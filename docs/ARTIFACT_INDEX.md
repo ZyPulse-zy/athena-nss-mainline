@@ -12,6 +12,10 @@
 - `evidence/nss36-admission-replay.json`：212 项当前准入检查，108 新旧差分，66 历史包络；不等于硬件验收。
 - `evidence/nss36-admission-timing.json`：失败后独立只读窗口的 58 条相对时序；当时所选游戏已不在候选，不能当原失败全过程。
 - `evidence/nss37-normalizer.json`：9,113 项新本地检查、16 对目标 RAM 解析测量、三组轻负载观测、两次安装/实际独立回滚/提交和最新控制器绑定；明确没有本轮 fast path 尝试。
+- `evidence/nss38-mainline.json`：真实 WAN2 32 次拒绝与独立恢复、两个独立软件高负载窗口、准入候选/目标内存开销、22:27 队列读取故障与自动恢复；常驻仍 NSS37。
+- `evidence/nss38-loop-timing.json`：失败后 105 次只读诊断相对时序；所选类别不再准入，不能当原失败重放。
+- `evidence/nss38-adapter-differential.json`、`nss38-admission-replay.json`：带诊断未安装候选的 1,470 决策对照、5 次数约束、230 准入/诊断案例。
+- `evidence/nss38-native-syntax.json`：两个候选的目标 Lua 编译，明确未执行/未绑定控制器。
 - `evidence/current-runtime.json`：最新审核摘要与部署哈希；读取者仍应重新核验现网。
 - `source-manifest.json`：每个源码副本的原路径、SHA256、大小；部署源文件必须与当前配置记录的哈希一致。
 
@@ -27,6 +31,9 @@
 | `outputs/nss35-address-recovery-report.html` | 上轮分类器恢复报告 |
 | `outputs/nss36-admission-timing-report.html` | 历史真实准入失败与时序定位报告 |
 | `outputs/nss37-normalizer-report.html` | 本轮等价属性解析、独立回滚与保留报告 |
+| `outputs/nss38-mainline-report.html` | 本轮真人准入、未安装候选、自然重启与结论边界 |
+| `work/nss38/real-matched-aba-20261003141133-251d83e6/` | 实际 WAN2 失败、回滚与 70 份冻结源码/证明 |
+| `work/nss38/candidate-traced-classifier.lua` | 带时序诊断的未安装准入候选；不能直接视为当前控制器 |
 | `work/nss37/normalizer-trial-qualified.json` | 第一次安装、180 秒独立自动恢复旧解析器/配置的证据 |
 | `work/nss37/affinity-qualified.json` | 当前新配置绑定与 66 项清单；未完成真人高负载验收 |
 | `work/nss36/real-matched-aba-20261003091409-28454bad/` | 真实 WAN1 尝试、独立回滚、59 份冻结源文件、完整私有证据 |
@@ -37,5 +44,6 @@
 | `work/nss34/` | 历史只读定位与 GitHub 建仓记录 |
 | `work/nss35/` | 历史恢复逻辑、测试与部署完整私有证据 |
 | `work/nss37/` | 当前解析优化、测试、部署与完整私有证据；原始连接/配置/检查点不上传 |
+| `work/nss38/` | 本轮源码、候选、日志与完整私有证据；原始连接、配置、检查点和模块不上传 |
 
 旧 NSS35/NSS33/NSS30/NSS29/NSS28 部署别名仍用于历史证明，不能用来覆盖当前常驻分类器状态。

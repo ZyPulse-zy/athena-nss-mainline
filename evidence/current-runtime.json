@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-03T10:15:42.559403+00:00",
-  "round": "NSS37",
+  "checkedAt": "2026-10-03T14:44:45.214861+00:00",
+  "round": "NSS38",
   "deploymentReference": "work/nss37/deployment-latest.json",
   "classifierConfigSha256": "b053e05b74ffe5ea3871284838e7771bcebfc8aa8a80ecc042f60693d7769635",
   "deployedTextSources": [
@@ -72,30 +72,33 @@
     "passed": true,
     "protectedConfigurationUnchanged": true,
     "exactOwnedNativeAudit": true,
-    "selectors": 4,
-    "queryAge": 2.9100000001490116,
-    "sequence": 200,
+    "selectors": 8,
+    "queryAge": 3.5100000000093132,
+    "sequence": 347,
     "ecmClosedAndZero": true
   },
   "lastApplicationObservation": {
-    "observedAt": "2026-10-03T10:11:17.078Z",
+    "observedAt": "2026-10-03T14:11:44.220Z",
     "readonly": true,
     "gameProcessRunning": true,
     "steamProcessRunning": true,
     "actualCs2RtCandidates": 1,
-    "actualSteamBulkCandidates": 0,
-    "sameWanCandidates": [],
-    "sourceAge": 2.130000000121072,
+    "actualSteamBulkCandidates": 23,
+    "sameWanCandidates": [
+      2
+    ],
+    "sourceAge": 1.4400000001769513,
     "nssAdmissionAllowed": false
   },
   "applicationEndpointsReadThisRound": true,
-  "freshApplicationPairCheckedThisRound": false,
+  "freshApplicationPairCheckedThisRound": true,
   "realForwardingABACompleted": false,
   "staleSnapshotRejectedEarlierInRound": false,
   "historicalNss36StaleSnapshotRejection": true,
+  "classifierWorkerRestartObservedThisRound": true,
   "finalClosure": {
     "passed": true,
-    "observedAt": "2026-10-03T10:15:57.001Z",
+    "observedAt": "2026-10-03T14:44:47.853Z",
     "readonly": true,
     "noActiveRootTransaction": true,
     "noNssStagingDirectory": true,

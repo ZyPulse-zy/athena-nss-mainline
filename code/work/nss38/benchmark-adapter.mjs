@@ -1,0 +1,20 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+import {connectRouter} from '../nss20/connect-router.mjs';import {encode,receipt} from '../nss11/v7-observe-repair/observe2/transport.mjs';
+const root='work/nss38',sha=s=>crypto.createHash('sha256').update(s).digest('hex');
+const old=fs.readFileSync('work/nss37/classifier.lua','utf8'),next=fs.readFileSync(root+'/candidate-classifier.lua','utf8');
+const proof=JSON.parse(fs.readFileSync(root+'/adapter-differential-qualified.json'));assert.ok(proof.passed&&proof.oldSha256===sha(old)&&proof.newSha256===sha(next));
+let fixture=fs.readFileSync('work/nss23/consumer-fixtures.lua','utf8').split('local s,c,w=make();local epoch=')[0];
+fixture=fixture.replace("local j=require('luci.jsonc');local M=assert(loadstring([===[__CONSUMER__]===]))()",'');
+let setup=fs.readFileSync('work/nss27/renewal-consumer-fixtures.lua','utf8').split('local x=setup();yes(')[0];
+setup=(setup.slice(0,setup.indexOf(' function x.time('))+' return x\nend\n').replace('local step=Adapter(P,fs,j,read,function()return clock end,run,rec);step()','Adapter(P,fs,j,read,function()return clock end,run,rec)');
+// Keep ready and candidates byte-exact. Remove unreachable sample, renewal and
+// retirement paths from this RAM-only benchmark to fit the existing cap.
+function prune(source){let s=source;for(const[a,b]of [['function M.compareEpoch(','return M\n\nend)()'],[' function out.sample()',' return out\nend']]){const first=s.indexOf(a),last=s.indexOf(b,first);assert.ok(first>0&&last>first);s=s.slice(0,first)+s.slice(last)}return s.split('\n').filter(l=>!l.trimStart().startsWith('--')&&!/^function A\.(compareCurrentEpoch|proposeRenewal|acceptRenewal|resampleClosed)/.test(l)).join('\n')}
+const edits=[[' local function current()',' local function readContext()'],['  Consumer.inspect(s,c,now());return s,c','  return s,c'],[' local epoch\n',' local function current()\n  local s,c=readContext();Consumer.inspect(s,c,now());return s,c\n end\n local epoch\n'],['  local s,c=current();local checked=Consumer.inspect(s,c,now())','  local s,c=readContext();local checked=Consumer.inspect(s,c,now())'],['local ok,result=pcall(function()local s,c=current();local e=Consumer.pair(s,c,now(),P.selected);','local ok,result=pcall(function()local s,c=readContext();local e=Consumer.pair(s,c,now(),P.selected);']];
+let rebuilt=prune(old);for(const[a,b]of edits){assert.equal(rebuilt.split(a).length,2);rebuilt=rebuilt.replace(a,()=>b)}assert.equal(rebuilt,prune(next));
+const changes='{'+edits.map(pair=>'{'+pair.map(v=>'[===['+v+']===]').join(',')+'}').join(',')+'}';
+let code=fs.readFileSync(root+'/benchmark-adapter.lua','utf8');for(const[k,v]of Object.entries({FIXTURE:fixture,OLD:prune(old),CHANGES:changes,SETUP:setup}))code=code.replace('__'+k+'__',()=>v);
+assert.ok(!code.includes('__OLD__'));fs.writeFileSync(root+'/benchmark-adapter-rendered.lua',code);
+const e=encode("/usr/bin/lua - <<'NSS38_BENCH_ADAPTER'\n"+code+"\nNSS38_BENCH_ADAPTER\n");
+if(process.argv.includes('--prepare-only')){console.log(JSON.stringify({prepared:true,bytes:e.bytes,execBytes:e.execBytes,routerCalled:false}));process.exit(0)}
+const c=await connectRouter();try{const r=receipt(await c.run(e.command),e);fs.writeFileSync(root+'/benchmark-adapter-raw-private.json',JSON.stringify(r,null,2)+'\n');assert.equal(r.code,0,r.stderr);const o=JSON.parse(r.stdout);Object.assign(o,{observedAt:new Date().toISOString(),execBytes:e.execBytes,oldSha256:sha(old),newSha256:sha(next),renderedSha256:sha(code)});o.groups=[2,32,64].map(flows=>{const rows=o.rows.filter(x=>x.flows===flows),mean=label=>rows.reduce((a,x)=>a+x[label].cpuSeconds/x.repeats,0)/rows.length;return{flows,pairs:rows.length,oldCpuMs:mean('old')*1000,newCpuMs:mean('new')*1000,reductionPercent:(1-mean('new')/mean('old'))*100}});fs.writeFileSync(root+'/native-adapter-benchmark.json',JSON.stringify(o,null,2)+'\n');console.log(JSON.stringify({passed:o.passed,groups:o.groups,elapsedSeconds:o.elapsedSeconds,backgroundLan4Mbps:o.backgroundLan4Mbps,routerWrites:false,execBytes:e.execBytes}));}finally{c.close()}

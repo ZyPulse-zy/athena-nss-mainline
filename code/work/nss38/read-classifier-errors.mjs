@@ -1,0 +1,3 @@
+import fs from'node:fs';import assert from'node:assert/strict';import{connectRouter}from'../nss20/connect-router.mjs';
+const d=JSON.parse(fs.readFileSync('work/nss37/deployment-latest.json'));assert.match(d.id,/^nss23-[a-z0-9-]+$/);
+const c=await connectRouter();try{const r=await c.run("/usr/bin/timeout -k 1 3 /sbin/logread -e '"+d.id+"' | /usr/bin/tail -n 120");assert.equal(r.code,0);fs.writeFileSync('work/nss38/classifier-service-log-private.txt',r.stdout);const lines=r.stdout.split('\n').filter(x=>x.includes('Oct  3 22:')&&/assert|failed|stale|timed|error|\.lua:\d+:/.test(x));console.log(lines.map(x=>x.replaceAll(d.base,'<classifier-base>')).join('\n'));}finally{c.close()}

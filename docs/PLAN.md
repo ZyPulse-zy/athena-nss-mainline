@@ -1,12 +1,12 @@
-# 下一步：验证优化后分类数据能及时进入 NSS
+# 下一步：稳定分类器，再完成单 WAN NSS 闭环
 
-唯一主线：自动游戏分类 → NSS RT/bulk leaf → 真人 CS2 + Steam 单 WAN 闭环。NSS37 属性解析优化已保留，独立回滚通过；NSS36 真实失败仍是未解决的高负载验收边界。
+唯一主线：自动游戏分类 → NSS RT/bulk leaf → 真人 CS2 + Steam。NSS38 真实 WAN2 尝试止于初始时间门槛；常驻 worker 后来又因队列读取返回 143 自动重启。两项均未解决，当前恢复健康不等于长期通过。
 
-1. **核验当前 NSS37。** 读取 `work/nss37/deployment-latest.json`、配置/源码哈希、现网与 ECM 全零。检查当前 producer 和 last-error 的归属；不能把首次试装到期当作当前崩溃，也不能把一次健康当长期稳定。
-2. **只读验证代表性负载下的发布时间。** 本轮仅证明解析 CPU 耗时下降，轻负载发布约 0.25–0.29 秒。记录来源序号、query age、publication delay、完整检查耗时与拒绝原因，判断初始 <1 秒窗口是否真正可用。用户没有持续下载时不反复催促，不将合成文本测量写成真实网络压测。
-3. **若仍不足，只定位同一发布路径。** 采集、核心分类、同步 fallback 规则维护与审计可能影响周期；先只读/内存量化具体阶段，再决定一个最小变量。不得删字段、缩小源范围、跳过身份、改变 PBR/mark/NAT、延长 TTL 或换时间基准。不要先改进程架构或开启其它 QoS 支线。
-4. **更新控制器资格后，集中一次真人测试。** 当前 NSS37 已绑定新配置与 66 项源文件；任何被绑定源码/证明的变更都需新轮次重新核验。自然同 WAN 的 Steam TCP 与 CS2 UDP、完整 mark/NAT/实例/应用归属均核对。准备充分后集中一次配合，无需长期挂着。
-5. **先验证加速路径，再评价性能。** checkpoint、独立回滚先于变更；单 WAN、单连接对。证明 tag 在 ECM 学习前就绪、两流分别命中 bulk/RT leaf、出口/ct mark/NAT/WAN affinity 不变、精确撤销有效，再做 software → NSS → software。重点 softirq/time_squeeze/吞吐及真实 CS2 jitter/loss/Miss；busy 仅辅助。现有子组 20 Mbps，不等于整体 300 Mbps 以上均已加速。
-6. **闭环通过后再扩展。** 第二 WAN、共享预算、Wi-Fi、autorate、五 WAN 和 bridge B-shaper/ECN/HTB dump 等继续等待。没有客户端数据就明确未取得，不用 ICMP/合成 UDP 替代真实游戏体验。
+1. **先读当前状态。** 常驻引用仍为 `work/nss37/deployment-latest.json`。新轮次目录核验哈希、worker/guardian、last-error、认证/PBR/服务、ECM 全零与上次清理。历史 70 份 NSS38 试验快照保持冻结。
+2. **定位队列读取失败与安全恢复。** 日志已确定 `/sbin/tc -j qdisc show dev rpwan1` 的 2 秒 wrapper 返回 143，发生于 apply 中的只读队列检查；尚无阻塞栈或信号来源。后续 8 次查询正常。先设计可离线复现的超时/半截输出及外层子进程取消模型，区分只读阶段与已有写入阶段；只有能证明整个子进程清理、撤回候选、精确恢复自有规则后才考虑原地重采样。未知状态继续终止，禁止吞错、复用旧状态或直接增加超时。这里是分类器生命周期修复，不扩展 CAKE 策略优化。
+3. **资格核验 NSS38 未安装候选。** `candidate-classifier.lua` 已证明重复检查可减少；带诊断版本为 `candidate-traced-classifier.lua` 与 `candidate-traced-fast-path.lua`。本地决策/时序检查与目标语法通过，但全套当前部署绑定、tag policy roundtrip 和相关目标 RAM 生命周期尚未完成。新轮次构建，不改 NSS37 或冻结试验的源码/证明。
+4. **只读验收完整准入循环。** 记录每次来源序号、query/publication age、phase 与 adapter 用时、完整拒绝原因及观察程序开销。只读阶段通过与实际准备后通过不能混为一谈。保留 <1 秒初始窗口、<2 秒学习余量及原独立截止，不以放宽有效期获得通过。没有自然流量时先完成资格，不反复要求用户下载。
+5. **再集中一次真人同 WAN 尝试。** 重新核对 Steam TCP 与 CS2 UDP 的当前应用归属、CT ID/zone/双向 tuple、完整 mark、NAT/WAN。先 checkpoint、独立超时恢复，再单 WAN/单连接对。证明预学习 tag、bulk/RT leaf、accelerated_count、WAN affinity、精确撤销；通过后才解释 software → NSS → software 性能。现有 20 Mbps 子组不代表全部 300 Mbps 以上下载均加速。
+6. **通过主线后才扩展。** 第二 WAN、共享预算、Wi-Fi、autorate、五 WAN 与其它 qdisc 支线等待。没有客户端指标就标记 CS2 jitter/loss/Miss 未测，不用 ICMP 或合成 UDP 代替。
 
-NSS37 本轮不再要求用户维持游戏或下载。已提交部署仍持续保留安全分类守护，ECM 关闭；不承诺未安排的后台测试。每轮保存假设、变更、负载、ECM/leaf、mark/NAT/WAN、时序、softirq/time_squeeze/吞吐、客户端指标来源与恢复结果。
+目前不需要用户持续挂游戏或下载。不承诺未安排的后台运行。每轮保留假设、唯一主变量、负载、ECM/leaf、mark/NAT/WAN、时序与观察成本、softirq/time_squeeze/吞吐、客户端数据来源以及恢复结果。

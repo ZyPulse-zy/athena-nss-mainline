@@ -35,7 +35,7 @@ assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets'
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
 c=json.loads((root/'evidence/current-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
-assert c['round']=='NSS37' and c['deploymentReference']=='work/nss37/deployment-latest.json'
+assert c['round']=='NSS38' and c['deploymentReference']=='work/nss37/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
@@ -65,4 +65,26 @@ assert y['controller']['configuration']['configSha256']==c['classifierConfigSha2
 assert y['finalState']['protectedAudit']['ecmClosedAndZero'] and y['finalState']['sameProducerSincePermanentObservation']
 assert not y['actualFastPathTrial']['attempted'] and not y['actualFastPathTrial']['ecmOpened']
 assert not y['limitations']['realHighLoadABACompleted'] and not y['limitations']['nssCpuBenefitProved'] and not y['limitations']['gameJitterLossMissCaptured']
+z=json.loads((root/'evidence/nss38-mainline.json').read_text())
+assert z['deploymentReference']==c['deploymentReference'] and not z['permanentClassifierChanged']
+t=z['actualTrial'];assert t['attempted'] and not t['passed'] and t['rollbackPassed']
+assert t['wan']==2 and t['tcpMark']==t['udpMark']==131072 and t['sameNat']
+assert t['probeCount']==32 and t['readyCount']==0 and sum(t['refusalCounts'].values())==32
+assert t['bulkLeaf']['packets']==t['rtLeaf']['packets']==0
+assert not t['gateModuleLoaded'] and not t['nssPermissionGranted'] and not t['packetTagRulesInstalled']
+assert t['frozenSourceProofCopies']==70 and t['physicalLan4QosTreePrepared']
+candidate=z['candidate'];assert not candidate['installed'] and not candidate['operationalBindingUpdated']
+assert candidate['localChecks']=={'decisionCases':1470,'inspectionCountChecks':5,'admissionCases':212,'renewalRetirementCases':21}
+assert candidate['trace']['admissionAndDiagnosticChecks']==230 and candidate['trace']['decisionCases']==1470
+for name,key in [('candidate-classifier.lua','adapterSha256'),('candidate-traced-classifier.lua',None),('candidate-traced-fast-path.lua',None)]:
+    expected=candidate[key] if key else candidate['trace']['adapterSha256' if 'classifier' in name else 'fastSha256']
+    assert hashlib.sha256((root/'code/work/nss38'/name).read_bytes()).hexdigest()==expected
+assert len(candidate['nativeBenchmark']['rows'])==12 and candidate['nativeBenchmark']['successfulReadyCalls']==120
+assert z['classifierRestart']['exitCode']==143 and z['classifierRestart']['exactRecoveryLogged']
+assert not z['classifierRestart']['underlyingBlockOrSignalCauseProved']
+assert all(x['exitCode']==0 and x['cakeRoots']==1 for x in z['classifierRestart']['subsequentProbe']['rows'])
+assert z['finalState']['currentClassifierHealthy'] and not z['finalState']['sameProducerSinceBegin']
+assert z['finalState']['protectedAudit']['ecmClosedAndZero'] and z['finalState']['closure']['passed']
+assert not z['limitations']['realHighLoadABACompleted'] and not z['limitations']['nssCpuBenefitProved']
+assert not z['limitations']['gameJitterLossMissCaptured'] and not z['limitations']['completeHighLoadLifecycleQualified']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

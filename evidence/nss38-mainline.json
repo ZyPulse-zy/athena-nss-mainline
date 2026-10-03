@@ -1,0 +1,674 @@
+{
+  "round": "NSS38",
+  "updatedAt": "2026-10-03T14:45:15.577Z",
+  "deploymentReference": "work/nss37/deployment-latest.json",
+  "permanentClassifierChanged": false,
+  "highLoadPublication": {
+    "observedAt": "2026-10-03T14:08:12.549Z",
+    "performance": {
+      "seconds": 18.139999999897555,
+      "lan4DownMbps": 353.2468255808263,
+      "lan4DownPps": 29241.345093880685,
+      "cpuBusyPercent": 77.25297827610372,
+      "softirqPercent": 56.846531184302734,
+      "timeSqueezeDelta": 1,
+      "includesObserverCost": true,
+      "matchedForwardingABA": false
+    },
+    "samples": 81,
+    "jsonReads": 14,
+    "observerCpuSeconds": 1.705063,
+    "guardianHealthyAtAllSamples": true,
+    "sourceAgeBelowOneSecond": 8,
+    "publicationDelayRangeSeconds": [
+      0.5600000000558794,
+      0.8099999998230487
+    ],
+    "candidateCountsRange": [
+      29,
+      32
+    ],
+    "productionWorkerInstrumented": false,
+    "childPhaseCountersUsable": false,
+    "childPhaseLimitation": "Kernel lacks CONFIG_PROC_CHILDREN; zero child-phase counters are unavailable data, not proof of absent maintenance."
+  },
+  "preTrialRehearsal": {
+    "samples": 44,
+    "ready": 6,
+    "ageMin": 0.7099999999627471,
+    "readMax": 0.1600000001490116,
+    "publicationDelayMin": 0.4699999999720603,
+    "publicationDelayMax": 0.6600000001490116,
+    "selectedTcpPresent": 44,
+    "selectedGamePresent": 44,
+    "routerWrites": false,
+    "reasons": {
+      "Fresh epoch lacks tag setup reserve": 15,
+      "Pre-learning time margin insufficient": 23
+    },
+    "currentApplicationOwnershipRechecked": true
+  },
+  "actualTrial": {
+    "attempted": true,
+    "passed": false,
+    "matchedForwardingABACompleted": false,
+    "applicationPairVerifiedTwiceBeforeCheckpoint": true,
+    "wan": 2,
+    "tcpMark": 131072,
+    "udpMark": 131072,
+    "sameFullMark": true,
+    "sameNat": true,
+    "selectedSubgroupCeilingMbps": 20,
+    "unselectedPhysicalFallbackMbps": 950,
+    "independentOwnerSeconds": 45,
+    "checkpointVerified": true,
+    "rollbackBeforeFirstWrite": true,
+    "detachedOwnerVerified": true,
+    "temporarySingleWanPrivate": true,
+    "physicalLan4QosTreePrepared": true,
+    "initialAlignmentSeconds": 5.6100000001024455,
+    "actualLastProbeSeconds": 5.590000000083819,
+    "probeCount": 32,
+    "readyCount": 0,
+    "refusalCounts": {
+      "Pre-learning time margin insufficient": 23,
+      "Fresh epoch lacks tag setup reserve": 9
+    },
+    "packetTagRulesInstalled": false,
+    "gateModuleLoaded": false,
+    "nssPermissionGranted": false,
+    "bulkLeaf": {
+      "bytes": 0,
+      "packets": 0
+    },
+    "rtLeaf": {
+      "bytes": 0,
+      "packets": 0
+    },
+    "defaultLeaf": {
+      "bytes": 229813353,
+      "packets": 151640
+    },
+    "rollbackPassed": true,
+    "wanRestored": true,
+    "qosRestored": true,
+    "modulesRemoved": true,
+    "protectedConfigurationUnchanged": true,
+    "authenticationAndDhcpIdentityPreserved": true,
+    "renewalReauthenticationTested": false,
+    "pbrNatWanAffinityAfterAccelerationProved": false,
+    "perProbeSourceSequenceNotRecorded": true,
+    "allFailureCausesProved": false,
+    "frozenSourceProofCopies": 70
+  },
+  "initialAdmissionTrace": [
+    {
+      "atSeconds": 0.2900000000372529,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 0.3700000001117587,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 0.4699999999720603,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 0.590000000083819,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 0.6899999999441206,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 0.7800000000279397,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 0.8900000001303852,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 1.590000000083819,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 2.2600000000093132,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 2.3600000001024455,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 2.5,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 2.640000000130385,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 2.7600000000093132,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 2.8700000001117587,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 2.949999999953434,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 3.080000000074506,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 3.2199999999720603,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 3.340000000083819,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 3.4399999999441206,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 3.540000000037253,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 3.7299999999813735,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 3.9100000001490116,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 4.060000000055879,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 4.2700000000186265,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 4.400000000139698,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 4.660000000149012,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    },
+    {
+      "atSeconds": 4.8600000001024455,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 5.080000000074506,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 5.260000000009313,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 5.350000000093132,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 5.46999999997206,
+      "ready": false,
+      "reason": "Fresh epoch lacks tag setup reserve",
+      "retryable": true
+    },
+    {
+      "atSeconds": 5.590000000083819,
+      "ready": false,
+      "reason": "Pre-learning time margin insufficient",
+      "retryable": true
+    }
+  ],
+  "postTrialLoopProfile": {
+    "observedAt": "2026-10-03T14:17:35.595Z",
+    "samples": 105,
+    "ready": 0,
+    "reasons": {
+      "Selected class is not admitted": 105
+    },
+    "observerCpuSeconds": 8.434097000000001,
+    "fullInventories": 3,
+    "scopedScans": 102,
+    "maxPhaseSeconds": 0.23999999999068677,
+    "maxAdapterSeconds": 0.1900000001769513,
+    "performance": {
+      "seconds": 12,
+      "lan4DownMbps": 402.7498253333333,
+      "lan4DownPps": 33315.25,
+      "cpuBusyPercent": 89.41450997030122,
+      "softirqPercent": 59.673313534153586,
+      "timeSqueezeDelta": 17,
+      "includesObserverCost": true,
+      "matchedForwardingABA": false
+    },
+    "publicationDelayRangeSeconds": [
+      0.8300000000745058,
+      1.1399999998975545
+    ],
+    "currentApplicationOwnershipRechecked": false,
+    "originalGameNoLongerAdmitted": true,
+    "oneEarlierReadOnlyScanAborted": "Core guard count changed; not reproduced in second diagnostic. Transient enumeration is only a hypothesis.",
+    "originalFailureCausalAttribution": false
+  },
+  "candidate": {
+    "installed": false,
+    "operationalBindingUpdated": false,
+    "admissionSemanticsAndDeadlinesUnchanged": true,
+    "change": "Remove only redundant full inspection in ready/observe. Renewal, retirement and sample contracts unchanged; no cache or reduced source scope.",
+    "baseAdapterSha256": "1a5753686d6470d6312df9fb3183df399bac9eeb246158a5bf776cd6dec0992d",
+    "adapterSha256": "e0a8662eda191a6021ccade87fd397075acdebf90cbd3056a20f58307a6989f3",
+    "localChecks": {
+      "decisionCases": 1470,
+      "inspectionCountChecks": 5,
+      "admissionCases": 212,
+      "renewalRetirementCases": 21
+    },
+    "nativeBenchmark": {
+      "observedAt": "2026-10-03T14:30:15.949Z",
+      "elapsedSeconds": 5.650000000139698,
+      "backgroundLan4Mbps": 6.19246442462565,
+      "groups": [
+        {
+          "flows": 2,
+          "pairs": 4,
+          "oldCpuMs": 2.1414,
+          "newCpuMs": 1.7732999999999999,
+          "reductionPercent": 17.1896889885122
+        },
+        {
+          "flows": 32,
+          "pairs": 4,
+          "oldCpuMs": 16.0904,
+          "newCpuMs": 11.845100000000002,
+          "reductionPercent": 26.384055088748546
+        },
+        {
+          "flows": 64,
+          "pairs": 4,
+          "oldCpuMs": 32.973549999999996,
+          "newCpuMs": 24.048499999999994,
+          "reductionPercent": 27.067300912397986
+        }
+      ],
+      "rows": [
+        {
+          "new": {
+            "cpuSeconds": 0.007414999999999998,
+            "wallSeconds": 0.010000000009313226
+          },
+          "old": {
+            "cpuSeconds": 0.008487999999999999,
+            "wallSeconds": 0.010000000009313226
+          },
+          "order": "old-new",
+          "flows": 2,
+          "repeats": 5,
+          "pair": 1
+        },
+        {
+          "old": {
+            "cpuSeconds": 0.009375999999999995,
+            "wallSeconds": 0
+          },
+          "new": {
+            "cpuSeconds": 0.0051,
+            "wallSeconds": 0
+          },
+          "order": "new-old",
+          "flows": 2,
+          "repeats": 5,
+          "pair": 2
+        },
+        {
+          "new": {
+            "cpuSeconds": 0.006824999999999998,
+            "wallSeconds": 0.010000000009313226
+          },
+          "old": {
+            "cpuSeconds": 0.013669000000000008,
+            "wallSeconds": 0.010000000009313226
+          },
+          "order": "old-new",
+          "flows": 2,
+          "repeats": 5,
+          "pair": 3
+        },
+        {
+          "old": {
+            "cpuSeconds": 0.011295,
+            "wallSeconds": 0.010000000009313226
+          },
+          "new": {
+            "cpuSeconds": 0.016126,
+            "wallSeconds": 0.02000000001862645
+          },
+          "order": "new-old",
+          "flows": 2,
+          "repeats": 5,
+          "pair": 4
+        },
+        {
+          "new": {
+            "cpuSeconds": 0.05866500000000002,
+            "wallSeconds": 0.05999999982304871
+          },
+          "old": {
+            "cpuSeconds": 0.08187099999999997,
+            "wallSeconds": 0.07999999984167516
+          },
+          "order": "old-new",
+          "flows": 32,
+          "repeats": 5,
+          "pair": 1
+        },
+        {
+          "old": {
+            "cpuSeconds": 0.080901,
+            "wallSeconds": 0.0800000000745058
+          },
+          "new": {
+            "cpuSeconds": 0.05997199999999997,
+            "wallSeconds": 0.060000000055879354
+          },
+          "order": "new-old",
+          "flows": 32,
+          "repeats": 5,
+          "pair": 2
+        },
+        {
+          "new": {
+            "cpuSeconds": 0.05909500000000001,
+            "wallSeconds": 0.060000000055879354
+          },
+          "old": {
+            "cpuSeconds": 0.07892199999999999,
+            "wallSeconds": 0.0800000000745058
+          },
+          "order": "old-new",
+          "flows": 32,
+          "repeats": 5,
+          "pair": 3
+        },
+        {
+          "old": {
+            "cpuSeconds": 0.08011400000000002,
+            "wallSeconds": 0.0800000000745058
+          },
+          "new": {
+            "cpuSeconds": 0.059170000000000056,
+            "wallSeconds": 0.060000000055879354
+          },
+          "order": "new-old",
+          "flows": 32,
+          "repeats": 5,
+          "pair": 4
+        },
+        {
+          "new": {
+            "cpuSeconds": 0.11518500000000009,
+            "wallSeconds": 0.11999999987892807
+          },
+          "old": {
+            "cpuSeconds": 0.15967299999999995,
+            "wallSeconds": 0.15999999991618097
+          },
+          "order": "old-new",
+          "flows": 64,
+          "repeats": 5,
+          "pair": 1
+        },
+        {
+          "old": {
+            "cpuSeconds": 0.16433700000000018,
+            "wallSeconds": 0.1699999999254942
+          },
+          "new": {
+            "cpuSeconds": 0.11859299999999995,
+            "wallSeconds": 0.1299999998882413
+          },
+          "order": "new-old",
+          "flows": 64,
+          "repeats": 5,
+          "pair": 2
+        },
+        {
+          "new": {
+            "cpuSeconds": 0.13098999999999994,
+            "wallSeconds": 0.13000000012107193
+          },
+          "old": {
+            "cpuSeconds": 0.172037,
+            "wallSeconds": 0.18000000016763806
+          },
+          "order": "old-new",
+          "flows": 64,
+          "repeats": 5,
+          "pair": 3
+        },
+        {
+          "old": {
+            "cpuSeconds": 0.1634239999999998,
+            "wallSeconds": 0.15999999991618097
+          },
+          "new": {
+            "cpuSeconds": 0.11620199999999992,
+            "wallSeconds": 0.10999999986961484
+          },
+          "order": "new-old",
+          "flows": 64,
+          "repeats": 5,
+          "pair": 4
+        }
+      ],
+      "successfulReadyCalls": 120,
+      "execBytes": 8711,
+      "oldSha256": "1a5753686d6470d6312df9fb3183df399bac9eeb246158a5bf776cd6dec0992d",
+      "newSha256": "e0a8662eda191a6021ccade87fd397075acdebf90cbd3056a20f58307a6989f3",
+      "scope": "Actual ready path, native Lua/jsonc; identical synthetic 2/32/64-flow publications, mocked filesystem and fixed admission clock. Unreachable sample/retirement/renewal methods pruned. No live admission or forwarding benefit proved."
+    },
+    "discardedBroaderChange": "First wider removal changed retirement error shape in local differential replay; discarded before any live use.",
+    "trace": {
+      "adapterSha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0",
+      "fastSha256": "c2fcf006a4f3c2833c51181a3b30f35db20238994eb71d3364f2e5b6bcbb2198",
+      "decisionCases": 1470,
+      "inspectionCountChecks": 5,
+      "admissionAndDiagnosticChecks": 230,
+      "newDiagnosticChecks": 18,
+      "diagnosticFields": [
+        "source sequence",
+        "query start/finish",
+        "publication time",
+        "age at completed check",
+        "adapter wall time",
+        "phase wall time",
+        "iteration wall time"
+      ],
+      "nativeCompileOnly": true,
+      "fullyBoundControllerQualified": false
+    }
+  },
+  "classifierRestart": {
+    "observed": true,
+    "logTime": "2026-10-03T22:27:08+08:00",
+    "command": "/sbin/tc -j qdisc show dev rpwan1",
+    "wrapperTimeoutSeconds": 2,
+    "exitCode": 143,
+    "reported": "Terminated",
+    "path": "queue read -> backend freshKnown/reconcile -> apply child fails -> worker exits -> procd restarts",
+    "exactRecoveryLogged": true,
+    "producerChanged": true,
+    "guardianProcessUnchanged": true,
+    "subsequentProbe": {
+      "routerWrites": false,
+      "rows": [
+        {
+          "bytes": 365,
+          "seconds": 0.010000000009313226,
+          "cakeRoots": 1,
+          "exitCode": 0
+        },
+        {
+          "bytes": 365,
+          "seconds": 0.010000000009313226,
+          "cakeRoots": 1,
+          "exitCode": 0
+        },
+        {
+          "bytes": 365,
+          "seconds": 0.010000000009313226,
+          "cakeRoots": 1,
+          "exitCode": 0
+        },
+        {
+          "bytes": 365,
+          "seconds": 0.010000000009313226,
+          "cakeRoots": 1,
+          "exitCode": 0
+        },
+        {
+          "bytes": 365,
+          "seconds": 0.010000000009313226,
+          "cakeRoots": 1,
+          "exitCode": 0
+        },
+        {
+          "bytes": 365,
+          "seconds": 0.009999999776482582,
+          "cakeRoots": 1,
+          "exitCode": 0
+        },
+        {
+          "bytes": 365,
+          "seconds": 0.010000000009313226,
+          "cakeRoots": 1,
+          "exitCode": 0
+        },
+        {
+          "bytes": 365,
+          "seconds": 0.010000000009313226,
+          "cakeRoots": 1,
+          "exitCode": 0
+        }
+      ],
+      "observedAt": "2026-10-03T14:34:08.080Z"
+    },
+    "underlyingBlockOrSignalCauseProved": false,
+    "productionFaultInjected": false,
+    "sourceModified": false,
+    "nssRelatedCauseProved": false
+  },
+  "finalState": {
+    "observedAt": "2026-10-03T14:44:46.546Z",
+    "configSha256": "b053e05b74ffe5ea3871284838e7771bcebfc8aa8a80ecc042f60693d7769635",
+    "protectedAudit": {
+      "passed": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 8,
+      "queryAge": 3.5100000000093132,
+      "sequence": 347,
+      "ecmClosedAndZero": true
+    },
+    "sameProducerSinceBegin": false,
+    "currentClassifierHealthy": true,
+    "currentLastErrorBelongsToPreviousInstance": true,
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-03T14:44:47.853Z",
+      "readonly": true,
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1856233.52
+    }
+  },
+  "limitations": {
+    "realHighLoadABACompleted": false,
+    "nssCpuBenefitProved": false,
+    "gameJitterLossMissCaptured": false,
+    "wholeSteam300MbpsAccelerated": false,
+    "completeHighLoadLifecycleQualified": false,
+    "publicationTimingFixed": false,
+    "adapterOptimizationInstalled": false,
+    "upstreamDriverDefectProved": false
+  },
+  "next": "Preserve classifier fail-closed recovery and diagnose the observed queue-read exit; qualify the candidate controller and per-probe timing against current deployment. Then a concentrated single-WAN real-pair retry only after lifecycle and admission gates pass. No second WAN or QoS side branches.",
+  "upstreamSubmission": false
+}

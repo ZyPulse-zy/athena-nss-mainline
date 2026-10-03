@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "differentialCases": 1470,
+  "inspectionCountChecks": 5,
+  "mutations": 42,
+  "oldSha256": "1a5753686d6470d6312df9fb3183df399bac9eeb246158a5bf776cd6dec0992d",
+  "newSha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0",
+  "routerWrites": false,
+  "scope": "Actual old/new adapter with deterministic serialized publications, fixed clocks and synthetic identities. Success, rejection and retirement results match after stripping source line numbers. Ready/observe remove one redundant inspection; sample/renewal/retirement counts and contracts stay unchanged.",
+  "error": ""
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-03T14:35:40.067Z",
+  "routerWrites": false,
+  "compileOnly": true,
+  "liveAdmissionQualified": false,
+  "operationalBindingUpdated": false,
+  "rows": [
+    {
+      "name": "candidate-traced-classifier.lua",
+      "sha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0",
+      "compiled": true,
+      "executed": false,
+      "execBytes": 8155
+    },
+    {
+      "name": "candidate-traced-fast-path.lua",
+      "sha256": "c2fcf006a4f3c2833c51181a3b30f35db20238994eb71d3364f2e5b6bcbb2198",
+      "compiled": true,
+      "executed": false,
+      "execBytes": 6835
+    }
+  ]
+}
