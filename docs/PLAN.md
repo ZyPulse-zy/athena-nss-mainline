@@ -1,12 +1,14 @@
-# 下一步：完成写前审核诊断，再集中一次真人验收
+# 下一步：同一 WAN 的性能与游戏验收
 
 唯一主线：自动游戏分类 → NSS bulk/RT leaf → 真人 CS2＋Steam 单 WAN。
 
-1. **核验 NSS39。** 常驻引用 `work/nss39/deployment-latest.json`，68 项绑定保持；新轮次用新目录，不覆盖 NSS40 的 72 份失败证据。先核对实例、守护、旧错误归属、保护配置与 ECM 全零。
-2. **接入已完成的取证入口。** 复制并绑定 NSS40 的 `current-audit-diagnostic.mjs` / `audit-renderer.mjs`，替代仅输出断言行号的本地审核入口；按次使用 `record-candidates.mjs` 保存 socket/候选/原始响应，再保存 selected pair，不能只覆盖 latest。所有原审核断言和外层截止保持。不要直接重跑 NSS40 冻结的实际尝试。
-3. **先定位完整快照过期。** NSS40 在约 323 Mbps 时 compact 准入 4/94 次通过，但随后的 full snapshot 写前审核失败，具体年龄未记录。源码发布顺序已知，根因未证明；先比较审核分段、来源/发布年龄、producer/sequence 和负载。不能拿之后 0.29 秒的轻载审核解释高负载根因，不能持锁等待新发布或放宽 TTL。
-4. **条件具备后集中短测。** 用户无需常驻游戏/反复下载。真实 socket → CT ID/zone/元组/完整 mark/NAT/自然 WAN affinity 均匹配，完整只读审核通过，才创建 checkpoint 并验证独立恢复。仍是一个 WAN、一条 bulk TCP＋一条 RT UDP，初始年龄 <1 秒、预学习 <2 秒、45 秒独立期限不变。
-5. **完成 software→NSS→software。** 核验 tag getter、两条加速 flow、bulk/RT FQ-CoDel leaf 与精确撤销。受控子组上限 20 Mbps，不等于整台 Steam 300 Mbps 均加速。重点比较相同实际负载下 softirq/time_squeeze、吞吐和 CS2 jitter/loss/Miss；计入观察成本，没有客户端遥测就写未测到。
-6. **闭环通过才扩展。** 第二 WAN、共享预算、Wi-Fi、autorate、五 WAN 及其它 qdisc 支线继续等待。
+NSS41 已证明真人功能路径，尚未证明固定高负载收益或低延迟游戏体验。原控制器失败保留；不要重跑冻结入口或把重新校验冒充原控制器通过。
 
-本轮未生产写入，未产生新的回滚验证。NSS39 历史独立回滚证明继续保留，每次新写入仍须建立本次 checkpoint 和独立自动恢复。未知读取/清理状态拒绝，不吞错、不扩大改动碰运气。
+1. **先核验现网。** 常驻引用仍是 `work/nss39/deployment-latest.json`。读取 worker/guardian、配置、旧错误归属、生产队列、ECM 全零与实验清理。新目录接续，保持 NSS40/NSS41 冻结证明。
+2. **修正本地验收入口并绑定。** 用 NSS41 的通用 WAN 解析器按选中 flow 的 WAN 校验，加入后处理及其依赖哈希，审计整个实际入口的依赖清单。实际 WAN1 冻结数据与 mark/NAT/tag/模式错误副本已检查，不需要为这个修复反复游戏。已冻结的 NSS41 `real-session.mjs` 仍引用旧 WAN5 后处理，不能原样再用。
+3. **恢复审核使用原完整断言。** 学习前的锁外调度仍需严格新序列及原 TTL；恢复已关闭 ECM 后使用原 <6/<9 秒完整审核，不再把学习前 source age <2 秒条件套到闭合验收。保留 fixed deadlines，未知读取/恢复拒绝。锁外等待失败应封存每次观察年龄与序号，本次该失败只有错误与总时间，不能伪装成完整逐帧原因。
+4. **设计单 WAN 的有效对照。** 当前只加速 1 TCP＋1 UDP、20 Mbps 子组，整机其余 300+ Mbps 不受控。先确定稳定下载负载和受控流量份额，选一个主要变量；不要凭 global busy 微小变化推算收益。仍保持新连接 Linux PBR、完整 ct mark、NAT 与原 WAN；没有理由要求用户常驻游戏或反复下载。
+5. **集中真人对照。** 新鲜应用 socket/CT 实例/完整元组/mark/NAT 匹配、全审核通过，才新建 checkpoint 并先验证独立恢复。保持默认拒绝、精准放行、learning 前 tag、精确撤销、相同 QoS 预算与观察循环。记录 bulk/RT leaf、软中断、time_squeeze、pps 和吞吐；客户端 jitter/loss/Miss 或体感没有取得就明确未测。观察时间从路由器 uptime 校准，不能错配窗口。
+6. **全部验收后才扩展。** 第二 WAN、共享预算、Wi-Fi、autorate、五 WAN 与其它 qdisc 支线继续等待。CAKE 保留软件基线/fallback，不转回长期优化主线。
+
+所有新的生产写入都需要本次 checkpoint 和独立于控制连接的超时恢复。NSS41 提前恢复完成，不冒充再次触发到期。不得刷机/升级内核/改分区/全清 conntrack/重建全部生产 qdisc，保护认证/PBR/sing-box/Tailscale。无上游提交；本地后处理问题见 [校验缺陷记录](ISSUE_ECM_WAN_VALIDATOR.md)。

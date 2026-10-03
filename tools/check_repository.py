@@ -35,7 +35,7 @@ assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets'
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
 c=json.loads((root/'evidence/current-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
-assert c['round']=='NSS40' and c['deploymentReference']=='work/nss39/deployment-latest.json'
+assert c['round']=='NSS41' and c['deploymentReference']=='work/nss39/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
@@ -123,5 +123,27 @@ assert w['finalState']['protectedAudit']['ecmClosedAndZero'] and w['finalState']
 assert not any(w['conclusions'][k] for k in ['reliableHighLoadAdmissionProved','realHighLoadNssLoopCompleted','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','highLoadCauseOfStaleProtectedSnapshotKnown','secondWanExpansionAllowed'])
 rows=json.loads((root/'evidence/nss40-admission-timing.json').read_text())['rows']
 assert len(rows)==94 and sum(x['ready'] for x in rows)==4 and all('sourceSequence' in x and 'sourceAge' in x for x in rows)
-assert c['staleSnapshotRejectedEarlierInRound'] and not c['plannedClassifierReplacementAndRollbackThisRound'] and not c['experimentalConfigurationWritesThisRound']
+assert c['historicalNss40StaleProtectedSnapshotRejection'] and not c['plannedClassifierReplacementAndRollbackThisRound']
+assert c['experimentalConfigurationWritesThisRound'] and c['realForwardingABACompleted'] and not c['completePerformanceAndGameAcceptance']
+j=json.loads((root/'evidence/nss41-mainline.json').read_text(encoding='utf-8'))
+assert j['classifierConfigSha256']==c['classifierConfigSha256'] and not j['permanentClassifierChanged']
+assert j['entry']['runtimeBoundFiles']==68 and j['entry']['totalBoundFiles']==83 and j['entry']['deadlinesNotExtended']
+assert j['entry']['schedulingWaitOutsideLock'] and j['entry']['schedulingCannotAuthorizeNss']
+assert j['localChecks']['newIndependentCases']==18 and j['schedulingQualification']['newNativeCases']==3
+t=j['actualTrial'];assert t['attempted'] and t['nativeFunctionalPathRevalidated'] and not t['originalControllerTerminalPassed']
+assert t['originalFailurePreserved'] and not t['legacyPostparserIncludedInPreauditManifest'] and t['boundFilesFrozen']==83
+assert t['checkpointCreatedAndVerified'] and t['independentOwnerVerifiedBeforeChanges'] and t['independentOwnerDeadlineSeconds']==45
+assert all(t['cleanup'].values()) and t['baselineAuditRecovered']['configurationMatches']
+assert t['recoveryAuditUsedOriginalLockedFreshnessPredicates'] and t['recoveryAuditCannotAuthorizeNss']
+assert t['automaticExpiryNotExercisedThisTrial'] and t['retirementExplicitAndEarly']
+n=t['nativeExperiment'];assert n['actualAcceleratedFlows']==2 and n['wan']==1 and n['fullTcpMark']==n['fullUdpMark']==65536
+assert n['sameNat'] and n['zoneZero'] and n['packetTagsEstablishedBeforeLearning'] and n['nativeFullStateRevalidated']
+assert n['nativeRenewals']==1 and n['sameQueuePlanAcrossPhases'] and not n['allSteamFlowsAccelerated']
+assert [p['name'] for p in n['phases']]==['A','B','A2'] and [p['acceleratedCount'] for p in n['phases']]==[0,2,0]
+assert all(300<p['lan4DownMbps']<450 and p['samples']==11 for p in n['phases'])
+assert n['leafCounters']['bulk']['packets']==6171 and n['leafCounters']['rt']['packets']==517
+assert t['parserCorrection']['checks']==7 and t['parserCorrection']['posttrialValidationSourcesNowFrozen']
+assert hashlib.sha256((root/'code/work/nss41/parse-ecm-any-wan.mjs').read_bytes()).hexdigest()==t['parserCorrection']['candidateParserSha256']
+assert not any(j['conclusions'][k] for k in ['nssCpuBenefitProvedThisRound','cs2QualityImprovementProved','realHighLoadNssLoopCompleted','secondWanExpansionAllowed'])
+assert j['finalState']['protectedAudit']['ecmClosedAndZero'] and j['finalState']['closure']['passed']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

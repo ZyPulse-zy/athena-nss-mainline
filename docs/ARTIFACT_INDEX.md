@@ -2,6 +2,10 @@
 
 仓库内可直接核对：
 
+- `evidence/nss41-mainline.json`：真人WAN1功能、原控制器错误、重新校验、三段测量与恢复证据；性能/游戏结论未通过。
+- `evidence/nss41-load-publication.json`：有限普通TCP下载的104帧脱敏完整/精简年龄；不是游戏或NSS性能。
+- `docs/ISSUE_ECM_WAN_VALIDATOR.md`：本地WAN5写死与依赖绑定缺口，未上游提交。
+
 - `evidence/nss40-mainline.json`：323 Mbps 真实只读准入、写前拒绝、无生产写入、取证改进及结论边界。
 - `evidence/nss40-admission-timing.json`：94 条相对时序、来源序号、年龄与阶段耗时，无连接元组。
 
@@ -32,7 +36,9 @@
 | `outputs/nss33-classifier-readiness-report.html` | 上一轮完整报告 |
 | `work/nss39/deployment-latest.json` | 当前常驻分类器部署引用 |
 | `work/nss39/affinity-qualified.json` | 当前 68 项绑定；未完成真人闭环 |
-| `outputs/nss40-mainline-report.html` | 最新真实只读准入、写前审核拒绝与取证报告 |
+| `outputs/nss41-mainline-report.html` | 最新真人WAN1 bulk/RT功能、三段测量、原错误和恢复报告 |
+| `work/nss41/real-matched-aba-20261003165708-9086b676/` | 真实实验、83项冻结与后处理校验冻结，完整私有证据 |
+| `outputs/nss40-mainline-report.html` | 历史真实只读准入、写前审核拒绝与取证报告 |
 | `work/nss40/real-matched-aba-20261003155259-d8910c25/` | 写前失败和 72 份冻结源码/证明，未改生产 |
 | `work/nss40/current-audit-diagnostic.mjs` | 全部原断言保留的分段诊断入口，已只读核验 |
 | `work/nss40/record-candidates.mjs` | 按次应用 socket/候选证据封存，原始数据不上 Git |

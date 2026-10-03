@@ -1,33 +1,47 @@
 # 当前状态
 
-更新：2026-10-04，北京时间。NSS40 延续至 00:00，最新审核和应用观测见 [当前运行记录](../evidence/current-runtime.json)。
+更新：2026-10-04，北京时间。最新现场核验见 [当前运行记录](../evidence/current-runtime.json)。
 
-**真实 CS2＋Steam 约 323 Mbps 时，初始只读准入 4/94 次通过；随后的写前审核因完整快照过期拒绝。没有开启 NSS，没有进入 A/B/A2。** 见 [NSS40 证据](../evidence/nss40-mainline.json) 与 [94 次时序](../evidence/nss40-admission-timing.json)。
+**真人 WAN1 的 CS2 UDP＋Steam TCP 已运行 software→NSS→software，ECM 稳定加速两条连接，两条 NSS bulk/RT leaf 与 mark/NAT/WAN affinity 已由冻结的实际状态验证。CPU 收益和游戏体验验收仍未完成。** 见 [NSS41 证据](../evidence/nss41-mainline.json)。
 
 ## 当前运行
 
-- 常驻引用仍是 `work/nss39/deployment-latest.json`；配置 `17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60`。本轮未改常驻源码、策略或有效期。
-- NSS39 保留的 worker 未换实例，守护健康；last-error 仍属于此前试装到期。最终 35/35 次轻载观测健康，配置、规则所有权、认证/PBR/服务审核通过。
-- ECM IPv4/IPv6 关闭且连接/加速/待处理全零，无实验 gate/qdisc、暂存、状态节点或事务。没有本轮生产写入，回滚不适用，不能记为一次回滚通过。
-- NSS39 的 68 项资格仍有效；NSS40 只重定位本地证据目录/入口，运行时路由器 payload 未变。失败后保存 72 份未变绑定文件。历史证明未覆盖。
+- 常驻仍是 `work/nss39/deployment-latest.json`，配置 `17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60`。NSS41 没有改常驻 worker、策略或有效期，同一 worker/guardian 健康。
+- 本次实验先 checkpoint 下载/压缩/哈希核验，确认独立 45 秒 owner 后才临时改变一个 WAN 和物理 LAN4 队列。
+- native owner 明确提前撤销，tag/队列/模块/WAN/mwan3/状态节点恢复，ECM 全零。保护配置与基线审核、闭合检查通过。独立到期已布置，本轮提前结束，未再触发到期回滚。
+- 无实验残留，NSS 尚未常驻开放。认证/DHCP 身份保持；续认证没有本轮新测试。
 
-## 本轮实测
+## 已证明的真人功能路径
 
-23:52 的真实只读窗口 9.27 秒：LAN4 322.80 Mbps / 26,712 pps，busy 85.15%、softirq 51.33%、time_squeeze +0。观察程序自身消耗 6.247 CPU 秒；以上包含密集检查成本，不是无干扰基线，也不是 NSS 收益。
+约 00:57:40–00:58:01，一条自然同 WAN1 的 Steam bulk TCP 与 CS2 RT UDP，zone 0、完整 mark 0x10000、同 NAT。自动分类 tag 先于 ECM 学习；B 稳定 5.17 秒，11/11 帧加速数 2，完成 1 次新序列续租。A/A2 均 11/11 帧加速数 0，队列计划和观察循环相同。
 
-应用 socket 归属确认后，所选 CS2 RT UDP 与 Steam bulk TCP 自然位于 WAN5，完整 mark 均为 0x50000、zone 0、同 NAT；adapter 校验了完整实例与双向元组。94 次完整 readiness/phase 检查中，4 次通过（来自 2 个新序列），59 次预学习余量不足、31 次 tag 设置余量不足。最小来源年龄 0.81 秒，最大 adapter/phase 0.20/0.28 秒。初始 <1 秒、预学习 <2 秒未改。
+冻结硬件状态确认 TCP server-first、UDP client-first、NAT 双向元组、完整 mark、private rpwan1/物理 wan 与 LAN4/br-lan 层级、对应 bulk/RT 下行 tag 正确。B＋撤销计数窗 5.83 秒：bulk +6171 包 / 9,325,760 B，RT +517 包 / 477,890 B。RT leaf 队列丢弃增量 0，不代表端到端游戏 loss 为零。
 
-23:52:59 实际入口在 `operational-audit.lua:32` 的完整快照新鲜度断言失败：发布年龄 <9 秒且来源年龄 <6 秒。尚未进入 checkpoint、独立事务或任何 NSS/WAN/队列变更。旧审核器未保存失败时具体年龄与阶段计时；保存 selected pair 的步骤也尚未执行。此前 rehearsal 的元组不能冒充失败瞬间的完整身份记录。
+## 性能与体验未完成
 
-## 补充诊断与未知原因
+| 阶段 | 总 LAN4 Mbps | pps | busy | softirq | time_squeeze |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| A 软件 | 347.72 | 28777 | 79.51% | 59.17% | +0 |
+| B NSS | 379.98 | 31453 | 82.89% | 60.64% | +0 |
+| A2 软件 | 391.11 | 32385 | 85.31% | 61.87% | +2 |
 
-- 新的 `work/nss40/current-audit-diagnostic.mjs` 保存审核分段时间和拒绝时年龄，所有原断言与固定截止保留；目标机只读集成核验通过。
-- `work/nss40/record-candidates.mjs` 按次保存 socket、候选、原始响应和哈希，避免覆盖 latest；已在无游戏时验证。此前尝试的原始应用 latest 后来已刷新，没有把缺失伪装成完整封存。
-- 首次带诊断的轻载审核用 0.29 秒通过，来源年龄 2.67 秒；不能用轻载通过解释高负载失败。
-- 源码确认 compact classification 先发布，随后同步等待软件维护/审核，最后发布 full snapshot。此顺序使两种发布阶段不同，但**没有证明本次失败由发布、锁等待还是审核耗时造成**。
+总负载上升，没有验证相同 offered load。只加速两条流，受控子组上限 20 Mbps，并非整个 380 Mbps 均加速。不能据此宣称 CPU 下降或吞吐提升。用户反馈“没注意到，无法比较”；没有客户端 jitter/loss/Miss，不能拿 RT leaf 零丢弃代替。
 
-## 下一步
+## 原控制器失败与重新校验
 
-先把诊断和按次应用封存接入新一轮实际入口并重新绑定。保持所有期限，定位完整快照在高负载审核中的年龄变化，再集中一次单 WAN A/B/A2。无需继续挂机或下载，不扩第二 WAN、共享预算、Wi-Fi 或 autorate。
+原控制器仍返回 false，该结果没有覆盖：
 
-本轮没有加速后的 bulk/RT leaf、mark/NAT/WAN 或客户端 CS2 jitter/loss/Miss 数据；高负载 NSS CPU 收益与真人闭环仍未通过。[NSS39 修复与部署资格](../evidence/nss39-mainline.json)、[历史已知问题](KNOWN_FAILURES.md) 保留。
+1. 历史后处理 `work/nss25/parse-ecm.mjs` 写死 WAN5，实际 WAN1 被误拒绝。另存通用 WAN 解析器重新检查同一份原始硬件状态，实际样本与 6 个拒绝变异通过。它不改变 native 实验，也不改冻结入口。
+2. 恢复时重复使用了学习前“新 full source age <2 秒”调度，固定等待期限内未通过。随后恢复专用入口执行全部原始 <6/<9 秒持锁审核并通过，不允许 NSS 准入，不放宽审核。
+
+83 项清单及当次身份/应用/源码已在审核前冻结；旧后处理不在该清单，新增校验源码已另行冻结。83 项不是完整依赖闭包，下一轮必须补上这个缺口。
+
+## 本轮准备与历史
+
+新增审核阶段诊断、按次应用封存、审核前身份与源码冻结，以及锁外等待严格更新 full publication。18 项新本地案例和 3 次最终轻载只读审核通过。初始 <1 秒、预学习 <2 秒、原始审核 <6/<9 秒、45 秒 owner 均保持。
+
+此前普通 TCP 有限下载 27.21 秒：125.21 Mbps、最高约 3 秒 234.58 Mbps，busy 46.55%、softirq 28.35%、squeeze +136。104 帧 full age 最高 4.27 秒，3 次原完整审核通过，未复现 NSS40 原失败；观察成本包含在数据内。不能作为游戏或 NSS 收益验证。
+
+[NSS40](../evidence/nss40-mainline.json) 的真实 323 Mbps、4/94 次只读准入与写前过期失败、72 份历史冻结证据保持。[NSS39](../evidence/nss39-mainline.json) 的实际独立到期证明保持。
+
+下一步仅完成通用 WAN 解析器/依赖绑定与恢复审核修正，然后在同一 WAN 稳定负载与受控份额，集中验证 CPU 和游戏体验。第二 WAN、共享预算、Wi-Fi、autorate 继续等待。无需持续挂游戏或下载。

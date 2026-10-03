@@ -1,0 +1,583 @@
+{
+  "round": "NSS41",
+  "generatedAt": "2026-10-03T17:07:49.777Z",
+  "deploymentReference": "work/nss39/deployment-latest.json",
+  "classifierConfigSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
+  "permanentClassifierChanged": false,
+  "routerConfigurationWrites": true,
+  "entry": {
+    "localEntryVersion": 4,
+    "runtimeBoundFiles": 68,
+    "localBoundFiles": 15,
+    "totalBoundFiles": 83,
+    "runtimeRouterPayloadsUnchanged": true,
+    "diagnosticAuditIntegrated": true,
+    "originalLockedAuditAssertionsRetained": true,
+    "immutableApplicationArchiveIntegrated": true,
+    "selectedPairAndSourceFreezeBeforeAudit": true,
+    "schedulingWaitOutsideLock": true,
+    "requiresStrictlyNewFullPublication": true,
+    "schedulingHintSourceAgeSeconds": 2,
+    "schedulingDeadlineSeconds": 5,
+    "schedulingOuterDeadlineSeconds": 6,
+    "lockedAuditDeadlineSeconds": 6,
+    "lockedSourceAgeLimitSeconds": 6,
+    "lockedPublicationAgeLimitSeconds": 9,
+    "nssInitialAgeLimitSeconds": 1,
+    "nssPrelearningAgeLimitSeconds": 2,
+    "nssOwnerDeadlineSeconds": 45,
+    "deadlinesNotExtended": true,
+    "schedulingCannotAuthorizeNss": true
+  },
+  "localChecks": {
+    "planner": {
+      "passed": true,
+      "checks": 15,
+      "cases": [
+        "new fresh publication schedules complete audit",
+        "same sequence cannot authorize stale reuse",
+        "new sequence still too old waits for genuinely fresh source",
+        "sequence below initial hard refuses",
+        "sequence regressing after a newer old publication hard refuses",
+        "producer change hard refuses",
+        "unhealthy publication hard refuses",
+        "future publication hard refuses",
+        "unordered query hard refuses",
+        "query over original two-second duration refuses",
+        "exact two-second source age cannot schedule",
+        "fractional sequence refuses",
+        "read error propagates without permission",
+        "missing publication refuses",
+        "missing producer refuses"
+      ],
+      "plannerSha256": "182d13aea7439aedbf31bcb106aa64429ac15047f4635d59c0817c53e23fcd48",
+      "scope": "Actual Lua scheduling planner; simulated clock/read IO only. No target-kernel, native serialization, traffic, or NSS admission qualification.",
+      "routerWrites": false,
+      "error": ""
+    },
+    "preauditArchive": {
+      "passed": true,
+      "checks": 3,
+      "cases": [
+        {
+          "case": "audit-refusal",
+          "passed": true,
+          "configurationMutationCalls": 0,
+          "exitCode": 1
+        },
+        {
+          "case": "tampered-application",
+          "passed": true,
+          "configurationMutationCalls": 0,
+          "exitCode": 1
+        },
+        {
+          "case": "no-application-pair",
+          "passed": true,
+          "configurationMutationCalls": 0,
+          "exitCode": 0
+        }
+      ],
+      "controllerSha256": "43b818d51c490c946bd99e1e66646c9dd28d5ee1abf5b9699539f84f46028fe9",
+      "scope": "Actual controller ordering through preaudit archive/refusal, with fake application IO and forced audit rejection. No router, game, native gate, or staging writes.",
+      "routerWrites": false
+    },
+    "newIndependentCases": 18,
+    "nativeIoMockedForLocalCases": true
+  },
+  "limitedLoad": {
+    "purpose": "Observe full/compact publication ages and original full audit during bounded ordinary TCP download; no Steam or game simulation",
+    "officialSource": "https://github.com/cloudflare/speedtest/blob/main/README.md",
+    "connections": 8,
+    "aggregateByteCeiling": 536870912,
+    "eachRequestDeadlineSeconds": 25,
+    "bytesDownloaded": 384920896,
+    "downloadSeconds": 25.393911999999546,
+    "completedRequests": 1,
+    "deadlineExitRequests": 7,
+    "allChildrenExited": true,
+    "frames": 104,
+    "observerCpuSeconds": 1.176525,
+    "performance": {
+      "seconds": 27.209999999962747,
+      "lan4DownMbps": 125.20587401707697,
+      "lan4DownPps": 10388.12936421856,
+      "cpuBusyPercent": 46.55236675363399,
+      "softirqPercent": 28.3544539694372,
+      "timeSqueezeDelta": 136
+    },
+    "peakThreeSecondWindow": {
+      "startAtSeconds": 4.359999999869615,
+      "seconds": 3.199999999953434,
+      "lan4DownMbps": 234.5797775034136,
+      "lan4DownPps": 19411.25000028247,
+      "cpuBusyPercent": 69.1415313225058,
+      "softirqPercent": 47.33178654292343,
+      "timeSqueezeDelta": 54
+    },
+    "compactMaxSourceAgeSeconds": 3.3100000000558794,
+    "fullMaxSourceAgeSeconds": 4.2700000000186265,
+    "fullSourceAgeAtLeastSixFrames": 0,
+    "originalAuditResults": [
+      {
+        "label": "audit-load-20261003162859-fc631c-1",
+        "passed": true,
+        "queryAge": 1.6000000000931323,
+        "sequence": 1412,
+        "selectors": 10,
+        "ecmClosedAndZero": true,
+        "lockedSeconds": 0.43000000016763806,
+        "freshness": {
+          "checkedAt": 1862491.07,
+          "publicationAge": 0.2800000000279397,
+          "sourceAge": 1.6000000000931323,
+          "queryStarted": 1862489.47,
+          "publishedAt": 1862490.79,
+          "sequence": 1412
+        },
+        "originalAssertionsRetained": true
+      },
+      {
+        "label": "audit-load-20261003162859-fc631c-2",
+        "passed": true,
+        "queryAge": 2.25,
+        "sequence": 1413,
+        "selectors": 8,
+        "ecmClosedAndZero": true,
+        "lockedSeconds": 0.36999999987892807,
+        "freshness": {
+          "checkedAt": 1862494.71,
+          "publicationAge": 1.3200000000651926,
+          "sourceAge": 2.25,
+          "queryStarted": 1862492.46,
+          "publishedAt": 1862493.39,
+          "sequence": 1413
+        },
+        "originalAssertionsRetained": true
+      },
+      {
+        "label": "audit-load-20261003162859-fc631c-3",
+        "passed": true,
+        "queryAge": 2.2700000000186265,
+        "sequence": 1414,
+        "selectors": 6,
+        "ecmClosedAndZero": true,
+        "lockedSeconds": 0.2900000000372529,
+        "freshness": {
+          "checkedAt": 1862497.74,
+          "publicationAge": 1.409999999916181,
+          "sourceAge": 2.2700000000186265,
+          "queryStarted": 1862495.47,
+          "publishedAt": 1862496.33,
+          "sequence": 1414
+        },
+        "originalAssertionsRetained": true
+      }
+    ],
+    "entryVersionUsed": "v1 before scheduling change",
+    "ecmClosedAndZero": true,
+    "nssOpened": false,
+    "softwareForwardingOnly": true,
+    "includesObserverAndAuditCost": true,
+    "notEquivalentToNss40Real323MbpsLoad": true,
+    "workerPhaseNotInstrumented": true,
+    "failedNss40AgeNotReproduced": true
+  },
+  "schedulingQualification": {
+    "alignedReadonlyAudits": [
+      {
+        "label": "aligned-final-1",
+        "passed": true,
+        "queryAge": 1.3100000000558794,
+        "sequence": 1854,
+        "selectors": 8,
+        "ecmClosedAndZero": true,
+        "lockedSeconds": 0.22999999998137355,
+        "freshness": {
+          "checkedAt": 1863833.33,
+          "publicationAge": 0.6100000001024455,
+          "sourceAge": 1.3100000000558794,
+          "queryStarted": 1863832.02,
+          "publishedAt": 1863832.72,
+          "sequence": 1854
+        },
+        "originalAssertionsRetained": true,
+        "waitSeconds": 0.3600000001024455,
+        "initialSequence": 1853,
+        "selectedSequence": 1854,
+        "alignmentSourceAge": 0.8500000000931323,
+        "alignmentPublicationAge": 0.1500000001396984,
+        "lockHeld": false,
+        "nssAdmissionAllowed": false,
+        "snapshotExpiryExtended": false,
+        "plannerSha256": "182d13aea7439aedbf31bcb106aa64429ac15047f4635d59c0817c53e23fcd48",
+        "wrapperSha256": "0afd29315086ada47e0221fa162b9022cd6ce7fab059f765fb4b9a3a5194e508"
+      },
+      {
+        "label": "aligned-final-2",
+        "passed": true,
+        "queryAge": 1.4499999999534339,
+        "sequence": 1861,
+        "selectors": 10,
+        "ecmClosedAndZero": true,
+        "lockedSeconds": 0.21999999997206032,
+        "freshness": {
+          "checkedAt": 1863854.47,
+          "publicationAge": 0.6699999999254942,
+          "sourceAge": 1.4499999999534339,
+          "queryStarted": 1863853.02,
+          "publishedAt": 1863853.8,
+          "sequence": 1861
+        },
+        "originalAssertionsRetained": true,
+        "waitSeconds": 2.699999999953434,
+        "initialSequence": 1860,
+        "selectedSequence": 1861,
+        "alignmentSourceAge": 1.0100000000093132,
+        "alignmentPublicationAge": 0.22999999998137355,
+        "lockHeld": false,
+        "nssAdmissionAllowed": false,
+        "snapshotExpiryExtended": false,
+        "plannerSha256": "182d13aea7439aedbf31bcb106aa64429ac15047f4635d59c0817c53e23fcd48",
+        "wrapperSha256": "0afd29315086ada47e0221fa162b9022cd6ce7fab059f765fb4b9a3a5194e508"
+      },
+      {
+        "label": "aligned-closing",
+        "passed": true,
+        "queryAge": 2.8200000000651926,
+        "sequence": 1958,
+        "selectors": 14,
+        "ecmClosedAndZero": true,
+        "lockedSeconds": 0.6999999999534339,
+        "freshness": {
+          "checkedAt": 1864151.5,
+          "publicationAge": 1.659999999916181,
+          "sourceAge": 2.8200000000651926,
+          "queryStarted": 1864148.68,
+          "publishedAt": 1864149.84,
+          "sequence": 1958
+        },
+        "originalAssertionsRetained": true,
+        "waitSeconds": 2.7199999999720603,
+        "initialSequence": 1957,
+        "selectedSequence": 1958,
+        "alignmentSourceAge": 1.8300000000745058,
+        "alignmentPublicationAge": 0.6699999999254942,
+        "lockHeld": false,
+        "nssAdmissionAllowed": false,
+        "snapshotExpiryExtended": false,
+        "plannerSha256": "182d13aea7439aedbf31bcb106aa64429ac15047f4635d59c0817c53e23fcd48",
+        "wrapperSha256": "0afd29315086ada47e0221fa162b9022cd6ce7fab059f765fb4b9a3a5194e508"
+      }
+    ],
+    "newNativeCases": 3,
+    "lightLoadOnly": true,
+    "actualHighLoadQualified": false,
+    "nssFlowAdmissionQualified": false
+  },
+  "preservedFailures": {
+    "originalNss40EvidenceUnchanged": true,
+    "v1FrozenFiles": 77,
+    "v2LocalFiles": 12,
+    "v3LocalFiles": 12,
+    "initialSchedulingOuterSeconds": 12,
+    "supportedOuterMaximumSeconds": 6,
+    "initialArgumentValidationExitCode": 2,
+    "initialLuaExecuted": false,
+    "initialRouterConfigurationWrites": false,
+    "wrapperRefusalPreserved": true,
+    "finalSchedulingOuterSeconds": 6,
+    "localArchiveFixtureFirstRunCountedDiagnosticFileAsDirectory": true,
+    "localArchiveFixtureErrorCorrectedWithoutControllerChange": true
+  },
+  "actualTrial": {
+    "attempted": true,
+    "attemptDirectory": "work/nss41/real-matched-aba-20261003165708-9086b676",
+    "originalControllerTerminalPassed": false,
+    "originalControllerErrors": [
+      "WAN affinity absent: legacy report parser hardcoded WAN5",
+      "Recovery alignment: no newer full publication meeting <2 s scheduling hint within fixed deadline"
+    ],
+    "originalFailurePreserved": true,
+    "preauditPassed": true,
+    "preauditSourceAge": 2.640000000130385,
+    "preauditEvidenceAndSourcesFrozen": true,
+    "boundFilesFrozen": 83,
+    "legacyPostparserIncludedInPreauditManifest": false,
+    "checkpointCreatedAndVerified": true,
+    "independentOwnerVerifiedBeforeChanges": true,
+    "independentOwnerDeadlineSeconds": 45,
+    "singleWan": 1,
+    "temporaryPrivateWan": true,
+    "physicalLan4NssTree": true,
+    "controlledTcpFlows": 1,
+    "controlledGameUdpFlows": 1,
+    "nativeExperiment": {
+      "passed": true,
+      "realCs2SteamPair": true,
+      "wan": 1,
+      "fullTcpMark": 65536,
+      "fullUdpMark": 65536,
+      "sameNat": true,
+      "zoneZero": true,
+      "ctInstanceAndTuplePinned": true,
+      "packetTagsEstablishedBeforeLearning": true,
+      "downBulkTag": 2399469568,
+      "downRtTag": 2399535104,
+      "nativeFullStateRevalidated": true,
+      "actualAcceleratedFlows": 2,
+      "minimumStableSeconds": 5,
+      "observedStableSeconds": 5.169999999925494,
+      "nativeRenewals": 1,
+      "sourceSequences": [
+        1980
+      ],
+      "sameQueuePlanAcrossPhases": true,
+      "phases": [
+        {
+          "name": "A",
+          "seconds": 5.069999999832362,
+          "samples": 11,
+          "startedBeijingApprox": "2026-10-04 00:57:39.692 CST",
+          "endedBeijingApprox": "2026-10-04 00:57:44.762 CST",
+          "lan4DownMbps": 347.72176726987993,
+          "lan4DownPps": 28777.12031653336,
+          "wan1DownMbps": 35.61545246666085,
+          "cpuBusyPercent": 79.51268025857782,
+          "softirqPercent": 59.1745400298359,
+          "timeSqueezeDelta": 0,
+          "acceleratedCount": 0,
+          "pendingAccelCountZero": true,
+          "minimumQueryAge": 1.369999999878928,
+          "maximumQueryAge": 3.819999999832362
+        },
+        {
+          "name": "B",
+          "seconds": 5.169999999925494,
+          "samples": 11,
+          "startedBeijingApprox": "2026-10-04 00:57:49.602 CST",
+          "endedBeijingApprox": "2026-10-04 00:57:54.772 CST",
+          "lan4DownMbps": 379.9792402375843,
+          "lan4DownPps": 31452.804642619616,
+          "wan1DownMbps": 68.88210135495785,
+          "cpuBusyPercent": 82.88899660688318,
+          "softirqPercent": 60.63984488608822,
+          "timeSqueezeDelta": 0,
+          "acceleratedCount": 2,
+          "pendingAccelCountZero": true,
+          "minimumQueryAge": 0.9899999999906868,
+          "maximumQueryAge": 4.079999999841675
+        },
+        {
+          "name": "A2",
+          "seconds": 5.090000000083819,
+          "samples": 11,
+          "startedBeijingApprox": "2026-10-04 00:57:55.852 CST",
+          "endedBeijingApprox": "2026-10-04 00:58:00.942 CST",
+          "lan4DownMbps": 391.1092825082942,
+          "lan4DownPps": 32385.068761745682,
+          "wan1DownMbps": 79.18637485134826,
+          "cpuBusyPercent": 85.30734632683658,
+          "softirqPercent": 61.86906546726637,
+          "timeSqueezeDelta": 2,
+          "acceleratedCount": 0,
+          "pendingAccelCountZero": true,
+          "minimumQueryAge": 1.159999999916181,
+          "maximumQueryAge": 3.75
+        }
+      ],
+      "leafCounters": {
+        "bulk": {
+          "kind": "nssfq_codel",
+          "handle": "8f05",
+          "windowSeconds": 5.830000000074506,
+          "bytes": 9325760,
+          "packets": 6171,
+          "dropped": 0,
+          "mbps": 12.796926243404211
+        },
+        "rt": {
+          "kind": "nssfq_codel",
+          "handle": "8f06",
+          "windowSeconds": 5.830000000074506,
+          "bytes": 477890,
+          "packets": 517,
+          "dropped": 0,
+          "mbps": 0.6557667238338151
+        },
+        "fallback": {
+          "kind": "nssfq_codel",
+          "handle": "8fff",
+          "windowSeconds": 5.830000000074506,
+          "bytes": 228661111,
+          "packets": 146367,
+          "dropped": 0,
+          "mbps": 313.77167889821993
+        }
+      },
+      "leafCounterWindowIncludesRetirement": true,
+      "selectedSubgroupCeilingMbps": 20,
+      "unselectedFallbackCeilingMbps": 950,
+      "allSteamFlowsAccelerated": false,
+      "nssUploadRtQosProved": false
+    },
+    "originalTerminalMatchedABACompleted": false,
+    "nativePhasesExecuted": true,
+    "nativeFunctionalPathRevalidated": true,
+    "gateLoaded": true,
+    "ecmOpened": true,
+    "retirementExplicitAndEarly": true,
+    "automaticExpiryNotExercisedThisTrial": true,
+    "cleanup": {
+      "firmwareZeroAfterRetirement": true,
+      "tagsRemoved": true,
+      "qosRestored": true,
+      "qosModuleUnloaded": true,
+      "wanRestored": true,
+      "mwan3Restored": true,
+      "stateNodeRemoved": true,
+      "moduleUnloaded": true
+    },
+    "wanHealthAfterUndo": true,
+    "baselineAuditRecovered": {
+      "configurationMatches": true,
+      "checks": {
+        "boot": true,
+        "native": true,
+        "lan4": true,
+        "rules": true,
+        "services": true,
+        "addresses": true,
+        "routes": true,
+        "originalFiles": true,
+        "protectedManifestSha256": true,
+        "pbrConfiguration": true,
+        "nftRulesetConfiguration": true,
+        "tenQueueConfigurations": true,
+        "protectedManifest": true,
+        "ecmStoppedAndZero": true
+      },
+      "rawRulesetIdentical": true,
+      "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true
+    },
+    "originalPostalignmentFailurePreserved": true,
+    "recoveryAuditUsedOriginalLockedFreshnessPredicates": true,
+    "recoveryAuditCannotAuthorizeNss": true,
+    "parserCorrection": {
+      "passed": true,
+      "checks": 7,
+      "cases": [
+        {
+          "case": "actual frozen WAN1 TCP+UDP state",
+          "passed": true
+        },
+        {
+          "case": "wrong selected WAN",
+          "passed": true
+        },
+        {
+          "case": "wrong full CT mark",
+          "passed": true
+        },
+        {
+          "case": "wrong expected NAT port",
+          "passed": true
+        },
+        {
+          "case": "missing private WAN layer",
+          "passed": true
+        },
+        {
+          "case": "wrong expected RT tag",
+          "passed": true
+        },
+        {
+          "case": "wrong accelerated mode",
+          "passed": true
+        }
+      ],
+      "originalParserSha256": "88f77d262a0eaca006365f79ed13210c79aa199229cad90b31ee4e2beaeaf769",
+      "candidateParserSha256": "4b6eafda54f045e12f908875e818e74e8be1cca58f4f56a102c225f68defa149",
+      "frozenStateSha256": "c0debcf8899f2847ee5a9ae8cd39cd7ea96dd16eb1f703c8c8f1346b863581f9",
+      "nativeRecordUnchanged": true,
+      "nativeExperimentNotRerun": true,
+      "scope": "Postprocessing actual frozen hardware state; hardcoded WAN5 corrected to selected WAN. Mutated copies verify rejection. Does not retroactively change failed controller status or qualify high-load CPU/game performance.",
+      "routerWrites": false,
+      "originalParserWasNotIn83BoundInputs": true,
+      "posttrialValidationSourcesNowFrozen": true,
+      "controllerFrozenUnchanged": true
+    },
+    "cakeTinPerPhase": null,
+    "gameQuality": {
+      "numericTelemetryCaptured": false,
+      "userFeedback": "没注意到，无法比较",
+      "initialExperienceQuestionTimeConversionOffsetSecondsApprox": 10,
+      "correctedWindowReported": true,
+      "causalConclusion": false
+    },
+    "sameOfferedLoadVerified": false,
+    "cpuBenefitProved": false,
+    "rollbackResult": "Native owner completed explicit early retirement and full restore; subsequent original-predicate protected audit and zero-state closure passed. The independent 45 s expiry was armed beforehand but did not fire in this successful native epoch."
+  },
+  "finalState": {
+    "checkedAt": "2026-10-03T16:59:35.588Z",
+    "protectedAudit": {
+      "passed": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.4399999999441206,
+      "sequence": 2057,
+      "ecmClosedAndZero": true
+    },
+    "sameProducerSinceOpening": true,
+    "currentWorkerHealthy": true,
+    "lastErrorBelongsToPreviousTrial": true,
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-03T16:59:36.612Z",
+      "readonly": true,
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1864322.24
+    },
+    "application": {
+      "observedAt": "2026-10-03T16:57:21.068Z",
+      "readonly": true,
+      "gameProcessRunning": true,
+      "steamProcessRunning": true,
+      "actualCs2RtCandidates": 1,
+      "actualSteamBulkCandidates": 25,
+      "sameWanCandidates": [
+        1
+      ],
+      "sourceAge": 1.7600000000093132,
+      "sourceSequence": 1970,
+      "nssAdmissionAllowed": false,
+      "controllerPrototypeOnly": true,
+      "adapterSha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0"
+    }
+  },
+  "conclusions": {
+    "preauditDiagnosticAndImmutableEvidenceGapAddressed": true,
+    "schedulingSafetyQualifiedInLocalCasesAndLightNativeChecks": true,
+    "nss40SpecificFailureRootCauseProved": false,
+    "fullSnapshotAgeIssueFixedUnderRealHighLoad": false,
+    "reliableHighLoadNssAdmissionProved": false,
+    "realHighLoadNssLoopCompleted": false,
+    "nssCpuBenefitProvedThisRound": false,
+    "cs2QualityImprovementProved": false,
+    "secondWanExpansionAllowed": false,
+    "upstreamSubmission": false,
+    "realSingleWanCs2SteamFunctionalPathProved": true,
+    "actualNssFastPathEnteredUnderHighAggregateDownload": true,
+    "realForwardingPhasesExecuted": true,
+    "bulkRtLeafAndAffinityProvedThisRound": true,
+    "entrySchedulingReliabilityProved": false,
+    "recoveryOnlyWaitWasOverstrictForClosure": true,
+    "completeDependencyClosureBound": false
+  },
+  "next": "In a new round, bind the generic WAN parser and audit its postprocessing dependencies; use original full audit for recovery, while retaining prewrite/new-flow scheduling and all native TTLs. Then stabilize offered load and single-WAN controlled share before another concentrated CPU/game comparison. No second WAN."
+}
