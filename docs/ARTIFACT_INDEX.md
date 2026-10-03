@@ -5,6 +5,8 @@
 - `evidence/nss33-summary.json`：关键量化结果、试验退出位置、回滚和结论范围。
 - `evidence/nss33-admission-timing.json`：66 个已脱敏的时序样本，仅保留相对时间、年龄、原因、候选存在性；不是完整包捕获。
 - `evidence/nss34-loop-profile.json`：只读循环的汇总与相对时间分解；不含流元组。
+- `evidence/nss34-admission-replay.json`：87 项离线检查，身份/IO 为模拟，真实时间包络 66 条；硬件验收明确为 false。
+- `evidence/nss34-classifier-restarts.json`：两次自动重启触发时间、地址查询返回码、随后只读复查；不含原始进程和连接记录。
 - `evidence/current-runtime.json`：最新审核摘要与部署哈希；读取者仍应重新核验现网。
 - `source-manifest.json`：每个源码副本的原路径、SHA256、大小；部署源文件必须与当前配置记录的哈希一致。
 

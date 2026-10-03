@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T07:54:44.438529+00:00",
+  "generatedAt": "2026-10-03T08:08:22.040410+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -374,6 +374,34 @@
       "workspaceSource": "work/nss34/final-closure.mjs",
       "sha256": "43f4a14a060c64b1d6d14c9e9dacff0a3bd81df754580529336f705d2c44b4ee",
       "bytes": 2024,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss34/test-admission-replay.py",
+      "workspaceSource": "work/nss34/test-admission-replay.py",
+      "sha256": "cd5e676e3e86fdf820d97552d1f0dbdab096d685f75090040a61d71264acb5d9",
+      "bytes": 6292,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss34/inspect-classifier-restart.mjs",
+      "workspaceSource": "work/nss34/inspect-classifier-restart.mjs",
+      "sha256": "7281c8a23c1dac4568d767b872d1bada84d8c542173f5a0c53ec7431fe217962",
+      "bytes": 1643,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss34/read-classifier-log.mjs",
+      "workspaceSource": "work/nss34/read-classifier-log.mjs",
+      "sha256": "a3f2def619ec4c4dcb1cff1a1663ada97cc407ee4c80792ee198bf3d3b916b68",
+      "bytes": 516,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss34/probe-address-query.mjs",
+      "workspaceSource": "work/nss34/probe-address-query.mjs",
+      "sha256": "96dad6eab7ad51c380138198520a11993d14f91cb2d0d64e964d3bf9cffd60ea",
+      "bytes": 1397,
       "role": "experimental-source-or-test"
     },
     {

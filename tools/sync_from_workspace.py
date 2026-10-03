@@ -32,7 +32,7 @@ allowlist={
  'work/nss27': ['renewal-consumer-fixtures.lua','flow-selection.mjs'],
  'work/nss27/endpoint-gate': ['rp_ecm_gate_lab_ct.c','two_slot_predicate.h','ecm_ae_classifier_public.h','predicate_test.c','ct_harness.py','control_harness.py','Makefile'],
  'work/nss32': ['fast-path.lua','classifier.lua','aba-fixtures.lua','test-consumer-local.py','verify-native.mjs'],
- 'work/nss34': ['profile-initial-loop.mjs','read-real-candidates.mjs','final-closure.mjs'],
+ 'work/nss34': ['profile-initial-loop.mjs','read-real-candidates.mjs','final-closure.mjs','test-admission-replay.py','inspect-classifier-restart.mjs','read-classifier-log.mjs','probe-address-query.mjs'],
 }
 def copy(source, destination, role):
     src=workspace/source; dst=repo/destination
@@ -79,7 +79,9 @@ save('evidence/nss34-loop-profile.json',{
  'observedAt':loop['observedAt'],'routerWrites':False,'nssOpened':False,'actualFlowAdmissionChecked':False,
  'summary':{'samples':len(rows),'fullInventory':sum(x['fullInventory'] for x in rows),'meanPhaseSeconds':sum(x['phaseSeconds'] for x in rows)/len(rows),'maxPhaseSeconds':max(x['phaseSeconds'] for x in rows),'maxIterationReads':max(x['iterationReads'] for x in rows),'ageOnlyReserveAvailable':sum(x['ageOnlyReserveAvailable'] for x in rows)},
  'rows':[{'atSeconds':round(x['at']-start,4),**keys(x,['closedSeconds','phaseSeconds','readSeconds','parseSeconds','iterationReads','fullInventory','refreshInventory','sourceAge','publicationDelay','ageOnlyReserveAvailable','classifiedFlowCount','status'])} for x in rows]})
-auditPath=current['localDir']+'/nss34-begin-audit.json'; audit=read(auditPath)
+auditPath=current['localDir']+'/nss34-end-audit.json'
+if not (workspace/auditPath).is_file(): auditPath=current['localDir']+'/nss34-begin-audit.json'
+audit=read(auditPath)
 checked=datetime.fromtimestamp((workspace/auditPath).stat().st_mtime,timezone.utc).isoformat()
 pc=read('work/nss34/real-reader-qualified.json')
 save('evidence/current-runtime.json',{
@@ -87,7 +89,25 @@ save('evidence/current-runtime.json',{
  'classifierConfigSha256':current['configHash'],'deployedTextSources':deployed,
  'audit':keys(audit,['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','selectors','queryAge','sequence','ecmClosedAndZero']),
  'applicationObservation':keys(pc,['observedAt','readonly','gameProcessRunning','steamProcessRunning','actualCs2RtCandidates','actualSteamBulkCandidates','sameWanCandidates','sourceAge','nssAdmissionAllowed']),
+ 'finalClosure':keys(read('work/nss34/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']) if (workspace/'work/nss34/final-closure.json').is_file() else None,
  'requiresLiveRevalidation':True,
 })
+replay=read('work/nss34/admission-replay-qualified.json')
+save('evidence/nss34-admission-replay.json',keys(replay,['passed','checks','cases','alignmentScenarios','adapterSha256','fastSourceSha256','routerWrites','trafficGenerated','hardwareQualified','sourceModified','scope']))
+restart=read('work/nss34/classifier-restart-inspection.json')
+probe=read('work/nss34/address-query-probe.json')
+error=restart['files']['last-error.json']['error']
+assert "'/sbin/ip -j -4 address show'" in error and '__NSS23_RC__143' in error
+log=(workspace/'work/nss34/classifier-service-log-private.txt').read_text(encoding='utf-8')
+assert '15:54:43 2026 daemon.err sh[22608]' in log and '16:00:11 2026 daemon.err sh[3344]' in log
+save('evidence/nss34-classifier-restarts.json',{
+ 'observedAt':restart['observedAt'],'routerWrites':False,'classifierWorkerChanged':True,
+ 'restartTriggerLogTimes':['2026-10-03T15:54:43+08:00','2026-10-03T16:00:11+08:00'],
+ 'latestFailure':{'command':'/sbin/ip -j -4 address show','wrapperTimeoutSeconds':2,'killAfterSeconds':1,'returnCode':143,'handler':'worker direct() asserts nonzero command status; watch loop exits, then procd respawns'},
+ 'currentAtInspection':{'classificationStatus':restart['files']['classification.json']['status'],'dataHealthy':restart['files']['classification.json']['dataHealthy'],'guardianHealthy':restart['files']['guardian.json']['healthy']},
+ 'subsequentAddressQueryProbe':probe,'blockingOrSignalRootCauseProved':False,
+ 'operationalConsequence':'Candidate history and producer instance change on restart; current health is not proof of continuous classification stability.',
+ 'nextGate':'Diagnose and qualify bounded fail-closed address discovery recovery before real high-load NSS retry.',
+})
 save('source-manifest.json',{'generatedAt':datetime.now(timezone.utc).isoformat(),'preservesOriginalSourceBytes':True,'routerCredentialsIncluded':False,'rawCapturesIncluded':False,'binariesIncluded':False,'sources':sources})
-print(json.dumps({'sourceFiles':len(sources),'codeBytes':sum(s['bytes'] for s in sources),'evidenceFiles':4,'credentialsCopied':False,'rawCapturesCopied':False}))
+print(json.dumps({'sourceFiles':len(sources),'codeBytes':sum(s['bytes'] for s in sources),'evidenceFiles':6,'credentialsCopied':False,'rawCapturesCopied':False}))

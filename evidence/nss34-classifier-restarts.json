@@ -1,0 +1,87 @@
+{
+  "observedAt": "2026-10-03T08:03:22.575Z",
+  "routerWrites": false,
+  "classifierWorkerChanged": true,
+  "restartTriggerLogTimes": [
+    "2026-10-03T15:54:43+08:00",
+    "2026-10-03T16:00:11+08:00"
+  ],
+  "latestFailure": {
+    "command": "/sbin/ip -j -4 address show",
+    "wrapperTimeoutSeconds": 2,
+    "killAfterSeconds": 1,
+    "returnCode": 143,
+    "handler": "worker direct() asserts nonzero command status; watch loop exits, then procd respawns"
+  },
+  "currentAtInspection": {
+    "classificationStatus": "running",
+    "dataHealthy": true,
+    "guardianHealthy": true
+  },
+  "subsequentAddressQueryProbe": {
+    "routerWrites": false,
+    "trafficGenerated": false,
+    "rows": [
+      {
+        "bytes": 2842,
+        "seconds": 0.010000000009313226,
+        "interfaceCount": 8,
+        "rc": 0,
+        "parseable": true
+      },
+      {
+        "bytes": 2842,
+        "seconds": 0.010000000009313226,
+        "interfaceCount": 8,
+        "rc": 0,
+        "parseable": true
+      },
+      {
+        "bytes": 2842,
+        "seconds": 0.010000000009313226,
+        "interfaceCount": 8,
+        "rc": 0,
+        "parseable": true
+      },
+      {
+        "bytes": 2842,
+        "seconds": 0.010000000009313226,
+        "interfaceCount": 8,
+        "rc": 0,
+        "parseable": true
+      },
+      {
+        "bytes": 2842,
+        "seconds": 0.010000000009313226,
+        "interfaceCount": 8,
+        "rc": 0,
+        "parseable": true
+      },
+      {
+        "bytes": 2842,
+        "seconds": 0.010000000009313226,
+        "interfaceCount": 8,
+        "rc": 0,
+        "parseable": true
+      },
+      {
+        "bytes": 2842,
+        "seconds": 0.009999999776482582,
+        "interfaceCount": 8,
+        "rc": 0,
+        "parseable": true
+      },
+      {
+        "bytes": 2842,
+        "seconds": 0.010000000009313226,
+        "interfaceCount": 8,
+        "rc": 0,
+        "parseable": true
+      }
+    ],
+    "observedAt": "2026-10-03T08:05:56.990Z"
+  },
+  "blockingOrSignalRootCauseProved": false,
+  "operationalConsequence": "Candidate history and producer instance change on restart; current health is not proof of continuous classification stability.",
+  "nextGate": "Diagnose and qualify bounded fail-closed address discovery recovery before real high-load NSS retry."
+}

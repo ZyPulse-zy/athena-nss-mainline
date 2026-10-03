@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-03T07:39:57.967196+00:00",
+  "checkedAt": "2026-10-03T08:02:27.184796+00:00",
   "round": "NSS34",
   "deploymentReference": "work/nss33/deployment-latest.json",
   "classifierConfigSha256": "73e3cf79c4f4e6116046512f9d84cc939da323bf53c5023f70bbb92daeaa5f6d",
@@ -73,8 +73,8 @@
     "protectedConfigurationUnchanged": true,
     "exactOwnedNativeAudit": true,
     "selectors": 6,
-    "queryAge": 1.790000000037253,
-    "sequence": 817,
+    "queryAge": 2.2600000000093132,
+    "sequence": 43,
     "ecmClosedAndZero": true
   },
   "applicationObservation": {
@@ -87,6 +87,15 @@
     "sameWanCandidates": [],
     "sourceAge": 0.6500000001396984,
     "nssAdmissionAllowed": false
+  },
+  "finalClosure": {
+    "passed": true,
+    "observedAt": "2026-10-03T08:02:26.415Z",
+    "readonly": true,
+    "noActiveRootTransaction": true,
+    "noNssStagingDirectory": true,
+    "noExperimentStateNodeDirectory": true,
+    "noExperimentalGateOrQdiscModule": true
   },
   "requiresLiveRevalidation": true
 }

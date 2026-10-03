@@ -4,6 +4,14 @@
 
 已验证的本地工具是 Node.js、Python 与 WSL `Athena-Cake-Build` 中的 Lua 5.1。没有把 SDK、固件或内核模块二进制加入仓库。
 
+## 仓库内可独立运行的离线回放
+
+`python tools/replay_admission.py --lua /path/to/lua5.1`
+
+Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/usr> --wsl-distro Athena-Cake-Build`。该目录应包含 `bin/lua5.1` 和相应 `lib/x86_64-linux-gnu`，可指向原工作区现有运行时。脚本只使用仓库源码和脱敏时间包络，模拟 IO/时间/身份，不连接路由器，不生成网络负载。临时输出位于忽略的 `.local/`。
+
+预期 87 项检查通过；这些检查证明准入逻辑和诊断边界，不是现场 NSS 性能验收。
+
 ## 先读与只读核验
 
 在完整私有工作区运行现有入口前，先检查源文件哈希和作用范围：
