@@ -22,7 +22,7 @@ Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/
 
 ## 先读与只读核验
 
-当前入口在完整私有工作区 `work/nss39/`，新轮次先复制为新目录并重新绑定，不能覆盖这轮证明。
+当前常驻/资格在完整私有工作区 `work/nss39/`。NSS40 最新取证入口为 `current-audit-diagnostic.mjs`（包含 `audit-renderer.mjs`）及 `record-candidates.mjs`；已只读核验。新轮次先复制并绑定这些入口到新目录，不能覆盖证明，也不能直接重跑 NSS40 冻结的实际入口。
 
 - `current-audit.mjs <new-label>`：核验当前 NSS39/受保护配置/自有规则/ECM，拒绝过期发布。
 - `real-session.mjs inspect`：核验 68 项 manifest 与当前配置，再只读核对真实应用流。未通过真人高负载 A/B，不能把资格当性能结论。

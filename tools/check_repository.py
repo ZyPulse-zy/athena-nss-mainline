@@ -35,7 +35,7 @@ assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets'
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
 c=json.loads((root/'evidence/current-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
-assert c['round']=='NSS39' and c['deploymentReference']=='work/nss39/deployment-latest.json'
+assert c['round']=='NSS40' and c['deploymentReference']=='work/nss39/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
@@ -104,4 +104,24 @@ assert q['nativeConsumerChecks']==17 and q['nativeAbaCases']==11 and q['affinity
 assert q['nativeIoAndClocksMocked'] and not q['hardwareHighLoadQualified'] and q['stageExecBytes']<=q['transportExecCeiling']==9000
 assert v['finalState']['ecmClosedAndZero'] and v['finalState']['sameProducerSinceRetainedObservation'] and v['finalState']['closure']['passed']
 assert not v['actualFastPathTrial']['attempted'] and not v['limitations']['realHighLoadABACompleted'] and not v['limitations']['nssCpuBenefitProved'] and not v['limitations']['gameJitterLossMissCaptured']
+w=json.loads((root/'evidence/nss40-mainline.json').read_text())
+assert w['classifierConfigSha256']==c['classifierConfigSha256'] and not w['permanentClassifierChanged']
+a=w['realReadOnlyAdmission'];assert a['samples']==94 and a['ready']==4 and sum(a['refusals'].values())==90
+assert a['selectedWan']==5 and a['fullTcpMark']==a['fullUdpMark']==327680 and a['sameNat'] and a['zoneZero']
+assert a['actualApplicationOwnershipChecked'] and a['tupleAndInstanceValidated']
+assert 300<a['performance']['lan4DownMbps']<350 and a['performance']['timeSqueezeDelta']==0
+assert a['observationCostIncludedInCpu'] and a['notMatchedForwardingABA'] and not a['nssOpened']
+assert a['initialAgeLimitSeconds']==1 and a['prelearningAgeLimitSeconds']==2 and a['execBytes']<=9000
+t=w['actualTrial'];assert t['prewriteAuditRefused'] and t['frozenBoundFiles']==72 and t['originalLine']==32
+assert not any(t[k] for k in ['productionMutationAttempted','checkpointCreated','wanChanged','qdiscCreated','tagRulesInstalled','gateModuleLoaded','ecmOpened','matchedForwardingABACompleted'])
+assert t['hardwareLeafCounters'] is None and not t['exactFailedAgesRecorded'] and not t['failedPhaseTimingRecorded']
+assert t['selectedPairNotFrozenBeforePrewriteRefusal'] and t['rawApplicationLatestWasRefreshedAfterward']
+d=w['diagnosticFollowup'];assert d['firstReadonlyPassed'] and d['secondReadonlyPassed'] and d['originalAssertionsRetained'] and d['perInvocationApplicationArchiveVerified']
+assert not d['failedHighLoadAuditRootCauseProved'] and d['timingOrderingDoesNotProveFailureCause']
+assert w['closingSoftwareWindow']['samples']==35 and w['closingSoftwareWindow']['allHealthy'] and w['closingSoftwareWindow']['semantic']['identityDecisionLeafAndExpiryEqual']
+assert w['finalState']['protectedAudit']['ecmClosedAndZero'] and w['finalState']['sameProducerSinceTurnStart'] and w['finalState']['sameProducerSinceNss39LastInspection'] and w['finalState']['closure']['passed']
+assert not any(w['conclusions'][k] for k in ['reliableHighLoadAdmissionProved','realHighLoadNssLoopCompleted','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','highLoadCauseOfStaleProtectedSnapshotKnown','secondWanExpansionAllowed'])
+rows=json.loads((root/'evidence/nss40-admission-timing.json').read_text())['rows']
+assert len(rows)==94 and sum(x['ready'] for x in rows)==4 and all('sourceSequence' in x and 'sourceAge' in x for x in rows)
+assert c['staleSnapshotRejectedEarlierInRound'] and not c['plannedClassifierReplacementAndRollbackThisRound'] and not c['experimentalConfigurationWritesThisRound']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

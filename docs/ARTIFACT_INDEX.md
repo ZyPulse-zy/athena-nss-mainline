@@ -2,6 +2,9 @@
 
 仓库内可直接核对：
 
+- `evidence/nss40-mainline.json`：323 Mbps 真实只读准入、写前拒绝、无生产写入、取证改进及结论边界。
+- `evidence/nss40-admission-timing.json`：94 条相对时序、来源序号、年龄与阶段耗时，无连接元组。
+
 - `evidence/nss39-mainline.json`：tc 监督复现/修复、四次安装/三次独立回滚、冷启动拒绝、保留实例、68 项控制器绑定与证据限制。
 
 - `evidence/nss33-summary.json`：关键量化结果、试验退出位置、回滚和结论范围。
@@ -29,7 +32,11 @@
 | `outputs/nss33-classifier-readiness-report.html` | 上一轮完整报告 |
 | `work/nss39/deployment-latest.json` | 当前常驻分类器部署引用 |
 | `work/nss39/affinity-qualified.json` | 当前 68 项绑定；未完成真人闭环 |
-| `outputs/nss39-mainline-report.html` | 最新修复、回滚和准入资格报告 |
+| `outputs/nss40-mainline-report.html` | 最新真实只读准入、写前审核拒绝与取证报告 |
+| `work/nss40/real-matched-aba-20261003155259-d8910c25/` | 写前失败和 72 份冻结源码/证明，未改生产 |
+| `work/nss40/current-audit-diagnostic.mjs` | 全部原断言保留的分段诊断入口，已只读核验 |
+| `work/nss40/record-candidates.mjs` | 按次应用 socket/候选证据封存，原始数据不上 Git |
+| `outputs/nss39-mainline-report.html` | 常驻修复、回滚和准入资格历史报告 |
 | `work/nss37/deployment-latest.json` | 历史 NSS37 解析器部署引用 |
 | `work/nss35/deployment-latest.json` | 历史地址恢复部署，NSS36 证明仍绑定它 |
 | `work/nss35/address-trial-qualified.json` | 试装修复与 180 秒独立到期回滚 |
