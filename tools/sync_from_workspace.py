@@ -13,7 +13,7 @@ def read(path): return json.loads((workspace/path).read_text(encoding='utf-8-sig
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def save(path, value):
     dst=repo/path; dst.parent.mkdir(parents=True,exist_ok=True)
-    dst.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    dst.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 def keys(obj,names): return {k:obj[k] for k in names if k in obj}
 
 current=read('work/nss33/deployment-latest.json')
