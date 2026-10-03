@@ -22,10 +22,11 @@ Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/
 
 ## 先读与只读核验
 
-当前常驻/资格在完整私有工作区 `work/nss39/`。NSS41 的原实际入口和83项冻结保持，不能原样再用；后处理WAN5写死及恢复调度问题见 STATE/PLAN。通用WAN解析器与恢复专用原断言入口仅完成该轮数据重验；下一轮先复制/绑定新入口及全部后处理依赖。NSS40 最新取证入口为 `current-audit-diagnostic.mjs`（包含 `audit-renderer.mjs`）及 `record-candidates.mjs`；已只读核验。新轮次先复制并绑定这些入口到新目录，不能覆盖证明，也不能直接重跑 NSS40 冻结的实际入口。
+常驻仍在完整私有工作区 `work/nss39/`；最新实际入口是 `work/nss42/`。`entry-qualified.json` v2 绑定 102 项，覆盖声明的静态依赖、历史动态 payload、通用 WAN 后处理与检查源码；外部既有连接实现只记录源码哈希。NSS41 的原实际入口和 83 项冻结保持，不能原样再用。NSS42 已修复后处理和恢复用途，原完整只读审核已通过，尚未执行新真人 A/B。不要重复准备或修改冻结输入来迎合现状。
 
-- `current-audit.mjs <new-label>`：核验当前 NSS39/受保护配置/自有规则/ECM，拒绝过期发布。
-- `real-session.mjs inspect`：核验 68 项 manifest 与当前配置，再只读核对真实应用流。未通过真人高负载 A/B，不能把资格当性能结论。
+- `current-audit-diagnostic.mjs <new-label> recovery`：直接执行原完整保护审核；不会学习或放行 NSS。
+- `current-audit-diagnostic.mjs <new-label> prewrite`：先锁外等待更新且新鲜的完整发布，再执行原完整审核。调度没有准入权；用途参数不可省略于实际写前入口。
+- `real-session.mjs inspect`：核验 102 项输入与当前配置，再只读核对真实应用流。资格不等于性能结论。
 - `final-closure.mjs`：实验事务/模块/暂存/状态清理检查。
 - `native-qualification.mjs`：完整候选原生 RAM 模拟。会创建已 checkpoint、独立清理的临时文件，不是纯只读入口；不能无审查重跑现场脚本。
 - NSS37/38 和更旧入口只保留为历史。NSS39 没有改 NSS32–38 冻结源码与证明。修改当前配置或任何绑定文件必须在新轮次重新资格核验。
@@ -33,6 +34,8 @@ Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/
 `python tools/replay_tc_supervision.py --wsl-runtime <runtime/usr>` 可独立执行 NSS39 的 16 项子进程/管道/截止模型，输出到忽略的 `.local/nss39-replay/`；不访问路由器，不生成流量。NSS38 带诊断 adapter 与 NSS39 的源码一致，原离线差分入口仍适用于这组源码；不同的部署绑定与目标检查另见 NSS39 证据。
 
 连接封装使用本机已保存的认证。不要把密码、密钥、令牌或认证文件内容粘进对话、日志或仓库。
+
+`python tools/replay_host_validation.py --node <node.exe> --wsl-runtime <runtime/usr>` 从仓库独立重放 NSS42 的 42 项合成 WAN/方向/拒绝案例和 23 项调度/诊断案例。解析测试源码中的常量，不执行原 Python 现场入口；不读取冻结真实连接状态、不访问凭据、不连接路由器。65 项是已有案例的再次执行，不应加到工作区 90 项独立案例总数。唯一真实 WAN1 状态重验仍在私有工作区。
 
 ## 同步代码和证据
 

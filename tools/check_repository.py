@@ -35,7 +35,7 @@ assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets'
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
 c=json.loads((root/'evidence/current-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
-assert c['round']=='NSS41' and c['deploymentReference']=='work/nss39/deployment-latest.json'
+assert c['round']=='NSS42' and c['deploymentReference']=='work/nss39/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
@@ -124,7 +124,8 @@ assert not any(w['conclusions'][k] for k in ['reliableHighLoadAdmissionProved','
 rows=json.loads((root/'evidence/nss40-admission-timing.json').read_text())['rows']
 assert len(rows)==94 and sum(x['ready'] for x in rows)==4 and all('sourceSequence' in x and 'sourceAge' in x for x in rows)
 assert c['historicalNss40StaleProtectedSnapshotRejection'] and not c['plannedClassifierReplacementAndRollbackThisRound']
-assert c['experimentalConfigurationWritesThisRound'] and c['realForwardingABACompleted'] and not c['completePerformanceAndGameAcceptance']
+assert not c['experimentalConfigurationWritesThisRound'] and not c['realForwardingABACompleted'] and not c['completePerformanceAndGameAcceptance']
+assert c['historicalNss41NativeForwardingABACompleted'] and c['historicalNss41RecoveryAlignmentRefused']
 j=json.loads((root/'evidence/nss41-mainline.json').read_text(encoding='utf-8'))
 assert j['classifierConfigSha256']==c['classifierConfigSha256'] and not j['permanentClassifierChanged']
 assert j['entry']['runtimeBoundFiles']==68 and j['entry']['totalBoundFiles']==83 and j['entry']['deadlinesNotExtended']
@@ -146,4 +147,29 @@ assert t['parserCorrection']['checks']==7 and t['parserCorrection']['posttrialVa
 assert hashlib.sha256((root/'code/work/nss41/parse-ecm-any-wan.mjs').read_bytes()).hexdigest()==t['parserCorrection']['candidateParserSha256']
 assert not any(j['conclusions'][k] for k in ['nssCpuBenefitProvedThisRound','cs2QualityImprovementProved','realHighLoadNssLoopCompleted','secondWanExpansionAllowed'])
 assert j['finalState']['protectedAudit']['ecmClosedAndZero'] and j['finalState']['closure']['passed']
+k=json.loads((root/'evidence/nss42-mainline.json').read_text(encoding='utf-8'))
+assert k['classifierConfigSha256']==c['classifierConfigSha256'] and not k['permanentClassifierChanged'] and not k['routerConfigurationWrites']
+e=k['entry'];assert e['qualificationVersion']==2 and e['totalBoundInputs']==102 and e['historicalRuntimeBoundInputs']==68
+assert e['workspaceGraphFiles']==40 and e['workspaceGraphEdges']==69 and e['postparserBound']
+assert e['learningAndRecoveryAuditSeparated'] and e['originalLockedAuditPredicatesRetained'] and e['deadlinesUnchanged']
+assert [e['initialAgeSeconds'],e['prelearningAgeSeconds'],e['lockedSourceAgeSeconds'],e['lockedPublicationAgeSeconds'],e['ownerDeadlineSeconds'],e['alignmentInnerSeconds'],e['alignmentOuterSeconds']]==[1,2,6,9,45,5,6]
+assert e['externalSourceBindingHashOnly'] and not e['externalTransportCodeOrCredentialsCopied'] and not e['newEntryHardwareAbATested']
+assert k['localChecks']['newCases']==90 and sum(v['checks'] for v in k['localChecks']['groups'].values())==90
+assert k['localChecks']['groups']['parser']['checks']==43 and k['localChecks']['groups']['controller']['checks']==8
+assert k['nativeDiagnosticRamChecks']['checks']==4 and k['nativeDiagnosticRamChecks']['simulation'] and not k['nativeDiagnosticRamChecks']['productionFaultInjected']
+assert len(k['nativeReadonlyAudits'])==5 and all(v['passed'] and not v['nssAdmissionAllowed'] and v['ecmClosedAndZero'] for v in k['nativeReadonlyAudits'])
+assert {v['auditPurpose'] for v in k['nativeReadonlyAudits']}=={'recovery','prewrite'}
+w=k['stability'];assert w['samples']==w['successfulReads']==21 and w['failedReads']==0 and 599<w['seconds']<602
+assert w['sameWorkerProducer'] and w['sameGuardianProducer'] and w['allSampledWorkersHealthy'] and w['allSampledGuardiansHealthy'] and w['ecmClosedAndZeroAllSamples']
+assert w['sequenceAdvanced'] and w['sequenceNeverRegressed'] and not w['syntheticTrafficGenerated']
+assert k['finalState']['protectedAudit']['ecmClosedAndZero'] and k['finalState']['sameProducerSinceNss41'] and k['finalState']['lastErrorBelongsToEarlierInstallation']
+assert k['finalState']['closure']['passed'] and not k['actualFastPathTrial']['attempted']
+assert k['actualFastPathTrial']['leafCounters'] is None and k['actualFastPathTrial']['gameTelemetry'] is None
+p=k['priorComparabilityAssessment'];assert p['controlledBytes']==9803650 and p['controlledPackets']==6688 and p['counterWindowIncludesRetirement']
+assert 4<p['controlledLeafByteSharePercent']<5 and not p['exactFastPathOffloadShareMeasured'] and not p['sameOfferedLoadVerified']
+assert not any(k['conclusions'][v] for v in ['newProductionDeploymentInstalled','realHighLoadNssTrialExecutedThisRound','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','completeHighLoadLifecycleQualified','secondWanExpansionAllowed'])
+timing=json.loads((root/'evidence/nss42-stability-timing.json').read_text())['rows'];assert len(timing)==21 and all(r['ecmAcceleratedCount']==0 for r in timing)
+assert hashlib.sha256((root/'code/work/nss42/parse-ecm-any-wan.mjs').read_bytes()).hexdigest()==k['localChecks']['groups']['parser']['testedSourceManifest']['work/nss42/parse-ecm-any-wan.mjs']
+assert k['repositoryReplay']['passed'] and k['repositoryReplay']['checks']==65 and not k['repositoryReplay']['routerAccess'] and not k['repositoryReplay']['privateHardwareStateRead']
+assert not k['reportVerification']['browserRendered']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

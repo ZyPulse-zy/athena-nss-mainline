@@ -1,0 +1,10 @@
+// Node's own syntax parser; modules are neither linked nor evaluated.
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import crypto from 'node:crypto';import vm from 'node:vm';
+const {workspace,roots}=JSON.parse(fs.readFileSync(0,'utf8')),base=path.resolve(workspace),queue=[...roots],seen=new Set(),edges=[],sourceExt=/\.(?:mjs|js|lua|py|c|h|sh)$/;
+const key=p=>path.relative(base,path.resolve(base,p)).replaceAll('\\','/'),hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+while(queue.length){const item=key(queue.shift());if(seen.has(item))continue;assert.ok(!item.startsWith('../')&&!path.isAbsolute(item),'Source dependency escapes workspace');const file=path.resolve(base,item);assert.ok(fs.statSync(file).isFile(),'Missing source dependency: '+item);seen.add(item);
+ if(!/\.(?:mjs|js)$/.test(item))continue;const body=fs.readFileSync(file,'utf8'),module=new vm.SourceTextModule(body,{identifier:item});assert.equal(module.status,'unlinked');
+ for(const spec of module.dependencySpecifiers){if(spec.startsWith('node:'))continue;assert.ok(spec.startsWith('.'),'Unreviewed non-builtin import: '+spec);const target=key(path.resolve(path.dirname(file),spec));assert.ok(sourceExt.test(target),'Unknown imported source type: '+target);edges.push({from:item,to:target,kind:'static-local-import'});queue.push(target);}
+ for(const match of body.matchAll(/['"](work\/[^'"\r\n]+\.(?:mjs|js|lua|py|c|h|sh))['"]/g)){const target=key(match[1]);if(!fs.existsSync(path.resolve(base,target)))continue;edges.push({from:item,to:target,kind:'literal-workspace-source'});queue.push(target);}
+}
+const files=[...seen].sort();console.log(JSON.stringify({files,edges,sourceManifest:Object.fromEntries(files.map(f=>[f,hash(path.resolve(base,f))])),scope:'Static Node imports parsed without linking or evaluation; existing literal workspace source references. Qualified NSS39 adds dynamic runtime payloads. Dynamic deployment data and encrypted credential storage are validated/excluded separately.'}));

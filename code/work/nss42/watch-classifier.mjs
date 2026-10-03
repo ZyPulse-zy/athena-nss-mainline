@@ -1,0 +1,22 @@
+// Ten-minute natural-load readonly sampling; no synthetic game, no mutation, no TTL change.
+import fs from 'node:fs';import assert from 'node:assert/strict';
+import {verifyPreparation} from './session-binding.mjs';import {connectRouter} from '../nss20/connect-router.mjs';import {encode,receipt} from '../nss11/v7-observe-repair/observe2/transport.mjs';
+verifyPreparation();const root='work/nss42',out=root+'/stability-observation-private.json';assert.ok(!fs.existsSync(out));const d=JSON.parse(fs.readFileSync('work/nss39/deployment-latest.json'));const rows=[];const startedAt=new Date().toISOString();
+const code=String.raw`local fs=require('nixio.fs');local j=require('luci.jsonc');local function read(p,l)local f=assert(io.open(p));local s=f:read(l+1)or'';f:close();assert(#s<=l);return s end
+assert(read('/root/router-project/game-classifier-generation',512)==${JSON.stringify(d.base+' '+d.configHash+'\n')});assert(not fs.lstat('/root/router-project/active-transaction'))
+local function snapshot(name)local p='/tmp/router-project-game-classifier/'..name..'.json';local a=assert(fs.lstat(p));assert(a.type=='reg'and a.uid==0 and a.gid==0 and a.nlink==1);local s=assert(j.parse(read(p,4194304)));local b=assert(fs.lstat(p));assert(a.dev==b.dev and a.ino==b.ino,'Snapshot replaced during sample');return s end
+local s=snapshot('snapshot');local c=snapshot('classification');local g=snapshot('guardian');local at=tonumber(read('/proc/uptime',128):match('^[%d.]+'));local p=assert(s.snapshot.provenance);local pc=assert(c.snapshot.provenance)
+local e={};for _,k in ipairs({'front_end_ipv4_stop','front_end_ipv6_stop','ecm_db/connection_count','ecm_nss_ipv4/accelerated_count','ecm_nss_ipv6/accelerated_count','ecm_nss_ipv4/pending_accel_count','ecm_nss_ipv6/pending_accel_count','ecm_nss_ipv4/pending_decel_count','ecm_nss_ipv6/pending_decel_count'})do e[k]=tonumber(read('/sys/kernel/debug/ecm/'..k,128))end
+local stat=read('/proc/'..s.pid..'/stat',8192);local fields={};for x in assert(stat:match('^%d+ %b() (.*)$')):gmatch('%S+')do fields[#fields+1]=x end
+assert(fields[20]==s.start and fields[1]~='Z');assert(read('/proc/'..s.pid..'/cmdline',8192)==table.concat({'/usr/bin/lua',${JSON.stringify(d.base)}..'/worker.lua','watch',${JSON.stringify(d.base)},${JSON.stringify(d.configHash)}},'\0')..'\0')
+print(j.stringify({uptime=at,pid=s.pid,start=s.start,producer=s.producer,status=s.status,dataHealthy=s.dataHealthy,nssPermit=s.nssPermit,configSha256=s.configSha256,error=s.error,fullSequence=p.sequence,fullAge=at-p.startedAtUptime,fullPublicationAge=at-s.atUptime,compactSequence=pc.sequence,compactAge=at-pc.startedAtUptime,compactHealthy=c.dataHealthy,guardianHealthy=g.healthy,guardianProducer=g.producer,guardianAge=at-g.atUptime,ecm=e,cpu=read('/proc/stat',16384):match('^[^\n]+'),softnet=read('/proc/net/softnet_stat',16384),txBytes=tonumber(read('/sys/class/net/lan4/statistics/tx_bytes',128)),txPackets=tonumber(read('/sys/class/net/lan4/statistics/tx_packets',128)),readonly=true,routerConfigurationWrites=false}))`;
+const c=await connectRouter();try{const e=encode("/usr/bin/lua - <<'NSS42_READONLY_STABILITY'\n"+code+"\nNSS42_READONLY_STABILITY\n");assert.ok(e.execBytes<=9000);const deadline=Date.now()+600000;
+for(let i=0;i<21;i++){
+ const due=deadline-600000+i*30000;if(Date.now()<due)await new Promise(resolve=>setTimeout(resolve,due-Date.now()));
+ const raw=receipt(await c.run(e.command),e);const record={observedAt:new Date().toISOString(),code:raw.code};
+ if(raw.code===0){record.sample=JSON.parse(raw.stdout);const s=record.sample;assert.equal(s.configSha256,d.configHash);assert.equal(s.nssPermit,false);assert.equal(s.ecm.front_end_ipv4_stop,1);assert.equal(s.ecm.front_end_ipv6_stop,1);for(const[k,v]of Object.entries(s.ecm))if(!k.endsWith('_stop'))assert.equal(v,0,k);}
+ else{record.error=raw.stderr;}
+ rows.push(record);fs.writeFileSync(out,JSON.stringify({startedAt,finishedAt:record.observedAt,samples:rows.length,expectedSamples:21,intervalSeconds:30,elapsedHostSeconds:(Date.parse(record.observedAt)-Date.parse(startedAt))/1000,readonly:true,routerConfigurationWrites:false,nssOpened:false,syntheticTrafficGenerated:false,observationCostIncluded:true,rows},null,2)+'\n');
+ if(i%2===0)console.log(JSON.stringify({samples:rows.length,code:raw.code,sequence:record.sample?.fullSequence,age:record.sample?.fullAge,workerHealthy:record.sample?.dataHealthy,guardianHealthy:record.sample?.guardianHealthy}));
+}
+}finally{c.close()}

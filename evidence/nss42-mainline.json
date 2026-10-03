@@ -1,0 +1,696 @@
+{
+  "round": "NSS42",
+  "generatedAt": "2026-10-03T18:26:08.960Z",
+  "deploymentReference": "work/nss39/deployment-latest.json",
+  "classifierConfigSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
+  "permanentClassifierChanged": false,
+  "routerConfigurationWrites": false,
+  "entry": {
+    "qualificationVersion": 2,
+    "totalBoundInputs": 102,
+    "historicalRuntimeBoundInputs": 68,
+    "workspaceGraphFiles": 40,
+    "workspaceGraphEdges": 69,
+    "graphScope": "Static Node imports parsed without linking or evaluation; existing literal workspace source references. Qualified NSS39 adds dynamic runtime payloads. Dynamic deployment data and encrypted credential storage are validated/excluded separately.",
+    "postparserBound": true,
+    "staticParsingDoesNotEvaluateModules": true,
+    "externalSourceBindingHashOnly": true,
+    "externalTransportCodeOrCredentialsCopied": false,
+    "privateTransportWrappersRetainedOnlyLocally": true,
+    "initialAgeSeconds": 1,
+    "prelearningAgeSeconds": 2,
+    "lockedSourceAgeSeconds": 6,
+    "lockedPublicationAgeSeconds": 9,
+    "ownerDeadlineSeconds": 45,
+    "alignmentInnerSeconds": 5,
+    "alignmentOuterSeconds": 6,
+    "deadlinesUnchanged": true,
+    "runtimePayloadsUnchanged": true,
+    "learningAndRecoveryAuditSeparated": true,
+    "originalLockedAuditPredicatesRetained": true,
+    "failedAlignmentObservationsNowSaved": true,
+    "newEntryHardwareAbATested": false,
+    "qualificationSha256": "9706fbc87e1a76dd288a9dc965504566b89de8d0b8f78a7c2b65e9a10f3b5120",
+    "frozenQualificationVersions": [
+      {
+        "version": 1,
+        "boundInputs": 99
+      },
+      {
+        "version": 2,
+        "boundInputs": 102,
+        "testProofs": 5
+      }
+    ]
+  },
+  "localChecks": {
+    "newCases": 90,
+    "groups": {
+      "parser": {
+        "checks": 43,
+        "scope": "One frozen real hardware-state replay, 20 synthetic WAN/orientation states and explicit invalid-state mutations; no flow admission or live experiment.",
+        "cases": [
+          {
+            "case": "frozen actual WAN1 TCP and UDP state",
+            "passed": true,
+            "kind": "actual-state-replay"
+          },
+          {
+            "case": "WAN1 TCP client and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN1 TCP client and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN1 TCP server and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN1 TCP server and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN2 TCP client and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN2 TCP client and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN2 TCP server and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN2 TCP server and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN3 TCP client and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN3 TCP client and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN3 TCP server and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN3 TCP server and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN4 TCP client and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN4 TCP client and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN4 TCP server and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN4 TCP server and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN5 TCP client and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN5 TCP client and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN5 TCP server and UDP client orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "WAN5 TCP server and UDP server orientation",
+            "passed": true,
+            "kind": "synthetic-state"
+          },
+          {
+            "case": "selected WAN below range",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "selected WAN above range",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "selected WAN fractional",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "mixed selected WAN",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "selected mark disagrees with WAN",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "selected full marks differ",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "proxy mark forbidden",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "wrong selected zone",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "invalid CT instance",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "wrong selected protocol",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "different selected NAT addresses",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "wrong expected NAT port",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "incorrect interface WAN",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "missing physical WAN layer",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "missing LAN4 layer",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "missing br-lan layer",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "wrong full firmware mark",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "wrong RT tag",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "unaccelerated firmware mode",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "duplicate state attribute",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "unexpected state line",
+            "passed": true,
+            "kind": "rejection"
+          },
+          {
+            "case": "unexpected third connection",
+            "passed": true,
+            "kind": "rejection"
+          }
+        ],
+        "testedSourceManifest": {
+          "work/nss42/parse-ecm-any-wan.mjs": "bd696bb4db1476c45f274d520825eb4c8144c32441f45206db4afbf1ff99a3c4",
+          "work/nss42/test-parser.mjs": "199887caaae94bd716504109c89ce5ea5113afb6365c227a8d9f01134d342cf1"
+        }
+      },
+      "publication-wait": {
+        "checks": 23,
+        "scope": "Actual Lua scheduling planner with failure observation callback; simulated clock/read IO, no production fault injection or NSS admission.",
+        "cases": [
+          "new fresh publication schedules complete audit",
+          "same sequence cannot authorize stale reuse",
+          "new sequence still too old waits for genuinely fresh source",
+          "sequence below initial hard refuses",
+          "sequence regressing after a newer old publication hard refuses",
+          "producer change hard refuses",
+          "unhealthy publication hard refuses",
+          "future publication hard refuses",
+          "unordered query hard refuses",
+          "query over original two-second duration refuses",
+          "exact two-second source age cannot schedule",
+          "fractional sequence refuses",
+          "read error propagates without permission",
+          "missing publication refuses",
+          "missing producer refuses",
+          "timeout keeps complete polled source ages",
+          "newer but old publication refusal keeps changed sequence",
+          "producer mismatch preserves rejecting observation",
+          "unhealthy refusal preserves rejecting observation",
+          "query ordering refusal preserves source timestamps",
+          "sequence regression preserves offending sequence",
+          "read failure preserves previously completed observations",
+          "successful diagnostics still cannot authorize or extend NSS"
+        ],
+        "testedSourceManifest": {
+          "work/nss42/publication-wait.lua": "009956806e6e6b48ef781b2fe69c4f2af28a3ff59ac4abb7eb89c4f1a0c28f56",
+          "work/nss42/test-publication-wait.py": "ef464af7e2754cf98e2e6ff007763b02fad7e324fe76e7d69694a3e78292e86c"
+        }
+      },
+      "controller": {
+        "checks": 8,
+        "scope": "Real controller through success/refusal/cleanup ordering using frozen hardware state and substituted application/router/staging IO. Native actions are mocks; no live NSS qualification.",
+        "cases": [
+          {
+            "case": "frozen-native-success",
+            "passed": true,
+            "kind": "controller-with-substituted-IO",
+            "nativeMutationCallsExecuted": 0
+          },
+          {
+            "case": "preaudit-refusal",
+            "passed": true,
+            "kind": "controller-with-substituted-IO",
+            "nativeMutationCallsExecuted": 0
+          },
+          {
+            "case": "recovery-refusal",
+            "passed": true,
+            "kind": "controller-with-substituted-IO",
+            "nativeMutationCallsExecuted": 0
+          },
+          {
+            "case": "stage-upload-failure",
+            "passed": true,
+            "kind": "controller-with-substituted-IO",
+            "nativeMutationCallsExecuted": 0
+          },
+          {
+            "case": "native-proof-mismatch",
+            "passed": true,
+            "kind": "controller-with-substituted-IO",
+            "nativeMutationCallsExecuted": 0
+          },
+          {
+            "case": "changed-instance-before-staging",
+            "passed": true,
+            "kind": "controller-with-substituted-IO",
+            "nativeMutationCallsExecuted": 0
+          },
+          {
+            "case": "no-application-pair",
+            "passed": true,
+            "kind": "controller-with-substituted-IO",
+            "nativeMutationCallsExecuted": 0
+          },
+          {
+            "case": "tampered-application",
+            "passed": true,
+            "kind": "controller-with-substituted-IO",
+            "nativeMutationCallsExecuted": 0
+          }
+        ],
+        "testedSourceManifest": {
+          "work/nss42/real-session.mjs": "19c42b6793125571b6d98ee26f679e6267c829eef7c506c12168b947771e6725",
+          "work/nss42/parse-ecm-any-wan.mjs": "bd696bb4db1476c45f274d520825eb4c8144c32441f45206db4afbf1ff99a3c4",
+          "work/nss42/test-controller.mjs": "b8ba7378ddf66d475d98dc2b8ac620526c2ef2a1941908fe81536d9bdf09e986"
+        }
+      },
+      "dependency": {
+        "checks": 7,
+        "scope": "Real entry static import closure and isolated parser/containment fixtures. Explicit qualified payloads and external transport hash remain separately handled.",
+        "cases": [
+          "actual entry binds parser, transport wrapper and baseline capture",
+          "cycles terminate and source bodies are not evaluated",
+          "quoted import-looking text is ignored by module parser",
+          "missing import refuses",
+          "workspace escape refuses",
+          "unreviewed external package refuses",
+          "changed dependency changes bound digest"
+        ],
+        "testedSourceManifest": {
+          "work/nss42/dependency-closure.mjs": "3a7065d5aa61ab70c2ddf204f1bd7c10c3513471317693bc87694348d62f3c63",
+          "work/nss42/parse-dependency-graph.mjs": "466fc46cd21e1003b1ff25879ffdb5ca255af2101d9b3fa1be811ef3861839e1",
+          "work/nss42/test-dependencies.mjs": "7b2069efa10e5d15ea727080faeba5881f8a18b4d7134201d230e7add4ab12d6"
+        }
+      },
+      "binding": {
+        "checks": 9,
+        "scope": "Actual binding/graph checks in isolated workspace copies; historical runtime and encrypted-login transport source are substituted. No production source changed and no credential data accessed.",
+        "cases": [
+          {
+            "case": "valid-binding",
+            "passed": true
+          },
+          {
+            "case": "changed-parser",
+            "passed": true
+          },
+          {
+            "case": "unbound-parser",
+            "passed": true
+          },
+          {
+            "case": "changed-baseline-source",
+            "passed": true
+          },
+          {
+            "case": "changed-test-proof",
+            "passed": true
+          },
+          {
+            "case": "changed-private-transport",
+            "passed": true
+          },
+          {
+            "case": "wrong-policy-mode",
+            "passed": true
+          },
+          {
+            "case": "wrong-runtime-configuration",
+            "passed": true
+          },
+          {
+            "case": "new-unbound-import",
+            "passed": true
+          }
+        ],
+        "testedSourceManifest": {
+          "work/nss42/session-binding.mjs": "86e893dd0dc398bb82c5626c8c58d237f58ea2718d9adcdbe951539a0106feb4",
+          "work/nss42/dependency-closure.mjs": "3a7065d5aa61ab70c2ddf204f1bd7c10c3513471317693bc87694348d62f3c63",
+          "work/nss42/parse-dependency-graph.mjs": "466fc46cd21e1003b1ff25879ffdb5ca255af2101d9b3fa1be811ef3861839e1",
+          "work/nss42/test-binding.mjs": "86145ba44c3ceedfbf25232c8fc3381566f403500c8e61f6a9bd985cd4f2af16"
+        }
+      }
+    },
+    "hardwareIoMocked": true
+  },
+  "nativeDiagnosticRamChecks": {
+    "nssOpened": false,
+    "nativeLuaAndJsonc": true,
+    "cases": [
+      {
+        "lastSequence": 10,
+        "passed": true,
+        "name": "timeout-rows-survive-native-jsonc",
+        "serializedObservations": 4
+      },
+      {
+        "lastSequence": 11,
+        "passed": true,
+        "name": "newer-but-old-source-rows-survive",
+        "serializedObservations": 4
+      },
+      {
+        "lastSequence": 11,
+        "passed": true,
+        "name": "producer-mismatch-row-survives",
+        "serializedObservations": 2
+      },
+      {
+        "lastSequence": 10,
+        "passed": true,
+        "name": "read-error-preserves-completed-rows",
+        "serializedObservations": 1
+      }
+    ],
+    "checks": 4,
+    "simulation": true,
+    "productionFaultInjected": false,
+    "passed": true,
+    "routerConfigurationWrites": false,
+    "observedAt": "2026-10-03T18:01:39.723Z",
+    "execBytes": 4775,
+    "plannerSha256": "009956806e6e6b48ef781b2fe69c4f2af28a3ff59ac4abb7eb89c4f1a0c28f56"
+  },
+  "nativeReadonlyAudits": [
+    {
+      "label": "native-recovery",
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 2.1499999999068677,
+      "ecmClosedAndZero": true
+    },
+    {
+      "label": "native-prewrite",
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 0,
+      "queryAge": 1.0600000000558794,
+      "ecmClosedAndZero": true
+    },
+    {
+      "label": "qualified-v2-recovery",
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 2.369999999878928,
+      "ecmClosedAndZero": true
+    },
+    {
+      "label": "qualified-v2-prewrite",
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.2399999999906868,
+      "ecmClosedAndZero": true
+    },
+    {
+      "label": "closing-recovery",
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 2.8100000000558794,
+      "ecmClosedAndZero": true
+    }
+  ],
+  "stability": {
+    "startedAt": "2026-10-03T18:01:48.129Z",
+    "finishedAt": "2026-10-03T18:11:48.686Z",
+    "samples": 21,
+    "successfulReads": 21,
+    "failedReads": 0,
+    "seconds": 600,
+    "intervalSeconds": 30,
+    "readonly": true,
+    "routerConfigurationWrites": false,
+    "syntheticTrafficGenerated": false,
+    "observationCostIncluded": true,
+    "sameWorkerProducer": true,
+    "sameGuardianProducer": true,
+    "allSampledWorkersHealthy": true,
+    "allSampledGuardiansHealthy": true,
+    "ecmClosedAndZeroAllSamples": true,
+    "fullSourceAgeRangeSeconds": [
+      2.3500000000931323,
+      2.5600000000558794
+    ],
+    "compactSourceAgeRangeSeconds": [
+      2.3500000000931323,
+      2.5600000000558794
+    ],
+    "sequenceAdvanced": true,
+    "sequenceNeverRegressed": true,
+    "performance": {
+      "lan4DownMbps": 1.9809822933333332,
+      "lan4DownPps": 186.93333333333334,
+      "cpuBusyPercent": 14.178861651193158,
+      "softirqPercent": 3.1047029043994914,
+      "timeSqueezeDelta": 0
+    },
+    "measurementLimit": "Natural software forwarding with readonly observation overhead; sparse sampled window, not matched-load NSS or a game trial."
+  },
+  "priorComparabilityAssessment": {
+    "round": "NSS41",
+    "newLiveExperiment": false,
+    "originalControllerFailurePreserved": true,
+    "controlledBytes": 9803650,
+    "totalLeafBytes": 238464761,
+    "controlledLeafByteSharePercent": 4.111152506931622,
+    "controlledPackets": 6688,
+    "totalLeafPackets": 153055,
+    "controlledLeafPacketSharePercent": 4.369671033288687,
+    "counterWindowSeconds": 5.830000000074506,
+    "counterWindowIncludesRetirement": true,
+    "exactFastPathOffloadShareMeasured": false,
+    "controlledSubgroupCeilingMbps": 20,
+    "controlledSubgroupCeilingUnchangedThisRound": true,
+    "aggregatePhases": [
+      {
+        "phase": "A",
+        "lan4DownMbps": 347.72176726987993,
+        "lan4DownPps": 28777.12031653336,
+        "wanDownMbps": 35.61545246666085,
+        "softirqPercent": 59.1745400298359
+      },
+      {
+        "phase": "B",
+        "lan4DownMbps": 379.9792402375843,
+        "lan4DownPps": 31452.804642619616,
+        "wanDownMbps": 68.88210135495785,
+        "softirqPercent": 60.63984488608822
+      },
+      {
+        "phase": "A2",
+        "lan4DownMbps": 391.1092825082942,
+        "lan4DownPps": 32385.068761745682,
+        "wanDownMbps": 79.18637485134826,
+        "softirqPercent": 61.86906546726637
+      }
+    ],
+    "sameOfferedLoadVerified": false,
+    "cpuBenefitProved": false,
+    "meaning": "The bulk/RT leaves account for only a small fraction of this combined B-plus-retirement window. This is not an exact accelerated-flow share, and global CPU changes under changing load are not causal evidence."
+  },
+  "actualFastPathTrial": {
+    "attempted": false,
+    "reason": "No real CS2 game and Steam bulk pair was present. No experiment was opened while the user slept.",
+    "ecmOpened": false,
+    "checkpointCreated": false,
+    "rollbackArmed": false,
+    "rollbackNeeded": false,
+    "leafCounters": null,
+    "gameTelemetry": null
+  },
+  "finalState": {
+    "checkedAt": "2026-10-03T18:13:29.460Z",
+    "protectedAudit": {
+      "passed": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 2.8100000000558794,
+      "sequence": 3487,
+      "ecmClosedAndZero": true
+    },
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-03T18:13:30.687Z",
+      "readonly": true,
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1868756.33
+    },
+    "sameProducerSinceOpening": true,
+    "sameProducerSinceNss41": true,
+    "currentWorkerHealthy": true,
+    "lastErrorBelongsToEarlierInstallation": true,
+    "application": {
+      "observedAt": "2026-10-03T18:02:44.004Z",
+      "readonly": true,
+      "gameProcessRunning": false,
+      "steamProcessRunning": true,
+      "actualCs2RtCandidates": 0,
+      "actualSteamBulkCandidates": 0,
+      "sameWanCandidates": [],
+      "sourceAge": 0.8399999998509884,
+      "nssAdmissionAllowed": false
+    }
+  },
+  "conclusions": {
+    "postprocessorWan1FalseRejectionCorrected": true,
+    "recoveryNoLongerUsesLearningOnlyScheduling": true,
+    "staticAndDeclaredRuntimeDependenciesBound": true,
+    "allExternalDependenciesComprehensivelyCaptured": false,
+    "diagnosticFailureRowsSerializedOnTarget": true,
+    "newProductionDeploymentInstalled": false,
+    "realHighLoadNssTrialExecutedThisRound": false,
+    "nssCpuBenefitProvedThisRound": false,
+    "cs2JitterLossMissCaptured": false,
+    "completeHighLoadLifecycleQualified": false,
+    "secondWanExpansionAllowed": false
+  },
+  "next": "Validate this qualified host controller in one concentrated real session. Stabilize the target WAN and total offered load, explicitly measure the controlled share and retain identical budgets. If the 20 Mbps subgroup is too small for the global CPU question, prepare a separately qualified single-WAN change to that one variable; do not silently broaden the gate or increase WAN count. Every live mutation still needs a fresh checkpoint and independent rollback.",
+  "repositoryReplay": {
+    "passed": true,
+    "wanChecks": 42,
+    "diagnosticChecks": 23,
+    "checks": 65,
+    "scope": "Re-execution of existing synthetic NSS42 cases; not 65 additional distinct cases. The one frozen actual-state replay is deliberately omitted.",
+    "routerAccess": false,
+    "privateHardwareStateRead": false,
+    "trafficGenerated": false,
+    "parserSha256": "bd696bb4db1476c45f274d520825eb4c8144c32441f45206db4afbf1ff99a3c4",
+    "plannerSha256": "009956806e6e6b48ef781b2fe69c4f2af28a3ff59ac4abb7eb89c4f1a0c28f56"
+  },
+  "reportVerification": {
+    "htmlSourceAndLinksCheckedSeparately": true,
+    "browserRendered": false,
+    "reason": "Local file URL was blocked by browser policy; no alternate browser or serving workaround was attempted."
+  }
+}

@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+const s=JSON.parse(fs.readFileSync('outputs/nss42-mainline-observations.json')),w=s.stability,e=s.entry,p=s.priorComparabilityAssessment,f=(v,d=2)=>Number(v).toFixed(d);
+const css=fs.readFileSync('outputs/nss39-mainline-report.html','utf8').match(/<style>([\s\S]*?)<\/style>/)[1];
+const label={parser:'WAN／mark／NAT／tag 校验', 'publication-wait':'调度时序与失败诊断',controller:'实际控制器顺序回放',dependency:'静态依赖解析',binding:'绑定变化拒绝'};
+fs.writeFileSync('outputs/nss42-mainline-report.html',`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NSS42 · 验收入口修复与持续只读观察</title><style>${css}</style></head><body><main>
+<p class="muted">Athena AX6600 · 2026-10-04 凌晨 · 北京时间</p><h1>验收入口已修复并绑定<br>真人性能验收仍待集中测试</h1>
+<p class="note">NSS41 已证明真实 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf。本轮修正后处理与恢复审核场景，完成 <strong>${s.localChecks.newCases} 项本地检查、${s.nativeDiagnosticRamChecks.checks} 项目标 Lua/jsonc RAM 检查</strong>，并观察分类器约十分钟。没有修改路由器配置、开放 NSS 或要求你持续挂游戏。</p>
+<h2>修复了什么</h2><p>通用 WAN 解析器按实际选中的 flow 验证出口，避免历史后处理写死 WAN5 而误拒绝真实 WAN1。加入完整 mark、zone、实例、NAT、方向、接口层级和 leaf tag 检查。真实冻结硬件状态重新回放，同时用五个 WAN 与不同 TCP/UDP 方向组合验证；错误副本继续拒绝。NSS41 的原控制器失败和原始证据保持，没有改成成功。</p>
+<p>学习前审核仍等待严格更新且新鲜的完整快照，再执行原完整持锁审核。恢复审核直接执行原完整审核，不再套用学习前“来源年龄 &lt;2 秒”的调度条件。初始 &lt;1 秒、预学习 &lt;2 秒、原审核 &lt;6/&lt;9 秒、独立 45 秒 owner、内部 5 秒／外部 6 秒期限保持。审核和调度均不能单独授权 NSS。</p>
+<p>失败调度现在保留已观察到的序号、来源与发布年龄、producer 及读取阶段；不据此改写历史未记录的诊断。实际 Lua/jsonc 的 4 个隔离 RAM 案例确认错误和诊断行可序列化，不是向生产分类器注入故障。</p>
+<h2>绑定与检查范围</h2><p>当前入口绑定 <strong>${e.totalBoundInputs} 项输入</strong>，包括历史 68 项 runtime 输入、后处理、控制器和检查源码；静态图覆盖 ${e.workspaceGraphFiles} 个文件、${e.workspaceGraphEdges} 条关系。Node 只解析未链接模块，不执行模块来扫描依赖。已声明动态 payload 单独按历史 runtime 清单绑定；外部既有连接实现只保留哈希；绑定和导出不读取或复制凭据内容，现场连接仍使用此前保存的认证。操作系统、运行时和所有可能动态依赖不在这个清单的全面保证内。</p>
+<div class="scroll"><table><thead><tr><th>检查</th><th>数量</th><th>结果与范围</th></tr></thead><tbody>${Object.entries(s.localChecks.groups).map(([k,v])=>`<tr><td>${label[k]}</td><td>${v.checks}</td><td>通过；本地隔离／模拟</td></tr>`).join('')}<tr><td>目标 Lua/jsonc 错误诊断</td><td>4</td><td>通过；隔离 RAM，模拟读取与时钟</td></tr></tbody></table></div>
+<p>99 项 v1 与 102 项 v2 清单及源码分别冻结。控制器回放覆盖成功、写前拒绝、恢复拒绝、上传失败、native 证明不匹配、CT 实例变化、没有应用配对和应用封存被改动。连接、上传和生产写操作在回放中被替换；这些检查不冒充本轮现场 A/B。</p>
+<p>私有仓库可独立重放 42 项合成校验＋23 项调度案例，无需凭据或原始连接数据；这是已有案例的再次执行，不额外加到 90 项总数。报告 HTML 源文件和链接已核对；本地文件 URL 被浏览器策略阻止，未进行页面渲染核验。</p><h2>现场只读核验</h2><div class="scroll"><table><thead><tr><th>入口</th><th>用途</th><th>来源年龄</th><th>ECM</th><th>结果</th></tr></thead><tbody>${s.nativeReadonlyAudits.map(a=>`<tr><td>${a.label}</td><td>${a.auditPurpose}</td><td>${f(a.queryAge)} s</td><td>关闭／全零</td><td>原完整审核通过</td></tr>`).join('')}</tbody></table></div>
+<p>两种用途都核验了原完整断言，保护配置保持。没有本轮 checkpoint 或回滚试验，因为没有修改路由器配置。上轮实际提前恢复与历史独立到期证明保留；下一次现场写入仍必须重新建立 checkpoint 并先确认独立回滚。</p>
+<h2>约十分钟分类器观察</h2><p>${w.samples} 次采样，间隔 30 秒，${f(w.seconds)} 秒；成功读取 ${w.successfulReads} 次，失败 ${w.failedReads} 次。同一 worker/producer 与 guardian，所有成功样本健康，来源序号持续前进，ECM 一直关闭且相关计数全零。完整快照来源年龄 ${f(w.fullSourceAgeRangeSeconds[0])}–${f(w.fullSourceAgeRangeSeconds[1])} 秒，compact ${f(w.compactSourceAgeRangeSeconds[0])}–${f(w.compactSourceAgeRangeSeconds[1])} 秒。</p>
+<div class="scroll"><table><thead><tr><th>负载</th><th>LAN4 Mbps</th><th>pps</th><th>busy</th><th>softirq</th><th>time_squeeze</th></tr></thead><tbody><tr><td>自然软件转发</td><td>${f(w.performance.lan4DownMbps)}</td><td>${f(w.performance.lan4DownPps,0)}</td><td>${f(w.performance.cpuBusyPercent)}%</td><td>${f(w.performance.softirqPercent)}%</td><td>+${w.performance.timeSqueezeDelta}</td></tr></tbody></table></div>
+<p>数据包含观察开销，仅表示该采样窗状态。30 秒间隔可能漏掉短暂变化；自然轻负载不能证明持续高负载稳定性、游戏体验或 NSS 收益。旧错误属于此前安装实例，没有把旧错误当成本轮故障，也没有删除旧错误。</p>
+<h2>下一次对照为什么要控制负载</h2><p>NSS41 的计数窗 ${f(p.counterWindowSeconds)} 秒包含 B 与撤销：bulk＋RT ${p.controlledBytes.toLocaleString('en-US')} B／${p.controlledPackets.toLocaleString('en-US')} 包，全部 leaf ${p.totalLeafBytes.toLocaleString('en-US')} B／${p.totalLeafPackets.toLocaleString('en-US')} 包，bulk/RT 占 ${f(p.controlledLeafByteSharePercent)}% 字节、${f(p.controlledLeafPacketSharePercent)}% 包。这个比例不是精确 fast path 占比，撤销后软件包也可能计入。</p>
+<p>同时总 LAN4 负载 347.72→379.98→391.11 Mbps、WAN1 35.62→68.88→79.19 Mbps 变化。当前子组仍上限 20 Mbps，只放行一条 bulk TCP＋一条游戏 UDP。整机吞吐和 CPU 不足以回答大比例卸载的收益，更不能把 leaf 丢弃为零当作游戏 loss/Miss 为零。</p>
+<h2>下一步仍是同一条主线</h2><p>你醒来后集中做一次真实 CS2＋Steam：先只读确认目标 WAN 与总负载稳定、新鲜 CT 实例和应用归属正确，再用本轮已绑定入口执行短对照。保持相同 QoS 预算、观察循环和 WAN affinity，记录受控流量份额；若份额太小，仅准备一个单 WAN 变量的新候选，不暗中扩大 gate 或同时放开多 WAN。当前不扩第二 WAN、共享预算、Wi-Fi 或 autorate。</p>
+<p>本轮未检测到真实游戏和下载配对，未开启加速实验。没有新的 CPU 收益结论、jitter/loss/Miss 或游戏体感。NSS39 常驻部署与保护配置不变，无实验残留。Issue/PR 只保留 backlog，没有提交上游。</p>
+<p><a href="nss42-mainline-observations.json">结构化证据</a> · <a href="nss41-mainline-report.html">上一轮真实功能证明</a> · <a href="https://github.com/ZyPulse-zy/athena-nss-mainline">私有仓库</a></p></main></body></html>`);
+console.log(JSON.stringify({report:'outputs/nss42-mainline-report.html',routerWrites:false,realGameTestThisRound:false}));

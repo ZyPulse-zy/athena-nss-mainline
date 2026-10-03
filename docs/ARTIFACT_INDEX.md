@@ -25,7 +25,9 @@
 - `evidence/nss38-loop-timing.json`：失败后 105 次只读诊断相对时序；所选类别不再准入，不能当原失败重放。
 - `evidence/nss38-adapter-differential.json`、`nss38-admission-replay.json`：带诊断未安装候选的 1,470 决策对照、5 次数约束、230 准入/诊断案例。
 - `evidence/nss38-native-syntax.json`：两个候选的目标 Lua 编译，明确未执行/未绑定控制器。
-- `evidence/current-runtime.json`：最新审核摘要与部署哈希；读取者仍应重新核验现网。
+- `evidence/nss42-mainline.json`：通用 WAN 后处理/审核用途/102 项绑定、90 项本地＋4 项目标 RAM 检查、600 秒自然轻载只读观察与功能/性能边界。
+- `evidence/nss42-stability-timing.json`：21 次相对采样时序，已去除 producer、原始 flow 与系统转储。
+- `evidence/current-runtime.json`：最新 NSS42 审核摘要与 NSS39 部署哈希；读取者仍应重新核验现网。
 - `source-manifest.json`：每个源码副本的原路径、SHA256、大小；部署源文件必须与当前配置记录的哈希一致。
 
 仅在完整私有工作区：
@@ -36,7 +38,10 @@
 | `outputs/nss33-classifier-readiness-report.html` | 上一轮完整报告 |
 | `work/nss39/deployment-latest.json` | 当前常驻分类器部署引用 |
 | `work/nss39/affinity-qualified.json` | 当前 68 项绑定；未完成真人闭环 |
-| `outputs/nss41-mainline-report.html` | 最新真人WAN1 bulk/RT功能、三段测量、原错误和恢复报告 |
+| `outputs/nss42-mainline-report.html` | 最新验收入口修复、声明依赖绑定、自然轻载观察与下一步报告 |
+| `work/nss42/entry-qualified.json` | 最新 v2 的 102 项输入、五份本地检查证明和外部连接源码哈希；不是完整运行环境保证 |
+| `work/nss42/v1-frozen/`、`v2-frozen/` | 99/102 项输入分别冻结，私有状态和连接封装不导出 |
+| `outputs/nss41-mainline-report.html` | 历史真人 WAN1 bulk/RT 功能、三段测量、原错误和恢复报告 |
 | `work/nss41/real-matched-aba-20261003165708-9086b676/` | 真实实验、83项冻结与后处理校验冻结，完整私有证据 |
 | `outputs/nss40-mainline-report.html` | 历史真实只读准入、写前审核拒绝与取证报告 |
 | `work/nss40/real-matched-aba-20261003155259-d8910c25/` | 写前失败和 72 份冻结源码/证明，未改生产 |
