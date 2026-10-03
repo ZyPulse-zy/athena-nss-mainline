@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-10-03T14:44:45.214861+00:00",
-  "round": "NSS38",
-  "deploymentReference": "work/nss37/deployment-latest.json",
-  "classifierConfigSha256": "b053e05b74ffe5ea3871284838e7771bcebfc8aa8a80ecc042f60693d7769635",
+  "checkedAt": "2026-10-03T15:28:05.257503+00:00",
+  "round": "NSS39",
+  "deploymentReference": "work/nss39/deployment-latest.json",
+  "classifierConfigSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
   "deployedTextSources": [
     {
       "name": "classifier-core.lua",
@@ -26,7 +26,7 @@
     },
     {
       "name": "worker.lua",
-      "sha256": "2adaa79b4bb6404582c9ae93b25fd63923d934ee91c3d5a71298243dac8959b3",
+      "sha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
       "included": true
     },
     {
@@ -72,22 +72,20 @@
     "passed": true,
     "protectedConfigurationUnchanged": true,
     "exactOwnedNativeAudit": true,
-    "selectors": 8,
-    "queryAge": 3.5100000000093132,
-    "sequence": 347,
+    "selectors": 4,
+    "queryAge": 1.1799999999348074,
+    "sequence": 209,
     "ecmClosedAndZero": true
   },
   "lastApplicationObservation": {
-    "observedAt": "2026-10-03T14:11:44.220Z",
+    "observedAt": "2026-10-03T15:25:05.004Z",
     "readonly": true,
-    "gameProcessRunning": true,
+    "gameProcessRunning": false,
     "steamProcessRunning": true,
-    "actualCs2RtCandidates": 1,
-    "actualSteamBulkCandidates": 23,
-    "sameWanCandidates": [
-      2
-    ],
-    "sourceAge": 1.4400000001769513,
+    "actualCs2RtCandidates": 0,
+    "actualSteamBulkCandidates": 0,
+    "sameWanCandidates": [],
+    "sourceAge": 1.159999999916181,
     "nssAdmissionAllowed": false
   },
   "applicationEndpointsReadThisRound": true,
@@ -95,10 +93,11 @@
   "realForwardingABACompleted": false,
   "staleSnapshotRejectedEarlierInRound": false,
   "historicalNss36StaleSnapshotRejection": true,
-  "classifierWorkerRestartObservedThisRound": true,
+  "classifierWorkerRestartObservedThisRound": false,
+  "plannedClassifierReplacementAndRollbackThisRound": true,
   "finalClosure": {
     "passed": true,
-    "observedAt": "2026-10-03T14:44:47.853Z",
+    "observedAt": "2026-10-03T15:25:07.144Z",
     "readonly": true,
     "noActiveRootTransaction": true,
     "noNssStagingDirectory": true,

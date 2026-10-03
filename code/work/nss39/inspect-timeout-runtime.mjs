@@ -1,0 +1,2 @@
+import fs from'node:fs';import assert from'node:assert/strict';import{connectRouter}from'../nss20/connect-router.mjs';
+const c=await connectRouter();try{const r=await c.run('/usr/bin/readlink -f /usr/bin/timeout\n/usr/bin/timeout --help 2>&1\n/bin/busybox | /usr/bin/head -n 2\n');fs.writeFileSync('work/nss39/timeout-runtime-private.json',JSON.stringify(r,null,2)+'\n');console.log(r.stdout.slice(0,1800));}finally{c.close()}

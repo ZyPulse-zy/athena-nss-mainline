@@ -22,16 +22,15 @@ Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/
 
 ## 先读与只读核验
 
-在完整私有工作区运行现有入口前，先检查源文件哈希和作用范围：
+当前入口在完整私有工作区 `work/nss39/`，新轮次先复制为新目录并重新绑定，不能覆盖这轮证明。
 
-- `work/nss37/current-audit.mjs <new-label>`：绑定当前 NSS37；输出在 NSS37 新标签下，避免覆盖已保存证明。审计会严格拒绝过旧快照，保留失败和随后复查两份记录。
-- `work/nss37/real-session.mjs inspect`：严格检查 66 项 manifest/current config，然后只读核验真实应用连接，不开启 gate/ECM 或生成流量。已有输出应保留，新轮次先复制入口与输出位置。NSS38 复制入口完成一次失败的真实 `aba`，未使用新候选。
-- `work/nss37/final-closure.mjs`：核验无实验事务/模块/状态残留；新轮次先复制为自己的输出位置。
-- `work/nss36/rehearse-admission.mjs`：只读检查 NSS36 固定历史连接身份是否仍可准入，不重新证明当前应用 socket 归属；不能当真实 A/B。
-- `work/nss36/profile-publication-path.mjs`：一次只读 CT 采集 + RAM 冷回放，验证当前代码哈希后测时间；不修改生产 worker，不等于完整生产计时。
-- NSS37 `operational-audit.mjs` 是试装前/恢复后针对 NSS35 的历史入口，最终当前审核使用 `current-audit.mjs`，不要混用。
-- NSS38 `current-audit.mjs` 仍绑定 NSS37、输出在 NSS38。本轮源码/证据已冻结；后续新目录重新生成资格。`candidate-*.lua` 仅候选，不能替换当前绑定文件后直接运行。
-- NSS33/34/35/36 现场入口保留为历史，不能拿旧配置资格操作 NSS37。NSS36 两个只读诊断也依赖历史身份/哈希，不是当前部署入口。若修改当前配置或绑定源码，NSS37 资格同样必须重新生成，不能复用。
+- `current-audit.mjs <new-label>`：核验当前 NSS39/受保护配置/自有规则/ECM，拒绝过期发布。
+- `real-session.mjs inspect`：核验 68 项 manifest 与当前配置，再只读核对真实应用流。未通过真人高负载 A/B，不能把资格当性能结论。
+- `final-closure.mjs`：实验事务/模块/暂存/状态清理检查。
+- `native-qualification.mjs`：完整候选原生 RAM 模拟。会创建已 checkpoint、独立清理的临时文件，不是纯只读入口；不能无审查重跑现场脚本。
+- NSS37/38 和更旧入口只保留为历史。NSS39 没有改 NSS32–38 冻结源码与证明。修改当前配置或任何绑定文件必须在新轮次重新资格核验。
+
+`python tools/replay_tc_supervision.py --wsl-runtime <runtime/usr>` 可独立执行 NSS39 的 16 项子进程/管道/截止模型，输出到忽略的 `.local/nss39-replay/`；不访问路由器，不生成流量。NSS38 带诊断 adapter 与 NSS39 的源码一致，原离线差分入口仍适用于这组源码；不同的部署绑定与目标检查另见 NSS39 证据。
 
 连接封装使用本机已保存的认证。不要把密码、密钥、令牌或认证文件内容粘进对话、日志或仓库。
 

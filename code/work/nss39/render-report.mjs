@@ -1,0 +1,25 @@
+import fs from'node:fs';const s=JSON.parse(fs.readFileSync('outputs/nss39-mainline-observations.json')),f=(v,n=2)=>Number(v).toFixed(n);
+const css=fs.readFileSync('outputs/nss38-mainline-report.html','utf8').match(/<style>([\s\S]*?)<\/style>/)[1];
+const benchmarks=s.readOnlyBenchmark.groups.map(g=>`<tr><td>${g.queriesPerRun} 次查询</td><td>${f(g.oldCallsMs,1)} → ${f(g.candidateCallsMs,1)} ms</td><td>${f(g.oldTotalMs,1)} → ${f(g.candidateTotalMs,1)} ms</td><td>${g.pairs} 对</td></tr>`).join('');
+const labels={trial:'首次试装',expiredSecondInstall:'第二次安装，后到期恢复',thirdColdStart:'第三次冷启动，拒绝保留',thirdAfterWarming:'第三次就绪后，后到期恢复',retained:'最终保留'};
+const windows=Object.entries(s.windows).map(([k,w])=>`<tr><td>${labels[k]}</td><td>${f(w.lan4DownMbps,3)}</td><td>${f(w.lan4DownPps,1)}</td><td>${f(w.cpuBusyPercent)}%</td><td>${f(w.softirqPercent)}%</td><td>+${w.timeSqueezeDelta}</td><td>${w.allHealthy?'35/35 健康':'3 次旧实例未就绪'}</td></tr>`).join('');
+const setups=s.installations.map(x=>`<tr><td>${x.attempt}</td><td>${['预定到期回滚','本地准备耗尽保留窗口','冷启动旧发布被拒绝；复查时保留余量不足','确认当前实例后完成检查并保留'][x.attempt-1]}</td><td>${x.automaticRollbackVerified?'独立到期回滚通过':'已提交保留'}</td></tr>`).join('');
+fs.writeFileSync('outputs/nss39-mainline-report.html',`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NSS39 · 分类器修复与准入绑定</title><style>${css}</style><main>
+<p class="muted">Athena AX6600 · 2026-10-03 · 时间均为北京时间</p><h1>分类器修复已保留<br>NSS 准入候选已完成当前部署绑定</h1>
+<p class="note">当前常驻版本为 <strong>NSS39</strong>。修复了队列命令超时工具与外层进程回收的组合问题，保留全部身份、分类和时限检查。3 次独立自动回滚通过，最后一次安装已核验并保留。<strong>ECM 仍关闭，真人 CS2＋Steam 高负载闭环尚未通过。</strong></p>
+<h2>本轮证明了什么</h2><p>NSS38 的自然故障是队列读取返回 143。本轮用现有二进制与隔离子进程复现：内层超时会返回 143；外层自己的截止会返回 124。此前日志没有保存外层原始退出码，所以<strong>仍不能确定那次自然故障的完整阻塞或信号来源</strong>。</p>
+<p>核对 BusyBox 1.38.0 官方发布源码后，发现 timeout 会派生独立会话的监视进程；本项目 group-runner 是子进程回收者，会等这些后代结束。原生对照确认：很快完成的查询，仍会在外层回收阶段等待约一秒。官方压缩包的校验和已验证，未执行下载的源码；没有逐项对照固件补丁。<a href="https://busybox.net/downloads/busybox-1.38.0.tar.bz2">官方 1.38.0 源码</a></p>
+<div class="scroll"><table><thead><tr><th>只读工作量</th><th>查询本身，旧→新</th><th>含外层回收，旧→新</th><th>交替样本</th></tr></thead><tbody>${benchmarks}</tbody></table></div>
+<p>使用真实队列/过滤器只读查询，背景 LAN4 约 ${f(s.readOnlyBenchmark.backgroundLan4Mbps,3)} Mbps。查询本身略慢，完整任务因去掉额外等待而缩短。<strong>表中是墙钟时间，不是 CPU 降幅，也不是 NSS 转发收益。</strong></p>
+<h2>修复与失败边界</h2><p>tc 现在由直接子进程执行，仍在既有外层进程组中；只允许原有三个参数形状。保持单命令 2 秒、整轮维护 6 秒，输出超限/半截失败/超时均拒绝；先确认子进程回收，再上报带操作、状态和耗时的错误。没有为读失败加入静默重试。未知清理状态仍终止，原精确恢复与独立守护继续生效。</p>
+<p>16 项本地进程模型检查、13 项原生参数检查、8 项目标机隔离进程案例通过，包括忽略 TERM 后 KILL、外层取消与失败批处理。测试批处理是内存中的替身，没有向真实规则注入部分写故障。观察、分类、发布和恢复主体保持字节等价。</p>
+<h2>实际安装与回滚</h2><p>每次均先下载并校验 checkpoint，再验证脱离 SSH 的暂存守护和 180 秒事务回滚。只改分类器命令监督及诊断，未开放 NSS，未改 PBR、五路认证或生产队列结构。</p><div class="scroll"><table><thead><tr><th>安装</th><th>经过</th><th>结果</th></tr></thead><tbody>${setups}</tbody></table></div>
+<p>第二、三次的保留余量不足来自本地准备/诊断用时，属于执行流程问题；未延长截止。第三次刚启动时，最初 3 次观测读到旧 producer，守护为不健康，保留流程拒绝。随后确认是旧发布过渡，未发现新 worker 再次故障。新流程先要求当前配置、活进程、守护与新序列一致，再开始采样。最后一次就绪确认 ${s.startup.retentionReadinessProbes} 次探测后通过，35 次观测全部健康，${new Date(s.classifier.commitAt).toLocaleTimeString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false})} 提交保留。</p>
+<h2>实际负载与 CPU 记录</h2><div class="scroll"><table><thead><tr><th>软件窗口</th><th>Mbps</th><th>pps</th><th>busy</th><th>softirq</th><th>time_squeeze</th><th>状态</th></tr></thead><tbody>${windows}</tbody></table></div><p>每组约 17 秒，均为自然轻负载，包含观察成本；负载不同，不能作收益 A/B。原生实验没有安装 NSS leaf，故本轮没有真实 bulk/RT leaf 计数、加速后 mark/NAT/WAN 或 CS2 jitter/loss/Miss 数据。没有用合成指标替代真人体验。</p>
+<h2>主线准备已前进到哪里</h2><p>NSS38 的精简准入检查及逐次诊断现已绑定 NSS39，清单共 ${s.controller.sourceManifestEntries} 项。记录来源序号、采集/发布时间和每轮检查耗时；初始采集年龄 &lt;1 秒、预学习时采集年龄 &lt;2 秒等条件保持不变。新旧决策对照 1,470 项与 5 项调用次数约束沿用相同源码的 NSS38 证明，不重复计为新执行。</p>
+<p>本轮新执行：230 项准入/诊断、21 项续租/撤销、26 项分类生命周期、19 项规则接管/故障恢复模拟、10 项同 WAN 选择检查。目标原生 Lua/jsonc 用完整源码通过 17 项续租/撤销和 11 项 A/B 控制案例；IO、时间与内核确认仍为模拟。完整测试文件经 checkpoint 和独立清理暂存于内存，清理已确认。传输上限仍为 9,000 字节。</p>
+<p>目标预检编译 11 个组成单元，tag 策略往返一致；准备包 ${s.controller.stagedBytes.toLocaleString('en-US')} 字节，启动命令 ${s.controller.stageExecBytes} 字节。以上证明控制器准备和拒绝边界，<strong>不等于真实加速流命中 bulk/RT leaf</strong>。</p>
+<h2>当前现场与下一步</h2><p>23:25 只读应用核查：CS2 未运行，Steam 在运行但无持续下载候选，没有同 WAN 游戏/下载连接对，因此未开启真实试验。最终配置、认证/PBR/服务、规则所有权及清理核验通过；ECM 全零，未留下实验 gate/qdisc、事务或暂存目录。最后错误属于此前试装到期，不属于当前实例。</p>
+<p>下一轮先核验当前 NSS39，再集中一次真人对局＋下载：先完成同 WAN 连接身份和只读准入时序检查，条件满足后才在单 WAN 的独立回滚保护下进入 software→NSS→software。重点是实际 leaf、WAN 粘性、softirq/time_squeeze 和游戏 jitter/loss/Miss。仍不扩第二 WAN、共享预算、Wi-Fi 或 autorate。</p>
+<p>没有证据确认高负载入口问题已经解决，也没有本轮 NSS CPU 或游戏收益结论。可复现的超时工具组合问题已整理为本地 Issue 候选，未提交上游。当前不需要你持续挂游戏或下载。</p>
+<p><a href="nss39-mainline-observations.json">结构化证据</a> · <a href="nss38-mainline-report.html">NSS38 历史失败</a> · <a href="https://github.com/ZyPulse-zy/athena-nss-mainline">私有主线仓库</a></p><p class="muted">常驻引用：work/nss39/deployment-latest.json<br>配置：<code>${s.classifier.configSha256}</code></p></main></html>`);console.log(JSON.stringify({report:'outputs/nss39-mainline-report.html',realHighLoadABACompleted:false}));

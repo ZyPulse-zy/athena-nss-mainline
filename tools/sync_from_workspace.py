@@ -16,11 +16,12 @@ def save(path, value):
     dst.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 def keys(obj,names): return {k:obj[k] for k in names if k in obj}
 
-current=read('work/nss37/deployment-latest.json')
+current=read('work/nss39/deployment-latest.json')
 assert current['committed'] is True
 cfg=read(current['localDir']+'/config.json')
 sources=[]
 allowlist={
+ 'work/nss39': ['prepare.mjs','original-worker.lua','tc-command.lua','tc-command-fixtures.lua','test-worker.py','build-worker.mjs','test-timeout-path.mjs','inspect-timeout-runtime.mjs','read-busybox-source.py','test-tc-native.mjs','benchmark-tc-readonly.mjs','worker.lua','guardian.lua','conntrack-source.lua','prepare-install.mjs','upgrade.mjs','verify-rollback.mjs','qualify-trial.mjs','commit-channel.mjs','retain-qualified.mjs','wait-current-startup.mjs','cancel-restored-stage.mjs','observe-compact.mjs','deployment-audit.mjs','current-audit.mjs','inspect-classifier.mjs','final-closure.mjs','prepare-mainline.mjs','binding.mjs','classifier.lua','fast-path.lua','core-guard-phase.lua','classified-tags.lua','qos-physical.lua','tag-normalizer.lua','wan-scope.lua','state-node.lua','module-stage-guardian.lua','read-prerequisites.lua','aba-fixtures.lua','pair-policy.mjs','payload.mjs','module-stage.mjs','real-session.mjs','read-real-candidates.mjs','preflight-mainline.mjs','qualification.mjs','qualify-affinity.mjs','test-admission.py','test-consumer-local.py','test-lifecycle.py','test-owned-lifecycle.py','native-qualification.mjs','summarize.mjs','render-report.mjs'],
  'work/nss38': ['current-audit.mjs','final-closure.mjs','inspect-classifier.mjs','inspect-game-class.mjs','read-real-candidates.mjs','real-session.mjs','classifier.lua','fast-path.lua','observe-publication.lua','observe-publication.mjs','rehearse-admission.mjs','profile-admission-loop.lua','profile-admission-loop.mjs','freeze-attempt.mjs','build-candidate.mjs','candidate-classifier.lua','test-adapter-differential.py','adapter-differential.lua','test-admission.py','test-consumer-local.py','benchmark-adapter.lua','benchmark-adapter.mjs','build-traced-candidate.mjs','candidate-traced-classifier.lua','candidate-traced-fast-path.lua','check-candidate-native.mjs','read-classifier-errors.mjs','probe-qdisc-read.mjs','summarize.mjs','render-report.mjs'],
  'work/nss11': ['group-runner.c','test-group-runner.py'],
  'work/nss37': ['conntrack-source.lua','original-conntrack-source.lua','worker.lua','guardian.lua','prepare.mjs','build.mjs','test-normalizer.py','test-lifecycle.py','profile-normalizer.mjs','benchmark-native.mjs','normalize-benchmark.lua','prepare-install.mjs','upgrade.mjs','verify-rollback.mjs','qualify-trial.mjs','commit-channel.mjs','observe-compact.mjs','operational-audit.mjs','deployment-audit.mjs','current-audit.mjs','inspect-classifier.mjs','final-closure.mjs','prepare-mainline.mjs','binding.mjs','classifier.lua','fast-path.lua','core-guard-phase.lua','classified-tags.lua','qos-physical.lua','tag-normalizer.lua','wan-scope.lua','state-node.lua','module-stage-guardian.lua','read-prerequisites.lua','aba-fixtures.lua','pair-policy.mjs','payload.mjs','module-stage.mjs','real-session.mjs','read-real-candidates.mjs','preflight-mainline.mjs','qualification.mjs','qualify-affinity.mjs','summarize.mjs','render-report.mjs'],
@@ -87,12 +88,12 @@ save('evidence/nss34-loop-profile.json',{
  'observedAt':loop['observedAt'],'routerWrites':False,'nssOpened':False,'actualFlowAdmissionChecked':False,
  'summary':{'samples':len(rows),'fullInventory':sum(x['fullInventory'] for x in rows),'meanPhaseSeconds':sum(x['phaseSeconds'] for x in rows)/len(rows),'maxPhaseSeconds':max(x['phaseSeconds'] for x in rows),'maxIterationReads':max(x['iterationReads'] for x in rows),'ageOnlyReserveAvailable':sum(x['ageOnlyReserveAvailable'] for x in rows)},
  'rows':[{'atSeconds':round(x['at']-start,4),**keys(x,['closedSeconds','phaseSeconds','readSeconds','parseSeconds','iterationReads','fullInventory','refreshInventory','sourceAge','publicationDelay','ageOnlyReserveAvailable','classifiedFlowCount','status'])} for x in rows]})
-auditPath='work/nss38/closing-audit.json'
+auditPath='work/nss39/closing-audit.json'
 audit=read(auditPath)
 checked=datetime.fromtimestamp((workspace/auditPath).stat().st_mtime,timezone.utc).isoformat()
-pc=read('work/nss38/real-reader-qualified.json')
+pc=read('work/nss39/real-reader-qualified.json')
 save('evidence/current-runtime.json',{
- 'checkedAt':checked,'round':'NSS38','deploymentReference':'work/nss37/deployment-latest.json',
+ 'checkedAt':checked,'round':'NSS39','deploymentReference':'work/nss39/deployment-latest.json',
  'classifierConfigSha256':current['configHash'],'deployedTextSources':deployed,
  'audit':keys(audit,['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','selectors','queryAge','sequence','ecmClosedAndZero']),
  'lastApplicationObservation':keys(pc,['observedAt','readonly','gameProcessRunning','steamProcessRunning','actualCs2RtCandidates','actualSteamBulkCandidates','sameWanCandidates','sourceAge','nssAdmissionAllowed']),
@@ -101,8 +102,9 @@ save('evidence/current-runtime.json',{
  'realForwardingABACompleted':False,
  'staleSnapshotRejectedEarlierInRound':False,
  'historicalNss36StaleSnapshotRejection':True,
- 'classifierWorkerRestartObservedThisRound':True,
- 'finalClosure':keys(read('work/nss38/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
+ 'classifierWorkerRestartObservedThisRound':False,
+ 'plannedClassifierReplacementAndRollbackThisRound':True,
+ 'finalClosure':keys(read('work/nss39/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
  'requiresLiveRevalidation':True,
 })
 replay=read('work/nss34/admission-replay-qualified.json')
@@ -133,7 +135,7 @@ save('evidence/nss36-mainline.json',n36)
 save('evidence/nss36-admission-timing.json',read('work/nss36/admission-timing-sanitized.json'))
 save('evidence/nss36-admission-replay.json',keys(read('work/nss36/admission-qualified.json'),['passed','checks','cases','alignmentScenarios','differentialAdmissionCases','capturedTimingCases','adapterSha256','fastSourceSha256','routerWrites','hardwareQualified','scope']))
 n37=read('outputs/nss37-normalizer-observations.json')
-assert n37['localChecks']==9113 and n37['classifier']['committed'] and n37['classifier']['configSha256']==current['configHash']
+assert n37['localChecks']==9113 and n37['classifier']['committed'] and n37['classifier']['configSha256']==read('work/nss37/deployment-latest.json')['configHash']
 assert n37['automaticRollback']['automaticExpiryWithoutControllerRollback']
 assert n37['finalState']['protectedAudit']['ecmClosedAndZero'] and not n37['actualFastPathTrial']['attempted']
 save('evidence/nss37-normalizer.json',n37)
@@ -147,4 +149,9 @@ save('evidence/nss38-loop-timing.json',read('work/nss38/loop-timing-sanitized.js
 save('evidence/nss38-adapter-differential.json',read('work/nss38/traced-adapter-differential-qualified.json'))
 save('evidence/nss38-admission-replay.json',read('work/nss38/traced-admission-qualified.json'))
 save('evidence/nss38-native-syntax.json',read('work/nss38/native-candidate-syntax.json'))
+n39=read('outputs/nss39-mainline-observations.json')
+assert n39['classifier']['committed'] and n39['classifier']['configSha256']==current['configHash']
+assert sum(x['automaticRollbackVerified'] for x in n39['installations'])==3
+assert n39['controller']['boundToCurrentDeployment'] and not n39['actualFastPathTrial']['attempted']
+save('evidence/nss39-mainline.json',n39)
 print(json.dumps({'sourceFiles':len(sources),'codeBytes':sum(s['bytes'] for s in sources),'evidenceFiles':len(list((repo/'evidence').glob('*.json'))),'credentialsCopied':False,'rawCapturesCopied':False}))

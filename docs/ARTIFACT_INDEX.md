@@ -2,6 +2,8 @@
 
 仓库内可直接核对：
 
+- `evidence/nss39-mainline.json`：tc 监督复现/修复、四次安装/三次独立回滚、冷启动拒绝、保留实例、68 项控制器绑定与证据限制。
+
 - `evidence/nss33-summary.json`：关键量化结果、试验退出位置、回滚和结论范围。
 - `evidence/nss33-admission-timing.json`：66 个已脱敏的时序样本，仅保留相对时间、年龄、原因、候选存在性；不是完整包捕获。
 - `evidence/nss34-loop-profile.json`：只读循环的汇总与相对时间分解；不含流元组。
@@ -25,7 +27,10 @@
 | --- | --- |
 | `outputs/nss32-matched-aba-report.html` | 历史受控低负载完整 A/B/A2 |
 | `outputs/nss33-classifier-readiness-report.html` | 上一轮完整报告 |
-| `work/nss37/deployment-latest.json` | 当前常驻分类器部署引用 |
+| `work/nss39/deployment-latest.json` | 当前常驻分类器部署引用 |
+| `work/nss39/affinity-qualified.json` | 当前 68 项绑定；未完成真人闭环 |
+| `outputs/nss39-mainline-report.html` | 最新修复、回滚和准入资格报告 |
+| `work/nss37/deployment-latest.json` | 历史 NSS37 解析器部署引用 |
 | `work/nss35/deployment-latest.json` | 历史地址恢复部署，NSS36 证明仍绑定它 |
 | `work/nss35/address-trial-qualified.json` | 试装修复与 180 秒独立到期回滚 |
 | `outputs/nss35-address-recovery-report.html` | 上轮分类器恢复报告 |
@@ -35,7 +40,7 @@
 | `work/nss38/real-matched-aba-20261003141133-251d83e6/` | 实际 WAN2 失败、回滚与 70 份冻结源码/证明 |
 | `work/nss38/candidate-traced-classifier.lua` | 带时序诊断的未安装准入候选；不能直接视为当前控制器 |
 | `work/nss37/normalizer-trial-qualified.json` | 第一次安装、180 秒独立自动恢复旧解析器/配置的证据 |
-| `work/nss37/affinity-qualified.json` | 当前新配置绑定与 66 项清单；未完成真人高负载验收 |
+| `work/nss37/affinity-qualified.json` | 历史 NSS37 配置绑定与 66 项清单；未完成真人高负载验收 |
 | `work/nss36/real-matched-aba-20261003091409-28454bad/` | 真实 WAN1 尝试、独立回滚、59 份冻结源文件、完整私有证据 |
 | `work/nss36/affinity-qualified.json` | 绑定 NSS35 的候选 source manifest；准备通过不代表真人闭环通过 |
 | `work/nss33/compact-trial-qualified.json` | 分类发布语义与独立 180 秒回滚 |
@@ -43,7 +48,7 @@
 | `work/nss33/admission-rehearsal-20261003071535-private.json` | 66 个准入检查原始样本 |
 | `work/nss34/` | 历史只读定位与 GitHub 建仓记录 |
 | `work/nss35/` | 历史恢复逻辑、测试与部署完整私有证据 |
-| `work/nss37/` | 当前解析优化、测试、部署与完整私有证据；原始连接/配置/检查点不上传 |
+| `work/nss37/` | 历史解析优化、测试、部署与完整私有证据；原始连接/配置/检查点不上传 |
 | `work/nss38/` | 本轮源码、候选、日志与完整私有证据；原始连接、配置、检查点和模块不上传 |
 
 旧 NSS35/NSS33/NSS30/NSS29/NSS28 部署别名仍用于历史证明，不能用来覆盖当前常驻分类器状态。

@@ -1,0 +1,469 @@
+{
+  "round": "NSS39",
+  "generatedAt": "2026-10-03T15:28:05.687Z",
+  "deploymentReference": "work/nss39/deployment-latest.json",
+  "classifier": {
+    "committed": true,
+    "configSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
+    "workerSha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
+    "guardianSha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+    "sourceSha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+    "commitAt": "2026-10-03T15:18:04.782Z"
+  },
+  "change": {
+    "oldWorkerSha256": "2adaa79b4bb6404582c9ae93b25fd63923d934ee91c3d5a71298243dac8959b3",
+    "newWorkerSha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
+    "helperSha256": "77c97286a7b29f8d9f293be8414342093cbf5307d1da2a70fde4c57f397556cf",
+    "onlyTcSupervisionAndFailureDiagnosticsChanged": true,
+    "policySourceScopeAndDeadlinesUnchanged": true,
+    "tcDeadlineSeconds": 2,
+    "outerMutationDeadlineSeconds": 6,
+    "failedCommandStillFatal": true,
+    "noReadFailureRetryAdded": true
+  },
+  "hypothesis": {
+    "detachedTimeoutWatchdogAddsOuterReapLatency": true,
+    "originalNatural143RootCauseProved": false,
+    "officialSource": {
+      "url": "https://busybox.net/downloads/busybox-1.38.0.tar.bz2",
+      "archiveSha256": "34f9ea6ff8636f2c9241153b9114eefa9e65674a45318ae1ef95bb5f31c53bb2",
+      "officialChecksumVerified": true,
+      "executed": false,
+      "runningFirmwarePatchesCompared": false,
+      "files": [
+        {
+          "sourcePath": "coreutils/timeout.c",
+          "localPath": "busybox-1.38.0-timeout.c",
+          "sha256": "985e5125c2f906028177ccc7b67c834de9f5b7b92d9717a33dfa24e4fb487514"
+        },
+        {
+          "sourcePath": "libbb/vfork_daemon_rexec.c",
+          "localPath": "busybox-1.38.0-vfork_daemon_rexec.c",
+          "sha256": "5ad316d72cf37b76b9cf0dbc61b1ca6e73d5111f20c9c278a186288a505517e4"
+        }
+      ]
+    },
+    "runtimeBusybox": "1.38.0",
+    "firmwareSourcePatchesCompared": false
+  },
+  "oldWrapperReproduction": {
+    "rows": [
+      {
+        "seconds": 1.0200000000186265,
+        "name": "normal",
+        "allFixtureDescendantsGone": true,
+        "readFailureReported": false,
+        "outerExit": 0,
+        "outerSeconds": 6
+      },
+      {
+        "seconds": 3.0100000000093132,
+        "name": "inner-query-timeout",
+        "innerExit": 143,
+        "allFixtureDescendantsGone": true,
+        "readFailureReported": true,
+        "outerExit": 1,
+        "outerSeconds": 6
+      },
+      {
+        "seconds": 3.0200000000186265,
+        "name": "outer-maintenance-timeout",
+        "allFixtureDescendantsGone": true,
+        "readFailureReported": false,
+        "outerExit": 124,
+        "outerSeconds": 1
+      }
+    ],
+    "productionFaultInjected": false
+  },
+  "helperChecks": {
+    "localCases": 16,
+    "localCaseNames": [
+      "successful complete output",
+      "partial output and nonzero exit rejected",
+      "delayed output with EAGAIN retained",
+      "stdout overflow even after clean exit rejected",
+      "stderr overflow rejected",
+      "stderr warning with clean exit accepted",
+      "half output cannot mask timeout",
+      "closed output cannot mask running child",
+      "TERM ignoring child killed and reaped",
+      "pipe error terminates then reaps child",
+      "setup failure terminates then reaps child",
+      "partial batch failure not retried",
+      "wait failure remains terminal",
+      "TERM failure remains terminal",
+      "KILL failure remains terminal",
+      "unproved cleanup remains terminal"
+    ],
+    "nativeArgumentCases": 13,
+    "nativeProcessCases": [
+      {
+        "name": "success",
+        "seconds": 0.17999999993480742,
+        "outerExit": 0,
+        "allFixtureChildrenGone": true,
+        "operationSucceeded": true,
+        "diagnostic": null
+      },
+      {
+        "name": "partial-nonzero",
+        "seconds": 0.18000000016763806,
+        "outerExit": 0,
+        "allFixtureChildrenGone": true,
+        "operationSucceeded": false,
+        "diagnostic": "qdisc-read failed; status=exited; code=7; childReaped=true; elapsed=0.010000000009313; [string \"-- Synchronous tc only. The caller is insid...\"]:49: tc command unsuccessful; stderr="
+      },
+      {
+        "name": "stdout-overflow",
+        "seconds": 0.19999999995343387,
+        "outerExit": 0,
+        "allFixtureChildrenGone": true,
+        "operationSucceeded": false,
+        "diagnostic": "qdisc-read failed; status=exited; code=0; childReaped=true; elapsed=0.0099999997764826; [string \"-- Synchronous tc only. The caller is insid...\"]:39: tc stdout exceeded bound; stderr="
+      },
+      {
+        "name": "stderr-overflow",
+        "seconds": 0.18999999994412065,
+        "outerExit": 0,
+        "allFixtureChildrenGone": true,
+        "operationSucceeded": false,
+        "diagnostic": "qdisc-read failed; status=exited; code=0; childReaped=true; elapsed=0.020000000018626; [string \"-- Synchronous tc only. The caller is insid...\"]:39: tc stderr exceeded bound; stderr=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      {
+        "name": "partial-timeout",
+        "seconds": 2.209999999962747,
+        "outerExit": 0,
+        "allFixtureChildrenGone": true,
+        "operationSucceeded": false,
+        "diagnostic": "qdisc-read failed; status=signaled; code=15; childReaped=true; elapsed=2.0100000000093; [string \"-- Synchronous tc only. The caller is insid...\"]:46: tc command exceeded 2 second deadline; stderr="
+      },
+      {
+        "name": "term-ignored-timeout",
+        "seconds": 2.340000000083819,
+        "outerExit": 0,
+        "allFixtureChildrenGone": true,
+        "operationSucceeded": false,
+        "diagnostic": "qdisc-read failed; status=signaled; code=9; childReaped=true; elapsed=2.1599999999162; [string \"-- Synchronous tc only. The caller is insid...\"]:46: tc command exceeded 2 second deadline; stderr="
+      },
+      {
+        "name": "batch-partial-fatal",
+        "seconds": 0.18999999994412065,
+        "outerExit": 0,
+        "allFixtureChildrenGone": true,
+        "operationSucceeded": false,
+        "diagnostic": "filter-batch failed; status=exited; code=8; childReaped=true; elapsed=0.010000000009313; [string \"-- Synchronous tc only. The caller is insid...\"]:49: tc command unsuccessful; stderr="
+      },
+      {
+        "name": "outer-cancel",
+        "seconds": 1.1799999999348074,
+        "outerExit": 124,
+        "allFixtureChildrenGone": true,
+        "operationSucceeded": null,
+        "diagnostic": null
+      }
+    ],
+    "actualTcWriteFaultInjected": false
+  },
+  "readOnlyBenchmark": {
+    "groups": [
+      {
+        "wans": 1,
+        "queriesPerRun": 4,
+        "pairs": 4,
+        "oldCallsMs": 30.000000027939677,
+        "candidateCallsMs": 42.50000003958121,
+        "oldTotalMs": 1037.5000000349246,
+        "candidateTotalMs": 214.9999999674037
+      },
+      {
+        "wans": 5,
+        "queriesPerRun": 20,
+        "pairs": 4,
+        "oldCallsMs": 147.4999999627471,
+        "candidateCallsMs": 229.99999998137355,
+        "oldTotalMs": 1149.9999999650754,
+        "candidateTotalMs": 395.00000001862645
+      }
+    ],
+    "backgroundLan4Mbps": 0.8647130124798716,
+    "pairedSamples": 8,
+    "realTcCommands": true,
+    "configurationWrites": false,
+    "metric": "Complete isolated wrapper wall time including process cleanup, not CPU or forwarding performance"
+  },
+  "installations": [
+    {
+      "attempt": 1,
+      "checkpointVerified": true,
+      "rollbackVerifiedBeforeConfigMutation": true,
+      "independentOfControlConnection": true,
+      "deadlineSeconds": 180,
+      "automaticRollbackVerified": true,
+      "rollbackObservedAt": "2026-10-03T15:09:01.490Z",
+      "committed": false,
+      "reason": "Initial qualification; deliberately allowed independent expiry"
+    },
+    {
+      "attempt": 2,
+      "checkpointVerified": true,
+      "rollbackVerifiedBeforeConfigMutation": true,
+      "independentOfControlConnection": true,
+      "deadlineSeconds": 180,
+      "automaticRollbackVerified": true,
+      "rollbackObservedAt": "2026-10-03T15:12:56.716Z",
+      "committed": false,
+      "reason": "Commit reserve elapsed during local preparation; allowed expiry"
+    },
+    {
+      "attempt": 3,
+      "checkpointVerified": true,
+      "rollbackVerifiedBeforeConfigMutation": true,
+      "independentOfControlConnection": true,
+      "deadlineSeconds": 180,
+      "automaticRollbackVerified": true,
+      "rollbackObservedAt": "2026-10-03T15:17:15.737Z",
+      "committed": false,
+      "reason": "Old publication rejected during cold start; resume later missed unchanged commit reserve; allowed expiry"
+    },
+    {
+      "attempt": 4,
+      "checkpointVerified": true,
+      "rollbackVerifiedBeforeConfigMutation": true,
+      "independentOfControlConnection": true,
+      "deadlineSeconds": 180,
+      "automaticRollbackVerified": false,
+      "committed": true,
+      "reason": "Waited for current producer, sampled and audited within deadline; retained"
+    }
+  ],
+  "independentRollback": {
+    "passed": true,
+    "automaticExpiryWithoutControllerRollback": true,
+    "previousWorkerAndConfigRestored": true
+  },
+  "windows": {
+    "trial": {
+      "samples": 35,
+      "seconds": 17.200000000186265,
+      "lan4DownMbps": 0.25511441860188844,
+      "lan4DownPps": 79.18604651077038,
+      "cpuBusyPercent": 18.847939640162508,
+      "softirqPercent": 5.52814857806152,
+      "timeSqueezeDelta": 1,
+      "allHealthy": true,
+      "producerStable": true,
+      "ecmClosedAndZero": true,
+      "minimumSourceAge": 0.5200000000186265,
+      "maximumSourceAge": 3.1100000001024455,
+      "semantic": {
+        "candidateBytes": 2922,
+        "sequence": 8,
+        "fullBytes": 280987,
+        "candidateFlows": 1,
+        "passed": true,
+        "softwareVerifiedRt": 0,
+        "identityDecisionLeafAndExpiryEqual": true,
+        "fullFlows": 205,
+        "fullSnapshotRetained": true
+      }
+    },
+    "expiredSecondInstall": {
+      "samples": 35,
+      "seconds": 17.239999999990687,
+      "lan4DownMbps": 0.4820872389793788,
+      "lan4DownPps": 93.56148491884404,
+      "cpuBusyPercent": 30.434782608695652,
+      "softirqPercent": 10.722679200940071,
+      "timeSqueezeDelta": 0,
+      "allHealthy": true,
+      "producerStable": true,
+      "ecmClosedAndZero": true,
+      "minimumSourceAge": 0.6399999998975545,
+      "maximumSourceAge": 3.2399999999906868,
+      "semantic": {
+        "candidateBytes": 4419,
+        "sequence": 42,
+        "fullBytes": 328932,
+        "candidateFlows": 2,
+        "passed": true,
+        "softwareVerifiedRt": 2,
+        "identityDecisionLeafAndExpiryEqual": true,
+        "fullFlows": 235,
+        "fullSnapshotRetained": true
+      }
+    },
+    "thirdColdStart": {
+      "samples": 35,
+      "seconds": 17.180000000167638,
+      "lan4DownMbps": 0.17566565773984585,
+      "lan4DownPps": 77.82305005744784,
+      "cpuBusyPercent": 16.799518724620242,
+      "softirqPercent": 1.0377500375996391,
+      "timeSqueezeDelta": 0,
+      "allHealthy": false,
+      "producerStable": false,
+      "ecmClosedAndZero": true,
+      "minimumSourceAge": 0.43000000016763806,
+      "maximumSourceAge": 5.75,
+      "semantic": {
+        "candidateBytes": 1372,
+        "sequence": 1,
+        "fullBytes": 217007,
+        "candidateFlows": 0,
+        "passed": true,
+        "softwareVerifiedRt": 0,
+        "identityDecisionLeafAndExpiryEqual": true,
+        "fullFlows": 160,
+        "fullSnapshotRetained": true
+      }
+    },
+    "thirdAfterWarming": {
+      "samples": 35,
+      "seconds": 17.21999999997206,
+      "lan4DownMbps": 0.191061556330159,
+      "lan4DownPps": 51.62601626024637,
+      "cpuBusyPercent": 17.061540753985994,
+      "softirqPercent": 1.5496945313664134,
+      "timeSqueezeDelta": 0,
+      "allHealthy": true,
+      "producerStable": true,
+      "ecmClosedAndZero": true,
+      "minimumSourceAge": 0.5700000000651926,
+      "maximumSourceAge": 3.290000000037253,
+      "semantic": {
+        "candidateBytes": 5951,
+        "sequence": 48,
+        "fullBytes": 237370,
+        "candidateFlows": 3,
+        "passed": true,
+        "softwareVerifiedRt": 3,
+        "identityDecisionLeafAndExpiryEqual": true,
+        "fullFlows": 169,
+        "fullSnapshotRetained": true
+      }
+    },
+    "retained": {
+      "samples": 35,
+      "seconds": 17.139999999897555,
+      "lan4DownMbps": 2.0451075846096565,
+      "lan4DownPps": 214.41073512380194,
+      "cpuBusyPercent": 19.017779073156515,
+      "softirqPercent": 5.0859807636257655,
+      "timeSqueezeDelta": 0,
+      "allHealthy": true,
+      "producerStable": true,
+      "ecmClosedAndZero": true,
+      "minimumSourceAge": 0.5199999997857958,
+      "maximumSourceAge": 3.0700000000651926,
+      "semantic": {
+        "candidateBytes": 1409,
+        "sequence": 2,
+        "fullBytes": 222869,
+        "candidateFlows": 0,
+        "passed": true,
+        "softwareVerifiedRt": 0,
+        "identityDecisionLeafAndExpiryEqual": true,
+        "fullFlows": 159,
+        "fullSnapshotRetained": true
+      }
+    }
+  },
+  "startup": {
+    "initialObservationRejectedOldProducer": true,
+    "thirdInitialUnhealthySamples": 3,
+    "oldPublicationNeverAuthorized": true,
+    "retentionReadinessCurrentInstallationBound": true,
+    "retentionReadinessProbes": 11
+  },
+  "controller": {
+    "boundToCurrentDeployment": true,
+    "configuration": {
+      "base": "/root/router-project/classifier/nss23-20261002122153-58e283ed",
+      "configSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
+      "workerSha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
+      "guardianSha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+      "classifierCoreSha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+      "ctSourceSha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+      "policyUnchanged": true,
+      "tcChildSupervisionOnly": true,
+      "sourceAndPublicationDeadlinesUnchanged": true,
+      "independentRollbackPreviouslyVerified": true
+    },
+    "sourceManifestEntries": 68,
+    "affinityChecks": 10,
+    "admissionChecks": 230,
+    "renewalLocalChecks": 21,
+    "coreLifecycleChecks": 26,
+    "ownedLifecycleChecks": 19,
+    "nativeConsumerChecks": 17,
+    "nativeAbaCases": 11,
+    "nativeSourceComplete": true,
+    "nativeIoAndClocksMocked": true,
+    "nativeTemporaryStageIndependentlyRemoved": true,
+    "exactTagPolicyRoundtrip": true,
+    "compiledUnits": 11,
+    "stagedBytes": 64231,
+    "stageExecBytes": 8875,
+    "transportExecCeiling": 9000,
+    "adapterSha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0",
+    "fastSha256": "c2fcf006a4f3c2833c51181a3b30f35db20238994eb71d3364f2e5b6bcbb2198",
+    "historicalNss38DifferentialCasesReused": 1470,
+    "historicalInspectionCountChecksReused": 5,
+    "hardwareHighLoadQualified": false
+  },
+  "application": {
+    "observedAt": "2026-10-03T15:25:05.004Z",
+    "gameProcessRunning": false,
+    "steamProcessRunning": true,
+    "actualCs2RtCandidates": 0,
+    "actualSteamBulkCandidates": 0,
+    "sameWanPairs": 0,
+    "nssAdmissionAllowed": false
+  },
+  "finalState": {
+    "auditObservedAt": "2026-10-03T15:28:05.258Z",
+    "protectedAudit": {
+      "passed": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 4,
+      "queryAge": 1.1799999999348074,
+      "sequence": 209,
+      "ecmClosedAndZero": true,
+      "baselineComparisonAllowsOnlyClassifierGenerationAndJournalOwnedSelectors": true
+    },
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-03T15:25:07.144Z",
+      "readonly": true,
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1858652.79
+    },
+    "currentClassifierHealthy": true,
+    "sameProducerSinceRetainedObservation": true,
+    "lastErrorBelongsToCurrentProducer": false,
+    "lastErrorReason": "Earlier uncommitted trial reached fixed rollback deadline",
+    "ecmClosedAndZero": true,
+    "noExperimentalLeafInstalled": true
+  },
+  "actualFastPathTrial": {
+    "attempted": false,
+    "ecmOpened": false,
+    "leafCountersAvailable": false,
+    "acceleratedFlowMarkNatWanTested": false
+  },
+  "limitations": {
+    "realHighLoadABACompleted": false,
+    "nssCpuBenefitProved": false,
+    "gameJitterLossMissCaptured": false,
+    "completeLongTermStabilityQualified": false,
+    "originalNaturalFailureRootCauseProved": false,
+    "monitoringIncludesObserverCost": true,
+    "softwareWindowsLoadMatched": false,
+    "upstreamSubmitted": false
+  }
+}

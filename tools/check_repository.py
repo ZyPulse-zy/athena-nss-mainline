@@ -35,7 +35,7 @@ assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets'
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
 c=json.loads((root/'evidence/current-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
-assert c['round']=='NSS38' and c['deploymentReference']=='work/nss37/deployment-latest.json'
+assert c['round']=='NSS39' and c['deploymentReference']=='work/nss39/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
@@ -50,7 +50,7 @@ assert x['finalState']['previousAuditRejectedStaleSnapshot'] and x['finalState']
 assert not x['limitations']['nssCpuBenefitProved'] and not x['limitations']['gameJitterLossMissCaptured']
 y=json.loads((root/'evidence/nss37-normalizer.json').read_text())
 assert y['localChecks']==9113 and y['differential']['checks']==9087 and y['lifecycle']['checks']==26
-assert y['classifier']['committed'] and y['classifier']['configSha256']==c['classifierConfigSha256']
+assert y['classifier']['committed']
 assert y['change']['onlyAttributeSearchChanged'] and y['change']['sourceScopePolicyAndDeadlinesUnchanged']
 assert hashlib.sha256((root/'code/work/nss35/conntrack-source.lua').read_bytes()).hexdigest()==y['change']['oldSha256']
 assert y['change']['newSha256']==y['classifier']['sourceSha256']==y['differential']['sourceSha256']
@@ -61,12 +61,12 @@ assert sum(len(v['samples']) for v in y['nativeBenchmark']['results'])==16
 assert all(v['allOutputsEqual'] and v['cpuReductionPercent']>20 for v in y['nativeBenchmark']['results'])
 assert all(v['allHealthy'] and v['samples']==35 and v['ecmClosedAndZero'] for v in y['windows'].values())
 assert y['controller']['sourceManifestEntries']==66 and y['controller']['newSyntheticSelectionChecks']==10
-assert y['controller']['configuration']['configSha256']==c['classifierConfigSha256']
+assert y['controller']['configuration']['configSha256']==y['classifier']['configSha256']
 assert y['finalState']['protectedAudit']['ecmClosedAndZero'] and y['finalState']['sameProducerSincePermanentObservation']
 assert not y['actualFastPathTrial']['attempted'] and not y['actualFastPathTrial']['ecmOpened']
 assert not y['limitations']['realHighLoadABACompleted'] and not y['limitations']['nssCpuBenefitProved'] and not y['limitations']['gameJitterLossMissCaptured']
 z=json.loads((root/'evidence/nss38-mainline.json').read_text())
-assert z['deploymentReference']==c['deploymentReference'] and not z['permanentClassifierChanged']
+assert z['deploymentReference']=='work/nss37/deployment-latest.json' and not z['permanentClassifierChanged']
 t=z['actualTrial'];assert t['attempted'] and not t['passed'] and t['rollbackPassed']
 assert t['wan']==2 and t['tcpMark']==t['udpMark']==131072 and t['sameNat']
 assert t['probeCount']==32 and t['readyCount']==0 and sum(t['refusalCounts'].values())==32
@@ -87,4 +87,21 @@ assert z['finalState']['currentClassifierHealthy'] and not z['finalState']['same
 assert z['finalState']['protectedAudit']['ecmClosedAndZero'] and z['finalState']['closure']['passed']
 assert not z['limitations']['realHighLoadABACompleted'] and not z['limitations']['nssCpuBenefitProved']
 assert not z['limitations']['gameJitterLossMissCaptured'] and not z['limitations']['completeHighLoadLifecycleQualified']
+v=json.loads((root/'evidence/nss39-mainline.json').read_text())
+assert v['classifier']['committed'] and v['classifier']['configSha256']==c['classifierConfigSha256']
+assert v['change']['onlyTcSupervisionAndFailureDiagnosticsChanged'] and v['change']['policySourceScopeAndDeadlinesUnchanged']
+assert v['change']['tcDeadlineSeconds']==2 and v['change']['outerMutationDeadlineSeconds']==6 and v['change']['failedCommandStillFatal']
+assert hashlib.sha256((root/'code/deployed-classifier/worker.lua').read_bytes()).hexdigest()==v['classifier']['workerSha256']
+assert len(v['installations'])==4 and sum(i['automaticRollbackVerified'] for i in v['installations'])==3 and v['installations'][-1]['committed']
+assert all(i['checkpointVerified'] and i['rollbackVerifiedBeforeConfigMutation'] and i['deadlineSeconds']==180 for i in v['installations'])
+assert v['helperChecks']['localCases']==16 and v['helperChecks']['nativeArgumentCases']==13 and len(v['helperChecks']['nativeProcessCases'])==8
+assert all(i['allFixtureChildrenGone'] for i in v['helperChecks']['nativeProcessCases'])
+assert v['startup']['thirdInitialUnhealthySamples']==3 and v['startup']['oldPublicationNeverAuthorized']
+assert not v['windows']['thirdColdStart']['allHealthy'] and v['windows']['retained']['allHealthy']
+q=v['controller'];assert q['boundToCurrentDeployment'] and q['configuration']['configSha256']==c['classifierConfigSha256']
+assert q['sourceManifestEntries']==68 and q['admissionChecks']==230 and q['renewalLocalChecks']==21 and q['coreLifecycleChecks']==26 and q['ownedLifecycleChecks']==19
+assert q['nativeConsumerChecks']==17 and q['nativeAbaCases']==11 and q['affinityChecks']==10 and q['exactTagPolicyRoundtrip'] and q['nativeTemporaryStageIndependentlyRemoved']
+assert q['nativeIoAndClocksMocked'] and not q['hardwareHighLoadQualified'] and q['stageExecBytes']<=q['transportExecCeiling']==9000
+assert v['finalState']['ecmClosedAndZero'] and v['finalState']['sameProducerSinceRetainedObservation'] and v['finalState']['closure']['passed']
+assert not v['actualFastPathTrial']['attempted'] and not v['limitations']['realHighLoadABACompleted'] and not v['limitations']['nssCpuBenefitProved'] and not v['limitations']['gameJitterLossMissCaptured']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

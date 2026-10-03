@@ -1,10 +1,395 @@
 {
-  "generatedAt": "2026-10-03T14:45:16.777221+00:00",
+  "generatedAt": "2026-10-03T15:37:48.921128+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
   "binariesIncluded": false,
   "sources": [
+    {
+      "path": "code/work/nss39/prepare.mjs",
+      "workspaceSource": "work/nss39/prepare.mjs",
+      "sha256": "3c0253f08d7c3efb9b97b32a71fbbf8f8694c46d4730dee41d93df0de10421f6",
+      "bytes": 1129,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/original-worker.lua",
+      "workspaceSource": "work/nss39/original-worker.lua",
+      "sha256": "2adaa79b4bb6404582c9ae93b25fd63923d934ee91c3d5a71298243dac8959b3",
+      "bytes": 23175,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/tc-command.lua",
+      "workspaceSource": "work/nss39/tc-command.lua",
+      "sha256": "77c97286a7b29f8d9f293be8414342093cbf5307d1da2a70fde4c57f397556cf",
+      "bytes": 3452,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/tc-command-fixtures.lua",
+      "workspaceSource": "work/nss39/tc-command-fixtures.lua",
+      "sha256": "4498fb8a297c04db1813a493785a05b8bed5a4ec37e06072919d653d9b1b3aa8",
+      "bytes": 3664,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/test-worker.py",
+      "workspaceSource": "work/nss39/test-worker.py",
+      "sha256": "7ed945eabaed3efe02637b25e394456ceacd607a179c7a84705898c93480cfbc",
+      "bytes": 2009,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/build-worker.mjs",
+      "workspaceSource": "work/nss39/build-worker.mjs",
+      "sha256": "00ac9e7d168b790cc7829de2282015cf377cec367c49c6333ff213914bcf15c3",
+      "bytes": 2401,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/test-timeout-path.mjs",
+      "workspaceSource": "work/nss39/test-timeout-path.mjs",
+      "sha256": "e8fa9754e0274f5077d02728b14a0f21bcd74fe0c6a01b3d3b3540fe48569df3",
+      "bytes": 3531,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/inspect-timeout-runtime.mjs",
+      "workspaceSource": "work/nss39/inspect-timeout-runtime.mjs",
+      "sha256": "edb3406456f886cf053662ef094e2a4984bdbaa8e990fb65fa991cefbf9e54a3",
+      "bytes": 427,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/read-busybox-source.py",
+      "workspaceSource": "work/nss39/read-busybox-source.py",
+      "sha256": "512ef7e94ec6d375eb867df383bc42130dd08204c2ea60484c944222585711de",
+      "bytes": 1117,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/test-tc-native.mjs",
+      "workspaceSource": "work/nss39/test-tc-native.mjs",
+      "sha256": "ec828ae5899d46592dd62f003d9f1f3d6bd9009948c6371593cc3a2a40832b97",
+      "bytes": 5720,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/benchmark-tc-readonly.mjs",
+      "workspaceSource": "work/nss39/benchmark-tc-readonly.mjs",
+      "sha256": "3c0927cc5c1fc9bcb0af2a08fe15fd094a451c923533753c66038db47b7c0c17",
+      "bytes": 4500,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/worker.lua",
+      "workspaceSource": "work/nss39/worker.lua",
+      "sha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
+      "bytes": 26794,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/guardian.lua",
+      "workspaceSource": "work/nss39/guardian.lua",
+      "sha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+      "bytes": 4871,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/conntrack-source.lua",
+      "workspaceSource": "work/nss39/conntrack-source.lua",
+      "sha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+      "bytes": 5970,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/prepare-install.mjs",
+      "workspaceSource": "work/nss39/prepare-install.mjs",
+      "sha256": "81229914077854a8cf7c21f9194becd405369dd2bf0a52aae1e9a43f000dc1fc",
+      "bytes": 3807,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/upgrade.mjs",
+      "workspaceSource": "work/nss39/upgrade.mjs",
+      "sha256": "f23d3e4c34b71861de111b83b54c4d190daa8533fa0cecde45c74521a1a7058a",
+      "bytes": 16419,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/verify-rollback.mjs",
+      "workspaceSource": "work/nss39/verify-rollback.mjs",
+      "sha256": "399b07042234cf4921fc2990f4e8a367b59f8655c67518a5cc57f7b8fb71a9fa",
+      "bytes": 3633,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/qualify-trial.mjs",
+      "workspaceSource": "work/nss39/qualify-trial.mjs",
+      "sha256": "a032d2d6322db58336745ea88d6bf6c7fcee6d68a66dba8edc56de9fa55b581e",
+      "bytes": 2460,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/commit-channel.mjs",
+      "workspaceSource": "work/nss39/commit-channel.mjs",
+      "sha256": "a94558d841d26a16ddbd9c37a6c44e3e0b54f6934cd85dbb03780dab22ae0324",
+      "bytes": 4544,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/retain-qualified.mjs",
+      "workspaceSource": "work/nss39/retain-qualified.mjs",
+      "sha256": "de4d7e1d17568dcd4cea327293297c38f704ec049a8698180a1bd70f217d605a",
+      "bytes": 1895,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/wait-current-startup.mjs",
+      "workspaceSource": "work/nss39/wait-current-startup.mjs",
+      "sha256": "49c861bf391c37063b2cf45e68cc3e4c6ab0950f1220f77221057a04e8461177",
+      "bytes": 2615,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/cancel-restored-stage.mjs",
+      "workspaceSource": "work/nss39/cancel-restored-stage.mjs",
+      "sha256": "7e9d51b626437d65721b3c84e1ce943494fd3dbcf7402c60b7e59fda6ca193d4",
+      "bytes": 741,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/observe-compact.mjs",
+      "workspaceSource": "work/nss39/observe-compact.mjs",
+      "sha256": "0f4c075a5beb0ab609dac8744a7817fdbc4cef0576ac79473ed412ed56306c38",
+      "bytes": 4149,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/deployment-audit.mjs",
+      "workspaceSource": "work/nss39/deployment-audit.mjs",
+      "sha256": "ac1a6b3a1a5089180ab6892c487643a984342ae252267ced5db3bdb57691b9de",
+      "bytes": 2298,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/current-audit.mjs",
+      "workspaceSource": "work/nss39/current-audit.mjs",
+      "sha256": "0da2f25cd7f392c6d2212841f6bd09841d4918ba05e13748ef78b2cecedb4c29",
+      "bytes": 2289,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/inspect-classifier.mjs",
+      "workspaceSource": "work/nss39/inspect-classifier.mjs",
+      "sha256": "f2acade41a8d0c00aa69c8eb9d552fb636c485d69745efd6cb0b9655fbc44584",
+      "bytes": 1767,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/final-closure.mjs",
+      "workspaceSource": "work/nss39/final-closure.mjs",
+      "sha256": "5e81ce7344f31a8f43aaa5fc5fdf2712d12466da7cfb3a19d35d511b7c5b6785",
+      "bytes": 2057,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/prepare-mainline.mjs",
+      "workspaceSource": "work/nss39/prepare-mainline.mjs",
+      "sha256": "3cfa59cc094d1dcdd8d59d822e1290b06038a964b998d59bd328f4030927d5fe",
+      "bytes": 5064,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/binding.mjs",
+      "workspaceSource": "work/nss39/binding.mjs",
+      "sha256": "823ae9a49b6d30c7fe697fc5b107912a8398c7c8cd20410474c1ec043d672f84",
+      "bytes": 2154,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/classifier.lua",
+      "workspaceSource": "work/nss39/classifier.lua",
+      "sha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0",
+      "bytes": 15560,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/fast-path.lua",
+      "workspaceSource": "work/nss39/fast-path.lua",
+      "sha256": "c2fcf006a4f3c2833c51181a3b30f35db20238994eb71d3364f2e5b6bcbb2198",
+      "bytes": 12438,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/core-guard-phase.lua",
+      "workspaceSource": "work/nss39/core-guard-phase.lua",
+      "sha256": "829bd226104e7edbbffd59431d9ab32bee8381979d3dfd86acc227bf992767a8",
+      "bytes": 5000,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/classified-tags.lua",
+      "workspaceSource": "work/nss39/classified-tags.lua",
+      "sha256": "04e09a8ab05be9376163c99f5c0921b59299c392c89e4fb00632c0873fe691ba",
+      "bytes": 3738,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/qos-physical.lua",
+      "workspaceSource": "work/nss39/qos-physical.lua",
+      "sha256": "ad8a46064e6f924c7e4f282ba8a576cc29a290573172f54604ce5e595a52b4c8",
+      "bytes": 8402,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/tag-normalizer.lua",
+      "workspaceSource": "work/nss39/tag-normalizer.lua",
+      "sha256": "717df9fdffcf343789b97ba164c5a308a36efb017d5d2db3b3db3fc52f1f39c1",
+      "bytes": 4841,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/wan-scope.lua",
+      "workspaceSource": "work/nss39/wan-scope.lua",
+      "sha256": "915f7e965ca580c530d95525b57863e6bf5da089057a0d54b26eb9c03ebb4f7d",
+      "bytes": 3324,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/state-node.lua",
+      "workspaceSource": "work/nss39/state-node.lua",
+      "sha256": "ed1473e9469be00972c3b02c3be35143a05ca8e37f2a366924165e37ca26a45f",
+      "bytes": 2234,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/module-stage-guardian.lua",
+      "workspaceSource": "work/nss39/module-stage-guardian.lua",
+      "sha256": "21019046f80dd7f3b9c158ac9cafc86fab0fc139ed1be23f7735a85d13de0900",
+      "bytes": 12565,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/read-prerequisites.lua",
+      "workspaceSource": "work/nss39/read-prerequisites.lua",
+      "sha256": "a4da4bbc1967105ff13c22faad4187bfbba86446d05832f44e1075d5f7fd88be",
+      "bytes": 2447,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/aba-fixtures.lua",
+      "workspaceSource": "work/nss39/aba-fixtures.lua",
+      "sha256": "fa16d8f0c0a2fdcfbe8dd3ade6e8d53820c6cb72496e568ce16055358a6e671d",
+      "bytes": 7568,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/pair-policy.mjs",
+      "workspaceSource": "work/nss39/pair-policy.mjs",
+      "sha256": "ed7b8acef9c5d581881e434f5359fd928a7df765daf076f093444ecf48961ca4",
+      "bytes": 1073,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/payload.mjs",
+      "workspaceSource": "work/nss39/payload.mjs",
+      "sha256": "7f11fd75c9f1425e819235975df663bd8b713516ed09756ff9643b18496ed9a8",
+      "bytes": 1792,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/module-stage.mjs",
+      "workspaceSource": "work/nss39/module-stage.mjs",
+      "sha256": "9140c171b8dda60c640bc8a2662ab15b196db31d0a01adab2ef754c588b93a9f",
+      "bytes": 15492,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/real-session.mjs",
+      "workspaceSource": "work/nss39/real-session.mjs",
+      "sha256": "2760ec686658ff9f47c91e17d0a0496ff4de3a55f7c0356f003ba5a578817316",
+      "bytes": 9785,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/read-real-candidates.mjs",
+      "workspaceSource": "work/nss39/read-real-candidates.mjs",
+      "sha256": "60e2eaba16c98d765b9bf7fddff76321146ea34b495a323475396a83575ad9d5",
+      "bytes": 5606,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/preflight-mainline.mjs",
+      "workspaceSource": "work/nss39/preflight-mainline.mjs",
+      "sha256": "0c860239ca76ebf6a04f71be3bd7fc351b265eb5a5781d9a84f453c15bc7bdc9",
+      "bytes": 6203,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/qualification.mjs",
+      "workspaceSource": "work/nss39/qualification.mjs",
+      "sha256": "d94c24032692c5503f64f457a1f10bd165048cc16f0689dd2f0f2e1a85926911",
+      "bytes": 1600,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/qualify-affinity.mjs",
+      "workspaceSource": "work/nss39/qualify-affinity.mjs",
+      "sha256": "047cebc36c6a7834ca9c38182eabcb452ed89ffdb698960d325e21afe8ffed8e",
+      "bytes": 4437,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/test-admission.py",
+      "workspaceSource": "work/nss39/test-admission.py",
+      "sha256": "73a822489bbea0a8ba4dfa62383a93b866e807acef4977a26a58ea53ce08e83e",
+      "bytes": 9673,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/test-consumer-local.py",
+      "workspaceSource": "work/nss39/test-consumer-local.py",
+      "sha256": "59f1121ec3153c26f85c661d6c5bb50fab35f96fc75ae7c8b6a44deb6d8be25e",
+      "bytes": 2677,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/test-lifecycle.py",
+      "workspaceSource": "work/nss39/test-lifecycle.py",
+      "sha256": "8a8d02905ff3fe5128c80d8c0a8b66045e6e65c9899380bcd8ecd4e19c38d3cb",
+      "bytes": 3439,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/test-owned-lifecycle.py",
+      "workspaceSource": "work/nss39/test-owned-lifecycle.py",
+      "sha256": "95cde8c69fe145481e691865997346514eaa5463be828bb87a020368435a33f7",
+      "bytes": 1791,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/native-qualification.mjs",
+      "workspaceSource": "work/nss39/native-qualification.mjs",
+      "sha256": "02b4a14e980535480559d7cc791385ed15dd74d682e1c93cc22bc29ef76782d5",
+      "bytes": 5876,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/summarize.mjs",
+      "workspaceSource": "work/nss39/summarize.mjs",
+      "sha256": "c6d1d9ee703d80f51e1751ee5548e6c4b168bf0bf087e339747a7e294abd8bdc",
+      "bytes": 8474,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss39/render-report.mjs",
+      "workspaceSource": "work/nss39/render-report.mjs",
+      "sha256": "c4523f6489cbeabe690e9e28c4b187af5639a661662526515bcb451f0af039aa",
+      "bytes": 8355,
+      "role": "experimental-source-or-test"
+    },
     {
       "path": "code/work/nss38/current-audit.mjs",
       "workspaceSource": "work/nss38/current-audit.mjs",
@@ -1323,7 +1708,7 @@
     },
     {
       "path": "code/deployed-classifier/conntrack-source.lua",
-      "workspaceSource": "work/nss37/conntrack-source.lua",
+      "workspaceSource": "work/nss39/conntrack-source.lua",
       "sha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
       "bytes": 5970,
       "role": "matches-current-deployed-config-hash"
@@ -1344,14 +1729,14 @@
     },
     {
       "path": "code/deployed-classifier/worker.lua",
-      "workspaceSource": "work/nss37/worker.lua",
-      "sha256": "2adaa79b4bb6404582c9ae93b25fd63923d934ee91c3d5a71298243dac8959b3",
-      "bytes": 23175,
+      "workspaceSource": "work/nss39/worker.lua",
+      "sha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
+      "bytes": 26794,
       "role": "matches-current-deployed-config-hash"
     },
     {
       "path": "code/deployed-classifier/guardian.lua",
-      "workspaceSource": "work/nss37/guardian.lua",
+      "workspaceSource": "work/nss39/guardian.lua",
       "sha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
       "bytes": 4871,
       "role": "matches-current-deployed-config-hash"
