@@ -1,0 +1,436 @@
+{
+  "round": "NSS35",
+  "updatedAt": "2026-10-03T08:47:26.057Z",
+  "hypothesis": "A bounded address-query data failure can withdraw candidates and recover in place without a classifier respawn, provided runner cleanup is proven.",
+  "change": "Only the address-query collector and its typed worker/guardian degradation path. Existing conntrack collection, classification policy, PBR/NAT, NSS admission deadlines and qdiscs are unchanged.",
+  "checks": 136,
+  "testParts": [
+    {
+      "file": "recovery-qualified.json",
+      "checks": 46,
+      "scope": "Actual policy and worker recovery branch in Lua 5.1. Mocked publication, history reset and owned-rule recovery; not real fault injection into the permanent service.",
+      "cases": [
+        "address timeout is retryable only after confirmed runner cleanup",
+        "missing kind is fatal",
+        "missing reason is fatal",
+        "missing limit is fatal",
+        "missing exitCode is fatal",
+        "missing queryCleanupCompleted is fatal",
+        "unproved runner exit -1 is fatal",
+        "unproved runner exit 0.5 is fatal",
+        "unproved runner exit 2 is fatal",
+        "unproved runner exit 3 is fatal",
+        "unproved runner exit 125 is fatal",
+        "unproved runner exit 126 is fatal",
+        "unproved runner exit 127 is fatal",
+        "unproved runner exit 256 is fatal",
+        "typed stdout-overflow can recover after cleanup",
+        "typed stderr-overflow can recover after cleanup",
+        "typed pipe-timeout can recover after cleanup",
+        "typed wait-timeout can recover after cleanup",
+        "typed command-exit can recover after cleanup",
+        "typed invalid-json can recover after cleanup",
+        "unknown failure stays terminal",
+        "untyped errors cannot claim child cleanup",
+        "existing conntrack overflow remains recoverable",
+        "obsolete conntrack cap is rejected",
+        "fresh recovered degradation preserves process but denies data health",
+        "guardian rejects missing baselineRecoveryComplete",
+        "guardian rejects missing queryCleanupCompleted",
+        "guardian rejects missing limit",
+        "guardian rejects missing reason",
+        "guardian rejects missing exitCode",
+        "guardian rejects malformed heartbeat atUptime",
+        "guardian rejects malformed heartbeat atUptime",
+        "guardian rejects malformed heartbeat status",
+        "guardian rejects malformed heartbeat dataHealthy",
+        "guardian rejects malformed heartbeat nssPermit",
+        "guardian rejects malformed heartbeat error",
+        "guardian rejects malformed heartbeat snapshot",
+        "first failure discards history and recovers only owned rules",
+        "candidate withdrawal precedes baseline cleanup and confirmation",
+        "degraded publication preserves bounded failure reason",
+        "repeated failure retries once each poll without repeated rule cleanup",
+        "CT overflow in same episode retains confirmed recovery and strict guardian fields",
+        "complete fresh observation can leave degradation",
+        "foreign transaction defers cleanup and cannot claim recovery",
+        "ownership recovery performs exact cleanup before healthy degraded heartbeat",
+        "unknown errors retain original terminal path"
+      ]
+    },
+    {
+      "file": "query-local-qualified.json",
+      "checks": 11,
+      "scope": "Actual address collector and recovery policy with mocked process, pipe and time APIs. Tests unsafe child states without killing any real process.",
+      "cases": [
+        "complete query is returned",
+        "pipe-timeout requires confirmed cancellation and reap",
+        "wait-timeout requires confirmed cancellation and reap",
+        "signaled runner cannot enter recoverable state",
+        "unknown child status cannot enter recoverable state",
+        "cancellation failed cannot enter recoverable state",
+        "cleanup deadline exceeded cannot enter recoverable state",
+        "runner exec failure cannot enter recoverable state",
+        "partial output never reuses previous complete inventory",
+        "malformed address root rejected",
+        "missing global IPv4 address rejected"
+      ]
+    },
+    {
+      "file": "query-native-qualified.json",
+      "checks": 11,
+      "scope": "Actual target Lua/nixio and existing group runner; RAM-only child fixtures, no classifier service or network state mutation",
+      "cases": [
+        {
+          "seconds": 0.17999999993480742,
+          "name": "real-address-inventory",
+          "passed": true
+        },
+        {
+          "seconds": 0.17999999993480742,
+          "name": "complete-json",
+          "passed": true
+        },
+        {
+          "seconds": 2.169999999925494,
+          "name": "timeout-after-partial-output",
+          "exitCode": 124,
+          "passed": true,
+          "reason": "command-exit"
+        },
+        {
+          "seconds": 2.1600000001490116,
+          "name": "timeout-cleans-descendant-group",
+          "exitCode": 124,
+          "passed": true,
+          "reason": "command-exit"
+        },
+        {
+          "seconds": 0.17999999993480742,
+          "name": "child-exit-143",
+          "exitCode": 143,
+          "passed": true,
+          "reason": "command-exit"
+        },
+        {
+          "seconds": 0.17999999993480742,
+          "name": "partial-json-exit-zero",
+          "exitCode": 0,
+          "passed": true,
+          "reason": "invalid-json"
+        },
+        {
+          "seconds": 0.17999999993480742,
+          "name": "wrong-json-type",
+          "exitCode": 0,
+          "passed": true,
+          "reason": "invalid-json"
+        },
+        {
+          "seconds": 0.18000000016763806,
+          "name": "wrong-address-schema",
+          "exitCode": 0,
+          "passed": true,
+          "reason": "invalid-json"
+        },
+        {
+          "seconds": 0.18999999994412065,
+          "name": "stdout-overflow",
+          "exitCode": 143,
+          "passed": true,
+          "reason": "stdout-overflow"
+        },
+        {
+          "seconds": 0.1699999999254942,
+          "name": "stderr-overflow",
+          "exitCode": 143,
+          "passed": true,
+          "reason": "stderr-overflow"
+        },
+        {
+          "seconds": 0.17999999993480742,
+          "name": "reserved-runner-failure",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "file": "history-native-qualified.json",
+      "checks": 13,
+      "scope": "Exact deployed observer with synthetic conntrack rows and address failure; actual Lua/jsonc, no service mutation.",
+      "cases": [
+        "cold start does not import RT",
+        "cold TCP not granted",
+        "one good sample is insufficient",
+        "large TCP rate maps to bulk",
+        "two good UDP samples qualify RT",
+        "RT and bulk tags are exact NSS leaf handles",
+        "metadata alone never grants NSS",
+        "failed address discovery propagates without publishing a flow snapshot",
+        "address-failure history discard rewarms admitted RT",
+        "address failure does not reset source sequence",
+        "RT returns after two new complete good samples",
+        "address-failure reset preserves active bulk cooldown",
+        "new address inventory cannot reuse stale NAT addresses"
+      ]
+    },
+    {
+      "file": "projection-qualified.json",
+      "checks": 55,
+      "scope": "Native Lua/jsonc, unchanged NSS32 consumer, projection and exact retirement planning",
+      "cases": [
+        "bulk TCP and RT UDP use exact different leaves",
+        "metadata and compiled tags never grant NSS permission",
+        "full PBR marks preserved",
+        "unchanged class keeps original bounded epoch",
+        "fresh snapshots never extend an existing immutable kernel epoch",
+        "unhealthy status denies pair",
+        "wrong generation denies pair",
+        "wrong boot denies pair",
+        "wrong config hash denies pair",
+        "wrong PID denies pair",
+        "wrong starttime denies pair",
+        "producer restart denies pair",
+        "stopped classifier denies pair",
+        "guardian unhealthy denies pair",
+        "wrong worker argv denies pair",
+        "dead process denies pair",
+        "failed query denies pair",
+        "foreign source command denies pair",
+        "foreign query zone denies pair",
+        "future source denies pair",
+        "old source denies pair",
+        "duplicate identity denies pair",
+        "key/CT identity mismatch denies pair",
+        "NAT upload mismatch denies pair",
+        "forged leaf denies pair",
+        "metadata grants permission denies pair",
+        "invented kernel pin denies pair",
+        "missing source ID denies pair",
+        "selected mark change denies pair",
+        "selected NAT change denies pair",
+        "unauthorized client denies pair",
+        "pre-learning epoch too old denies pair",
+        "RT class exit retires only affected UDP slot",
+        "retirement never flushes CT or changes tags before firmware retirement",
+        "old UDP exit revokes its epoch",
+        "classifier death retires both controlled slots",
+        "immutable deadline retires both slots",
+        "all and only bulk/admitted RT retained from 402 flows",
+        "full source snapshot remains byte-for-byte unchanged",
+        "selected identities and decisions are not reconstructed",
+        "source sequence and timestamps unchanged",
+        "native consumer accepts compact publication without granting permission",
+        "projection does not extend pre-learning freshness",
+        "class exit omitted from projection still exactly retires UDP",
+        "projected class exit never flushes conntrack",
+        "exited UDP is absent immediately",
+        "unadmitted RT is excluded",
+        "warming/degraded/error publications retain no snapshot",
+        "malformed projection input refused",
+        "malformed projection input refused",
+        "malformed projection input refused",
+        "malformed projection input refused",
+        "target jsonc retains projected flows and provenance",
+        "degraded address data cannot admit an NSS pair",
+        "missing snapshot cannot reuse an earlier epoch"
+      ]
+    }
+  ],
+  "classifier": {
+    "committed": true,
+    "deploymentReference": "work/nss35/deployment-latest.json",
+    "configSha256": "c28e6daaecba7423113d20ddbacf138efb08c4572b880af761e52af38bb8b812",
+    "workerSha256": "2adaa79b4bb6404582c9ae93b25fd63923d934ee91c3d5a71298243dac8959b3",
+    "guardianSha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+    "commitAt": "2026-10-03T08:32:21.757Z",
+    "latestAuditAt": "2026-10-03T08:46:21.528Z",
+    "producerMatchesPermanentObservation": true,
+    "sameProducerObservationSpanSeconds": 860.589999999851
+  },
+  "trial": {
+    "samples": 35,
+    "seconds": 17.170000000158325,
+    "lan4Mbps": 0.920751077452197,
+    "lan4Pps": 138.43913803017367,
+    "cpuBusyPercent": 19.12776232986975,
+    "softirqPercent": 5.312454266061759,
+    "timeSqueezeDelta": 0,
+    "allHealthy": true,
+    "singleProducer": true,
+    "sourceAgeRangeSeconds": [
+      0.5700000000651926,
+      3.1500000001396984
+    ],
+    "projectionSemantic": {
+      "candidateBytes": 4449,
+      "sequence": 5,
+      "fullBytes": 144439,
+      "candidateFlows": 2,
+      "passed": true,
+      "softwareVerifiedRt": 2,
+      "identityDecisionLeafAndExpiryEqual": true,
+      "fullFlows": 103,
+      "fullSnapshotRetained": true
+    }
+  },
+  "permanentObservation": {
+    "samples": 35,
+    "seconds": 17.139999999897555,
+    "lan4Mbps": 0.933113185536499,
+    "lan4Pps": 138.3313885655876,
+    "cpuBusyPercent": 17.095699576014535,
+    "softirqPercent": 1.28709872804361,
+    "timeSqueezeDelta": 0,
+    "allHealthy": true,
+    "singleProducer": true,
+    "sourceAgeRangeSeconds": [
+      0.36999999987892807,
+      3.050000000046566
+    ],
+    "projectionSemantic": {
+      "candidateBytes": 4447,
+      "sequence": 9,
+      "fullBytes": 155753,
+      "candidateFlows": 2,
+      "passed": true,
+      "softwareVerifiedRt": 2,
+      "identityDecisionLeafAndExpiryEqual": true,
+      "fullFlows": 111,
+      "fullSnapshotRetained": true
+    }
+  },
+  "automaticRollback": {
+    "passed": true,
+    "observedAt": "2026-10-03T08:30:36.864Z",
+    "deadlineSeconds": 180,
+    "controllerDidNotCallRollback": true,
+    "oldWorkerAndConfigRestored": true,
+    "oldClassifierHealthy": true
+  },
+  "queryFixtures": {
+    "allFixtureDescendantsGone": true,
+    "cases": [
+      {
+        "seconds": 0.17999999993480742,
+        "name": "real-address-inventory",
+        "passed": true
+      },
+      {
+        "seconds": 0.17999999993480742,
+        "name": "complete-json",
+        "passed": true
+      },
+      {
+        "seconds": 2.169999999925494,
+        "name": "timeout-after-partial-output",
+        "exitCode": 124,
+        "passed": true,
+        "reason": "command-exit"
+      },
+      {
+        "seconds": 2.1600000001490116,
+        "name": "timeout-cleans-descendant-group",
+        "exitCode": 124,
+        "passed": true,
+        "reason": "command-exit"
+      },
+      {
+        "seconds": 0.17999999993480742,
+        "name": "child-exit-143",
+        "exitCode": 143,
+        "passed": true,
+        "reason": "command-exit"
+      },
+      {
+        "seconds": 0.17999999993480742,
+        "name": "partial-json-exit-zero",
+        "exitCode": 0,
+        "passed": true,
+        "reason": "invalid-json"
+      },
+      {
+        "seconds": 0.17999999993480742,
+        "name": "wrong-json-type",
+        "exitCode": 0,
+        "passed": true,
+        "reason": "invalid-json"
+      },
+      {
+        "seconds": 0.18000000016763806,
+        "name": "wrong-address-schema",
+        "exitCode": 0,
+        "passed": true,
+        "reason": "invalid-json"
+      },
+      {
+        "seconds": 0.18999999994412065,
+        "name": "stdout-overflow",
+        "exitCode": 143,
+        "passed": true,
+        "reason": "stdout-overflow"
+      },
+      {
+        "seconds": 0.1699999999254942,
+        "name": "stderr-overflow",
+        "exitCode": 143,
+        "passed": true,
+        "reason": "stderr-overflow"
+      },
+      {
+        "seconds": 0.17999999993480742,
+        "name": "reserved-runner-failure",
+        "passed": true
+      }
+    ],
+    "checks": 11,
+    "scope": "Actual target Lua/nixio and existing group runner; RAM-only child fixtures, no classifier service or network state mutation",
+    "productionFaultInjected": false,
+    "passed": true,
+    "routerConfigurationWrites": false,
+    "observedAt": "2026-10-03T08:30:07.995Z",
+    "querySha256": "3820ace7b6ac3c03e87f1274ddecbf55a04edffb33f479edc9f1e355b9773be3",
+    "runnerSha256": "2854059fc58fc304cee00bf2467a2d1725f836828c99aa3b8c6e53b4b3dc73e2",
+    "execBytes": 7174,
+    "runnerSourceSha256": "35d47f40a3c3f3d4afbf5420a1d615c64e922bd88d45c946425e7066bce985ac"
+  },
+  "protectedAudit": {
+    "passed": true,
+    "configurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "ecmClosedAndZero": true,
+    "selectors": 4
+  },
+  "closure": {
+    "passed": true,
+    "observedAt": "2026-10-03T08:46:21.528Z",
+    "readonly": true,
+    "noActiveRootTransaction": true,
+    "noNssStagingDirectory": true,
+    "noExperimentStateNodeDirectory": true,
+    "noExperimentalGateOrQdiscModule": true,
+    "uptime": 1834727.19
+  },
+  "safety": {
+    "newCheckpointForEachInstall": true,
+    "detachedStagingGuard": true,
+    "independentTransactionGuard": true,
+    "softwareRecoveryTargetsOnlyOwnedFilters": true,
+    "fullConntrackFlush": false,
+    "productionQdiscRebuild": false,
+    "wanModeChanged": false,
+    "nssGateOrQdiscLoaded": false
+  },
+  "limitations": {
+    "productionAddressFailureInjected": false,
+    "underlyingBlockingOrSignalCauseProved": false,
+    "originalAddressStallNaturallyReproduced": false,
+    "highLoadABACompleted": false,
+    "highLoadCpuBenefitProved": false,
+    "cs2JitterLossMissCaptured": false,
+    "longTermStabilityQualified": false,
+    "fullNewVersionCrashPortLifecycleRequalified": false,
+    "smallNativeFixtureLoopNotProductionServiceFault": true
+  },
+  "next": "Rebind the mainline NSS controller to the current committed config and revalidate full lifecycle/admission offline before one concentrated real CS2 plus Steam single-WAN trial. Do not reuse NSS33 live qualification against NSS35."
+}

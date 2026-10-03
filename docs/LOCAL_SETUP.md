@@ -12,14 +12,16 @@ Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/
 
 预期 87 项检查通过；这些检查证明准入逻辑和诊断边界，不是现场 NSS 性能验收。
 
+另外，`python tools/replay_classifier_recovery.py --wsl-runtime <runtime/usr>` 可独立回放 57 项地址失败恢复与不安全子进程状态检查，使用模拟进程/时间/发布，不访问路由器；输出保存在 `.local/`。
+
 ## 先读与只读核验
 
 在完整私有工作区运行现有入口前，先检查源文件哈希和作用范围：
 
-- `work/nss33/operational-audit.mjs <new-label>`：核验现网与分类器；输出保存在当前部署目录，使用新标签避免覆盖历史证明。
-- `work/nss34/read-real-candidates.mjs`：只读关联 PC 进程 socket 和当前候选；不生成流量。
-- `work/nss34/final-closure.mjs`：核验无实验事务/模块/状态残留。
-- `work/nss33/real-session.mjs`：默认 inspect；`aba` 会变更现网，只能在全部约束通过后使用。
+- `work/nss35/operational-audit.mjs <new-label>`：核验现网与分类器；输出保存在当前部署目录，使用新标签避免覆盖历史证明。
+- 新一轮真实候选读取器须先绑定 NSS35 当前配置。旧 `work/nss34/read-real-candidates.mjs` 保留为历史入口，不直接用于新部署验收。
+- `work/nss35/final-closure.mjs`：核验无实验事务/模块/状态残留。
+- `work/nss33/real-session.mjs`：旧现场控制器，资格绑定 NSS33。不能直接拿它运行当前 NSS35 的 `aba`；先在新轮次重新生成当前配置的资格。
 
 连接封装使用本机已保存的认证。不要把密码、密钥、令牌或认证文件内容粘进对话、日志或仓库。
 

@@ -2,6 +2,8 @@
 
 先读 `docs/STATE.md`、`docs/PLAN.md`、最近一轮 `docs/EXPERIMENT_LOG.md`。用户在对话中的新指示优先；不能把历史授权或证据扩展到新的危险动作。
 
+当前常驻引用是私有工作区 `work/nss35/deployment-latest.json`。NSS33 的 live qualification 绑定旧配置；新一轮先重新绑定与核验，不能直接沿用旧资格操作当前部署。
+
 ## 主线与证据
 
 - 主线只有：自动分类 → NSS bulk/RT leaf → 真人 CS2 + Steam 单 WAN 闭环。

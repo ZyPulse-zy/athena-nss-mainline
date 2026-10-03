@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-10-03T08:02:27.184796+00:00",
-  "round": "NSS34",
-  "deploymentReference": "work/nss33/deployment-latest.json",
-  "classifierConfigSha256": "73e3cf79c4f4e6116046512f9d84cc939da323bf53c5023f70bbb92daeaa5f6d",
+  "checkedAt": "2026-10-03T08:46:20.486948+00:00",
+  "round": "NSS35",
+  "deploymentReference": "work/nss35/deployment-latest.json",
+  "classifierConfigSha256": "c28e6daaecba7423113d20ddbacf138efb08c4572b880af761e52af38bb8b812",
   "deployedTextSources": [
     {
       "name": "classifier-core.lua",
@@ -26,12 +26,12 @@
     },
     {
       "name": "worker.lua",
-      "sha256": "5b43928bc09a66558f8cd57e81cbaf442f2bcfc7345118b2a2ea8a7b3ed3bf68",
+      "sha256": "2adaa79b4bb6404582c9ae93b25fd63923d934ee91c3d5a71298243dac8959b3",
       "included": true
     },
     {
       "name": "guardian.lua",
-      "sha256": "744348360eaeb2be98efdf93341bba00067a9304701502f70e2b7a9451739a25",
+      "sha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
       "included": true
     },
     {
@@ -72,12 +72,12 @@
     "passed": true,
     "protectedConfigurationUnchanged": true,
     "exactOwnedNativeAudit": true,
-    "selectors": 6,
-    "queryAge": 2.2600000000093132,
-    "sequence": 43,
+    "selectors": 4,
+    "queryAge": 1.4499999999534339,
+    "sequence": 295,
     "ecmClosedAndZero": true
   },
-  "applicationObservation": {
+  "priorApplicationObservation": {
     "observedAt": "2026-10-03T07:41:26.657Z",
     "readonly": true,
     "gameProcessRunning": true,
@@ -88,9 +88,10 @@
     "sourceAge": 0.6500000001396984,
     "nssAdmissionAllowed": false
   },
+  "freshApplicationPairCheckedThisRound": false,
   "finalClosure": {
     "passed": true,
-    "observedAt": "2026-10-03T08:02:26.415Z",
+    "observedAt": "2026-10-03T08:46:21.528Z",
     "readonly": true,
     "noActiveRootTransaction": true,
     "noNssStagingDirectory": true,

@@ -32,4 +32,11 @@ s=json.loads((root/'evidence/nss33-summary.json').read_text())
 assert s['realTrial']['passed'] is False and s['realTrial']['rollbackPassed'] is True
 assert not s['nssHighLoadCpuBenefitProved'] and not s['cs2JitterLossMissCaptured']
 assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets']==0
+n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
+c=json.loads((root/'evidence/current-runtime.json').read_text())
+assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
+assert c['classifierConfigSha256']==n['classifier']['configSha256']
+assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
+assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
+assert not n['limitations']['cs2JitterLossMissCaptured']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))
