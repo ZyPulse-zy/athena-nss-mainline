@@ -39,4 +39,13 @@ assert c['classifierConfigSha256']==n['classifier']['configSha256']
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
+x=json.loads((root/'evidence/nss36-mainline.json').read_text())
+assert x['checks']==299 and x['controller']['configuration']['configSha256']==c['classifierConfigSha256']
+t=x['actualTrial']
+assert t['attempted'] and not t['passed'] and not t['matchedForwardingABACompleted'] and t['rollbackPassed']
+assert t['probeCount']==44 and t['readyCount']==0 and sum(t['refusalCounts'].values())==44
+assert t['physicalLan4QosTreePrepared'] and not t['packetTagRulesInstalled'] and not t['gateModuleLoaded'] and not t['nssPermissionGranted']
+assert t['bulkLeaf']['packets']==t['rtLeaf']['packets']==0
+assert x['finalState']['previousAuditRejectedStaleSnapshot'] and x['finalState']['subsequentAuditPassed'] and x['finalState']['ecmClosedAndZero']
+assert not x['limitations']['nssCpuBenefitProved'] and not x['limitations']['gameJitterLossMissCaptured']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

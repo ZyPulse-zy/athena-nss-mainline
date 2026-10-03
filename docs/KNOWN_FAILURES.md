@@ -16,9 +16,21 @@
 
 ## LOCAL-ADMISSION-001：通用超时文案掩盖具体准入原因
 
-状态：87 项离线检查通过，诊断候选已准备，真实失败根因仍未确定。
+状态：NSS36 精确拒绝处理已通过 212 项准入检查；新真实尝试记录 44 次时间余量拒绝。NSS33 历史失败仍不回溯归因为同一原因。
 
 - 缺少所选 RT 候选、来源过旧，均可能最终报 `Insufficient fresh-classifier margin for complete ABA`。
 - 原失败没有逐次拒绝记录。不能从这一句推断 CPU 性能不足。
-- 当前候选保留 `initialAlignment.probes`，其中记录每次时间、布尔结果、具体原因。回放已验证这能显示内部候选拒绝。
+- NSS36 保留 `initialAlignment.probes`，记录时间、结果、原因与 retryable。只有三种精确的本地时间余量失败可以重试；所选身份/类别先核验，其它错误立即结束这次尝试。
+- 108 组新旧差分和 66 历史包络保持准入结果相同；完整 212 项回放入口为 `tools/replay_mainline_admission.py`。代码见 `code/work/nss36/classifier.lua` 与 `fast-path.lua`。
 - 有效期、独立截止和默认拒绝规则均未放宽；没有本轮新的 fast path 验收。
+
+## LOCAL-PUBLICATION-001：采集/分类发布时间挤占初始准入窗口
+
+状态：阻塞当前真人闭环；已做只读成本定位，尚未安装优化，不属于已证实的上游 NSS 缺陷。
+
+- 最小现场证据：NSS36 真实同 WAN CS2 UDP + Steam TCP，初始约 5.93 秒中 44 次时间拒绝，gate/ECM 均未开启；WAN/队列独立恢复。
+- `classifier.lua` 的 pair 学习屏障要求 query age <2 秒，ready 再预留 tag 设置时间而要求 <1 秒。没有改变这些边界。
+- 后续独立只读窗口 publication delay 0.77–1.21 秒、完整检查最高 0.26 秒；所选游戏已不在候选，不能把该窗口当原失败完整重放。
+- `conntrack-source.lua` 的 normalize 与 `classifier-core.lua` 的行解析是已测到的开销：单次目标 RAM 分解为 0.55 / 0.28 秒，另有真实查询 0.28 秒。样本 455 行，未优化版本，未跟踪生产 worker 的全部阶段。
+- worker 同步 fallback 规则维护和审计可能延长采样间隔，但没有阶段计时证明它解释了每次长间隔。结束审计一次来源过旧、随后通过，producer 未变。
+- 下一步先做输入等价/拒绝等价回放和目标内存前后测量；不得丢字段、缩小范围、延长 TTL 或改时间基准来绕过问题。没有修改前后实测前不提交上游 Issue/PR。

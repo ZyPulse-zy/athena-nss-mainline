@@ -2,7 +2,7 @@
 
 先读 `docs/STATE.md`、`docs/PLAN.md`、最近一轮 `docs/EXPERIMENT_LOG.md`。用户在对话中的新指示优先；不能把历史授权或证据扩展到新的危险动作。
 
-当前常驻引用是私有工作区 `work/nss35/deployment-latest.json`。NSS33 的 live qualification 绑定旧配置；新一轮先重新绑定与核验，不能直接沿用旧资格操作当前部署。
+当前常驻引用是私有工作区 `work/nss35/deployment-latest.json`。NSS36 控制器已绑定该配置，但真人尝试在初始时间余量检查退出；先按 PLAN 减少采集/分类发布开销，不靠反复真人下载碰运气。NSS33 的 live qualification 仍绑定旧配置，不能直接操作当前部署。
 
 ## 主线与证据
 
@@ -28,5 +28,6 @@
 - 此仓库没有登录凭据、原始 CT/socket 转储、备份、部署私有配置或模块二进制。不要把这些加入 Git。
 - `code/` 保存精确源文件，`source-manifest.json` 给出它们的原始路径。部署代码与候选代码分开描述。
 - 原工作区的 NSS32/NSS33 证明文件是冻结证据。不要覆盖它们来迎合新代码；新一轮使用新目录与新证明。
+- NSS36 实际失败目录已保存 59 份与当次 manifest 一致的源码/证明副本。后续候选从新轮次开始，保留这次失败与回滚证据。
 - 修改后运行与变化相关的离线检查；现场验证结果单独记录。完成后更新 STATE、PLAN、EXPERIMENT_LOG 和结构化证据再提交。
 - 上游 Issue/PR 仅进入 backlog；缺乏最小复现与修改前后证据时，不提交上游。

@@ -1,0 +1,9 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';import {connectRouter} from '../nss20/connect-router.mjs';import {encode,receipt} from '../nss11/v7-observe-repair/observe2/transport.mjs';
+const source=fs.readFileSync('work/nss36/fast-path.lua','utf8'),fixture=fs.readFileSync('work/nss36/aba-fixtures.lua','utf8');
+const runnable=source.split('\n').filter(x=>!x.trimStart().startsWith('--')).join('\n');
+const good=fixture.indexOf("for _,kind in ipairs({'stable'"),bad=fixture.indexOf("for _,kind in ipairs({'change-A'"),finish=fixture.lastIndexOf('print(j.stringify(');assert.ok(good>0&&bad>good&&finish>bad);
+const prefix="local j=require('luci.jsonc');local Fast=assert(loadstring([====["+runnable+"]====]))()\n"+fixture.slice(0,good);
+const parts=[fixture.slice(good,bad),fixture.slice(bad,finish)];const envelopes=parts.map(p=>encode("/usr/bin/lua - <<'NSS36_ABA_FIXTURE'\n"+prefix+p+fixture.slice(finish)+"\nNSS36_ABA_FIXTURE\n"));
+const answers=[],c=await connectRouter();try{for(let i=0;i<envelopes.length;i++){const e=envelopes[i],r=receipt(await c.run(e.command),e);fs.writeFileSync('work/nss36/aba-replay-part'+i+'-raw-private.json',JSON.stringify(r,null,2));assert.equal(r.code,0,r.stderr);const a=JSON.parse(r.stdout);assert.equal(a.passed,true);answers.push(a);}}finally{c.close()}
+const result={passed:true,cases:answers.flatMap(a=>a.cases),scope:'Actual target Lua/jsonc with candidate A/B/A2 controller, synthetic clock and native I/O stubs. No service or forwarding mutation.',sourceSha256:crypto.createHash('sha256').update(source).digest('hex'),execBytes:envelopes.map(e=>e.execBytes),routerWrites:false,unchangedTransportExecCeiling:9000};
+fs.writeFileSync('work/nss36/aba-qualified.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));

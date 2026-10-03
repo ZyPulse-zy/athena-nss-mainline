@@ -1,0 +1,12 @@
+local selectedWan=assert(tonumber(arg[1]));assert(selectedWan%1==0 and selectedWan>=1 and selectedWan<=5);local interface='rpwan'..selectedWan;local service='wan'..selectedWan
+local j=require('luci.jsonc');local fs=require('nixio.fs')
+local function read(p,l)local f=assert(io.open(p));local s=f:read((l or 262144)+1)or'';f:close();assert(#s<=(l or 262144));return s end
+local function cmd(c)local f=assert(io.popen('/usr/bin/timeout -k 1 3 '..c..' 2>&1; rc=$?;printf "\n__NSS20_RC__%s\n" "$rc"'));local s=f:read('*a');f:close();local b,r=s:match('^(.*)\n__NSS20_RC__(%d+)\n$');assert(b and r=='0',b);return b end
+local u=assert(require('ubus').connect());local sv=assert(u:call('service','list',{}));u:close()
+local s=assert(sv['router-project-minieap'].instances[service]);assert(s.running and type(s.pid)=='number')
+local a={};for v in assert(read('/proc/'..s.pid..'/stat',8192):match('^%d+ %b() (.*)$')):gmatch('%S+')do a[#a+1]=v end
+local log=read('/tmp/router-project-logs/minieap-'..service..'.log');local function count(p)local n=0;for _ in log:gmatch(p)do n=n+1 end;return n end
+local o={wan=selectedWan,boot=read('/proc/sys/kernel/random/boot_id',128):gsub('%s+$',''),uptime=tonumber(read('/proc/uptime',128):match('^[%d.]+')),auth={pid=s.pid,start=a[20],failure=count('认证失败')+count('Authentication failed'),success=count('认证成功')+count('EAP%-Success')+count('Authentication succeeded')},mode=assert(j.parse(cmd('/sbin/ip -j -d link show dev '..interface))),status=assert(j.parse(cmd('/bin/ubus call network.interface.'..service..' status'))),mwan3=tonumber(read('/proc/sys/net/ecm/mwan3_enable',128)),dscp=tonumber(read('/sys/kernel/debug/ecm/ecm_classifier_dscp/enabled',128)),delay=tonumber(read('/sys/kernel/debug/ecm/ecm_classifier_default/accel_delay_pkts',128)),stateMajor=tonumber(read('/sys/kernel/debug/ecm/ecm_state/state_dev_major',128)),devices=read('/proc/devices',32768),eapHeaderSha=cmd('/usr/bin/sha256sum /root/router-project/experiments/nss9-abg3-20261001/eap-header'):match('^(%x+) '),coreSha=cmd('/usr/bin/sha256sum /root/router-project/scripts/core-guard.sh'):match('^(%x+) '),prepareSha=cmd('/usr/bin/sha256sum /root/router-project/scripts/prepare-macvlans.sh'):match('^(%x+) ')}
+assert(o.mode[1].linkinfo.info_data.mode=='bridge' and o.status.up and o.mwan3==0 and o.dscp==1 and o.delay==1)
+assert(o.stateMajor>0 and o.devices:find('\n'..o.stateMajor..' ecm_state\n',1,true))
+print(j.stringify(o))
