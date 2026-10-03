@@ -1,0 +1,531 @@
+{
+  "round": "NSS37",
+  "updatedAt": "2026-10-03T10:18:16.339Z",
+  "hypothesis": "Preserve normalized output, rejection behavior and source deadlines while reducing repeated attribute scans; then safely retain the optimization without opening ECM.",
+  "change": {
+    "file": "conntrack-source.lua",
+    "function": "attrs",
+    "onlyAttributeSearchChanged": true,
+    "oldSha256": "4aedd44ab9d9bb02cc3da3cc3a2eabb4c5731d68b8c2730b2b7e1a3a46ef4cd1",
+    "newSha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+    "literalKeySearch": true,
+    "whitespaceBoundaryAndDuplicateSemanticsPreserved": true,
+    "sourceScopePolicyAndDeadlinesUnchanged": true,
+    "workerGuardianCoreAndBackendUnchanged": true
+  },
+  "localChecks": 9113,
+  "differential": {
+    "passed": true,
+    "checks": 9087,
+    "helperCases": 2688,
+    "normalizationCases": 6381,
+    "explicitExpectations": 18,
+    "capturedTextReplayed": true,
+    "sourceSha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+    "originalSha256": "4aedd44ab9d9bb02cc3da3cc3a2eabb4c5731d68b8c2730b2b7e1a3a46ef4cd1",
+    "routerWrites": false,
+    "trafficGenerated": false,
+    "scope": "Pure old/new attributes and normalization under Lua 5.1; deterministic mutations and optional private captured text, no NSS permission or live timestamps.",
+    "error": ""
+  },
+  "lifecycle": {
+    "passed": true,
+    "checks": 26,
+    "cases": [
+      "cold start does not import RT",
+      "cold TCP not granted",
+      "one good sample is insufficient",
+      "large TCP rate maps to bulk",
+      "two good UDP samples qualify RT",
+      "RT and bulk tags are exact NSS leaf handles",
+      "metadata alone never grants NSS",
+      "new port and new CT require cold learning",
+      "old port identity retired",
+      "port change automatically follows",
+      "full mark change cannot inherit RT",
+      "low mark bits preserved",
+      "WAN and NAT change rewarm",
+      "new existing WAN qualified without changing routing",
+      "old-flow exit removes classification",
+      "returning flow is cold",
+      "restart and crash do not trust old metadata",
+      "restart relearns RT",
+      "RT flow exceeding rate becomes bulk",
+      "cooldown does not grant acceleration",
+      "fresh one-way flow not classified as RT",
+      "one global per-host slot budget across five existing WANs",
+      "duplicate CT ID rejects snapshot",
+      "foreign LAN source rejects query",
+      "foreign conntrack zone rejects query",
+      "truncated query rejects snapshot"
+    ],
+    "coreSha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+    "ctSourceSha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+    "backendSourceSha256": "a4ec72a5f9905f66d6617580ef6e630499fc15363e673f5d2edcd2549d4c2335",
+    "configurationSha256": "c28e6daaecba7423113d20ddbacf138efb08c4572b880af761e52af38bb8b812",
+    "routerWrites": false,
+    "serviceLifecycleInjected": false,
+    "scope": "Unchanged deployed core and leaf function with candidate CT normalization. Synthetic socket/counter/interface rows and JSON shim in Lua 5.1; no service restart or crash was induced.",
+    "error": ""
+  },
+  "nativeProfile": {
+    "routerWrites": false,
+    "trafficGenerated": false,
+    "iterations": 3,
+    "rows": 207,
+    "sourceBytes": 48919,
+    "wallSeconds": 0.09999999986030161,
+    "cpuSeconds": 0.10088099999999998,
+    "allNormalizedRowsEqual": true,
+    "productionWorkerInstrumented": false,
+    "buckets": {
+      "protocol": 0.003370000000000123,
+      "row-finish": 0.0032530000000000336,
+      "attributes": 0.054440999999999934,
+      "client": 0.012248999999999649,
+      "tuple-count": 0.011529999999999846,
+      "header": 0.0029200000000001447
+    },
+    "observedAt": "2026-10-03T09:47:26.719Z",
+    "execBytes": 7103
+  },
+  "nativeBenchmark": {
+    "routerWrites": false,
+    "candidateInstalled": false,
+    "lan4Mbps": 0.6389126760898611,
+    "passed": true,
+    "sourceHashesVerified": true,
+    "observerSeconds": 1.4199999999254942,
+    "scope": "Alternating old/new normalization of identical strings in target Lua RAM. Synthetic expansion is not kernel traffic or forwarding performance.",
+    "trafficGenerated": false,
+    "sourceReadOnce": true,
+    "results": [
+      {
+        "bytes": 48239,
+        "name": "live-captured-text",
+        "allOutputsEqual": true,
+        "rows": 204,
+        "samples": [
+          {
+            "new": {
+              "cpuSeconds": 0.015280999999999989,
+              "wallSeconds": 0.02000000001862645
+            },
+            "old": {
+              "cpuSeconds": 0.025638000000000022,
+              "wallSeconds": 0.030000000027939677
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.015439999999999982,
+              "wallSeconds": 0.009999999776482582
+            },
+            "old": {
+              "cpuSeconds": 0.029996999999999996,
+              "wallSeconds": 0.030000000027939677
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.015108999999999984,
+              "wallSeconds": 0.010000000009313226
+            },
+            "old": {
+              "cpuSeconds": 0.025570999999999983,
+              "wallSeconds": 0.02000000001862645
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.015324999999999978,
+              "wallSeconds": 0.02000000001862645
+            },
+            "old": {
+              "cpuSeconds": 0.026612000000000025,
+              "wallSeconds": 0.030000000027939677
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.015048000000000006,
+              "wallSeconds": 0.010000000009313226
+            },
+            "old": {
+              "cpuSeconds": 0.02970600000000001,
+              "wallSeconds": 0.030000000027939677
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.014884999999999982,
+              "wallSeconds": 0.010000000009313226
+            },
+            "old": {
+              "cpuSeconds": 0.02531799999999995,
+              "wallSeconds": 0.030000000027939677
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.017710000000000004,
+              "wallSeconds": 0.02000000001862645
+            },
+            "old": {
+              "cpuSeconds": 0.027469999999999994,
+              "wallSeconds": 0.029999999795109034
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.014959999999999973,
+              "wallSeconds": 0.010000000009313226
+            },
+            "old": {
+              "cpuSeconds": 0.026034999999999975,
+              "wallSeconds": 0.02000000001862645
+            }
+          }
+        ],
+        "synthetic": false,
+        "oldCpuMean": 0.027043374999999995,
+        "newCpuMean": 0.015469749999999987,
+        "cpuReductionPercent": 42.796525951365204,
+        "oldWallMean": 0.02749999999650754,
+        "newWallMean": 0.013749999983701855
+      },
+      {
+        "bytes": 117521,
+        "name": "synthetic-512-rows-from-captured-grammar",
+        "allOutputsEqual": true,
+        "rows": 512,
+        "samples": [
+          {
+            "new": {
+              "cpuSeconds": 0.037483000000000044,
+              "wallSeconds": 0.0400000000372529
+            },
+            "old": {
+              "cpuSeconds": 0.06699100000000002,
+              "wallSeconds": 0.06999999983236194
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.04433699999999996,
+              "wallSeconds": 0.05000000004656613
+            },
+            "old": {
+              "cpuSeconds": 0.063226,
+              "wallSeconds": 0.07000000006519258
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.04077799999999998,
+              "wallSeconds": 0.03999999980442226
+            },
+            "old": {
+              "cpuSeconds": 0.064469,
+              "wallSeconds": 0.060000000055879354
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.03530100000000003,
+              "wallSeconds": 0.0400000000372529
+            },
+            "old": {
+              "cpuSeconds": 0.063504,
+              "wallSeconds": 0.07000000006519258
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.03564300000000009,
+              "wallSeconds": 0.0400000000372529
+            },
+            "old": {
+              "cpuSeconds": 0.06677299999999997,
+              "wallSeconds": 0.07000000006519258
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.0370680000000001,
+              "wallSeconds": 0.03999999980442226
+            },
+            "old": {
+              "cpuSeconds": 0.06739000000000006,
+              "wallSeconds": 0.07000000006519258
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.04125599999999996,
+              "wallSeconds": 0.0400000000372529
+            },
+            "old": {
+              "cpuSeconds": 0.06123900000000004,
+              "wallSeconds": 0.060000000055879354
+            }
+          },
+          {
+            "new": {
+              "cpuSeconds": 0.03539800000000004,
+              "wallSeconds": 0.029999999795109034
+            },
+            "old": {
+              "cpuSeconds": 0.06155400000000011,
+              "wallSeconds": 0.060000000055879354
+            }
+          }
+        ],
+        "synthetic": true,
+        "oldCpuMean": 0.06439325000000003,
+        "newCpuMean": 0.038408000000000025,
+        "cpuReductionPercent": 40.35399673102381,
+        "oldWallMean": 0.06625000003259629,
+        "newWallMean": 0.03999999994994141
+      }
+    ],
+    "observedAt": "2026-10-03T09:56:38.528Z",
+    "sourceSha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+    "originalSha256": "4aedd44ab9d9bb02cc3da3cc3a2eabb4c5731d68b8c2730b2b7e1a3a46ef4cd1",
+    "execBytes": 6883
+  },
+  "automaticRollback": {
+    "passed": true,
+    "observedAt": "2026-10-03T10:03:42.826Z",
+    "independent180SecondRollback": true,
+    "automaticExpiryWithoutControllerRollback": true,
+    "previousWorkerAndConfigRestored": true,
+    "previousNormalizerAndGuardianRestored": true,
+    "previousClassifierHealthyAndFresh": true,
+    "ecmClosedAndZero": true
+  },
+  "installations": [
+    {
+      "checkpointDownloadedAndHashVerified": true,
+      "checkpointGzipVerified": true,
+      "transactionTimeoutSeconds": 180,
+      "stageTimeoutSeconds": 480,
+      "rollbackVerifiedBeforeConfigMutation": true,
+      "independentOfControlConnection": true
+    },
+    {
+      "checkpointDownloadedAndHashVerified": true,
+      "checkpointGzipVerified": true,
+      "transactionTimeoutSeconds": 180,
+      "stageTimeoutSeconds": 480,
+      "rollbackVerifiedBeforeConfigMutation": true,
+      "independentOfControlConnection": true
+    }
+  ],
+  "windows": {
+    "before": {
+      "observationFileCompletedAt": "2026-10-03T09:59:43.718Z",
+      "samples": 35,
+      "allHealthy": true,
+      "sameProducerWithinWindow": true,
+      "seconds": 17.149999999906868,
+      "lan4DownMbps": 2.7884212245049382,
+      "lan4DownPps": 316.50145772766626,
+      "cpuBusyPercent": 14.477657004830919,
+      "softirqPercent": 1.554951690821256,
+      "timeSqueezeDelta": 0,
+      "queryAgeRangeSeconds": [
+        0.6300000001210719,
+        3.2000000001862645
+      ],
+      "publicationDelayRangeSeconds": [
+        0.27000000001862645,
+        0.2900000000372529
+      ],
+      "parseMaxSeconds": 0.010000000009313226,
+      "ageUnderOneSecond": 6,
+      "semantic": {
+        "candidateBytes": 5874,
+        "sequence": 1725,
+        "fullBytes": 109549,
+        "candidateFlows": 3,
+        "passed": true,
+        "softwareVerifiedRt": 3,
+        "identityDecisionLeafAndExpiryEqual": true,
+        "fullFlows": 78,
+        "fullSnapshotRetained": true
+      },
+      "ecmClosedAndZero": true,
+      "measurement": "Natural light-load software forwarding with observer overhead; these windows do not form a matched performance ABA."
+    },
+    "trial": {
+      "observationFileCompletedAt": "2026-10-03T10:01:34.693Z",
+      "samples": 35,
+      "allHealthy": true,
+      "sameProducerWithinWindow": true,
+      "seconds": 17.130000000121072,
+      "lan4DownMbps": 0.7930148277819024,
+      "lan4DownPps": 134.96789258515233,
+      "cpuBusyPercent": 14.430416911332943,
+      "softirqPercent": 4.961832061068702,
+      "timeSqueezeDelta": 0,
+      "queryAgeRangeSeconds": [
+        0.5500000000465661,
+        3.130000000121072
+      ],
+      "publicationDelayRangeSeconds": [
+        0.25,
+        0.27000000001862645
+      ],
+      "parseMaxSeconds": 0.010000000009313226,
+      "ageUnderOneSecond": 6,
+      "semantic": {
+        "candidateBytes": 2955,
+        "sequence": 16,
+        "fullBytes": 93060,
+        "candidateFlows": 1,
+        "passed": true,
+        "softwareVerifiedRt": 1,
+        "identityDecisionLeafAndExpiryEqual": true,
+        "fullFlows": 67,
+        "fullSnapshotRetained": true
+      },
+      "ecmClosedAndZero": true,
+      "measurement": "Natural light-load software forwarding with observer overhead; these windows do not form a matched performance ABA."
+    },
+    "permanent": {
+      "observationFileCompletedAt": "2026-10-03T10:06:10.913Z",
+      "samples": 35,
+      "allHealthy": true,
+      "sameProducerWithinWindow": true,
+      "seconds": 17.12000000011176,
+      "lan4DownMbps": 1.206729439244459,
+      "lan4DownPps": 161.3901869148343,
+      "cpuBusyPercent": 14.056224899598394,
+      "softirqPercent": 2.2757697456492636,
+      "timeSqueezeDelta": 0,
+      "queryAgeRangeSeconds": [
+        0.6399999998975545,
+        3.209999999962747
+      ],
+      "publicationDelayRangeSeconds": [
+        0.25,
+        0.28999999980442226
+      ],
+      "parseMaxSeconds": 0.010000000009313226,
+      "ageUnderOneSecond": 6,
+      "semantic": {
+        "candidateBytes": 4424,
+        "sequence": 4,
+        "fullBytes": 105116,
+        "candidateFlows": 2,
+        "passed": true,
+        "softwareVerifiedRt": 2,
+        "identityDecisionLeafAndExpiryEqual": true,
+        "fullFlows": 75,
+        "fullSnapshotRetained": true
+      },
+      "ecmClosedAndZero": true,
+      "measurement": "Natural light-load software forwarding with observer overhead; these windows do not form a matched performance ABA."
+    }
+  },
+  "classifier": {
+    "committed": true,
+    "commitAt": "2026-10-03T10:07:55.620Z",
+    "deploymentReference": "work/nss37/deployment-latest.json",
+    "configSha256": "b053e05b74ffe5ea3871284838e7771bcebfc8aa8a80ecc042f60693d7769635",
+    "workerSha256": "2adaa79b4bb6404582c9ae93b25fd63923d934ee91c3d5a71298243dac8959b3",
+    "guardianSha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+    "sourceSha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+    "nssEnabled": false
+  },
+  "controller": {
+    "configuration": {
+      "configSha256": "b053e05b74ffe5ea3871284838e7771bcebfc8aa8a80ecc042f60693d7769635",
+      "workerSha256": "2adaa79b4bb6404582c9ae93b25fd63923d934ee91c3d5a71298243dac8959b3",
+      "guardianSha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+      "classifierCoreSha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+      "ctSourceSha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+      "policyUnchanged": true,
+      "ctSourceChangedOnlyAttributeSearch": true,
+      "normalizationDifferentialChecks": 9087,
+      "sourceAndPublicationDeadlinesUnchanged": true,
+      "independentRollbackPreviouslyVerified": true
+    },
+    "sourceManifestEntries": 66,
+    "newSyntheticSelectionChecks": 10,
+    "targetPreflight": {
+      "passed": true,
+      "observedAt": "2026-10-03T10:10:53.848Z",
+      "readOnly": true,
+      "routerMutationAttempted": false,
+      "exactPackedPolicyRoundtrip": true,
+      "stagedBytes": 62588,
+      "stageExecBytes": 8879,
+      "unchangedTransportExecCeiling": 9000,
+      "abaRuntimeQualified": false
+    },
+    "historicalNss36ConsumerAndBackendProofsReusedOnlyWhereCodeUnchanged": true,
+    "realSessionReadiness": {
+      "observedAt": "2026-10-03T10:11:17.093Z",
+      "mode": "inspect",
+      "actualGameCandidates": 1,
+      "actualBulkCandidates": 0,
+      "sameWanPairs": 0,
+      "routerWrites": false,
+      "trafficGenerated": false,
+      "openFrontend": false,
+      "status": "WAITING_FOR_REAL_CS2_STEAM_PAIR",
+      "nssPermissionGranted": false
+    }
+  },
+  "finalState": {
+    "observedAt": "2026-10-03T10:15:57.939Z",
+    "protectedAudit": {
+      "passed": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 4,
+      "queryAge": 2.9100000001490116,
+      "sequence": 200,
+      "ecmClosedAndZero": true
+    },
+    "sameProducerSincePermanentObservation": true,
+    "classificationHealthy": true,
+    "guardianHealthy": true,
+    "lastErrorBelongsToExpiredTrial": true,
+    "lastErrorIsCurrentProducer": false,
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-03T10:15:57.001Z",
+      "readonly": true,
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1840102.69
+    }
+  },
+  "actualFastPathTrial": {
+    "attempted": false,
+    "gateModuleLoaded": false,
+    "ecmOpened": false,
+    "acceleratedFlowCount": 0,
+    "bulkRtLeafTrafficMeasured": false,
+    "acceleratedPbrMarkNatWanAffinityRevalidated": false
+  },
+  "limitations": {
+    "realHighLoadABACompleted": false,
+    "nssCpuBenefitProved": false,
+    "gameJitterLossMissCaptured": false,
+    "productionCrashInjected": false,
+    "wholeSteam300MbpsAccelerated": false,
+    "highLoadPublicationTimingQualified": false,
+    "allPublicationDelayCausesProved": false,
+    "longTermClassifierStabilityQualified": false,
+    "parserCpuIsNotRouterCpu": true,
+    "lifecycleUsesSyntheticCountersAndIo": true
+  },
+  "next": "Read-only freshness and publication timing under representative load before a concentrated real same-WAN CS2/Steam attempt. Keep all identity, policy, source-age, tag and independent rollback limits. No second WAN or QoS side branch.",
+  "upstreamSubmission": false
+}

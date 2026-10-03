@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-10-03T09:24:54.543841+00:00",
-  "round": "NSS36",
-  "deploymentReference": "work/nss35/deployment-latest.json",
-  "classifierConfigSha256": "c28e6daaecba7423113d20ddbacf138efb08c4572b880af761e52af38bb8b812",
+  "checkedAt": "2026-10-03T10:15:42.559403+00:00",
+  "round": "NSS37",
+  "deploymentReference": "work/nss37/deployment-latest.json",
+  "classifierConfigSha256": "b053e05b74ffe5ea3871284838e7771bcebfc8aa8a80ecc042f60693d7769635",
   "deployedTextSources": [
     {
       "name": "classifier-core.lua",
@@ -11,7 +11,7 @@
     },
     {
       "name": "conntrack-source.lua",
-      "sha256": "4aedd44ab9d9bb02cc3da3cc3a2eabb4c5731d68b8c2730b2b7e1a3a46ef4cd1",
+      "sha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
       "included": true
     },
     {
@@ -72,30 +72,30 @@
     "passed": true,
     "protectedConfigurationUnchanged": true,
     "exactOwnedNativeAudit": true,
-    "selectors": 10,
-    "queryAge": 1.9000000001396984,
-    "sequence": 1040,
+    "selectors": 4,
+    "queryAge": 2.9100000001490116,
+    "sequence": 200,
     "ecmClosedAndZero": true
   },
   "lastApplicationObservation": {
-    "observedAt": "2026-10-03T09:14:20.297Z",
+    "observedAt": "2026-10-03T10:11:17.078Z",
     "readonly": true,
     "gameProcessRunning": true,
     "steamProcessRunning": true,
     "actualCs2RtCandidates": 1,
-    "actualSteamBulkCandidates": 22,
-    "sameWanCandidates": [
-      1
-    ],
-    "sourceAge": 2.9799999999813735,
+    "actualSteamBulkCandidates": 0,
+    "sameWanCandidates": [],
+    "sourceAge": 2.130000000121072,
     "nssAdmissionAllowed": false
   },
-  "freshApplicationPairCheckedThisRound": true,
+  "applicationEndpointsReadThisRound": true,
+  "freshApplicationPairCheckedThisRound": false,
   "realForwardingABACompleted": false,
-  "staleSnapshotRejectedEarlierInRound": true,
+  "staleSnapshotRejectedEarlierInRound": false,
+  "historicalNss36StaleSnapshotRejection": true,
   "finalClosure": {
     "passed": true,
-    "observedAt": "2026-10-03T09:24:08.952Z",
+    "observedAt": "2026-10-03T10:15:57.001Z",
     "readonly": true,
     "noActiveRootTransaction": true,
     "noNssStagingDirectory": true,

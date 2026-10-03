@@ -8,20 +8,7 @@ local function decimal(v,lo,hi)
  assert(type(v)=='string'and(v=='0'or v:match('^[1-9]%d*$')),'Noncanonical integer')
  local n=tonumber(v);assert(n and n==math.floor(n)and n>=lo and n<=hi,'Integer range');return n
 end
-local function attrs(line,k)
- -- Literal key search avoids a full Lua-pattern scan for each attribute.
- -- Keep the original whitespace boundary, nonempty value and duplicate semantics.
- local values,at,needle={},1,k..'='
- while true do
-  local first,last=line:find(needle,at,true);if not first then break end
-  at=last+1
-  if first>1 and line:sub(first-1,first-1):match('%s')then
-   local a,b=line:find('^%S+',at)
-   if a then values[#values+1]=line:sub(a,b);at=b+1 end
-  end
- end
- return values
-end
+local function attrs(line,k)local a={};for v in (line..' '):gmatch('%s'..k..'=(%S+)')do a[#a+1]=v end;return a end
 function M.contract(o)
  assert(o and o.version==1 and o.authorizedClient=='192.168.237.0/24','Invalid authorized LAN')
  assert(o.conntrackPath=='/usr/sbin/conntrack'and type(o.groupRunnerPath)=='string'and o.groupRunnerPath:match('^/root/router%-project/classifier/nss23%-[%w%-]+/group%-runner$'),'Unqualified CLI/bounded runner path')

@@ -16,12 +16,13 @@ def save(path, value):
     dst.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 def keys(obj,names): return {k:obj[k] for k in names if k in obj}
 
-current=read('work/nss35/deployment-latest.json')
+current=read('work/nss37/deployment-latest.json')
 assert current['committed'] is True
 cfg=read(current['localDir']+'/config.json')
 sources=[]
 allowlist={
  'work/nss11': ['group-runner.c','test-group-runner.py'],
+ 'work/nss37': ['conntrack-source.lua','original-conntrack-source.lua','worker.lua','guardian.lua','prepare.mjs','build.mjs','test-normalizer.py','test-lifecycle.py','profile-normalizer.mjs','benchmark-native.mjs','normalize-benchmark.lua','prepare-install.mjs','upgrade.mjs','verify-rollback.mjs','qualify-trial.mjs','commit-channel.mjs','observe-compact.mjs','operational-audit.mjs','deployment-audit.mjs','current-audit.mjs','inspect-classifier.mjs','final-closure.mjs','prepare-mainline.mjs','binding.mjs','classifier.lua','fast-path.lua','core-guard-phase.lua','classified-tags.lua','qos-physical.lua','tag-normalizer.lua','wan-scope.lua','state-node.lua','module-stage-guardian.lua','read-prerequisites.lua','aba-fixtures.lua','pair-policy.mjs','payload.mjs','module-stage.mjs','real-session.mjs','read-real-candidates.mjs','preflight-mainline.mjs','qualification.mjs','qualify-affinity.mjs','summarize.mjs','render-report.mjs'],
  'work/nss33': [
   'admission-publication.lua','worker.lua','guardian.lua','conntrack-source.lua',
   'classifier.lua','fast-path.lua','core-guard-phase.lua','classified-tags.lua','qos-physical.lua',
@@ -85,19 +86,21 @@ save('evidence/nss34-loop-profile.json',{
  'observedAt':loop['observedAt'],'routerWrites':False,'nssOpened':False,'actualFlowAdmissionChecked':False,
  'summary':{'samples':len(rows),'fullInventory':sum(x['fullInventory'] for x in rows),'meanPhaseSeconds':sum(x['phaseSeconds'] for x in rows)/len(rows),'maxPhaseSeconds':max(x['phaseSeconds'] for x in rows),'maxIterationReads':max(x['iterationReads'] for x in rows),'ageOnlyReserveAvailable':sum(x['ageOnlyReserveAvailable'] for x in rows)},
  'rows':[{'atSeconds':round(x['at']-start,4),**keys(x,['closedSeconds','phaseSeconds','readSeconds','parseSeconds','iterationReads','fullInventory','refreshInventory','sourceAge','publicationDelay','ageOnlyReserveAvailable','classifiedFlowCount','status'])} for x in rows]})
-auditPath='work/nss36/final-recheck-audit.json'
+auditPath='work/nss37/final-audit.json'
 audit=read(auditPath)
 checked=datetime.fromtimestamp((workspace/auditPath).stat().st_mtime,timezone.utc).isoformat()
-pc=read('work/nss36/real-reader-qualified.json')
+pc=read('work/nss37/real-reader-qualified.json')
 save('evidence/current-runtime.json',{
- 'checkedAt':checked,'round':'NSS36','deploymentReference':'work/nss35/deployment-latest.json',
+ 'checkedAt':checked,'round':'NSS37','deploymentReference':'work/nss37/deployment-latest.json',
  'classifierConfigSha256':current['configHash'],'deployedTextSources':deployed,
  'audit':keys(audit,['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','selectors','queryAge','sequence','ecmClosedAndZero']),
  'lastApplicationObservation':keys(pc,['observedAt','readonly','gameProcessRunning','steamProcessRunning','actualCs2RtCandidates','actualSteamBulkCandidates','sameWanCandidates','sourceAge','nssAdmissionAllowed']),
- 'freshApplicationPairCheckedThisRound':True,
+ 'applicationEndpointsReadThisRound':True,
+ 'freshApplicationPairCheckedThisRound':False,
  'realForwardingABACompleted':False,
- 'staleSnapshotRejectedEarlierInRound':True,
- 'finalClosure':keys(read('work/nss36/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
+ 'staleSnapshotRejectedEarlierInRound':False,
+ 'historicalNss36StaleSnapshotRejection':True,
+ 'finalClosure':keys(read('work/nss37/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
  'requiresLiveRevalidation':True,
 })
 replay=read('work/nss34/admission-replay-qualified.json')
@@ -119,7 +122,7 @@ save('evidence/nss34-classifier-restarts.json',{
 })
 save('source-manifest.json',{'generatedAt':datetime.now(timezone.utc).isoformat(),'preservesOriginalSourceBytes':True,'routerCredentialsIncluded':False,'rawCapturesIncluded':False,'binariesIncluded':False,'sources':sources})
 n35=read('outputs/nss35-address-recovery-observations.json')
-assert n35['classifier']['committed'] and n35['classifier']['configSha256']==current['configHash']
+assert n35['classifier']['committed'] and n35['classifier']['configSha256']==read('work/nss35/deployment-latest.json')['configHash']
 assert n35['automaticRollback']['passed'] and n35['checks']==136
 save('evidence/nss35-address-recovery.json',n35)
 n36=read('outputs/nss36-admission-timing-observations.json')
@@ -127,4 +130,9 @@ assert n36['checks']==299 and not n36['actualTrial']['passed'] and n36['actualTr
 save('evidence/nss36-mainline.json',n36)
 save('evidence/nss36-admission-timing.json',read('work/nss36/admission-timing-sanitized.json'))
 save('evidence/nss36-admission-replay.json',keys(read('work/nss36/admission-qualified.json'),['passed','checks','cases','alignmentScenarios','differentialAdmissionCases','capturedTimingCases','adapterSha256','fastSourceSha256','routerWrites','hardwareQualified','scope']))
+n37=read('outputs/nss37-normalizer-observations.json')
+assert n37['localChecks']==9113 and n37['classifier']['committed'] and n37['classifier']['configSha256']==current['configHash']
+assert n37['automaticRollback']['automaticExpiryWithoutControllerRollback']
+assert n37['finalState']['protectedAudit']['ecmClosedAndZero'] and not n37['actualFastPathTrial']['attempted']
+save('evidence/nss37-normalizer.json',n37)
 print(json.dumps({'sourceFiles':len(sources),'codeBytes':sum(s['bytes'] for s in sources),'evidenceFiles':len(list((repo/'evidence').glob('*.json'))),'credentialsCopied':False,'rawCapturesCopied':False}))

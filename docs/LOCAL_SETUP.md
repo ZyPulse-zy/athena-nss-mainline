@@ -16,16 +16,19 @@ Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/
 
 `python tools/replay_mainline_admission.py --wsl-runtime <runtime/usr>` 可从仓库独立回放 NSS36 的 212 项准入检查（108 新旧差分、66 历史时序包络）。使用现有 WSL `Athena-Cake-Build`，输出保存在 `.local/nss36-replay/`，不读取凭据、不连接路由器、不发流量。
 
+`python tools/replay_normalizer.py --wsl-runtime <runtime/usr>` 可从仓库独立执行 NSS37 新旧解析器的 9,085 项检查，仅合成文本、模拟时间，不读取任何私有捕获。完整工作区加入真实采集文本后为 9,087 项，另有 26 项核心/leaf 生命周期检查。输出保存在忽略的 `.local/`；不要对冻结的工作区资格文件直接重跑覆盖。
+
 ## 先读与只读核验
 
 在完整私有工作区运行现有入口前，先检查源文件哈希和作用范围：
 
-- `work/nss36/operational-audit.mjs <new-label>`：绑定当前 NSS35；输出在 NSS36 新标签下，避免覆盖冻结证明。审计会严格拒绝过旧快照，保留失败和随后复查两份记录。
-- `work/nss36/real-session.mjs inspect`：严格检查 59 项 manifest/current config，然后只读核验真实应用连接。不会开启 gate/ECM 或生成流量。NSS36 的 `aba` 已实际尝试并失败，不应在发布时间问题未解决前反复运行。
-- `work/nss36/final-closure.mjs`：核验无实验事务/模块/状态残留；新轮次先复制为自己的输出位置。
+- `work/nss37/current-audit.mjs <new-label>`：绑定当前 NSS37；输出在 NSS37 新标签下，避免覆盖已保存证明。审计会严格拒绝过旧快照，保留失败和随后复查两份记录。
+- `work/nss37/real-session.mjs inspect`：严格检查 66 项 manifest/current config，然后只读核验真实应用连接，不开启 gate/ECM 或生成流量。已有输出应保留，新轮次先复制入口与输出位置；本轮没有实际执行 `aba`。
+- `work/nss37/final-closure.mjs`：核验无实验事务/模块/状态残留；新轮次先复制为自己的输出位置。
 - `work/nss36/rehearse-admission.mjs`：只读检查 NSS36 固定历史连接身份是否仍可准入，不重新证明当前应用 socket 归属；不能当真实 A/B。
 - `work/nss36/profile-publication-path.mjs`：一次只读 CT 采集 + RAM 冷回放，验证当前代码哈希后测时间；不修改生产 worker，不等于完整生产计时。
-- NSS33/34 现场入口保留为历史，不能拿旧配置资格操作 NSS35。若修改当前分类器配置，NSS36 资格也必须重新绑定，不能复用。
+- NSS37 `operational-audit.mjs` 是试装前/恢复后针对 NSS35 的历史入口，最终当前审核使用 `current-audit.mjs`，不要混用。
+- NSS33/34/35/36 现场入口保留为历史，不能拿旧配置资格操作 NSS37。NSS36 两个只读诊断也依赖历史身份/哈希，不是当前部署入口。若修改当前配置或绑定源码，NSS37 资格同样必须重新生成，不能复用。
 
 连接封装使用本机已保存的认证。不要把密码、密钥、令牌或认证文件内容粘进对话、日志或仓库。
 
