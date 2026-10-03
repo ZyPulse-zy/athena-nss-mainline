@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-10-03T07:39:57.967196+00:00",
+  "round": "NSS34",
+  "deploymentReference": "work/nss33/deployment-latest.json",
+  "classifierConfigSha256": "73e3cf79c4f4e6116046512f9d84cc939da323bf53c5023f70bbb92daeaa5f6d",
+  "deployedTextSources": [
+    {
+      "name": "classifier-core.lua",
+      "sha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+      "included": true
+    },
+    {
+      "name": "conntrack-source.lua",
+      "sha256": "4aedd44ab9d9bb02cc3da3cc3a2eabb4c5731d68b8c2730b2b7e1a3a46ef4cd1",
+      "included": true
+    },
+    {
+      "name": "owned.lua",
+      "sha256": "3061a42d2b429f2e6ca4d4b73d73f87504ac4899b047da6e90606079bfda5947",
+      "included": true
+    },
+    {
+      "name": "backend.lua",
+      "sha256": "a4ec72a5f9905f66d6617580ef6e630499fc15363e673f5d2edcd2549d4c2335",
+      "included": true
+    },
+    {
+      "name": "worker.lua",
+      "sha256": "5b43928bc09a66558f8cd57e81cbaf442f2bcfc7345118b2a2ea8a7b3ed3bf68",
+      "included": true
+    },
+    {
+      "name": "guardian.lua",
+      "sha256": "744348360eaeb2be98efdf93341bba00067a9304701502f70e2b7a9451739a25",
+      "included": true
+    },
+    {
+      "name": "stop-worker.lua",
+      "sha256": "74afd01c9d114279b388f954fa5e138cfe16449151e93ecb62539368a7e69a1f",
+      "included": true
+    },
+    {
+      "name": "cleanup.sh",
+      "sha256": "de41d810a19f3b2506fb46e85c955f38c2f60971105652982be1b259dc1749b0",
+      "included": true
+    },
+    {
+      "name": "init.sh",
+      "sha256": "9ad7b1c93c0dcc5c4bc01a6b5a73d396328478ed0487af6ffecb9d314484bab7",
+      "included": true
+    },
+    {
+      "name": "group-runner",
+      "sha256": "2854059fc58fc304cee00bf2467a2d1725f836828c99aa3b8c6e53b4b3dc73e2",
+      "included": false,
+      "reason": "binary helper retained in private workspace"
+    },
+    {
+      "name": "process-stop",
+      "sha256": "e209e728929d72960625f85bebf962e0001fdeefb97e9c0b66aa09faef722fc4",
+      "included": false,
+      "reason": "binary helper retained in private workspace"
+    },
+    {
+      "name": "process-crash",
+      "sha256": "12293880057e91d1b6ce7c60b96a7f81b70656aede84e71497a2e225d91f4305",
+      "included": false,
+      "reason": "binary helper retained in private workspace"
+    }
+  ],
+  "audit": {
+    "passed": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 6,
+    "queryAge": 1.790000000037253,
+    "sequence": 817,
+    "ecmClosedAndZero": true
+  },
+  "applicationObservation": {
+    "observedAt": "2026-10-03T07:41:26.657Z",
+    "readonly": true,
+    "gameProcessRunning": true,
+    "steamProcessRunning": true,
+    "actualCs2RtCandidates": 0,
+    "actualSteamBulkCandidates": 0,
+    "sameWanCandidates": [],
+    "sourceAge": 0.6500000001396984,
+    "nssAdmissionAllowed": false
+  },
+  "requiresLiveRevalidation": true
+}

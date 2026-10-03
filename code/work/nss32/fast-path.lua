@@ -1,0 +1,149 @@
+-- One unchanged queue/tag plan; identical observation loop in A, B and A2.
+local M={}
+function M.verifyRenewalAck(k,p,session)
+ local sequence,untilMs,sessionMs=assert(k.epoch_refresh):match('^sequence=(%d+) classifier_until_ms=(%d+) session_until_ms=(%d+)$')
+ assert(sequence and tonumber(sequence)==p.nextSequence and tonumber(untilMs)==p.untilMs and tonumber(sessionMs)==session,'Native renewal receipt mismatch')
+ assert(k.tcp_permit=='Y'and k.game_permit=='Y','Native lease not live after update')
+ for _,slot in ipairs({'tcp','game'})do
+  assert(k[slot..'_pinned_state']:find('pinned=1 current_hash_matches=1',1,true),'Pinned instance changed during renewal')
+  assert(k[slot..'_state']:find('ever_opened=1 terminal=0 admit=1',1,true),'Terminal gate cannot acknowledge renewal')
+ end
+ return{sequence=tonumber(sequence),classifierUntilMs=tonumber(untilMs)}
+end
+function M.new(P,fs,j,read,now,stopped,put,command,record,parameters,load,unload,DIR,phase,classifier)
+ local n=require('nixio');local out={};local session;local loaded=false
+ local paths={'ecm_db/connection_count','ecm_nss_ipv4/accelerated_count','ecm_nss_ipv6/accelerated_count','ecm_nss_ipv4/pending_accel_count','ecm_nss_ipv6/pending_accel_count','ecm_nss_ipv4/pending_decel_count','ecm_nss_ipv6/pending_decel_count'}
+ local function pause(s)if s>0 then local whole=math.floor(s);n.nanosleep(whole,math.floor((s-whole)*1000000000))end end
+ local function sample()
+  local r={uptime=now(),stop4=tonumber(read('/sys/kernel/debug/ecm/front_end_ipv4_stop',128)),stop6=tonumber(read('/sys/kernel/debug/ecm/front_end_ipv6_stop',128)),counts={},cpu=read('/proc/stat',16384),softnet=read('/proc/net/softnet_stat',16384),interfaces={}}
+  for _,p in ipairs(paths)do local v=tonumber(read('/sys/kernel/debug/ecm/'..p,128));assert(v and v>=0 and v<=2,'Unexpected ECM scope');r.counts[p]=v end
+  for _,d in ipairs({'rpwan'..assert(P.selected.tcp.wan),'lan4'})do r.interfaces[d]={};for _,k in ipairs({'rx_bytes','rx_packets','tx_bytes','tx_packets','rx_dropped','tx_dropped'})do r.interfaces[d][k]=tonumber(read('/sys/class/net/'..d..'/statistics/'..k,128))end end
+  assert(r.stop6==1 and r.counts['ecm_nss_ipv6/accelerated_count']==0 and r.counts['ecm_nss_ipv6/pending_accel_count']==0 and r.counts['ecm_nss_ipv6/pending_decel_count']==0)
+  return r
+ end
+ local function observe()
+  local began=now();local frame=classifier.observe();local map={};for _,f in ipairs(frame.flows)do map[f.key]=f end
+  for _,slot in ipairs({'tcp','udp'})do
+   local w=P.selected[slot];local f=assert(map[w.classifierKey],'Selected flow is no longer admitted');local i=f.identity
+   assert(f.decision.class==(slot=='tcp'and'BULK'or'RT')and f.leaf.downTag==(slot=='tcp'and 2399469568 or 2399535104),'Selected class changed')
+   assert(tonumber(i.connectionId)==w.id and tonumber(i.zone)==0 and i.mark==w.mark and i.wan==w.wan)
+   for _,d in ipairs({'original','reply'})do for _,k in ipairs({'src','dst','sport','dport'})do assert(i[d][k]==w[d][k],'Selected CT/NAT tuple drift')end end
+   assert(now()<f.validUntilUptime-1,'Selected classification expired')
+  end
+  assert(now()<frame.startedAtUptime+5,'Classification observation stale')
+  return{sequence=frame.sourceSequence,producer=frame.producer,queryStarted=frame.startedAtUptime,queryAge=now()-frame.startedAtUptime,checkSeconds=now()-began}
+ end
+ local function getter(raw)
+  local counters={};for _,x in ipairs(raw.nftables)do if x.rule then for _,e in ipairs(x.rule.expr)do if e.counter then counters[x.rule.comment:match('([^:]+)$')]=e.counter end end end end
+  for _,slot in ipairs({'tcp','udp'})do for _,d in ipairs({'up','down'})do local k=slot..'_post_'..d;assert(counters[k..'_total'].packets>0 and counters[k..'_expected'].packets==counters[k..'_total'].packets and counters[k..'_unexpected'].packets==0,'Tag getter mismatch')end end
+  assert(counters.udp_post_neighbor_nonzero.packets==0);return counters
+ end
+ local function state()
+  assert(P.statePath=='/root/router-project/experiments/rp-nss25-state-'..P.owner..'/ecm-state')
+  return command('/usr/bin/timeout -k 1 1 /bin/cat '..P.statePath)
+ end
+ local function complete(s)
+  if s.counts['ecm_nss_ipv4/accelerated_count']~=2 or s.counts['ecm_db/connection_count']~=2 then return false end
+  for _,p in ipairs(paths)do if p:find('pending_',1,true)and s.counts[p]~=0 then return false end end
+  return true
+ end
+ local function renew(observed)
+  if observed.sequence==record.adapterSourceSequence then return end
+  assert(observed.sequence>record.adapterSourceSequence,'Sequence regressed')
+  local p=assert(classifier.proposeRenewal(),'New source without a renewal proposal')
+  assert(p.untilMs<=session,'ABA cannot complete within fixed session')
+  put('/sys/module/rp_ecm_gate_lab_ct/parameters/epoch_refresh',p.expectedSequence..':'..p.nextSequence..':'..p.untilMs..'\n')
+  local k=parameters();local ack=M.verifyRenewalAck(k,p,session);classifier.acceptRenewal(p,ack)
+  record.tagEpochUntil=ack.classifierUntilMs/1000
+  record.renewals[#record.renewals+1]={atUptime=now(),previousSequence=p.expectedSequence,sequence=ack.sequence,untilMs=ack.classifierUntilMs}
+ end
+ local function tick(name)
+  -- Exactly the same classifier read/identity checks and telemetry in all phases.
+  local observed=observe();if name=='B'then renew(observed);assert(now()<record.tagEpochUntil)else stopped()end
+  local s=sample();s.phase=name;s.observation=observed
+  if name=='B'then assert(complete(s),'Controlled pair did not stay accelerated')else for _,v in pairs(s.counts)do assert(v==0)end end
+  record.samples[#record.samples+1]=s;return s
+ end
+ local function measure(name)
+  assert(now()<record.deadline-(name=='A'and 26 or name=='B'and 13 or 8),'Insufficient phase/cleanup margin')
+  -- jsonc drops repeated table references. Store samples once, with phase indices.
+  local p={name=name,requestedSeconds=5,cadenceSeconds=0.5,observer='same-validated-classifier-and-counter-loop',sampleStart=#record.samples+1}
+  record.phases[#record.phases+1]=p
+  local start;local nextAt;local last
+  repeat
+   local s=tick(name);last=s
+   if not start then start=s.uptime;nextAt=start end
+   if s.uptime-start>=5 then break end
+   nextAt=nextAt+0.5;pause(math.max(0,nextAt-now()))
+  until false
+  p.startedAt=start;p.endedAt=last.uptime;p.seconds=p.endedAt-p.startedAt;p.completed=true;p.sampleEnd=#record.samples;p.sampleCount=p.sampleEnd-p.sampleStart+1
+  assert(p.seconds>=5 and p.seconds<=6.5,'Observer overran equal phase bound')
+ end
+ function out.align(deadline)
+  stopped();assert(P.openFrontend==true)
+  assert(command('/usr/bin/sha256sum /root/router-project/scripts/core-guard.sh'):match('^(%x+) ')==P.coreGuard.sha256)
+  local ending=math.min(now()+9,deadline-32)
+  repeat
+   stopped();phase.scan(fs,read,P.coreGuard)
+   if classifier.preLearningReady()and now()<ending then return end
+   pause(0.02)
+  until now()>=ending
+  error('Insufficient fresh-classifier margin for complete ABA')
+ end
+ local function alignLearning()
+  -- Leave all existing B/A2 start barriers intact. Use the otherwise idle part
+  -- of the same 45 s owner, instead of abandoning the last viable core cycle.
+  local ending=math.min(now()+20,record.deadline-15);local nextCheck=0
+  record.learningAlignment={}
+  repeat
+   record.corePhase=phase.waitFresh(P.coreGuard,function()
+    stopped();if now()>=nextCheck then observe();nextCheck=now()+0.5 end
+    return phase.scan(fs,read,P.coreGuard)
+   end,now,function()pause(0.03)end,math.min(now()+7,ending))
+   local probeUntil=math.min(record.corePhase.observedAt+0.35,ending)
+   repeat
+    local ready,reason=classifier.preLearningReady()
+    record.learningAlignment[#record.learningAlignment+1]={coreAt=record.corePhase.observedAt,checkedAt=now(),ready=ready,reason=reason}
+    if ready and now()<probeUntil then return end
+    if now()>=probeUntil then break end;pause(0.02)
+   until false
+  until now()>=ending
+  error('No joint fresh classifier/core phase with room for B and A2')
+ end
+ function out.run(due,live,qos,removeTags)
+  stopped();assert(P.selected.tcp.wan==5 and P.selected.udp.wan==5)
+  record.abaVersion=32;record.phases={};record.samples={};record.renewals={};record.frontendRequested=true
+  record.unchangedQoSPlan=true;local getterUntil=now()+0.3
+  repeat record.initialTags=live();local ok,err=pcall(getter,record.initialTags);if ok then break end;assert(now()<getterUntil,err);pause(0.02)until false
+  record.qosAtA=qos.snapshot();measure('A');record.tagsAfterA=live();getter(record.tagsAfterA)
+  alignLearning();stopped()
+  local fresh=classifier.resampleClosed();due=fresh.provenance.startedAtUptime+5;record.tagEpochUntil=due
+  record.tagsBefore=live();record.preLearningGetter=getter(record.tagsBefore);record.preLearningProofAt=now()
+  assert(now()<due-3 and now()-record.corePhase.observedAt<1.2,'Fresh learning margin lost after A')
+  assert(classifier.compareCurrentEpoch().action=='KEEP_IMMUTABLE_EPOCH')
+  session=math.floor(math.min(now()+12,record.deadline-8)*1000);assert(session/1000-now()>=9,'Native session lacks ABA retirement margin');record.hardSessionUntilMs=session
+  load(P.insmodArguments..' classifier_until_ms='..math.floor(due*1000)..' session_until_ms='..session..' classifier_sequence='..assert(record.adapterSourceSequence));loaded=true;stopped()
+  record.parametersBefore=parameters();assert(record.parametersBefore.registered=='Y'and record.parametersBefore.diagnostic_only=='N')
+  for _,s in ipairs({'tcp','game'})do assert(record.parametersBefore[s..'_pinned_state']:find('pinned=1 current_hash_matches=1',1,true));put('/sys/module/rp_ecm_gate_lab_ct/parameters/'..s..'_drain','Y\n');put('/sys/module/rp_ecm_gate_lab_ct/parameters/'..s..'_permit','Y\n')end
+  record.parametersPermitted=parameters();stopped();assert(now()-record.corePhase.observedAt<1.5 and now()<due-2.5)
+  put('/sys/kernel/debug/ecm/front_end_ipv4_stop','0\n');record.frontendOpenedAt=now();record.newNssPermit=true
+  local acquireUntil=now()+1.2
+  repeat
+   local observed=observe();renew(observed);local s=sample()
+   if complete(s)then break end
+   assert(now()<acquireUntil,'Controlled pair failed to accelerate');pause(0.05)
+  until false
+  record.acceleratedState=state();record.qosAccelerated=qos.snapshot();measure('B')
+  assert(#record.renewals>0,'B lacked a confirmed classifier renewal')
+  put('/sys/kernel/debug/ecm/front_end_ipv4_stop','1\n');record.frontendClosedAt=now();unload();loaded=false;stopped();record.explicitEarlyRetirement=true
+  assert(now()*1000<session,'Scoped retirement exceeded fixed session');assert(state()=='','ECM state remained after exact retirement')
+  record.firmwareZeroAfterRetirement=true;record.qosAfterRetirement=qos.snapshot()
+  -- Same exact tag table and queue tree continue in A2; only hardware permission is gone.
+  record.tagsBeforeA2=live();getter(record.tagsBeforeA2);measure('A2');record.tagsAfterA2=live();getter(record.tagsAfterA2)
+  record.qosAfterA2=qos.snapshot();removeTags();record.tagsRemovedAt=now();stopped()
+  record.expiredState=state();assert(record.expiredState=='');record.fastPathEpochCompleted=true;record.abaCompleted=true
+  record.fastPathMeasurement={qualified=true,minimumStableSeconds=5,stableSeconds=record.phases[2].seconds,startedAt=record.phases[2].startedAt,lastStableAt=record.phases[2].endedAt}
+ end
+ return out
+end
+return M

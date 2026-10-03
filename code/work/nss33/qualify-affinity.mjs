@@ -1,0 +1,16 @@
+import fs from'node:fs';import assert from'node:assert/strict';import crypto from'node:crypto';import{selectRealPair}from'./pair-policy.mjs';import{verifyNativeABA}from'../nss32/verify-native.mjs';
+const read=p=>JSON.parse(fs.readFileSync(p)),sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');const old=verifyNativeABA();
+const aba=read('work/nss33/aba-qualified.json'),pre=read('work/nss33/mainline-preflight-qualified.json');assert.ok(aba.passed&&pre.passed&&aba.routerWrites===false&&pre.routerMutationAttempted===false);assert.equal(sha('work/nss33/fast-path.lua'),aba.sourceSha256);
+const d=read('work/nss33/deployment-latest.json');assert.equal(d.committed,true);assert.equal(read(d.localDir+'/final-audit.json').passed,true);
+const frozen=read('work/nss33/real-matched-aba-20261003071100-604d4fe1/selected-private.json');
+const rt={identity:{...frozen.udp,protocolNumber:17},decision:{class:'RT',budgetAdmitted:true,pps:100}};
+const bulk={identity:{...frozen.tcp,protocolNumber:6},decision:{class:'BULK',rateKbps:2000}};
+const checks=[];const test=(label,good)=>{assert.ok(good,label);checks.push(label)};
+const selected={game:[rt],bulk:[bulk]},before=JSON.stringify(selected);let p=selectRealPair(selected);test('natural WAN4 application pair selected without altering input',p.length===1&&p[0].g.identity.wan===4&&JSON.stringify(selected)===before);
+for(const[reason,change]of [['different WAN',x=>{x.identity.wan=5;x.identity.mark=327680}],['different low ct mark',x=>x.identity.mark++],['different NAT address',x=>x.identity.reply.dst='192.0.2.99'],['proxy mark',x=>x.identity.mark|=0x2000],['nonzero zone',x=>x.identity.zone=1],['foreign client',x=>x.identity.original.src='192.168.237.208'],['non-bulk flow',x=>x.decision.class='BE']]){const x=structuredClone(bulk);change(x);test(reason+' refused',selectRealPair({game:[rt],bulk:[x]}).length===0);}
+test('no Steam flow means no experiment',selectRealPair({game:[rt],bulk:[]}).length===0);
+test('no actual game means no experiment',selectRealPair({game:[],bulk:[bulk]}).length===0);
+const names=['pair-policy.mjs','qualification.mjs','real-session.mjs','read-real-candidates.mjs','module-stage.mjs','payload.mjs','fast-path.lua','classifier.lua','aba-qualified.json','consumer-qualified.json','mainline-preflight-qualified.json','compact-trial-qualified.json','projection-qualified.json'];
+const sourceManifest={...old.sourceManifest};for(const f of names)sourceManifest['work/nss33/'+f]=sha('work/nss33/'+f);
+const out={passed:true,observedAt:new Date().toISOString(),hardwareRuntimeQualified:false,realGameQualityQualified:false,scope:'One natural application WAN at a time. Immutable prior WAN5 native evidence plus new readonly WAN4 orchestration and current compact-classifier checks. No claim of WAN4 hardware qualification.',boot:old.boot,configuration:{base:d.base,configSha256:d.configHash,workerSha256:read(d.localDir+'/config.json').files['worker.lua']},nativeBaselineWan:5,selectedWanCount:1,wanAffinityRewritten:false,checks,sourceManifest};
+fs.writeFileSync('work/nss33/affinity-qualified.json',JSON.stringify(out,null,2)+'\n');console.log(JSON.stringify({passed:true,checks:checks.length,readonly:true,hardwareRuntimeQualified:false}));

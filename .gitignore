@@ -1,0 +1,24 @@
+# Keep credentials, router captures, packages and local connection adapters out.
+.local/
+raw/
+private/
+*private*
+*credential*
+*.pem
+*.key
+*.pfx
+*.p12
+*.clixml
+.env
+.env.*
+*.ko
+*.o
+*.a
+*.so
+*.tar
+*.gz
+*.zip
+__pycache__/
+*.pyc
+node_modules/
+local-state.json

@@ -1,0 +1,100 @@
+{
+  "round": "NSS33",
+  "sourceReport": "outputs/nss33-classifier-readiness-report.html",
+  "highLoadSoftwareBaseline": {
+    "seconds": 14.43999999994412,
+    "lan4DownMbps": 405.8605983395207,
+    "lan4DownPps": 33575.27700844018,
+    "cpuBusyPercent": 88.85141132611398,
+    "softirqPercent": 60.23433339250843,
+    "timeSqueezeDelta": 133
+  },
+  "measurementLimit": "Diagnostic LAN4 aggregate; read-only observation overhead; not matched forwarding ABA.",
+  "publicationProfile": {
+    "fullFlows": 338,
+    "compactFlows": 30,
+    "fullBytes": 475855,
+    "compactBytes": 45209,
+    "fullEncodeSeconds": 1.159999999916181,
+    "compactBuildEncodeSeconds": 0.0400000000372529,
+    "parseSeconds": 0.9500000001862645,
+    "compactParseSeconds": 0.060000000055879354
+  },
+  "projectionChecks": 53,
+  "classifier": {
+    "committed": true,
+    "configSha256": "73e3cf79c4f4e6116046512f9d84cc939da323bf53c5023f70bbb92daeaa5f6d",
+    "workerSha256": "5b43928bc09a66558f8cd57e81cbaf442f2bcfc7345118b2a2ea8a7b3ed3bf68",
+    "rollbackPassed": true,
+    "semanticProjection": {
+      "candidateBytes": 5907,
+      "sequence": 49,
+      "fullBytes": 248681,
+      "candidateFlows": 3,
+      "passed": true,
+      "softwareVerifiedRt": 3,
+      "identityDecisionLeafAndExpiryEqual": true,
+      "fullFlows": 180,
+      "fullSnapshotRetained": true
+    },
+    "highLoadPerformanceQualified": false
+  },
+  "realTrial": {
+    "passed": false,
+    "matchedForwardingABACompleted": false,
+    "actualApplicationPair": true,
+    "wan": 4,
+    "tcpMark": 262144,
+    "udpMark": 262144,
+    "failure": "Insufficient fresh-classifier margin for complete ABA",
+    "exactInitialRefusalReasonsRecorded": false,
+    "gateModuleLoaded": false,
+    "nssPermissionGranted": false,
+    "controlDeadlineSeconds": 45,
+    "initialAlignmentBudgetSeconds": 6.840000000083819,
+    "bulkLeaf": {
+      "bytes": 0,
+      "packets": 0,
+      "snapshotIsPhaseAligned": false
+    },
+    "rtLeaf": {
+      "bytes": 0,
+      "packets": 0,
+      "snapshotIsPhaseAligned": false
+    },
+    "defaultLeaf": {
+      "bytes": 311153125,
+      "packets": 200538,
+      "snapshotIsPhaseAligned": false
+    },
+    "wanBeforeMode": "bridge",
+    "wanDuringMode": "private",
+    "wanAfterMode": "bridge",
+    "wanHealthAfterUndo": true,
+    "authIdentityAndDhcpPreserved": true,
+    "renewalOrReauthenticationTested": false,
+    "rollbackPassed": true,
+    "initialFailureRootCauseConclusive": false
+  },
+  "admissionRehearsal": {
+    "samples": 66,
+    "ready": 6,
+    "reasons": {
+      "Pre-learning time margin insufficient": 41,
+      "Fresh epoch lacks tag setup reserve": 19
+    },
+    "selectedTcpPresent": 66,
+    "selectedGamePresent": 66,
+    "minSourceAgeSeconds": 0.6800000001676381,
+    "maxReadSeconds": 0.1600000001490116,
+    "publicationDelayRangeSeconds": [
+      0.5100000000093132,
+      0.7900000000372529
+    ],
+    "routerWrites": false,
+    "nssOpened": false
+  },
+  "nssHighLoadCpuBenefitProved": false,
+  "cs2JitterLossMissCaptured": false,
+  "upstreamSubmission": false
+}
