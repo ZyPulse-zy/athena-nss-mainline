@@ -121,3 +121,10 @@
 | `work/nss38/` | 本轮源码、候选、日志与完整私有证据；原始连接、配置、检查点和模块不上传 |
 
 旧 NSS35/NSS33/NSS30/NSS29/NSS28 部署别名仍用于历史证明，不能用来覆盖当前常驻分类器状态。
+
+## NSS64
+
+- [本轮只读/候选](../evidence/nss64-mainline.json)、[完整编码](../evidence/nss64-encoding.json)、[编码规模](../evidence/nss64-scale.json)、[被动发布链路](../evidence/nss64-pipeline.json)。
+- [原NSS63拒绝拆分](../evidence/nss64-latency.json)、[精确编译](../evidence/nss64-compile.json)、[最终原审核](../evidence/nss64-final-audit.json)、[20份冻结源](../evidence/nss64-source-proof.json)。
+- [publication候选worker](../code/work/nss64/candidate-worker.lua)，未安装/未授予准入；[潜在Issue](ISSUE_JSON_PUBLICATION_COST.md) 未提交。
+- 本地 `outputs/nss64-mainline-report.html` / `work/nss64/` 保存报告与完整私有证据；原始连接、配置和截图不上传。

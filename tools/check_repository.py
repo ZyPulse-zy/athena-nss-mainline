@@ -422,7 +422,7 @@ assert x53['reportVerification']['sourceValidated'] and not x53['reportVerificat
 frozen53=json.loads((root/'evidence/nss53-source-proof.json').read_text());assert frozen53['sources']==len(frozen53['sourceHashes'])==24 and frozen53['notAdditionalProductionAdmission']
 for source,expected in frozen53['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
 x63=json.loads((root/'evidence/nss63-mainline.json').read_text())
-runtime63=json.loads((root/'evidence/current-runtime.json').read_text())
+runtime63=json.loads((root/'evidence/nss63-runtime.json').read_text())
 assert runtime63['round']=='NSS63' and runtime63['deploymentReference']=='work/nss47/deployment-latest.json'
 assert runtime63['historical53RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss53-runtime.json').read_bytes()).hexdigest()
 assert runtime63['classifierConfigSha256']==x63['classifierConfigSha256']==x53['classifierConfigSha256']
@@ -477,4 +477,44 @@ assert all(runtime63['audit'][k] for k in ['passed','protectedConfigurationUncha
 assert runtime63['entryFullHighLoadForwardingQualified'] is False and not runtime63['nssPermanentlyEnabled']
 assert not any(x63['conclusions'][k] for k in ['softwareVersusNssCpuBenefitProved','gameBenefitProved','realHumanExperienceProved','completeHighLoadLifecycleQualified','completeHighLoadLoopPassed','secondWanExpansionAllowed','sharedBudgetAllowed','upstreamSubmitted'])
 assert x63['reportVerification']['sourceValidated'] and not x63['reportVerification']['browserRendered']
+x64=json.loads((root/'evidence/nss64-mainline.json').read_text())
+runtime64=json.loads((root/'evidence/current-runtime.json').read_text())
+assert runtime64['round']==x64['round']=='NSS64' and runtime64['deploymentReference']=='work/nss47/deployment-latest.json'
+assert runtime64['historical63RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss63-runtime.json').read_bytes()).hexdigest()
+assert runtime64['classifierConfigSha256']==x64['classifierConfigSha256']==runtime63['classifierConfigSha256']
+assert not any(x64[k]for k in ['permanentClassifierChanged','routerConfigurationWrites','newNssForwardingExperiment','ecmOpenedThisTurn'])
+assert x64['checkpointCount']==x64['rollbackTrialCount']==0 and x64['allOriginalDeadlinesUnchanged']
+assert x64['currentEntry']=={'path':'work/nss63/real-session.mjs','boundInputs':241,'unchanged':True,'fullHighLoadForwardingQualified':False}
+assert x64['budgetMbps']==20 and x64['gateFlows']=={'tcp':1,'udp':1} and x64['ownerSeconds']==45
+encode64=x64['completeEncoding'];assert encode64['passed'] and encode64['cases']==29 and encode64['projectValidation']['cases']==36
+assert encode64['completePublicationFieldEquality'] and encode64['sameFrozenInMemoryFixtureWithinPairs']
+assert encode64['realFlows']==319 and encode64['originalProjectorContractDifferentiallyChecked'] and not encode64['exactOriginalProjectorFunctionUsed']
+assert 23<encode64['cpuReductionPercent']<25 and encode64['notWholeRouterCpuBenefit'] and not encode64['controlledHighNetworkLoad']
+scale64=x64['encodingOnlyScale'];assert scale64['passed'] and scale64['excludesProjectionCpu'] and scale64['syntheticScaleFixture']
+assert [v['flows']for v in scale64['rows']]==[128,256,512,1024] and all(v['semanticEquality']for v in scale64['rows'])
+assert scale64['rows'][-1]['originalCpu']>2*scale64['rows'][-1]['candidateCpu']
+assert scale64['installedJsonStringifyIsC'] and not scale64['candidateInstalled']
+natural64=x64['naturalPipeline'];assert natural64['passed'] and natural64['readonly'] and natural64['lan4Mbps']<1
+assert len(natural64['completeObservedCycles'])==2 and natural64['visibilityAreObservationBounds'] and natural64['observerCostIncluded']
+assert not natural64['backgroundLoadControlled'] and not natural64['nssAdmissionAllowed']
+candidate64=x64['candidateWorker'];compiled64=x64['nativeCompilation']
+assert candidate64['candidateOnly'] and not candidate64['installed'] and candidate64['candidateBytes']==compiled64['bytes']==32019
+assert candidate64['originalAllDeadlinesRetained'] and candidate64['classifierPolicyAndLearningUnchanged']
+assert compiled64['compiledExactCandidateInRam'] and compiled64['originalWorkerByteRestorationVerified']
+assert not any(compiled64[k]for k in ['executed','installed','configurationWrites','nssAdmissionAllowed'])
+assert candidate64['candidateWorkerSha256']==compiled64['sha256']==hashlib.sha256((root/'code/work/nss64/candidate-worker.lua').read_bytes()).hexdigest()
+assert candidate64['originalWorkerSha256']==hashlib.sha256((root/'code/deployed-classifier/worker.lua').read_bytes()).hexdigest()
+assert [v['code']for v in x64['failedPreparationCases']]==[124,2] and all(v['originalEvidenceRetainedLocally']for v in x64['failedPreparationCases'])
+assert x64['historicalLatency']['historicalEvidenceReanalyzedNotNewExperiment'] and not x64['historicalLatency']['allPostStampTimeAttributedToJson']
+final64=x64['finalState'];assert final64['sameWorkerGuardianAndProducerSinceOpening']
+assert all(final64[k]for k in ['ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert final64['protectedAudit']['passed'] and final64['protectedAudit']['originalFullLockedAudit']
+assert all(runtime64['audit'][k]for k in ['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','ecmClosedAndZero']) and runtime64['finalClosure']['passed']
+assert not any(runtime64[k]for k in ['experimentalConfigurationWritesThisTurn','nssOpenedThisTurn','naturalWorkerRestartObservedThisTurn','publicationCandidateInstalled','nssPermanentlyEnabled','completePerformanceAndGameAcceptance'])
+assert not any(x64['conclusions'][k]for k in ['wholeRouterCpuBenefitProved','highLoadPublicationFixed','realHumanGameImprovementProved','completeMatchedABACompleted','secondWanExpansionAllowed','upstreamSubmitted'])
+proof64=json.loads((root/'evidence/nss64-source-proof.json').read_text())
+assert proof64['sources']==len(proof64['sourceHashes'])==20 and proof64['notAdditionalProductionAdmission'] and not proof64['candidateInstalled']
+assert x64['proofBoundary']['old99And13NotReexecuted'] and x64['proofBoundary']['noNewGameDownloadOrGameGuiThisTurn']
+for source,expected in proof64['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+assert x64['reportVerification']['sourceValidated'] and not x64['reportVerification']['browserRendered']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

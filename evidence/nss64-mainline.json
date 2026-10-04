@@ -1,0 +1,383 @@
+{
+  "round": "NSS64",
+  "observedAt": "2026-10-04T15:15:28.774Z",
+  "deploymentReference": "work/nss47/deployment-latest.json",
+  "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+  "permanentClassifierChanged": false,
+  "routerConfigurationWrites": false,
+  "newNssForwardingExperiment": false,
+  "ecmOpenedThisTurn": false,
+  "checkpointCount": 0,
+  "rollbackTrialCount": 0,
+  "budgetMbps": 20,
+  "gateFlows": {
+    "tcp": 1,
+    "udp": 1
+  },
+  "ownerSeconds": 45,
+  "allOriginalDeadlinesUnchanged": true,
+  "currentEntry": {
+    "path": "work/nss63/real-session.mjs",
+    "boundInputs": 241,
+    "unchanged": true,
+    "fullHighLoadForwardingQualified": false
+  },
+  "historicalLatency": {
+    "round": "NSS63",
+    "historicalEvidenceReanalyzedNotNewExperiment": true,
+    "fullSourceAgeAtCheck": 7.410000000149012,
+    "queryToFullPublicationStampSeconds": 3.840000000083819,
+    "queryToFullHintCompletionSeconds": 5.46999999997206,
+    "handoffToOriginalAuditSeconds": 0.2900000000372529,
+    "originalAuditHashSeconds": 0.35000000009313226,
+    "originalAuditJournalSeconds": 0.030000000027939677,
+    "originalAuditSelectorsSeconds": 0.5100000000093132,
+    "originalAuditFullSnapshotParseSeconds": 0.7600000000093132,
+    "firstNewFullHintReadCompletedAfterStampSeconds": 1.6200000001117587,
+    "fullStampCapturedBeforeJsonProjectionAndEncode": true,
+    "renameTimeDirectlyInstrumented": false,
+    "hintReadAndSchedulingCostsNotSeparatedInHistoricalRows": true,
+    "allPostStampTimeAttributedToJson": false,
+    "sourceExpirySecondsUnchanged": 6,
+    "allProductionDeadlinesUnchanged": true
+  },
+  "completeEncoding": {
+    "projectValidation": {
+      "cases": 36,
+      "cycleAndNonJsonRejected": true,
+      "sharedReferencesPreserved": true,
+      "slotMapAndDenseListContractRetained": true,
+      "flowCount": 319,
+      "passed": true,
+      "actualCompletePublicationCompared": true
+    },
+    "unknownFieldsPreserved": true,
+    "rows": [
+      {
+        "bytes": 431625,
+        "wallSeconds": 0.1699999999254942,
+        "cpuSeconds": 0.17793499999999995,
+        "scope": "real-complete",
+        "mode": "original"
+      },
+      {
+        "bytes": 431625,
+        "wallSeconds": 0.14000000013038516,
+        "cpuSeconds": 0.1363310000000002,
+        "scope": "real-complete",
+        "mode": "candidate"
+      },
+      {
+        "bytes": 431625,
+        "wallSeconds": 0.13999999989755452,
+        "cpuSeconds": 0.13688200000000017,
+        "scope": "real-complete",
+        "mode": "candidate"
+      },
+      {
+        "bytes": 431625,
+        "wallSeconds": 0.17999999993480742,
+        "cpuSeconds": 0.180226,
+        "scope": "real-complete",
+        "mode": "original"
+      },
+      {
+        "bytes": 431625,
+        "wallSeconds": 0.18000000016763806,
+        "cpuSeconds": 0.1790100000000001,
+        "scope": "real-complete",
+        "mode": "original"
+      },
+      {
+        "bytes": 431625,
+        "wallSeconds": 0.13999999989755452,
+        "cpuSeconds": 0.13544899999999993,
+        "scope": "real-complete",
+        "mode": "candidate"
+      },
+      {
+        "bytes": 691468,
+        "wallSeconds": 0.31000000005587935,
+        "cpuSeconds": 0.307296,
+        "scope": "synthetic-512",
+        "mode": "original"
+      },
+      {
+        "bytes": 691468,
+        "wallSeconds": 0.2099999999627471,
+        "cpuSeconds": 0.21362199999999998,
+        "scope": "synthetic-512",
+        "mode": "candidate"
+      }
+    ],
+    "passed": true,
+    "originalFreshnessUnchanged": true,
+    "startedAt": 1943769.59,
+    "sourceSequence": 3660,
+    "candidateInstalled": false,
+    "sharedAliasesPreserved": true,
+    "realFlows": 319,
+    "realBytes": 431625,
+    "nssAdmissionAllowed": false,
+    "completePublicationFieldEquality": true,
+    "readonly": true,
+    "originalFullAuditUnchanged": true,
+    "finishedAt": 1943772.11,
+    "originalJsonProjectionRetained": true,
+    "cases": 29,
+    "observedAt": "2026-10-04T15:03:46.629Z",
+    "helperSha256": "84f3a1b535609cd55dace63d148b53161f99db4f35eb1d7a66ec6110b94cd0d4",
+    "variant": "flow-json-stream",
+    "projection": "fast",
+    "projectorSha256": "c5633b47a3d843f122119e3e6b87270d7f5df7b1c4003eb980d5b4e6983e183a",
+    "exactOriginalProjectorFunctionUsed": false,
+    "originalProjectorContractDifferentiallyChecked": true,
+    "legacyOriginalJsonProjectionRetainedFieldMeansContractNotIdenticalFunction": true,
+    "realCompleteOriginalMeanCpuSeconds": 0.17905700000000002,
+    "realCompleteCandidateMeanCpuSeconds": 0.13622066666666677,
+    "cpuReductionPercent": 23.923294444413372,
+    "sameFrozenInMemoryFixtureWithinPairs": true,
+    "controlledHighNetworkLoad": false,
+    "notWholeRouterCpuBenefit": true
+  },
+  "encodingOnlyScale": {
+    "excludesProjectionCpu": true,
+    "installedJsonStringifyIsC": true,
+    "originalFullPublicationFieldsRetained": true,
+    "nssAdmissionAllowed": false,
+    "rows": [
+      {
+        "bytes": 177215,
+        "originalCpu": 0.02995500000000001,
+        "candidateWall": 0.02000000001862645,
+        "candidateCpu": 0.02377299999999999,
+        "flows": 128,
+        "originalWall": 0.030000000027939677,
+        "semanticEquality": true
+      },
+      {
+        "bytes": 353792,
+        "originalCpu": 0.06453800000000004,
+        "candidateWall": 0.05000000004656613,
+        "candidateCpu": 0.05538700000000002,
+        "flows": 256,
+        "originalWall": 0.07000000006519258,
+        "semanticEquality": true
+      },
+      {
+        "bytes": 707130,
+        "originalCpu": 0.156957,
+        "candidateWall": 0.13000000012107193,
+        "candidateCpu": 0.10893099999999989,
+        "flows": 512,
+        "originalWall": 0.15999999991618097,
+        "semanticEquality": true
+      },
+      {
+        "bytes": 1413739,
+        "originalCpu": 0.42286599999999996,
+        "candidateWall": 0.19999999995343387,
+        "candidateCpu": 0.19818000000000024,
+        "flows": 1024,
+        "originalWall": 0.4299999999348074,
+        "semanticEquality": true
+      }
+    ],
+    "passed": true,
+    "startedAt": 1944165.93,
+    "syntheticScaleFixture": true,
+    "candidateInstalled": false,
+    "readonly": true,
+    "finishedAt": 1944169.3,
+    "observedAt": "2026-10-04T15:10:23.853Z"
+  },
+  "naturalPipeline": {
+    "passed": true,
+    "readonly": true,
+    "seconds": 4.03000000002794,
+    "observerCpuSeconds": 0.22585499999999997,
+    "completeObservedCycles": [
+      {
+        "sequence": 3750,
+        "flows": 115,
+        "querySeconds": 0.18999999994412065,
+        "classificationFirstObservedAfterQuerySeconds": 0.2900000000372529,
+        "applyResultFirstObservedAfterQuerySeconds": 0.6499999999068677,
+        "fullFirstObservedAfterQuerySeconds": 0.8599999998696148,
+        "fullStampAfterQuerySeconds": 0.7900000000372529,
+        "fullVisibilityObservationLowerAfterStamp": 0.019999999785795808,
+        "fullVisibilityObservationUpperAfterStamp": 0.06999999983236194,
+        "fullParseSeconds": 0.0400000000372529
+      },
+      {
+        "sequence": 3751,
+        "flows": 109,
+        "querySeconds": 0.2099999999627471,
+        "classificationFirstObservedAfterQuerySeconds": 0.31999999983236194,
+        "applyResultFirstObservedAfterQuerySeconds": 0.4299999999348074,
+        "fullFirstObservedAfterQuerySeconds": 0.6299999998882413,
+        "fullStampAfterQuerySeconds": 0.5500000000465661,
+        "fullVisibilityObservationLowerAfterStamp": 0.029999999795109034,
+        "fullVisibilityObservationUpperAfterStamp": 0.07999999984167516,
+        "fullParseSeconds": 0.05000000004656613
+      }
+    ],
+    "lan4Mbps": 0.0228486352355736,
+    "pps": 18.11414392046995,
+    "busyPercent": 17.044025157232703,
+    "softirqPercent": 3.207547169811321,
+    "timeSqueezeDelta": 0,
+    "backgroundLoadControlled": false,
+    "observerCostIncluded": true,
+    "timeGranularitySeconds": 0.01,
+    "visibilityAreObservationBounds": true,
+    "productionWorkerInstrumented": false,
+    "ctMarkNatCountersCachedForAdmission": false,
+    "nssAdmissionAllowed": false
+  },
+  "candidateWorker": {
+    "passed": true,
+    "candidateOnly": true,
+    "installed": false,
+    "originalWorkerSha256": "9ab72a5af3bb997b25f8a43ee0cac002ec6f0fc3ba5ae091e5845f64e138719c",
+    "candidateWorkerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+    "originalBytes": 28919,
+    "candidateBytes": 32019,
+    "projectorSha256": "c5633b47a3d843f122119e3e6b87270d7f5df7b1c4003eb980d5b4e6983e183a",
+    "encoderSha256": "84f3a1b535609cd55dace63d148b53161f99db4f35eb1d7a66ec6110b94cd0d4",
+    "onlyChange": "Complete snapshot serialization; all other worker bytes and non-snapshot serialization unchanged",
+    "fullFieldsRetained": true,
+    "originalOwnedModuleUnchanged": true,
+    "originalMaxBytesRetained": 4194304,
+    "originalAllDeadlinesRetained": true,
+    "classifierPolicyAndLearningUnchanged": true,
+    "pbrCtNatAndNssGateUnchanged": true,
+    "notHighLoadForwardingQualified": true
+  },
+  "nativeCompilation": {
+    "bytes": 32019,
+    "nssAdmissionAllowed": false,
+    "originalWorkerBytes": 28919,
+    "passed": true,
+    "installed": false,
+    "configurationWrites": false,
+    "executed": false,
+    "compiledExactCandidateInRam": true,
+    "originalWorkerByteRestorationVerified": true,
+    "sha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+    "observedAt": "2026-10-04T15:13:14.578Z"
+  },
+  "failedPreparationCases": [
+    {
+      "case": "paired1-compare",
+      "reason": "2048-shape-combined-comparison-exceeded-six-second-runner",
+      "code": 124,
+      "productionConfigurationWrites": false,
+      "nssOpened": false,
+      "originalEvidenceRetainedLocally": true
+    },
+    {
+      "case": "natural1-pipeline",
+      "reason": "observer-requested-unsupported-runner-duration-before-lua-execution",
+      "code": 2,
+      "productionConfigurationWrites": false,
+      "nssOpened": false,
+      "originalEvidenceRetainedLocally": true
+    }
+  ],
+  "proofBoundary": {
+    "nativeContractCasesInLatestPass": {
+      "project": 36,
+      "completeEncoding": 29
+    },
+    "independentUniqueCaseCountNotAsserted": true,
+    "earlierSameRoundPassesPreserved": true,
+    "old99And13NotReexecuted": true,
+    "fixturesAreNotAdmission": true,
+    "noNewGameDownloadOrGameGuiThisTurn": true,
+    "sourceDeficiencyNotProvedInstalledBinaryIdenticalToUpstream": true
+  },
+  "finalState": {
+    "protectedAudit": {
+      "passed": true,
+      "observedAt": "2026-10-04T15:15:28.774Z",
+      "readonly": true,
+      "configurationMatches": true,
+      "deploymentReference": "work/nss47/deployment-latest.json",
+      "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+      "workerPid": 20682,
+      "guardianPid": 5412,
+      "originalFullLockedAudit": true,
+      "selectors": 6,
+      "queryAge": 2.6100000001024455,
+      "sequence": 3895,
+      "ecmStoppedAndZero": true,
+      "noActiveTransaction": true,
+      "noStaging": true,
+      "noExperimentState": true,
+      "noExperimentalModule": true,
+      "diagnostic": {
+        "events": [
+          {
+            "name": "locked-audit-start",
+            "at": 1944473.75
+          },
+          {
+            "name": "hashes-complete",
+            "at": 1944473.84
+          },
+          {
+            "name": "journal-parsed",
+            "at": 1944473.84
+          },
+          {
+            "name": "selectors-complete",
+            "at": 1944473.93
+          },
+          {
+            "name": "snapshot-parsed",
+            "at": 1944474.03
+          },
+          {
+            "name": "freshness-checked",
+            "at": 1944474.03
+          },
+          {
+            "name": "locked-audit-end",
+            "at": 1944474.04
+          }
+        ],
+        "freshness": {
+          "checkedAt": 1944474.03,
+          "publicationAge": 1.6999999999534339,
+          "sourceAge": 2.6100000001024455,
+          "queryStarted": 1944471.42,
+          "publishedAt": 1944472.33,
+          "sequence": 3895
+        }
+      },
+      "serviceEpochPinned": true,
+      "nssAdmissionAllowed": false
+    },
+    "sameWorkerGuardianAndProducerSinceOpening": true,
+    "ecmStoppedAndZero": true,
+    "noActiveTransaction": true,
+    "noStaging": true,
+    "noExperimentState": true,
+    "noExperimentalModule": true
+  },
+  "conclusions": {
+    "encodingCpuReductionVerified": true,
+    "wholeRouterCpuBenefitProved": false,
+    "highLoadPublicationFixed": false,
+    "realHumanGameImprovementProved": false,
+    "completeMatchedABACompleted": false,
+    "secondWanExpansionAllowed": false,
+    "upstreamSubmitted": false
+  },
+  "nextStep": "One publication-boundary patch under checkpoint and independent timed undo; original full audit and source deadlines retained. Then concentrated matched real single-WAN A/B/A2.",
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

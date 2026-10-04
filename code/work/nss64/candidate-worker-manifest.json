@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "candidateOnly": true,
+  "installed": false,
+  "originalWorkerSha256": "9ab72a5af3bb997b25f8a43ee0cac002ec6f0fc3ba5ae091e5845f64e138719c",
+  "candidateWorkerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+  "originalBytes": 28919,
+  "candidateBytes": 32019,
+  "projectorSha256": "c5633b47a3d843f122119e3e6b87270d7f5df7b1c4003eb980d5b4e6983e183a",
+  "encoderSha256": "84f3a1b535609cd55dace63d148b53161f99db4f35eb1d7a66ec6110b94cd0d4",
+  "onlyChange": "Complete snapshot serialization; all other worker bytes and non-snapshot serialization unchanged",
+  "fullFieldsRetained": true,
+  "originalOwnedModuleUnchanged": true,
+  "originalMaxBytesRetained": 4194304,
+  "originalAllDeadlinesRetained": true,
+  "classifierPolicyAndLearningUnchanged": true,
+  "pbrCtNatAndNssGateUnchanged": true,
+  "notHighLoadForwardingQualified": true
+}

@@ -1,0 +1,51 @@
+{
+  "excludesProjectionCpu": true,
+  "installedJsonStringifyIsC": true,
+  "originalFullPublicationFieldsRetained": true,
+  "nssAdmissionAllowed": false,
+  "rows": [
+    {
+      "bytes": 177215,
+      "originalCpu": 0.02995500000000001,
+      "candidateWall": 0.02000000001862645,
+      "candidateCpu": 0.02377299999999999,
+      "flows": 128,
+      "originalWall": 0.030000000027939677,
+      "semanticEquality": true
+    },
+    {
+      "bytes": 353792,
+      "originalCpu": 0.06453800000000004,
+      "candidateWall": 0.05000000004656613,
+      "candidateCpu": 0.05538700000000002,
+      "flows": 256,
+      "originalWall": 0.07000000006519258,
+      "semanticEquality": true
+    },
+    {
+      "bytes": 707130,
+      "originalCpu": 0.156957,
+      "candidateWall": 0.13000000012107193,
+      "candidateCpu": 0.10893099999999989,
+      "flows": 512,
+      "originalWall": 0.15999999991618097,
+      "semanticEquality": true
+    },
+    {
+      "bytes": 1413739,
+      "originalCpu": 0.42286599999999996,
+      "candidateWall": 0.19999999995343387,
+      "candidateCpu": 0.19818000000000024,
+      "flows": 1024,
+      "originalWall": 0.4299999999348074,
+      "semanticEquality": true
+    }
+  ],
+  "passed": true,
+  "startedAt": 1944165.93,
+  "syntheticScaleFixture": true,
+  "candidateInstalled": false,
+  "readonly": true,
+  "finishedAt": 1944169.3,
+  "observedAt": "2026-10-04T15:10:23.853Z"
+}

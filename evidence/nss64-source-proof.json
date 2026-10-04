@@ -1,0 +1,32 @@
+{
+  "sources": 20,
+  "sourceHashes": {
+    "work/nss64/health.mjs": "1321a65951ce269080a8927ed8c07bce93bc36fff2b55be7df8eda3183333600",
+    "work/nss64/profile.lua": "5c5a70e97e23451726f0abf85277372a0df8b2410e9001ffea8a490854f7e110",
+    "work/nss64/run-profile.mjs": "3094682dcb9c804963276a617c6c29f029e3c4faa43104ab78f53eeee89eb6c9",
+    "work/nss64/json-project.lua": "5cd80e9f5d116b8312cf859c4754ca7195dc96c14ece8d8ecb559507c1f271ac",
+    "work/nss64/project-fixtures.lua": "de7d0645542767489fd400275821b08deb02182a04137a13f7a3299b85dc47dc",
+    "work/nss64/compare-project.mjs": "3d58ef308c62953d24b38f4aae8e394bfe231e9c8fecd6f8d6141c08de35120e",
+    "work/nss64/flow-json.lua": "28311426230630e2429c297d5231eafb354f339fa6fb93703fc80ee2ae470c28",
+    "work/nss64/flow-json-stream.lua": "84f3a1b535609cd55dace63d148b53161f99db4f35eb1d7a66ec6110b94cd0d4",
+    "work/nss64/json-project-fast.lua": "c5633b47a3d843f122119e3e6b87270d7f5df7b1c4003eb980d5b4e6983e183a",
+    "work/nss64/compare-encoding.mjs": "e12a3e2a135e405c6afec42590102d29fcc5198dc83beb5edbeee7945565a5c3",
+    "work/nss64/observe-pipeline.lua": "f98c9b3050bcaae61ff6b3dcb214be1239e17570c90481d8869b794d5cc191d6",
+    "work/nss64/observe-pipeline.mjs": "33eab25fd6b9ea74cdca9d8b5f55292b576277bedd757410d632f8635e1f4488",
+    "work/nss64/encoding-scale.mjs": "8e03a2f81ad0f1e46f4ea7ade7ce31bb73003367bfda7e91a1985e1ea4a8a7f7",
+    "work/nss64/build-candidate.mjs": "b20c7c139ee40332c962c87cd51ee14d5884ef31675a4ba957cf799f51f5740f",
+    "work/nss64/compile-candidate.mjs": "503e06589e41b37890a6b43e1cce3fdb4dbaadfdc69aab047411cc43bebcf2f6",
+    "work/nss64/candidate-worker.lua": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+    "work/nss64/candidate-worker-manifest.json": "789bc3fb9f01c5584f06b2b0acb1d47fec3e236caf5950340eea26d8203b96df",
+    "work/nss64/summarize.py": "7c7cf6e60ac3c977a110a41bb539a924300e4e04a0e7bf3366b57f7ef695b4c8",
+    "work/nss64/freeze-proof.py": "03a81674b6f5890f07de06360719bc79456ae8b5b217463e0a1be35f2665e6f1",
+    "work/nss64/compile-qualified.json": "6bc33b699520191a0a8425014669a8ebc4645b32a00f8aabf50bcd37af390a7c"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "candidateInstalled": false,
+  "productionEntryUnchanged": true,
+  "role": "readonly-publication-latency-and-complete-encoding-candidate-latest-native-contract-and-exact-compile",
+  "earlierSameRoundWrapperRevisionsNotClaimedByteIdentical": true,
+  "original63ProofsUntouched": true
+}

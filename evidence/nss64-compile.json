@@ -1,0 +1,13 @@
+{
+  "bytes": 32019,
+  "nssAdmissionAllowed": false,
+  "originalWorkerBytes": 28919,
+  "passed": true,
+  "installed": false,
+  "configurationWrites": false,
+  "executed": false,
+  "compiledExactCandidateInRam": true,
+  "originalWorkerByteRestorationVerified": true,
+  "sha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+  "observedAt": "2026-10-04T15:13:14.578Z"
+}

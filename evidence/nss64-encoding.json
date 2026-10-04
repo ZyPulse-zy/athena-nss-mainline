@@ -1,0 +1,99 @@
+{
+  "projectValidation": {
+    "cases": 36,
+    "cycleAndNonJsonRejected": true,
+    "sharedReferencesPreserved": true,
+    "slotMapAndDenseListContractRetained": true,
+    "flowCount": 319,
+    "passed": true,
+    "actualCompletePublicationCompared": true
+  },
+  "unknownFieldsPreserved": true,
+  "rows": [
+    {
+      "bytes": 431625,
+      "wallSeconds": 0.1699999999254942,
+      "cpuSeconds": 0.17793499999999995,
+      "scope": "real-complete",
+      "mode": "original"
+    },
+    {
+      "bytes": 431625,
+      "wallSeconds": 0.14000000013038516,
+      "cpuSeconds": 0.1363310000000002,
+      "scope": "real-complete",
+      "mode": "candidate"
+    },
+    {
+      "bytes": 431625,
+      "wallSeconds": 0.13999999989755452,
+      "cpuSeconds": 0.13688200000000017,
+      "scope": "real-complete",
+      "mode": "candidate"
+    },
+    {
+      "bytes": 431625,
+      "wallSeconds": 0.17999999993480742,
+      "cpuSeconds": 0.180226,
+      "scope": "real-complete",
+      "mode": "original"
+    },
+    {
+      "bytes": 431625,
+      "wallSeconds": 0.18000000016763806,
+      "cpuSeconds": 0.1790100000000001,
+      "scope": "real-complete",
+      "mode": "original"
+    },
+    {
+      "bytes": 431625,
+      "wallSeconds": 0.13999999989755452,
+      "cpuSeconds": 0.13544899999999993,
+      "scope": "real-complete",
+      "mode": "candidate"
+    },
+    {
+      "bytes": 691468,
+      "wallSeconds": 0.31000000005587935,
+      "cpuSeconds": 0.307296,
+      "scope": "synthetic-512",
+      "mode": "original"
+    },
+    {
+      "bytes": 691468,
+      "wallSeconds": 0.2099999999627471,
+      "cpuSeconds": 0.21362199999999998,
+      "scope": "synthetic-512",
+      "mode": "candidate"
+    }
+  ],
+  "passed": true,
+  "originalFreshnessUnchanged": true,
+  "startedAt": 1943769.59,
+  "sourceSequence": 3660,
+  "candidateInstalled": false,
+  "sharedAliasesPreserved": true,
+  "realFlows": 319,
+  "realBytes": 431625,
+  "nssAdmissionAllowed": false,
+  "completePublicationFieldEquality": true,
+  "readonly": true,
+  "originalFullAuditUnchanged": true,
+  "finishedAt": 1943772.11,
+  "originalJsonProjectionRetained": true,
+  "cases": 29,
+  "observedAt": "2026-10-04T15:03:46.629Z",
+  "helperSha256": "84f3a1b535609cd55dace63d148b53161f99db4f35eb1d7a66ec6110b94cd0d4",
+  "variant": "flow-json-stream",
+  "projection": "fast",
+  "projectorSha256": "c5633b47a3d843f122119e3e6b87270d7f5df7b1c4003eb980d5b4e6983e183a",
+  "exactOriginalProjectorFunctionUsed": false,
+  "originalProjectorContractDifferentiallyChecked": true,
+  "legacyOriginalJsonProjectionRetainedFieldMeansContractNotIdenticalFunction": true,
+  "realCompleteOriginalMeanCpuSeconds": 0.17905700000000002,
+  "realCompleteCandidateMeanCpuSeconds": 0.13622066666666677,
+  "cpuReductionPercent": 23.923294444413372,
+  "sameFrozenInMemoryFixtureWithinPairs": true,
+  "controlledHighNetworkLoad": false,
+  "notWholeRouterCpuBenefit": true
+}

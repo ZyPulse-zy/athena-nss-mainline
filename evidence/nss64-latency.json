@@ -1,0 +1,19 @@
+{
+  "round": "NSS63",
+  "historicalEvidenceReanalyzedNotNewExperiment": true,
+  "fullSourceAgeAtCheck": 7.410000000149012,
+  "queryToFullPublicationStampSeconds": 3.840000000083819,
+  "queryToFullHintCompletionSeconds": 5.46999999997206,
+  "handoffToOriginalAuditSeconds": 0.2900000000372529,
+  "originalAuditHashSeconds": 0.35000000009313226,
+  "originalAuditJournalSeconds": 0.030000000027939677,
+  "originalAuditSelectorsSeconds": 0.5100000000093132,
+  "originalAuditFullSnapshotParseSeconds": 0.7600000000093132,
+  "firstNewFullHintReadCompletedAfterStampSeconds": 1.6200000001117587,
+  "fullStampCapturedBeforeJsonProjectionAndEncode": true,
+  "renameTimeDirectlyInstrumented": false,
+  "hintReadAndSchedulingCostsNotSeparatedInHistoricalRows": true,
+  "allPostStampTimeAttributedToJson": false,
+  "sourceExpirySecondsUnchanged": 6,
+  "allProductionDeadlinesUnchanged": true
+}

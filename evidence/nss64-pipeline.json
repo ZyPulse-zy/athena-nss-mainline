@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "readonly": true,
+  "seconds": 4.03000000002794,
+  "observerCpuSeconds": 0.22585499999999997,
+  "completeObservedCycles": [
+    {
+      "sequence": 3750,
+      "flows": 115,
+      "querySeconds": 0.18999999994412065,
+      "classificationFirstObservedAfterQuerySeconds": 0.2900000000372529,
+      "applyResultFirstObservedAfterQuerySeconds": 0.6499999999068677,
+      "fullFirstObservedAfterQuerySeconds": 0.8599999998696148,
+      "fullStampAfterQuerySeconds": 0.7900000000372529,
+      "fullVisibilityObservationLowerAfterStamp": 0.019999999785795808,
+      "fullVisibilityObservationUpperAfterStamp": 0.06999999983236194,
+      "fullParseSeconds": 0.0400000000372529
+    },
+    {
+      "sequence": 3751,
+      "flows": 109,
+      "querySeconds": 0.2099999999627471,
+      "classificationFirstObservedAfterQuerySeconds": 0.31999999983236194,
+      "applyResultFirstObservedAfterQuerySeconds": 0.4299999999348074,
+      "fullFirstObservedAfterQuerySeconds": 0.6299999998882413,
+      "fullStampAfterQuerySeconds": 0.5500000000465661,
+      "fullVisibilityObservationLowerAfterStamp": 0.029999999795109034,
+      "fullVisibilityObservationUpperAfterStamp": 0.07999999984167516,
+      "fullParseSeconds": 0.05000000004656613
+    }
+  ],
+  "lan4Mbps": 0.0228486352355736,
+  "pps": 18.11414392046995,
+  "busyPercent": 17.044025157232703,
+  "softirqPercent": 3.207547169811321,
+  "timeSqueezeDelta": 0,
+  "backgroundLoadControlled": false,
+  "observerCostIncluded": true,
+  "timeGranularitySeconds": 0.01,
+  "visibilityAreObservationBounds": true,
+  "productionWorkerInstrumented": false,
+  "ctMarkNatCountersCachedForAdmission": false,
+  "nssAdmissionAllowed": false
+}

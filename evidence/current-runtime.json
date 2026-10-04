@@ -1,74 +1,92 @@
 {
-  "checkedAt": "2026-10-04T13:33:18.784484+00:00",
-  "round": "NSS63",
+  "round": "NSS64",
+  "checkedAt": "2026-10-04T15:15:28.774Z",
   "deploymentReference": "work/nss47/deployment-latest.json",
   "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
   "audit": {
     "passed": true,
-    "auditPurpose": "recovery",
-    "prelearningSchedulingRequested": false,
-    "nssAdmissionAllowed": false,
-    "originalLockedFreshnessPredicatesRetained": true,
-    "protectedConfigurationUnchanged": true,
-    "exactOwnedNativeAudit": true,
-    "selectors": 14,
-    "queryAge": 4.559999999823049,
-    "sequence": 1710,
-    "ecmClosedAndZero": true,
-    "serviceEpochPinned": true,
-    "servicePidChangesAcknowledgedBeforeExperiment": [
-      {
-        "service": "sing-box-athena",
-        "instance": "core",
-        "pidChangedBeforeExperiment": true
-      },
-      {
-        "service": "sing-box-athena",
-        "instance": "guard",
-        "pidChangedBeforeExperiment": true
-      }
-    ],
-    "serviceChangesDuringExperimentAllowed": false
-  },
-  "finalClosure": {
-    "passed": true,
-    "observedAt": "2026-10-04T13:26:13.060Z",
+    "observedAt": "2026-10-04T15:15:28.774Z",
     "readonly": true,
+    "configurationMatches": true,
     "deploymentReference": "work/nss47/deployment-latest.json",
     "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
-    "noActiveRootTransaction": true,
-    "noNssStagingDirectory": true,
-    "noExperimentStateNodeDirectory": true,
-    "noExperimentalGateOrQdiscModule": true,
-    "uptime": 1937918.77
+    "workerPid": 20682,
+    "guardianPid": 5412,
+    "originalFullLockedAudit": true,
+    "selectors": 6,
+    "queryAge": 2.6100000001024455,
+    "sequence": 3895,
+    "ecmStoppedAndZero": true,
+    "noActiveTransaction": true,
+    "noStaging": true,
+    "noExperimentState": true,
+    "noExperimentalModule": true,
+    "diagnostic": {
+      "events": [
+        {
+          "name": "locked-audit-start",
+          "at": 1944473.75
+        },
+        {
+          "name": "hashes-complete",
+          "at": 1944473.84
+        },
+        {
+          "name": "journal-parsed",
+          "at": 1944473.84
+        },
+        {
+          "name": "selectors-complete",
+          "at": 1944473.93
+        },
+        {
+          "name": "snapshot-parsed",
+          "at": 1944474.03
+        },
+        {
+          "name": "freshness-checked",
+          "at": 1944474.03
+        },
+        {
+          "name": "locked-audit-end",
+          "at": 1944474.04
+        }
+      ],
+      "freshness": {
+        "checkedAt": 1944474.03,
+        "publicationAge": 1.6999999999534339,
+        "sourceAge": 2.6100000001024455,
+        "queryStarted": 1944471.42,
+        "publishedAt": 1944472.33,
+        "sequence": 3895
+      }
+    },
+    "serviceEpochPinned": true,
+    "nssAdmissionAllowed": false,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "ecmClosedAndZero": true
+  },
+  "finalClosure": {
+    "passed": true
   },
   "workerPid": 20682,
-  "naturalWorkerRestartObservedThisTurn": true,
-  "classifierWorkerContinuousAfterCacheRetain": false,
+  "guardianPid": 5412,
+  "sameWorkerGuardianAndProducerSinceOpening": true,
   "permanentClassifierChangedThisTurn": false,
-  "classifierReliabilityChangesRetained": 3,
-  "pureIpv4ParserCacheRetained": true,
-  "experimentalConfigurationWritesThisTurn": true,
-  "nssOpenedThisTurn": true,
-  "temporaryStagesThisTurn": 5,
-  "historicalNss49FunctionABACompleted": true,
-  "realForwardingABACompletedThisTurn": false,
-  "partialABThisTurn": true,
-  "realNssBClientHudCapturedThisTurn": true,
-  "completePerformanceAndGameAcceptance": false,
+  "experimentalConfigurationWritesThisTurn": false,
+  "nssOpenedThisTurn": false,
+  "naturalWorkerRestartObservedThisTurn": false,
   "qualifiedExperimentalEntry": "work/nss63/real-session.mjs",
   "qualifiedExperimentalEntryBoundInputs": 241,
   "entryPreparationQualified": true,
-  "entryNotInstalledAsResidentClassifier": true,
   "entryFullHighLoadForwardingQualified": false,
-  "latestEntryRefusedBeforeCheckpoint": true,
+  "publicationCandidateInstalled": false,
+  "candidateWorkerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+  "candidateCompiledInTargetRamOnly": true,
   "nssPermanentlyEnabled": false,
-  "steamImmediateQueueEmpty": true,
-  "steamNetworkBps": 0,
-  "cs2TestServerExited": true,
-  "cs2HudRestored": true,
-  "humanGameplayThisTurn": false,
-  "upstreamSubmitted": false,
-  "requiresLiveRevalidation": true,
-  "historical53RuntimePreservedSha256": "03c05467c254bb0b98b540e33e59dfdc96f9b6f6012d2f57aa5c4ed0df23b33a"
+  "completePerformanceAndGameAcceptance": false,
+  "gameGuiOrNewDownloadPerformedThisTurn": false,
+  "historical63RuntimePreservedSha256": "c78125f0bdd73b3348d370b80224eeefb918bf83bfb8429890d433e0dc478d44",
+  "requiresLiveRevalidation": true
 }
