@@ -1,0 +1,10 @@
+{
+  "round": "NSS53",
+  "phaseSha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+  "phaseByteIdenticalToNss52": true,
+  "classifierSha256": "d661fa54ecba3a6360001224bba28538d9e532d4429b93ef54f86759ceabe526",
+  "changedRuntimeDecisionPolicy": false,
+  "notInstalled": true,
+  "notProductionBound": true,
+  "highLoadQualified": false
+}

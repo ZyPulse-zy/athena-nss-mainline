@@ -1,6 +1,15 @@
 # 证据索引
 
-## 当前主线：NSS49
+## 当前主线：NSS53
+
+- [当前汇总](../evidence/nss53-mainline.json)、[运行核验](../evidence/current-runtime.json)：常驻NSS47未变、ECM关闭全零，本轮仅只读。
+- [真实下载发现时序](../evidence/nss53-phase-load.json)：两组三次6/6通过，294–366Mbps，原200ms条件保持；CPU/softirq/squeeze含profiler成本，不是NSS A/B。
+- [拒绝帧诊断](../evidence/nss53-diagnostics.json)：60本地断言/14原生helper与两次实际只读ready分开；投影缺失未知、严格同源完整帧，不改变权限。
+- [159项新入口](../evidence/nss53-entry-binding.json)、[24份源码冻结](../evidence/nss53-source-proof.json)、[Steam负载结束状态](../evidence/nss53-steam-load.json)。当前入口`work/nss53/real-session.mjs`，报告`outputs/nss53-mainline-report.html`。
+- [NSS52原runtime](../evidence/nss52-runtime.json)按原字节保留，[历史汇总](../evidence/nss52-mainline.json)与[NSS49原生功能](../evidence/nss49-actual-aba.json)保持原义。
+- [进程发现问题](ISSUE_CORE_SLEEP_DISCOVERY.md)、[准入投影诊断问题](ISSUE_ADMISSION_PROJECTION.md)为私有控制器backlog，未提交上游。
+
+## NSS49 历史功能
 
 - [实际完整对照](../evidence/nss49-actual-aba.json)：WAN2真实CS2/Steam、0→2→0、leaf/mark/NAT/affinity与精确恢复成功；吞吐不匹配、没有B段HUD，CPU/真人收益未通过。
 - [当前汇总](../evidence/nss49-mainline.json) 与 [当前运行](../evidence/current-runtime.json)：常驻NSS47纯地址缓存＋NSS46可靠性修复，当前ECM关闭。

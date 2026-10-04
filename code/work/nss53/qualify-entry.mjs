@@ -1,0 +1,17 @@
+// Binding audit; reuses frozen controller cases rather than replaying old setup.
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+import {verifyPreparation}from './qualification.mjs';
+const root='work/nss53',hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'),q=verifyPreparation();
+function undo(t,a,b){assert.equal(t.split(a).length,2,a);return t.replace(a,()=>b);}
+let stage=fs.readFileSync(root+'/module-stage.mjs','utf8');
+stage=undo(stage,"fs.readFileSync('work/nss53/core-guard-phase.lua','utf8')","fs.readFileSync('work/nss51/core-guard-phase.lua','utf8')");
+stage=undo(stage,"fs.readFileSync('work/nss53/phase-qualified.json','utf8')","fs.readFileSync('work/nss51/phase-qualified.json','utf8')");
+stage=undo(stage,"fs.readFileSync('work/nss53/classifier.lua','utf8')","fs.readFileSync('work/nss49/classifier.lua','utf8')");assert.equal(stage,fs.readFileSync('work/nss51/module-stage.mjs','utf8'));
+let controller=fs.readFileSync(root+'/real-session.mjs','utf8');
+controller=undo(controller,"const dir='work/nss53/real-matched-aba-'","const dir='work/nss51/real-matched-aba-'");
+controller=controller.replaceAll("runNode('work/nss53/current-audit-diagnostic.mjs'","runNode('work/nss51/current-audit-diagnostic.mjs'");assert.equal(controller,fs.readFileSync('work/nss51/real-session.mjs','utf8'));
+let restored=fs.readFileSync(root+'/classifier.lua','utf8');const delta=JSON.parse(fs.readFileSync(root+'/classifier-delta.json'));for(const e of [...delta.edits].reverse())restored=undo(restored,e.to,e.from);assert.equal(restored,fs.readFileSync('work/nss49/classifier.lua','utf8'));
+const phase=fs.readFileSync(root+'/core-guard-phase.lua','utf8');assert.equal(phase,fs.readFileSync('work/nss52/core-guard-phase.lua','utf8'));assert.equal(phase.slice(phase.indexOf('function M.waitFresh')),fs.readFileSync('work/nss51/core-guard-phase.lua','utf8').slice(fs.readFileSync('work/nss51/core-guard-phase.lua','utf8').indexOf('function M.waitFresh')));
+const files=['selection-diagnostic.lua','classifier.lua','classifier-delta.json','core-guard-phase.lua','phase-qualified.json','diagnostic-qualified.json','ready-readonly-qualified.json','build-candidate.mjs','build-entry.mjs','test-diagnostics.mjs','test-ready-readonly.mjs','trace-readonly.mjs','qualification.mjs','session-binding.mjs','module-stage.mjs','real-session.mjs','qualify-entry.mjs','current-audit-diagnostic.mjs','cleanup-audit.mjs'];
+const p={passed:true,observedAt:new Date().toISOString(),baseBoundInputs:Object.keys(q.sourceManifest).length,newBoundInputs:files.length,sourceManifest:Object.fromEntries(files.map(n=>[root+'/'+n,hash(root+'/'+n)])),controllerDecisionAndRecoveryBarriersUnchanged:true,moduleStageOtherRuntimeSourcesUnchanged:true,sameSourceDiagnosticOnly:true,originalSourceAndOwnerDeadlinesUnchanged:true,ownerSeconds:45,budgetMbps:20,flows:{tcp:1,udp:1},waitFreshByteIdentical:true,phaseSourceByteIdenticalToNss52:true,sourceAndRuntimeAdmissionStillRequired:true,noRouterWrites:true,notInstalled:true,highLoadQualified:false,newNativeFunctionABA:false,old99And13CasesReusedNotReexecuted:true};
+fs.writeFileSync(root+'/entry-qualified.json',JSON.stringify(p,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({passed:true,boundInputs:p.baseBoundInputs+p.newBoundInputs,notInstalled:true,highLoadQualified:false,noRouterWrites:true}));

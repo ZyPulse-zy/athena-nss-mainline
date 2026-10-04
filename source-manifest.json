@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T09:38:04.264546+00:00",
+  "generatedAt": "2026-10-04T10:45:57.557496+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -4393,8 +4393,176 @@
       "sha256": "0a26b72fabd332375d46b90b9290cdddb78d98add0e7ee228e6a5821179ae20f",
       "bytes": 7982,
       "role": "uninstalled-readonly-candidate"
+    },
+    {
+      "path": "code/work/nss53/selection-diagnostic.lua",
+      "workspaceSource": "work/nss53/selection-diagnostic.lua",
+      "sha256": "fa30990dc66658c4770afde8b59856397e76c13ef4ada04f028e3cddcde8cab3",
+      "bytes": 3080,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/build-candidate.mjs",
+      "workspaceSource": "work/nss53/build-candidate.mjs",
+      "sha256": "aec907a6f27edea00855a6b23553e2fbe2a06b887bdbc79398f77247b09b80f1",
+      "bytes": 4529,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/classifier.lua",
+      "workspaceSource": "work/nss53/classifier.lua",
+      "sha256": "d661fa54ecba3a6360001224bba28538d9e532d4429b93ef54f86759ceabe526",
+      "bytes": 20246,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/classifier-delta.json",
+      "workspaceSource": "work/nss53/classifier-delta.json",
+      "sha256": "2a59bb7d8ac1b57db5496a7b5e9d0525b63611fd29c7ff93348e4d66de645bd0",
+      "bytes": 5819,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/core-guard-phase.lua",
+      "workspaceSource": "work/nss53/core-guard-phase.lua",
+      "sha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+      "bytes": 6180,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/candidate-summary.json",
+      "workspaceSource": "work/nss53/candidate-summary.json",
+      "sha256": "865d53b817ff601e64d10aef41a73c8e7a12a551ae41651fc851b8c2798e34de",
+      "bytes": 360,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/test-diagnostics.mjs",
+      "workspaceSource": "work/nss53/test-diagnostics.mjs",
+      "sha256": "45a290d90eb844e389b8399833d996cd19a44526a58e2a559a5836d3f0e32f10",
+      "bytes": 15094,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/test-ready-readonly.mjs",
+      "workspaceSource": "work/nss53/test-ready-readonly.mjs",
+      "sha256": "c9fed42188bff51cbdb136c7969a0124874c7b3a75f7d6e6cfb7dad592fcb155",
+      "bytes": 5061,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/test-ready-steam-load.mjs",
+      "workspaceSource": "work/nss53/test-ready-steam-load.mjs",
+      "sha256": "5a7e271b3c36547fc665b4141fad6a7a21e94b77ff27a86665d0b8eba0938faa",
+      "bytes": 5065,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/trace-readonly.mjs",
+      "workspaceSource": "work/nss53/trace-readonly.mjs",
+      "sha256": "aad0b8c82779a76af4df7cd1e4587a733271041746a5bde563803ada5d74595a",
+      "bytes": 6137,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/build-entry.mjs",
+      "workspaceSource": "work/nss53/build-entry.mjs",
+      "sha256": "c4b77f7d6779363c0589385e8f08bf5a3b282d3294b62ad7bf6740840b46ea01",
+      "bytes": 2248,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/qualification.mjs",
+      "workspaceSource": "work/nss53/qualification.mjs",
+      "sha256": "a07ceaaee567d1795931532c36e66783ad4bb597c197dcf0642ec2440349e6cc",
+      "bytes": 1968,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/session-binding.mjs",
+      "workspaceSource": "work/nss53/session-binding.mjs",
+      "sha256": "e042253d87d310977f8d16110d6a89455de4b8ba0124fe8a341fd79b8b2ad345",
+      "bytes": 946,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/module-stage.mjs",
+      "workspaceSource": "work/nss53/module-stage.mjs",
+      "sha256": "c57682bf953843284f205c1b124d59b6f0032811d748f6d4d5ceab6bd4549ede",
+      "bytes": 15499,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/real-session.mjs",
+      "workspaceSource": "work/nss53/real-session.mjs",
+      "sha256": "096b7f10c3c7c680563baa24a9acd4241ec939782cb3620b26eb06379cef63b2",
+      "bytes": 11286,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/qualify-entry.mjs",
+      "workspaceSource": "work/nss53/qualify-entry.mjs",
+      "sha256": "35158a2d90f6c9052755c4fbac3a559483b4d0024aac3107b0639afc988b62c4",
+      "bytes": 3402,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/phase-qualified.json",
+      "workspaceSource": "work/nss53/phase-qualified.json",
+      "sha256": "91d2e9bc3f5914f4da7d8c86a83ef91387eb1c6833c8d2160fe4220e3e8fbf45",
+      "bytes": 445,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/entry-qualified.json",
+      "workspaceSource": "work/nss53/entry-qualified.json",
+      "sha256": "147216ce179bd115c7357db91cd8e347860ddbcd56ac8405db7d046d0639a991",
+      "bytes": 2742,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss53/current-audit-diagnostic.mjs",
+      "sha256": "13114f2bf51a56da8447ac6536ab0b09508e209e1961432277cd9b98a0ee75f3",
+      "bytes": 4151,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/cleanup-audit.mjs",
+      "workspaceSource": "work/nss53/cleanup-audit.mjs",
+      "sha256": "bfeb2562b3cb0da3b921a9edc4928de4b35e41ee12cd7428001765c566a2542d",
+      "bytes": 2309,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/diagnostic-qualified.json",
+      "workspaceSource": "work/nss53/diagnostic-qualified.json",
+      "sha256": "16b105113b0042c272e4b1b8e072902e119069710c79b0876969a5656572a3b2",
+      "bytes": 4793,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/ready-readonly-qualified.json",
+      "workspaceSource": "work/nss53/ready-readonly-qualified.json",
+      "sha256": "5dc55d924d5abf35e641e4f97b93d37285b5f71ef0ec29d5bafaf788999af1f4",
+      "bytes": 1024,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/summarize.py",
+      "workspaceSource": "work/nss53/summarize.py",
+      "sha256": "4356070e4072e3333f0c20db354c10476ab49bd9509ab27c55fbcfb78125b795",
+      "bytes": 16468,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss53/freeze-safe-sources.py",
+      "workspaceSource": "work/nss53/freeze-safe-sources.py",
+      "sha256": "80c823cf7934f5458e8a32b124e59373d0ab9d356b357419210359b1e771eaab",
+      "bytes": 1633,
+      "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
     }
   ],
-  "lastAppendExport": "NSS50–NSS52",
+  "lastAppendExport": "NSS53",
   "privateDataExcluded": true
 }

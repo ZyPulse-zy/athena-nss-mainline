@@ -244,3 +244,15 @@
 - 17:30最终原完整持锁审核通过，同一worker/guardian/producer，queryAge3.28秒、sequence3488，2个selector可能为背景流；ECM停止全零，无事务/暂存/状态/gate或qdisc实验模块。CS2退出测试服务器，三项HUD恢复“条件较差时”，Steam速率零；同实例连续不代表高负载crash或长期稳定。
 - NSS50/51/52分别15/14/7份可读源码冻结，实际128/140项完整输入副本与原始HUD/CT/socket/serviceepoch仍私有。NSS49 runtime精确保留，旧成功/失败和新候选分开；冻结不是额外生产准入。报告源验证通过，未声称浏览器渲染验收。上游Issue/PR只本地backlog，未提交。
 - 下一步只验证高负载进程发现、补该帧分类诊断，然后集中取得同负载软件→NSS→软件/客户端HUD。NSS49功能成立，不重复分类器安装或旧99/13项准备；第二WAN、共享预算、Wi-Fi、autorate继续等待，CPU/真人收益未验收。
+
+## 2026-10-04 NSS53：真实下载发现 6/6、拒绝帧诊断与新入口绑定
+
+- 开场与18:38末次原完整持锁保护审核通过，常驻NSS47/config478818d…7517a900不变。固定service epoch期间服务集合/命令/健康/身份无漂移，同worker/guardian/producer；sequence从4211推进至4840。ECM关闭全零，无事务、暂存、实验state或gate/qdisc模块。本轮没有路由器实验配置写入、checkpoint、回滚试验或NSS B。
+- NSS52父进程解析候选保持同字节，原waitFresh、200ms条件与source/owner/epoch期限不变。NSS53入口绑定140基础＋19新项共159项，stage/controller差分只改明确候选、诊断和新目录。原20Mbps、一TCP＋一UDP、独立45秒owner恢复保持；旧99/13准备复用不重计。当前是实验入口，未替换常驻分类器，未本轮完整转发资格。
+- 新同帧诊断源码确认classification是bulk＋已准入RT投影。保留导致拒绝的原采样；仅终态拒绝后最多读一次snapshot，producer与全部query来源字段一致且原consumer.inspect有效，才补完整分类。否则明确未知，不重新查CT、不改准入/重试/恢复。原第一/第六次拒绝仍缺完整槽位，不能倒推历史原因。
+- 本地60断言（21旧适配器重放＋39新增）、原生JSON helper14项通过；本地适配器IO/时钟/ACK被替代。目标实际ready路径两次均用合成不存在键：轻载sourceAge1.39秒，同源完整帧确认不存在；下载时sourceAge1.64秒、check0.05秒，完整来源不相同则未知，retry=false，ECM仍全零。不是实际连接NSS准入/加速证明；目标RAM省略未用renewal函数，不宣称完整原生转发模拟。
+- 用户授权另找库内下载，助手选择未安装DOOM（2016），D盘当时可用218.25GB、磁盘需求68.69GB、网络59.3GB；暂停前约6.1GB、页面曾显示323.3/336.4Mbps。已核验暂停/0bps，未购买、卸载、启动游戏或重下DOOM Eternal。本轮未操作CS2 GUI，没有HUD；运行着CS2进程不等于对局。
+- 完整consumer candidates/readContext/inspect＋原guard真实子进程换代，两组三次各6.01/5.40/5.36与3.18/5.27/5.16秒，6/6通过。LAN4 Mbps365.65/353.88/330.47/300.99/297.43/293.94，pps30305/29350/27478/25000/24684/24445。CPU busy84.80/79.07/76.24/77.61/74.09/71.52%，softirq54.41/55.67/53.00/47.35/45.40/45.86%，time_squeeze+22/+18/+2/+18/+30/+28、softnetDrop全零。含profiler开销，不同窗口不是同offered load，更不是NSS A/B；softnet0drop不是客户端0loss。
+- longest consumer180ms、含consumer回调200ms；实际接纳结果最大出生年龄180ms，uptime约10ms粒度、余量有限。新候选六短窗发现验证通过，不把历史旧helper0/3、51的1/3与本轮计算为整机CPU收益，也不宣称完整高负载crash/recovery或长期稳定。guard未signal/暂停/修改，ECM每帧关闭零计数。
+- 应用核查24Steam bulk/0对局UDP/0同WANpair，默认只读等待，未开ECM，无leaf/CAKE tin/游戏指标/体感。下一步直接用53在真实同WAN配对下先记录HUD、原checkpoint/独立恢复、同负载software→NSS→software，不扩WAN，不重复安装/旧准备。
+- 三次本地传输长度拒绝、夹具/输出解析、入口切片offset、首版投影解释及汇总缓存年龄/结果字段修正原输出保持，未提高传输或有效期界限、未触发生产变更。24源码冻结，651份总镜像哈希校验；旧52runtime原字节保存。原完整私有绑定、配置/进程/CT/socket/截图仍本地。报告源验证通过，未声称浏览器渲染，未提交上游。

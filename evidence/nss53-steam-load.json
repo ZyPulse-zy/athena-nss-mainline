@@ -1,0 +1,17 @@
+{
+  "title": "DOOM (2016)",
+  "availableSteamLibraryContent": true,
+  "selectedLibrary": "D:",
+  "availableGBBeforeRequest": 218.25,
+  "displayedDiskRequirementGB": 68.69,
+  "displayedDownloadGB": 59.3,
+  "lastDisplayedDownloadedGBBeforePause": 6.1,
+  "approximateGuiVolumeNotExactByteCounter": true,
+  "pausedConfirmed": true,
+  "networkBpsAfterPause": 0,
+  "purchaseOrUninstallOccurred": false,
+  "newGameLaunched": false,
+  "completedDoomEternalNotRedownloaded": true,
+  "cs2GuiNotOperatedThisRound": true,
+  "hudNotCapturedThisRound": true
+}

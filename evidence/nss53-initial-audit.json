@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "auditPurpose": "prewrite",
+  "prelearningSchedulingRequested": true,
+  "nssAdmissionAllowed": false,
+  "originalLockedFreshnessPredicatesRetained": true,
+  "protectedConfigurationUnchanged": true,
+  "exactOwnedNativeAudit": true,
+  "selectors": 0,
+  "queryAge": 3.830000000074506,
+  "sequence": 4211,
+  "ecmClosedAndZero": true,
+  "serviceEpochPinned": true,
+  "servicePidChangesAcknowledgedBeforeExperiment": [
+    {
+      "service": "sing-box-athena",
+      "instance": "core",
+      "pidChangedBeforeExperiment": true
+    },
+    {
+      "service": "sing-box-athena",
+      "instance": "guard",
+      "pidChangedBeforeExperiment": true
+    }
+  ],
+  "serviceChangesDuringExperimentAllowed": false
+}

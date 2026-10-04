@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "sourceSha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+  "clockTicks": 100,
+  "reusedNss52Checks": 34,
+  "reusedLightLoadPhases": 2,
+  "qualificationSource": "work/nss52/phase-qualified-sanitized.json",
+  "qualificationSourceSha256": "51115e50d2f1064aeee797da8f4b42c0318031e3b972707e2523483e6644a365",
+  "waitFreshByteIdentical": true,
+  "highLoadQualified": false,
+  "noNssPermission": true
+}

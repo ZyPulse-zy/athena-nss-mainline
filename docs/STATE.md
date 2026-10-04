@@ -2,9 +2,25 @@
 
 更新：2026-10-04，北京时间。最新现场核验见 [当前运行记录](../evidence/current-runtime.json)。
 
-**常驻仍 NSS47，ECM 关闭全零。NSS49 单 WAN 功能成功保持；NSS50–52 六次新尝试没有开放 ECM，当前卡在高负载准入读取延迟与所选分类持续性。已取得两段软件客户端 HUD；新的进程解析候选仅通过轻载只读检查，CPU / 真人游戏收益仍未验收。**
+**常驻仍 NSS47，ECM 关闭全零。NSS53 真实下载 294–366 Mbps 的六次只读发现全部通过；精确拒绝诊断与 NSS52 同字节进程候选已绑定新 159 项实验入口。本轮没有 CS2 对局连接、没有 NSS 放行或 A/B。NSS49 单 WAN 功能保持，CPU / 真人游戏收益仍未验收。**
 
-## 最新：NSS50–NSS52
+## 最新：NSS53
+
+见 [本轮汇总](../evidence/nss53-mainline.json)、[真实负载时序](../evidence/nss53-phase-load.json)、[拒绝诊断](../evidence/nss53-diagnostics.json) 与 [新入口](../evidence/nss53-entry-binding.json)。
+
+- 常驻引用、配置和保护设置未变。开场与 18:38 收尾原完整持锁审核通过，worker / guardian / producer 连续，序列继续前进；ECM 停止全零，无事务、暂存、实验 state、gate / qdisc 模块。本轮没有路由器实验配置写入、checkpoint 或回滚试验；只读无需恢复生产配置。
+- 新入口 `work/nss53/real-session.mjs`：140 项基础＋19 项新绑定，共 159 项。NSS52 进程候选字节相同；原 `waitFresh`、200 ms 出生条件、source / owner / epoch 期限、20 Mbps、一 TCP＋一 UDP及恢复决定保持。来源绑定与适配器差分审核通过，旧 99 / 13 项复用，不重新计为本轮执行。它是实验入口，未替换常驻分类器，也未在本轮完成原生 NSS A/B。
+- 用户授权由助手找新的库内下载，选择未安装的 DOOM（2016）。D 盘当时 218.25 GB 可用，下载显示总 59.3 GB，暂停前约 6.1 GB；已确认暂停、网络 0 bps。未购买、卸载、启动新游戏，未重下完成的 DOOM Eternal；本轮未操作 CS2 GUI 或取得 HUD。
+- 两组实际完整 consumer `candidates / readContext / inspect` 回调、每组三次 `waitFresh`，6/6 通过。LAN4 365.65 / 353.88 / 330.47 / 300.99 / 297.43 / 293.94 Mbps，约 24.4k–30.3k pps；四次达到 300 Mbps。新子进程接纳结果中的最大出生年龄 180 ms，consumer 读取最大约 180 ms，含读取的回调最大约 200 ms。uptime 约 10 ms 粒度、余量有限；guard 未被改动或 signal。CPU / softirq / time_squeeze 在证据中保留，包含 profiler 开销，各窗不是相同 offered load，不是 NSS 性能 A/B。
+- 这将 NSS52 候选从“只有轻载”推进为六个真实负载短窗下的发现验证。历史旧 helper 0/3、NSS51 1/3 保持；不同窗口不构成整机因果 CPU 比较，更不是完整高负载故障恢复或长期稳定证明。
+- 源码发现 `classification.json` 是 bulk＋已准入 RT 投影。投影缺失不能直接证明 CT 不存在、退出或改类。新诊断保留原拒绝帧；仅最终拒绝后至多读一次完整 `snapshot.json`，producer / 全部 query 来源相同、原 consumer 校验通过才记录完整分类。来源不同保持未知，不新增 conntrack 查询，不改变准入、重试或恢复。
+- 本地 60 断言（原 21 重放＋新增 39），目标原生 JSON helper 14 项通过。实际只读 ready 使用合成不存在键：轻载同源完整帧确认不存在；真实下载中完整帧来源不同，按预期记录未知。完整适配器本地模拟、目标 helper 和目标 ready 三种证据分开，均不授予真实连接加速资格。
+- 实际应用只读核查：24 条 Steam bulk、0 条 CS2 对局 UDP、0 同 WAN 配对，原入口默认等待，未暂存或放行 ECM。没有新 bulk/RT leaf、CAKE tin、游戏 jitter/loss/Miss 或体感，不把缺失填零。
+- 24 份源码按白名单冻结，原完整私有输入、CT/socket、配置、原始进程、截图与凭据留本地。NSS52 runtime 按原字节保存在 [历史运行记录](../evidence/nss52-runtime.json)。传输/夹具/诊断投影与汇总字段修正均有本地记录，未提高传输或时序上限、未触发生产变更。没有上游提交。
+
+下一步使用 NSS53 已绑定入口，待自然真实单 WAN CS2＋Steam 配对后先对齐 HUD，再按原 checkpoint / 独立 45 秒回滚做同负载 software→NSS→software。可以恢复现有暂停下载，无需重装分类器、重复旧准备或继续下载整款游戏。未通过前不扩第二 WAN / 共享预算 / Wi-Fi / autorate。
+
+## NSS50–NSS52 历史
 
 见 [本轮汇总](../evidence/nss52-mainline.json)、[高负载只读时序](../evidence/nss51-phase-timing.json)、[实际软件负载](../evidence/nss50-partial-software.json) 和 [软件客户端记录](../evidence/nss50-client-software.json)。
 

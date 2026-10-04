@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T10:25:04.169Z",
+  "adapterSha256": "d661fa54ecba3a6360001224bba28538d9e532d4429b93ef54f86759ceabe526",
+  "execBytes": 8847,
+  "readonly": true,
+  "nativeJsonc": true,
+  "syntheticAbsentKeys": true,
+  "actualPublicationConsumed": true,
+  "completeReadyPathExecuted": true,
+  "unusedRenewalFunctionsOmitted": true,
+  "originalAssertionsRetained": true,
+  "noExtraAdmissionClassificationReads": true,
+  "maximumAfterRejectionDiagnosticReads": 1,
+  "retryable": false,
+  "sequence": 4577,
+  "sourceAge": 1.3900000001303852,
+  "checkSeconds": 0,
+  "slotReasons": {
+    "tcp": "NOT_IN_ADMISSION_PROJECTION",
+    "udp": "NOT_IN_ADMISSION_PROJECTION"
+  },
+  "sameSourceCompleteDiagnosticObserved": true,
+  "completeSlotReasons": {
+    "tcp": "EXACT_KEY_ABSENT",
+    "udp": "EXACT_KEY_ABSENT"
+  },
+  "completeDiagnosticUnavailable": null,
+  "ecmClosedAndZero": true,
+  "noNssPermission": true,
+  "notInstalled": true,
+  "notProductionBound": true,
+  "realForwardingQualified": false
+}

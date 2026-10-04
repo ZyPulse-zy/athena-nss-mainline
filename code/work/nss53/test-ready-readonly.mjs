@@ -1,0 +1,25 @@
+// Actual target readContext/inspect/pair/ready path with deliberately absent keys.
+// No synthetic traffic, no NSS writes and no authorization for a real connection.
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+import {connectRouter}from '../nss20/connect-router.mjs';import {encode,receipt}from '../nss11/v7-observe-repair/observe2/transport.mjs';
+const root='work/nss53',adapter=fs.readFileSync(root+'/classifier.lua','utf8');
+const ctx=JSON.parse(fs.readFileSync('work/nss47/deployment-latest.json')),cfg=JSON.parse(fs.readFileSync(ctx.localDir+'/config.json'));
+const owner={base:ctx.base,configSha256:ctx.configHash,workerSha256:cfg.files['worker.lua']};
+const a=adapter.indexOf('function M.compareEpoch('),b=adapter.indexOf('return M\n',a);assert.ok(a>0&&b>a);
+let reader=adapter.slice(0,a)+adapter.slice(b);const c=reader.indexOf(' function out.sample()'),d=reader.indexOf(' return out\nend\nreturn setmetatable',c);assert.ok(c>0&&d>c);reader=reader.slice(0,c)+reader.slice(d);
+assert.equal(reader.slice(reader.indexOf(' function out.ready()'),reader.indexOf(' return out\nend\nreturn setmetatable')),adapter.slice(adapter.indexOf(' function out.ready()'),adapter.indexOf(' function out.sample()')));
+const code=`local A=(function()\n${reader}\nend)();local fs=require('nixio.fs');local j=require('luci.jsonc')
+local function read(p,l)local f=assert(io.open(p));local s=f:read(l+1)or'';f:close();assert(#s<=l);return s end
+local function now()return assert(tonumber(read('/proc/uptime',128):match('^[%d.]+')))end
+local function run(c)assert(c:match('^/usr/bin/sha256sum /root/router%-project/classifier/'));local f=assert(io.popen(c));local s=f:read('*a');f:close();return s end
+local function stopped()assert(tonumber(read('/sys/kernel/debug/ecm/front_end_ipv4_stop',128))==1 and tonumber(read('/sys/kernel/debug/ecm/front_end_ipv6_stop',128))==1);for _,p in ipairs({'ecm_db/connection_count','ecm_nss_ipv4/accelerated_count','ecm_nss_ipv6/accelerated_count','ecm_nss_ipv4/pending_accel_count','ecm_nss_ipv6/pending_accel_count','ecm_nss_ipv4/pending_decel_count','ecm_nss_ipv6/pending_decel_count'})do assert(tonumber(read('/sys/kernel/debug/ecm/'..p,128))==0)end end
+stopped();local P={classifierOwner=assert(j.parse([==[${JSON.stringify(owner)}]==])),boot=read('/proc/sys/kernel/random/boot_id',128):gsub('%s+$',''),selected={tcp={classifierKey='nss53-absent-tcp'},udp={classifierKey='nss53-absent-udp'}}};local record={deadline=now()+10};local r=A.new(P,fs,j,read,now,run,record)
+local ok,reason,retry=r.ready();assert(not ok and retry==false and reason:match('Selected class is not admitted$'),tostring(reason))
+local detail=assert(record.lastAdmissionProbe.selected);assert(detail.sameAdmissionFrame and detail.nssAdmissionAllowed==false)
+for _,slot in ipairs({'tcp','udp'})do assert((detail.slots[slot].reasonCode=='NOT_IN_ADMISSION_PROJECTION'or detail.slots[slot].reasonCode=='EXACT_KEY_ABSENT')and not detail.slots[slot].present)end
+stopped();print(j.stringify({passed=true,readonly=true,nativeJsonc=true,syntheticAbsentKeys=true,actualPublicationConsumed=true,completeReadyPathExecuted=true,unusedRenewalFunctionsOmitted=true,originalAssertionsRetained=true,ecmClosedAndZero=true,probe=record.lastAdmissionProbe,reason=reason,retryable=retry}))`;
+const e=encode("/usr/bin/lua - <<'NSS53_READY_READONLY'\n"+code.replace(/^\s*--[^\n]*$/gm,'')+'\nNSS53_READY_READONLY\n');
+if(process.argv.includes('--prepare-only')){console.log(JSON.stringify({prepared:true,execBytes:e.execBytes}));process.exit(0);}
+const connection=await connectRouter();try{const raw=receipt(await connection.run(e.command),e);fs.writeFileSync(root+'/ready-readonly-raw-private.json',JSON.stringify(raw,null,2)+'\n',{flag:'wx'});assert.equal(raw.code,0,raw.stderr);const p=JSON.parse(raw.stdout);assert.ok(p.passed);
+const proof={passed:true,observedAt:new Date().toISOString(),adapterSha256:crypto.createHash('sha256').update(adapter).digest('hex'),execBytes:e.execBytes,readonly:true,nativeJsonc:true,syntheticAbsentKeys:true,actualPublicationConsumed:true,completeReadyPathExecuted:true,unusedRenewalFunctionsOmitted:true,originalAssertionsRetained:true,noExtraAdmissionClassificationReads:true,maximumAfterRejectionDiagnosticReads:1,retryable:p.retryable,sequence:p.probe.selected.sourceSequence,sourceAge:p.probe.sourceAge,checkSeconds:p.probe.checkSeconds,slotReasons:Object.fromEntries(['tcp','udp'].map(s=>[s,p.probe.selected.slots[s].reasonCode])),sameSourceCompleteDiagnosticObserved:!!p.probe.completeSelected,completeSlotReasons:p.probe.completeSelected?Object.fromEntries(['tcp','udp'].map(s=>[s,p.probe.completeSelected.slots[s].reasonCode])):null,completeDiagnosticUnavailable:p.probe.completeSelectionUnavailable??null,ecmClosedAndZero:true,noNssPermission:true,notInstalled:true,notProductionBound:true,realForwardingQualified:false};
+fs.writeFileSync(root+'/ready-readonly-qualified.json',JSON.stringify(proof,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(proof));}finally{connection.close();}

@@ -7,6 +7,8 @@ def read(path):return json.loads((workspace/path).read_text(encoding='utf-8-sig'
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def save(path,value):(root/path).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 previous=root/'evidence/current-runtime.json';historical=root/'evidence/nss49-runtime.json'
+if json.loads(previous.read_text())['round'] not in ('NSS49','NSS52'):
+    raise SystemExit('NSS50-52 export is historical. Do not replace a later current runtime.')
 if not historical.exists():
     assert json.loads(previous.read_text())['round']=='NSS49';shutil.copyfile(previous,historical)
 manifest=json.loads((root/'source-manifest.json').read_text());existing={x['path']:x for x in manifest['sources']}

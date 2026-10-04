@@ -1,0 +1,206 @@
+{
+  "readonlyWindows": [
+    {
+      "observedAt": "2026-10-04T10:35:43.271Z",
+      "readonly": true,
+      "execBytes": 8995,
+      "phaseSha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+      "adapterSha256": "d661fa54ecba3a6360001224bba28538d9e532d4429b93ef54f86759ceabe526",
+      "attempts": [
+        {
+          "passed": true,
+          "seconds": 6.010000000009313,
+          "scans": 126,
+          "maxScanSeconds": 0.19999999995343387,
+          "maxObservationSeconds": 0.17999999993480742,
+          "lan4Mbps": 365.64776705434184,
+          "lan4Pps": 30305.490848538728,
+          "newChildren": [
+            {
+              "birthAge": 0.12000000011175871,
+              "scanSeconds": 0.060000000055879354,
+              "priorGap": 0.0400000000372529,
+              "inventoryProcesses": 228
+            }
+          ],
+          "attempt": 1,
+          "acceptedMaxBirthAgeSeconds": 0.12000000011175871,
+          "busyPercent": 84.80308219178082,
+          "softirqPercent": 54.409246575342465,
+          "timeSqueezeDelta": 22,
+          "softnetDropDelta": 0,
+          "allNewChildBirthAgesWithinOriginal200ms": true,
+          "includesProfilerCost": true
+        },
+        {
+          "passed": true,
+          "seconds": 5.399999999906868,
+          "scans": 122,
+          "maxScanSeconds": 0.18999999994412065,
+          "maxObservationSeconds": 0.10999999986961484,
+          "lan4Mbps": 353.88186074684404,
+          "lan4Pps": 29350.000000506192,
+          "newChildren": [
+            {
+              "birthAge": 0.010000000009313226,
+              "scanSeconds": 0.030000000027939677,
+              "priorGap": 0.030000000027939677,
+              "inventoryProcesses": 233
+            }
+          ],
+          "attempt": 2,
+          "acceptedMaxBirthAgeSeconds": 0.060000000055879354,
+          "busyPercent": 79.06976744186046,
+          "softirqPercent": 55.674418604651166,
+          "timeSqueezeDelta": 18,
+          "softnetDropDelta": 0,
+          "allNewChildBirthAgesWithinOriginal200ms": true,
+          "includesProfilerCost": true
+        },
+        {
+          "passed": true,
+          "seconds": 5.3600000001024455,
+          "scans": 132,
+          "maxScanSeconds": 0.18999999994412065,
+          "maxObservationSeconds": 0.10000000009313226,
+          "lan4Mbps": 330.46903133696736,
+          "lan4Pps": 27478.358208430032,
+          "newChildren": [
+            {
+              "birthAge": 0.060000000055879354,
+              "scanSeconds": 0.0400000000372529,
+              "priorGap": 0.030000000027939677,
+              "inventoryProcesses": 227
+            }
+          ],
+          "attempt": 3,
+          "acceptedMaxBirthAgeSeconds": 0.07000000006519258,
+          "busyPercent": 76.23809523809524,
+          "softirqPercent": 53.0,
+          "timeSqueezeDelta": 2,
+          "softnetDropDelta": 0,
+          "allNewChildBirthAgesWithinOriginal200ms": true,
+          "includesProfilerCost": true
+        }
+      ],
+      "ecmClosedThroughout": true,
+      "noRouterWrites": true,
+      "guardUntouched": true,
+      "completeConsumerCandidatesPathExecuted": true,
+      "unusedAdapterFunctionsOmitted": true,
+      "originalConsumerByteIdentical": true,
+      "highLoadQualificationRequiresActualLoad": true,
+      "notInstalled": true
+    },
+    {
+      "observedAt": "2026-10-04T10:36:09.561Z",
+      "readonly": true,
+      "execBytes": 8995,
+      "phaseSha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+      "adapterSha256": "d661fa54ecba3a6360001224bba28538d9e532d4429b93ef54f86759ceabe526",
+      "attempts": [
+        {
+          "passed": true,
+          "seconds": 3.1799999999348074,
+          "scans": 76,
+          "maxScanSeconds": 0.10999999986961484,
+          "maxObservationSeconds": 0.0800000000745058,
+          "lan4Mbps": 300.99348931434673,
+          "lan4Pps": 24999.68553510371,
+          "newChildren": [
+            {
+              "birthAge": 0.07000000006519258,
+              "scanSeconds": 0.030000000027939677,
+              "priorGap": 0.030000000027939677,
+              "inventoryProcesses": 227
+            }
+          ],
+          "attempt": 1,
+          "acceptedMaxBirthAgeSeconds": 0.07000000006519258,
+          "busyPercent": 77.60834670947031,
+          "softirqPercent": 47.351524879614765,
+          "timeSqueezeDelta": 18,
+          "softnetDropDelta": 0,
+          "allNewChildBirthAgesWithinOriginal200ms": true,
+          "includesProfilerCost": true
+        },
+        {
+          "passed": true,
+          "seconds": 5.2700000000186265,
+          "scans": 131,
+          "maxScanSeconds": 0.14999999990686774,
+          "maxObservationSeconds": 0.13999999989755452,
+          "lan4Mbps": 297.4256742408504,
+          "lan4Pps": 24683.712121081506,
+          "newChildren": [
+            {
+              "birthAge": 0.12000000011175871,
+              "scanSeconds": 0.14999999990686774,
+              "priorGap": 0.030000000027939677,
+              "inventoryProcesses": 234
+            }
+          ],
+          "attempt": 2,
+          "acceptedMaxBirthAgeSeconds": 0.17999999993480742,
+          "busyPercent": 74.0867023867511,
+          "softirqPercent": 45.396980029225524,
+          "timeSqueezeDelta": 30,
+          "softnetDropDelta": 0,
+          "allNewChildBirthAgesWithinOriginal200ms": true,
+          "includesProfilerCost": true
+        },
+        {
+          "passed": true,
+          "seconds": 5.159999999916181,
+          "scans": 126,
+          "maxScanSeconds": 0.11999999987892807,
+          "maxObservationSeconds": 0.10999999986961484,
+          "lan4Mbps": 293.9358852760925,
+          "lan4Pps": 24444.96124070716,
+          "newChildren": [
+            {
+              "birthAge": 0.049999999813735485,
+              "scanSeconds": 0.030000000027939677,
+              "priorGap": 0.029999999795109034,
+              "inventoryProcesses": 225
+            }
+          ],
+          "attempt": 3,
+          "acceptedMaxBirthAgeSeconds": 0.05999999982304871,
+          "busyPercent": 71.51670951156812,
+          "softirqPercent": 45.861182519280206,
+          "timeSqueezeDelta": 28,
+          "softnetDropDelta": 0,
+          "allNewChildBirthAgesWithinOriginal200ms": true,
+          "includesProfilerCost": true
+        }
+      ],
+      "ecmClosedThroughout": true,
+      "noRouterWrites": true,
+      "guardUntouched": true,
+      "completeConsumerCandidatesPathExecuted": true,
+      "unusedAdapterFunctionsOmitted": true,
+      "originalConsumerByteIdentical": true,
+      "highLoadQualificationRequiresActualLoad": true,
+      "notInstalled": true
+    }
+  ],
+  "actualAttempts": 6,
+  "actualPasses": 6,
+  "minLan4Mbps": 293.9358852760925,
+  "maxLan4Mbps": 365.64776705434184,
+  "attemptsAtLeast300Mbps": 4,
+  "maxCallbackSeconds": 0.19999999995343387,
+  "maxObservationSeconds": 0.17999999993480742,
+  "maxObservedBirthAgeSeconds": 0.17999999993480742,
+  "original200msRequirementUnchanged": true,
+  "guardNotModifiedOrSignalled": true,
+  "completeConsumerCandidatesReadContextInspectExecuted": true,
+  "unusedAdapterFunctionsOmittedOnlyInReadonlyRamHarness": true,
+  "scope": "Six short actual-load discovery observations, not full high-load lifecycle or NSS forwarding qualification.",
+  "oldNss49ActualLoadPassed": 0,
+  "oldNss49ActualLoadAttempts": 3,
+  "oldNss51ActualLoadPassed": 1,
+  "oldNss51ActualLoadAttempts": 3,
+  "historicalWindowsNotSameOfferedLoad": true
+}

@@ -1,6 +1,6 @@
 # Athena NSS 主线记录
 
-最新 [NSS50–52](evidence/nss52-mainline.json)：六次新尝试未开放ECM，四次单WAN临时暂存完整恢复。已取得两段软件客户端HUD，定位高下载负载下进程读取超过校验窗口；候选修复仍待高负载资格。NSS52纯解析加速不代表整机收益，未安装/未绑定生产入口。NSS49历史原生功能成功保持，CPU/真人收益仍未验收。常驻NSS47，ECM关闭；下载和测试游戏已结束、HUD恢复。接续先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md) 与 [根因记录](docs/ISSUE_CORE_SLEEP_DISCOVERY.md)。
+最新 [NSS53](evidence/nss53-mainline.json)：真实下载 294–366 Mbps，两组共六次进程发现全部通过，原 200 ms 门槛未变；新实验入口 `work/nss53/real-session.mjs` 已绑定 159 项来源，并记录同帧拒绝及严格同源完整分类诊断。常驻仍 NSS47，ECM 关闭；本轮只读，DOOM（2016）下载已暂停，没有 CS2 对局连接或新的 NSS A/B。本轮发现验证不是 CPU / 真人收益验收，也不证明完整高负载生命周期。接续先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md) 与 [根因记录](docs/ISSUE_CORE_SLEEP_DISCOVERY.md)，直接补同负载客户端闭环，不重复安装分类器。
 
 Athena AX6600 网络优化研究。唯一主线：**自动识别游戏流 → NSS RT / bulk leaf → 真人 CS2 + Steam 高负载闭环**。
 

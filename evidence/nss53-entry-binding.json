@@ -1,0 +1,16 @@
+{
+  "path": "work/nss53/real-session.mjs",
+  "boundInputs": 159,
+  "baseBoundInputs": 140,
+  "newBoundInputs": 19,
+  "preparationVerified": true,
+  "sourceChecksPassed": true,
+  "controllerDecisionAndRecoveryBarriersUnchanged": true,
+  "phaseByteIdenticalToNss52": true,
+  "sourcePolicyByteIdenticalToNss49": true,
+  "sameSourceDiagnosticOnly": true,
+  "notInstalled": true,
+  "actualNssABATestedThisEntry": false,
+  "completeHighLoadForwardingQualified": false,
+  "historical99And13CasesReusedNotReexecuted": true
+}

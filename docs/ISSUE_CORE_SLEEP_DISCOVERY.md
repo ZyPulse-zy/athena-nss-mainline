@@ -21,6 +21,18 @@ NSS52只优化父进程字段提取，旧22项模型重放与新增12项解析�
 
 第一次/第六次的Selected class is not admitted未记录具体槽位。后续连接退出或17:14下载完成只能作为后续状态，不能倒推错误帧。应另加原采样中的精确只读诊断，不增加第二份可能漂移的快照或放宽分类条件。
 
+## NSS53 后续证据
+
+NSS52候选字节相同纳入NSS53新159项实验入口。按同一最小复现，在真实DOOM（2016）下载两组三次只读观察6/6通过，LAN4约294–366Mbps，四次至少300Mbps。见 [原始窗口的脱敏时序](../evidence/nss53-phase-load.json)。完整candidates/readContext/inspect保持，guard未修改/signal，ECM每帧关闭零计数，原200ms要求未变。
+
+| 观察 | 通过 | 最长回调 | 实际接纳最大出生年龄 |
+| --- | --- | --- | --- |
+| NSS52同字节候选，NSS53真实下载窗口 | 6/6 | 约200ms | 180ms |
+
+最长consumer读取约180ms，uptime约10ms粒度，余量有限。此轮支持短时高负载发现路径可工作，不能声明长期稳定、完整高负载故障恢复或NSS性能收益；历史各窗offered load不同，也不是同负载解析A/B。没有真实CS2 UDP，所以未执行NSS53转发。
+
+新的 [投影诊断问题记录](ISSUE_ADMISSION_PROJECTION.md)保存同帧拒绝，并仅在最终拒绝后读取一次严格匹配producer/query的完整分类。来源不同明确未知；它不放宽准入，不能恢复历史未采集槽位，也不证明本问题来自ECM/FW。没有上游提交。
+
 # 私有审核问题候选：历史服务 PID 基线
 
 NSS50第三次原入口在任何checkpoint/暂存前拒绝：sing-box-athena core/guard在当前状态健康，命令和运行状态与NSS47安装基线一致，仅PID不同。没证明为何重启。`code/work/nss50/service-epoch.mjs`仅接纳实验前这两项PID变化，然后固定本次服务集合/命令/实例；任何实验期间变化仍拒绝。分类器继续用原生PID/start/argv/锁归属审核。
