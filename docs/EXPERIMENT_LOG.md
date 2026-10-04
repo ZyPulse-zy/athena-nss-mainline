@@ -280,3 +280,12 @@
 - 首次2048组合模拟六秒runner返回124自动结束，失败保留；观察器初版请求超过runner支持范围，执行Lua前返回2。改为原六秒内四秒观察，没有扩大限额。自然4.03秒，LAN4约0.023Mbps、18.11pps、busy17.04/softirq3.21%、squeeze0，包含0.226 CPU秒观察器成本；两个完整周期0.63–0.86秒可见，stamp→可见观测窗20–80ms，只是轻载。
 - 单项候选worker32,019字节精确目标RAM编译/SHA通过，剥离该边界补丁与原28,919字节worker逐字节相同；非快照序列化保持原式。未执行watch、安装、改原模块或绑定新NSS入口。策略/学习/字段/原完整解析/审核/PBR/ct mark/NAT/gate及全部期限未变，当前仍NSS63/241项。
 - 20份源码冻结/累计815，原63 runtime与全部旧证明按字节保持，原始连接/配置/CT与私有输出不上传。输出中originalJsonProjectionRetained旧布尔已注明指合同、不是同一函数，原raw保留。源码/报告源检查通过，浏览器渲染未验证。下一步直接publication边界checkpoint+独立撤销单项试验，再高负载完整审核和集中单WAN可比A/B/A2，不重装/重放旧准备/扩WAN。
+
+## 2026-10-05 NSS65：publication现场单项试装与自然精确恢复
+
+- 23:56开场原完整审核通过，旧20682/5412。创建一个checkpoint并下载/SHA/gzip核验，先证明独立480秒暂存守护，再证明PPID1且身份/boot/期限/CP绑定的180秒生产撤销，然后仅替换完整snapshot序列化worker32,019字节与config.files/事务身份。四模块、策略/学习、PBR/NAT/gate、root qdisc及原期限保持。
+- 候选期间00:00:59和00:02:01两次原完整持锁审核通过，source2.69/1.78秒，worker9414/guardian9415/producer连续，sequence16→37。NSS始终关闭零计数；不是新的241项入口资格。
+- 00:03独立180秒自然到期，不发控制器回滚命令；00:03:19已核验rolled-back日志、旧worker/config SHA/指针、四模块SHA、健康fresh snapshot。随后精确stage owner/inode取消本轮暂存；不是该stage自然480秒到期证明。
+- 00:04:20原完整审核/保护配置/清理通过，worker20030/guardian20031/source2.43秒，常驻47/config不变，ECM全零、无事务/stage/state/实验模块。实例变化是本轮试装及恢复restart，不能声称原producer/PID连续。
+- 两个候选自然窗和一个恢复自然窗：0.025/0.031/0.018Mbps，busy16.50/15.21/21.11%、softirq4.61/0.13/5.12%、squeeze+0，均含观察器成本，未匹配负载。完整周期query→首次可见0.77/0.73/0.85秒为观测界限，不证明高负载来源过期已解决或CPU/游戏收益。
+- 不重跑旧36/29与99/13；无GUI、新下载、真实CS2/Steam高负载/HUD/真人体验、NSS放行或A/B/A2。8份白名单源码/累计823和8份完整实际私有输入冻结，旧64/runtime与历史证据保留，未提交上游。下一步直接高负载原完整发布/审核及候选正确绑定后的集中可比单WAN闭环。

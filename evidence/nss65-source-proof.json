@@ -1,0 +1,21 @@
+{
+  "sources": 8,
+  "sourceHashes": {
+    "work/nss65/health.mjs": "b26a5b9e17251ea49cd3142cf0eb7f66b609e90e505030de729ecdf7262ab79f",
+    "work/nss65/publication-trial.mjs": "ef6b183e1e77a9f91fd00ecb6875d7749677e8646a9b943df5a8c76715302a42",
+    "work/nss65/verify-rollback.mjs": "e0070063451b0da300c57b1cebb2260c7faa047ea32656f2a4a76c026b4c07cb",
+    "work/nss65/cleanup-stage.mjs": "fb4d2fe9ce3263dc70256d95feaf7746fde4cc30cb743b8570eac772de45e688",
+    "work/nss65/summarize.py": "724c998d252ba88b1c7cddd8ca86d20a4303c55e1eaf850fb2d883b92fccfe8d",
+    "work/nss65/freeze-proof.py": "37c130c4f564072aaf03be800ad54b253a442288173ae9be7fd1c8bf5f304a05",
+    "work/nss65/observe-restored.lua": "f98c9b3050bcaae61ff6b3dcb214be1239e17570c90481d8869b794d5cc191d6",
+    "work/nss65/observe-restored.mjs": "fed5f33697e66f73f1bcc3ef41a4c59e1963d7363b6d03c80f3c083b17896cd9"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "publicationCandidateInstalledDuringTrial": true,
+  "candidateRetainedAtEnd": false,
+  "productionNssEntryUnchanged": true,
+  "role": "single-publication-boundary-live-trial-and-independent-natural-undo",
+  "actualOwnerParameterizedRuntimeObserversRetainedPrivately": true,
+  "original64ProofsUntouched": true
+}

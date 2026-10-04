@@ -1,0 +1,96 @@
+{
+  "windows": [
+    {
+      "passed": true,
+      "mode": "publication-candidate",
+      "label": "trial1",
+      "observedAt": "2026-10-04T16:01:04.071Z",
+      "seconds": 4.0,
+      "lan4Mbps": 0.024924,
+      "pps": 11.5,
+      "busyPercent": 16.500622665006226,
+      "softirqPercent": 4.60772104607721,
+      "timeSqueezeDelta": 0,
+      "observerCpuSeconds": 0.35058300000000003,
+      "observerCostIncluded": true,
+      "backgroundLoadControlled": false,
+      "visibilityAreObservationBounds": true,
+      "completeObservedCycles": [
+        {
+          "sequence": 18,
+          "flows": 228,
+          "querySeconds": 0.19999999995343387,
+          "queryToFullFirstObservedSeconds": 0.7700000000186265,
+          "queryToFullStampSeconds": 0.6200000001117587,
+          "stampToVisibilityLowerSeconds": 0.09999999986030161,
+          "stampToVisibilityUpperSeconds": 0.14999999990686774,
+          "fullParseSeconds": 0.10000000009313226
+        }
+      ],
+      "allEcmCountsZeroThroughout": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "passed": true,
+      "mode": "publication-candidate",
+      "label": "trial2",
+      "observedAt": "2026-10-04T16:01:59.223Z",
+      "seconds": 4.03000000002794,
+      "lan4Mbps": 0.030626302729316206,
+      "pps": 17.617866004840636,
+      "busyPercent": 15.21323997453851,
+      "softirqPercent": 0.1273074474856779,
+      "timeSqueezeDelta": 0,
+      "observerCpuSeconds": 0.223304,
+      "observerCostIncluded": true,
+      "backgroundLoadControlled": false,
+      "visibilityAreObservationBounds": true,
+      "completeObservedCycles": [
+        {
+          "sequence": 36,
+          "flows": 168,
+          "querySeconds": 0.19999999995343387,
+          "queryToFullFirstObservedSeconds": 0.7299999999813735,
+          "queryToFullStampSeconds": 0.6100000001024455,
+          "stampToVisibilityLowerSeconds": 0.06999999983236194,
+          "stampToVisibilityUpperSeconds": 0.11999999987892807,
+          "fullParseSeconds": 0.07000000006519258
+        }
+      ],
+      "allEcmCountsZeroThroughout": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "passed": true,
+      "mode": "original-publication-restored",
+      "label": "restored1",
+      "observedAt": "2026-10-04T16:05:33.044Z",
+      "seconds": 4.040000000037253,
+      "lan4Mbps": 0.018099009900823207,
+      "pps": 8.168316831607848,
+      "busyPercent": 21.11111111111111,
+      "softirqPercent": 5.1234567901234565,
+      "timeSqueezeDelta": 0,
+      "observerCpuSeconds": 0.23467100000000002,
+      "observerCostIncluded": true,
+      "backgroundLoadControlled": false,
+      "visibilityAreObservationBounds": true,
+      "completeObservedCycles": [
+        {
+          "sequence": 47,
+          "flows": 188,
+          "querySeconds": 0.19999999995343387,
+          "queryToFullFirstObservedSeconds": 0.8500000000931323,
+          "queryToFullStampSeconds": 0.7099999999627471,
+          "stampToVisibilityLowerSeconds": 0.09000000008381903,
+          "stampToVisibilityUpperSeconds": 0.1500000001396984,
+          "fullParseSeconds": 0.07999999984167516
+        }
+      ],
+      "allEcmCountsZeroThroughout": true,
+      "nssAdmissionAllowed": false
+    }
+  ],
+  "matchedABANotClaimed": true,
+  "wholeRouterCpuBenefitNotClaimed": true
+}

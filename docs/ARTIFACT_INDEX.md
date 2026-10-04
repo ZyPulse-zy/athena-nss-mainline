@@ -128,3 +128,9 @@
 - [原NSS63拒绝拆分](../evidence/nss64-latency.json)、[精确编译](../evidence/nss64-compile.json)、[最终原审核](../evidence/nss64-final-audit.json)、[20份冻结源](../evidence/nss64-source-proof.json)。
 - [publication候选worker](../code/work/nss64/candidate-worker.lua)，未安装/未授予准入；[潜在Issue](ISSUE_JSON_PUBLICATION_COST.md) 未提交。
 - 本地 `outputs/nss64-mainline-report.html` / `work/nss64/` 保存报告与完整私有证据；原始连接、配置和截图不上传。
+
+## NSS65：现场publication试装与独立自然恢复
+
+- [主线结果](../evidence/nss65-mainline.json)、[自然窗口](../evidence/nss65-pipeline.json)、[恢复后审核](../evidence/nss65-final-audit.json)、[8份白名单源](../evidence/nss65-source-proof.json)。
+- [单项试装](../code/work/nss65/publication-trial.mjs)、[独立自然恢复核验](../code/work/nss65/verify-rollback.mjs)。候选没有留驻，也没有新NSS入口绑定或高负载/游戏收益。
+- 本地 `outputs/nss65-mainline-report.html` / `work/nss65/` 保留报告与完整私有checkpoint/config/owner/实际输入；未上传。

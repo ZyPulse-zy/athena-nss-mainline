@@ -1,5 +1,7 @@
 # Athena NSS 主线记录
 
+最新 [NSS65](evidence/nss65-mainline.json)：JSON发布候选现场试装/两次原完整审核通过，独立180秒自然撤销精确恢复；常驻47、ECM关闭全零。自然轻载不能验收高负载/整机CPU或真人收益。下一步直接高负载发布审核与正确绑定的集中单WAN A/B/A2。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md)，下方NSS64为历史。
+
 最新 [NSS64](evidence/nss64-mainline.json)：完整JSON发布候选、319条真实快照编码CPU约23.92%改善、目标精确编译；尚未安装，整机/高负载收益未验证。现网仍47、ECM关闭全零，原完整审核/清理通过。下一步直接单项checkpoint/独立撤销发布测试，再补可比单WAN A/B/A2；不重复准备或继续装新游戏。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md) 和 [候选](docs/ISSUE_JSON_PUBLICATION_COST.md)。下方NSS63为历史。
 
 最新 [NSS63](evidence/nss63-mainline.json)：再次验证真实单WAN CS2 UDP＋Steam TCP进入NSS bulk/RT leaf，实际取得A/B HUD；A2被计数检查拒绝。304→262 Mbps负载不匹配，softirq下降不能作为收益。常驻仍47，五次临时暂存均撤销，最终ECM关闭/完整审核与清理通过、游戏HUD恢复。最新241项入口在高负载完整来源过期时写前拒绝；下一步只解决真实发布/审核延迟，随后补同负载完整A/B/A2，不重装/重放旧准备或扩WAN。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md)、[问题定位](docs/ISSUE_NSS63_MAINLINE.md)。

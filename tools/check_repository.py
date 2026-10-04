@@ -478,7 +478,7 @@ assert runtime63['entryFullHighLoadForwardingQualified'] is False and not runtim
 assert not any(x63['conclusions'][k] for k in ['softwareVersusNssCpuBenefitProved','gameBenefitProved','realHumanExperienceProved','completeHighLoadLifecycleQualified','completeHighLoadLoopPassed','secondWanExpansionAllowed','sharedBudgetAllowed','upstreamSubmitted'])
 assert x63['reportVerification']['sourceValidated'] and not x63['reportVerification']['browserRendered']
 x64=json.loads((root/'evidence/nss64-mainline.json').read_text())
-runtime64=json.loads((root/'evidence/current-runtime.json').read_text())
+runtime64=json.loads((root/'evidence/nss64-runtime.json').read_text())
 assert runtime64['round']==x64['round']=='NSS64' and runtime64['deploymentReference']=='work/nss47/deployment-latest.json'
 assert runtime64['historical63RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss63-runtime.json').read_bytes()).hexdigest()
 assert runtime64['classifierConfigSha256']==x64['classifierConfigSha256']==runtime63['classifierConfigSha256']
@@ -517,4 +517,45 @@ assert proof64['sources']==len(proof64['sourceHashes'])==20 and proof64['notAddi
 assert x64['proofBoundary']['old99And13NotReexecuted'] and x64['proofBoundary']['noNewGameDownloadOrGameGuiThisTurn']
 for source,expected in proof64['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
 assert x64['reportVerification']['sourceValidated'] and not x64['reportVerification']['browserRendered']
+x65=json.loads((root/'evidence/nss65-mainline.json').read_text());runtime65=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x65['round']==runtime65['round']=='NSS65'
+assert runtime65['historical64RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss64-runtime.json').read_bytes()).hexdigest()
+assert runtime65['historical63RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss63-runtime.json').read_bytes()).hexdigest()
+assert x65['classifierConfigSha256']==runtime65['classifierConfigSha256']==runtime64['classifierConfigSha256']
+assert x65['routerConfigurationWrites'] and x65['publicationCandidateActuallyInstalled'] and not x65['candidateRetainedAtEnd']
+assert not x65['permanentClassifierChanged'] and not x65['nssOpenedThisTurn'] and not x65['newNssForwardingExperiment']
+assert x65['checkpointCount']==x65['rollbackTrialCount']==1
+assert x65['currentEntry']=={'path':'work/nss63/real-session.mjs','boundInputs':241,'unchanged':True,'candidateEntryBindingCreated':False}
+assert x65['candidateWorkerSha256']==candidate64['candidateWorkerSha256']
+assert x65['onlyPublicationBoundaryAndTransactionIdentityChanged'] and x65['sourcePolicyClassifierLearningAndAllDeadlinesUnchanged']
+assert x65['untouchedNormalizerGuardianBackendCore'] and x65['originalNonSnapshotSerializationUnchanged']
+protect65=x65['protection'];assert all(protect65[k]for k in ['checkpointDownloadedHashAndGzipVerified','independentStageGuardianVerifiedBeforeUpload','independentProductionUndoVerifiedBeforeMutation','independentOfControlConnection','originalSixSecondRunnerUnchanged'])
+assert protect65['productionUndoSeconds']==180 and protect65['stageGuardianSeconds']==480
+install65=x65['installation'];assert install65['passed'] and install65['workerBytes']==32019 and install65['guardVerifiedIndependentParent']==1
+assert install65['originalFullLockedAuditPassesDuringTrial']==2 and install65['candidateWorkerGuardianAndProducerContinuousBetweenAudits']
+assert install65['sequenceBetweenAudits']==[16,37] and all(0<=x<6 for x in install65['fullSnapshotSourceAgeSecondsAtAudits'])
+assert x65['rollback']['passed'] and x65['rollback']['automaticExpiryWithoutControllerRollback'] and x65['rollback']['previousWorkerAndConfigRestored']
+assert x65['rollback']['unchangedNormalizerAndGuardianVerified'] and x65['rollback']['unchangedBackendVerified'] and x65['rollback']['unchangedClassifierCoreVerified']
+assert x65['stageCleanup']['onlyOwnedPassiveStageCancelled'] and x65['stageCleanup']['productionNatural180SecondUndoAlreadyProven'] and x65['stageCleanup']['stageAbsent']
+assert not x65['stageCleanup']['stageNatural480SecondExpiryClaimed']
+assert len(x65['naturalWindows'])==3
+for w in x65['naturalWindows']:
+    assert w['passed'] and w['lan4Mbps']<1 and w['seconds']>=4 and w['observerCostIncluded']
+    assert not w['backgroundLoadControlled'] and not w['nssAdmissionAllowed'] and w['allEcmCountsZeroThroughout']
+    assert w['visibilityAreObservationBounds'] and len(w['completeObservedCycles'])==1
+assert x65['proofBoundary']['liveTrialNotJsonContractCaseRerun'] and x65['proofBoundary']['naturalWindowsNotMatchedTrafficComparison']
+assert not x65['proofBoundary']['oldNative36And29Reexecuted'] and not x65['proofBoundary']['old99And13Reexecuted']
+assert x65['proofBoundary']['noNewGameDownloadOrGameGuiThisTurn'] and not x65['proofBoundary']['realSteamHighLoadPresent'] and not x65['proofBoundary']['realCs2Present']
+assert x65['conclusions']['publicationCandidateLiveAndOriginalAuditPassed'] and x65['conclusions']['preciseIndependentNaturalUndoPassed']
+assert not any(x65['conclusions'][k]for k in ['highLoadPublicationFixed','wholeRouterCpuBenefitProved','realHumanGameImprovementProved','completeMatchedABACompleted','secondWanExpansionAllowed','upstreamSubmitted'])
+assert all(x65['finalState'][k]for k in ['ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert x65['finalState']['expectedWorkerAndGuardianRestartForTrialAndRestore'] and not x65['finalState']['sameInstancesSinceOpening']
+assert runtime65['expectedClassifierRestartForTrialAndRestore'] and runtime65['independentNatural180SecondUndoVerified'] and runtime65['finalClosure']['passed']
+assert runtime65['workerPid']==20030 and runtime65['guardianPid']==20031
+assert all(runtime65['audit'][k]for k in ['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','ecmClosedAndZero'])
+assert not any(runtime65[k]for k in ['naturalWorkerRestartObservedThisTurn','publicationCandidateInstalled','nssPermanentlyEnabled','completePerformanceAndGameAcceptance'])
+proof65=json.loads((root/'evidence/nss65-source-proof.json').read_text())
+assert proof65['sources']==len(proof65['sourceHashes'])==8 and proof65['notAdditionalProductionAdmission'] and proof65['publicationCandidateInstalledDuringTrial'] and not proof65['candidateRetainedAtEnd']
+for source,expected in proof65['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+assert x65['reportVerification']['sourceValidated'] and not x65['reportVerification']['browserRendered']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

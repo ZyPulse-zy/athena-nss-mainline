@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T16:04:20.153Z",
+  "readonly": true,
+  "configurationMatches": true,
+  "deploymentReference": "work/nss47/deployment-latest.json",
+  "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+  "workerPid": 20030,
+  "guardianPid": 20031,
+  "originalFullLockedAudit": true,
+  "selectors": 6,
+  "queryAge": 2.4299999999348074,
+  "sequence": 23,
+  "ecmStoppedAndZero": true,
+  "noActiveTransaction": true,
+  "noStaging": true,
+  "publicationTrial": false,
+  "noExperimentState": true,
+  "noExperimentalModule": true,
+  "diagnostic": {
+    "events": [
+      {
+        "name": "locked-audit-start",
+        "at": 1947405.19
+      },
+      {
+        "name": "hashes-complete",
+        "at": 1947405.25
+      },
+      {
+        "name": "journal-parsed",
+        "at": 1947405.25
+      },
+      {
+        "name": "selectors-complete",
+        "at": 1947405.34
+      },
+      {
+        "name": "snapshot-parsed",
+        "at": 1947405.38
+      },
+      {
+        "name": "freshness-checked",
+        "at": 1947405.38
+      },
+      {
+        "name": "locked-audit-end",
+        "at": 1947405.39
+      }
+    ],
+    "freshness": {
+      "checkedAt": 1947405.38,
+      "publicationAge": 1.0399999998044223,
+      "sourceAge": 2.4299999999348074,
+      "queryStarted": 1947402.95,
+      "publishedAt": 1947404.34,
+      "sequence": 23
+    }
+  },
+  "serviceEpochPinned": true,
+  "nssAdmissionAllowed": false
+}

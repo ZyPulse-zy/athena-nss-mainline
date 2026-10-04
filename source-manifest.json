@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T15:23:13.544052+00:00",
+  "generatedAt": "2026-10-04T16:11:54.192786+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -5709,8 +5709,64 @@
       "sha256": "6bc33b699520191a0a8425014669a8ebc4645b32a00f8aabf50bcd37af390a7c",
       "bytes": 390,
       "role": "readonly-publication-latency-and-complete-encoding-candidate-latest-native-contract-and-exact-compile"
+    },
+    {
+      "path": "code/work/nss65/health.mjs",
+      "workspaceSource": "work/nss65/health.mjs",
+      "sha256": "b26a5b9e17251ea49cd3142cf0eb7f66b609e90e505030de729ecdf7262ab79f",
+      "bytes": 5033,
+      "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss65/publication-trial.mjs",
+      "workspaceSource": "work/nss65/publication-trial.mjs",
+      "sha256": "ef6b183e1e77a9f91fd00ecb6875d7749677e8646a9b943df5a8c76715302a42",
+      "bytes": 14609,
+      "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss65/verify-rollback.mjs",
+      "workspaceSource": "work/nss65/verify-rollback.mjs",
+      "sha256": "e0070063451b0da300c57b1cebb2260c7faa047ea32656f2a4a76c026b4c07cb",
+      "bytes": 3984,
+      "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss65/cleanup-stage.mjs",
+      "workspaceSource": "work/nss65/cleanup-stage.mjs",
+      "sha256": "fb4d2fe9ce3263dc70256d95feaf7746fde4cc30cb743b8570eac772de45e688",
+      "bytes": 2979,
+      "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss65/summarize.py",
+      "workspaceSource": "work/nss65/summarize.py",
+      "sha256": "724c998d252ba88b1c7cddd8ca86d20a4303c55e1eaf850fb2d883b92fccfe8d",
+      "bytes": 11542,
+      "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss65/freeze-proof.py",
+      "workspaceSource": "work/nss65/freeze-proof.py",
+      "sha256": "37c130c4f564072aaf03be800ad54b253a442288173ae9be7fd1c8bf5f304a05",
+      "bytes": 2222,
+      "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss65/observe-restored.lua",
+      "workspaceSource": "work/nss65/observe-restored.lua",
+      "sha256": "f98c9b3050bcaae61ff6b3dcb214be1239e17570c90481d8869b794d5cc191d6",
+      "bytes": 3662,
+      "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss65/observe-restored.mjs",
+      "workspaceSource": "work/nss65/observe-restored.mjs",
+      "sha256": "fed5f33697e66f73f1bcc3ef41a4c59e1963d7363b6d03c80f3c083b17896cd9",
+      "bytes": 1298,
+      "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
     }
   ],
-  "lastAppendExport": "NSS64",
+  "lastAppendExport": "NSS65",
   "privateDataExcluded": true
 }
