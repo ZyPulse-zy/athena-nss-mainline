@@ -36,7 +36,7 @@ assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets'
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
 c=json.loads((root/'evidence/current-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
-assert c['round']=='NSS43' and c['deploymentReference']=='work/nss39/deployment-latest.json'
+assert c['round']=='NSS44' and c['deploymentReference']=='work/nss39/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
@@ -197,4 +197,48 @@ assert not any(m['decision'][v] for v in ('raiseBudgetNow','expandFlowsNow','cha
 assert not m['actualFastPathTrial']['attempted'] and m['actualFastPathTrial']['leafCounters'] is None and m['actualFastPathTrial']['gameTelemetry'] is None
 assert not any(m['conclusions'][v] for v in ('nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','completeHighLoadLifecycleQualified','secondWanExpansionAllowed'))
 assert m['reportVerification']['sourceValidated'] and not m['reportVerification']['browserRendered']
+v=json.loads((root/'evidence/nss44-mainline.json').read_text(encoding='utf-8'))
+assert v['classifierConfigSha256']==c['classifierConfigSha256'] and not v['permanentClassifierChanged']
+assert not v['routerConfigurationWrites'] and v['originalNss42EntryUnmodified']
+assert v['budgetMbps']==20 and v['gateFlows']=={'tcp':1,'udp':1} and v['ownerDeadlineSeconds']==45
+t=v['actualAttempt']
+assert t['attempted'] and t['realApplicationPairFound'] and t['selectedWan']==1
+assert t['fullTcpMark']==t['fullUdpMark']==65536 and t['sameNat'] and t['zoneZero']
+assert not t['originalControllerTerminalPassed'] and t['originalFailurePreserved'] and t['boundSourceFilesFrozen']==102
+assert t['rejectedBeforeCheckpointOrStaging'] and t['prewriteAlignmentFailed'] and t['alignmentPolls']==39
+assert t['fullSourceSequencesObserved']==[13555,13556] and t['fullPublicationDelays']==[2.91,3.01]
+assert t['everyPollHealthy'] and not any(t[k] for k in ('checkpointCreated','independentExperimentOwnerStarted','productionMutationAttempted','wanChanged','nssQdiscCreated','packetTagsInstalled','gateModuleLoaded','ecmOpened','forwardingABACompleted','nativeFastPathAffinityVerified'))
+assert t['leafCounters'] is None and t['gameTelemetry'] is None
+failed=json.loads((root/'evidence/nss44-failed-admission-timing.json').read_text(encoding='utf-8'))
+assert not failed['passed'] and len(failed['rows'])==39
+assert all(r['healthy'] and r['sourceAge']>2 for r in failed['rows'])
+restart=v['classifierRestart']
+assert restart['observed'] and not restart['injectionOrManualRestart'] and not restart['configChanged']
+assert not restart['firstExactRecoveryPassed'] and restart['recoveryRawStatus']==31744 and restart['recoverySeconds']==6.18
+assert restart['oldFailureRetained'] and restart['newProducerHealthy'] and restart['sameNewProducerSincePostrefusalInspection']
+assert not restart['restartCausationByNssExperimentProved'] and not restart['fullHighLoadLifecycleQualified']
+candidate=v['readonlySchedulingCandidate']
+assert not candidate['installedOrUsedForProduction'] and not candidate['productionEntryQualified']
+assert candidate['originalFullAuditRetained'] and candidate['originalSchedulerLibraryUnchanged']
+assert candidate['ageLimitsUnchanged']=={'schedulingHintSeconds':2,'lockedSourceSeconds':6,'lockedPublicationSeconds':9,'initialLearningSeconds':1,'prelearningSeconds':2}
+assert candidate['boundsUnchanged']=={'innerWaitSeconds':5,'outerWaitSeconds':6,'ownerSeconds':45}
+assert candidate['nativeReadonlyAuditPassed'] and candidate['nativeReadonlyEcmClosedAndZero'] and not candidate['nativeReadonlyAdmissionAllowed']
+assert not candidate['highLoadNssProof'] and not candidate['fixesClassifierApplyOrRecoveryTimeout']
+assert v['localChecks']['passed'] and v['localChecks']['checks']==30 and not v['localChecks']['routerAccess'] and not v['localChecks']['productionEntryQualified']
+assert v['sourceProof']['sources']==16 and v['sourceProof']['readonlyOrUninstalledCandidatesOnly']
+for source,expected in v['sourceProof']['sourceHashes'].items():
+    assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+light=v['passiveFollowup']
+assert light['frames']==105 and 27<light['seconds']<28 and light['performance']['lan4DownMbps']<1
+assert light['naturalLightLoad'] and light['actualApplicationPairNotConfirmed'] and light['notMatchedForwardingABA'] and not light['syntheticTrafficGenerated']
+hash_candidate=v['hashCandidate']
+assert not hash_candidate['installed'] and not hash_candidate['hashesCached'] and hash_candidate['allPayloadsStillCheckedEveryInvocation']
+assert hash_candidate['payloadCount']==12 and hash_candidate['nativeReadOnlyPairs']==3 and hash_candidate['savedMeanMs']<40
+assert hash_candidate['hashChildCpuNotCounted'] and not hash_candidate['resolvedPublicationDelay']
+assert all(v['finalState']['protectedAudit'].values()) and v['finalState']['classifierHealthy'] and v['finalState']['closure']['passed']
+assert not v['finalState']['sameProducerSinceOpening'] and v['finalState']['lastErrorIsThisRoundsRestart']
+assert not any(v['conclusions'][k] for k in ('newNssFastPathTrialExecuted','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','classifierHighLoadStable','readinessCandidateProvedUnderHighLoad','completeHighLoadLoopPassed','secondWanExpansionAllowed'))
+assert c['classifierWorkerRestartObservedThisRound'] and c['staleSnapshotRejectedEarlierInRound'] and not c['firstClassifierExactRecoveryPassedThisRound']
+assert c['finalClassifierHealthyAndExactOwnedAuditPassed'] and c['realApplicationAttemptRefusedBeforeCheckpointOrStaging']
+assert v['reportVerification']['sourceValidated'] and not v['reportVerification']['browserRendered']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

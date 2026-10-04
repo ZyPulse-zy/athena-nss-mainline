@@ -21,6 +21,7 @@ assert current['committed'] is True
 cfg=read(current['localDir']+'/config.json')
 sources=[]
 allowlist={
+ 'work/nss44': ['audit-renderer.mjs','current-audit-diagnostic.mjs','inspect-classifier.mjs','final-closure.mjs','session-binding.mjs','read-classifier-log.mjs','observe-publication.mjs','hash-batch.lua','build-hash-candidate.py','candidate-worker.lua','benchmark-hash-readonly.mjs','wait-ready-candidate.mjs','candidate-audit-readonly.mjs','test_candidates.py','summarize.py','render_report.py'],
  'work/nss43': ['audit-renderer.mjs','current-audit-diagnostic.mjs','final-closure.mjs','inspect-classifier.mjs','session-binding.mjs','read-real-candidates.mjs','profile-steam.mjs','read-queue-budget.mjs','read-queue-budget-compact.mjs','load_model.py','test_load_model.py','summarize.py','render_report.py'],
  'work/nss42': ['audit-renderer.mjs','build-qualification.mjs','check-diagnostics-native.mjs','current-audit-diagnostic.mjs','dependency-closure.mjs','final-closure.mjs','inspect-classifier.mjs','opening-audit.mjs','parse-dependency-graph.mjs','parse-ecm-any-wan.mjs','prepare.mjs','publication-wait.lua','read-real-candidates.mjs','real-session.mjs','record-candidates.mjs','session-binding.mjs','test-binding.mjs','test-controller.mjs','test-dependencies.mjs','test-parser.mjs','test-publication-wait.py','wait-full-publication.mjs','watch-classifier.mjs'],
  'work/nss42/report': ['summarize.mjs','render.mjs'],
@@ -95,13 +96,12 @@ save('evidence/nss34-loop-profile.json',{
  'observedAt':loop['observedAt'],'routerWrites':False,'nssOpened':False,'actualFlowAdmissionChecked':False,
  'summary':{'samples':len(rows),'fullInventory':sum(x['fullInventory'] for x in rows),'meanPhaseSeconds':sum(x['phaseSeconds'] for x in rows)/len(rows),'maxPhaseSeconds':max(x['phaseSeconds'] for x in rows),'maxIterationReads':max(x['iterationReads'] for x in rows),'ageOnlyReserveAvailable':sum(x['ageOnlyReserveAvailable'] for x in rows)},
  'rows':[{'atSeconds':round(x['at']-start,4),**keys(x,['closedSeconds','phaseSeconds','readSeconds','parseSeconds','iterationReads','fullInventory','refreshInventory','sourceAge','publicationDelay','ageOnlyReserveAvailable','classifiedFlowCount','status'])} for x in rows]})
-auditPath='work/nss43/closing-audit.json'
+auditPath='work/nss44/final-audit.json'
 audit=read(auditPath)
 checked=datetime.fromtimestamp((workspace/auditPath).stat().st_mtime,timezone.utc).isoformat()
-profile=read('work/nss43/steam-profile-latest.json')
-pc=read(profile['directory']+'/sample-12/real-reader-qualified.json')
+pc=read('work/nss42/real-matched-aba-20261004023857-0c4f4549/application-preaudit/real-reader-qualified.json')
 save('evidence/current-runtime.json',{
- 'checkedAt':checked,'round':'NSS43','deploymentReference':'work/nss39/deployment-latest.json',
+ 'checkedAt':checked,'round':'NSS44','deploymentReference':'work/nss39/deployment-latest.json',
  'classifierConfigSha256':current['configHash'],'deployedTextSources':deployed,
  'audit':keys(audit,['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','selectors','queryAge','sequence','ecmClosedAndZero']),
  'lastApplicationObservation':keys(pc,['observedAt','readonly','gameProcessRunning','steamProcessRunning','actualCs2RtCandidates','actualSteamBulkCandidates','sameWanCandidates','sourceAge','nssAdmissionAllowed']),
@@ -110,15 +110,18 @@ save('evidence/current-runtime.json',{
  'realForwardingABACompleted':False,
  'historicalNss41NativeForwardingABACompleted':True,
  'completePerformanceAndGameAcceptance':False,
- 'staleSnapshotRejectedEarlierInRound':False,
+ 'staleSnapshotRejectedEarlierInRound':True,
  'historicalNss40StaleProtectedSnapshotRejection':True,
  'recoveryAlignmentRefusedEarlierInRound':False,
  'historicalNss41RecoveryAlignmentRefused':True,
  'historicalNss36StaleSnapshotRejection':True,
- 'classifierWorkerRestartObservedThisRound':False,
+ 'classifierWorkerRestartObservedThisRound':True,
+ 'firstClassifierExactRecoveryPassedThisRound':False,
+ 'finalClassifierHealthyAndExactOwnedAuditPassed':True,
+ 'realApplicationAttemptRefusedBeforeCheckpointOrStaging':True,
  'plannedClassifierReplacementAndRollbackThisRound':False,
  'experimentalConfigurationWritesThisRound':False,
- 'finalClosure':keys(read('work/nss43/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
+ 'finalClosure':keys(read('work/nss44/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
  'requiresLiveRevalidation':True,
 })
 replay=read('work/nss34/admission-replay-qualified.json')
@@ -197,4 +200,14 @@ assert not n43['actualFastPathTrial']['attempted'] and n43['finalState']['protec
 save('evidence/nss43-mainline.json',n43)
 save('evidence/nss43-load-profile.json',read('work/nss43/load-profile-sanitized.json'))
 save('evidence/nss43-prior-aba-comparability.json',read('work/nss43/prior-aba-comparability-sanitized.json'))
+n44=read('outputs/nss44-mainline-observations.json')
+assert n44['deploymentReference']=='work/nss39/deployment-latest.json' and not n44['routerConfigurationWrites']
+assert n44['actualAttempt']['realApplicationPairFound'] and n44['actualAttempt']['rejectedBeforeCheckpointOrStaging']
+assert not n44['actualAttempt']['originalControllerTerminalPassed'] and n44['actualAttempt']['originalFailurePreserved']
+assert n44['classifierRestart']['observed'] and not n44['classifierRestart']['firstExactRecoveryPassed']
+assert n44['sourceProof']['sources']==16 and n44['localChecks']['checks']==30
+assert not n44['readonlySchedulingCandidate']['productionEntryQualified'] and n44['finalState']['protectedAudit']['passed']
+save('evidence/nss44-mainline.json',n44)
+save('evidence/nss44-failed-admission-timing.json',read('work/nss44/failed-admission-timing-sanitized.json'))
+save('evidence/nss44-publication-timing.json',read('work/nss44/publication-timing-sanitized.json'))
 print(json.dumps({'sourceFiles':len(sources),'codeBytes':sum(s['bytes'] for s in sources),'evidenceFiles':len(list((repo/'evidence').glob('*.json'))),'credentialsCopied':False,'rawCapturesCopied':False}))

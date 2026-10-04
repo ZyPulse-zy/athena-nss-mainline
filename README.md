@@ -18,8 +18,9 @@ Athena AX6600 网络优化研究。唯一主线：**自动识别游戏流 → NS
 - NSS38 精简准入和逐次诊断候选已绑定 NSS39 的 68 项清单，目标原生完整源码模拟、tag 往返与配置检查通过。
 - **真人 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf 功能已验证；现网恢复后 ECM 关闭。固定高负载 CPU 和游戏体验验收尚未通过。**
 - NSS41 已执行真实单 WAN A/B/A2：加速数 0→2→0，bulk/RT leaf +6171/+517 包，mark/NAT/WAN1 正确。原失败与恢复证明保持；总负载 348→380→391 Mbps 上升，没有收益结论。
-- NSS43 完成用户 Steam 只读测量：48 秒、13/13 样本，LAN4 约 278 Mbps，单 TCP 的份额限制已明确；保留当前预算/TTL，下一次集中真人验收。见 [负载证据](evidence/nss43-mainline.json) 和 [验收记录](docs/SINGLE_WAN_ACCEPTANCE.md)。
-- NSS42 已修复本地验收入口和恢复用途，102 项绑定，90 项本地＋4 项目标 RAM 检查、原完整只读审核及 600 秒自然轻载观察通过。未改生产；下一步稳定同 WAN 负载和受控份额，集中完成性能与游戏验收。
+- NSS44 真实 WAN1 连接对已找到，但原入口在 checkpoint 前因完整发布过旧而拒绝。还观察到分类器自然退出、首次恢复失败；新实例与最终保护审核通过。先解决发布与恢复可靠性，再请求下一次真人窗口。见 [本轮证据](evidence/nss44-mainline.json) 和 [本地问题记录](docs/ISSUE_CLASSIFIER_PUBLICATION.md)。
+- NSS43 完成用户 Steam 只读测量：48 秒、13/13 样本，LAN4 约 278 Mbps，单 TCP 的份额限制已明确。见 [负载证据](evidence/nss43-mainline.json) 和 [验收记录](docs/SINGLE_WAN_ACCEPTANCE.md)。
+- NSS42 的 102 项绑定、90 项本地＋4 项目标 RAM 检查、原完整只读审核及 600 秒自然轻载证据保持。当前 20 Mbps/流数/TTL 不变，NSS44 候选未安装、未获得新生产入口资格。
 
 最新证据见 [STATE.md](docs/STATE.md)、[实验记录](docs/EXPERIMENT_LOG.md) 和 [本地 Issue 候选](docs/ISSUE_TC_SUPERVISION.md)。代码镜像不是可直接安装的发布包。
 

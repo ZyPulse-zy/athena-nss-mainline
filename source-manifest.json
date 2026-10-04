@@ -1,10 +1,122 @@
 {
-  "generatedAt": "2026-10-04T02:27:40.869750+00:00",
+  "generatedAt": "2026-10-04T03:17:39.182621+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
   "binariesIncluded": false,
   "sources": [
+    {
+      "path": "code/work/nss44/audit-renderer.mjs",
+      "workspaceSource": "work/nss44/audit-renderer.mjs",
+      "sha256": "cb3bdf2a38ba2aaeb36f349e8c66f443742eae9160d38b6067d212b82db73a7d",
+      "bytes": 1837,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss44/current-audit-diagnostic.mjs",
+      "sha256": "9483feea3c71c6b27d63c94dc055eb67fa0097af4ca8e0897b082ef64434dd51",
+      "bytes": 3059,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/inspect-classifier.mjs",
+      "workspaceSource": "work/nss44/inspect-classifier.mjs",
+      "sha256": "c933902a4ae3295a3be13c55d69bce86d5409eecbec32a4d005c9720c69f4d49",
+      "bytes": 1775,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/final-closure.mjs",
+      "workspaceSource": "work/nss44/final-closure.mjs",
+      "sha256": "95489b3dfaa7a065f7eeeb4b0f7e0158e93a73af04325aea82092ce32e0ac1a4",
+      "bytes": 2072,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/session-binding.mjs",
+      "workspaceSource": "work/nss44/session-binding.mjs",
+      "sha256": "e60aa7cf6f00bc678dac60bddaae83937ae14c7e62a71ff957f88a4c1540a475",
+      "bytes": 128,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/read-classifier-log.mjs",
+      "workspaceSource": "work/nss44/read-classifier-log.mjs",
+      "sha256": "e3a79ec3669f64560c40c0c7809f89251c3fb08f8ef2e27426fcaf7b98e249c4",
+      "bytes": 896,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/observe-publication.mjs",
+      "workspaceSource": "work/nss44/observe-publication.mjs",
+      "sha256": "cec10f040588a9c56276a1af50c0dc06989a861c90eb1522c74d95ffed68f5f8",
+      "bytes": 1561,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/hash-batch.lua",
+      "workspaceSource": "work/nss44/hash-batch.lua",
+      "sha256": "689a3cf4febabe8a1890309d5310b1f805e74716df99b6f73e2859de23d6204a",
+      "bytes": 1514,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/build-hash-candidate.py",
+      "workspaceSource": "work/nss44/build-hash-candidate.py",
+      "sha256": "3d6e891b17037822f96b303201442d9c30e8afcfde8ab1f5eb51cb3b5074eb8d",
+      "bytes": 1588,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/candidate-worker.lua",
+      "workspaceSource": "work/nss44/candidate-worker.lua",
+      "sha256": "213f10d62041fa3684dcf41e79d695ea09d525674ebce97faa57d6e9242a92dd",
+      "bytes": 28246,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/benchmark-hash-readonly.mjs",
+      "workspaceSource": "work/nss44/benchmark-hash-readonly.mjs",
+      "sha256": "f123628f199e126bd7f725b56c32982b1f153dc08ee6403e7b7f11075af328aa",
+      "bytes": 3239,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/wait-ready-candidate.mjs",
+      "workspaceSource": "work/nss44/wait-ready-candidate.mjs",
+      "sha256": "9d56fea0957fc165740c6c2c9fbe73a321bb356645e4c2629eab006da2441325",
+      "bytes": 5446,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/candidate-audit-readonly.mjs",
+      "workspaceSource": "work/nss44/candidate-audit-readonly.mjs",
+      "sha256": "68fe26220a334bc474369f91ad86f7e54c85cd73ab8906b1f840270ca2c55252",
+      "bytes": 3127,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/test_candidates.py",
+      "workspaceSource": "work/nss44/test_candidates.py",
+      "sha256": "2c4d8b3376512d0db9529f5b9b227b0942b4468b29cac456b623798db3c9639b",
+      "bytes": 6414,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/summarize.py",
+      "workspaceSource": "work/nss44/summarize.py",
+      "sha256": "c3507e7ee2bb3494c17f90f982894c61869a1f755e8843e3a1f22938004561b7",
+      "bytes": 11352,
+      "role": "experimental-source-or-test"
+    },
+    {
+      "path": "code/work/nss44/render_report.py",
+      "workspaceSource": "work/nss44/render_report.py",
+      "sha256": "e030baf79f6ea5911d3cc36af40cf7470e93837a270daa35b61b0a3a89363c72",
+      "bytes": 6034,
+      "role": "experimental-source-or-test"
+    },
     {
       "path": "code/work/nss43/audit-renderer.mjs",
       "workspaceSource": "work/nss43/audit-renderer.mjs",

@@ -1,0 +1,220 @@
+{
+  "round": "NSS44",
+  "updatedAt": "2026-10-04T03:06:40.755291+00:00",
+  "deploymentReference": "work/nss39/deployment-latest.json",
+  "classifierConfigSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
+  "permanentClassifierChanged": false,
+  "routerConfigurationWrites": false,
+  "originalNss42EntryUnmodified": true,
+  "budgetMbps": 20,
+  "gateFlows": {
+    "tcp": 1,
+    "udp": 1
+  },
+  "ownerDeadlineSeconds": 45,
+  "actualAttempt": {
+    "attempted": true,
+    "realApplicationPairFound": true,
+    "actualGameCandidates": 1,
+    "actualSteamBulkCandidates": 23,
+    "selectedWan": 1,
+    "fullTcpMark": 65536,
+    "fullUdpMark": 65536,
+    "sameNat": true,
+    "zoneZero": true,
+    "originalControllerTerminalPassed": false,
+    "boundSourceFilesFrozen": 102,
+    "originalFailurePreserved": true,
+    "rejectedBeforeCheckpointOrStaging": true,
+    "prewriteAlignmentFailed": true,
+    "alignmentSeconds": 5.060000000055879,
+    "alignmentPolls": 39,
+    "fullSourceSequencesObserved": [
+      13555,
+      13556
+    ],
+    "fullPublicationDelays": [
+      2.91,
+      3.01
+    ],
+    "sourceAgeRangeSeconds": [
+      4.189999999944121,
+      8.18999999994412
+    ],
+    "everyPollHealthy": true,
+    "checkpointCreated": false,
+    "independentExperimentOwnerStarted": false,
+    "productionMutationAttempted": false,
+    "wanChanged": false,
+    "nssQdiscCreated": false,
+    "packetTagsInstalled": false,
+    "gateModuleLoaded": false,
+    "ecmOpened": false,
+    "forwardingABACompleted": false,
+    "nativeFastPathAffinityVerified": false,
+    "leafCounters": null,
+    "gameTelemetry": null
+  },
+  "openingAuditFailure": {
+    "originalAssertionRetained": true,
+    "sourceAgeSeconds": 7.6100000001024455,
+    "sourceAgeLimitSeconds": 6,
+    "publicationAgeSeconds": 5.180000000167638,
+    "stage": "Original complete locked freshness predicate"
+  },
+  "classifierRestart": {
+    "observed": true,
+    "injectionOrManualRestart": false,
+    "configChanged": false,
+    "sameProducerSinceOpening": false,
+    "newProducerHealthy": true,
+    "sameNewProducerSincePostrefusalInspection": true,
+    "loggedCause": "Classifier snapshot stale before write; apply rawStatus 256, wall time 3.79 seconds",
+    "staleFailureLogBeijing": "2026-10-04 10:41:17",
+    "mutationFailureLogBeijing": "2026-10-04 10:41:23",
+    "firstExactRecoveryPassed": false,
+    "recoveryRawStatus": 31744,
+    "recoverySeconds": 6.18,
+    "oldFailureRetained": true,
+    "finalExactOwnedAuditPassed": true,
+    "restartCausationByNssExperimentProved": false,
+    "fullHighLoadLifecycleQualified": false
+  },
+  "passiveFollowup": {
+    "seconds": 27.1500000001397,
+    "frames": 105,
+    "observerCpuSeconds": 0.887929,
+    "performance": {
+      "busyPercent": 16.528301886792452,
+      "softirqPercent": 2.2264150943396226,
+      "seconds": 27.1500000001397,
+      "lan4DownMbps": 0.23717097605771154,
+      "lan4DownPps": 37.71639042337868,
+      "timeSqueezeDelta": 0
+    },
+    "compactPublicationDelayRangeSeconds": [
+      0.3200000000651926,
+      0.35000000009313226
+    ],
+    "fullPublicationDelayRangeSeconds": [
+      0.5800000000745058,
+      1.25
+    ],
+    "completeFlowCountRange": [
+      138,
+      146
+    ],
+    "naturalLightLoad": true,
+    "actualApplicationPairNotConfirmed": true,
+    "syntheticTrafficGenerated": false,
+    "notMatchedForwardingABA": true
+  },
+  "readonlySchedulingCandidate": {
+    "installedOrUsedForProduction": false,
+    "productionEntryQualified": false,
+    "originalFullAuditRetained": true,
+    "originalSchedulerLibraryUnchanged": true,
+    "change": "Wait on existing before-software-baseline classification publication; afterward execute original complete locked snapshot/native audit",
+    "ageLimitsUnchanged": {
+      "schedulingHintSeconds": 2,
+      "lockedSourceSeconds": 6,
+      "lockedPublicationSeconds": 9,
+      "initialLearningSeconds": 1,
+      "prelearningSeconds": 2
+    },
+    "boundsUnchanged": {
+      "innerWaitSeconds": 5,
+      "outerWaitSeconds": 6,
+      "ownerSeconds": 45
+    },
+    "nativeReadonlyAuditPassed": true,
+    "nativeReadonlyEcmClosedAndZero": true,
+    "nativeReadonlyAdmissionAllowed": false,
+    "nativeReadonlyFullAuditQueryAge": 4.28000000002794,
+    "nativeHintSourceAge": 0.7600000000093132,
+    "highLoadNssProof": false,
+    "fixesClassifierApplyOrRecoveryTimeout": false
+  },
+  "hashCandidate": {
+    "installed": false,
+    "allPayloadsStillCheckedEveryInvocation": true,
+    "payloadCount": 12,
+    "hashesCached": false,
+    "nativeReadOnlyPairs": 3,
+    "individualMeanMs": 43.33333337369064,
+    "batchMeanMs": 10.000000009313226,
+    "savedMeanMs": 33.33333336437742,
+    "backgroundLan4Mbps": 0.037349999965215104,
+    "hashChildCpuNotCounted": true,
+    "resolvedPublicationDelay": false,
+    "lifecycleUnchanged": true
+  },
+  "localChecks": {
+    "passed": true,
+    "checks": 30,
+    "routerAccess": false,
+    "scope": "Checksum and projection guards plus static source equivalence; not full lifecycle or native high-load proof",
+    "productionEntryQualified": false
+  },
+  "sourceProof": {
+    "sources": 16,
+    "sourceHashes": {
+      "work/nss44/audit-renderer.mjs": "cb3bdf2a38ba2aaeb36f349e8c66f443742eae9160d38b6067d212b82db73a7d",
+      "work/nss44/current-audit-diagnostic.mjs": "9483feea3c71c6b27d63c94dc055eb67fa0097af4ca8e0897b082ef64434dd51",
+      "work/nss44/inspect-classifier.mjs": "c933902a4ae3295a3be13c55d69bce86d5409eecbec32a4d005c9720c69f4d49",
+      "work/nss44/final-closure.mjs": "95489b3dfaa7a065f7eeeb4b0f7e0158e93a73af04325aea82092ce32e0ac1a4",
+      "work/nss44/session-binding.mjs": "e60aa7cf6f00bc678dac60bddaae83937ae14c7e62a71ff957f88a4c1540a475",
+      "work/nss44/read-classifier-log.mjs": "e3a79ec3669f64560c40c0c7809f89251c3fb08f8ef2e27426fcaf7b98e249c4",
+      "work/nss44/observe-publication.mjs": "cec10f040588a9c56276a1af50c0dc06989a861c90eb1522c74d95ffed68f5f8",
+      "work/nss44/hash-batch.lua": "689a3cf4febabe8a1890309d5310b1f805e74716df99b6f73e2859de23d6204a",
+      "work/nss44/build-hash-candidate.py": "3d6e891b17037822f96b303201442d9c30e8afcfde8ab1f5eb51cb3b5074eb8d",
+      "work/nss44/candidate-worker.lua": "213f10d62041fa3684dcf41e79d695ea09d525674ebce97faa57d6e9242a92dd",
+      "work/nss44/benchmark-hash-readonly.mjs": "f123628f199e126bd7f725b56c32982b1f153dc08ee6403e7b7f11075af328aa",
+      "work/nss44/wait-ready-candidate.mjs": "9d56fea0957fc165740c6c2c9fbe73a321bb356645e4c2629eab006da2441325",
+      "work/nss44/candidate-audit-readonly.mjs": "68fe26220a334bc474369f91ad86f7e54c85cd73ab8906b1f840270ca2c55252",
+      "work/nss44/test_candidates.py": "2c4d8b3376512d0db9529f5b9b227b0942b4468b29cac456b623798db3c9639b",
+      "work/nss44/summarize.py": "c3507e7ee2bb3494c17f90f982894c61869a1f755e8843e3a1f22938004561b7",
+      "work/nss44/render_report.py": "e030baf79f6ea5911d3cc36af40cf7470e93837a270daa35b61b0a3a89363c72"
+    },
+    "readonlyOrUninstalledCandidatesOnly": true,
+    "credentialsAndRawCapturesNotExported": true
+  },
+  "finalState": {
+    "protectedAudit": {
+      "passed": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "ecmClosedAndZero": true
+    },
+    "classifierHealthy": true,
+    "sameProducerSinceOpening": false,
+    "lastErrorIsThisRoundsRestart": true,
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-04T03:01:58.099Z",
+      "readonly": true,
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1900464.61
+    }
+  },
+  "conclusions": {
+    "realPairFound": true,
+    "newNssFastPathTrialExecuted": false,
+    "nssCpuBenefitProvedThisRound": false,
+    "cs2JitterLossMissCaptured": false,
+    "classifierHighLoadStable": false,
+    "publishingSourceMismatchExplainsAdmissionRefusalMechanism": true,
+    "readinessCandidateProvedUnderHighLoad": false,
+    "completeHighLoadLoopPassed": false,
+    "secondWanExpansionAllowed": false
+  },
+  "next": "First qualify the correct publication source and restore reliable classifier apply/recovery within existing deadlines. Bind a new production entry before one future concentrated real window. Do not ask user to keep gaming or downloading for preparation.",
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false,
+    "reason": "Existing local-browser rendering policy block retained; no workaround attempted"
+  }
+}

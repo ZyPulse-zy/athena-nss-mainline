@@ -2,7 +2,23 @@
 
 更新：2026-10-04，北京时间。最新现场核验见 [当前运行记录](../evidence/current-runtime.json)。
 
-**真实 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf 已由 NSS41 证明；CPU 和游戏体验验收仍未通过。NSS43 已量清 Steam 的单连接受控份额，现网仍是 NSS39，NSS42 102 项验收入口不变。**
+**真实 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf 已由 NSS41 证明；CPU 和游戏体验验收仍未通过。NSS44 真人尝试止于写前新鲜度门槛，并发现一次分类器自然退出/重启；现网仍 NSS39，NSS42 102 项入口不变。**
+
+## 最新现场与 NSS44
+
+见 [本轮证据](../evidence/nss44-mainline.json)、[实际拒绝时序](../evidence/nss44-failed-admission-timing.json)、[后续轻载发布时序](../evidence/nss44-publication-timing.json)。
+
+- 用户已进服并保留下载；新鲜应用归属找到 1 个 CS2 RT、23 个 Steam bulk 候选，选中 WAN1、完整 mark 均 0x10000、zone 0、同 NAT。这是连接归属证据，尚未进入原生加速出口校验。
+- 未修改 NSS42 入口实际执行。102 份输入源码/证明冻结，原失败保持；写前等待 5.06 秒、39 次健康观测，完整发布 query→publish 2.91/3.01 秒，来源年龄 4.19–8.19 秒。未满足 <2 秒门槛，在 checkpoint/暂存前拒绝。没有 owner、WAN/队列/tag/gate/ECM 变更，没有 A/B/A2、leaf 或客户端指标。
+- 开场原完整审核还因来源年龄 7.61 秒超过 6 秒而拒绝，原断言没有放宽。
+- 10:41:17–10:41:23 观察到常驻 worker 的 `snapshot stale before write` / apply 子进程失败（3.79 秒）；首次精确 recovery 失败（6.18 秒、rawStatus 31744）。procd 自动启动新实例，guardian 实例保持；没有注入 crash 或手动重启，也没有证明只读观察导致该退出。高负载稳定性仍未通过。
+- 源码确认：精简 `classification.json` 在软件规则应用前发布，完整 `snapshot.json` 在应用及可能审核后发布；NSS 消费者读前者，NSS42 学习前调度却等待后者。延迟的完整发布无法满足原 <2 秒等待门槛，这是已定位的拒绝机制；不是全部高负载故障已解决。
+- 只读候选改为等待已有 before-software-baseline classification，然后执行未修改的原完整持锁/native 审核。年龄/调度/owner 全部不变。30 项本地检查通过；目标只读 hint 来源年龄 0.76 秒、原完整审核来源年龄 4.28 秒，通过且 ECM 关闭。候选未安装、未用于生产、没有新入口资格；它不修复 apply/recovery 超时。
+- 后续自然轻载 27.15 秒、105 帧，LAN4 0.237 Mbps，compact/full 发布延迟 0.32–0.35 / 0.58–1.25 秒，softirq 2.23%、time_squeeze +0。未重新确认真人连接对，含观察开销，不能与此前高负载比较成 NSS 收益。
+- 批量校验 12 个 payload 的未安装候选，目标只读 3 对交替测量约节省 33 ms，仍每次校验全部文件；不足以解决约 3 秒发布延迟，子进程 CPU 未计入。不是当前优先修复。
+- 最终 11:01:58 新 worker/guardian 健康；原完整审核、配置/精确规则和清理通过，ECM 关闭且计数为零，无事务、暂存、实验状态或模块。首次恢复失败和旧错误日志仍保留，不能写成全程稳定。
+
+下一步先修复并资格核验分类器 apply/recovery 和正确的发布等待来源，绑定新入口后再集中真人验收。用户无需继续挂游戏或下载，16 份只读/未安装候选源码快照不能授权加速。
 
 ## 当前运行与 NSS43
 
@@ -17,7 +33,7 @@
 - 20 项离线检查通过；13 份只读源码快照保留，它不构成新的生产入口资格。NSS42 102 项清单只复核、未修改。10% 相对跨度是预先声明的 A/B/A2 观测比较条件，不授权加速，也不证明 offered load 相同；[历史 NSS41 对照](../evidence/nss43-prior-aba-comparability.json) 不满足。
 - 第一次采样因本地 JavaScript 语法错误 13 次退出，发生在路由器连接前，原失败保留；修正后重新取得有效窗口。分开读取的 autorate 数值不同，相邻 JSON/文本/JSON 5/5 单位核对通过；采样后的 70–90 Mbps 不能回填为整窗固定预算。
 
-下一步按 [单次真人验收记录](SINGLE_WAN_ACCEPTANCE.md) 集中完成自动分类→bulk/RT leaf→CS2＋Steam。当前不需要用户继续挂机。
+这轮只读负载观测仍有效；后续按 NSS44 新发现先完成稳定性与入口资格，再使用 [单次真人验收记录](SINGLE_WAN_ACCEPTANCE.md)。
 
 ## NSS42 验收入口
 

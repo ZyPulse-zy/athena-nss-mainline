@@ -1,0 +1,321 @@
+{
+  "passed": false,
+  "seconds": 5.060000000055879,
+  "rows": [
+    {
+      "relativeSeconds": 0.43999999994412065,
+      "sourceSequence": 13555,
+      "sourceAge": 4.949999999953434,
+      "publicationAge": 2.040000000037253,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 0.5400000000372529,
+      "sourceSequence": 13555,
+      "sourceAge": 5.050000000046566,
+      "publicationAge": 2.140000000130385,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 0.6399999998975545,
+      "sourceSequence": 13555,
+      "sourceAge": 5.149999999906868,
+      "publicationAge": 2.2399999999906868,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 0.7600000000093132,
+      "sourceSequence": 13555,
+      "sourceAge": 5.2700000000186265,
+      "publicationAge": 2.3600000001024455,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 0.8599999998696148,
+      "sourceSequence": 13555,
+      "sourceAge": 5.369999999878928,
+      "publicationAge": 2.459999999962747,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 0.9599999999627471,
+      "sourceSequence": 13555,
+      "sourceAge": 5.46999999997206,
+      "publicationAge": 2.5600000000558794,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.0700000000651926,
+      "sourceSequence": 13555,
+      "sourceAge": 5.580000000074506,
+      "publicationAge": 2.670000000158325,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.1899999999441206,
+      "sourceSequence": 13555,
+      "sourceAge": 5.699999999953434,
+      "publicationAge": 2.790000000037253,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.3000000000465661,
+      "sourceSequence": 13555,
+      "sourceAge": 5.810000000055879,
+      "publicationAge": 2.9000000001396984,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.409999999916181,
+      "sourceSequence": 13555,
+      "sourceAge": 5.919999999925494,
+      "publicationAge": 3.0100000000093132,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.5100000000093132,
+      "sourceSequence": 13555,
+      "sourceAge": 6.0200000000186265,
+      "publicationAge": 3.1100000001024455,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.619999999878928,
+      "sourceSequence": 13555,
+      "sourceAge": 6.129999999888241,
+      "publicationAge": 3.2199999999720603,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.7299999999813735,
+      "sourceSequence": 13555,
+      "sourceAge": 6.239999999990687,
+      "publicationAge": 3.330000000074506,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.840000000083819,
+      "sourceSequence": 13555,
+      "sourceAge": 6.350000000093132,
+      "publicationAge": 3.4400000001769513,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 1.9499999999534339,
+      "sourceSequence": 13555,
+      "sourceAge": 6.459999999962747,
+      "publicationAge": 3.550000000046566,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.0700000000651926,
+      "sourceSequence": 13555,
+      "sourceAge": 6.580000000074506,
+      "publicationAge": 3.670000000158325,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.169999999925494,
+      "sourceSequence": 13555,
+      "sourceAge": 6.679999999934807,
+      "publicationAge": 3.7700000000186265,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.2800000000279397,
+      "sourceSequence": 13555,
+      "sourceAge": 6.790000000037253,
+      "publicationAge": 3.880000000121072,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.3899999998975545,
+      "sourceSequence": 13555,
+      "sourceAge": 6.899999999906868,
+      "publicationAge": 3.9899999999906868,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.4899999999906868,
+      "sourceSequence": 13555,
+      "sourceAge": 7,
+      "publicationAge": 4.090000000083819,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.5999999998603016,
+      "sourceSequence": 13555,
+      "sourceAge": 7.109999999869615,
+      "publicationAge": 4.199999999953434,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.709999999962747,
+      "sourceSequence": 13555,
+      "sourceAge": 7.21999999997206,
+      "publicationAge": 4.310000000055879,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.8200000000651926,
+      "sourceSequence": 13555,
+      "sourceAge": 7.330000000074506,
+      "publicationAge": 4.420000000158325,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 2.9399999999441206,
+      "sourceSequence": 13555,
+      "sourceAge": 7.449999999953434,
+      "publicationAge": 4.540000000037253,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 3.040000000037253,
+      "sourceSequence": 13555,
+      "sourceAge": 7.550000000046566,
+      "publicationAge": 4.640000000130385,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 3.1499999999068677,
+      "sourceSequence": 13555,
+      "sourceAge": 7.659999999916181,
+      "publicationAge": 4.75,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 3.25,
+      "sourceSequence": 13555,
+      "sourceAge": 7.760000000009313,
+      "publicationAge": 4.850000000093132,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 3.359999999869615,
+      "sourceSequence": 13555,
+      "sourceAge": 7.869999999878928,
+      "publicationAge": 4.959999999962747,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 3.459999999962747,
+      "sourceSequence": 13555,
+      "sourceAge": 7.96999999997206,
+      "publicationAge": 5.060000000055879,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 3.5700000000651926,
+      "sourceSequence": 13555,
+      "sourceAge": 8.080000000074506,
+      "publicationAge": 5.170000000158325,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 3.6799999999348074,
+      "sourceSequence": 13555,
+      "sourceAge": 8.18999999994412,
+      "publicationAge": 5.28000000002794,
+      "queryToPublishSeconds": 2.909999999916181,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 4.21999999997206,
+      "sourceSequence": 13556,
+      "sourceAge": 4.189999999944121,
+      "publicationAge": 1.1799999999348074,
+      "queryToPublishSeconds": 3.0100000000093132,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 4.330000000074506,
+      "sourceSequence": 13556,
+      "sourceAge": 4.300000000046566,
+      "publicationAge": 1.290000000037253,
+      "queryToPublishSeconds": 3.0100000000093132,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 4.429999999934807,
+      "sourceSequence": 13556,
+      "sourceAge": 4.399999999906868,
+      "publicationAge": 1.3899999998975545,
+      "queryToPublishSeconds": 3.0100000000093132,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 4.53000000002794,
+      "sourceSequence": 13556,
+      "sourceAge": 4.5,
+      "publicationAge": 1.4899999999906868,
+      "queryToPublishSeconds": 3.0100000000093132,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 4.6399999998975545,
+      "sourceSequence": 13556,
+      "sourceAge": 4.609999999869615,
+      "publicationAge": 1.5999999998603016,
+      "queryToPublishSeconds": 3.0100000000093132,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 4.739999999990687,
+      "sourceSequence": 13556,
+      "sourceAge": 4.709999999962747,
+      "publicationAge": 1.6999999999534339,
+      "queryToPublishSeconds": 3.0100000000093132,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 4.849999999860302,
+      "sourceSequence": 13556,
+      "sourceAge": 4.819999999832362,
+      "publicationAge": 1.8099999998230487,
+      "queryToPublishSeconds": 3.0100000000093132,
+      "healthy": true
+    },
+    {
+      "relativeSeconds": 4.949999999953434,
+      "sourceSequence": 13556,
+      "sourceAge": 4.919999999925494,
+      "publicationAge": 1.909999999916181,
+      "queryToPublishSeconds": 3.0100000000093132,
+      "healthy": true
+    }
+  ],
+  "routerConfigurationWrites": false,
+  "nssAdmissionAllowed": false,
+  "lockHeld": false
+}

@@ -1,0 +1,8 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+import {connectRouter} from '../nss20/connect-router.mjs';import {encode,receipt} from '../nss11/v7-observe-repair/observe2/transport.mjs';
+const label=process.argv[2]??'inspection';assert.match(label,/^[a-zA-Z0-9_-]+$/);
+const code=String.raw`local fs=require('nixio.fs');local j=require('luci.jsonc');local function read(p,l)local f=assert(io.open(p));local s=f:read(l+1);f:close();assert(#s<=l);return s end
+local root='/tmp/router-project-game-classifier';local out={readonly=true,routerWrites=false,atUptime=tonumber(read('/proc/uptime',128):match('^[%d.]+')),files={}}
+for _,name in ipairs({'last-error.json','snapshot.json','classification.json','guardian.json'})do if fs.lstat(root..'/'..name)then local s=assert(j.parse(read(root..'/'..name,4194304)));local t={};for _,k in ipairs({'status','healthy','dataHealthy','pid','start','producer','atUptime','error','lastQuerySequence','degradation','stopped','configSha256'})do t[k]=s[k]end;if s.snapshot and s.snapshot.provenance then local p=s.snapshot.provenance;t.sourceSequence=p.sequence;t.sourceAge=out.atUptime-p.startedAtUptime end;out.files[name]=t end end
+local names={};for name in fs.dir(root)do names[#names+1]=name end;out.fileNames=names;print(j.stringify(out))`;
+const c=await connectRouter();try{const e=encode("/usr/bin/lua - <<'NSS34_RESTART_READONLY'\n"+code+"\nNSS34_RESTART_READONLY\n");const r=receipt(await c.run(e.command),e);assert.equal(r.code,0,r.stderr);const out=JSON.parse(r.stdout);out.observedAt=new Date().toISOString();fs.writeFileSync('work/nss44/classifier-'+label+'-inspection.json',JSON.stringify(out,null,2)+'\n');console.log(JSON.stringify({observedAt:out.observedAt,files:out.files}));}finally{c.close()}

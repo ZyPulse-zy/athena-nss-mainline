@@ -2,6 +2,12 @@
 
 仓库内可直接核对：
 
+- `evidence/nss44-mainline.json`：真实 WAN1 写前拒绝、102 份原入口冻结、自然重启/首次恢复失败、未安装候选与最终保护核验。
+- `evidence/nss44-failed-admission-timing.json`：实际失败的 39 帧相对年龄/发布时间，无端点；不是模拟或 NSS 阶段。
+- `evidence/nss44-publication-timing.json`：随后独立自然轻载窗口的发布时序；未确认真人连接对，不能作为高负载 A/B。
+- `docs/ISSUE_CLASSIFIER_PUBLICATION.md`：本地发布等待/分类器恢复问题，现象与根因证明范围分开，未上游提交。
+- `evidence/nss43-mainline.json`、`nss43-load-profile.json`：48 秒 Steam-only 负载与单 TCP 份额，不是真人闭环。
+
 - `evidence/nss41-mainline.json`：真人WAN1功能、原控制器错误、重新校验、三段测量与恢复证据；性能/游戏结论未通过。
 - `evidence/nss41-load-publication.json`：有限普通TCP下载的104帧脱敏完整/精简年龄；不是游戏或NSS性能。
 - `docs/ISSUE_ECM_WAN_VALIDATOR.md`：本地WAN5写死与依赖绑定缺口，未上游提交。
@@ -27,7 +33,7 @@
 - `evidence/nss38-native-syntax.json`：两个候选的目标 Lua 编译，明确未执行/未绑定控制器。
 - `evidence/nss42-mainline.json`：通用 WAN 后处理/审核用途/102 项绑定、90 项本地＋4 项目标 RAM 检查、600 秒自然轻载只读观察与功能/性能边界。
 - `evidence/nss42-stability-timing.json`：21 次相对采样时序，已去除 producer、原始 flow 与系统转储。
-- `evidence/current-runtime.json`：最新 NSS42 审核摘要与 NSS39 部署哈希；读取者仍应重新核验现网。
+- `evidence/current-runtime.json`：最新 NSS44 最终审核/自然重启摘要与 NSS39 部署哈希；读取者仍应重新核验现网。
 - `source-manifest.json`：每个源码副本的原路径、SHA256、大小；部署源文件必须与当前配置记录的哈希一致。
 
 仅在完整私有工作区：
@@ -37,6 +43,9 @@
 | `outputs/nss32-matched-aba-report.html` | 历史受控低负载完整 A/B/A2 |
 | `outputs/nss33-classifier-readiness-report.html` | 上一轮完整报告 |
 | `work/nss39/deployment-latest.json` | 当前常驻分类器部署引用 |
+| `outputs/nss44-mainline-report.html` | 最新真人写前拒绝、自然重启、只读候选和结论边界报告 |
+| `work/nss42/real-matched-aba-20261004023857-0c4f4549/` | NSS44 实际失败、102 份原入口冻结与完整私有应用归属证据；没有生产写入 |
+| `work/nss44/readonly-frozen/` | 16 份只读/未安装候选源码冻结；不是新的生产准入资格 |
 | `work/nss39/affinity-qualified.json` | 当前 68 项绑定；未完成真人闭环 |
 | `outputs/nss42-mainline-report.html` | 最新验收入口修复、声明依赖绑定、自然轻载观察与下一步报告 |
 | `work/nss42/entry-qualified.json` | 最新 v2 的 102 项输入、五份本地检查证明和外部连接源码哈希；不是完整运行环境保证 |
