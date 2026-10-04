@@ -1,0 +1,11 @@
+import fs from'node:fs';import assert from'node:assert/strict';import crypto from'node:crypto';
+import{verifyPreparation}from'../nss42/session-binding.mjs';import{connectRouter}from'../nss20/connect-router.mjs';import{encode,receipt}from'../nss11/v7-observe-repair/observe2/transport.mjs';
+verifyPreparation();const root='work/nss45',d=JSON.parse(fs.readFileSync('work/nss39/deployment-latest.json')),cfg=JSON.parse(fs.readFileSync(d.localDir+'/config.json'));
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex'),p=JSON.parse(fs.readFileSync(root+'/expiry-journal-native-prepared.json')),fixture=fs.readFileSync(root+'/expiry-journal-native.lua','utf8');assert.equal(sha(fixture),p.fixtureSha256);assert.equal(sha(fs.readFileSync(root+'/candidate-backend.lua')),p.backendSha256);
+const e=encode(d.base+'/group-runner 6 /usr/bin/lua - '+d.base+" <<'NSS45_EXPIRY_JOURNAL_RAM'\n"+fixture+'\nNSS45_EXPIRY_JOURNAL_RAM\n');assert.ok(e.execBytes<=9000);
+const c=await connectRouter();try{
+ const h=await c.run('/usr/bin/sha256sum '+d.base+'/config.json '+d.base+'/owned.lua '+d.base+'/backend.lua '+d.base+'/group-runner');assert.equal(h.code,0);assert.deepEqual(h.stdout.trim().split('\n').map(s=>s.split(/\s/)[0]),[d.configHash,cfg.files['owned.lua'],cfg.files['backend.lua'],cfg.files['group-runner']]);
+ const r=receipt(await c.run(e.command),e);fs.writeFileSync(root+'/expiry-journal-native-raw-private.json',JSON.stringify(r,null,2)+'\n');assert.equal(r.code,0,r.stderr);
+ const lines=r.stdout.trim().split('\n'),x=JSON.parse(lines.at(-1));assert.ok(x.passed);assert.equal(x.checks,8);assert.equal(lines.filter(s=>s.startsWith('PASS ')).length,8);assert.equal(sha(x.compiledBackend),p.backendSha256);
+ const out={passed:true,checks:8,sameLocalCasesRepeated:true,observedAt:new Date().toISOString(),execBytes:e.execBytes,fixtureSha256:p.fixtureSha256,backendSha256:p.backendSha256,realNativeLua:true,actualBackendAndOwnershipAlgorithms:true,nativeQueueIOAndPublicationsMocked:true,realMutationChildExecuted:false,productionLifecycleQualified:false,installed:false,routerWrites:false};fs.writeFileSync(root+'/expiry-journal-native-qualified.json',JSON.stringify(out,null,2)+'\n');console.log(JSON.stringify(out));
+}finally{c.close()}

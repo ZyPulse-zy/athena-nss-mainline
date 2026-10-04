@@ -2,6 +2,12 @@
 
 仓库内可直接核对：
 
+- `evidence/nss45-mainline.json`：两次独立轻载试装/自然到期恢复、114 个独立本地案例、目标 RAM/真实 query 子进程证明与未验证边界。
+- `evidence/nss45-trial-timing.json`：两组各 35 帧相对时间和自然轻载指标，不能组成转发 A/B。
+- `evidence/nss45-query-cleanup.json`：7 个真实 native 子进程的合成查询输出与实际回收证明，无生产规则变更。
+- `evidence/nss45-recovery-benchmark.json`：三对空日志只读恢复测量，写回调拒绝；不证明高负载或整机 CPU 收益。
+- `docs/ISSUE_CLASSIFIER_RECOVERY.md`：行数边界、重复初始枚举、未安装软件过期候选及真实应用子进程缺失证明。
+
 - `evidence/nss44-mainline.json`：真实 WAN1 写前拒绝、102 份原入口冻结、自然重启/首次恢复失败、未安装候选与最终保护核验。
 - `evidence/nss44-failed-admission-timing.json`：实际失败的 39 帧相对年龄/发布时间，无端点；不是模拟或 NSS 阶段。
 - `evidence/nss44-publication-timing.json`：随后独立自然轻载窗口的发布时序；未确认真人连接对，不能作为高负载 A/B。
@@ -43,6 +49,9 @@
 | `outputs/nss32-matched-aba-report.html` | 历史受控低负载完整 A/B/A2 |
 | `outputs/nss33-classifier-readiness-report.html` | 上一轮完整报告 |
 | `work/nss39/deployment-latest.json` | 当前常驻分类器部署引用 |
+| `outputs/nss45-mainline-report.html` | 最新分类器恢复、两项轻载试装、独立到期回滚、未安装软件过期候选与结论边界 |
+| `work/nss45/source-frozen/` | 53 份源码冻结；不是 NSS 生产入口资格 |
+| `work/nss45/backend-trial/`、`row-trial/` | 两次短时试装及 checkpoint/180 秒独立到期恢复私有证据；两者均未长期保留 |
 | `outputs/nss44-mainline-report.html` | 最新真人写前拒绝、自然重启、只读候选和结论边界报告 |
 | `work/nss42/real-matched-aba-20261004023857-0c4f4549/` | NSS44 实际失败、102 份原入口冻结与完整私有应用归属证据；没有生产写入 |
 | `work/nss44/readonly-frozen/` | 16 份只读/未安装候选源码冻结；不是新的生产准入资格 |

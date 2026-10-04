@@ -36,7 +36,7 @@ assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets'
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
 c=json.loads((root/'evidence/current-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
-assert c['round']=='NSS44' and c['deploymentReference']=='work/nss39/deployment-latest.json'
+assert c['round']=='NSS45' and c['deploymentReference']=='work/nss39/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
@@ -124,8 +124,8 @@ assert w['finalState']['protectedAudit']['ecmClosedAndZero'] and w['finalState']
 assert not any(w['conclusions'][k] for k in ['reliableHighLoadAdmissionProved','realHighLoadNssLoopCompleted','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','highLoadCauseOfStaleProtectedSnapshotKnown','secondWanExpansionAllowed'])
 rows=json.loads((root/'evidence/nss40-admission-timing.json').read_text())['rows']
 assert len(rows)==94 and sum(x['ready'] for x in rows)==4 and all('sourceSequence' in x and 'sourceAge' in x for x in rows)
-assert c['historicalNss40StaleProtectedSnapshotRejection'] and not c['plannedClassifierReplacementAndRollbackThisRound']
-assert not c['experimentalConfigurationWritesThisRound'] and not c['realForwardingABACompleted'] and not c['completePerformanceAndGameAcceptance']
+assert c['historicalNss40StaleProtectedSnapshotRejection']
+assert not c['realForwardingABACompleted'] and not c['completePerformanceAndGameAcceptance']
 assert c['historicalNss41NativeForwardingABACompleted'] and c['historicalNss41RecoveryAlignmentRefused']
 j=json.loads((root/'evidence/nss41-mainline.json').read_text(encoding='utf-8'))
 assert j['classifierConfigSha256']==c['classifierConfigSha256'] and not j['permanentClassifierChanged']
@@ -238,7 +238,44 @@ assert hash_candidate['hashChildCpuNotCounted'] and not hash_candidate['resolved
 assert all(v['finalState']['protectedAudit'].values()) and v['finalState']['classifierHealthy'] and v['finalState']['closure']['passed']
 assert not v['finalState']['sameProducerSinceOpening'] and v['finalState']['lastErrorIsThisRoundsRestart']
 assert not any(v['conclusions'][k] for k in ('newNssFastPathTrialExecuted','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','classifierHighLoadStable','readinessCandidateProvedUnderHighLoad','completeHighLoadLoopPassed','secondWanExpansionAllowed'))
-assert c['classifierWorkerRestartObservedThisRound'] and c['staleSnapshotRejectedEarlierInRound'] and not c['firstClassifierExactRecoveryPassedThisRound']
-assert c['finalClassifierHealthyAndExactOwnedAuditPassed'] and c['realApplicationAttemptRefusedBeforeCheckpointOrStaging']
+assert c['classifierWorkerRestartObservedThisRound'] and c['historicalNss44StaleSnapshotRejection'] and not c['historicalNss44FirstExactRecoveryPassed']
+assert c['finalClassifierHealthyAndExactOwnedAuditPassed']
 assert v['reportVerification']['sourceValidated'] and not v['reportVerification']['browserRendered']
+x45=json.loads((root/'evidence/nss45-mainline.json').read_text(encoding='utf-8'))
+assert x45['deploymentReference']=='work/nss39/deployment-latest.json' and x45['classifierConfigSha256']==c['classifierConfigSha256']
+assert x45['routerConfigurationWrites'] and not x45['permanentClassifierChanged'] and not x45['nssOpened']
+assert x45['originalNss42EntryUnmodified'] and x45['budgetMbps']==20 and x45['gateFlows']=={'tcp':1,'udp':1} and x45['ownerDeadlineSeconds']==45
+assert x45['openingObservation']['naturalPriorWorkerExitsObserved']==3 and not x45['openingObservation']['manualRestartOrFaultInjection']
+trials=x45['temporaryClassifierTrials'];assert len(trials)==2
+assert trials[0]['changedSources']==['backend.lua'] and sorted(trials[1]['changedSources'])==['conntrack-source.lua','guardian.lua','worker.lua']
+for trial in trials:
+    assert trial['checkpointDownloadedHashAndGzipVerified'] and trial['independentRollbackVerifiedBeforeProductionWrite'] and trial['independentOfControlConnection']
+    assert trial['automaticExpirySeconds']==180 and trial['stageAutomaticExpirySeconds']==480 and not trial['committed'] and not trial['nssEnabled']
+    assert trial['activeWindow']['samples']==35 and trial['activeWindow']['allHealthy'] and trial['activeWindow']['oneProducer']
+    assert trial['activeOriginalCompleteProtectionAuditPassed'] and trial['originalAgeAndPermissionPredicatesRetained']
+    rb=trial['automaticRollback'];assert rb['passed'] and rb['automaticExpiryWithoutControllerRollback'] and rb['previousBackendRestored'] and rb['previousClassifierHealthyAndFresh'] and rb['ecmClosedAndZero']
+    assert trial['predeadlineFailClosedExitExpectedAndObserved'] and trial['full180SecondContinuousHealthNotClaimed']
+    assert not trial['realOverloadOrStaleSoftwareFaultInjected'] and not trial['highLoadLifecycleQualified']
+assert x45['localChecks']['totalUniqueLocalCases']==114 and x45['localChecks']['recoveryUniqueCases']==24
+assert x45['nativeChecks']['realQueryChildCases']==7 and x45['nativeChecks']['doesNotAddRepeatedCasesToLocalTotal']
+assert x45['sourceProof']['sources']==53 and not x45['sourceProof']['nssProductionEntryQualified']
+for source,expected in x45['sourceProof']['sourceHashes'].items():
+    assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+bench=x45['recoveryReadReuse'];assert bench['originalEmptyReadCalls']==60 and bench['candidateEmptyReadCalls']==40 and bench['nativeReadonlyPairs']==3
+assert bench['candidateMeanSeconds']<bench['originalMeanSeconds'] and bench['freshPrewriteAndPostwriteChecksRetained'] and bench['cacheDisabledAfterFirstWrite']
+assert bench['journalProjectedEmptyInRam'] and not bench['nativeSelectorsRecoveredDuringBenchmark'] and bench['tcChildCpuExcludedFromObserverCpu'] and bench['doesNotResolveHistoricalHighLoadRecoveryTimeout']
+row=x45['rowOverflowCandidate'];assert row['localChecks']==row['sameNativeRamCases']==48 and row['nativeRealQueryChildCases']==7
+assert row['temporarilyInstalledThenAutomaticallyRestored'] and row['noPartialRowsAdmitted'] and row['queryCleanupProofRequired'] and row['unknownErrorsRemainTerminal']
+expiry=x45['softwareExpiryCandidate'];assert expiry['localHelperCases']==expiry['sameNativeHelperCases']==34 and expiry['localJournalIntegrationCases']==expiry['sameNativeJournalCases']==8
+assert expiry['originalSixSecondSoftwareDeadline'] and expiry['originalSixSecondMutationDeadline'] and expiry['publicationAgeSeconds']==9
+assert expiry['bothPublicationsWithdrawnBeforePreciseRecovery'] and expiry['unknownWriterPreserved']
+assert not any(expiry[k] for k in ['realApplyChildAndServiceFaultRecoveryQualified','installed','productionEntryQualified'])
+query=json.loads((root/'evidence/nss45-query-cleanup.json').read_text());assert query['passed'] and query['checks']==7 and query['routerWrites']==False and not query['installed']
+assert all(v['actualQueryChildReaped'] and v['syntheticOutput'] and v['realNativeChild'] for v in query['cases'])
+assert all(x45['finalState']['protectedAudit'].values()) and x45['finalState']['classifierHealthy'] and x45['finalState']['closure']['passed']
+assert x45['finalState']['lastErrorIsControlledTrialPredeadlineExit'] and not x45['finalState']['lastErrorBelongsToCurrentWorker']
+assert not any(x45['conclusions'][k] for k in ['newNssFastPathTrialExecuted','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','classifierHighLoadStable','completeSoftwareExpiryChildServiceRecoveryProved','completeHighLoadLoopPassed','secondWanExpansionAllowed'])
+assert c['plannedClassifierReplacementAndRollbackThisRound'] and c['experimentalConfigurationWritesThisRound'] and c['temporaryClassifierTrials']==2 and c['allNaturalExpiryRestorationsPassed']
+assert not c['nssOpenedThisRound'] and c['lastErrorIsControlledTrialPredeadlineExit'] and not c['lastErrorBelongsToCurrentWorker']
+assert x45['reportVerification']['sourceValidated'] and not x45['reportVerification']['browserRendered']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

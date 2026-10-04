@@ -1,0 +1,79 @@
+{
+  "routerWrites": false,
+  "checks": 7,
+  "fullClassifierLifecycleQualified": false,
+  "passed": true,
+  "installed": false,
+  "actualConntrackCommandNotRun": true,
+  "nssOpened": false,
+  "syntheticQueryArguments": true,
+  "cases": [
+    {
+      "actualQueryChildReaped": true,
+      "seconds": 0.1699999999254942,
+      "name": "empty source succeeds",
+      "terminalUnknown": false,
+      "syntheticOutput": true,
+      "passed": true,
+      "realNativeChild": true
+    },
+    {
+      "actualQueryChildReaped": true,
+      "seconds": 0.4699999999720603,
+      "name": "2048 real-child rows succeed",
+      "terminalUnknown": false,
+      "syntheticOutput": true,
+      "passed": true,
+      "realNativeChild": true
+    },
+    {
+      "actualQueryChildReaped": true,
+      "seconds": 0.4699999999720603,
+      "name": "old 2049 boundary reproduces untyped terminal error",
+      "terminalUnknown": false,
+      "syntheticOutput": true,
+      "passed": true,
+      "realNativeChild": true
+    },
+    {
+      "actualQueryChildReaped": true,
+      "seconds": 0.4599999999627471,
+      "name": "new 2049 boundary carries actual reap proof",
+      "terminalUnknown": false,
+      "syntheticOutput": true,
+      "passed": true,
+      "realNativeChild": true
+    },
+    {
+      "actualQueryChildReaped": true,
+      "seconds": 0.2900000000372529,
+      "name": "stdout overflow carries actual reap proof",
+      "terminalUnknown": false,
+      "syntheticOutput": true,
+      "passed": true,
+      "realNativeChild": true
+    },
+    {
+      "actualQueryChildReaped": true,
+      "seconds": 0.17999999993480742,
+      "name": "stderr overflow remains terminal after actual reap",
+      "terminalUnknown": true,
+      "syntheticOutput": true,
+      "passed": true,
+      "realNativeChild": true
+    },
+    {
+      "actualQueryChildReaped": true,
+      "seconds": 0.17000000015832484,
+      "name": "unknown command exit remains terminal after actual reap",
+      "terminalUnknown": true,
+      "syntheticOutput": true,
+      "passed": true,
+      "realNativeChild": true
+    }
+  ],
+  "observedAt": "2026-10-04T04:26:31.191Z",
+  "execBytes": 7015,
+  "fixtureSha256": "c62b5a0cda86fd94cf6f0deb2d4acf168ddc424cbc9ca1485a877019167e3e2e",
+  "candidateSourceSha256": "e1e01fe23988aed2d92e1ba1f9ad3053c52756ab557f6c78d991954c394af109"
+}

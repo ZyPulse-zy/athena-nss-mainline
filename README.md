@@ -18,7 +18,8 @@ Athena AX6600 网络优化研究。唯一主线：**自动识别游戏流 → NS
 - NSS38 精简准入和逐次诊断候选已绑定 NSS39 的 68 项清单，目标原生完整源码模拟、tag 往返与配置检查通过。
 - **真人 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf 功能已验证；现网恢复后 ECM 关闭。固定高负载 CPU 和游戏体验验收尚未通过。**
 - NSS41 已执行真实单 WAN A/B/A2：加速数 0→2→0，bulk/RT leaf +6171/+517 包，mark/NAT/WAN1 正确。原失败与恢复证明保持；总负载 348→380→391 Mbps 上升，没有收益结论。
-- NSS44 真实 WAN1 连接对已找到，但原入口在 checkpoint 前因完整发布过旧而拒绝。还观察到分类器自然退出、首次恢复失败；新实例与最终保护审核通过。先解决发布与恢复可靠性，再请求下一次真人窗口。见 [本轮证据](evidence/nss44-mainline.json) 和 [本地问题记录](docs/ISSUE_CLASSIFIER_PUBLICATION.md)。
+- NSS45 两项分类器修复分别完成短时试装、独立 180 秒自然恢复和原完整审核，未长期保留，NSS 全程关闭。114 个独立本地案例、目标 RAM 重放、7 个真实 query 子进程案例通过；软件过期候选未安装，完整 apply 子进程/高负载服务恢复仍待验证。见 [本轮证据](evidence/nss45-mainline.json) 和 [恢复问题记录](docs/ISSUE_CLASSIFIER_RECOVERY.md)。
+- NSS44 真实 WAN1 配对、写前完整发布过期拒绝、自然退出/首次恢复失败证据保持。classification 提示后原完整审核的候选未绑定新入口，准备期间无需用户挂游戏。见 [历史证据](evidence/nss44-mainline.json) 和 [发布问题记录](docs/ISSUE_CLASSIFIER_PUBLICATION.md)。
 - NSS43 完成用户 Steam 只读测量：48 秒、13/13 样本，LAN4 约 278 Mbps，单 TCP 的份额限制已明确。见 [负载证据](evidence/nss43-mainline.json) 和 [验收记录](docs/SINGLE_WAN_ACCEPTANCE.md)。
 - NSS42 的 102 项绑定、90 项本地＋4 项目标 RAM 检查、原完整只读审核及 600 秒自然轻载证据保持。当前 20 Mbps/流数/TTL 不变，NSS44 候选未安装、未获得新生产入口资格。
 
