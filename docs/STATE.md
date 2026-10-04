@@ -2,15 +2,22 @@
 
 更新：2026-10-04，北京时间。最新现场核验见 [当前运行记录](../evidence/current-runtime.json)。
 
-**真实 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf 已由 NSS41 证明；CPU 和游戏体验验收仍未通过。NSS42 已修复本地验收入口、补齐声明的依赖绑定并完成只读核验，现网仍是 NSS39。**
+**真实 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf 已由 NSS41 证明；CPU 和游戏体验验收仍未通过。NSS43 已量清 Steam 的单连接受控份额，现网仍是 NSS39，NSS42 102 项验收入口不变。**
 
-## 当前运行
+## 当前运行与 NSS43
 
-- 常驻引用 `work/nss39/deployment-latest.json`，配置 `17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60`。worker/guardian 与 NSS41 是同一实例，健康；旧错误属于此前安装到期。
-- NSS42 没有生产配置写入、checkpoint、回滚试验或 NSS 准入。原完整保护审核通过，ECM 关闭且相关计数全零，无事务、实验模块、暂存或状态节点残留。
-- 02:01:48–02:11:48 的 600 秒只读窗，30 秒一次，21/21 次成功，worker/guardian 样本健康、来源序号递增。完整/compact 来源年龄 2.35–2.56 秒。稀疏轻载采样不能证明全部时间和高负载稳定性。
-- 自然软件转发约 1.98 Mbps / 187 pps，busy 14.18%、softirq 3.10%、time_squeeze +0，包含观察开销；不是 NSS A/B 或游戏数据。
-- 没有检测到真人 CS2＋Steam 下载配对，没有要求休息中的用户开游戏。
+见 [本轮证据](../evidence/nss43-mainline.json)、[相对采样与脱敏连接速率](../evidence/nss43-load-profile.json)。
+
+- 常驻引用仍 `work/nss39/deployment-latest.json`，配置 `17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60`。起止原完整保护审核通过，同一 worker/guardian 健康；旧错误属于此前安装到期。结束 12 个 selector 由常驻分类器自主管理。
+- NSS43 工具只读，没有生产配置写入、checkpoint、回滚试验或 NSS 准入。ECM 九项关闭/零计数检查每帧通过，结束无事务、实验模块、暂存或状态节点残留。
+- 用户仅开启 Steam，未开 CS2。北京时间 10:11:02 起约 48.02 秒，13/13 次新鲜 socket 与 CT 归属观测成功；每帧 bulk 13–16 条，全窗 23 个 CT 实例，存在退出/重建。WAN5 没有贯穿全窗的单条连接。
+- LAN4 277.73 Mbps / 22,985 pps，4 秒窗 262.32–287.97 Mbps，变异系数 2.36%；busy 71.17%、softirq 49.24%、time_squeeze +49、softnet dropped +0，包含观察开销。不是 NSS A/B，未达到全窗 300 Mbps。
+- WAN1–5 RX 约 35.46/62.26/46.58/87.71/51.53 Mbps；相应最大全窗 CT reply 单 TCP 为 21.80/17.49/22.99/16.40/未取得 Mbps。CT 查询起始估计窗与物理接口窗略不同，不能作为 Steam 载荷或精确加速份额。
+- 固定这些软件路径速率的离线模型：20→30 Mbps，WAN1 整机参考份额 7.20%→7.85%，WAN3 7.20%→8.28%，WAN2/4 无增加。加速后 TCP 需求可能变，这不是实际 NSS 预测。当前不扩预算、连接数或 TTL。
+- 20 项离线检查通过；13 份只读源码快照保留，它不构成新的生产入口资格。NSS42 102 项清单只复核、未修改。10% 相对跨度是预先声明的 A/B/A2 观测比较条件，不授权加速，也不证明 offered load 相同；[历史 NSS41 对照](../evidence/nss43-prior-aba-comparability.json) 不满足。
+- 第一次采样因本地 JavaScript 语法错误 13 次退出，发生在路由器连接前，原失败保留；修正后重新取得有效窗口。分开读取的 autorate 数值不同，相邻 JSON/文本/JSON 5/5 单位核对通过；采样后的 70–90 Mbps 不能回填为整窗固定预算。
+
+下一步按 [单次真人验收记录](SINGLE_WAN_ACCEPTANCE.md) 集中完成自动分类→bulk/RT leaf→CS2＋Steam。当前不需要用户继续挂机。
 
 ## NSS42 验收入口
 

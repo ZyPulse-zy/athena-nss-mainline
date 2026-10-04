@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-03T18:13:28.324728+00:00",
-  "round": "NSS42",
+  "checkedAt": "2026-10-04T02:19:22.065816+00:00",
+  "round": "NSS43",
   "deploymentReference": "work/nss39/deployment-latest.json",
   "classifierConfigSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
   "deployedTextSources": [
@@ -72,20 +72,20 @@
     "passed": true,
     "protectedConfigurationUnchanged": true,
     "exactOwnedNativeAudit": true,
-    "selectors": 2,
-    "queryAge": 2.8100000000558794,
-    "sequence": 3487,
+    "selectors": 12,
+    "queryAge": 2.569999999832362,
+    "sequence": 13170,
     "ecmClosedAndZero": true
   },
   "lastApplicationObservation": {
-    "observedAt": "2026-10-03T18:02:44.004Z",
+    "observedAt": "2026-10-04T02:11:51.821Z",
     "readonly": true,
     "gameProcessRunning": false,
     "steamProcessRunning": true,
     "actualCs2RtCandidates": 0,
-    "actualSteamBulkCandidates": 0,
+    "actualSteamBulkCandidates": 16,
     "sameWanCandidates": [],
-    "sourceAge": 0.8399999998509884,
+    "sourceAge": 2.4100000001490116,
     "nssAdmissionAllowed": false
   },
   "applicationEndpointsReadThisRound": true,
@@ -103,7 +103,7 @@
   "experimentalConfigurationWritesThisRound": false,
   "finalClosure": {
     "passed": true,
-    "observedAt": "2026-10-03T18:13:30.687Z",
+    "observedAt": "2026-10-04T02:19:21.085Z",
     "readonly": true,
     "noActiveRootTransaction": true,
     "noNssStagingDirectory": true,

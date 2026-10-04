@@ -18,6 +18,7 @@ Athena AX6600 网络优化研究。唯一主线：**自动识别游戏流 → NS
 - NSS38 精简准入和逐次诊断候选已绑定 NSS39 的 68 项清单，目标原生完整源码模拟、tag 往返与配置检查通过。
 - **真人 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf 功能已验证；现网恢复后 ECM 关闭。固定高负载 CPU 和游戏体验验收尚未通过。**
 - NSS41 已执行真实单 WAN A/B/A2：加速数 0→2→0，bulk/RT leaf +6171/+517 包，mark/NAT/WAN1 正确。原失败与恢复证明保持；总负载 348→380→391 Mbps 上升，没有收益结论。
+- NSS43 完成用户 Steam 只读测量：48 秒、13/13 样本，LAN4 约 278 Mbps，单 TCP 的份额限制已明确；保留当前预算/TTL，下一次集中真人验收。见 [负载证据](evidence/nss43-mainline.json) 和 [验收记录](docs/SINGLE_WAN_ACCEPTANCE.md)。
 - NSS42 已修复本地验收入口和恢复用途，102 项绑定，90 项本地＋4 项目标 RAM 检查、原完整只读审核及 600 秒自然轻载观察通过。未改生产；下一步稳定同 WAN 负载和受控份额，集中完成性能与游戏验收。
 
 最新证据见 [STATE.md](docs/STATE.md)、[实验记录](docs/EXPERIMENT_LOG.md) 和 [本地 Issue 候选](docs/ISSUE_TC_SUPERVISION.md)。代码镜像不是可直接安装的发布包。

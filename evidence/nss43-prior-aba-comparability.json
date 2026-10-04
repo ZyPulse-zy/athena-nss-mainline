@@ -1,0 +1,21 @@
+{
+  "maximumRelativeSpread": 0.1,
+  "metrics": {
+    "lan4DownMbps": {
+      "relativeSpread": 0.1163401399475951,
+      "withinDeclaredTolerance": false
+    },
+    "lan4Pps": {
+      "relativeSpread": 0.1168692551905292,
+      "withinDeclaredTolerance": false
+    },
+    "wanRxMbps": {
+      "relativeSpread": 0.7116178758718995,
+      "withinDeclaredTolerance": false
+    }
+  },
+  "similarObservedLoad": false,
+  "sameOfferedLoadProved": false,
+  "permitsCausalCpuClaim": false,
+  "nssAdmissionAllowed": false
+}

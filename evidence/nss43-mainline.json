@@ -1,0 +1,458 @@
+{
+  "round": "NSS43",
+  "updatedAt": "2026-10-04T02:23:34.671743+00:00",
+  "deploymentReference": "work/nss39/deployment-latest.json",
+  "classifierConfigSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
+  "permanentClassifierChanged": false,
+  "routerConfigurationWrites": false,
+  "nssEntryChanged": false,
+  "budgetMbps": 20,
+  "gateFlows": {
+    "tcp": 1,
+    "udp": 1
+  },
+  "ownerDeadlineSeconds": 45,
+  "readonlyAudits": [
+    {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "nssAdmissionAllowed": false,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.5500000000465661,
+      "sequence": 12829,
+      "ecmClosedAndZero": true
+    },
+    {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "nssAdmissionAllowed": false,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 12,
+      "queryAge": 2.569999999832362,
+      "sequence": 13170,
+      "ecmClosedAndZero": true
+    }
+  ],
+  "localChecks": {
+    "checks": 20,
+    "passed": true,
+    "simulation": true,
+    "routerAccess": false
+  },
+  "steamProfile": {
+    "startedAt": "2026-10-04T02:11:02.247Z",
+    "finishedAt": "2026-10-04T02:11:51.834Z",
+    "samples": 13,
+    "seconds": 48.02000000001863,
+    "sourceAgeRangeSeconds": [
+      1.2299999999813735,
+      3.4500000001862645
+    ],
+    "performance": {
+      "busyPercent": 71.17494302824738,
+      "softirqPercent": 49.24479304679633,
+      "softnetDroppedDelta": 0,
+      "timeSqueezeDelta": 49,
+      "interfaces": {
+        "rpwan3": {
+          "rxMbps": 46.579974177408005,
+          "txMbps": 2.095012578091649,
+          "rxPps": 3666.9512703026176,
+          "txPps": 3608.350687212261
+        },
+        "lan4": {
+          "rxMbps": 12.101461557679604,
+          "txMbps": 277.72613860880523,
+          "rxPps": 20059.100374836034,
+          "txPps": 22984.86047479325
+        },
+        "rpwan5": {
+          "rxMbps": 51.528411661787594,
+          "txMbps": 1.958435152019232,
+          "rxPps": 3858.142440648233,
+          "txPps": 3622.1782590573207
+        },
+        "wan": {
+          "rxMbps": 285.22592069959785,
+          "txMbps": 12.390379341936052,
+          "rxPps": 23667.055393576826,
+          "txPps": 20379.48771344482
+        },
+        "rpwan4": {
+          "rxMbps": 87.71009379421838,
+          "txMbps": 3.040100791335764,
+          "rxPps": 6351.332778006699,
+          "txPps": 5915.701790918155
+        },
+        "rpwan2": {
+          "rxMbps": 62.255425239459406,
+          "txMbps": 2.605447896708694,
+          "rxPps": 4704.394002497134,
+          "txPps": 4388.525614325661
+        },
+        "rpwan1": {
+          "rxMbps": 35.45588188253518,
+          "txMbps": 1.7735615160342975,
+          "rxPps": 2887.421907537406,
+          "txPps": 2845.647646812724
+        }
+      }
+    },
+    "lan4IntervalMbpsRange": [
+      262.3186217797594,
+      287.974256
+    ],
+    "lan4IntervalCoefficientOfVariation": 0.02361139057358652,
+    "bulkInstancesObserved": 23,
+    "bulkCountsEachSample": [
+      15,
+      13,
+      16,
+      16,
+      16,
+      15,
+      15,
+      16,
+      16,
+      13,
+      15,
+      16,
+      16
+    ],
+    "cs2CountsEachSample": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "byWan": {
+      "1": {
+        "observedInstances": 2,
+        "measurableInstances": 2,
+        "wholeWindowInstances": 2,
+        "highestWholeWindowCtReplyMbps": 21.796102972007848
+      },
+      "2": {
+        "observedInstances": 6,
+        "measurableInstances": 4,
+        "wholeWindowInstances": 2,
+        "highestWholeWindowCtReplyMbps": 17.48677433907399
+      },
+      "3": {
+        "observedInstances": 3,
+        "measurableInstances": 3,
+        "wholeWindowInstances": 2,
+        "highestWholeWindowCtReplyMbps": 22.991641074082736
+      },
+      "4": {
+        "observedInstances": 9,
+        "measurableInstances": 8,
+        "wholeWindowInstances": 4,
+        "highestWholeWindowCtReplyMbps": 16.400602582562158
+      },
+      "5": {
+        "observedInstances": 3,
+        "measurableInstances": 3,
+        "wholeWindowInstances": 0,
+        "highestWholeWindowCtReplyMbps": null
+      }
+    },
+    "fixedDemandSensitivity": {
+      "1": [
+        {
+          "capMbps": 20,
+          "fixedDemandControlledMbps": 20,
+          "percentOfMeasuredLan4": 7.201338736132166,
+          "percentOfMeasuredWanRx": 56.40813015527215
+        },
+        {
+          "capMbps": 30,
+          "fixedDemandControlledMbps": 21.796102972007848,
+          "percentOfMeasuredLan4": 7.848056031452276,
+          "percentOfMeasuredWanRx": 61.473870666136634
+        },
+        {
+          "capMbps": 40,
+          "fixedDemandControlledMbps": 21.796102972007848,
+          "percentOfMeasuredLan4": 7.848056031452276,
+          "percentOfMeasuredWanRx": 61.473870666136634
+        },
+        {
+          "capMbps": 60,
+          "fixedDemandControlledMbps": 21.796102972007848,
+          "percentOfMeasuredLan4": 7.848056031452276,
+          "percentOfMeasuredWanRx": 61.473870666136634
+        }
+      ],
+      "2": [
+        {
+          "capMbps": 20,
+          "fixedDemandControlledMbps": 17.48677433907399,
+          "percentOfMeasuredLan4": 6.2964092708987724,
+          "percentOfMeasuredWanRx": 28.08875575391674
+        },
+        {
+          "capMbps": 30,
+          "fixedDemandControlledMbps": 17.48677433907399,
+          "percentOfMeasuredLan4": 6.2964092708987724,
+          "percentOfMeasuredWanRx": 28.08875575391674
+        },
+        {
+          "capMbps": 40,
+          "fixedDemandControlledMbps": 17.48677433907399,
+          "percentOfMeasuredLan4": 6.2964092708987724,
+          "percentOfMeasuredWanRx": 28.08875575391674
+        },
+        {
+          "capMbps": 60,
+          "fixedDemandControlledMbps": 17.48677433907399,
+          "percentOfMeasuredLan4": 6.2964092708987724,
+          "percentOfMeasuredWanRx": 28.08875575391674
+        }
+      ],
+      "3": [
+        {
+          "capMbps": 20,
+          "fixedDemandControlledMbps": 20,
+          "percentOfMeasuredLan4": 7.201338736132166,
+          "percentOfMeasuredWanRx": 42.93690658527738
+        },
+        {
+          "capMbps": 30,
+          "fixedDemandControlledMbps": 22.991641074082736,
+          "percentOfMeasuredLan4": 8.278529773701967,
+          "percentOfMeasuredWanRx": 49.359497252005845
+        },
+        {
+          "capMbps": 40,
+          "fixedDemandControlledMbps": 22.991641074082736,
+          "percentOfMeasuredLan4": 8.278529773701967,
+          "percentOfMeasuredWanRx": 49.359497252005845
+        },
+        {
+          "capMbps": 60,
+          "fixedDemandControlledMbps": 22.991641074082736,
+          "percentOfMeasuredLan4": 8.278529773701967,
+          "percentOfMeasuredWanRx": 49.359497252005845
+        }
+      ],
+      "4": [
+        {
+          "capMbps": 20,
+          "fixedDemandControlledMbps": 16.400602582562158,
+          "percentOfMeasuredLan4": 5.905314733685705,
+          "percentOfMeasuredWanRx": 18.698649007308713
+        },
+        {
+          "capMbps": 30,
+          "fixedDemandControlledMbps": 16.400602582562158,
+          "percentOfMeasuredLan4": 5.905314733685705,
+          "percentOfMeasuredWanRx": 18.698649007308713
+        },
+        {
+          "capMbps": 40,
+          "fixedDemandControlledMbps": 16.400602582562158,
+          "percentOfMeasuredLan4": 5.905314733685705,
+          "percentOfMeasuredWanRx": 18.698649007308713
+        },
+        {
+          "capMbps": 60,
+          "fixedDemandControlledMbps": 16.400602582562158,
+          "percentOfMeasuredLan4": 5.905314733685705,
+          "percentOfMeasuredWanRx": 18.698649007308713
+        }
+      ]
+    },
+    "scope": {
+      "counterSource": "Existing classifier CT reply counters matched to fresh Steam socket ownership each sample",
+      "flowWindow": "Estimated query-start uptime from uptime minus source age; not the physical-interface counter window",
+      "includesObserverCost": true,
+      "softwareRateIsNotPostOffloadDemand": true,
+      "rotatingFlowGapsNotCountedAsZero": true,
+      "sensitivityPredictsCpuOrLatency": false,
+      "sensitivityChangesLiveBudget": false,
+      "nativeFastPathAffinityCheckedThisRound": false,
+      "actualSteamPayloadRateMeasured": false,
+      "gameTelemetryCaptured": false
+    }
+  },
+  "priorAbaObservedLoadComparison": {
+    "maximumRelativeSpread": 0.1,
+    "metrics": {
+      "lan4DownMbps": {
+        "relativeSpread": 0.1163401399475951,
+        "withinDeclaredTolerance": false
+      },
+      "lan4Pps": {
+        "relativeSpread": 0.1168692551905292,
+        "withinDeclaredTolerance": false
+      },
+      "wanRxMbps": {
+        "relativeSpread": 0.7116178758718995,
+        "withinDeclaredTolerance": false
+      }
+    },
+    "similarObservedLoad": false,
+    "sameOfferedLoadProved": false,
+    "permitsCausalCpuClaim": false,
+    "nssAdmissionAllowed": false
+  },
+  "queueBudget": {
+    "observedAt": "2026-10-04T02:14:42.972Z",
+    "readonly": true,
+    "routerWrites": false,
+    "captureAfterSteamProfile": true,
+    "execBytes": 801,
+    "rows": [
+      {
+        "wan": 1,
+        "seconds": 0.0800000000745058,
+        "beforeJsonBytesPerSecond": 11246625,
+        "afterJsonBytesPerSecond": 11246625,
+        "textMbps": 89.973,
+        "unitsVerifiedByAdjacentReads": true,
+        "autorateChangedBetweenBracketReads": false
+      },
+      {
+        "wan": 2,
+        "seconds": 0.07000000006519258,
+        "beforeJsonBytesPerSecond": 11137500,
+        "afterJsonBytesPerSecond": 11137500,
+        "textMbps": 89.1,
+        "unitsVerifiedByAdjacentReads": true,
+        "autorateChangedBetweenBracketReads": false
+      },
+      {
+        "wan": 3,
+        "seconds": 0.0800000000745058,
+        "beforeJsonBytesPerSecond": 11250000,
+        "afterJsonBytesPerSecond": 11250000,
+        "textMbps": 90,
+        "unitsVerifiedByAdjacentReads": true,
+        "autorateChangedBetweenBracketReads": false
+      },
+      {
+        "wan": 4,
+        "seconds": 0.05999999982304871,
+        "beforeJsonBytesPerSecond": 10241500,
+        "afterJsonBytesPerSecond": 10241500,
+        "textMbps": 81.932,
+        "unitsVerifiedByAdjacentReads": true,
+        "autorateChangedBetweenBracketReads": false
+      },
+      {
+        "wan": 5,
+        "seconds": 0.10000000009313226,
+        "beforeJsonBytesPerSecond": 8750000,
+        "afterJsonBytesPerSecond": 8750000,
+        "textMbps": 70,
+        "unitsVerifiedByAdjacentReads": true,
+        "autorateChangedBetweenBracketReads": false
+      }
+    ]
+  },
+  "localFailures": [
+    {
+      "stage": "First Steam profiler",
+      "calls": 13,
+      "cause": "Local JavaScript template editing introduced a syntax error; failed before router connection",
+      "successfulReads": 0,
+      "routerChanges": false,
+      "originalErrorsRetained": true
+    },
+    {
+      "stage": "Separated queue JSON/text reads",
+      "cause": "Values differed across sequential observations; no synchronized-unit claim was made",
+      "resolvedBy": "Adjacent JSON/text/JSON observation, 5 of 5 unit checks matched; not a qdisc compatibility defect"
+    }
+  ],
+  "sourceProof": {
+    "sources": 13,
+    "sourceHashes": {
+      "work/nss43/audit-renderer.mjs": "21a213cd71c36054cbbf58932fd77b74c211b697ef5f4ee27badc928397435ce",
+      "work/nss43/current-audit-diagnostic.mjs": "39fa2a89ff63c38fc7641d362d1d1382481bca75419c1670a894c4e774c12d8c",
+      "work/nss43/final-closure.mjs": "11ed72b531ca545d42533f57404e12fa9565d9aa94d4cbab3d833238584e9132",
+      "work/nss43/inspect-classifier.mjs": "9e35a1b679a2fde4a04aa53c6ca6770b4157201c726c3465da6d587136a424c2",
+      "work/nss43/session-binding.mjs": "58ffc81bc0bc0edbb21cded005f871ec10ea2762ea9f48dec6074777454fb4fc",
+      "work/nss43/read-real-candidates.mjs": "11f14320cf07251a6afcd9128b835dd4dd5b3c071b0246bcd47e2e20a4490b7f",
+      "work/nss43/profile-steam.mjs": "8a1cdd8c68c23bd50a645103a47fe2129c4f9177b8022998b333b22d056bdbab",
+      "work/nss43/read-queue-budget.mjs": "a3335c70b7599f324a0e0e081552178aac597d4cda6f74cd7afab08c564d9c29",
+      "work/nss43/read-queue-budget-compact.mjs": "01dba2e6b48f5bb1d2d52e1792bc8c9ceac1e5efc4b2c6ec1f0dddc59402e7ec",
+      "work/nss43/load_model.py": "930beaa5e99ceef7ea221de725c4280f4e0c314823972be3f1c6266c3b12a8ca",
+      "work/nss43/test_load_model.py": "ec52b94ae3cf191a75b4eff78006dac9194f1fd1fe821c45df7253542848f592",
+      "work/nss43/summarize.py": "9bf2449155e9190e252b1741efc237b7cb740e79f1bd88001e8a34acab7a1c7f",
+      "work/nss43/render_report.py": "a454000d439c002ffc990d29a83d9c246b7a75c4036d7954f105c9975fcd81f8"
+    },
+    "readonlyOnly": true,
+    "prior102InputQualificationReused": true,
+    "newProductionEntryQualified": false,
+    "privateCapturesAndConnectorNotExported": true
+  },
+  "finalState": {
+    "protectedAudit": {
+      "passed": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "ecmClosedAndZero": true
+    },
+    "classifierHealthy": true,
+    "sameProducerSinceOpening": true,
+    "lastErrorBelongsToEarlierInstallation": true,
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-04T02:19:21.085Z",
+      "readonly": true,
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1897907.58
+    }
+  },
+  "actualFastPathTrial": {
+    "attempted": false,
+    "acceleratedCountDuringSamples": 0,
+    "leafCounters": null,
+    "gameTelemetry": null,
+    "checkpointRequiredForProductionWrites": true,
+    "checkpointCreated": false,
+    "rollbackExercised": false
+  },
+  "decision": {
+    "raiseBudgetNow": false,
+    "expandFlowsNow": false,
+    "changeTtlNow": false,
+    "reason": "Current observed whole-window TCP demand is about 16-23 Mbps; fixed-demand 20-to-30 Mbps model changes whole-PC controlled share by at most about 1.08 percentage points on WAN1-4. WAN5 lacks a whole-window instance.",
+    "next": "One concentrated CS2+Steam window using the unchanged single-WAN, one-TCP/one-UDP entry; track exact flow persistence, controlled leaf share, both global and selected-WAN load, then assess game and performance separately.",
+    "observationCriterionRelativeSpread": 0.1,
+    "criterionAuthorizesNss": false,
+    "sameOfferedLoadStillRequiresIndependentEvidence": true
+  },
+  "conclusions": {
+    "softwareLoadCharacterized": true,
+    "bulkConnectionsRotate": true,
+    "singleTcpScopeLimitsGlobalCpuInterpretation": true,
+    "budgetIncreaseCpuBenefitProved": false,
+    "nssCpuBenefitProvedThisRound": false,
+    "cs2JitterLossMissCaptured": false,
+    "completeHighLoadLifecycleQualified": false,
+    "secondWanExpansionAllowed": false
+  },
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false,
+    "reason": "Existing local-browser rendering policy block retained; no alternate access route attempted"
+  }
+}

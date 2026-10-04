@@ -15,7 +15,8 @@ rules={
 }
 count=0; links=0
 for file in root.rglob('*'):
-    if not file.is_file() or '.git' in file.relative_to(root).parts or '.local' in file.relative_to(root).parts: continue
+    # Python replay caches are already excluded by .gitignore; they are not exported artifacts.
+    if not file.is_file() or any(p in file.relative_to(root).parts for p in ('.git','.local','__pycache__')): continue
     rel=file.relative_to(root).as_posix()
     assert not re.search(r'(?i)(?:^|/)(?:connect-router[^/]*|.*private.*|.*credential.*|deployment-latest\.json)$',rel), 'Excluded filename: '+rel
     assert file.suffix.lower() not in ('.ko','.o','.key','.pem','.pfx','.clixml','.zip','.gz'),rel
@@ -35,7 +36,7 @@ assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets'
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
 c=json.loads((root/'evidence/current-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
-assert c['round']=='NSS42' and c['deploymentReference']=='work/nss39/deployment-latest.json'
+assert c['round']=='NSS43' and c['deploymentReference']=='work/nss39/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
 assert not n['limitations']['productionAddressFailureInjected'] and not n['limitations']['highLoadCpuBenefitProved']
 assert not n['limitations']['cs2JitterLossMissCaptured']
@@ -172,4 +173,28 @@ timing=json.loads((root/'evidence/nss42-stability-timing.json').read_text())['ro
 assert hashlib.sha256((root/'code/work/nss42/parse-ecm-any-wan.mjs').read_bytes()).hexdigest()==k['localChecks']['groups']['parser']['testedSourceManifest']['work/nss42/parse-ecm-any-wan.mjs']
 assert k['repositoryReplay']['passed'] and k['repositoryReplay']['checks']==65 and not k['repositoryReplay']['routerAccess'] and not k['repositoryReplay']['privateHardwareStateRead']
 assert not k['reportVerification']['browserRendered']
+m=json.loads((root/'evidence/nss43-mainline.json').read_text(encoding='utf-8'))
+assert m['classifierConfigSha256']==c['classifierConfigSha256'] and not m['permanentClassifierChanged']
+assert not m['routerConfigurationWrites'] and not m['nssEntryChanged']
+assert m['budgetMbps']==20 and m['gateFlows']=={'tcp':1,'udp':1} and m['ownerDeadlineSeconds']==45
+assert m['localChecks']['checks']==20 and m['localChecks']['passed'] and not m['localChecks']['routerAccess']
+assert len(m['readonlyAudits'])==2 and all(a['passed'] and a['ecmClosedAndZero'] and not a['nssAdmissionAllowed'] for a in m['readonlyAudits'])
+assert m['sourceProof']['sources']==13 and m['sourceProof']['readonlyOnly'] and not m['sourceProof']['newProductionEntryQualified']
+for source,expected in m['sourceProof']['sourceHashes'].items():
+    assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+load=json.loads((root/'evidence/nss43-load-profile.json').read_text(encoding='utf-8'))
+assert load['samples']==13 and 48<load['seconds']<49 and load['bulkInstancesObserved']==23
+assert 270<load['performance']['interfaces']['lan4']['txMbps']<285 and load['performance']['timeSqueezeDelta']==49
+assert len(load['intervals'])==12 and len(load['flowRates'])==20
+assert load['byWan']['5']['wholeWindowInstances']==0 and not load['nssAdmissionAllowed']
+assert load['allSamplesEcmClosedAndZero'] and load['sameClassifierProducer']
+assert not load['scope']['sensitivityPredictsCpuOrLatency'] and not load['scope']['actualSteamPayloadRateMeasured']
+assert not m['priorAbaObservedLoadComparison']['similarObservedLoad'] and not m['priorAbaObservedLoadComparison']['permitsCausalCpuClaim']
+assert m['queueBudget']['captureAfterSteamProfile'] and all(r['unitsVerifiedByAdjacentReads'] for r in m['queueBudget']['rows'])
+assert m['finalState']['classifierHealthy'] and m['finalState']['sameProducerSinceOpening'] and m['finalState']['closure']['passed']
+assert m['localFailures'][0]['successfulReads']==0 and m['localFailures'][0]['calls']==13 and m['localFailures'][0]['originalErrorsRetained']
+assert not any(m['decision'][v] for v in ('raiseBudgetNow','expandFlowsNow','changeTtlNow','criterionAuthorizesNss'))
+assert not m['actualFastPathTrial']['attempted'] and m['actualFastPathTrial']['leafCounters'] is None and m['actualFastPathTrial']['gameTelemetry'] is None
+assert not any(m['conclusions'][v] for v in ('nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','completeHighLoadLifecycleQualified','secondWanExpansionAllowed'))
+assert m['reportVerification']['sourceValidated'] and not m['reportVerification']['browserRendered']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))
