@@ -1,0 +1,126 @@
+{
+  "checkedAt": "2026-10-04T04:42:45.804742+00:00",
+  "round": "NSS45",
+  "deploymentReference": "work/nss39/deployment-latest.json",
+  "classifierConfigSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
+  "deployedTextSources": [
+    {
+      "name": "classifier-core.lua",
+      "sha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+      "included": true
+    },
+    {
+      "name": "conntrack-source.lua",
+      "sha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+      "included": true
+    },
+    {
+      "name": "owned.lua",
+      "sha256": "3061a42d2b429f2e6ca4d4b73d73f87504ac4899b047da6e90606079bfda5947",
+      "included": true
+    },
+    {
+      "name": "backend.lua",
+      "sha256": "a4ec72a5f9905f66d6617580ef6e630499fc15363e673f5d2edcd2549d4c2335",
+      "included": true
+    },
+    {
+      "name": "worker.lua",
+      "sha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
+      "included": true
+    },
+    {
+      "name": "guardian.lua",
+      "sha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+      "included": true
+    },
+    {
+      "name": "stop-worker.lua",
+      "sha256": "74afd01c9d114279b388f954fa5e138cfe16449151e93ecb62539368a7e69a1f",
+      "included": true
+    },
+    {
+      "name": "cleanup.sh",
+      "sha256": "de41d810a19f3b2506fb46e85c955f38c2f60971105652982be1b259dc1749b0",
+      "included": true
+    },
+    {
+      "name": "init.sh",
+      "sha256": "9ad7b1c93c0dcc5c4bc01a6b5a73d396328478ed0487af6ffecb9d314484bab7",
+      "included": true
+    },
+    {
+      "name": "group-runner",
+      "sha256": "2854059fc58fc304cee00bf2467a2d1725f836828c99aa3b8c6e53b4b3dc73e2",
+      "included": false,
+      "reason": "binary helper retained in private workspace"
+    },
+    {
+      "name": "process-stop",
+      "sha256": "e209e728929d72960625f85bebf962e0001fdeefb97e9c0b66aa09faef722fc4",
+      "included": false,
+      "reason": "binary helper retained in private workspace"
+    },
+    {
+      "name": "process-crash",
+      "sha256": "12293880057e91d1b6ce7c60b96a7f81b70656aede84e71497a2e225d91f4305",
+      "included": false,
+      "reason": "binary helper retained in private workspace"
+    }
+  ],
+  "audit": {
+    "passed": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 2,
+    "queryAge": 2.709999999962747,
+    "sequence": 205,
+    "ecmClosedAndZero": true
+  },
+  "lastApplicationObservation": {
+    "observedAt": "2026-10-04T04:42:48.423Z",
+    "readonly": true,
+    "gameProcessRunning": false,
+    "steamProcessRunning": true,
+    "actualCs2RtCandidates": 0,
+    "actualSteamBulkCandidates": 0,
+    "sameWanCandidates": [],
+    "sourceAge": 2.5,
+    "nssAdmissionAllowed": false
+  },
+  "applicationEndpointsReadThisRound": true,
+  "freshApplicationPairCheckedThisRound": true,
+  "realForwardingABACompleted": false,
+  "historicalNss41NativeForwardingABACompleted": true,
+  "completePerformanceAndGameAcceptance": false,
+  "staleSnapshotRejectedEarlierInRound": false,
+  "historicalNss44StaleSnapshotRejection": true,
+  "historicalNss40StaleProtectedSnapshotRejection": true,
+  "recoveryAlignmentRefusedEarlierInRound": false,
+  "historicalNss41RecoveryAlignmentRefused": true,
+  "historicalNss36StaleSnapshotRejection": true,
+  "classifierWorkerRestartObservedThisRound": true,
+  "firstClassifierExactRecoveryPassedThisRound": null,
+  "historicalNss44FirstExactRecoveryPassed": false,
+  "naturalPriorRowBoundExitsObserved": 3,
+  "finalClassifierHealthyAndExactOwnedAuditPassed": true,
+  "realApplicationAttemptRefusedBeforeCheckpointOrStaging": false,
+  "plannedClassifierReplacementAndRollbackThisRound": true,
+  "temporaryClassifierTrials": 2,
+  "allNaturalExpiryRestorationsPassed": true,
+  "experimentalConfigurationWritesThisRound": true,
+  "nssOpenedThisRound": false,
+  "lastErrorIsControlledTrialPredeadlineExit": true,
+  "lastErrorBelongsToCurrentWorker": false,
+  "originalNss42EntryUnmodified": true,
+  "finalClosure": {
+    "passed": true,
+    "observedAt": "2026-10-04T04:42:46.797Z",
+    "readonly": true,
+    "noActiveRootTransaction": true,
+    "noNssStagingDirectory": true,
+    "noExperimentStateNodeDirectory": true,
+    "noExperimentalGateOrQdiscModule": true
+  },
+  "requiresLiveRevalidation": true
+}

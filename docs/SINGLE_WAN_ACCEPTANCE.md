@@ -8,7 +8,9 @@ NSS45 两项修复的轻载试装和独立自然恢复已通过，软件过期�
 
 ## 固定范围
 
-- 常驻仍 NSS39，原 NSS42 102 项入口冻结不变；新的修改须另建轮次并重新绑定/资格核验。20 Mbps、单 WAN、一条 Steam TCP＋一条 CS2 UDP、原学习/持锁/owner 时限保持。
+当前准备资格已由 NSS46 完成：三项可靠性修复保留，真实 apply 过期恢复与 crash 恢复通过，新入口 112 项绑定/99 项离线检查/现场原完整审核通过。使用 `work/nss46/deployment-latest.json` 和 `work/nss46/real-session.mjs`；下面 NSS39/NSS42/NSS44/NSS45 的描述保留为当时历史，不能代替当前来源。当前唯一缺项是集中真人高负载验收。
+
+- 常驻 NSS46，原 NSS42 102 项入口冻结不变。20 Mbps、单 WAN、一条 Steam TCP＋一条 CS2 UDP、原学习/持锁/owner 时限保持。
 - 原选择策略已经在相同游戏 WAN 内优先较大的 bulk 候选，不把这件事重复算作新优化。不能改已有连接 WAN 或让 NSS 重新负载均衡。
 - 不额外放行其它 TCP/UDP，不提高预算，不以任何观察比较条件代替原身份、来源年龄、tag、owner、checkpoint 检查。
 - 所有生产变更仍在本次 checkpoint 下载/哈希验证、独立 owner 已运行之后。精确撤销与全部受保护基线恢复必须单独记录。

@@ -1,0 +1,2 @@
+import fs from'node:fs';import assert from'node:assert/strict';import{connectRouter}from'../nss20/connect-router.mjs';
+const c=await connectRouter();try{const r=await c.run("/usr/bin/timeout -k 1 3 /sbin/logread -e 'NSS46_REAL_' | /usr/bin/tail -n 100");assert.equal(r.code,0);fs.writeFileSync('work/nss46/fault-child-log-private.txt',r.stdout);const lines=r.stdout.split('\n').filter(x=>x.includes('DELAY')||x.includes('action=recover'));console.log(JSON.stringify({readonly:true,actualChildLog:lines}));}finally{c.close()}

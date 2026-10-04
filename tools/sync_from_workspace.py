@@ -16,11 +16,12 @@ def save(path, value):
     dst.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 def keys(obj,names): return {k:obj[k] for k in names if k in obj}
 
-current=read('work/nss39/deployment-latest.json')
+current=read('work/nss46/deployment-latest.json')
 assert current['committed'] is True
 cfg=read(current['localDir']+'/config.json')
 sources=[]
 allowlist={
+ 'work/nss46': ['audit-backend.mjs','audit-crash.mjs','audit-expiry.mjs','audit-fault.mjs','audit-renderer.mjs','audit-row.mjs','binding.mjs','build-entry.mjs','build-expiry.py','build-row.py','cancel-restored-stages.mjs','classified-tags.lua','classifier.lua','combined-expiry-replay.lua','commit-backend.mjs','commit-expiry.mjs','commit-row.mjs','conntrack-source.lua','core-guard-phase.lua','crash-once.mjs','current-audit-diagnostic.mjs','dependency-closure.mjs','entry-scheduling-fixtures.lua','fast-path.lua','fault-worker.lua','final-closure.mjs','guardian.lua','inspect-classifier.mjs','module-stage-guardian.lua','module-stage.mjs','observe-compact.mjs','observe-current.mjs','observe-fault.mjs','observe-retained.mjs','original-conntrack-source.lua','original-guardian.lua','original-worker.lua','parse-dependency-graph.mjs','parse-ecm-any-wan.mjs','payload.mjs','prepare-crash.py','prepare-entry.py','prepare-expiry-retain.py','prepare-fault.py','prepare-row-retain.py','prepare-runtime.py','publication-wait-fixtures.lua','publication-wait.lua','qos-physical.lua','qualification.mjs','read-classifier-log.mjs','read-fault-log.mjs','read-prerequisites.lua','read-real-candidates.mjs','real-session.mjs','record-candidates.mjs','render-report.py','row-replay.lua','session-binding.mjs','stale-guardian.lua','stale-replay.lua','stale-worker.lua','state-node.lua','summarize.py','tag-normalizer.lua','test-binding.mjs','test-combined-expiry.py','test-controller.mjs','test-dependencies.mjs','test-entry-scheduling.py','test-expiry.py','test-parser.mjs','test-publication-wait.py','test-row.py','upgrade-backend.mjs','upgrade-crash.mjs','upgrade-expiry.mjs','upgrade-fault.mjs','upgrade-row.mjs','verify-crash-rollback.mjs','verify-fault-rollback.mjs','wait-ready-candidate.mjs','wan-scope.lua','worker.lua'],
  'work/nss45': ['audit-renderer.mjs','current-audit-diagnostic.mjs','final-closure.mjs','inspect-classifier.mjs','session-binding.mjs','read-classifier-log.mjs','read-real-candidates.mjs',
   'build-row-candidate.py','original-worker.lua','original-guardian.lua','original-conntrack-source.lua','worker.lua','guardian.lua','conntrack-source.lua','test-row-candidate.py','row-replay.lua','check-row-native.mjs',
   'build-recovery-candidate.py','original-backend.lua','candidate-backend.lua','test-recovery-candidate.py','recovery-fixtures.lua','benchmark-recovery-readonly.mjs',
@@ -73,7 +74,8 @@ for name,expected in cfg['files'].items():
     if not name.endswith(('.lua','.sh')):
         deployed.append({'name':name,'sha256':expected,'included':False,'reason':'binary helper retained in private workspace'})
         continue
-    candidates=sorted((workspace/'work').glob('nss*/'+name),reverse=True)
+    deployed_path=workspace/current['localDir']/name
+    candidates=([deployed_path] if deployed_path.is_file() else [])+sorted((workspace/'work').glob('nss*/'+name),reverse=True)
     matches=[path for path in candidates if sha(path)==expected]
     assert matches, 'Missing matching deployed source: '+name
     copy(matches[0].relative_to(workspace),Path('code/deployed-classifier')/name,'matches-current-deployed-config-hash')
@@ -103,12 +105,12 @@ save('evidence/nss34-loop-profile.json',{
  'observedAt':loop['observedAt'],'routerWrites':False,'nssOpened':False,'actualFlowAdmissionChecked':False,
  'summary':{'samples':len(rows),'fullInventory':sum(x['fullInventory'] for x in rows),'meanPhaseSeconds':sum(x['phaseSeconds'] for x in rows)/len(rows),'maxPhaseSeconds':max(x['phaseSeconds'] for x in rows),'maxIterationReads':max(x['iterationReads'] for x in rows),'ageOnlyReserveAvailable':sum(x['ageOnlyReserveAvailable'] for x in rows)},
  'rows':[{'atSeconds':round(x['at']-start,4),**keys(x,['closedSeconds','phaseSeconds','readSeconds','parseSeconds','iterationReads','fullInventory','refreshInventory','sourceAge','publicationDelay','ageOnlyReserveAvailable','classifiedFlowCount','status'])} for x in rows]})
-auditPath='work/nss45/final-audit.json'
+auditPath='work/nss46/final-audit.json'
 audit=read(auditPath)
 checked=datetime.fromtimestamp((workspace/auditPath).stat().st_mtime,timezone.utc).isoformat()
-pc=read('work/nss45/final-app/real-reader-qualified.json')
+pc=read('work/nss46/real-reader-qualified.json')
 save('evidence/current-runtime.json',{
- 'checkedAt':checked,'round':'NSS45','deploymentReference':'work/nss39/deployment-latest.json',
+ 'checkedAt':checked,'round':'NSS46','deploymentReference':'work/nss46/deployment-latest.json',
  'classifierConfigSha256':current['configHash'],'deployedTextSources':deployed,
  'audit':keys(audit,['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','selectors','queryAge','sequence','ecmClosedAndZero']),
  'lastApplicationObservation':keys(pc,['observedAt','readonly','gameProcessRunning','steamProcessRunning','actualCs2RtCandidates','actualSteamBulkCandidates','sameWanCandidates','sourceAge','nssAdmissionAllowed']),
@@ -117,27 +119,29 @@ save('evidence/current-runtime.json',{
  'realForwardingABACompleted':False,
  'historicalNss41NativeForwardingABACompleted':True,
  'completePerformanceAndGameAcceptance':False,
- 'staleSnapshotRejectedEarlierInRound':False,
+ 'staleSnapshotRejectedEarlierInRound':True,
  'historicalNss44StaleSnapshotRejection':True,
  'historicalNss40StaleProtectedSnapshotRejection':True,
  'recoveryAlignmentRefusedEarlierInRound':False,
  'historicalNss41RecoveryAlignmentRefused':True,
  'historicalNss36StaleSnapshotRejection':True,
  'classifierWorkerRestartObservedThisRound':True,
- 'firstClassifierExactRecoveryPassedThisRound':None,
+ 'firstClassifierExactRecoveryPassedThisRound':True,
  'historicalNss44FirstExactRecoveryPassed':False,
- 'naturalPriorRowBoundExitsObserved':3,
+ 'naturalPriorRowBoundExitsObserved':0,
  'finalClassifierHealthyAndExactOwnedAuditPassed':True,
  'realApplicationAttemptRefusedBeforeCheckpointOrStaging':False,
  'plannedClassifierReplacementAndRollbackThisRound':True,
  'temporaryClassifierTrials':2,
+ 'classifierReliabilityChangesRetained':3,
+ 'newNssEntryBoundInputs':112,
  'allNaturalExpiryRestorationsPassed':True,
  'experimentalConfigurationWritesThisRound':True,
  'nssOpenedThisRound':False,
  'lastErrorIsControlledTrialPredeadlineExit':True,
  'lastErrorBelongsToCurrentWorker':False,
  'originalNss42EntryUnmodified':True,
- 'finalClosure':keys(read('work/nss45/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
+ 'finalClosure':keys(read('work/nss46/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
  'requiresLiveRevalidation':True,
 })
 replay=read('work/nss34/admission-replay-qualified.json')
@@ -183,7 +187,7 @@ save('evidence/nss38-adapter-differential.json',read('work/nss38/traced-adapter-
 save('evidence/nss38-admission-replay.json',read('work/nss38/traced-admission-qualified.json'))
 save('evidence/nss38-native-syntax.json',read('work/nss38/native-candidate-syntax.json'))
 n39=read('outputs/nss39-mainline-observations.json')
-assert n39['classifier']['committed'] and n39['classifier']['configSha256']==current['configHash']
+assert n39['classifier']['committed'] and n39['classifier']['configSha256']==read('work/nss39/deployment-latest.json')['configHash']
 assert sum(x['automaticRollbackVerified'] for x in n39['installations'])==3
 assert n39['controller']['boundToCurrentDeployment'] and not n39['actualFastPathTrial']['attempted']
 save('evidence/nss39-mainline.json',n39)
@@ -236,4 +240,11 @@ save('evidence/nss45-mainline.json',n45)
 save('evidence/nss45-trial-timing.json',read('work/nss45/trial-timing-sanitized.json'))
 save('evidence/nss45-query-cleanup.json',read('work/nss45/query-cleanup-native-qualified.json'))
 save('evidence/nss45-recovery-benchmark.json',read('work/nss45/recovery-readonly-qualified.json'))
+n46=read('outputs/nss46-mainline-observations.json')
+assert n46['classifierCommitted'] and n46['permanentClassifierChanged'] and not n46['nssOpened']
+assert n46['realSoftwareExpiry']['passed'] and n46['realWorkerCrash']['passed'] and len(n46['retainedChanges'])==3
+assert n46['entry']['boundInputs']==112 and n46['entry']['localCases']==99 and n46['finalState']['closure']['passed']
+save('evidence/nss46-mainline.json',n46)
+save('evidence/nss46-fault-timing.json',read('work/nss46/fault-timing-sanitized.json'))
+save('evidence/nss46-entry-binding.json',read('work/nss46/entry-binding-sanitized.json'))
 print(json.dumps({'sourceFiles':len(sources),'codeBytes':sum(s['bytes'] for s in sources),'evidenceFiles':len(list((repo/'evidence').glob('*.json'))),'credentialsCopied':False,'rawCapturesCopied':False}))

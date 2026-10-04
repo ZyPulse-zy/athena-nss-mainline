@@ -34,7 +34,7 @@ assert s['realTrial']['passed'] is False and s['realTrial']['rollbackPassed'] is
 assert not s['nssHighLoadCpuBenefitProved'] and not s['cs2JitterLossMissCaptured']
 assert s['realTrial']['bulkLeaf']['packets']==s['realTrial']['rtLeaf']['packets']==0
 n=json.loads((root/'evidence/nss35-address-recovery.json').read_text())
-c=json.loads((root/'evidence/current-runtime.json').read_text())
+c=json.loads((root/'evidence/nss45-runtime.json').read_text())
 assert n['checks']==136 and n['classifier']['committed'] and n['automaticRollback']['passed']
 assert c['round']=='NSS45' and c['deploymentReference']=='work/nss39/deployment-latest.json'
 assert n['protectedAudit']['ecmClosedAndZero'] and not n['safety']['nssGateOrQdiscLoaded']
@@ -55,7 +55,7 @@ assert y['classifier']['committed']
 assert y['change']['onlyAttributeSearchChanged'] and y['change']['sourceScopePolicyAndDeadlinesUnchanged']
 assert hashlib.sha256((root/'code/work/nss35/conntrack-source.lua').read_bytes()).hexdigest()==y['change']['oldSha256']
 assert y['change']['newSha256']==y['classifier']['sourceSha256']==y['differential']['sourceSha256']
-assert hashlib.sha256((root/'code/deployed-classifier/conntrack-source.lua').read_bytes()).hexdigest()==y['change']['newSha256']
+assert hashlib.sha256((root/'code/work/nss37/conntrack-source.lua').read_bytes()).hexdigest()==y['change']['newSha256']
 assert y['automaticRollback']['automaticExpiryWithoutControllerRollback'] and y['automaticRollback']['previousNormalizerAndGuardianRestored']
 assert len(y['installations'])==2 and all(v['rollbackVerifiedBeforeConfigMutation'] and v['independentOfControlConnection'] for v in y['installations'])
 assert sum(len(v['samples']) for v in y['nativeBenchmark']['results'])==16
@@ -92,7 +92,7 @@ v=json.loads((root/'evidence/nss39-mainline.json').read_text())
 assert v['classifier']['committed'] and v['classifier']['configSha256']==c['classifierConfigSha256']
 assert v['change']['onlyTcSupervisionAndFailureDiagnosticsChanged'] and v['change']['policySourceScopeAndDeadlinesUnchanged']
 assert v['change']['tcDeadlineSeconds']==2 and v['change']['outerMutationDeadlineSeconds']==6 and v['change']['failedCommandStillFatal']
-assert hashlib.sha256((root/'code/deployed-classifier/worker.lua').read_bytes()).hexdigest()==v['classifier']['workerSha256']
+assert hashlib.sha256((root/'code/work/nss39/worker.lua').read_bytes()).hexdigest()==v['classifier']['workerSha256']
 assert len(v['installations'])==4 and sum(i['automaticRollbackVerified'] for i in v['installations'])==3 and v['installations'][-1]['committed']
 assert all(i['checkpointVerified'] and i['rollbackVerifiedBeforeConfigMutation'] and i['deadlineSeconds']==180 for i in v['installations'])
 assert v['helperChecks']['localCases']==16 and v['helperChecks']['nativeArgumentCases']==13 and len(v['helperChecks']['nativeProcessCases'])==8
@@ -278,4 +278,25 @@ assert not any(x45['conclusions'][k] for k in ['newNssFastPathTrialExecuted','ns
 assert c['plannedClassifierReplacementAndRollbackThisRound'] and c['experimentalConfigurationWritesThisRound'] and c['temporaryClassifierTrials']==2 and c['allNaturalExpiryRestorationsPassed']
 assert not c['nssOpenedThisRound'] and c['lastErrorIsControlledTrialPredeadlineExit'] and not c['lastErrorBelongsToCurrentWorker']
 assert x45['reportVerification']['sourceValidated'] and not x45['reportVerification']['browserRendered']
+x46=json.loads((root/'evidence/nss46-mainline.json').read_text());latest=json.loads((root/'evidence/current-runtime.json').read_text())
+assert latest['round']=='NSS46' and latest['deploymentReference']==x46['deploymentReference']=='work/nss46/deployment-latest.json'
+assert x46['classifierCommitted'] and x46['permanentClassifierChanged'] and not x46['nssOpened']
+assert latest['classifierConfigSha256']==x46['classifierConfigSha256'] and latest['classifierReliabilityChangesRetained']==3
+assert len(x46['retainedChanges'])==3 and all(p['committed'] and p['checkpointDownloadedHashAndGzipVerified'] and p['independentRollbackVerifiedBeforeWrite'] and p['independentRollbackSeconds']==180 for p in x46['retainedChanges'])
+expiry=x46['realSoftwareExpiry'];assert expiry['passed'] and expiry['realApplyChild'] and expiry['applyChildReaped'] and expiry['expiredProducerBound'] and expiry['refusedBeforeBatch'] and expiry['exactRecoveryConfirmed']
+assert 6<expiry['ageAtWriteCheck']<7 and expiry['actualRecoveryChildSeconds']<1 and expiry['realConnectionMetadataUnmodified'] and not expiry['fakeFlow']
+crash=x46['realWorkerCrash'];assert crash['passed'] and crash['oneExactWorkerCrash'] and crash['oldPid']!=crash['newPid'] and crash['recoveredSeconds']<9
+assert len(x46['independentFaultTrialRollbacks'])==2 and all(p['automaticNaturalTransactionRollbackPassed'] and p['allFourSourcesConfigAndPointerRestored'] for p in x46['independentFaultTrialRollbacks'])
+entry=x46['entry'];assert entry['passed'] and entry['boundInputs']==112 and entry['localCases']==99 and entry['classificationHintSourceAgeSeconds']<2
+assert entry['fullLockedAudit']['passed'] and entry['nssLuaPayloadsByteIdenticalToQualifiedNss39'] and entry['initialAndNativeDeadlinesUnchanged'] and not entry['actualNssTrafficTestThisRound']
+assert x46['budgetMbps']==20 and x46['gateFlows']=={'tcp':1,'udp':1} and x46['ownerDeadlineSeconds']==45 and x46['softwareSourceAgeSeconds']==6 and x46['publicationAgeSeconds']==9
+for name in ['worker.lua','guardian.lua','conntrack-source.lua']:
+    assert hashlib.sha256((root/'code/deployed-classifier'/name).read_bytes()).hexdigest()==hashlib.sha256((root/'code/work/nss46'/name).read_bytes()).hexdigest()
+assert hashlib.sha256((root/'code/deployed-classifier/backend.lua').read_bytes()).hexdigest()==hashlib.sha256((root/'code/work/nss45/candidate-backend.lua').read_bytes()).hexdigest()
+assert x46['sourceProof']['sources']==84
+for source,expected in x46['sourceProof']['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected
+assert all(x46['finalState']['protectedAudit'].values()) and x46['finalState']['classifierHealthy'] and x46['finalState']['closure']['passed']
+assert not x46['finalState']['lastErrorBelongsToCurrentWorker'] and x46['finalState']['lastErrorIsControlledTrialPredeadlineExit']
+assert x46['retainedNaturalObservation']['passed'] and x46['retainedNaturalObservation']['samples']==60
+assert not any(x46['conclusions'][k]for k in ['newNssFastPathTrialExecuted','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','classifierHighLoadStable','completeHighLoadLoopPassed','secondWanExpansionAllowed'])
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

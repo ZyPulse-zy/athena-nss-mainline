@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-10-04T04:42:45.804742+00:00",
-  "round": "NSS45",
-  "deploymentReference": "work/nss39/deployment-latest.json",
-  "classifierConfigSha256": "17aaa0797d654938b654d06eaf575ba0766c845aae2a16f8e229998c5992af60",
+  "checkedAt": "2026-10-04T05:49:55.054979+00:00",
+  "round": "NSS46",
+  "deploymentReference": "work/nss46/deployment-latest.json",
+  "classifierConfigSha256": "f244567a5fea40b7259500271627a4fc22df4c7b4345958414d98fb60ffdeb12",
   "deployedTextSources": [
     {
       "name": "classifier-core.lua",
@@ -11,7 +11,7 @@
     },
     {
       "name": "conntrack-source.lua",
-      "sha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+      "sha256": "e1e01fe23988aed2d92e1ba1f9ad3053c52756ab557f6c78d991954c394af109",
       "included": true
     },
     {
@@ -21,17 +21,17 @@
     },
     {
       "name": "backend.lua",
-      "sha256": "a4ec72a5f9905f66d6617580ef6e630499fc15363e673f5d2edcd2549d4c2335",
+      "sha256": "01ddeae3b7469034c9a0471dec32e9c1770198ecdbd538106b16d89ab06fa669",
       "included": true
     },
     {
       "name": "worker.lua",
-      "sha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
+      "sha256": "9ab72a5af3bb997b25f8a43ee0cac002ec6f0fc3ba5ae091e5845f64e138719c",
       "included": true
     },
     {
       "name": "guardian.lua",
-      "sha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+      "sha256": "97bb3f78076cade8fe44cfeec5c149085c63f2295b28cf1a505f89f3de80de70",
       "included": true
     },
     {
@@ -73,19 +73,19 @@
     "protectedConfigurationUnchanged": true,
     "exactOwnedNativeAudit": true,
     "selectors": 2,
-    "queryAge": 2.709999999962747,
-    "sequence": 205,
+    "queryAge": 2.6899999999441206,
+    "sequence": 133,
     "ecmClosedAndZero": true
   },
   "lastApplicationObservation": {
-    "observedAt": "2026-10-04T04:42:48.423Z",
+    "observedAt": "2026-10-04T05:45:27.698Z",
     "readonly": true,
     "gameProcessRunning": false,
     "steamProcessRunning": true,
     "actualCs2RtCandidates": 0,
     "actualSteamBulkCandidates": 0,
     "sameWanCandidates": [],
-    "sourceAge": 2.5,
+    "sourceAge": 2.5899999998509884,
     "nssAdmissionAllowed": false
   },
   "applicationEndpointsReadThisRound": true,
@@ -93,20 +93,22 @@
   "realForwardingABACompleted": false,
   "historicalNss41NativeForwardingABACompleted": true,
   "completePerformanceAndGameAcceptance": false,
-  "staleSnapshotRejectedEarlierInRound": false,
+  "staleSnapshotRejectedEarlierInRound": true,
   "historicalNss44StaleSnapshotRejection": true,
   "historicalNss40StaleProtectedSnapshotRejection": true,
   "recoveryAlignmentRefusedEarlierInRound": false,
   "historicalNss41RecoveryAlignmentRefused": true,
   "historicalNss36StaleSnapshotRejection": true,
   "classifierWorkerRestartObservedThisRound": true,
-  "firstClassifierExactRecoveryPassedThisRound": null,
+  "firstClassifierExactRecoveryPassedThisRound": true,
   "historicalNss44FirstExactRecoveryPassed": false,
-  "naturalPriorRowBoundExitsObserved": 3,
+  "naturalPriorRowBoundExitsObserved": 0,
   "finalClassifierHealthyAndExactOwnedAuditPassed": true,
   "realApplicationAttemptRefusedBeforeCheckpointOrStaging": false,
   "plannedClassifierReplacementAndRollbackThisRound": true,
   "temporaryClassifierTrials": 2,
+  "classifierReliabilityChangesRetained": 3,
+  "newNssEntryBoundInputs": 112,
   "allNaturalExpiryRestorationsPassed": true,
   "experimentalConfigurationWritesThisRound": true,
   "nssOpenedThisRound": false,
@@ -115,7 +117,7 @@
   "originalNss42EntryUnmodified": true,
   "finalClosure": {
     "passed": true,
-    "observedAt": "2026-10-04T04:42:46.797Z",
+    "observedAt": "2026-10-04T05:49:56.946Z",
     "readonly": true,
     "noActiveRootTransaction": true,
     "noNssStagingDirectory": true,

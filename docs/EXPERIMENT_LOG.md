@@ -203,3 +203,14 @@
 - 最终 12:42:44–12:42:49：常驻仍 NSS39，健康实例与第二次回滚后的实例相同；原完整规则/配置审核通过，ECM 关闭/全零，无事务/暂存/状态/实验模块，没有真实 CS2/Steam 下载配对。last-error 属于 row 试装到期，与当前 worker 不同，开场自然溢出日志不改写。
 - 53 份源码冻结，白名单同步脱敏证据；不是 NSS 生产入口资格。NSS41 功能证明和 NSS44 原失败保持。本轮没有新 fast path、leaf、A/B/A2、CPU收益、CS2 jitter/loss/Miss 或第二 WAN 资格。
 - 下一项是完整 apply 子进程、既有期限内的服务恢复资格，再按单一变量组合修复，绑定 classification 提示后原完整审核的新入口。准备期间不要求用户开游戏或反复下载。恢复问题进入本地 backlog，未提交上游；报告源检查通过，浏览器渲染未核验，没有绕过既有策略拒绝。
+
+## 2026-10-04 NSS46：可靠性修复实装、真实故障恢复与新入口
+
+- 当前常驻切换为 `work/nss46/deployment-latest.json`，三项修复按 backend→软件来源过期→行数溢出逐变量安装并保留。每次 checkpoint 下载、哈希/压缩验证、写前独立 180 秒守护核验、目标语法和原完整保护审核通过；无 qdisc 根重建、CT 全清、认证/PBR/服务架构变更。
+- 实际 watch 对真实接纳的连接观察只延迟一次，未修改元数据。真实 apply 绑定父 producer/PID/start/原锁，请求/结果序列化保留；来源年龄 6.27 秒拒绝 batch，两个发布撤回，intent 精确清零；实际 recover 0.80 秒，同 worker 继续运行。
+- 在持事务锁、确认没有 worker 子进程时精确 kill 一个空闲 worker，procd 新实例在 7.56 秒恢复新鲜发布与健康 guardian。两个故障试装均自然到期恢复四份源码、配置、generation 指针及健康实例；480 秒暂存自然清理。
+- expiry 保留初始三帧旧 producer/新 guardian 预热如实保持，新实例完整审核后才提交。最终 row 版本 35 帧全健康；随后自然轻载 60 帧、29.61 秒，同实例健康，来源最大年龄 3.17 秒，LAN4 0.047 Mbps。未当作 CPU/高负载收益。
+- 新入口 `work/nss46/real-session.mjs` 使用 classification 提示后原完整审核，112 项来源绑定、99 个入口本地案例、现场来源年龄 0.30 秒及完整审核通过。NSS Lua 数据面与已验证 NSS39 字节一致；原 NSS42 102 项入口不动。20 Mbps、一条 TCP＋一条 UDP、45 秒 owner、原 1/2/6/9 秒门槛不变。
+- 组合回归 48 个 row＋34 个 expiry 断言通过；相同七个历史实际 query 子进程证明按精确 helper/normalizer 字节复用，不重复计为本轮 native 新案例。入口夹具旧路径/seed 绑定、故障摘要 JSON 重复引用和保留脚本本地重名错误已修正，原输出保留；未因此开启 NSS。
+- 最终 13:49:55–13:49:56：worker/guardian 健康、保护审核通过、ECM 关闭全零、无事务/暂存/状态/实验模块；last-error 是受控 crash 试装临近到期，属于旧 worker。当前没有 CS2＋Steam 配对。新入口现场检查没有授予 NSS。
+- 84 份本轮源码冻结，按明确白名单同步。当前镜像与历史源码检查分别绑定；原 NSS45 current-runtime 精确保存在 nss45-runtime，历史证据不因常驻升级改写。只请求一次真实窗口，未要求重复挂机。剩余为真人 software→NSS→software 及高负载恢复/游戏指标，未扩第二 WAN/共享预算/Wi-Fi/autorate，未上游提交。

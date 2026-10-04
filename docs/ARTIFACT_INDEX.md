@@ -2,6 +2,11 @@
 
 仓库内可直接核对：
 
+- `evidence/nss46-mainline.json`：三项修复逐项保留、真实 apply/worker crash 恢复、两个独立自然到期恢复、新入口 112 项绑定及最终保护核验。
+- `evidence/nss46-fault-timing.json`：真实来源过期时两个发布撤回、intent 清零与同实例接续的相对时序，无流端点。
+- `evidence/nss46-entry-binding.json`：新的当前配置来源、原门槛和默认拒绝入口范围；不是本轮真人 fast path 证明。
+- `evidence/nss45-runtime.json`：保存原 NSS45 现网快照；`current-runtime.json` 已指向 NSS46，旧历史断言不再错误比较当前源码。
+
 - `evidence/nss45-mainline.json`：两次独立轻载试装/自然到期恢复、114 个独立本地案例、目标 RAM/真实 query 子进程证明与未验证边界。
 - `evidence/nss45-trial-timing.json`：两组各 35 帧相对时间和自然轻载指标，不能组成转发 A/B。
 - `evidence/nss45-query-cleanup.json`：7 个真实 native 子进程的合成查询输出与实际回收证明，无生产规则变更。

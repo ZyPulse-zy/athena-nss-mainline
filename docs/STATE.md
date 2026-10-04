@@ -2,9 +2,24 @@
 
 更新：2026-10-04，北京时间。最新现场核验见 [当前运行记录](../evidence/current-runtime.json)。
 
-**真实 WAN1 自动分类→ECM fast path→NSS bulk/RT leaf 已由 NSS41 证明；CPU 和游戏体验验收仍未通过。NSS45 两项分类器修复分别完成轻载短时试装与独立到期恢复，未长期保留；现网仍 NSS39，NSS42 102 项入口不变。**
+**常驻分类器已切换到 NSS46：三项可靠性修复逐项实装并保留，真实 apply 过期恢复和真实 crash 恢复通过。新 NSS 入口绑定 112 项输入、99 项本地入口检查及现场完整审核通过。真人 WAN1 fast path/leaf 功能仍引用 NSS41；当前 ECM 关闭，CPU 和游戏收益尚未验收。**
 
-## 最新现场与 NSS45
+## 最新现场与 NSS46
+
+见 [本轮证据](../evidence/nss46-mainline.json)、[真实过期恢复时序](../evidence/nss46-fault-timing.json) 和 [新入口绑定](../evidence/nss46-entry-binding.json)。
+
+- 当前常驻引用是私有工作区 `work/nss46/deployment-latest.json`，配置 SHA256 `f244567a5fea40b7259500271627a4fc22df4c7b4345958414d98fb60ffdeb12`。`work/nss39/deployment-latest.json` 已成为历史引用，不能替代当前状态。
+- 先保留 NSS45 已独立验证的 backend 恢复初始枚举复用，再单独保留软件来源过期处理，最后单独叠加行数溢出处理。各次有 checkpoint、下载哈希/压缩核验、写前独立 180 秒回滚身份确认、目标语法检查和原完整保护审核。未改变 policy、CAKE 根队列、PBR、认证或服务架构。
+- 一次真实 watch 观察仅延迟时间，连接元数据不改写。真实 apply 子进程保留原请求序列化、producer/PID/start/锁绑定，在来源年龄 6.27 秒时拒绝 batch；两个发布撤回、pending intents 精确清理，真实 recover 子进程 0.80 秒，同一 worker 继续新观察。是轻载真实故障证明，不是高负载恢复证明。
+- 在无活动 worker 子进程并持事务锁时，精确 kill 一个空闲 worker；procd 在 7.56 秒恢复新实例、新鲜发布和健康 guardian。两个故障试装均在原 180 秒自然到期恢复四份源码、配置、指针及健康实例；480 秒暂存也自然清理。没有延长期限或扩大连接范围。
+- expiry 保留观测开头三帧为旧 producer / guardian 预热；提交前新实例原完整审核通过。最终版本独立 35 帧观测全健康；随后 60 帧、29.61 秒自然轻载同一实例健康，来源年龄最高 3.17 秒。背景 RT 命中没有 CS2 socket 归属，不算游戏验收。
+- 新入口 `work/nss46/real-session.mjs` 等待 before-software-baseline classification 后执行原完整审核。112 项来源绑定、99 项本地入口案例通过，目标等待来源年龄 0.30 秒，原完整审核来源年龄 0.70 秒。NSS 数据面 Lua 与已验证 NSS39 字节一致；原 NSS42 102 项入口保留不动。20 Mbps、一个 TCP＋一个 UDP、45 秒 owner 和原 1/2/6/9 秒门槛保持。
+- 最终 13:49:55–13:49:56：worker 30050 / guardian 30051 健康，原完整规则与保护配置审核通过，ECM 停止且全零，无活动事务、暂存、实验状态或模块。last-error 来自受控 crash 试装临近期限退出，属于旧实例。没有当前 CS2＋Steam 配对，没有 NSS 写入或新的 CPU/游戏结论。
+- 84 份本轮源码已冻结并按白名单导出。入口夹具路径/seed 绑定和故障摘要 JSON 重复引用问题已纠正，原失败输出保持；这些准备问题没有触发 NSS。源码冻结与入口资格、真实故障和真人高负载证据分别记录。
+
+下一步直接运行新入口的一次集中真人窗口，先确认同 WAN 的真实 CS2 UDP＋Steam TCP，再 software→NSS→software，记录实际 leaf 份额、softirq/time_squeeze 和客户端体验。准备期间不用挂机。未通过前不扩第二 WAN、共享预算、Wi-Fi 或 autorate。
+
+## NSS45 历史现场
 
 见 [本轮证据](../evidence/nss45-mainline.json)、[轻载试装采样](../evidence/nss45-trial-timing.json)、[真实 query 子进程检查](../evidence/nss45-query-cleanup.json) 和 [本地恢复问题记录](ISSUE_CLASSIFIER_RECOVERY.md)。
 
