@@ -1,0 +1,18 @@
+{
+  "guardFailuresRejected": true,
+  "incompleteChildNeverAuthorized": true,
+  "ramFixtures": true,
+  "checks": 15,
+  "routerWrites": false,
+  "pidReuseRejected": true,
+  "passed": true,
+  "fullScanFunctionTested": true,
+  "observedAt": "2026-10-04T13:05:33.421Z",
+  "sourceSha256": "5aa0cbf30ff3c87622d7cf168a99a67733685378cb7c0710c0c6cfad36825491",
+  "fixtureSha256": "493192c45e03d319fd2e68fd6c86612f2f665793f548ad51dc539ee45f2c913a",
+  "clockTicks": 100,
+  "fullSyntaxCompiled": true,
+  "scanOnlyFixturesWaitFreshOmitted": true,
+  "waitFreshByteIdentical": true,
+  "limitsUnchanged": true
+}

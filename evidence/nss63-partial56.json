@@ -1,0 +1,168 @@
+{
+  "analysisPassed": true,
+  "controllerPassed": false,
+  "completeABA": false,
+  "oneWan": 1,
+  "ctMark": 65536,
+  "actualAcceleratedStateValidated": true,
+  "connectionCount": 2,
+  "runtimeProof": {
+    "tcp": {
+      "protocol": 6,
+      "ecmOrientation": "server-first",
+      "accelerated": true,
+      "ctMark": 65536,
+      "downTag": 2399469568,
+      "upTag": 0,
+      "natCorrect": true,
+      "wanAffinity": 1,
+      "fromLan4": true,
+      "fromBridgeLan": true,
+      "slowPathPackets": 3,
+      "fromPackets": 2,
+      "toPackets": 1
+    },
+    "udp": {
+      "protocol": 17,
+      "ecmOrientation": "server-first",
+      "accelerated": true,
+      "ctMark": 65536,
+      "downTag": 2399535104,
+      "upTag": 0,
+      "natCorrect": true,
+      "wanAffinity": 1,
+      "fromLan4": true,
+      "fromBridgeLan": true,
+      "slowPathPackets": 2,
+      "fromPackets": 1,
+      "toPackets": 1
+    }
+  },
+  "phases": [
+    {
+      "name": "A",
+      "startedAt": 1931529.86,
+      "endedAt": 1931534.9,
+      "samples": 11,
+      "seconds": 5.039999999804422,
+      "busyPercent": 75.97765363128492,
+      "softirqPercent": 52.76790248857288,
+      "softnetProcessed": 571635,
+      "softnetDropped": 0,
+      "timeSqueeze": 42,
+      "interfaces": {
+        "lan4": {
+          "rx_bytes": 8225017,
+          "tx_bytes": 191364210,
+          "rx_packets": 108721,
+          "tx_packets": 126996,
+          "rx_dropped": 0,
+          "tx_dropped": 0,
+          "rxMbps": 13.055582540189164,
+          "txMbps": 303.7527142975014,
+          "rxPps": 21571.626984964074,
+          "txPps": 25197.619048596844
+        },
+        "rpwan1": {
+          "rx_bytes": 36456816,
+          "tx_bytes": 1655448,
+          "rx_packets": 22141,
+          "tx_packets": 21322,
+          "rx_dropped": 0,
+          "tx_dropped": 0,
+          "rxMbps": 57.867961907007476,
+          "txMbps": 2.627695238197206,
+          "rxPps": 4393.055555726029,
+          "txPps": 4230.555555719723
+        }
+      },
+      "acceleratedCount": 0
+    },
+    {
+      "name": "B",
+      "startedAt": 1931542.46,
+      "endedAt": 1931547.49,
+      "samples": 11,
+      "seconds": 5.03000000002794,
+      "busyPercent": 71.2082262210797,
+      "softirqPercent": 47.660668380462724,
+      "softnetProcessed": 469406,
+      "softnetDropped": 0,
+      "timeSqueeze": 20,
+      "interfaces": {
+        "lan4": {
+          "rx_bytes": 7205775,
+          "tx_bytes": 164503574,
+          "rx_packets": 92840,
+          "tx_packets": 109320,
+          "rx_dropped": 0,
+          "tx_dropped": 0,
+          "rxMbps": 11.46047713711328,
+          "txMbps": 261.63590298065407,
+          "rxPps": 18457.25646113008,
+          "txPps": 21733.598409422022
+        },
+        "rpwan1": {
+          "rx_bytes": 19636250,
+          "tx_bytes": 896413,
+          "rx_packets": 12747,
+          "tx_packets": 11550,
+          "rx_dropped": 0,
+          "tx_dropped": 0,
+          "rxMbps": 31.230616302013406,
+          "txMbps": 1.4257065606282637,
+          "rxPps": 2534.19483099984,
+          "txPps": 2296.22266400315
+        }
+      },
+      "acceleratedCount": 2
+    }
+  ],
+  "leafDeltasAroundFastPath": {
+    "startUptime": 1931542.44,
+    "endUptime": 1931547.92,
+    "includesAcquireAndRetirementBoundary": true,
+    "counters": {
+      "8f05:": {
+        "bytes": 7178935,
+        "packets": 4755,
+        "drops": 7
+      },
+      "8f06:": {
+        "bytes": 503139,
+        "packets": 549,
+        "drops": 0
+      },
+      "8fff:": {
+        "bytes": 153045599,
+        "packets": 99601,
+        "drops": 0
+      }
+    }
+  },
+  "renewals": 1,
+  "selectedBudgetMbps": 20,
+  "frontendOpenedAt": 1931542.26,
+  "frontendClosedAt": 1931547.49,
+  "twoPhaseOnlyThroughputSpread": {
+    "total": 0.1489835841393569,
+    "selectedWan": 0.597929756914957
+  },
+  "missingA2": true,
+  "offeredLoadEqualityProven": false,
+  "cpuBenefitConclusive": false,
+  "realHumanGameQualityConclusive": false,
+  "humanGameplay": false,
+  "coreBirthAgeSeconds": 0.0800000000745058,
+  "coreGuardUntouched": true,
+  "rollback": {
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "qosRestored": true,
+    "moduleUnloaded": true,
+    "qosModuleUnloaded": true,
+    "stateNodeRemoved": true,
+    "tagsRemoved": true,
+    "firmwareZeroAfterRetirement": true
+  }
+}

@@ -256,3 +256,17 @@
 - longest consumer180ms、含consumer回调200ms；实际接纳结果最大出生年龄180ms，uptime约10ms粒度、余量有限。新候选六短窗发现验证通过，不把历史旧helper0/3、51的1/3与本轮计算为整机CPU收益，也不宣称完整高负载crash/recovery或长期稳定。guard未signal/暂停/修改，ECM每帧关闭零计数。
 - 应用核查24Steam bulk/0对局UDP/0同WANpair，默认只读等待，未开ECM，无leaf/CAKE tin/游戏指标/体感。下一步直接用53在真实同WAN配对下先记录HUD、原checkpoint/独立恢复、同负载software→NSS→software，不扩WAN，不重复安装/旧准备。
 - 三次本地传输长度拒绝、夹具/输出解析、入口切片offset、首版投影解释及汇总缓存年龄/结果字段修正原输出保持，未提高传输或有效期界限、未触发生产变更。24源码冻结，651份总镜像哈希校验；旧52runtime原字节保存。原完整私有绑定、配置/进程/CT/socket/截图仍本地。报告源验证通过，未声称浏览器渲染，未提交上游。
+
+## 2026-10-04 NSS54–63：实际A+B/HUD、五次恢复、发布与读取竞态定位
+
+- 原53入口的完整来源过期在checkpoint前拒绝。54 path-inode join实际竞态、55 held-FD读修复后standalone语法传输过长；56使用独立守护编译精确完整bundle，上限未变。
+- 56真实WAN1 A5.04秒/B5.03秒、各11帧；ECM0→2→0、bulk4755/RT549包、原ECM parser确认mark65536/NAT/WAN/lan4/br-lan，续租一次/精确撤销。A2前total/expected下载counter差1pkt/1500B、其它计数对齐，原strict getter拒绝。只有部分A+B，不能冒充完整成功。
+- 实际软中断52.77→47.66、busy75.98→71.21、squeeze42→20，但LAN4 303.75→261.64、WAN1 57.87→31.23Mbps，不匹配。原生锚点约100ms不确定性，A/B各5张完整中央HUD实际检查：A16ms/jitter2–3/loss0.1–0.5/Miss0.8，B16ms/jitter1–2/loss0/Miss0。在线闲置非真人；HUD滚动/峰值，未验收性能或游戏收益。
+- 57极窄counter witness后一次只读重读，原getter仍mandatory，实际preaudit stale拒绝；58 inode hint/RAM10，真实WAN2只到A后同计数差帧拒绝；59将相同见证用在ECM关闭的A后，RAM7。第一59同源完整分类确认当次TCP缺失；第二59仍preaudit stale。没有扩大budget/TTL/准入重试。
+- 60 metadata-only hint/RAM10，native完整审核通过后JS wrapper契约错误写前拒绝；61 normalize/RAM外14本地断言。首61来源margin2.16秒不能学习，恢复flags全真但即时完整AFTER stale；暂停后原完整recovery通过。第二61完成软件A，旧sleep候选wchan自然退出时拒绝，未打开ECM。
+- 62整次child读取或nil候选修复，15目标RAM、full helper语法/实际只读scan与waitFresh同字节证明，200ms保留。本地漏payload导入，路由器连接前失败。63精确拷贝依赖并实际module导入，241项资格绑定；实际source7.41>6再次写前拒绝，尚无新helper高负载forwarding稳定证明。
+- 共12实际控制器失败案例、5暂存（1WAN1/4WAN2，每次单WAN）、1次ECM；另62本地启动失败。5个checkpoint archive在封存时重验SHA/gzip，独立45秒守护写前身份记录及undo/保护比较保存。4个即时完整AFTER通过；首61失败与后来通过分开。原45秒自然到期未在这5次case中实测。
+- 分类器未重装/主动restart，worker自然5411→20682，guardian5412保持，原因未知。最终21:26原完整审核source4.56、14selector、NSS47config不变，ECM全零，清理无事务/暂存/state/实验模块。
+- DOOM201619:44完成；助手授权下载新库内Disco/Hades/Witcher，原暂停队列自动接续21:12–21:13均完成。最终0bps、即时queue0，未购买/启动新游戏/卸载/DOOM Eternal重下；CS2测试服退出，三项HUD恢复。不是最终三个下载仍暂停。
+- 144份可读源码新增、原实际输入冻结保持，旧53runtime按字节留存。离线WAN投影交叉校验发现四个错误fallback1，已按selected改为2并保留v1、生成v2；运行时选择/权限不变。归档脚本的本地文件路径/缺失比较结果假定已纠正，不改生产门槛。
+- 仅下一条主线：缩短高负载完整snapshot发布及消费工作，再补可比A/B/A2。NSS56功能/实际HUD有进展，但CPU、真人收益、长期稳定未通过；未扩第二WAN同时加速/共享预算/其它backlog，未上游提交。

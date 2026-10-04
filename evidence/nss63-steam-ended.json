@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-10-04T13:28:20.351Z",
+  "visualVerified": true,
+  "currentNetworkBps": 0,
+  "currentDiskBps": 0,
+  "immediateQueueItems": 0,
+  "completedItems": 8,
+  "downloadedTestTitlesThisTurn": [
+    {
+      "title": "DOOM (2016)",
+      "completedAtLocal": "19:44",
+      "downloadGB": 59.3
+    },
+    {
+      "title": "The Witcher 3 Remastered",
+      "completedAtLocal": "21:12",
+      "downloadGB": 64
+    },
+    {
+      "title": "Hades",
+      "completedAtLocal": "21:12",
+      "downloadGB": 10
+    },
+    {
+      "title": "Disco Elysium",
+      "completedAtLocal": "21:13",
+      "downloadGB": 8.7
+    }
+  ],
+  "previouslyPausedQueueAutomaticallyAdvanced": true,
+  "scheduledUnrelatedUpdateLeftUntouched": true,
+  "purchased": false,
+  "newTitlesLaunched": false,
+  "uninstallOccurred": false,
+  "completedDoomEternalRedownloaded": false
+}

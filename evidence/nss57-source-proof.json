@@ -1,0 +1,27 @@
+{
+  "sources": 17,
+  "sourceHashes": {
+    "work/nss57/baseline-publication-join.lua": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+    "work/nss57/cleanup-audit.mjs": "55de6c14234d91ae071e5849f26e4ea473415346cc58902c234b8d2677b53671",
+    "work/nss57/clock-anchor.mjs": "122ecf28016bdf797706cf76616ce784e835f3e295ea7a28b877c5bbde203fb6",
+    "work/nss57/counter-tests.json": "9e44e1fedec8734cb33e7d56d8b243c5316d5956e6c3afa267f89d121e4a8d35",
+    "work/nss57/current-audit-diagnostic.mjs": "a3ca2c961e6022d87455413ba6913a669a179d9fcff8c2015977fe3a1021964c",
+    "work/nss57/entry-qualified.json": "e3750f4996a43ab4392ba329916d0e82863f2f7d14c5434199591399cf1200c9",
+    "work/nss57/fast-path-prepare-error.lua": "a3ca00cfbd3f91d0c22d3f5aac27668b17a29db4f65b02649aec3a09db28d563",
+    "work/nss57/fast-path.lua": "add92f7bf8158d0203c1181f4554cc026f0f9d466ee4c2c35c3d062a46b12f14",
+    "work/nss57/join-tests.json": "bd2d2f394af8f20567484c6b05761ff0d422be6c122f47e2ad6eaca417d51bbc",
+    "work/nss57/module-stage.mjs": "b50406f57aa8404b58ec9df98565863fe01b3291c0fa4dda8a9728907e9bde5a",
+    "work/nss57/payload.mjs": "95d3107a7ab2f130165c0b251b35d75b4b0691e155968add42a88602b53c3864",
+    "work/nss57/prepare-publication-notice.mjs": "30e84cb04bf5112793dbef9614f18f3d13fc409982b74a1afd3809342712f18c",
+    "work/nss57/qualify-entry.mjs": "35acf5bc837b8f74aed6bed8c9396ab348d314e0fb7e2018ed7bf6e90aed7d3f",
+    "work/nss57/real-session.mjs": "b9ce09c36d18653df6787890720a73f56da73431539f29486e41b8d13696c384",
+    "work/nss57/repair-prepare.mjs": "bb17e462cc441f903bd56c437673f3be2c33e92897efa62872b3e140202b94be",
+    "work/nss57/session-binding.mjs": "98df80d64ba594d8ff752edf9b135c0eb1d429ac6dd11d9805fe8272bcb943e1",
+    "work/nss57/wait-ready-joined.mjs": "3636718c7ebf5c8ec7d51ef6ea02112f81cdccb18141a9850cd12e5622212951"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "role": "historical-experimental-candidate-tests-and-analysis-not-resident",
+  "actualCompletePrivateInputFreezePreserved": true,
+  "nss62OriginalLocalDependencyFailurePreserved": false
+}

@@ -1,0 +1,23 @@
+{
+  "sources": 13,
+  "sourceHashes": {
+    "work/nss60/baseline-publication-join.lua": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+    "work/nss60/cleanup-audit.mjs": "830c934f8597f22a0f5f1892aa19025f580ef7b5e9f1191c52e9e65f5430fe26",
+    "work/nss60/clock-anchor.mjs": "5cdec2e9e10bcc12592089add189c1d823bf98ed7aaae5a753d9cfe4bdf9d030",
+    "work/nss60/current-audit-diagnostic.mjs": "fc77fd871f32b5f588f5382499d7c7062bf6d80fcf243ed151889ac3777a9161",
+    "work/nss60/entry-qualified.json": "484796134831e595b6829bc4e447c783273e38c7e05a0cae6f9e5119bd8f790d",
+    "work/nss60/metadata-hint.lua": "aa2f8e4e9278c31be01835a0a1ef9a2e3a1e5dcc3208d833e6bf91dfe144d44b",
+    "work/nss60/metadata-tests.json": "2e14d61d3e2825fc4d0ec8da9977bb1c5124acdd51eab1725ed3f20365d06fab",
+    "work/nss60/prepare-hint-contract.mjs": "6d6548c48d9ed901926e97527d3a31704b4ba938bdb42721b8d79c40529dc0c4",
+    "work/nss60/qualify-entry.mjs": "ebf3ab7702004761827769814ca856eb98d769644f97928f62ae3a85c6172bda",
+    "work/nss60/real-session.mjs": "502c7f4f991164e6cfeabe98e63f957f0085997ffe18af99497de020bc2c5b7c",
+    "work/nss60/session-binding.mjs": "0cb370aebd233e8cbb397ebc04791de1bee65a916be1fa9338da41a806d2b0fc",
+    "work/nss60/test-metadata-hint.mjs": "e14e9f0063c32b7495aa5cc4ec87a18e53ea377c4bd9534a0b97808e34f06a87",
+    "work/nss60/wait-publication-metadata.mjs": "8ac8d391460b781a48e17eecb9dee584ec53ef38b7d8561f3c5657173a9afd45"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "role": "historical-experimental-candidate-tests-and-analysis-not-resident",
+  "actualCompletePrivateInputFreezePreserved": true,
+  "nss62OriginalLocalDependencyFailurePreserved": false
+}

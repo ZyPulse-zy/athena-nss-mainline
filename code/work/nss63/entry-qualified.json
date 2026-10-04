@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T13:10:15.333Z",
+  "baseBoundInputs": 230,
+  "boundInputs": 241,
+  "sourceManifest": {
+    "work/nss63/real-session.mjs": "c99edb1fbd03e4c075cf43fdda6942234a37d3a723af679b51817d4008463e54",
+    "work/nss63/session-binding.mjs": "f5e1d8a29e7e3040080b08a48867b9aa3f30895cb11c12c80019bc6c2cacfb9e",
+    "work/nss63/current-audit-diagnostic.mjs": "906339983c305a62e2fc21f4cac709fef051571213e9ef845089f45fb21fab2a",
+    "work/nss63/cleanup-audit.mjs": "e2a1386f2aca1c1d361bad9bdbf78bc87ed28bcac05cdd941dcec6be073a6c7d",
+    "work/nss63/clock-anchor.mjs": "a08d9092f7ec2bab4b526e103c5f297d0b2dac433719eedfdd2bc0bab4394514",
+    "work/nss63/wait-publication-metadata.mjs": "747d8219a21c20a66968fa87ddbd2219e6da323a996b1c3d2adc8dd912186d9b",
+    "work/nss63/module-stage.mjs": "b8ee272096df10cf1eff14b7fb9850b85fe5a0d53d7b61912c05013db1f66fc1",
+    "work/nss63/payload.mjs": "ff7bd67aa584c427b90bd2e2e245eced74639b525e9404ed2541c855073de3a3",
+    "work/nss63/core-guard-phase.lua": "5aa0cbf30ff3c87622d7cf168a99a67733685378cb7c0710c0c6cfad36825491",
+    "work/nss63/phase-qualified.json": "7b7bf9ab7ba8fb5d7aefcb6189210fe39c4de2e32a3ee7659cf0e49b184c7955",
+    "work/nss63/qualify-entry.mjs": "0f418719415ac8932f643b0b34518e6e7fe49298e30e61ada8941ed896800cf0"
+  },
+  "dependencyCopyOnly": true,
+  "moduleResolutionChecked": true,
+  "originalFullAuditAndExactQueryCheckRetained": true,
+  "nssQoSAdmissionAndPolicyUnchanged": true,
+  "nss62ProcessHelperByteIdentical": true,
+  "nss62NativeRamChecksReused": 15,
+  "originalDeadlinesUnchanged": true,
+  "notInstalled": true,
+  "fullHighLoadAbaQualified": false
+}

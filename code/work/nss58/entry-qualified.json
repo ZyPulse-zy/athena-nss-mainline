@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T12:14:20.180Z",
+  "baseBoundInputs": 181,
+  "boundInputs": 188,
+  "sourceManifest": {
+    "work/nss58/real-session.mjs": "2d7f7d332fb0e75e0b466b56c3b89436a0f9d664b63a83ebaf83c35863e94ded",
+    "work/nss58/session-binding.mjs": "b6c0cbcd2924f251ce7423e7639bb18629b52a926232c259966ef81e59a6ebeb",
+    "work/nss58/current-audit-diagnostic.mjs": "034b226016aed41557d98f0d0cfadda49343282b408abd97db8ccd904838a55f",
+    "work/nss58/wait-publication-notice.mjs": "a41c58b6805bf95bc5ddb3dd8d02a37a1e5dbe9da1a36e2c57030d481af22484",
+    "work/nss58/publication-notice.lua": "546ee4b5c31ac56a476d7e9da117c054e40713fa80e82982d3c814de58ff0a19",
+    "work/nss58/notice-tests.json": "51ecd1897ba2fd1b33001394d27960e2882920d59f8aa5c9037efda6c6e15146",
+    "work/nss58/qualify-entry.mjs": "6bfc1d76f839fe475eecfb23cfa9977b6cc8ab431b8e25dd207c3b0b95f9ec8b"
+  },
+  "readonlySchedulingOnly": true,
+  "nativePayloadUnchanged": true,
+  "nativePayloadReferencesFrozenNss57": true,
+  "originalFullAuditRetained": true,
+  "additionalExactQueryProducerCheck": true,
+  "originalDeadlinesUnchanged": true,
+  "fullSnapshotNotReadByHint": true,
+  "noticeIsNotAdmissionAuthority": true,
+  "targetNativePureLuaChecks": 10,
+  "notInstalled": true,
+  "fullHighLoadAbaQualified": false
+}

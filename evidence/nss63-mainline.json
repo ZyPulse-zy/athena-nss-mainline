@@ -1,0 +1,904 @@
+{
+  "round": "NSS63",
+  "includesRounds": "NSS54–NSS63 plus new NSS53 actual refusal",
+  "observedAt": "2026-10-04T13:33:18.784484+00:00",
+  "deploymentReference": "work/nss47/deployment-latest.json",
+  "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+  "permanentClassifierChanged": false,
+  "routerConfigurationWrites": true,
+  "ecmOpenedThisTurn": true,
+  "completeForwardingABAThisTurn": false,
+  "budgetMbps": 20,
+  "gateFlows": {
+    "tcp": 1,
+    "udp": 1
+  },
+  "ownerSeconds": 45,
+  "allOriginalDeadlinesUnchanged": true,
+  "entry": {
+    "path": "work/nss63/real-session.mjs",
+    "boundInputs": 241,
+    "dependencyResolutionQualified": true,
+    "notResident": true,
+    "latestActualRefusedBeforeCheckpoint": true,
+    "fullHighLoadForwardingQualified": false,
+    "processRamCases": 15,
+    "processRamCasesReusedFromNss62": true
+  },
+  "checksByRevision": [
+    {
+      "round": 54,
+      "nativePureJoinCases": 13
+    },
+    {
+      "round": 55,
+      "nativePureJoinCases": 14
+    },
+    {
+      "round": 56,
+      "joinCasesReused": 14
+    },
+    {
+      "round": 57,
+      "nativePureCounterCases": 7
+    },
+    {
+      "round": 58,
+      "nativePureNoticeCases": 10
+    },
+    {
+      "round": 59,
+      "nativePureCounterCases": 7
+    },
+    {
+      "round": 60,
+      "nativePureMetadataCases": 10
+    },
+    {
+      "round": 61,
+      "localContractAssertions": 14
+    },
+    {
+      "round": 62,
+      "nativeRamProcessCases": 15
+    },
+    {
+      "round": 63,
+      "processCasesReusedNotNew": 15
+    }
+  ],
+  "actualCases": [
+    {
+      "round": "NSS53",
+      "case": "20261004111209-6a9eaa7f",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "complete-snapshot-source-expired-before-checkpoint",
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": true,
+      "resultFileSha256": "9d5eb5ce594074fd6085388f0c92eecc513f1f0c39cd8785dd66145296772aef"
+    },
+    {
+      "round": "NSS54",
+      "case": "20261004112142-0b6e84c4",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "publication-inode-replaced-during-path-read",
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": true,
+      "resultFileSha256": "86f6acab0a5cb7d5cb57160d0b16fe60d29f310c39d58a5c265bf819c6ce706c"
+    },
+    {
+      "round": "NSS55",
+      "case": "20261004113015-795828f5",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "standalone-classifier-syntax-transport-over-9000-before-checkpoint",
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": true,
+      "resultFileSha256": "0a231d8723d3e1d0a8338377abe63a408b15d8570d9328ed0b6e83ad7ffe9a09"
+    },
+    {
+      "round": "NSS56",
+      "case": "20261004113917-6ebf3ae3",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "strict-counter-getter-after-retirement-before-A2",
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": true,
+      "completedPhases": [
+        "A",
+        "B"
+      ],
+      "rejectedBeforeCheckpointOrStaging": false,
+      "resultFileSha256": "f6270c9142da59d48d19c86031c52d3d00b1396a6244d2d551cfe9a7f43da17c",
+      "wan": 1,
+      "checkpointDownloadedHashAndGzipVerified": true,
+      "checkpointSha256": "ff7c7fc7e4a0b48bbdd67eb0d7ec4e9ad9d18823d4f3203f347b13767c37aead",
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "independentOfControlConnection": true,
+      "natural45SecondExpiryProvedThisCase": false,
+      "scopedRollbackPassed": true,
+      "configurationComparisonPassed": true,
+      "stageCleanupPassed": true,
+      "immediateAfterOriginalFullAuditPassed": true,
+      "laterOriginalFullRecoveryAuditPassed": false,
+      "rollbackFlags": {
+        "firmwareZeroAfterRetirement": true,
+        "stateNodeRemoved": true,
+        "tagsRemoved": true,
+        "qosRestored": true,
+        "moduleUnloaded": true,
+        "wanRestored": true,
+        "qosModuleUnloaded": true,
+        "mwan3Restored": true
+      },
+      "ctMark": 65536,
+      "actualSelectedPairSourceSha256": "b0110ed94ec879b79a6c967c158f4d4d04dcd04e8b6757e30a9a754767b2e425"
+    },
+    {
+      "round": "NSS57",
+      "case": "20261004120723-62732af8",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "complete-snapshot-source-expired-before-checkpoint",
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": true,
+      "resultFileSha256": "46ed404b25118d18fcdde625afa4bdf0515fd16a382827551fc4a86ba33949d0"
+    },
+    {
+      "round": "NSS58",
+      "case": "20261004121718-a769d145",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "strict-counter-getter-after-A-before-ECM",
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": false,
+      "completedPhases": [
+        "A"
+      ],
+      "rejectedBeforeCheckpointOrStaging": false,
+      "resultFileSha256": "68b2924b4b63bf6876ca92d3c18e812bd498448c64d57a94cc8124f504c1a237",
+      "wan": 2,
+      "checkpointDownloadedHashAndGzipVerified": true,
+      "checkpointSha256": "ff7c7fc7e4a0b48bbdd67eb0d7ec4e9ad9d18823d4f3203f347b13767c37aead",
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "independentOfControlConnection": true,
+      "natural45SecondExpiryProvedThisCase": false,
+      "scopedRollbackPassed": true,
+      "configurationComparisonPassed": true,
+      "stageCleanupPassed": true,
+      "immediateAfterOriginalFullAuditPassed": true,
+      "laterOriginalFullRecoveryAuditPassed": false,
+      "rollbackFlags": {
+        "mwan3Restored": true,
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "stateNodeRemoved": true,
+        "wanRestored": true,
+        "tagsRemoved": true
+      },
+      "ctMark": 131072,
+      "actualSelectedPairSourceSha256": "f7a736991dae28663d399aead6c897ccff6380a4e14bd779adcce6922c8c840d"
+    },
+    {
+      "round": "NSS59",
+      "case": "20261004122829-9f40d45c",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "selected-TCP-absent-in-strict-same-source-complete-classification",
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": false,
+      "resultFileSha256": "4e61c76c3b92ce1b15c91b8a59d13452c9e010322dc721a94d12042e54d57a85",
+      "wan": 2,
+      "checkpointDownloadedHashAndGzipVerified": true,
+      "checkpointSha256": "ff7c7fc7e4a0b48bbdd67eb0d7ec4e9ad9d18823d4f3203f347b13767c37aead",
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "independentOfControlConnection": true,
+      "natural45SecondExpiryProvedThisCase": false,
+      "scopedRollbackPassed": true,
+      "configurationComparisonPassed": true,
+      "stageCleanupPassed": true,
+      "immediateAfterOriginalFullAuditPassed": true,
+      "laterOriginalFullRecoveryAuditPassed": false,
+      "rollbackFlags": {
+        "mwan3Restored": true,
+        "stateNodeRemoved": true,
+        "wanRestored": true,
+        "qosRestored": true,
+        "qosModuleUnloaded": true
+      },
+      "ctMark": 131072,
+      "actualSelectedPairSourceSha256": "0fafde442d8d39ccb49f34f37f438c6c30e51dc1e08a0178e435d3f36094edf8"
+    },
+    {
+      "round": "NSS59",
+      "case": "20261004123227-d23e7948",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "complete-snapshot-source-expired-before-checkpoint",
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": true,
+      "resultFileSha256": "ab4953ee30176474b0874068eb12e306d3bdd503dd14f3ea36a0ddd6ae7706f3"
+    },
+    {
+      "round": "NSS60",
+      "case": "20261004124808-c5c15d65",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "local-publication-hint-return-contract-before-checkpoint",
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": true,
+      "resultFileSha256": "727018c8aeae86d2cf7c869d73d8f062aa2def68b5cea966bf3883db6ad0f706"
+    },
+    {
+      "round": "NSS61",
+      "case": "20261004125340-b2e64484",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "prelearning-source-margin-insufficient-before-A",
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": false,
+      "resultFileSha256": "0b14834b3c11d7533ed61b81518beda74e7991ede2caea3f4262e70bf6c4cba6",
+      "wan": 2,
+      "checkpointDownloadedHashAndGzipVerified": true,
+      "checkpointSha256": "ff7c7fc7e4a0b48bbdd67eb0d7ec4e9ad9d18823d4f3203f347b13767c37aead",
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "independentOfControlConnection": true,
+      "natural45SecondExpiryProvedThisCase": false,
+      "scopedRollbackPassed": true,
+      "configurationComparisonPassed": null,
+      "stageCleanupPassed": true,
+      "immediateAfterOriginalFullAuditPassed": false,
+      "laterOriginalFullRecoveryAuditPassed": true,
+      "rollbackFlags": {
+        "mwan3Restored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "stateNodeRemoved": true,
+        "qosRestored": true
+      },
+      "ctMark": 131072,
+      "actualSelectedPairSourceSha256": "26e9dcd5c75fba212939789e3ad054df0fbf9607e19aa398df7fea97112d76be"
+    },
+    {
+      "round": "NSS61",
+      "case": "20261004125914-c82315c1",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "candidate-sleep-child-proc-wchan-disappeared-before-ECM",
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": false,
+      "completedPhases": [
+        "A"
+      ],
+      "rejectedBeforeCheckpointOrStaging": false,
+      "resultFileSha256": "281407ff7dce6c6096f9e86bf598c4e282dcab8c701f1ad60910e1dad2d10dc8",
+      "wan": 2,
+      "checkpointDownloadedHashAndGzipVerified": true,
+      "checkpointSha256": "ff7c7fc7e4a0b48bbdd67eb0d7ec4e9ad9d18823d4f3203f347b13767c37aead",
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "independentOfControlConnection": true,
+      "natural45SecondExpiryProvedThisCase": false,
+      "scopedRollbackPassed": true,
+      "configurationComparisonPassed": true,
+      "stageCleanupPassed": true,
+      "immediateAfterOriginalFullAuditPassed": true,
+      "laterOriginalFullRecoveryAuditPassed": false,
+      "rollbackFlags": {
+        "mwan3Restored": true,
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "stateNodeRemoved": true,
+        "wanRestored": true,
+        "tagsRemoved": true
+      },
+      "ctMark": 131072,
+      "actualSelectedPairSourceSha256": "59f0cffec982740900700d1522eda9437162639e85572934ccc81b1ea220aae6"
+    },
+    {
+      "round": "NSS63",
+      "case": "20261004131115-c2fb6b05",
+      "controllerPassed": false,
+      "completeABA": false,
+      "failure": "complete-snapshot-source-expired-before-checkpoint",
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "completedPhases": [],
+      "rejectedBeforeCheckpointOrStaging": true,
+      "resultFileSha256": "14da513a30f2756f8bff02df54a163739b4901938d842be4ca0b3c994c588c4f"
+    }
+  ],
+  "productionTemporaryStages": 5,
+  "actualNssOpenings": 1,
+  "partialForwarding": {
+    "analysisPassed": true,
+    "controllerPassed": false,
+    "completeABA": false,
+    "oneWan": 1,
+    "ctMark": 65536,
+    "actualAcceleratedStateValidated": true,
+    "connectionCount": 2,
+    "runtimeProof": {
+      "tcp": {
+        "protocol": 6,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 65536,
+        "downTag": 2399469568,
+        "upTag": 0,
+        "natCorrect": true,
+        "wanAffinity": 1,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 3,
+        "fromPackets": 2,
+        "toPackets": 1
+      },
+      "udp": {
+        "protocol": 17,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 65536,
+        "downTag": 2399535104,
+        "upTag": 0,
+        "natCorrect": true,
+        "wanAffinity": 1,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 2,
+        "fromPackets": 1,
+        "toPackets": 1
+      }
+    },
+    "phases": [
+      {
+        "name": "A",
+        "startedAt": 1931529.86,
+        "endedAt": 1931534.9,
+        "samples": 11,
+        "seconds": 5.039999999804422,
+        "busyPercent": 75.97765363128492,
+        "softirqPercent": 52.76790248857288,
+        "softnetProcessed": 571635,
+        "softnetDropped": 0,
+        "timeSqueeze": 42,
+        "interfaces": {
+          "lan4": {
+            "rx_bytes": 8225017,
+            "tx_bytes": 191364210,
+            "rx_packets": 108721,
+            "tx_packets": 126996,
+            "rx_dropped": 0,
+            "tx_dropped": 0,
+            "rxMbps": 13.055582540189164,
+            "txMbps": 303.7527142975014,
+            "rxPps": 21571.626984964074,
+            "txPps": 25197.619048596844
+          },
+          "rpwan1": {
+            "rx_bytes": 36456816,
+            "tx_bytes": 1655448,
+            "rx_packets": 22141,
+            "tx_packets": 21322,
+            "rx_dropped": 0,
+            "tx_dropped": 0,
+            "rxMbps": 57.867961907007476,
+            "txMbps": 2.627695238197206,
+            "rxPps": 4393.055555726029,
+            "txPps": 4230.555555719723
+          }
+        },
+        "acceleratedCount": 0
+      },
+      {
+        "name": "B",
+        "startedAt": 1931542.46,
+        "endedAt": 1931547.49,
+        "samples": 11,
+        "seconds": 5.03000000002794,
+        "busyPercent": 71.2082262210797,
+        "softirqPercent": 47.660668380462724,
+        "softnetProcessed": 469406,
+        "softnetDropped": 0,
+        "timeSqueeze": 20,
+        "interfaces": {
+          "lan4": {
+            "rx_bytes": 7205775,
+            "tx_bytes": 164503574,
+            "rx_packets": 92840,
+            "tx_packets": 109320,
+            "rx_dropped": 0,
+            "tx_dropped": 0,
+            "rxMbps": 11.46047713711328,
+            "txMbps": 261.63590298065407,
+            "rxPps": 18457.25646113008,
+            "txPps": 21733.598409422022
+          },
+          "rpwan1": {
+            "rx_bytes": 19636250,
+            "tx_bytes": 896413,
+            "rx_packets": 12747,
+            "tx_packets": 11550,
+            "rx_dropped": 0,
+            "tx_dropped": 0,
+            "rxMbps": 31.230616302013406,
+            "txMbps": 1.4257065606282637,
+            "rxPps": 2534.19483099984,
+            "txPps": 2296.22266400315
+          }
+        },
+        "acceleratedCount": 2
+      }
+    ],
+    "leafDeltasAroundFastPath": {
+      "startUptime": 1931542.44,
+      "endUptime": 1931547.92,
+      "includesAcquireAndRetirementBoundary": true,
+      "counters": {
+        "8f05:": {
+          "bytes": 7178935,
+          "packets": 4755,
+          "drops": 7
+        },
+        "8f06:": {
+          "bytes": 503139,
+          "packets": 549,
+          "drops": 0
+        },
+        "8fff:": {
+          "bytes": 153045599,
+          "packets": 99601,
+          "drops": 0
+        }
+      }
+    },
+    "renewals": 1,
+    "selectedBudgetMbps": 20,
+    "frontendOpenedAt": 1931542.26,
+    "frontendClosedAt": 1931547.49,
+    "twoPhaseOnlyThroughputSpread": {
+      "total": 0.1489835841393569,
+      "selectedWan": 0.597929756914957
+    },
+    "missingA2": true,
+    "offeredLoadEqualityProven": false,
+    "cpuBenefitConclusive": false,
+    "realHumanGameQualityConclusive": false,
+    "humanGameplay": false,
+    "coreBirthAgeSeconds": 0.0800000000745058,
+    "coreGuardUntouched": true,
+    "rollback": {
+      "wanRestored": true,
+      "mwan3Restored": true,
+      "qosRestored": true,
+      "moduleUnloaded": true,
+      "qosModuleUnloaded": true,
+      "stateNodeRemoved": true,
+      "tagsRemoved": true,
+      "firmwareZeroAfterRetirement": true
+    }
+  },
+  "clientHud": {
+    "actualClientHudCaptured": true,
+    "humanGameplay": false,
+    "assistantOnlineIdle": true,
+    "frames": [
+      {
+        "phase": "A",
+        "frame": "064.jpg",
+        "sourceSha256": "f9d7b516a526f8f2a9c7eaa3c8c33882b923a73ec750dce90a8ef01003e8ef14",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931531.10825,
+          "latest": 1931531.44425
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0.8,
+          "lossPercent": 0.5,
+          "jitterMs": 3
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 1
+        }
+      },
+      {
+        "phase": "A",
+        "frame": "065.jpg",
+        "sourceSha256": "6dcb4ccd891ef6c140e985e51dd8f2794a46b037239b4cc3e8c57f9fed2f2ca1",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931531.60825,
+          "latest": 1931531.93725
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0.8,
+          "lossPercent": 0.3,
+          "jitterMs": 2
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 1
+        }
+      },
+      {
+        "phase": "A",
+        "frame": "066.jpg",
+        "sourceSha256": "79f3c77c57769dc48d0203b88badea4c878cf01b685fdf5ce8b148b7b3782766",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931532.10125,
+          "latest": 1931532.42625
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0.8,
+          "lossPercent": 0.2,
+          "jitterMs": 2
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 1
+        }
+      },
+      {
+        "phase": "A",
+        "frame": "067.jpg",
+        "sourceSha256": "dd1ef7bfbe41ec0abcb353e9576c7bd5390cc8e5d9c1480a0d58ba736800a1b9",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931532.58225,
+          "latest": 1931532.92225
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0.8,
+          "lossPercent": 0.1,
+          "jitterMs": 2
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 1
+        }
+      },
+      {
+        "phase": "A",
+        "frame": "068.jpg",
+        "sourceSha256": "21cbc2930b0fb66c27a95ce66dac7e30a1d4edd038ebf55f701caa81aff139bf",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931533.08825,
+          "latest": 1931533.39225
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0.8,
+          "lossPercent": 0.1,
+          "jitterMs": 2
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 1
+        }
+      },
+      {
+        "phase": "B",
+        "frame": "090.jpg",
+        "sourceSha256": "9d45e10f6198109971d1eba063fc9a88b9551d1207838c51df009cf353d6080c",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931543.76325,
+          "latest": 1931544.10125
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 1
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 0
+        }
+      },
+      {
+        "phase": "B",
+        "frame": "091.jpg",
+        "sourceSha256": "7eb54b4ab3a05c8e70998683a982e886f6f2f3d18b236c861521fd9f1733c2db",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931544.25725,
+          "latest": 1931544.57625
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 2
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 0
+        }
+      },
+      {
+        "phase": "B",
+        "frame": "092.jpg",
+        "sourceSha256": "2fd73083cfb142be572bea2a79f4faf13083fb3384d9e923c2f71b06ba8f282c",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931544.73625,
+          "latest": 1931545.06225
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 2
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 0
+        }
+      },
+      {
+        "phase": "B",
+        "frame": "093.jpg",
+        "sourceSha256": "098072ce87667d0af0304a4a0ab2774bb7f9a01081cbee54ade8a91f0c725e86",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931545.21725,
+          "latest": 1931545.55925
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 2
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 0
+        }
+      },
+      {
+        "phase": "B",
+        "frame": "094.jpg",
+        "sourceSha256": "b2396de958dbe22781271cdb7793ca74d33d3187d46b49f701780ebddf8b9c25",
+        "fullContextVisuallyVerified": true,
+        "uptimeInterval": {
+          "earliest": 1931545.71525,
+          "latest": 1931546.08425
+        },
+        "pingMs": 16,
+        "down": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 1
+        },
+        "up": {
+          "missPercent": 0,
+          "lossPercent": 0,
+          "jitterMs": 0
+        }
+      }
+    ],
+    "clockUncertaintyMs": 100,
+    "allCaptureIntervalsAtLeastOneSecondInsidePhases": true,
+    "originalScreenshotsPrivate": true,
+    "rollingOrPeakDisplayNotIndependentInstantaneousSamples": true,
+    "missingA2": true,
+    "gameBenefitAccepted": false
+  },
+  "clientEndState": {
+    "steam": {
+      "observedAt": "2026-10-04T13:28:20.351Z",
+      "visualVerified": true,
+      "currentNetworkBps": 0,
+      "currentDiskBps": 0,
+      "immediateQueueItems": 0,
+      "completedItems": 8,
+      "downloadedTestTitlesThisTurn": [
+        {
+          "title": "DOOM (2016)",
+          "completedAtLocal": "19:44",
+          "downloadGB": 59.3
+        },
+        {
+          "title": "The Witcher 3 Remastered",
+          "completedAtLocal": "21:12",
+          "downloadGB": 64
+        },
+        {
+          "title": "Hades",
+          "completedAtLocal": "21:12",
+          "downloadGB": 10
+        },
+        {
+          "title": "Disco Elysium",
+          "completedAtLocal": "21:13",
+          "downloadGB": 8.7
+        }
+      ],
+      "previouslyPausedQueueAutomaticallyAdvanced": true,
+      "scheduledUnrelatedUpdateLeftUntouched": true,
+      "purchased": false,
+      "newTitlesLaunched": false,
+      "uninstallOccurred": false,
+      "completedDoomEternalRedownloaded": false
+    },
+    "cs2": {
+      "restored": true,
+      "serverExited": true,
+      "humanGameplay": false
+    }
+  },
+  "finalState": {
+    "protectedAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 14,
+      "queryAge": 4.559999999823049,
+      "sequence": 1710,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [
+        {
+          "service": "sing-box-athena",
+          "instance": "core",
+          "pidChangedBeforeExperiment": true
+        },
+        {
+          "service": "sing-box-athena",
+          "instance": "guard",
+          "pidChangedBeforeExperiment": true
+        }
+      ],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-04T13:26:13.060Z",
+      "readonly": true,
+      "deploymentReference": "work/nss47/deployment-latest.json",
+      "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1937918.77
+    },
+    "workerPid": 20682,
+    "guardianPid": 5412,
+    "sameCacheRetainedWorkerThroughout": false,
+    "naturalWorkerRestartObserved": true,
+    "manualWorkerRestartOrCrashInjected": false,
+    "workerRestartCauseProved": false,
+    "sequence": 1710,
+    "classifierHealthyAndExactOwnedAuditPassed": true
+  },
+  "sourceFreezes": [
+    {
+      "round": "NSS54",
+      "sources": 13
+    },
+    {
+      "round": "NSS55",
+      "sources": 14
+    },
+    {
+      "round": "NSS56",
+      "sources": 15
+    },
+    {
+      "round": "NSS57",
+      "sources": 17
+    },
+    {
+      "round": "NSS58",
+      "sources": 12
+    },
+    {
+      "round": "NSS59",
+      "sources": 19
+    },
+    {
+      "round": "NSS60",
+      "sources": 13
+    },
+    {
+      "round": "NSS61",
+      "sources": 12
+    },
+    {
+      "round": "NSS62",
+      "sources": 14
+    },
+    {
+      "round": "NSS63",
+      "sources": 14
+    }
+  ],
+  "sourceProofOnlyNotAdditionalAdmission": true,
+  "conclusions": {
+    "realSelectedTcpUdpNssLeafProvedThisTurn": true,
+    "actualNssBHudCaptured": true,
+    "softwareVersusNssCpuBenefitProved": false,
+    "gameBenefitProved": false,
+    "realHumanExperienceProved": false,
+    "completeHighLoadLifecycleQualified": false,
+    "completeHighLoadLoopPassed": false,
+    "secondWanExpansionAllowed": false,
+    "sharedBudgetAllowed": false,
+    "upstreamSubmitted": false
+  },
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  },
+  "offlineEvidenceCorrection": {
+    "originalV1Sha256": "9dd622dc905c9eb25454797e0003fe9b56133011ba389c919017248dbe48a529",
+    "originalV1RetainedPrivate": true,
+    "changes": [
+      {
+        "round": "NSS58",
+        "case": "20261004121718-a769d145",
+        "incorrectV1Wan": 1,
+        "actualWan": 2
+      },
+      {
+        "round": "NSS59",
+        "case": "20261004122829-9f40d45c",
+        "incorrectV1Wan": 1,
+        "actualWan": 2
+      },
+      {
+        "round": "NSS61",
+        "case": "20261004125340-b2e64484",
+        "incorrectV1Wan": 1,
+        "actualWan": 2
+      },
+      {
+        "round": "NSS61",
+        "case": "20261004125914-c82315c1",
+        "incorrectV1Wan": 1,
+        "actualWan": 2
+      }
+    ],
+    "incorrectWanAfterFallbackRemoved": true,
+    "actualRouterSelectionAndAdmissionUnaffected": true
+  }
+}

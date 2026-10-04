@@ -1,0 +1,8 @@
+{
+  "checks": 10,
+  "nativePureLua": true,
+  "nssAdmissionAllowed": false,
+  "passed": true,
+  "routerConfigurationWrites": false,
+  "sourceSha256": "546ee4b5c31ac56a476d7e9da117c054e40713fa80e82982d3c814de58ff0a19"
+}

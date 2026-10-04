@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T12:41:44.701Z",
+  "baseBoundInputs": 200,
+  "boundInputs": 208,
+  "sourceManifest": {
+    "work/nss60/real-session.mjs": "502c7f4f991164e6cfeabe98e63f957f0085997ffe18af99497de020bc2c5b7c",
+    "work/nss60/session-binding.mjs": "0cb370aebd233e8cbb397ebc04791de1bee65a916be1fa9338da41a806d2b0fc",
+    "work/nss60/current-audit-diagnostic.mjs": "fc77fd871f32b5f588f5382499d7c7062bf6d80fcf243ed151889ac3777a9161",
+    "work/nss60/wait-publication-metadata.mjs": "8ac8d391460b781a48e17eecb9dee584ec53ef38b7d8561f3c5657173a9afd45",
+    "work/nss60/metadata-hint.lua": "aa2f8e4e9278c31be01835a0a1ef9a2e3a1e5dcc3208d833e6bf91dfe144d44b",
+    "work/nss60/baseline-publication-join.lua": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+    "work/nss60/metadata-tests.json": "2e14d61d3e2825fc4d0ec8da9977bb1c5124acdd51eab1725ed3f20365d06fab",
+    "work/nss60/qualify-entry.mjs": "ebf3ab7702004761827769814ca856eb98d769644f97928f62ae3a85c6172bda"
+  },
+  "readonlySchedulingOnly": true,
+  "metadataIsNotAuthority": true,
+  "originalFullAuditAndExactQueryCheckRetained": true,
+  "nssPayloadUnchanged": true,
+  "nssPayloadReferencesFrozenNss59": true,
+  "originalDeadlinesUnchanged": true,
+  "targetNativeActualPublicationParityChecks": 10,
+  "joinModelReusedUnchanged": true,
+  "notInstalled": true,
+  "fullHighLoadAbaQualified": false
+}

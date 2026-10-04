@@ -1,10 +1,25 @@
 # 当前状态
 
-更新：2026-10-04，北京时间。最新现场核验见 [当前运行记录](../evidence/current-runtime.json)。
+更新：2026-10-04，北京时间。最新为 NSS63；以下 NSS53 及更早章节是历史。
 
-**常驻仍 NSS47，ECM 关闭全零。NSS53 真实下载 294–366 Mbps 的六次只读发现全部通过；精确拒绝诊断与 NSS52 同字节进程候选已绑定新 159 项实验入口。本轮没有 CS2 对局连接、没有 NSS 放行或 A/B。NSS49 单 WAN 功能保持，CPU / 真人游戏收益仍未验收。**
+**常驻仍 NSS47，最终 ECM 关闭全零。本轮 NSS56 完成真实 WAN1 CS2 UDP＋Steam TCP 的 A→B，ECM 0→2→0、bulk/RT leaf、完整 mark/NAT/WAN affinity 与精确恢复正确；A2 未完成。已取得 B 段实际 HUD，但吞吐不匹配、没有真人操作，CPU / 游戏收益仍未通过。**
 
-## 最新：NSS53
+见 [本轮汇总](../evidence/nss63-mainline.json)、[实际阶段](../evidence/nss63-partial56.json)、[客户端](../evidence/nss63-client56.json)、[失败与恢复](../evidence/nss63-attempts.json)。
+
+- 最新实验入口 `work/nss63/real-session.mjs`，241 项来源绑定。已修正发布读取竞态、独立语法传输尺寸、极窄计数重读、提示返回契约和短命子进程读取；依赖实际导入也已核验。它没有替换常驻分类器；最新现场因完整来源 7.41 秒超过原 6 秒在 checkpoint 前拒绝，不能称高负载闭环修复完成。
+- 五次单 WAN 临时暂存：NSS56 为 WAN1，随后四次为 WAN2，始终一次一个 WAN。每次先下载 checkpoint、核验 SHA/gzip，再确认独立 45 秒守护身份。仅 NSS56 放行 ECM；其余均未放行。全部精确撤销、暂存清理，四次即时原完整 AFTER 通过；NSS61 第一次 AFTER 来源过期，暂停下载后的原完整恢复审核另行通过。不是五次自然 45 秒到期试验。
+- NSS56 两段各 11 帧 / 5.04、5.03 秒：LAN4 303.75→261.64 Mbps，选中 WAN1 57.87→31.23 Mbps，softirq 52.77→47.66%，busy 75.98→71.21%，time_squeeze +42→+20。总吞吐跨度 14.90%、选中 WAN 跨度 59.79%，均超过可比条件；加速子组仅 20 Mbps，主要字节仍走 fallback。较低 softirq 不能归因于 NSS。
+- B 段实际 bulk/RT leaf 增加 4755 / 549 包，bulk drop 7、RT drop 0；两方向 NAT/mark 与 WAN1/物理 WAN/LAN4/br-lan 均由原 ECM 解析器核验。一次续租与精确撤销通过。队列计数覆盖建立 / 撤销边界，不能代替客户端 loss。
+- 时钟映射不确定性约 100 ms，各段中央 5 张完整游戏截图逐张检查：A ping 16 ms、下行 jitter 2–3 ms、loss 0.1–0.5%、Miss 0.8%；B ping 16 ms、jitter 1–2 ms、loss/Miss 均 0。是助手进入在线服务器闲置，HUD 为滚动/峰值显示，没有 A2、真人体验或改善结论。
+- 12 个实际控制器案例均保留原失败；5 次有暂存、1 次开 ECM、1 次 A+B、另 2 次只有 A。NSS62 另有本地缺少 payload 导入错误，连接路由器前发生；NSS63 修复依赖拷贝。原 200 ms child 出生条件、20 Mbps、TCP/UDP 各一条、45 秒 owner、source/epoch 期限均未放宽。
+- NSS54/55 发布 join 目标 RAM 分别 13/14 案例；NSS57/59 极窄计数见证各 7；NSS58 notice 10；NSS60 metadata 10；NSS61 契约 14 本地断言；NSS62 子进程读取 15 目标 RAM 案例，NSS63 同字节复用。旧 99/13 不重放或重新计数。模拟、只读、真实转发分别记录。
+- 常驻 worker 从 5411 自然换为 20682，guardian 5412 保持；没有主动 restart/crash，原因未证明。最终 21:26 原完整保护审核通过、source 4.56 秒、14 个 owned selector、配置未变，ECM 全零，无事务/暂存/state/gate/qdisc 模块。不能写成全程同实例或高负载长期稳定。
+- Steam 测试负载最终自然完成：DOOM（2016）19:44；巫师3/Hades 21:12；Disco Elysium 21:13。之前暂停的队列自动接续，不能写成最终仍暂停。最终网络/磁盘均 0 bps，无即时下载；未购买、卸载、启动新游戏或重下 DOOM Eternal。CS2 已退出服务器、三项临时 HUD 恢复。
+- 144 份新增可读源码冻结，795 份仓库源码累计；完整实际输入、CT/socket、配置、模块、截图与凭据留本地。离线报告曾误把缺失 wanAfter 字段默认为 WAN1，实际 selected 验证发现并更正四个 WAN2 案例，原 v1 留私有；运行时选择/准入未受影响。NSS53 runtime 原字节保留。
+
+**下一步只定位并缩短高负载 classification→完整 snapshot 发布及原持锁审核的延迟。** 不重装分类器、不重放旧准备、不要求用户长期挂机，不用继续下载安装新游戏维持准备。新代码单变量核验后再取得完整、负载可比的 A/B/A2；只有性能与真人闭环通过才扩第二 WAN 同时加速、共享预算、Wi-Fi/autorate。
+
+## NSS53 历史
 
 见 [本轮汇总](../evidence/nss53-mainline.json)、[真实负载时序](../evidence/nss53-phase-load.json)、[拒绝诊断](../evidence/nss53-diagnostics.json) 与 [新入口](../evidence/nss53-entry-binding.json)。
 

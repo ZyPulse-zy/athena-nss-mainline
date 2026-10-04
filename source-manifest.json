@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T10:45:57.557496+00:00",
+  "generatedAt": "2026-10-04T13:38:33.498926+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -4561,8 +4561,1016 @@
       "sha256": "80c823cf7934f5458e8a32b124e59373d0ab9d356b357419210359b1e771eaab",
       "bytes": 1633,
       "role": "experimental-entry-readonly-diagnostic-or-test-not-resident"
+    },
+    {
+      "path": "code/work/nss54/baseline-publication-join.lua",
+      "workspaceSource": "work/nss54/baseline-publication-join.lua",
+      "sha256": "487be176720483953a33dc59149d19472a19b2e89271d6d42dce6f445b66ae69",
+      "bytes": 1794,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/cleanup-audit.mjs",
+      "workspaceSource": "work/nss54/cleanup-audit.mjs",
+      "sha256": "f49014e79d40a9f46f1bffa19a051bacb122c584b1698c374294e4f7f98c062c",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/clock-anchor.mjs",
+      "workspaceSource": "work/nss54/clock-anchor.mjs",
+      "sha256": "1e42282ec03f7f5b5cd9c7ea1fe0dfda89f683d1a2ab3197a63a55a861fbadb8",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss54/current-audit-diagnostic.mjs",
+      "sha256": "99ef0e43ef4f2e025131cace3aaa4091187b5e5a6f9da1ad92afe5be5b35483e",
+      "bytes": 4134,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/entry-qualified.json",
+      "workspaceSource": "work/nss54/entry-qualified.json",
+      "sha256": "d4c1b70ab738a6a3a1a7f85cf12c8794c3a13820749de7209f8646bef97271b2",
+      "bytes": 1423,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/initial-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss54/initial-audit-diagnostic.mjs",
+      "sha256": "2f6cb0bbc8943e6ddd7b67966fa81a3f8a57ecd26155ce697c09af582c524851",
+      "bytes": 4151,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/join-tests.json",
+      "workspaceSource": "work/nss54/join-tests.json",
+      "sha256": "6b91c0f08df2fc156bae45fe9f0440ef50a2d9906048f5d65ac1579204c67bc5",
+      "bytes": 218,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/prepare-revision.mjs",
+      "workspaceSource": "work/nss54/prepare-revision.mjs",
+      "sha256": "6d7b90ecded115a987327c451f2e7dfaa121039c3f5d5ac94d95ff1447f2912f",
+      "bytes": 3123,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/qualify-entry.mjs",
+      "workspaceSource": "work/nss54/qualify-entry.mjs",
+      "sha256": "7feb40a6921e6eeb1a96a60a43f373934bb2e7d0330d736427de6e3564b306f9",
+      "bytes": 3161,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/real-session.mjs",
+      "workspaceSource": "work/nss54/real-session.mjs",
+      "sha256": "e1a0aaee9185ae72f61a6ba823853a57c2f281ecdfbab64700f96c4bcc4da9b8",
+      "bytes": 11293,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/session-binding.mjs",
+      "workspaceSource": "work/nss54/session-binding.mjs",
+      "sha256": "09242f7e73bc1b9f96ef4177228c3d9e3cd07817c05c896fe3ac333ff8cb2f8e",
+      "bytes": 885,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/test-publication-join.mjs",
+      "workspaceSource": "work/nss54/test-publication-join.mjs",
+      "sha256": "4f3ee2b5f361c6be5df953bc7673016ecde381cdcd1760d01acd575ff1f3fce6",
+      "bytes": 2674,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss54/wait-ready-joined.mjs",
+      "workspaceSource": "work/nss54/wait-ready-joined.mjs",
+      "sha256": "79e44bcbbc8daa9b13a62e0d3d04821bd45955c438b4fcb96181badef794163f",
+      "bytes": 4290,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/baseline-publication-join.lua",
+      "workspaceSource": "work/nss55/baseline-publication-join.lua",
+      "sha256": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+      "bytes": 1888,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/cleanup-audit.mjs",
+      "workspaceSource": "work/nss55/cleanup-audit.mjs",
+      "sha256": "5fb94821599b40e70fd798fbfa8d85d0b67142fd311b642260b3a5ad9df3d5a7",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/clock-anchor.mjs",
+      "workspaceSource": "work/nss55/clock-anchor.mjs",
+      "sha256": "e9335c708ee2e14c8582a1a3aeb70607bc0ceb3fa075f1ddf0945246111b68ea",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss55/current-audit-diagnostic.mjs",
+      "sha256": "2af7f67140162ff0f12a10d236c992f6c00725e9ca8b841ff260fa785da89f6d",
+      "bytes": 4134,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/entry-qualified.json",
+      "workspaceSource": "work/nss55/entry-qualified.json",
+      "sha256": "d1d80c78c9c3f6d9ff12219179f8f77ec77b4ca8074e874868b8229d2b628b63",
+      "bytes": 1423,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/initial-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss55/initial-audit-diagnostic.mjs",
+      "sha256": "2af7f67140162ff0f12a10d236c992f6c00725e9ca8b841ff260fa785da89f6d",
+      "bytes": 4134,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/join-tests.json",
+      "workspaceSource": "work/nss55/join-tests.json",
+      "sha256": "bd2d2f394af8f20567484c6b05761ff0d422be6c122f47e2ad6eaca417d51bbc",
+      "bytes": 218,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/measure-syntax-transport.mjs",
+      "workspaceSource": "work/nss55/measure-syntax-transport.mjs",
+      "sha256": "68c02481982c645d2b05d50b1cb46b3985ed3856e1fbf5bbddefc8b568faddf9",
+      "bytes": 860,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/prepare-stage-revision.mjs",
+      "workspaceSource": "work/nss55/prepare-stage-revision.mjs",
+      "sha256": "860928137e7bcb0c8859c724505abfd438d0b78481645a4782c798f6a5c1a616",
+      "bytes": 2637,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/qualify-entry.mjs",
+      "workspaceSource": "work/nss55/qualify-entry.mjs",
+      "sha256": "7c44d290b96285c7a7891ef34082ff6a96a6c51175ba03a030e022cb9e782f8d",
+      "bytes": 3161,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/real-session.mjs",
+      "workspaceSource": "work/nss55/real-session.mjs",
+      "sha256": "006d821eacbb44376717617a3850e0c66ee7c35b179cb8a0eb104b9a5ea654ce",
+      "bytes": 11293,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/session-binding.mjs",
+      "workspaceSource": "work/nss55/session-binding.mjs",
+      "sha256": "8582611899f2884fcff606d6df86820908b2aa9c34c13d8f250456a895f48781",
+      "bytes": 885,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/test-publication-join.mjs",
+      "workspaceSource": "work/nss55/test-publication-join.mjs",
+      "sha256": "c509e0c65842bdc3425d9a9f024c23ce00f7da086fe92808bd3c0cc7ec46f1ce",
+      "bytes": 2755,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss55/wait-ready-joined.mjs",
+      "workspaceSource": "work/nss55/wait-ready-joined.mjs",
+      "sha256": "fbc65b262d9261dfd41f7f4a3834fc504d7b14f12744775f376e5cb8a4953fd6",
+      "bytes": 4798,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/baseline-publication-join.lua",
+      "workspaceSource": "work/nss56/baseline-publication-join.lua",
+      "sha256": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+      "bytes": 1888,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/cleanup-audit.mjs",
+      "workspaceSource": "work/nss56/cleanup-audit.mjs",
+      "sha256": "44ea220ad1318ebd9398282a0b70bcf6fdc3de6f6f6f0781a603deb08d81a899",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/clock-anchor.mjs",
+      "workspaceSource": "work/nss56/clock-anchor.mjs",
+      "sha256": "4c8b10cb208ea547f25f93d9019dd09ccbc6d8a2d3807101232872e7e4e16e84",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss56/current-audit-diagnostic.mjs",
+      "sha256": "e56f00411268b0f06fb447f2e9bd126994680cfc71ccb80cf8057556802b9787",
+      "bytes": 4134,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/entry-qualified.json",
+      "workspaceSource": "work/nss56/entry-qualified.json",
+      "sha256": "6f2e8b990d8248a4d616cfbb7310d964b3ad234f873650d315011e95d0ca83fd",
+      "bytes": 1739,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/initial-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss56/initial-audit-diagnostic.mjs",
+      "sha256": "e56f00411268b0f06fb447f2e9bd126994680cfc71ccb80cf8057556802b9787",
+      "bytes": 4134,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/join-tests.json",
+      "workspaceSource": "work/nss56/join-tests.json",
+      "sha256": "bd2d2f394af8f20567484c6b05761ff0d422be6c122f47e2ad6eaca417d51bbc",
+      "bytes": 218,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/module-stage.mjs",
+      "workspaceSource": "work/nss56/module-stage.mjs",
+      "sha256": "23fcbe9f934eea6573be7fd979002b5a0355f8c22ee30acae6db71c9e7b16893",
+      "bytes": 16038,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/prepare-counter-revision.mjs",
+      "workspaceSource": "work/nss56/prepare-counter-revision.mjs",
+      "sha256": "012b2cc54b8df4a26486ad6f906a1c83c78c317739d5e609dea2ffc1b58e481b",
+      "bytes": 2966,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/qualify-entry.mjs",
+      "workspaceSource": "work/nss56/qualify-entry.mjs",
+      "sha256": "e08ebd60ac2fb0c63047402112ec675e0ded4395097c5bf94704e59a8ab20599",
+      "bytes": 3275,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/real-session.mjs",
+      "workspaceSource": "work/nss56/real-session.mjs",
+      "sha256": "6cca35ed45e40e727272d6c6a452c6838c8a50a2258e452f98dbb65d808bfc3f",
+      "bytes": 11286,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/session-binding.mjs",
+      "workspaceSource": "work/nss56/session-binding.mjs",
+      "sha256": "cc920df4372475fa5ab6748006dbbfa13ce90ff80d473dc3fa7c4bd400980fed",
+      "bytes": 945,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/test-counter-witness.mjs",
+      "workspaceSource": "work/nss56/test-counter-witness.mjs",
+      "sha256": "f78f088b7c9c932725b6312507b96b2690fb9e29a02024f328113aba6f3a2095",
+      "bytes": 2346,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/test-publication-join.mjs",
+      "workspaceSource": "work/nss56/test-publication-join.mjs",
+      "sha256": "64a0a8617c20ddb9b1be657214567ea8e8ac5bf67c6bac857939cf775588a116",
+      "bytes": 2755,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss56/wait-ready-joined.mjs",
+      "workspaceSource": "work/nss56/wait-ready-joined.mjs",
+      "sha256": "4972d9c3632286e8f8dbd40e5ffd6d04f31da14417b2479c5933bd6b3a48180f",
+      "bytes": 4798,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/baseline-publication-join.lua",
+      "workspaceSource": "work/nss57/baseline-publication-join.lua",
+      "sha256": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+      "bytes": 1888,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/cleanup-audit.mjs",
+      "workspaceSource": "work/nss57/cleanup-audit.mjs",
+      "sha256": "55de6c14234d91ae071e5849f26e4ea473415346cc58902c234b8d2677b53671",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/clock-anchor.mjs",
+      "workspaceSource": "work/nss57/clock-anchor.mjs",
+      "sha256": "122ecf28016bdf797706cf76616ce784e835f3e295ea7a28b877c5bbde203fb6",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/counter-tests.json",
+      "workspaceSource": "work/nss57/counter-tests.json",
+      "sha256": "9e44e1fedec8734cb33e7d56d8b243c5316d5956e6c3afa267f89d121e4a8d35",
+      "bytes": 217,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss57/current-audit-diagnostic.mjs",
+      "sha256": "a3ca2c961e6022d87455413ba6913a669a179d9fcff8c2015977fe3a1021964c",
+      "bytes": 4134,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/entry-qualified.json",
+      "workspaceSource": "work/nss57/entry-qualified.json",
+      "sha256": "e3750f4996a43ab4392ba329916d0e82863f2f7d14c5434199591399cf1200c9",
+      "bytes": 1908,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/fast-path-prepare-error.lua",
+      "workspaceSource": "work/nss57/fast-path-prepare-error.lua",
+      "sha256": "a3ca00cfbd3f91d0c22d3f5aac27668b17a29db4f65b02649aec3a09db28d563",
+      "bytes": 14734,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/fast-path.lua",
+      "workspaceSource": "work/nss57/fast-path.lua",
+      "sha256": "add92f7bf8158d0203c1181f4554cc026f0f9d466ee4c2c35c3d062a46b12f14",
+      "bytes": 14262,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/join-tests.json",
+      "workspaceSource": "work/nss57/join-tests.json",
+      "sha256": "bd2d2f394af8f20567484c6b05761ff0d422be6c122f47e2ad6eaca417d51bbc",
+      "bytes": 218,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/module-stage.mjs",
+      "workspaceSource": "work/nss57/module-stage.mjs",
+      "sha256": "b50406f57aa8404b58ec9df98565863fe01b3291c0fa4dda8a9728907e9bde5a",
+      "bytes": 16031,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/payload.mjs",
+      "workspaceSource": "work/nss57/payload.mjs",
+      "sha256": "95d3107a7ab2f130165c0b251b35d75b4b0691e155968add42a88602b53c3864",
+      "bytes": 1792,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/prepare-publication-notice.mjs",
+      "workspaceSource": "work/nss57/prepare-publication-notice.mjs",
+      "sha256": "30e84cb04bf5112793dbef9614f18f3d13fc409982b74a1afd3809342712f18c",
+      "bytes": 1696,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/qualify-entry.mjs",
+      "workspaceSource": "work/nss57/qualify-entry.mjs",
+      "sha256": "35acf5bc837b8f74aed6bed8c9396ab348d314e0fb7e2018ed7bf6e90aed7d3f",
+      "bytes": 2857,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/real-session.mjs",
+      "workspaceSource": "work/nss57/real-session.mjs",
+      "sha256": "b9ce09c36d18653df6787890720a73f56da73431539f29486e41b8d13696c384",
+      "bytes": 11286,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/repair-prepare.mjs",
+      "workspaceSource": "work/nss57/repair-prepare.mjs",
+      "sha256": "bb17e462cc441f903bd56c437673f3be2c33e92897efa62872b3e140202b94be",
+      "bytes": 1505,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/session-binding.mjs",
+      "workspaceSource": "work/nss57/session-binding.mjs",
+      "sha256": "98df80d64ba594d8ff752edf9b135c0eb1d429ac6dd11d9805fe8272bcb943e1",
+      "bytes": 907,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss57/wait-ready-joined.mjs",
+      "workspaceSource": "work/nss57/wait-ready-joined.mjs",
+      "sha256": "3636718c7ebf5c8ec7d51ef6ea02112f81cdccb18141a9850cd12e5622212951",
+      "bytes": 4798,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/cleanup-audit.mjs",
+      "workspaceSource": "work/nss58/cleanup-audit.mjs",
+      "sha256": "87fb412e521bd954c38cc62f7020b6118cb6f528ee9b5663eb9b1a211c42f700",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/clock-anchor.mjs",
+      "workspaceSource": "work/nss58/clock-anchor.mjs",
+      "sha256": "4c862f6511c2a76ab05f0e4b0c9f63f8b3b206c0b44512d9a851815a7d949c28",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss58/current-audit-diagnostic.mjs",
+      "sha256": "034b226016aed41557d98f0d0cfadda49343282b408abd97db8ccd904838a55f",
+      "bytes": 4402,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/entry-qualified.json",
+      "workspaceSource": "work/nss58/entry-qualified.json",
+      "sha256": "e4d4340578c92561134786e2c2346f122e4427a0fc0cd90af4a1f3b84307f3dc",
+      "bytes": 1302,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/notice-tests.json",
+      "workspaceSource": "work/nss58/notice-tests.json",
+      "sha256": "51ecd1897ba2fd1b33001394d27960e2882920d59f8aa5c9037efda6c6e15146",
+      "bytes": 218,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/prepare-after-a-witness.mjs",
+      "workspaceSource": "work/nss58/prepare-after-a-witness.mjs",
+      "sha256": "49f05ed345a548348d807c8408515a01741ae3af325a27ebcae3190bd7fb9c56",
+      "bytes": 2181,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/publication-notice.lua",
+      "workspaceSource": "work/nss58/publication-notice.lua",
+      "sha256": "546ee4b5c31ac56a476d7e9da117c054e40713fa80e82982d3c814de58ff0a19",
+      "bytes": 1031,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/qualify-entry.mjs",
+      "workspaceSource": "work/nss58/qualify-entry.mjs",
+      "sha256": "6bfc1d76f839fe475eecfb23cfa9977b6cc8ab431b8e25dd207c3b0b95f9ec8b",
+      "bytes": 2595,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/real-session.mjs",
+      "workspaceSource": "work/nss58/real-session.mjs",
+      "sha256": "2d7f7d332fb0e75e0b466b56c3b89436a0f9d664b63a83ebaf83c35863e94ded",
+      "bytes": 11293,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/session-binding.mjs",
+      "workspaceSource": "work/nss58/session-binding.mjs",
+      "sha256": "b6c0cbcd2924f251ce7423e7639bb18629b52a926232c259966ef81e59a6ebeb",
+      "bytes": 850,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/test-publication-notice.mjs",
+      "workspaceSource": "work/nss58/test-publication-notice.mjs",
+      "sha256": "6dbc3045d2a8be9740f3feb211a7a00b7b511de3f154800f616e179a93721202",
+      "bytes": 1916,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss58/wait-publication-notice.mjs",
+      "workspaceSource": "work/nss58/wait-publication-notice.mjs",
+      "sha256": "a41c58b6805bf95bc5ddb3dd8d02a37a1e5dbe9da1a36e2c57030d481af22484",
+      "bytes": 2941,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/before-margin-correction-counter-tests.json",
+      "workspaceSource": "work/nss59/before-margin-correction-counter-tests.json",
+      "sha256": "e1a3222c34c5fb3a1d43ebbee122b31a6a662b268d6d63cea3fd2a672bed34d8",
+      "bytes": 349,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/cleanup-audit.mjs",
+      "workspaceSource": "work/nss59/cleanup-audit.mjs",
+      "sha256": "d69f364aa54a9da9d782095822fbd6d410a285e55aa009a71a68f9fbe9f2d1cb",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/clock-anchor.mjs",
+      "workspaceSource": "work/nss59/clock-anchor.mjs",
+      "sha256": "f55c1f05026f3eecb7f5dd72606fdc5dd738a3ccdb81172cf161d4e9fc88fd1c",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/counter-tests.json",
+      "workspaceSource": "work/nss59/counter-tests.json",
+      "sha256": "eeaf34434ce581a3545adf93c72567dca3e0f5bbd9382bf8db58126cb43e3e56",
+      "bytes": 349,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss59/current-audit-diagnostic.mjs",
+      "sha256": "1d9c8c1355b21d39dba953de7865ecfac68355a0ac2617533cb6405acbebcf64",
+      "bytes": 4402,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/entry-qualified.json",
+      "workspaceSource": "work/nss59/entry-qualified.json",
+      "sha256": "5f5921340391181296d9956e6abab9cd45ff356682da143955c5cabc21a15063",
+      "bytes": 1844,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/fast-path-before-margin-correction.lua",
+      "workspaceSource": "work/nss59/fast-path-before-margin-correction.lua",
+      "sha256": "deef0896e60bdcfe82911dc06715d51e5a51308ee6ad54cbc5ea81b1f962dfac",
+      "bytes": 14831,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/fast-path.lua",
+      "workspaceSource": "work/nss59/fast-path.lua",
+      "sha256": "b0aabcdb645c34df94e4c7645bed20efc9633d4d840004f18a093a2574badd99",
+      "bytes": 14831,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/module-stage.mjs",
+      "workspaceSource": "work/nss59/module-stage.mjs",
+      "sha256": "aa86ce919bbb49b5328ebb0bf8aeacb22bdac348e8cd5933b83abee892ac81ff",
+      "bytes": 16031,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/notice-tests.json",
+      "workspaceSource": "work/nss59/notice-tests.json",
+      "sha256": "51ecd1897ba2fd1b33001394d27960e2882920d59f8aa5c9037efda6c6e15146",
+      "bytes": 218,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/payload.mjs",
+      "workspaceSource": "work/nss59/payload.mjs",
+      "sha256": "ff7bd67aa584c427b90bd2e2e245eced74639b525e9404ed2541c855073de3a3",
+      "bytes": 1792,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/prepare-metadata-wait.mjs",
+      "workspaceSource": "work/nss59/prepare-metadata-wait.mjs",
+      "sha256": "1a7389d1726fa188b841a9a90ff9a6332f5009dab313c78739206b059c455824",
+      "bytes": 2604,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/publication-notice.lua",
+      "workspaceSource": "work/nss59/publication-notice.lua",
+      "sha256": "546ee4b5c31ac56a476d7e9da117c054e40713fa80e82982d3c814de58ff0a19",
+      "bytes": 1031,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/qualify-entry.mjs",
+      "workspaceSource": "work/nss59/qualify-entry.mjs",
+      "sha256": "84f8afa1e3e219948ded77776faeb188a604251d293752d91864980a970197af",
+      "bytes": 2885,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/real-session.mjs",
+      "workspaceSource": "work/nss59/real-session.mjs",
+      "sha256": "2fa2d32de296b1374e1488cc5cd533fa1fa37fc3ede4d8dc768ad7fdd1f696b5",
+      "bytes": 11286,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/repair-preparation-margin.mjs",
+      "workspaceSource": "work/nss59/repair-preparation-margin.mjs",
+      "sha256": "19979dfa68565d543eb7a10157259c55a57812c6dd8359b993cba8ab6cbb762f",
+      "bytes": 1259,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/session-binding.mjs",
+      "workspaceSource": "work/nss59/session-binding.mjs",
+      "sha256": "fb5f86837ee63136fcf6535441ab74cb324872a91bbc71a074e8461e172947dc",
+      "bytes": 846,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/test-counter-witness.mjs",
+      "workspaceSource": "work/nss59/test-counter-witness.mjs",
+      "sha256": "5a054ff8d658ec51b16e910a36e246eaa62d48f20142354f7caf440d1affe7a5",
+      "bytes": 2546,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss59/wait-publication-notice.mjs",
+      "workspaceSource": "work/nss59/wait-publication-notice.mjs",
+      "sha256": "cb984241e1e200febe4d98c5ebb5108bf6ae5f3defee8e2fd90d80f5b0b9ecbc",
+      "bytes": 2941,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/baseline-publication-join.lua",
+      "workspaceSource": "work/nss60/baseline-publication-join.lua",
+      "sha256": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+      "bytes": 1888,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/cleanup-audit.mjs",
+      "workspaceSource": "work/nss60/cleanup-audit.mjs",
+      "sha256": "830c934f8597f22a0f5f1892aa19025f580ef7b5e9f1191c52e9e65f5430fe26",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/clock-anchor.mjs",
+      "workspaceSource": "work/nss60/clock-anchor.mjs",
+      "sha256": "5cdec2e9e10bcc12592089add189c1d823bf98ed7aaae5a753d9cfe4bdf9d030",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss60/current-audit-diagnostic.mjs",
+      "sha256": "fc77fd871f32b5f588f5382499d7c7062bf6d80fcf243ed151889ac3777a9161",
+      "bytes": 4404,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/entry-qualified.json",
+      "workspaceSource": "work/nss60/entry-qualified.json",
+      "sha256": "484796134831e595b6829bc4e447c783273e38c7e05a0cae6f9e5119bd8f790d",
+      "bytes": 1392,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/metadata-hint.lua",
+      "workspaceSource": "work/nss60/metadata-hint.lua",
+      "sha256": "aa2f8e4e9278c31be01835a0a1ef9a2e3a1e5dcc3208d833e6bf91dfe144d44b",
+      "bytes": 866,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/metadata-tests.json",
+      "workspaceSource": "work/nss60/metadata-tests.json",
+      "sha256": "2e14d61d3e2825fc4d0ec8da9977bb1c5124acdd51eab1725ed3f20365d06fab",
+      "bytes": 297,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/prepare-hint-contract.mjs",
+      "workspaceSource": "work/nss60/prepare-hint-contract.mjs",
+      "sha256": "6d6548c48d9ed901926e97527d3a31704b4ba938bdb42721b8d79c40529dc0c4",
+      "bytes": 1151,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/qualify-entry.mjs",
+      "workspaceSource": "work/nss60/qualify-entry.mjs",
+      "sha256": "ebf3ab7702004761827769814ca856eb98d769644f97928f62ae3a85c6172bda",
+      "bytes": 2151,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/real-session.mjs",
+      "workspaceSource": "work/nss60/real-session.mjs",
+      "sha256": "502c7f4f991164e6cfeabe98e63f957f0085997ffe18af99497de020bc2c5b7c",
+      "bytes": 11293,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/session-binding.mjs",
+      "workspaceSource": "work/nss60/session-binding.mjs",
+      "sha256": "0cb370aebd233e8cbb397ebc04791de1bee65a916be1fa9338da41a806d2b0fc",
+      "bytes": 837,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/test-metadata-hint.mjs",
+      "workspaceSource": "work/nss60/test-metadata-hint.mjs",
+      "sha256": "e14e9f0063c32b7495aa5cc4ec87a18e53ea377c4bd9534a0b97808e34f06a87",
+      "bytes": 2213,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss60/wait-publication-metadata.mjs",
+      "workspaceSource": "work/nss60/wait-publication-metadata.mjs",
+      "sha256": "8ac8d391460b781a48e17eecb9dee584ec53ef38b7d8561f3c5657173a9afd45",
+      "bytes": 4605,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/cleanup-audit.mjs",
+      "workspaceSource": "work/nss61/cleanup-audit.mjs",
+      "sha256": "243387dba1a6926e17197ed6e394c15fd2651184fad8e9046bbc5ef6d3ac1449",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/clock-anchor.mjs",
+      "workspaceSource": "work/nss61/clock-anchor.mjs",
+      "sha256": "9f99620ec3c9c3315d3933bd3782901b91b6d6d837a5566a36b10c7c0d4da829",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss61/current-audit-diagnostic.mjs",
+      "sha256": "9cc44e7ddb8878448c05564cccad81be2d1212cdbde97a400a4318360f9c33ca",
+      "bytes": 4404,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/entry-qualified.json",
+      "workspaceSource": "work/nss61/entry-qualified.json",
+      "sha256": "da173f9d0e61e32d8dd8db13afa7666b696ebaf7a81519a20472123ee664103c",
+      "bytes": 1519,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/hint-contract-tests.json",
+      "workspaceSource": "work/nss61/hint-contract-tests.json",
+      "sha256": "60905a7677512e206e8bcbb8cb9228eacfef6020fb26bd719757d78096b1148d",
+      "bytes": 366,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/prepare-process-race.mjs",
+      "workspaceSource": "work/nss61/prepare-process-race.mjs",
+      "sha256": "890bb909209794a3e7300a66c52d8655cc110fae23d10357f6cb06c47f5b36a6",
+      "bytes": 2697,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/publication-hint.mjs",
+      "workspaceSource": "work/nss61/publication-hint.mjs",
+      "sha256": "64aec1f8aa3716ac1f411e83f1733c1ee3c0f0ab91c91f5099eb9807fabafd62",
+      "bytes": 969,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/qualify-entry.mjs",
+      "workspaceSource": "work/nss61/qualify-entry.mjs",
+      "sha256": "2572c987f6e6b6a0cd358b2d44dfc58110a181c49e51c32a290d0d09f1b6435b",
+      "bytes": 2340,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/real-session.mjs",
+      "workspaceSource": "work/nss61/real-session.mjs",
+      "sha256": "56c914f0eeae6f3d38e6ef4394e6634f070e45c7ccdbf2d1c6e7f0ce9e29f70e",
+      "bytes": 11293,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/session-binding.mjs",
+      "workspaceSource": "work/nss61/session-binding.mjs",
+      "sha256": "73b29ed5fc345fb6cac6172d6966f911a8d9efead2daff3cd0a48393b6ad5710",
+      "bytes": 817,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/test-hint-contract.mjs",
+      "workspaceSource": "work/nss61/test-hint-contract.mjs",
+      "sha256": "b586a45ccc8c95f0fe43133a3c2ef686c934149298138f81359c6b2d02e5a881",
+      "bytes": 1646,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss61/wait-publication-metadata.mjs",
+      "workspaceSource": "work/nss61/wait-publication-metadata.mjs",
+      "sha256": "a34c7dbbce1456c2ce6d51d4e51f70fc1216f8299ec63005f98c6f039cb45126",
+      "bytes": 4663,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/cleanup-audit.mjs",
+      "workspaceSource": "work/nss62/cleanup-audit.mjs",
+      "sha256": "3a31fe11dfd2e17b39a64447981a4339332402177a4fe0768ca0a7a4d2c9e663",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/clock-anchor.mjs",
+      "workspaceSource": "work/nss62/clock-anchor.mjs",
+      "sha256": "4e672f5921d67e822bc71db25e7f8bcbaa8630042f42f20795ef33fc506fa482",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/core-guard-phase.lua",
+      "workspaceSource": "work/nss62/core-guard-phase.lua",
+      "sha256": "5aa0cbf30ff3c87622d7cf168a99a67733685378cb7c0710c0c6cfad36825491",
+      "bytes": 6866,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss62/current-audit-diagnostic.mjs",
+      "sha256": "95cafdd92e9e7b704e3933c0f597acd68b133524d810b7714e66fff88b76188a",
+      "bytes": 4404,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/entry-qualified.json",
+      "workspaceSource": "work/nss62/entry-qualified.json",
+      "sha256": "8610f30f1948845adb8870dcee74db4d401c2f4fbcd6b0fa6b4ebd7c6c7fecb4",
+      "bytes": 1776,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/module-stage.mjs",
+      "workspaceSource": "work/nss62/module-stage.mjs",
+      "sha256": "37ec024fb1fa9dfbede91c72e7219020326fab780ecf31c64743969fb666e6dd",
+      "bytes": 16031,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/phase-qualified.json",
+      "workspaceSource": "work/nss62/phase-qualified.json",
+      "sha256": "7b7bf9ab7ba8fb5d7aefcb6189210fe39c4de2e32a3ee7659cf0e49b184c7955",
+      "bytes": 595,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/prepare-dependency-copy.mjs",
+      "workspaceSource": "work/nss62/prepare-dependency-copy.mjs",
+      "sha256": "78ccb4fc27129c85dcb854052b1cf59f1b74ce6168f1530515802c389b60477b",
+      "bytes": 732,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/process-race-fixtures.lua",
+      "workspaceSource": "work/nss62/process-race-fixtures.lua",
+      "sha256": "493192c45e03d319fd2e68fd6c86612f2f665793f548ad51dc539ee45f2c913a",
+      "bytes": 2701,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/qualify-entry.mjs",
+      "workspaceSource": "work/nss62/qualify-entry.mjs",
+      "sha256": "75ff779ca7bf0cac34212058890101811a22fcc0656ac2eeea8f5b3eca95fae7",
+      "bytes": 3042,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/real-session.mjs",
+      "workspaceSource": "work/nss62/real-session.mjs",
+      "sha256": "f311b270974ca5a549899b6bbc1acd02ae657ea0f7ea523afed39787517a2b7a",
+      "bytes": 11286,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/session-binding.mjs",
+      "workspaceSource": "work/nss62/session-binding.mjs",
+      "sha256": "3798b89836db540e6d8d4a2c77e6bf47d36c52f9bcd783a3fff25e9e05e6c1d7",
+      "bytes": 842,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/test-process-race.mjs",
+      "workspaceSource": "work/nss62/test-process-race.mjs",
+      "sha256": "1dcf926556e7f5c1ddd6b18aee430f39cda4e71e31c7e7339ff3226d47037d73",
+      "bytes": 2368,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss62/wait-publication-metadata.mjs",
+      "workspaceSource": "work/nss62/wait-publication-metadata.mjs",
+      "sha256": "208e9ba53a764893cd39270b364449434439234728f43062376166f10e316f19",
+      "bytes": 4670,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/analyze-partial.mjs",
+      "workspaceSource": "work/nss63/analyze-partial.mjs",
+      "sha256": "7e6ff53fd885ac3f1a5c915737611977e498a4088bfe6e9c2fb3aec6aa372487",
+      "bytes": 4560,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/cleanup-audit.mjs",
+      "workspaceSource": "work/nss63/cleanup-audit.mjs",
+      "sha256": "e2a1386f2aca1c1d361bad9bdbf78bc87ed28bcac05cdd941dcec6be073a6c7d",
+      "bytes": 2309,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/clock-anchor.mjs",
+      "workspaceSource": "work/nss63/clock-anchor.mjs",
+      "sha256": "a08d9092f7ec2bab4b526e103c5f297d0b2dac433719eedfdd2bc0bab4394514",
+      "bytes": 1284,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/core-guard-phase.lua",
+      "workspaceSource": "work/nss63/core-guard-phase.lua",
+      "sha256": "5aa0cbf30ff3c87622d7cf168a99a67733685378cb7c0710c0c6cfad36825491",
+      "bytes": 6866,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss63/current-audit-diagnostic.mjs",
+      "sha256": "906339983c305a62e2fc21f4cac709fef051571213e9ef845089f45fb21fab2a",
+      "bytes": 4404,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/entry-qualified.json",
+      "workspaceSource": "work/nss63/entry-qualified.json",
+      "sha256": "2672e0a8304a6fdf58d16d4a6fa1ff602f970a8f34ffb74a85303fbf64f3e282",
+      "bytes": 1648,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/module-stage.mjs",
+      "workspaceSource": "work/nss63/module-stage.mjs",
+      "sha256": "b8ee272096df10cf1eff14b7fb9850b85fe5a0d53d7b61912c05013db1f66fc1",
+      "bytes": 16031,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/payload.mjs",
+      "workspaceSource": "work/nss63/payload.mjs",
+      "sha256": "ff7bd67aa584c427b90bd2e2e245eced74639b525e9404ed2541c855073de3a3",
+      "bytes": 1792,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/phase-qualified.json",
+      "workspaceSource": "work/nss63/phase-qualified.json",
+      "sha256": "7b7bf9ab7ba8fb5d7aefcb6189210fe39c4de2e32a3ee7659cf0e49b184c7955",
+      "bytes": 595,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/qualify-entry.mjs",
+      "workspaceSource": "work/nss63/qualify-entry.mjs",
+      "sha256": "0f418719415ac8932f643b0b34518e6e7fe49298e30e61ada8941ed896800cf0",
+      "bytes": 1920,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/real-session.mjs",
+      "workspaceSource": "work/nss63/real-session.mjs",
+      "sha256": "c99edb1fbd03e4c075cf43fdda6942234a37d3a723af679b51817d4008463e54",
+      "bytes": 11286,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/session-binding.mjs",
+      "workspaceSource": "work/nss63/session-binding.mjs",
+      "sha256": "f5e1d8a29e7e3040080b08a48867b9aa3f30895cb11c12c80019bc6c2cacfb9e",
+      "bytes": 827,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/wait-publication-metadata.mjs",
+      "workspaceSource": "work/nss63/wait-publication-metadata.mjs",
+      "sha256": "747d8219a21c20a66968fa87ddbd2219e6da323a996b1c3d2adc8dd912186d9b",
+      "bytes": 4670,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/build-report-data.py",
+      "workspaceSource": "work/nss63/build-report-data.py",
+      "sha256": "72a1985fd504b41e605ecc211ed0749927f8f415fad7376a15cefa0b9065bbd3",
+      "bytes": 13330,
+      "role": "historical-experimental-candidate-tests-and-analysis-not-resident"
+    },
+    {
+      "path": "code/work/nss63/correct-evidence-wan.py",
+      "workspaceSource": "work/nss63/correct-evidence-wan.py",
+      "sha256": "d5ab1f6c2dd0b69a0e397e3a99bc1e0a7cb33955f1d295bb58e393f678f63544",
+      "bytes": 2114,
+      "role": "offline-evidence-projection-correction-not-runtime"
     }
   ],
-  "lastAppendExport": "NSS53",
+  "lastAppendExport": "NSS63",
   "privateDataExcluded": true
 }

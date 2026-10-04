@@ -382,7 +382,7 @@ assert all(current['audit'][k]for k in ['passed','protectedConfigurationUnchange
 assert not any(x52['conclusions'][k]for k in ['nssBClientHudCapturedThisTurn','softwareVersusNssCpuBenefitProvedThisTurn','realHumanExperienceProved','highLoadPhaseFixValidated','secondWanExpansionAllowed','sharedBudgetAllowed','upstreamSubmitted'])
 assert x52['reportVerification']['sourceValidated'] and not x52['reportVerification']['browserRendered']
 x53=json.loads((root/'evidence/nss53-mainline.json').read_text())
-current53=json.loads((root/'evidence/current-runtime.json').read_text())
+current53=json.loads((root/'evidence/nss53-runtime.json').read_text())
 assert current53['round']=='NSS53' and current53['classifierConfigSha256']==x53['classifierConfigSha256']==x49['classifierConfigSha256']
 assert current53['historical52RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss52-runtime.json').read_bytes()).hexdigest()
 assert current53['deploymentReference']=='work/nss47/deployment-latest.json'
@@ -421,4 +421,60 @@ assert not any(x53['conclusions'][k] for k in ['newNssFastPathTrialExecuted','so
 assert x53['reportVerification']['sourceValidated'] and not x53['reportVerification']['browserRendered']
 frozen53=json.loads((root/'evidence/nss53-source-proof.json').read_text());assert frozen53['sources']==len(frozen53['sourceHashes'])==24 and frozen53['notAdditionalProductionAdmission']
 for source,expected in frozen53['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+x63=json.loads((root/'evidence/nss63-mainline.json').read_text())
+runtime63=json.loads((root/'evidence/current-runtime.json').read_text())
+assert runtime63['round']=='NSS63' and runtime63['deploymentReference']=='work/nss47/deployment-latest.json'
+assert runtime63['historical53RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss53-runtime.json').read_bytes()).hexdigest()
+assert runtime63['classifierConfigSha256']==x63['classifierConfigSha256']==x53['classifierConfigSha256']
+assert not x63['permanentClassifierChanged'] and x63['routerConfigurationWrites'] and x63['ecmOpenedThisTurn']
+assert x63['budgetMbps']==20 and x63['gateFlows']=={'tcp':1,'udp':1} and x63['ownerSeconds']==45 and x63['allOriginalDeadlinesUnchanged']
+cases=x63['actualCases'];assert len(cases)==12 and sum(a['productionTemporaryStageOccurred'] for a in cases)==5
+assert sum(a['ecmPermitOpened'] for a in cases)==1 and not any(a['controllerPassed'] or a['completeABA'] for a in cases)
+assert [a['completedPhases'] for a in cases]==[[],[],[],['A','B'],[],['A'],[],[],[],[],['A'],[]]
+for a in cases:
+    if a['productionTemporaryStageOccurred']:
+        assert a['wan'] in (1,2) and ((a['ctMark']>>16)&255)==a['wan'] and a['checkpointDownloadedHashAndGzipVerified'] and a['independent45SecondRollbackVerifiedBeforeWrite']
+        assert a['independentOfControlConnection'] and a['scopedRollbackPassed'] and a['stageCleanupPassed'] and all(a['rollbackFlags'].values())
+        assert not a['natural45SecondExpiryProvedThisCase']
+        assert a['immediateAfterOriginalFullAuditPassed'] or a['laterOriginalFullRecoveryAuditPassed']
+    else:assert a['rejectedBeforeCheckpointOrStaging'] and not a['ecmPermitOpened']
+assert [a['wan'] for a in cases if a['productionTemporaryStageOccurred']]==[1,2,2,2,2]
+assert len(x63['offlineEvidenceCorrection']['changes'])==4 and x63['offlineEvidenceCorrection']['actualRouterSelectionAndAdmissionUnaffected']
+assert cases[9]['immediateAfterOriginalFullAuditPassed'] is False and cases[9]['configurationComparisonPassed'] is None
+assert cases[9]['laterOriginalFullRecoveryAuditPassed']
+entry63=json.loads((root/'evidence/nss63-entry-binding.json').read_text());assert entry63['passed'] and entry63['boundInputs']==241
+assert entry63['moduleResolutionChecked'] and entry63['originalFullAuditAndExactQueryCheckRetained'] and entry63['nss62NativeRamChecksReused']==15
+assert entry63['notInstalled'] and not entry63['fullHighLoadAbaQualified']
+for source,expected in entry63['sourceManifest'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+for n in range(54,64):
+    proof=json.loads((root/'evidence'/f'nss{n}-source-proof.json').read_text())
+    assert proof['sources']==len(proof['sourceHashes']) and proof['privateConnectionAndCapturesExcluded'] and proof['notAdditionalProductionAdmission']
+    for source,expected in proof['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+assert (root/'code/work/nss63/core-guard-phase.lua').read_bytes()==(root/'code/work/nss62/core-guard-phase.lua').read_bytes()
+proof63v2=json.loads((root/'evidence/nss63-source-proof-v2.json').read_text())
+assert proof63v2['sources']==1 and proof63v2['notAdditionalProductionAdmission']
+for source,expected in proof63v2['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
+assert (root/'code/work/nss63/payload.mjs').read_bytes()==(root/'code/work/nss59/payload.mjs').read_bytes()
+partial=x63['partialForwarding'];assert partial['analysisPassed'] and not partial['controllerPassed'] and partial['missingA2']
+assert partial['actualAcceleratedStateValidated'] and partial['oneWan']==1 and partial['ctMark']==65536 and partial['connectionCount']==2
+assert [p['acceleratedCount'] for p in partial['phases']]==[0,2] and all(p['samples']==11 for p in partial['phases'])
+assert partial['twoPhaseOnlyThroughputSpread']['total']>0.1 and partial['twoPhaseOnlyThroughputSpread']['selectedWan']>0.1
+assert partial['leafDeltasAroundFastPath']['counters']['8f06:']=={'bytes':503139,'packets':549,'drops':0}
+assert partial['renewals']==1 and all(partial['rollback'].values()) and not partial['cpuBenefitConclusive']
+for slot in ['tcp','udp']:
+    assert partial['runtimeProof'][slot]['accelerated'] and partial['runtimeProof'][slot]['natCorrect'] and partial['runtimeProof'][slot]['wanAffinity']==1
+client=x63['clientHud'];assert client['actualClientHudCaptured'] and len(client['frames'])==10 and client['missingA2'] and not client['humanGameplay']
+assert client['clockUncertaintyMs']==100 and client['rollingOrPeakDisplayNotIndependentInstantaneousSamples'] and not client['gameBenefitAccepted']
+assert all(f['fullContextVisuallyVerified'] for f in client['frames']) and sum(f['phase']=='B' for f in client['frames'])==5
+assert x63['clientEndState']['steam']['currentNetworkBps']==0 and x63['clientEndState']['steam']['immediateQueueItems']==0
+assert x63['clientEndState']['steam']['previouslyPausedQueueAutomaticallyAdvanced'] and len(x63['clientEndState']['steam']['downloadedTestTitlesThisTurn'])==4
+assert not x63['clientEndState']['steam']['purchased'] and not x63['clientEndState']['steam']['newTitlesLaunched']
+assert x63['clientEndState']['cs2']['restored'] and x63['clientEndState']['cs2']['serverExited']
+assert x63['finalState']['naturalWorkerRestartObserved'] and not x63['finalState']['sameCacheRetainedWorkerThroughout']
+assert not x63['finalState']['manualWorkerRestartOrCrashInjected'] and not x63['finalState']['workerRestartCauseProved']
+assert runtime63['naturalWorkerRestartObservedThisTurn'] and not runtime63['classifierWorkerContinuousAfterCacheRetain']
+assert all(runtime63['audit'][k] for k in ['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','ecmClosedAndZero']) and runtime63['finalClosure']['passed']
+assert runtime63['entryFullHighLoadForwardingQualified'] is False and not runtime63['nssPermanentlyEnabled']
+assert not any(x63['conclusions'][k] for k in ['softwareVersusNssCpuBenefitProved','gameBenefitProved','realHumanExperienceProved','completeHighLoadLifecycleQualified','completeHighLoadLoopPassed','secondWanExpansionAllowed','sharedBudgetAllowed','upstreamSubmitted'])
+assert x63['reportVerification']['sourceValidated'] and not x63['reportVerification']['browserRendered']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

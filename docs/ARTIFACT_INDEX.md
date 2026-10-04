@@ -1,6 +1,15 @@
 # 证据索引
 
-## 当前主线：NSS53
+## 当前主线：NSS63
+
+- [本轮汇总](../evidence/nss63-mainline.json)、[当前运行](../evidence/current-runtime.json)：常驻47、最终ECM关闭全零；5暂存全部撤销。
+- [12真实案例](../evidence/nss63-attempts.json)：5 checkpoint/独立45秒恢复，只有56打开ECM；62本地导入失败另记。
+- [NSS56实际A+B](../evidence/nss63-partial56.json)、[实际HUD](../evidence/nss63-client56.json)：ECM0→2→0，WAN1/mark/NAT和leaf正确；A2缺失、304/262Mbps不匹配、无真人体验，不称收益。
+- [241项最新绑定](../evidence/nss63-entry-binding.json)、[最新源码](../evidence/nss63-source-proof.json)、[离线证据修正](../evidence/nss63-source-proof-v2.json)；全实际输入/配置/截图留私有，源码冻结不授予额外权限。
+- [终态审核](../evidence/nss63-final-audit.json)、[终态清理](../evidence/nss63-final-cleanup.json)、[下载完成状态](../evidence/nss63-steam-ended.json)。本地报告`outputs/nss63-mainline-report.html`。
+- [NSS53原runtime](../evidence/nss53-runtime.json)原字节保留；[失败定位](ISSUE_NSS63_MAINLINE.md)明确已修和仍未修的边界，没有上游提交。
+
+## NSS53 历史
 
 - [当前汇总](../evidence/nss53-mainline.json)、[运行核验](../evidence/current-runtime.json)：常驻NSS47未变、ECM关闭全零，本轮仅只读。
 - [真实下载发现时序](../evidence/nss53-phase-load.json)：两组三次6/6通过，294–366Mbps，原200ms条件保持；CPU/softirq/squeeze含profiler成本，不是NSS A/B。

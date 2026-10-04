@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T11:38:02.903Z",
+  "baseBoundInputs": 159,
+  "boundInputs": 169,
+  "sourceManifest": {
+    "work/nss56/real-session.mjs": "6cca35ed45e40e727272d6c6a452c6838c8a50a2258e452f98dbb65d808bfc3f",
+    "work/nss56/current-audit-diagnostic.mjs": "e56f00411268b0f06fb447f2e9bd126994680cfc71ccb80cf8057556802b9787",
+    "work/nss56/wait-ready-joined.mjs": "4972d9c3632286e8f8dbd40e5ffd6d04f31da14417b2479c5933bd6b3a48180f",
+    "work/nss56/baseline-publication-join.lua": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+    "work/nss56/test-publication-join.mjs": "64a0a8617c20ddb9b1be657214567ea8e8ac5bf67c6bac857939cf775588a116",
+    "work/nss56/qualify-entry.mjs": "e08ebd60ac2fb0c63047402112ec675e0ded4395097c5bf94704e59a8ab20599",
+    "work/nss56/session-binding.mjs": "cc920df4372475fa5ab6748006dbbfa13ce90ff80d473dc3fa7c4bd400980fed",
+    "work/nss56/join-tests.json": "bd2d2f394af8f20567484c6b05761ff0d422be6c122f47e2ad6eaca417d51bbc",
+    "work/nss56/module-stage.mjs": "23fcbe9f934eea6573be7fd979002b5a0355f8c22ee30acae6db71c9e7b16893",
+    "work/nss56/stage-adapter-diff.json": "de087ab5b648fa13bc36a2d0b26c9f71140bab81130457cdeed2ab208b5dbd60"
+  },
+  "originalLockedAuditUnchanged": true,
+  "controllerDecisionAndRecoveryBarriersUnchanged": true,
+  "nssPayloadUnchanged": true,
+  "oversizeClassifierSyntaxUsesExactGuardedBundle": true,
+  "readonlySchedulingOnly": false,
+  "schedulingAndSyntaxTransportOnly": true,
+  "originalSourceAndOwnerDeadlinesUnchanged": true,
+  "pureNativeLuaChecks": 14,
+  "newWaitCeilingSeconds": 4,
+  "originalFullAuditSourceSeconds": 6,
+  "originalFullAuditPublicationSeconds": 9,
+  "notInstalled": true,
+  "fullHighLoadAbaQualified": false
+}

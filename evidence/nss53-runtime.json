@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-10-04T10:38:22.992Z",
+  "round": "NSS53",
+  "deploymentReference": "work/nss47/deployment-latest.json",
+  "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+  "audit": {
+    "passed": true,
+    "auditPurpose": "recovery",
+    "prelearningSchedulingRequested": false,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 0,
+    "queryAge": 3.090000000083819,
+    "sequence": 4840,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "servicePidChangesAcknowledgedBeforeExperiment": [
+      {
+        "service": "sing-box-athena",
+        "instance": "core",
+        "pidChangedBeforeExperiment": true
+      },
+      {
+        "service": "sing-box-athena",
+        "instance": "guard",
+        "pidChangedBeforeExperiment": true
+      }
+    ],
+    "serviceChangesDuringExperimentAllowed": false
+  },
+  "finalClosure": {
+    "passed": true,
+    "observedAt": "2026-10-04T10:38:22.992Z",
+    "readonly": true,
+    "deploymentReference": "work/nss47/deployment-latest.json",
+    "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+    "noActiveRootTransaction": true,
+    "noNssStagingDirectory": true,
+    "noExperimentStateNodeDirectory": true,
+    "noExperimentalGateOrQdiscModule": true,
+    "uptime": 1927848.65
+  },
+  "classifierWorkerContinuousAfterCacheRetain": true,
+  "historicalNss49FunctionABACompleted": true,
+  "historicalNss46SoftwareExpiryAndCrashRecoveryPassed": true,
+  "classifierReliabilityChangesRetained": 3,
+  "pureIpv4ParserCacheRetained": true,
+  "experimentalConfigurationWritesThisTurn": false,
+  "nssOpenedThisTurn": false,
+  "realForwardingABACompletedThisTurn": false,
+  "completePerformanceAndGameAcceptance": false,
+  "nssPermanentlyEnabled": false,
+  "qualifiedExperimentalEntry": "work/nss53/real-session.mjs",
+  "qualifiedExperimentalEntryBoundInputs": 159,
+  "entryPreparationQualified": true,
+  "entryNotInstalledAsResidentClassifier": true,
+  "entryFullHighLoadForwardingQualified": false,
+  "phaseDiscoveryActualLoadAttempts": 6,
+  "phaseDiscoveryActualLoadPassed": 6,
+  "steamDownloadPaused": true,
+  "noCs2GuiActionsThisTurn": true,
+  "actualGameCandidatesLastObservation": 0,
+  "upstreamSubmitted": false,
+  "requiresLiveRevalidation": true,
+  "historical52RuntimePreservedSha256": "879d5efb4951c9fd4059fbfc98d68241368281d1b1d03f9c73bb9fbd0c445b34"
+}

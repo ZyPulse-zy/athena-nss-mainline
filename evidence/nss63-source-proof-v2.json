@@ -1,0 +1,9 @@
+{
+  "sources": 1,
+  "sourceHashes": {
+    "work/nss63/correct-evidence-wan.py": "d5ab1f6c2dd0b69a0e397e3a99bc1e0a7cb33955f1d295bb58e393f678f63544"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "role": "offline-evidence-projection-correction-not-runtime"
+}

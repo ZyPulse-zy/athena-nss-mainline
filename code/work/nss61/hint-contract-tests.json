@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": 14,
+  "actualSchedulingToFullAuditParityAssertions": 4,
+  "negativeCases": 10,
+  "originalFullAuditStillMandatory": true,
+  "nssPayloadUnchanged": true,
+  "routerWrites": false,
+  "recordSource": "real-matched-aba-20261004124808-c5c15d65-before",
+  "sourceSha256": "64aec1f8aa3716ac1f411e83f1733c1ee3c0f0ab91c91f5099eb9807fabafd62"
+}

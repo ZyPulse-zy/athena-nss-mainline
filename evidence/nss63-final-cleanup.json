@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T13:26:13.060Z",
+  "readonly": true,
+  "deploymentReference": "work/nss47/deployment-latest.json",
+  "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+  "noActiveRootTransaction": true,
+  "noNssStagingDirectory": true,
+  "noExperimentStateNodeDirectory": true,
+  "noExperimentalGateOrQdiscModule": true,
+  "uptime": 1937918.77
+}

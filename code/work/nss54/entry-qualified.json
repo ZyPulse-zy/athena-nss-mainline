@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T11:20:02.833Z",
+  "baseBoundInputs": 159,
+  "boundInputs": 167,
+  "sourceManifest": {
+    "work/nss54/real-session.mjs": "e1a0aaee9185ae72f61a6ba823853a57c2f281ecdfbab64700f96c4bcc4da9b8",
+    "work/nss54/current-audit-diagnostic.mjs": "99ef0e43ef4f2e025131cace3aaa4091187b5e5a6f9da1ad92afe5be5b35483e",
+    "work/nss54/wait-ready-joined.mjs": "79e44bcbbc8daa9b13a62e0d3d04821bd45955c438b4fcb96181badef794163f",
+    "work/nss54/baseline-publication-join.lua": "487be176720483953a33dc59149d19472a19b2e89271d6d42dce6f445b66ae69",
+    "work/nss54/test-publication-join.mjs": "4f3ee2b5f361c6be5df953bc7673016ecde381cdcd1760d01acd575ff1f3fce6",
+    "work/nss54/qualify-entry.mjs": "7feb40a6921e6eeb1a96a60a43f373934bb2e7d0330d736427de6e3564b306f9",
+    "work/nss54/session-binding.mjs": "09242f7e73bc1b9f96ef4177228c3d9e3cd07817c05c896fe3ac333ff8cb2f8e",
+    "work/nss54/join-tests.json": "6b91c0f08df2fc156bae45fe9f0440ef50a2d9906048f5d65ac1579204c67bc5"
+  },
+  "originalLockedAuditUnchanged": true,
+  "controllerDecisionAndRecoveryBarriersUnchanged": true,
+  "nssPayloadUnchanged": true,
+  "readonlySchedulingOnly": true,
+  "originalSourceAndOwnerDeadlinesUnchanged": true,
+  "pureNativeLuaChecks": 13,
+  "newWaitCeilingSeconds": 4,
+  "originalFullAuditSourceSeconds": 6,
+  "originalFullAuditPublicationSeconds": 9,
+  "notInstalled": true,
+  "fullHighLoadAbaQualified": false
+}

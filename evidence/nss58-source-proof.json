@@ -1,0 +1,22 @@
+{
+  "sources": 12,
+  "sourceHashes": {
+    "work/nss58/cleanup-audit.mjs": "87fb412e521bd954c38cc62f7020b6118cb6f528ee9b5663eb9b1a211c42f700",
+    "work/nss58/clock-anchor.mjs": "4c862f6511c2a76ab05f0e4b0c9f63f8b3b206c0b44512d9a851815a7d949c28",
+    "work/nss58/current-audit-diagnostic.mjs": "034b226016aed41557d98f0d0cfadda49343282b408abd97db8ccd904838a55f",
+    "work/nss58/entry-qualified.json": "e4d4340578c92561134786e2c2346f122e4427a0fc0cd90af4a1f3b84307f3dc",
+    "work/nss58/notice-tests.json": "51ecd1897ba2fd1b33001394d27960e2882920d59f8aa5c9037efda6c6e15146",
+    "work/nss58/prepare-after-a-witness.mjs": "49f05ed345a548348d807c8408515a01741ae3af325a27ebcae3190bd7fb9c56",
+    "work/nss58/publication-notice.lua": "546ee4b5c31ac56a476d7e9da117c054e40713fa80e82982d3c814de58ff0a19",
+    "work/nss58/qualify-entry.mjs": "6bfc1d76f839fe475eecfb23cfa9977b6cc8ab431b8e25dd207c3b0b95f9ec8b",
+    "work/nss58/real-session.mjs": "2d7f7d332fb0e75e0b466b56c3b89436a0f9d664b63a83ebaf83c35863e94ded",
+    "work/nss58/session-binding.mjs": "b6c0cbcd2924f251ce7423e7639bb18629b52a926232c259966ef81e59a6ebeb",
+    "work/nss58/test-publication-notice.mjs": "6dbc3045d2a8be9740f3feb211a7a00b7b511de3f154800f616e179a93721202",
+    "work/nss58/wait-publication-notice.mjs": "a41c58b6805bf95bc5ddb3dd8d02a37a1e5dbe9da1a36e2c57030d481af22484"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "role": "historical-experimental-candidate-tests-and-analysis-not-resident",
+  "actualCompletePrivateInputFreezePreserved": true,
+  "nss62OriginalLocalDependencyFailurePreserved": false
+}

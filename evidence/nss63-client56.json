@@ -1,0 +1,223 @@
+{
+  "actualClientHudCaptured": true,
+  "humanGameplay": false,
+  "assistantOnlineIdle": true,
+  "frames": [
+    {
+      "phase": "A",
+      "frame": "064.jpg",
+      "sourceSha256": "f9d7b516a526f8f2a9c7eaa3c8c33882b923a73ec750dce90a8ef01003e8ef14",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931531.10825,
+        "latest": 1931531.44425
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0.8,
+        "lossPercent": 0.5,
+        "jitterMs": 3
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 1
+      }
+    },
+    {
+      "phase": "A",
+      "frame": "065.jpg",
+      "sourceSha256": "6dcb4ccd891ef6c140e985e51dd8f2794a46b037239b4cc3e8c57f9fed2f2ca1",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931531.60825,
+        "latest": 1931531.93725
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0.8,
+        "lossPercent": 0.3,
+        "jitterMs": 2
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 1
+      }
+    },
+    {
+      "phase": "A",
+      "frame": "066.jpg",
+      "sourceSha256": "79f3c77c57769dc48d0203b88badea4c878cf01b685fdf5ce8b148b7b3782766",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931532.10125,
+        "latest": 1931532.42625
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0.8,
+        "lossPercent": 0.2,
+        "jitterMs": 2
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 1
+      }
+    },
+    {
+      "phase": "A",
+      "frame": "067.jpg",
+      "sourceSha256": "dd1ef7bfbe41ec0abcb353e9576c7bd5390cc8e5d9c1480a0d58ba736800a1b9",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931532.58225,
+        "latest": 1931532.92225
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0.8,
+        "lossPercent": 0.1,
+        "jitterMs": 2
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 1
+      }
+    },
+    {
+      "phase": "A",
+      "frame": "068.jpg",
+      "sourceSha256": "21cbc2930b0fb66c27a95ce66dac7e30a1d4edd038ebf55f701caa81aff139bf",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931533.08825,
+        "latest": 1931533.39225
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0.8,
+        "lossPercent": 0.1,
+        "jitterMs": 2
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 1
+      }
+    },
+    {
+      "phase": "B",
+      "frame": "090.jpg",
+      "sourceSha256": "9d45e10f6198109971d1eba063fc9a88b9551d1207838c51df009cf353d6080c",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931543.76325,
+        "latest": 1931544.10125
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 1
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 0
+      }
+    },
+    {
+      "phase": "B",
+      "frame": "091.jpg",
+      "sourceSha256": "7eb54b4ab3a05c8e70998683a982e886f6f2f3d18b236c861521fd9f1733c2db",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931544.25725,
+        "latest": 1931544.57625
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 2
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 0
+      }
+    },
+    {
+      "phase": "B",
+      "frame": "092.jpg",
+      "sourceSha256": "2fd73083cfb142be572bea2a79f4faf13083fb3384d9e923c2f71b06ba8f282c",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931544.73625,
+        "latest": 1931545.06225
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 2
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 0
+      }
+    },
+    {
+      "phase": "B",
+      "frame": "093.jpg",
+      "sourceSha256": "098072ce87667d0af0304a4a0ab2774bb7f9a01081cbee54ade8a91f0c725e86",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931545.21725,
+        "latest": 1931545.55925
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 2
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 0
+      }
+    },
+    {
+      "phase": "B",
+      "frame": "094.jpg",
+      "sourceSha256": "b2396de958dbe22781271cdb7793ca74d33d3187d46b49f701780ebddf8b9c25",
+      "fullContextVisuallyVerified": true,
+      "uptimeInterval": {
+        "earliest": 1931545.71525,
+        "latest": 1931546.08425
+      },
+      "pingMs": 16,
+      "down": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 1
+      },
+      "up": {
+        "missPercent": 0,
+        "lossPercent": 0,
+        "jitterMs": 0
+      }
+    }
+  ],
+  "clockUncertaintyMs": 100,
+  "allCaptureIntervalsAtLeastOneSecondInsidePhases": true,
+  "originalScreenshotsPrivate": true,
+  "rollingOrPeakDisplayNotIndependentInstantaneousSamples": true,
+  "missingA2": true,
+  "gameBenefitAccepted": false
+}

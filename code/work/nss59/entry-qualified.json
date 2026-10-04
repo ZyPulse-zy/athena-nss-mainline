@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-04T12:25:49.249Z",
+  "baseBoundInputs": 188,
+  "boundInputs": 200,
+  "sourceManifest": {
+    "work/nss59/real-session.mjs": "2fa2d32de296b1374e1488cc5cd533fa1fa37fc3ede4d8dc768ad7fdd1f696b5",
+    "work/nss59/session-binding.mjs": "fb5f86837ee63136fcf6535441ab74cb324872a91bbc71a074e8461e172947dc",
+    "work/nss59/current-audit-diagnostic.mjs": "1d9c8c1355b21d39dba953de7865ecfac68355a0ac2617533cb6405acbebcf64",
+    "work/nss59/wait-publication-notice.mjs": "cb984241e1e200febe4d98c5ebb5108bf6ae5f3defee8e2fd90d80f5b0b9ecbc",
+    "work/nss59/publication-notice.lua": "546ee4b5c31ac56a476d7e9da117c054e40713fa80e82982d3c814de58ff0a19",
+    "work/nss59/notice-tests.json": "51ecd1897ba2fd1b33001394d27960e2882920d59f8aa5c9037efda6c6e15146",
+    "work/nss59/qualify-entry.mjs": "84f8afa1e3e219948ded77776faeb188a604251d293752d91864980a970197af",
+    "work/nss59/fast-path.lua": "b0aabcdb645c34df94e4c7645bed20efc9633d4d840004f18a093a2574badd99",
+    "work/nss59/payload.mjs": "ff7bd67aa584c427b90bd2e2e245eced74639b525e9404ed2541c855073de3a3",
+    "work/nss59/module-stage.mjs": "aa86ce919bbb49b5328ebb0bf8aeacb22bdac348e8cd5933b83abee892ac81ff",
+    "work/nss59/after-a-diff.json": "f5e930e5c013fc131559c24ea497bd89d5cf029738d1e2528975e6abe7f9451f",
+    "work/nss59/counter-tests.json": "eeaf34434ce581a3545adf93c72567dca3e0f5bbd9382bf8db58126cb43e3e56"
+  },
+  "afterAExactReadonlyWitnessOnly": true,
+  "originalStrictGetterUnchanged": true,
+  "initialAndPrelearningGetterUnchanged": true,
+  "originalDeadlinesUnchanged": true,
+  "wrongTagNeverRetried": true,
+  "afterAOneExtraReadMaximum": true,
+  "existingA2OneExtraReadRetained": true,
+  "nativePureLuaCounterChecks": 7,
+  "publicationNoticeProofReusedByteIdenticallyFromNss58": true,
+  "notInstalled": true,
+  "fullHighLoadAbaQualified": false
+}

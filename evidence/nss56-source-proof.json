@@ -1,0 +1,25 @@
+{
+  "sources": 15,
+  "sourceHashes": {
+    "work/nss56/baseline-publication-join.lua": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+    "work/nss56/cleanup-audit.mjs": "44ea220ad1318ebd9398282a0b70bcf6fdc3de6f6f6f0781a603deb08d81a899",
+    "work/nss56/clock-anchor.mjs": "4c8b10cb208ea547f25f93d9019dd09ccbc6d8a2d3807101232872e7e4e16e84",
+    "work/nss56/current-audit-diagnostic.mjs": "e56f00411268b0f06fb447f2e9bd126994680cfc71ccb80cf8057556802b9787",
+    "work/nss56/entry-qualified.json": "6f2e8b990d8248a4d616cfbb7310d964b3ad234f873650d315011e95d0ca83fd",
+    "work/nss56/initial-audit-diagnostic.mjs": "e56f00411268b0f06fb447f2e9bd126994680cfc71ccb80cf8057556802b9787",
+    "work/nss56/join-tests.json": "bd2d2f394af8f20567484c6b05761ff0d422be6c122f47e2ad6eaca417d51bbc",
+    "work/nss56/module-stage.mjs": "23fcbe9f934eea6573be7fd979002b5a0355f8c22ee30acae6db71c9e7b16893",
+    "work/nss56/prepare-counter-revision.mjs": "012b2cc54b8df4a26486ad6f906a1c83c78c317739d5e609dea2ffc1b58e481b",
+    "work/nss56/qualify-entry.mjs": "e08ebd60ac2fb0c63047402112ec675e0ded4395097c5bf94704e59a8ab20599",
+    "work/nss56/real-session.mjs": "6cca35ed45e40e727272d6c6a452c6838c8a50a2258e452f98dbb65d808bfc3f",
+    "work/nss56/session-binding.mjs": "cc920df4372475fa5ab6748006dbbfa13ce90ff80d473dc3fa7c4bd400980fed",
+    "work/nss56/test-counter-witness.mjs": "f78f088b7c9c932725b6312507b96b2690fb9e29a02024f328113aba6f3a2095",
+    "work/nss56/test-publication-join.mjs": "64a0a8617c20ddb9b1be657214567ea8e8ac5bf67c6bac857939cf775588a116",
+    "work/nss56/wait-ready-joined.mjs": "4972d9c3632286e8f8dbd40e5ffd6d04f31da14417b2479c5933bd6b3a48180f"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "role": "historical-experimental-candidate-tests-and-analysis-not-resident",
+  "actualCompletePrivateInputFreezePreserved": true,
+  "nss62OriginalLocalDependencyFailurePreserved": false
+}

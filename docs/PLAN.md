@@ -1,12 +1,12 @@
-# 下一步：用 NSS53 补齐同负载客户端闭环
+# 下一步：解决真实发布延迟，再完成可比 A/B/A2
 
-最新 NSS53，常驻仍 NSS47，实验入口 `work/nss53/real-session.mjs` 已绑定 159 项输入。NSS52 进程发现候选保持同字节，真实 Steam 294–366 Mbps 的两组三次只读发现全部通过，200 ms 要求未变；拒绝诊断已绑定。只证明六个短窗，完整高负载生命周期与新的 NSS A/B 未通过。见 [当前证据](../evidence/nss53-mainline.json) 与 [根因记录](ISSUE_CORE_SLEEP_DISCOVERY.md)。
+最新 NSS63，常驻仍 NSS47，实验入口241项；本轮真实 A+B/客户端 HUD 是功能进展，完整同负载与真人收益未通过。见 [当前状态](STATE.md) 和 [失败定位](ISSUE_NSS63_MAINLINE.md)。下面的旧 NSS49 步骤保留为历史验收边界。
 
-当前只做下面的集中真实窗口，沿用下方身份/回滚/性能验收要求；下方 NSS49 入口、121 项与已结束窗口为历史，不能替代最新引用。
-
-1. 核验当前常驻、服务 epoch、来源绑定和上次清理，使用 NSS53，而不是改旧冻结入口。真实游戏 flow 不存在时默认拒绝；不用让用户长期挂机，也不继续下载整款游戏。新 DOOM（2016）负载已暂停，可在一次集中窗恢复现有部分下载；不用重下 DOOM Eternal。
-2. 自然对局＋下载出现同 WAN TCP/UDP 配对后，先同步客户端 HUD，再立即进入原 checkpoint / 独立 45 秒 owner 流程。保留 20 Mbps / 一 TCP＋一 UDP和所有期限，不停 guard 或改出生界限。实际 ready 若拒绝，保存同一投影的槽位；仅最终拒绝后读取严格同源完整分类，来源不匹配就未知，不能据后续流退出倒推。
-3. 同负载 software→NSS→software 依次验收实际 ECM / leaf、出口/ct mark/NAT/affinity和精确恢复；吞吐可比后才解释 softirq/time_squeeze与 HUD jitter/loss/Miss。助手在线观战与真人操作/体感分开。已有分类器安装、旧99/13项准备不重复；第二WAN/共享预算等继续等待。当前六次发现有一次接纳出生年龄180 ms，余量有限；新的失败先精确诊断，不扩修改碰运气。
+1. 核验本轮最终清理与当前47实例；旧worker5411已自然更换20682，不能沿用旧producer。最新241项入口只通过依赖/RAM资格，实际在checkpoint前因source7.41秒拒绝，不能把15模拟案例当现场转发稳定性。
+2. 在本地保存的真实拒绝帧及源码中拆分 classification→apply/audit→snapshot 发布延迟和原审核消费成本。NSS63完整query→publish3.84秒，消费者检查时source7.41；metadata hint只能调度，不能替代6/9秒完整持锁原审核。先找可缩短的实际工作，勿延长期限或跳过规则/配置检查。准备不需要游戏或新下载。
+3. 单一变量候选在新目录核验，保持原source/epoch、45秒owner、20Mbps、一TCP一UDP、200ms child条件。短子进程部分读取必须整次拒绝/重新发现；guard错误、PID复用不能作为可重试成功。极窄counter witness只容许原已见+1 TCP下载包/+1500B、其它计数完全对齐且unexpected/neighbor为0后多读一次，仍必须通过原strict getter。
+4. 准备完成后仅集中取得真实CS2＋Steam自然负载。沿用原checkpoint/独立45秒守护，记录完整A/B/A2与实际HUD；先检查LAN4、pps、单WAN负载和受控份额，再解释softirq/time_squeeze/游戏体验。助手闲置不能验收真人体验；5秒短段的滚动HUD不能当独立瞬时采样。
+5. 本轮NSS实际加速份额很小且吞吐下降，不把softirq下降称收益，不因此扩流数、预算或多WAN。完整闭环通过后才另立必要的范围变更候选。软件CAKE仍仅基线和fallback；不扩ECN/HTB dump/其它backlog。
 
 ## NSS49 验收步骤与保持的边界
 

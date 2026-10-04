@@ -1,0 +1,24 @@
+{
+  "sources": 14,
+  "sourceHashes": {
+    "work/nss55/baseline-publication-join.lua": "fec58e9046cf572f80d529a9aecb8cba1376e8afe3388bd120585257f259af45",
+    "work/nss55/cleanup-audit.mjs": "5fb94821599b40e70fd798fbfa8d85d0b67142fd311b642260b3a5ad9df3d5a7",
+    "work/nss55/clock-anchor.mjs": "e9335c708ee2e14c8582a1a3aeb70607bc0ceb3fa075f1ddf0945246111b68ea",
+    "work/nss55/current-audit-diagnostic.mjs": "2af7f67140162ff0f12a10d236c992f6c00725e9ca8b841ff260fa785da89f6d",
+    "work/nss55/entry-qualified.json": "d1d80c78c9c3f6d9ff12219179f8f77ec77b4ca8074e874868b8229d2b628b63",
+    "work/nss55/initial-audit-diagnostic.mjs": "2af7f67140162ff0f12a10d236c992f6c00725e9ca8b841ff260fa785da89f6d",
+    "work/nss55/join-tests.json": "bd2d2f394af8f20567484c6b05761ff0d422be6c122f47e2ad6eaca417d51bbc",
+    "work/nss55/measure-syntax-transport.mjs": "68c02481982c645d2b05d50b1cb46b3985ed3856e1fbf5bbddefc8b568faddf9",
+    "work/nss55/prepare-stage-revision.mjs": "860928137e7bcb0c8859c724505abfd438d0b78481645a4782c798f6a5c1a616",
+    "work/nss55/qualify-entry.mjs": "7c44d290b96285c7a7891ef34082ff6a96a6c51175ba03a030e022cb9e782f8d",
+    "work/nss55/real-session.mjs": "006d821eacbb44376717617a3850e0c66ee7c35b179cb8a0eb104b9a5ea654ce",
+    "work/nss55/session-binding.mjs": "8582611899f2884fcff606d6df86820908b2aa9c34c13d8f250456a895f48781",
+    "work/nss55/test-publication-join.mjs": "c509e0c65842bdc3425d9a9f024c23ce00f7da086fe92808bd3c0cc7ec46f1ce",
+    "work/nss55/wait-ready-joined.mjs": "fbc65b262d9261dfd41f7f4a3834fc504d7b14f12744775f376e5cb8a4953fd6"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "role": "historical-experimental-candidate-tests-and-analysis-not-resident",
+  "actualCompletePrivateInputFreezePreserved": true,
+  "nss62OriginalLocalDependencyFailurePreserved": false
+}
