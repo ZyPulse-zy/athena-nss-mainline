@@ -2,9 +2,27 @@
 
 更新：2026-10-04，北京时间。最新现场核验见 [当前运行记录](../evidence/current-runtime.json)。
 
-**常驻分类器已切换到 NSS46：三项可靠性修复逐项实装并保留，真实 apply 过期恢复和真实 crash 恢复通过。新 NSS 入口绑定 112 项输入、99 项本地入口检查及现场完整审核通过。真人 WAN1 fast path/leaf 功能仍引用 NSS41；当前 ECM 关闭，CPU 和游戏收益尚未验收。**
+**NSS49 完整单 WAN 功能对照通过：真实 CS2 / Steam 自动进入 NSS RT / bulk leaf，ECM 0→2→0，mark/NAT/WAN affinity、控制器终态和恢复审核正确。常驻为 NSS47 地址缓存＋NSS46 可靠性修复，ECM 已关闭。CPU / 真人游戏收益仍未验收。**
 
-## 最新现场与 NSS46
+## 最新：NSS47–NSS49
+
+见 [本轮汇总](../evidence/nss49-mainline.json)、[实际对照](../evidence/nss49-actual-aba.json)、[原失败](../evidence/nss49-failed-attempts.json)、[客户端边界](../evidence/nss49-client-boundaries.json)。
+
+- 当前常驻引用 `work/nss47/deployment-latest.json`，配置 `478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900`。NSS46 三项修复保留，NSS47 仅加每次发现重置、各 1024 项纯地址缓存，CT 实例/zone/mark/NAT/计数不缓存。4550 差分样本、目标 527 行每版本 80 次解析与 3 个完整快照一致，解析 CPU 4.740→3.489 秒（26.4%），不是整机收益。第一试装独立 180 秒自然恢复，第二次另建 checkpoint/回滚/完整审核后保留，暂存守护已退出。另一约 1.9% 扫描候选未安装。
+- NSS46 原入口真实应用对已找到，但39次观察的精简发布延迟 1.03–1.26 秒，初始 <1 秒拒绝。NSS48 新 cache 绑定满足初始 0.72 秒，却在 0.3 秒标签窗 TCP 全零、UDP 正确时拒绝；没有错误 tag 证据。两次暂存/独立守护、精确恢复和原完整审核通过，均未放行 ECM。
+- NSS49 入口 `work/nss49/real-session.mjs` 绑定 121 项输入、99 项本地案例、13 项目标 RAM 模拟。仅初始无包等待至多 1.2 秒，受原 epoch / owner 余量约束；错误 tag 立即拒绝，正计数才可放行。初始 <1 / 预学习 <2 / 软件 <6 / 发布 <9 秒、20 Mbps、一 TCP＋一 UDP、45 秒 owner 保持。实际成功 getter 1 probe / 0.16 秒，不能说扩等待导致本次成功。其余 NSS Lua 与 NSS48 字节相同；继承的 unchanged 字段不覆盖 helper 差异。
+- 14:52–14:53，助手按授权恢复现有下载、进入在线死亡竞赛观战。真实 WAN2 一 TCP＋一 UDP、mark 0x20000，三段各 5.03 秒 / 11 帧，ECM 0→2→0。TCP downTag 0x8f050000 / UDP 0x8f060000、upTag 0，NAT、WAN affinity 2、LAN4/br-lan 层级正确，一次续租通过。完整控制器成功，不只是功能片段；没有真人操作 / 体感。
+- LAN4 A/B/A2 167.90 / 193.94 / 170.86 Mbps；WAN2 66.31 / 83.86 / 66.02 Mbps；softirq 41.14 / 41.71 / 44.81%；time_squeeze +0/+1/+4，softnet drop 全零。总吞吐跨度 14.66%、选中 WAN 24.75%，超过预设 10%；offered load 也未证明相同。busy 62.35/60.69/60.99% 仅为观察，CPU 因果收益未验收，全窗未到 300 Mbps+。
+- 建立至撤销约 5.43 秒 leaf 窗：bulk +11,531,555 B / 7635 包 / 13 drop，RT +644,562 B / 713 包 / 0 drop，fallback +130,118,774 B / 84,625 包。包含边界，非精确 B 净速率；RT 0 drop 不是客户端 0 loss。受控 leaf 约占字节 8.56%，软件 CAKE 保留未加速流 fallback。
+- 38 张实际截图经 125 ms 往返锚点校准，A/B 无完整有效帧、A2 有 3 帧。缺失字段不填 0。第二轮 Steam 已完成，游戏候选1/bulk0，router/NSS 写前等待；部分截图前台遮挡，全部不用于验收。已退出测试服务器，没有为补负载购买 / 卸载重装游戏。
+- NSS49 每次写前 checkpoint 下载/哈希/gzip、独立 45 秒 owner 身份通过；主动精确撤销，未触发新的自然 45 秒到期证明。WAN/mwan3、队列/tag/state/模块恢复，原完整 AFTER 审核通过。15:07–15:08 最终完整审核通过、worker 5411 连续、sequence645，ECM 关闭全零，无事务/暂存/模块。约半小时同实例不等于完整高负载故障恢复或长期稳定。
+- NSS47/48/49 19/37/47 份可读源码冻结，实际完整输入副本留私有。原 NSS46 current-runtime 精确保存在 nss46-runtime，历史失败、RAM 模拟和新硬件证明分开。没有上游提交。
+
+下一步使用已通过的 NSS49 入口补同负载客户端对照，不再重复分类器准备。提前同步 HUD，确认同一应用连接持续；功能、性能与真人体验分别验收。未通过前不扩第二 WAN 同时加速、共享预算、Wi-Fi 或 autorate。见 [计划](PLAN.md)。
+
+15:34 补充只读核验：[退出游戏后的原完整审核](../evidence/nss49-post-game-audit.json) 通过，同一 worker 5411、sequence1189、source age1.73秒，ECM仍关闭全零。当前4个selector可能属于背景流，仅数量不能证明真实CS2旧流退出，也不增加CPU/游戏或长期稳定结论；之前15:07–15:08证明保持。
+
+## NSS46 历史实装与资格
 
 见 [本轮证据](../evidence/nss46-mainline.json)、[真实过期恢复时序](../evidence/nss46-fault-timing.json) 和 [新入口绑定](../evidence/nss46-entry-binding.json)。
 
@@ -17,7 +35,7 @@
 - 最终 13:49:55–13:49:56：worker 30050 / guardian 30051 健康，原完整规则与保护配置审核通过，ECM 停止且全零，无活动事务、暂存、实验状态或模块。last-error 来自受控 crash 试装临近期限退出，属于旧实例。没有当前 CS2＋Steam 配对，没有 NSS 写入或新的 CPU/游戏结论。
 - 84 份本轮源码已冻结并按白名单导出。入口夹具路径/seed 绑定和故障摘要 JSON 重复引用问题已纠正，原失败输出保持；这些准备问题没有触发 NSS。源码冻结与入口资格、真实故障和真人高负载证据分别记录。
 
-下一步直接运行新入口的一次集中真人窗口，先确认同 WAN 的真实 CS2 UDP＋Steam TCP，再 software→NSS→software，记录实际 leaf 份额、softirq/time_squeeze 和客户端体验。准备期间不用挂机。未通过前不扩第二 WAN、共享预算、Wi-Fi 或 autorate。
+NSS46 当时的下一步已由上述 NSS47–49 推进；该轮原配置/入口是历史，当前来源以本文开头为准。
 
 ## NSS45 历史现场
 

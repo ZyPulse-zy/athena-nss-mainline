@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-04T07:34:47.150471+00:00",
+  "readonly": true,
+  "routerConfigurationWrites": false,
+  "audit": {
+    "passed": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 4,
+    "queryAge": 1.7299999999813735,
+    "sequence": 1189,
+    "ecmClosedAndZero": true
+  },
+  "sameCacheRetainedWorker": true,
+  "selectorCountDoesNotIdentifyGameFlowOrProveOldFlowExit": true,
+  "noCpuOrGameConclusion": true
+}

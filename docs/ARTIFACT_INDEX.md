@@ -1,5 +1,15 @@
 # 证据索引
 
+## 当前主线：NSS49
+
+- [实际完整对照](../evidence/nss49-actual-aba.json)：WAN2真实CS2/Steam、0→2→0、leaf/mark/NAT/affinity与精确恢复成功；吞吐不匹配、没有B段HUD，CPU/真人收益未通过。
+- [当前汇总](../evidence/nss49-mainline.json) 与 [当前运行](../evidence/current-runtime.json)：常驻NSS47纯地址缓存＋NSS46可靠性修复，当前ECM关闭。
+- [新入口](../evidence/nss49-entry-binding.json)、[原失败](../evidence/nss49-failed-attempts.json)、[客户端边界](../evidence/nss49-client-boundaries.json)、[13个原生RAM案例](../evidence/nss49-native-aba-cases.json)。
+- [NSS47源码冻结](../evidence/nss47-source-proof.json)、[NSS48冻结](../evidence/nss48-source-proof.json)、[NSS49冻结](../evidence/nss49-source-proof.json)：分别19/37/47份可读源码；实际完整来源/连接/备份留本地。
+- 私有工作区当前部署 `work/nss47/deployment-latest.json`，当前入口 `work/nss49/real-session.mjs`，成功目录 `work/nss49/real-matched-aba-20261004065238-cdfa8d7a/`；报告 `outputs/nss49-mainline-report.html`。
+
+以下更旧条目是各轮当时记录，出现“当前/最新”时按该轮日期理解，不替代上述来源。
+
 仓库内可直接核对：
 
 - `evidence/nss46-mainline.json`：三项修复逐项保留、真实 apply/worker crash 恢复、两个独立自然到期恢复、新入口 112 项绑定及最终保护核验。

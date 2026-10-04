@@ -1,3 +1,8 @@
 * text=auto eol=lf
 # These are byte-exact evidence sources, including existing CRLF line endings.
 /code/** -text
+# Preserve the exact pre-existing whitespace in four frozen fixture copies.
+/code/work/nss48/entry-scheduling-fixtures.lua whitespace=-blank-at-eol
+/code/work/nss49/entry-scheduling-fixtures.lua whitespace=-blank-at-eol
+/code/work/nss48/inspect-classifier.mjs whitespace=-blank-at-eof
+/code/work/nss49/inspect-classifier.mjs whitespace=-blank-at-eof

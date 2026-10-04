@@ -1,0 +1,92 @@
+{
+  "scope": "Deterministic candidate Lua with synthetic clock and native I/O stubs; no router mutation",
+  "passed": true,
+  "cases": [
+    {
+      "observations": 34,
+      "renewals": 1,
+      "phases": 3,
+      "passed": true,
+      "case": "stable"
+    },
+    {
+      "observations": 34,
+      "renewals": 1,
+      "phases": 3,
+      "passed": true,
+      "case": "core-close"
+    },
+    {
+      "observations": 34,
+      "renewals": 1,
+      "phases": 3,
+      "passed": true,
+      "case": "wan4"
+    },
+    {
+      "observations": 34,
+      "renewals": 1,
+      "phases": 3,
+      "passed": true,
+      "case": "delayed-tcp"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:28: Selected class changed",
+      "case": "change-A"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:28: Selected class changed",
+      "case": "change-B"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:28: Selected class changed",
+      "case": "change-A2"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:30: Selected CT/NAT tuple drift",
+      "case": "nat-drift"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:42: Tag getter mismatch",
+      "case": "wrong-tag"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:70: Controlled pair did not stay accelerated",
+      "case": "drop-acceleration"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:129: assertion failed!",
+      "case": "wan-mismatch"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:129: assertion failed!",
+      "case": "low-mark-mismatch"
+    },
+    {
+      "refused": true,
+      "error": "...stage-9e8c7ddb897d1a90dcbb33879533b1d8/fast-path.lua:137: Selected flow had no bidirectional traffic before bounded getter deadline",
+      "case": "idle-tcp"
+    }
+  ],
+  "observedAt": "2026-10-04T06:49:52.166Z",
+  "sourceSha256": "22bb325399bb62a00d088ba66689707d21f85ebe2e9434ca5231ade9bc83a294",
+  "routerConfigurationWrites": false,
+  "routerWrites": true,
+  "temporaryRamFilesOnly": true,
+  "nativeJsonc": true,
+  "ioTimeAndGateAcknowledgementsMocked": true,
+  "realForwardingQualified": false,
+  "completeSourceExecuted": true,
+  "checkpointVerified": true,
+  "independentStageCleanupBeforeFirstWrite": true,
+  "stageProofDirectory": "work/nss49/native-ram-20261004064946",
+  "transportExecCeilingUnchanged": 9000
+}

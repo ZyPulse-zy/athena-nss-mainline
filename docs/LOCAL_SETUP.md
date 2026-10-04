@@ -22,12 +22,12 @@ Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/
 
 ## 先读与只读核验
 
-常驻仍在完整私有工作区 `work/nss39/`；最新实际入口是 `work/nss42/`。`entry-qualified.json` v2 绑定 102 项，覆盖声明的静态依赖、历史动态 payload、通用 WAN 后处理与检查源码；外部既有连接实现只记录源码哈希。NSS41 的原实际入口和 83 项冻结保持，不能原样再用。NSS42 已修复后处理和恢复用途，原完整只读审核已通过，尚未执行新真人 A/B。不要重复准备或修改冻结输入来迎合现状。
+当前常驻 `work/nss47/deployment-latest.json`，当前入口 `work/nss49/real-session.mjs`，121 项来源绑定。NSS47 仅纯地址缓存＋NSS46 三项可靠性修复；NSS49 完整单 WAN 在线 CS2/Steam 对照与恢复已通过，CPU/真人收益尚未通过。历史 NSS39/42/46 入口不作当前来源，不重复准备或修改冻结输入。下面 command 从 `work/nss49/` 使用；该代码镜像依赖本地私有配置/认证，不能直接在仓库运行生产入口。
 
 - `current-audit-diagnostic.mjs <new-label> recovery`：直接执行原完整保护审核；不会学习或放行 NSS。
 - `current-audit-diagnostic.mjs <new-label> prewrite`：先锁外等待更新且新鲜的完整发布，再执行原完整审核。调度没有准入权；用途参数不可省略于实际写前入口。
-- `real-session.mjs inspect`：核验 102 项输入与当前配置，再只读核对真实应用流。资格不等于性能结论。
-- `final-closure.mjs`：实验事务/模块/暂存/状态清理检查。
+- `real-session.mjs inspect`：核验 121 项输入与当前配置，再只读核对真实应用流。资格不等于性能结论。
+- `final-cleanup-audit.mjs`：只读实验事务/模块/暂存/状态清理检查，输出名与原冻结证明分开。
 - `native-qualification.mjs`：完整候选原生 RAM 模拟。会创建已 checkpoint、独立清理的临时文件，不是纯只读入口；不能无审查重跑现场脚本。
 - NSS37/38 和更旧入口只保留为历史。NSS39 没有改 NSS32–38 冻结源码与证明。修改当前配置或任何绑定文件必须在新轮次重新资格核验。
 
@@ -36,6 +36,8 @@ Windows 上已有分离的 Lua 运行目录时可使用 `--wsl-runtime <runtime/
 连接封装使用本机已保存的认证。不要把密码、密钥、令牌或认证文件内容粘进对话、日志或仓库。
 
 `python tools/replay_host_validation.py --node <node.exe> --wsl-runtime <runtime/usr>` 从仓库独立重放 NSS42 的 42 项合成 WAN/方向/拒绝案例和 23 项调度/诊断案例。解析测试源码中的常量，不执行原 Python 现场入口；不读取冻结真实连接状态、不访问凭据、不连接路由器。65 项是已有案例的再次执行，不应加到工作区 90 项独立案例总数。唯一真实 WAN1 状态重验仍在私有工作区。
+
+NSS49 只调整初始无包等待（最多1.2秒、错误tag立即拒绝、正双向计数才可继续），原来源/20 Mbps/单连接对/45秒owner不变；其余NSS Lua与NSS48一致、kernel/FW不升级。13个RAM场景使用模拟IO/时钟，硬件证明另见实际控制器成功记录。每个新窗口仍需新checkpoint/独立回滚身份和新鲜应用身份，复制的资格JSON不等于实时放行。
 
 ## 同步代码和证据
 

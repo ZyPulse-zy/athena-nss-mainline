@@ -1,0 +1,25 @@
+{
+  "firstActualSkyFrames": 38,
+  "clockAnchorRoundTripMs": 125,
+  "assignedPhaseFrameCounts": {
+    "A": 0,
+    "B": 0,
+    "A2": 3
+  },
+  "nssBHudCovered": false,
+  "hudAbsenceNotConvertedToZero": true,
+  "clientExperienceNotMeasured": true,
+  "secondAttempt": {
+    "observedAt": "2026-10-04T07:05:57.972Z",
+    "actualGameCandidates": 1,
+    "actualBulkCandidates": 0,
+    "sameWanPairs": 0,
+    "routerWrites": false,
+    "nssPermissionGranted": false,
+    "status": "WAITING_FOR_REAL_CS2_STEAM_PAIR"
+  },
+  "secondAttemptNoForwardingABA": true,
+  "secondCaptureNotGameAcceptanceEvidence": true,
+  "laterForegroundOcclusionObserved": true,
+  "screenshotsExportedToGit": false
+}

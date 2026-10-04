@@ -16,11 +16,20 @@ def save(path, value):
     dst.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 def keys(obj,names): return {k:obj[k] for k in names if k in obj}
 
-current=read('work/nss46/deployment-latest.json')
+historical46=repo/'evidence/nss46-runtime.json'
+if not historical46.exists():
+    previousRuntime=repo/'evidence/current-runtime.json'
+    assert json.loads(previousRuntime.read_text())['round']=='NSS46'
+    shutil.copyfile(previousRuntime,historical46)
+current=read('work/nss47/deployment-latest.json')
 assert current['committed'] is True
 cfg=read(current['localDir']+'/config.json')
 sources=[]
 allowlist={
+ 'work/nss29':['classifier-core.lua'],
+ 'work/nss47':['audit-cache-retain.mjs','audit-cache.mjs','build-cache.py','build-core.py','cache-bound-replay.lua','classifier-core-cache.lua','classifier-core.lua','commit-cache.mjs','native-cache.mjs','native-core.mjs','prepare-cache-retain.py','prepare-cache-trial.py','profile-publication.mjs','test-cache-bound.py','test-cache.py','test-core.py','upgrade-cache-retain.mjs','upgrade-cache.mjs','verify-cache-rollback.mjs'],
+ 'work/nss48':['audit-renderer.mjs','binding.mjs','build-entry.mjs','classified-tags.lua','classifier.lua','core-guard-phase.lua','current-audit-diagnostic.mjs','dependency-closure.mjs','entry-scheduling-fixtures.lua','fast-path.lua','final-closure.mjs','inspect-classifier.mjs','module-stage-guardian.lua','module-stage.mjs','parse-dependency-graph.mjs','parse-ecm-any-wan.mjs','payload.mjs','prepare-entry.py','publication-wait-fixtures.lua','publication-wait.lua','qos-physical.lua','qualification.mjs','read-prerequisites.lua','read-real-candidates.mjs','real-session.mjs','record-candidates.mjs','session-binding.mjs','state-node.lua','tag-normalizer.lua','test-binding.mjs','test-controller.mjs','test-dependencies.mjs','test-entry-scheduling.py','test-parser.mjs','test-publication-wait.py','wait-ready-candidate.mjs','wan-scope.lua'],
+ 'work/nss49':['audit-renderer.mjs','binding.mjs','build-entry.mjs','classified-tags.lua','classifier.lua','core-guard-phase.lua','current-audit-diagnostic.mjs','dependency-closure.mjs','entry-scheduling-fixtures.lua','fast-path.lua','final-closure.mjs','inspect-classifier.mjs','module-stage-guardian.lua','module-stage.mjs','parse-dependency-graph.mjs','parse-ecm-any-wan.mjs','payload.mjs','prepare-entry.py','publication-wait-fixtures.lua','publication-wait.lua','qos-physical.lua','qualification.mjs','read-prerequisites.lua','read-real-candidates.mjs','real-session.mjs','record-candidates.mjs','session-binding.mjs','state-node.lua','tag-normalizer.lua','test-binding.mjs','test-controller.mjs','test-dependencies.mjs','test-entry-scheduling.py','test-parser.mjs','test-publication-wait.py','wait-ready-candidate.mjs','wan-scope.lua','aba-fixtures.lua','analyze-aba.mjs','clock-anchor.mjs','native-qualification.mjs','preflight-mainline.mjs','prepare-final-closure.py','final-cleanup-audit.mjs','summarize.py','render-report.py','freeze-safe-sources.py'],
  'work/nss46': ['audit-backend.mjs','audit-crash.mjs','audit-expiry.mjs','audit-fault.mjs','audit-renderer.mjs','audit-row.mjs','binding.mjs','build-entry.mjs','build-expiry.py','build-row.py','cancel-restored-stages.mjs','classified-tags.lua','classifier.lua','combined-expiry-replay.lua','commit-backend.mjs','commit-expiry.mjs','commit-row.mjs','conntrack-source.lua','core-guard-phase.lua','crash-once.mjs','current-audit-diagnostic.mjs','dependency-closure.mjs','entry-scheduling-fixtures.lua','fast-path.lua','fault-worker.lua','final-closure.mjs','guardian.lua','inspect-classifier.mjs','module-stage-guardian.lua','module-stage.mjs','observe-compact.mjs','observe-current.mjs','observe-fault.mjs','observe-retained.mjs','original-conntrack-source.lua','original-guardian.lua','original-worker.lua','parse-dependency-graph.mjs','parse-ecm-any-wan.mjs','payload.mjs','prepare-crash.py','prepare-entry.py','prepare-expiry-retain.py','prepare-fault.py','prepare-row-retain.py','prepare-runtime.py','publication-wait-fixtures.lua','publication-wait.lua','qos-physical.lua','qualification.mjs','read-classifier-log.mjs','read-fault-log.mjs','read-prerequisites.lua','read-real-candidates.mjs','real-session.mjs','record-candidates.mjs','render-report.py','row-replay.lua','session-binding.mjs','stale-guardian.lua','stale-replay.lua','stale-worker.lua','state-node.lua','summarize.py','tag-normalizer.lua','test-binding.mjs','test-combined-expiry.py','test-controller.mjs','test-dependencies.mjs','test-entry-scheduling.py','test-expiry.py','test-parser.mjs','test-publication-wait.py','test-row.py','upgrade-backend.mjs','upgrade-crash.mjs','upgrade-expiry.mjs','upgrade-fault.mjs','upgrade-row.mjs','verify-crash-rollback.mjs','verify-fault-rollback.mjs','wait-ready-candidate.mjs','wan-scope.lua','worker.lua'],
  'work/nss45': ['audit-renderer.mjs','current-audit-diagnostic.mjs','final-closure.mjs','inspect-classifier.mjs','session-binding.mjs','read-classifier-log.mjs','read-real-candidates.mjs',
   'build-row-candidate.py','original-worker.lua','original-guardian.lua','original-conntrack-source.lua','worker.lua','guardian.lua','conntrack-source.lua','test-row-candidate.py','row-replay.lua','check-row-native.mjs',
@@ -105,43 +114,40 @@ save('evidence/nss34-loop-profile.json',{
  'observedAt':loop['observedAt'],'routerWrites':False,'nssOpened':False,'actualFlowAdmissionChecked':False,
  'summary':{'samples':len(rows),'fullInventory':sum(x['fullInventory'] for x in rows),'meanPhaseSeconds':sum(x['phaseSeconds'] for x in rows)/len(rows),'maxPhaseSeconds':max(x['phaseSeconds'] for x in rows),'maxIterationReads':max(x['iterationReads'] for x in rows),'ageOnlyReserveAvailable':sum(x['ageOnlyReserveAvailable'] for x in rows)},
  'rows':[{'atSeconds':round(x['at']-start,4),**keys(x,['closedSeconds','phaseSeconds','readSeconds','parseSeconds','iterationReads','fullInventory','refreshInventory','sourceAge','publicationDelay','ageOnlyReserveAvailable','classifiedFlowCount','status'])} for x in rows]})
-auditPath='work/nss46/final-audit.json'
+auditPath='work/nss49/post-game-exit-audit.json'
 audit=read(auditPath)
 checked=datetime.fromtimestamp((workspace/auditPath).stat().st_mtime,timezone.utc).isoformat()
-pc=read('work/nss46/real-reader-qualified.json')
+new49=read('outputs/nss49-mainline-observations.json')
 save('evidence/current-runtime.json',{
- 'checkedAt':checked,'round':'NSS46','deploymentReference':'work/nss46/deployment-latest.json',
+ 'checkedAt':checked,'round':'NSS49','deploymentReference':'work/nss47/deployment-latest.json',
  'classifierConfigSha256':current['configHash'],'deployedTextSources':deployed,
  'audit':keys(audit,['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','selectors','queryAge','sequence','ecmClosedAndZero']),
- 'lastApplicationObservation':keys(pc,['observedAt','readonly','gameProcessRunning','steamProcessRunning','actualCs2RtCandidates','actualSteamBulkCandidates','sameWanCandidates','sourceAge','nssAdmissionAllowed']),
+ 'lastApplicationObservation':new49['clientEvidence']['secondAttempt'],
  'applicationEndpointsReadThisRound':True,
  'freshApplicationPairCheckedThisRound':True,
- 'realForwardingABACompleted':False,
+ 'realForwardingABACompleted':True,
  'historicalNss41NativeForwardingABACompleted':True,
  'completePerformanceAndGameAcceptance':False,
- 'staleSnapshotRejectedEarlierInRound':True,
  'historicalNss44StaleSnapshotRejection':True,
  'historicalNss40StaleProtectedSnapshotRejection':True,
- 'recoveryAlignmentRefusedEarlierInRound':False,
  'historicalNss41RecoveryAlignmentRefused':True,
  'historicalNss36StaleSnapshotRejection':True,
- 'classifierWorkerRestartObservedThisRound':True,
- 'firstClassifierExactRecoveryPassedThisRound':True,
+ 'classifierWorkerContinuousAfterCacheRetain':new49['finalState']['sameCacheRetainedWorker'],
+ 'historicalNss46SoftwareExpiryAndCrashRecoveryPassed':True,
  'historicalNss44FirstExactRecoveryPassed':False,
- 'naturalPriorRowBoundExitsObserved':0,
  'finalClassifierHealthyAndExactOwnedAuditPassed':True,
- 'realApplicationAttemptRefusedBeforeCheckpointOrStaging':False,
+ 'secondApplicationAttemptRefusedBeforeCheckpointOrStaging':True,
  'plannedClassifierReplacementAndRollbackThisRound':True,
- 'temporaryClassifierTrials':2,
+ 'temporaryClassifierCacheNaturalRollback':True,
  'classifierReliabilityChangesRetained':3,
- 'newNssEntryBoundInputs':112,
+ 'pureIpv4ParserCacheRetained':True,
+ 'newNssEntryBoundInputs':121,
  'allNaturalExpiryRestorationsPassed':True,
  'experimentalConfigurationWritesThisRound':True,
- 'nssOpenedThisRound':False,
- 'lastErrorIsControlledTrialPredeadlineExit':True,
- 'lastErrorBelongsToCurrentWorker':False,
+ 'nssOpenedThisRound':True,
+ 'nssPermanentlyEnabled':False,
  'originalNss42EntryUnmodified':True,
- 'finalClosure':keys(read('work/nss46/final-closure.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
+ 'finalClosure':keys(read('work/nss49/final-cleanup-audit.json'),['passed','observedAt','readonly','noActiveRootTransaction','noNssStagingDirectory','noExperimentStateNodeDirectory','noExperimentalGateOrQdiscModule']),
  'requiresLiveRevalidation':True,
 })
 replay=read('work/nss34/admission-replay-qualified.json')
@@ -247,4 +253,22 @@ assert n46['entry']['boundInputs']==112 and n46['entry']['localCases']==99 and n
 save('evidence/nss46-mainline.json',n46)
 save('evidence/nss46-fault-timing.json',read('work/nss46/fault-timing-sanitized.json'))
 save('evidence/nss46-entry-binding.json',read('work/nss46/entry-binding-sanitized.json'))
+save('evidence/nss49-mainline.json',new49)
+save('evidence/nss49-actual-aba.json',read('work/nss49/actual-aba-sanitized.json'))
+save('evidence/nss49-entry-binding.json',read('work/nss49/entry-binding-sanitized.json'))
+save('evidence/nss49-failed-attempts.json',read('work/nss49/failed-attempts-sanitized.json'))
+save('evidence/nss49-client-boundaries.json',read('work/nss49/client-evidence-sanitized.json'))
+for round in ['nss47','nss48','nss49']:
+    save('evidence/'+round+'-source-proof.json',read('work/'+round+'/source-proof-v1.json'))
+save('evidence/nss47-cache-differential.json',read('work/nss47/cache-qualified.json'))
+save('evidence/nss47-cache-native.json',read('work/nss47/native-cache-qualified.json'))
+save('evidence/nss47-cache-bound.json',read('work/nss47/cache-bound-qualified.json'))
+save('evidence/nss49-native-aba-cases.json',read('work/nss49/aba-qualified.json'))
+save('evidence/nss49-post-game-audit.json',{
+ 'checkedAt':checked,'readonly':True,'routerConfigurationWrites':False,
+ 'audit':keys(audit,['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','selectors','queryAge','sequence','ecmClosedAndZero']),
+ 'sameCacheRetainedWorker':audit['producer'].endswith(':5411:191326402'),
+ 'selectorCountDoesNotIdentifyGameFlowOrProveOldFlowExit':True,
+ 'noCpuOrGameConclusion':True,
+})
 print(json.dumps({'sourceFiles':len(sources),'codeBytes':sum(s['bytes'] for s in sources),'evidenceFiles':len(list((repo/'evidence').glob('*.json'))),'credentialsCopied':False,'rawCapturesCopied':False}))

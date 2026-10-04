@@ -1,0 +1,23 @@
+{
+  "acceptedRows": 200,
+  "completeClassifierRepeatedEqual": 3,
+  "parserMetadataEqual": true,
+  "passed": true,
+  "actualRows": 527,
+  "cpuSeconds": {
+    "new": 3.4886779999999993,
+    "old": 4.740382999999999
+  },
+  "nssEnabled": false,
+  "parserTraversalsPerVersion": 80,
+  "productionInstalled": false,
+  "readonly": true,
+  "wallSeconds": {
+    "new": 3.4899999999906868,
+    "old": 4.75
+  },
+  "observedAt": "2026-10-04T06:25:11.684Z",
+  "originalSha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+  "candidateSha256": "87626d72bab1d666dcdaebde7545d7022b7b099cd74b206624568bad330f34f8",
+  "execBytes": 7314
+}

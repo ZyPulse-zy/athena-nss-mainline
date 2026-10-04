@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "candidateSha256": "87626d72bab1d666dcdaebde7545d7022b7b099cd74b206624568bad330f34f8",
+  "originalSha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+  "checks": 9612,
+  "distinctValidAddresses": 1200,
+  "passes": 2,
+  "ipCacheCap": 1024,
+  "numberCacheCap": 1024,
+  "resultsAndErrorStatusEqual": true,
+  "output": "COMPLETE 9612 bounded=1024,1024\n",
+  "error": ""
+}

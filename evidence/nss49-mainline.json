@@ -1,0 +1,437 @@
+{
+  "round": "NSS49",
+  "coversRounds": [
+    "NSS47",
+    "NSS48",
+    "NSS49"
+  ],
+  "generatedAt": "2026-10-04T07:12:40.054741+00:00",
+  "deploymentReference": "work/nss47/deployment-latest.json",
+  "entryReference": "work/nss49/real-session.mjs",
+  "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+  "classifierCommitted": true,
+  "nssPermanentlyEnabled": false,
+  "automaticGuiSession": {
+    "authorizedByUser": true,
+    "steamExistingDownloadResumed": true,
+    "existingDownloadCompleted": true,
+    "cs2OnlineDeathmatchSpectator": true,
+    "humanPlayThisRound": false,
+    "clientTestServerExited": true,
+    "syntheticTrafficUsed": false,
+    "newPurchaseOrUnownedGameInstalled": false,
+    "gameQualityConclusion": false
+  },
+  "classifierCache": {
+    "committed": true,
+    "candidateSha256": "87626d72bab1d666dcdaebde7545d7022b7b099cd74b206624568bad330f34f8",
+    "originalSha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+    "change": "Two pure IPv4 validation/arithmetic caches, independently capped at 1024 and reset for every discovery observation.",
+    "freshCtIdentityMarkNatAndCountersNotCached": true,
+    "policyAndSourceBoundAndDeadlinesUnchanged": true,
+    "differentialCases": 4550,
+    "acceptedCases": 744,
+    "nativeRows": 527,
+    "nativeAcceptedRows": 200,
+    "nativeTraversalsPerVersion": 80,
+    "completeNativeSnapshotsEqual": 3,
+    "nativeParserCpuSeconds": {
+      "new": 3.4886779999999993,
+      "old": 4.740382999999999
+    },
+    "nativeParserCpuReductionPercent": 26.40514490073903,
+    "wholeRouterCpuBenefitProved": false,
+    "cacheCap": 1024,
+    "boundedChecks": 9612,
+    "distinctCacheAddresses": 1200,
+    "natural180SecondRollbackVerified": true,
+    "trialLiveCacheTimingCaptured": false,
+    "secondInstallationCheckpointAndIndependentRollbackVerified": true,
+    "commitAt": "2026-10-04T06:36:35.981Z",
+    "retainedInstallationArming": {
+      "passed": true,
+      "independentOfSsh": true,
+      "deadline": 1913441,
+      "observedUptime": 1913261.68
+    },
+    "rejectedLiteralScannerInstalled": false
+  },
+  "actualFailures": [
+    {
+      "label": "NSS46 original entry under actual applications",
+      "passed": false,
+      "reason": "initial compact publication > 1 second",
+      "error": "AssertionError [ERR_ASSERTION]: [string \"local qos=(function()...\"]:611: Insufficient fresh-classifier margin for complete ABA",
+      "nssPermitOpened": false,
+      "checkpointGzipVerified": true,
+      "independentRollbackVerifiedBeforeWrite": true,
+      "rollbackPassed": true,
+      "afterOriginalFullAuditPassed": true,
+      "frozenBoundInputs": 112
+    },
+    {
+      "label": "NSS48 cache-bound entry",
+      "passed": false,
+      "reason": "TCP initial tag counters all zero in the 0.3 second wait",
+      "error": "AssertionError [ERR_ASSERTION]: [string \"local qos=(function()...\"]:638: [string \"local qos=(function()...\"]:550: Tag getter mismatch",
+      "nssPermitOpened": false,
+      "checkpointGzipVerified": true,
+      "independentRollbackVerifiedBeforeWrite": true,
+      "rollbackPassed": true,
+      "afterOriginalFullAuditPassed": true,
+      "frozenBoundInputs": 119,
+      "initialTagPacketCounters": {
+        "tcp_writer_up": 0,
+        "tcp_writer_down": 0,
+        "udp_writer_up": 2,
+        "udp_writer_down": 5,
+        "tcp_post_up_total": 0,
+        "tcp_post_up_expected": 0,
+        "tcp_post_up_unexpected": 0,
+        "tcp_post_down_total": 0,
+        "tcp_post_down_expected": 0,
+        "tcp_post_down_unexpected": 0,
+        "udp_post_up_total": 2,
+        "udp_post_up_expected": 2,
+        "udp_post_up_unexpected": 0,
+        "udp_post_down_total": 5,
+        "udp_post_down_expected": 5,
+        "udp_post_down_unexpected": 0,
+        "udp_post_neighbor_total": 0,
+        "udp_post_neighbor_zero": 0,
+        "udp_post_neighbor_nonzero": 0
+      }
+    }
+  ],
+  "entry": {
+    "boundInputs": 121,
+    "configurationMatchesCurrentClassifier": true,
+    "localEntryCases": 99,
+    "nativeRamSyntheticCases": 13,
+    "nativeRamGateTimeIoMocked": true,
+    "onlyInitialZeroTrafficReadinessChanged": true,
+    "initialTagNoTrafficWaitSeconds": 1.2,
+    "previousInitialTagWaitSeconds": 0.3,
+    "wrongTagStillImmediatelyRejected": true,
+    "zeroTrafficCannotAuthorizeNss": true,
+    "otherNssLuaByteIdenticalToNss48": true,
+    "fastHelperSha256": "22bb325399bb62a00d088ba66689707d21f85ebe2e9434ca5231ade9bc83a294",
+    "nativeNssKernelDataPlaneUnmodified": true,
+    "ownerSeconds": 45,
+    "initialSourceAgeSeconds": 1,
+    "prelearningSourceAgeSeconds": 2,
+    "softwareSourceAgeSeconds": 6,
+    "publicationAgeSeconds": 9,
+    "epochSeconds": 5,
+    "controlledBudgetMbps": 20,
+    "tcpSlots": 1,
+    "udpSlots": 1,
+    "legacyNssRouterPayloadsUnchangedFlagIsInheritedAndDoesNotDescribeHelperDelta": true
+  },
+  "actualForwardingABA": {
+    "passed": true,
+    "sameControlledApplicationPair": true,
+    "realHumanGameplay": false,
+    "oneWan": 2,
+    "ctMark": 131072,
+    "phases": [
+      {
+        "phase": "A",
+        "startUptime": 1914323.38,
+        "endUptime": 1914328.41,
+        "startCst": "2026-10-04T14:52:57.712+08:00",
+        "endCst": "2026-10-04T14:53:02.742+08:00",
+        "samples": 11
+      },
+      {
+        "phase": "B",
+        "startUptime": 1914338.53,
+        "endUptime": 1914343.56,
+        "startCst": "2026-10-04T14:53:12.862+08:00",
+        "endCst": "2026-10-04T14:53:17.892+08:00",
+        "samples": 11
+      },
+      {
+        "phase": "A2",
+        "startUptime": 1914344.21,
+        "endUptime": 1914349.24,
+        "startCst": "2026-10-04T14:53:18.542+08:00",
+        "endCst": "2026-10-04T14:53:23.572+08:00",
+        "samples": 11
+      }
+    ],
+    "runtimeState": {
+      "tcp": {
+        "protocol": 6,
+        "ecmOrientation": "client-first",
+        "accelerated": true,
+        "ctMark": 131072,
+        "downTag": 2399469568,
+        "upTag": 0,
+        "natCorrect": true,
+        "wanAffinity": 2,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 3,
+        "fromPackets": 1,
+        "toPackets": 2
+      },
+      "udp": {
+        "protocol": 17,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 131072,
+        "downTag": 2399535104,
+        "upTag": 0,
+        "natCorrect": true,
+        "wanAffinity": 2,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 3,
+        "fromPackets": 2,
+        "toPackets": 1
+      }
+    },
+    "measurements": {
+      "passed": true,
+      "functionalOnly": true,
+      "oneWan": 2,
+      "ctMark": 131072,
+      "natAndAffinityVerified": true,
+      "phases": [
+        {
+          "name": "A",
+          "seconds": 5.03000000002794,
+          "busyPercent": 62.34817813765182,
+          "softirqPercent": 41.14372469635627,
+          "softnetProcessed": 332829,
+          "softnetDropped": 0,
+          "timeSqueeze": 0,
+          "interfaces": {
+            "lan4": {
+              "rx_bytes": 4589720,
+              "tx_bytes": 105568433,
+              "rx_packets": 61114,
+              "tx_packets": 70061,
+              "rx_dropped": 0,
+              "tx_dropped": 0,
+              "rxMbps": 7.299753479084702,
+              "txMbps": 167.9020803171588,
+              "rxPps": 12149.900596353984,
+              "txPps": 13928.628230538934
+            },
+            "rpwan2": {
+              "rx_bytes": 41694358,
+              "tx_bytes": 1212594,
+              "rx_packets": 24639,
+              "tx_packets": 15986,
+              "rx_dropped": 0,
+              "tx_dropped": 0,
+              "rxMbps": 66.31309423422411,
+              "txMbps": 1.9285789264306394,
+              "rxPps": 4898.40954271633,
+              "txPps": 3178.1312127060046
+            }
+          },
+          "sourceAgeMin": 0.5599999998230487,
+          "sourceAgeMax": 3.119999999878928,
+          "acceleratedCount": 0
+        },
+        {
+          "name": "B",
+          "seconds": 5.03000000002794,
+          "busyPercent": 60.6900156821746,
+          "softirqPercent": 41.714584422373235,
+          "softnetProcessed": 348060,
+          "softnetDropped": 0,
+          "timeSqueeze": 1,
+          "interfaces": {
+            "lan4": {
+              "rx_bytes": 5302537,
+              "tx_bytes": 121939519,
+              "rx_packets": 70281,
+              "tx_packets": 80924,
+              "rx_dropped": 0,
+              "tx_dropped": 0,
+              "rxMbps": 8.433458449257332,
+              "txMbps": 193.9395928418651,
+              "rxPps": 13972.365805091375,
+              "txPps": 16088.270377644234
+            },
+            "rpwan2": {
+              "rx_bytes": 52727650,
+              "tx_bytes": 1576958,
+              "rx_packets": 31794,
+              "tx_packets": 21954,
+              "rx_dropped": 0,
+              "tx_dropped": 0,
+              "rxMbps": 83.8610735581823,
+              "txMbps": 2.508084294220661,
+              "rxPps": 6320.874751455944,
+              "txPps": 4364.612326019494
+            }
+          },
+          "sourceAgeMin": 0.7399999999906868,
+          "sourceAgeMax": 3.2600000000093132,
+          "acceleratedCount": 2
+        },
+        {
+          "name": "A2",
+          "seconds": 5.03000000002794,
+          "busyPercent": 60.98790322580645,
+          "softirqPercent": 44.80846774193548,
+          "softnetProcessed": 342053,
+          "softnetDropped": 0,
+          "timeSqueeze": 4,
+          "interfaces": {
+            "lan4": {
+              "rx_bytes": 4749229,
+              "tx_bytes": 107428250,
+              "rx_packets": 62913,
+              "tx_packets": 71295,
+              "rx_dropped": 0,
+              "tx_dropped": 0,
+              "rxMbps": 7.553445725604167,
+              "txMbps": 170.86003976048235,
+              "rxPps": 12507.554671898717,
+              "txPps": 14173.956262346717
+            },
+            "rpwan2": {
+              "rx_bytes": 41511183,
+              "tx_bytes": 1215092,
+              "rx_packets": 24559,
+              "tx_packets": 15826,
+              "rx_dropped": 0,
+              "tx_dropped": 0,
+              "rxMbps": 66.02176222627344,
+              "txMbps": 1.9325518886572575,
+              "rxPps": 4882.504970151806,
+              "txPps": 3146.3220675769567
+            }
+          },
+          "sourceAgeMin": 0.8999999999068677,
+          "sourceAgeMax": 3.419999999925494,
+          "acceleratedCount": 0
+        }
+      ],
+      "leafDeltasAroundFastPath": {
+        "startUptime": 1914338.51,
+        "endUptime": 1914343.94,
+        "includesAcquireAndRetirementBoundary": true,
+        "counters": {
+          "8f05:": {
+            "bytes": 11531555,
+            "packets": 7635,
+            "drops": 13
+          },
+          "8f06:": {
+            "bytes": 644562,
+            "packets": 713,
+            "drops": 0
+          },
+          "8fff:": {
+            "bytes": 130118774,
+            "packets": 84625,
+            "drops": 0
+          }
+        }
+      },
+      "renewals": 1,
+      "totalThroughputRelativeSpread": 0.1466346656668665,
+      "selectedWanThroughputRelativeSpread": 0.24754367018427448,
+      "observedThroughputWithin10Percent": false,
+      "offeredLoadEqualityProven": false,
+      "selectedBudgetMbps": 20,
+      "acceleratedFlowCount": 2,
+      "cpuBenefitConclusive": false,
+      "realHumanGameQualityConclusive": false,
+      "automaticGameSession": true,
+      "routerRollbackVerified": true
+    },
+    "initialTagGetterSeconds": 0.1600000001490116,
+    "initialTagGetterProbes": 1,
+    "extendedNoTrafficWaitNeededThisCase": false,
+    "nativeRenewals": 1,
+    "checkpointDownloadedAndHashAndGzipVerified": true,
+    "independent45SecondOwnerVerifiedBeforeWrites": true,
+    "explicitEarlyRetirement": true,
+    "natural45SecondExpiryTriggeredThisCase": false,
+    "postRetirementFirmwareZero": true,
+    "scopedRollbackPassed": true,
+    "afterFullProtectionAuditPassed": true,
+    "sourceInputsFrozenPrivately": true,
+    "commonQueuePlanAndCounterLoop": true,
+    "throughputMatched": false,
+    "offeredLoadEqualityProven": false,
+    "totalLoad300MbpsPlusThisWholeWindow": false,
+    "cpuAndGameAcceptancePassed": false
+  },
+  "clientEvidence": {
+    "firstActualSkyFrames": 38,
+    "clockAnchorRoundTripMs": 125,
+    "assignedPhaseFrameCounts": {
+      "A": 0,
+      "B": 0,
+      "A2": 3
+    },
+    "nssBHudCovered": false,
+    "hudAbsenceNotConvertedToZero": true,
+    "clientExperienceNotMeasured": true,
+    "secondAttempt": {
+      "observedAt": "2026-10-04T07:05:57.972Z",
+      "actualGameCandidates": 1,
+      "actualBulkCandidates": 0,
+      "sameWanPairs": 0,
+      "routerWrites": false,
+      "nssPermissionGranted": false,
+      "status": "WAITING_FOR_REAL_CS2_STEAM_PAIR"
+    },
+    "secondAttemptNoForwardingABA": true,
+    "secondCaptureNotGameAcceptanceEvidence": true,
+    "laterForegroundOcclusionObserved": true,
+    "screenshotsExportedToGit": false
+  },
+  "finalState": {
+    "classifierHealthy": true,
+    "sameCacheRetainedWorker": true,
+    "protectedAudit": {
+      "passed": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 3.9600000001955777,
+      "sequence": 645,
+      "ecmClosedAndZero": true
+    },
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-04T07:08:30.978Z",
+      "readonly": true,
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1915256.71
+    },
+    "entryCannotAuthorizeWithoutFreshPair": true
+  },
+  "conclusions": {
+    "automaticClassificationToNativeBulkRtLeavesProvedThisRound": true,
+    "fullControllerSoftwareNssSoftwareSucceeded": true,
+    "markNatWanAffinityProved": true,
+    "wholeRouterCpuBenefitProved": false,
+    "clientNssBHudMetricsCaptured": false,
+    "realHumanExperienceProved": false,
+    "completeHighLoadLifecycleQualified": false,
+    "secondSimultaneousWanAllowed": false,
+    "sharedBudgetAllowed": false,
+    "hostFairnessRestorationRequired": false,
+    "n100Required": false,
+    "upstreamSubmitted": false
+  },
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false,
+    "reason": "Existing local-file browser policy refusal retained; no workaround."
+  }
+}

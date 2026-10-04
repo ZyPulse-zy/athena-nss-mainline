@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 4550,
+  "acceptedCases": 744,
+  "originalSha256": "8a2381446b50b64b612a1c6b1474103499c5b30feb3949f65df48d664e7a9fb0",
+  "candidateSha256": "87626d72bab1d666dcdaebde7545d7022b7b099cd74b206624568bad330f34f8",
+  "scope": "Pure parsing equality under Lua 5.1; does not prove classifier runtime or NSS admission",
+  "capturedRowsIncluded": true,
+  "error": ""
+}

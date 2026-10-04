@@ -1,0 +1,47 @@
+[
+  {
+    "label": "NSS46 original entry under actual applications",
+    "passed": false,
+    "reason": "initial compact publication > 1 second",
+    "error": "AssertionError [ERR_ASSERTION]: [string \"local qos=(function()...\"]:611: Insufficient fresh-classifier margin for complete ABA",
+    "nssPermitOpened": false,
+    "checkpointGzipVerified": true,
+    "independentRollbackVerifiedBeforeWrite": true,
+    "rollbackPassed": true,
+    "afterOriginalFullAuditPassed": true,
+    "frozenBoundInputs": 112
+  },
+  {
+    "label": "NSS48 cache-bound entry",
+    "passed": false,
+    "reason": "TCP initial tag counters all zero in the 0.3 second wait",
+    "error": "AssertionError [ERR_ASSERTION]: [string \"local qos=(function()...\"]:638: [string \"local qos=(function()...\"]:550: Tag getter mismatch",
+    "nssPermitOpened": false,
+    "checkpointGzipVerified": true,
+    "independentRollbackVerifiedBeforeWrite": true,
+    "rollbackPassed": true,
+    "afterOriginalFullAuditPassed": true,
+    "frozenBoundInputs": 119,
+    "initialTagPacketCounters": {
+      "tcp_writer_up": 0,
+      "tcp_writer_down": 0,
+      "udp_writer_up": 2,
+      "udp_writer_down": 5,
+      "tcp_post_up_total": 0,
+      "tcp_post_up_expected": 0,
+      "tcp_post_up_unexpected": 0,
+      "tcp_post_down_total": 0,
+      "tcp_post_down_expected": 0,
+      "tcp_post_down_unexpected": 0,
+      "udp_post_up_total": 2,
+      "udp_post_up_expected": 2,
+      "udp_post_up_unexpected": 0,
+      "udp_post_down_total": 5,
+      "udp_post_down_expected": 5,
+      "udp_post_down_unexpected": 0,
+      "udp_post_neighbor_total": 0,
+      "udp_post_neighbor_zero": 0,
+      "udp_post_neighbor_nonzero": 0
+    }
+  }
+]

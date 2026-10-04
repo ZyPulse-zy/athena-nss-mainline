@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "sources": 19,
+  "sourceHashes": {
+    "work/nss47/audit-cache-retain.mjs": "e1f1c9ac998aab5b60d4d35b614d0168357ca38784d35b98ee50404af95b5e62",
+    "work/nss47/audit-cache.mjs": "5fb1367197ec8a4dc43892fc8f154cabc0514700179684d213b4c1e252ca1aec",
+    "work/nss47/build-cache.py": "1b28642b75794f1545006d4b1175e5a34db88712a99d098f84565e8c82ced420",
+    "work/nss47/build-core.py": "ac6b6a03dc62516652c1fbae814ebf6696f6d0bd174b4e1459181c12a81dee71",
+    "work/nss47/cache-bound-replay.lua": "a5cb67236edd9a8c9c179a438c2ff06662ebbdff111a8c6cd211502469339c08",
+    "work/nss47/classifier-core-cache.lua": "87626d72bab1d666dcdaebde7545d7022b7b099cd74b206624568bad330f34f8",
+    "work/nss47/classifier-core.lua": "26b4d9503dd149e3cbb6cf35a3a6b8030e7963ee828bc8cad10df91e9e1692df",
+    "work/nss47/commit-cache.mjs": "7db2e6ead8d5e46c4c6b87f5d2c04ed21aefff605d05449e7f0fb37d40b9c446",
+    "work/nss47/native-cache.mjs": "8e1f338b54578096d1038d057fcfdace562c2df9034b733bcab7157844b73555",
+    "work/nss47/native-core.mjs": "e48be3e29af59a98b4df6964d760fc35e982c128c6f83ca4f2f2b7d8ca9c5a6e",
+    "work/nss47/prepare-cache-retain.py": "b96f2b0341dee020e7ce3034757739c1e10fa28ad99b960ab2f68d3fb50ebda4",
+    "work/nss47/prepare-cache-trial.py": "829cbdd5454c2c6a25da337cb3828a74268fb7616d5643802f05230095e9129d",
+    "work/nss47/profile-publication.mjs": "a5b9f32a1f8c2c16125e116a75604f25fed0a8231d53322b1a0bfb380b48c1d5",
+    "work/nss47/test-cache-bound.py": "a610b97eaec301b844d081b52728d5bbedd14325d0a40cce38d75c3a4f080541",
+    "work/nss47/test-cache.py": "fdbf0c798359a609e09e44cc526fb1c7f567a74434c5775a676298abc8cabe34",
+    "work/nss47/test-core.py": "88ed953877c59a0bdc089516743f73a37c51dd8a5ba6d55c6610c47acba968c1",
+    "work/nss47/upgrade-cache-retain.mjs": "05112d1b2937745459da7085c99036ca31b7e74cc8a8d57177e0916a88b0b388",
+    "work/nss47/upgrade-cache.mjs": "b1f610e962a927c7864856748970e8bc9d063a20cd5d70175588951cbbbd7718",
+    "work/nss47/verify-cache-rollback.mjs": "aea21ff8a7e00ae0028f33bfe709c9cea4d64d6695186a951d6415e9e8d890d0"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true
+}
