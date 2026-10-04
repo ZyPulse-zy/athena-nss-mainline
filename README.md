@@ -1,5 +1,7 @@
 # Athena NSS 主线记录
 
+最新 [NSS50–52](evidence/nss52-mainline.json)：六次新尝试未开放ECM，四次单WAN临时暂存完整恢复。已取得两段软件客户端HUD，定位高下载负载下进程读取超过校验窗口；候选修复仍待高负载资格。NSS52纯解析加速不代表整机收益，未安装/未绑定生产入口。NSS49历史原生功能成功保持，CPU/真人收益仍未验收。常驻NSS47，ECM关闭；下载和测试游戏已结束、HUD恢复。接续先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md) 与 [根因记录](docs/ISSUE_CORE_SLEEP_DISCOVERY.md)。
+
 Athena AX6600 网络优化研究。唯一主线：**自动识别游戏流 → NSS RT / bulk leaf → 真人 CS2 + Steam 高负载闭环**。
 
 这是私有研究仓库，用来跨对话保存代码、可核对证据和下一步。现场凭据、完整连接元组、路由器配置备份和模块二进制仍保存在原本的本地工作区。

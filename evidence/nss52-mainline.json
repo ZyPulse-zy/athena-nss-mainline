@@ -1,0 +1,888 @@
+{
+  "round": "NSS50–NSS52",
+  "observedAt": "2026-10-04T09:33:00.109437+00:00",
+  "deploymentReference": "work/nss47/deployment-latest.json",
+  "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+  "permanentClassifierChanged": false,
+  "qualifiedExperimentalEntry": "work/nss51/real-session.mjs",
+  "uninstalledNextCandidate": "work/nss52/core-guard-phase.lua",
+  "ecmOpenedThisTurn": false,
+  "forwardingABACompletedThisTurn": false,
+  "budgetMbps": 20,
+  "gateFlows": {
+    "tcp": 1,
+    "udp": 1
+  },
+  "ownerSeconds": 45,
+  "allOriginalDeadlinesUnchanged": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "entryRound": "NSS49",
+      "case": "real-matched-aba-20261004081047-630838a7",
+      "passed": false,
+      "failure": "selected-class-not-admitted",
+      "checkpointAndTemporaryStageCreated": true,
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": false,
+      "forwardingABACompleted": false,
+      "completedPhases": [],
+      "phasesBAndA2Missing": true,
+      "retrospectiveSelectedFlowCauseProven": false,
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "checkpointHashAndGzipVerified": true,
+      "rollbackPassed": true,
+      "stageCleanupPassed": true,
+      "afterFullProtectedAuditPassed": true,
+      "natural45SecondNssExpiryProvedThisCase": false,
+      "qosRestored": true,
+      "initialAdmissionDiagnostic": {
+        "probes": 1,
+        "seconds": 6.070000000065193,
+        "sourceAgeSeconds": 3.6000000000931323
+      }
+    },
+    {
+      "attempt": 2,
+      "entryRound": "NSS49",
+      "case": "real-matched-aba-20261004081723-2112487f",
+      "passed": false,
+      "failure": "locked-source-age-6.47s",
+      "checkpointAndTemporaryStageCreated": false,
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "forwardingABACompleted": false,
+      "completedPhases": [],
+      "phasesBAndA2Missing": true,
+      "retrospectiveSelectedFlowCauseProven": false,
+      "rejectedBeforeCheckpointOrStaging": true,
+      "routerConfigurationWrites": false,
+      "rollbackRequired": false
+    },
+    {
+      "attempt": 3,
+      "entryRound": "NSS49",
+      "case": "real-matched-aba-20261004082036-376a3195",
+      "passed": false,
+      "failure": "historical-service-pid-baseline",
+      "checkpointAndTemporaryStageCreated": false,
+      "productionTemporaryStageOccurred": false,
+      "ecmPermitOpened": false,
+      "forwardingABACompleted": false,
+      "completedPhases": [],
+      "phasesBAndA2Missing": true,
+      "retrospectiveSelectedFlowCauseProven": false,
+      "rejectedBeforeCheckpointOrStaging": true,
+      "routerConfigurationWrites": false,
+      "rollbackRequired": false
+    },
+    {
+      "attempt": 4,
+      "entryRound": "NSS50",
+      "case": "real-matched-aba-20261004083435-f36f1fcc",
+      "passed": false,
+      "failure": "core-sleep-deadline",
+      "checkpointAndTemporaryStageCreated": true,
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": false,
+      "forwardingABACompleted": false,
+      "completedPhases": [
+        "A"
+      ],
+      "phasesBAndA2Missing": true,
+      "retrospectiveSelectedFlowCauseProven": false,
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "checkpointHashAndGzipVerified": true,
+      "rollbackPassed": true,
+      "stageCleanupPassed": true,
+      "afterFullProtectedAuditPassed": true,
+      "natural45SecondNssExpiryProvedThisCase": false,
+      "qosRestored": true,
+      "initialAdmissionDiagnostic": {
+        "probes": 36,
+        "seconds": 7.350000000093132,
+        "sourceAgeSeconds": 0.8500000000931323
+      }
+    },
+    {
+      "attempt": 5,
+      "entryRound": "NSS50",
+      "case": "real-matched-aba-20261004083901-c4b7888d",
+      "passed": false,
+      "failure": "core-sleep-deadline",
+      "checkpointAndTemporaryStageCreated": true,
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": false,
+      "forwardingABACompleted": false,
+      "completedPhases": [
+        "A"
+      ],
+      "phasesBAndA2Missing": true,
+      "retrospectiveSelectedFlowCauseProven": false,
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "checkpointHashAndGzipVerified": true,
+      "rollbackPassed": true,
+      "stageCleanupPassed": true,
+      "afterFullProtectedAuditPassed": true,
+      "natural45SecondNssExpiryProvedThisCase": false,
+      "qosRestored": true,
+      "initialAdmissionDiagnostic": {
+        "probes": 14,
+        "seconds": 7.820000000065193,
+        "sourceAgeSeconds": 0.9200000001583248
+      }
+    },
+    {
+      "attempt": 6,
+      "entryRound": "NSS51",
+      "case": "real-matched-aba-20261004091358-67970a14",
+      "passed": false,
+      "failure": "selected-class-not-admitted",
+      "checkpointAndTemporaryStageCreated": true,
+      "productionTemporaryStageOccurred": true,
+      "ecmPermitOpened": false,
+      "forwardingABACompleted": false,
+      "completedPhases": [],
+      "phasesBAndA2Missing": true,
+      "retrospectiveSelectedFlowCauseProven": false,
+      "independent45SecondRollbackVerifiedBeforeWrite": true,
+      "checkpointHashAndGzipVerified": true,
+      "rollbackPassed": true,
+      "stageCleanupPassed": true,
+      "afterFullProtectedAuditPassed": true,
+      "natural45SecondNssExpiryProvedThisCase": false,
+      "qosRestored": true,
+      "initialAdmissionDiagnostic": {
+        "probes": 1,
+        "seconds": 7.790000000037253,
+        "sourceAgeSeconds": 2.8799999998882413
+      }
+    }
+  ],
+  "partialSoftwareMeasurements": {
+    "readonlyOfflineAnalysis": true,
+    "cases": [
+      {
+        "case": "real-matched-aba-20261004083435-f36f1fcc",
+        "wan": 5,
+        "phase": "A",
+        "seconds": 5.080000000074506,
+        "samples": 11,
+        "busyPercent": 75.64426478019202,
+        "softirqPercent": 48.30722587165235,
+        "timeSqueeze": 0,
+        "softnetDrop": 0,
+        "interfaces": {
+          "lan4": {
+            "rx_bytes": 6594657,
+            "tx_bytes": 144365671,
+            "rx_packets": 81661,
+            "tx_packets": 95822,
+            "rx_dropped": 0,
+            "tx_dropped": 0,
+            "rxMbps": 10.385286614020911,
+            "txMbps": 227.3475133824924,
+            "rxPps": 16074.999999764235,
+            "txPps": 18862.5984249202
+          },
+          "rpwan5": {
+            "rx_bytes": 29366370,
+            "tx_bytes": 1381858,
+            "rx_packets": 17907,
+            "tx_packets": 16655,
+            "rx_dropped": 0,
+            "tx_dropped": 0,
+            "rxMbps": 46.246251967825664,
+            "txMbps": 2.1761543306767446,
+            "rxPps": 3524.9999999483007,
+            "txPps": 3278.5433070385293
+          }
+        },
+        "softwareForwarding": true,
+        "commonNssLan4QueueTreeStaged": true,
+        "ecmPermitOpened": false,
+        "phasesBAndA2Missing": true,
+        "cpuBenefitConclusion": false,
+        "gameBenefitConclusion": false,
+        "rollbackPassed": true
+      },
+      {
+        "case": "real-matched-aba-20261004083901-c4b7888d",
+        "wan": 5,
+        "phase": "A",
+        "seconds": 5.0499999998137355,
+        "samples": 11,
+        "busyPercent": 72.51521298174443,
+        "softirqPercent": 47.718052738336716,
+        "timeSqueeze": 1,
+        "softnetDrop": 0,
+        "interfaces": {
+          "lan4": {
+            "rx_bytes": 7264724,
+            "tx_bytes": 168945811,
+            "rx_packets": 93111,
+            "tx_packets": 112181,
+            "rx_dropped": 0,
+            "tx_dropped": 0,
+            "rxMbps": 11.508473663790816,
+            "txMbps": 267.63692832670324,
+            "rxPps": 18437.82178285828,
+            "txPps": 22214.059406759938
+          },
+          "rpwan5": {
+            "rx_bytes": 48155682,
+            "tx_bytes": 1853429,
+            "rx_packets": 27666,
+            "tx_packets": 25456,
+            "rx_dropped": 0,
+            "tx_dropped": 0,
+            "rxMbps": 76.28622891370485,
+            "txMbps": 2.9361251486231477,
+            "rxPps": 5478.4158417862245,
+            "txPps": 5040.792079393846
+          }
+        },
+        "softwareForwarding": true,
+        "commonNssLan4QueueTreeStaged": true,
+        "ecmPermitOpened": false,
+        "phasesBAndA2Missing": true,
+        "cpuBenefitConclusion": false,
+        "gameBenefitConclusion": false,
+        "rollbackPassed": true
+      }
+    ],
+    "noBetweenCaseCausalComparison": true,
+    "missingDataNeverZero": true
+  },
+  "clientSoftwareMeasurements": {
+    "source": "Actual Sky JPEG captures, manually checked HUD and full game context",
+    "humanGameplay": false,
+    "noNssPhaseOccurred": true,
+    "missingDataNeverZero": true,
+    "clockAnchorsChecked": true,
+    "cases": [
+      {
+        "case": "real-matched-aba-20261004083435-f36f1fcc",
+        "phase": "A",
+        "frames": [
+          {
+            "index": 30,
+            "central": false,
+            "pingMs": 12,
+            "missDownPercent": 1.2,
+            "lossDownPercent": 0.1,
+            "jitterDownMs": 3,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 1
+          },
+          {
+            "index": 31,
+            "central": true,
+            "pingMs": 12,
+            "missDownPercent": 1.2,
+            "lossDownPercent": 0,
+            "jitterDownMs": 2,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 1
+          },
+          {
+            "index": 32,
+            "central": true,
+            "pingMs": 12,
+            "missDownPercent": 0,
+            "lossDownPercent": 0,
+            "jitterDownMs": 4,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 1
+          },
+          {
+            "index": 33,
+            "central": false,
+            "pingMs": 12,
+            "missDownPercent": 0,
+            "lossDownPercent": 0,
+            "jitterDownMs": 4,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 1
+          }
+        ],
+        "fullContextVerified": true,
+        "context": "Online deathmatch, idle automated client; game HUD visible throughout mapped window"
+      },
+      {
+        "case": "real-matched-aba-20261004083901-c4b7888d",
+        "phase": "A",
+        "frames": [
+          {
+            "index": 26,
+            "central": false,
+            "pingMs": 12,
+            "missDownPercent": 0,
+            "lossDownPercent": 0.8,
+            "jitterDownMs": 1,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 0
+          },
+          {
+            "index": 27,
+            "central": true,
+            "pingMs": 12,
+            "missDownPercent": 0,
+            "lossDownPercent": 0.2,
+            "jitterDownMs": 3,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 1
+          },
+          {
+            "index": 28,
+            "central": true,
+            "pingMs": 12,
+            "missDownPercent": 0.4,
+            "lossDownPercent": 0.1,
+            "jitterDownMs": 4,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 1
+          },
+          {
+            "index": 29,
+            "central": true,
+            "pingMs": 12,
+            "missDownPercent": 0.4,
+            "lossDownPercent": 0,
+            "jitterDownMs": 2,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 1
+          },
+          {
+            "index": 30,
+            "central": false,
+            "pingMs": 12,
+            "missDownPercent": 0.4,
+            "lossDownPercent": 0,
+            "jitterDownMs": 2,
+            "missUpPercent": 0,
+            "lossUpPercent": 0,
+            "jitterUpMs": 1
+          }
+        ],
+        "fullContextVerified": true,
+        "context": "Online deathmatch, idle automated client; death and respawn in the window"
+      }
+    ],
+    "interpretation": {
+      "noSoftwareVsNssComparison": true,
+      "hudHasRollingWindowAndPeakMetrics": true,
+      "centralFramesDoNotRemoveHudRollingHistory": true,
+      "missIsNotRawPacketLoss": true,
+      "nssCpuOrGameBenefitProven": false,
+      "valveMetricDefinitionSource": "https://help.steampowered.com/en/faqs/view/5E6F-5B36-5485-F6B9"
+    }
+  },
+  "serviceEpochFix": {
+    "localBoundaryCases": 24,
+    "entryBoundInputs": 128,
+    "preExperimentHealthyCoreGuardPidOnlyDriftAccepted": true,
+    "sameCommandsAndRunningStateRequired": true,
+    "allDuringExperimentServiceChangesRejected": true,
+    "nativeFullReadonlyAuditPassed": true,
+    "classifierNativeOwnershipAuditRetained": true,
+    "causeOfHistoricalPidChangeProven": false
+  },
+  "phase51": {
+    "sourceSha256": "8051accbb2b941bb9e56122550acf1f16339ca2a1d74a5e119fdd528af936d61",
+    "originalSourceSha256": "829bd226104e7edbbffd59431d9ab32bee8381979d3dfd86acc227bf992767a8",
+    "reusedProcessModelCases": 22,
+    "liveReadonlyPhases": 2,
+    "entryBoundInputs": 140,
+    "onlyPinnedGuardChildDiscoveryChanged": true,
+    "waitFreshByteIdentical": true,
+    "nativeFullReadonlyEntryAuditPassed": true,
+    "highLoadReadOnlySuccesses": 1,
+    "highLoadReadOnlyAttempts": 3,
+    "highLoadReliablyFixed": false,
+    "forwardingSucceededThisEntry": false
+  },
+  "readonlyProfiling": {
+    "readonly": true,
+    "ecmClosedThroughout": true,
+    "guardUntouched": true,
+    "consumerCandidatesPathExecuted": true,
+    "unusedAdapterFunctionsOmittedOnlyInReadonlyProfiler": true,
+    "phaseCommentsOmittedOnlyInReadonlyProfiler": true,
+    "offeredLoadEqualityNotProven": true,
+    "groups": [
+      {
+        "name": "paused-exact",
+        "passedAttempts": 3,
+        "attempts": [
+          {
+            "passed": true,
+            "seconds": 3,
+            "scans": 90,
+            "maximumScanSeconds": 0.05999999982304871,
+            "maximumConsumerSeconds": 0.010000000009313226,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.0800000000745058,
+                "scanSeconds": 0.05000000004656613,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          },
+          {
+            "passed": true,
+            "seconds": 5.100000000093132,
+            "scans": 156,
+            "maximumScanSeconds": 0.09000000008381903,
+            "maximumConsumerSeconds": 0.010000000009313226,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.09000000008381903,
+                "scanSeconds": 0.0400000000372529,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          },
+          {
+            "passed": true,
+            "seconds": 5.079999999841675,
+            "scans": 156,
+            "maximumScanSeconds": 0.060000000055879354,
+            "maximumConsumerSeconds": 0.010000000009313226,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.07999999984167516,
+                "scanSeconds": 0.05000000004656613,
+                "priorGapSeconds": 0.029999999795109034
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "download-exact",
+        "passedAttempts": 0,
+        "attempts": [
+          {
+            "passed": false,
+            "seconds": 7.0200000000186265,
+            "scans": 127,
+            "maximumScanSeconds": 0.7399999999906868,
+            "maximumConsumerSeconds": 0.1699999999254942,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.43999999994412065,
+                "scanSeconds": 0.7399999999906868,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          },
+          {
+            "passed": false,
+            "seconds": 7.0200000000186265,
+            "scans": 131,
+            "maximumScanSeconds": 0.40999999991618097,
+            "maximumConsumerSeconds": 0.1699999999254942,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.31000000005587935,
+                "scanSeconds": 0.40999999991618097,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          },
+          {
+            "passed": false,
+            "seconds": 7.010000000009313,
+            "scans": 125,
+            "maximumScanSeconds": 0.7299999999813735,
+            "maximumConsumerSeconds": 0.14999999990686774,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.19999999995343387,
+                "scanSeconds": 0.23999999999068677,
+                "priorGapSeconds": 0.030000000027939677
+              },
+              {
+                "birthAgeSeconds": 0.4299999999348074,
+                "scanSeconds": 0.2699999997857958,
+                "priorGapSeconds": 0.0400000000372529
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "candidate-paused",
+        "passedAttempts": 3,
+        "attempts": [
+          {
+            "passed": true,
+            "seconds": 1.3600000001024455,
+            "scans": 40,
+            "maximumScanSeconds": 0.05000000004656613,
+            "maximumConsumerSeconds": 0.010000000009313226,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.07000000006519258,
+                "scanSeconds": 0.05000000004656613,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          },
+          {
+            "passed": true,
+            "seconds": 5.040000000037253,
+            "scans": 156,
+            "maximumScanSeconds": 0.0400000000372529,
+            "maximumConsumerSeconds": 0.010000000009313226,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.02000000001862645,
+                "scanSeconds": 0.030000000027939677,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          },
+          {
+            "passed": true,
+            "seconds": 5.089999999850988,
+            "scans": 158,
+            "maximumScanSeconds": 0.03999999980442226,
+            "maximumConsumerSeconds": 0.010000000009313226,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.02000000001862645,
+                "scanSeconds": 0.02000000001862645,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "candidate-download",
+        "passedAttempts": 1,
+        "attempts": [
+          {
+            "passed": true,
+            "seconds": 5.290000000037253,
+            "scans": 126,
+            "maximumScanSeconds": 0.18000000016763806,
+            "maximumConsumerSeconds": 0.030000000027939677,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.030000000027939677,
+                "scanSeconds": 0.14999999990686774,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          },
+          {
+            "passed": false,
+            "seconds": 7.179999999934807,
+            "scans": 162,
+            "maximumScanSeconds": 0.25,
+            "maximumConsumerSeconds": 0.18999999994412065,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.2099999999627471,
+                "scanSeconds": 0.18999999994412065,
+                "priorGapSeconds": 0.0400000000372529
+              }
+            ]
+          },
+          {
+            "passed": false,
+            "seconds": 7,
+            "scans": 145,
+            "maximumScanSeconds": 0.17000000015832484,
+            "maximumConsumerSeconds": 0.13999999989755452,
+            "newChildObservations": [
+              {
+                "birthAgeSeconds": 0.2099999999627471,
+                "scanSeconds": 0.17000000015832484,
+                "priorGapSeconds": 0.030000000027939677
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "phase52UninstalledCandidate": {
+    "passed": true,
+    "nativeLua": true,
+    "sourceSha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+    "originalSourceSha256": "8051accbb2b941bb9e56122550acf1f16339ca2a1d74a5e119fdd528af936d61",
+    "reusedProcessModelCases": 22,
+    "newParentDifferentialCases": 12,
+    "caseResults": [
+      {
+        "name": "fresh discovery reads only stat for unrelated processes",
+        "passed": true
+      },
+      {
+        "name": "cached child still checks full identity without enumeration",
+        "passed": true
+      },
+      {
+        "name": "wrong child parent cannot be returned",
+        "passed": true
+      },
+      {
+        "name": "wrong child argv cannot be returned",
+        "passed": true
+      },
+      {
+        "name": "wrong child duration cannot be returned",
+        "passed": true
+      },
+      {
+        "name": "wrong child state cannot be returned",
+        "passed": true
+      },
+      {
+        "name": "wrong child wchan cannot be returned",
+        "passed": true
+      },
+      {
+        "name": "cached reparenting forces discovery without a phase",
+        "passed": true
+      },
+      {
+        "name": "cached PID reuse revalidates a new complete child identity",
+        "passed": true
+      },
+      {
+        "name": "multiple direct sleep children fail closed",
+        "passed": true
+      },
+      {
+        "name": "guard PID reuse before discovery rejected",
+        "passed": true
+      },
+      {
+        "name": "guard PID reuse during discovery rejected",
+        "passed": true
+      },
+      {
+        "name": "guard absence rejected",
+        "passed": true
+      },
+      {
+        "name": "guard argv change rejected",
+        "passed": true
+      },
+      {
+        "name": "4096 process inventory bound retained",
+        "passed": true
+      },
+      {
+        "name": "legacy bounded child transition retained",
+        "passed": true
+      },
+      {
+        "name": "same old child never grants phase",
+        "passed": true
+      },
+      {
+        "name": "200 ms scan bound retained",
+        "passed": true
+      },
+      {
+        "name": "old absolute birth cannot be revived by rediscovery",
+        "passed": true
+      },
+      {
+        "name": "changed guard refused by wait",
+        "passed": true
+      },
+      {
+        "name": "unconfirmed sleep refused by wait",
+        "passed": true
+      },
+      {
+        "name": "future sleep birth refused",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 1",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 2",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 3",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 4",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 5",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 6",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 7",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 8",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 9",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 10",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 11",
+        "passed": true
+      },
+      {
+        "name": "parent parser differential 12",
+        "passed": true
+      }
+    ],
+    "liveReadOnlyPhases": [
+      {
+        "scanSeconds": 0.02000000001862645,
+        "birthAgeSeconds": 0.05000000004656613,
+        "waitSeconds": 2.2399999999906868,
+        "reads": 70,
+        "birthClockChecked": true,
+        "guardUntouched": true
+      },
+      {
+        "scanSeconds": 0.010000000009313226,
+        "birthAgeSeconds": 0.05000000004656613,
+        "waitSeconds": 5.099999999860302,
+        "reads": 161,
+        "birthClockChecked": true,
+        "guardUntouched": true
+      }
+    ],
+    "parentParserBenchSeconds": {
+      "new": 0.05026599999999992,
+      "old": 0.6233359999999999
+    },
+    "benchmarkTraversalsPerVersion": 10000,
+    "benchmarkIsPureParserOnly": true,
+    "notWholeRouterCpuBenefit": true,
+    "noRouterWrites": true,
+    "noNssPermission": true,
+    "notInstalled": true,
+    "notBoundToProductionEntry": true,
+    "highLoadQualified": false,
+    "waitFreshByteIdentical": true
+  },
+  "clientEndState": {
+    "steam": {
+      "observedAt": "2026-10-04T09:25:44.600Z",
+      "application": "Steam",
+      "title": "DOOM Eternal",
+      "downloadCompleted": true,
+      "networkBps": 0,
+      "totalDownloadedGB": 79.2,
+      "completionDisplayTime": "17:14",
+      "launched": false,
+      "otherInstallStarted": false,
+      "source": "Sky window accessibility and visible download page"
+    },
+    "cs2": {
+      "observedAt": "2026-10-04T09:27:56.637Z",
+      "restored": true,
+      "showPing": "If conditions are poor",
+      "showNetworkProblems": "If conditions are poor",
+      "detailedNetworkQuality": "If conditions are poor",
+      "graphUnchanged": "If conditions are poor",
+      "bufferingUnchanged": true,
+      "testServerExited": true,
+      "humanGameplay": false,
+      "verifiedUsing": "Sky actual unobscured screenshot"
+    },
+    "screenshotsAndRawIdentitiesExported": false,
+    "humanGameplay": false,
+    "newPurchase": false,
+    "doomLaunched": false
+  },
+  "finalState": {
+    "protectedAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 3.2800000000279397,
+      "sequence": 3488,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [
+        {
+          "service": "sing-box-athena",
+          "instance": "core",
+          "pidChangedBeforeExperiment": true
+        },
+        {
+          "service": "sing-box-athena",
+          "instance": "guard",
+          "pidChangedBeforeExperiment": true
+        }
+      ],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "closure": {
+      "passed": true,
+      "observedAt": "2026-10-04T09:30:39.559Z",
+      "readonly": true,
+      "deploymentReference": "work/nss47/deployment-latest.json",
+      "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+      "noActiveRootTransaction": true,
+      "noNssStagingDirectory": true,
+      "noExperimentStateNodeDirectory": true,
+      "noExperimentalGateOrQdiscModule": true,
+      "uptime": 1923785.25
+    },
+    "sameCacheRetainedWorker": true,
+    "servicePidEpochUnchangedDuringExperiments": true,
+    "nssPermanentlyEnabled": false
+  },
+  "conclusions": {
+    "historical49FunctionProofStillValid": true,
+    "actualSoftwareClientHudCaptured": true,
+    "nssBClientHudCapturedThisTurn": false,
+    "softwareVersusNssCpuBenefitProvedThisTurn": false,
+    "realHumanExperienceProved": false,
+    "highLoadPhaseFixValidated": false,
+    "secondWanExpansionAllowed": false,
+    "sharedBudgetAllowed": false,
+    "upstreamSubmitted": false
+  },
+  "nextAction": "Qualify efficient process discovery under the next real download window, preserve selected-flow continuity, then run one same-load software→NSS→software comparison with actual client HUD; do not repeat classifier installation prep.",
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

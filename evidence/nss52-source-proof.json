@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "sources": 7,
+  "sourceHashes": {
+    "work/nss52/build-candidate.mjs": "bc478b1343b15d94014ec4b03b8b58f9c795cd058a6e83e36e2a5e95747ad9f6",
+    "work/nss52/core-guard-phase.lua": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+    "work/nss52/phase-delta.json": "a594e132a6ee09b8f31ddcc4f478f820f791cf9cb3332bcc80fbd2c9eb6104b8",
+    "work/nss52/qualify-phase.mjs": "d36f7654ec3fc322237cf241cd22ac8ee9c762d19321b8b6053af2b1d3e0e2b6",
+    "work/nss52/summarize.py": "0a26b72fabd332375d46b90b9290cdddb78d98add0e7ee228e6a5821179ae20f",
+    "work/nss52/render-report.py": "eff77aed8828ab6660da613922897683292de3204d3387b5934eba324ae291da",
+    "work/nss52/freeze-safe-sources.py": "0e606229d1cda13d1e6b5a7487cb3090710516799559795d9bf7751fe65df273"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "phase52ProductionEntryQualified": false
+}

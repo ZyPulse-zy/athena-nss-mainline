@@ -1,0 +1,12 @@
+{
+  "originalSha256": "8051accbb2b941bb9e56122550acf1f16339ca2a1d74a5e119fdd528af936d61",
+  "candidateSha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+  "from": "   if ok then local a={};for v in assert(raw:match('^%d+ %b() (.*)$')):gmatch('%S+')do a[#a+1]=v end\n    if tonumber(a[2])==g.pid then",
+  "to": "   if ok then local parent=tonumber(assert(raw:match('^%d+ %b() (.*)$')):match('^%s*%S+%s+(%S+)'))\n    if parent==g.pid then",
+  "waitFreshByteIdentical": true,
+  "onlyUnrelatedParentFieldParsingChanged": true,
+  "guardAndChildFullIdentityChecksUnchanged": true,
+  "notInstalled": true,
+  "notBoundToProductionEntry": true,
+  "sourceAndOwnerDeadlinesUnchanged": true
+}

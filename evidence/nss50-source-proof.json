@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "sources": 15,
+  "sourceHashes": {
+    "work/nss50/service-epoch.mjs": "8c5ead875b7bd0927fbb6fdc645be9e355af0abb496029318a53a2411246185b",
+    "work/nss50/current-audit-diagnostic.mjs": "fa2cac7cfa49643b0b12c9e01973a56a7ff0d69d29dc1cb628e29ce704c73b83",
+    "work/nss50/session-binding.mjs": "a908fafc2a7e6a04dd14a8b473e6de5c96c199a0d4505484f2f29b36572aa216",
+    "work/nss50/real-session.mjs": "995fa94855ff3e790103eb5f5b5462650125e2ccdd17888ec14542e3f1dc0809",
+    "work/nss50/test-service-epoch.mjs": "0cce785c58adb3e4a2ac11d526289157a5a6e64c58b5ac0bc6a05212026fb5ba",
+    "work/nss50/qualify-overlay.mjs": "eef34c5c96eb789cea112d25ec0880d024b73a218f03044c43f0742e408b372d",
+    "work/nss50/clock-anchor.mjs": "c1dd1fd57cf18c2859cba76b163ea7b9e4f57620e7698f287a05dcffd377da0c",
+    "work/nss50/cleanup-audit.mjs": "72479ca7d66b2f81d3beba3bd693ce4dc58b5b37ef806e277d566a305bd27a29",
+    "work/nss50/inspect-selected.mjs": "eeaf31de16a82e137b922b3762a0b77786e4aecd85afd3ba34726d8d2f954eb6",
+    "work/nss50/capture-hud.js": "e6e6562d4b9c5b59afd8cf0ebbd84e759ae655adb50b167fc741018446e26bb2",
+    "work/nss50/capture-hud-long.js": "2a9811101a717558d62b65310bfe33f090ff4567b33f09e1fd55f16edbac879d",
+    "work/nss50/analyze-aba.mjs": "b6bc188420b1085af84fd3c13f7b2f2757278473c1e2c8f5384bae39f5e48cd4",
+    "work/nss50/map-client-frames.mjs": "254719c60ed52e72932ba1ca273928e7f32fb6c1e5c3a4f2bc5ab2fcc8416176",
+    "work/nss50/make-hud-sheet.py": "8e0e446fcd8053c049e5dca136c0b25564d89551fb69ac4c0958fe8f15ea46f5",
+    "work/nss50/analyze-partial.mjs": "d326d5e8522ae3c1439ece07039722c43cf2d92de00572d071e485d2709c423e"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "phase52ProductionEntryQualified": false
+}

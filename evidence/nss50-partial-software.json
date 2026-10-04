@@ -1,0 +1,95 @@
+{
+  "readonlyOfflineAnalysis": true,
+  "cases": [
+    {
+      "case": "real-matched-aba-20261004083435-f36f1fcc",
+      "wan": 5,
+      "phase": "A",
+      "seconds": 5.080000000074506,
+      "samples": 11,
+      "busyPercent": 75.64426478019202,
+      "softirqPercent": 48.30722587165235,
+      "timeSqueeze": 0,
+      "softnetDrop": 0,
+      "interfaces": {
+        "lan4": {
+          "rx_bytes": 6594657,
+          "tx_bytes": 144365671,
+          "rx_packets": 81661,
+          "tx_packets": 95822,
+          "rx_dropped": 0,
+          "tx_dropped": 0,
+          "rxMbps": 10.385286614020911,
+          "txMbps": 227.3475133824924,
+          "rxPps": 16074.999999764235,
+          "txPps": 18862.5984249202
+        },
+        "rpwan5": {
+          "rx_bytes": 29366370,
+          "tx_bytes": 1381858,
+          "rx_packets": 17907,
+          "tx_packets": 16655,
+          "rx_dropped": 0,
+          "tx_dropped": 0,
+          "rxMbps": 46.246251967825664,
+          "txMbps": 2.1761543306767446,
+          "rxPps": 3524.9999999483007,
+          "txPps": 3278.5433070385293
+        }
+      },
+      "softwareForwarding": true,
+      "commonNssLan4QueueTreeStaged": true,
+      "ecmPermitOpened": false,
+      "phasesBAndA2Missing": true,
+      "cpuBenefitConclusion": false,
+      "gameBenefitConclusion": false,
+      "rollbackPassed": true
+    },
+    {
+      "case": "real-matched-aba-20261004083901-c4b7888d",
+      "wan": 5,
+      "phase": "A",
+      "seconds": 5.0499999998137355,
+      "samples": 11,
+      "busyPercent": 72.51521298174443,
+      "softirqPercent": 47.718052738336716,
+      "timeSqueeze": 1,
+      "softnetDrop": 0,
+      "interfaces": {
+        "lan4": {
+          "rx_bytes": 7264724,
+          "tx_bytes": 168945811,
+          "rx_packets": 93111,
+          "tx_packets": 112181,
+          "rx_dropped": 0,
+          "tx_dropped": 0,
+          "rxMbps": 11.508473663790816,
+          "txMbps": 267.63692832670324,
+          "rxPps": 18437.82178285828,
+          "txPps": 22214.059406759938
+        },
+        "rpwan5": {
+          "rx_bytes": 48155682,
+          "tx_bytes": 1853429,
+          "rx_packets": 27666,
+          "tx_packets": 25456,
+          "rx_dropped": 0,
+          "tx_dropped": 0,
+          "rxMbps": 76.28622891370485,
+          "txMbps": 2.9361251486231477,
+          "rxPps": 5478.4158417862245,
+          "txPps": 5040.792079393846
+        }
+      },
+      "softwareForwarding": true,
+      "commonNssLan4QueueTreeStaged": true,
+      "ecmPermitOpened": false,
+      "phasesBAndA2Missing": true,
+      "cpuBenefitConclusion": false,
+      "gameBenefitConclusion": false,
+      "rollbackPassed": true
+    }
+  ],
+  "noBetweenCaseCausalComparison": true,
+  "missingDataNeverZero": true
+}

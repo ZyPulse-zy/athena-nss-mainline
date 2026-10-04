@@ -1,0 +1,10 @@
+{
+  "originalSha256": "829bd226104e7edbbffd59431d9ab32bee8381979d3dfd86acc227bf992767a8",
+  "candidateSha256": "8051accbb2b941bb9e56122550acf1f16339ca2a1d74a5e119fdd528af936d61",
+  "from": "  local s=M.scan(fs,read);assert(s.guard.pid==expected.pid and s.guard.start==expected.start)\n  s.scopedIdentityRead=true;s.refreshInventory=true;return s",
+  "to": "  -- The guard was fully validated above. Inspect process stat for ancestry;\n  -- read argv/wchan only for its direct children, then revalidate each match.\n  local sleepers={};local total=0\n  for pid in fs.dir('/proc')do if pid:match('^%d+$')then\n   total=total+1;assert(total<=4096,'Process inventory bound')\n   local ok,raw=pcall(read,'/proc/'..pid..'/stat',8192)\n   if ok then local a={};for v in assert(raw:match('^%d+ %b() (.*)$')):gmatch('%S+')do a[#a+1]=v end\n    if tonumber(a[2])==g.pid then\n     local p=proc(tonumber(pid))\n     if p and p.ppid==g.pid and #p.argv==2 and(p.argv[1]=='sleep'or p.argv[1]=='/bin/sleep')and p.argv[2]=='5'and p.state=='S'and p.wchan=='hrtimer_nanosleep'then sleepers[#sleepers+1]=p end\n    end\n   end\n  end end\n  assert(#sleepers<=1,'Multiple core sleep children')\n  local final=assert(proc(expected.pid),'Core guard absent')\n  assert(final.start==g.start and final.state~='Z'and #final.argv==3 and final.argv[1]=='/bin/sh'and final.argv[2]=='/root/router-project/scripts/core-guard.sh'and final.argv[3]=='watch','Core guard identity changed')\n  local p=sleepers[1];remembered=p and{guardPid=g.pid,guardStart=g.start,pid=p.pid,start=p.start}or nil\n  return{guard=final,sleep=p,clockTicks=M.clockTicks(read),scopedIdentityRead=true,refreshInventory=true,parentScopedInventory=true,inventoryProcesses=total}",
+  "waitFreshByteIdentical": true,
+  "unscopedDiscoveryByteIdentical": true,
+  "sourceAndOwnerDeadlinesUnchanged": true,
+  "candidateNotYetAuthorized": true
+}

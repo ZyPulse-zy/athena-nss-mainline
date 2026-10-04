@@ -9,6 +9,9 @@ args=parser.parse_args()
 workspace=args.workspace.resolve()
 repo=Path(__file__).resolve().parents[1]
 assert workspace.is_dir() and repo != workspace
+runtime=repo/'evidence/current-runtime.json'
+if runtime.exists() and json.loads(runtime.read_text())['round']=='NSS52':
+    raise SystemExit('Historical NSS49 export is frozen. Use tools/sync_nss50_52.py for the current append-only export.')
 def read(path): return json.loads((workspace/path).read_text(encoding='utf-8-sig'))
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def save(path, value):

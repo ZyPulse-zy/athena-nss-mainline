@@ -1,0 +1,208 @@
+{
+  "readonly": true,
+  "ecmClosedThroughout": true,
+  "guardUntouched": true,
+  "consumerCandidatesPathExecuted": true,
+  "unusedAdapterFunctionsOmittedOnlyInReadonlyProfiler": true,
+  "phaseCommentsOmittedOnlyInReadonlyProfiler": true,
+  "offeredLoadEqualityNotProven": true,
+  "groups": [
+    {
+      "name": "paused-exact",
+      "passedAttempts": 3,
+      "attempts": [
+        {
+          "passed": true,
+          "seconds": 3,
+          "scans": 90,
+          "maximumScanSeconds": 0.05999999982304871,
+          "maximumConsumerSeconds": 0.010000000009313226,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.0800000000745058,
+              "scanSeconds": 0.05000000004656613,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "seconds": 5.100000000093132,
+          "scans": 156,
+          "maximumScanSeconds": 0.09000000008381903,
+          "maximumConsumerSeconds": 0.010000000009313226,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.09000000008381903,
+              "scanSeconds": 0.0400000000372529,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "seconds": 5.079999999841675,
+          "scans": 156,
+          "maximumScanSeconds": 0.060000000055879354,
+          "maximumConsumerSeconds": 0.010000000009313226,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.07999999984167516,
+              "scanSeconds": 0.05000000004656613,
+              "priorGapSeconds": 0.029999999795109034
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "download-exact",
+      "passedAttempts": 0,
+      "attempts": [
+        {
+          "passed": false,
+          "seconds": 7.0200000000186265,
+          "scans": 127,
+          "maximumScanSeconds": 0.7399999999906868,
+          "maximumConsumerSeconds": 0.1699999999254942,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.43999999994412065,
+              "scanSeconds": 0.7399999999906868,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "seconds": 7.0200000000186265,
+          "scans": 131,
+          "maximumScanSeconds": 0.40999999991618097,
+          "maximumConsumerSeconds": 0.1699999999254942,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.31000000005587935,
+              "scanSeconds": 0.40999999991618097,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "seconds": 7.010000000009313,
+          "scans": 125,
+          "maximumScanSeconds": 0.7299999999813735,
+          "maximumConsumerSeconds": 0.14999999990686774,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.19999999995343387,
+              "scanSeconds": 0.23999999999068677,
+              "priorGapSeconds": 0.030000000027939677
+            },
+            {
+              "birthAgeSeconds": 0.4299999999348074,
+              "scanSeconds": 0.2699999997857958,
+              "priorGapSeconds": 0.0400000000372529
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "candidate-paused",
+      "passedAttempts": 3,
+      "attempts": [
+        {
+          "passed": true,
+          "seconds": 1.3600000001024455,
+          "scans": 40,
+          "maximumScanSeconds": 0.05000000004656613,
+          "maximumConsumerSeconds": 0.010000000009313226,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.07000000006519258,
+              "scanSeconds": 0.05000000004656613,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "seconds": 5.040000000037253,
+          "scans": 156,
+          "maximumScanSeconds": 0.0400000000372529,
+          "maximumConsumerSeconds": 0.010000000009313226,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.02000000001862645,
+              "scanSeconds": 0.030000000027939677,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "seconds": 5.089999999850988,
+          "scans": 158,
+          "maximumScanSeconds": 0.03999999980442226,
+          "maximumConsumerSeconds": 0.010000000009313226,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.02000000001862645,
+              "scanSeconds": 0.02000000001862645,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "candidate-download",
+      "passedAttempts": 1,
+      "attempts": [
+        {
+          "passed": true,
+          "seconds": 5.290000000037253,
+          "scans": 126,
+          "maximumScanSeconds": 0.18000000016763806,
+          "maximumConsumerSeconds": 0.030000000027939677,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.030000000027939677,
+              "scanSeconds": 0.14999999990686774,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "seconds": 7.179999999934807,
+          "scans": 162,
+          "maximumScanSeconds": 0.25,
+          "maximumConsumerSeconds": 0.18999999994412065,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.2099999999627471,
+              "scanSeconds": 0.18999999994412065,
+              "priorGapSeconds": 0.0400000000372529
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "seconds": 7,
+          "scans": 145,
+          "maximumScanSeconds": 0.17000000015832484,
+          "maximumConsumerSeconds": 0.13999999989755452,
+          "newChildObservations": [
+            {
+              "birthAgeSeconds": 0.2099999999627471,
+              "scanSeconds": 0.17000000015832484,
+              "priorGapSeconds": 0.030000000027939677
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

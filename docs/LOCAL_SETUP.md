@@ -1,5 +1,9 @@
 # 本地接续
 
+最新实装/候选接续见 [STATE](STATE.md) 与 [PLAN](PLAN.md)：常驻NSS47不变，NSS51入口绑定140项，NSS52 helper仅未安装候选，六次新尝试没有ECM许可。下方NSS49入口说明为历史路径，不能替代最新资格或自动运行。
+
+`tools/sync_nss50_52.py <完整私有工作区路径>`是当前白名单追加导出；保留NSS49 runtime并合并精确源码清单，不上传私有原始材料。旧`sync_from_workspace.py`在最新runtime为NSS52时拒绝运行，避免覆盖新状态。同步后仍运行`tools/check_repository.py`并检查diff。
+
 完整私有工作区仍是本聊天原目录。仓库的 `code/work/...` 保存代码原路径；凭据与完整实验目录不会上传。
 
 已验证的本地工具是 Node.js、Python 与 WSL `Athena-Cake-Build` 中的 Lua 5.1。没有把 SDK、固件或内核模块二进制加入仓库。

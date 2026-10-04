@@ -1,0 +1,17 @@
+// Read-only wall/uptime anchor. Never authorizes a router mutation.
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {connectRouter} from '../nss20/connect-router.mjs';
+import {encode,receipt} from '../nss11/v7-observe-repair/observe2/transport.mjs';
+const label=process.argv[2];assert.match(label,/^[a-z0-9-]+$/);
+const path='work/nss50/clock-'+label+'-private.json';assert.ok(!fs.existsSync(path));
+const code="local n=require('nixio');local j=require('luci.jsonc');local s,u=n.gettimeofday();local f=assert(io.open('/proc/uptime'));local raw=f:read(128);f:close();print(j.stringify({routerWallSeconds=s+u/1000000,routerUptime=tonumber(raw:match('^[%d.]+'))}))";
+const c=await connectRouter();try{
+ const e=encode("/usr/bin/lua - <<'NSS50_CLOCK_READONLY'\n"+code+'\nNSS50_CLOCK_READONLY\n');
+ const start=Date.now(),raw=receipt(await c.run(e.command),e),end=Date.now();
+ assert.equal(raw.code,0,raw.stderr);const r=JSON.parse(raw.stdout);
+ assert.ok(Number.isFinite(r.routerWallSeconds)&&Number.isFinite(r.routerUptime));
+ const out={...r,localRequestMs:start,localReceiptMs:end,roundTripMs:end-start,readonly:true};
+ fs.writeFileSync(path,JSON.stringify(out,null,2)+'\n',{flag:'wx'});
+ console.log(JSON.stringify({readonly:true,roundTripMs:out.roundTripMs,clockDifferenceMs:out.routerWallSeconds*1000-(start+end)/2,output:path}));
+}finally{c.close()}

@@ -2,9 +2,25 @@
 
 更新：2026-10-04，北京时间。最新现场核验见 [当前运行记录](../evidence/current-runtime.json)。
 
-**NSS49 完整单 WAN 功能对照通过：真实 CS2 / Steam 自动进入 NSS RT / bulk leaf，ECM 0→2→0，mark/NAT/WAN affinity、控制器终态和恢复审核正确。常驻为 NSS47 地址缓存＋NSS46 可靠性修复，ECM 已关闭。CPU / 真人游戏收益仍未验收。**
+**常驻仍 NSS47，ECM 关闭全零。NSS49 单 WAN 功能成功保持；NSS50–52 六次新尝试没有开放 ECM，当前卡在高负载准入读取延迟与所选分类持续性。已取得两段软件客户端 HUD；新的进程解析候选仅通过轻载只读检查，CPU / 真人游戏收益仍未验收。**
 
-## 最新：NSS47–NSS49
+## 最新：NSS50–NSS52
+
+见 [本轮汇总](../evidence/nss52-mainline.json)、[高负载只读时序](../evidence/nss51-phase-timing.json)、[实际软件负载](../evidence/nss50-partial-software.json) 和 [软件客户端记录](../evidence/nss50-client-software.json)。
+
+- 常驻引用与配置哈希不变：`work/nss47/deployment-latest.json`，`478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900`。没有安装新的分类器、内核、driver 或 firmware。NSS49 历史 runtime 精确保存在 [nss49-runtime](../evidence/nss49-runtime.json)。
+- 用户授权下载库中 DOOM Eternal，由助手控制现有 Steam / CS2。下载于 17:14 完成 79.2 GB、最终速率 0，没有启动 DOOM、购买、卸载或重新下载；CS2 已退出服务器，三项 HUD 显示恢复。是助手在线闲置 / 观战，没有真人操作或主观体验。
+- 六次实际尝试：选中分类拒绝、持锁来源 6.47 秒、历史服务 PID 基线拒绝、两次 core-sleep deadline、再一次选中分类拒绝。四次 checkpoint / 独立 45 秒守护 / 单 WAN 临时暂存后精确恢复，完整 AFTER 和最终清理通过；两次暂存前拒绝。全部未放行 ECM，不能称新的 NSS A/B/A2。
+- NSS50 只允许实验前健康的 sing-box core / guard PID 与历史安装基线不同，命令、服务集合和运行状态完全相同；固定本次 epoch 后任何漂移仍拒绝。24 项本地边界、新 128 项输入与原完整目标只读审核通过。不推断 PID 变化原因，也没有重启这两个服务。
+- 两次仅软件 A 各 11 帧、5.08 / 5.05 秒：LAN4 227.35 / 267.64 Mbps，WAN5 46.25 / 76.29 Mbps，softirq 48.31 / 47.72%，time_squeeze +0 / +1。共同 LAN4 NSS 队列树已经暂存、ECM 全零；不是未暂存的原始基线，负载不同不能彼此作因果比较。没有 B/A2/有效 CAKE tin 对照。
+- 实际 HUD 对应 A 的 4 / 5 帧经时钟锚点、完整游戏场景和人工逐帧检查：ping 12 ms，下行 jitter 2–4 / 1–4 ms，loss 0–0.1 / 0–0.8%，Miss 0–1.2 / 0–0.4%。滚动 / 峰值不是独立瞬时采样；没有 B，也没有真人体验，不能声称 QoS 改善。
+- 只读 profiler 定位：原 helper 在目标子进程换代后读全机 stat/argv/wchan，约 350 Mbps 实际下载下 0/3 通过，最长回调 740 ms；暂停下载 3/3。NSS51 只发现固定 guard 的直接子进程，22 项模型 / 两次实际只读 / 140 项绑定 / 原完整审核通过。但实际下载只读仍仅 1/3 通过，不是稳定修复。随后真实入口在选中分类断言拒绝，没有到 B。
+- NSS52 只把无关进程 stat 的完整字段拆分改为父进程提取。原 22 模型重放＋12 差分、两次轻载只读通过；10,000 遍纯解析 0.623336→0.050266 秒，约 91.94%，不是整机收益。等待源码字节、200 ms 出生条件和全部来源 / owner 期限保持。**候选未安装、未绑定生产入口、无高负载资格。**
+- 17:30 最终原完整持锁审核通过，worker / guardian / producer 与先前 NSS49 相同，ECM 停止全零，无事务、暂存目录、实验状态或模块。连续同实例不证明完整高负载 crash / 长期稳定。NSS50/51/52 分别 15/14/7 份可读源码冻结，实际 128/140 项输入副本仍私有，源码冻结不授予新生产资格。
+
+下一步先用下一次真实下载窗验证高负载进程发现稳定，补失败帧具体分类诊断，再一次取得同负载软件→NSS→软件与客户端 HUD。已有分类器安装与旧 99/13 项检查不重复准备；不扩第二 WAN、共享预算、Wi-Fi 或 autorate。详见 [计划](PLAN.md) 与 [本地问题记录](ISSUE_CORE_SLEEP_DISCOVERY.md)。
+
+## NSS47–NSS49 历史功能与缓存证明
 
 见 [本轮汇总](../evidence/nss49-mainline.json)、[实际对照](../evidence/nss49-actual-aba.json)、[原失败](../evidence/nss49-failed-attempts.json)、[客户端边界](../evidence/nss49-client-boundaries.json)。
 

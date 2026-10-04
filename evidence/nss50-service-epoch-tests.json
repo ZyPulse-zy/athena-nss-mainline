@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "cases": 24,
+  "results": [
+    {
+      "name": "historical-identities-unchanged",
+      "passed": true
+    },
+    {
+      "name": "healthy-preexisting-two-pid-change",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-core-command",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-guard-command",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-core-stopped",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-guard-stopped",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-missing-instance",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-added-instance",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-missing-service",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-added-service",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-unrelated-pid",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-unrelated-stopped",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-unrelated-command",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-zero-pid",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-fractional-pid",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-negative-pid",
+      "passed": true
+    },
+    {
+      "name": "adoption-rejects-unexpected-instance-field",
+      "passed": true
+    },
+    {
+      "name": "epoch-retains-exact-services",
+      "passed": true
+    },
+    {
+      "name": "within-epoch-rejects-core-pid",
+      "passed": true
+    },
+    {
+      "name": "within-epoch-rejects-guard-pid",
+      "passed": true
+    },
+    {
+      "name": "within-epoch-rejects-core-command",
+      "passed": true
+    },
+    {
+      "name": "within-epoch-rejects-guard-stopped",
+      "passed": true
+    },
+    {
+      "name": "within-epoch-rejects-unrelated-pid",
+      "passed": true
+    },
+    {
+      "name": "within-epoch-rejects-unknown-service",
+      "passed": true
+    }
+  ],
+  "syntheticServiceFixtures": true,
+  "noRouterOrServiceWrites": true,
+  "nssPermissionGranted": false,
+  "withinExperimentServiceDriftRejected": true
+}

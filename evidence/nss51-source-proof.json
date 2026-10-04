@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "sources": 14,
+  "sourceHashes": {
+    "work/nss51/build-candidate.mjs": "80038eaad3b4552dd2abd85c6d9db679a4394bc6bbab852c60fd2a8d0ed5d24d",
+    "work/nss51/core-guard-phase.lua": "8051accbb2b941bb9e56122550acf1f16339ca2a1d74a5e119fdd528af936d61",
+    "work/nss51/phase-delta.json": "8641523f1443ce6375176244720840f99009cb43eb62900ffa163036868e12fe",
+    "work/nss51/qualify-phase.mjs": "0a36062148581cf291611b987ea41a458ef4954d6d6970fac2c569aba48d9aba",
+    "work/nss51/build-entry.mjs": "e4ae2df25a35398ef9a6ee4bc9c77fbbefdb3f4e643db99acc39a0c3c94bf9bb",
+    "work/nss51/module-stage.mjs": "2bf188f77fae6c74e51534690e1d6329a22e4beb72c3093945b2e7bfb5a91920",
+    "work/nss51/real-session.mjs": "84042d36485a13b8c17b58a68f57923ed974fb99715245c898c3b0244664be96",
+    "work/nss51/current-audit-diagnostic.mjs": "69dc9ee5e86b9d52092e9bba843fe349dfbf4fa2e63fb5b6f161a9ef6099293a",
+    "work/nss51/qualification.mjs": "b14dc31adf7facdb8b3d3802780f8b56ff37b2e31d3a83558481cc314f57a915",
+    "work/nss51/session-binding.mjs": "1419ab737f5dace41feeb5e4794390ef5f3bcd2471d1e8fdedcc3c32cb19a4b7",
+    "work/nss51/qualify-entry.mjs": "d79f482f226696e946174dfb44bc731cd6b294d7ecb3e97f6e2301bc08cb0a6c",
+    "work/nss51/trace-phase.mjs": "0b8f62666d3d2b55d3ef51d728cb82b3d67da35c11bead43098e50c35b374de2",
+    "work/nss51/trace-exact-observer.mjs": "77065130fbbd98e4fdd3ac2d4a9a331629f73c952500c8c1e616a388073eba58",
+    "work/nss51/summarize-traces.mjs": "ed32b36527b8a699b57eefcfb53e2fd37a09db45d9ecc21915f97d69bc42750c"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "phase52ProductionEntryQualified": false
+}

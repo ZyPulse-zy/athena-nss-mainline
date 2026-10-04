@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T07:35:59.430628+00:00",
+  "generatedAt": "2026-10-04T09:38:04.264546+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -4141,6 +4141,260 @@
       "sha256": "9ad7b1c93c0dcc5c4bc01a6b5a73d396328478ed0487af6ffecb9d314484bab7",
       "bytes": 1234,
       "role": "matches-current-deployed-config-hash"
+    },
+    {
+      "path": "code/work/nss50/analyze-aba.mjs",
+      "workspaceSource": "work/nss50/analyze-aba.mjs",
+      "sha256": "b6bc188420b1085af84fd3c13f7b2f2757278473c1e2c8f5384bae39f5e48cd4",
+      "bytes": 4121,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/analyze-partial.mjs",
+      "workspaceSource": "work/nss50/analyze-partial.mjs",
+      "sha256": "d326d5e8522ae3c1439ece07039722c43cf2d92de00572d071e485d2709c423e",
+      "bytes": 2500,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/capture-hud-long.js",
+      "workspaceSource": "work/nss50/capture-hud-long.js",
+      "sha256": "2a9811101a717558d62b65310bfe33f090ff4567b33f09e1fd55f16edbac879d",
+      "bytes": 2407,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/capture-hud.js",
+      "workspaceSource": "work/nss50/capture-hud.js",
+      "sha256": "e6e6562d4b9c5b59afd8cf0ebbd84e759ae655adb50b167fc741018446e26bb2",
+      "bytes": 2233,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/cleanup-audit.mjs",
+      "workspaceSource": "work/nss50/cleanup-audit.mjs",
+      "sha256": "72479ca7d66b2f81d3beba3bd693ce4dc58b5b37ef806e277d566a305bd27a29",
+      "bytes": 2309,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/clock-anchor.mjs",
+      "workspaceSource": "work/nss50/clock-anchor.mjs",
+      "sha256": "c1dd1fd57cf18c2859cba76b163ea7b9e4f57620e7698f287a05dcffd377da0c",
+      "bytes": 1380,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss50/current-audit-diagnostic.mjs",
+      "sha256": "fa2cac7cfa49643b0b12c9e01973a56a7ff0d69d29dc1cb628e29ce704c73b83",
+      "bytes": 4137,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/inspect-selected.mjs",
+      "workspaceSource": "work/nss50/inspect-selected.mjs",
+      "sha256": "eeaf31de16a82e137b922b3762a0b77786e4aecd85afd3ba34726d8d2f954eb6",
+      "bytes": 2528,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/make-hud-sheet.py",
+      "workspaceSource": "work/nss50/make-hud-sheet.py",
+      "sha256": "8e0e446fcd8053c049e5dca136c0b25564d89551fb69ac4c0958fe8f15ea46f5",
+      "bytes": 1556,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/map-client-frames.mjs",
+      "workspaceSource": "work/nss50/map-client-frames.mjs",
+      "sha256": "254719c60ed52e72932ba1ca273928e7f32fb6c1e5c3a4f2bc5ab2fcc8416176",
+      "bytes": 2744,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/qualify-overlay.mjs",
+      "workspaceSource": "work/nss50/qualify-overlay.mjs",
+      "sha256": "eef34c5c96eb789cea112d25ec0880d024b73a218f03044c43f0742e408b372d",
+      "bytes": 2709,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/real-session.mjs",
+      "workspaceSource": "work/nss50/real-session.mjs",
+      "sha256": "995fa94855ff3e790103eb5f5b5462650125e2ccdd17888ec14542e3f1dc0809",
+      "bytes": 11286,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/service-epoch.mjs",
+      "workspaceSource": "work/nss50/service-epoch.mjs",
+      "sha256": "8c5ead875b7bd0927fbb6fdc645be9e355af0abb496029318a53a2411246185b",
+      "bytes": 2379,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/session-binding.mjs",
+      "workspaceSource": "work/nss50/session-binding.mjs",
+      "sha256": "a908fafc2a7e6a04dd14a8b473e6de5c96c199a0d4505484f2f29b36572aa216",
+      "bytes": 1110,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss50/test-service-epoch.mjs",
+      "workspaceSource": "work/nss50/test-service-epoch.mjs",
+      "sha256": "0cce785c58adb3e4a2ac11d526289157a5a6e64c58b5ac0bc6a05212026fb5ba",
+      "bytes": 3117,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/build-candidate.mjs",
+      "workspaceSource": "work/nss51/build-candidate.mjs",
+      "sha256": "80038eaad3b4552dd2abd85c6d9db679a4394bc6bbab852c60fd2a8d0ed5d24d",
+      "bytes": 2484,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/build-entry.mjs",
+      "workspaceSource": "work/nss51/build-entry.mjs",
+      "sha256": "e4ae2df25a35398ef9a6ee4bc9c77fbbefdb3f4e643db99acc39a0c3c94bf9bb",
+      "bytes": 2168,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/core-guard-phase.lua",
+      "workspaceSource": "work/nss51/core-guard-phase.lua",
+      "sha256": "8051accbb2b941bb9e56122550acf1f16339ca2a1d74a5e119fdd528af936d61",
+      "bytes": 6190,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss51/current-audit-diagnostic.mjs",
+      "sha256": "69dc9ee5e86b9d52092e9bba843fe349dfbf4fa2e63fb5b6f161a9ef6099293a",
+      "bytes": 4144,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/module-stage.mjs",
+      "workspaceSource": "work/nss51/module-stage.mjs",
+      "sha256": "2bf188f77fae6c74e51534690e1d6329a22e4beb72c3093945b2e7bfb5a91920",
+      "bytes": 15499,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/phase-delta.json",
+      "workspaceSource": "work/nss51/phase-delta.json",
+      "sha256": "8641523f1443ce6375176244720840f99009cb43eb62900ffa163036868e12fe",
+      "bytes": 1879,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/qualification.mjs",
+      "workspaceSource": "work/nss51/qualification.mjs",
+      "sha256": "b14dc31adf7facdb8b3d3802780f8b56ff37b2e31d3a83558481cc314f57a915",
+      "bytes": 1208,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/qualify-entry.mjs",
+      "workspaceSource": "work/nss51/qualify-entry.mjs",
+      "sha256": "d79f482f226696e946174dfb44bc731cd6b294d7ecb3e97f6e2301bc08cb0a6c",
+      "bytes": 3325,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/qualify-phase.mjs",
+      "workspaceSource": "work/nss51/qualify-phase.mjs",
+      "sha256": "0a36062148581cf291611b987ea41a458ef4954d6d6970fac2c569aba48d9aba",
+      "bytes": 8475,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/real-session.mjs",
+      "workspaceSource": "work/nss51/real-session.mjs",
+      "sha256": "84042d36485a13b8c17b58a68f57923ed974fb99715245c898c3b0244664be96",
+      "bytes": 11286,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/session-binding.mjs",
+      "workspaceSource": "work/nss51/session-binding.mjs",
+      "sha256": "1419ab737f5dace41feeb5e4794390ef5f3bcd2471d1e8fdedcc3c32cb19a4b7",
+      "bytes": 909,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/summarize-traces.mjs",
+      "workspaceSource": "work/nss51/summarize-traces.mjs",
+      "sha256": "ed32b36527b8a699b57eefcfb53e2fd37a09db45d9ecc21915f97d69bc42750c",
+      "bytes": 1207,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/trace-exact-observer.mjs",
+      "workspaceSource": "work/nss51/trace-exact-observer.mjs",
+      "sha256": "77065130fbbd98e4fdd3ac2d4a9a331629f73c952500c8c1e616a388073eba58",
+      "bytes": 4699,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss51/trace-phase.mjs",
+      "workspaceSource": "work/nss51/trace-phase.mjs",
+      "sha256": "0b8f62666d3d2b55d3ef51d728cb82b3d67da35c11bead43098e50c35b374de2",
+      "bytes": 3523,
+      "role": "experimental-entry-observer-or-test"
+    },
+    {
+      "path": "code/work/nss52/build-candidate.mjs",
+      "workspaceSource": "work/nss52/build-candidate.mjs",
+      "sha256": "bc478b1343b15d94014ec4b03b8b58f9c795cd058a6e83e36e2a5e95747ad9f6",
+      "bytes": 1351,
+      "role": "uninstalled-readonly-candidate"
+    },
+    {
+      "path": "code/work/nss52/core-guard-phase.lua",
+      "workspaceSource": "work/nss52/core-guard-phase.lua",
+      "sha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+      "bytes": 6180,
+      "role": "uninstalled-readonly-candidate"
+    },
+    {
+      "path": "code/work/nss52/freeze-safe-sources.py",
+      "workspaceSource": "work/nss52/freeze-safe-sources.py",
+      "sha256": "0e606229d1cda13d1e6b5a7487cb3090710516799559795d9bf7751fe65df273",
+      "bytes": 1945,
+      "role": "uninstalled-readonly-candidate"
+    },
+    {
+      "path": "code/work/nss52/phase-delta.json",
+      "workspaceSource": "work/nss52/phase-delta.json",
+      "sha256": "a594e132a6ee09b8f31ddcc4f478f820f791cf9cb3332bcc80fbd2c9eb6104b8",
+      "bytes": 707,
+      "role": "uninstalled-readonly-candidate"
+    },
+    {
+      "path": "code/work/nss52/qualify-phase.mjs",
+      "workspaceSource": "work/nss52/qualify-phase.mjs",
+      "sha256": "d36f7654ec3fc322237cf241cd22ac8ee9c762d19321b8b6053af2b1d3e0e2b6",
+      "bytes": 4130,
+      "role": "uninstalled-readonly-candidate"
+    },
+    {
+      "path": "code/work/nss52/render-report.py",
+      "workspaceSource": "work/nss52/render-report.py",
+      "sha256": "eff77aed8828ab6660da613922897683292de3204d3387b5934eba324ae291da",
+      "bytes": 12376,
+      "role": "uninstalled-readonly-candidate"
+    },
+    {
+      "path": "code/work/nss52/summarize.py",
+      "workspaceSource": "work/nss52/summarize.py",
+      "sha256": "0a26b72fabd332375d46b90b9290cdddb78d98add0e7ee228e6a5821179ae20f",
+      "bytes": 7982,
+      "role": "uninstalled-readonly-candidate"
     }
-  ]
+  ],
+  "lastAppendExport": "NSS50–NSS52",
+  "privateDataExcluded": true
 }

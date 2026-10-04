@@ -299,7 +299,7 @@ assert all(x46['finalState']['protectedAudit'].values()) and x46['finalState']['
 assert not x46['finalState']['lastErrorBelongsToCurrentWorker'] and x46['finalState']['lastErrorIsControlledTrialPredeadlineExit']
 assert x46['retainedNaturalObservation']['passed'] and x46['retainedNaturalObservation']['samples']==60
 assert not any(x46['conclusions'][k]for k in ['newNssFastPathTrialExecuted','nssCpuBenefitProvedThisRound','cs2JitterLossMissCaptured','classifierHighLoadStable','completeHighLoadLoopPassed','secondWanExpansionAllowed'])
-x49=json.loads((root/'evidence/nss49-mainline.json').read_text());latest=json.loads((root/'evidence/current-runtime.json').read_text())
+x49=json.loads((root/'evidence/nss49-mainline.json').read_text());latest=json.loads((root/'evidence/nss49-runtime.json').read_text())
 assert latest['round']=='NSS49' and latest['deploymentReference']==x49['deploymentReference']=='work/nss47/deployment-latest.json'
 assert latest['classifierConfigSha256']==x49['classifierConfigSha256']=='478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900'
 assert latest['pureIpv4ParserCacheRetained'] and latest['nssOpenedThisRound'] and not latest['nssPermanentlyEnabled']
@@ -338,4 +338,47 @@ assert client['secondAttempt']['actualBulkCandidates']==0 and not client['second
 assert x49['automaticGuiSession']['clientTestServerExited'] and not x49['automaticGuiSession']['humanPlayThisRound'] and not x49['automaticGuiSession']['newPurchaseOrUnownedGameInstalled']
 assert x49['finalState']['sameCacheRetainedWorker'] and x49['finalState']['closure']['passed'] and x49['reportVerification']['sourceValidated']
 assert not any(x49['conclusions'][k]for k in ['wholeRouterCpuBenefitProved','clientNssBHudMetricsCaptured','realHumanExperienceProved','completeHighLoadLifecycleQualified','secondSimultaneousWanAllowed','sharedBudgetAllowed','upstreamSubmitted'])
+x52=json.loads((root/'evidence/nss52-mainline.json').read_text());current=json.loads((root/'evidence/current-runtime.json').read_text())
+assert current['round']=='NSS52' and current['classifierConfigSha256']==x52['classifierConfigSha256']==x49['classifierConfigSha256']
+assert current['deploymentReference']=='work/nss47/deployment-latest.json' and not x52['permanentClassifierChanged']
+assert not x52['ecmOpenedThisTurn'] and not x52['forwardingABACompletedThisTurn'] and not current['nssOpenedThisTurn']
+assert current['historicalNss49FunctionABACompleted'] and not current['completePerformanceAndGameAcceptance']
+assert x52['budgetMbps']==20 and x52['gateFlows']=={'tcp':1,'udp':1} and x52['ownerSeconds']==45 and x52['allOriginalDeadlinesUnchanged']
+assert len(x52['attempts'])==6 and sum(a['productionTemporaryStageOccurred']for a in x52['attempts'])==4
+assert all(not a['passed'] and not a['ecmPermitOpened'] and not a['forwardingABACompleted']for a in x52['attempts'])
+assert [a['completedPhases']for a in x52['attempts']]==[[],[],[],['A'],['A'],[]]
+for a in x52['attempts']:
+    if a['productionTemporaryStageOccurred']:
+        assert a['rollbackPassed'] and a['stageCleanupPassed'] and a['afterFullProtectedAuditPassed']
+        assert a['checkpointHashAndGzipVerified'] and a['independent45SecondRollbackVerifiedBeforeWrite']
+        assert not a['natural45SecondNssExpiryProvedThisCase']
+    else:assert a['rejectedBeforeCheckpointOrStaging'] and not a['routerConfigurationWrites']
+assert x52['serviceEpochFix']['localBoundaryCases']==24 and x52['serviceEpochFix']['entryBoundInputs']==128
+assert x52['serviceEpochFix']['allDuringExperimentServiceChangesRejected'] and x52['serviceEpochFix']['nativeFullReadonlyAuditPassed']
+assert x52['phase51']['entryBoundInputs']==140 and x52['phase51']['highLoadReadOnlySuccesses']==1 and x52['phase51']['highLoadReadOnlyAttempts']==3
+assert not x52['phase51']['highLoadReliablyFixed'] and not x52['phase51']['forwardingSucceededThisEntry']
+assert [g['passedAttempts']for g in x52['readonlyProfiling']['groups']]==[3,0,3,1]
+candidate=x52['phase52UninstalledCandidate'];assert candidate['reusedProcessModelCases']==22 and candidate['newParentDifferentialCases']==12
+assert len(candidate['caseResults'])==34 and all(c['passed']for c in candidate['caseResults'])
+assert candidate['notInstalled'] and candidate['notBoundToProductionEntry'] and not candidate['highLoadQualified']
+assert candidate['waitFreshByteIdentical'] and candidate['benchmarkIsPureParserOnly'] and candidate['notWholeRouterCpuBenefit']
+assert len(candidate['liveReadOnlyPhases'])==2 and all(p['scanSeconds']<=0.2 and p['birthAgeSeconds']<=0.2 for p in candidate['liveReadOnlyPhases'])
+for round in ['nss50','nss51','nss52']:
+    frozen=json.loads((root/'evidence'/f'{round}-source-proof.json').read_text())
+    assert frozen['sources']==len(frozen['sourceHashes']) and frozen['notAdditionalProductionAdmission']
+    for source,expected in frozen['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected
+phase51=(root/'code/work/nss51/core-guard-phase.lua').read_text();phase52=(root/'code/work/nss52/core-guard-phase.lua').read_text()
+delta=json.loads((root/'code/work/nss52/phase-delta.json').read_text());assert phase52.replace(delta['to'],delta['from'])==phase51
+assert hashlib.sha256((root/'code/work/nss52/core-guard-phase.lua').read_bytes()).hexdigest()==candidate['sourceSha256']
+for p in x52['partialSoftwareMeasurements']['cases']:
+    assert p['softwareForwarding'] and p['commonNssLan4QueueTreeStaged'] and not p['ecmPermitOpened'] and p['phasesBAndA2Missing']
+    assert p['samples']==11 and not p['cpuBenefitConclusion'] and not p['gameBenefitConclusion'] and p['rollbackPassed']
+client=x52['clientSoftwareMeasurements'];assert client['noNssPhaseOccurred'] and not client['humanGameplay']
+assert [len(p['frames'])for p in client['cases']]==[4,5] and all(p['phase']=='A' and p['fullContextVerified']for p in client['cases'])
+assert x52['clientEndState']['steam']['downloadCompleted'] and not x52['clientEndState']['steam']['launched']
+assert x52['clientEndState']['cs2']['restored'] and x52['clientEndState']['cs2']['testServerExited']
+assert x52['finalState']['sameCacheRetainedWorker'] and current['classifierWorkerContinuousAfterCacheRetain']
+assert all(current['audit'][k]for k in ['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','ecmClosedAndZero']) and current['finalClosure']['passed']
+assert not any(x52['conclusions'][k]for k in ['nssBClientHudCapturedThisTurn','softwareVersusNssCpuBenefitProvedThisTurn','realHumanExperienceProved','highLoadPhaseFixValidated','secondWanExpansionAllowed','sharedBudgetAllowed','upstreamSubmitted'])
+assert x52['reportVerification']['sourceValidated'] and not x52['reportVerification']['browserRendered']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

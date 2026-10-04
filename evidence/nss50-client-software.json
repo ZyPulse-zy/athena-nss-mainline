@@ -1,0 +1,132 @@
+{
+  "source": "Actual Sky JPEG captures, manually checked HUD and full game context",
+  "humanGameplay": false,
+  "noNssPhaseOccurred": true,
+  "missingDataNeverZero": true,
+  "clockAnchorsChecked": true,
+  "cases": [
+    {
+      "case": "real-matched-aba-20261004083435-f36f1fcc",
+      "phase": "A",
+      "frames": [
+        {
+          "index": 30,
+          "central": false,
+          "pingMs": 12,
+          "missDownPercent": 1.2,
+          "lossDownPercent": 0.1,
+          "jitterDownMs": 3,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 1
+        },
+        {
+          "index": 31,
+          "central": true,
+          "pingMs": 12,
+          "missDownPercent": 1.2,
+          "lossDownPercent": 0,
+          "jitterDownMs": 2,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 1
+        },
+        {
+          "index": 32,
+          "central": true,
+          "pingMs": 12,
+          "missDownPercent": 0,
+          "lossDownPercent": 0,
+          "jitterDownMs": 4,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 1
+        },
+        {
+          "index": 33,
+          "central": false,
+          "pingMs": 12,
+          "missDownPercent": 0,
+          "lossDownPercent": 0,
+          "jitterDownMs": 4,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 1
+        }
+      ],
+      "fullContextVerified": true,
+      "context": "Online deathmatch, idle automated client; game HUD visible throughout mapped window"
+    },
+    {
+      "case": "real-matched-aba-20261004083901-c4b7888d",
+      "phase": "A",
+      "frames": [
+        {
+          "index": 26,
+          "central": false,
+          "pingMs": 12,
+          "missDownPercent": 0,
+          "lossDownPercent": 0.8,
+          "jitterDownMs": 1,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 0
+        },
+        {
+          "index": 27,
+          "central": true,
+          "pingMs": 12,
+          "missDownPercent": 0,
+          "lossDownPercent": 0.2,
+          "jitterDownMs": 3,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 1
+        },
+        {
+          "index": 28,
+          "central": true,
+          "pingMs": 12,
+          "missDownPercent": 0.4,
+          "lossDownPercent": 0.1,
+          "jitterDownMs": 4,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 1
+        },
+        {
+          "index": 29,
+          "central": true,
+          "pingMs": 12,
+          "missDownPercent": 0.4,
+          "lossDownPercent": 0,
+          "jitterDownMs": 2,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 1
+        },
+        {
+          "index": 30,
+          "central": false,
+          "pingMs": 12,
+          "missDownPercent": 0.4,
+          "lossDownPercent": 0,
+          "jitterDownMs": 2,
+          "missUpPercent": 0,
+          "lossUpPercent": 0,
+          "jitterUpMs": 1
+        }
+      ],
+      "fullContextVerified": true,
+      "context": "Online deathmatch, idle automated client; death and respawn in the window"
+    }
+  ],
+  "interpretation": {
+    "noSoftwareVsNssComparison": true,
+    "hudHasRollingWindowAndPeakMetrics": true,
+    "centralFramesDoNotRemoveHudRollingHistory": true,
+    "missIsNotRawPacketLoss": true,
+    "nssCpuOrGameBenefitProven": false,
+    "valveMetricDefinitionSource": "https://help.steampowered.com/en/faqs/view/5E6F-5B36-5485-F6B9"
+  }
+}

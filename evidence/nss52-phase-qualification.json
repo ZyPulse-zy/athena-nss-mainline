@@ -1,0 +1,177 @@
+{
+  "passed": true,
+  "nativeLua": true,
+  "sourceSha256": "2a79f0b7111a90f7ce19e5479a97b54ca3a5c82e18409a0fecc3476ce55ebb3a",
+  "originalSourceSha256": "8051accbb2b941bb9e56122550acf1f16339ca2a1d74a5e119fdd528af936d61",
+  "reusedProcessModelCases": 22,
+  "newParentDifferentialCases": 12,
+  "caseResults": [
+    {
+      "name": "fresh discovery reads only stat for unrelated processes",
+      "passed": true
+    },
+    {
+      "name": "cached child still checks full identity without enumeration",
+      "passed": true
+    },
+    {
+      "name": "wrong child parent cannot be returned",
+      "passed": true
+    },
+    {
+      "name": "wrong child argv cannot be returned",
+      "passed": true
+    },
+    {
+      "name": "wrong child duration cannot be returned",
+      "passed": true
+    },
+    {
+      "name": "wrong child state cannot be returned",
+      "passed": true
+    },
+    {
+      "name": "wrong child wchan cannot be returned",
+      "passed": true
+    },
+    {
+      "name": "cached reparenting forces discovery without a phase",
+      "passed": true
+    },
+    {
+      "name": "cached PID reuse revalidates a new complete child identity",
+      "passed": true
+    },
+    {
+      "name": "multiple direct sleep children fail closed",
+      "passed": true
+    },
+    {
+      "name": "guard PID reuse before discovery rejected",
+      "passed": true
+    },
+    {
+      "name": "guard PID reuse during discovery rejected",
+      "passed": true
+    },
+    {
+      "name": "guard absence rejected",
+      "passed": true
+    },
+    {
+      "name": "guard argv change rejected",
+      "passed": true
+    },
+    {
+      "name": "4096 process inventory bound retained",
+      "passed": true
+    },
+    {
+      "name": "legacy bounded child transition retained",
+      "passed": true
+    },
+    {
+      "name": "same old child never grants phase",
+      "passed": true
+    },
+    {
+      "name": "200 ms scan bound retained",
+      "passed": true
+    },
+    {
+      "name": "old absolute birth cannot be revived by rediscovery",
+      "passed": true
+    },
+    {
+      "name": "changed guard refused by wait",
+      "passed": true
+    },
+    {
+      "name": "unconfirmed sleep refused by wait",
+      "passed": true
+    },
+    {
+      "name": "future sleep birth refused",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 1",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 2",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 3",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 4",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 5",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 6",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 7",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 8",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 9",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 10",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 11",
+      "passed": true
+    },
+    {
+      "name": "parent parser differential 12",
+      "passed": true
+    }
+  ],
+  "liveReadOnlyPhases": [
+    {
+      "scanSeconds": 0.02000000001862645,
+      "birthAgeSeconds": 0.05000000004656613,
+      "waitSeconds": 2.2399999999906868,
+      "reads": 70,
+      "birthClockChecked": true,
+      "guardUntouched": true
+    },
+    {
+      "scanSeconds": 0.010000000009313226,
+      "birthAgeSeconds": 0.05000000004656613,
+      "waitSeconds": 5.099999999860302,
+      "reads": 161,
+      "birthClockChecked": true,
+      "guardUntouched": true
+    }
+  ],
+  "parentParserBenchSeconds": {
+    "new": 0.05026599999999992,
+    "old": 0.6233359999999999
+  },
+  "benchmarkTraversalsPerVersion": 10000,
+  "benchmarkIsPureParserOnly": true,
+  "notWholeRouterCpuBenefit": true,
+  "noRouterWrites": true,
+  "noNssPermission": true,
+  "notInstalled": true,
+  "notBoundToProductionEntry": true,
+  "highLoadQualified": false,
+  "waitFreshByteIdentical": true
+}

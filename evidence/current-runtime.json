@@ -1,123 +1,64 @@
 {
-  "checkedAt": "2026-10-04T07:34:47.150471+00:00",
-  "round": "NSS49",
+  "checkedAt": "2026-10-04T09:30:39.559Z",
+  "round": "NSS52",
   "deploymentReference": "work/nss47/deployment-latest.json",
   "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
-  "deployedTextSources": [
-    {
-      "name": "classifier-core.lua",
-      "sha256": "87626d72bab1d666dcdaebde7545d7022b7b099cd74b206624568bad330f34f8",
-      "included": true
-    },
-    {
-      "name": "conntrack-source.lua",
-      "sha256": "e1e01fe23988aed2d92e1ba1f9ad3053c52756ab557f6c78d991954c394af109",
-      "included": true
-    },
-    {
-      "name": "owned.lua",
-      "sha256": "3061a42d2b429f2e6ca4d4b73d73f87504ac4899b047da6e90606079bfda5947",
-      "included": true
-    },
-    {
-      "name": "backend.lua",
-      "sha256": "01ddeae3b7469034c9a0471dec32e9c1770198ecdbd538106b16d89ab06fa669",
-      "included": true
-    },
-    {
-      "name": "worker.lua",
-      "sha256": "9ab72a5af3bb997b25f8a43ee0cac002ec6f0fc3ba5ae091e5845f64e138719c",
-      "included": true
-    },
-    {
-      "name": "guardian.lua",
-      "sha256": "97bb3f78076cade8fe44cfeec5c149085c63f2295b28cf1a505f89f3de80de70",
-      "included": true
-    },
-    {
-      "name": "stop-worker.lua",
-      "sha256": "74afd01c9d114279b388f954fa5e138cfe16449151e93ecb62539368a7e69a1f",
-      "included": true
-    },
-    {
-      "name": "cleanup.sh",
-      "sha256": "de41d810a19f3b2506fb46e85c955f38c2f60971105652982be1b259dc1749b0",
-      "included": true
-    },
-    {
-      "name": "init.sh",
-      "sha256": "9ad7b1c93c0dcc5c4bc01a6b5a73d396328478ed0487af6ffecb9d314484bab7",
-      "included": true
-    },
-    {
-      "name": "group-runner",
-      "sha256": "2854059fc58fc304cee00bf2467a2d1725f836828c99aa3b8c6e53b4b3dc73e2",
-      "included": false,
-      "reason": "binary helper retained in private workspace"
-    },
-    {
-      "name": "process-stop",
-      "sha256": "e209e728929d72960625f85bebf962e0001fdeefb97e9c0b66aa09faef722fc4",
-      "included": false,
-      "reason": "binary helper retained in private workspace"
-    },
-    {
-      "name": "process-crash",
-      "sha256": "12293880057e91d1b6ce7c60b96a7f81b70656aede84e71497a2e225d91f4305",
-      "included": false,
-      "reason": "binary helper retained in private workspace"
-    }
-  ],
   "audit": {
     "passed": true,
+    "auditPurpose": "recovery",
+    "prelearningSchedulingRequested": false,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
     "protectedConfigurationUnchanged": true,
     "exactOwnedNativeAudit": true,
-    "selectors": 4,
-    "queryAge": 1.7299999999813735,
-    "sequence": 1189,
-    "ecmClosedAndZero": true
+    "selectors": 2,
+    "queryAge": 3.2800000000279397,
+    "sequence": 3488,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "servicePidChangesAcknowledgedBeforeExperiment": [
+      {
+        "service": "sing-box-athena",
+        "instance": "core",
+        "pidChangedBeforeExperiment": true
+      },
+      {
+        "service": "sing-box-athena",
+        "instance": "guard",
+        "pidChangedBeforeExperiment": true
+      }
+    ],
+    "serviceChangesDuringExperimentAllowed": false
   },
-  "lastApplicationObservation": {
-    "observedAt": "2026-10-04T07:05:57.972Z",
-    "actualGameCandidates": 1,
-    "actualBulkCandidates": 0,
-    "sameWanPairs": 0,
-    "routerWrites": false,
-    "nssPermissionGranted": false,
-    "status": "WAITING_FOR_REAL_CS2_STEAM_PAIR"
-  },
-  "applicationEndpointsReadThisRound": true,
-  "freshApplicationPairCheckedThisRound": true,
-  "realForwardingABACompleted": true,
-  "historicalNss41NativeForwardingABACompleted": true,
-  "completePerformanceAndGameAcceptance": false,
-  "historicalNss44StaleSnapshotRejection": true,
-  "historicalNss40StaleProtectedSnapshotRejection": true,
-  "historicalNss41RecoveryAlignmentRefused": true,
-  "historicalNss36StaleSnapshotRejection": true,
-  "classifierWorkerContinuousAfterCacheRetain": true,
-  "historicalNss46SoftwareExpiryAndCrashRecoveryPassed": true,
-  "historicalNss44FirstExactRecoveryPassed": false,
-  "finalClassifierHealthyAndExactOwnedAuditPassed": true,
-  "secondApplicationAttemptRefusedBeforeCheckpointOrStaging": true,
-  "plannedClassifierReplacementAndRollbackThisRound": true,
-  "temporaryClassifierCacheNaturalRollback": true,
-  "classifierReliabilityChangesRetained": 3,
-  "pureIpv4ParserCacheRetained": true,
-  "newNssEntryBoundInputs": 121,
-  "allNaturalExpiryRestorationsPassed": true,
-  "experimentalConfigurationWritesThisRound": true,
-  "nssOpenedThisRound": true,
-  "nssPermanentlyEnabled": false,
-  "originalNss42EntryUnmodified": true,
   "finalClosure": {
     "passed": true,
-    "observedAt": "2026-10-04T07:08:30.978Z",
+    "observedAt": "2026-10-04T09:30:39.559Z",
     "readonly": true,
+    "deploymentReference": "work/nss47/deployment-latest.json",
+    "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
     "noActiveRootTransaction": true,
     "noNssStagingDirectory": true,
     "noExperimentStateNodeDirectory": true,
-    "noExperimentalGateOrQdiscModule": true
+    "noExperimentalGateOrQdiscModule": true,
+    "uptime": 1923785.25
   },
+  "classifierWorkerContinuousAfterCacheRetain": true,
+  "historicalNss49FunctionABACompleted": true,
+  "historicalNss46SoftwareExpiryAndCrashRecoveryPassed": true,
+  "classifierReliabilityChangesRetained": 3,
+  "pureIpv4ParserCacheRetained": true,
+  "experimentalConfigurationWritesThisTurn": true,
+  "nssOpenedThisTurn": false,
+  "realForwardingABACompletedThisTurn": false,
+  "completePerformanceAndGameAcceptance": false,
+  "nssPermanentlyEnabled": false,
+  "qualifiedExperimentalEntry": "work/nss51/real-session.mjs",
+  "qualifiedExperimentalEntryBoundInputs": 140,
+  "uninstalledNextCandidate": "work/nss52/core-guard-phase.lua",
+  "candidateNotProductionBound": true,
+  "clientTestServerExited": true,
+  "hudRestored": true,
+  "steamDownloadCompleted": true,
+  "upstreamSubmitted": false,
   "requiresLiveRevalidation": true
 }

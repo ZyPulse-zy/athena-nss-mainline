@@ -1,0 +1,16 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+import {verifyPreparation as base} from '../nss50/session-binding.mjs';import {verifyPreparation as phase} from './qualification.mjs';
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');const b=base();phase();
+function undo(t,a,b){assert.equal(t.split(a).length,2,a);return t.replace(a,()=>b);}
+let stage=fs.readFileSync('work/nss51/module-stage.mjs','utf8');
+stage=undo(stage,"fs.readFileSync('work/nss47/deployment-latest.json')","fs.readFileSync('work/nss49/deployment-latest.json')");
+stage=undo(stage,"fs.readFileSync('work/nss51/core-guard-phase.lua','utf8')","fs.readFileSync('work/nss49/core-guard-phase.lua','utf8')");
+stage=undo(stage,"fs.readFileSync('work/nss51/phase-qualified.json','utf8')","fs.readFileSync('work/nss25/phase-qualified.json','utf8')");
+stage=undo(stage,"import{buildPayload}from'../nss49/payload.mjs';","import{buildPayload}from'./payload.mjs';");assert.equal(stage,fs.readFileSync('work/nss49/module-stage.mjs','utf8'));
+let controller=fs.readFileSync('work/nss51/real-session.mjs','utf8');
+controller=undo(controller,"from './module-stage.mjs'","from '../nss49/module-stage.mjs'");controller=undo(controller,"from '../nss50/service-epoch.mjs'","from './service-epoch.mjs'");controller=undo(controller,"const dir='work/nss51/real-matched-aba-'","const dir='work/nss50/real-matched-aba-'");
+controller=controller.replaceAll("runNode('work/nss51/current-audit-diagnostic.mjs'","runNode('work/nss50/current-audit-diagnostic.mjs'");assert.equal(controller,fs.readFileSync('work/nss50/real-session.mjs','utf8'));
+let audit=fs.readFileSync('work/nss51/current-audit-diagnostic.mjs','utf8');audit=undo(audit,"from '../nss50/service-epoch.mjs'","from './service-epoch.mjs'");audit=undo(audit,"fs.readFileSync('work/nss47/deployment-latest.json')","fs.readFileSync('work/nss49/deployment-latest.json')");audit=audit.replaceAll('work\\/nss51\\/','work\\/nss50\\/').replaceAll("'work/nss51'","'work/nss50'").replaceAll("'work/nss51/'","'work/nss50/'");assert.equal(audit,fs.readFileSync('work/nss50/current-audit-diagnostic.mjs','utf8'));
+const sources=['core-guard-phase.lua','phase-delta.json','phase-qualified.json','build-candidate.mjs','qualify-phase.mjs','build-entry.mjs','module-stage.mjs','real-session.mjs','current-audit-diagnostic.mjs','qualification.mjs','session-binding.mjs','qualify-entry.mjs'].map(n=>'work/nss51/'+n);
+const p={passed:true,baseBoundInputs:Object.keys(b.sourceManifest).length,originalNss49EntryCasesReused:99,unchangedNss49FastPathNativeRamCasesReused:13,nss50ServiceEpochCasesReused:24,newNativePureProcessCases:22,newReadOnlyLivePhases:2,controllerAdmissionOtherwiseByteIdentical:true,moduleStageOtherwiseByteIdentical:true,auditOtherwiseByteIdentical:true,onlyPhaseDiscoveryRuntimeChange:true,waitFreshByteIdentical:true,coreGuardNeverModified:true,sourceAndOwnerDeadlinesUnchanged:true,noNssPermissionGrantedByQualification:true,sourceManifest:Object.fromEntries(sources.map(p=>[p,hash(p)]))};
+fs.writeFileSync('work/nss51/entry-qualified.json',JSON.stringify(p,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({passed:true,baseBoundInputs:p.baseBoundInputs,newBoundInputs:sources.length,newPureCases:22,unchangedFastPath:true}));
