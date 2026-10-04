@@ -1,0 +1,23 @@
+{
+  "sources": 10,
+  "sourceHashes": {
+    "work/nss66/health.mjs": "bbf3ce65aba8c6304d1d1baa077dc8480a82cb521bc3a70d8c11f189f8ebf88b",
+    "work/nss66/publication-trial.mjs": "2a0acd2a9ec0282e8663a039cdccd9018186a60aca32d0571d60c658beab235d",
+    "work/nss66/verify-rollback.mjs": "8f1338ae118d146dcc79cfb92cd2785e8c2590650afe6fc12134eb103efdfa0b",
+    "work/nss66/cleanup-stage.mjs": "51fc6aaf1fbdee6f8b867f1c5dbf48ba0a30d1f792d40fb125bfc45dc1f79473",
+    "work/nss66/observe-restored.lua": "f98c9b3050bcaae61ff6b3dcb214be1239e17570c90481d8869b794d5cc191d6",
+    "work/nss66/observe-restored.mjs": "aefdd5079e1b659522f2a6b875821f058dcae503228109dff4dd151e3b57f90a",
+    "work/nss66/observe-trial.lua": "4293bec51b5c0e542ca5884bd4a4ad3804aac7e72a9fdbfc0703f53a2020ecdc",
+    "work/nss66/observe-trial.mjs": "34da292daef646da5c01ab434e6959951f50674de0e6ab3154bbf0c8cdf134e4",
+    "work/nss66/client-watchdog.ps1": "75afb5bf477e4ccf404e9f0d72ce4ccfe5ed9af9bbd2822308bc680b03b9e140",
+    "work/nss66/bounded-load.mjs": "3135fb367272910bf6bed33b072653260f0a1f3d5727b8317541c24056533013"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "publicationCandidateInstalledDuringTrial": true,
+  "candidateRetainedAtEnd": false,
+  "productionNssEntryUnchanged": true,
+  "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo",
+  "observerRuntimeOwnerPassedAsArgumentNotHardcoded": true,
+  "original64And65ProofsUntouched": true
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T16:11:54.192786+00:00",
+  "generatedAt": "2026-10-04T17:18:10.877917+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -5765,8 +5765,162 @@
       "sha256": "fed5f33697e66f73f1bcc3ef41a4c59e1963d7363b6d03c80f3c083b17896cd9",
       "bytes": 1298,
       "role": "single-publication-boundary-live-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/health.mjs",
+      "workspaceSource": "work/nss66/health.mjs",
+      "sha256": "bbf3ce65aba8c6304d1d1baa077dc8480a82cb521bc3a70d8c11f189f8ebf88b",
+      "bytes": 5033,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/publication-trial.mjs",
+      "workspaceSource": "work/nss66/publication-trial.mjs",
+      "sha256": "2a0acd2a9ec0282e8663a039cdccd9018186a60aca32d0571d60c658beab235d",
+      "bytes": 14609,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/verify-rollback.mjs",
+      "workspaceSource": "work/nss66/verify-rollback.mjs",
+      "sha256": "8f1338ae118d146dcc79cfb92cd2785e8c2590650afe6fc12134eb103efdfa0b",
+      "bytes": 3984,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/cleanup-stage.mjs",
+      "workspaceSource": "work/nss66/cleanup-stage.mjs",
+      "sha256": "51fc6aaf1fbdee6f8b867f1c5dbf48ba0a30d1f792d40fb125bfc45dc1f79473",
+      "bytes": 2979,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/observe-restored.lua",
+      "workspaceSource": "work/nss66/observe-restored.lua",
+      "sha256": "f98c9b3050bcaae61ff6b3dcb214be1239e17570c90481d8869b794d5cc191d6",
+      "bytes": 3662,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/observe-restored.mjs",
+      "workspaceSource": "work/nss66/observe-restored.mjs",
+      "sha256": "aefdd5079e1b659522f2a6b875821f058dcae503228109dff4dd151e3b57f90a",
+      "bytes": 1298,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/observe-trial.lua",
+      "workspaceSource": "work/nss66/observe-trial.lua",
+      "sha256": "4293bec51b5c0e542ca5884bd4a4ad3804aac7e72a9fdbfc0703f53a2020ecdc",
+      "bytes": 3706,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/observe-trial.mjs",
+      "workspaceSource": "work/nss66/observe-trial.mjs",
+      "sha256": "34da292daef646da5c01ab434e6959951f50674de0e6ab3154bbf0c8cdf134e4",
+      "bytes": 1313,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/client-watchdog.ps1",
+      "workspaceSource": "work/nss66/client-watchdog.ps1",
+      "sha256": "75afb5bf477e4ccf404e9f0d72ce4ccfe5ed9af9bbd2822308bc680b03b9e140",
+      "bytes": 2441,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss66/bounded-load.mjs",
+      "workspaceSource": "work/nss66/bounded-load.mjs",
+      "sha256": "3135fb367272910bf6bed33b072653260f0a1f3d5727b8317541c24056533013",
+      "bytes": 4246,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/health.mjs",
+      "workspaceSource": "work/nss67/health.mjs",
+      "sha256": "931aab043d00f9e408285dd6e08ff5eaca9780c451f70062da06f879e65e22b7",
+      "bytes": 5033,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/publication-trial.mjs",
+      "workspaceSource": "work/nss67/publication-trial.mjs",
+      "sha256": "35f957b998f7374c186d18238b139cba346de4681f1c3860355acb419a8005e6",
+      "bytes": 14609,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/verify-rollback.mjs",
+      "workspaceSource": "work/nss67/verify-rollback.mjs",
+      "sha256": "a297202a180a84927511152125aa42decb641846107bed8d70218418230e04b7",
+      "bytes": 3984,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/cleanup-stage.mjs",
+      "workspaceSource": "work/nss67/cleanup-stage.mjs",
+      "sha256": "f45b39d938dbd7d271e1c45d6137fbf3bf7dc6266b26f9a8e42d738f46e4125a",
+      "bytes": 2979,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/observe-restored.lua",
+      "workspaceSource": "work/nss67/observe-restored.lua",
+      "sha256": "f98c9b3050bcaae61ff6b3dcb214be1239e17570c90481d8869b794d5cc191d6",
+      "bytes": 3662,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/observe-restored.mjs",
+      "workspaceSource": "work/nss67/observe-restored.mjs",
+      "sha256": "8664782cd5b4afa99084dfb31572266277701d4b4869b13fc6ca013a658922cf",
+      "bytes": 1298,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/observe-trial.lua",
+      "workspaceSource": "work/nss67/observe-trial.lua",
+      "sha256": "4293bec51b5c0e542ca5884bd4a4ad3804aac7e72a9fdbfc0703f53a2020ecdc",
+      "bytes": 3706,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/observe-trial.mjs",
+      "workspaceSource": "work/nss67/observe-trial.mjs",
+      "sha256": "f5c9ba1609e78949877881bcb976286e87d2b558e721f5358c3a30e5e957fa05",
+      "bytes": 1313,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/client-watchdog.ps1",
+      "workspaceSource": "work/nss67/client-watchdog.ps1",
+      "sha256": "75afb5bf477e4ccf404e9f0d72ce4ccfe5ed9af9bbd2822308bc680b03b9e140",
+      "bytes": 2441,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/audit-load.mjs",
+      "workspaceSource": "work/nss67/audit-load.mjs",
+      "sha256": "fccc6fd79db93fc398a1f3644bd0cdce4c700b1eb1c3dfebd9f45c192c0cac16",
+      "bytes": 3873,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/summarize.py",
+      "workspaceSource": "work/nss67/summarize.py",
+      "sha256": "694a0bfa4b93687c42d16eeefcb3cf2abd2c2bae639ae5694c6847f9b8ecc127",
+      "bytes": 17516,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
+    },
+    {
+      "path": "code/work/nss67/freeze-proof.py",
+      "workspaceSource": "work/nss67/freeze-proof.py",
+      "sha256": "0732a355749ede177062894f37af729c0d5d7e217d02a5af2dae72ad76e087e7",
+      "bytes": 2344,
+      "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo"
     }
   ],
-  "lastAppendExport": "NSS65",
+  "lastAppendExport": "NSS67",
   "privateDataExcluded": true
 }

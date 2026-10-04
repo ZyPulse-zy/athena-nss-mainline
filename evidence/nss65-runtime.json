@@ -1,21 +1,21 @@
 {
-  "round": "NSS67",
-  "checkedAt": "2026-10-04T17:09:58.924Z",
+  "round": "NSS65",
+  "checkedAt": "2026-10-04T16:04:20.153Z",
   "deploymentReference": "work/nss47/deployment-latest.json",
   "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
   "audit": {
     "passed": true,
-    "observedAt": "2026-10-04T17:09:58.924Z",
+    "observedAt": "2026-10-04T16:04:20.153Z",
     "readonly": true,
     "configurationMatches": true,
     "deploymentReference": "work/nss47/deployment-latest.json",
     "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
-    "workerPid": 9454,
-    "guardianPid": 9455,
+    "workerPid": 20030,
+    "guardianPid": 20031,
     "originalFullLockedAudit": true,
-    "selectors": 2,
-    "queryAge": 2.2199999999720603,
-    "sequence": 231,
+    "selectors": 6,
+    "queryAge": 2.4299999999348074,
+    "sequence": 23,
     "ecmStoppedAndZero": true,
     "noActiveTransaction": true,
     "noStaging": true,
@@ -26,40 +26,40 @@
       "events": [
         {
           "name": "locked-audit-start",
-          "at": 1951343.99
+          "at": 1947405.19
         },
         {
           "name": "hashes-complete",
-          "at": 1951344.06
+          "at": 1947405.25
         },
         {
           "name": "journal-parsed",
-          "at": 1951344.06
+          "at": 1947405.25
         },
         {
           "name": "selectors-complete",
-          "at": 1951344.14
+          "at": 1947405.34
         },
         {
           "name": "snapshot-parsed",
-          "at": 1951344.19
+          "at": 1947405.38
         },
         {
           "name": "freshness-checked",
-          "at": 1951344.19
+          "at": 1947405.38
         },
         {
           "name": "locked-audit-end",
-          "at": 1951344.2
+          "at": 1947405.39
         }
       ],
       "freshness": {
-        "checkedAt": 1951344.19,
-        "publicationAge": 0.9699999999720603,
-        "sourceAge": 2.2199999999720603,
-        "queryStarted": 1951341.97,
-        "publishedAt": 1951343.22,
-        "sequence": 231
+        "checkedAt": 1947405.38,
+        "publicationAge": 1.0399999998044223,
+        "sourceAge": 2.4299999999348074,
+        "queryStarted": 1947402.95,
+        "publishedAt": 1947404.34,
+        "sequence": 23
       }
     },
     "serviceEpochPinned": true,
@@ -71,8 +71,8 @@
   "finalClosure": {
     "passed": true
   },
-  "workerPid": 9454,
-  "guardianPid": 9455,
+  "workerPid": 20030,
+  "guardianPid": 20031,
   "sameWorkerGuardianAndProducerSinceOpening": false,
   "expectedClassifierRestartForTrialAndRestore": true,
   "naturalWorkerRestartObservedThisTurn": false,
@@ -90,13 +90,8 @@
   "independentNatural180SecondUndoVerified": true,
   "nssPermanentlyEnabled": false,
   "completePerformanceAndGameAcceptance": false,
-  "steamDownloadControlledThisTurn": true,
-  "gameStartedThisTurn": false,
-  "realHumanMetricsAvailable": false,
-  "above300MbpsPublicationActuallyObserved": true,
-  "clientDownloadFinallyPausedOrCompleted": true,
-  "requiresLiveRevalidation": true,
-  "historical65RuntimePreservedSha256": "da9bff64cd3dace478df11615a4a57599dd6e2697640fc643cb2586c56863922",
+  "gameGuiOrNewDownloadPerformedThisTurn": false,
   "historical64RuntimePreservedSha256": "04c831d3685b69e0d55883499e54ad5e4ef7a1466acd842cc868c6bf109664d7",
-  "historical63RuntimePreservedSha256": "c78125f0bdd73b3348d370b80224eeefb918bf83bfb8429890d433e0dc478d44"
+  "historical63RuntimePreservedSha256": "c78125f0bdd73b3348d370b80224eeefb918bf83bfb8429890d433e0dc478d44",
+  "requiresLiveRevalidation": true
 }

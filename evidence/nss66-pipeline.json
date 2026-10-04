@@ -1,0 +1,158 @@
+{
+  "windows": [
+    {
+      "passed": true,
+      "label": "steam-original",
+      "mode": "original-publication-ramp",
+      "observedAt": "2026-10-04T16:41:46.909Z",
+      "seconds": 4.009999999776483,
+      "lan4Mbps": 188.66620250428184,
+      "pps": 15688.029926061483,
+      "busyPercent": 56.71736375158429,
+      "softirqPercent": 39.860583016476554,
+      "timeSqueezeDelta": 6,
+      "observerCpuSeconds": 0.536578,
+      "observerCostIncluded": true,
+      "backgroundLoadControlled": false,
+      "visibilityAreObservationBounds": true,
+      "fullSnapshotSizesFlows": [
+        186,
+        184,
+        196
+      ],
+      "completeObservedCycles": [
+        {
+          "sequence": 772,
+          "flows": 196,
+          "querySeconds": 0.22999999998137355,
+          "queryToFullFirstObservedSeconds": 1.3900000001303852,
+          "queryToFullStampSeconds": 1.0800000000745058,
+          "stampToVisibilityLowerSeconds": 0.25,
+          "stampToVisibilityUpperSeconds": 0.31000000005587935,
+          "fullParseSeconds": 0.13999999989755452
+        }
+      ],
+      "ecmStoppedAndZeroThroughout": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "passed": true,
+      "label": "trial-idle",
+      "mode": "publication-candidate-idle",
+      "observedAt": "2026-10-04T16:48:21.139Z",
+      "seconds": 4.03000000002794,
+      "lan4Mbps": 0.16028982630161825,
+      "pps": 45.4094292800822,
+      "busyPercent": 19.050632911392405,
+      "softirqPercent": 4.493670886075949,
+      "timeSqueezeDelta": 0,
+      "observerCpuSeconds": 0.26909900000000003,
+      "observerCostIncluded": true,
+      "backgroundLoadControlled": false,
+      "visibilityAreObservationBounds": true,
+      "fullSnapshotSizesFlows": [
+        133,
+        155,
+        168
+      ],
+      "completeObservedCycles": [
+        {
+          "sequence": 28,
+          "flows": 155,
+          "querySeconds": 0.2099999999627471,
+          "queryToFullFirstObservedSeconds": 0.7299999999813735,
+          "queryToFullStampSeconds": 0.6200000001117587,
+          "stampToVisibilityLowerSeconds": 0.05999999982304871,
+          "stampToVisibilityUpperSeconds": 0.10999999986961484,
+          "fullParseSeconds": 0.0400000000372529
+        },
+        {
+          "sequence": 29,
+          "flows": 168,
+          "querySeconds": 0.19999999995343387,
+          "queryToFullFirstObservedSeconds": 0.6899999999441206,
+          "queryToFullStampSeconds": 0.5800000000745058,
+          "stampToVisibilityLowerSeconds": 0.060000000055879354,
+          "stampToVisibilityUpperSeconds": 0.10999999986961484,
+          "fullParseSeconds": 0.0800000000745058
+        }
+      ],
+      "ecmStoppedAndZeroThroughout": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "passed": true,
+      "label": "steam-candidate-1",
+      "mode": "publication-candidate-loaded",
+      "observedAt": "2026-10-04T16:48:57.600Z",
+      "seconds": 4.040000000037253,
+      "lan4Mbps": 209.06099009708214,
+      "pps": 17280.940593900057,
+      "busyPercent": 61.207450224791266,
+      "softirqPercent": 36.5446371226718,
+      "timeSqueezeDelta": 0,
+      "observerCpuSeconds": 0.5642860000000001,
+      "observerCostIncluded": true,
+      "backgroundLoadControlled": false,
+      "visibilityAreObservationBounds": true,
+      "fullSnapshotSizesFlows": [
+        266,
+        269
+      ],
+      "completeObservedCycles": [],
+      "ecmStoppedAndZeroThroughout": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "passed": true,
+      "label": "steam-candidate-2",
+      "mode": "publication-candidate-loaded",
+      "observedAt": "2026-10-04T16:49:36.177Z",
+      "seconds": 4.019999999785796,
+      "lan4Mbps": 147.85955224668461,
+      "pps": 12260.94527428516,
+      "busyPercent": 57.55813953488372,
+      "softirqPercent": 31.072351421188632,
+      "timeSqueezeDelta": 0,
+      "observerCpuSeconds": 0.5222760000000001,
+      "observerCostIncluded": true,
+      "backgroundLoadControlled": false,
+      "visibilityAreObservationBounds": true,
+      "fullSnapshotSizesFlows": [
+        255,
+        260
+      ],
+      "completeObservedCycles": [
+        {
+          "sequence": 53,
+          "flows": 260,
+          "querySeconds": 0.23999999999068677,
+          "queryToFullFirstObservedSeconds": 1.459999999962747,
+          "queryToFullStampSeconds": 1.2800000000279397,
+          "stampToVisibilityLowerSeconds": 0.1299999998882413,
+          "stampToVisibilityUpperSeconds": 0.17999999993480742,
+          "fullParseSeconds": 0.15999999991618097
+        }
+      ],
+      "ecmStoppedAndZeroThroughout": true,
+      "nssAdmissionAllowed": false
+    }
+  ],
+  "matchedABANotClaimed": true,
+  "wholeRouterCpuBenefitNotClaimed": true,
+  "sourceMarkerPrecedesJsonEncodingNotRename": true,
+  "exactRestoredAuditLoad": null,
+  "lateExpiredContextFailure": {
+    "label": "trial-loaded-2",
+    "passed": false,
+    "originalFailurePreserved": true,
+    "originalAssertionsRetained": true,
+    "afterIndependentProductionDeadline": true,
+    "secondsAfterDeadline": 17.06000000005588,
+    "failedAssertion": "requested config SHA equals current production config SHA",
+    "expiredCandidateContextAgainstRestoredOriginal": true,
+    "sourceStalenessFailure": false,
+    "timingStatsRejectedAsPerformanceEvidence": true,
+    "laterRestoredOriginalAuditPassed": true
+  }
+}

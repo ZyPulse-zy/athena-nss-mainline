@@ -517,7 +517,7 @@ assert proof64['sources']==len(proof64['sourceHashes'])==20 and proof64['notAddi
 assert x64['proofBoundary']['old99And13NotReexecuted'] and x64['proofBoundary']['noNewGameDownloadOrGameGuiThisTurn']
 for source,expected in proof64['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
 assert x64['reportVerification']['sourceValidated'] and not x64['reportVerification']['browserRendered']
-x65=json.loads((root/'evidence/nss65-mainline.json').read_text());runtime65=json.loads((root/'evidence/current-runtime.json').read_text())
+x65=json.loads((root/'evidence/nss65-mainline.json').read_text());runtime65=json.loads((root/'evidence/nss65-runtime.json').read_text())
 assert x65['round']==runtime65['round']=='NSS65'
 assert runtime65['historical64RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss64-runtime.json').read_bytes()).hexdigest()
 assert runtime65['historical63RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss63-runtime.json').read_bytes()).hexdigest()
@@ -558,4 +558,46 @@ proof65=json.loads((root/'evidence/nss65-source-proof.json').read_text())
 assert proof65['sources']==len(proof65['sourceHashes'])==8 and proof65['notAdditionalProductionAdmission'] and proof65['publicationCandidateInstalledDuringTrial'] and not proof65['candidateRetainedAtEnd']
 for source,expected in proof65['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected,source
 assert x65['reportVerification']['sourceValidated'] and not x65['reportVerification']['browserRendered']
+for number in (66,67):
+    new=json.loads((root/f'evidence/nss{number}-mainline.json').read_text())
+    proof=json.loads((root/f'evidence/nss{number}-source-proof.json').read_text())
+    assert new['round']==f'NSS{number}' and new['classifierConfigSha256']==runtime65['classifierConfigSha256']
+    assert new['publicationCandidateActuallyInstalled'] and new['routerConfigurationWrites']
+    assert new['checkpointCount']==new['rollbackTrialCount']==1
+    assert new['protection']['productionUndoSeconds']==180 and new['protection']['stageGuardianSeconds']==480
+    assert new['protection']['independentOfControlConnection'] and new['protection']['originalSixSecondRunnerUnchanged']
+    assert new['rollback']['passed'] and new['rollback']['automaticExpiryWithoutControllerRollback']
+    assert new['rollback']['previousWorkerAndConfigRestored'] and new['untouchedNormalizerGuardianBackendCore']
+    assert new['currentEntry']=={'path':'work/nss63/real-session.mjs','boundInputs':241,'unchanged':True,'candidateEntryBindingCreated':False}
+    assert not new['candidateRetainedAtEnd'] and not new['permanentClassifierChanged'] and not new['nssOpenedThisTurn']
+    assert new['installation']['candidateWorkerGuardianAndProducerContinuousBetweenAudits']
+    assert all(a['passed']and a['queryAge']<6 and a['originalFullLockedAudit']and a['ecmStoppedAndZero']for a in new['candidateAudits'])
+    assert len(new['candidateAudits'])==(2 if number==66 else 3)
+    loaded=[w for w in new['actualTrafficWindows']if w['mode']=='publication-candidate-loaded']
+    assert len(loaded)==(2 if number==66 else 3)
+    assert all(w['passed']and w['seconds']>=4 and w['observerCostIncluded']and not w['backgroundLoadControlled']and not w['nssAdmissionAllowed']for w in loaded)
+    assert all(w['ecmStoppedAndZeroThroughout']for w in new['actualTrafficWindows'])
+    assert all((w['lan4Mbps']>=300)==(number==67)for w in loaded)
+    assert new['conclusions']['testedAbove300MbpsPublicationWindowSupported']==(number==67)
+    assert not any(new['conclusions'][k]for k in ['generalHighLoadStabilityProved','wholeRouterCpuBenefitProved','realHumanGameImprovementProved','completeMatchedABACompleted','secondWanExpansionAllowed','upstreamSubmitted'])
+    assert new['lateExpiredContextFailure']['afterIndependentProductionDeadline'] and new['lateExpiredContextFailure']['expiredCandidateContextAgainstRestoredOriginal']
+    assert not new['lateExpiredContextFailure']['sourceStalenessFailure'] and new['lateExpiredContextFailure']['originalFailurePreserved']
+    assert new['client']['networkLoadNoLongerRunning'] and new['client']['noGameLaunched'] and new['client']['noPurchaseOrUninstall']
+    assert new['stageCleanup']['stageAbsent'] and not new['stageCleanup']['stageNatural480SecondExpiryClaimed']
+    assert new['finalState']['protectedAudit']['passed'] and all(new['finalState'][k]for k in ['ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+    assert proof['sources']==len(proof['sourceHashes'])==(10 if number==66 else 12)
+    assert proof['notAdditionalProductionAdmission'] and not proof['candidateRetainedAtEnd']
+    for source,expected in proof['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected
+    assert new['reportVerification']['sourceValidated'] and not new['reportVerification']['browserRendered']
+new67=json.loads((root/'evidence/nss67-mainline.json').read_text());latest=json.loads((root/'evidence/current-runtime.json').read_text())
+assert latest['round']=='NSS67' and latest['workerPid']==9454 and latest['guardianPid']==9455
+assert latest['historical65RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss65-runtime.json').read_bytes()).hexdigest()
+assert latest['historical64RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss64-runtime.json').read_bytes()).hexdigest()
+assert latest['finalClosure']['passed'] and latest['above300MbpsPublicationActuallyObserved']
+assert not latest['publicationCandidateInstalled'] and not latest['nssOpenedThisTurn'] and not latest['candidateEntryBindingCreated']
+assert all(latest['audit'][k]for k in ['passed','protectedConfigurationUnchanged','exactOwnedNativeAudit','ecmClosedAndZero'])
+assert 0<new67['exactRestoredAuditLoad']['queryAge']<6 and new67['exactRestoredAuditLoad']['lan4Mbps']>=300
+assert new67['exactRestoredAuditLoad']['measurementCoversActualAudit'] and new67['exactRestoredAuditLoad']['passed']
+assert new67['client']['downloadPausedAtUiPercent']==17 and new67['client']['networkBpsAtFinalUi']==new67['client']['diskBpsAtFinalUi']==0
+assert not new67['client']['downloadCompleted'] and new67['client']['partialAuthorizedDownloadLeftPaused']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

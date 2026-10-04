@@ -134,3 +134,10 @@
 - [主线结果](../evidence/nss65-mainline.json)、[自然窗口](../evidence/nss65-pipeline.json)、[恢复后审核](../evidence/nss65-final-audit.json)、[8份白名单源](../evidence/nss65-source-proof.json)。
 - [单项试装](../code/work/nss65/publication-trial.mjs)、[独立自然恢复核验](../code/work/nss65/verify-rollback.mjs)。候选没有留驻，也没有新NSS入口绑定或高负载/游戏收益。
 - 本地 `outputs/nss65-mainline-report.html` / `work/nss65/` 保留报告与完整私有checkpoint/config/owner/实际输入；未上传。
+
+## NSS66–67：真实下载发布、独立精确恢复和入口接续
+
+- [NSS66实测](../evidence/nss66-mainline.json)、[NSS67实测](../evidence/nss67-mainline.json)、[300Mbps以上窗口](../evidence/nss67-pipeline.json)、[最终审核](../evidence/nss67-final-audit.json)。
+- [10份NSS66源码](../evidence/nss66-source-proof.json)、[12份NSS67源码](../evidence/nss67-source-proof.json)、[保留的NSS65 runtime](../evidence/nss65-runtime.json)、[NSS66 runtime](../evidence/nss66-runtime.json)。
+- [单项试装](../code/work/nss67/publication-trial.mjs)、[精确独立恢复](../code/work/nss67/verify-rollback.mjs)、[入口接续的三个来源位置](PUBLICATION_ENTRY_HANDOFF.md)。
+- 本地 `outputs/nss67-mainline-report.html` 与 `work/nss66/`、`work/nss67/` 保存完整私有资料；配置/checkpoint/owner/CT/socket/截图未上传。本轮没有新NSS入口资格或真人/CPU验收。

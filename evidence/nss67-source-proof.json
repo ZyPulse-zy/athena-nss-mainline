@@ -1,0 +1,25 @@
+{
+  "sources": 12,
+  "sourceHashes": {
+    "work/nss67/health.mjs": "931aab043d00f9e408285dd6e08ff5eaca9780c451f70062da06f879e65e22b7",
+    "work/nss67/publication-trial.mjs": "35f957b998f7374c186d18238b139cba346de4681f1c3860355acb419a8005e6",
+    "work/nss67/verify-rollback.mjs": "a297202a180a84927511152125aa42decb641846107bed8d70218418230e04b7",
+    "work/nss67/cleanup-stage.mjs": "f45b39d938dbd7d271e1c45d6137fbf3bf7dc6266b26f9a8e42d738f46e4125a",
+    "work/nss67/observe-restored.lua": "f98c9b3050bcaae61ff6b3dcb214be1239e17570c90481d8869b794d5cc191d6",
+    "work/nss67/observe-restored.mjs": "8664782cd5b4afa99084dfb31572266277701d4b4869b13fc6ca013a658922cf",
+    "work/nss67/observe-trial.lua": "4293bec51b5c0e542ca5884bd4a4ad3804aac7e72a9fdbfc0703f53a2020ecdc",
+    "work/nss67/observe-trial.mjs": "f5c9ba1609e78949877881bcb976286e87d2b558e721f5358c3a30e5e957fa05",
+    "work/nss67/client-watchdog.ps1": "75afb5bf477e4ccf404e9f0d72ce4ccfe5ed9af9bbd2822308bc680b03b9e140",
+    "work/nss67/audit-load.mjs": "fccc6fd79db93fc398a1f3644bd0cdce4c700b1eb1c3dfebd9f45c192c0cac16",
+    "work/nss67/summarize.py": "694a0bfa4b93687c42d16eeefcb3cf2abd2c2bae639ae5694c6847f9b8ecc127",
+    "work/nss67/freeze-proof.py": "0732a355749ede177062894f37af729c0d5d7e217d02a5af2dae72ad76e087e7"
+  },
+  "privateConnectionAndCapturesExcluded": true,
+  "notAdditionalProductionAdmission": true,
+  "publicationCandidateInstalledDuringTrial": true,
+  "candidateRetainedAtEnd": false,
+  "productionNssEntryUnchanged": true,
+  "role": "single-publication-boundary-real-download-trial-and-independent-natural-undo",
+  "observerRuntimeOwnerPassedAsArgumentNotHardcoded": true,
+  "original64And65ProofsUntouched": true
+}
