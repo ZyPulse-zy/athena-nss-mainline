@@ -1,0 +1,28 @@
+{
+  "ramOnly": true,
+  "routerWrites": false,
+  "actualConsumerExecuted": true,
+  "checks": 10,
+  "nssPermissionGranted": false,
+  "ioTimeAndInputMocked": true,
+  "passed": true,
+  "cases": [
+    "kernel expiry follows six-second query validity",
+    "both selected decision deadlines remain bounded",
+    "same valid identity survives former artificial five-second cutoff",
+    "exact six-second boundary refuses expired source",
+    "shorter selected flow validity limits common kernel expiry",
+    "shorter flow deadline cannot be renewed after expiry",
+    "unchanged three-second pin reserve rejects late learning",
+    "mark mismatch still refused",
+    "NAT tuple mismatch still refused",
+    "wrong RT tag still refused"
+  ],
+  "observedAt": "2026-10-05T04:42:55.791Z",
+  "adapterSha256": "8b6f5932c3984f012d80019f5fc4c0d95dc554f56975aba50538b0eaf661b82b",
+  "fastPathSha256": "1fa97e45830ad0918c1b166d9ff080ba70433396a2cfbddd241c0bc06627e21a",
+  "leaseBoundToActualClassValidity": true,
+  "neverBeyondSixSecondFreshness": true,
+  "fullFastPathSyntaxCompiled": true,
+  "nativeBinaryUnchanged": true
+}

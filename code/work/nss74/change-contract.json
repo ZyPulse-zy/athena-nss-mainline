@@ -1,0 +1,9 @@
+{
+  "onlyPersistentApplicationIdentities": true,
+  "oneWanAndExactTwoFlowGateUnchanged": true,
+  "actualGameIdentityUnchanged": true,
+  "selectionMovedAfterOriginalFullAudit": true,
+  "noSelectedFlowReplacementAfterCheckpoint": true,
+  "noNativeClassifierTagQosOrExpiryChanges": true,
+  "reason": "NSS73 rejected an exact Steam TCP that disappeared from the same-source complete classification frame while CS2 RT retained correct identity."
+}

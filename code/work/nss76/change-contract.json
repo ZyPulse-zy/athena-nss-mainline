@@ -1,0 +1,12 @@
+{
+  "getterBeforeFinalClassifierProof": true,
+  "liveGetterWithinOriginalFreshCoreBarrier": true,
+  "preLearningSourceReserveSeconds": 3.25,
+  "originalFinalSourceBarrierSeconds": 3,
+  "originalFinalCoreBarrierSeconds": 1.2,
+  "originalPermitCoreBarrierSeconds": 1.5,
+  "nativeAndSixSecondExpiryUnchanged": true,
+  "ownerSeconds": 45,
+  "oneWanTwoFlowsAnd20MbpsUnchanged": true,
+  "reason": "NSS75 tag counter read consumed 0.45 seconds after a 3.13-second source margin; move that read before the final classifier freshness proof, without extending its validity."
+}

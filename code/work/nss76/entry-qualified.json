@@ -1,0 +1,39 @@
+{
+  "ramOnly": true,
+  "clockCoreAndClassifierMocked": true,
+  "actualGetterAndAlignmentExecuted": true,
+  "checks": 9,
+  "nssPermissionGranted": false,
+  "routerWrites": false,
+  "passed": true,
+  "cases": [
+    "source reserve survives actual 450ms counter read",
+    "old core barrier retained",
+    "live tag proof precedes classifier proof",
+    "source never exceeds six seconds",
+    "insufficient source margin cannot open",
+    "old core cannot open",
+    "short selected validity cannot open",
+    "identity rejection remains terminal",
+    "tag rejection still blocks learning"
+  ],
+  "observedAt": "2026-10-05T06:08:12.670Z",
+  "fastPathSha256": "4db54f9ca26fddcdaffba4b49ffd0f3704384811b066dfa6f3f2e1c3d73d1e2b",
+  "getterBeforeFinalClassifierProof": true,
+  "fullFastPathSyntaxCompiled": true,
+  "nativeAndSixSecondExpiryUnchanged": true,
+  "baseBoundInputs": 333,
+  "sourceManifest": {
+    "work/nss76/fast-path.lua": "4db54f9ca26fddcdaffba4b49ffd0f3704384811b066dfa6f3f2e1c3d73d1e2b",
+    "work/nss76/payload.mjs": "340815b6b60ec8fd18419cab311a9d46e95aadf12d2dba6235922ac6d8e730b5",
+    "work/nss76/module-stage.mjs": "5301230017a72f0605a8e6a9fc554da1829e9b0d672b2145fdde5f39d6e2d8e4",
+    "work/nss76/real-session.mjs": "7e834a64e778ef5a1c0805c0303db05dfd54d39b677f1889c707ce6573536bb9",
+    "work/nss76/current-audit-diagnostic.mjs": "cb7d74d6f74f7e8381c564d3800289e5c189230f4fa8cbfd477c7f26283e38ef",
+    "work/nss76/record-candidates.mjs": "5acb68e967aff07299172fb4b33a6ba7fa4d2229c9893a165c6ac96b10722206",
+    "work/nss76/read-real-candidates.mjs": "07a1f4abf998b62e99b59afc8f65cab2c2d95e65d603f75f45a5fdd4ee631185",
+    "work/nss76/session-binding.mjs": "f8f832509c92921604b534b2f0cf8df8e12be8154e4d4cd6797b4735178f9168",
+    "work/nss76/change-contract.json": "0ccb428f8fe0b63b9ae7f82604c25630f88b6901877fc5be71a68c59bf0fd517",
+    "work/nss76/build-getter-order.mjs": "dae302c7badaad3c13998bd64c0cc9f21bfa5bbe5e06b42d8821cba4f1eb922f",
+    "work/nss76/qualify-getter-order.mjs": "a541f860b73b42f8c5a1c8dec5e64690adb0198b074e0946f8aa25ff91e72cb7"
+  }
+}

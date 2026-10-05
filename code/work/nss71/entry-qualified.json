@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "baseBoundInputs": 279,
+  "readinessSetupReserveRemoved": true,
+  "learningBarrierUnchanged": true,
+  "sourceManifest": {
+    "work/nss71/classifier.lua": "4ace82c7ef9959919638a48653d23a00f0602334724f32bf0c14937d47062241",
+    "work/nss71/module-stage.mjs": "d9998781d85b419b72252e4527fe6993e50c0ffb98bba47761ff23e6ccc1f4f4",
+    "work/nss71/current-audit-diagnostic.mjs": "ab688dd62ab50f58c14a8bf966f676e52e933bfe15d1b714df5c953a5690f5d8",
+    "work/nss71/real-session.mjs": "bba999efa684a02631491277fc87e9efbbd341b4344d4291e70d6189cd40ca59",
+    "work/nss71/record-candidates.mjs": "3fb7f3d33e6339705733612ffbd835ef4ebb7037f2c95b70dfe46d5bff18a828",
+    "work/nss71/read-real-candidates.mjs": "bf0675c2db01f4b53210a87dc3c5f2236b6bb03d64b0220a8b091f1c2534c61a",
+    "work/nss71/session-binding.mjs": "baf64730b9020a6ffe06b099ec45720e137cbdd2343038fb212031f871f2750e",
+    "work/nss71/change-contract.json": "38b686d11faf6e8124e2fac373dd1834c54ffaf785c0718586fab7e24d3e1257",
+    "work/nss71/qualify-reserve.mjs": "fcac7c5a501ef38096c0dc4a5ed7ecaf871347bd7f881740248a56f338e7c2c3",
+    "work/nss71/reserve-qualified.json": "b528da0ce345c12ef11b29b7995bf0d3468c6d5c46700ad8a67149e9e68ae979"
+  }
+}

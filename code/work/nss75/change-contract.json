@@ -1,0 +1,10 @@
+{
+  "checkpointBeforeFinalSelection": true,
+  "selectionBeforeIndependentStage": true,
+  "noRetargetingExistingGate": true,
+  "originalGameAndOneWanRetained": true,
+  "nativeGateTagQosAndSourceExpiryUnchanged": true,
+  "finalExactTcpMayDifferFromProvisionalBeforeAnyProductionExperimentWrites": true,
+  "fullBundleShaAndCompileBeforeQueueWrites": true,
+  "reason": "NSS74 exact TCP disappeared during passive preparation; move final application-owned selection after compile and checkpoint."
+}

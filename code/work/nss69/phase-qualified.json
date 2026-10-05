@@ -1,0 +1,22 @@
+{
+  "expectedGuardRefusals": 3,
+  "incompleteChildNeverAuthorized": true,
+  "checks": 15,
+  "passed": true,
+  "newFailures": 3,
+  "oldFailures": 9,
+  "routerWrites": false,
+  "ramOnly": true,
+  "optionalStatEofReproduced": true,
+  "clockTicks": 100,
+  "guardSame": true,
+  "liveFullAndScopedScan": true,
+  "observedAt": "2026-10-05T04:02:57.588Z",
+  "sourceSha256": "5edadcb5c50dc05af55129f82774b53a1841ac4318f5aa847549f15cce7504ab",
+  "previousSourceSha256": "5aa0cbf30ff3c87622d7cf168a99a67733685378cb7c0710c0c6cfad36825491",
+  "fixtureSha256": "58a7b1503b2fe53120c7b1fb298ee98b08bf0fd9da20f3dd5004da9d454fd1ee",
+  "fullSyntaxCompiled": true,
+  "waitFreshByteIdentical": true,
+  "limitsUnchanged": true,
+  "originalFailedBundleSha256": "5f6a0bad5a79512a9bd38f3378e0625e017bf956a37ef84a049a9476185de94b"
+}

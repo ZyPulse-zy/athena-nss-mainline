@@ -1,0 +1,40 @@
+{
+  "ramOnly": true,
+  "checks": 9,
+  "passed": true,
+  "actualNss76AgeReplayed": 2.94,
+  "ioClockAndClassifierMocked": true,
+  "cases": [
+    "fresh input proceeds",
+    "old nine-second initial wait remains",
+    "actual NSS76 age 2.94s is rejected before tag setup",
+    "late source is retryable only while closed",
+    "exact 1.65s boundary refused",
+    "new fresh publication accepted after old source refused",
+    "no stale source promoted",
+    "missing source is terminal",
+    "identity rejection not retried"
+  ],
+  "nssPermissionGranted": false,
+  "routerWrites": false,
+  "actualInitialAlignmentExecuted": true,
+  "observedAt": "2026-10-05T06:20:00.448Z",
+  "fastPathSha256": "a775b2a83df53cc37b4d308de833a5fa17dbb9ab0b1ed28c0d25a2ff3b1b7481",
+  "fullFastPathSyntaxCompiled": true,
+  "initialTagPublicationReserveAligned": true,
+  "originalTagAndNativeDeadlinesUnchanged": true,
+  "baseBoundInputs": 344,
+  "sourceManifest": {
+    "work/nss77/fast-path.lua": "a775b2a83df53cc37b4d308de833a5fa17dbb9ab0b1ed28c0d25a2ff3b1b7481",
+    "work/nss77/payload.mjs": "b213a90baad67c2813109f8e984d07d6b79b325d5445c6f7d63ba9f01d848603",
+    "work/nss77/module-stage.mjs": "d73d3d4bad16264d2790cdcdd27231248e5955303b70044332aafa4a5271404f",
+    "work/nss77/real-session.mjs": "8b3a3822a523b9504e36533e1be7f062f2b62becba00f9df70b7b28eee8953c5",
+    "work/nss77/current-audit-diagnostic.mjs": "c64eaf9c1dee08de557c5cf7788777cd4fccb81a4515c6cd253cf10756f2016a",
+    "work/nss77/record-candidates.mjs": "434d8d0594547cd0c89ff8aab4e2a2386e181d0e5772c14b23e493557e20254f",
+    "work/nss77/read-real-candidates.mjs": "60dd51995c1dde50e8d0db6e78905861af8b9a8a741818b8fd8832f595c82190",
+    "work/nss77/session-binding.mjs": "1ce8a75050a72c1eb709aac0e7f9876b46370e902a07466e411cf2c11ed589e5",
+    "work/nss77/change-contract.json": "6173f5cca7cc8e948b237ded144e62c0f04eb7038d4a185d45e003ec59b0e945",
+    "work/nss77/build-initial-reserve.mjs": "1abba3c5460f6bf345b8b69186004e1cda1c0706ba79724e9130aaaeee6d1393",
+    "work/nss77/qualify-initial-reserve.mjs": "a9b9ac7ca044da625eabc2953568fffcfef4361a564dbddc4dcc4ae595122a91"
+  }
+}

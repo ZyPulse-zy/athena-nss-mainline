@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-05T05:20:53.874Z",
+  "cases": [
+    "Persistent identity wins over a new faster TCP",
+    "Exited TCP",
+    "Reused endpoint different CT id",
+    "Changed NAT port",
+    "Changed full ct mark",
+    "Changed WAN affinity",
+    "Proxy mark",
+    "Changed CT zone",
+    "TCP no longer bulk",
+    "Game no longer RT",
+    "Game budget rejected",
+    "New game port",
+    "Changed producer is rejected",
+    "Older sequence is rejected"
+  ],
+  "checks": 14,
+  "localSyntheticIdentityTests": true,
+  "routerWrites": false,
+  "nssAdmissionGranted": false,
+  "baseBoundInputs": 314,
+  "sourceManifest": {
+    "work/nss74/build-persistent-entry.mjs": "9100c52e5b2c89448ebe1f885991acc576ee3cd96fa25a42d533301eec963ee6",
+    "work/nss74/persistent-pair.mjs": "3946967f2336a5bb11501196e438be79f1cbfa56b53a9c19adb723cca00e1e87",
+    "work/nss74/qualify-persistent-entry.mjs": "a93df1251bec6b426759a14daca6159c0dcb71e0886fe8e748af71c7ff2846c1",
+    "work/nss74/real-session.mjs": "79b053bbcece1fa3d659c91f8afb319cfc3d055504e1d33fdd4a985f60ccf3fc",
+    "work/nss74/session-binding.mjs": "c4ee5ffed626b8cb0e6db4939b1c67bc0ac185e7d2d68f42a56ab64b2fdf6757",
+    "work/nss74/current-audit-diagnostic.mjs": "240eaa5ce4bd67369108b6cddd9b79bc35b631812e1d65f65fad20f308814d1a",
+    "work/nss74/record-candidates.mjs": "f896b0ef69a80e30685fcd87a7d5535df489916e77a92f9992f040862a8bb789",
+    "work/nss74/read-real-candidates.mjs": "3179fc53eddb0e096aa18d1b217818e46eac3f69a63b75d22c7c2321d156c093",
+    "work/nss74/change-contract.json": "86190fb87d750f92dc5cf2f7f68f831782174cdb0d27a36a2a89e274c0540a41"
+  },
+  "oneWanAndExactTwoFlowGateUnchanged": true,
+  "onlyPersistentApplicationIdentities": true
+}

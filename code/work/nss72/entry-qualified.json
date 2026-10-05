@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "baseBoundInputs": 289,
+  "leaseBoundToActualClassValidity": true,
+  "neverBeyondSixSecondFreshness": true,
+  "sourceManifest": {
+    "work/nss72/classifier.lua": "8b6f5932c3984f012d80019f5fc4c0d95dc554f56975aba50538b0eaf661b82b",
+    "work/nss72/fast-path.lua": "1fa97e45830ad0918c1b166d9ff080ba70433396a2cfbddd241c0bc06627e21a",
+    "work/nss72/payload.mjs": "5b8c0f417bd59bbe04899f3bc97f663ad06e8d4fd49f87b5c4fc74ee0e2b1445",
+    "work/nss72/module-stage.mjs": "d72e52f5c14d47afd27a9df928842a3d1c6ab6b1913e15eaaa82942c246eeeed",
+    "work/nss72/current-audit-diagnostic.mjs": "8f0a2bfd6d0c3e98fc35224377a31be8ed9444fe842ce95d96e16a71c27d5b2f",
+    "work/nss72/real-session.mjs": "830d782bdf4d31c83a30fc2ec408b249ab7745146882a5980555f49f1b26eee5",
+    "work/nss72/record-candidates.mjs": "c71fa85c1e76cf5051c73debae35c35e2581985b28161f7161aacb224317debd",
+    "work/nss72/read-real-candidates.mjs": "77bf9b182ccfb9fbd92c8740ed9993b14b73fb9fbe64242a66cba289bf8f484d",
+    "work/nss72/session-binding.mjs": "4517cb2cd8c37cfecd07080c3a1a35c3fd5576f6976d9434e77243d6237804fe",
+    "work/nss72/change-contract.json": "8f976ef71b9825e0671895571ed0f1c02be7d47d78da711aac41421d61212a44",
+    "work/nss72/qualify-validity.mjs": "f3aec02f865ffd086b47e18e709a09425679ff3ebd908b843da04f5e8c68ad0b",
+    "work/nss72/validity-qualified.json": "294a67f83b98bf0c1225e994de89924982cc368e5ff83b6ab14fb148bcaeba89"
+  }
+}

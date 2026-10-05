@@ -1,0 +1,14 @@
+{
+  "leaseBoundToActualClassValidity": true,
+  "maximumSourceAgeSeconds": 6,
+  "neverBeyondSelectedFlowValidity": true,
+  "nativeMaximumLeaseMilliseconds": 6000,
+  "nativeRenewalReserveMilliseconds": 250,
+  "localRenewalReserveSeconds": 0.5,
+  "preLearningReserveSeconds": 3,
+  "hardSessionMaximumSeconds": 12,
+  "independentStageSeconds": 45,
+  "defaultDenyIdentityTupleMarkAndClassUnchanged": true,
+  "productionClassifierUnchanged": true,
+  "reason": "B reached two accelerated flows but a new three-second publication was observed after the old five-second lease renewal reserve. Use the existing six-second source/flow validity instead of subtracting another second."
+}

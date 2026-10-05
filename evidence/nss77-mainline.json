@@ -1,0 +1,805 @@
+{
+  "round": "NSS77",
+  "observedAt": "2026-10-05T06:21:14.700Z",
+  "deploymentReference": "work/nss68/deployment-latest.json",
+  "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+  "candidateWorkerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+  "permanentClassifierChangedThisTurn": false,
+  "trials": [
+    {
+      "round": "NSS68",
+      "case": "20261005035144-b351a48d",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Optional process stat parser assertion; exact EOF/PID not captured",
+      "wan": 2,
+      "fullMark": 131072,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [],
+      "ecmFrontendOpened": false,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 14,
+        "queryAge": 4.100000000093132,
+        "sequence": 42,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS69",
+      "case": "20261005040745-4bf24064",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Stale classifier observation during closed core wait",
+      "wan": 1,
+      "fullMark": 65536,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [
+        {
+          "name": "A",
+          "complete": true,
+          "seconds": 5.29,
+          "frames": 11,
+          "lan4Mbps": 364.729,
+          "lan4Pps": 30157.84,
+          "wanRxMbps": 60.629,
+          "cpuBusyPercent": 89.991,
+          "softirqPercent": 64.944,
+          "timeSqueezeDelta": 216,
+          "softnetDroppedDelta": 0,
+          "acceleratedCounts": [
+            0
+          ],
+          "observerCostIncluded": true
+        }
+      ],
+      "ecmFrontendOpened": false,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 12,
+        "queryAge": 4.4500000001862645,
+        "sequence": 347,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS70",
+      "case": "20261005043204-feb23804",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Obsolete extra setup reserve refused",
+      "wan": 3,
+      "fullMark": 196608,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [],
+      "ecmFrontendOpened": false,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 24,
+        "queryAge": 5.560000000055879,
+        "sequence": 373,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS71",
+      "case": "20261005043704-753d726e",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Too late to renew; B stopped after 1.56 seconds",
+      "wan": 3,
+      "fullMark": 196608,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [
+        {
+          "name": "A",
+          "complete": true,
+          "seconds": 5.17,
+          "frames": 11,
+          "lan4Mbps": 335.973,
+          "lan4Pps": 27830.56,
+          "wanRxMbps": 72.525,
+          "cpuBusyPercent": 89.335,
+          "softirqPercent": 52.034,
+          "timeSqueezeDelta": 38,
+          "softnetDroppedDelta": 0,
+          "acceleratedCounts": [
+            0
+          ],
+          "observerCostIncluded": true
+        },
+        {
+          "name": "B",
+          "complete": false,
+          "seconds": 1.56,
+          "frames": 4,
+          "lan4Mbps": 325.657,
+          "lan4Pps": 26949.36,
+          "wanRxMbps": 54.556,
+          "cpuBusyPercent": 80.066,
+          "softirqPercent": 50.166,
+          "timeSqueezeDelta": 5,
+          "softnetDroppedDelta": 0,
+          "acceleratedCounts": [
+            2
+          ],
+          "observerCostIncluded": true
+        }
+      ],
+      "ecmFrontendOpened": true,
+      "acceleratedCountTwoObserved": true,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 16,
+        "queryAge": 4.260000000009313,
+        "sequence": 79,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS72",
+      "case": "20261005045247-ad21b8f1",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Selected flow not admitted after opening; exact slot unknown",
+      "wan": 4,
+      "fullMark": 262144,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [
+        {
+          "name": "A",
+          "complete": true,
+          "seconds": 5.03,
+          "frames": 11,
+          "lan4Mbps": 242.07,
+          "lan4Pps": 20049.7,
+          "wanRxMbps": 63.634,
+          "cpuBusyPercent": 74.406,
+          "softirqPercent": 55.599,
+          "timeSqueezeDelta": 0,
+          "softnetDroppedDelta": 0,
+          "acceleratedCounts": [
+            0
+          ],
+          "observerCostIncluded": true
+        }
+      ],
+      "ecmFrontendOpened": true,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 4,
+        "queryAge": 1.9799999999813735,
+        "sequence": 385,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS73",
+      "case": "20261005050652-25e46c2d",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Application pair changed before staging",
+      "wan": 1,
+      "fullMark": 65536,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [],
+      "ecmFrontendOpened": false,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": false,
+      "independentStageBeforeWriteVerified": false,
+      "stageUndo": null,
+      "restore": {
+        "qosRestored": false,
+        "qosModuleUnloaded": false,
+        "wanRestored": false,
+        "mwan3Restored": false,
+        "stateNodeRemoved": false
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 8,
+        "queryAge": 3.4699999999720603,
+        "sequence": 645,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS73",
+      "case": "20261005051307-9b2bd6cc",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Same-source complete frame lacks selected TCP; UDP retained",
+      "wan": 1,
+      "fullMark": 65536,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [],
+      "ecmFrontendOpened": false,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 12,
+        "queryAge": 1.6399999998975545,
+        "sequence": 787,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS74",
+      "case": "20261005052526-2a557970",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Persistent TCP still disappeared during passive preparation",
+      "wan": 3,
+      "fullMark": 196608,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [],
+      "ecmFrontendOpened": false,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 16,
+        "queryAge": 4.589999999850988,
+        "sequence": 1034,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS75",
+      "case": "20261005055326-7c434615",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Tag counter read consumed final source learning reserve",
+      "wan": 4,
+      "fullMark": 262144,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [
+        {
+          "name": "A",
+          "complete": true,
+          "seconds": 5.06,
+          "frames": 11,
+          "lan4Mbps": 326.83,
+          "lan4Pps": 27061.07,
+          "wanRxMbps": 47.296,
+          "cpuBusyPercent": 78.005,
+          "softirqPercent": 59.501,
+          "timeSqueezeDelta": 110,
+          "softnetDroppedDelta": 0,
+          "acceleratedCounts": [
+            0
+          ],
+          "observerCostIncluded": true
+        }
+      ],
+      "ecmFrontendOpened": false,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 12,
+        "queryAge": 3.1899999999441206,
+        "sequence": 1596,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    },
+    {
+      "round": "NSS76",
+      "case": "20261005061223-b1352de6",
+      "passed": false,
+      "completeABA": false,
+      "failureCategory": "Initial readiness accepted age 2.94s; next pair read refused",
+      "wan": 4,
+      "fullMark": 262144,
+      "initialMarkNatAndWanPairConsistent": true,
+      "phases": [],
+      "ecmFrontendOpened": false,
+      "acceleratedCountTwoObserved": false,
+      "checkpointVerified": true,
+      "independentStageBeforeWriteVerified": true,
+      "stageUndo": {
+        "sameBoot": true,
+        "ownDirectoryAbsent": true,
+        "stateNodeDirectoryAbsent": true,
+        "guardianTerminated": true,
+        "moduleAbsent": true,
+        "qosModuleAbsent": true
+      },
+      "restore": {
+        "qosRestored": true,
+        "qosModuleUnloaded": true,
+        "wanRestored": true,
+        "mwan3Restored": true,
+        "stateNodeRemoved": true
+      },
+      "protectedBaselineMatches": true,
+      "rawRulesetIdentical": true,
+      "fullRecoveryAudit": {
+        "passed": true,
+        "auditPurpose": "recovery",
+        "prelearningSchedulingRequested": false,
+        "nssAdmissionAllowed": false,
+        "originalLockedFreshnessPredicatesRetained": true,
+        "protectedConfigurationUnchanged": true,
+        "exactOwnedNativeAudit": true,
+        "selectors": 2,
+        "queryAge": 1.6099999998696148,
+        "sequence": 1969,
+        "ecmClosedAndZero": true,
+        "serviceEpochPinned": true,
+        "servicePidChangesAcknowledgedBeforeExperiment": [],
+        "serviceChangesDuringExperimentAllowed": false
+      },
+      "bulkRtLeafBenefitClaimed": false,
+      "humanExperienceClaimed": false,
+      "cpuBenefitClaimed": false
+    }
+  ],
+  "qualification": {
+    "69": {
+      "boundInputs": 268,
+      "liveStageAttempted": true,
+      "newNativeCases": 15
+    },
+    "70": {
+      "boundInputs": 279,
+      "liveStageAttempted": true,
+      "newNativeCases": 4
+    },
+    "71": {
+      "boundInputs": 289,
+      "liveStageAttempted": true,
+      "newNativeCases": 7
+    },
+    "72": {
+      "boundInputs": 301,
+      "liveStageAttempted": true,
+      "newNativeCases": 10
+    },
+    "73": {
+      "boundInputs": 314,
+      "liveStageAttempted": true,
+      "newNativeCases": 7
+    },
+    "74": {
+      "boundInputs": 323,
+      "liveStageAttempted": true,
+      "newNativeCases": 0
+    },
+    "75": {
+      "boundInputs": 333,
+      "liveStageAttempted": true,
+      "newNativeCases": 0
+    },
+    "76": {
+      "boundInputs": 344,
+      "liveStageAttempted": true,
+      "newNativeCases": 9
+    },
+    "77": {
+      "boundInputs": 355,
+      "liveStageAttempted": false,
+      "newNativeCases": 9
+    }
+  },
+  "latestExperimentalEntry": "work/nss77/real-session.mjs",
+  "latestBoundInputs": 355,
+  "latestCandidateLiveTested": false,
+  "latestCandidateRamChecks": 9,
+  "latestCandidateFullFastPathSyntaxCompiled": true,
+  "knownReasons": {
+    "selectedTcpAbsentInSameSourceCompleteFrameObserved": [
+      73,
+      74
+    ],
+    "absenceProvesConntrackExit": false,
+    "nss75RemainingSourceSecondsAfterGetter": 2.68,
+    "nss75OriginalRequiredSeconds": 3,
+    "nss75GetterAndResampleElapsedSeconds": 0.45,
+    "nss76InitialSourceAgeSeconds": 2.94,
+    "nss77MaximumInitialSourceAgeSeconds": 1.65,
+    "nss76GetterNowBeforeFinalClassifierProof": true,
+    "nativeSixSecondExpiryAnd45SecondOwnerUnchanged": true
+  },
+  "client": {
+    "computerUseStoppedByPhysicalEscape": true,
+    "noFurtherComputerUseAfterStop": true,
+    "taskGuardWithdrawn": {
+      "passed": true,
+      "observedAt": "2026-10-05T06:21:12.4803550Z",
+      "reason": "Physical Escape stopped Computer Use; withdraw task-owned deferred Steam shutdown before handing control back",
+      "onlyExactTaskGuardTerminated": true,
+      "clientUiRestoreClaimed": false,
+      "steamOrCs2KilledByThisCleanup": false,
+      "naturalExpiryClaimed": false,
+      "computerUseStoppedByUser": true
+    },
+    "nss75RestoredAndGuardCancelled": {
+      "passed": true,
+      "at": "2026-10-05T06:04:09.1660148Z",
+      "downloadPausedUi": true,
+      "networkAndDiskZeroUi": true,
+      "gameReturnedToMenuUi": true,
+      "hudOriginalThreeValuesPreserved": true,
+      "hudChangedThisWindow": false,
+      "naturalExpiryClaimed": false
+    },
+    "nss75GuardReceipt": {
+      "passed": true,
+      "completedAt": "2026-10-05T06:04:09.2423928Z",
+      "cancelledAfterClientRestore": true,
+      "timedExitExecuted": false,
+      "exactOriginalSteamInstanceGone": false,
+      "deadlineSeconds": 900,
+      "command": "steam -shutdown",
+      "originalClientUiRestored": true,
+      "failure": null
+    },
+    "nss73NaturalGuard": {
+      "passed": true,
+      "completedAt": "2026-10-05T05:17:05.8806456Z",
+      "cancelledAfterClientRestore": false,
+      "timedExitExecuted": true,
+      "exactOriginalSteamInstanceGone": true,
+      "deadlineSeconds": 900,
+      "command": "steam -shutdown",
+      "originalClientUiRestored": false,
+      "failure": null
+    },
+    "nss74NaturalGuard": {
+      "passed": true,
+      "completedAt": "2026-10-05T05:37:14.4061740Z",
+      "cancelledAfterClientRestore": false,
+      "timedExitExecuted": true,
+      "exactOriginalSteamInstanceGone": true,
+      "deadlineSeconds": 900,
+      "command": "steam -shutdown",
+      "originalClientUiRestored": false,
+      "failure": null
+    },
+    "nss70NaturalReceiptMissing": true,
+    "steamExistingRedDeadRedemption2DownloadCompletedAtLastUi": true,
+    "finalValidationStillRunningAtLastUi": true,
+    "latestFinalUiRestoreClaimed": false,
+    "assistantIdleOfficialDeathmatch": true,
+    "humanExperience": false,
+    "newAcquiredGameNotLaunched": true,
+    "purchaseOrUninstall": false
+  },
+  "finalAudit": {
+    "passed": true,
+    "observedAt": "2026-10-05T06:21:14.700Z",
+    "readonly": true,
+    "configurationMatches": true,
+    "deploymentReference": "work/nss68/deployment-latest.json",
+    "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+    "workerPid": 4859,
+    "guardianPid": 17139,
+    "originalFullLockedAudit": true,
+    "selectors": 0,
+    "queryAge": 1.8899999998975545,
+    "sequence": 2120,
+    "ecmStoppedAndZero": true,
+    "noActiveTransaction": true,
+    "noStaging": true,
+    "publicationTrial": false,
+    "noExperimentState": true,
+    "noExperimentalModule": true,
+    "diagnostic": {
+      "events": [
+        {
+          "name": "locked-audit-start",
+          "at": 1998819.76
+        },
+        {
+          "name": "hashes-complete",
+          "at": 1998819.82
+        },
+        {
+          "name": "journal-parsed",
+          "at": 1998819.82
+        },
+        {
+          "name": "selectors-complete",
+          "at": 1998819.91
+        },
+        {
+          "name": "snapshot-parsed",
+          "at": 1998819.94
+        },
+        {
+          "name": "freshness-checked",
+          "at": 1998819.94
+        },
+        {
+          "name": "locked-audit-end",
+          "at": 1998819.95
+        }
+      ],
+      "freshness": {
+        "checkedAt": 1998819.94,
+        "publicationAge": 0.5699999998323619,
+        "sourceAge": 1.8899999998975545,
+        "queryStarted": 1998818.05,
+        "publishedAt": 1998819.37,
+        "sequence": 2120
+      }
+    },
+    "serviceEpochPinned": true,
+    "nssAdmissionAllowed": false
+  },
+  "conclusions": {
+    "ecmAndTwoLeavesPreviouslyProvedBy49And56": true,
+    "partialTwoFlowAccelerationObservedThisTurn": true,
+    "completeMatchedABAThisTurn": false,
+    "wholeRouterCpuBenefitProved": false,
+    "humanCs2ImprovementProved": false,
+    "latestCandidateHighLoadQualified": false,
+    "secondWanExpansionAllowed": false,
+    "upstreamSubmitted": false
+  }
+}

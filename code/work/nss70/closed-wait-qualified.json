@@ -1,0 +1,17 @@
+{
+  "ramOnly": true,
+  "oldExpiredClosedWaitReproduced": true,
+  "changedClassRefused": true,
+  "checks": 4,
+  "passed": true,
+  "ecmClosedThroughoutFixture": true,
+  "newClosedWaitCanReachStrictAdmission": true,
+  "routerWrites": false,
+  "missingFreshMarginNeverPermitted": true,
+  "observedAt": "2026-10-05T04:11:52.608Z",
+  "sourceSha256": "a5b1b0e8258a47870f9146e6ae2618c4b72c001cfdb3b071dc4a36efbb9e7314",
+  "oldSourceSha256": "b0aabcdb645c34df94e4c7645bed20efc9633d4d840004f18a093a2574badd99",
+  "fullNativeSyntaxCompiled": true,
+  "activeFlowObserverAndLearningGatesUnchanged": true,
+  "ageLimitsAndLeaseUnchanged": true
+}

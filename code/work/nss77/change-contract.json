@@ -1,0 +1,9 @@
+{
+  "initialTagPublicationReserveAligned": true,
+  "maximumInitialSourceAgeSeconds": 1.65,
+  "originalTagSourceDeadlineSeconds": 5,
+  "originalPreTagReserveSeconds": 3,
+  "originalTagAndNativeDeadlinesUnchanged": true,
+  "originalInitialWaitAnd45SecondOwnerUnchanged": true,
+  "reason": "NSS76 readiness passed at source age 2.94s; the next pair read exceeded its 3s margin and the unchanged tag publisher also requires age under 2s. Initial readiness must reserve the actual downstream preparation cost."
+}

@@ -1,0 +1,8 @@
+{
+  "closedWaitOnly": true,
+  "previousFastPathSha256": "b0aabcdb645c34df94e4c7645bed20efc9633d4d840004f18a093a2574badd99",
+  "activeFlowObserverAndLearningGatesUnchanged": true,
+  "corePhaseHelper": "work/nss69/core-guard-phase.lua",
+  "mode": "wait with ECM stopped, then original strict preLearningReady/resampleClosed before learning",
+  "ageLimitsAndLeaseUnchanged": true
+}

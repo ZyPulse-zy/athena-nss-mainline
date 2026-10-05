@@ -1,0 +1,24 @@
+{
+  "ramOnly": true,
+  "nssPermissionGranted": false,
+  "checks": 7,
+  "routerWrites": false,
+  "ioTimeAndInputsMocked": true,
+  "passed": true,
+  "cases": [
+    "projection absence is not CT exit",
+    "same-source complete diagnostic reveals excluded class",
+    "diagnostic preserves identity facts",
+    "diagnostic never grants admission",
+    "complete frame read once after rejection",
+    "different source remains unknown",
+    "no full frame read when projection contains both slots"
+  ],
+  "observedAt": "2026-10-05T05:00:57.780Z",
+  "consumerAdmissionByteEquivalentIgnoringWholeLineComments": true,
+  "adapterSha256": "2b0dc08a50462de180b8d9b8e738e619e2e61aafd0d5eae6f2b6eea6eacf50f8",
+  "fastPathSha256": "ebdd5cc67f5f1a03e60d71e7d43dee7383ca1f66392e1059821ad0491b70e9d5",
+  "fullFastSourceCompiled": true,
+  "adapterSyntaxDeferredToExactGuardedBundle": true,
+  "transportLimitsUnchanged": true
+}

@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-05T04:04:08.311Z",
+  "baseBoundInputs": 257,
+  "newBoundInputs": 11,
+  "phaseOnlyNativeDelta": true,
+  "originalWaitFreshAndDeadlinesRetained": true,
+  "originalFullAuditAndDeploymentRetained": true,
+  "existingGateQosClassifiersAndPayloadUnchanged": true,
+  "sourceManifest": {
+    "work/nss69/core-guard-phase.lua": "5edadcb5c50dc05af55129f82774b53a1841ac4318f5aa847549f15cce7504ab",
+    "work/nss69/phase-qualified.json": "cfdbc273286a2303323c1df98e31ca0cb905f320a40964a16e6ee315f61c88d7",
+    "work/nss69/stat-eof-fixtures.lua": "58a7b1503b2fe53120c7b1fb298ee98b08bf0fd9da20f3dd5004da9d454fd1ee",
+    "work/nss69/qualify-phase.mjs": "bf026c887a24b1818df27ddfa57e69906740c8d507f9ee1c4f20a27c15189029",
+    "work/nss69/module-stage.mjs": "4aa4a727c555d27774e1f903f65c44c38a3dea22ef18558ea9748f89e81aeb6a",
+    "work/nss69/current-audit-diagnostic.mjs": "5b1fe2f7bfce551aebdbd5f7c2d86d3e056797cd80016bc7af750a47df92a1be",
+    "work/nss69/real-session.mjs": "d940e3806c6e2c569db98cb3d743259ebefaf3beda5ec8f522cd5b06fc25cfea",
+    "work/nss69/record-candidates.mjs": "aa2abd3538aab9acc9e5adb40132e94a807b1fa29c1723f6f207f813dff8e9b7",
+    "work/nss69/read-real-candidates.mjs": "9ea523769bb37ea397fefe4b550eec55adaecb865856cae26a925ce75d902c3c",
+    "work/nss69/session-binding.mjs": "5f88ab14d80ff89d3f4566ea248bbb4b1f9461ef9feee53e3ec234e8fa80a1b0",
+    "work/nss69/build-entry.mjs": "7c55bab6dd575a4513289d8a7e56d1d083fe7519338d7b29b63e0dbe8f822979"
+  }
+}

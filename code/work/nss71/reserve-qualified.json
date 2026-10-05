@@ -1,0 +1,17 @@
+{
+  "ramOnly": true,
+  "checks": 7,
+  "pairBoundaryStillRefuses": true,
+  "passed": true,
+  "validFrameCanReachOriginalPinBarrier": true,
+  "changedIdentityStillRefuses": true,
+  "obsoleteReserveFailureReproduced": true,
+  "nssPermissionGranted": false,
+  "routerWrites": false,
+  "fixtureUsesMockedContextAndUnchangedPairContract": true,
+  "observedAt": "2026-10-05T04:36:45.384Z",
+  "sourceSha256": "4ace82c7ef9959919638a48653d23a00f0602334724f32bf0c14937d47062241",
+  "oldSourceSha256": "d661fa54ecba3a6360001224bba28538d9e532d4429b93ef54f86759ceabe526",
+  "fullSourceExactlyOneAssertionRemoved": true,
+  "consumerAndLearningBarriersUnchanged": true
+}

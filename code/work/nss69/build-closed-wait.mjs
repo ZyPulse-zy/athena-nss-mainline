@@ -1,0 +1,14 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+import {verifyPreparation as base} from './session-binding.mjs';
+const q=base();assert.equal(Object.keys(q.sourceManifest).length,268);fs.mkdirSync('work/nss70');
+const old=fs.readFileSync('work/nss59/fast-path.lua','utf8');const a='stopped();if now()>=nextCheck then observe();nextCheck=now()+0.5 end';assert.equal(old.split(a).length,2);const fast=old.replace(a,'stopped() -- ECM remains closed; fresh admission is checked after the core phase.');
+fs.writeFileSync('work/nss70/fast-path.lua',fast);
+function clone(src,name,edits){let s=fs.readFileSync(src,'utf8');for(const[a,b,all=false]of edits){assert.ok(s.includes(a));if(!all)assert.equal(s.split(a).length,2);s=all?s.replaceAll(a,b):s.replace(a,b);}fs.writeFileSync('work/nss70/'+name,s);}
+clone('work/nss63/payload.mjs','payload.mjs',[["work/nss59/fast-path.lua","work/nss70/fast-path.lua"]]);
+clone('work/nss69/module-stage.mjs','module-stage.mjs',[["from'../nss63/payload.mjs'","from'./payload.mjs'"],["work/nss59/fast-path.lua","work/nss70/fast-path.lua"]]);
+clone('work/nss69/current-audit-diagnostic.mjs','current-audit-diagnostic.mjs',[['work/nss69','work/nss70',true],['nss69\\/','nss70\\/']]);
+for(const name of ['real-session.mjs','record-candidates.mjs','read-real-candidates.mjs'])clone('work/nss69/'+name,name,[['work/nss69','work/nss70',true]]);
+const binding=`import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';import {verifyPreparation as previous} from '../nss69/session-binding.mjs';
+export function verifyPreparation(){const q=previous(),p=JSON.parse(fs.readFileSync('work/nss70/entry-qualified.json'));assert.ok(p.passed&&p.closedWaitOnly&&p.activeFlowObserverAndLearningGatesUnchanged);assert.equal(p.baseBoundInputs,Object.keys(q.sourceManifest).length);for(const[f,h]of Object.entries(p.sourceManifest))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),h,f);return{...q,sourceManifest:{...q.sourceManifest,...p.sourceManifest},closedWaitSchedulingOverlay:true};}
+`;fs.writeFileSync('work/nss70/session-binding.mjs',binding);
+fs.writeFileSync('work/nss70/change-contract.json',JSON.stringify({closedWaitOnly:true,previousFastPathSha256:crypto.createHash('sha256').update(old).digest('hex'),activeFlowObserverAndLearningGatesUnchanged:fast.replace('stopped() -- ECM remains closed; fresh admission is checked after the core phase.',a)===old,corePhaseHelper:'work/nss69/core-guard-phase.lua',mode:'wait with ECM stopped, then original strict preLearningReady/resampleClosed before learning',ageLimitsAndLeaseUnchanged:true},null,2)+'\n');console.log(JSON.stringify({candidatePrepared:true,oneChangedNativeStatement:true,productionWrites:false}));

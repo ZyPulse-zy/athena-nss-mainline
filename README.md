@@ -1,5 +1,8 @@
 # Athena NSS 主线记录
 
+最新 [NSS77](evidence/nss77-mainline.json)：真实CS2/Steam部分加速，完整闭环未通过；已定位并修正准备余量不一致，最新候选355项/目标RAM通过但未现场试用。当前ECM关闭且恢复审核通过。先读 [STATE](docs/STATE.md) 和 [PLAN](docs/PLAN.md)。下方68及更早是历史。
+
+
 最新 [NSS68](evidence/nss68-mainline.json)：发布候选已实际保留，新257项入口与完整准入/恢复审核通过；ECM关闭。记录一次自然tc回收失败与自动恢复，真人同负载闭环未验收。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md)，下面67及更早为历史。
 
 

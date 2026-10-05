@@ -600,7 +600,7 @@ assert 0<new67['exactRestoredAuditLoad']['queryAge']<6 and new67['exactRestoredA
 assert new67['exactRestoredAuditLoad']['measurementCoversActualAudit'] and new67['exactRestoredAuditLoad']['passed']
 assert new67['client']['downloadPausedAtUiPercent']==17 and new67['client']['networkBpsAtFinalUi']==new67['client']['diskBpsAtFinalUi']==0
 assert not new67['client']['downloadCompleted'] and new67['client']['partialAuthorizedDownloadLeftPaused']
-x68=json.loads((root/'evidence/nss68-mainline.json').read_text());l68=json.loads((root/'evidence/current-runtime.json').read_text())
+x68=json.loads((root/'evidence/nss68-mainline.json').read_text());l68=json.loads((root/'evidence/nss68-runtime.json').read_text())
 assert l68['round']=='NSS68' and x68['candidateRetainedAtEnd'] and l68['publicationCandidateInstalled']
 assert l68['deploymentReference']=='work/nss68/deployment-latest.json' and l68['classifierConfigSha256']==x68['classifierConfigSha256']
 assert l68['candidateEntryBindingCreated'] and l68['qualifiedExperimentalEntryBoundInputs']==257
@@ -614,5 +614,24 @@ assert l68['finalClosure']['passed'] and l68['audit']['passed'] and l68['audit']
 assert l68['historical67RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss67-runtime.json').read_bytes()).hexdigest()
 assert x68['actualTrafficWindow']['lan4Mbps']<300 and not x68['actualTrafficWindow']['qualifiedHighLoad']
 assert all(not x68['conclusions'][k]for k in ['wholeRouterCpuBenefitProved','realHumanExperienceProved','completeMatchedABACompleted','generalLongTermStabilityProved','upstreamSubmitted'])
-assert len(manifest['sources'])==868
+assert len(manifest['sources'])>868
+proof77=json.loads((root/'evidence/nss77-source-proof.json').read_text())
+assert hashlib.sha256(json.dumps(manifest['sources'][:868],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof77['historicPrefixCanonicalSha256']
+assert len(manifest['sources'])==868+proof77['sources']
+for source,digest in proof77['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+x77=json.loads((root/'evidence/nss77-mainline.json').read_text());rt77=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x77['latestBoundInputs']==355 and x77['latestCandidateRamChecks']==9 and not x77['latestCandidateLiveTested']
+assert len(x77['trials'])==10 and sum(t['independentStageBeforeWriteVerified']for t in x77['trials'])==9
+assert all(t['protectedBaselineMatches']for t in x77['trials'])
+for t in x77['trials']:
+    assert not t['completeABA'] and not t['cpuBenefitClaimed'] and not t['humanExperienceClaimed']
+    if t['independentStageBeforeWriteVerified']:assert t['checkpointVerified'] and all(t['stageUndo'].values()) and all(t['restore'].values())
+assert sum(t['acceleratedCountTwoObserved']for t in x77['trials'])==1
+assert x77['knownReasons']['nativeSixSecondExpiryAnd45SecondOwnerUnchanged']
+assert x77['client']['computerUseStoppedByPhysicalEscape'] and x77['client']['taskGuardWithdrawn']['passed']
+assert not x77['client']['latestFinalUiRestoreClaimed']
+assert rt77['round']=='NSS77' and not rt77['entryFullHighLoadForwardingQualified'] and not rt77['nssPermanentlyEnabled']
+assert rt77['finalClosure']['passed'] and rt77['audit']['configurationMatches'] and rt77['audit']['originalFullLockedAudit']
+assert rt77['historical68RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss68-runtime.json').read_bytes()).hexdigest()
+
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

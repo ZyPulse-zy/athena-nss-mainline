@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "diagnosticOnly": true,
+  "noDiagnosticResultAffectsAdmission": true,
+  "baseBoundInputs": 301,
+  "sourceManifest": {
+    "work/nss73/classifier.lua": "2b0dc08a50462de180b8d9b8e738e619e2e61aafd0d5eae6f2b6eea6eacf50f8",
+    "work/nss73/fast-path.lua": "ebdd5cc67f5f1a03e60d71e7d43dee7383ca1f66392e1059821ad0491b70e9d5",
+    "work/nss73/payload.mjs": "26ffacbd7d2acb548cd4e38071c017cd35e5f9ee5fece2a7350b56b25902fee9",
+    "work/nss73/module-stage.mjs": "a0cfb67f011f3bac158dd01ddb562a979394aa300061f1cb642aa85f71c23e67",
+    "work/nss73/current-audit-diagnostic.mjs": "eab54bbb0ac8890f759d5088fd6352c6d43499f7b125e851851aff44095e1196",
+    "work/nss73/real-session.mjs": "6656bc6fbf2c552f02ce388e688528a44ef03f953074c1cc7f672ea28a7e0214",
+    "work/nss73/record-candidates.mjs": "147881cc74f9502ffdb96ade97d6e1d972acb7436acc178f0f416300cc010a32",
+    "work/nss73/read-real-candidates.mjs": "643db67b0b81abb00906022ddef2d2b6a84a31b24e61ecb5cb81e35d65802f18",
+    "work/nss73/session-binding.mjs": "4ec623e71208af70b1f135d041910d81ba0e08e842330c9085bc7453d7322b23",
+    "work/nss73/change-contract.json": "1b92f3301c37a68097fe2eb615d4a53540085f006f94479b0616a4c620d0ce2d",
+    "work/nss73/diagnostic-helper.lua": "4b0023d0e3d7d8359af451bf9850d94e266d410929a3bc3e2212cc363b83e370",
+    "work/nss73/qualify-diagnostic.mjs": "63d1ce4696dfeb1559ca441634bd25fb80e90f94daee80a662a5d34d0eb69be5",
+    "work/nss73/diagnostic-qualified.json": "5c4f28dd48c944cbbcb57114139fe5aba0a9a88f489e592571c4191edc832e4c"
+  }
+}

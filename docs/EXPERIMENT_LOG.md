@@ -310,3 +310,30 @@
 - 现有暂停的黎明杀机恢复，界面瞬时312Mbps后回到暂停；真实4秒仅2.879Mbps/425pps、busy34.91/softirq7.46/squeeze0；实际审核窗0.587Mbps，未形成300Mbps对照。没有CS2、HUD、真人或NSS CPU收益。暂停原因未确认，不称助手主动暂停；观察到暂停和0bps才取消独立360秒客户端守护。
 - 10:37:28原完整终态审核source3.24通过，ECM关闭全零，无事务/stage/state/实验模块，五WAN认证/PBR/NAT/十个生产qdisc与保护配置保持。23份白名单源累计868，12份完整私有运行输入和257绑定输入冻结；旧67runtime原字节保留。
 - 下一步直接使用新68入口做一次集中真人CS2+现有下载同TCP/UDP、单WAN可比A/B/A2。新轮次先读实际worker/guardian/producer；实验期间producer更换必须拒绝并精确恢复。不要再试装相同publication、重放旧准备、装新游戏或扩WAN。
+
+## 2026-10-05 NSS69–77：真实配对、部分加速和准备顺序定位
+
+见 [实际轮次](../evidence/nss77-mainline.json)、[终态原完整审核](../evidence/nss77-final-audit.json)、[新源码](../evidence/nss77-source-proof.json)。
+
+- 常驻仍是 `work/nss68/deployment-latest.json`，配置 `581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7`。本轮没有重装分类器或改变生产配置；worker4859/guardian17139，14:21 source1.89秒、ECM关闭零计数，无事务、暂存、state或实验模块。
+- NSS71真实A5.17秒、B1.56秒，ECM2；B未达五秒并因续租过晚停止，无A2。LAN4约336/326Mbps、softirq52.03/50.17%、squeeze38/5，窗口长度不同，不是CPU收益。
+- 73/74失败帧里选中Steam TCP不在同源完整分类快照，游戏UDP仍身份/mark/NAT/WAN/tag正确。不是已证明CT消失或分类器故障。75把最终精确TCP选择移至checkpoint下载与编译之后、独立stage之前，原游戏连接和单WAN范围固定。
+- 75软件A5.06秒/11帧完成，最后学习余量2.68秒不满足3秒。76把耗时getter移至最终分类证明之前，保留六秒source/native、3秒学习、1.2/1.5秒core、20Mbps和45秒owner；实际失败发生在更早initial ready通过age2.94秒之后，未到A。
+- 77只修正initial ready准备预算为age<1.65秒，使后续原标签age<2秒门槛有余量。355项绑定，9目标RAM检查和完整fast语法通过；IO/时钟/分类器模拟，**没有77现场stage/加速证明**。76的getter顺序也没有取得新的实际B证明。
+- 本轮本地测试生成错误均保留原raw，修正之后才核验；不作为源码/内核缺陷。69可选stat EOF仅夹具复现，原现场没有具体EOF/PID，不能判定现场根因。
+- 客户端通过官方死斗产生真实UDP，助手闲置，未取得真人体感。HUD有保存但不完整对应B，条件显示隐藏值不能记为零。75下载暂停与菜单/HUD恢复单独通过；最后76下载已完成、验证文件仍运行。用户物理Esc停止桌面操作，已停止UI并撤下精确任务guard，不能声称76最终菜单/HUD已恢复。
+- 原68 runtime按字节保存，新增122份白名单源，累计990。原始CT、端点、截图、checkpoint、凭据和二进制均留本地；没有提交上游Issue/PR。
+
+
+| 轮次 | 实际阶段/负载 | 停止原因 | 恢复 |
+|---|---|---|---|
+| NSS68 | 未取得测量阶段 | Optional process stat parser assertion; exact EOF/PID not captured | 原完整恢复通过 |
+| NSS69 | A 5.29s, 364.729Mbps | Stale classifier observation during closed core wait | 原完整恢复通过 |
+| NSS70 | 未取得测量阶段 | Obsolete extra setup reserve refused | 原完整恢复通过 |
+| NSS71 | A 5.17s, 335.973Mbps / B 1.56s (未完成), 325.657Mbps | Too late to renew; B stopped after 1.56 seconds | 原完整恢复通过 |
+| NSS72 | A 5.03s, 242.07Mbps | Selected flow not admitted after opening; exact slot unknown | 原完整恢复通过 |
+| NSS73 | 未取得测量阶段 | Application pair changed before staging | 原完整恢复通过 |
+| NSS73 | 未取得测量阶段 | Same-source complete frame lacks selected TCP; UDP retained | 原完整恢复通过 |
+| NSS74 | 未取得测量阶段 | Persistent TCP still disappeared during passive preparation | 原完整恢复通过 |
+| NSS75 | A 5.06s, 326.83Mbps | Tag counter read consumed final source learning reserve | 原完整恢复通过 |
+| NSS76 | 未取得测量阶段 | Initial readiness accepted age 2.94s; next pair read refused | 原完整恢复通过 |

@@ -1,5 +1,10 @@
 # 证据索引
 
+## 当前NSS77
+
+- [实测轮次](../evidence/nss77-mainline.json)、[终态审核](../evidence/nss77-final-audit.json)、[新源冻结](../evidence/nss77-source-proof.json)。
+- [当前运行](../evidence/current-runtime.json)、[NSS68 runtime原字节](../evidence/nss68-runtime.json)。
+
 ## 当前：NSS68
 
 - [实际保留与自然恢复记录](../evidence/nss68-mainline.json)、[当前运行](../evidence/current-runtime.json)、[终态原审核](../evidence/nss68-final-audit.json)。

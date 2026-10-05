@@ -1,0 +1,8 @@
+{
+  "diagnosticOnly": true,
+  "defaultDenyAndSixSecondExpiryUnchanged": true,
+  "originalRejectionFullFrameCheckReused": true,
+  "noDiagnosticResultAffectsAdmission": true,
+  "readsCompleteFrameOnlyAfterSelectedFlowRejection": true,
+  "reason": "NSS72 selected flow dropped out of the admission projection immediately after opening ECM, but the original observation loop did not record which class or slot was rejected."
+}

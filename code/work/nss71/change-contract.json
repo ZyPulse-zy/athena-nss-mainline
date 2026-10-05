@@ -1,0 +1,9 @@
+{
+  "readinessSetupReserveRemoved": true,
+  "previousClassifierSha256": "d661fa54ecba3a6360001224bba28538d9e532d4429b93ef54f86759ceabe526",
+  "consumerPairByteIdentical": true,
+  "pinLearningThreeSecondBarrierUnchanged": true,
+  "activeExpiryRenewalIdentityAndRetirementUnchanged": true,
+  "productionClassifierUnchanged": true,
+  "reason": "Observed source age 1.12 seconds had correct RT/BULK identity, but obsolete extra one-second readiness reserve refused it while ECM remained closed."
+}

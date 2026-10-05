@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "baseBoundInputs": 268,
+  "closedWaitOnly": true,
+  "activeFlowObserverAndLearningGatesUnchanged": true,
+  "sourceManifest": {
+    "work/nss70/fast-path.lua": "a5b1b0e8258a47870f9146e6ae2618c4b72c001cfdb3b071dc4a36efbb9e7314",
+    "work/nss70/payload.mjs": "fc8ebbea6d8d4e3837e17fa3d56d595156424556e4d3b6141e0b337bb33b8a31",
+    "work/nss70/module-stage.mjs": "63410b1923190d0ac1b0aebd75fe348aafe37f8f992f74ec6bb40bf542ca676e",
+    "work/nss70/current-audit-diagnostic.mjs": "16bd979252298c2eef17fef57a1a28a87c317bd5e0d5e9e72b68dc4502b5ba6d",
+    "work/nss70/real-session.mjs": "8f7f5a39694e49ad774070e7c41035788120abb2d5787e0c274c134b870c84b5",
+    "work/nss70/record-candidates.mjs": "8bb9a4e4fa5a255ba7c367750ef64cf489c8cac282d9659346b79e59829a10ac",
+    "work/nss70/read-real-candidates.mjs": "3d3288000759668d4ce8757a7152ef8ab36e9a2eb34bb0c0c026507c3fddab7c",
+    "work/nss70/session-binding.mjs": "9e8c194c1ddc39bb392f2279478e24dbd337086158bc5edc7589e02532a0c49a",
+    "work/nss70/change-contract.json": "aba910e24698bdfa907efc0596baab506e95e209b165e12d947527b15a646bb5",
+    "work/nss70/qualify-closed-wait.mjs": "c6746a267bb8d151e21321c08d6a1ba8aa8b11256530aedf551cbb310a2501c1",
+    "work/nss70/closed-wait-qualified.json": "57934e26fbf3ffbaf089089b7a01c7dac8828ebb2aab10a77919aa72813ff06a"
+  }
+}
