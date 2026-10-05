@@ -362,3 +362,17 @@
 - 82在WAN2同一TCP/UDP跑完整5.00/5.01/5.02秒、各11帧；ECM0→2→0、正确bulk/RT tag、mark0x20000/NAT/出口、1次续租、精确撤销。发送32Mbps，实际14.90/17.16/18.08，不同吞吐不作CPU收益；softirq11.73/7.24/18.12、busy30.39/22.81/35.95、squeeze0。B观察bulk+8990包/drop143、RT+262/drop0；UDP203/203、213/213、203/202，p95约205.64/205.25/204.86ms，为自有端点RTT而非游戏。
 - 五个现场stage各新checkpoint下载/SHA/gzip、独立PPID1/45秒owner写前核验，最后全部保护配置/完整原审核恢复通过。17:05常驻4859/17139、config581b5d46…c791d7/source1.15；ECM关闭全零，无事务/stage/state/模块。临时端点180秒FW独立恢复与客户端guard通过，临时端口已关闭，无生产VPS服务替换、游戏/Steam/UI/HUD改动。
 - 新源码与脱敏聚合证据进私有仓库；完整原始CT、nonce、连接/凭据、checkpoint、模块、实际绑定输入仍留本地。旧78 runtime原字节保存。不提交上游；下一步直接提高单WAN受控带宽，再最后集中真人验收，不重装/重放旧准备或同时扩多WAN。
+
+
+## 2026-10-05 NSS84–92：60Mbps组、计数观察根因与32Mbps可比闭环
+
+- 主要QoS变量20→60Mbps，bulk59/RT1/ceil60，默认950、FQ-CoDel参数不变，实际source反向替换与旧字节相等，原生layout7例。52发送/1GiB/180秒客户端上限，45秒owner及原native/source期限保持。
+- 84 ACK1包40字节＋UDP未返回，未执行A/ECM；85按精确ACK及pending做23RAM后，prep90%回包不达，86一轮8个自己TCP候选未同WAN、另一同WAN但缺最近回包；均未stage。87去掉冗余echo质量门槛后A仅2秒/5帧，TCP分类投影消失；实际客户端stderr是Windows EPERM status rename崩溃，完整同源CT诊断不可用，不能只按投影定CT退出。没有ECM。
+- 88修客户端临时EPERM/EBUSY，3本地正负例，其它IO错误仍fatal；后来无实际EPERM复发不称现场注入恢复。被动tap改ETH_P_ALL，249入/249出/249客户端回包证明原87 IP-only零TX只是观察限制；后续initial先ACK偏差、重读又TCP-down偏差，UDPdown0，原失败保留且不开放ECM。
+- 89按正确观察合同替换逐规则原子相等假设，最多1重读、total/expected两帧单调且交叉范围相交，wrong tag/neighbor包及字节0，原完整NFT policy及新flow/TTL/classifier/native gate不变；30目标RAM正负例含真实88两帧及缺方向仍拒绝。实际52两轮initial UDPdown为0在原1.2秒截止拒绝，均无A/ECM；一次端点5秒247入、246出、客户端只33，安装tag前及撤销后亦有缺包，原因未定。
+- 91仅把发送52→32，60QoS和89fast字节不变，WAN2完整A5.01/B5.01/A25.01、各11帧、ECM0/2/0。客户端31.996/32.023/32.003Mbps，LAN4均33.57Mbps左右，softirq15.19/4.97/14.43%、busy28.81/15.93/30.03%，time_squeeze/softnet drop全0。两次A2边界计数bracket现场通过，2次确认renewal、精确retire、mark/NAT/affinity通过。
+- 32Mbps相对软件均值softirq下降66.41%；UDP239/239、238/238、239/239，p95约198.39/198.06/198.39ms，为自有端点RTT而非CS2。B附近异步leaf bulk+14541包/+20675746字节、RT+242/+41140，drop0/0；未饱和60，因此不验收60准确限速、拥塞FQ/AQM/ECN或游戏收益。
+- 六个实际stage各checkpoint/SHA/gzip、独立PPID1/45秒恢复和前后原完整保护审核通过；九个有限端点全部180秒FW基线恢复、0规则、临时unit/端口关闭、client/210秒精确守护退出。18:42原完整终态source2.88、worker4859/guardian17139连续，ECM关闭全零，无事务/stage/state/module，常驻68不变。
+- 92封存实测/源码与旧82 runtime原字节；完整原始CT/nonce/端点凭据/checkpoint/模块/绑定留私有，无上游Issue/PR。下一步只定位52回程并补更高同負载闭环，最后一次真人CS2验收，不重装分类器/重复准备/新游戏/扩第二WAN。
+
+- 最终文档复核纠正上行边界：实际两flow upTag均0，当前仅LAN4下行NSS队列，不能声称上行仍走软件或得到WAN CAKE保障；本轮上传只是ACK＋低速UDP，未验收上传QoS。原实际测试源码/数据不变。

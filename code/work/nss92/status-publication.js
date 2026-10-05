@@ -1,0 +1,2 @@
+// Context supplied by the private controlled client.
+function stamp(){if(ended)return;const x={...stats,at:Date.now()/1000,elapsed:(performance.now()-started)/1000};fs.writeFileSync(dir+'/status-private.json.new',JSON.stringify(x));try{fs.renameSync(dir+'/status-private.json.new',dir+'/status-private.json')}catch(e){if(e.code!=='EPERM'&&e.code!=='EBUSY')throw e;stats.statusPublicationDeferrals=(stats.statusPublicationDeferrals??0)+1}loadOut.write(JSON.stringify(x)+'\n');}

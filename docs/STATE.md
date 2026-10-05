@@ -1,5 +1,24 @@
 # 当前状态
 
+更新：2026-10-05 18:42，北京时间。最新NSS92；常驻仍NSS68，所有NSS实验已撤销。
+
+**60Mbps受控QoS预算下，真实32Mbps的一TCP＋低速UDP完成完整单WAN A→B→A2。客户端31.996/32.023/32.003Mbps，softirq15.19→4.97→14.43%，相对两段软件均值下降66.41%；UDP239/239、238/238、239/239，bulk/RT零丢弃。ECM0→2→0、NAT/PBR/WAN affinity和精确恢复通过。**
+
+见 [汇总](../evidence/nss92-mainline.json)、[六次现场记录](../evidence/nss92-trials.json)、[32Mbps完整对照](../evidence/nss92-matched32.json)、[标签计数修正](../evidence/nss92-tag-reader.json)、[回程与客户端故障](../evidence/nss92-load-observations.json)、[终态审核](../evidence/nss92-final-audit.json)。
+
+- 用户已允许工程以受控真实TCP/UDP推进；无需每轮开Steam/CS2。真人游戏保留为最后集中验收。永久分类器未改，4859/17139连续，config581b5d46…c791d7；终态source2.88秒通过原完整审核，ECM关闭全零，无事务/stage/state/实验模块。
+- 主要QoS变量从20提高到60Mbps，bulk保障59Mbps、RT保障1Mbps，二者ceil60，默认fallback950；目标原生选项7案例通过。当前32Mbps没有压到60Mbps上限，不能声称60Mbps限速精度或拥塞/AQM/ECN已验收；这套NSS队列仅覆盖LAN4下行；实际TCP/UDP upTag都为0，未建立NSS上行队列，不能把WAN软件CAKE当作已加速流的上行QoS保证。
+- 84/88多规则计数继续出现1包40/60/1500字节偏差，第二次也可偏差。89替换活动counter严格同瞬时相等假设：精确完整policy验证保持，错误tag/neighbor包和字节必须全零；最多重读一次，两帧所有total/expected需单调且交叉区间相交，学习前仍要真实双向包。30目标RAM案例包含真实88帧与错误字节、缺方向、倒退等反例；91现场两次边界重读成功。6秒来源/12秒native/45秒owner等未改。原失败保持。
+- 87实际客户端在Windows status原子替换时EPERM退出，之后TCP不在分类投影。88对EPERM/EBUSY延后状态上报、数据连接继续，其它IO失败仍退出；3本地案例通过。实际后续没再次捕获EPERM，不冒充现场故障注入恢复。
+- 52Mbps下当前UDP回程窗口不稳定：正确ETH_P_ALL端点tap曾249发出/249客户端收到；另一5秒247入、246发出、仅33客户端记录。缺包在安装tag前和撤销后也有。89两次使用新检查均因initial UDP-down为0，在原1.2秒内拒绝且不开放ECM；不能归因NSS，也不假定是52Mbps造成。根因暂定位在自有服务器egress至客户端接收之间，尚未区分上游/路由器/Windows。
+- 六个stage各checkpoint下载/SHA/gzip、写前独立PPID1/45秒守护与完整恢复审核通过；九个负载端点FW180秒独立恢复、规则0、原全局基线恢复、临时unit/端口关闭、客户端/210秒精确守护退出。没有新游戏下载、游戏/HUD/UI、购买/卸载、固件/内核、生产分类器或五WAN/PBR改动。
+- 可直接使用32Mbps已通过入口`work/nss91/controlled-session.mjs`（555实际绑定输入），52Mbps诊断入口`work/nss89/controlled-session.mjs`（533输入）。源码/完整输入按新case冻结，不能修改旧证据。原始CT/nonce/端点配置/凭据/checkpoint/模块仍私有；[旧82 runtime原字节](../evidence/nss82-runtime.json)保持。
+- 下一步集中定位受控UDP回程缺包：优先只读关联服务器发出、路由器收/发和客户端接收；不能用没有回包的窗口评价RT QoS。随后同一60Mbps预算补52Mbps完整可比A/B/A2，再一次真人CS2＋正常下载验收。已经通过的分类器安装、30项计数检查、32Mbps闭环不重放；不扩第二WAN、共享预算、Wi-Fi或autorate。
+
+## NSS82历史状态
+
+# 当前状态
+
 更新：2026-10-05 17:05，北京时间。最新NSS82；常驻仍NSS68，实验NSS均已撤销。
 
 **受控真实TCP＋UDP完成两次完整单WAN A→B→A2。相同约18Mbps的客户端吞吐下，softirq为9.65→4.31→9.48%，相对两段软件均值下降54.97%。32Mbps发送负载下bulk丢弃143、RT零丢弃，NSS段UDP213/213收到回复。工程闭环已通过，300Mbps和真人CS2收益尚未验收。**

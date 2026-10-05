@@ -1,0 +1,45 @@
+{
+  "offered52MbpsUdpReturnUnstableBeforeEcm": true,
+  "endpointTap88": {
+    "passed": true,
+    "readonly": true,
+    "allProtocolTapForTransmitVisibility": true,
+    "seconds": 5,
+    "authenticatedIncoming": 249,
+    "incomingWithAllowedSource": 249,
+    "outgoingEchoes": 249,
+    "matchingClientRepliesAtRead": 249,
+    "finalBoundaryRepliesMayStillBeInFlight": true,
+    "notCs2Metric": true
+  },
+  "endpointTap89": {
+    "passed": true,
+    "readonly": true,
+    "allProtocolTapForTransmitVisibility": true,
+    "seconds": 5,
+    "authenticatedIncoming": 247,
+    "incomingWithAllowedSource": 247,
+    "outgoingEchoes": 246,
+    "matchingClientRepliesAtRead": 33,
+    "finalBoundaryRepliesMayStillBeInFlight": true,
+    "notCs2Metric": true
+  },
+  "serverTransmitTapCorrectedFromIpOnlyToAllProtocols": true,
+  "capture87NoTxWasInstrumentationLimitation": true,
+  "absenceBeginsBeforeTagInstallation": true,
+  "absencesAlsoAfterRollback": true,
+  "localizationBetweenOwnedServerEgressAndClientReceive": true,
+  "routerOrUpstreamOrWindowsRootCauseUnproved": true,
+  "cs2LossMissNotMeasured": true,
+  "prepareOnly85And86Runs": 3,
+  "prepareOnly85And86EcmOpened": false,
+  "clientPublicationFixQualification": {
+    "passed": true,
+    "cases": 3,
+    "clientSha256": "aad59c803a57cb198bd3b981a8df63c03cf5820ce49b6e70200475104b121b8a",
+    "hardwareAdmission": false,
+    "knownTransientFailuresDoNotTerminateTraffic": true
+  },
+  "actual87ClientEpermFailurePreserved": true,
+  "postPatchRealEpermRecurrenceNotClaimed": true
+}

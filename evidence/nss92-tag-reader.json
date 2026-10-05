@@ -1,0 +1,192 @@
+{
+  "nativeQualification": {
+    "nssAdmissionAllowed": false,
+    "recordedNonAtomicSnapshotsCovered": true,
+    "recordedMissingDownlinkStillRefused": true,
+    "passed": true,
+    "cases": 30,
+    "sourceSha256": "bcd7bb213527b3b6a31cfe2090e4447d28f447c4d3a5952cd114621bc4140347"
+  },
+  "maximumRereadsPerGetter": 1,
+  "singleSnapshotEqualityOnlyFastPath": true,
+  "monotonicAndCrossSnapshotOverlapRequired": true,
+  "allWrongTagPacketAndByteCountersZeroRequired": true,
+  "completeExactOwnedPolicyNormalizerUnchanged": true,
+  "originalNativeSourceLifetimeAndFlowIdentityChecksUnchanged": true,
+  "bidirectionalPositiveCountersBeforeEcmRequired": true,
+  "initialMissingTrafficStillRefusedWithinOriginal1p2Seconds": true,
+  "actual88FirstCounters": {
+    "tcp_writer_up": {
+      "packets": 3287,
+      "bytes": 188844
+    },
+    "tcp_writer_down": {
+      "packets": 3297,
+      "bytes": 4944040
+    },
+    "udp_writer_up": {
+      "packets": 37,
+      "bytes": 5772
+    },
+    "udp_writer_down": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "tcp_post_up_total": {
+      "packets": 3287,
+      "bytes": 188844
+    },
+    "tcp_post_up_expected": {
+      "packets": 3288,
+      "bytes": 188904
+    },
+    "tcp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "tcp_post_down_total": {
+      "packets": 3298,
+      "bytes": 4945540
+    },
+    "tcp_post_down_expected": {
+      "packets": 3298,
+      "bytes": 4945540
+    },
+    "tcp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_up_total": {
+      "packets": 37,
+      "bytes": 5772
+    },
+    "udp_post_up_expected": {
+      "packets": 37,
+      "bytes": 5772
+    },
+    "udp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_total": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_expected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_total": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_zero": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_nonzero": {
+      "packets": 0,
+      "bytes": 0
+    }
+  },
+  "actual88SecondCounters": {
+    "tcp_writer_up": {
+      "packets": 4693,
+      "bytes": 268640
+    },
+    "tcp_writer_down": {
+      "packets": 4712,
+      "bytes": 7065080
+    },
+    "udp_writer_up": {
+      "packets": 52,
+      "bytes": 8112
+    },
+    "udp_writer_down": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "tcp_post_up_total": {
+      "packets": 4693,
+      "bytes": 268640
+    },
+    "tcp_post_up_expected": {
+      "packets": 4693,
+      "bytes": 268640
+    },
+    "tcp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "tcp_post_down_total": {
+      "packets": 4713,
+      "bytes": 7066580
+    },
+    "tcp_post_down_expected": {
+      "packets": 4714,
+      "bytes": 7068080
+    },
+    "tcp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_up_total": {
+      "packets": 52,
+      "bytes": 8112
+    },
+    "udp_post_up_expected": {
+      "packets": 52,
+      "bytes": 8112
+    },
+    "udp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_total": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_expected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_total": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_zero": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_nonzero": {
+      "packets": 0,
+      "bytes": 0
+    }
+  },
+  "actual91TwoBoundaryBrackets": [
+    {
+      "contract": "monotonic-overlap-zero-wrong-tag",
+      "nssAdmissionAllowed": false,
+      "key": "tagsBeforeA2",
+      "reads": 1
+    },
+    {
+      "contract": "monotonic-overlap-zero-wrong-tag",
+      "nssAdmissionAllowed": false,
+      "key": "tagsAfterA2",
+      "reads": 1
+    }
+  ],
+  "oldFailedResultsPreserved": true,
+  "firmwareMisTagProved": false,
+  "kernelBugProved": false,
+  "upstreamSubmitted": false
+}

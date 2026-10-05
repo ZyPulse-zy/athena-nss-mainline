@@ -1,0 +1,110 @@
+[
+  {
+    "round": "NSS84",
+    "loadLocalPath": "work/nss84/load-20261005092842-30c9d1fc1d541519",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "round": "NSS85",
+    "loadLocalPath": "work/nss85/load-20261005093959-082450a2f051404c",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "round": "NSS86",
+    "loadLocalPath": "work/nss86/load-20261005094527-3ff272184288e90b",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "round": "NSS86",
+    "loadLocalPath": "work/nss86/load-20261005095223-b94f3286ca2a8f41",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "round": "NSS87",
+    "loadLocalPath": "work/nss87/load-20261005100323-af547e2034d9c9de",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "round": "NSS88",
+    "loadLocalPath": "work/nss88/load-20261005101340-1aba2e28d4808e64",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "round": "NSS89",
+    "loadLocalPath": "work/nss89/load-20261005102557-2986b51b6b64a4cf",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "round": "NSS89",
+    "loadLocalPath": "work/nss89/load-20261005103649-585d0850fcb8f6a5",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "round": "NSS91",
+    "loadLocalPath": "work/nss91/load-20261005103245-8519709fd07014c8",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "noExistingVpsServiceReplaced": true
+  }
+]

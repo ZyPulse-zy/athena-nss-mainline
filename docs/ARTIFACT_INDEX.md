@@ -1,5 +1,13 @@
 # 证据索引
 
+## 当前NSS92
+
+- [实测汇总](../evidence/nss92-mainline.json)、[六次现场及失败](../evidence/nss92-trials.json)、[32Mbps可比对照](../evidence/nss92-matched32.json)。
+- [新计数合同](../evidence/nss92-tag-reader.json)、[回程/客户端观测](../evidence/nss92-load-observations.json)、[最终审核](../evidence/nss92-final-audit.json)、[九端点恢复](../evidence/nss92-endpoint-closure.json)、[源字节冻结](../evidence/nss92-source-proof.json)。
+- [当前运行](../evidence/current-runtime.json)、[旧82 runtime](../evidence/nss82-runtime.json)，本地报告`outputs/nss92-mainline-report.html`。
+
+# 证据索引
+
 ## 当前NSS82
 
 - [实测汇总](../evidence/nss82-mainline.json)、[五次现场/失败保留](../evidence/nss82-trials.json)、[18Mbps可比对照](../evidence/nss82-matched18.json)、[32Mbps拥塞观察](../evidence/nss82-saturated32.json)。

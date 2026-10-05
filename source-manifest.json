@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T09:19:42.053109+00:00",
+  "generatedAt": "2026-10-05T10:49:49.871280+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -7354,8 +7354,211 @@
       "sha256": "9420783b6023622f2a65a4e179390fc4a7e29967bf6ec2672915d9d258a53a5b",
       "bytes": 29602,
       "role": "controlled-real-WAN-test-and-measured-evidence"
+    },
+    {
+      "path": "code/work/nss84/qos-physical.lua",
+      "workspaceSource": "work/nss84/qos-physical.lua",
+      "sha256": "b8f4a0269cd111471c5f640214ed15919051f619616b9acc53debb6fc0e43511",
+      "bytes": 8402,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss84/qualify-qos-native.mjs",
+      "workspaceSource": "work/nss84/qualify-qos-native.mjs",
+      "sha256": "8e293f945178e1eb072be7c153bae5b16e81a14cff1d4df4c93a204f5fd088e8",
+      "bytes": 2597,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss85/fast-path.lua",
+      "workspaceSource": "work/nss85/fast-path.lua",
+      "sha256": "50fed1c9da2738604df13a0a5ed4860b24067b07739a3e3f40584b5ec36e4569",
+      "bytes": 15153,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss85/qualify-getter.mjs",
+      "workspaceSource": "work/nss85/qualify-getter.mjs",
+      "sha256": "d873c6e6ee94a21abaf09a48c61ca228e4cd22db48b076568118e784585a4cdf",
+      "bytes": 2771,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss88/qualify-client.mjs",
+      "workspaceSource": "work/nss88/qualify-client.mjs",
+      "sha256": "e41739f76a64fdd0e4a5341f4496cd001c93ff1b04919aad319f4abc6ccca382",
+      "bytes": 1401,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/controlled-session.mjs",
+      "workspaceSource": "work/nss89/controlled-session.mjs",
+      "sha256": "addd461be186678f37b6b59562a6d2285bd108c6fa19cd8286642eca7d7b2897",
+      "bytes": 12797,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/read-controlled.mjs",
+      "workspaceSource": "work/nss89/read-controlled.mjs",
+      "sha256": "8253f0fadda6be375b15d9ca2b7072c915c18af96c09396a600ccb1a9f573c84",
+      "bytes": 5545,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/match-controlled.mjs",
+      "workspaceSource": "work/nss89/match-controlled.mjs",
+      "sha256": "634b261c6efa00c79a73033b24e969dd1262ab5246cb36b6e06b37af97a02b0d",
+      "bytes": 2160,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss89/current-audit-diagnostic.mjs",
+      "sha256": "556c7fe5026c691887b22c3ae14daab84ecf919043d18b895c49e1474843f011",
+      "bytes": 4501,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/session-binding.mjs",
+      "workspaceSource": "work/nss89/session-binding.mjs",
+      "sha256": "232eb87b67414cfe1a1290186ab83ae0516c4f70b0591229cf64848d3c6977c3",
+      "bytes": 705,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/payload.mjs",
+      "workspaceSource": "work/nss89/payload.mjs",
+      "sha256": "5d17c5ee98bb4a877116b0141c158156d773105e45b26d0de65e8fc5e27ef57c",
+      "bytes": 1844,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/module-stage.mjs",
+      "workspaceSource": "work/nss89/module-stage.mjs",
+      "sha256": "a12e234181741ae512ebbf1b8851141453b0cd79473989a4128b9a1f646f09c1",
+      "bytes": 17285,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/fast-path.lua",
+      "workspaceSource": "work/nss89/fast-path.lua",
+      "sha256": "bcd7bb213527b3b6a31cfe2090e4447d28f447c4d3a5952cd114621bc4140347",
+      "bytes": 14813,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/tag-counter-audit.lua",
+      "workspaceSource": "work/nss89/tag-counter-audit.lua",
+      "sha256": "07eddba86484afef07720dd2958a543140ccf597c5443a369bb5a3276e94d324",
+      "bytes": 1647,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/qos-physical.lua",
+      "workspaceSource": "work/nss89/qos-physical.lua",
+      "sha256": "b8f4a0269cd111471c5f640214ed15919051f619616b9acc53debb6fc0e43511",
+      "bytes": 8402,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/qualify-getter.mjs",
+      "workspaceSource": "work/nss89/qualify-getter.mjs",
+      "sha256": "38b41dbecfe2e323de9d96a39b62d5139a14dc875999ec4e128c8c2951ec037f",
+      "bytes": 4863,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/calibrate-clock.mjs",
+      "workspaceSource": "work/nss89/calibrate-clock.mjs",
+      "sha256": "b5803aaa698a80bad5d4d93b38e681e42d08fe7b9bebb279222cd925bf04aafc",
+      "bytes": 993,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/analyze-controlled.py",
+      "workspaceSource": "work/nss89/analyze-controlled.py",
+      "sha256": "35a9804bbc6e038a45ede9024cfd4be20402f2e513578bb0521bd818df21acd5",
+      "bytes": 4574,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/capture-endpoint.mjs",
+      "workspaceSource": "work/nss89/capture-endpoint.mjs",
+      "sha256": "7a4ce40780b50586ccc1e8681022b50f6c0b2ecd6e9f732e664d5b437a40c2dd",
+      "bytes": 2355,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss89/client-watchdog.ps1",
+      "workspaceSource": "work/nss89/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss91/controlled-session.mjs",
+      "workspaceSource": "work/nss91/controlled-session.mjs",
+      "sha256": "4e680bde817aa5d5d3ab25d2dd2f37695c0fcd5fceff76eedc737bfb758b5f03",
+      "bytes": 12797,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss91/read-controlled.mjs",
+      "workspaceSource": "work/nss91/read-controlled.mjs",
+      "sha256": "c87828849847ae4c747a34dc18ec32ff32b6561577c41f24f740ce7091ba71f7",
+      "bytes": 5545,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss91/match-controlled.mjs",
+      "workspaceSource": "work/nss91/match-controlled.mjs",
+      "sha256": "200d28d37cced087470d6201ba659e21bcac1386c7a7bcad4374206b60c91f46",
+      "bytes": 2160,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss91/session-binding.mjs",
+      "workspaceSource": "work/nss91/session-binding.mjs",
+      "sha256": "40df7b2f0b65a0a470ddd77a83ee7260747b8c2f2b3c60c6d2ebb83c835d1e9e",
+      "bytes": 577,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss91/payload.mjs",
+      "workspaceSource": "work/nss91/payload.mjs",
+      "sha256": "c0942fabb3ca6a7f14d090601917dac18a92bd30b123c2179d2baa805c487771",
+      "bytes": 1844,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss91/module-stage.mjs",
+      "workspaceSource": "work/nss91/module-stage.mjs",
+      "sha256": "e21116e958e4148998339fd96b44d68be05d072d4ebaa97b2bc34f179d92e67c",
+      "bytes": 17285,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss91/analyze-controlled.py",
+      "workspaceSource": "work/nss91/analyze-controlled.py",
+      "sha256": "51d39c97035120323c24e2419f092c5ef0b5d647523f127bd99e370d63200daf",
+      "bytes": 4574,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss92/status-publication.js",
+      "workspaceSource": "work/nss92/status-publication.js",
+      "sha256": "31c669fbb073f9e709918b2d735b156de67e06e5e6eb4166255a26c32976cb6e",
+      "bytes": 480,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss92/save-evidence.py",
+      "workspaceSource": "work/nss92/save-evidence.py",
+      "sha256": "4afeab5a0883046d65f096b5726cb2f229cba7854d4512d9fc40b6a74337c95f",
+      "bytes": 29757,
+      "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
     }
   ],
-  "lastAppendExport": "NSS82",
+  "lastAppendExport": "NSS92",
   "privateDataExcluded": true
 }

@@ -1,0 +1,2088 @@
+[
+  {
+    "round": "NSS84",
+    "name": "initial-ack-and-pending",
+    "caseLocalPath": "work/nss84/controlled-matched-aba-20261005092927-19c76faf",
+    "passed": false,
+    "oneWan": 3,
+    "ecmOpened": false,
+    "phases": [],
+    "sourceInputs": 426,
+    "sourceManifestSha256": "45515f6fad1398520ae1bdf9f8b3b6b2456bcaf1ec759d87d08bf48962f22f04",
+    "sourceInputsCurrentBytesMatchActualRun": true,
+    "checkpointDownloadedShaAndGzipVerified": true,
+    "independentOwnerSeconds": 45,
+    "guardianVerifiedBeforeFirstWrite": true,
+    "guardianPpid": 1,
+    "rollback": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "baseline": {
+      "configurationMatches": true,
+      "checks": {
+        "boot": true,
+        "native": true,
+        "lan4": true,
+        "rules": true,
+        "services": true,
+        "addresses": true,
+        "routes": true,
+        "originalFiles": true,
+        "protectedManifestSha256": true,
+        "pbrConfiguration": true,
+        "nftRulesetConfiguration": true,
+        "tenQueueConfigurations": true,
+        "protectedManifest": true,
+        "ecmStoppedAndZero": true
+      },
+      "rawRulesetIdentical": true,
+      "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true
+    },
+    "beforeFullAudit": {
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 8,
+      "queryAge": 1.5300000000279397,
+      "sequence": 5884,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "afterFullAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 8,
+      "queryAge": 3.4799999999813735,
+      "sequence": 5903,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "originalResultSha256": "0bc29b52d93c83cc640d2419c64ee6c1933ff03ce644e6f9681a74244223f1f4",
+    "originalRecordSha256": "398f8f9c790b5afa104406657c95b29e2c27d6e9f357efc68b9d2192f5053b10",
+    "softwareTagCounters": {
+      "initialTags": {
+        "tcp_writer_up": {
+          "packets": 4619,
+          "bytes": 261120
+        },
+        "tcp_writer_down": {
+          "packets": 4680,
+          "bytes": 7014160
+        },
+        "udp_writer_up": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_writer_down": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_up_total": {
+          "packets": 4619,
+          "bytes": 261120
+        },
+        "tcp_post_up_expected": {
+          "packets": 4620,
+          "bytes": 261160
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 4681,
+          "bytes": 7015660
+        },
+        "tcp_post_down_expected": {
+          "packets": 4681,
+          "bytes": 7015660
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_post_up_expected": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_expected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      }
+    },
+    "rereads": [],
+    "qosGroupMbps": 60,
+    "offeredTcpMbps": 52,
+    "gameQualityConclusion": false
+  },
+  {
+    "round": "NSS87",
+    "name": "client-status-rename-crash",
+    "caseLocalPath": "work/nss87/controlled-matched-aba-20261005100412-54394880",
+    "passed": false,
+    "oneWan": 5,
+    "ecmOpened": false,
+    "phases": [
+      {
+        "name": "A"
+      }
+    ],
+    "sourceInputs": 488,
+    "sourceManifestSha256": "625a0c8a415f4d2dbc8eaaa2491292275b2bafe8921d9bcd66837f5c9d05b3ff",
+    "sourceInputsCurrentBytesMatchActualRun": true,
+    "checkpointDownloadedShaAndGzipVerified": true,
+    "independentOwnerSeconds": 45,
+    "guardianVerifiedBeforeFirstWrite": true,
+    "guardianPpid": 1,
+    "rollback": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "baseline": {
+      "configurationMatches": true,
+      "checks": {
+        "boot": true,
+        "native": true,
+        "lan4": true,
+        "rules": true,
+        "services": true,
+        "addresses": true,
+        "routes": true,
+        "originalFiles": true,
+        "protectedManifestSha256": true,
+        "pbrConfiguration": true,
+        "nftRulesetConfiguration": true,
+        "tenQueueConfigurations": true,
+        "protectedManifest": true,
+        "ecmStoppedAndZero": true
+      },
+      "rawRulesetIdentical": true,
+      "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true
+    },
+    "beforeFullAudit": {
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.3799999998882413,
+      "sequence": 6579,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "afterFullAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.8399999998509884,
+      "sequence": 6599,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "originalResultSha256": "ea7c9fe4fd1293fc55d82d1039078a6f6eb57e540280c6400a08e330cb9525de",
+    "originalRecordSha256": "0836fc2d5686a05a039598907bf24819a6cde0a9dc357733a200b73aed705ee7",
+    "softwareTagCounters": {
+      "initialTags": {
+        "tcp_writer_up": {
+          "packets": 848,
+          "bytes": 41004
+        },
+        "tcp_writer_down": {
+          "packets": 844,
+          "bytes": 1324400
+        },
+        "udp_writer_up": {
+          "packets": 4,
+          "bytes": 624
+        },
+        "udp_writer_down": {
+          "packets": 4,
+          "bytes": 624
+        },
+        "tcp_post_up_total": {
+          "packets": 848,
+          "bytes": 41004
+        },
+        "tcp_post_up_expected": {
+          "packets": 848,
+          "bytes": 41004
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 844,
+          "bytes": 1324400
+        },
+        "tcp_post_down_expected": {
+          "packets": 844,
+          "bytes": 1324400
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 4,
+          "bytes": 624
+        },
+        "udp_post_up_expected": {
+          "packets": 4,
+          "bytes": 624
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 4,
+          "bytes": 624
+        },
+        "udp_post_down_expected": {
+          "packets": 4,
+          "bytes": 624
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      }
+    },
+    "rereads": [],
+    "qosGroupMbps": 60,
+    "offeredTcpMbps": 52,
+    "gameQualityConclusion": false,
+    "clientFailure": {
+      "windowsStatusRenameEpermCaptured": true,
+      "clientExitedBeforeEcmOpening": true,
+      "projectionAbsenceAloneDoesNotProveCtExit": true,
+      "completeSameSourceDiagnosticUnavailable": true,
+      "rawErrorSha256": "7d710913d746f4638f331a02265299207020ef9dd2e410997cbd1f721dff2805"
+    }
+  },
+  {
+    "round": "NSS88",
+    "name": "second-snapshot-skew-and-pending",
+    "caseLocalPath": "work/nss88/controlled-matched-aba-20261005101439-546037e0",
+    "passed": false,
+    "oneWan": 4,
+    "ecmOpened": false,
+    "phases": [],
+    "sourceInputs": 510,
+    "sourceManifestSha256": "77e724297e925684ea10d06b1e65edf19c0b676df85bc19b96989585aa330d70",
+    "sourceInputsCurrentBytesMatchActualRun": true,
+    "checkpointDownloadedShaAndGzipVerified": true,
+    "independentOwnerSeconds": 45,
+    "guardianVerifiedBeforeFirstWrite": true,
+    "guardianPpid": 1,
+    "rollback": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "baseline": {
+      "configurationMatches": true,
+      "checks": {
+        "boot": true,
+        "native": true,
+        "lan4": true,
+        "rules": true,
+        "services": true,
+        "addresses": true,
+        "routes": true,
+        "originalFiles": true,
+        "protectedManifestSha256": true,
+        "pbrConfiguration": true,
+        "nftRulesetConfiguration": true,
+        "tenQueueConfigurations": true,
+        "protectedManifest": true,
+        "ecmStoppedAndZero": true
+      },
+      "rawRulesetIdentical": true,
+      "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true
+    },
+    "beforeFullAudit": {
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 8,
+      "queryAge": 1.180000000167638,
+      "sequence": 6788,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "afterFullAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 4,
+      "queryAge": 3.3700000001117587,
+      "sequence": 6807,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "originalResultSha256": "f213dbc79272981082c11bb64cebcef96b81169a79d64b2c22137f312af8c29b",
+    "originalRecordSha256": "336a64a24236186891e68d513e5303e420a82aec4a53bd86379f6f7d54dd284b",
+    "softwareTagCounters": {
+      "initialTagsFirst": {
+        "tcp_writer_up": {
+          "packets": 3287,
+          "bytes": 188844
+        },
+        "tcp_writer_down": {
+          "packets": 3297,
+          "bytes": 4944040
+        },
+        "udp_writer_up": {
+          "packets": 37,
+          "bytes": 5772
+        },
+        "udp_writer_down": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_up_total": {
+          "packets": 3287,
+          "bytes": 188844
+        },
+        "tcp_post_up_expected": {
+          "packets": 3288,
+          "bytes": 188904
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 3298,
+          "bytes": 4945540
+        },
+        "tcp_post_down_expected": {
+          "packets": 3298,
+          "bytes": 4945540
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 37,
+          "bytes": 5772
+        },
+        "udp_post_up_expected": {
+          "packets": 37,
+          "bytes": 5772
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_expected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "initialTags": {
+        "tcp_writer_up": {
+          "packets": 4693,
+          "bytes": 268640
+        },
+        "tcp_writer_down": {
+          "packets": 4712,
+          "bytes": 7065080
+        },
+        "udp_writer_up": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_writer_down": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_up_total": {
+          "packets": 4693,
+          "bytes": 268640
+        },
+        "tcp_post_up_expected": {
+          "packets": 4693,
+          "bytes": 268640
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 4713,
+          "bytes": 7066580
+        },
+        "tcp_post_down_expected": {
+          "packets": 4714,
+          "bytes": 7068080
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_post_up_expected": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_expected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      }
+    },
+    "rereads": [
+      {
+        "nssAdmissionAllowed": false,
+        "key": "initialTags",
+        "reads": 1
+      }
+    ],
+    "qosGroupMbps": 60,
+    "offeredTcpMbps": 52,
+    "gameQualityConclusion": false
+  },
+  {
+    "round": "NSS89",
+    "name": "52-udp-return-missing",
+    "caseLocalPath": "work/nss89/controlled-matched-aba-20261005102717-95a82e4e",
+    "passed": false,
+    "oneWan": 2,
+    "ecmOpened": false,
+    "phases": [],
+    "sourceInputs": 533,
+    "sourceManifestSha256": "55cdd310f65efdb0f1e53226a0492ad5ab0c453e65d4d28eb4ffb8807b917ea5",
+    "sourceInputsCurrentBytesMatchActualRun": true,
+    "checkpointDownloadedShaAndGzipVerified": true,
+    "independentOwnerSeconds": 45,
+    "guardianVerifiedBeforeFirstWrite": true,
+    "guardianPpid": 1,
+    "rollback": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "baseline": {
+      "configurationMatches": true,
+      "checks": {
+        "boot": true,
+        "native": true,
+        "lan4": true,
+        "rules": true,
+        "services": true,
+        "addresses": true,
+        "routes": true,
+        "originalFiles": true,
+        "protectedManifestSha256": true,
+        "pbrConfiguration": true,
+        "nftRulesetConfiguration": true,
+        "tenQueueConfigurations": true,
+        "protectedManifest": true,
+        "ecmStoppedAndZero": true
+      },
+      "rawRulesetIdentical": true,
+      "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true
+    },
+    "beforeFullAudit": {
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.0700000000651926,
+      "sequence": 7040,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "afterFullAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 3.380000000121072,
+      "sequence": 7059,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "originalResultSha256": "3a1e412eb0822e6a3274aff4b8c562f533403e238f1d084b1e1a55422798e680",
+    "originalRecordSha256": "22fef39a644cdb7c237bbcae10587069fb4caa11b60ec6d2bea9f3e504cde3ba",
+    "softwareTagCounters": {
+      "initialTagsFirst": {
+        "tcp_writer_up": {
+          "packets": 4709,
+          "bytes": 267560
+        },
+        "tcp_writer_down": {
+          "packets": 4744,
+          "bytes": 7110160
+        },
+        "udp_writer_up": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_writer_down": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_up_total": {
+          "packets": 4709,
+          "bytes": 267560
+        },
+        "tcp_post_up_expected": {
+          "packets": 4709,
+          "bytes": 267560
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 4744,
+          "bytes": 7110160
+        },
+        "tcp_post_down_expected": {
+          "packets": 4745,
+          "bytes": 7111660
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_post_up_expected": {
+          "packets": 52,
+          "bytes": 8112
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_expected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "initialTags": {
+        "tcp_writer_up": {
+          "packets": 5372,
+          "bytes": 304844
+        },
+        "tcp_writer_down": {
+          "packets": 5413,
+          "bytes": 8112200
+        },
+        "udp_writer_up": {
+          "packets": 60,
+          "bytes": 9360
+        },
+        "udp_writer_down": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_up_total": {
+          "packets": 5373,
+          "bytes": 304896
+        },
+        "tcp_post_up_expected": {
+          "packets": 5373,
+          "bytes": 304896
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 5414,
+          "bytes": 8113700
+        },
+        "tcp_post_down_expected": {
+          "packets": 5415,
+          "bytes": 8115200
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 60,
+          "bytes": 9360
+        },
+        "udp_post_up_expected": {
+          "packets": 60,
+          "bytes": 9360
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_expected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      }
+    },
+    "rereads": [
+      {
+        "contract": "monotonic-overlap-zero-wrong-tag",
+        "nssAdmissionAllowed": false,
+        "key": "initialTags",
+        "reads": 1
+      },
+      {
+        "contract": "monotonic-overlap-zero-wrong-tag",
+        "nssAdmissionAllowed": false,
+        "key": "initialTags",
+        "reads": 1
+      }
+    ],
+    "qosGroupMbps": 60,
+    "offeredTcpMbps": 52,
+    "gameQualityConclusion": false
+  },
+  {
+    "round": "NSS91",
+    "name": "matched-32",
+    "caseLocalPath": "work/nss91/controlled-matched-aba-20261005103412-0f877edb",
+    "passed": true,
+    "oneWan": 2,
+    "ecmOpened": true,
+    "phases": [
+      {
+        "name": "A",
+        "seconds": 5.009999999776483,
+        "completed": true,
+        "sampleCount": 11
+      },
+      {
+        "name": "B",
+        "seconds": 5.010000000009313,
+        "completed": true,
+        "sampleCount": 11
+      },
+      {
+        "name": "A2",
+        "seconds": 5.010000000009313,
+        "completed": true,
+        "sampleCount": 11
+      }
+    ],
+    "sourceInputs": 555,
+    "sourceManifestSha256": "cf9ae136cee57ade9243d3d92e869fea7f0d2fb68dadcaabe617102150f79f3d",
+    "sourceInputsCurrentBytesMatchActualRun": true,
+    "checkpointDownloadedShaAndGzipVerified": true,
+    "independentOwnerSeconds": 45,
+    "guardianVerifiedBeforeFirstWrite": true,
+    "guardianPpid": 1,
+    "rollback": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "baseline": {
+      "configurationMatches": true,
+      "checks": {
+        "boot": true,
+        "native": true,
+        "lan4": true,
+        "rules": true,
+        "services": true,
+        "addresses": true,
+        "routes": true,
+        "originalFiles": true,
+        "protectedManifestSha256": true,
+        "pbrConfiguration": true,
+        "nftRulesetConfiguration": true,
+        "tenQueueConfigurations": true,
+        "protectedManifest": true,
+        "ecmStoppedAndZero": true
+      },
+      "rawRulesetIdentical": true,
+      "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true
+    },
+    "beforeFullAudit": {
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.8100000000558794,
+      "sequence": 7179,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "afterFullAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 2.75,
+      "sequence": 7198,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "originalResultSha256": "829ccdbad579bbb76eb1d3497dfdecc5adcccbec8c6992875c71a846ed56cb65",
+    "originalRecordSha256": "8fb81c0af093a3835d6783affcb1593bb8fb464777ba14104798a09a95d25814",
+    "softwareTagCounters": {
+      "tagsAfterA": {
+        "tcp_writer_up": {
+          "packets": 13899,
+          "bytes": 664504
+        },
+        "tcp_writer_down": {
+          "packets": 15270,
+          "bytes": 21495328
+        },
+        "udp_writer_up": {
+          "packets": 255,
+          "bytes": 39780
+        },
+        "udp_writer_down": {
+          "packets": 254,
+          "bytes": 39624
+        },
+        "tcp_post_up_total": {
+          "packets": 13900,
+          "bytes": 664556
+        },
+        "tcp_post_up_expected": {
+          "packets": 13900,
+          "bytes": 664556
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 15271,
+          "bytes": 21496828
+        },
+        "tcp_post_down_expected": {
+          "packets": 15271,
+          "bytes": 21496828
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 255,
+          "bytes": 39780
+        },
+        "udp_post_up_expected": {
+          "packets": 255,
+          "bytes": 39780
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 254,
+          "bytes": 39624
+        },
+        "udp_post_down_expected": {
+          "packets": 254,
+          "bytes": 39624
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "tagsAfter": {
+        "tcp_writer_up": {
+          "packets": 43422,
+          "bytes": 2078304
+        },
+        "tcp_writer_down": {
+          "packets": 47568,
+          "bytes": 66951388
+        },
+        "udp_writer_up": {
+          "packets": 792,
+          "bytes": 123552
+        },
+        "udp_writer_down": {
+          "packets": 791,
+          "bytes": 123396
+        },
+        "tcp_post_up_total": {
+          "packets": 43423,
+          "bytes": 2078356
+        },
+        "tcp_post_up_expected": {
+          "packets": 43423,
+          "bytes": 2078356
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 47569,
+          "bytes": 66952888
+        },
+        "tcp_post_down_expected": {
+          "packets": 47569,
+          "bytes": 66952888
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 792,
+          "bytes": 123552
+        },
+        "udp_post_up_expected": {
+          "packets": 792,
+          "bytes": 123552
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 791,
+          "bytes": 123396
+        },
+        "udp_post_down_expected": {
+          "packets": 791,
+          "bytes": 123396
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "tagsBefore": {
+        "tcp_writer_up": {
+          "packets": 26476,
+          "bytes": 1266456
+        },
+        "tcp_writer_down": {
+          "packets": 29025,
+          "bytes": 40852700
+        },
+        "udp_writer_up": {
+          "packets": 484,
+          "bytes": 75504
+        },
+        "udp_writer_down": {
+          "packets": 483,
+          "bytes": 75348
+        },
+        "tcp_post_up_total": {
+          "packets": 26476,
+          "bytes": 1266456
+        },
+        "tcp_post_up_expected": {
+          "packets": 26476,
+          "bytes": 1266456
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 29025,
+          "bytes": 40852700
+        },
+        "tcp_post_down_expected": {
+          "packets": 29025,
+          "bytes": 40852700
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 484,
+          "bytes": 75504
+        },
+        "udp_post_up_expected": {
+          "packets": 484,
+          "bytes": 75504
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 483,
+          "bytes": 75348
+        },
+        "udp_post_down_expected": {
+          "packets": 483,
+          "bytes": 75348
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "tagsAfterA2First": {
+        "tcp_writer_up": {
+          "packets": 42524,
+          "bytes": 2035312
+        },
+        "tcp_writer_down": {
+          "packets": 46597,
+          "bytes": 65588332
+        },
+        "udp_writer_up": {
+          "packets": 776,
+          "bytes": 121056
+        },
+        "udp_writer_down": {
+          "packets": 775,
+          "bytes": 120900
+        },
+        "tcp_post_up_total": {
+          "packets": 42524,
+          "bytes": 2035312
+        },
+        "tcp_post_up_expected": {
+          "packets": 42525,
+          "bytes": 2035364
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 46598,
+          "bytes": 65589832
+        },
+        "tcp_post_down_expected": {
+          "packets": 46598,
+          "bytes": 65589832
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 776,
+          "bytes": 121056
+        },
+        "udp_post_up_expected": {
+          "packets": 776,
+          "bytes": 121056
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 775,
+          "bytes": 120900
+        },
+        "udp_post_down_expected": {
+          "packets": 775,
+          "bytes": 120900
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "initialTags": {
+        "tcp_writer_up": {
+          "packets": 63,
+          "bytes": 2968
+        },
+        "tcp_writer_down": {
+          "packets": 75,
+          "bytes": 105900
+        },
+        "udp_writer_up": {
+          "packets": 2,
+          "bytes": 312
+        },
+        "udp_writer_down": {
+          "packets": 1,
+          "bytes": 156
+        },
+        "tcp_post_up_total": {
+          "packets": 63,
+          "bytes": 2968
+        },
+        "tcp_post_up_expected": {
+          "packets": 63,
+          "bytes": 2968
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 75,
+          "bytes": 105900
+        },
+        "tcp_post_down_expected": {
+          "packets": 75,
+          "bytes": 105900
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 2,
+          "bytes": 312
+        },
+        "udp_post_up_expected": {
+          "packets": 2,
+          "bytes": 312
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 1,
+          "bytes": 156
+        },
+        "udp_post_down_expected": {
+          "packets": 1,
+          "bytes": 156
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "tagsBeforeA2First": {
+        "tcp_writer_up": {
+          "packets": 28213,
+          "bytes": 1349612
+        },
+        "tcp_writer_down": {
+          "packets": 30934,
+          "bytes": 43539840
+        },
+        "udp_writer_up": {
+          "packets": 515,
+          "bytes": 80340
+        },
+        "udp_writer_down": {
+          "packets": 514,
+          "bytes": 80184
+        },
+        "tcp_post_up_total": {
+          "packets": 28214,
+          "bytes": 1349664
+        },
+        "tcp_post_up_expected": {
+          "packets": 28215,
+          "bytes": 1349704
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 30934,
+          "bytes": 43539840
+        },
+        "tcp_post_down_expected": {
+          "packets": 30934,
+          "bytes": 43539840
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 515,
+          "bytes": 80340
+        },
+        "udp_post_up_expected": {
+          "packets": 515,
+          "bytes": 80340
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 514,
+          "bytes": 80184
+        },
+        "udp_post_down_expected": {
+          "packets": 514,
+          "bytes": 80184
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "tagsBeforeA2": {
+        "tcp_writer_up": {
+          "packets": 28664,
+          "bytes": 1371148
+        },
+        "tcp_writer_down": {
+          "packets": 31426,
+          "bytes": 44232740
+        },
+        "udp_writer_up": {
+          "packets": 523,
+          "bytes": 81588
+        },
+        "udp_writer_down": {
+          "packets": 522,
+          "bytes": 81432
+        },
+        "tcp_post_up_total": {
+          "packets": 28664,
+          "bytes": 1371148
+        },
+        "tcp_post_up_expected": {
+          "packets": 28664,
+          "bytes": 1371148
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 31426,
+          "bytes": 44232740
+        },
+        "tcp_post_down_expected": {
+          "packets": 31426,
+          "bytes": 44232740
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 523,
+          "bytes": 81588
+        },
+        "udp_post_up_expected": {
+          "packets": 523,
+          "bytes": 81588
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 522,
+          "bytes": 81432
+        },
+        "udp_post_down_expected": {
+          "packets": 522,
+          "bytes": 81432
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "tagsAfterA2": {
+        "tcp_writer_up": {
+          "packets": 42938,
+          "bytes": 2055152
+        },
+        "tcp_writer_down": {
+          "packets": 47039,
+          "bytes": 66206288
+        },
+        "udp_writer_up": {
+          "packets": 783,
+          "bytes": 122148
+        },
+        "udp_writer_down": {
+          "packets": 782,
+          "bytes": 121992
+        },
+        "tcp_post_up_total": {
+          "packets": 42938,
+          "bytes": 2055152
+        },
+        "tcp_post_up_expected": {
+          "packets": 42938,
+          "bytes": 2055152
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 47040,
+          "bytes": 66207788
+        },
+        "tcp_post_down_expected": {
+          "packets": 47040,
+          "bytes": 66207788
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 783,
+          "bytes": 122148
+        },
+        "udp_post_up_expected": {
+          "packets": 783,
+          "bytes": 122148
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 782,
+          "bytes": 121992
+        },
+        "udp_post_down_expected": {
+          "packets": 782,
+          "bytes": 121992
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      }
+    },
+    "rereads": [
+      {
+        "contract": "monotonic-overlap-zero-wrong-tag",
+        "nssAdmissionAllowed": false,
+        "key": "tagsBeforeA2",
+        "reads": 1
+      },
+      {
+        "contract": "monotonic-overlap-zero-wrong-tag",
+        "nssAdmissionAllowed": false,
+        "key": "tagsAfterA2",
+        "reads": 1
+      }
+    ],
+    "qosGroupMbps": 60,
+    "offeredTcpMbps": 32,
+    "gameQualityConclusion": false,
+    "metrics": {
+      "schema": "nss91-controlled-actual-aba-v1",
+      "passed": true,
+      "oneWan": 2,
+      "requestedTcpMbps": 32,
+      "udpRequestedPps": 50,
+      "phases": [
+        {
+          "phase": "A",
+          "seconds": 5.009999999776483,
+          "sampleCount": 11,
+          "acceleratedCounts": [
+            0
+          ],
+          "busyPercent": 28.8109756097561,
+          "softirqPercent": 15.19308943089431,
+          "cores": [
+            {
+              "core": "cpu0",
+              "busyPercent": 34.883720930232556,
+              "softirqPercent": 21.31782945736434
+            },
+            {
+              "core": "cpu1",
+              "busyPercent": 15.353535353535353,
+              "softirqPercent": 1.2121212121212122
+            },
+            {
+              "core": "cpu2",
+              "busyPercent": 35.390946502057616,
+              "softirqPercent": 22.22222222222222
+            },
+            {
+              "core": "cpu3",
+              "busyPercent": 29.51167728237792,
+              "softirqPercent": 15.92356687898089
+            }
+          ],
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "interfaces": {
+            "rpwan2": {
+              "mbps": 1.391977644772681,
+              "txPps": 2726.9461079060916,
+              "rxMbps": 33.292137326834606
+            },
+            "lan4": {
+              "mbps": 33.58476487175784,
+              "txPps": 3003.1936129084365,
+              "rxMbps": 1.5970810379954044
+            }
+          },
+          "clientTcpMbps": 31.995691211710284,
+          "udp": {
+            "sendWindowUtcEpoch": [
+              1791196472.9544997,
+              1791196477.9645
+            ],
+            "excludedBoundarySeconds": 0.05949998378753662,
+            "sent": 239,
+            "received": 239,
+            "unreturned": 0,
+            "unreturnedPercent": 0.0,
+            "rttP50Ms": 198.040599999993,
+            "rttP95Ms": 198.39340999999695,
+            "rttMaxMs": 200.5341000000044,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.2210453781507789,
+            "isCs2Metric": false
+          }
+        },
+        {
+          "phase": "B",
+          "seconds": 5.010000000009313,
+          "sampleCount": 11,
+          "acceleratedCounts": [
+            2
+          ],
+          "busyPercent": 15.92964824120603,
+          "softirqPercent": 4.974874371859296,
+          "cores": [
+            {
+              "core": "cpu0",
+              "busyPercent": 26.31578947368421,
+              "softirqPercent": 18.128654970760234
+            },
+            {
+              "core": "cpu1",
+              "busyPercent": 13.26530612244898,
+              "softirqPercent": 0.40816326530612246
+            },
+            {
+              "core": "cpu2",
+              "busyPercent": 10.931174089068826,
+              "softirqPercent": 0.4048582995951417
+            },
+            {
+              "core": "cpu3",
+              "busyPercent": 12.804878048780488,
+              "softirqPercent": 0.4065040650406504
+            }
+          ],
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "interfaces": {
+            "rpwan2": {
+              "mbps": 1.2783105788399391,
+              "txPps": 2488.423153687989,
+              "rxMbps": 32.974590019898784
+            },
+            "lan4": {
+              "mbps": 33.56591776440866,
+              "txPps": 3004.790419156091,
+              "rxMbps": 1.4402395209554066
+            }
+          },
+          "clientTcpMbps": 32.023273704134176,
+          "udp": {
+            "sendWindowUtcEpoch": [
+              1791196483.0444999,
+              1791196488.0544999
+            ],
+            "excludedBoundarySeconds": 0.05949998378753662,
+            "sent": 238,
+            "received": 238,
+            "unreturned": 0,
+            "unreturnedPercent": 0.0,
+            "rttP50Ms": 197.5856500000009,
+            "rttP95Ms": 198.0554299999989,
+            "rttMaxMs": 201.32970000000205,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.24163713080185673,
+            "isCs2Metric": false
+          }
+        },
+        {
+          "phase": "A2",
+          "seconds": 5.010000000009313,
+          "sampleCount": 11,
+          "acceleratedCounts": [
+            0
+          ],
+          "busyPercent": 30.03048780487805,
+          "softirqPercent": 14.43089430894309,
+          "cores": [
+            {
+              "core": "cpu0",
+              "busyPercent": 37.996219281663514,
+              "softirqPercent": 23.062381852551987
+            },
+            {
+              "core": "cpu1",
+              "busyPercent": 18.29268292682927,
+              "softirqPercent": 0.6097560975609756
+            },
+            {
+              "core": "cpu2",
+              "busyPercent": 34.583333333333336,
+              "softirqPercent": 19.166666666666668
+            },
+            {
+              "core": "cpu3",
+              "busyPercent": 28.755364806866954,
+              "softirqPercent": 14.377682403433477
+            }
+          ],
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "interfaces": {
+            "rpwan2": {
+              "mbps": 1.3957461077818365,
+              "txPps": 2731.337325344224,
+              "rxMbps": 33.24556327339129
+            },
+            "lan4": {
+              "mbps": 33.586010379179086,
+              "txPps": 3014.1716566810237,
+              "rxMbps": 1.6967425149669058
+            }
+          },
+          "clientTcpMbps": 32.003067999482546,
+          "udp": {
+            "sendWindowUtcEpoch": [
+              1791196488.7645,
+              1791196493.7745
+            ],
+            "excludedBoundarySeconds": 0.05949998378753662,
+            "sent": 239,
+            "received": 239,
+            "unreturned": 0,
+            "unreturnedPercent": 0.0,
+            "rttP50Ms": 198.03040000000328,
+            "rttP95Ms": 198.39131000000344,
+            "rttMaxMs": 199.5286000000051,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.19309789915945763,
+            "isCs2Metric": false
+          }
+        }
+      ],
+      "leafCountersAcrossBObservation": {
+        "8f05:": {
+          "bytes": 20675746,
+          "packets": 14541,
+          "dropped": 0
+        },
+        "8f06:": {
+          "bytes": 41140,
+          "packets": 242,
+          "dropped": 0
+        }
+      },
+      "leafStatsAsynchronous": true,
+      "renewals": 2,
+      "nativeLimitsUnchanged": true,
+      "qosParentMbps": 60,
+      "clockAlignmentUncertaintyMs": 59.49998378753662,
+      "classifierToLeafAndNatAffinityVerified": true,
+      "checkpointAndIndependentOwnerRollbackVerified": true,
+      "protectedConfigurationRestored": true,
+      "gameQualityConclusion": false,
+      "highLoad300MbpsConclusion": false,
+      "shortWindowsIncludeSameObserverCost": true
+    },
+    "acceleratedIdentityProof": {
+      "passed": true,
+      "connectionCount": 2,
+      "proof": {
+        "tcp": {
+          "serial": "1062141",
+          "protocol": 6,
+          "ecmOrientation": "server-first",
+          "accelerated": true,
+          "ctMark": 131072,
+          "downTag": 2399469568,
+          "upTag": 0,
+          "natCorrect": true,
+          "wanAffinity": 2,
+          "fromLan4": true,
+          "fromBridgeLan": true,
+          "slowPathPackets": 12,
+          "fromPackets": 10,
+          "toPackets": 2
+        },
+        "udp": {
+          "serial": "1062142",
+          "protocol": 17,
+          "ecmOrientation": "server-first",
+          "accelerated": true,
+          "ctMark": 131072,
+          "downTag": 2399535104,
+          "upTag": 0,
+          "natCorrect": true,
+          "wanAffinity": 2,
+          "fromLan4": true,
+          "fromBridgeLan": true,
+          "slowPathPackets": 2,
+          "fromPackets": 1,
+          "toPackets": 1
+        }
+      }
+    }
+  },
+  {
+    "round": "NSS89",
+    "name": "52-repeat-udp-return-missing",
+    "caseLocalPath": "work/nss89/controlled-matched-aba-20261005103839-6dab30d6",
+    "passed": false,
+    "oneWan": 1,
+    "ecmOpened": false,
+    "phases": [],
+    "sourceInputs": 533,
+    "sourceManifestSha256": "55cdd310f65efdb0f1e53226a0492ad5ab0c453e65d4d28eb4ffb8807b917ea5",
+    "sourceInputsCurrentBytesMatchActualRun": true,
+    "checkpointDownloadedShaAndGzipVerified": true,
+    "independentOwnerSeconds": 45,
+    "guardianVerifiedBeforeFirstWrite": true,
+    "guardianPpid": 1,
+    "rollback": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "baseline": {
+      "configurationMatches": true,
+      "checks": {
+        "boot": true,
+        "native": true,
+        "lan4": true,
+        "rules": true,
+        "services": true,
+        "addresses": true,
+        "routes": true,
+        "originalFiles": true,
+        "protectedManifestSha256": true,
+        "pbrConfiguration": true,
+        "nftRulesetConfiguration": true,
+        "tenQueueConfigurations": true,
+        "protectedManifest": true,
+        "ecmStoppedAndZero": true
+      },
+      "rawRulesetIdentical": true,
+      "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true
+    },
+    "beforeFullAudit": {
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 4,
+      "queryAge": 1.3899999998975545,
+      "sequence": 7268,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "afterFullAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.040000000037253,
+      "sequence": 7288,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "originalResultSha256": "3a1e412eb0822e6a3274aff4b8c562f533403e238f1d084b1e1a55422798e680",
+    "originalRecordSha256": "6369604295a1f96c81b219627a6d957dc754a0ffc2023da0b9ee66796e955cee",
+    "softwareTagCounters": {
+      "initialTagsFirst": {
+        "tcp_writer_up": {
+          "packets": 3355,
+          "bytes": 191896
+        },
+        "tcp_writer_down": {
+          "packets": 3381,
+          "bytes": 5068580
+        },
+        "udp_writer_up": {
+          "packets": 38,
+          "bytes": 5928
+        },
+        "udp_writer_down": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_up_total": {
+          "packets": 3356,
+          "bytes": 191956
+        },
+        "tcp_post_up_expected": {
+          "packets": 3357,
+          "bytes": 192000
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 3382,
+          "bytes": 5070080
+        },
+        "tcp_post_down_expected": {
+          "packets": 3382,
+          "bytes": 5070080
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 38,
+          "bytes": 5928
+        },
+        "udp_post_up_expected": {
+          "packets": 38,
+          "bytes": 5928
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_expected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      "initialTags": {
+        "tcp_writer_up": {
+          "packets": 5545,
+          "bytes": 316148
+        },
+        "tcp_writer_down": {
+          "packets": 5591,
+          "bytes": 8379200
+        },
+        "udp_writer_up": {
+          "packets": 62,
+          "bytes": 9672
+        },
+        "udp_writer_down": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_up_total": {
+          "packets": 5545,
+          "bytes": 316148
+        },
+        "tcp_post_up_expected": {
+          "packets": 5545,
+          "bytes": 316148
+        },
+        "tcp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "tcp_post_down_total": {
+          "packets": 5592,
+          "bytes": 8380700
+        },
+        "tcp_post_down_expected": {
+          "packets": 5592,
+          "bytes": 8380700
+        },
+        "tcp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_up_total": {
+          "packets": 62,
+          "bytes": 9672
+        },
+        "udp_post_up_expected": {
+          "packets": 62,
+          "bytes": 9672
+        },
+        "udp_post_up_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_expected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_down_unexpected": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_total": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_zero": {
+          "packets": 0,
+          "bytes": 0
+        },
+        "udp_post_neighbor_nonzero": {
+          "packets": 0,
+          "bytes": 0
+        }
+      }
+    },
+    "rereads": [
+      {
+        "contract": "monotonic-overlap-zero-wrong-tag",
+        "nssAdmissionAllowed": false,
+        "key": "initialTags",
+        "reads": 1
+      }
+    ],
+    "qosGroupMbps": 60,
+    "offeredTcpMbps": 52,
+    "gameQualityConclusion": false
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "round": "NSS92",
+  "roundsCovered": [
+    "NSS84",
+    "NSS85",
+    "NSS86",
+    "NSS87",
+    "NSS88",
+    "NSS89",
+    "NSS91"
+  ],
+  "observedAt": "2026-10-05T10:42:08.076Z",
+  "permanentClassifierChanged": false,
+  "productionFirmwareKernelChanged": false,
+  "stageCases": 6,
+  "successfulCompleteABA": 1,
+  "scope": {
+    "oneWanAtATime": true,
+    "controlledTcpFlows": 1,
+    "controlledUdpFlows": 1,
+    "qosGroupMbps": 60,
+    "offeredTcpMbpsCases": [
+      52,
+      32
+    ]
+  },
+  "matched32": {
+    "actualThroughputMatched": true,
+    "matchedShortWindowSoftirqBenefitSupported": true,
+    "relativeReductionAgainstMeanSoftwarePercent": 66.4131980658007,
+    "cpuBusyAuxiliaryOnly": true,
+    "udpNoUnreturnedInAllThreeWindows": true,
+    "leafDropsBothZero": true,
+    "secondsPerPhase": [
+      5.009999999776483,
+      5.010000000009313,
+      5.010000000009313
+    ]
+  },
+  "offered52": {
+    "matchedABACompleted": false,
+    "noEcmOpeningInTwoUpdatedGetterTrials": true,
+    "udpReturnPathUnstable": true,
+    "rootCauseUnproved": true,
+    "notNssCpuBenefitEvidence": true
+  },
+  "qos": {
+    "original20to60OnlyRateLiteralsChanged": true,
+    "nativeOptionCases": 7,
+    "rateAccuracyAt60NotYetSaturationTested": true,
+    "congestionFqAqmEcnHostFairnessDiffservAutorateNotRevalidatedAt60": true,
+    "onlyLanEgressDownlinkLeavesInstalled": true,
+    "actualTcpUpTag": 0,
+    "actualUdpUpTag": 0,
+    "acceleratedUplinkQosGuaranteed": false,
+    "softwareWanCakeNotAssumedToShapeAcceleratedUplink": true
+  },
+  "tagReader": {
+    "targetRamCases": 30,
+    "twoActualSuccessfulBoundaryBrackets": true,
+    "originalIncorrectAtomicEqualityAssumptionReplaced": true,
+    "nativeGateFlowScopeAndLifetimesUnchanged": true
+  },
+  "clientStatusPublication": {
+    "targetWindowsLocalCases": 3,
+    "transientEpermEbusyNoLongerKillTraffic": true,
+    "otherIoFailuresRemainFatal": true
+  },
+  "finalAuditPassed": true,
+  "endpointClosureCount": 9,
+  "humanCs2Acceptance": false,
+  "highLoad300MbpsAcceptance": false,
+  "secondWanEnabled": false,
+  "upstreamSubmitted": false,
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

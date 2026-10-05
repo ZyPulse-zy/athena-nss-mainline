@@ -1,5 +1,9 @@
 # Athena NSS 主线
 
+最新 [NSS92单WAN32Mbps闭环](evidence/nss92-mainline.json)：60Mbps预算下，相同32Mbps真实TCP/UDP中softirq约下降66.4%，三段UDP全部返回、ECM0→2→0与恢复通过。52Mbps回程缺包根因未定，当前NSS已撤销、常驻68未改。先读 [状态](docs/STATE.md) 和 [计划](docs/PLAN.md)。
+
+# Athena NSS 主线
+
 最新 [NSS82受控工程闭环](evidence/nss82-mainline.json)：两次完整单WAN A/B/A2通过；同18Mbps负载softirq约下降55%，32Mbps发送负载bulk拥塞而RT队列零丢弃。当前NSS已撤销、常驻NSS68未改。工程无需反复开Steam/CS2，下一步直接更高单WAN受控带宽，真人游戏只留最后集中验收。先读 [状态](docs/STATE.md) 和 [计划](docs/PLAN.md)。下方旧结论为历史。
 
 # Athena NSS 主线记录

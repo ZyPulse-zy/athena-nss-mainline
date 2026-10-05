@@ -20,3 +20,12 @@
 17项目标 RAM 案例检查 ACK 条件，包括两包偏差、错误长度、unexpected、缺少方向/真实流量、邻居和反向偏差的拒绝。NSS82现场实际用了已有 TCP-down 条件；新 ACK 条件没有现场触发证明。阶段时长、20Mbps组、六秒分类来源、12秒native session和独立45秒撤销均未改变。
 
 若以后仍出现多包偏差，应先保存实际两帧与读取时序，再考虑改善观察方式；不要通过扩大 NSS 放行范围掩盖审计读数问题。
+
+
+## NSS89–91更新：修正观察合同
+
+见 [实际两帧和新合同](../evidence/nss92-tag-reader.json)。NSS88同一次initial读：先TCP-up expected多1包/60字节；第二次up相等而down expected又多1包/1500字节。错误tag仍0，证明一次重读后仍要求严格同瞬时相等会继续误拒绝活动流。UDPdown独立为0，不能被计数修正冒充为有双向流量。
+
+本地文件`code/work/nss89/fast-path.lua`和`tag-counter-audit.lua`：每次live先由未改的normalizer验证完整自有NFT policy；counter数值非负整数、包/字节零状态一致，所有unexpected和neighbor包及字节0。第一帧exact equal可直接验证；skew时只再读1帧，total/expected各自单调、两帧交叉区间相交才接受观察。学习前仍需四方向正包，initial缺包仅按原1.2秒等候。native flow资格、ct identity/mark/NAT、来源/租期和默认拒绝不变。读数本身不授予加速。
+
+30目标RAM案例覆盖实际88帧、wrong-tag byte-only、负数/缺counter/倒退/无重叠/缺方向；NSS91实际成功A2前后各一次bracket。52的两轮缺UDPdown继续拒绝，32Mbps完整A/B/A2和正确bulk/RT实际通过。这个已复现的问题属于本项目审计控制器假设，当前没有充分证据提交给Linux或NSS上游。
