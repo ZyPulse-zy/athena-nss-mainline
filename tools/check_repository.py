@@ -1082,7 +1082,7 @@ proof119=json.loads((root/'evidence/nss119-source-proof.json').read_text())
 assert proof119['historicPrefixSources']==1364 and proof119['sources']==35 and len(manifest['sources'])>=1399
 assert hashlib.sha256(json.dumps(manifest['sources'][:1364],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof119['historicPrefixCanonicalSha256']
 for source,digest in proof119['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-x119=json.loads((root/'evidence/nss119-mainline.json').read_text());rt119=json.loads((root/'evidence/current-runtime.json').read_text())
+x119=json.loads((root/'evidence/nss119-mainline.json').read_text());rt119=json.loads((root/'evidence/nss119-runtime.json').read_text())
 assert x119['round']==rt119['round']=='NSS119'and x119['boundInputs']==rt119['qualifiedExperimentalEntryBoundInputs']==890
 assert x119['onlyUploadPacingChanged']and x119['offeredUploadMbps']==32 and x119['maximumPacerCreditBytes']==65536
 assert not x119['instantaneousLoadCatchupStillPossible']and not x119['sameWanAs118']and not x119['boundedPacerRestoredNssThroughput']
@@ -1114,5 +1114,44 @@ assert not label119['actualMeasurementsChanged']and label119['originalSourceExpo
 assert label119['historicPrefixSources']==1399 and len(manifest['sources'])>=1400
 assert label119['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1399],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 assert label119['newSourceSha256']==hashlib.sha256((root/'code'/label119['newSource']).read_bytes()).hexdigest()
+
+proof124=json.loads((root/'evidence/nss124-source-proof.json').read_text())
+assert proof124['historicPrefixSources']==1400 and proof124['sources']==98 and len(manifest['sources'])>=1498
+assert proof124['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1400],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+for source,digest in proof124['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert proof124['privateOwnedHostBootstrapExcluded']and proof124['actualBindingTreesRetained']
+x124=json.loads((root/'evidence/nss124-mainline.json').read_text());rt124=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x124['round']==rt124['round']=='NSS124'and x124['boundInputs']==rt124['qualifiedExperimentalEntryBoundInputs']==1000
+assert (x124['offeredUploadMbps'],x124['uplinkGroupMbps'],x124['uplinkBulkMbps'],x124['uplinkRtMbps'],x124['downlinkGroupMbps'])==(32,60,59,1,30)
+assert (x124['phaseSeconds'],x124['nativeSessionSeconds'],x124['independentOwnerSeconds'],x124['classifierMaximumLeaseSeconds'])==(20,27,100,6)
+assert all(x124[k]for k in ['routerQosOnlyUplinkBudgetChangedFrom119','sameWanAs119','completeFunctionalABA','comparableSelectedTransferRateObserved','nssThroughputRestoredWithLargerUplinkBudget','atomicHintFailureAndFiniteMatchingFailurePreserved','readOnlyAtomicRenameHandlingAdded'])
+assert not any(x124[k]for k in ['allWanBackgroundObserved','exactRootCauseOfThirtyMbpsLossProved','newStrictCpuComparisonAccepted','rtRepliesComplete','strictRateAccuracyAccepted','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','residentClassifierChanged','nssPermanentlyEnabled','uiOperated','upstreamSubmitted'])
+f124=json.loads((root/'evidence/nss124-prewrite-refusal.json').read_text());match124=json.loads((root/'evidence/nss124-matching-refusal.json').read_text())
+assert f124['originalFailurePreserved']and not any(f124[k]for k in ['passed','ecmOpened','detachedStageStarted','queueWrites','checkpointStarted'])
+assert match124['originalFailurePreserved']and match124['preparationOnly']and match124['resolvedByKeepingUdpSocketAndPeerFixedAndOnlyRotatingOwnedTcp']
+assert not any(match124[k]for k in ['passed','ecmOpened','queueWrites','productionRouterWrites','actualNewUdpWanOrNatPeerProved','campusPolicyOrPbrChanged'])
+t124=json.loads((root/'evidence/nss124-trial.json').read_text());m124=json.loads((root/'evidence/nss124-metrics.json').read_text())
+assert t124['passed']and t124['completeABA']and t124['sourceInputs']==1000 and t124['sourceInputsCurrentAndFrozenMatch']and t124['guardianVerifiedBeforeFirstWrite']and t124['checkpointDownloadedShaAndGzipVerified']and all(t124['rollback'].values())
+assert t124['baseline']['configurationMatches']and t124['beforeFullAudit']['passed']and t124['afterFullAudit']['passed']
+assert m124['oneWan']==5 and m124['bulkDirection']=='upload'and m124['localSubmittedBytesNotUsedForThroughput']and m124['renewals']==6
+assert [p['acceleratedCounts']for p in m124['phases']]==[[0],[2],[0]]and [p['whole']['udp']['unreturned']for p in m124['phases']]==[0,1,0]
+assert all(30<p['whole']['clientTcpMbps']<32 and p['whole']['timeSqueezeDelta']==p['whole']['softnetDropDelta']==0 for p in m124['phases'])
+assert m124['qosParentMbps']==30 and m124['uplinkParentMbps']==60 and not m124['qosBytesUnchangedFrom114']and not m124['allWanBackgroundObserved']
+up124=json.loads((root/'evidence/nss124-uplink-proof.json').read_text());assert up124['passed']and up124['actualEcmTagsVerified']and up124['bothUplinkLeavesAdvancedNearAcceleratedPhase']
+assert up124['uplinkLeafDelta']['8e05:']['dropped']==up124['uplinkLeafDelta']['8e06:']['dropped']==0
+for slot,up,down in [('tcp',0x8e050000,0x8f050000),('udp',0x8e060000,0x8f060000)]:
+    v=t124['actualAcceleratedIdentity']['proof'][slot];assert v['upTag']==up and v['downTag']==down and v['ctMark']==0x50000 and v['natCorrect']and v['wanAffinity']==5
+q124=json.loads((root/'evidence/nss124-qualification.json').read_text());assert q124['atomicReadMaximumRetries']==1 and q124['waitSeconds']==5 and q124['runnerSeconds']==6 and q124['originalFullAuditUnchanged']and q124['qualifiedPayloadBytes']==73506
+assert len(q124['atomicHintTargetRam'])==8 and all(c['passed']and c['targetRamOnly']for c in q124['atomicHintTargetRam'])
+hint124=json.loads((root/'evidence/nss124-actual-readonly-hint.json').read_text());assert hint124['passed']and hint124['readonly']and hint124['fullAuditUnchanged']and not hint124['productionRouterWrites']and not hint124['nssAdmissionAllowed']
+cs124=json.loads((root/'evidence/nss124-endpoint-closure.json').read_text());assert len(cs124)==3
+for c in cs124:
+    assert c['temporaryFirewallRulesRemaining']==0 and c['canonicalFirewallBaselineRestored']and c['ownedUnitInactiveMainPidZeroPortsClosed']and c['clientExited']and c['clientGuardPassed']and c['endpointGuardianVerifiedBeforeWrite']
+    assert c['independentFirewallExpirySeconds']==180 and c['independentClientDeadlineSeconds']==210
+assert cs124[-1]['initialClosureSshTimeoutPreserved']and cs124[-1]['subsequentReadOnlyClosurePassed']
+assert rt124['historical119RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss119-runtime.json').read_bytes()).hexdigest()
+assert rt124['workerPid']==4859 and rt124['guardianPid']==17139 and rt124['currentNssAdmissionMustBeRefreshedBeforeWrite']
+assert all(rt124['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert all(rt124['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

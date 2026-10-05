@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "queueStatisticsAsynchronous": true,
+  "nearBSeconds": 20.489999999990687,
+  "uplinkParentAndLeafClassDelta": {
+    "8e00:50": {
+      "bytes": 71472024,
+      "packets": 52748,
+      "dropped": 0,
+      "overlimits": 10078
+    },
+    "8e00:5": {
+      "bytes": 75412080,
+      "packets": 54970,
+      "dropped": 0,
+      "overlimits": 10
+    },
+    "8e00:6": {
+      "bytes": 133110,
+      "packets": 783,
+      "dropped": 0,
+      "overlimits": 0
+    }
+  },
+  "nearBBulkMbpsIncluding38ByteOverhead": 31.809788189375123,
+  "shaperActivityObserved": true,
+  "actualRtLeafDrops": 0,
+  "actualBulkLeafDrops": 0,
+  "phaseBServerConfirmedTcpFiveSecondBinsMbps": [
+    31.05122400398888,
+    31.275938049681674,
+    31.126206822707065,
+    30.7512994145779
+  ],
+  "bulkRampObservedAcrossBins": false,
+  "rtAllRepliesReceivedInEachPhase": false,
+  "rateAccuracyAccepted": false,
+  "tcpRampCauseProved": false,
+  "newCpuComparisonAccepted": false,
+  "humanCs2Acceptance": false,
+  "nextOneVariable": "Observe all WAN background equally across A/B/A2 before evaluating comparable-load CPU evidence.",
+  "offeredUploadMbps": 32,
+  "uplinkGroupMbps": 60,
+  "actualOfferedRateDeliveryAccepted": true
+}

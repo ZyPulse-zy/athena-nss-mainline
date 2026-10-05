@@ -1,0 +1,15 @@
+from pathlib import Path
+r=Path('work/nss121');r.mkdir(exist_ok=True)
+s=Path('work/nss120/match-controlled.mjs').read_text(encoding='utf-8')
+s=s.replace("import fs from 'node:fs';", "import{nextPort}from'./natural-target.mjs';import fs from 'node:fs';")
+start=s.index(' if(x.tcp.length&&x.udp.length');end=s.index('\n await new Promise',start)
+s=s[:start]+" if(performance.now()-lastChange>5500){const status=JSON.parse(fs.readFileSync(load.dir+'/status-private.json'));const next=nextPort({tcpWan:x.tcp[0]?.identity.wan,udpWan:x.udp[0]?.identity.wan,status,config:c});if(next){fs.writeFileSync(load.dir+'/control.json.new',JSON.stringify({session:c.session,...next}));fs.renameSync(load.dir+'/control.json.new',load.dir+'/control.json');lastChange=performance.now();}}"+s[end:]
+(r/'match-target.mjs').write_text(s,encoding='utf-8')
+s=Path('work/nss117/retry-existing.mjs').read_text(encoding='utf-8').replace('nss117','nss121').replace('nss116','nss120')
+s=s.replace("const frozen=root+'/frozen-qualified-inputs';", "const local=JSON.parse(fs.readFileSync(root+'/matching-qualified.json'));assert.ok(local.passed);for(const[f,d]of Object.entries(local.sourceManifest))assert.equal(hash(fs.readFileSync(f)),d);const frozen=root+'/frozen-qualified-inputs';")
+s=s.replace('for(const[f,h]of Object.entries(q.sourceManifest))', 'for(const[f,h]of Object.entries({...q.sourceManifest,...local.sourceManifest}))')
+s=s.replace("JSON.stringify(q.sourceManifest,null,2)","JSON.stringify({...q.sourceManifest,...local.sourceManifest},null,2)")
+s=s.replace("unchanged NSS120 upload retry after publication coherence refusal", "NSS120 uplink60 / bounded upload32 / natural WAN5 matching")
+s=s.replace('offeredMbps:48,qosMbps:30','offeredMbps:32,downlinkMbps:30,uplinkMbps:60')
+s=s.replace("run(entry+'/match-controlled.mjs',[],90)","run(root+'/match-target.mjs',[],90)")
+(r/'run.mjs').write_text(s,encoding='utf-8')

@@ -1,0 +1,46 @@
+[
+  {
+    "loadLocalPath": "work/nss120/load-20261005195800-a3d549a1f7f467d9",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.00431999999998,
+    "clientErrors": []
+  },
+  {
+    "loadLocalPath": "work/nss123/load-20261005201030-b7667bf26f9dbe32",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.00109329999998,
+    "clientErrors": []
+  },
+  {
+    "loadLocalPath": "work/nss124/load-20261005201807-4a358653b7ad4e31",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 154.88913710000003,
+    "initialClosureSshTimeoutPreserved": true,
+    "subsequentReadOnlyClosurePassed": true,
+    "naturalOsDeadlineClosure": true,
+    "clientErrors": [
+      "SSH: Keepalive timeout"
+    ]
+  }
+]

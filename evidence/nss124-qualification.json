@@ -1,0 +1,167 @@
+{
+  "uplink60": [
+    {
+      "name": "only-uplink-rates-and-matching-validator-changed",
+      "passed": true,
+      "localOnly": true
+    },
+    {
+      "passed": true,
+      "name": "up-full",
+      "targetRamOnly": true
+    },
+    {
+      "passed": true,
+      "name": "up-old-30",
+      "targetRamOnly": true
+    },
+    {
+      "passed": true,
+      "name": "up-wrong-bulk",
+      "targetRamOnly": true
+    },
+    {
+      "passed": true,
+      "name": "down-full",
+      "targetRamOnly": true
+    },
+    {
+      "passed": true,
+      "name": "down-down-60",
+      "targetRamOnly": true
+    },
+    {
+      "passed": true,
+      "name": "up-priority",
+      "targetRamOnly": true
+    },
+    {
+      "passed": true,
+      "name": "up-missing-root",
+      "targetRamOnly": true
+    },
+    {
+      "passed": true,
+      "name": "up-partial",
+      "targetRamOnly": true
+    },
+    {
+      "name": "new-rate-payload-within-original-73728-cap",
+      "passed": true,
+      "localOnly": true,
+      "bytes": 73506
+    }
+  ],
+  "naturalTargetMatcher": [
+    {
+      "name": "both-wrong-rotate-only-owned-udp",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "udp-target-rotate-only-owned-tcp",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "both-target-no-rotation",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "missing-publication-not-authority",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "original-eight-tcp-twelve-udp-port-bounds-kept",
+      "passed": true,
+      "simulated": true
+    }
+  ],
+  "atomicHintTargetRam": [
+    {
+      "name": "same",
+      "discardedReads": 0,
+      "reads": 1,
+      "accepted": true,
+      "passed": true,
+      "targetRamOnly": true
+    },
+    {
+      "name": "rename-once",
+      "discardedReads": 1,
+      "reads": 2,
+      "accepted": true,
+      "passed": true,
+      "targetRamOnly": true
+    },
+    {
+      "name": "rename-twice",
+      "discardedReads": 2,
+      "reads": 2,
+      "accepted": false,
+      "passed": true,
+      "targetRamOnly": true
+    },
+    {
+      "name": "foreign-before",
+      "discardedReads": 0,
+      "reads": 0,
+      "accepted": false,
+      "passed": true,
+      "targetRamOnly": true
+    },
+    {
+      "name": "foreign-after",
+      "discardedReads": 0,
+      "reads": 1,
+      "accepted": false,
+      "passed": true,
+      "targetRamOnly": true
+    },
+    {
+      "name": "hardlink",
+      "discardedReads": 0,
+      "reads": 0,
+      "accepted": false,
+      "passed": true,
+      "targetRamOnly": true
+    },
+    {
+      "name": "not-regular",
+      "discardedReads": 0,
+      "reads": 0,
+      "accepted": false,
+      "passed": true,
+      "targetRamOnly": true
+    },
+    {
+      "name": "read-error",
+      "discardedReads": 0,
+      "reads": 1,
+      "accepted": false,
+      "passed": true,
+      "targetRamOnly": true
+    }
+  ],
+  "fixedUdpPeer": [
+    {
+      "name": "eight-hardware-helper-sources-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "original-TCP-only-natural-matching-restored-byte-exact",
+      "passed": true
+    },
+    {
+      "name": "original-controlled-reader-without-fixed-WAN-is-byte-exact",
+      "passed": true
+    }
+  ],
+  "atomicReadMaximumRetries": 1,
+  "waitSeconds": 5,
+  "runnerSeconds": 6,
+  "originalFullAuditUnchanged": true,
+  "qualifiedPayloadBytes": 73506
+}

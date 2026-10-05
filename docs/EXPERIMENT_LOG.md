@@ -1,5 +1,20 @@
 # 实验记录
 
+## NSS120–124 · 2026-10-06 04:28 · 上行预算与真实吞吐恢复
+
+更新：2026-10-06 04:28，北京时间。最新NSS124；常驻68/config581b5d46…c791d7、4859/17139不变，实验已撤销。
+
+**上行受控组30→60Mbps（bulk29→59、RT1、ceil60），下行30与有界32Mbps上传不改。实际自然WAN5、同一对flow完整20秒A/B/A2，ECM0→2→0、四leaf/mark/NAT/affinity/六次续租/恢复通过；服务器确认30.709/30.774/30.727Mbps，B不再降至约16Mbps。**
+
+见 [实际指标](../evidence/nss124-metrics.json)、[轮次](../evidence/nss124-trial.json)、[汇总](../evidence/nss124-mainline.json)、[拒绝](../evidence/nss124-prewrite-refusal.json)、[匹配失败](../evidence/nss124-matching-refusal.json)、[关闭](../evidence/nss124-endpoint-closure.json)、[终态](../evidence/nss124-final-audit.json)。
+
+- softirq 9.479/4.758/9.655%，time_squeeze/drop均0；UDP收/发826/826、827/828、828/828。上下行bulk/RT queue drop均0，客户端B少一个echo回复，不能写成网络零丢包或CS2效果。选中TCP吞吐可比，暂未同时捕获其它WAN背景，严格整机CPU收益不新增验收。
+- 与119同WAN5且同32发送器；上行预算增大后吞吐恢复，支持原30组拥塞相关因素参与，不把跨轮网络变化排除或写成精确AQM根因。60组未饱和，尚未验收60准确限速、拥塞延迟或完整CAKE替代。
+- 120经121匹配后，旧只读hint遇发布rename在checkpoint/stage前拒绝，未改路由器。122只将已替换读数丢弃、最多重读一次；8目标RAM边界与实际只读hint通过，原5秒wait/6秒runner及完整审核不改。123强求WAN5而轮换UDP后匹配失败；端点只允许原NAT peer，冲突是合理线索，实际新UDP WAN/peer未捕获，不声称已定因。124保留UDP socket/peer，只自然轮换自己的TCP，未改PBR/认证/端点规则范围。
+- 1000项新入口，native27/owner100/source6和9000/65536/73728字节边界不改。实际新checkpoint下载/SHA/gzip与独立守护在写前核验；三端点FW180/客户端210均清理，124首次关闭SSH查询超时原记录保留，随后只读确认规则基线和端口关闭。
+- 最终source3.03、ECM关闭全零、无事务/stage/state/模块，两物理根原mq＋四fq_codel恢复；WAN4仍down、自然四路PBR不改。旧119 runtime原字节保持，完整私有输入冻结。未操作UI/下载/游戏、不改常驻upTag0、不提交上游。
+- 下一步只补所有WAN的相同只读计数，保持当前队列/负载/来源和期限，做一次CPU对照；随后收敛真实class到双向leaf的最小消费者映射及改类精确撤销，不重装整套或长期放行未知flow。最后一次集中真人CS2验收；第二WAN/共享预算/WiFi/autorate仍后置。09:50起收尾、报告和推送后暂停本夜接续。
+
 ## NSS119 · 2026-10-06 03:51 · 32Mbps上传仍未稳定
 
 更新：2026-10-06 03:51，北京时间。最新NSS119；常驻68/config581b5d46…c791d7、4859/17139保持，实验全撤销。

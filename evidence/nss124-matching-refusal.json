@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "preparationOnly": true,
+  "desiredWan": 5,
+  "ecmOpened": false,
+  "queueWrites": false,
+  "productionRouterWrites": false,
+  "finitePreparationSeconds": 75,
+  "originalFailurePreserved": true,
+  "originalDriverSha256": "3fc6742eee40d020e16d29cb6683b3f31612299b93cc37c7e6403fce3de7ebca",
+  "likelyEndpointPeerPinAndUdpRotationConflict": true,
+  "actualNewUdpWanOrNatPeerProved": false,
+  "resolvedByKeepingUdpSocketAndPeerFixedAndOnlyRotatingOwnedTcp": true,
+  "campusPolicyOrPbrChanged": false
+}

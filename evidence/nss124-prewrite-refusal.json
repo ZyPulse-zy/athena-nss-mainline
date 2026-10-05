@@ -1,0 +1,13 @@
+{
+  "caseLocalPath": "work/nss120/controlled-matched-aba-20261005195857-75098850",
+  "passed": false,
+  "ecmOpened": false,
+  "detachedStageStarted": false,
+  "queueWrites": false,
+  "checkpointStarted": false,
+  "originalFailurePreserved": true,
+  "rejection": "Publication changed during scheduling read before checkpoint/stage",
+  "originalResultSha256": "0f3e336acf43fb5454476f6d5c58ec2d27f9f5f30991aeb42d5138795c59446b",
+  "driverPrintedInheritedNss116Label": true,
+  "actualEntry": "work/nss120/controlled-session.mjs"
+}

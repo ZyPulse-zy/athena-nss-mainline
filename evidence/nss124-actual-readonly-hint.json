@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "readonly": true,
+  "productionRouterWrites": false,
+  "nssAdmissionAllowed": false,
+  "fullAuditUnchanged": true,
+  "actualStandaloneHintPassed": true,
+  "hardwareStageUsedQualifiedReader": true,
+  "discardedAtomicReadsInSuccessfulPreparation": [],
+  "originalStandaloneReceiptSha256": "0b5dc0dc71612688bd7022de0c77a112d4c20f72cc5f28ca937d44c5f6489ccb"
+}
