@@ -1,5 +1,13 @@
 # 证据索引
 
+## 当前NSS98
+
+- [本轮汇总](../evidence/nss98-mainline.json)、[三轮现场](../evidence/nss98-trials.json)、[48Mbps指标](../evidence/nss98-matched48.json)、[40Mbps拥塞](../evidence/nss98-congested40.json)。
+- [52回程位置](../evidence/nss98-return-localization.json)、[五端点关闭](../evidence/nss98-endpoint-closure.json)、[终态审核](../evidence/nss98-final-audit.json)、[源码字节](../evidence/nss98-source-proof.json)。
+- [当前运行](../evidence/current-runtime.json)、[旧92 runtime](../evidence/nss92-runtime.json)。本地报告`outputs/nss98-mainline-report.html`。
+
+# 证据索引
+
 ## 当前NSS92
 
 - [实测汇总](../evidence/nss92-mainline.json)、[六次现场及失败](../evidence/nss92-trials.json)、[32Mbps可比对照](../evidence/nss92-matched32.json)。

@@ -1,0 +1,221 @@
+{
+  "schema": "nss97-controlled-actual-aba-v1",
+  "passed": true,
+  "oneWan": 3,
+  "requestedTcpMbps": 48,
+  "udpRequestedPps": 50,
+  "phases": [
+    {
+      "phase": "A",
+      "seconds": 5.0200000000186265,
+      "sampleCount": 11,
+      "acceleratedCounts": [
+        0
+      ],
+      "busyPercent": 24.15485278080698,
+      "softirqPercent": 6.106870229007634,
+      "cores": [
+        {
+          "core": "cpu0",
+          "busyPercent": 18.181818181818183,
+          "softirqPercent": 1.6317016317016317
+        },
+        {
+          "core": "cpu1",
+          "busyPercent": 25.057471264367816,
+          "softirqPercent": 2.0689655172413794
+        },
+        {
+          "core": "cpu2",
+          "busyPercent": 36.17463617463618,
+          "softirqPercent": 19.334719334719335
+        },
+        {
+          "core": "cpu3",
+          "busyPercent": 16.73469387755102,
+          "softirqPercent": 0.6122448979591837
+        }
+      ],
+      "timeSqueezeDelta": 0,
+      "softnetDropDelta": 0,
+      "interfaces": {
+        "lan4": {
+          "mbps": 35.38282549787668,
+          "txPps": 2978.0876493913406,
+          "rxMbps": 2.2506390438163506
+        },
+        "rpwan3": {
+          "mbps": 2.0835585657293207,
+          "txPps": 2878.8844621407125,
+          "rxMbps": 35.45525577676088
+        }
+      },
+      "clientTcpMbps": 32.86768536781619,
+      "udp": {
+        "sendWindowUtcEpoch": [
+          1791200614.3705,
+          1791200619.3905
+        ],
+        "excludedBoundarySeconds": 0.05950010299682617,
+        "sent": 205,
+        "received": 205,
+        "unreturned": 0,
+        "unreturnedPercent": 0.0,
+        "rttP50Ms": 189.9019999999946,
+        "rttP95Ms": 191.47804000000178,
+        "rttMaxMs": 195.28540000000066,
+        "meanAbsoluteConsecutiveRttDeltaMs": 0.5078651960785446,
+        "isCs2Metric": false
+      }
+    },
+    {
+      "phase": "B",
+      "seconds": 5.029999999795109,
+      "sampleCount": 11,
+      "acceleratedCounts": [
+        2
+      ],
+      "busyPercent": 12.248062015503876,
+      "softirqPercent": 0.8268733850129198,
+      "cores": [
+        {
+          "core": "cpu0",
+          "busyPercent": 13.839285714285714,
+          "softirqPercent": 1.7857142857142858
+        },
+        {
+          "core": "cpu1",
+          "busyPercent": 14.4,
+          "softirqPercent": 0.2
+        },
+        {
+          "core": "cpu2",
+          "busyPercent": 9.475806451612904,
+          "softirqPercent": 0.0
+        },
+        {
+          "core": "cpu3",
+          "busyPercent": 11.382113821138212,
+          "softirqPercent": 1.4227642276422765
+        }
+      ],
+      "timeSqueezeDelta": 0,
+      "softnetDropDelta": 0,
+      "interfaces": {
+        "lan4": {
+          "mbps": 37.03610974305931,
+          "txPps": 3111.133200921957,
+          "rxMbps": 1.716225845000326
+        },
+        "rpwan3": {
+          "mbps": 1.1584588469656776,
+          "txPps": 1784.4930418221923,
+          "rxMbps": 24.399979325049568
+        }
+      },
+      "clientTcpMbps": 35.090569982330656,
+      "udp": {
+        "sendWindowUtcEpoch": [
+          1791200623.6905,
+          1791200628.7205002
+        ],
+        "excludedBoundarySeconds": 0.05950010299682617,
+        "sent": 223,
+        "received": 223,
+        "unreturned": 0,
+        "unreturnedPercent": 0.0,
+        "rttP50Ms": 189.76489999999467,
+        "rttP95Ms": 189.88265000000538,
+        "rttMaxMs": 190.84960000000137,
+        "meanAbsoluteConsecutiveRttDeltaMs": 0.30832297297358213,
+        "isCs2Metric": false
+      }
+    },
+    {
+      "phase": "A2",
+      "seconds": 5.010000000009313,
+      "sampleCount": 11,
+      "acceleratedCounts": [
+        0
+      ],
+      "busyPercent": 25.635703165542292,
+      "softirqPercent": 14.167099117799689,
+      "cores": [
+        {
+          "core": "cpu0",
+          "busyPercent": 20.84257206208426,
+          "softirqPercent": 6.873614190687362
+        },
+        {
+          "core": "cpu1",
+          "busyPercent": 36.57142857142857,
+          "softirqPercent": 26.095238095238095
+        },
+        {
+          "core": "cpu2",
+          "busyPercent": 30.349344978165938,
+          "softirqPercent": 20.96069868995633
+        },
+        {
+          "core": "cpu3",
+          "busyPercent": 13.995943204868155,
+          "softirqPercent": 1.8255578093306288
+        }
+      ],
+      "timeSqueezeDelta": 0,
+      "softnetDropDelta": 0,
+      "interfaces": {
+        "lan4": {
+          "mbps": 36.29938043905428,
+          "txPps": 3076.447105782704,
+          "rxMbps": 2.263819560874035
+        },
+        "rpwan3": {
+          "mbps": 2.0061924151659314,
+          "txPps": 2903.193612769054,
+          "rxMbps": 36.38469940112997
+        }
+      },
+      "clientTcpMbps": 33.27422823993968,
+      "udp": {
+        "sendWindowUtcEpoch": [
+          1791200629.3005002,
+          1791200634.3105001
+        ],
+        "excludedBoundarySeconds": 0.05950010299682617,
+        "sent": 217,
+        "received": 217,
+        "unreturned": 0,
+        "unreturnedPercent": 0.0,
+        "rttP50Ms": 189.83899999999267,
+        "rttP95Ms": 190.66024000001198,
+        "rttMaxMs": 191.23679999999877,
+        "meanAbsoluteConsecutiveRttDeltaMs": 0.2883356481483201,
+        "isCs2Metric": false
+      }
+    }
+  ],
+  "leafCountersAcrossBObservation": {
+    "8f05:": {
+      "bytes": 27058862,
+      "packets": 17885,
+      "dropped": 148
+    },
+    "8f06:": {
+      "bytes": 45390,
+      "packets": 267,
+      "dropped": 0
+    }
+  },
+  "leafStatsAsynchronous": true,
+  "renewals": 2,
+  "nativeLimitsUnchanged": true,
+  "qosParentMbps": 40,
+  "clockAlignmentUncertaintyMs": 59.50010299682617,
+  "classifierToLeafAndNatAffinityVerified": true,
+  "checkpointAndIndependentOwnerRollbackVerified": true,
+  "protectedConfigurationRestored": true,
+  "gameQualityConclusion": false,
+  "highLoad300MbpsConclusion": false,
+  "shortWindowsIncludeSameObserverCost": true
+}

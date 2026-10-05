@@ -1,0 +1,1188 @@
+[
+  {
+    "round": "NSS93",
+    "loadLocalPath": "work/nss93/load-20261005110508-096ffb23a6cc4b0d",
+    "summary": {
+      "passed": true,
+      "oneWan": 5,
+      "sameTcpAndUdpAndNatMarkThroughout": true,
+      "routerWrites": false,
+      "nssOpened": false,
+      "routerSamples": 104,
+      "clockUncertaintyMs": 50.00007152557373,
+      "maxQuerySeconds": 0.030000000027939677,
+      "serverClientMatchedByNonceAndSequenceNotServerWallClock": true,
+      "aggregates": [
+        {
+          "offeredMbps": 32,
+          "intervals": 41,
+          "seconds": 19.485000133514404,
+          "clientSent": 948,
+          "serverReceived": 939,
+          "serverEgress": 944,
+          "serverEgressMatchedClient": 944,
+          "clientArrivals": 949,
+          "routerCtUpDelta": 948,
+          "routerCtDownDelta": 948
+        },
+        {
+          "offeredMbps": 52,
+          "intervals": 47,
+          "seconds": 22.420000076293945,
+          "clientSent": 1105,
+          "serverReceived": 1104,
+          "serverEgress": 1103,
+          "serverEgressMatchedClient": 803,
+          "clientArrivals": 804,
+          "routerCtUpDelta": 1106,
+          "routerCtDownDelta": 804
+        }
+      ],
+      "lowReplyIntervals": [
+        {
+          "mbps": 52,
+          "seconds": 0.4649999141693115,
+          "clientSent": 23,
+          "serverReceived": 23,
+          "serverEgress": 23,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 23,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4650001525878906,
+          "clientSent": 23,
+          "serverReceived": 23,
+          "serverEgress": 23,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 23,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4649999141693115,
+          "clientSent": 23,
+          "serverReceived": 23,
+          "serverEgress": 23,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 23,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4700000286102295,
+          "clientSent": 23,
+          "serverReceived": 23,
+          "serverEgress": 22,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 23,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4649999141693115,
+          "clientSent": 23,
+          "serverReceived": 22,
+          "serverEgress": 22,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 24,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4700000286102295,
+          "clientSent": 24,
+          "serverReceived": 24,
+          "serverEgress": 24,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 23,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4650001525878906,
+          "clientSent": 23,
+          "serverReceived": 23,
+          "serverEgress": 23,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 23,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4649999141693115,
+          "clientSent": 23,
+          "serverReceived": 23,
+          "serverEgress": 23,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 23,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4700000286102295,
+          "clientSent": 24,
+          "serverReceived": 24,
+          "serverEgress": 24,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 24,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.5750000476837158,
+          "clientSent": 28,
+          "serverReceived": 28,
+          "serverEgress": 28,
+          "serverEgressMatchedClient": 2,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 29,
+          "routerCtDownDelta": 0
+        },
+        {
+          "mbps": 52,
+          "seconds": 0.4700000286102295,
+          "clientSent": 24,
+          "serverReceived": 24,
+          "serverEgress": 24,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 23,
+          "routerCtDownDelta": 0
+        }
+      ],
+      "bounds": "Server and client match by sequence; CT timing is clock-bounded. Sent-cohort counters and receive-time CT counters can differ at RTT boundaries. CT is after TC ingress/IFB, so low CT reply count alone does not exclude pre-CT router drops.",
+      "notCs2LossMetric": true
+    },
+    "rawObservationSha256": "60ee030371dafed9a2685ccefd747088f750fa196f0fc5cf6281906a4d7ddbcd",
+    "serverClientSequenceMatched": true,
+    "captureAndCompleteCtInputsKeptPrivate": true
+  },
+  {
+    "round": "NSS94",
+    "loadLocalPath": "work/nss94/load-20261005111946-d326b62e40adb842",
+    "summary": {
+      "passed": true,
+      "oneWan": 3,
+      "sameTcpAndUdpAndNatMarkThroughout": true,
+      "routerWrites": false,
+      "nssOpened": false,
+      "routerSamples": 64,
+      "clockUncertaintyMs": 50.999999046325684,
+      "maxQuerySeconds": 0.030000000027939677,
+      "maxStatsSeconds": 0.049999999813735485,
+      "serverClientMatchedByNonceAndSequenceNotServerWallClock": true,
+      "aggregates": [
+        {
+          "offeredMbps": 32,
+          "intervals": 28,
+          "seconds": 23.52999997138977,
+          "clientSent": 1147,
+          "serverReceived": 1142,
+          "serverEgress": 1144,
+          "serverEgressMatchedClient": 1144,
+          "clientArrivals": 1147,
+          "routerCtUpDelta": 1147,
+          "routerCtDownDelta": 1147,
+          "tcpBytes": 93126656,
+          "tcpElapsed": 23.28000020980835,
+          "actualClientTcpMbps": 32.0022869968064,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 70353,
+            "redirectDrops": 0,
+            "redirectPackets": 70356,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "cpuTotal": 9200,
+            "cpuBusy": 2284,
+            "cpuSoftirq": 1034
+          },
+          "cpuBusyPct": 24.82608695652174,
+          "cpuSoftirqPct": 11.23913043478261,
+          "tins": [
+            {
+              "sentPackets": 0,
+              "drops": 0,
+              "maxPeakDelayUs": 0
+            },
+            {
+              "sentPackets": 69197,
+              "drops": 0,
+              "maxPeakDelayUs": 1940
+            },
+            {
+              "sentPackets": 0,
+              "drops": 0,
+              "maxPeakDelayUs": 0
+            },
+            {
+              "sentPackets": 1148,
+              "drops": 0,
+              "maxPeakDelayUs": 150
+            }
+          ],
+          "nic": {
+            "wan": {
+              "rx_errors": 0,
+              "rx_dropped": 1,
+              "tx_bytes": 5125897,
+              "rx_packets": 71787,
+              "tx_packets": 66266,
+              "rx_bytes": 99150786,
+              "tx_errors": 0,
+              "tx_dropped": 0
+            },
+            "rpwan3": {
+              "rx_errors": 0,
+              "rx_dropped": 0,
+              "tx_bytes": 4269542,
+              "rx_packets": 62724,
+              "tx_packets": 64963,
+              "rx_bytes": 97892325,
+              "tx_errors": 0,
+              "tx_dropped": 0
+            },
+            "lan4": {
+              "rx_errors": 0,
+              "rx_dropped": 0,
+              "tx_bytes": 99008901,
+              "rx_packets": 65565,
+              "tx_packets": 70948,
+              "rx_bytes": 5015554,
+              "tx_errors": 0,
+              "tx_dropped": 0
+            },
+            "rpifb3": {
+              "rx_errors": 0,
+              "rx_dropped": 0,
+              "tx_bytes": 98310353,
+              "rx_packets": 70352,
+              "tx_packets": 70351,
+              "rx_bytes": 98310353,
+              "tx_errors": 0,
+              "tx_dropped": 0
+            }
+          },
+          "cakeBandwidthMbpsRange": [
+            70.0,
+            70.0
+          ]
+        },
+        {
+          "offeredMbps": 52,
+          "intervals": 26,
+          "seconds": 22.08999991416931,
+          "clientSent": 1095,
+          "serverReceived": 1092,
+          "serverEgress": 1092,
+          "serverEgressMatchedClient": 701,
+          "clientArrivals": 702,
+          "routerCtUpDelta": 1095,
+          "routerCtDownDelta": 701,
+          "tcpBytes": 143130624,
+          "tcpElapsed": 22.020999908447266,
+          "actualClientTcpMbps": 51.99786552656767,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 104633,
+            "redirectDrops": 0,
+            "redirectPackets": 104611,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "cpuTotal": 8505,
+            "cpuBusy": 2500,
+            "cpuSoftirq": 1213
+          },
+          "cpuBusyPct": 29.394473838918284,
+          "cpuSoftirqPct": 14.26219870664315,
+          "tins": [
+            {
+              "sentPackets": 0,
+              "drops": 0,
+              "maxPeakDelayUs": 0
+            },
+            {
+              "sentPackets": 103932,
+              "drops": 0,
+              "maxPeakDelayUs": 2650
+            },
+            {
+              "sentPackets": 0,
+              "drops": 0,
+              "maxPeakDelayUs": 0
+            },
+            {
+              "sentPackets": 701,
+              "drops": 0,
+              "maxPeakDelayUs": 150
+            }
+          ],
+          "nic": {
+            "wan": {
+              "rx_errors": 0,
+              "rx_dropped": 1,
+              "tx_bytes": 7743566,
+              "rx_packets": 105710,
+              "tx_packets": 102399,
+              "rx_bytes": 150330893,
+              "tx_errors": 0,
+              "tx_dropped": 0
+            },
+            "rpwan3": {
+              "rx_errors": 0,
+              "rx_dropped": 0,
+              "tx_bytes": 6972847,
+              "rx_packets": 97823,
+              "tx_packets": 101493,
+              "rx_bytes": 149263755,
+              "tx_errors": 0,
+              "tx_dropped": 0
+            },
+            "lan4": {
+              "rx_errors": 0,
+              "rx_dropped": 0,
+              "tx_bytes": 150200883,
+              "rx_packets": 101737,
+              "tx_packets": 104921,
+              "rx_bytes": 7629818,
+              "tx_errors": 0,
+              "tx_dropped": 0
+            },
+            "rpifb3": {
+              "rx_errors": 0,
+              "rx_dropped": 0,
+              "tx_bytes": 149628401,
+              "rx_packets": 104608,
+              "tx_packets": 104606,
+              "rx_bytes": 149628401,
+              "tx_errors": 0,
+              "tx_dropped": 0
+            }
+          },
+          "cakeBandwidthMbpsRange": [
+            70.0,
+            71.4
+          ]
+        }
+      ],
+      "lowReplyIntervals": [
+        {
+          "mbps": 52,
+          "startedAt": 1791199326.7859998,
+          "endedAt": 1791199327.6209998,
+          "seconds": 0.8350000381469727,
+          "clientSent": 42,
+          "serverReceived": 42,
+          "serverEgress": 42,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 42,
+          "routerCtDownDelta": 0,
+          "tcpBytes": 4947968,
+          "tcpElapsed": 0.75,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 3814,
+            "cakeBandwidthMin": 8750000,
+            "cakeBandwidthMax": 8925000,
+            "redirectDrops": 0,
+            "redirectPackets": 3842,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "tins": [
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 3815,
+                "drops": 0,
+                "backlogBytesEnd": 7570,
+                "peakDelayUsEnd": 1303,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 144,
+                "ecnMarks": 0
+              }
+            ],
+            "nic": {
+              "wan": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 341673,
+                "rx_packets": 3865,
+                "tx_packets": 3898,
+                "rx_bytes": 5790497,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpwan3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 321329,
+                "rx_packets": 3688,
+                "tx_packets": 3887,
+                "rx_bytes": 5777687,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "lan4": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5798103,
+                "rx_packets": 3885,
+                "tx_packets": 3839,
+                "rx_bytes": 339855,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpifb3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5783455,
+                "rx_packets": 3849,
+                "tx_packets": 3849,
+                "rx_bytes": 5784969,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              }
+            },
+            "cpuTotal": 313,
+            "cpuBusy": 78,
+            "cpuSoftirq": 34
+          }
+        },
+        {
+          "mbps": 52,
+          "startedAt": 1791199327.6209998,
+          "endedAt": 1791199328.4659998,
+          "seconds": 0.8450000286102295,
+          "clientSent": 42,
+          "serverReceived": 42,
+          "serverEgress": 42,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 42,
+          "routerCtDownDelta": 0,
+          "tcpBytes": 4947968,
+          "tcpElapsed": 0.75,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 3841,
+            "cakeBandwidthMin": 8835750,
+            "cakeBandwidthMax": 8925000,
+            "redirectDrops": 0,
+            "redirectPackets": 3839,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "tins": [
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 3838,
+                "drops": 0,
+                "backlogBytesEnd": 3028,
+                "peakDelayUsEnd": 1302,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 144,
+                "ecnMarks": 0
+              }
+            ],
+            "nic": {
+              "wan": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 296217,
+                "rx_packets": 3865,
+                "tx_packets": 3861,
+                "rx_bytes": 5820152,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpwan3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 275902,
+                "rx_packets": 3684,
+                "tx_packets": 3843,
+                "rx_bytes": 5793794,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "lan4": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5813038,
+                "rx_packets": 3847,
+                "tx_packets": 3836,
+                "rx_bytes": 294789,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpifb3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5797610,
+                "rx_packets": 3836,
+                "tx_packets": 3836,
+                "rx_bytes": 5796096,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              }
+            },
+            "cpuTotal": 314,
+            "cpuBusy": 68,
+            "cpuSoftirq": 33
+          }
+        },
+        {
+          "mbps": 52,
+          "startedAt": 1791199328.4659998,
+          "endedAt": 1791199329.3059998,
+          "seconds": 0.8399999141693115,
+          "clientSent": 42,
+          "serverReceived": 42,
+          "serverEgress": 42,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 42,
+          "routerCtDownDelta": 0,
+          "tcpBytes": 6602752,
+          "tcpElapsed": 1.0,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 3811,
+            "cakeBandwidthMin": 8750000,
+            "cakeBandwidthMax": 8835750,
+            "redirectDrops": 0,
+            "redirectPackets": 3800,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "tins": [
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 3809,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 1373,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 144,
+                "ecnMarks": 0
+              }
+            ],
+            "nic": {
+              "wan": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 299575,
+                "rx_packets": 3822,
+                "tx_packets": 3837,
+                "rx_bytes": 5752198,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpwan3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 277786,
+                "rx_packets": 3665,
+                "tx_packets": 3813,
+                "rx_bytes": 5726173,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "lan4": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5748801,
+                "rx_packets": 3822,
+                "tx_packets": 3795,
+                "rx_bytes": 297993,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpifb3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5728915,
+                "rx_packets": 3797,
+                "tx_packets": 3797,
+                "rx_bytes": 5728915,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              }
+            },
+            "cpuTotal": 322,
+            "cpuBusy": 97,
+            "cpuSoftirq": 38
+          }
+        },
+        {
+          "mbps": 52,
+          "startedAt": 1791199329.3059998,
+          "endedAt": 1791199330.1459997,
+          "seconds": 0.8399999141693115,
+          "clientSent": 42,
+          "serverReceived": 42,
+          "serverEgress": 42,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 42,
+          "routerCtDownDelta": 0,
+          "tcpBytes": 4931584,
+          "tcpElapsed": 0.75,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 3852,
+            "cakeBandwidthMin": 8750000,
+            "cakeBandwidthMax": 8750000,
+            "redirectDrops": 0,
+            "redirectPackets": 3845,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "tins": [
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 3859,
+                "drops": 0,
+                "backlogBytesEnd": 9498,
+                "peakDelayUsEnd": 1301,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 144,
+                "ecnMarks": 0
+              }
+            ],
+            "nic": {
+              "wan": {
+                "rx_errors": 0,
+                "rx_dropped": 1,
+                "tx_bytes": 317877,
+                "rx_packets": 3915,
+                "tx_packets": 3892,
+                "rx_bytes": 5745845,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpwan3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 279042,
+                "rx_packets": 3738,
+                "tx_packets": 3855,
+                "rx_bytes": 5711721,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "lan4": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5745599,
+                "rx_packets": 3876,
+                "tx_packets": 3870,
+                "rx_bytes": 315973,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpifb3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5726481,
+                "rx_packets": 3851,
+                "tx_packets": 3851,
+                "rx_bytes": 5726481,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              }
+            },
+            "cpuTotal": 312,
+            "cpuBusy": 90,
+            "cpuSoftirq": 40
+          }
+        },
+        {
+          "mbps": 52,
+          "startedAt": 1791199330.1459997,
+          "endedAt": 1791199330.9809997,
+          "seconds": 0.8350000381469727,
+          "clientSent": 42,
+          "serverReceived": 42,
+          "serverEgress": 42,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 42,
+          "routerCtDownDelta": 0,
+          "tcpBytes": 6586368,
+          "tcpElapsed": 1.0,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 4014,
+            "cakeBandwidthMin": 8750000,
+            "cakeBandwidthMax": 8750000,
+            "redirectDrops": 0,
+            "redirectPackets": 3999,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "tins": [
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 4012,
+                "drops": 0,
+                "backlogBytesEnd": 7570,
+                "peakDelayUsEnd": 1466,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 144,
+                "ecnMarks": 0
+              }
+            ],
+            "nic": {
+              "wan": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 314111,
+                "rx_packets": 4037,
+                "tx_packets": 4023,
+                "rx_bytes": 5793498,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpwan3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 292136,
+                "rx_packets": 3896,
+                "tx_packets": 3995,
+                "rx_bytes": 5768352,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "lan4": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5788808,
+                "rx_packets": 4004,
+                "tx_packets": 4007,
+                "rx_bytes": 311992,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpifb3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5772314,
+                "rx_packets": 4000,
+                "tx_packets": 3999,
+                "rx_bytes": 5773828,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              }
+            },
+            "cpuTotal": 326,
+            "cpuBusy": 83,
+            "cpuSoftirq": 44
+          }
+        },
+        {
+          "mbps": 52,
+          "startedAt": 1791199330.9809997,
+          "endedAt": 1791199331.8209996,
+          "seconds": 0.8399999141693115,
+          "clientSent": 42,
+          "serverReceived": 42,
+          "serverEgress": 42,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 42,
+          "routerCtDownDelta": 0,
+          "tcpBytes": 4947968,
+          "tcpElapsed": 0.75,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 3948,
+            "cakeBandwidthMin": 8750000,
+            "cakeBandwidthMax": 8750000,
+            "redirectDrops": 0,
+            "redirectPackets": 3964,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "tins": [
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 3956,
+                "drops": 0,
+                "backlogBytesEnd": 19682,
+                "peakDelayUsEnd": 1731,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 144,
+                "ecnMarks": 0
+              }
+            ],
+            "nic": {
+              "wan": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 320153,
+                "rx_packets": 4031,
+                "tx_packets": 4032,
+                "rx_bytes": 5770214,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpwan3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 291525,
+                "rx_packets": 3831,
+                "tx_packets": 3973,
+                "rx_bytes": 5724888,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "lan4": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5753184,
+                "rx_packets": 3995,
+                "tx_packets": 3994,
+                "rx_bytes": 314013,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpifb3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5732010,
+                "rx_packets": 3963,
+                "tx_packets": 3963,
+                "rx_bytes": 5732010,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              }
+            },
+            "cpuTotal": 312,
+            "cpuBusy": 87,
+            "cpuSoftirq": 39
+          }
+        },
+        {
+          "mbps": 52,
+          "startedAt": 1791199331.8209996,
+          "endedAt": 1791199332.7459998,
+          "seconds": 0.9250001907348633,
+          "clientSent": 46,
+          "serverReceived": 46,
+          "serverEgress": 46,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 46,
+          "routerCtDownDelta": 0,
+          "tcpBytes": 6586368,
+          "tcpElapsed": 1.0,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 4389,
+            "cakeBandwidthMin": 8750000,
+            "cakeBandwidthMax": 8750000,
+            "redirectDrops": 0,
+            "redirectPackets": 4380,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "tins": [
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 4377,
+                "drops": 0,
+                "backlogBytesEnd": 1514,
+                "peakDelayUsEnd": 1600,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 144,
+                "ecnMarks": 0
+              }
+            ],
+            "nic": {
+              "wan": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 359801,
+                "rx_packets": 4485,
+                "tx_packets": 4442,
+                "rx_bytes": 6382027,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpwan3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 317684,
+                "rx_packets": 4235,
+                "tx_packets": 4360,
+                "rx_bytes": 6327522,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "lan4": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 6378706,
+                "rx_packets": 4372,
+                "tx_packets": 4412,
+                "rx_bytes": 341470,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpifb3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 6335406,
+                "rx_packets": 4381,
+                "tx_packets": 4381,
+                "rx_bytes": 6335406,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              }
+            },
+            "cpuTotal": 356,
+            "cpuBusy": 111,
+            "cpuSoftirq": 44
+          }
+        },
+        {
+          "mbps": 52,
+          "startedAt": 1791199332.7459998,
+          "endedAt": 1791199333.5859997,
+          "seconds": 0.8399999141693115,
+          "clientSent": 42,
+          "serverReceived": 40,
+          "serverEgress": 40,
+          "serverEgressMatchedClient": 0,
+          "clientArrivals": 0,
+          "routerCtUpDelta": 42,
+          "routerCtDownDelta": 0,
+          "tcpBytes": 4915200,
+          "tcpElapsed": 0.75,
+          "counters": {
+            "cakeDrops": 0,
+            "cakeSent": 4087,
+            "cakeBandwidthMin": 8750000,
+            "cakeBandwidthMax": 8750000,
+            "redirectDrops": 0,
+            "redirectPackets": 4119,
+            "softnetDropped": 0,
+            "timeSqueeze": 0,
+            "tins": [
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 4090,
+                "drops": 0,
+                "backlogBytesEnd": 6056,
+                "peakDelayUsEnd": 1579,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 0,
+                "ecnMarks": 0
+              },
+              {
+                "sentPackets": 0,
+                "drops": 0,
+                "backlogBytesEnd": 0,
+                "peakDelayUsEnd": 144,
+                "ecnMarks": 0
+              }
+            ],
+            "nic": {
+              "wan": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 330522,
+                "rx_packets": 4149,
+                "tx_packets": 4144,
+                "rx_bytes": 5848603,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpwan3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 303057,
+                "rx_packets": 3991,
+                "tx_packets": 4113,
+                "rx_bytes": 5820426,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "lan4": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5830978,
+                "rx_packets": 4099,
+                "tx_packets": 4102,
+                "rx_bytes": 324502,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              },
+              "rpifb3": {
+                "rx_errors": 0,
+                "rx_dropped": 0,
+                "tx_bytes": 5822736,
+                "rx_packets": 4114,
+                "tx_packets": 4115,
+                "rx_bytes": 5821222,
+                "tx_errors": 0,
+                "tx_dropped": 0
+              }
+            },
+            "cpuTotal": 318,
+            "cpuBusy": 102,
+            "cpuSoftirq": 35
+          }
+        }
+      ],
+      "bounds": "CT receive counts have bounded clock error; server/client cohorts matched by sequence. Queue/NIC counters are interface-wide. Their zero drops can exclude those counters, nonzero drops do not identify a particular flow. Echo is not CS2 loss.",
+      "notCs2LossMetric": true
+    },
+    "rawObservationSha256": "95235735f8ec4f4fd5948cc66bf2d73693380ee626b66b2c7ff619344d87f62c",
+    "serverClientSequenceMatched": true,
+    "captureAndCompleteCtInputsKeptPrivate": true
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T10:49:49.871280+00:00",
+  "generatedAt": "2026-10-05T11:57:00.114750+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -7557,8 +7557,225 @@
       "sha256": "4afeab5a0883046d65f096b5726cb2f229cba7854d4512d9fc40b6a74337c95f",
       "bytes": 29757,
       "role": "bounded-tag-observation-and-controlled-60Mbps-QoS-evidence"
+    },
+    {
+      "path": "code/work/nss93/prepare-diagnostic.py",
+      "workspaceSource": "work/nss93/prepare-diagnostic.py",
+      "sha256": "7c00ce83ac5c08e4d8f185725b63978a9fd1d681317f010b6af9f774b29c59b8",
+      "bytes": 2778,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss93/observe-return.mjs",
+      "workspaceSource": "work/nss93/observe-return.mjs",
+      "sha256": "005ae1e60425a0bb10ce3bc8c0b1c238bc5e891b5020422c70803ae44fba3d65",
+      "bytes": 4948,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss93/analyze-return.py",
+      "workspaceSource": "work/nss93/analyze-return.py",
+      "sha256": "42582276bb7b7dd0ff05415f91c6ccf0ccf49f27bc55699032a8340d4ef69fd5",
+      "bytes": 3742,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss94/prepare-diagnostic.py",
+      "workspaceSource": "work/nss94/prepare-diagnostic.py",
+      "sha256": "3d2d0bfaf2fbb1e644313d9e8b98c8849452ea44556b9712cd8b9f4573075bee",
+      "bytes": 931,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss94/read-capability.mjs",
+      "workspaceSource": "work/nss94/read-capability.mjs",
+      "sha256": "786f2694949222f30444b54b297540a469303d2b3439905ee0b41020121d9339",
+      "bytes": 947,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss94/observe-queues.mjs",
+      "workspaceSource": "work/nss94/observe-queues.mjs",
+      "sha256": "dbe089b4cdabe35b65d1b0e5afd2b34227e2a3dc89c64ae1c8627121322c198f",
+      "bytes": 6597,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss94/analyze-queues.py",
+      "workspaceSource": "work/nss94/analyze-queues.py",
+      "sha256": "9e73886b38c800558f126a5cee2d99ba26b240666f659580ad91377085dbe59c",
+      "bytes": 6834,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss95/run-existing-entry.mjs",
+      "workspaceSource": "work/nss95/run-existing-entry.mjs",
+      "sha256": "64540ec23274f1101463989dff7332ba394efc562baa40ccb868ba1f12e44d4b",
+      "bytes": 2593,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/prepare-load.py",
+      "workspaceSource": "work/nss96/prepare-load.py",
+      "sha256": "1b46283585ec13c5332bc1f6bf1f178f967080cbc98e4e728125184bb732bf8f",
+      "bytes": 3358,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/run.mjs",
+      "workspaceSource": "work/nss96/run.mjs",
+      "sha256": "0c9c876e1e8419e4f771f01b0dee8dc74177d44e78d4279e33bf07bbe38b63f5",
+      "bytes": 3124,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/controlled-session.mjs",
+      "workspaceSource": "work/nss96/controlled-session.mjs",
+      "sha256": "c678f73b6344afa8461c5d46d97f25224d195c7dea5babce0f25b485a4e5a706",
+      "bytes": 12797,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/read-controlled.mjs",
+      "workspaceSource": "work/nss96/read-controlled.mjs",
+      "sha256": "8bde609bdacfd138f57969daeaa82652f4ca5fe851c586cb1e312ea87ab49106",
+      "bytes": 5545,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/match-controlled.mjs",
+      "workspaceSource": "work/nss96/match-controlled.mjs",
+      "sha256": "3c4a4c3c9776e4c9cc440687ba55cf2575b1a5021653dc45c62f50529f80846f",
+      "bytes": 2160,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/session-binding.mjs",
+      "workspaceSource": "work/nss96/session-binding.mjs",
+      "sha256": "0a664dd9a6dbefc0f184ba4ce10e59f0c61cfd8e96567b5fdbb8a996a0280006",
+      "bytes": 577,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/payload.mjs",
+      "workspaceSource": "work/nss96/payload.mjs",
+      "sha256": "f36f30ecf965c311145e270fe96729e2758caa2f85b3076b2e8428477ecd0980",
+      "bytes": 1844,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/module-stage.mjs",
+      "workspaceSource": "work/nss96/module-stage.mjs",
+      "sha256": "f1a4e27e27a1960910cfff6f7ff3e04d07b23e8c0daf73a1443e6bb16b6d56c1",
+      "bytes": 17285,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/analyze-controlled.py",
+      "workspaceSource": "work/nss96/analyze-controlled.py",
+      "sha256": "529b8383bc6605a16ed1d938c364cdc24acb1bf7935069849cb56ff10f73780e",
+      "bytes": 4574,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss96/calibrate-clock.mjs",
+      "workspaceSource": "work/nss96/calibrate-clock.mjs",
+      "sha256": "cf57a362c1452eaa3a25c1127e7f6033155efbb6f7a89de238bd7ab65c53428f",
+      "bytes": 993,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/prepare-saturation.py",
+      "workspaceSource": "work/nss97/prepare-saturation.py",
+      "sha256": "40bdff352d155c473f876f56f5b0dff8a2cd3e80d0d7639dd36538d621990756",
+      "bytes": 3804,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/run.mjs",
+      "workspaceSource": "work/nss97/run.mjs",
+      "sha256": "6d2084b6ac927cb3d62a22fb4a63f854a1a1bf88cce99d6b9c0a9ca7c7665973",
+      "bytes": 3134,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/controlled-session.mjs",
+      "workspaceSource": "work/nss97/controlled-session.mjs",
+      "sha256": "030da521781780521bd2758b4462a4e4ab26324cb91477c81f6924dfa75e093a",
+      "bytes": 12797,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/read-controlled.mjs",
+      "workspaceSource": "work/nss97/read-controlled.mjs",
+      "sha256": "727e5e1d3baf92f9059e07f47ceae9a4762ce6defaf56aa26bff6da0c9673758",
+      "bytes": 5545,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/match-controlled.mjs",
+      "workspaceSource": "work/nss97/match-controlled.mjs",
+      "sha256": "02aaf139c49e20a3e773c15f5d47f9c2ba1f5f2dbad18ba9da375a7ef32b5ff5",
+      "bytes": 2160,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/session-binding.mjs",
+      "workspaceSource": "work/nss97/session-binding.mjs",
+      "sha256": "b05ea55a4e41e97f2d1fa23350d6f8b6bbf1b52c97b9cf59226abba0d8915c9f",
+      "bytes": 867,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/payload.mjs",
+      "workspaceSource": "work/nss97/payload.mjs",
+      "sha256": "d178f35872c6344f19e1a3822d359916df9f27c3501b2365724cd6193eb7ae35",
+      "bytes": 1844,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/module-stage.mjs",
+      "workspaceSource": "work/nss97/module-stage.mjs",
+      "sha256": "7ea4b38047e4e7677a6da39b1e484871845c4f28645e93846ce677a8e9785ebd",
+      "bytes": 17285,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/qos-physical.lua",
+      "workspaceSource": "work/nss97/qos-physical.lua",
+      "sha256": "d487036dcd06b02960767c6d0c5421e704e7a9c4047deb59a9ef6cd1967498ec",
+      "bytes": 8472,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/qualify-qos-native.mjs",
+      "workspaceSource": "work/nss97/qualify-qos-native.mjs",
+      "sha256": "c97cef25bffe521332561f734e80ad4c2c54bdbebbb5b5c2b3f3d3623a600178",
+      "bytes": 2597,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/analyze-controlled.py",
+      "workspaceSource": "work/nss97/analyze-controlled.py",
+      "sha256": "ba965bd5f5d670efb2426f24e3cd56c756d356ce856ca418d8c9ad1733f17863",
+      "bytes": 4574,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss97/calibrate-clock.mjs",
+      "workspaceSource": "work/nss97/calibrate-clock.mjs",
+      "sha256": "55588e4c6c653000b19b0a215a5736ef77b18301e1278d957a8dc8334ba630bd",
+      "bytes": 993,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss98/save-evidence.py",
+      "workspaceSource": "work/nss98/save-evidence.py",
+      "sha256": "1b3b1303dd14696f2e8cf570eeefa83d824d4fd8241ea223216a92dba453a3cb",
+      "bytes": 28412,
+      "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
     }
   ],
-  "lastAppendExport": "NSS92",
+  "lastAppendExport": "NSS98",
   "privateDataExcluded": true
 }

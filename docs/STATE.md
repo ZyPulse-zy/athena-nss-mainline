@@ -1,5 +1,23 @@
 # 当前状态
 
+更新：2026-10-05 19:50，北京时间。最新NSS98；常驻仍NSS68，所有实验NSS已撤销。
+
+**48Mbps真实单WAN完成完整功能A/B/A2。NSS与返回软件两段吞吐47.981/48.004Mbps，softirq5.245/18.860%，相对下降72.19%。另一次40Mbps受控预算拥塞短测bulk新增丢弃148、RT零丢弃，NSS段UDP223/223收到回复。**
+
+见 [本轮汇总](../evidence/nss98-mainline.json)、[三轮现场](../evidence/nss98-trials.json)、[48Mbps原始指标](../evidence/nss98-matched48.json)、[40Mbps拥塞指标](../evidence/nss98-congested40.json)、[回程定位](../evidence/nss98-return-localization.json)、[终态审核](../evidence/nss98-final-audit.json)。
+
+- NSS96：60Mbps组、发送48Mbps、WAN2，一TCP一UDP。ECM0→2→0、两次续租、学习前tag、真实bulk/RT leaf、完整ct mark/NAT/WAN affinity和精确撤销通过。三段5秒/11帧，实际TCP47.031/47.981/48.004；第一段约2%低且UDP157/234，不能算三段严格相同吞吐或游戏改善。CPU收益仅采用吞吐差0.05%的B/A2；两段UDP241/241、243/243，leaf drop0/0。原32Mbps三段可比66.41%结论保持。
+- NSS97：同一发送48Mbps，只把受控QoS组60改40，bulk保障39、RT保障1、共同ceil40、fallback950，单WAN3。7目标RAM native-option记录布局案例通过；实际4queue/5class/9命令及两次续租、加速/恢复通过。实际TCP32.868/35.091/33.274Mbps，不接受CPU对比或长期40Mbps精确限速结论。异步B附近bulk drop+148、drop_overlimit增量0、RT drop0；bulk仍有backlog、RT backlog0，符合AQM/隔离的解释，但未把异步计数当精确B瞬时统计。UDP205/205、223/223、217/217，B RTT p95约189.883ms；受控echo不是CS2网络指标。ECN、多流公平、长窗限速未验收。
+- NSS93/94全程只读、ECM关闭，分别104/64个逐流CT帧；保持同一TCP/UDP/mark/NAT/WAN，52↔32Mbps切换。NSS94实际32.002/51.998Mbps；32回包1144/1144匹配，52服务器egress1092、PC匹配701。8个0回包窗CAKE/redirect/softnet丢弃都0、Voice没有新增包；全部选择窗CAKE也drop0。WAN物理rx_drop仅各组1，不能解释数百缺包。支持缺口在可观测软件IFB/CAKE交付之前，不支持PC程序或这些队列为主要丢包位置；没有物理接口精确nonce tap，上游与未计数入口仍未分开。server/PC按nonce序号匹配，不能直接用未校准服务器UTC。
+- NSS95仍发送52、60Mbps组，测试前UDP120发/0收；原1.2秒内拒绝initial down0，无A、无ECM。独立45秒恢复与完整审核通过，失败原义保持。第一次端点关闭检查早于180秒自然expiry，准确拒绝2条规则未到期；后来实际自然撤销、FW全局基线和端口/unit/客户端关闭均通过。
+- 三个stage每个checkpoint下载/SHA/gzip和写前独立PPID1/45秒守护、最终恢复通过；五个端点FW180秒守护写前核验、规则0/全局基线恢复、临时unit/端口/client关闭、210秒精确客户端守护通过。常驻4859/17139/config581b5d46…c791d7未改；最终source1.64秒通过原完整审核，ECM关闭全零，无事务/stage/state/实验模块。没有Steam/CS2/UI/新游戏下载/第二WAN/五路认证PBR改动。
+- 当前NSS树仍只有LAN4下行，实际TCP/UDP upTag均0；未建立加速上行QoS，不能依赖软件WAN CAKE约束已经绕过它的flow。没有完整CAKE替代验收。多人公平不是需求；DiffServ4未复刻，现为明确bulk/RT两leaf、FQ-CoDel参数5ms/100ms/1024flows，autorate未接入NSS。
+- 下一步只收尾单WAN关键功能：先用集中长一点的受控窗口核实拥塞时实际限速/RT延迟与自动分类，处理首段过渡影响；再集中一次真人CS2＋正常下载HUD/体感验收。52Mbps US UDP端点缺口作为已定位到软件队列之前的独立待查，不再反复用无回包窗口卡住所有工程。NSS96/556为48Mbps收益入口，NSS97/580为40Mbps拥塞入口；不重装分类器、重放已通过准备、扩第二WAN/共享预算/Wi-Fi/autorate。原完整私有输入和捕获仍本地，旧92/82 runtime原字节保持。
+
+## NSS92历史状态
+
+# 当前状态
+
 更新：2026-10-05 18:42，北京时间。最新NSS92；常驻仍NSS68，所有NSS实验已撤销。
 
 **60Mbps受控QoS预算下，真实32Mbps的一TCP＋低速UDP完成完整单WAN A→B→A2。客户端31.996/32.023/32.003Mbps，softirq15.19→4.97→14.43%，相对两段软件均值下降66.41%；UDP239/239、238/238、239/239，bulk/RT零丢弃。ECM0→2→0、NAT/PBR/WAN affinity和精确恢复通过。**

@@ -1,0 +1,78 @@
+{
+  "round": "NSS98",
+  "roundsCovered": [
+    "NSS93",
+    "NSS94",
+    "NSS95",
+    "NSS96",
+    "NSS97"
+  ],
+  "observedAt": "2026-10-05T11:50:53.711Z",
+  "readOnlyDiagnostics": 2,
+  "stageCases": 3,
+  "successfulCompleteABA": 2,
+  "ecmOpenedCases": 2,
+  "permanentClassifierChanged": false,
+  "productionFirmwareKernelChanged": false,
+  "oneWanAtATime": true,
+  "matched48": {
+    "completeFunctionalABA": true,
+    "allThreeThroughputWithinOnePercent": false,
+    "initialSoftwareUdpUnreturned": 77,
+    "acceptedCpuComparison": "B vs A2 only",
+    "bA2ThroughputRatio": 0.9995227807627349,
+    "relativeSoftirqReductionAgainstA2Percent": 72.19066115943026,
+    "bA2UdpAllReturned": true,
+    "bulkAndRtLeafDropsZero": true,
+    "gameQualityConclusion": false
+  },
+  "congested40": {
+    "offeredTcpMbps": 48,
+    "qosGroupMbps": 40,
+    "bulkGuaranteeMbps": 39,
+    "rtGuaranteeMbps": 1,
+    "bothCeilMbps": 40,
+    "fallbackMbps": 950,
+    "nativeOptionFixtureCases": 7,
+    "bulkDropDelta": 148,
+    "bulkDropOverlimitDelta": 0,
+    "rtDropDelta": 0,
+    "nssUdpSent": 223,
+    "nssUdpReceived": 223,
+    "nssUdpP95Ms": 189.88265000000538,
+    "cpuComparisonAccepted": false,
+    "longTermExactRateAccuracyAccepted": false,
+    "ecnAccepted": false,
+    "multipleFlowFairnessAccepted": false,
+    "queueCountersAsynchronous": true
+  },
+  "returnDeficit52": {
+    "reproducedOnStableSameFlows": true,
+    "clientProcessNotSupportedAsMainLocation": true,
+    "cakeOrIfbCounterDropsNotSupportedAsMainLocation": true,
+    "strongestInference": "Before observed software IFB/CAKE delivery, but no exact physical-interface per-flow tap",
+    "unreportedRouterIngressOrUpstreamStillNotSeparated": true,
+    "before95StageUdpSent": 120,
+    "before95StageUdpReceived": 0,
+    "ecmOpeningRefused": true
+  },
+  "qosScope": {
+    "onlyLanEgressDownlinkLeavesInstalled": true,
+    "acceleratedUpTagTcp": 0,
+    "acceleratedUpTagUdp": 0,
+    "acceleratedUplinkQosGuaranteed": false,
+    "fullCakeReplacementAccepted": false
+  },
+  "finalAuditPassed": true,
+  "endpointClosureCount": 5,
+  "early95ClosureCheckRefusedBeforeExpiry": true,
+  "later95IndependentExpiryClosurePassed": true,
+  "humanCs2Acceptance": false,
+  "highLoad300MbpsAcceptance": false,
+  "secondWanEnabled": false,
+  "upstreamSubmitted": false,
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

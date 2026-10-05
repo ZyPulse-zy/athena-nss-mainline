@@ -1,5 +1,16 @@
 # 实验记录
 
+## NSS93–98 · 2026-10-05 19:50 · 高一档CPU收益与拥塞队列
+
+假设：52缺包应能缩小位置，48Mbps有相同吞吐的NSS CPU收益，低于发送负载的40Mbps NSS组可隔离RT。
+
+执行与观测：两个只读固定flow 52↔32诊断；95沿用89/533入口52在initial UDP-down0拒绝；96仅发送改48/60组完整单WAN2；97同发送只将组改40/39/1、7目标native-option布局案例及单WAN3实装完整A/B/A2。详细实测、原失败、checkpoint/守护、来源和配置恢复见[三轮现场](../evidence/nss98-trials.json)、[回程诊断](../evidence/nss98-return-localization.json)。
+
+结论：48的B/A2吞吐47.981/48.004、softirq5.245/18.860，支持72.19%相对下降；A首段77UDP缺包、吞吐47.031，不并入严格相同比较。40组bulk148新增drop、drop_overlimit不增、RT0，B UDP223/223支持两个leaf隔离；短窗异步统计不证明精确恒定40Mbps/ECN/多流公平，其CPU比较不接受。52缺包队列drop全0，主位置更像可观测IFB/CAKE之前，但物理tap缺失保留不确定性。没有真人CS2结论，只有LAN4下行，上行tag0。
+
+恢复：3个stage都checkpoint+独立45秒守护写前核验/完整恢复；5个端点180秒FW自然撤销和基线、unit/端口/client/210秒guard通过。95早期检查2规则尚未到期拒绝与最终自然expiry通过分列。原完整终态source1.64，4859/17139连续、常驻68不变，ECM关闭全零，无残留；源码与原输入冻结，旧runtime字节保持。
+
+
 ## NSS32 — 2026-10-03 14:17 左右，受控低负载
 
 - 假设：自动分类结果可驱动 bulk/RT leaf，三阶段保持同一队列预算与共同观测循环。

@@ -1,0 +1,62 @@
+[
+  {
+    "loadLocalPath": "work/nss93/load-20261005110508-096ffb23a6cc4b0d",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "loadLocalPath": "work/nss94/load-20261005111946-d326b62e40adb842",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "loadLocalPath": "work/nss96/load-20261005113519-af9bcfc7b56cae95",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "loadLocalPath": "work/nss97/load-20261005114214-250d37f24e56c4ed",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "noExistingVpsServiceReplaced": true
+  },
+  {
+    "loadLocalPath": "work/nss89/load-20261005112654-e567a31e0bdd2f1b",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "noExistingVpsServiceReplaced": true
+  }
+]
