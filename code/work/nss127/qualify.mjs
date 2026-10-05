@@ -1,0 +1,20 @@
+import fs from'node:fs';import assert from'node:assert/strict';import crypto from'node:crypto';import{mapClassifiedPair}from'./class-leaf-map.mjs';import{packetTemplate}from'./uplink-tag-plan.mjs';import{packetTemplate as previous}from'../nss125/uplink-tag-plan.mjs';
+const root='work/nss127',caseDir='work/nss125/controlled-matched-aba-20261005204220-e475787b',frame=JSON.parse(fs.readFileSync(caseDir+'/post-checkpoint-controlled-receipt-private.json')),selected=JSON.parse(fs.readFileSync(caseDir+'/selected-private.json')),checks=[];const clone=x=>structuredClone(x),h=b=>crypto.createHash('sha256').update(b).digest('hex');
+function test(name,change,ok=true,after){const f=clone(frame),s=clone(selected);change?.(f,s);let got,accepted=true;try{got=mapClassifiedPair(f,s);}catch(e){accepted=false;}assert.equal(accepted,ok,name);if(after&&accepted)after(got);checks.push({name,passed:true,historicalReplayOnly:!change,syntheticMutationOnly:!!change,nssAdmissionAllowed:false});}
+test('actual-complete-classification-frame',null,true,d=>assert.deepEqual(packetTemplate(d,'a'.repeat(32),59999),previous({decisions:d.decisions},'a'.repeat(32),59999)));
+const flow=(f,slot)=>f.flows.find(x=>x.identity.protocolNumber===(slot==='tcp'?6:17)&&Number(x.identity.connectionId)===selected[slot].id);
+test('TCP-RT-model-maps-RT-not-protocol',f=>{const x=flow(f,'tcp');x.decision.class='RT';x.decision.budgetAdmitted=true;x.decision.reason='interactive';x.leaf.class='RT';x.leaf.downTag=0x8f060000;},true,d=>assert.equal(d.decisions[0].upTag,0x8e060000));
+test('UDP-BULK-model-maps-BULK-not-protocol',f=>{const x=flow(f,'udp');x.decision.class='BULK';x.decision.reason='bulk';x.leaf.class='BULK';x.leaf.downTag=0x8f050000;},true,d=>assert.equal(d.decisions[1].upTag,0x8e050000));
+test('unknown-class-refused',f=>{flow(f,'tcp').decision.class='BE';},false);
+test('unadmitted-RT-refused',f=>{flow(f,'udp').decision.budgetAdmitted=false;},false);
+test('full-mark-drift-refused',f=>{flow(f,'tcp').identity.mark+=1;},false);
+test('NAT-tuple-drift-refused',f=>{flow(f,'tcp').identity.reply.dport+=1;},false);
+test('duplicate-key-refused',f=>{f.flows.push(clone(f.flows[0]));},false);
+test('expired-source-refused',f=>{f.sourceAge=6.01;},false);
+test('source-sequence-drift-refused',f=>{f.sourceSequence+=1;},false);
+test('resident-upTag-change-refused',f=>{flow(f,'udp').leaf.upTag=0x8e060000;},false);
+test('wrong-downTag-refused',f=>{flow(f,'udp').leaf.downTag=0x8f050000;},false);
+test('over-six-second-flow-lease-refused',f=>{flow(f,'tcp').validUntilUptime+=10;},false);
+test('missing-instance-pin-metadata-refused',f=>{flow(f,'tcp').identity.instanceMetadataComplete=false;},false);
+const sourceManifest={};for(const name of ['class-leaf-map.mjs','uplink-tag-plan.mjs','qualify.mjs'])sourceManifest[root+'/'+name]=h(fs.readFileSync(root+'/'+name));
+fs.writeFileSync(root+'/mapping-qualified.json',JSON.stringify({passed:true,checks,sourceManifest,actualHistoricalFrameSha256:h(fs.readFileSync(caseDir+'/post-checkpoint-controlled-receipt-private.json')),mappingByActualClass:true,protocolCrossModelsNotHardwareProof:true,productionPairStillRestrictedToTcpBulkUdpRt:true,routerWrites:false,nssAdmissionAllowed:false,gateAndLeaseNotChanged:true},null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({passed:true,checks:checks.length,historicalActualFrame:1,syntheticMutations:checks.length-1,productionExecution:false}));

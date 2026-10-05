@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T20:47:58.982555+00:00",
+  "generatedAt": "2026-10-05T21:05:22.379461+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -10735,8 +10735,267 @@
       "sha256": "9d0f8bede61f9a13b1e642f5f830df21b5475565d168e99be05bd3d790281952",
       "bytes": 15226,
       "role": "same-observer-all-WAN-counter-evidence"
+    },
+    {
+      "path": "code/work/nss127/class-leaf-map.mjs",
+      "workspaceSource": "work/nss127/class-leaf-map.mjs",
+      "sha256": "2e93e423757f9603ec271b567c681ab5a9eccf3bfc000c710f56b64da45f81d6",
+      "bytes": 3621,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss127/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss127/uplink-tag-plan.mjs",
+      "sha256": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459",
+      "bytes": 1257,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss127/qualify.mjs",
+      "workspaceSource": "work/nss127/qualify.mjs",
+      "sha256": "8864db316d195f6c68f3dfb93a77a831ddc1505fcb213f28d79e055a1f1a880c",
+      "bytes": 3411,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/prepare.py",
+      "workspaceSource": "work/nss128/prepare.py",
+      "sha256": "d0bd4b8291d00f685c61b00dca34e5fd63161aed04eec2c3985d5dfe364556e8",
+      "bytes": 2552,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/bounded-pacer.mjs",
+      "workspaceSource": "work/nss128/bounded-pacer.mjs",
+      "sha256": "f126a177fa1afd9cd8af98ac858d4e0eacb44388efbb5357333949c52a48c09b",
+      "bytes": 589,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/upload-ack.mjs",
+      "workspaceSource": "work/nss128/upload-ack.mjs",
+      "sha256": "a291bbcfc707964f399b11c7914f403530c7e06a8f33cd740bfd047945034221",
+      "bytes": 386,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/upload-server.py",
+      "workspaceSource": "work/nss128/upload-server.py",
+      "sha256": "de2a920b810e2f0eb74f255eab39be6de5c7d246f4506fbd276593de2f5d300a",
+      "bytes": 632,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/ssh-client.mjs",
+      "workspaceSource": "work/nss128/ssh-client.mjs",
+      "sha256": "4ca4ed3faa8142c0ce33e78e16220ed4455823892a56f11f0b34c77de1a4f00a",
+      "bytes": 6574,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/session-binding.mjs",
+      "workspaceSource": "work/nss128/session-binding.mjs",
+      "sha256": "7141d5cf46f23131318cefebf92437e679ae745c3a248948f52e538cb103e858",
+      "bytes": 1107,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/qualify.mjs",
+      "workspaceSource": "work/nss128/qualify.mjs",
+      "sha256": "d14394c5578aaef6f1316fb613a9b515a70ef9ee11f1e413080b2b006d88a790",
+      "bytes": 3828,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/controlled-session.mjs",
+      "workspaceSource": "work/nss128/controlled-session.mjs",
+      "sha256": "8b32cba540526ef5d039decf648ff3b66426e2e3d4fd5b6336b7a465900f3db4",
+      "bytes": 13988,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss128/current-audit-diagnostic.mjs",
+      "sha256": "ea520109a22a2ada6eb123e3ff0a31372b053a3159a7c890b2886a7a111f7ec5",
+      "bytes": 5836,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/match-controlled.mjs",
+      "workspaceSource": "work/nss128/match-controlled.mjs",
+      "sha256": "182cde02e1e795e76b06aa78940cfeb90b70da33f7caf0dec5de11e19a4b9f42",
+      "bytes": 2163,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/read-controlled.mjs",
+      "workspaceSource": "work/nss128/read-controlled.mjs",
+      "sha256": "e1a0bcb3f6a389ababff1391da3dfbd792183196adf0d4cfa72d4b97973ca375",
+      "bytes": 5548,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/run.mjs",
+      "workspaceSource": "work/nss128/run.mjs",
+      "sha256": "0b150a174b0a9df671ce137a1834e8c40847364fdc388c6a98c8dcc027b03779",
+      "bytes": 3224,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/module-stage.mjs",
+      "workspaceSource": "work/nss128/module-stage.mjs",
+      "sha256": "f9b68196fdf8f2aa2cfd4ebee6b8f7ff160e8d6b14001bf282e7dabb37eba5e5",
+      "bytes": 17768,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/payload.mjs",
+      "workspaceSource": "work/nss128/payload.mjs",
+      "sha256": "6f8d454bf04c9113aa1e82c38a861acc7b22b29251a5f40b646311ffa1d931ac",
+      "bytes": 1910,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/pack-lua.mjs",
+      "workspaceSource": "work/nss128/pack-lua.mjs",
+      "sha256": "fbf9e4e11f2f6c31b38f435e9a1cc22bef5afb28ace84d52f8bdad58fb504a0b",
+      "bytes": 601,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/pack-guardian.mjs",
+      "workspaceSource": "work/nss128/pack-guardian.mjs",
+      "sha256": "072cc27b2768ce9909a7c09b9770d2c8ee5abc3ba9997ecc251edf85f75aa35d",
+      "bytes": 660,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/compact-default-queues.mjs",
+      "workspaceSource": "work/nss128/compact-default-queues.mjs",
+      "sha256": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+      "bytes": 849,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss128/uplink-tag-plan.mjs",
+      "sha256": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459",
+      "bytes": 1257,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss128/parse-ecm-any-wan.mjs",
+      "sha256": "3090744d56d1e637f3874390032d37e16b201766c44d4bc227956854852350a7",
+      "bytes": 3583,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/fast-path.lua",
+      "workspaceSource": "work/nss128/fast-path.lua",
+      "sha256": "36bca2994ad152c7bdf63fdf7c6e781fd0e95d0772f1b8ce72552b7ead6445b1",
+      "bytes": 15849,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/module-stage-guardian.lua",
+      "workspaceSource": "work/nss128/module-stage-guardian.lua",
+      "sha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+      "bytes": 12634,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/qos-physical.lua",
+      "workspaceSource": "work/nss128/qos-physical.lua",
+      "sha256": "05b9862c12bbf8fa9b59f392e9c34f692647fdafaed0c871a502519d63e90454",
+      "bytes": 10324,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/tag-normalizer.lua",
+      "workspaceSource": "work/nss128/tag-normalizer.lua",
+      "sha256": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+      "bytes": 5128,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/failed-wan-owner.lua",
+      "workspaceSource": "work/nss128/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/declared-baseline.mjs",
+      "workspaceSource": "work/nss128/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/service-epoch.mjs",
+      "workspaceSource": "work/nss128/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/analyze-long.py",
+      "workspaceSource": "work/nss128/analyze-long.py",
+      "sha256": "536c5759c9264ada246f6518ce4c27c226dffe748533cca0371ecc09c529c69c",
+      "bytes": 7223,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/calibrate-clock.mjs",
+      "workspaceSource": "work/nss128/calibrate-clock.mjs",
+      "sha256": "f650021b994e31f8c94f9609fb17b0924bbf5c77f7b8ca00a834e5e4ee4b6cac",
+      "bytes": 994,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/prove-upstream.py",
+      "workspaceSource": "work/nss128/prove-upstream.py",
+      "sha256": "a1cc5c53da7b8d77b4191a895c317f018f0b45a266afaee9a43ddd73ddd2b41d",
+      "bytes": 1992,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/health.mjs",
+      "workspaceSource": "work/nss128/health.mjs",
+      "sha256": "a54e9867158fa4b8dd8c1a5e35b55613c9dcbb6aa6efc28b30c4e410e974bf24",
+      "bytes": 5877,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/read-final-physical.mjs",
+      "workspaceSource": "work/nss128/read-final-physical.mjs",
+      "sha256": "b816bdfb6562092ca2828818bb3ab43525a54613e816566c616524343be10320",
+      "bytes": 2047,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/compare-load.py",
+      "workspaceSource": "work/nss128/compare-load.py",
+      "sha256": "dc792747ec6eea6bceb58cf42dbf9a243b6c310e07a766d3dd5522b08b98f5f2",
+      "bytes": 2563,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/prove-class-mapping.py",
+      "workspaceSource": "work/nss128/prove-class-mapping.py",
+      "sha256": "28d9c9a39a1d8087383f1384fc6c9030cdd78cf3cfd2b7f23f07b9bbb9ecd961",
+      "bytes": 2145,
+      "role": "actual-class-derived-dual-leaf-mapping"
+    },
+    {
+      "path": "code/work/nss128/save-evidence.py",
+      "workspaceSource": "work/nss128/save-evidence.py",
+      "sha256": "abf61e944e255003cfdd3795d83e5e80b6f15d6dbe349f492bb27e3595b3c586",
+      "bytes": 16073,
+      "role": "actual-class-derived-dual-leaf-mapping"
     }
   ],
-  "lastAppendExport": "NSS126",
+  "lastAppendExport": "NSS128",
   "privateDataExcluded": true
 }

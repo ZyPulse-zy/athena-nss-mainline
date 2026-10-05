@@ -1,0 +1,13 @@
+{
+  "loadLocalPath": "work/nss128/load-20261005205447-87950b678c0f8b5a",
+  "temporaryFirewallRulesRemaining": 0,
+  "canonicalFirewallBaselineRestored": true,
+  "ownedUnitInactiveMainPidZeroPortsClosed": true,
+  "clientExited": true,
+  "clientGuardPassed": true,
+  "independentFirewallExpirySeconds": 180,
+  "independentClientDeadlineSeconds": 210,
+  "endpointGuardianVerifiedBeforeWrite": true,
+  "clientRunSeconds": 180.00757320000002,
+  "clientErrors": []
+}

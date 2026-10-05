@@ -1,5 +1,21 @@
 # 实验记录
 
+## NSS127–128 · 2026-10-06 05:02 · 实际class直接映射双向leaf
+
+更新：2026-10-06 05:02，北京时间。最新NSS128；常驻68/config581b5d46…c791d7、4859/17139保持，实验已撤销。
+
+**消费者上行tag已直接按实际class生成，绑定同源完整CT/mark/NAT/lease。真实WAN1、一TCP BULK＋一UDP RT，学习前映射及实际NSS四tag/四leaf正确，20秒A/B/A2、ECM0→2→0、六续租/精确恢复通过。上传29.837/30.372/29.747Mbps，softirq 10.034/5.246/10.393%，软件段均值10.21→NSS5.25，短窗可比条件下相对低48.64%。**
+
+见 [实际映射](../evidence/nss128-actual-class-mapping.json)、[指标](../evidence/nss128-metrics.json)、[可比分析](../evidence/nss128-comparison.json)、[轮次](../evidence/nss128-trial.json)、[汇总](../evidence/nss128-mainline.json)、[关闭](../evidence/nss128-endpoint-closure.json)、[终态](../evidence/nss128-final-audit.json)。
+
+- 用实际分类结果和源sequence/完整身份决定上8e05/06、下8f05/06；未知类、未获准RT、mark/NAT/实例/来源/lease变化均拒绝，保留原detached重新分类、kernel pin和默认deny。学习前映射与NSS实际双向tag逐一一致。常驻publication upTag0不改，未为字段重装classifier。
+- 127有1个真实历史完整帧回放＋13模型反例/跨协议例，14项通过；TCP RT/UDP BULK只证明mapper按class选值，生产入口仍仅TCP BULK＋UDP RT，不能声称其它组合硬件已验收。128原native/gate/队列/发送器逐字节相同；同实际pair/tuples构成的完整bundle与125一致，3项入口检查/1069绑定，实际checkpoint与控制连接外100秒撤销写前核验。
+- 本轮为映射验证并顺带保存同观察器CPU指标，未额外重复CPU探针追126背景门槛。其它WAN总RX＋TX 0.071/0.198/0.269Mbps，原七项可比合同全部通过；每段20秒、选中吞吐/physicalwan发送与UDP发送率接近。softirq相对低48.64%只限约30Mbps受控上传短窗，非随机/长期/300Mbps、拥塞AQM或真人结果，包速差异保留。
+- UDP收/发718/718、781/781、720/720、四leaf drop0、squeeze/softnet drop0，端点RTT非CS2 jitter/loss/Miss。下行是TCP ACK与小UDP，未覆盖Steam主下载方向的这套新双向版本。现阶段可确认映射与收益信号；改类的真实精确撤销/新epoch重学尚需独立窄测试。
+- 原完整终态source2.87、ECM关闭全零、无事务/stage/state/模块；两物理mq＋四fq_codel恢复，1临时端点与客户端全关闭，WAN4仍down、自然四路PBR不改。旧126 runtime原字节保留，原始完整输入私有冻结；没有UI、游戏/新下载、账户/认证或上游操作。
+- 下一步仅真实class变化的精确撤销/重学：先查原模块slot close/drain与全局续租约束、完整同源分类读取能力，再在一个自有TCP＋UDP上暂停TCP上传诱发BULK→BE，比较器应只报告TCP受影响。关闭新学习、只撤销目标CI并核验其缺失/剩余UDP短窗，再结束旧epoch；新分类与新kernel pin后才重学。原6/27/100与独立恢复保持。若只有投影缺失，不能代替实际改类/CT退出证明。不得为了剩余UDP强续已terminal gate或在旧CI未退时改tag。
+- 后续仍只这条自动分类→NSS leaf主线，最后集中真人一次；不扩WAN/共享预算/WiFi/autorate、不重装/新下载/UI。09:50起不新实验，整理晨间终态与报告、推送后暂停本夜接续。
+
 ## NSS125–126 · 2026-10-06 04:45 · 同观察器与全部WAN背景
 
 更新：2026-10-06 04:45，北京时间。最新NSS126整理、实际125入口；常驻68/config581b5d46…c791d7、4859/17139不变，实验已撤销。

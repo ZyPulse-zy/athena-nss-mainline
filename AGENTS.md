@@ -1,5 +1,8 @@
 # 接续此研究
 
+最新NSS128：消费者双向tag按实际class/同源完整CT mark NAT lease派生，未知与未准入RT拒绝；生产仍TCP BULK＋UDP RT。127一真实历史帧＋13模型共14过，TCPRT/UDPBULK仅模型；128三入口检查/1069项、同tuple完整native bundle不变。实际WAN1完整20秒A/B/A2、ECM0/2/0、四tag/四leaf/mark/NAT/affinity/6续租/精确恢复过，上传29.837/30.372/29.747，softirq10.034/5.246/10.393%，可比7条件全过，短窗相对低48.64%（非300/长期/真人）；UDP718/718、781/781、720/720、四leafdrop0/squeeze0。原完整终态source2.87/4859/17139/68upTag0不变、ECM全零无残留、两根恢复、端点关闭，WAN4仍down。下一步只真实改类精确撤销/新epoch重学：先审slot close/drain/全局续租和同源完整分类，受控TCP暂停诱发BULK→BE；投影缺失不当改类/CT退出，旧CI未退不改tag/terminal不能强续。6/27/100/checkpoint/独立撤销不改；不再追CPU阈值、不扩WAN/共享预算/WiFi/autorate/新下载/UI。09:50收尾10点前暂停本夜；STATE为准。
+
+
 最新NSS126整理/实际125：仅扩同观察器到5rpwan/wan/lan4，UP60/DOWN30/32上传保持；WAN2真实20秒三段、ECM0/2/0、四leaf/mark/NAT/affinity/6续租及恢复通过，上传30.356/29.956/30.734、softirq10.237/4.496/10.011%，背景0.167/0.099/0.350Mbps，UDP774/774、746/748、771/771，四leafdrop0/squeeze0。背景范围0.2513略超分析0.25，原严格comparison=false保持；重复CPU信号可继续工程，不为了阈值重做CPU试验，也非真人/300或完整CAKE验收。125首SSH握手超时/0上传/未stage失败冻结；126同1033项入口只重试一次，无源/超时变更。2端点关闭、新checkpoint及独立100秒守护、原完整终态source3.05/4859/17139/68不变、ECM全零无残留，两根恢复、WAN4仍down。下一步实际class→双向tag最小消费者绑定/未知拒绝/改类精确撤销，再最后真人一次；不重装/新下载/UI/扩WAN；09:50收尾10点前暂停本夜；STATE为准。
 
 

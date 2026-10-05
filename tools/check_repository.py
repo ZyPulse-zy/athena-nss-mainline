@@ -1158,7 +1158,7 @@ proof126=json.loads((root/'evidence/nss126-source-proof.json').read_text())
 assert proof126['historicPrefixSources']==1498 and proof126['sources']==35 and len(manifest['sources'])>=1533
 assert proof126['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1498],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 for source,digest in proof126['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-x126=json.loads((root/'evidence/nss126-mainline.json').read_text());rt126=json.loads((root/'evidence/current-runtime.json').read_text());m126=json.loads((root/'evidence/nss126-metrics.json').read_text())
+x126=json.loads((root/'evidence/nss126-mainline.json').read_text());rt126=json.loads((root/'evidence/nss126-runtime.json').read_text());m126=json.loads((root/'evidence/nss126-metrics.json').read_text())
 assert x126['round']==rt126['round']=='NSS126'and x126['hardwareEntryRound']==125 and x126['boundInputs']==rt126['qualifiedExperimentalEntryBoundInputs']==1033
 assert (x126['offeredUploadMbps'],x126['uplinkGroupMbps'],x126['downlinkGroupMbps'],x126['phaseSeconds'],x126['nativeSessionSeconds'],x126['independentOwnerSeconds'],x126['classifierMaximumLeaseSeconds'])==(32,60,30,20,27,100,6)
 assert all(x126[k]for k in ['onlyCommonReadOnlyInterfaceListChanged','allWanBackgroundObserved','completeFunctionalABA','firstSshHandshakeTimeoutPreserved','unchangedQualifiedEntryRetriedOnce','selectedTransferRateComparable','unselectedTrafficSmallInEachPhase','strictBackgroundRangeCriterionMarginallyFailed','repeatCpuSignalSupportsContinuingEngineering','noAdditionalCpuProbeToChaseThresholdPlanned'])
@@ -1187,5 +1187,35 @@ assert rt126['historical124RuntimePreservedSha256']==hashlib.sha256((root/'evide
 assert rt126['workerPid']==4859 and rt126['guardianPid']==17139 and rt126['currentNssAdmissionMustBeRefreshedBeforeWrite']
 assert all(rt126['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
 assert all(rt126['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
+
+proof128=json.loads((root/'evidence/nss128-source-proof.json').read_text())
+assert proof128['historicPrefixSources']==1533 and proof128['sources']==37 and len(manifest['sources'])>=1570
+assert proof128['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1533],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+for source,digest in proof128['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+x128=json.loads((root/'evidence/nss128-mainline.json').read_text());rt128=json.loads((root/'evidence/current-runtime.json').read_text());m128=json.loads((root/'evidence/nss128-metrics.json').read_text())
+assert x128['round']==rt128['round']=='NSS128'and x128['boundInputs']==rt128['qualifiedExperimentalEntryBoundInputs']==1069
+assert (x128['offeredUploadMbps'],x128['uplinkGroupMbps'],x128['downlinkGroupMbps'],x128['phaseSeconds'],x128['nativeSessionSeconds'],x128['independentOwnerSeconds'],x128['classifierMaximumLeaseSeconds'])==(32,60,30,20,27,100,6)
+assert all(x128[k]for k in ['onlyMappingSourceChanged','mappingByActualClass','allWanBackgroundObserved','completeFunctionalABA','sameHardwareBundleForSameActualClassAndTuples','mappedBeforeEcmLearning','productionPairRestrictedToTcpBulkUdpRt','genericTcpRtUdpBulkModelsOnly','scopedShortCpuComparisonAccepted','rtAllProbeRepliesReceived','residentUpTagZeroUnchanged'])
+assert not any(x128[k]for k in ['physicalClassChangeRetirementAccepted','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','preciseRateAccuracyAccepted','residentClassifierChanged','nssPermanentlyEnabled','uiOperated','upstreamSubmitted'])
+t128=json.loads((root/'evidence/nss128-trial.json').read_text());assert t128['passed']and t128['completeABA']and t128['sourceInputs']==1069 and t128['sourceInputsCurrentAndFrozenMatch']and t128['guardianVerifiedBeforeFirstWrite']and t128['checkpointDownloadedShaAndGzipVerified']and all(t128['rollback'].values())
+assert t128['baseline']['configurationMatches']and t128['beforeFullAudit']['passed']and t128['afterFullAudit']['passed']
+assert m128['allWanBackgroundObserved']and m128['counterObserverSameInAllPhases']and m128['qosBytesUnchangedFrom124']and m128['oneWan']==1 and m128['renewals']==6
+assert m128['newCpuComparisonAccepted']is None and m128['cpuInterpretationRequiresSeparateSameLoadComparison']and m128['onlyActualClassToUplinkMappingChangedFrom125']
+assert [p['acceleratedCounts']for p in m128['phases']]==[[0],[2],[0]]and all(29<p['whole']['clientTcpMbps']<32 and p['whole']['udp']['unreturned']==p['whole']['timeSqueezeDelta']==p['whole']['softnetDropDelta']==0 for p in m128['phases'])
+comparison128=json.loads((root/'evidence/nss128-comparison.json').read_text());assert comparison128['passed']and comparison128['comparabilityAccepted']and all(comparison128['checks'].values())
+assert 48<comparison128['softirqRelativeReductionPercent']<49 and comparison128['softirqRelativeReductionPercent']==x128['scopedSoftirqRelativeReductionPercent']==rt128['scopedSoftirqRelativeReductionPercent']
+assert not comparison128['humanCs2Acceptance']and not comparison128['highLoad300MbpsAcceptance']and not comparison128['productionNssRetained']
+mapped128=json.loads((root/'evidence/nss128-actual-class-mapping.json').read_text());assert all(mapped128[k]for k in ['passed','actualHardwareExecution','mappingUsesActualClassNotProtocol','initialAndPostCheckpointFullIdentityAndLeaseChecked','mappedPlanCreatedBeforeFrontendOpened','actualDetachedClassificationRepeatedBeforeTagPublication','exactClassifierPairClassAndActualEcmBidirectionalTagsMatch','residentUpTagZeroUnchanged','kernelPinDefaultDenyAndSixSecondRenewalRetained','productionPairRestrictedToTcpBulkUdpRt'])
+assert not mapped128['tcpRtAndUdpBulkHardwareAccepted']and not mapped128['classChangePhysicalRetirementAccepted']and not mapped128['permanentNssEnabled']
+for slot,up,down in [('tcp',0x8e050000,0x8f050000),('udp',0x8e060000,0x8f060000)]:
+    v=t128['actualAcceleratedIdentity']['proof'][slot];assert v['upTag']==up and v['downTag']==down and v['ctMark']==0x10000 and v['natCorrect']and v['wanAffinity']==1
+q128=json.loads((root/'evidence/nss128-qualification.json').read_text());assert len(q128['classMapping'])==14 and len(q128['entry'])==3 and q128['originalNativeBundleEquivalent']and q128['genericCrossProtocolModelsNotHardwareProof']and q128['payloadBytes']==73523
+assert sum(bool(v['historicalReplayOnly'])for v in q128['classMapping'])==1 and sum(bool(v['syntheticMutationOnly'])for v in q128['classMapping'])==13
+c128=json.loads((root/'evidence/nss128-endpoint-closure.json').read_text());assert c128['temporaryFirewallRulesRemaining']==0 and c128['canonicalFirewallBaselineRestored']and c128['ownedUnitInactiveMainPidZeroPortsClosed']and c128['clientExited']and c128['clientGuardPassed']and c128['endpointGuardianVerifiedBeforeWrite']
+assert c128['independentFirewallExpirySeconds']==180 and c128['independentClientDeadlineSeconds']==210
+assert rt128['historical126RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss126-runtime.json').read_bytes()).hexdigest()
+assert rt128['workerPid']==4859 and rt128['guardianPid']==17139 and rt128['currentNssAdmissionMustBeRefreshedBeforeWrite']and rt128['actualClassDerivedMappingHardwarePassed']and rt128['scopedShortCpuComparisonAccepted']
+assert all(rt128['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert all(rt128['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

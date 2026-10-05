@@ -1,0 +1,123 @@
+{
+  "classMapping": [
+    {
+      "name": "actual-complete-classification-frame",
+      "passed": true,
+      "historicalReplayOnly": true,
+      "syntheticMutationOnly": false,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "TCP-RT-model-maps-RT-not-protocol",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "UDP-BULK-model-maps-BULK-not-protocol",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "unknown-class-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "unadmitted-RT-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "full-mark-drift-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "NAT-tuple-drift-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "duplicate-key-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "expired-source-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "source-sequence-drift-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "resident-upTag-change-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "wrong-downTag-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "over-six-second-flow-lease-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    },
+    {
+      "name": "missing-instance-pin-metadata-refused",
+      "passed": true,
+      "historicalReplayOnly": false,
+      "syntheticMutationOnly": true,
+      "nssAdmissionAllowed": false
+    }
+  ],
+  "entry": [
+    {
+      "name": "seven-native-and-load-helpers-byte-exact",
+      "passed": true,
+      "localOnly": true
+    },
+    {
+      "name": "actual-historical-pair-full-policy-byte-equivalent",
+      "passed": true,
+      "historicalReplayOnly": true
+    },
+    {
+      "name": "whole-guarded-hardware-bundle-byte-equivalent",
+      "passed": true,
+      "historicalReplayOnly": true,
+      "bytes": 73523
+    }
+  ],
+  "originalNativeBundleEquivalent": true,
+  "payloadBytes": 73523,
+  "genericCrossProtocolModelsNotHardwareProof": true
+}

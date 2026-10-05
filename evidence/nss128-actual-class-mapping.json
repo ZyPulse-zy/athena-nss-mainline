@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "actualHardwareExecution": true,
+  "mappingUsesActualClassNotProtocol": true,
+  "initialAndPostCheckpointFullIdentityAndLeaseChecked": true,
+  "mappedPlanCreatedBeforeFrontendOpened": true,
+  "postCheckpointSequence": 19588,
+  "actualDetachedClassificationRepeatedBeforeTagPublication": true,
+  "exactClassifierPairClassAndActualEcmBidirectionalTagsMatch": true,
+  "producerSha256": "79c4d7d340a434c376bc98da2056ea268023c28a27b2dc51b047f9ff20ecd59d",
+  "residentUpTagZeroUnchanged": true,
+  "kernelPinDefaultDenyAndSixSecondRenewalRetained": true,
+  "productionPairRestrictedToTcpBulkUdpRt": true,
+  "tcpRtAndUdpBulkHardwareAccepted": false,
+  "classChangePhysicalRetirementAccepted": false,
+  "permanentNssEnabled": false
+}
