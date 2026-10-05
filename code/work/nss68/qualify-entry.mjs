@@ -1,0 +1,42 @@
+// Validate only the new deployment wiring. No replay of historical gate/QoS tests.
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+import {verifyPreparation as originalPreparation} from '../nss63/session-binding.mjs';
+import {verifyCurrentClassifier as originalClassifier} from '../nss49/binding.mjs';
+import {validateCandidate} from './deployment-binding.mjs';
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex'),read=p=>fs.readFileSync(p,'utf8');
+const original=originalClassifier(),q=originalPreparation();assert.equal(Object.keys(q.sourceManifest).length,241);
+const transactionId='nss68-publication-20261005000000-aabbccdd';
+const config=structuredClone(original.config);config.files['worker.lua']='40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828';config.installTransaction=transactionId;
+const deployment={...original.deployment,transactionId,previous:original.deployment,configHash:sha(JSON.stringify(config))};
+const commit={passed:true,committed:true,remoteCommittedReceiptVerified:true,originalFullAuditPassed:true,protectedConfigurationUnchanged:true,independent180SecondRollbackVerifiedBeforeWrite:true,priorNaturalRollbackVerified:true,transactionId,configHash:deployment.configHash,workerSha256:config.files['worker.lua'],nssEnabled:false};
+const checks=[];validateCandidate(deployment,config,commit,original);checks.push('exact publication-only synthetic context accepted offline');
+function reject(label,mutate){const d=structuredClone(deployment),c=structuredClone(config),p=structuredClone(commit);mutate(d,c,p);assert.throws(()=>validateCandidate(d,c,p,original),label);checks.push(label);}
+reject('uncommitted trial rejected',d=>d.committed=false);
+reject('nonpermanent context rejected',d=>d.permanentClassifier=false);
+reject('NSS permission rejected',d=>d.nssEnabled=true);
+reject('different base rejected',d=>d.base+='/wrong');
+reject('wrong classifier generation rejected',d=>d.id+='wrong');
+reject('old or other round transaction rejected',d=>d.transactionId=transactionId.replace('68','67'));
+reject('mismatched transaction in config rejected',(_,c)=>c.installTransaction+='wrong');
+reject('wrong worker bytes rejected',(_,c)=>c.files['worker.lua']=original.config.files['worker.lua']);
+reject('source scope change rejected',(_,c)=>c.source.maxSourceBytes++);
+reject('previous deployment hash changed rejected',d=>d.previous.configHash='0'.repeat(64));
+reject('missing live commit receipt rejected',(_,__,p)=>p.remoteCommittedReceiptVerified=false);
+reject('old commit config hash rejected',(_,__,p)=>p.configHash=original.deployment.configHash);
+reject('missing full original audit rejected',(_,__,p)=>p.originalFullAuditPassed=false);
+// Normalize only the two declared owner substitutions; everything else must equal NSS63.
+const oldStage=read('work/nss63/module-stage.mjs');
+const oldOwner="const deployment=JSON.parse(fs.readFileSync('work/nss47/deployment-latest.json'));assert.equal(deployment.committed,true);const configuration=JSON.parse(fs.readFileSync(deployment.localDir+'/config.json'));";
+const expectedStage=oldStage.replace("import{buildPayload}from'./payload.mjs';","import{buildPayload}from'../nss63/payload.mjs';\nimport {verifyDeployment} from './deployment-binding.mjs';").replace(oldOwner,"const {deployment,config:configuration}=verifyDeployment();");
+assert.equal(read('work/nss68/module-stage.mjs'),expectedStage);checks.push('entire stage unchanged except explicit verified deployment source');
+const expectedEntry=read('work/nss63/real-session.mjs').replace("const root='work/nss49', observationRoot='work/nss49'","const root='work/nss49', observationRoot='work/nss68'").replaceAll("'work/nss63/real-matched-aba-'","'work/nss68/real-matched-aba-'").replaceAll("'work/nss63/current-audit-diagnostic.mjs'","'work/nss68/current-audit-diagnostic.mjs'");
+assert.equal(read('work/nss68/real-session.mjs'),expectedEntry);checks.push('entire A/B/A2 controller unchanged except declared output and audit references');
+for(const p of ['current-audit-diagnostic.mjs','read-real-candidates.mjs','module-stage.mjs','wait-ready-candidate.mjs'])assert.ok(read('work/nss68/'+p).includes('verifyDeployment'));
+assert.ok(read('work/nss68/read-real-candidates.mjs').includes("fs.readFileSync('work/nss49/classifier.lua'"));
+assert.ok(read('work/nss68/current-audit-diagnostic.mjs').includes("fs.readFileSync('work/nss23/operational-audit.lua'"));
+checks.push('all consumers share explicit verified deployment; original adapter and native audit retained');
+const files=fs.readdirSync('work/nss68').filter(n=>n.endsWith('.mjs')||n==='prepare.py').map(n=>'work/nss68/'+n);
+const sourceManifest=Object.fromEntries(files.map(f=>[f,sha(fs.readFileSync(f))]));
+const proof={passed:true,observedAt:new Date().toISOString(),baseBoundInputs:241,original241InputsRetained:true,originalNativeAuditByteIdentical:true,classifierAdapterByteIdentical:true,nativeStageAndPayloadPolicyByteIdentical:true,allFlowTimersAndLimitsUnchanged:true,explicitDeploymentForAllConsumers:true,checks:checks.length,checkDetails:checks,sourceManifest,syntheticContextOnlyForOfflineRejections:true,actualRetainedDeploymentStillRequired:true,routerWrites:false,newNssAdmission:false,historicalTestsNotReplayed:true};
+fs.writeFileSync('work/nss68/entry-qualified.json',JSON.stringify(proof,null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({...proof,checkDetails:undefined,sourceManifest:undefined,overlayInputs:files.length}));

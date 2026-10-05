@@ -1,5 +1,8 @@
 # Athena NSS 主线记录
 
+最新 [NSS68](evidence/nss68-mainline.json)：发布候选已实际保留，新257项入口与完整准入/恢复审核通过；ECM关闭。记录一次自然tc回收失败与自动恢复，真人同负载闭环未验收。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md)，下面67及更早为历史。
+
+
 最新 [NSS67](evidence/nss67-mainline.json)：发布候选在372/367/385Mbps真实Steam负载运行，高负载原完整审核3.62/4.41秒通过；独立180秒自然撤销精确恢复47，ECM关闭全零。下一步精确绑定候选实际部署再集中单WAN真人闭环；不是NSS/CPU/游戏收益验收。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md)。下方65等为历史。
 
 最新 [NSS65](evidence/nss65-mainline.json)：JSON发布候选现场试装/两次原完整审核通过，独立180秒自然撤销精确恢复；常驻47、ECM关闭全零。自然轻载不能验收高负载/整机CPU或真人收益。下一步直接高负载发布审核与正确绑定的集中单WAN A/B/A2。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md)，下方NSS64为历史。

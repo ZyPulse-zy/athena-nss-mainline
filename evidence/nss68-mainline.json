@@ -1,0 +1,262 @@
+{
+  "round": "NSS68",
+  "observedAt": "2026-10-05T02:37:28.274Z",
+  "deploymentReference": "work/nss68/deployment-latest.json",
+  "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+  "candidateWorkerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+  "candidateWorkerBytes": 32019,
+  "routerConfigurationWrites": true,
+  "permanentClassifierChanged": true,
+  "candidateRetainedAtEnd": true,
+  "nssOpenedThisTurn": false,
+  "newNssForwardingExperiment": false,
+  "retention": {
+    "passed": true,
+    "committed": true,
+    "observedAt": "2026-10-05T02:31:24.127Z",
+    "configHash": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+    "workerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+    "remoteCommittedReceiptVerified": true,
+    "originalFullAuditPassed": true,
+    "protectedConfigurationUnchanged": true,
+    "independent180SecondRollbackVerifiedBeforeWrite": true,
+    "priorNaturalRollbackVerified": true,
+    "nssEnabled": false,
+    "checkpointCount": 1,
+    "originalFourModulesUnchanged": true,
+    "old47And49ReferencesPreserved": true,
+    "productionUndoSeconds": 180,
+    "stageGuardianSeconds": 480,
+    "committedBeforeDeadline": true,
+    "newNaturalUndoTrialClaimed": false,
+    "prior66And67NaturalUndoReusedAsEvidence": true,
+    "onlyPublicationBoundaryAndOwnerConfigChanged": true
+  },
+  "stageCleanup": {
+    "passed": true,
+    "observedAt": "2026-10-05T02:31:25.594Z",
+    "onlyOwnedPassiveStageCancelled": true,
+    "productionRetentionCommitAlreadyProven": true,
+    "stageAbsent": true,
+    "stageNatural480SecondExpiryClaimed": false
+  },
+  "entry": {
+    "path": "work/nss68/real-session.mjs",
+    "baseInputs": 241,
+    "overlayInputs": 16,
+    "boundInputs": 257,
+    "checks": 17,
+    "explicitCommittedDeploymentForReaderAuditStage": true,
+    "originalPolicyPayloadAndTimersUnchanged": true,
+    "nativeGateStagingExecutedThisTurn": false,
+    "prewriteReadOnlyAudit": {
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 4,
+      "queryAge": 1.459999999962747,
+      "sequence": 69,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "recoveryReadOnlyAudit": {
+      "passed": true,
+      "auditPurpose": "recovery",
+      "prelearningSchedulingRequested": false,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 2,
+      "queryAge": 1.2600000000093132,
+      "sequence": 89,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "servicePidChangesAcknowledgedBeforeExperiment": [],
+      "serviceChangesDuringExperimentAllowed": false
+    },
+    "consumerReadOnly": {
+      "observedAt": "2026-10-05T02:35:35.559Z",
+      "readonly": true,
+      "gameProcessRunning": false,
+      "steamProcessRunning": true,
+      "actualCs2RtCandidates": 0,
+      "actualSteamBulkCandidates": 0,
+      "sameWanCandidates": [],
+      "sourceAge": 2,
+      "sourceSequence": 52,
+      "nssAdmissionAllowed": false,
+      "controllerPrototypeOnly": true,
+      "adapterSha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0"
+    },
+    "readiness": {
+      "observedAt": "2026-10-05T02:35:35.582Z",
+      "mode": "inspect",
+      "actualGameCandidates": 0,
+      "actualBulkCandidates": 0,
+      "sameWanPairs": 0,
+      "routerWrites": false,
+      "trafficGenerated": false,
+      "openFrontend": false,
+      "status": "WAITING_FOR_REAL_CS2_STEAM_PAIR",
+      "nssPermissionGranted": false
+    }
+  },
+  "workerLifecycle": {
+    "naturalRestartObserved": true,
+    "firstWorkerPid": 17138,
+    "currentWorkerPid": 23634,
+    "guardianPid": 17139,
+    "guardianUnchanged": true,
+    "restartBeforeDownloadResume": true,
+    "applyRawStatus": 256,
+    "applyElapsedSeconds": 4.35,
+    "identifiedFailureBoundary": "tc child cleanup not proved; outer mutation must terminate",
+    "childCommandAndPidNotLogged": true,
+    "underlyingKernelCauseProved": false,
+    "tcSupervisorByteIdenticalToPrevious47": true,
+    "currentOriginalAuditPassed": true,
+    "sameProducerAcrossNewPrewriteAndRecovery": true,
+    "noInducedCrashThisTurn": true
+  },
+  "actualTrafficWindow": {
+    "passed": true,
+    "seconds": 4.0200000000186265,
+    "lan4Mbps": 2.8785731343150203,
+    "pps": 424.8756218885786,
+    "busyPercent": 34.9146110056926,
+    "softirqPercent": 7.463630613535737,
+    "timeSqueezeDelta": 0,
+    "observerCostIncluded": true,
+    "observerCpuSeconds": 0.366039,
+    "nssAdmissionAllowed": false,
+    "qualifiedHighLoad": false
+  },
+  "actualAuditWindow": {
+    "passed": true,
+    "observedAt": "2026-10-05T02:35:33.164Z",
+    "readonly": true,
+    "originalFullLockedAudit": true,
+    "allOriginalAssertionsRetained": true,
+    "queryAge": 2.4399999999441206,
+    "sequence": 51,
+    "originalDeadlinesUnchanged": true,
+    "seconds": 0.2999999998137355,
+    "lan4Mbps": 0.5867200003642837,
+    "pps": 143.33333342232638,
+    "busyPercent": 40.17094017094017,
+    "softirqPercent": 4.273504273504273,
+    "timeSqueezeDelta": 0,
+    "measurementCoversActualAudit": true,
+    "auditObserverCostIncluded": true,
+    "ecmStoppedAndZeroAtBothBoundaries": true,
+    "nssAdmissionAllowed": false
+  },
+  "client": {
+    "existingPausedDownloadResumed": true,
+    "steamInstantaneousUiMbps": 312,
+    "actualSustained300MbpsNotObserved": true,
+    "returnedPausedBeforeAudit": true,
+    "pauseCauseNotEstablished": true,
+    "downloadFinallyPaused": true,
+    "networkAndDiskZeroObserved": true,
+    "independentClientWatchdogSeconds": 360,
+    "watchdogCancelledAfterPauseObserved": true,
+    "naturalClientShutdownThisRound": false,
+    "noNewGameDownload": true,
+    "noPurchaseUninstallOrGameLaunch": true,
+    "actualCs2Candidates": 0,
+    "actualSteamCandidatesAtReader": 0
+  },
+  "finalState": {
+    "protectedAudit": {
+      "passed": true,
+      "observedAt": "2026-10-05T02:37:28.274Z",
+      "readonly": true,
+      "configurationMatches": true,
+      "deploymentReference": "work/nss68/deployment-latest.json",
+      "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+      "workerPid": 23634,
+      "guardianPid": 17139,
+      "originalFullLockedAudit": true,
+      "selectors": 2,
+      "queryAge": 3.2399999999906868,
+      "sequence": 89,
+      "ecmStoppedAndZero": true,
+      "noActiveTransaction": true,
+      "noStaging": true,
+      "publicationTrial": false,
+      "noExperimentState": true,
+      "noExperimentalModule": true,
+      "diagnostic": {
+        "events": [
+          {
+            "name": "locked-audit-start",
+            "at": 1985393.31
+          },
+          {
+            "name": "hashes-complete",
+            "at": 1985393.37
+          },
+          {
+            "name": "journal-parsed",
+            "at": 1985393.37
+          },
+          {
+            "name": "selectors-complete",
+            "at": 1985393.46
+          },
+          {
+            "name": "snapshot-parsed",
+            "at": 1985393.52
+          },
+          {
+            "name": "freshness-checked",
+            "at": 1985393.52
+          },
+          {
+            "name": "locked-audit-end",
+            "at": 1985393.53
+          }
+        ],
+        "freshness": {
+          "checkedAt": 1985393.52,
+          "publicationAge": 2.669999999925494,
+          "sourceAge": 3.2399999999906868,
+          "queryStarted": 1985390.28,
+          "publishedAt": 1985390.85,
+          "sequence": 89
+        }
+      },
+      "serviceEpochPinned": true,
+      "nssAdmissionAllowed": false
+    },
+    "noActiveTransaction": true,
+    "noStage": true,
+    "noExperimentalModule": true,
+    "noState": true,
+    "ecmClosedAndZero": true
+  },
+  "conclusions": {
+    "candidateRetentionAndExplicitBindingProved": true,
+    "newContextPrewriteReadOnlyAuditProved": true,
+    "highLoadAdmissionProvedThisRound": false,
+    "newRealFlowLearningOrLeafProof": false,
+    "wholeRouterCpuBenefitProved": false,
+    "realHumanExperienceProved": false,
+    "completeMatchedABACompleted": false,
+    "generalLongTermStabilityProved": false,
+    "secondWanExpansionAllowed": false,
+    "upstreamSubmitted": false
+  },
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

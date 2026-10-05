@@ -1,5 +1,21 @@
 # 当前状态
 
+更新：2026-10-05，北京时间。最新为NSS68；下方67及更早为历史。
+
+**发布候选已实际长期保留，新的257项入口已经绑定同一个committed部署，现场原完整准入/恢复审核通过。NSS仍关闭；真人同负载闭环尚未验收。**
+
+见 [本轮实测](../evidence/nss68-mainline.json)、[新入口绑定](../evidence/nss68-entry-binding.json)、[终态审核](../evidence/nss68-final-audit.json) 和 [调用位置](PUBLICATION_ENTRY_HANDOFF.md)。
+
+- 当前部署 `work/nss68/deployment-latest.json`，config `581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7`，32,019字节worker SHA `40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828`。旧47/49引用只作历史，未覆盖。
+- 一个checkpoint下载/SHA/gzip，独立480秒stage和180秒生产undo写前核验；原完整持锁审核source2.49通过后远端commit、配置/worker/pointer读回验证，候选留驻，常驻健康守护保留。本轮没有再测自然180秒撤销；66/67自然恢复证明保持。只按owner/inode取消已提交后的passive stage。
+- 入口 `work/nss68/real-session.mjs` 原241项全部保留，新16项、共257，17绑定检查通过。分类读取、原完整审核、stage共同使用新committed部署；原Lua消费者、stage/payload与1/2/6/9秒、200ms child、20Mbps、一TCP一UDP、45秒owner均不变。实际只读准入source1.46秒、同producer恢复审核1.26通过，未运行新NSS stage，不能称高负载gate已验收。
+- 10:32:50–52候选17138自然退出，日志为 `tc child cleanup not proved`，apply256、4.35秒。原47相同TC监督代码也有历史apply失败；该次发生在本轮恢复下载之前。只有边界证据，没有具体tc命令、child PID和阻塞栈，不能归因发布改动、下载或内核。自动恢复后23634/17139，最新准入/恢复同producer，长期稳定未验收。见 [监督记录](ISSUE_TC_SUPERVISION.md)。
+- 现有暂停的黎明杀机恢复，界面瞬时312Mbps后回到暂停；真实4秒仅2.879Mbps/425pps、busy34.91/softirq7.46/squeeze0；实际审核窗0.587Mbps，未形成300Mbps对照。没有CS2、HUD、真人或NSS CPU收益。暂停原因未确认，不称助手主动暂停；观察到暂停和0bps才取消独立360秒客户端守护。
+- 10:37:28原完整终态审核source3.24通过，ECM关闭全零，无事务/stage/state/实验模块，五WAN认证/PBR/NAT/十个生产qdisc与保护配置保持。23份白名单源累计868，12份完整私有运行输入和257绑定输入冻结；旧67runtime原字节保留。
+- 下一步直接使用新68入口做一次集中真人CS2+现有下载同TCP/UDP、单WAN可比A/B/A2。新轮次先读实际worker/guardian/producer；实验期间producer更换必须拒绝并精确恢复。不要再试装相同publication、重放旧准备、装新游戏或扩WAN。
+
+## NSS66–67历史
+
 更新：2026-10-05，北京时间。最新为 NSS66–67；以下 NSS65 及更早章节是历史。
 
 **发布候选已在真实 Steam 372 / 367 / 385 Mbps 窗口运行，高负载期间两次原完整审核 source3.62 / 4.41秒通过。两轮独立180秒自然撤销精确恢复。常驻仍47、ECM关闭全零；这不是新的NSS转发或CPU/真人收益验收。**

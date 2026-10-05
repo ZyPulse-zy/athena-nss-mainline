@@ -1,5 +1,11 @@
 # 证据索引
 
+## 当前：NSS68
+
+- [实际保留与自然恢复记录](../evidence/nss68-mainline.json)、[当前运行](../evidence/current-runtime.json)、[终态原审核](../evidence/nss68-final-audit.json)。
+- [257项入口绑定](../evidence/nss68-entry-binding.json)、[23份白名单源码](../evidence/nss68-source-proof.json)、[接续位置](PUBLICATION_ENTRY_HANDOFF.md)。
+- [NSS67 runtime原字节](../evidence/nss67-runtime.json)保持。新入口和保留已完成，真实高负载NSS A/B/A2尚未完成。
+
 ## 当前主线：NSS63
 
 - [本轮汇总](../evidence/nss63-mainline.json)、[当前运行](../evidence/current-runtime.json)：常驻47、最终ECM关闭全零；5暂存全部撤销。

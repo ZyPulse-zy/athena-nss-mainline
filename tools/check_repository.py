@@ -589,7 +589,7 @@ for number in (66,67):
     assert proof['notAdditionalProductionAdmission'] and not proof['candidateRetainedAtEnd']
     for source,expected in proof['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==expected
     assert new['reportVerification']['sourceValidated'] and not new['reportVerification']['browserRendered']
-new67=json.loads((root/'evidence/nss67-mainline.json').read_text());latest=json.loads((root/'evidence/current-runtime.json').read_text())
+new67=json.loads((root/'evidence/nss67-mainline.json').read_text());latest=json.loads((root/'evidence/nss67-runtime.json').read_text())
 assert latest['round']=='NSS67' and latest['workerPid']==9454 and latest['guardianPid']==9455
 assert latest['historical65RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss65-runtime.json').read_bytes()).hexdigest()
 assert latest['historical64RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss64-runtime.json').read_bytes()).hexdigest()
@@ -600,4 +600,19 @@ assert 0<new67['exactRestoredAuditLoad']['queryAge']<6 and new67['exactRestoredA
 assert new67['exactRestoredAuditLoad']['measurementCoversActualAudit'] and new67['exactRestoredAuditLoad']['passed']
 assert new67['client']['downloadPausedAtUiPercent']==17 and new67['client']['networkBpsAtFinalUi']==new67['client']['diskBpsAtFinalUi']==0
 assert not new67['client']['downloadCompleted'] and new67['client']['partialAuthorizedDownloadLeftPaused']
+x68=json.loads((root/'evidence/nss68-mainline.json').read_text());l68=json.loads((root/'evidence/current-runtime.json').read_text())
+assert l68['round']=='NSS68' and x68['candidateRetainedAtEnd'] and l68['publicationCandidateInstalled']
+assert l68['deploymentReference']=='work/nss68/deployment-latest.json' and l68['classifierConfigSha256']==x68['classifierConfigSha256']
+assert l68['candidateEntryBindingCreated'] and l68['qualifiedExperimentalEntryBoundInputs']==257
+assert x68['entry']['baseInputs']==241 and x68['entry']['overlayInputs']==16 and x68['entry']['checks']==17
+assert not x68['entry']['nativeGateStagingExecutedThisTurn'] and not l68['nssOpenedThisTurn']
+assert x68['retention']['remoteCommittedReceiptVerified'] and x68['retention']['checkpointCount']==1
+assert x68['retention']['productionUndoSeconds']==180 and x68['retention']['stageGuardianSeconds']==480
+assert not x68['retention']['newNaturalUndoTrialClaimed'] and x68['workerLifecycle']['naturalRestartObserved']
+assert x68['workerLifecycle']['applyRawStatus']==256 and x68['workerLifecycle']['tcSupervisorByteIdenticalToPrevious47']
+assert l68['finalClosure']['passed'] and l68['audit']['passed'] and l68['audit']['ecmClosedAndZero']
+assert l68['historical67RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss67-runtime.json').read_bytes()).hexdigest()
+assert x68['actualTrafficWindow']['lan4Mbps']<300 and not x68['actualTrafficWindow']['qualifiedHighLoad']
+assert all(not x68['conclusions'][k]for k in ['wholeRouterCpuBenefitProved','realHumanExperienceProved','completeMatchedABACompleted','generalLongTermStabilityProved','upstreamSubmitted'])
+assert len(manifest['sources'])==868
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

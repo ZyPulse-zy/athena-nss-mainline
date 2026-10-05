@@ -1,21 +1,22 @@
 {
-  "round": "NSS67",
-  "checkedAt": "2026-10-04T17:09:58.924Z",
-  "deploymentReference": "work/nss47/deployment-latest.json",
-  "classifierConfigSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
+  "round": "NSS68",
+  "checkedAt": "2026-10-05T02:49:40.004Z",
+  "deploymentReference": "work/nss68/deployment-latest.json",
+  "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+  "candidateWorkerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
   "audit": {
     "passed": true,
-    "observedAt": "2026-10-04T17:09:58.924Z",
+    "observedAt": "2026-10-05T02:37:28.274Z",
     "readonly": true,
     "configurationMatches": true,
-    "deploymentReference": "work/nss47/deployment-latest.json",
-    "configSha256": "478818d553903aa859c853cab99383e038d4d325f500d68843ffff8b7517a900",
-    "workerPid": 9454,
-    "guardianPid": 9455,
+    "deploymentReference": "work/nss68/deployment-latest.json",
+    "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+    "workerPid": 23634,
+    "guardianPid": 17139,
     "originalFullLockedAudit": true,
     "selectors": 2,
-    "queryAge": 2.2199999999720603,
-    "sequence": 231,
+    "queryAge": 3.2399999999906868,
+    "sequence": 89,
     "ecmStoppedAndZero": true,
     "noActiveTransaction": true,
     "noStaging": true,
@@ -26,40 +27,40 @@
       "events": [
         {
           "name": "locked-audit-start",
-          "at": 1951343.99
+          "at": 1985393.31
         },
         {
           "name": "hashes-complete",
-          "at": 1951344.06
+          "at": 1985393.37
         },
         {
           "name": "journal-parsed",
-          "at": 1951344.06
+          "at": 1985393.37
         },
         {
           "name": "selectors-complete",
-          "at": 1951344.14
+          "at": 1985393.46
         },
         {
           "name": "snapshot-parsed",
-          "at": 1951344.19
+          "at": 1985393.52
         },
         {
           "name": "freshness-checked",
-          "at": 1951344.19
+          "at": 1985393.52
         },
         {
           "name": "locked-audit-end",
-          "at": 1951344.2
+          "at": 1985393.53
         }
       ],
       "freshness": {
-        "checkedAt": 1951344.19,
-        "publicationAge": 0.9699999999720603,
-        "sourceAge": 2.2199999999720603,
-        "queryStarted": 1951341.97,
-        "publishedAt": 1951343.22,
-        "sequence": 231
+        "checkedAt": 1985393.52,
+        "publicationAge": 2.669999999925494,
+        "sourceAge": 3.2399999999906868,
+        "queryStarted": 1985390.28,
+        "publishedAt": 1985390.85,
+        "sequence": 89
       }
     },
     "serviceEpochPinned": true,
@@ -71,32 +72,91 @@
   "finalClosure": {
     "passed": true
   },
-  "workerPid": 9454,
-  "guardianPid": 9455,
-  "sameWorkerGuardianAndProducerSinceOpening": false,
-  "expectedClassifierRestartForTrialAndRestore": true,
-  "naturalWorkerRestartObservedThisTurn": false,
-  "permanentClassifierChangedThisTurn": false,
-  "experimentalConfigurationWritesThisTurn": true,
+  "workerPid": 23634,
+  "guardianPid": 17139,
+  "publicationCandidateInstalled": true,
+  "candidateEntryBindingCreated": true,
+  "permanentClassifierChangedThisTurn": true,
   "nssOpenedThisTurn": false,
-  "qualifiedExperimentalEntry": "work/nss63/real-session.mjs",
-  "qualifiedExperimentalEntryBoundInputs": 241,
+  "qualifiedExperimentalEntry": "work/nss68/real-session.mjs",
+  "qualifiedExperimentalEntryBoundInputs": 257,
   "entryPreparationQualified": true,
   "entryFullHighLoadForwardingQualified": false,
-  "candidateEntryBindingCreated": false,
-  "publicationCandidateInstalledDuringTrial": true,
-  "publicationCandidateInstalled": false,
-  "candidateWorkerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
-  "independentNatural180SecondUndoVerified": true,
+  "entryReadOnlyPrewriteAndRecoveryQualified": true,
+  "naturalWorkerRestartObservedThisTurn": true,
+  "sameWorkerSinceRetainedInstallation": false,
+  "sameWorkerAcrossLatestEntryAudits": true,
   "nssPermanentlyEnabled": false,
   "completePerformanceAndGameAcceptance": false,
   "steamDownloadControlledThisTurn": true,
+  "clientDownloadFinallyPaused": true,
   "gameStartedThisTurn": false,
   "realHumanMetricsAvailable": false,
-  "above300MbpsPublicationActuallyObserved": true,
-  "clientDownloadFinallyPausedOrCompleted": true,
+  "above300MbpsPublicationObservedThisTurn": false,
+  "historical67Above300MbpsPublicationObserved": true,
+  "generalLongTermStabilityProved": false,
   "requiresLiveRevalidation": true,
-  "historical65RuntimePreservedSha256": "da9bff64cd3dace478df11615a4a57599dd6e2697640fc643cb2586c56863922",
-  "historical64RuntimePreservedSha256": "04c831d3685b69e0d55883499e54ad5e4ef7a1466acd842cc868c6bf109664d7",
-  "historical63RuntimePreservedSha256": "c78125f0bdd73b3348d370b80224eeefb918bf83bfb8429890d433e0dc478d44"
+  "historical67RuntimePreservedSha256": "d9cba1bff415383d735ddad756f5b6d4d6bc697150590929f84e1e6c60af2314",
+  "handoffRevalidation": {
+    "passed": true,
+    "observedAt": "2026-10-05T02:49:40.004Z",
+    "readonly": true,
+    "configurationMatches": true,
+    "deploymentReference": "work/nss68/deployment-latest.json",
+    "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+    "workerPid": 23634,
+    "guardianPid": 17139,
+    "originalFullLockedAudit": true,
+    "selectors": 20,
+    "queryAge": 2.1299999998882413,
+    "sequence": 332,
+    "ecmStoppedAndZero": true,
+    "noActiveTransaction": true,
+    "noStaging": true,
+    "publicationTrial": false,
+    "noExperimentState": true,
+    "noExperimentalModule": true,
+    "diagnostic": {
+      "events": [
+        {
+          "name": "locked-audit-start",
+          "at": 1986124.77
+        },
+        {
+          "name": "hashes-complete",
+          "at": 1986124.83
+        },
+        {
+          "name": "journal-parsed",
+          "at": 1986124.84
+        },
+        {
+          "name": "selectors-complete",
+          "at": 1986124.96
+        },
+        {
+          "name": "snapshot-parsed",
+          "at": 1986125.25
+        },
+        {
+          "name": "freshness-checked",
+          "at": 1986125.25
+        },
+        {
+          "name": "locked-audit-end",
+          "at": 1986125.25
+        }
+      ],
+      "freshness": {
+        "checkedAt": 1986125.25,
+        "publicationAge": 0.6999999999534339,
+        "sourceAge": 2.1299999998882413,
+        "queryStarted": 1986123.12,
+        "publishedAt": 1986124.55,
+        "sequence": 332
+      }
+    },
+    "serviceEpochPinned": true,
+    "nssAdmissionAllowed": false
+  }
 }

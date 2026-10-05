@@ -1,0 +1,33 @@
+{
+  "sources": 23,
+  "sourceHashes": {
+    "work/nss68/deployment-binding.mjs": "17e75451784c77f950a5acf4b740110b2eee1df59fd4d41ed67f9450dc246c3b",
+    "work/nss68/prepare.py": "92db8787ebd81e3e8eefdbd28f68c16bda14ca326e338bb958260b592c6cdfc8",
+    "work/nss68/commit-publication.mjs": "c51b656b11ba1c8d344a55dc1d3d250efeb3b10e6fc0c58adaed021f842f871e",
+    "work/nss68/qualify-entry.mjs": "015090d0daac3a3ff27fa818ae5de512cceb968820b95c1a0cbb2a9c522ad381",
+    "work/nss68/cleanup-stage.mjs": "200fbef06d30d4d7960d2a1625a62c01338b10431105ce5a00736b686994bdfb",
+    "work/nss68/health.mjs": "957039c761f178eb87d14a845167a8f2fe68b324e38feb60b79ad169190106be",
+    "work/nss68/publication-retain.mjs": "4f207a849737dc671ca0030b546d1f82afe387f3a2ee051f866d5702765dce01",
+    "work/nss68/verify-rollback.mjs": "7a8109f3cb83ba29cd54f29838d0fae651f0b18b0ccc036c6b40f390cc5e051e",
+    "work/nss68/read-real-candidates.mjs": "a165299d3a572a4da47322db37d6e38239ac7ed4c65d2d07de9f4a0c23188179",
+    "work/nss68/record-candidates.mjs": "03cc166508445050a676515c4a5400bea33dbd1897481d7364adbf02e9845975",
+    "work/nss68/wait-ready-candidate.mjs": "0ef976a1cb5b0a1243534945c073a49002c8781150f131f69bd17c8254150d6e",
+    "work/nss68/wait-publication-metadata.mjs": "b7ec9f334321444ea3d79c3728eeced163ae4dffed18b67234a1957a05367c5f",
+    "work/nss68/current-audit-diagnostic.mjs": "93d9505beca9d535071866bc78720ae9849d9d9ebda1d3930cc66184e951cc85",
+    "work/nss68/module-stage.mjs": "18c98dc94c18e22eaecd1c2e43b08da9bd909d6d8c01fc2f7be49bbcd408136f",
+    "work/nss68/real-session.mjs": "05cff817ac0a40bdc65dec62cb7ed706b7790e052bd94085cf08423e30e87153",
+    "work/nss68/session-binding.mjs": "c89a66b92e6bbe4489de017471589c5f053cf7dce28d70c1b9118cd14b63c45e",
+    "work/nss68/audit-load.mjs": "fc8f33739633ac7238d3970eecf9b1b82149d9644a1db70ed418161a174af99d",
+    "work/nss68/observe-retained.lua": "581c82ea10d4d328bfa87372adb3da4fd8c65cee35858d5f0e282e3b402cdab7",
+    "work/nss68/observe-retained.mjs": "14d935b65b14e674fa5f1220d5f3f96cb65e00798f64a94e8a86a623cb001b04",
+    "work/nss68/client-watchdog.ps1": "75afb5bf477e4ccf404e9f0d72ce4ccfe5ed9af9bbd2822308bc680b03b9e140",
+    "work/nss68/read-worker-recovery.mjs": "393cef9317706b63ae4352af02ed3ce9e7aeb91c773980374b2000d004ab9f5f",
+    "work/nss68/summarize.py": "6c3fe3cfef35e245988649d0bd4752057eb7f6a912aa675d8cb12b3e918b349d",
+    "work/nss68/freeze-proof.py": "5fff586817744fd7095ed85a2b966092b314fcb3425c85e85217de8bd63f7bc6"
+  },
+  "candidateRetainedAtEnd": true,
+  "privateConnectionConfigurationAndCapturesExcluded": true,
+  "old63And67ProofsUntouched": true,
+  "newFlowPermissionGranted": false,
+  "role": "qualified-publication-retention-and-explicit-deployment-consumer-audit-stage-overlay"
+}

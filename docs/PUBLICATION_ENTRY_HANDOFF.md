@@ -1,3 +1,11 @@
+# NSS68：实际部署与统一入口绑定已完成
+
+`work/nss68/deployment-latest.json` 是当前committed引用，worker/config/pointer实际读回和原完整审核已验证。新 `read-real-candidates.mjs`、`current-audit-diagnostic.mjs`、`module-stage.mjs` 和调度hint统一调用 [部署校验](../code/work/nss68/deployment-binding.mjs)。旧47/49与过期67trial保持历史，不能替代新引用。
+
+原241+16共257输入、17新验证、现场原完整准入与恢复检查通过。新NSS stage未执行；高负载 gate、完整可比A/B/A2与真人收益仍未验收。见 [NSS68](../evidence/nss68-mainline.json)。
+
+## NSS67接续问题历史
+
 # 发布候选接入 NSS 的下一步
 
 NSS67 已在真实 Steam 下载的 372 / 367 / 385 Mbps 窗口运行发布候选。高负载期间两次原完整审核 source 3.62 / 4.41 秒通过，原 6 秒限制保留。候选自动恢复后未留驻；目前常驻仍47，NSS63入口241项未变。见 [实测](../evidence/nss67-mainline.json)。
