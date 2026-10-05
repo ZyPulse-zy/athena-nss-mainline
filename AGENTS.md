@@ -1,5 +1,8 @@
 # 接续此研究
 
+最新NSS115整理/实际114：单WAN2真实TCP+UDP、20秒A/B/A2/ECM0→2→0，物理LAN4下行8f05/06与wan上行8e05/06四leaf命中，mark/NAT/affinity/7续租/两根及模块恢复通过；TCP26.378/26.998/25.884，UDP868/868、933/933、866/866，下bulkdrop204/RT0，上bulk/RT+36842/+923包/0drop。不是真人/300Mbps/完整CAKE或上行拥塞验收；常驻upTag0不变、受控由真实class映射。114新入口793项，9000/65536/73728传输上限、6秒来源、27native/100owner不放宽。110原恢复拒绝保留，111整体通过；112传输写前拒绝/未stage，113两树建成却旧normalizer拒绝、ECM未开，全部原义保持。113只修procd脚本正常exec minieap的精确身份审核，未改认证；失败未选中WAN4PID变化单独允许，其它配置/路由/服务严格。四stage与五端点均清理，115终态4859/17139/source1.70、ECM关闭全零无残留，两物理默认根恢复，WAN4仍down四路自动PBR不改，旧109 runtime逐字节保留。下一步上行压力/RT与最小自动映射，之后一次集中真人；不扩WAN/共享预算/Wi-Fi/autorate、不重装/新下载/UI。夜间至10:00，09:50不新生产实验；STATE为准。
+
+
 最新NSS109：两次实际8秒捕获484请求/484serverTX，router最早Linux tap465，之后private WAN/IFB/bridge/LAN/PC均465，19缺口前于tap，上游与NIC早期未分开。TCP44.407/47.999Mbps，BULK WAN3/RT WAN2，非同WAN/NSS/CPU/真人验收。首108自身capture drops160拒绝且server提前中断保留；109先filter后接收两次drops0。auth-recover PID缺失set-e故障仅查询修复并保留，checkpoint/180秒独立撤销/SSH/native审核，保护manifest一行改变；自然恢复请求后返回0但WAN4仍down，不称认证恢复。既有健康控制器[100,100,100,0,100]的300桶严格源码模型通过，四路75/75/75/0/75，旧全5WAN审核拒绝保留。终态4859/17139/config不变，ECM关闭全零、无残留，两端点关闭；旧107/98/92/82 runtime保持。105/662仅历史资格，新写前须绑定声明auth修复和实际四路基线。下一步接回单WANNSS预算/关键上行与最终一次真人，不扩WAN/共享预算/新下载/重装；STATE为准。
 
 

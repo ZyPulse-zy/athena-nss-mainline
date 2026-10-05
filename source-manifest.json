@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T17:13:14.135555+00:00",
+  "generatedAt": "2026-10-05T19:11:34.575888+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -8313,8 +8313,771 @@
       "sha256": "0d36a35fb3fc35fa4dab9228ebd07705881cb8e778b593cc0703846963b508c8",
       "bytes": 1853,
       "role": "verify-published-LF-text-checksums-on-Windows"
+    },
+    {
+      "path": "code/work/nss110/controlled-session.mjs",
+      "workspaceSource": "work/nss110/controlled-session.mjs",
+      "sha256": "a452da27dd9a7af593f5e4602b158ecfc9e64e61ef26e29677b075c5f0f7c548",
+      "bytes": 12805,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss110/current-audit-diagnostic.mjs",
+      "sha256": "1c919a507cb3950cd145dab99298151213611898ade794ca9e16e0a9197210a2",
+      "bytes": 5372,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/session-binding.mjs",
+      "workspaceSource": "work/nss110/session-binding.mjs",
+      "sha256": "712824821ef0dbf0441a832566f3113234cc892d6aa0db1772fcda0313851ff0",
+      "bytes": 1163,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/declared-baseline.mjs",
+      "workspaceSource": "work/nss110/declared-baseline.mjs",
+      "sha256": "10334548a358a3a726d554809054d400658e90dac79584e3135228d6bb5d627f",
+      "bytes": 2302,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/match-controlled.mjs",
+      "workspaceSource": "work/nss110/match-controlled.mjs",
+      "sha256": "33c6df6efc8a4f0e2fbfadb3cf2952819b3ef759c1a48b9358cb1958525f2a0f",
+      "bytes": 2163,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/read-controlled.mjs",
+      "workspaceSource": "work/nss110/read-controlled.mjs",
+      "sha256": "e1b52afd074e59cb46c7951b34202280cd5732a288ac368d7b0c6b3433fafc19",
+      "bytes": 5548,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/run.mjs",
+      "workspaceSource": "work/nss110/run.mjs",
+      "sha256": "fa5b074943c0906723d87b9f4901dc0ed9f42a9677623f5c0b7c954099ce6df8",
+      "bytes": 3178,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/module-stage.mjs",
+      "workspaceSource": "work/nss110/module-stage.mjs",
+      "sha256": "2431d1cfd8f90880f89a7b209e6831df3036e6ab8a14047ff4abecdc5a7b6d55",
+      "bytes": 393,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/prepare.py",
+      "workspaceSource": "work/nss110/prepare.py",
+      "sha256": "d69282bfabb746e91be1df328a4764fbd5652d0646d59cc096db82ac4c75ba8f",
+      "bytes": 1214,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/qualify.mjs",
+      "workspaceSource": "work/nss110/qualify.mjs",
+      "sha256": "c5ade80c92bd943f431bb3035625cecf661b57ecedbd2065b98665d0faa88e83",
+      "bytes": 5366,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/health.mjs",
+      "workspaceSource": "work/nss110/health.mjs",
+      "sha256": "78069e44d54a358a7697c42b30ac4e7770e5d96da09952b47aaaa815f374e712",
+      "bytes": 5842,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/closure-recheck.mjs",
+      "workspaceSource": "work/nss110/closure-recheck.mjs",
+      "sha256": "a4a1b0d37a50589419ffd74c4d94114721475dba0897c99fd680e8f0a3d1ec3f",
+      "bytes": 2487,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/prepare-analysis.py",
+      "workspaceSource": "work/nss110/prepare-analysis.py",
+      "sha256": "992286f93d11632b11353a1d1a9d9d090eb532b61257ea9a7344db381fea4dd9",
+      "bytes": 819,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/analyze-long.py",
+      "workspaceSource": "work/nss110/analyze-long.py",
+      "sha256": "77c86b3ac41a25be2028c0d877093ef262a63d1eadc26f2374de0695ff701f1a",
+      "bytes": 5302,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss110/calibrate-clock.mjs",
+      "workspaceSource": "work/nss110/calibrate-clock.mjs",
+      "sha256": "10b4ee5d84926ca9c5e0f43b3ebce5a8e109beb557e930bd5b1b8c5cf8ab922a",
+      "bytes": 994,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/controlled-session.mjs",
+      "workspaceSource": "work/nss111/controlled-session.mjs",
+      "sha256": "5de4c9af0e84632bdacb944bd86729d6f7ca41b6d333362e0aa42da58f56509a",
+      "bytes": 13013,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss111/current-audit-diagnostic.mjs",
+      "sha256": "22e4cbd9d527e10106d44b7bdfbff1619e1098163310c0fb4786dd4f87b0211d",
+      "bytes": 5835,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/session-binding.mjs",
+      "workspaceSource": "work/nss111/session-binding.mjs",
+      "sha256": "1a72bf82e567db9b7002895e87bcea0e8fc45d9d5ee96d276c4a6197ff0d4c03",
+      "bytes": 763,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/declared-baseline.mjs",
+      "workspaceSource": "work/nss111/declared-baseline.mjs",
+      "sha256": "afdd8ed547ca3ccdd6553e83af54a1608921375c7e397b04726ea10d70983b47",
+      "bytes": 3500,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/service-epoch.mjs",
+      "workspaceSource": "work/nss111/service-epoch.mjs",
+      "sha256": "460f2be0bdee773fa670e4e1783ed0b5b2ab271ce8547394e9b62ebb982595cc",
+      "bytes": 1086,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/match-controlled.mjs",
+      "workspaceSource": "work/nss111/match-controlled.mjs",
+      "sha256": "f1299cdfeb81df9aef2a78d8efe091b9feda79a9e3e1c6cb14072c4018a86abf",
+      "bytes": 2163,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/read-controlled.mjs",
+      "workspaceSource": "work/nss111/read-controlled.mjs",
+      "sha256": "f897211e1b42a0f4ef41b84e63f01d4762fcc3c97de829db662eb52c15146f6f",
+      "bytes": 5548,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/run.mjs",
+      "workspaceSource": "work/nss111/run.mjs",
+      "sha256": "dbd6f5721abb7268807c3a877a7aa69d14d6ada08ff718dbf22ef053c05fdaa5",
+      "bytes": 3178,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/module-stage.mjs",
+      "workspaceSource": "work/nss111/module-stage.mjs",
+      "sha256": "eb06fbbb537d235b47450dd1f9f28ab1b326fabfc16a901ff7987364793fb883",
+      "bytes": 398,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/prepare.py",
+      "workspaceSource": "work/nss111/prepare.py",
+      "sha256": "c29eda800b3ceeeb5b87aa628a543eb93d282976109f1ef1c18d2c62600598cf",
+      "bytes": 3550,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/qualify.mjs",
+      "workspaceSource": "work/nss111/qualify.mjs",
+      "sha256": "1e03d284602c3a01f467169dabe0352087cdb85d6a456c666b41d8c67332779f",
+      "bytes": 4015,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/failed-wan-owner.lua",
+      "workspaceSource": "work/nss111/failed-wan-owner.lua",
+      "sha256": "acbc56f5b0802fcf203150d931bfc4eaa99bee49f1eb0f34b0836c84294b878e",
+      "bytes": 1390,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/prepare-analysis.py",
+      "workspaceSource": "work/nss111/prepare-analysis.py",
+      "sha256": "361ca49584e494fdb1ffb5d94419c6b52d054f009bc300401250cd964d082ff8",
+      "bytes": 568,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/analyze-long.py",
+      "workspaceSource": "work/nss111/analyze-long.py",
+      "sha256": "9337b430b52aab40896a795ff5935499da5dc180eb51aec7e0c32819dd49a1c6",
+      "bytes": 5126,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss111/calibrate-clock.mjs",
+      "workspaceSource": "work/nss111/calibrate-clock.mjs",
+      "sha256": "08262b447ef84dbea4d1c5fde8cfe577ddedb2789173589a67dc754492362ac7",
+      "bytes": 994,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/controlled-session.mjs",
+      "workspaceSource": "work/nss112/controlled-session.mjs",
+      "sha256": "442225687542aeab49bdbf4f517979251fd0a36a097cc97ce076914a5eda8230",
+      "bytes": 13307,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss112/current-audit-diagnostic.mjs",
+      "sha256": "0eda72993490adb4e10a900a598463455d49b65116dc91245b68f9f66beaf32a",
+      "bytes": 5835,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/session-binding.mjs",
+      "workspaceSource": "work/nss112/session-binding.mjs",
+      "sha256": "2ed3062aa09e24c6242d76d8c2ba6f646ecc1cbd23776557e5e7eb94fc66b135",
+      "bytes": 980,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/declared-baseline.mjs",
+      "workspaceSource": "work/nss112/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/service-epoch.mjs",
+      "workspaceSource": "work/nss112/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/match-controlled.mjs",
+      "workspaceSource": "work/nss112/match-controlled.mjs",
+      "sha256": "44d9f6c21e5b3c05ee76bccc5e3ef63b4c012fda7848d209ffdbf8e328784bc6",
+      "bytes": 2163,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/read-controlled.mjs",
+      "workspaceSource": "work/nss112/read-controlled.mjs",
+      "sha256": "233f0f4f83cb68b630e9312a65ada1bdd2795d8a795c9ec975c99acec8b9d4a3",
+      "bytes": 5548,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/run.mjs",
+      "workspaceSource": "work/nss112/run.mjs",
+      "sha256": "c13b28dca77aba2e30cc13156e9d5918edfe1093db9a7a5e84c203bb42615215",
+      "bytes": 3186,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/module-stage.mjs",
+      "workspaceSource": "work/nss112/module-stage.mjs",
+      "sha256": "a7467250b5dbe1e7f1523c09ac273dd193ca78984e18cc5667b34c338a39f539",
+      "bytes": 17289,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/prepare-qos.py",
+      "workspaceSource": "work/nss112/prepare-qos.py",
+      "sha256": "50ef32f5ed552687736b7bc6baf49ef8b4cf679fe91e7ca343786ab03ecb467f",
+      "bytes": 3972,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/prepare-entry.py",
+      "workspaceSource": "work/nss112/prepare-entry.py",
+      "sha256": "cf4a47c3a256b485fc997ce8b39b0f0ba663875e044eccddb49fe477a20d633a",
+      "bytes": 3137,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/qualify.mjs",
+      "workspaceSource": "work/nss112/qualify.mjs",
+      "sha256": "3fc62a397863a0e7b945327d9e0ece56684367236e5630b96274847113097106",
+      "bytes": 11379,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/qos-physical.lua",
+      "workspaceSource": "work/nss112/qos-physical.lua",
+      "sha256": "9df3b007bf2f274433df4c7d481cbbcbd5f989356d8b6522c8b963ec4eb84cf3",
+      "bytes": 10109,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/qos-lifecycle-fixtures.lua",
+      "workspaceSource": "work/nss112/qos-lifecycle-fixtures.lua",
+      "sha256": "a625fd5e9b2e4d66fefb73bf5b711fb6eb3704b3fc359670386c908b1e422055",
+      "bytes": 3113,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/payload.mjs",
+      "workspaceSource": "work/nss112/payload.mjs",
+      "sha256": "5dc860b7964f07d9a090e4fb66b4d4ada18ddb8fd2358a36ee832e762eca6561",
+      "bytes": 1910,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/pack-lua.mjs",
+      "workspaceSource": "work/nss112/pack-lua.mjs",
+      "sha256": "fbf9e4e11f2f6c31b38f435e9a1cc22bef5afb28ace84d52f8bdad58fb504a0b",
+      "bytes": 601,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss112/uplink-tag-plan.mjs",
+      "sha256": "f25000857e3661b6b46c8409836d04a189eeac3c37acafbd2acc8f6075b6903b",
+      "bytes": 1051,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss112/parse-ecm-any-wan.mjs",
+      "sha256": "3090744d56d1e637f3874390032d37e16b201766c44d4bc227956854852350a7",
+      "bytes": 3583,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/fast-path.lua",
+      "workspaceSource": "work/nss112/fast-path.lua",
+      "sha256": "6020419285823da3fec572e92cfdf984fe56429821dfe774fd19d0714bbcd7de",
+      "bytes": 15834,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/module-stage-guardian.lua",
+      "workspaceSource": "work/nss112/module-stage-guardian.lua",
+      "sha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+      "bytes": 12634,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/measure-payload.mjs",
+      "workspaceSource": "work/nss112/measure-payload.mjs",
+      "sha256": "5705a4dd2e322868b7e4809b0767471321512b834c757ab508b2b378a5b906cc",
+      "bytes": 1796,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/read-uplink.mjs",
+      "workspaceSource": "work/nss112/read-uplink.mjs",
+      "sha256": "47d19f7cd7574bfad068f097c65b45b3551d272b056f4b3c3acea9001a0664ef",
+      "bytes": 2595,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/inspect-auth-process.lua",
+      "workspaceSource": "work/nss112/inspect-auth-process.lua",
+      "sha256": "dcb4dc483062cf729f2b02ae2555a2d4973e2c3fa3191f141c8b7ad2ef19f605",
+      "bytes": 1621,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/inspect-auth-process.mjs",
+      "workspaceSource": "work/nss112/inspect-auth-process.mjs",
+      "sha256": "518acfc6115e7827c283fc43d09b27d58cbdf2bfdf8e056451123aef004a79bc",
+      "bytes": 732,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss112/read-auth-wrapper.mjs",
+      "workspaceSource": "work/nss112/read-auth-wrapper.mjs",
+      "sha256": "585396bb784957c31e8b836c8c243b58480f50c7c80a1d033084471e380827c5",
+      "bytes": 918,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/controlled-session.mjs",
+      "workspaceSource": "work/nss113/controlled-session.mjs",
+      "sha256": "f428c55869b398695a616d1e73dee99fce4822b3d5593f999f59aeffac1ed3b6",
+      "bytes": 13416,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss113/current-audit-diagnostic.mjs",
+      "sha256": "9dade8985f7caca2e43f388dbd465fc0a20445fb8e848ba8b8f80e772511b67d",
+      "bytes": 5835,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/session-binding.mjs",
+      "workspaceSource": "work/nss113/session-binding.mjs",
+      "sha256": "1feb5874624b729df543300681885cab12323b71690acea84ef7a27f8b6a7b56",
+      "bytes": 967,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/declared-baseline.mjs",
+      "workspaceSource": "work/nss113/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/service-epoch.mjs",
+      "workspaceSource": "work/nss113/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/match-controlled.mjs",
+      "workspaceSource": "work/nss113/match-controlled.mjs",
+      "sha256": "e5e7b71e811538e502929b3fca64c0845d274a16c6a2aa5f78b6b1346647cfb5",
+      "bytes": 2163,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/read-controlled.mjs",
+      "workspaceSource": "work/nss113/read-controlled.mjs",
+      "sha256": "c319920fd515e4f7c4cb354c3d980e84a0af3177a37fa69a3028a8b7756de538",
+      "bytes": 5548,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/run.mjs",
+      "workspaceSource": "work/nss113/run.mjs",
+      "sha256": "0b7b71962fc9566b5d764cb813bc59ecf9c450b1e3cb00d062e588f9cf224916",
+      "bytes": 3186,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/module-stage.mjs",
+      "workspaceSource": "work/nss113/module-stage.mjs",
+      "sha256": "3a4528debb1198d81cd951fc07dd2d57c7c4b81c28cc5973922c57804ebc18e7",
+      "bytes": 17766,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/prepare.py",
+      "workspaceSource": "work/nss113/prepare.py",
+      "sha256": "f0844113c4fff748c78ec77c02a044913531e7ce2780cef4a2eab66c9bab6b6b",
+      "bytes": 1010,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/qualify.mjs",
+      "workspaceSource": "work/nss113/qualify.mjs",
+      "sha256": "d7fe8914a1e9dd6d0753d12ae934bd1b2bb453e2f85987a7f363dcea288da51e",
+      "bytes": 4181,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/qos-physical.lua",
+      "workspaceSource": "work/nss113/qos-physical.lua",
+      "sha256": "9df3b007bf2f274433df4c7d481cbbcbd5f989356d8b6522c8b963ec4eb84cf3",
+      "bytes": 10109,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/payload.mjs",
+      "workspaceSource": "work/nss113/payload.mjs",
+      "sha256": "546acf3b793af75e7348bb55ba133c005a8f8758622166a6ebc5379e3dd98d02",
+      "bytes": 1910,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/pack-lua.mjs",
+      "workspaceSource": "work/nss113/pack-lua.mjs",
+      "sha256": "fbf9e4e11f2f6c31b38f435e9a1cc22bef5afb28ace84d52f8bdad58fb504a0b",
+      "bytes": 601,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/pack-guardian.mjs",
+      "workspaceSource": "work/nss113/pack-guardian.mjs",
+      "sha256": "9f3a215c33614737b82e0fd2389127aac46b151e5e564fc2f7fa85798e036218",
+      "bytes": 660,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/compact-default-queues.mjs",
+      "workspaceSource": "work/nss113/compact-default-queues.mjs",
+      "sha256": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+      "bytes": 849,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/preview-plan.mjs",
+      "workspaceSource": "work/nss113/preview-plan.mjs",
+      "sha256": "cba81a0703d5980557bfa4032f5dfe34eaed81eff78a89a27b7a76f07c6054c9",
+      "bytes": 1539,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/failed-wan-owner.lua",
+      "workspaceSource": "work/nss113/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss113/uplink-tag-plan.mjs",
+      "sha256": "f25000857e3661b6b46c8409836d04a189eeac3c37acafbd2acc8f6075b6903b",
+      "bytes": 1051,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss113/parse-ecm-any-wan.mjs",
+      "sha256": "3090744d56d1e637f3874390032d37e16b201766c44d4bc227956854852350a7",
+      "bytes": 3583,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/fast-path.lua",
+      "workspaceSource": "work/nss113/fast-path.lua",
+      "sha256": "6020419285823da3fec572e92cfdf984fe56429821dfe774fd19d0714bbcd7de",
+      "bytes": 15834,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss113/module-stage-guardian.lua",
+      "workspaceSource": "work/nss113/module-stage-guardian.lua",
+      "sha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+      "bytes": 12634,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/controlled-session.mjs",
+      "workspaceSource": "work/nss114/controlled-session.mjs",
+      "sha256": "157d9f7551de6637df82e62028095afc2f61397d32cc84cbc29d4f4b10ea4c3f",
+      "bytes": 13416,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss114/current-audit-diagnostic.mjs",
+      "sha256": "ba163972a31bb041d293be09dd586a78b826c36f7688be7b43a8be18ecf5cf0c",
+      "bytes": 5835,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/session-binding.mjs",
+      "workspaceSource": "work/nss114/session-binding.mjs",
+      "sha256": "3ce9d7bc638bd949a0a47cc92dfe1516f825125e47b2cb894b7c74110797a402",
+      "bytes": 830,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/declared-baseline.mjs",
+      "workspaceSource": "work/nss114/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/service-epoch.mjs",
+      "workspaceSource": "work/nss114/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/match-controlled.mjs",
+      "workspaceSource": "work/nss114/match-controlled.mjs",
+      "sha256": "a1ed922ae325c8fc7e962d6c3b1b555449b34647b9604c198a00a487ffcf321c",
+      "bytes": 2163,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/read-controlled.mjs",
+      "workspaceSource": "work/nss114/read-controlled.mjs",
+      "sha256": "d4a82c55a74d8b5b610442ff1102af8b3278dc2a02e6019c957da78140cab9e9",
+      "bytes": 5548,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/run.mjs",
+      "workspaceSource": "work/nss114/run.mjs",
+      "sha256": "749d7fa662702dc249494d0a39d643a787969587695ee7ba6a6610db0b85aeae",
+      "bytes": 3186,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/module-stage.mjs",
+      "workspaceSource": "work/nss114/module-stage.mjs",
+      "sha256": "b3c044e85cbe1d9b76b40d8a3633bb1de16fdc00a0f8bc7e6bee0f8373b04f5d",
+      "bytes": 17768,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/prepare.py",
+      "workspaceSource": "work/nss114/prepare.py",
+      "sha256": "6583304b77cbfc51b8c32b2e6ff09fd0919eb264ed75cddb76feac718efeea5d",
+      "bytes": 2061,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/qualify.mjs",
+      "workspaceSource": "work/nss114/qualify.mjs",
+      "sha256": "a5faeaa5c5e71e595c3ff61e72866346514b94788958f83b8b4cedb8db253a18",
+      "bytes": 3900,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/qualify-normalizer.lua",
+      "workspaceSource": "work/nss114/qualify-normalizer.lua",
+      "sha256": "c1f9aaea41a4a07d3936d5c92a298ac1df4440c80f55755e972cd22a74924c9f",
+      "bytes": 2846,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/tag-normalizer.lua",
+      "workspaceSource": "work/nss114/tag-normalizer.lua",
+      "sha256": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+      "bytes": 5128,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/failed-wan-owner.lua",
+      "workspaceSource": "work/nss114/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/qos-physical.lua",
+      "workspaceSource": "work/nss114/qos-physical.lua",
+      "sha256": "9df3b007bf2f274433df4c7d481cbbcbd5f989356d8b6522c8b963ec4eb84cf3",
+      "bytes": 10109,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/payload.mjs",
+      "workspaceSource": "work/nss114/payload.mjs",
+      "sha256": "79040f75fe4e815eb257500ea5195f8d877a0323b6644f0f87856fbe4f0533b0",
+      "bytes": 1910,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/pack-lua.mjs",
+      "workspaceSource": "work/nss114/pack-lua.mjs",
+      "sha256": "fbf9e4e11f2f6c31b38f435e9a1cc22bef5afb28ace84d52f8bdad58fb504a0b",
+      "bytes": 601,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/pack-guardian.mjs",
+      "workspaceSource": "work/nss114/pack-guardian.mjs",
+      "sha256": "965b28cd6de7e57cd54ebe14c784628cf523b4b10aa9d99deec2daa3c21efd3d",
+      "bytes": 660,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/compact-default-queues.mjs",
+      "workspaceSource": "work/nss114/compact-default-queues.mjs",
+      "sha256": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+      "bytes": 849,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss114/uplink-tag-plan.mjs",
+      "sha256": "f25000857e3661b6b46c8409836d04a189eeac3c37acafbd2acc8f6075b6903b",
+      "bytes": 1051,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss114/parse-ecm-any-wan.mjs",
+      "sha256": "3090744d56d1e637f3874390032d37e16b201766c44d4bc227956854852350a7",
+      "bytes": 3583,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/fast-path.lua",
+      "workspaceSource": "work/nss114/fast-path.lua",
+      "sha256": "6020419285823da3fec572e92cfdf984fe56429821dfe774fd19d0714bbcd7de",
+      "bytes": 15834,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/module-stage-guardian.lua",
+      "workspaceSource": "work/nss114/module-stage-guardian.lua",
+      "sha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+      "bytes": 12634,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/prepare-analysis.py",
+      "workspaceSource": "work/nss114/prepare-analysis.py",
+      "sha256": "3e9fddb411473cf922f562cd00e9d1ca1e05e021e6350025119173e5c7cacaa3",
+      "bytes": 1433,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/analyze-long.py",
+      "workspaceSource": "work/nss114/analyze-long.py",
+      "sha256": "a6e35aacaafbf90a24143adc58de467d91d5aa115900c97827e42e38a1d80f65",
+      "bytes": 5809,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/calibrate-clock.mjs",
+      "workspaceSource": "work/nss114/calibrate-clock.mjs",
+      "sha256": "b562dd241a75d0ba9a8413acf514e26da5d2944bfaf1d2c9c7218d2e1bb04792",
+      "bytes": 994,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss114/prove-upstream.py",
+      "workspaceSource": "work/nss114/prove-upstream.py",
+      "sha256": "12e35aa8e00a79919352032e2cbe6839b3c7eedd81648c3f5513faf66eb65e44",
+      "bytes": 1976,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss115/prepare-health.py",
+      "workspaceSource": "work/nss115/prepare-health.py",
+      "sha256": "8b43486a49cad33b6c44b2717f3d599589bc6daad58f0a03dfb7f07f8895a264",
+      "bytes": 239,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss115/health.mjs",
+      "workspaceSource": "work/nss115/health.mjs",
+      "sha256": "52fddaa8a1c6b0c353f67823b1a71589f121c1c0c48eb751bffc7743fcde5d90",
+      "bytes": 5877,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss115/read-final-physical.mjs",
+      "workspaceSource": "work/nss115/read-final-physical.mjs",
+      "sha256": "b18fc10edb198b826f8f16cd00caf397246c9d9a08d70de5ff20c397cc7cd4bf",
+      "bytes": 2041,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss115/keep-awake.ps1",
+      "workspaceSource": "work/nss115/keep-awake.ps1",
+      "sha256": "cb28bda424cae98090db7a16371d02a3908968c77c3ab7db4a8b8f0ec6aa9bae",
+      "bytes": 659,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss115/save-evidence.py",
+      "workspaceSource": "work/nss115/save-evidence.py",
+      "sha256": "e67ced5bc80595fcfa1eb543aa555da78518a2b33e03bfd978b537ec1aa94afb",
+      "bytes": 24864,
+      "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
     }
   ],
-  "lastAppendExport": "NSS109",
+  "lastAppendExport": "NSS115",
   "privateDataExcluded": true
 }

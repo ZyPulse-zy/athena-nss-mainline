@@ -1,0 +1,3 @@
+import fs from'node:fs';import assert from'node:assert/strict';import{connectRouter}from'../nss27/connect-router.mjs';import{encode,receipt}from'../nss11/v7-observe-repair/observe2/transport.mjs';
+const body=fs.readFileSync('work/nss112/inspect-auth-process.lua','utf8'),c=await connectRouter();
+try{const e=encode("lua - <<'NSS112_AUTH_READ'\n"+body+"\nNSS112_AUTH_READ\n"),r=receipt(await c.run(e.command),e);fs.writeFileSync('work/nss112/auth-process-inspection-raw-private.json',JSON.stringify(r,null,2)+'\n',{flag:'wx'});assert.equal(r.code,0);const v=JSON.parse(r.stdout);fs.writeFileSync('work/nss112/auth-process-inspection.json',JSON.stringify(v,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(v));}finally{c.close()}

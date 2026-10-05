@@ -1,0 +1,4 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+import {verifyPreparation as previous} from '../nss111/session-binding.mjs';
+const h=b=>crypto.createHash('sha256').update(b).digest('hex');
+export function verifyPreparation(){const q=previous(),p=JSON.parse(fs.readFileSync('work/nss112/entry-qualified.json'));assert.ok(p.passed&&p.onlyPhysicalUplinkQosAdded&&p.productionExecution===false);assert.equal(p.maximumStagedBytes,73728);assert.equal(p.nativeGateBinaryChanged,false);assert.ok(p.checks.length>=20);for(const[f,x]of Object.entries(p.sourceManifest))assert.equal(h(fs.readFileSync(f)),x,f);assert.equal(h(fs.readFileSync('work/nss112/uplink-capacity-private.json')),p.uplinkCapacitySha256);for(const name of ['fast-path.lua','module-stage-guardian.lua'])assert.equal(h(fs.readFileSync('work/nss112/'+name)),h(fs.readFileSync('work/nss105/'+name)));return{...q,sourceManifest:{...q.sourceManifest,...p.sourceManifest}};}

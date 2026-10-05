@@ -1,5 +1,24 @@
 # 当前状态
 
+更新：2026-10-06 03:05，北京时间。最新NSS115整理，实际双向硬件测试NSS114。常驻68/config581b5d46…c791d7仍4859/17139；实验全部撤销。
+
+**首次完整证明：同一真实单WAN TCP＋UDP经ECM进入物理LAN4下行bulk/RT、物理wan上行bulk/RT四个NSS FQ-CoDel leaf。三段各20秒，ECM0→2→0，完整mark/NAT/WAN affinity正确、七次续租、两物理根及模块精确恢复。**
+
+见 [汇总](../evidence/nss115-mainline.json)、[实际各轮](../evidence/nss115-trials.json)、[上行实测](../evidence/nss115-uplink-proof.json)、[端点关闭](../evidence/nss115-endpoint-closure.json)、[终态](../evidence/nss115-final-audit.json)、[物理队列恢复](../evidence/nss115-physical-final.json)。
+
+- NSS110按声明auth修复与精确四WAN故障切换基线进入，WAN5完整功能A/B/A2；原整体恢复因未选中故障WAN4自然PID/running变化拒绝，失败仍保留。NSS111只允许该进程变化，其它路由、保护文件、服务仍严格相同；WAN5整体通过，实际此轮未触发新进程例外。111 TCP25.717/26.998/27.004Mbps，softirq9.706/0.876/11.881%，UDP840/840、909/909、835/835；为本轮观察，不新增完整高负载CPU或真人验收。
+- NSS112新双向队列方案20目标RAM＋格式检查通过，完整包75489B先拒绝；仅删除单行源格式/注释后73011B，原73728B上限不变。一次现场guardian传输大小拒绝，checkpoint已核验但未启动stage/改队列。WAN4 procd脚本会正常exec到minieap，旧脚本argv假设产生独立拒绝；只读观察和受保护wrapper源码确认，未改认证。
+- NSS113以原判定实际使用的队列字段缩小plan、保留counter原记录，原9000B传输不变；正常脚本或精确minieap argv/执行文件/PPID/start均校验，绝不输出账户参数。两物理树实际构建且恢复；旧normalizer仅允许下行标签，ECM前拒绝“Unapproved setter”，失败保持。113实际原完整恢复通过，并观察到未选中WAN4进程变化；这不等于WAN4认证恢复。
+- NSS114只补四个明确class/direction writer的标签白名单和8e native alias，27目标RAM反例通过。单WAN2三段实际TCP26.378/26.998/25.884Mbps，softirq9.859/5.421/15.644%，time_squeeze全0；UDP868/868、933/933、866/866。下行bulk新增204drop、RT0；异步近B上行bulk/RT分别+36842/+923包，均0drop/backlog0。实际ECM TCP/UDP上下行tag、CT mark/NAT/WAN2正确，默认未知flow拒绝。不同吞吐和软件段差异不算新CPU收益，echo不是真人CS2。
+- 两物理树各30Mbps组、bulk29/RT1、共同ceil30、默认950fallback。上行数据主要TCP ACK与小UDP，尚未证明上行拥塞限速/实时延迟、EAPOL在高负载队列下连续性或完整CAKE替代。物理wan被五MacVLAN共用，仅一对flow获加速；不是每个private WAN直接挂NSS qdisc，也不声称其它流完全没有经过新增physical root。
+- 常驻发布upTag仍0；本次受控映射依据实际BULK/RT class在ECM学习前生成8e上行tag，未改永久分类器。新114入口793项必须每次重新读当前实例。既有32/48Mbps收益保留，真人/300Mbps/多WAN未验收；不要用完成的工程探针代替用户体验。
+- 四个stage各checkpoint下载/SHA/gzip与控制连接外100秒owner，均精确清理；五个端点FW180/客户端210秒关闭。110两次SSH关闭查询超时原记录保留，独立只读复核最终基线/端口关闭。115原完整终态source1.70、ECM关闭全零、无事务/stage/state/模块；两物理根原mq＋四fq_codel确认。WAN4仍down，现有自动四路PBR不改。旧109 runtime原字节保存，完整私有CT/配置/nonce/检查点/凭据不进Git。
+- 夜间继续到今天10:00；09:50停止新生产实验、整理终态。保持用户Esc后的UI停用，不新下载、不启动游戏、不提交上游。下一步只补单WAN上行压力/RT及自动映射缺口，之后一次集中真人验收；多WAN、共享预算、Wi-Fi、autorate和ECN backlog继续后置。
+
+## NSS109历史状态
+
+# 当前状态
+
 补充：北京时间01:24收尾只读复核仍4859/17139、source2.43秒、ECM关闭全零、无实验残留，WAN4仍down；[新复核](../evidence/nss109-last-readonly-audit.json)，原01:04完整声明审核保持。
 
 更新：2026-10-06 01:04，北京时间。最新NSS109；常驻仍68/config581b5d46…c791d7，ECM关闭全零，无实验残留。

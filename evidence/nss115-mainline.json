@@ -1,0 +1,53 @@
+{
+  "round": "NSS115",
+  "coveredRounds": [
+    110,
+    111,
+    112,
+    113,
+    114,
+    115
+  ],
+  "observedAt": "2026-10-05T19:05:36.726Z",
+  "actualSingleWanStageCases": 4,
+  "preStageTransportRefusals": 1,
+  "completeFunctionalABA": 3,
+  "overallSuccessfulABA": 2,
+  "newDualPhysicalQosPassed": true,
+  "dualPhysicalQosHardwareRound": 114,
+  "dualPhysicalQosOneWan": 2,
+  "actualAcceleratedCount": [
+    0,
+    2,
+    0
+  ],
+  "newQualifiedEntry": "work/nss114/controlled-session.mjs",
+  "newQualifiedEntryBoundInputs": 793,
+  "onlyOneTcpUdpPairAtATime": true,
+  "physicalLan4DownlinkQosProven": true,
+  "physicalWanUplinkLeafRoutingProven": true,
+  "uplinkCongestionLatencyAccepted": false,
+  "authEapolContinuityWhileQueueActiveAccepted": false,
+  "newMatchedCpuComparisonAccepted": false,
+  "earlier32And48CpuEvidenceRetained": true,
+  "humanCs2Acceptance": false,
+  "highLoad300MbpsAcceptance": false,
+  "fullCakeReplacementAccepted": false,
+  "residentClassifierChanged": false,
+  "residentPublicationUpTagStillZero": true,
+  "controlledUpTagDerivedFromActualBulkRtClass": true,
+  "nssPermanentlyEnabled": false,
+  "failedUnselectedWan4ProcessLifecycleScoped": true,
+  "unknownRoutingChangesAllowed": false,
+  "wan4AuthenticationRecovered": false,
+  "allTemporaryEndpointsClosed": 5,
+  "uiOperated": false,
+  "newSteamDownloadsStarted": false,
+  "upstreamSubmitted": false,
+  "originalFailuresPreserved": true,
+  "nightContinuationUntilBeijing": "2026-10-06T10:00:00+08:00",
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

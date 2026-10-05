@@ -897,12 +897,12 @@ assert x107['reportVerification']['sourceValidated']and not x107['reportVerifica
 
 proof109=json.loads((root/'evidence/nss109-source-proof.json').read_text())
 assert proof109['historicPrefixSources']==1155 and proof109['sources']==30
-assert len(manifest['sources'])==1155+proof109['sources']+2
+assert len(manifest['sources'])>=1155+proof109['sources']+2
 assert hashlib.sha256(json.dumps(manifest['sources'][:1155],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof109['historicPrefixCanonicalSha256']
 for source,digest in proof109['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 assert proof109['privateOwnedHostBootstrapExcluded']and proof109['successfulRepairAndCaptureCurrentSourcesAndPrivateInputsRetained']
 assert proof109['prewriteUncompressedInstallerVariantNotClaimedFrozen']and proof109['firstInterruptedServerCaptureNotClaimedComplete']
-x109=json.loads((root/'evidence/nss109-mainline.json').read_text());rt109=json.loads((root/'evidence/current-runtime.json').read_text())
+x109=json.loads((root/'evidence/nss109-mainline.json').read_text());rt109=json.loads((root/'evidence/nss109-runtime.json').read_text())
 assert x109['round']==rt109['round']=='NSS109'
 assert x109['eligibleRequests']==484 and x109['missingBeforeEarliestRouterLinuxTap']==19 and x109['missingInObservedRouterDownstreamChain']==0
 assert not any(x109[k]for k in ['routerPhysicalNicVsUpstreamSeparated','wan4AuthenticationRecovered','nssOpenedThisTurn','newMatchedABA','newCpuComparisonAccepted','sameWanCongestionComparison','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','acceleratedUplinkQosGuaranteed','residentClassifierChanged','nssPermanentlyEnabled','upstreamSubmitted'])
@@ -957,5 +957,53 @@ assert last109['observedAt']==rt109['checkedAt']and last109['readonlyRepeatAfter
 assert all(last109[k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
 assert last109['workerPid']==4859 and last109['guardianPid']==17139 and not last109['wan4Up']and not last109['nssAdmissionAllowed']
 assert rt109['priorDeclaredBaselineAuditRetained']
+
+proof115=json.loads((root/'evidence/nss115-source-proof.json').read_text())
+assert proof115['historicPrefixSources']==1187 and proof115['sources']==109
+assert len(manifest['sources'])>=1187+proof115['sources']
+assert hashlib.sha256(json.dumps(manifest['sources'][:1187],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof115['historicPrefixCanonicalSha256']
+for source,digest in proof115['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert proof115['privateOwnedHostBootstrapExcluded']and proof115['actualCaseSourceInputsAndHistoricFrozenTreesRetained']
+x115=json.loads((root/'evidence/nss115-mainline.json').read_text());rt115=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x115['round']==rt115['round']=='NSS115' and x115['newQualifiedEntryBoundInputs']==793
+assert x115['actualSingleWanStageCases']==4 and x115['preStageTransportRefusals']==1 and x115['completeFunctionalABA']==3 and x115['overallSuccessfulABA']==2
+assert x115['newDualPhysicalQosPassed']and x115['dualPhysicalQosHardwareRound']==114 and x115['dualPhysicalQosOneWan']==2 and x115['actualAcceleratedCount']==[0,2,0]
+assert all(x115[k]for k in ['onlyOneTcpUdpPairAtATime','physicalLan4DownlinkQosProven','physicalWanUplinkLeafRoutingProven','residentPublicationUpTagStillZero','controlledUpTagDerivedFromActualBulkRtClass','originalFailuresPreserved'])
+assert not any(x115[k]for k in ['uplinkCongestionLatencyAccepted','authEapolContinuityWhileQueueActiveAccepted','newMatchedCpuComparisonAccepted','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','residentClassifierChanged','nssPermanentlyEnabled','unknownRoutingChangesAllowed','wan4AuthenticationRecovered','uiOperated','newSteamDownloadsStarted','upstreamSubmitted'])
+tr115=json.loads((root/'evidence/nss115-trials.json').read_text());assert len(tr115)==5
+assert not tr115[0]['passed']and tr115[0]['completeABA']and tr115[0]['stageUndoVerified']and tr115[0]['originalStrictRecoveryRejected']
+assert tr115[1]['passed']and tr115[1]['completeABA']
+assert not tr115[2]['detachedStageStarted']and not tr115[2]['queueWrites']and not tr115[2]['ecmOpened']
+assert not tr115[3]['passed']and not tr115[3]['ecmOpened']and tr115[3]['bothPhysicalQueuesConstructedAndRestoredBeforeEcm']
+assert 'Unapproved setter'in tr115[3]['error']and tr115[3]['baseline']['failedUnselectedWan4ProcessEpoch']['processChanged']
+assert tr115[4]['passed']and tr115[4]['completeABA']and [p['acceleratedCounts']for p in tr115[4]['metrics']['phases']]==[[0],[2],[0]]
+for i in [1,3,4]:
+    t=tr115[i];assert t['sourceInputsCurrentAndFrozenMatch']and t['guardianVerifiedBeforeFirstWrite']and t['checkpointDownloadedShaAndGzipVerified']and all(t['rollback'].values())
+    assert t['independentOwnerSeconds']==100 and t['fixedNativeSessionSeconds']==27 and t['classifierMaximumLeaseSeconds']==6
+    assert t['baseline']['configurationMatches']and t['beforeFullAudit']['passed']and t['afterFullAudit']['passed']
+up115=json.loads((root/'evidence/nss115-uplink-proof.json').read_text());assert up115['passed']and up115['actualEcmTagsVerified']and up115['bothUplinkLeavesAdvancedNearAcceleratedPhase']
+assert up115['uplinkDevice']=='wan'and up115['physicalIfindex']==6 and up115['physicalAeId']==5
+assert up115['uplinkBulkTag']==0x8e050000 and up115['uplinkRtTag']==0x8e060000
+for name in ['8e05:','8e06:']:assert up115['uplinkLeafDelta'][name]['packets']>0 and up115['uplinkLeafDelta'][name]['dropped']==0
+assert up115['bothPhysicalRootsRestored']and up115['ownedModuleRemoved']and up115['pbrCtMarkNatWanAffinityVerified']and up115['queueStatisticsAsynchronous']
+assert not up115['upstreamCongestionLatencyAccepted']and not up115['humanGameAcceptance']
+for slot,up,down in [('tcp',0x8e050000,0x8f050000),('udp',0x8e060000,0x8f060000)]:
+    v=tr115[4]['actualAcceleratedIdentity']['proof'][slot];assert v['upTag']==up and v['downTag']==down and v['ctMark']==0x20000 and v['natCorrect']and v['wanAffinity']==2
+prep115=json.loads((root/'evidence/nss115-preparation.json').read_text())
+assert len(prep115['qos20TargetRamCases']['checks'])==20 and len(prep115['qosEntry30Checks'])==30 and len(prep115['planAndOwner21Checks'])==21 and len(prep115['normalizer27TargetRamChecks']['checks'])==27
+assert prep115['limitsUnchanged']=={'execBytes':9000,'transportRawBytes':65536,'stagedCodeBytes':73728,'classifierLeaseSeconds':6,'nativeSessionSeconds':27,'independentOwnerSeconds':100}
+assert not prep115['payloadCapFirstRefusal']['passed']and prep115['payloadCapFirstRefusal']['payloadBytes']==75489
+assert prep115['normalizer27TargetRamChecks']['uplinkTagsSimulated']and not prep115['normalizer27TargetRamChecks']['configurationWrites']
+assert prep115['normalizer27TargetRamChecks']['sourceSha256']==hashlib.sha256((root/'code/work/nss114/tag-normalizer.lua').read_bytes()).hexdigest()
+closures115=json.loads((root/'evidence/nss115-endpoint-closure.json').read_text());assert len(closures115)==5
+for c in closures115:
+    assert c['temporaryFirewallRulesRemaining']==0 and c['canonicalFirewallBaselineRestored']and c['ownedUnitInactiveMainPidZeroPortsClosed']and c['clientExited']and c['clientGuardPassed']and c['endpointGuardianVerifiedBeforeWrite']
+    assert c['independentFirewallExpirySeconds']==180 and c['independentClientDeadlineSeconds']==210
+assert closures115[0]['firstTwoSshClosureTimeoutsRetained']and closures115[0]['separateReadOnlyClosureAfterOsDeadlinePassed']
+assert rt115['workerPid']==4859 and rt115['guardianPid']==17139 and rt115['currentNssAdmissionMustBeRefreshedBeforeWrite']
+assert rt115['historical109RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss109-runtime.json').read_bytes()).hexdigest()
+assert all(rt115['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert all(rt115['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
+assert x115['reportVerification']['sourceValidated']and not x115['reportVerification']['browserRendered']
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

@@ -1,0 +1,642 @@
+{
+  "qos20TargetRamCases": {
+    "passed": true,
+    "checks": [
+      {
+        "simulated": true,
+        "name": "downlink-full-recorded-layout",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "downlink-target-drift",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "downlink-priority-drift",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "downlink-unknown-line",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "downlink-duplicate",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "downlink-missing-rt",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "downlink-partial-undo",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "uplink-full-recorded-layout",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "uplink-target-drift",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "uplink-priority-drift",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "uplink-unknown-line",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "uplink-duplicate",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "uplink-missing-rt",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "uplink-partial-undo",
+        "passed": true
+      },
+      {
+        "simulated": true,
+        "name": "downlink-tag-not-valid-uplink-layout",
+        "passed": true
+      },
+      {
+        "bothOriginalRootsRestored": true,
+        "name": "both-physical-roots-setup-and-undo",
+        "ownedModuleLoadedOnce": true,
+        "simulated": true,
+        "ownedModuleUnloadedOnce": true,
+        "passed": true,
+        "setupAccepted": true
+      },
+      {
+        "bothOriginalRootsRestored": true,
+        "name": "uplink-partial-failure-1",
+        "ownedModuleLoadedOnce": true,
+        "simulated": true,
+        "ownedModuleUnloadedOnce": true,
+        "passed": true,
+        "setupAccepted": false
+      },
+      {
+        "bothOriginalRootsRestored": true,
+        "name": "uplink-partial-failure-4",
+        "ownedModuleLoadedOnce": true,
+        "simulated": true,
+        "ownedModuleUnloadedOnce": true,
+        "passed": true,
+        "setupAccepted": false
+      },
+      {
+        "bothOriginalRootsRestored": true,
+        "name": "uplink-partial-failure-6",
+        "ownedModuleLoadedOnce": true,
+        "simulated": true,
+        "ownedModuleUnloadedOnce": true,
+        "passed": true,
+        "setupAccepted": false
+      },
+      {
+        "bothOriginalRootsRestored": true,
+        "name": "uplink-partial-failure-9",
+        "ownedModuleLoadedOnce": true,
+        "simulated": true,
+        "ownedModuleUnloadedOnce": true,
+        "passed": true,
+        "setupAccepted": false
+      }
+    ],
+    "configurationWrites": false,
+    "hardwareQueueExecution": false,
+    "sourceSha256": "9df3b007bf2f274433df4c7d481cbbcbd5f989356d8b6522c8b963ec4eb84cf3"
+  },
+  "qosEntry30Checks": [
+    {
+      "name": "format-only-single-line-code-and-string-preserved",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "format-packer-rejects-long-string",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "format-packer-rejects-long-equals-string",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "format-packer-rejects-long-comment",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "format-packer-rejects-continued-string",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "format-packer-rejects-continued-crlf-string",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "two-uplink-writers-eight-getters-neighbors-zero",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "recorded-identity-uplink-tags-simulated",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "original-zero-uplink-tags-rejected",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "simulated": true,
+      "name": "downlink-full-recorded-layout",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "downlink-target-drift",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "downlink-priority-drift",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "downlink-unknown-line",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "downlink-duplicate",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "downlink-missing-rt",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "downlink-partial-undo",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "uplink-full-recorded-layout",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "uplink-target-drift",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "uplink-priority-drift",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "uplink-unknown-line",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "uplink-duplicate",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "uplink-missing-rt",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "uplink-partial-undo",
+      "passed": true
+    },
+    {
+      "simulated": true,
+      "name": "downlink-tag-not-valid-uplink-layout",
+      "passed": true
+    },
+    {
+      "bothOriginalRootsRestored": true,
+      "name": "both-physical-roots-setup-and-undo",
+      "ownedModuleLoadedOnce": true,
+      "simulated": true,
+      "ownedModuleUnloadedOnce": true,
+      "passed": true,
+      "setupAccepted": true
+    },
+    {
+      "bothOriginalRootsRestored": true,
+      "name": "uplink-partial-failure-1",
+      "ownedModuleLoadedOnce": true,
+      "simulated": true,
+      "ownedModuleUnloadedOnce": true,
+      "passed": true,
+      "setupAccepted": false
+    },
+    {
+      "bothOriginalRootsRestored": true,
+      "name": "uplink-partial-failure-4",
+      "ownedModuleLoadedOnce": true,
+      "simulated": true,
+      "ownedModuleUnloadedOnce": true,
+      "passed": true,
+      "setupAccepted": false
+    },
+    {
+      "bothOriginalRootsRestored": true,
+      "name": "uplink-partial-failure-6",
+      "ownedModuleLoadedOnce": true,
+      "simulated": true,
+      "ownedModuleUnloadedOnce": true,
+      "passed": true,
+      "setupAccepted": false
+    },
+    {
+      "bothOriginalRootsRestored": true,
+      "name": "uplink-partial-failure-9",
+      "ownedModuleLoadedOnce": true,
+      "simulated": true,
+      "ownedModuleUnloadedOnce": true,
+      "passed": true,
+      "setupAccepted": false
+    },
+    {
+      "name": "complete-payload-within-original-73728-byte-cap",
+      "passed": true,
+      "bytes": 73011,
+      "simulated": false
+    }
+  ],
+  "planAndOwner21Checks": [
+    {
+      "name": "downlink-exact-option-projection",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "downlink-rejects-foreign-root",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "downlink-rejects-duplicate-parent",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "downlink-rejects-handle",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "downlink-rejects-missing-row",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "downlink-rejects-unknown-parent",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "uplink-exact-option-projection",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "uplink-rejects-foreign-root",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "uplink-rejects-duplicate-parent",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "uplink-rejects-handle",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "uplink-rejects-missing-row",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "uplink-rejects-unknown-parent",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "three-guardian-literals-preserved",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "guardian-rejects-missing-placeholder",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "guardian-rejects-unexpected-long-literal",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "five-bounded-plan-previews-0",
+      "rawBytes": 17777,
+      "execBytes": 8663,
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "five-bounded-plan-previews-1",
+      "rawBytes": 17777,
+      "execBytes": 8663,
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "five-bounded-plan-previews-2",
+      "rawBytes": 17777,
+      "execBytes": 8663,
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "five-bounded-plan-previews-3",
+      "rawBytes": 17777,
+      "execBytes": 8667,
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "five-bounded-plan-previews-4",
+      "rawBytes": 17777,
+      "execBytes": 8663,
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "actual-failed-wan-process-owner",
+      "passed": true,
+      "simulated": false,
+      "observedRunning": false,
+      "observedLifecycle": "not-running"
+    }
+  ],
+  "normalizer27TargetRamChecks": {
+    "actualKernelRecordIdentityRetained": true,
+    "checks": [
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "recorded-native-identity-with-simulated-up-tags",
+        "accepted": true
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "tcp_writer_up-zero-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "tcp_writer_up-other-direction-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "tcp_writer_up-other-class-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "tcp_writer_up-outside-writer-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "udp_writer_up-zero-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "udp_writer_up-other-direction-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "udp_writer_up-other-class-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "udp_writer_up-outside-writer-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "tcp_writer_down-zero-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "tcp_writer_down-other-direction-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "tcp_writer_down-other-class-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "tcp_writer_down-outside-writer-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "udp_writer_down-zero-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "udp_writer_down-other-direction-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "udp_writer_down-other-class-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "udp_writer_down-outside-writer-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "numeric-nss-tags-normalize",
+        "accepted": true
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "unknown-comment-unknown-tag-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "foreign-owner-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "ct-id-drift-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "ct-mark-drift-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "ct-zone-drift-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "ct-protocol-drift-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "iifname-drift-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "oifname-drift-rejected",
+        "accepted": false
+      },
+      {
+        "simulated": true,
+        "passed": true,
+        "name": "foreign-nft-action-rejected",
+        "accepted": false
+      }
+    ],
+    "nssAdmissionAllowed": false,
+    "configurationWrites": false,
+    "passed": true,
+    "uplinkTagsSimulated": true,
+    "sourceSha256": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b"
+  },
+  "limitsUnchanged": {
+    "execBytes": 9000,
+    "transportRawBytes": 65536,
+    "stagedCodeBytes": 73728,
+    "classifierLeaseSeconds": 6,
+    "nativeSessionSeconds": 27,
+    "independentOwnerSeconds": 100
+  },
+  "payloadCapFirstRefusal": {
+    "passed": false,
+    "payloadBytes": 75489,
+    "originalCapBytes": 73728,
+    "sha256": "c2f2005e2af4e801abb4e87132d3e94ccf2c0de726a6b18f1d686153465ceedc",
+    "components": {
+      "qos": {
+        "bytes": 10109,
+        "leadingWhitespaceBytes": 115
+      },
+      "phase": {
+        "bytes": 7016,
+        "leadingWhitespaceBytes": 255
+      },
+      "classifier": {
+        "bytes": 19589,
+        "leadingWhitespaceBytes": 450
+      },
+      "tags": {
+        "bytes": 3738,
+        "leadingWhitespaceBytes": 109
+      },
+      "normalizer": {
+        "bytes": 4841,
+        "leadingWhitespaceBytes": 234
+      }
+    },
+    "tagSourceBytes": 8836,
+    "routerExecution": false
+  },
+  "singleMessageRamTransportRefusal": {
+    "passed": false,
+    "reason": "Error: Transport length refused",
+    "rawBytes": 50033,
+    "sourceSha256": "b3a1000e9b5a37ee6e41c5b4cbb8b989b51b863a15911efbf8d0ba8b45767f27",
+    "routerExecution": false,
+    "limitsUnchanged": true
+  },
+  "threeTestHarnessErrorsRetained": true,
+  "permanentSourceBytesNotChanged": true
+}
