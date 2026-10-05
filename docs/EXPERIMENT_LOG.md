@@ -1,5 +1,20 @@
 # 实验记录
 
+## NSS108–109 · 2026-10-06 01:04 · 精确UDP路径定位与认证恢复修复
+
+更新：2026-10-06 01:04，北京时间。最新NSS109；常驻仍68/config581b5d46…c791d7，ECM关闭全零，无实验残留。
+
+**两次实际8秒nonce/序号捕获定位到：484个请求均到服务器并发出echo；路由器最早Linux物理接口tap只见465个，之后private WAN→IFB→bridge→LAN→PC全部465个相同，链内缺包零。19/484（约3.93%）缺口在server软件TX→router最早Linux tap之间；上游链路与网卡接收早期尚未分开。**
+
+见 [序号证据](../evidence/nss109-path-localization.json)、[认证修复](../evidence/nss109-auth-repair.json)、[自然故障切换](../evidence/nss109-wan4-failover.json)、[捕获器边界](../evidence/nss109-instrumentation.json)、[关闭](../evidence/nss109-endpoint-closure.json)、[终态](../evidence/nss109-final-audit.json)。
+
+- 首窗236发/227收，后窗248发/238收；内部窗口裁掉首1秒/尾2秒，使用最终PC日志和确切nonce序号，不假定服务器/路由器UTC同步。对应TCP44.407/47.999Mbps、UDP p95约209.51/209.35ms。自动分类实际TCP BULK WAN3、UDP RT WAN2：这是软件路径定位，非同WAN拥塞对照；没有NSS leaf、同窗CPU/softirq/squeeze或真人CS2新验收。
+- NSS108首次捕获自身drops160、退出2，不能作缺包定位；其server捕获被异常中断，不称完整保留。109只修socket接收顺序：protocol0→socket filter→bind ETH_P_ALL，两次实际drops0、九接口方向可见。host/目标解析同6例通过；WSL不支持AF_PACKET的实际socket测试失败，未把它称通过。helper本身最多12秒、外部14秒，checkpoint和独立480秒临时目录清理先于上传；108观察到到期后自然消失、109owner/inode核验后取消。
+- 写前发现WAN4认证进程无PID，旧恢复脚本set -e让jsonfilter缺失字段的退出1跳过空PID分支。真实最小复现与6目标RAM结构案例通过，只改PID读取为校验ubus结构的Lua；保护清单仅更新对应一行。checkpoint下载/SHA/gzip、独立180秒撤销写前验证，原完整native审核、单独SSH和其它运行配置核验后保留。没有主动重启认证/接口，本轮未做新的自然180秒回滚。写后原始动态tc文字比较失败保留，随后用原完整ownership审核验证动态selector。
+- 现有watchdog在修复后一次自然恢复请求返回0，但WAN4仍认证失败/接口down，无IPv4；不称五WAN恢复。原健康控制器权重[100,100,100,0,100]，300桶按实际源码严格复现为四路各75桶，仅60个旧WAN4桶重派、healthy移除WAN4、3个WAN4 DHCP路由规则消失，固定ct mark规则保留。是既有故障切换，非实验写PBR。原全5WAN旧快照严格审核的拒绝保留；本轮对声明修复和精确自动切换后的其它配置/原完整native审核通过，不是新的NSS入口资格。
+- 终态worker4859/guardian17139/source3.34，ECM stop1/所有count0，无事务/stage/state/实验模块。两个端点FW180秒独立恢复、client210秒退出、unit/端口关闭均通过；凭据/实际端点配置/CT/nonce/二进制/检查点/完整清单留本地。
+- 历史32Mbps约66.41%与48Mbps B/A2约72.19% softirq收益保持；本轮没有加速写入/新收益/真人指标。仅LAN4下行/upTag0的缺口保持。旧107/98/92/82 runtime逐字节保留。下一步回到实际四路基线下的单WAN入口和NSS QoS预算/关键上行，不再用这两窗约4%缺包要求反复调整CAKE；最后一次集中真人验收，不扩WAN/Wi-Fi/autorate/共享全局预算。
+
 ## NSS99–107 · 2026-10-05 23:56 · 20秒拥塞与启动观测
 
 更新：2026-10-05 23:56，北京时间。最新NSS107，常驻仍NSS68；实验均撤销。

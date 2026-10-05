@@ -1,0 +1,28 @@
+{
+  "firstCaptureAccepted": false,
+  "firstCaptureSocketDrops": 160,
+  "firstCaptureExitCode": 2,
+  "firstRouterRawSha256": "bd8306e5784d9b18e644316892f1d314bb59d80eaf5192cf217a742ce9fcb731",
+  "firstServerCompletedCaptureRetained": false,
+  "firstServerInterruptedOnRouterFailure": true,
+  "correctedOnlySocketSubscriptionOrder": true,
+  "receiveEnabledAfterSocketFilterInstalled": true,
+  "qualifiedNewCaptures": 2,
+  "qualifiedCaptureDrops": [
+    0,
+    0
+  ],
+  "hostParserCases": 6,
+  "targetParserCases": 6,
+  "wslAfPacketKernelTestSupported": false,
+  "actualRouterAfPacketAndBpfVerified": true,
+  "noPromiscuousOrTcOrInterfaceChange": true,
+  "captureMaximumSeconds": 12,
+  "shellMaximumSeconds": 14,
+  "independentStageCleanupSeconds": 480,
+  "failedUncompressedManifestStageBeforeProductionMutation": true,
+  "successfulRepairInputsRetained": true,
+  "firstUncompressedInstallerVariantPreRunFrozen": false,
+  "rawDynamicNativeFilterTextComparisonRefusalPreserved": true,
+  "originalNativeOwnershipAuditStillRequired": true
+}

@@ -839,7 +839,7 @@ assert x98['reportVerification']['sourceValidated']and not x98['reportVerificati
 
 proof107=json.loads((root/'evidence/nss107-source-proof.json').read_text())
 assert proof107['historicPrefixSources']==1110 and proof107['sources']==45
-assert len(manifest['sources'])==1110+proof107['sources']
+assert len(manifest['sources'])>=1110+proof107['sources']
 assert hashlib.sha256(json.dumps(manifest['sources'][:1110],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof107['historicPrefixCanonicalSha256']
 for source,digest in proof107['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 assert proof107['privateOwnedHostBootstrapExcluded']and proof107['completePrivateSourceInputsRetained']and proof107['lostFirstBackgroundRawIsExplicitException']
@@ -884,7 +884,7 @@ for c in closures107:
     assert c['temporaryFirewallRulesRemaining']==0 and c['canonicalFirewallBaselineRestored']and c['ownedUnitInactiveMainPidZeroPortsClosed']
     assert c['clientExited']and c['clientGuardPassed']and c['endpointGuardianVerifiedBeforeWrite']
     assert c['independentFirewallExpirySeconds']==180 and c['independentClientDeadlineSeconds']==210
-x107=json.loads((root/'evidence/nss107-mainline.json').read_text());rt107=json.loads((root/'evidence/current-runtime.json').read_text())
+x107=json.loads((root/'evidence/nss107-mainline.json').read_text());rt107=json.loads((root/'evidence/nss107-runtime.json').read_text())
 assert x107['round']==rt107['round']=='NSS107'and x107['stageCases']==4 and x107['successfulFunctionalABA']==3 and x107['startupEpochActualPassed']
 assert x107['newEntryInputs']==rt107['qualifiedExperimentalEntryBoundInputs']==662
 assert not any(x107[k]for k in ['newCpuComparisonAccepted','rateAccuracyAccepted','endToEndUdpQosAccepted','humanCs2Acceptance','highLoad300MbpsAcceptance','permanentClassifierChanged','nssPermanentlyEnabled','secondWanSimultaneousAcceleration','acceleratedUplinkQosGuaranteed','fullCakeReplacementAccepted','upstreamSubmitted'])
@@ -894,5 +894,53 @@ assert rt107['historical98RuntimePreservedSha256']==hashlib.sha256((root/'eviden
 assert rt107['historical92RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss92-runtime.json').read_bytes()).hexdigest()
 assert rt107['historical82RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss82-runtime.json').read_bytes()).hexdigest()
 assert x107['reportVerification']['sourceValidated']and not x107['reportVerification']['browserRendered']
+
+proof109=json.loads((root/'evidence/nss109-source-proof.json').read_text())
+assert proof109['historicPrefixSources']==1155 and proof109['sources']==30
+assert len(manifest['sources'])==1155+proof109['sources']
+assert hashlib.sha256(json.dumps(manifest['sources'][:1155],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof109['historicPrefixCanonicalSha256']
+for source,digest in proof109['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert proof109['privateOwnedHostBootstrapExcluded']and proof109['successfulRepairAndCaptureCurrentSourcesAndPrivateInputsRetained']
+assert proof109['prewriteUncompressedInstallerVariantNotClaimedFrozen']and proof109['firstInterruptedServerCaptureNotClaimedComplete']
+x109=json.loads((root/'evidence/nss109-mainline.json').read_text());rt109=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x109['round']==rt109['round']=='NSS109'
+assert x109['eligibleRequests']==484 and x109['missingBeforeEarliestRouterLinuxTap']==19 and x109['missingInObservedRouterDownstreamChain']==0
+assert not any(x109[k]for k in ['routerPhysicalNicVsUpstreamSeparated','wan4AuthenticationRecovered','nssOpenedThisTurn','newMatchedABA','newCpuComparisonAccepted','sameWanCongestionComparison','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','acceleratedUplinkQosGuaranteed','residentClassifierChanged','nssPermanentlyEnabled','upstreamSubmitted'])
+assert x109['tcpBulkWan']==3 and x109['udpRtWan']==2 and x109['temporaryEndpointsClosed']==2
+localization109=json.loads((root/'evidence/nss109-path-localization.json').read_text())
+assert [t['qualifiedSequences']for t in localization109['trials']]==[236,248]
+assert [t['unreturned']for t in localization109['trials']]==[9,10]
+for t in localization109['trials']:
+    assert t['passed']and t['socketDrops']==0 and t['allRouterDownAndPcSetsIdentical']and t['routerDownstreamMissingAfterEarliestTap']==0
+    counts=t['counts'];assert counts['serverIngress']==counts['serverEgress']==counts['physicalWanUp']==t['qualifiedSequences']
+    assert counts['physicalWanDown']==counts['privateWanDown']==counts['ifbDown']==counts['bridgeDown']==counts['lanDown']==counts['pcReceived']
+    assert t['boundaryTrimmed']and t['pcFinalLogUsed']and t['routerAndServerClocksNotAssumedAligned']and t['notMatchedNssABA']and t['notCs2Metric']
+assert not localization109['identity']['sameWanPair']and not localization109['identity']['nssPermissionGranted']
+auth109=json.loads((root/'evidence/nss109-auth-repair.json').read_text())
+assert auth109['committed']and auth109['independent180SecondRollbackVerifiedBeforeWrite']and auth109['originalNativeAuditPassed']
+assert not auth109['authenticatorRestarted']and not auth109['interfacesRestarted']and not auth109['naturalRollbackTested']
+assert auth109['qualification']['passed']and auth109['qualification']['originalMissingPidExitCode']==1 and len(auth109['qualification']['checks'])==6
+assert auth109['latestNaturalRecoveryRequest']['result']==0 and not auth109['latestNaturalRecoveryRequest']['authenticationSucceeded']
+assert auth109['newAuthSha256']==hashlib.sha256((root/'code/work/nss108/auth-candidate.sh').read_bytes()).hexdigest()
+assert auth109['oldAuthSha256']==hashlib.sha256((root/'code/work/nss108/auth-before.sh').read_bytes()).hexdigest()
+instrument109=json.loads((root/'evidence/nss109-instrumentation.json').read_text())
+assert instrument109['firstCaptureSocketDrops']==160 and instrument109['firstCaptureExitCode']==2 and not instrument109['firstCaptureAccepted']
+assert not instrument109['firstServerCompletedCaptureRetained']and instrument109['firstServerInterruptedOnRouterFailure']
+assert instrument109['qualifiedNewCaptures']==2 and instrument109['qualifiedCaptureDrops']==[0,0]
+assert instrument109['actualRouterAfPacketAndBpfVerified']and not instrument109['wslAfPacketKernelTestSupported']
+failover109=json.loads((root/'evidence/nss109-wan4-failover.json').read_text())
+assert failover109['passed']and failover109['exact300BucketSourceAlgorithmReproduced']and failover109['removedWan4Buckets']==60
+assert failover109['newBucketCounts']==[75,75,75,0,75]and failover109['currentAppliedWeights']==[100,100,100,0,100]
+assert failover109['onlyThreeWan4DhcpRulesRemoved']and failover109['unchangedProtectedHealthControllerSource']and not failover109['experimentRoutingMutation']
+assert failover109['healthControllerSha256']==hashlib.sha256((root/'code/work/nss109/health-controller.lua').read_bytes()).hexdigest()
+for c in json.loads((root/'evidence/nss109-endpoint-closure.json').read_text()):
+    assert c['temporaryFirewallRulesRemaining']==0 and c['canonicalFirewallBaselineRestored']and c['ownedUnitInactiveMainPidZeroPortsClosed']and c['clientExited']and c['clientGuardPassed']
+    assert c['endpointGuardianVerifiedBeforeWrite']and c['independentFirewallExpirySeconds']==180 and c['independentClientDeadlineSeconds']==210
+assert rt109['workerPid']==4859 and rt109['guardianPid']==17139 and rt109['authRecoverySourceChangedAndCommitted']
+assert not rt109['currentNssAdmissionQualified']and rt109['historicalEntryMustAdoptDeclaredAuthRepairAndActualFailoverBaselineBeforeWrite']
+assert all(rt109['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert not rt109['audit']['allFiveWanHealthy']and not rt109['audit']['fullOriginalNssAdmissionEpochPassed']and not rt109['audit']['nssAdmissionAllowed']
+for n in [107,98,92,82]:assert rt109[f'historical{n}RuntimePreservedSha256']==hashlib.sha256((root/f'evidence/nss{n}-runtime.json').read_bytes()).hexdigest()
+assert x109['reportVerification']['sourceValidated']and not x109['reportVerification']['browserRendered']
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

@@ -1,5 +1,8 @@
 # 接续此研究
 
+最新NSS109：两次实际8秒捕获484请求/484serverTX，router最早Linux tap465，之后private WAN/IFB/bridge/LAN/PC均465，19缺口前于tap，上游与NIC早期未分开。TCP44.407/47.999Mbps，BULK WAN3/RT WAN2，非同WAN/NSS/CPU/真人验收。首108自身capture drops160拒绝且server提前中断保留；109先filter后接收两次drops0。auth-recover PID缺失set-e故障仅查询修复并保留，checkpoint/180秒独立撤销/SSH/native审核，保护manifest一行改变；自然恢复请求后返回0但WAN4仍down，不称认证恢复。既有健康控制器[100,100,100,0,100]的300桶严格源码模型通过，四路75/75/75/0/75，旧全5WAN审核拒绝保留。终态4859/17139/config不变，ECM关闭全零、无残留，两端点关闭；旧107/98/92/82 runtime保持。105/662仅历史资格，新写前须绑定声明auth修复和实际四路基线。下一步接回单WANNSS预算/关键上行与最终一次真人，不扩WAN/共享预算/新下载/重装；STATE为准。
+
+
 最新NSS107：更新：2026-10-05 23:56，北京时间。最新NSS107，常驻仍NSS68；实验均撤销。 新启动观测入口在单WAN完整20秒A/B/A2通过，后续错误tag零新增。新轮实际TCP 25.058/27.131/26.567Mbps；UDP收到/发出 761/793 → 867/904 → 794/820；续租7次，bulk/RT drop 293/0。本轮原始启动错误为零，1包启动例外仅目标RAM案例覆盖，尚未现场触发；RTT p95约238.08/240.69/237.75ms，squeeze全0，UDP仍约4%未返回。异步leaf含38字节overhead约28.12Mbps，不作精确30Mbps限速验收。 新105/662入口，启动原始边界至多TCP-down1包1500B可记录但不能作ECM许可；100ms等待/未来错误零新增/原完整policy/双向/20秒A仍先于ECM，原失败103保留。常驻4859/17139/config581b5d46…c791d7不变，终态ECM全零无残留；旧98/92/82 runtime原字节保留，六端点均关闭。仅LAN4下行/upTag0，没有新CPU/真人/300Mbps验收；首背景raw覆盖已披露仅恢复实际工具聚合，不伪造。下一步只补单WAN拥塞/回程，不扩WAN/共享全局预算/重装/新下载，STATE为准。
 
 

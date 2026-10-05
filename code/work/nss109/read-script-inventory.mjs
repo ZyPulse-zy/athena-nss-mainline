@@ -1,0 +1,1 @@
+import fs from 'node:fs';import {connectRouter} from '../nss27/connect-router.mjs';const c=await connectRouter();try{const r=await c.run('ls /root/router-project/scripts');fs.writeFileSync('work/nss109/script-inventory-private.json',JSON.stringify(r,null,2)+'\n',{flag:'wx'});console.log(r.stdout);}finally{c.close()}

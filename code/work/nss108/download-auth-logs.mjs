@@ -1,0 +1,2 @@
+import fs from 'node:fs';import {connectRouter} from '../nss27/connect-router.mjs';
+const c=await connectRouter();try{for(const [r,l]of [['/root/router-project/logs/minieap-wan4.log','wan4-auth-log-private.bin'],['/tmp/router-project-auth-recovery.jsonl','wan-recoveries-private.jsonl']])await c.download(r,'work/nss108/'+l);console.log(JSON.stringify({privateDownloadsSaved:true}));}finally{c.close()}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "healthControllerSha256": "cff370c2bc139fe6d6acb0501b7fdd16ff8841c2da3cbb0c4f3cb8cfb531f312",
+  "unchangedProtectedHealthControllerSource": true,
+  "currentAppliedWeights": [
+    100,
+    100,
+    100,
+    0,
+    100
+  ],
+  "exact300BucketSourceAlgorithmReproduced": true,
+  "removedWan4Buckets": 60,
+  "newBucketCounts": [
+    75,
+    75,
+    75,
+    0,
+    75
+  ],
+  "healthySetOnlyWan4Removed": true,
+  "onlyThreeWan4DhcpRulesRemoved": true,
+  "experimentRoutingMutation": false,
+  "nssPermissionGranted": false
+}

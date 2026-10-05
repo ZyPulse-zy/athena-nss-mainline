@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "round": 108,
+      "uptime": 2036836.38,
+      "alreadyAbsentAfterIndependentDeadline": true,
+      "passed": true,
+      "controllerCancellation": false,
+      "stageAbsent": true
+    },
+    {
+      "round": 109,
+      "ownerAndInodeMatched": true,
+      "independentParentVerified": true,
+      "uptime": 2036836.5,
+      "passed": true,
+      "controllerCancellation": true,
+      "stageAbsent": true
+    }
+  ]
+}

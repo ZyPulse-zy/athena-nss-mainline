@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "committed": true,
+  "oldAuthSha256": "047cd2f288eca8f116685807e25ec3628dc0bb4ebc02501ad0d9e99b6d186f69",
+  "newAuthSha256": "7d187998681dff2b3c15d476dfe096d1e33ee42c4028843a75381b069cdc0e44",
+  "oldManifestSha256": "71ba5eccf89d131da847a5bbb98ccfd2362cc8e4a351238f405b53f736d187ba",
+  "newManifestSha256": "165de08d8733842151c770d23c5060dcd11a4b56b1ea756dc00ace494333de31",
+  "independent180SecondRollbackVerifiedBeforeWrite": true,
+  "authenticatorRestarted": false,
+  "interfacesRestarted": false,
+  "unchangedServicesAndRouting": true,
+  "ecmStoppedAndZero": true,
+  "naturalRollbackTested": false,
+  "originalNativeAuditPassed": true,
+  "initialRawDynamicFilterComparisonFailurePreserved": true,
+  "observedAt": "2026-10-05T16:33:53.798Z",
+  "qualification": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "present",
+        "passed": true,
+        "simulated": true,
+        "accepted": true
+      },
+      {
+        "name": "noPid",
+        "passed": true,
+        "simulated": true,
+        "accepted": true
+      },
+      {
+        "name": "noInstance",
+        "passed": true,
+        "simulated": true,
+        "accepted": true
+      },
+      {
+        "name": "invalidPid",
+        "passed": true,
+        "simulated": true,
+        "accepted": false
+      },
+      {
+        "name": "noInstances",
+        "passed": true,
+        "simulated": true,
+        "accepted": false
+      },
+      {
+        "name": "missingService",
+        "passed": true,
+        "simulated": true,
+        "accepted": false
+      }
+    ],
+    "originalMissingPidExitCode": 1,
+    "originalMissingPidBranchReached": false,
+    "sourceSha256": "047cd2f288eca8f116685807e25ec3628dc0bb4ebc02501ad0d9e99b6d186f69",
+    "candidateSha256": "7d187998681dff2b3c15d476dfe096d1e33ee42c4028843a75381b069cdc0e44",
+    "targetFile": "/root/router-project/scripts/auth-recover.sh",
+    "onlyPidDiscoveryChanged": true,
+    "ubusErrorsStillFailClosed": true,
+    "protectedManifestIncludesTarget": true,
+    "targetShellSyntaxPassed": true,
+    "routerWrites": false
+  },
+  "latestNaturalRecoveryRequest": {
+    "attemptsLastHour": 3,
+    "uptime": 2037336.36,
+    "wan": 4,
+    "result": 0,
+    "reason": "isolated-health-failure-120s",
+    "authenticationSucceeded": false
+  },
+  "missingPidBranchActuallyReachedInNaturalRetryProved": false
+}

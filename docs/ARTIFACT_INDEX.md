@@ -1,3 +1,7 @@
+# 当前NSS109
+
+[汇总](../evidence/nss109-mainline.json) · [序号](../evidence/nss109-path-localization.json) · [修复](../evidence/nss109-auth-repair.json) · [故障切换](../evidence/nss109-wan4-failover.json) · [终态](../evidence/nss109-final-audit.json) · [源码](../evidence/nss109-source-proof.json) · [历史107 runtime](../evidence/nss107-runtime.json)。本地报告 outputs/nss109-mainline-report.html。
+
 # 当前NSS107
 
 [汇总](../evidence/nss107-mainline.json) · [现场](../evidence/nss107-trials.json) · [启动观测检查](../evidence/nss107-startup-epoch-qualification.json) · [恢复](../evidence/nss107-final-audit.json) · [端点关闭](../evidence/nss107-endpoint-closure.json) · [源码](../evidence/nss107-source-proof.json) · [旧98 runtime](../evidence/nss98-runtime.json)。本地报告 outputs/nss107-mainline-report.html。
