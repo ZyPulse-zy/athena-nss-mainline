@@ -952,5 +952,10 @@ assert all(rt109['audit'][k]for k in ['passed','originalFullLockedNativeAudit','
 assert not rt109['audit']['allFiveWanHealthy']and not rt109['audit']['fullOriginalNssAdmissionEpochPassed']and not rt109['audit']['nssAdmissionAllowed']
 for n in [107,98,92,82]:assert rt109[f'historical{n}RuntimePreservedSha256']==hashlib.sha256((root/f'evidence/nss{n}-runtime.json').read_bytes()).hexdigest()
 assert x109['reportVerification']['sourceValidated']and not x109['reportVerification']['browserRendered']
+last109=json.loads((root/rt109['lastReadonlyAuditReference']).read_text())
+assert last109['observedAt']==rt109['checkedAt']and last109['readonlyRepeatAfterEvidenceExport']
+assert all(last109[k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert last109['workerPid']==4859 and last109['guardianPid']==17139 and not last109['wan4Up']and not last109['nssAdmissionAllowed']
+assert rt109['priorDeclaredBaselineAuditRetained']
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

@@ -1,5 +1,7 @@
 # 当前状态
 
+补充：北京时间01:24收尾只读复核仍4859/17139、source2.43秒、ECM关闭全零、无实验残留，WAN4仍down；[新复核](../evidence/nss109-last-readonly-audit.json)，原01:04完整声明审核保持。
+
 更新：2026-10-06 01:04，北京时间。最新NSS109；常驻仍68/config581b5d46…c791d7，ECM关闭全零，无实验残留。
 
 **两次实际8秒nonce/序号捕获定位到：484个请求均到服务器并发出echo；路由器最早Linux物理接口tap只见465个，之后private WAN→IFB→bridge→LAN→PC全部465个相同，链内缺包零。19/484（约3.93%）缺口在server软件TX→router最早Linux tap之间；上游链路与网卡接收早期尚未分开。**
