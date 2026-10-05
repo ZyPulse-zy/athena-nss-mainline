@@ -1,5 +1,5 @@
 """Verify curated source identity, artifact links, and obvious secret exclusions."""
-import hashlib, json, re
+import hashlib, json, re, copy
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 manifest=json.loads((root/'source-manifest.json').read_text(encoding='utf-8'))
@@ -1217,5 +1217,14 @@ assert rt128['historical126RuntimePreservedSha256']==hashlib.sha256((root/'evide
 assert rt128['workerPid']==4859 and rt128['guardianPid']==17139 and rt128['currentNssAdmissionMustBeRefreshedBeforeWrite']and rt128['actualClassDerivedMappingHardwarePassed']and rt128['scopedShortCpuComparisonAccepted']
 assert all(rt128['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
 assert all(rt128['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
+
+label128=json.loads((root/'evidence/nss128-analysis-label-correction.json').read_text())
+assert label128['passed']and label128['historicPrefixSources']==1570 and len(manifest['sources'])>=1571
+assert label128['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1570],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+assert label128['newSourceSha256']==hashlib.sha256((root/'code'/label128['newSource']).read_bytes()).hexdigest()
+assert not label128['actualMeasurementsChanged']and not label128['executionSourceAndFrozenInputsChanged']and not label128['routerWrites']and label128['original37SourcesUntouched']and label128['initialFailedCheckerRecorded']
+for name,target in [('metrics',m128),('trial',t128)]:
+    raw=(root/f'evidence/nss128-v1-{name}.json').read_bytes();assert hashlib.sha256(raw).hexdigest()==label128['originalPublishedV1RetainedSha256'][name]
+    v1=json.loads(raw);v2=copy.deepcopy(target);leaf=v2 if name=='metrics'else v2['metrics'];assert leaf['newCpuComparisonAccepted']is None;leaf['newCpuComparisonAccepted']=False;assert v1==v2
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

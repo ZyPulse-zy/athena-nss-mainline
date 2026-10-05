@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "originalPublishedV1RetainedSha256": {
+    "metrics": "71c92448f2ad340d6cd8304a289952925abe87643cf6e4cfa93bffb8e7c714af",
+    "trial": "7465dedc185585ce7fb4d33304a8149b450219758ad075bcdc4d58f535d5ce04"
+  },
+  "onlyFieldCorrected": "newCpuComparisonAccepted",
+  "originalLegacyFalseTemplateOverrodeIntendedNull": true,
+  "correctedRawMetricsInterpretationNull": true,
+  "separateSameLoadComparisonAuthoritative": true,
+  "actualMeasurementsChanged": false,
+  "executionSourceAndFrozenInputsChanged": false,
+  "original37SourcesUntouched": true,
+  "initialFailedCheckerRecorded": true,
+  "originalFailedPublishedCommit": "5a57ecdeb288bda0ac897dd9ffe3d7e78bb81862",
+  "historicPrefixSources": 1570,
+  "historicPrefixCanonicalSha256": "72a1030521a943927b2ccbd0f8be5b3c58b017221a91615b6ad448f34e882594",
+  "newSource": "work/nss128/correct-analysis-label.py",
+  "newSourceSha256": "dedade56d8a37d2652a1aa5a7d80f406f95c0e57cde34bbb630e27a28008f2e9",
+  "routerWrites": false
+}

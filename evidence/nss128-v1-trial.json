@@ -1910,7 +1910,7 @@
     "uplinkParentMbps": 60,
     "uplinkBulkRateMbps": 59,
     "uplinkRtRateMbps": 1,
-    "newCpuComparisonAccepted": null,
+    "newCpuComparisonAccepted": false,
     "cpuInterpretationRequiresSeparateSameLoadComparison": true,
     "qosChangedOnlyUplinkBudgetFrom119": false,
     "onlyActualClassToUplinkMappingChangedFrom125": true,
