@@ -1,0 +1,419 @@
+{
+  "caseLocalPath": "work/nss133/controlled-class-20261005220027-abee66d9",
+  "passed": false,
+  "sourceInputs": 1226,
+  "sourceInputsCurrentAndFrozenMatch": true,
+  "sourceManifestSha256": "b1b43a37ac6cafba1e6ffed3f89352c2f987ba5e8a8802d5d5cb0c378a8fa682",
+  "checkpointDownloadedShaAndGzipVerified": true,
+  "guardianVerifiedBeforeFirstWrite": true,
+  "guardianPpid": 1,
+  "independentOwnerSeconds": 100,
+  "fixedNativeSessionSeconds": 27,
+  "classifierMaximumLeaseSeconds": 6,
+  "ecmOpened": true,
+  "completeABA": false,
+  "phases": [],
+  "renewals": 5,
+  "rollback": {
+    "sameBoot": true,
+    "ownDirectoryAbsent": true,
+    "stateNodeDirectoryAbsent": true,
+    "guardianTerminated": true,
+    "moduleAbsent": true,
+    "qosModuleAbsent": true
+  },
+  "baseline": {
+    "configurationMatches": true,
+    "checks": {
+      "boot": true,
+      "native": true,
+      "lan4": true,
+      "rules": true,
+      "services": true,
+      "addresses": true,
+      "routes": true,
+      "originalFiles": true,
+      "protectedManifestSha256": true,
+      "pbrConfiguration": true,
+      "nftRulesetConfiguration": true,
+      "tenQueueConfigurations": true,
+      "protectedManifest": true,
+      "ecmStoppedAndZero": true
+    },
+    "rawRulesetIdentical": true,
+    "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true,
+    "failedUnselectedWan4ProcessEpoch": {
+      "processChanged": false,
+      "commandChanged": false,
+      "outsideSelectedFlowWan": true
+    },
+    "originalFullNativeOwnershipAuditStillRequired": true,
+    "noRoutingStateExceptionDuringExperiment": true
+  },
+  "beforeFullAudit": {
+    "passed": true,
+    "auditPurpose": "prewrite",
+    "prelearningSchedulingRequested": true,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 2,
+    "queryAge": 1.0700000000651926,
+    "sequence": 494,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": true,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "fourHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "afterFullAudit": {
+    "passed": true,
+    "auditPurpose": "recovery",
+    "prelearningSchedulingRequested": false,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 4,
+    "queryAge": 0.8000000000465661,
+    "sequence": 532,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": true,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "fourHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "softwareTagCounters": {
+    "tagsAfterA": {
+      "tcp_writer_up": {
+        "packets": 340,
+        "bytes": 1557080
+      },
+      "tcp_writer_down": {
+        "packets": 588,
+        "bytes": 24328
+      },
+      "udp_writer_up": {
+        "packets": 17,
+        "bytes": 2652
+      },
+      "udp_writer_down": {
+        "packets": 17,
+        "bytes": 2652
+      },
+      "tcp_post_up_total": {
+        "packets": 340,
+        "bytes": 1557080
+      },
+      "tcp_post_up_expected": {
+        "packets": 340,
+        "bytes": 1557080
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 588,
+        "bytes": 24328
+      },
+      "tcp_post_down_expected": {
+        "packets": 588,
+        "bytes": 24328
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 17,
+        "bytes": 2652
+      },
+      "udp_post_up_expected": {
+        "packets": 17,
+        "bytes": 2652
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 17,
+        "bytes": 2652
+      },
+      "udp_post_down_expected": {
+        "packets": 17,
+        "bytes": 2652
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "tagsBefore": {
+      "tcp_writer_up": {
+        "packets": 2660,
+        "bytes": 12536376
+      },
+      "tcp_writer_down": {
+        "packets": 4816,
+        "bytes": 198912
+      },
+      "udp_writer_up": {
+        "packets": 136,
+        "bytes": 21216
+      },
+      "udp_writer_down": {
+        "packets": 136,
+        "bytes": 21216
+      },
+      "tcp_post_up_total": {
+        "packets": 2660,
+        "bytes": 12536376
+      },
+      "tcp_post_up_expected": {
+        "packets": 2660,
+        "bytes": 12536376
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 4816,
+        "bytes": 198912
+      },
+      "tcp_post_down_expected": {
+        "packets": 4816,
+        "bytes": 198912
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 136,
+        "bytes": 21216
+      },
+      "udp_post_up_expected": {
+        "packets": 136,
+        "bytes": 21216
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 136,
+        "bytes": 21216
+      },
+      "udp_post_down_expected": {
+        "packets": 136,
+        "bytes": 21216
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "startupTags": {
+      "tcp_writer_up": {
+        "packets": 25,
+        "bytes": 115924
+      },
+      "tcp_writer_down": {
+        "packets": 23,
+        "bytes": 968
+      },
+      "udp_writer_up": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_writer_down": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "tcp_post_up_total": {
+        "packets": 25,
+        "bytes": 115924
+      },
+      "tcp_post_up_expected": {
+        "packets": 25,
+        "bytes": 115924
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 23,
+        "bytes": 968
+      },
+      "tcp_post_down_expected": {
+        "packets": 23,
+        "bytes": 968
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_post_up_expected": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_post_down_expected": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "initialTags": {
+      "tcp_writer_up": {
+        "packets": 222,
+        "bytes": 994080
+      },
+      "tcp_writer_down": {
+        "packets": 386,
+        "bytes": 15952
+      },
+      "udp_writer_up": {
+        "packets": 11,
+        "bytes": 1716
+      },
+      "udp_writer_down": {
+        "packets": 11,
+        "bytes": 1716
+      },
+      "tcp_post_up_total": {
+        "packets": 222,
+        "bytes": 994080
+      },
+      "tcp_post_up_expected": {
+        "packets": 222,
+        "bytes": 994080
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 386,
+        "bytes": 15952
+      },
+      "tcp_post_down_expected": {
+        "packets": 386,
+        "bytes": 15952
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 11,
+        "bytes": 1716
+      },
+      "udp_post_up_expected": {
+        "packets": 11,
+        "bytes": 1716
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 11,
+        "bytes": 1716
+      },
+      "udp_post_down_expected": {
+        "packets": 11,
+        "bytes": 1716
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    }
+  },
+  "actualAcceleratedIdentity": null,
+  "originalRecordSha256": "806c9b406dc3d095ebe5ae2b07eb9faa18870702ca80a709d522576243ad8fb7",
+  "originalResultSha256": "14c00b1b6bd7e97f675041f4109d8dae42ce25af01d8bab84fa359d400dbe7a2",
+  "error": "[string \"local qos=(function()...\"]:14: Complete class change unavailable before expiry\nstack traceback:\n\t[C]: in function 'assert'\n\t[string \"local qos=(function()...\"]:14: in function 'run'\n\t[string \"local qos=(function()...\"]:8: in function 'run'\n\tstdin:1: in function <stdin:1>\n\t[C]: in function 'xpcall'\n\tstdin:1: in main chunk\n\t[C]: ?",
+  "gameQualityConclusion": false,
+  "actualApplicationPauseOccurred": false,
+  "watcherFailure": "Lua gsub returned two values, passing replacement count as tonumber base",
+  "classChangePhysicallyProved": false
+}

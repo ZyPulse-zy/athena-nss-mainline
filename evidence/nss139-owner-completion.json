@@ -1,0 +1,24 @@
+[
+  {
+    "mode": "change",
+    "successOnlyEarlyOwnerCompletion": true,
+    "successRecordGraceSeconds": 5,
+    "independentMaximumSeconds": 100,
+    "execBytes": 8907,
+    "qosBundleBytes": 73555,
+    "guardianVerifiedBeforeWrite": true,
+    "completeUndoVerified": true,
+    "allOriginalQueuesAndModulesRestoredBeforeEarlyCompletion": true
+  },
+  {
+    "mode": "relearn",
+    "successOnlyEarlyOwnerCompletion": true,
+    "successRecordGraceSeconds": 5,
+    "independentMaximumSeconds": 100,
+    "execBytes": 8911,
+    "qosBundleBytes": 73555,
+    "guardianVerifiedBeforeWrite": true,
+    "completeUndoVerified": true,
+    "allOriginalQueuesAndModulesRestoredBeforeEarlyCompletion": true
+  }
+]

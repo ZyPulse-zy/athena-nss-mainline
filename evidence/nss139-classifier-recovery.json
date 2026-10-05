@@ -1,0 +1,20 @@
+{
+  "previousWorkerPid": 4859,
+  "currentWorkerPid": 31657,
+  "guardianPid": 17139,
+  "naturalProcdRecovery": true,
+  "forcedRestartOrReinstall": false,
+  "observedFailure": {
+    "action": "apply",
+    "rawStatus": 256,
+    "elapsedSeconds": 0.35,
+    "querySequence": 20391
+  },
+  "rootCauseProved": false,
+  "orphanBatchPidCollisionIsUnconfirmedHypothesis": true,
+  "actualChildPidAndStderrUnavailable": true,
+  "oldGuardianFailureRecordBelongsToDifferentHistoricalInstance": true,
+  "fullOriginalAuditPassedAfterRecovery": true,
+  "sourceConfigUnchanged": true,
+  "originalLastErrorSha256": "18d1f37594f0b0ba77cf909e2771f9a762014ad3773286ae9b8c36c4dbd97742"
+}

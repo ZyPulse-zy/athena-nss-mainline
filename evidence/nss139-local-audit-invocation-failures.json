@@ -1,0 +1,12 @@
+[
+  {
+    "operation": "preflight health helper",
+    "error": "Argument pre-class-lifecycle rejected by required v[0-9]+ label; no router call executed",
+    "subsequentOriginalFullStageAuditsPassed": true
+  },
+  {
+    "operation": "post-trial physical audit output",
+    "error": "EEXIST on write-exclusive receipt path; preflight evidence remained exact, so final audit moved to new NSS139 directory",
+    "oldEvidenceOverwritten": false
+  }
+]

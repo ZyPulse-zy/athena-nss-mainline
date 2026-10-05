@@ -1,0 +1,20 @@
+{
+  "originalFailurePreserved": true,
+  "reason": "Concurrent connection helper temporarily changed global process cwd while another upload/record writer used relative paths",
+  "checkpointDownloadedShaAndGzipVerified": true,
+  "guardianVerifiedBeforeWrite": true,
+  "independentMaximumSeconds": 100,
+  "partialStagingAttempted": true,
+  "activationOrEcmOpeningProved": false,
+  "actualActivationStateUnavailable": true,
+  "missingRecordNotInvented": true,
+  "undo": {
+    "sameBoot": true,
+    "ownDirectoryAbsent": true,
+    "stateNodeDirectoryAbsent": true,
+    "guardianTerminated": true,
+    "moduleAbsent": true,
+    "qosModuleAbsent": true
+  },
+  "laterOriginalFullOperationalAuditPassed": true
+}

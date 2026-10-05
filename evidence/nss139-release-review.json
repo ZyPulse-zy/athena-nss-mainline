@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "operation": "git diff --cached --check",
+  "originalFailurePreserved": true,
+  "commitOrPushPerformedAfterFailure": false,
+  "cause": "One pre-existing blank line with two spaces at runtime fast-path.lua line 166 in eight byte-exact frozen copies",
+  "frozenSourceEdited": false,
+  "resolution": "Add eight exact file attributes matching the existing repository policy for frozen proof whitespace; other whitespace checks remain enabled"
+}

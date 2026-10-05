@@ -8,3 +8,12 @@
 /code/work/nss49/entry-scheduling-fixtures.lua whitespace=-blank-at-eol
 /code/work/nss48/inspect-classifier.mjs whitespace=-blank-at-eof
 /code/work/nss49/inspect-classifier.mjs whitespace=-blank-at-eof
+# Keep the one pre-existing blank line in the exact runtime proof copies.
+/code/work/nss129/fast-path.lua whitespace=-blank-at-eol
+/code/work/nss131/fast-path.lua whitespace=-blank-at-eol
+/code/work/nss132/fast-path.lua whitespace=-blank-at-eol
+/code/work/nss133/fast-path.lua whitespace=-blank-at-eol
+/code/work/nss135/fast-path.lua whitespace=-blank-at-eol
+/code/work/nss136/fast-path.lua whitespace=-blank-at-eol
+/code/work/nss137/fast-path.lua whitespace=-blank-at-eol
+/code/work/nss138/fast-path.lua whitespace=-blank-at-eol

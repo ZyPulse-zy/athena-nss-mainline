@@ -1192,7 +1192,7 @@ proof128=json.loads((root/'evidence/nss128-source-proof.json').read_text())
 assert proof128['historicPrefixSources']==1533 and proof128['sources']==37 and len(manifest['sources'])>=1570
 assert proof128['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1533],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 for source,digest in proof128['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-x128=json.loads((root/'evidence/nss128-mainline.json').read_text());rt128=json.loads((root/'evidence/current-runtime.json').read_text());m128=json.loads((root/'evidence/nss128-metrics.json').read_text())
+x128=json.loads((root/'evidence/nss128-mainline.json').read_text());rt128=json.loads((root/'evidence/nss128-runtime.json').read_text());m128=json.loads((root/'evidence/nss128-metrics.json').read_text())
 assert x128['round']==rt128['round']=='NSS128'and x128['boundInputs']==rt128['qualifiedExperimentalEntryBoundInputs']==1069
 assert (x128['offeredUploadMbps'],x128['uplinkGroupMbps'],x128['downlinkGroupMbps'],x128['phaseSeconds'],x128['nativeSessionSeconds'],x128['independentOwnerSeconds'],x128['classifierMaximumLeaseSeconds'])==(32,60,30,20,27,100,6)
 assert all(x128[k]for k in ['onlyMappingSourceChanged','mappingByActualClass','allWanBackgroundObserved','completeFunctionalABA','sameHardwareBundleForSameActualClassAndTuples','mappedBeforeEcmLearning','productionPairRestrictedToTcpBulkUdpRt','genericTcpRtUdpBulkModelsOnly','scopedShortCpuComparisonAccepted','rtAllProbeRepliesReceived','residentUpTagZeroUnchanged'])
@@ -1226,5 +1226,48 @@ assert not label128['actualMeasurementsChanged']and not label128['executionSourc
 for name,target in [('metrics',m128),('trial',t128)]:
     raw=(root/f'evidence/nss128-v1-{name}.json').read_bytes();assert hashlib.sha256(raw).hexdigest()==label128['originalPublishedV1RetainedSha256'][name]
     v1=json.loads(raw);v2=copy.deepcopy(target);leaf=v2 if name=='metrics'else v2['metrics'];assert leaf['newCpuComparisonAccepted']is None;leaf['newCpuComparisonAccepted']=False;assert v1==v2
+
+proof139=json.loads((root/'evidence/nss139-source-proof.json').read_text())
+assert proof139['historicPrefixSources']==1571 and proof139['sources']==261 and len(manifest['sources'])>=1832
+assert proof139['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1571],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+assert len(proof139['sourceHashes'])==261 and proof139['actualBindingTreesRetained']and proof139['privateHostBootstrapExcluded']
+for source,digest in proof139['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+x139=json.loads((root/'evidence/nss139-mainline.json').read_text());rt139=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x139['round']==rt139['round']=='NSS139'and x139['hardwareEntryRound']==138 and x139['boundInputs']==rt139['qualifiedExperimentalEntryBoundInputs']==1340 and x139['oneWan']==2
+assert (x139['classifierMaximumLeaseSeconds'],x139['nativeSessionSeconds'],x139['independentOwnerMaximumSeconds'],x139['clientMaximumSeconds'])==(6,27,100,180)
+assert all(x139[k]for k in ['onlyTcpBulkAndUdpRt','completeSameQueryClassEvidence','exactAffectedTcpCiRetired','remainingUdpSameCiRtTagsVerified','sameSocketCtMarkNatWanAcrossEpochs','newKernelPinAndDifferentEcmCiVerified','successOnlyOwnerEarlyCompletionAfterFullRestoration','failureOwnerMaximumUnchanged','firstRetirementAlsoPassedIn135','residentUpTagZeroUnchanged','naturalWorkerRecoveryObserved'])
+assert not any(x139[k]for k in ['projectionAbsenceAloneAccepted','overall135RelearningPassed','residentClassifierChanged','classifierFailureRootCauseProved','newCpuComparison','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','nssPermanentlyEnabled','uiOperated','newDownloadStarted','upstreamSubmitted'])
+assert x139['ecmCountsFirst']==[2,1,0]and x139['ecmCountsSecond']==[0,2,0]and x139['finiteLoadsClosed']==7 and x139['ownedSshReceiversRemaining']==0
+life139=json.loads((root/'evidence/nss139-class-lifecycle.json').read_text());lp=life139['proof']
+assert lp['passed']and lp['oldClass']=='BULK'and lp['newClass']=='BE'and lp['reason']=='cooldown'and lp['affectedSlots']==['tcp']and lp['sourceQuerySequence']==1031
+assert all(lp[k]for k in ['realClassChange','sameQueryCompleteClassifierFrame','sameSocketCtMarkNatWan','cpuReaderBarrierConfirmed','actualCiAbsenceAndRemainingUdpAcceleratedVerified','remainingUdpSameCiAndRtTags','oldGenerationNeverReopenedOrExtendedAfterTerminal','oldTagsRemovedAfterCiAbsence','freshIndependentCheckpointAndOwnerForRelearning','freshKernelPinAndNativeGeneration','sameTcpUdpCtIdentitiesAcrossGenerations','newClassificationAndDifferentEcMSerials'])
+assert not lp['projectionAbsenceAloneAccepted']and not lp['barrierIsFirmwareDestroyAck']and not lp['gameQualityConclusion']and not lp['cpuComparisonThisRound']and not lp['fullProductionNssRetained']
+assert lp['twoDirectionRetirementRequests']==2 and lp['ecmCounts']==[2,1,0]and 2<lp['remainingOldLeaseAtSingleRetirementSeconds']<3 and .15<lp['queryDurationSeconds']<.25
+for t in [life139['first'],life139['second']]:
+    assert t['passed']and not t['completeABA']and t['sourceInputs']==1340 and t['sourceInputsCurrentAndFrozenMatch']and t['guardianVerifiedBeforeFirstWrite']and t['checkpointDownloadedShaAndGzipVerified']and all(t['rollback'].values())
+    assert t['baseline']['configurationMatches']and t['beforeFullAudit']['passed']and t['afterFullAudit']['passed']and t['error']is None
+    for slot,up,down in [('tcp',0x8e050000,0x8f050000),('udp',0x8e060000,0x8f060000)]:
+        v=t['actualAcceleratedIdentity']['proof'][slot];assert v['upTag']==up and v['downTag']==down and v['ctMark']==0x20000 and v['natCorrect']and v['wanAffinity']==2
+for slot in ['tcp','udp']:assert life139['first']['actualAcceleratedIdentity']['proof'][slot]['serial']!=life139['second']['actualAcceleratedIdentity']['proof'][slot]['serial']
+owners139=json.loads((root/'evidence/nss139-owner-completion.json').read_text());assert len(owners139)==2
+for o in owners139:
+    assert o['successOnlyEarlyOwnerCompletion']and o['successRecordGraceSeconds']==5 and o['independentMaximumSeconds']==100 and o['guardianVerifiedBeforeWrite']and o['completeUndoVerified']and o['allOriginalQueuesAndModulesRestoredBeforeEarlyCompletion']
+    assert o['execBytes']<=9000 and o['qosBundleBytes']<=73728
+q139=json.loads((root/'evidence/nss139-qualification.json').read_text());assert q139['actualBindingInputs']==1340 and q139['newSuccessOnlyTargetRamChecks']==11 and q139['earlierCompleteReclassificationTargetRamChecks']==12 and q139['earlierModelsInheritedByteExactNotReexecuted']and q139['modelInputsAreMocked']
+assert len(q139['entryChecks'])==11 and all(v['passed']for v in q139['entryChecks'])and q139['wholeStageRecordReadMaximumBytes']==1048576
+prior135=json.loads((root/'evidence/nss139-first-retirement.json').read_text());assert prior135['passed']and not prior135['overallTwoEpochDriverPassed']and not prior135['freshGenerationRelearningAttempted']and all(prior135['rollback'].values())
+failed133=json.loads((root/'evidence/nss139-failed-class-change.json').read_text());assert not failed133['passed']and failed133['ecmOpened']and not failed133['actualApplicationPauseOccurred']and not failed133['classChangePhysicallyProved']and all(failed133['rollback'].values())
+staging131=json.loads((root/'evidence/nss139-staging-recovery.json').read_text());assert staging131['originalFailurePreserved']and staging131['checkpointDownloadedShaAndGzipVerified']and staging131['guardianVerifiedBeforeWrite']and all(staging131['undo'].values())and staging131['laterOriginalFullOperationalAuditPassed']and staging131['actualActivationStateUnavailable']and not staging131['activationOrEcmOpeningProved']
+failures139=json.loads((root/'evidence/nss139-failures.json').read_text());assert len(failures139)==8 and all(v['originalFailurePreserved']for v in failures139)
+recovery139=json.loads((root/'evidence/nss139-classifier-recovery.json').read_text());assert recovery139['previousWorkerPid']==4859 and recovery139['currentWorkerPid']==31657 and recovery139['guardianPid']==17139 and recovery139['naturalProcdRecovery']and recovery139['fullOriginalAuditPassedAfterRecovery']and recovery139['sourceConfigUnchanged']
+assert not recovery139['forcedRestartOrReinstall']and not recovery139['rootCauseProved']and recovery139['orphanBatchPidCollisionIsUnconfirmedHypothesis']and recovery139['actualChildPidAndStderrUnavailable']
+closures139=json.loads((root/'evidence/nss139-endpoint-closure.json').read_text());assert len(closures139)==7
+for c in closures139:assert c['temporaryFirewallRulesRemaining']==0 and c['canonicalFirewallBaselineRestored']and c['ownedUnitInactiveMainPidZeroPortsClosed']and c['clientExited']and c['clientGuardPassed']and c['endpointGuardianVerifiedBeforeWrite']
+receiver139=json.loads((root/'evidence/nss139-receiver-closure.json').read_text());assert receiver139['passed']and receiver139['readonly']and receiver139['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
+assert rt139['historical128RuntimePreservedSha256']==proof139['oldNss128RuntimeRetainedExactSha256']==hashlib.sha256((root/'evidence/nss128-runtime.json').read_bytes()).hexdigest()
+assert rt139['workerPid']==31657 and rt139['guardianPid']==17139 and rt139['currentNssAdmissionMustBeRefreshedBeforeWrite']and rt139['physicalClassChangeRetirementAccepted']and rt139['freshEpochRelearningSameCtAccepted']
+assert not rt139['nssPermanentlyEnabled']and not rt139['realHumanGameAcceptance']and not rt139['newCpuComparisonAcceptedThisTurn']
+assert all(rt139['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert all(rt139['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

@@ -1,0 +1,53 @@
+{
+  "round": "NSS139",
+  "hardwareEntryRound": 138,
+  "observedAt": "2026-10-05T22:30:49.477Z",
+  "boundInputs": 1340,
+  "oneWan": 2,
+  "onlyTcpBulkAndUdpRt": true,
+  "actualClassChange": "BULK->BE cooldown",
+  "completeSameQueryClassEvidence": true,
+  "projectionAbsenceAloneAccepted": false,
+  "exactAffectedTcpCiRetired": true,
+  "remainingUdpSameCiRtTagsVerified": true,
+  "sameSocketCtMarkNatWanAcrossEpochs": true,
+  "newKernelPinAndDifferentEcmCiVerified": true,
+  "ecmCountsFirst": [
+    2,
+    1,
+    0
+  ],
+  "ecmCountsSecond": [
+    0,
+    2,
+    0
+  ],
+  "nativeSessionSeconds": 27,
+  "classifierMaximumLeaseSeconds": 6,
+  "independentOwnerMaximumSeconds": 100,
+  "clientMaximumSeconds": 180,
+  "successOnlyOwnerEarlyCompletionAfterFullRestoration": true,
+  "successReceiptGraceSeconds": 5,
+  "failureOwnerMaximumUnchanged": true,
+  "firstRetirementAlsoPassedIn135": true,
+  "overall135RelearningPassed": false,
+  "failedTrialsPreserved": 8,
+  "finiteLoadsClosed": 7,
+  "ownedSshReceiversRemaining": 0,
+  "residentClassifierChanged": false,
+  "residentUpTagZeroUnchanged": true,
+  "naturalWorkerRecoveryObserved": true,
+  "classifierFailureRootCauseProved": false,
+  "newCpuComparison": false,
+  "humanCs2Acceptance": false,
+  "highLoad300MbpsAcceptance": false,
+  "fullCakeReplacementAccepted": false,
+  "nssPermanentlyEnabled": false,
+  "uiOperated": false,
+  "newDownloadStarted": false,
+  "upstreamSubmitted": false,
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

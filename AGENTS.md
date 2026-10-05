@@ -1,5 +1,8 @@
 # 接续此研究
 
+最新NSS139：实际138/1340项，单WAN2完整真实BULK→BE同query/同CT，比较器只TCP，ECM2→1/原UDP RT CI保持，再旧代0；恢复同socket后新分类/kernel pin/checkpoint/owner与不同CI重学2→0。两完整审核/两根/端点恢复，success-only完整恢复后5秒记录宽限，失败仍100秒，6/27/100/180及字节上限不变。135仅第一撤销过、第二期限拒绝；129/131/132/133/136/137原失败和原因分开冻结。129常驻4859自然apply256/0.35秒退出，procd31657/guardian17139、68/config/upTag0不变；orphan batch只是未证实假设，不改classifier。终态source0.91、selectors0、ECM关闭全零，无事务/stage/state/模块，两物理原根/7负载/SSH receiver已恢复，WAN4仍down四路failover不动。旧128 runtime原字节保存，本轮无CPU/300Mbps/真人验收。下一步仅把实测撤销/重学并入最后真人入口，先离线；睡眠不UI/新下载/扩WAN/CPU重复。09:50收尾10点前暂停本夜；STATE为准。
+
+
 最新NSS128：消费者双向tag按实际class/同源完整CT mark NAT lease派生，未知与未准入RT拒绝；生产仍TCP BULK＋UDP RT。127一真实历史帧＋13模型共14过，TCPRT/UDPBULK仅模型；128三入口检查/1069项、同tuple完整native bundle不变。实际WAN1完整20秒A/B/A2、ECM0/2/0、四tag/四leaf/mark/NAT/affinity/6续租/精确恢复过，上传29.837/30.372/29.747，softirq10.034/5.246/10.393%，可比7条件全过，短窗相对低48.64%（非300/长期/真人）；UDP718/718、781/781、720/720、四leafdrop0/squeeze0。原完整终态source2.87/4859/17139/68upTag0不变、ECM全零无残留、两根恢复、端点关闭，WAN4仍down。下一步只真实改类精确撤销/新epoch重学：先审slot close/drain/全局续租和同源完整分类，受控TCP暂停诱发BULK→BE；投影缺失不当改类/CT退出，旧CI未退不改tag/terminal不能强续。6/27/100/checkpoint/独立撤销不改；不再追CPU阈值、不扩WAN/共享预算/WiFi/autorate/新下载/UI。09:50收尾10点前暂停本夜；STATE为准。
 
 

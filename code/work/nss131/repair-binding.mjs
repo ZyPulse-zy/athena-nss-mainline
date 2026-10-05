@@ -1,0 +1,13 @@
+import fs from'node:fs';import assert from'node:assert/strict';import crypto from'node:crypto';
+const root='work/nss131',h=b=>crypto.createHash('sha256').update(b).digest('hex');
+const p=JSON.parse(fs.readFileSync(root+'/entry-qualified.json'));assert.ok(p.passed&&!fs.existsSync(root+'/frozen-qualified-inputs'));
+const binding=fs.readFileSync(root+'/session-binding.mjs','utf8');fs.writeFileSync(root+'/session-binding-v1.mjs',binding,{flag:'wx'});fs.copyFileSync(root+'/entry-qualified.json',root+'/entry-qualified-v1.json',fs.constants.COPYFILE_EXCL);
+const own=fs.readFileSync(root+'/pause-control.mjs','utf8'),prior=fs.readFileSync('work/nss129/pause-control.mjs','utf8');assert.equal(own.replaceAll('NSS131_','NSS129_'),prior);
+const old="'ssh-client.mjs','pause-control.mjs']";assert.equal(binding.split(old).length,2);let next=binding.replace(old,"'ssh-client.mjs']");
+next=next.replace("assert.ok(fs.readFileSync('work/nss131/current-audit-diagnostic.mjs'", "assert.equal(fs.readFileSync('work/nss131/pause-control.mjs','utf8').replaceAll('NSS131_','NSS129_'),fs.readFileSync('work/nss129/pause-control.mjs','utf8'));assert.ok(fs.readFileSync('work/nss131/current-audit-diagnostic.mjs'");
+fs.writeFileSync(root+'/session-binding.mjs',next);
+p.sourceManifest={};for(const name of fs.readdirSync(root))if(/\.(mjs|py|lua|ps1)$/.test(name)&&!name.includes('private'))p.sourceManifest[root+'/'+name]=h(fs.readFileSync(root+'/'+name));
+p.checks.push({name:'pause-trigger-protocol-marker-only-namespace-equivalent',passed:true,previousIncorrectByteExactBindingRefusalPreserved:true,routerWrites:false});
+fs.writeFileSync(root+'/entry-qualified.json',JSON.stringify(p,null,2)+'\n');
+fs.writeFileSync(root+'/binding-correction-private.json',JSON.stringify({passed:true,previousBindingSha256:h(binding),newBindingSha256:h(next),onlyReadableProtocolMarkerDiffers:true,oldQualificationPreserved:true,boundSourceCount:Object.keys(p.sourceManifest).length,productionWrites:false},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({rebound:true,sourceBindings:Object.keys(p.sourceManifest).length,productionWrites:false}));

@@ -1,5 +1,20 @@
 # 实验记录
 
+## NSS129–139 · 2026-10-06 06:30 · 真实改类精确撤销及新代重学
+
+更新：2026-10-06 06:30，北京时间。最新NSS139整理、实际138；常驻NSS68/config581b5d46…c791d7，worker自然恢复为31657、guardian17139未变。全部实验已撤销。
+
+**真实同一TCP/UDP完成了自动改类、精确撤销和新代重学：TCP上传暂停后，同源完整分类帧判定BULK→BE/cooldown；比较器仅报告TCP受影响，ECM2→1，UDP保留原CI及双向RT tag；旧代结束为0。恢复应用发送后，同一CT/mark/NAT/WAN用新的分类、内核pin、独立checkpoint/owner重学，新ECM编号得到2→0。**
+
+见 [完整生命周期](../evidence/nss139-class-lifecycle.json)、[汇总](../evidence/nss139-mainline.json)、[成功守护结束](../evidence/nss139-owner-completion.json)、[失败记录](../evidence/nss139-failures.json)、[分类器恢复](../evidence/nss139-classifier-recovery.json)、[端点关闭](../evidence/nss139-endpoint-closure.json)、[原完整终态](../evidence/nss139-final-audit.json)。
+
+- 实际单WAN2、一TCP BULK＋一UDP RT；完整分类query1031/0.18秒，明确TCP仍有相同CT/zone/mark/original/reply/WAN且为BE，UDP仍获准RT。仅投影缺失不能证明改类或CT退出。CPU同步barrier不是firmware销毁ACK；另验实际目标CI缺失、ECM仅剩原UDP、pending全0，剩余旧分类lease约2.29秒后结束旧代，不强续terminal gate、不在旧CI存在时改tag。
+- 两次新checkpoint下载/SHA/gzip与独立守护写前核验、两份1340项实际输入当前及冻结副本逐字节匹配；两次原完整前后审核/精确恢复通过。来源6秒/native27秒/owner最大100秒/client180秒、9000/65536/73728字节和1MiB读上限保持。成功只在模块、tag、两物理根、WAN/mwan3/state全部恢复且ECM关闭零计数后，留5秒记录宽限再退出独立owner；失败仍保留原100秒到期路径。没有发送取消信号或提前放弃失败回滚。
+- NSS135已有同样真实精确TCP撤销，但第二代因客户端期限不足未开始，原overall失败保留。NSS131连接helper并发修改进程cwd、NSS133 Lua多返回值误作tonumber进制、NSS137预检误带执行后报告字段等失败分别定位并修复；132回包不足与136预算拒绝未stage。完整失败及本地调用错误不改成成功。11项新的目标RAM成功结束边界与原12项完整分类模型分开；旧模型源码相同继承，未反复重跑。
+- 常驻worker4859在129负载中自然apply失败（status256、0.35秒），procd恢复31657，guardian17139与源/config不变。实际child PID/stderr缺失，旧orphan batch与PID重用只是未证实线索；没有为此主动重装/重启常驻分类器。新实例实际通过原完整身份审核，不能继续把4859当现网PID。
+- 本轮只验功能生命周期，没有新增CPU对照、300Mbps、Steam主下载或真人CS2指标。128此前约30Mbps上传可比短窗的softirq相对低48.64%保持为历史证据，不能扩大成长期/游戏收益。最终source0.91、selectors0、ECM关闭全零，无事务/stage/state/实验模块，两物理原mq＋四fq_codel恢复；七个有限负载、临时规则/端口/客户端已关闭，自有SSH接收器0残留。WAN4仍认证down，既有四路failover保持。
+- 下一步把已经证明的撤销/重学规则并入最后集中真人短测入口；先做必要离线绑定/拒绝路径检查。睡眠期间不操作桌面、Steam/CS2或新下载，不扩WAN/共享预算/WiFi/autorate/ECN，不重复CPU阈值试验。09:50不新生产试验，10点前完成晨间终态/发布并暂停本夜heartbeat。
+
 ## NSS128发布字段修正
 
 发布复核：128分析模板末尾的旧false覆盖了原本待独立分析的nullable字段，首次仓库校验失败却误提交5a57ecd。现保留原发布v1指标/轮次字节，仅更正该元数据字段为null；独立CPU比较七项及48.64%结果和所有实测数据不变，原37份源码/私有输入不改，追加一份修正源与严格比对，校验现已通过。见 [字段修正](../evidence/nss128-analysis-label-correction.json)。

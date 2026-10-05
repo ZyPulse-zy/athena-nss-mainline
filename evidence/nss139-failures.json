@@ -1,0 +1,70 @@
+[
+  {
+    "round": "NSS129",
+    "stage": "Owned load / read-only matching",
+    "productionRouterExperimentStarted": false,
+    "reason": "Permanent classifier worker exited during owned load; procd recovered it",
+    "rootCauseProved": false,
+    "originalFailurePreserved": true
+  },
+  {
+    "round": "NSS131-local",
+    "stage": "Local binding verification",
+    "productionRouterExperimentStarted": false,
+    "reason": "Namespace-only protocol marker was incorrectly required to be byte exact; corrected binding before production staging",
+    "originalFailurePreserved": true
+  },
+  {
+    "round": "NSS131",
+    "stage": "Independent module staging",
+    "productionRouterExperimentStarted": true,
+    "reason": "Concurrent connection helper temporarily changed global process cwd while another upload/record writer used relative paths",
+    "activationOrEcmOpeningProved": false,
+    "actualActivationStateUnavailable": true,
+    "originalFailurePreserved": true
+  },
+  {
+    "round": "NSS132",
+    "stage": "Read-only load qualification",
+    "productionRouterExperimentStarted": false,
+    "reason": "No recent actual UDP replies before staging",
+    "wan": 5,
+    "wan5DeterministicFailureProved": false,
+    "originalFailurePreserved": true
+  },
+  {
+    "round": "NSS133",
+    "stage": "Exact class change",
+    "productionRouterExperimentStarted": true,
+    "reason": "Lua gsub returned two values, passing replacement count as tonumber base",
+    "ecmOpened": true,
+    "applicationPauseOccurred": false,
+    "realClassChangeProved": false,
+    "rollbackPassed": true,
+    "originalFailurePreserved": true
+  },
+  {
+    "round": "NSS135",
+    "stage": "Second independent epoch",
+    "productionRouterExperimentStarted": true,
+    "firstExactTcpRetirementPassed": true,
+    "secondEpochStarted": false,
+    "reason": "Original finite client deadline exhausted while successful old owner waited to its 100-second expiry",
+    "originalFailurePreserved": true
+  },
+  {
+    "round": "NSS136",
+    "stage": "Pre-write client budget",
+    "productionRouterExperimentStarted": false,
+    "reason": "150-second estimate could not cover two 100-second idle owner waits within original 180-second client limit",
+    "originalFailurePreserved": true
+  },
+  {
+    "round": "NSS137",
+    "stage": "Local transport qualification",
+    "productionRouterExperimentStarted": false,
+    "reason": "Qualification replay erroneously included six post-encode audit-only fields; actual runtime plan is saved before those fields are appended.",
+    "targetRamSuccessPolicyChecks": 11,
+    "originalFailurePreserved": true
+  }
+]

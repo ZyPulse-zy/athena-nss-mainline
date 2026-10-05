@@ -1,0 +1,89 @@
+{
+  "actualEntryRound": 138,
+  "actualBindingInputs": 1340,
+  "entryChecks": [
+    {
+      "name": "exact-inherited-fast-path.lua",
+      "passed": true
+    },
+    {
+      "name": "exact-inherited-classifier.lua",
+      "passed": true
+    },
+    {
+      "name": "exact-inherited-qos-physical.lua",
+      "passed": true
+    },
+    {
+      "name": "exact-inherited-tag-normalizer.lua",
+      "passed": true
+    },
+    {
+      "name": "exact-inherited-ssh-client.mjs",
+      "passed": true
+    },
+    {
+      "name": "exact-inherited-bounded-pacer.mjs",
+      "passed": true
+    },
+    {
+      "name": "exact-inherited-pack-lua.mjs",
+      "passed": true
+    },
+    {
+      "name": "exact-inherited-parse-ecm-any-wan.mjs",
+      "passed": true
+    },
+    {
+      "name": "exact-inherited-watcher-read.lua",
+      "passed": true
+    },
+    {
+      "name": "target-RAM-success-only-early-completion-11-boundaries",
+      "passed": true,
+      "checks": 11
+    },
+    {
+      "name": "whole-new-guardian-in-original-transport-budget",
+      "passed": true,
+      "execBytes": 8915,
+      "historicalActualPlanOnly": true
+    }
+  ],
+  "newSuccessOnlyTargetRamChecks": 11,
+  "earlierCompleteReclassificationTargetRamChecks": 12,
+  "earlierModelsInheritedByteExactNotReexecuted": true,
+  "modelInputsAreMocked": true,
+  "guardianMaxExecBytes": 9000,
+  "guardedQosMaxBytes": 73728,
+  "wholeStageRecordReadMaximumBytes": 1048576,
+  "sourceMaximumAgeSeconds": 6,
+  "nativeSessionSeconds": 27,
+  "independentOwnerMaximumSeconds": 100,
+  "clientMaximumSeconds": 180,
+  "actualStages": [
+    {
+      "mode": "change",
+      "successOnlyEarlyOwnerCompletion": true,
+      "successRecordGraceSeconds": 5,
+      "independentMaximumSeconds": 100,
+      "execBytes": 8907,
+      "qosBundleBytes": 73555,
+      "guardianVerifiedBeforeWrite": true,
+      "completeUndoVerified": true,
+      "allOriginalQueuesAndModulesRestoredBeforeEarlyCompletion": true
+    },
+    {
+      "mode": "relearn",
+      "successOnlyEarlyOwnerCompletion": true,
+      "successRecordGraceSeconds": 5,
+      "independentMaximumSeconds": 100,
+      "execBytes": 8911,
+      "qosBundleBytes": 73555,
+      "guardianVerifiedBeforeWrite": true,
+      "completeUndoVerified": true,
+      "allOriginalQueuesAndModulesRestoredBeforeEarlyCompletion": true
+    }
+  ],
+  "firstIncorrectReplayPlanShapeFailurePreserved": true
+}
