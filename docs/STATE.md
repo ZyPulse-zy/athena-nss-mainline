@@ -1,5 +1,21 @@
 # 当前状态
 
+更新：2026-10-06 03:31，北京时间。最新NSS117；常驻68/config581b5d46…c791d7仍4859/17139，所有实验已撤销。
+
+**双向QoS的实际上传路径也已完成：只改变自有同一SSH TCP的负载方向，原30/29/1队列、27秒native、100秒owner与20秒A/B/A2保持。单WAN1服务器确认上传48.097/17.201/42.156Mbps，ECM0→2→0、上下行四leaf、mark/NAT/affinity和精确恢复通过。**
+
+见 [汇总](../evidence/nss117-mainline.json)、[实际两轮](../evidence/nss117-trials.json)、[上传指标](../evidence/nss117-metrics.json)、[上行leaf](../evidence/nss117-uplink-proof.json)、[关闭](../evidence/nss117-endpoint-closure.json)、[终态](../evidence/nss117-final-audit.json)。
+
+- 首116因发布文件更新与读检查重合，在ECM开放前拒绝，双物理树完整恢复；117只用同一825项入口一次重试，没有放宽一致性/时间或重装分类器。原失败保留。新客户端明确按服务器已读stdin字节计数，不把本地write提交当吞吐；11解析边界与真实本地1MiB/EOF receiver共12项检查，和现场证据分开。
+- 三段softirq13.053/4.513/13.424%，UDP收/发864/864、820/820、850/850；全量busy、squeeze、pps、RTT和异步leaf见原指标。B上传明显低于软件段，不能计算严格CPU收益，echo不是真人CS2。实际上行parent overlimits+12640、bulk drop21、RT drop0，证明shaper活动；B的四个5秒上传窗口14.71/16.17/17.82/20.20Mbps持续回升，尚未稳在30Mbps。不能把这个短窗降速定为限速精度或根因证明；先前32/48MbpsCPU证据保留。
+- 仍仅一个WAN、一TCP一UDP；上下行两个30Mbps组和默认950fallback未改，常驻发布upTag0不改。物理wan共用MacVLAN，未知flow拒绝；尚未保证全部EAPOL/其它业务在高负载树下的连续性、全套CAKE语义或五WANQoS。当前WAN4仍认证故障，自然四路PBR与学校策略保持。
+- 两次stage各新checkpoint下载/SHA/gzip和独立100秒守护，两个端点独立FW180/客户端210秒恢复和端口关闭。最终原完整source1.80秒、ECM关闭全零、无事务/stage/state/模块，两物理根mq＋四fq_codel恢复；旧115 runtime原字节存档。源/实际绑定与私有原输入冻结，凭据/CT/nonce/配置/检查点/二进制不进Git。
+- 下一步只把发送48降到32Mbps，维持30/29/1队列及所有期限，观察较小负载切换下B吞吐能否稳定及RT隔离；不先改预算。保持UI停用、不新下载/游戏、不扩WAN/WiFi/共享全局预算/autorate；最后集中一次真人验收。夜间继续至10:00，09:50停止新实验并完成报告、清理和推送后暂停本夜接续。
+
+## NSS115历史状态
+
+# 当前状态
+
 更新：2026-10-06 03:05，北京时间。最新NSS115整理，实际双向硬件测试NSS114。常驻68/config581b5d46…c791d7仍4859/17139；实验全部撤销。
 
 **首次完整证明：同一真实单WAN TCP＋UDP经ECM进入物理LAN4下行bulk/RT、物理wan上行bulk/RT四个NSS FQ-CoDel leaf。三段各20秒，ECM0→2→0，完整mark/NAT/WAN affinity正确、七次续租、两物理根及模块精确恢复。**

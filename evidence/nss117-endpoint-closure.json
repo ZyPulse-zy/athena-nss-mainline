@@ -1,0 +1,28 @@
+[
+  {
+    "loadLocalPath": "work/nss116/load-20261005191848-6713b3d6173c320c",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.0060424,
+    "clientErrors": []
+  },
+  {
+    "loadLocalPath": "work/nss116/load-20261005192311-acc6934ab291cd3a",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.00352709999999,
+    "clientErrors": []
+  }
+]

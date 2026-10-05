@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T19:11:34.575888+00:00",
+  "generatedAt": "2026-10-05T19:34:05.954428+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -9076,8 +9076,253 @@
       "sha256": "e67ced5bc80595fcfa1eb543aa555da78518a2b33e03bfd978b537ec1aa94afb",
       "bytes": 24864,
       "role": "scoped-four-WAN-admission-and-dual-physical-QoS"
+    },
+    {
+      "path": "code/work/nss116/prepare.py",
+      "workspaceSource": "work/nss116/prepare.py",
+      "sha256": "11b3c74c6ebd373c2c3d7f708f66e2cd1bdee67ec4b9013e3297c7868fc766bf",
+      "bytes": 3570,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/upload-ack.mjs",
+      "workspaceSource": "work/nss116/upload-ack.mjs",
+      "sha256": "a291bbcfc707964f399b11c7914f403530c7e06a8f33cd740bfd047945034221",
+      "bytes": 386,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/upload-server.py",
+      "workspaceSource": "work/nss116/upload-server.py",
+      "sha256": "de2a920b810e2f0eb74f255eab39be6de5c7d246f4506fbd276593de2f5d300a",
+      "bytes": 632,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/ssh-client.mjs",
+      "workspaceSource": "work/nss116/ssh-client.mjs",
+      "sha256": "b6c583cadf9225849cd4e63f8fb0f7f56d077e9ffa557e070e998ae0756bd990",
+      "bytes": 6464,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/session-binding.mjs",
+      "workspaceSource": "work/nss116/session-binding.mjs",
+      "sha256": "d43a4728af824cf091813ede566eaf98c607c848c142277742d9c887795aa5b4",
+      "bytes": 867,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/qualify.mjs",
+      "workspaceSource": "work/nss116/qualify.mjs",
+      "sha256": "1c115204ec0c3bb158067f34895c6b78542842f2f681cbbdb6359e3344e3f60b",
+      "bytes": 2784,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/controlled-session.mjs",
+      "workspaceSource": "work/nss116/controlled-session.mjs",
+      "sha256": "f36ec35ded5bd1122eb51f42ff90cb70495e3cab45ec372bbcef61a8d1a15b64",
+      "bytes": 13416,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss116/current-audit-diagnostic.mjs",
+      "sha256": "f4e942b96315c9760043620bfa2865bb168e3f7a0172e5d4178f9422a0fa2d91",
+      "bytes": 5835,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/match-controlled.mjs",
+      "workspaceSource": "work/nss116/match-controlled.mjs",
+      "sha256": "5f7033f886588a7025dbf0d31ac66d186d52411f843936a465640ffce1022870",
+      "bytes": 2163,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/read-controlled.mjs",
+      "workspaceSource": "work/nss116/read-controlled.mjs",
+      "sha256": "3b7c559ec24ed50823c8381745c916930684963d65188946017f943d45f461c9",
+      "bytes": 5548,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/run.mjs",
+      "workspaceSource": "work/nss116/run.mjs",
+      "sha256": "8a0376cce624fa146c8e9291914c6dd22e0b1dc54e36e8fe1a5b84dd5c932f2a",
+      "bytes": 3186,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/module-stage.mjs",
+      "workspaceSource": "work/nss116/module-stage.mjs",
+      "sha256": "c173d339b613a3da7243e70fe3c64e030c7a5cf333b7186812ec67af6767851f",
+      "bytes": 17768,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/payload.mjs",
+      "workspaceSource": "work/nss116/payload.mjs",
+      "sha256": "a267f375f84db2667ce0fccc90303619e3fda06454061c1bc0df62945aa8dea5",
+      "bytes": 1910,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/pack-lua.mjs",
+      "workspaceSource": "work/nss116/pack-lua.mjs",
+      "sha256": "fbf9e4e11f2f6c31b38f435e9a1cc22bef5afb28ace84d52f8bdad58fb504a0b",
+      "bytes": 601,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/pack-guardian.mjs",
+      "workspaceSource": "work/nss116/pack-guardian.mjs",
+      "sha256": "84b84c1dfaf21942347514ba54d2362bae98ea2e7915edf06da39abf3d59955d",
+      "bytes": 660,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/compact-default-queues.mjs",
+      "workspaceSource": "work/nss116/compact-default-queues.mjs",
+      "sha256": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+      "bytes": 849,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss116/uplink-tag-plan.mjs",
+      "sha256": "f25000857e3661b6b46c8409836d04a189eeac3c37acafbd2acc8f6075b6903b",
+      "bytes": 1051,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss116/parse-ecm-any-wan.mjs",
+      "sha256": "3090744d56d1e637f3874390032d37e16b201766c44d4bc227956854852350a7",
+      "bytes": 3583,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/fast-path.lua",
+      "workspaceSource": "work/nss116/fast-path.lua",
+      "sha256": "6020419285823da3fec572e92cfdf984fe56429821dfe774fd19d0714bbcd7de",
+      "bytes": 15834,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/module-stage-guardian.lua",
+      "workspaceSource": "work/nss116/module-stage-guardian.lua",
+      "sha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+      "bytes": 12634,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/qos-physical.lua",
+      "workspaceSource": "work/nss116/qos-physical.lua",
+      "sha256": "9df3b007bf2f274433df4c7d481cbbcbd5f989356d8b6522c8b963ec4eb84cf3",
+      "bytes": 10109,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/tag-normalizer.lua",
+      "workspaceSource": "work/nss116/tag-normalizer.lua",
+      "sha256": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+      "bytes": 5128,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/failed-wan-owner.lua",
+      "workspaceSource": "work/nss116/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/declared-baseline.mjs",
+      "workspaceSource": "work/nss116/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss116/service-epoch.mjs",
+      "workspaceSource": "work/nss116/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/prepare-retry.py",
+      "workspaceSource": "work/nss117/prepare-retry.py",
+      "sha256": "ca1edcc13cd74fce6fc45ef92174fa2671ee014a613600291b8f05a3cdaf06b3",
+      "bytes": 560,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/retry-existing.mjs",
+      "workspaceSource": "work/nss117/retry-existing.mjs",
+      "sha256": "9a01f48a35014c59caf526b7ba38eb8867f10af0765669000bdc5fc3fab92af5",
+      "bytes": 3158,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/prepare-analysis.py",
+      "workspaceSource": "work/nss117/prepare-analysis.py",
+      "sha256": "92945f5141d9e8c23916e761d87e3729f8b88e019b8b9d42d683940ccc294f87",
+      "bytes": 1091,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/analyze-long.py",
+      "workspaceSource": "work/nss117/analyze-long.py",
+      "sha256": "c51daed4159f892be74ca74d0d85dfff06858766508d3b70840ddc48812ad1f3",
+      "bytes": 5951,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/calibrate-clock.mjs",
+      "workspaceSource": "work/nss117/calibrate-clock.mjs",
+      "sha256": "b0acb48a470fe2aa5969a2b60c46b4f3963b1ef9f5cbf9332e7c2d9d3b20146e",
+      "bytes": 994,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/prove-upstream.py",
+      "workspaceSource": "work/nss117/prove-upstream.py",
+      "sha256": "12e35aa8e00a79919352032e2cbe6839b3c7eedd81648c3f5513faf66eb65e44",
+      "bytes": 1976,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/analyze-uplink-transient.py",
+      "workspaceSource": "work/nss117/analyze-uplink-transient.py",
+      "sha256": "42b929504d400d86d56472ff53a2ca3c901d9e1caf171b63ed0be58d713466ce",
+      "bytes": 1966,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/health.mjs",
+      "workspaceSource": "work/nss117/health.mjs",
+      "sha256": "0d24db1f22b14a5eab410174a924470d8b78dff476beeb884210bc1b5f32bf12",
+      "bytes": 5877,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/read-final-physical.mjs",
+      "workspaceSource": "work/nss117/read-final-physical.mjs",
+      "sha256": "f48f3eae849e01cba83dc88748d85434609a5109c505a91c23a696a3b85df6ff",
+      "bytes": 2047,
+      "role": "server-confirmed-single-WAN-upload-QoS"
+    },
+    {
+      "path": "code/work/nss117/save-evidence.py",
+      "workspaceSource": "work/nss117/save-evidence.py",
+      "sha256": "cb0c04ad9606a86789baf63bf125cbf480972e52ea844d4b4a9bf73007bb1453",
+      "bytes": 12838,
+      "role": "server-confirmed-single-WAN-upload-QoS"
     }
   ],
-  "lastAppendExport": "NSS115",
+  "lastAppendExport": "NSS117",
   "privateDataExcluded": true
 }

@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "queueStatisticsAsynchronous": true,
+  "nearBSeconds": 20.34000000008382,
+  "uplinkParentAndLeafClassDelta": {
+    "8e00:50": {
+      "bytes": 39874928,
+      "packets": 27176,
+      "dropped": 17,
+      "overlimits": 12640
+    },
+    "8e00:5": {
+      "bytes": 43087428,
+      "packets": 28637,
+      "dropped": 17,
+      "overlimits": 11
+    },
+    "8e00:6": {
+      "bytes": 134810,
+      "packets": 793,
+      "dropped": 0,
+      "overlimits": 0
+    }
+  },
+  "nearBBulkMbpsIncluding38ByteOverhead": 17.869395476819182,
+  "shaperActivityObserved": true,
+  "actualRtLeafDrops": 0,
+  "actualBulkLeafDrops": 21,
+  "phaseBServerConfirmedTcpFiveSecondBinsMbps": [
+    14.707481644001357,
+    16.17048099903307,
+    17.81561135567353,
+    20.197700551249582
+  ],
+  "phaseBNotSteadyThirtyMbps": true,
+  "bulkRampObservedAcrossBins": true,
+  "rtAllRepliesReceivedInEachPhase": true,
+  "rateAccuracyAccepted": false,
+  "tcpRampCauseProved": false,
+  "newCpuComparisonAccepted": false,
+  "humanCs2Acceptance": false,
+  "nextOneVariable": "Reduce only offered upload from 48 to 32 Mbps; keep queues and all gate deadlines exact."
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "initial-empty",
+    "passed": true,
+    "simulated": true,
+    "accepted": true
+  },
+  {
+    "name": "confirmed-progress",
+    "passed": true,
+    "simulated": true,
+    "accepted": true
+  },
+  {
+    "name": "equal-repeat",
+    "passed": true,
+    "simulated": true,
+    "accepted": true
+  },
+  {
+    "name": "rollback",
+    "passed": true,
+    "simulated": true,
+    "accepted": false
+  },
+  {
+    "name": "fractional",
+    "passed": true,
+    "simulated": true,
+    "accepted": false
+  },
+  {
+    "name": "negative",
+    "passed": true,
+    "simulated": true,
+    "accepted": false
+  },
+  {
+    "name": "over-byte-cap",
+    "passed": true,
+    "simulated": true,
+    "accepted": false
+  },
+  {
+    "name": "string",
+    "passed": true,
+    "simulated": true,
+    "accepted": false
+  },
+  {
+    "name": "missing",
+    "passed": true,
+    "simulated": true,
+    "accepted": false
+  },
+  {
+    "name": "foreign-field",
+    "passed": true,
+    "simulated": true,
+    "accepted": false
+  },
+  {
+    "name": "not-json",
+    "passed": true,
+    "simulated": true,
+    "accepted": false
+  },
+  {
+    "name": "actual-posix-receiver-confirmed-one-mib-and-eof-exit",
+    "passed": true,
+    "simulated": false,
+    "localOnly": true
+  }
+]
