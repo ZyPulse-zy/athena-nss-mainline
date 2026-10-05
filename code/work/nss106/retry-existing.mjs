@@ -1,0 +1,16 @@
+// One new load after all eight natural candidates missed the UDP WAN.
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';import {spawn} from 'node:child_process';
+import {verifyPreparation} from '../nss105/session-binding.mjs';
+const root='work/nss106',entry='work/nss105',hash=b=>crypto.createHash('sha256').update(b).digest('hex'),q=verifyPreparation();
+const frozen=root+'/frozen-qualified-inputs';fs.mkdirSync(frozen);
+for(const[f,h]of Object.entries(q.sourceManifest)){assert.equal(hash(fs.readFileSync(f)),h);const p=frozen+'/'+f;fs.mkdirSync(p.slice(0,p.lastIndexOf('/')),{recursive:true});fs.copyFileSync(f,p)}
+fs.writeFileSync(root+'/entry-source-manifest.json',JSON.stringify(q.sourceManifest,null,2)+'\n');fs.writeFileSync(root+'/driver-source.sha256',hash(fs.readFileSync(import.meta.filename))+'\n');
+const receipts=[];let started=false;
+async function run(file,args=[],seconds=120){const p=spawn(process.execPath,[file,...args],{windowsHide:true,stdio:['ignore','pipe','pipe']});let stdout='',stderr='';p.stdout.on('data',b=>stdout+=b);p.stderr.on('data',b=>stderr+=b);const timer=setTimeout(()=>p.kill(),seconds*1000);const code=await new Promise(r=>p.once('close',r));clearTimeout(timer);receipts.push({file,args,code,stdout,stderr,at:new Date().toISOString()});fs.writeFileSync(root+'/driver-private.json',JSON.stringify(receipts,null,2)+'\n');if(code!==0)throw Error(file+' failed: '+stderr.slice(-1200));return stdout;}
+try{
+ console.log(JSON.stringify({entry:'unchanged NSS105 retry after natural WAN mismatch',boundInputs:Object.keys(q.sourceManifest).length,offeredMbps:48,qosMbps:30,oneWan:true}));
+ const v=JSON.parse(await run(entry+'/start-dallas.mjs',['ssh'],100));started=true;fs.writeFileSync(root+'/load-reference-private.json',JSON.stringify(v,null,2)+'\n');console.log(JSON.stringify({loadStarted:true,endpointFirewallSeconds:180,clientGuardSeconds:210}));
+ console.log(await run(entry+'/match-controlled.mjs',[],90));const b=JSON.parse(fs.readFileSync(v.dir+'/udp-baseline-qualified.json'));assert.ok(b.returned>0,'No actual recent UDP return');
+ const result=JSON.parse(await run(entry+'/controlled-session.mjs',['aba'],145));fs.writeFileSync(root+'/experiment-reference.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+}catch(e){process.exitCode=1;fs.writeFileSync(root+'/driver-error.json',JSON.stringify({error:String(e)},null,2)+'\n');console.log(JSON.stringify({passed:false,error:String(e)}));}
+finally{if(started)try{const v=JSON.parse(fs.readFileSync(root+'/load-reference-private.json'));const until=fs.statSync(v.dir+'/launch-receipt.json').mtimeMs+182000;while(Date.now()<until){console.log(JSON.stringify({awaitingIndependentEndpointExpiry:true,secondsRemaining:Math.ceil((until-Date.now())/1000)}));await new Promise(r=>setTimeout(r,Math.min(15000,until-Date.now())))}console.log(await run(entry+'/close-endpoint.mjs',[],60));}catch(e){process.exitCode=1;fs.writeFileSync(root+'/closure-error.json',JSON.stringify({error:String(e)},null,2)+'\n');console.log(JSON.stringify({closureError:String(e)}));}}

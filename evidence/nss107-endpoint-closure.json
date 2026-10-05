@@ -1,0 +1,82 @@
+[
+  {
+    "loadLocalPath": "work/nss99/load-20261005144721-bee38676e1b61890",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.0005424,
+    "clientErrors": []
+  },
+  {
+    "loadLocalPath": "work/nss100/load-20261005145604-444329d44018004d",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 11.002472599999999,
+    "clientErrors": [
+      "SSH: Keepalive timeout"
+    ]
+  },
+  {
+    "loadLocalPath": "work/nss100/load-20261005150002-45845f48881b79fa",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.0049788,
+    "clientErrors": []
+  },
+  {
+    "loadLocalPath": "work/nss100/load-20261005152438-df8d052504c87012",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.00046749999998,
+    "clientErrors": []
+  },
+  {
+    "loadLocalPath": "work/nss105/load-20261005154744-8445d10dcae03ada",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.00022230000002,
+    "clientErrors": []
+  },
+  {
+    "loadLocalPath": "work/nss105/load-20261005155134-e536bcb1c56624c3",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.0008102,
+    "clientErrors": []
+  }
+]

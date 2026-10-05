@@ -1,0 +1,20 @@
+[
+  {
+    "round": "NSS100",
+    "beforeRouterWrites": true,
+    "reason": "SSH keepalive timeout; client identity absent",
+    "originalFailureRetained": true
+  },
+  {
+    "round": "NSS103",
+    "beforeEcmOpening": true,
+    "reason": "Initial TCP down unexpected 1 packet / 1500 bytes",
+    "originalFailureRetained": true
+  },
+  {
+    "round": "NSS105",
+    "beforeRouterWrites": true,
+    "reason": "Eight natural TCP candidates did not share UDP WAN",
+    "originalFailureRetained": true
+  }
+]

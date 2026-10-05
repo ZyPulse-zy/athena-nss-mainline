@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T11:57:00.114750+00:00",
+  "generatedAt": "2026-10-05T15:58:49.682258+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -7774,8 +7774,323 @@
       "sha256": "1b3b1303dd14696f2e8cf570eeefa83d824d4fd8241ea223216a92dba453a3cb",
       "bytes": 28412,
       "role": "controlled-higher-load-and-NSS-downlink-congestion-evidence"
+    },
+    {
+      "path": "code/work/nss99/prepare-long.py",
+      "workspaceSource": "work/nss99/prepare-long.py",
+      "sha256": "5243d4b757a67cc61b74beca5bfed868905868872526f777ebaf5d3bf026d2fc",
+      "bytes": 4393,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/qualify-long.mjs",
+      "workspaceSource": "work/nss99/qualify-long.mjs",
+      "sha256": "fe6a7070648231df225384b2ec245e0d7c92b70843ffb928d58ff2607e274d3b",
+      "bytes": 9529,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/run.mjs",
+      "workspaceSource": "work/nss99/run.mjs",
+      "sha256": "39d5d17c94cd76653d57c66014e6f65aa7e45fed2ab4fc5f74f05a52f734a2ca",
+      "bytes": 3144,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/controlled-session.mjs",
+      "workspaceSource": "work/nss99/controlled-session.mjs",
+      "sha256": "c859b8c5654312712bf82c42897b4be8d4da98fbb14c4a268d04772711ccc153",
+      "bytes": 12800,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/read-controlled.mjs",
+      "workspaceSource": "work/nss99/read-controlled.mjs",
+      "sha256": "f6e4b400a912374124a43147809ad8e5c0cd72bccbb733b4eb29319d173d0616",
+      "bytes": 5545,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/match-controlled.mjs",
+      "workspaceSource": "work/nss99/match-controlled.mjs",
+      "sha256": "4d6c65738e04326381980b1fd7223e6f3659e4bdc63f79d1f2a2b8cf978f940e",
+      "bytes": 2160,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/session-binding.mjs",
+      "workspaceSource": "work/nss99/session-binding.mjs",
+      "sha256": "02d8a7f8762985c1cd8422661be5e45bf50246e8efa58e1c3586204598f41556",
+      "bytes": 1008,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/payload.mjs",
+      "workspaceSource": "work/nss99/payload.mjs",
+      "sha256": "15832f53b5230bf1de64799a95869e3399b7f2c27fff7b7fe2b7812754ae7328",
+      "bytes": 1844,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/module-stage.mjs",
+      "workspaceSource": "work/nss99/module-stage.mjs",
+      "sha256": "cb13195f612a0eb1578acf65af6498552fcb8246bfe70d77bf4b69b74d52ea03",
+      "bytes": 17285,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/fast-path.lua",
+      "workspaceSource": "work/nss99/fast-path.lua",
+      "sha256": "1fc710f408e981c14807b7f16c6e9fb284e559a1d588ba077f81d314b2afdcb0",
+      "bytes": 14821,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/module-stage-guardian.lua",
+      "workspaceSource": "work/nss99/module-stage-guardian.lua",
+      "sha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+      "bytes": 12634,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/analyze-long.py",
+      "workspaceSource": "work/nss99/analyze-long.py",
+      "sha256": "f2e0fc078ff457d946fff21b778d8f898a6c7dfb4b74f09e2825672ddc64db03",
+      "bytes": 5084,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss99/calibrate-clock.mjs",
+      "workspaceSource": "work/nss99/calibrate-clock.mjs",
+      "sha256": "03c6b4ba2feceae6a726067df14ee005917790e98864caca1073780d528cb402",
+      "bytes": 993,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/prepare-rate.py",
+      "workspaceSource": "work/nss100/prepare-rate.py",
+      "sha256": "33e8cc65b0b1e47d1ac759181d07eeddebcd63423a9c6513258a1ea2e4fd2a61",
+      "bytes": 4411,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/qualify-qos-native.mjs",
+      "workspaceSource": "work/nss100/qualify-qos-native.mjs",
+      "sha256": "fc6cbb052e26b8b7394aee026840783ea0a4432a28f0852cc32ef390e3125777",
+      "bytes": 2600,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/run.mjs",
+      "workspaceSource": "work/nss100/run.mjs",
+      "sha256": "020fbb9b507240820b266944a439201c8c6a66d9eeebf2b2df157fcd723444ae",
+      "bytes": 3150,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/controlled-session.mjs",
+      "workspaceSource": "work/nss100/controlled-session.mjs",
+      "sha256": "8d546bf82bfc053c486bfc386fff81b552d2cef967ca699bd053a41ab171e2d6",
+      "bytes": 12805,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/read-controlled.mjs",
+      "workspaceSource": "work/nss100/read-controlled.mjs",
+      "sha256": "550d07df85863c395dfeda3e09f0e4f830e2336c58a8af986360e975f1362953",
+      "bytes": 5548,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/match-controlled.mjs",
+      "workspaceSource": "work/nss100/match-controlled.mjs",
+      "sha256": "073d6508a7ec044d4bb3f71919284c6d2d0d594433e29fc2a074334714b4e04a",
+      "bytes": 2163,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/session-binding.mjs",
+      "workspaceSource": "work/nss100/session-binding.mjs",
+      "sha256": "17cfc9d154bf74618b59556d23fc769042b2a464f6a0e00216e8936d04df76c2",
+      "bytes": 1032,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/payload.mjs",
+      "workspaceSource": "work/nss100/payload.mjs",
+      "sha256": "b8c0b3fefad47391b90dd94ba26f37e8c29744836368c6820cd1270f55898346",
+      "bytes": 1845,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/module-stage.mjs",
+      "workspaceSource": "work/nss100/module-stage.mjs",
+      "sha256": "ee02be618e173b29cf79e569bbf5812ed1953875790e705d5a9ab63c015b59d6",
+      "bytes": 17289,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/fast-path.lua",
+      "workspaceSource": "work/nss100/fast-path.lua",
+      "sha256": "1fc710f408e981c14807b7f16c6e9fb284e559a1d588ba077f81d314b2afdcb0",
+      "bytes": 14821,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/module-stage-guardian.lua",
+      "workspaceSource": "work/nss100/module-stage-guardian.lua",
+      "sha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+      "bytes": 12634,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/qos-physical.lua",
+      "workspaceSource": "work/nss100/qos-physical.lua",
+      "sha256": "2f7ba8b3ea60f98e4bc6b44649d78800b1582e7c232dc447dbce52b599d709db",
+      "bytes": 8472,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/analyze-long.py",
+      "workspaceSource": "work/nss100/analyze-long.py",
+      "sha256": "8c2098ec8f18955cd495996c4118fe0a0dfb7585117fe2e0bcb650867b3f4817",
+      "bytes": 5127,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss100/calibrate-clock.mjs",
+      "workspaceSource": "work/nss100/calibrate-clock.mjs",
+      "sha256": "6921bc14d9b49d68ae9372f64704dd1c98351266f9607536541547812d9cfad7",
+      "bytes": 994,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss101/retry-existing.mjs",
+      "workspaceSource": "work/nss101/retry-existing.mjs",
+      "sha256": "5c5612f0eb56af9949e5ca8d013cbef2ff3344b9ed3a6136d95ca4a94b96c1e9",
+      "bytes": 3167,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss101/collect-lifecycle.py",
+      "workspaceSource": "work/nss101/collect-lifecycle.py",
+      "sha256": "738198011f62cd6acf23d644c10a98b66f13c5d2de02a38b253707ab4db22eba",
+      "bytes": 5616,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss101/read-background-initial.mjs",
+      "workspaceSource": "work/nss101/read-background-initial.mjs",
+      "sha256": "0ac79d7828bcf78c75a241b98b323a518348bbef9b1288d1b4908a46c446ee46",
+      "bytes": 2928,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss103/run-existing.mjs",
+      "workspaceSource": "work/nss103/run-existing.mjs",
+      "sha256": "0f93aca223b21dba98b9d897a5e4eb5768bc431d34679dd3581934b7847a24fc",
+      "bytes": 3153,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/prepare-epoch.py",
+      "workspaceSource": "work/nss105/prepare-epoch.py",
+      "sha256": "a65508ba20e208dbc12563c16d0871a487946852dab950544fe7094afda0fa07",
+      "bytes": 4969,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/qualify-epoch.mjs",
+      "workspaceSource": "work/nss105/qualify-epoch.mjs",
+      "sha256": "1cc8869e5880aec31d2d0af0fea46c5658533cc32872c7c5c0cb0c3bfa9b3b64",
+      "bytes": 6332,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/run.mjs",
+      "workspaceSource": "work/nss105/run.mjs",
+      "sha256": "59fddc2325f85fca380fa6559a8f87cc6e333cb1b4bcc5baec826cc75ea9d513",
+      "bytes": 3178,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/controlled-session.mjs",
+      "workspaceSource": "work/nss105/controlled-session.mjs",
+      "sha256": "b3c7f3c8ac23da6f1ef47abd4f30a0f11c427741a98c7baf273255ba70fb45a2",
+      "bytes": 12805,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/read-controlled.mjs",
+      "workspaceSource": "work/nss105/read-controlled.mjs",
+      "sha256": "6d1b665572abac1ea55863cede3c9438362b19fbbd224bed9f9c9249a36f9b2a",
+      "bytes": 5548,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/match-controlled.mjs",
+      "workspaceSource": "work/nss105/match-controlled.mjs",
+      "sha256": "bf8f19774380ae87a1ffbbaab3b2f1ba673ed2cc9947ff08241aefbf22ddac01",
+      "bytes": 2163,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/session-binding.mjs",
+      "workspaceSource": "work/nss105/session-binding.mjs",
+      "sha256": "5bc8b21651864cc03617832bb41632e92d0ce16f04a8805fc6e7ec435a35076a",
+      "bytes": 964,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/payload.mjs",
+      "workspaceSource": "work/nss105/payload.mjs",
+      "sha256": "55506d2933628598fe822e7f91d58d523cc00546e9c8ba32caba950fd06c2099",
+      "bytes": 1845,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/module-stage.mjs",
+      "workspaceSource": "work/nss105/module-stage.mjs",
+      "sha256": "03f8bebcbd017ffb2b3f2b215d69d9a0d7bd5c03a5d5707a179712546907226a",
+      "bytes": 17289,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/fast-path.lua",
+      "workspaceSource": "work/nss105/fast-path.lua",
+      "sha256": "6020419285823da3fec572e92cfdf984fe56429821dfe774fd19d0714bbcd7de",
+      "bytes": 15834,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/analyze-long.py",
+      "workspaceSource": "work/nss105/analyze-long.py",
+      "sha256": "d30ca58e3c449ba823dcda9977774dc07731be98341e5add8757406fd3299fc5",
+      "bytes": 5127,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss105/calibrate-clock.mjs",
+      "workspaceSource": "work/nss105/calibrate-clock.mjs",
+      "sha256": "c3a4931978a9fe22f7719f3cc1cd7b5c185d6ac4c874621fb99fb9e133b73b95",
+      "bytes": 994,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss106/retry-existing.mjs",
+      "workspaceSource": "work/nss106/retry-existing.mjs",
+      "sha256": "2b7629511984574fd5685d7e3e9a861c6e590f56b8fed84460834289e38deaf2",
+      "bytes": 3144,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
+    },
+    {
+      "path": "code/work/nss107/save-evidence.py",
+      "workspaceSource": "work/nss107/save-evidence.py",
+      "sha256": "4cec670c3ad0c619f8f255dca4ce46bfb86792a05a8fddfcdfd46e7436167f1d",
+      "bytes": 21018,
+      "role": "long-single-WAN-QoS-and-startup-epoch-evidence"
     }
   ],
-  "lastAppendExport": "NSS98",
+  "lastAppendExport": "NSS107",
   "privateDataExcluded": true
 }

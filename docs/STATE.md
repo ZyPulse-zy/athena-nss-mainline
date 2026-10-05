@@ -1,5 +1,23 @@
 # 当前状态
 
+更新：2026-10-05 23:56，北京时间。最新NSS107，常驻仍NSS68；实验均撤销。
+
+**每段20秒的单WAN工程观察已完成两轮；新启动观测入口在单WAN完整20秒A/B/A2通过，后续错误tag零新增。**
+
+见 [实测汇总](../evidence/nss107-mainline.json)、[所有stage](../evidence/nss107-trials.json)、[启动观测检查](../evidence/nss107-startup-epoch-qualification.json)、[端点关闭](../evidence/nss107-endpoint-closure.json)、[终态](../evidence/nss107-final-audit.json)。
+
+- NSS99：40Mbps组、发送48，WAN2三段TCP34.417/36.069/34.872，7续租、ECM0/2/0，bulk新增363drop/RT0。UDP811/832、815/852、809/834；不是全部回包，不验收端到端QoS/精确限速或新CPU收益。
+- NSS100首次客户端SSH约11秒keepalive超时，路由器写前拒绝；NSS101同入口一次重试。30组受LAN4其它流量260/308/320Mbps影响，TCP5.498/15.754/7.679，UDP833/867→23/955→2/714，squeeze45/101/130，RT leaf仍0drop。缺口在返回软件后继续，不归因NSS。用户随后暂停下载，LAN4只读降至0.039Mbps，路由器其它WAN仍约67Mbps。
+- NSS103暂停后短测initial发现TCP-down错误1包1500B，在ECM前拒绝并完整恢复。forward writer与postrouting getter跨钩子发布可能捕获已越过writer的包，此为解释假设，没有内核/固件缺陷证明。
+- NSS105将启动原始计数保留，建立仅用于观测的基线，允许原始启动边界至多这1个TCP-down/1500B；其它错误/neighbor拒绝，未来错误必须零新增、所有计数单调/完整policy和学习前双向正包保持。100ms软件等待包含在原1.2秒getter期限内；软件A20秒仍先于ECM。没有清空counter或CT，18目标RAM案例/完整语法通过。初次8个自然TCP未同WAN，在路由器写前停止；106同一662项入口一次重试。新启动观测入口在单WAN完整20秒A/B/A2通过，后续错误tag零新增。新轮实际TCP 25.058/27.131/26.567Mbps；UDP收到/发出 761/793 → 867/904 → 794/820；续租7次，bulk/RT drop 293/0。本轮原始启动错误为零，1包启动例外仅目标RAM案例覆盖，尚未现场触发；RTT p95约238.08/240.69/237.75ms，squeeze全0，UDP仍约4%未返回。异步leaf含38字节overhead约28.12Mbps，不作精确30Mbps限速验收。
+- 当前期限：native固定27秒≤原30秒上限，真实分类租约最大6秒，独立owner100秒；每轮只一WAN一TCP一UDP。实际四个stage各checkpoint/SHA/gzip/控制连接外恢复，六端点FW180/客户端210秒关闭。最终4859/17139/config581b5d46…c791d7/source2.97，原完整审核通过，ECM关闭全零，无残留。
+- 本轮没有永久NSS、常驻分类器更换、真人CS2、300Mbps验收或上行QoS。先前32Mbps三段66.41%与48Mbps B/A2约72.19% softirq收益保留；此轮只看拥塞和功能，不用不同吞吐计算收益。实际upTag仍0，仅LAN4下行；CAKE完整替代尚未成立。
+- 背景观测第一次原始文件被后一次覆盖：156.94Mbps等聚合从实际工具输出恢复，原始帧不再可用；暂停后的0.039Mbps原始证据另存。已向用户说明，未伪造原始SHA或补帧。其它完整运行输入、CT、凭据、checkpoint/模块仍私有，旧98/92/82 runtime保持。
+
+## NSS98历史状态
+
+# 当前状态
+
 更新：2026-10-05 19:50，北京时间。最新NSS98；常驻仍NSS68，所有实验NSS已撤销。
 
 **48Mbps真实单WAN完成完整功能A/B/A2。NSS与返回软件两段吞吐47.981/48.004Mbps，softirq5.245/18.860%，相对下降72.19%。另一次40Mbps受控预算拥塞短测bulk新增丢弃148、RT零丢弃，NSS段UDP223/223收到回复。**

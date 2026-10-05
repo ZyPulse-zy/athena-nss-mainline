@@ -1,26 +1,26 @@
 {
-  "round": "NSS107",
-  "checkedAt": "2026-10-05T15:56:52.655Z",
+  "round": "NSS98",
+  "checkedAt": "2026-10-05T11:50:53.711Z",
   "deploymentReference": "work/nss68/deployment-latest.json",
   "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
   "workerPid": 4859,
   "guardianPid": 17139,
-  "nssPermanentlyEnabled": false,
+  "publicationCandidateInstalled": true,
   "permanentClassifierChangedThisTurn": false,
-  "qualifiedExperimentalEntry": "work/nss105/controlled-session.mjs",
-  "qualifiedExperimentalEntryBoundInputs": 662,
-  "startupEpochActualPassed": true,
-  "phaseSeconds": 20,
-  "fixedNativeSessionSeconds": 27,
-  "independentOwnerSeconds": 100,
-  "classifierMaximumLeaseSeconds": 6,
-  "successfulFunctionalABA": 3,
+  "nssPermanentlyEnabled": false,
+  "nssOpenedThisTurn": true,
+  "qualifiedExperimentalEntry": "work/nss96/controlled-session.mjs",
+  "qualifiedExperimentalEntryBoundInputs": 556,
+  "qualifiedCongestionEntry": "work/nss97/controlled-session.mjs",
+  "congestionEntryBoundInputs": 580,
+  "lastSuccessfulControlledLoadMbps": 48,
+  "matchedBversusA2SoftirqBenefitSupported": true,
+  "allThree48MbpsWithinOnePercent": false,
+  "entryFullHighLoadForwardingQualified": false,
   "realHumanGameAcceptance": false,
-  "newCpuComparisonAccepted": false,
-  "onlyLan4DownlinkQosProven": true,
   "audit": {
     "passed": true,
-    "observedAt": "2026-10-05T15:56:52.655Z",
+    "observedAt": "2026-10-05T11:50:53.711Z",
     "readonly": true,
     "configurationMatches": true,
     "deploymentReference": "work/nss68/deployment-latest.json",
@@ -28,9 +28,9 @@
     "workerPid": 4859,
     "guardianPid": 17139,
     "originalFullLockedAudit": true,
-    "selectors": 16,
-    "queryAge": 2.970000000204891,
-    "sequence": 13617,
+    "selectors": 0,
+    "queryAge": 1.6399999998975545,
+    "sequence": 8710,
     "ecmStoppedAndZero": true,
     "noActiveTransaction": true,
     "noStaging": true,
@@ -41,46 +41,46 @@
       "events": [
         {
           "name": "locked-audit-start",
-          "at": 2033357.58
+          "at": 2018598.77
         },
         {
           "name": "hashes-complete",
-          "at": 2033357.65
+          "at": 2018598.83
         },
         {
           "name": "journal-parsed",
-          "at": 2033357.66
+          "at": 2018598.83
         },
         {
           "name": "selectors-complete",
-          "at": 2033357.78
+          "at": 2018598.92
         },
         {
           "name": "snapshot-parsed",
-          "at": 2033357.87
+          "at": 2018598.94
         },
         {
           "name": "freshness-checked",
-          "at": 2033357.87
+          "at": 2018598.94
         },
         {
           "name": "locked-audit-end",
-          "at": 2033357.88
+          "at": 2018598.94
         }
       ],
       "freshness": {
-        "checkedAt": 2033357.87,
-        "publicationAge": 1.8000000000465661,
-        "sourceAge": 2.970000000204891,
-        "queryStarted": 2033354.9,
-        "publishedAt": 2033356.07,
-        "sequence": 13617
+        "checkedAt": 2018598.94,
+        "publicationAge": 0.8699999998789281,
+        "sourceAge": 1.6399999998975545,
+        "queryStarted": 2018597.3,
+        "publishedAt": 2018598.07,
+        "sequence": 8710
       }
     },
     "serviceEpochPinned": true,
     "nssAdmissionAllowed": false
   },
-  "historical98RuntimePreservedSha256": "42cfb69ca8cfddda3e598314c5859bb1287d73ee6e4bbbcf80833e952ccd40cb",
+  "endpointClosures": 5,
   "historical92RuntimePreservedSha256": "71c9e49344c90d7bc7c856efbac57063dbe4ba54ff36dd46956ad6b1ac4c4584",
   "historical82RuntimePreservedSha256": "9e56e02eee6c400aa59b71574df497a8628cf8a26bf64e774cf6b1578f458109"
 }

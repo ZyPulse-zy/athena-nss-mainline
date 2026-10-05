@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "readonly": true,
+  "offeredLoad": false,
+  "nssStoppedAndZero": true,
+  "seconds": 7.070000000065193,
+  "busyPercent": 32.56066642520826,
+  "softirqPercent": 16.479536399855125,
+  "timeSqueezeDelta": 1,
+  "softnetDropDelta": 0,
+  "interfaces": {
+    "rpwan3": {
+      "rxMbps": 3.862204243245858,
+      "txMbps": 0.22879434228926226,
+      "rxPps": 312.5884016944302,
+      "txPps": 313.2956152729244,
+      "rxDropped": 0,
+      "txDropped": 0
+    },
+    "rpwan5": {
+      "rxMbps": 22.055230551423218,
+      "txMbps": 1.0536735502024481,
+      "rxPps": 1745.6859971550487,
+      "txPps": 1715.4172559954975,
+      "rxDropped": 0,
+      "txDropped": 0
+    },
+    "rpwan4": {
+      "rxMbps": 7.151999999934051,
+      "txMbps": 0.35815219235879087,
+      "rxPps": 573.5502121587848,
+      "txPps": 565.7708627953488,
+      "rxDropped": 0,
+      "txDropped": 0
+    },
+    "wan": {
+      "rxMbps": 67.48735275751065,
+      "txMbps": 3.7028322489050356,
+      "rxPps": 5832.6732672729495,
+      "txPps": 5432.248939129541,
+      "rxDropped": 0,
+      "txDropped": 0
+    },
+    "rpwan2": {
+      "rxMbps": 20.823560961618455,
+      "txMbps": 1.055979632239202,
+      "rxPps": 1691.9377651894906,
+      "txPps": 1675.5304101684255,
+      "rxDropped": 0,
+      "txDropped": 0
+    },
+    "rpwan1": {
+      "rxMbps": 13.43025629407701,
+      "txMbps": 0.8031321074890583,
+      "rxPps": 1171.0042432706732,
+      "txPps": 1170.0141442607812,
+      "rxDropped": 0,
+      "txDropped": 0
+    },
+    "lan4": {
+      "rxMbps": 0.05705572842945974,
+      "txMbps": 0.03919321074928499,
+      "rxPps": 29.84441301245465,
+      "txPps": 21.64073550192209,
+      "rxDropped": 0,
+      "txDropped": 0
+    }
+  }
+}

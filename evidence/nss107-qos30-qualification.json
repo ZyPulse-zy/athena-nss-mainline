@@ -1,0 +1,36 @@
+{
+  "fixtureSource": "recorded NSS8 layout; only selected group rates transformed to 30/29/1 Mbps",
+  "configurationWrites": false,
+  "passed": true,
+  "checks": [
+    {
+      "name": "complete recorded native queues",
+      "passed": true
+    },
+    {
+      "name": "queue option drift",
+      "passed": true
+    },
+    {
+      "name": "class priority drift",
+      "passed": true
+    },
+    {
+      "name": "unknown trailing line",
+      "passed": true
+    },
+    {
+      "name": "duplicate queue",
+      "passed": true
+    },
+    {
+      "name": "missing RT leaf",
+      "passed": true
+    },
+    {
+      "name": "known partial construction allowed for cleanup",
+      "passed": true
+    }
+  ],
+  "sourceSha256": "2f7ba8b3ea60f98e4bc6b44649d78800b1582e7c232dc447dbce52b599d709db"
+}

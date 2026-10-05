@@ -1,0 +1,72 @@
+{
+  "routerWrites": false,
+  "productionExecution": false,
+  "checks": [
+    {
+      "name": "complete20",
+      "simulated": true,
+      "elapsedSeconds": 61.049999999,
+      "passed": true,
+      "renewals": 6
+    },
+    {
+      "name": "staleSource",
+      "simulated": true,
+      "elapsedSeconds": 25.029999999000005,
+      "passed": true,
+      "renewals": 1
+    },
+    {
+      "name": "markDrift",
+      "simulated": true,
+      "elapsedSeconds": 25.029999999000005,
+      "passed": true,
+      "renewals": 1
+    },
+    {
+      "name": "classDrift",
+      "simulated": true,
+      "elapsedSeconds": 25.029999999000005,
+      "passed": true,
+      "renewals": 1
+    },
+    {
+      "name": "flowGone",
+      "simulated": true,
+      "elapsedSeconds": 25.029999999000005,
+      "passed": true,
+      "renewals": 1
+    },
+    {
+      "name": "wrongSessionAck",
+      "simulated": true,
+      "elapsedSeconds": 24.029999999000005,
+      "passed": true,
+      "renewals": 0
+    },
+    {
+      "name": "beyondFixedSession",
+      "simulated": true,
+      "elapsedSeconds": 24.029999999000005,
+      "passed": true,
+      "renewals": 0
+    },
+    {
+      "name": "insufficientOwner",
+      "simulated": true,
+      "elapsedSeconds": 0,
+      "passed": true,
+      "renewals": 0
+    }
+  ],
+  "passed": true,
+  "targetLuaTimingModel": true,
+  "sourceSha256": "1fc710f408e981c14807b7f16c6e9fb284e559a1d588ba077f81d314b2afdcb0",
+  "guardianSha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+  "nativeSourceSha256": "7cfd5b7e94cbe0c5d89363653b69c44a8b42024d6dda059888eab34304558237",
+  "nativeMaximumSessionSeconds": 30,
+  "requestedNativeSessionSeconds": 27,
+  "classifierMaximumLeaseSeconds": 6,
+  "ownedFlows": 2,
+  "oneWan": true
+}

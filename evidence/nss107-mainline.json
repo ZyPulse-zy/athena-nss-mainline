@@ -1,0 +1,40 @@
+{
+  "round": "NSS107",
+  "observedAt": "2026-10-05T15:56:52.655Z",
+  "roundsCovered": [
+    "NSS99",
+    "NSS100",
+    "NSS101",
+    "NSS103",
+    "NSS105",
+    "NSS106"
+  ],
+  "stageCases": 4,
+  "successfulFunctionalABA": 3,
+  "startupEpochActualPassed": true,
+  "newEntry": "work/nss105/controlled-session.mjs",
+  "newEntryInputs": 662,
+  "newCpuComparisonAccepted": false,
+  "previousMatched32And48CpuEvidenceRetained": true,
+  "rateAccuracyAccepted": false,
+  "endToEndUdpQosAccepted": false,
+  "humanCs2Acceptance": false,
+  "highLoad300MbpsAcceptance": false,
+  "permanentClassifierChanged": false,
+  "nssPermanentlyEnabled": false,
+  "oneAcceleratedTcpUdpPairAtATime": true,
+  "secondWanSimultaneousAcceleration": false,
+  "onlyLan4DownlinkQosProven": true,
+  "acceleratedUplinkQosGuaranteed": false,
+  "fullCakeReplacementAccepted": false,
+  "originalFailureRecordsPreserved": true,
+  "allEndpointClosures": 6,
+  "backgroundRawOverwriteExplicitlyDisclosed": true,
+  "backgroundBeforePauseRecoveredFromActualToolSummary": true,
+  "timingModelIsNotHardwareExpiryInjection": true,
+  "upstreamSubmitted": false,
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

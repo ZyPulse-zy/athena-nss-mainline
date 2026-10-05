@@ -775,7 +775,7 @@ assert x92['reportVerification']['sourceValidated'] and not x92['reportVerificat
 
 proof98=json.loads((root/'evidence/nss98-source-proof.json').read_text())
 assert proof98['historicPrefixSources']==1079 and proof98['sources']==31
-assert len(manifest['sources'])==1079+proof98['sources']
+assert len(manifest['sources'])>=1079+proof98['sources']
 assert hashlib.sha256(json.dumps(manifest['sources'][:1079],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof98['historicPrefixCanonicalSha256']
 for source,digest in proof98['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 assert proof98['privateOwnedHostBootstrapExcluded'] and proof98['completePrivateSourceInputsRetained'] and proof98['notAdditionalProductionAdmission']
@@ -821,7 +821,7 @@ for c in closures98:
     assert c['temporaryFirewallRulesRemaining']==0 and c['canonicalFirewallBaselineRestored']and c['ownedUnitInactiveMainPidZeroPortsClosed']
     assert c['clientExited']and c['clientGuardPassed']and c['endpointGuardianVerifiedBeforeWrite']and c['noExistingVpsServiceReplaced']
     assert c['independentFirewallExpirySeconds']==180 and c['independentClientDeadlineSeconds']==210
-x98=json.loads((root/'evidence/nss98-mainline.json').read_text());rt98=json.loads((root/'evidence/current-runtime.json').read_text())
+x98=json.loads((root/'evidence/nss98-mainline.json').read_text());rt98=json.loads((root/'evidence/nss98-runtime.json').read_text())
 assert x98['round']==rt98['round']=='NSS98'and x98['stageCases']==3 and x98['successfulCompleteABA']==x98['ecmOpenedCases']==2
 assert x98['matched48']['acceptedCpuComparison']=='B vs A2 only'and not x98['matched48']['allThreeThroughputWithinOnePercent']
 assert 70<x98['matched48']['relativeSoftirqReductionAgainstA2Percent']<75
@@ -836,5 +836,63 @@ assert rt98['historical92RuntimePreservedSha256']==hashlib.sha256((root/'evidenc
 assert rt98['historical82RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss82-runtime.json').read_bytes()).hexdigest()
 assert all(rt98['audit'][k]for k in ['passed','configurationMatches','originalFullLockedAudit','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
 assert x98['reportVerification']['sourceValidated']and not x98['reportVerification']['browserRendered']
+
+proof107=json.loads((root/'evidence/nss107-source-proof.json').read_text())
+assert proof107['historicPrefixSources']==1110 and proof107['sources']==45
+assert len(manifest['sources'])==1110+proof107['sources']
+assert hashlib.sha256(json.dumps(manifest['sources'][:1110],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof107['historicPrefixCanonicalSha256']
+for source,digest in proof107['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert proof107['privateOwnedHostBootstrapExcluded']and proof107['completePrivateSourceInputsRetained']and proof107['lostFirstBackgroundRawIsExplicitException']
+trials107=json.loads((root/'evidence/nss107-trials.json').read_text())
+assert [t['sourceInputs']for t in trials107]==[608,636,636,662]
+assert [t['completeABA']for t in trials107]==[True,True,False,True]
+assert [t['ecmOpened']for t in trials107]==[True,True,False,True]
+assert [t['renewals']for t in trials107]==[7,6,0,7]
+for t in trials107:
+    assert t['sourceInputsCurrentAndFrozenMatch']and t['checkpointDownloadedShaAndGzipVerified']and t['guardianVerifiedBeforeFirstWrite']
+    assert t['guardianPpid']==1 and t['independentOwnerSeconds']==100 and t['fixedNativeSessionSeconds']==27 and t['classifierMaximumLeaseSeconds']==6
+    assert all(t['rollback'].values())and t['baseline']['configurationMatches']and all(t['baseline']['checks'].values())and t['beforeFullAudit']['passed']and t['afterFullAudit']['passed']
+    assert not t['gameQualityConclusion']
+    if t['completeABA']:
+        assert [p['acceleratedCounts']for p in t['metrics']['phases']]==[[0],[2],[0]]
+        assert all(p['sampleCount']==41 and 20<=p['whole']['seconds']<=21.5 for p in t['metrics']['phases'])
+        assert t['actualAcceleratedIdentity']['passed']and t['actualAcceleratedIdentity']['connectionCount']==2
+        assert all(t['actualAcceleratedIdentity']['proof'][k]['upTag']==0 and t['actualAcceleratedIdentity']['proof'][k]['natCorrect']for k in ['tcp','udp'])
+assert trials107[2]['softwareTagCounters']['initialTags']['tcp_post_down_unexpected']=={'packets':1,'bytes':1500}
+assert 'Unexpected tag observed'in trials107[2]['error']and not trials107[2]['phases']
+for t in [trials107[0],trials107[1]]:
+    assert t['metrics']['leafAcrossBNearbySnapshots']['8f06:']['delta']['dropped']==0
+assert trials107[0]['metrics']['leafAcrossBNearbySnapshots']['8f05:']['delta']['dropped']==363
+new107=trials107[3];assert new107['zeroNewWrongTagsConfirmed']and new107['startupEpoch']['rawCountersNeverReset']
+assert not new107['startupEpoch']['nssAdmissionAllowed']and not new107['startupEpoch']['onePacketStartupExceptionActuallyTriggered']
+for c in new107['measurementEpochCounters'].values():assert all(c[k]['packets']==c[k]['bytes']==0 for k in c if k.endswith('_unexpected')or k=='udp_post_neighbor_nonzero')
+assert new107['metrics']['leafAcrossBNearbySnapshots']['8f05:']['delta']['dropped']==293
+assert new107['metrics']['leafAcrossBNearbySnapshots']['8f06:']['delta']['dropped']==0
+assert [p['whole']['udp']['received']for p in new107['metrics']['phases']]==[761,867,794]
+assert [p['whole']['udp']['sent']for p in new107['metrics']['phases']]==[793,904,820]
+assert all(p['whole']['timeSqueezeDelta']==p['whole']['softnetDropDelta']==0 for p in new107['metrics']['phases'])
+assert new107['leafAdditionalStats']['8f06:']['afterBacklogPackets']==0
+epoch107=json.loads((root/'evidence/nss107-startup-epoch-qualification.json').read_text())
+assert epoch107['passed']and len(epoch107['checks'])==18 and epoch107['strictCounterAuditByteIdentical']
+assert epoch107['maximumInitialWaitSeconds']==1.2 and epoch107['warmupSeconds']==.1
+assert epoch107['sourceSha256']==hashlib.sha256((root/'code/work/nss105/fast-path.lua').read_bytes()).hexdigest()
+bg107=json.loads((root/'evidence/nss107-background-before.json').read_text());after107=json.loads((root/'evidence/nss107-background-after.json').read_text())
+assert bg107['toolReturnedSummaryValuesRetained']and not bg107['originalRawObservationAvailable']and bg107['interfaces']['lan4']['txMbps']>150
+assert after107['interfaces']['lan4']['txMbps']<.1
+closures107=json.loads((root/'evidence/nss107-endpoint-closure.json').read_text());assert len(closures107)==6
+for c in closures107:
+    assert c['temporaryFirewallRulesRemaining']==0 and c['canonicalFirewallBaselineRestored']and c['ownedUnitInactiveMainPidZeroPortsClosed']
+    assert c['clientExited']and c['clientGuardPassed']and c['endpointGuardianVerifiedBeforeWrite']
+    assert c['independentFirewallExpirySeconds']==180 and c['independentClientDeadlineSeconds']==210
+x107=json.loads((root/'evidence/nss107-mainline.json').read_text());rt107=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x107['round']==rt107['round']=='NSS107'and x107['stageCases']==4 and x107['successfulFunctionalABA']==3 and x107['startupEpochActualPassed']
+assert x107['newEntryInputs']==rt107['qualifiedExperimentalEntryBoundInputs']==662
+assert not any(x107[k]for k in ['newCpuComparisonAccepted','rateAccuracyAccepted','endToEndUdpQosAccepted','humanCs2Acceptance','highLoad300MbpsAcceptance','permanentClassifierChanged','nssPermanentlyEnabled','secondWanSimultaneousAcceleration','acceleratedUplinkQosGuaranteed','fullCakeReplacementAccepted','upstreamSubmitted'])
+assert rt107['workerPid']==4859 and rt107['guardianPid']==17139 and not rt107['realHumanGameAcceptance']
+assert all(rt107['audit'][k]for k in ['passed','configurationMatches','originalFullLockedAudit','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert rt107['historical98RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss98-runtime.json').read_bytes()).hexdigest()
+assert rt107['historical92RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss92-runtime.json').read_bytes()).hexdigest()
+assert rt107['historical82RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss82-runtime.json').read_bytes()).hexdigest()
+assert x107['reportVerification']['sourceValidated']and not x107['reportVerification']['browserRendered']
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

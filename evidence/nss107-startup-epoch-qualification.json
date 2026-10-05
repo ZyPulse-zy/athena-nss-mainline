@@ -1,0 +1,125 @@
+{
+  "routerWrites": false,
+  "checks": [
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "one-startup-packet-no-new-errors",
+      "accepted": true
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "zero-startup-errors",
+      "accepted": true
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "wrong-startup-size",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "two-startup-packets",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "startup-udp-error",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "startup-neighbor-error",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "new-tcp-error",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "new-udp-error",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "new-neighbor-error",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "missing-counter",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "added-counter",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "regressed-counter",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "fractional-counter",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "overflow-counter",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "invalid-zero-baseline",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "missing-new-direction",
+      "accepted": false
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "pending-is-not-admission",
+      "accepted": true
+    },
+    {
+      "simulated": true,
+      "passed": true,
+      "name": "monotonic-counter-bracket-after-epoch",
+      "accepted": true
+    }
+  ],
+  "targetLua": true,
+  "rawCountersRetained": true,
+  "passed": true,
+  "fullPolicyStillVerified": true,
+  "sourceSha256": "6020419285823da3fec572e92cfdf984fe56429821dfe774fd19d0714bbcd7de",
+  "strictCounterAuditByteIdentical": true,
+  "onlyStartupObservationChanged": true,
+  "maximumInitialWaitSeconds": 1.2,
+  "warmupSeconds": 0.1,
+  "phaseSeconds": 20,
+  "nativeSeconds": 27,
+  "classifierSeconds": 6
+}
