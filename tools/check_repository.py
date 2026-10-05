@@ -617,9 +617,11 @@ assert all(not x68['conclusions'][k]for k in ['wholeRouterCpuBenefitProved','rea
 assert len(manifest['sources'])>868
 proof77=json.loads((root/'evidence/nss77-source-proof.json').read_text())
 assert hashlib.sha256(json.dumps(manifest['sources'][:868],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof77['historicPrefixCanonicalSha256']
-assert len(manifest['sources'])==868+proof77['sources']
+proof78=json.loads((root/'evidence/nss78-source-proof.json').read_text())
+assert hashlib.sha256(json.dumps(manifest['sources'][:990],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof78['historicPrefixCanonicalSha256']
+assert len(manifest['sources'])==868+proof77['sources']+proof78['sources']
 for source,digest in proof77['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-x77=json.loads((root/'evidence/nss77-mainline.json').read_text());rt77=json.loads((root/'evidence/current-runtime.json').read_text())
+x77=json.loads((root/'evidence/nss77-mainline.json').read_text());rt77=json.loads((root/'evidence/nss77-runtime.json').read_text())
 assert x77['latestBoundInputs']==355 and x77['latestCandidateRamChecks']==9 and not x77['latestCandidateLiveTested']
 assert len(x77['trials'])==10 and sum(t['independentStageBeforeWriteVerified']for t in x77['trials'])==9
 assert all(t['protectedBaselineMatches']for t in x77['trials'])
@@ -633,5 +635,20 @@ assert not x77['client']['latestFinalUiRestoreClaimed']
 assert rt77['round']=='NSS77' and not rt77['entryFullHighLoadForwardingQualified'] and not rt77['nssPermanentlyEnabled']
 assert rt77['finalClosure']['passed'] and rt77['audit']['configurationMatches'] and rt77['audit']['originalFullLockedAudit']
 assert rt77['historical68RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss68-runtime.json').read_bytes()).hexdigest()
+
+rt78=json.loads((root/'evidence/current-runtime.json').read_text())
+x78=json.loads((root/'evidence/nss78-mainline.json').read_text())
+assert rt78['round']=='NSS78' and rt78['qualifiedExperimentalEntry']=='work/nss77/real-session.mjs'
+assert rt78['qualifiedExperimentalEntryBoundInputs']==355 and not rt78['entryFullHighLoadForwardingQualified']
+assert rt78['historical77RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss77-runtime.json').read_bytes()).hexdigest()
+assert all(rt78['audit'][k] for k in ['passed','configurationMatches','originalFullLockedAudit','ecmStoppedAndZero','noStaging','noExperimentState','noExperimentalModule'])
+assert not any(x78['changes'].values()) and not x78['load']['highLoad']
+assert x78['load']['sameWanPairs']==0 and x78['timing']['samples']==154 and x78['timing']['publications']==6
+assert x78['timing']['initialAgeEligible']==64 and x78['timing']['originalTagAgeEligible']==82
+assert x78['timing']['jointFreshSamples']==2 and x78['interpretation']['jointFreshSamplesAreNotAdmission']
+assert not x78['interpretation']['selectedPairAdmissionVerified'] and not x78['interpretation']['cpuOrSoftirqBenefitProved']
+assert not x78['interpretation']['nss77LiveForwardingTested'] and not x78['rollback']['newRollbackTestClaimed']
+assert proof78['sources']==len(proof78['sourceHashes'])==2 and proof78['notAdditionalProductionAdmission']
+for source,digest in proof78['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

@@ -1,5 +1,7 @@
 # Athena NSS 主线记录
 
+最新 [NSS78](evidence/nss78-mainline.json)：轻载准备窗口已实测存在；目前无真实游戏/下载对，未开启NSS。入口仍NSS77，下一步直接集中闭环。现网原完整审核通过。下方77及更早为历史。
+
 最新 [NSS77](evidence/nss77-mainline.json)：真实CS2/Steam部分加速，完整闭环未通过；已定位并修正准备余量不一致，最新候选355项/目标RAM通过但未现场试用。当前ECM关闭且恢复审核通过。先读 [STATE](docs/STATE.md) 和 [PLAN](docs/PLAN.md)。下方68及更早是历史。
 
 

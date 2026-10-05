@@ -1,6 +1,6 @@
 {
-  "round": "NSS77",
-  "checkedAt": "2026-10-05T06:21:14.700Z",
+  "round": "NSS78",
+  "checkedAt": "2026-10-05T06:56:23.498Z",
   "deploymentReference": "work/nss68/deployment-latest.json",
   "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
   "workerPid": 4859,
@@ -8,13 +8,14 @@
   "publicationCandidateInstalled": true,
   "permanentClassifierChangedThisTurn": false,
   "nssPermanentlyEnabled": false,
+  "nssOpenedThisTurn": false,
   "qualifiedExperimentalEntry": "work/nss77/real-session.mjs",
   "qualifiedExperimentalEntryBoundInputs": 355,
   "entryPreparationQualified": true,
   "entryFullHighLoadForwardingQualified": false,
   "audit": {
     "passed": true,
-    "observedAt": "2026-10-05T06:21:14.700Z",
+    "observedAt": "2026-10-05T06:56:23.498Z",
     "readonly": true,
     "configurationMatches": true,
     "deploymentReference": "work/nss68/deployment-latest.json",
@@ -23,54 +24,13 @@
     "guardianPid": 17139,
     "originalFullLockedAudit": true,
     "selectors": 0,
-    "queryAge": 1.8899999998975545,
-    "sequence": 2120,
+    "queryAge": 3.669999999925494,
+    "sequence": 2822,
     "ecmStoppedAndZero": true,
     "noActiveTransaction": true,
     "noStaging": true,
-    "publicationTrial": false,
     "noExperimentState": true,
     "noExperimentalModule": true,
-    "diagnostic": {
-      "events": [
-        {
-          "name": "locked-audit-start",
-          "at": 1998819.76
-        },
-        {
-          "name": "hashes-complete",
-          "at": 1998819.82
-        },
-        {
-          "name": "journal-parsed",
-          "at": 1998819.82
-        },
-        {
-          "name": "selectors-complete",
-          "at": 1998819.91
-        },
-        {
-          "name": "snapshot-parsed",
-          "at": 1998819.94
-        },
-        {
-          "name": "freshness-checked",
-          "at": 1998819.94
-        },
-        {
-          "name": "locked-audit-end",
-          "at": 1998819.95
-        }
-      ],
-      "freshness": {
-        "checkedAt": 1998819.94,
-        "publicationAge": 0.5699999998323619,
-        "sourceAge": 1.8899999998975545,
-        "queryStarted": 1998818.05,
-        "publishedAt": 1998819.37,
-        "sequence": 2120
-      }
-    },
     "serviceEpochPinned": true,
     "nssAdmissionAllowed": false
   },
@@ -79,8 +39,10 @@
   },
   "completePerformanceAndGameAcceptance": false,
   "requiresLiveRevalidation": true,
-  "historical68RuntimePreservedSha256": "c738a551ab242324f7cb9eab8fa72508b986e12c4a6407867e07023c5ecf6486",
-  "computerUseStoppedByUser": true,
-  "clientTaskGuardWithdrawn": true,
-  "clientFinalUiRestored": false
+  "historical77RuntimePreservedSha256": "f030402663429f5b4ea15b0b51c94f64f1577e4f38f387e992e9aea1da1e6fdd",
+  "currentRealApplicationPairVisible": false,
+  "clientDownloadNetworkBpsObserved": 0,
+  "newClientDownloadStarted": false,
+  "clientHudChangedThisTurn": false,
+  "previousTurnClientFinalRestoreStillUnproved": true
 }

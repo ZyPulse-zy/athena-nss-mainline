@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T06:26:42.263563+00:00",
+  "generatedAt": "2026-10-05T07:00:52.381235+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -6934,8 +6934,22 @@
       "sha256": "9e4fa4b7f2356cdf663336593285591f35271ba1cdd2e98db30cc879f438f1aa",
       "bytes": 25342,
       "role": "reviewed-experiment-source-or-qualification-not-live-proof"
+    },
+    {
+      "path": "code/work/nss78/measure-readiness.mjs",
+      "workspaceSource": "work/nss78/measure-readiness.mjs",
+      "sha256": "58b64c343a9ca45b9ba4ddfaa3f691bd5e833f1dff2421bce7772fbdd802fc0c",
+      "bytes": 6325,
+      "role": "readonly-timing-diagnostic-no-admission"
+    },
+    {
+      "path": "code/work/nss78/save-mainline.py",
+      "workspaceSource": "work/nss78/save-mainline.py",
+      "sha256": "30abf7891d1acc86a0effd468702fddd8f7a0ffeb292b6c86714b1abc387fe81",
+      "bytes": 14800,
+      "role": "readonly-timing-diagnostic-no-admission"
     }
   ],
-  "lastAppendExport": "NSS69-77",
+  "lastAppendExport": "NSS78",
   "privateDataExcluded": true
 }

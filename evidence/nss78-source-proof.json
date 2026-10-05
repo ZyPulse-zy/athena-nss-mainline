@@ -1,0 +1,13 @@
+{
+  "round": "NSS78",
+  "sources": 2,
+  "sourceHashes": {
+    "work/nss78/measure-readiness.mjs": "58b64c343a9ca45b9ba4ddfaa3f691bd5e833f1dff2421bce7772fbdd802fc0c",
+    "work/nss78/save-mainline.py": "30abf7891d1acc86a0effd468702fddd8f7a0ffeb292b6c86714b1abc387fe81"
+  },
+  "historicPrefixSources": 990,
+  "historicPrefixCanonicalSha256": "f0318d248bbd59ed1011dfeafba64d51eb0a3cc58ae8ec14311e25665987351d",
+  "notAdditionalProductionAdmission": true,
+  "privateConnectionAndCapturesExcluded": true,
+  "originalEntryBoundInputsUnchanged": 355
+}

@@ -1,0 +1,121 @@
+{
+  "round": "NSS78",
+  "observedAt": "2026-10-05T06:56:23.498Z",
+  "hypothesis": "The unchanged NSS77 initial source-age budget has observable windows in the current resident publication cadence.",
+  "changes": {
+    "routerConfigurationWrites": false,
+    "nssStage": false,
+    "ecmOpened": false,
+    "productionQdiscWrites": false,
+    "permanentClassifierChanged": false,
+    "experimentalEntryChanged": false
+  },
+  "load": {
+    "steamNetworkBpsAtUi": 0,
+    "steamDiskBpsAtUi": 0,
+    "pendingLargeSteamDownloadsAtUi": 0,
+    "existingRdr2DownloadCompleted": true,
+    "cs2MenuVisible": true,
+    "actualApplicationGameCandidates": 0,
+    "actualApplicationBulkCandidates": 0,
+    "sameWanPairs": 0,
+    "trafficGenerated": false,
+    "highLoad": false
+  },
+  "timing": {
+    "observedAt": "2026-10-05T06:52:58.116Z",
+    "readonly": true,
+    "seconds": 16.080000000074506,
+    "samples": 154,
+    "publications": 6,
+    "initialAgeEligible": 64,
+    "originalTagAgeEligible": 82,
+    "freshCoreBirthEligible": 7,
+    "jointFreshSamples": 2,
+    "queryAge": {
+      "min": 0.34000000008381903,
+      "max": 3.300000000046566
+    },
+    "publicationDelay": {
+      "min": 0.27000000001862645,
+      "max": 0.3200000000651926
+    },
+    "sourceReadSeconds": {
+      "min": 0,
+      "max": 0.010000000009313226
+    },
+    "coreReadSeconds": {
+      "min": 0,
+      "max": 0.02000000001862645
+    },
+    "workerPid": 4859,
+    "guardianPid": 17139,
+    "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+    "ecmStoppedAndZero": true,
+    "realFlowAdmissionNotTested": true,
+    "highLoadNotTested": true,
+    "cpuBenefitNotTested": true,
+    "nssPermissionGranted": false,
+    "sourceManifest": {
+      "work/nss78/measure-readiness.mjs": "58b64c343a9ca45b9ba4ddfaa3f691bd5e833f1dff2421bce7772fbdd802fc0c",
+      "work/nss69/core-guard-phase.lua": "5edadcb5c50dc05af55129f82774b53a1841ac4318f5aa847549f15cce7504ab"
+    },
+    "originalEntryBindingCount": 355,
+    "privateCoreGuardSha256": "7d4a0360b32ab486dfb7241637e70eb78fbfe4d620ea47b9e7a0eafedfa2012f"
+  },
+  "queryIntervalsSeconds": [
+    2.9899999999906868,
+    3.0,
+    3.0100000000093132,
+    2.9899999999906868,
+    3.0
+  ],
+  "classificationFlowCounts": {
+    "minimum": 1,
+    "maximum": 3
+  },
+  "interpretation": {
+    "timingWindowsObservedAtLightLoad": true,
+    "selectedPairAdmissionVerified": false,
+    "nss77LiveForwardingTested": false,
+    "completeMatchedABACompleted": false,
+    "cpuOrSoftirqBenefitProved": false,
+    "cs2JitterLossMissMeasured": false,
+    "highLoadBudgetProved": false,
+    "jointFreshSamplesAreNotAdmission": true
+  },
+  "rollback": {
+    "requiredForRouterMutation": false,
+    "reason": "No router mutation was performed.",
+    "newRollbackTestClaimed": false,
+    "originalFullAuditBeforeAndAfterPassed": true
+  },
+  "finalAudit": {
+    "passed": true,
+    "observedAt": "2026-10-05T06:56:23.498Z",
+    "readonly": true,
+    "configurationMatches": true,
+    "deploymentReference": "work/nss68/deployment-latest.json",
+    "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+    "workerPid": 4859,
+    "guardianPid": 17139,
+    "originalFullLockedAudit": true,
+    "selectors": 0,
+    "queryAge": 3.669999999925494,
+    "sequence": 2822,
+    "ecmStoppedAndZero": true,
+    "noActiveTransaction": true,
+    "noStaging": true,
+    "noExperimentState": true,
+    "noExperimentalModule": true,
+    "serviceEpochPinned": true,
+    "nssAdmissionAllowed": false
+  },
+  "nextEntry": "work/nss77/real-session.mjs",
+  "boundInputs": 355,
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false,
+    "browserFileProtocolPolicyBlocked": true
+  }
+}

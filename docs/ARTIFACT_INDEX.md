@@ -1,5 +1,10 @@
 # 证据索引
 
+## 当前NSS78
+
+- [只读时序诊断](../evidence/nss78-mainline.json)、[终态审核](../evidence/nss78-final-audit.json)、[新增源码](../evidence/nss78-source-proof.json)。
+- [当前运行](../evidence/current-runtime.json)、[原77 runtime原字节](../evidence/nss77-runtime.json)。入口保持77；轻载诊断不授予准入。
+
 ## 当前NSS77
 
 - [实测轮次](../evidence/nss77-mainline.json)、[终态审核](../evidence/nss77-final-audit.json)、[新源冻结](../evidence/nss77-source-proof.json)。

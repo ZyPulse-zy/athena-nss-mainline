@@ -337,3 +337,16 @@
 | NSS74 | 未取得测量阶段 | Persistent TCP still disappeared during passive preparation | 原完整恢复通过 |
 | NSS75 | A 5.06s, 326.83Mbps | Tag counter read consumed final source learning reserve | 原完整恢复通过 |
 | NSS76 | 未取得测量阶段 | Initial readiness accepted age 2.94s; next pair read refused | 原完整恢复通过 |
+
+
+## 2026-10-05 14:56 — NSS78只读准备时序
+
+见 [本轮诊断](../evidence/nss78-mainline.json)、[终态审核](../evidence/nss78-final-audit.json)、[两份新增源码](../evidence/nss78-source-proof.json)。
+
+- 16.08秒、154次读取、6个实际分类发布。发布延迟0.27–0.32秒，查询间隔2.99–3.01秒；64次来源age<1.65秒，82次age<2秒。分类快照只有1–3条，不能外推到300Mbps负载。
+- 7次观察到core sleep出生age≤200ms，其中2次同时满足初始来源预算；只是时间重叠，不是完整身份、分类、mark/NAT或真实gate准入证明。
+- 新的两次原完整审核通过，常驻4859/17139、config581b5d46…c791d7未变。14:56:23 source3.67秒，ECM关闭全零，无事务/stage/state/实验模块。
+- Steam队列无待下载大文件，RDR2完成，网络/磁盘均0bps；游戏菜单可见，实际0游戏候选/0Steam bulk/0同WAN对。本轮仅显示Steam窗口，没有新增下载、启动对局或改HUD。前一轮Esc后的完整客户端恢复仍未补证，当前菜单观察不覆盖旧记录。
+- 未调用77的aba；355项绑定和已完RAM证明保持，不重放。没有CPU/softirq、time_squeeze或真人游戏收益结论，也没有新增回滚试验。
+- 原77 runtime原字节冻结，新增2份白名单源码、累计992。原始运行数据、core-guard原文和桌面内容留本地，未提交上游Issue/PR。
+
