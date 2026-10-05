@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "queueStatisticsAsynchronous": true,
+  "nearBSeconds": 20.489999999990687,
+  "uplinkParentAndLeafClassDelta": {
+    "8e00:50": {
+      "bytes": 39561702,
+      "packets": 27058,
+      "dropped": 32,
+      "overlimits": 10573
+    },
+    "8e00:5": {
+      "bytes": 41072498,
+      "packets": 27401,
+      "dropped": 32,
+      "overlimits": 8
+    },
+    "8e00:6": {
+      "bytes": 134300,
+      "packets": 790,
+      "dropped": 0,
+      "overlimits": 0
+    }
+  },
+  "nearBBulkMbpsIncluding38ByteOverhead": 17.21323845779211,
+  "shaperActivityObserved": true,
+  "actualRtLeafDrops": 0,
+  "actualBulkLeafDrops": 32,
+  "phaseBServerConfirmedTcpFiveSecondBinsMbps": [
+    16.61399800175467,
+    15.26472849020059,
+    16.525531918782335,
+    16.994516490541034
+  ],
+  "phaseBNotSteadyThirtyMbps": true,
+  "bulkRampObservedAcrossBins": true,
+  "rtAllRepliesReceivedInEachPhase": true,
+  "rateAccuracyAccepted": false,
+  "tcpRampCauseProved": false,
+  "newCpuComparisonAccepted": false,
+  "humanCs2Acceptance": false,
+  "nextOneVariable": "Inspect actual transfer and RT results before another single-variable change."
+}

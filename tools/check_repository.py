@@ -1012,7 +1012,7 @@ assert len(manifest['sources'])>=1296+35
 assert hashlib.sha256(json.dumps(manifest['sources'][:1296],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof117['historicPrefixCanonicalSha256']
 for source,digest in proof117['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 assert proof117['privateOwnedHostBootstrapExcluded']and proof117['actualBindingTreesRetained']
-x117=json.loads((root/'evidence/nss117-mainline.json').read_text());rt117=json.loads((root/'evidence/current-runtime.json').read_text())
+x117=json.loads((root/'evidence/nss117-mainline.json').read_text());rt117=json.loads((root/'evidence/nss117-runtime.json').read_text())
 assert x117['round']==rt117['round']=='NSS117'and x117['boundInputs']==rt117['qualifiedExperimentalEntryBoundInputs']==825
 assert x117['directionOnlyNewVariable']==rt117['bulkDirection']=='upload'and x117['offeredUploadMbps']==48
 assert all(x117[k]for k in ['queueRatesUnchangedFrom114','routerPayloadByteExactFrom114','serverConfirmedReceivedBytesUsed','firstPublicationCoherenceFailurePreserved','unchangedEntryRetriedOnce','successfulSingleWanABA','shaperActivityObserved'])
@@ -1048,5 +1048,34 @@ assert all(rt117['audit'][k]for k in ['passed','originalFullLockedNativeAudit','
 assert all(rt117['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
 assert not rt117['nssPermanentlyEnabled']and not rt117['realHumanGameAcceptance']and not rt117['newMatchedCpuComparisonAccepted']
 assert x117['reportVerification']['sourceValidated']and not x117['reportVerification']['browserRendered']
+
+proof118=json.loads((root/'evidence/nss118-source-proof.json').read_text())
+assert proof118['historicPrefixSources']==1331 and proof118['sources']==33 and len(manifest['sources'])>=1364
+assert hashlib.sha256(json.dumps(manifest['sources'][:1331],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof118['historicPrefixCanonicalSha256']
+for source,digest in proof118['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert proof118['privateOwnedHostBootstrapExcluded']and proof118['actualBindingTreesRetained']
+x118=json.loads((root/'evidence/nss118-mainline.json').read_text());rt118=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x118['round']==rt118['round']=='NSS118'and x118['boundInputs']==rt118['qualifiedExperimentalEntryBoundInputs']==857
+assert x118['onlyOfferedUploadChanged']and x118['offeredAveragePerConnectionMbps']==32 and x118['instantaneousLoadCatchupStillPossible']
+assert x118['hardwarePayloadByteExactFrom116']and x118['queueRatesUnchanged']and x118['completeFunctionalABA']and x118['shaperActivityObserved']
+assert (x118['phaseSeconds'],x118['nativeSessionSeconds'],x118['independentOwnerSeconds'],x118['classifierMaximumLeaseSeconds'])==(20,27,100,6)
+assert x118['rtRepliesComplete']and x118['rtLeafDrop']==0 and x118['bulkLeafDrop']==32 and x118['temporaryEndpointsClosed']==1
+assert not any(x118[k]for k in ['smallerRateTransitionRestoredThroughput','newMatchedCpuComparisonAccepted','strictRateAccuracyAccepted','tcpThroughputRootCauseProved','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','residentClassifierChanged','nssPermanentlyEnabled','uiOperated','upstreamSubmitted'])
+t118=json.loads((root/'evidence/nss118-trial.json').read_text());assert t118['passed']and t118['completeABA']
+assert t118['sourceInputsCurrentAndFrozenMatch']and t118['guardianVerifiedBeforeFirstWrite']and t118['checkpointDownloadedShaAndGzipVerified']and all(t118['rollback'].values())
+assert t118['baseline']['configurationMatches']and t118['beforeFullAudit']['passed']and t118['afterFullAudit']['passed']
+m118=json.loads((root/'evidence/nss118-metrics.json').read_text());assert m118['offeredTcpMbps']==32 and m118['localSubmittedBytesNotUsedForThroughput']and m118['renewals']==7
+assert [p['acceleratedCounts']for p in m118['phases']]==[[0],[2],[0]]and [p['whole']['udp']['sent']for p in m118['phases']]==[703,817,864]
+assert all(p['whole']['udp']['unreturned']==p['whole']['timeSqueezeDelta']==p['whole']['softnetDropDelta']==0 for p in m118['phases'])
+assert m118['phases'][1]['whole']['clientTcpMbps']<20 and m118['phases'][2]['whole']['clientTcpMbps']>32
+trans118=json.loads((root/'evidence/nss118-uplink-transient.json').read_text());assert trans118['shaperActivityObserved']and trans118['uplinkParentAndLeafClassDelta']['8e00:50']['overlimits']==10573
+assert len(json.loads((root/'evidence/nss118-qualification.json').read_text()))==9
+c118=json.loads((root/'evidence/nss118-endpoint-closure.json').read_text())
+assert c118['temporaryFirewallRulesRemaining']==0 and c118['canonicalFirewallBaselineRestored']and c118['ownedUnitInactiveMainPidZeroPortsClosed']and c118['clientExited']and c118['clientGuardPassed']and c118['endpointGuardianVerifiedBeforeWrite']
+assert c118['independentFirewallExpirySeconds']==180 and c118['independentClientDeadlineSeconds']==210
+assert rt118['historical117RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss117-runtime.json').read_bytes()).hexdigest()
+assert rt118['workerPid']==4859 and rt118['guardianPid']==17139 and rt118['currentNssAdmissionMustBeRefreshedBeforeWrite']
+assert all(rt118['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert all(rt118['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

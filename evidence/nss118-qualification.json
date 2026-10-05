@@ -1,0 +1,47 @@
+[
+  {
+    "name": "router-byte-exact-fast-path.lua",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "router-byte-exact-module-stage-guardian.lua",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "router-byte-exact-qos-physical.lua",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "router-byte-exact-tag-normalizer.lua",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "router-byte-exact-uplink-tag-plan.mjs",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "router-byte-exact-parse-ecm-any-wan.mjs",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "exact-single-rate-change-start-dallas.mjs",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "exact-single-rate-change-ssh-client.mjs",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "exact-single-rate-change-run.mjs",
+    "passed": true,
+    "localOnly": true
+  }
+]
