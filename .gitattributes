@@ -1,6 +1,8 @@
 * text=auto eol=lf
 # These are byte-exact evidence sources, including existing CRLF line endings.
 /code/** -text
+# Frozen runtime references carry byte hashes and must retain their source endings.
+/evidence/*runtime.json -text
 # Preserve the exact pre-existing whitespace in four frozen fixture copies.
 /code/work/nss48/entry-scheduling-fixtures.lua whitespace=-blank-at-eol
 /code/work/nss49/entry-scheduling-fixtures.lua whitespace=-blank-at-eol
