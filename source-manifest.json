@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T22:35:17.751371+00:00",
+  "generatedAt": "2026-10-05T23:26:49.944975+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -12828,8 +12828,379 @@
       "sha256": "33092e6afddd8bfb687b4b8d28bcdfbb73b936e1b07b823cd0a508b9d3fff88b",
       "bytes": 16677,
       "role": "exact-class-retirement-and-fresh-epoch-relearning"
+    },
+    {
+      "path": "code/work/nss140/application-filter.lua",
+      "workspaceSource": "work/nss140/application-filter.lua",
+      "sha256": "88523b157c9322204ebcb54dd87a3192e574e1e0d6608640d1fe164aab042785",
+      "bytes": 1015,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/application-ownership.mjs",
+      "workspaceSource": "work/nss140/application-ownership.mjs",
+      "sha256": "9da42bff598ad1164cfc93f027994c941c230d46804bbd27f784f8d7fd29c54b",
+      "bytes": 1868,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/archive-entry-v1.py",
+      "workspaceSource": "work/nss140/archive-entry-v1.py",
+      "sha256": "acec0410b8e303e0650d155b2f76f423a221a7c2b8a69b26077395ef6d6ab1db",
+      "bytes": 1512,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/classifier.lua",
+      "workspaceSource": "work/nss140/classifier.lua",
+      "sha256": "fec5b214e45b7e0f13c16352c8a45613afcd5f12412fd1be7016beedc34101d1",
+      "bytes": 20557,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/compact-default-queues.mjs",
+      "workspaceSource": "work/nss140/compact-default-queues.mjs",
+      "sha256": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+      "bytes": 849,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/compact-final-identifiers-v1.mjs",
+      "workspaceSource": "work/nss140/compact-final-identifiers-v1.mjs",
+      "sha256": "aa3ce7014e3375882566315911fa1c39b57d164b6297cf01cc9024a51143677c",
+      "bytes": 1590,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/compact-final-identifiers.mjs",
+      "workspaceSource": "work/nss140/compact-final-identifiers.mjs",
+      "sha256": "51e6cc0554ba4c8b46a22a654c6c7dae63ba622f2b9e12787052327e41112628",
+      "bytes": 1571,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/compact-identifiers-v1.mjs",
+      "workspaceSource": "work/nss140/compact-identifiers-v1.mjs",
+      "sha256": "593b7e27bc43d5102ec3ebf29ba4d5f6155a479cc02e2e29eb78d9ee9f9aeeec",
+      "bytes": 1397,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/compact-identifiers.mjs",
+      "workspaceSource": "work/nss140/compact-identifiers.mjs",
+      "sha256": "68ebf7ba8bfca832b133af73c8bf356599965a1b083b502dcf3a07ba3c635175",
+      "bytes": 1436,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/compact-more-identifiers.mjs",
+      "workspaceSource": "work/nss140/compact-more-identifiers.mjs",
+      "sha256": "dc37c00e23b8e222be57458772ca803687cf756e85b82f482cbb431dbd788e79",
+      "bytes": 1413,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss140/current-audit-diagnostic.mjs",
+      "sha256": "2c42d1f3d8c43959688583bd105ee553bbec2520e850e928f94a1fad563d2a8f",
+      "bytes": 5830,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/declared-baseline.mjs",
+      "workspaceSource": "work/nss140/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/failed-wan-owner.lua",
+      "workspaceSource": "work/nss140/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/fast-models-v1.lua",
+      "workspaceSource": "work/nss140/fast-models-v1.lua",
+      "sha256": "d47797ae50ee62bcd2927d3edfba6ee3f35dc01c27383050f8d3c3c7d25bbc90",
+      "bytes": 6802,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/fast-models-v2.lua",
+      "workspaceSource": "work/nss140/fast-models-v2.lua",
+      "sha256": "50ad8198123305df04c496f4e058766dda0c36e05a43a271861e62338b93c00a",
+      "bytes": 6816,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/fast-models.lua",
+      "workspaceSource": "work/nss140/fast-models.lua",
+      "sha256": "50ad8198123305df04c496f4e058766dda0c36e05a43a271861e62338b93c00a",
+      "bytes": 6816,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/fast-path-v1.lua",
+      "workspaceSource": "work/nss140/fast-path-v1.lua",
+      "sha256": "0da0c1d3c243963bbefbdb0652344f70f666ad95c4340a070d2c39267167626f",
+      "bytes": 17096,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/fast-path-v2.lua",
+      "workspaceSource": "work/nss140/fast-path-v2.lua",
+      "sha256": "361fa0f220c8aecf247928c13e0762f7c7df9b03004dfbe40156d7b6f9a49aad",
+      "bytes": 16353,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/fast-path-v3.lua",
+      "workspaceSource": "work/nss140/fast-path-v3.lua",
+      "sha256": "1be9b7e4ca3129954e3612ade5c3be789670031811f6934b22a1b0c99866cf67",
+      "bytes": 16136,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/fast-path.lua",
+      "workspaceSource": "work/nss140/fast-path.lua",
+      "sha256": "bd68a244beb60e0da8c510f6fe871e7104d22804c547d85150efe4ecf9fea947",
+      "bytes": 15883,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/measure-bundle.mjs",
+      "workspaceSource": "work/nss140/measure-bundle.mjs",
+      "sha256": "72528f1570fee3ca75f91465537d3d83115c5bbb7855c868867afd2a8668a80a",
+      "bytes": 1366,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/module-stage-guardian.lua",
+      "workspaceSource": "work/nss140/module-stage-guardian.lua",
+      "sha256": "533ebc28ce0c9513048f10d34599a4577d3feed04f1e066a6f568fc32bf6bfec",
+      "bytes": 13171,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/module-stage.mjs",
+      "workspaceSource": "work/nss140/module-stage.mjs",
+      "sha256": "c21dd6201e830642ae68515bc5c73143f404d29d26579dc3aecb785c7d4c8e69",
+      "bytes": 17684,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/observe-retire-models.lua",
+      "workspaceSource": "work/nss140/observe-retire-models.lua",
+      "sha256": "1d16a7357bd81a6e6182ad7163cdd102c6dec8e46c0b9e169a9af5b79e03de77",
+      "bytes": 4164,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/pack-guardian.mjs",
+      "workspaceSource": "work/nss140/pack-guardian.mjs",
+      "sha256": "746a9c866d1e80f9494cead571af2f0e44bddacafbd0a55f7df8f75c96378927",
+      "bytes": 660,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/pack-lua.mjs",
+      "workspaceSource": "work/nss140/pack-lua.mjs",
+      "sha256": "d1a9982deb0acda6dd88fe70c630d176f7d5543ed4298d115bdd9b4d65186766",
+      "bytes": 1749,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss140/parse-ecm-any-wan.mjs",
+      "sha256": "6a17e97bd217b07f5169ae2375c210c6f1cab77dacb4d634355f406118327e60",
+      "bytes": 3651,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/payload.mjs",
+      "workspaceSource": "work/nss140/payload.mjs",
+      "sha256": "b05143e7cd7789d9fff9e557f72c4cf5b3600ada191e82ba471b695089fbad97",
+      "bytes": 1910,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/prepare-real-entry.py",
+      "workspaceSource": "work/nss140/prepare-real-entry.py",
+      "sha256": "052621833a330965473e4d5c091ca0c5df20f1dee9dca3ff119e2d7b8f016439",
+      "bytes": 5497,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/prepare.py",
+      "workspaceSource": "work/nss140/prepare.py",
+      "sha256": "d43ca59eefa1b44a733058ff6ce0e1be3b561694ae6c529d2ec89b33c2b59d7d",
+      "bytes": 4422,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/qos-physical.lua",
+      "workspaceSource": "work/nss140/qos-physical.lua",
+      "sha256": "05b9862c12bbf8fa9b59f392e9c34f692647fdafaed0c871a502519d63e90454",
+      "bytes": 10324,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/qualify-entry.mjs",
+      "workspaceSource": "work/nss140/qualify-entry.mjs",
+      "sha256": "940540c68edb92ed0036a74ff87901640cb858417c0b2d64202a2c7f1e75f102",
+      "bytes": 9687,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/qualify-fast-v1.mjs",
+      "workspaceSource": "work/nss140/qualify-fast-v1.mjs",
+      "sha256": "1bdd58235f3365f437a91e800c20b90634b5273b302d91765cd18510a1ce9a5f",
+      "bytes": 2618,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/qualify-fast-v2.mjs",
+      "workspaceSource": "work/nss140/qualify-fast-v2.mjs",
+      "sha256": "8332dc81dacbd5bf051e8373d0b9e168838100e00c2f68575b480e718456b23f",
+      "bytes": 2869,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/qualify-fast-v3.mjs",
+      "workspaceSource": "work/nss140/qualify-fast-v3.mjs",
+      "sha256": "acdc011c1c739be219c7bff700cd192ca171498d9ba21998e40ae391ea6072b4",
+      "bytes": 3542,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/qualify-fast.mjs",
+      "workspaceSource": "work/nss140/qualify-fast.mjs",
+      "sha256": "8332dc81dacbd5bf051e8373d0b9e168838100e00c2f68575b480e718456b23f",
+      "bytes": 2869,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/read-real-candidates-v1.mjs",
+      "workspaceSource": "work/nss140/read-real-candidates-v1.mjs",
+      "sha256": "07b7c8c55e3c13f8d7bbae180b62d683695c867283b56d3708237bde109b0eb4",
+      "bytes": 6167,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/read-real-candidates.mjs",
+      "workspaceSource": "work/nss140/read-real-candidates.mjs",
+      "sha256": "72c772193c59efbbfce1d7d28c4a39060a0fcd873f87253c14591096a223bd99",
+      "bytes": 4710,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/real-session.mjs",
+      "workspaceSource": "work/nss140/real-session.mjs",
+      "sha256": "f383292db6c43759b2e01fa1020b0667290ba58296a5e4a68fd794e272420a9b",
+      "bytes": 14299,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/record-candidates.mjs",
+      "workspaceSource": "work/nss140/record-candidates.mjs",
+      "sha256": "d8e9b2e5b2791c2cf61ab9e29291306424bd0f8a49c10b81df278351c81191f0",
+      "bytes": 1642,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/service-epoch.mjs",
+      "workspaceSource": "work/nss140/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/session-binding-v1.mjs",
+      "workspaceSource": "work/nss140/session-binding-v1.mjs",
+      "sha256": "13c1d1e6ab1893b61bfb6229d2da5ac269a53bc7bf37d4b13a1d70f02eb4cfc9",
+      "bytes": 1989,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/session-binding.mjs",
+      "workspaceSource": "work/nss140/session-binding.mjs",
+      "sha256": "3aa98b427f7a14e35bcb77c5e23c8201f4e62e973e262904413847c75652f2b6",
+      "bytes": 2195,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/tag-normalizer.lua",
+      "workspaceSource": "work/nss140/tag-normalizer.lua",
+      "sha256": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+      "bytes": 5128,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss140/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss140/uplink-tag-plan.mjs",
+      "sha256": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459",
+      "bytes": 1257,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss141/prepare-audits.py",
+      "workspaceSource": "work/nss141/prepare-audits.py",
+      "sha256": "6f284e32e20daff5c5a5f9458801f8992541f7ecfd8870be463079d18b760495",
+      "bytes": 608,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss141/health.mjs",
+      "workspaceSource": "work/nss141/health.mjs",
+      "sha256": "8ff41aab37f4a38bec7022082a4d0a9fc11fb533b996ec6fcbf0e3a4c7c7b87d",
+      "bytes": 6360,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss141/read-final-physical.mjs",
+      "workspaceSource": "work/nss141/read-final-physical.mjs",
+      "sha256": "29c09658cc57c7bdef21b2136b97374ac3857150e6e776e08e71f91709d66bad",
+      "bytes": 2047,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss141/verify-receivers.mjs",
+      "workspaceSource": "work/nss141/verify-receivers.mjs",
+      "sha256": "8deb58a266750f37c5da5faa8653a7c7388d6bff4dd1bb2ab93560c3fa0b83b7",
+      "bytes": 1500,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss141/measure-entry-size-v1.mjs",
+      "workspaceSource": "work/nss141/measure-entry-size-v1.mjs",
+      "sha256": "eedbf040f3e153f8c75d72c63eb3330476cd7c0c58446ede60de71e6d6000c8f",
+      "bytes": 3592,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss141/measure-entry-size-v2.mjs",
+      "workspaceSource": "work/nss141/measure-entry-size-v2.mjs",
+      "sha256": "9dfe58ac25824b37a490bb4ab53e7a57cd57109d9be6de5d3abdaa5a74391909",
+      "bytes": 4191,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss141/measure-entry-size.mjs",
+      "workspaceSource": "work/nss141/measure-entry-size.mjs",
+      "sha256": "885179638d80a0fac9a5bdf44a8cd196709b60f28db1e6855411768b42fe98d2",
+      "bytes": 4413,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss141/save-evidence.py",
+      "workspaceSource": "work/nss141/save-evidence.py",
+      "sha256": "3c80cf53fbaca74248418e5f75decb39536920d7c5e456ef92c6436bcf7322fe",
+      "bytes": 16700,
+      "role": "final-real-entry-offline-integration-and-readonly-health"
     }
   ],
-  "lastAppendExport": "NSS139",
+  "lastAppendExport": "NSS141",
   "privateDataExcluded": true
 }

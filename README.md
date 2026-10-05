@@ -1,5 +1,9 @@
 # Athena NSS 主线
 
+最新 [NSS141真人入口准备](evidence/nss141-mainline.json)：真实改类撤销与新代重学已在 [NSS139](evidence/nss139-class-lifecycle.json)通过，现已并入最后集中真人入口并完成必要离线/只读核验。常驻68、ECM关闭；140整合版本完整A/B/A2和真人验收尚未执行。以 [STATE](docs/STATE.md) 与 [PLAN](docs/PLAN.md) 开头为准，下方旧摘要仅历史。
+
+# Athena NSS 主线
+
 最新 [NSS92单WAN32Mbps闭环](evidence/nss92-mainline.json)：60Mbps预算下，相同32Mbps真实TCP/UDP中softirq约下降66.4%，三段UDP全部返回、ECM0→2→0与恢复通过。52Mbps回程缺包根因未定，当前NSS已撤销、常驻68未改。先读 [状态](docs/STATE.md) 和 [计划](docs/PLAN.md)。
 
 # Athena NSS 主线

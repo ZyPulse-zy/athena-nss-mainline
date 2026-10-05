@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-10-05T23:12:42.342Z",
+  "mode": "inspect",
+  "actualGameCandidates": 0,
+  "actualBulkCandidates": 0,
+  "sameWanPairs": 0,
+  "routerWrites": false,
+  "trafficGenerated": false,
+  "openFrontend": false,
+  "status": "WAITING_FOR_REAL_CS2_STEAM_PAIR",
+  "nssPermissionGranted": false
+}

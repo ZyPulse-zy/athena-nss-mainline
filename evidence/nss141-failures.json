@@ -1,0 +1,71 @@
+[
+  {
+    "stage": "first-default-inspect-preparation",
+    "passed": false,
+    "routerConnectionStarted": false,
+    "checkpointOrStageStarted": false,
+    "ecmOpened": false,
+    "originalPreserved": true,
+    "reason": "Byte-equality assertion incorrectly included the temporary namespace of guardian placeholders; corrected only to permit this exact namespace substitution. Expanded guardian source remains identical.",
+    "actualRecord": {
+      "passed": false,
+      "stage": "verifyPreparation-before-PC-reader-and-router-connection",
+      "observedAtUtc": "2026-10-05T23:11:09Z",
+      "error": "AssertionError: pack-guardian.mjs byte equality",
+      "actualSha256": "746a9c866d1e80f9494cead571af2f0e44bddacafbd0a55f7df8f75c96378927",
+      "expectedSha256": "bb6d49d95ab67cac54aa91b49c79491f573ae57ac34ecf7c019895f5b05c8dd9",
+      "cause": "Only temporary placeholder namespace changed NSS138_LITERAL to NSS140_LITERAL; expanded guardian was not changed. Source equality assertion was too broad.",
+      "routerConnectionStarted": false,
+      "checkpointOrStageStarted": false,
+      "ecmOpened": false,
+      "firstQualificationSourcesFrozen": 43
+    }
+  },
+  {
+    "stage": "first-size-model",
+    "passed": false,
+    "routerConnectionStarted": false,
+    "checkpointOrStageStarted": false,
+    "ecmOpened": false,
+    "originalPreserved": true,
+    "reason": "Model omitted per-decision protocol; template retained extra TCP neighbor rules and had undefined l4proto matches. No entry code or valid payload qualification used this model.",
+    "originalReportedPassedButModelInvalid": true,
+    "originalOutputRetainedSha256": "ce48e0cedc3a3a3f5c90108469353a73a3325ba4524ade5f70411156035a27b0"
+  },
+  {
+    "stage": "identifier-compactor-candidates",
+    "passed": false,
+    "routerConnectionStarted": false,
+    "checkpointOrStageStarted": false,
+    "ecmOpened": false,
+    "originalPreserved": true,
+    "reason": "Quoted-literal conservation and property-name checks rejected two local alias candidates before they replaced the final source."
+  },
+  {
+    "stage": "combined-whole-factory-model-transport",
+    "passed": false,
+    "routerConnectionStarted": false,
+    "checkpointOrStageStarted": false,
+    "ecmOpened": false,
+    "originalPreserved": true,
+    "reason": "Two combined model commands exceeded unchanged 9000-byte transport cap before execution. Full factory syntax and only new observe/retire branches were later checked separately; whole factory ABA was not executed."
+  },
+  {
+    "stage": "first-staged-publication-whitespace-review",
+    "passed": false,
+    "routerConnectionStarted": false,
+    "checkpointOrStageStarted": false,
+    "ecmOpened": false,
+    "originalPreserved": true,
+    "reason": "git diff --cached --check refused the one inherited blank line at fast-path line209 in four byte-frozen source copies; preserve exact sources and use only four path-specific whitespace attributes.",
+    "files": [
+      "fast-path-v1.lua",
+      "fast-path-v2.lua",
+      "fast-path-v3.lua",
+      "fast-path.lua"
+    ],
+    "line": 209,
+    "sourceBytesChanged": false,
+    "approvalOrCommitChainStoppedBeforeCommit": true
+  }
+]

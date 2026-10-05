@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-05T23:12:42.320Z",
+  "readonly": true,
+  "gameProcessRunning": false,
+  "steamProcessRunning": true,
+  "actualCs2RtCandidates": 0,
+  "actualSteamBulkCandidates": 0,
+  "sameWanCandidates": [],
+  "sourceAge": 2.169999999925494,
+  "sourceSequence": 1936,
+  "nssAdmissionAllowed": false,
+  "controllerPrototypeOnly": true,
+  "adapterSha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0"
+}

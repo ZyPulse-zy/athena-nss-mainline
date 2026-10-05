@@ -1,6 +1,6 @@
 {
-  "round": "NSS141",
-  "checkedAt": "2026-10-05T23:14:56.969Z",
+  "round": "NSS139",
+  "checkedAt": "2026-10-05T22:30:49.477Z",
   "deploymentReference": "work/nss68/deployment-latest.json",
   "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
   "workerPid": 31657,
@@ -9,13 +9,10 @@
   "residentClassifierChangedThisTurn": false,
   "qualifiedExperimentalEntry": "work/nss138/controlled-session.mjs",
   "qualifiedExperimentalEntryBoundInputs": 1340,
-  "preparedRealEntry": "work/nss140/real-session.mjs",
-  "preparedRealEntryBoundInputs": 1385,
-  "preparedRealEntryHardwareAbaTested": false,
   "currentNssAdmissionMustBeRefreshedBeforeWrite": true,
   "audit": {
     "passed": true,
-    "observedAt": "2026-10-05T23:14:56.969Z",
+    "observedAt": "2026-10-05T22:30:49.477Z",
     "readonly": true,
     "originalFullLockedNativeAudit": true,
     "unrelatedConfigurationMatches": true,
@@ -30,8 +27,8 @@
     "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
     "workerPid": 31657,
     "guardianPid": 17139,
-    "queryAge": 4.399999999906868,
-    "selectors": 2,
+    "queryAge": 0.909999999916181,
+    "selectors": 0,
     "ecmStoppedAndZero": true,
     "noActiveTransaction": true,
     "noStaging": true,
@@ -48,7 +45,7 @@
   },
   "physicalRootRestoreAudit": {
     "passed": true,
-    "observedAt": "2026-10-05T23:14:55.321Z",
+    "observedAt": "2026-10-05T22:30:48.189Z",
     "readonly": true,
     "physicalWanOriginalMqFourFqCodelRestored": true,
     "lan4OriginalMqFourFqCodelRestored": true,
@@ -58,10 +55,10 @@
     "wan4Lifecycle": "not-running",
     "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
   },
-  "physicalClassChangeRetirementAcceptedFrom139": true,
-  "freshEpochRelearningSameCtAcceptedFrom139": true,
+  "physicalClassChangeRetirementAccepted": true,
+  "freshEpochRelearningSameCtAccepted": true,
   "realHumanGameAcceptance": false,
   "newCpuComparisonAcceptedThisTurn": false,
-  "historical139RuntimePreservedSha256": "19559e29dd8e92ffc6c91a8f8937e2d9976df595a2305a5feca4301949045036",
+  "historical128RuntimePreservedSha256": "b2d0d304a69f36e927b7e626e9a7786db66ac6decf164baf8325e7bf181b01a9",
   "nightContinuationUntilBeijing": "2026-10-06T10:00:00+08:00"
 }

@@ -1,3 +1,17 @@
+# NSS141最后真人入口准备
+
+- [NSS141 mainline](../evidence/nss141-mainline.json)
+- [NSS141 entry-qualification](../evidence/nss141-entry-qualification.json)
+- [NSS141 fast-qualification](../evidence/nss141-fast-qualification.json)
+- [NSS141 readonly-readiness](../evidence/nss141-readonly-readiness.json)
+- [NSS141 readonly-reader](../evidence/nss141-readonly-reader.json)
+- [NSS141 size-review](../evidence/nss141-size-review.json)
+- [NSS141 failures](../evidence/nss141-failures.json)
+- [NSS141 receiver-closure](../evidence/nss141-receiver-closure.json)
+- [NSS141 final-audit](../evidence/nss141-final-audit.json)
+- [NSS141 physical-final](../evidence/nss141-physical-final.json)
+- [NSS141 source-proof](../evidence/nss141-source-proof.json)
+
 # 当前NSS139
 
 [真实改类与重学](../evidence/nss139-class-lifecycle.json) · [失败](../evidence/nss139-failures.json) · [常驻实例恢复](../evidence/nss139-classifier-recovery.json) · [终态](../evidence/nss139-final-audit.json) · [历史128 runtime](../evidence/nss128-runtime.json)。

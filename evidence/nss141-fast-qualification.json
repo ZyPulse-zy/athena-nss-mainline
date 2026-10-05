@@ -1,0 +1,96 @@
+{
+  "productionExecution": false,
+  "cases": [
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "unchanged"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "changed"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "no-full-frame"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "wrong-scope"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "expired-frame"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "expired-old-lease"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "pending-drain"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "pin-drift"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "remaining-shape"
+    },
+    {
+      "routerWrites": false,
+      "mockedClockCountersClassifierAndFirmware": true,
+      "hardwareProof": false,
+      "targetRamOnly": true,
+      "passed": true,
+      "case": "software-class-change"
+    }
+  ],
+  "passed": true,
+  "checks": 10,
+  "sourceSha256": "bd68a244beb60e0da8c510f6fe871e7104d22804c547d85150efe4ecf9fea947",
+  "allOtherTokensAndQuotedStringsExact": true,
+  "original138CompleteClassVerifierRetained": true,
+  "wholeFactoryCompiledInTargetRam": true,
+  "onlyNewObserveAndRetireBranchesExecutedWithMockedBackend": true,
+  "wholeFactoryAbaNotExecutedThisRound": true,
+  "actualHardwareTestThisVersion": false,
+  "syntaxExecBytes": 7811,
+  "modelExecBytes": 5475
+}

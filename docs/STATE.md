@@ -1,5 +1,22 @@
 # 当前状态
 
+更新：2026-10-06 07:14，北京时间。最新NSS141整理、140入口离线整合；常驻NSS68/config581b5d46…c791d7，worker31657、guardian17139。本轮没有生产试装，ECM保持关闭。
+
+**已经把139实测的改类精确撤销接入最后真人入口。学习前按完整实际class映射双向bulk/RT tag；保留程序连接归属和完整CT/mark/NAT/query/leaf/lease证据。若B段发生受支持的真实BULK→BE，停止新学习、核验完整同query证据、精确撤销TCP CI并检查原UDP，再结束旧代；该次中断不能算完整A/B/A2，也不会在旧代强续或改tag。重新学习必须重新进入入口，取得新分类/kernel pin/checkpoint/owner。**
+
+见 [整合汇总](../evidence/nss141-mainline.json)、[入口资格](../evidence/nss141-entry-qualification.json)、[新增撤销检查](../evidence/nss141-fast-qualification.json)、[只读现网](../evidence/nss141-readonly-readiness.json)、[终态](../evidence/nss141-final-audit.json) 与 [失败](../evidence/nss141-failures.json)。
+
+- `work/nss140/real-session.mjs` 默认只读inspect，显式aba才可实验。当前1385项绑定含原138的1340项和原真人77的全部355项；45新输入当前及本地冻结逐字节匹配。真实默认inspect已运行，无游戏/下载对，未创建checkpoint/stage/开放ECM。
+- 新fast完整目标RAM语法通过，仅新增observe/retire分支10项模型执行；程序归属Lua过滤10项RAM和8项Node拒绝、1份历史完整分类帧映射通过。旧138真实生命周期及128可比CPU是历史实测；**140新整合版本完整factory A/B/A2未在模型或硬件跑过，不能把分支检查写成真人验收。**
+- 正常测量保留三段各20秒、同观察器/同QoS与完整mark/NAT/affinity检查。仅一健康WAN、一TCP BULK＋一UDP RT；UP60（bulk59/RT1）、DOWN30（bulk29/RT1）、fallback950保持。来源6秒/native27秒/owner100秒、9000/65536/73728字节及1MiB读上限不放宽；有效渲染73574字节、guardian8907，另三份仅尺寸模型73575/73417/73588均在上限内。实际新输入仍须现场编码检查，尺寸模型不授权flow。
+- 原140第一次默认inspect因临时placeholder命名的字节相等断言拒绝，发生在PC读取及路由器连接之前；43份首资格源码已冻结，只允许该确切namespace替换，展开guardian不变。第一尺寸模型漏protocol、保留额外TCP neighbor并报告错误尺寸，原输出虽标passed仍明确作无效证据保留；修正后校验实际protocol。两次combined模型命令过大写前拒绝、两个alias候选被文字/属性检查拒绝，也未隐藏。
+- 原完整终态source4.40、动态selectors2由native审核验证；ECM关闭全零，无事务/stage/state/模块，两物理mq＋四fq_codel和自有SSH receiver零残留。WAN4仍down，既有四路failover与认证/代理/Tailscale不动。未操作UI/下载/对局；没有新CPU或游戏体验结论。
+- 最后集中真人窗：用户醒来后用已有正常待下载内容和真人CS2，不购买/重装/新增下载；先只读确认同WAN精确pair，再新checkpoint与独立owner并核验后做20秒A/B/A2。记录HUD jitter/loss/Miss/体感及softirq/squeeze/吞吐；下载负载不匹配或窗口中断就分开报告功能和性能。随后才讨论长期NSS策略与扩WAN。睡眠期间仅保存准备，09:50晨间收尾、10点前暂停本夜heartbeat，不重复CPU/试装/广泛准备。
+
+## NSS139历史
+
+# 当前状态
+
 更新：2026-10-06 06:30，北京时间。最新NSS139整理、实际138；常驻NSS68/config581b5d46…c791d7，worker自然恢复为31657、guardian17139未变。全部实验已撤销。
 
 **真实同一TCP/UDP完成了自动改类、精确撤销和新代重学：TCP上传暂停后，同源完整分类帧判定BULK→BE/cooldown；比较器仅报告TCP受影响，ECM2→1，UDP保留原CI及双向RT tag；旧代结束为0。恢复应用发送后，同一CT/mark/NAT/WAN用新的分类、内核pin、独立checkpoint/owner重学，新ECM编号得到2→0。**

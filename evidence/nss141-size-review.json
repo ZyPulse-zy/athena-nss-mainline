@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "sizeReviewOnly": true,
+  "packetProtocolFieldsValidated": true,
+  "invalidV1SizeModelRetained": true,
+  "v1UnusableReason": "Model omitted per-decision protocol; template retained extra TCP neighbor rules and had undefined l4proto matches. No entry code or valid payload qualification used this model.",
+  "sourceMaximumSeconds": 6,
+  "nativeMaximumSeconds": 27,
+  "ownerMaximumSeconds": 100,
+  "noBudgetWidened": true,
+  "oversizedFutureRealInputMustRefuseBeforeStage": true,
+  "cases": [
+    {
+      "kind": "historical-real-owned-pair",
+      "renderingOnly": true,
+      "currentNssAuthorization": false,
+      "productionWrites": false,
+      "qosBundleBytes": 73575,
+      "qosBundleFitsOriginal73728": true,
+      "guardianExecBytes": 8903,
+      "guardianFitsOriginal9000": true
+    },
+    {
+      "kind": "long-IPv4-coalescing-ports-size-only",
+      "renderingOnly": true,
+      "currentNssAuthorization": false,
+      "productionWrites": false,
+      "qosBundleBytes": 73417,
+      "qosBundleFitsOriginal73728": true,
+      "guardianExecBytes": 8899,
+      "guardianFitsOriginal9000": true
+    },
+    {
+      "kind": "long-IPv4-distinct-ports-size-only",
+      "renderingOnly": true,
+      "currentNssAuthorization": false,
+      "productionWrites": false,
+      "qosBundleBytes": 73588,
+      "qosBundleFitsOriginal73728": true,
+      "guardianExecBytes": 8911,
+      "guardianFitsOriginal9000": true
+    }
+  ]
+}

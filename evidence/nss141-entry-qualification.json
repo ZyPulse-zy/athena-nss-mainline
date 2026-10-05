@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "integratedRealEntry": true,
+  "partialClassChangeIsNotCompletedAba": true,
+  "productionExecution": false,
+  "productionPairStillRestrictedToTcpBulkUdpRt": true,
+  "fullRowsRetainedForClassMapping": true,
+  "currentNssAuthorization": false,
+  "actualHardwareAbaThisVersion": false,
+  "wholeFactoryAbaNotExecutedThisRound": true,
+  "fastQualificationSha256": "e90fcdea7f7886a5dcb247e54b5613c6128324429aaddd1a20c699c89fa8f1b0",
+  "classifierMaximumLeaseSeconds": 6,
+  "nativeSessionSeconds": 27,
+  "independentOwnerSeconds": 100,
+  "payloadBytes": 73574,
+  "guardianExecBytes": 8907,
+  "inheritedBoundInputs": 1340,
+  "checks": [
+    {
+      "name": "all-original-real-entry-355-bindings-retained",
+      "passed": true,
+      "bindings": 355
+    },
+    {
+      "name": "historical-authenticated-full-rows-preserved-and-class-mapper-accepts",
+      "passed": true,
+      "historicalActualFrameOnly": true,
+      "pcOwnershipModeled": true,
+      "currentNssAuthorization": false
+    },
+    {
+      "name": "ownership-tuple-class-proxy-full-provenance-and-budget-rejections",
+      "passed": true,
+      "checks": 8,
+      "nodeModelsOnly": true
+    },
+    {
+      "name": "actual-application-Lua-filter-in-target-RAM",
+      "passed": true,
+      "checks": 10,
+      "execBytes": 2694
+    },
+    {
+      "name": "complete-original-transport-budgets",
+      "passed": true,
+      "payloadBytes": 73574,
+      "maximumPayloadBytes": 73728,
+      "guardianExecBytes": 8907,
+      "maximumExecBytes": 9000,
+      "historicalActualPlansOnly": true
+    },
+    {
+      "name": "read-only-default-fresh-post-checkpoint-map-and-no-partial-ABA-success",
+      "passed": true
+    }
+  ],
+  "nativeModels": {
+    "ramOnly": true,
+    "checks": 10,
+    "nssAuthorization": false,
+    "routerWrites": false,
+    "passed": true,
+    "mockedSocketsAndRows": true
+  },
+  "newEntrySourceHashes": {
+    "work/nss140/application-filter.lua": "88523b157c9322204ebcb54dd87a3192e574e1e0d6608640d1fe164aab042785",
+    "work/nss140/application-ownership.mjs": "9da42bff598ad1164cfc93f027994c941c230d46804bbd27f784f8d7fd29c54b",
+    "work/nss140/archive-entry-v1.py": "acec0410b8e303e0650d155b2f76f423a221a7c2b8a69b26077395ef6d6ab1db",
+    "work/nss140/classifier.lua": "fec5b214e45b7e0f13c16352c8a45613afcd5f12412fd1be7016beedc34101d1",
+    "work/nss140/compact-default-queues.mjs": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+    "work/nss140/compact-final-identifiers-v1.mjs": "aa3ce7014e3375882566315911fa1c39b57d164b6297cf01cc9024a51143677c",
+    "work/nss140/compact-final-identifiers.mjs": "51e6cc0554ba4c8b46a22a654c6c7dae63ba622f2b9e12787052327e41112628",
+    "work/nss140/compact-identifiers-v1.mjs": "593b7e27bc43d5102ec3ebf29ba4d5f6155a479cc02e2e29eb78d9ee9f9aeeec",
+    "work/nss140/compact-identifiers.mjs": "68ebf7ba8bfca832b133af73c8bf356599965a1b083b502dcf3a07ba3c635175",
+    "work/nss140/compact-more-identifiers.mjs": "dc37c00e23b8e222be57458772ca803687cf756e85b82f482cbb431dbd788e79",
+    "work/nss140/current-audit-diagnostic.mjs": "2c42d1f3d8c43959688583bd105ee553bbec2520e850e928f94a1fad563d2a8f",
+    "work/nss140/declared-baseline.mjs": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+    "work/nss140/failed-wan-owner.lua": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+    "work/nss140/fast-models-v1.lua": "d47797ae50ee62bcd2927d3edfba6ee3f35dc01c27383050f8d3c3c7d25bbc90",
+    "work/nss140/fast-models-v2.lua": "50ad8198123305df04c496f4e058766dda0c36e05a43a271861e62338b93c00a",
+    "work/nss140/fast-models.lua": "50ad8198123305df04c496f4e058766dda0c36e05a43a271861e62338b93c00a",
+    "work/nss140/fast-path-v1.lua": "0da0c1d3c243963bbefbdb0652344f70f666ad95c4340a070d2c39267167626f",
+    "work/nss140/fast-path-v2.lua": "361fa0f220c8aecf247928c13e0762f7c7df9b03004dfbe40156d7b6f9a49aad",
+    "work/nss140/fast-path-v3.lua": "1be9b7e4ca3129954e3612ade5c3be789670031811f6934b22a1b0c99866cf67",
+    "work/nss140/fast-path.lua": "bd68a244beb60e0da8c510f6fe871e7104d22804c547d85150efe4ecf9fea947",
+    "work/nss140/measure-bundle.mjs": "72528f1570fee3ca75f91465537d3d83115c5bbb7855c868867afd2a8668a80a",
+    "work/nss140/module-stage-guardian.lua": "533ebc28ce0c9513048f10d34599a4577d3feed04f1e066a6f568fc32bf6bfec",
+    "work/nss140/module-stage.mjs": "c21dd6201e830642ae68515bc5c73143f404d29d26579dc3aecb785c7d4c8e69",
+    "work/nss140/observe-retire-models.lua": "1d16a7357bd81a6e6182ad7163cdd102c6dec8e46c0b9e169a9af5b79e03de77",
+    "work/nss140/pack-guardian.mjs": "746a9c866d1e80f9494cead571af2f0e44bddacafbd0a55f7df8f75c96378927",
+    "work/nss140/pack-lua.mjs": "d1a9982deb0acda6dd88fe70c630d176f7d5543ed4298d115bdd9b4d65186766",
+    "work/nss140/parse-ecm-any-wan.mjs": "6a17e97bd217b07f5169ae2375c210c6f1cab77dacb4d634355f406118327e60",
+    "work/nss140/payload.mjs": "b05143e7cd7789d9fff9e557f72c4cf5b3600ada191e82ba471b695089fbad97",
+    "work/nss140/prepare-real-entry.py": "052621833a330965473e4d5c091ca0c5df20f1dee9dca3ff119e2d7b8f016439",
+    "work/nss140/prepare.py": "d43ca59eefa1b44a733058ff6ce0e1be3b561694ae6c529d2ec89b33c2b59d7d",
+    "work/nss140/qos-physical.lua": "05b9862c12bbf8fa9b59f392e9c34f692647fdafaed0c871a502519d63e90454",
+    "work/nss140/qualify-entry.mjs": "940540c68edb92ed0036a74ff87901640cb858417c0b2d64202a2c7f1e75f102",
+    "work/nss140/qualify-fast-v1.mjs": "1bdd58235f3365f437a91e800c20b90634b5273b302d91765cd18510a1ce9a5f",
+    "work/nss140/qualify-fast-v2.mjs": "8332dc81dacbd5bf051e8373d0b9e168838100e00c2f68575b480e718456b23f",
+    "work/nss140/qualify-fast-v3.mjs": "acdc011c1c739be219c7bff700cd192ca171498d9ba21998e40ae391ea6072b4",
+    "work/nss140/qualify-fast.mjs": "8332dc81dacbd5bf051e8373d0b9e168838100e00c2f68575b480e718456b23f",
+    "work/nss140/read-real-candidates-v1.mjs": "07b7c8c55e3c13f8d7bbae180b62d683695c867283b56d3708237bde109b0eb4",
+    "work/nss140/read-real-candidates.mjs": "72c772193c59efbbfce1d7d28c4a39060a0fcd873f87253c14591096a223bd99",
+    "work/nss140/real-session.mjs": "f383292db6c43759b2e01fa1020b0667290ba58296a5e4a68fd794e272420a9b",
+    "work/nss140/record-candidates.mjs": "d8e9b2e5b2791c2cf61ab9e29291306424bd0f8a49c10b81df278351c81191f0",
+    "work/nss140/service-epoch.mjs": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+    "work/nss140/session-binding-v1.mjs": "13c1d1e6ab1893b61bfb6229d2da5ac269a53bc7bf37d4b13a1d70f02eb4cfc9",
+    "work/nss140/session-binding.mjs": "3aa98b427f7a14e35bcb77c5e23c8201f4e62e973e262904413847c75652f2b6",
+    "work/nss140/tag-normalizer.lua": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+    "work/nss140/uplink-tag-plan.mjs": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459"
+  },
+  "oldInputsRetainedOnlyLocally": true
+}

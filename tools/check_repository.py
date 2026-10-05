@@ -1232,7 +1232,7 @@ assert proof139['historicPrefixSources']==1571 and proof139['sources']==261 and 
 assert proof139['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1571],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 assert len(proof139['sourceHashes'])==261 and proof139['actualBindingTreesRetained']and proof139['privateHostBootstrapExcluded']
 for source,digest in proof139['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-x139=json.loads((root/'evidence/nss139-mainline.json').read_text());rt139=json.loads((root/'evidence/current-runtime.json').read_text())
+x139=json.loads((root/'evidence/nss139-mainline.json').read_text());rt139=json.loads((root/'evidence/nss139-runtime.json').read_text())
 assert x139['round']==rt139['round']=='NSS139'and x139['hardwareEntryRound']==138 and x139['boundInputs']==rt139['qualifiedExperimentalEntryBoundInputs']==1340 and x139['oneWan']==2
 assert (x139['classifierMaximumLeaseSeconds'],x139['nativeSessionSeconds'],x139['independentOwnerMaximumSeconds'],x139['clientMaximumSeconds'])==(6,27,100,180)
 assert all(x139[k]for k in ['onlyTcpBulkAndUdpRt','completeSameQueryClassEvidence','exactAffectedTcpCiRetired','remainingUdpSameCiRtTagsVerified','sameSocketCtMarkNatWanAcrossEpochs','newKernelPinAndDifferentEcmCiVerified','successOnlyOwnerEarlyCompletionAfterFullRestoration','failureOwnerMaximumUnchanged','firstRetirementAlsoPassedIn135','residentUpTagZeroUnchanged','naturalWorkerRecoveryObserved'])
@@ -1270,4 +1270,33 @@ assert not rt139['nssPermanentlyEnabled']and not rt139['realHumanGameAcceptance'
 assert all(rt139['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
 assert all(rt139['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
 
+proof141=json.loads((root/'evidence/nss141-source-proof.json').read_text())
+assert proof141['historicPrefixSources']==1832 and proof141['sources']==53 and len(manifest['sources'])>=1885
+assert proof141['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1832],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+assert len(proof141['sourceHashes'])==53 and proof141['preparedInputsCurrentAndFrozenMatch']and proof141['preparedBindings']==1385 and proof141['privateHostBootstrapExcluded']and proof141['originalFailuresKept']
+for source,digest in proof141['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+x141=json.loads((root/'evidence/nss141-mainline.json').read_text());rt141=json.loads((root/'evidence/current-runtime.json').read_text());q141=json.loads((root/'evidence/nss141-entry-qualification.json').read_text());f141=json.loads((root/'evidence/nss141-fast-qualification.json').read_text())
+assert x141['round']==rt141['round']=='NSS141'and x141['preparedEntryRound']==140 and x141['preparedBindings']==rt141['preparedRealEntryBoundInputs']==1385 and x141['inheritedBindings']==1340 and x141['newEntryBindings']==45
+assert all(x141[k]for k in ['realEntryIntegrated','readonlyDefaultInspectExecuted','historicalFullFrameMappingReplayOnly','fullFactorySyntaxCompiled','residentUpTagZeroUnchanged','partialClassChangeNeverCompletesAba','freshCheckpointAndNewEpochRequiredAfterClassChange','originalByteAndDeadlineCapsKept'])
+assert not any(x141[k]for k in ['wholeFactoryAbaExecutedThisRound','newVersionHardwareAbaPassed','newCpuComparison','humanCs2Acceptance','productionWrites','checkpointOrStageStarted','ecmOpened','residentClassifierChanged','nssPermanentlyEnabled','fullCakeReplacementAccepted','uiOperated','newDownloadStarted','upstreamSubmitted'])
+assert x141['currentRealGameCandidates']==x141['currentRealBulkCandidates']==x141['currentSameWanPairs']==0
+assert (x141['sourceMaximumSeconds'],x141['nativeMaximumSeconds'],x141['ownerMaximumSeconds'],x141['packetBundleBytes'],x141['guardianExecBytes'])==(6,27,100,73574,8907)
+assert q141['passed']and q141['integratedRealEntry']and not q141['productionExecution']and q141['partialClassChangeIsNotCompletedAba']and q141['fullRowsRetainedForClassMapping']and not q141['actualHardwareAbaThisVersion']and q141['wholeFactoryAbaNotExecutedThisRound']
+assert q141['inheritedBoundInputs']==1340 and len(q141['newEntrySourceHashes'])==45 and len(q141['checks'])==6 and all(c['passed']for c in q141['checks'])and q141['nativeModels']['checks']==10
+for source,digest in q141['newEntrySourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert f141['passed']and f141['checks']==10 and f141['wholeFactoryCompiledInTargetRam']and f141['onlyNewObserveAndRetireBranchesExecutedWithMockedBackend']and f141['wholeFactoryAbaNotExecutedThisRound']and not f141['actualHardwareTestThisVersion']
+assert f141['sourceSha256']==hashlib.sha256((root/'code/work/nss140/fast-path.lua').read_bytes()).hexdigest()and all(v['passed']and v['targetRamOnly']and v['mockedClockCountersClassifierAndFirmware']and not v['routerWrites']and not v['hardwareProof']for v in f141['cases'])
+ready141=json.loads((root/'evidence/nss141-readonly-readiness.json').read_text());reader141=json.loads((root/'evidence/nss141-readonly-reader.json').read_text())
+assert ready141['mode']=='inspect'and ready141['sameWanPairs']==0 and not ready141['routerWrites']and not ready141['trafficGenerated']and not ready141['openFrontend']and not ready141['nssPermissionGranted']
+assert reader141['readonly']and reader141['actualCs2RtCandidates']==reader141['actualSteamBulkCandidates']==0 and not reader141['nssAdmissionAllowed']
+size141=json.loads((root/'evidence/nss141-size-review.json').read_text());assert size141['passed']and size141['sizeReviewOnly']and size141['packetProtocolFieldsValidated']and size141['invalidV1SizeModelRetained']and len(size141['cases'])==3 and size141['noBudgetWidened']and size141['oversizedFutureRealInputMustRefuseBeforeStage']
+for c in size141['cases']:assert c['renderingOnly']and not c['currentNssAuthorization']and not c['productionWrites']and c['qosBundleFitsOriginal73728']and c['guardianFitsOriginal9000']and c['qosBundleBytes']<=73728 and c['guardianExecBytes']<=9000
+fail141=json.loads((root/'evidence/nss141-failures.json').read_text());assert len(fail141)==5 and all(not v['passed']and v['originalPreserved']and not v['routerConnectionStarted']and not v['checkpointOrStageStarted']and not v['ecmOpened']for v in fail141)
+assert fail141[0]['actualRecord']['firstQualificationSourcesFrozen']==43 and fail141[1]['originalReportedPassedButModelInvalid']
+assert fail141[4]['approvalOrCommitChainStoppedBeforeCommit']and not fail141[4]['sourceBytesChanged']and fail141[4]['line']==209 and len(fail141[4]['files'])==4
+assert rt141['historical139RuntimePreservedSha256']==proof141['oldNss139RuntimeRetainedExactSha256']==hashlib.sha256((root/'evidence/nss139-runtime.json').read_bytes()).hexdigest()
+assert rt141['workerPid']==31657 and rt141['guardianPid']==17139 and rt141['currentNssAdmissionMustBeRefreshedBeforeWrite']and not rt141['preparedRealEntryHardwareAbaTested']and not rt141['nssPermanentlyEnabled']and not rt141['realHumanGameAcceptance']and not rt141['newCpuComparisonAcceptedThisTurn']
+assert all(rt141['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert all(rt141['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
+assert json.loads((root/'evidence/nss141-receiver-closure.json').read_text())['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

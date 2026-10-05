@@ -17,3 +17,8 @@
 /code/work/nss136/fast-path.lua whitespace=-blank-at-eol
 /code/work/nss137/fast-path.lua whitespace=-blank-at-eol
 /code/work/nss138/fast-path.lua whitespace=-blank-at-eol
+# Preserve the same pre-existing empty line in the exact integrated candidates.
+/code/work/nss140/fast-path-v1.lua whitespace=-blank-at-eol
+/code/work/nss140/fast-path-v2.lua whitespace=-blank-at-eol
+/code/work/nss140/fast-path-v3.lua whitespace=-blank-at-eol
+/code/work/nss140/fast-path.lua whitespace=-blank-at-eol

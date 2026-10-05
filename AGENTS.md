@@ -1,5 +1,11 @@
 # 接续此研究
 
+最新NSS141：140最后真人入口已离线整合，1385绑定/原355全部继承，完整class/程序tuple/双向tag保留，新增撤销10RAM/程序过滤10RAM及8Node，默认inspect现场0pair/no writes。正常20秒A/B/A2；受支持BE改类先stop新学习、完整同query→仅TCP CI撤销/原UDP核验，再结束旧代，不能作为完整ABA，必须新分类/pin/checkpoint/owner重进。140整合factory完整ABA未执行，139实测和128 CPU只继承历史。6/27/100及字节上限不变；初断言/无效尺寸模型/alias/过大模型命令原失败冻结。常驻68/31657/17139不改，终态ECM全零无残留/两根/receiver恢复，WAN4down四路不动。最后真人留醒来集中一次，不UI/新下载/CPU重复/扩WAN，09:50晨间收尾10点前暂停本夜；STATE为准。
+
+## NSS139及更早历史
+
+# 接续此研究
+
 最新NSS139：实际138/1340项，单WAN2完整真实BULK→BE同query/同CT，比较器只TCP，ECM2→1/原UDP RT CI保持，再旧代0；恢复同socket后新分类/kernel pin/checkpoint/owner与不同CI重学2→0。两完整审核/两根/端点恢复，success-only完整恢复后5秒记录宽限，失败仍100秒，6/27/100/180及字节上限不变。135仅第一撤销过、第二期限拒绝；129/131/132/133/136/137原失败和原因分开冻结。129常驻4859自然apply256/0.35秒退出，procd31657/guardian17139、68/config/upTag0不变；orphan batch只是未证实假设，不改classifier。终态source0.91、selectors0、ECM关闭全零，无事务/stage/state/模块，两物理原根/7负载/SSH receiver已恢复，WAN4仍down四路failover不动。旧128 runtime原字节保存，本轮无CPU/300Mbps/真人验收。下一步仅把实测撤销/重学并入最后真人入口，先离线；睡眠不UI/新下载/扩WAN/CPU重复。09:50收尾10点前暂停本夜；STATE为准。
 
 
