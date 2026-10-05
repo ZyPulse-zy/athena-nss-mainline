@@ -1,0 +1,1504 @@
+{
+  "caseLocalPath": "work/nss119/controlled-matched-aba-20261005194907-eb0894bd",
+  "passed": true,
+  "sourceInputs": 890,
+  "sourceInputsCurrentAndFrozenMatch": true,
+  "sourceManifestSha256": "9ec0be82f64f695e0c95bf299dc318e951cf80dce7001cf89228015c6a0c414f",
+  "checkpointDownloadedShaAndGzipVerified": true,
+  "guardianVerifiedBeforeFirstWrite": true,
+  "guardianPpid": 1,
+  "independentOwnerSeconds": 100,
+  "fixedNativeSessionSeconds": 27,
+  "classifierMaximumLeaseSeconds": 6,
+  "ecmOpened": true,
+  "completeABA": true,
+  "phases": [
+    {
+      "name": "A",
+      "seconds": 20.010000000009313,
+      "completed": true,
+      "sampleCount": 41
+    },
+    {
+      "name": "B",
+      "seconds": 20.010000000009313,
+      "completed": true,
+      "sampleCount": 41
+    },
+    {
+      "name": "A2",
+      "seconds": 20,
+      "completed": true,
+      "sampleCount": 41
+    }
+  ],
+  "renewals": 6,
+  "rollback": {
+    "sameBoot": true,
+    "ownDirectoryAbsent": true,
+    "stateNodeDirectoryAbsent": true,
+    "guardianTerminated": true,
+    "moduleAbsent": true,
+    "qosModuleAbsent": true
+  },
+  "baseline": {
+    "configurationMatches": true,
+    "checks": {
+      "boot": true,
+      "native": true,
+      "lan4": true,
+      "rules": true,
+      "services": true,
+      "addresses": true,
+      "routes": true,
+      "originalFiles": true,
+      "protectedManifestSha256": true,
+      "pbrConfiguration": true,
+      "nftRulesetConfiguration": true,
+      "tenQueueConfigurations": true,
+      "protectedManifest": true,
+      "ecmStoppedAndZero": true
+    },
+    "rawRulesetIdentical": true,
+    "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true,
+    "failedUnselectedWan4ProcessEpoch": {
+      "processChanged": false,
+      "commandChanged": false,
+      "outsideSelectedFlowWan": true
+    },
+    "originalFullNativeOwnershipAuditStillRequired": true,
+    "noRoutingStateExceptionDuringExperiment": true
+  },
+  "beforeFullAudit": {
+    "passed": true,
+    "auditPurpose": "prewrite",
+    "prelearningSchedulingRequested": true,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 2,
+    "queryAge": 1.75,
+    "sequence": 18261,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": true,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "fourHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "afterFullAudit": {
+    "passed": true,
+    "auditPurpose": "recovery",
+    "prelearningSchedulingRequested": false,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 2,
+    "queryAge": 1.040000000037253,
+    "sequence": 18299,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": true,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "fourHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "softwareTagCounters": {
+    "tagsAfterA": {
+      "tcp_writer_up": {
+        "packets": 15805,
+        "bytes": 79071108
+      },
+      "tcp_writer_down": {
+        "packets": 30629,
+        "bytes": 1265288
+      },
+      "udp_writer_up": {
+        "packets": 826,
+        "bytes": 128856
+      },
+      "udp_writer_down": {
+        "packets": 825,
+        "bytes": 128700
+      },
+      "tcp_post_up_total": {
+        "packets": 15805,
+        "bytes": 79071108
+      },
+      "tcp_post_up_expected": {
+        "packets": 15805,
+        "bytes": 79071108
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 30630,
+        "bytes": 1265328
+      },
+      "tcp_post_down_expected": {
+        "packets": 30630,
+        "bytes": 1265328
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 826,
+        "bytes": 128856
+      },
+      "udp_post_up_expected": {
+        "packets": 826,
+        "bytes": 128856
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 825,
+        "bytes": 128700
+      },
+      "udp_post_down_expected": {
+        "packets": 825,
+        "bytes": 128700
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "tagsAfter": {
+      "tcp_writer_up": {
+        "packets": 38920,
+        "bytes": 181071518
+      },
+      "tcp_writer_down": {
+        "packets": 69131,
+        "bytes": 2854848
+      },
+      "udp_writer_up": {
+        "packets": 1888,
+        "bytes": 294528
+      },
+      "udp_writer_down": {
+        "packets": 1887,
+        "bytes": 294372
+      },
+      "tcp_post_up_total": {
+        "packets": 38920,
+        "bytes": 181071518
+      },
+      "tcp_post_up_expected": {
+        "packets": 38920,
+        "bytes": 181071518
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 69131,
+        "bytes": 2854848
+      },
+      "tcp_post_down_expected": {
+        "packets": 69131,
+        "bytes": 2854848
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 1888,
+        "bytes": 294528
+      },
+      "udp_post_up_expected": {
+        "packets": 1888,
+        "bytes": 294528
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 1887,
+        "bytes": 294372
+      },
+      "udp_post_down_expected": {
+        "packets": 1887,
+        "bytes": 294372
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "startupTags": {
+      "tcp_writer_up": {
+        "packets": 19,
+        "bytes": 99280
+      },
+      "tcp_writer_down": {
+        "packets": 20,
+        "bytes": 836
+      },
+      "udp_writer_up": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_writer_down": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "tcp_post_up_total": {
+        "packets": 19,
+        "bytes": 99280
+      },
+      "tcp_post_up_expected": {
+        "packets": 19,
+        "bytes": 99280
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 20,
+        "bytes": 836
+      },
+      "tcp_post_down_expected": {
+        "packets": 20,
+        "bytes": 836
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_post_up_expected": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_post_down_expected": {
+        "packets": 1,
+        "bytes": 156
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "tagsBefore": {
+      "tcp_writer_up": {
+        "packets": 19582,
+        "bytes": 98154604
+      },
+      "tcp_writer_down": {
+        "packets": 37980,
+        "bytes": 1568652
+      },
+      "udp_writer_up": {
+        "packets": 1028,
+        "bytes": 160368
+      },
+      "udp_writer_down": {
+        "packets": 1027,
+        "bytes": 160212
+      },
+      "tcp_post_up_total": {
+        "packets": 19582,
+        "bytes": 98154604
+      },
+      "tcp_post_up_expected": {
+        "packets": 19582,
+        "bytes": 98154604
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 37981,
+        "bytes": 1568692
+      },
+      "tcp_post_down_expected": {
+        "packets": 37981,
+        "bytes": 1568692
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 1028,
+        "bytes": 160368
+      },
+      "udp_post_up_expected": {
+        "packets": 1028,
+        "bytes": 160368
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 1027,
+        "bytes": 160212
+      },
+      "udp_post_down_expected": {
+        "packets": 1027,
+        "bytes": 160212
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "tagsAfterAFirst": {
+      "tcp_writer_up": {
+        "packets": 15682,
+        "bytes": 78450988
+      },
+      "tcp_writer_down": {
+        "packets": 30398,
+        "bytes": 1255764
+      },
+      "udp_writer_up": {
+        "packets": 820,
+        "bytes": 127920
+      },
+      "udp_writer_down": {
+        "packets": 819,
+        "bytes": 127764
+      },
+      "tcp_post_up_total": {
+        "packets": 15684,
+        "bytes": 78460172
+      },
+      "tcp_post_up_expected": {
+        "packets": 15685,
+        "bytes": 78471892
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 30398,
+        "bytes": 1255764
+      },
+      "tcp_post_down_expected": {
+        "packets": 30398,
+        "bytes": 1255764
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 820,
+        "bytes": 127920
+      },
+      "udp_post_up_expected": {
+        "packets": 820,
+        "bytes": 127920
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 819,
+        "bytes": 127764
+      },
+      "udp_post_down_expected": {
+        "packets": 819,
+        "bytes": 127764
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "initialTags": {
+      "tcp_writer_up": {
+        "packets": 194,
+        "bytes": 1009380
+      },
+      "tcp_writer_down": {
+        "packets": 379,
+        "bytes": 15576
+      },
+      "udp_writer_up": {
+        "packets": 10,
+        "bytes": 1560
+      },
+      "udp_writer_down": {
+        "packets": 10,
+        "bytes": 1560
+      },
+      "tcp_post_up_total": {
+        "packets": 194,
+        "bytes": 1009380
+      },
+      "tcp_post_up_expected": {
+        "packets": 194,
+        "bytes": 1009380
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 379,
+        "bytes": 15576
+      },
+      "tcp_post_down_expected": {
+        "packets": 379,
+        "bytes": 15576
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 10,
+        "bytes": 1560
+      },
+      "udp_post_up_expected": {
+        "packets": 10,
+        "bytes": 1560
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 10,
+        "bytes": 1560
+      },
+      "udp_post_down_expected": {
+        "packets": 10,
+        "bytes": 1560
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "tagsBeforeA2": {
+      "tcp_writer_up": {
+        "packets": 20291,
+        "bytes": 100819994
+      },
+      "tcp_writer_down": {
+        "packets": 38971,
+        "bytes": 1609708
+      },
+      "udp_writer_up": {
+        "packets": 1056,
+        "bytes": 164736
+      },
+      "udp_writer_down": {
+        "packets": 1056,
+        "bytes": 164736
+      },
+      "tcp_post_up_total": {
+        "packets": 20291,
+        "bytes": 100819994
+      },
+      "tcp_post_up_expected": {
+        "packets": 20291,
+        "bytes": 100819994
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 38971,
+        "bytes": 1609708
+      },
+      "tcp_post_down_expected": {
+        "packets": 38971,
+        "bytes": 1609708
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 1056,
+        "bytes": 164736
+      },
+      "udp_post_up_expected": {
+        "packets": 1056,
+        "bytes": 164736
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 1056,
+        "bytes": 164736
+      },
+      "udp_post_down_expected": {
+        "packets": 1056,
+        "bytes": 164736
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "tagsAfterA2": {
+      "tcp_writer_up": {
+        "packets": 38778,
+        "bytes": 180392618
+      },
+      "tcp_writer_down": {
+        "packets": 68879,
+        "bytes": 2844448
+      },
+      "udp_writer_up": {
+        "packets": 1880,
+        "bytes": 293280
+      },
+      "udp_writer_down": {
+        "packets": 1880,
+        "bytes": 293280
+      },
+      "tcp_post_up_total": {
+        "packets": 38778,
+        "bytes": 180392618
+      },
+      "tcp_post_up_expected": {
+        "packets": 38778,
+        "bytes": 180392618
+      },
+      "tcp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "tcp_post_down_total": {
+        "packets": 68879,
+        "bytes": 2844448
+      },
+      "tcp_post_down_expected": {
+        "packets": 68879,
+        "bytes": 2844448
+      },
+      "tcp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_up_total": {
+        "packets": 1880,
+        "bytes": 293280
+      },
+      "udp_post_up_expected": {
+        "packets": 1880,
+        "bytes": 293280
+      },
+      "udp_post_up_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_down_total": {
+        "packets": 1880,
+        "bytes": 293280
+      },
+      "udp_post_down_expected": {
+        "packets": 1880,
+        "bytes": 293280
+      },
+      "udp_post_down_unexpected": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_total": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_zero": {
+        "packets": 0,
+        "bytes": 0
+      },
+      "udp_post_neighbor_nonzero": {
+        "packets": 0,
+        "bytes": 0
+      }
+    }
+  },
+  "actualAcceleratedIdentity": {
+    "passed": true,
+    "connectionCount": 2,
+    "proof": {
+      "tcp": {
+        "serial": "1062167",
+        "protocol": 6,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 327680,
+        "downTag": 2399469568,
+        "upTag": 2382692352,
+        "natCorrect": true,
+        "wanAffinity": 5,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 3,
+        "fromPackets": 2,
+        "toPackets": 1
+      },
+      "udp": {
+        "serial": "1062166",
+        "protocol": 17,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 327680,
+        "downTag": 2399535104,
+        "upTag": 2382757888,
+        "natCorrect": true,
+        "wanAffinity": 5,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 2,
+        "fromPackets": 1,
+        "toPackets": 1
+      }
+    }
+  },
+  "originalRecordSha256": "1cff6fb6564de5b750cc4e65fd1a8ac221b2e38bb3060c9c29139f57dbf7e05b",
+  "originalResultSha256": "829ccdbad579bbb76eb1d3497dfdecc5adcccbec8c6992875c71a846ed56cb65",
+  "error": null,
+  "gameQualityConclusion": false,
+  "metrics": {
+    "schema": "nss119-upload-controlled-actual-v1",
+    "passed": true,
+    "oneWan": 5,
+    "offeredTcpMbps": 32,
+    "qosParentMbps": 30,
+    "requestedPhaseSeconds": 20,
+    "fixedNativeSessionSeconds": 27,
+    "independentOwnerSeconds": 100,
+    "classifierLeaseMaximumSeconds": 6,
+    "nativeBinaryUnchanged": true,
+    "qosBytesUnchangedFrom114": true,
+    "phases": [
+      {
+        "phase": "A",
+        "sampleCount": 41,
+        "acceleratedCounts": [
+          0
+        ],
+        "whole": {
+          "seconds": 20.010000000009313,
+          "routerUptimeStart": 2047314.22,
+          "routerUptimeEnd": 2047334.23,
+          "clientTcpMbps": 30.60701902869359,
+          "busyPercent": 22.453353504790723,
+          "softirqPercent": 10.287443267776096,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "udp": {
+            "sent": 798,
+            "received": 798,
+            "unreturned": 0,
+            "rttP50Ms": 197.74204999999347,
+            "rttP95Ms": 198.44130500000173,
+            "rttMaxMs": 199.6771000000008,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.38870526976155123,
+            "isCs2Metric": false
+          },
+          "interfaces": {
+            "rpwan5": {
+              "txMbps": 31.76111584206418,
+              "txPps": 2939.680159918672,
+              "rxMbps": 0.7953543228382105
+            },
+            "lan4": {
+              "txMbps": 0.9278976511739809,
+              "txPps": 1556.771614192179,
+              "rxMbps": 31.901180209880202
+            }
+          }
+        },
+        "central10": {
+          "seconds": 10.010000000009313,
+          "routerUptimeStart": 2047319.22,
+          "routerUptimeEnd": 2047329.23,
+          "clientTcpMbps": 29.884796570528227,
+          "busyPercent": 21.4773589678725,
+          "softirqPercent": 9.840627371616494,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "udp": {
+            "sent": 405,
+            "received": 405,
+            "unreturned": 0,
+            "rttP50Ms": 197.70229999998992,
+            "rttP95Ms": 198.40251999999745,
+            "rttMaxMs": 198.91670000000158,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.38990445544539504,
+            "isCs2Metric": false
+          },
+          "interfaces": {
+            "rpwan5": {
+              "txMbps": 31.756910289680743,
+              "txPps": 2938.5614385587046,
+              "rxMbps": 0.7912399600392239
+            },
+            "lan4": {
+              "txMbps": 0.9297934065925415,
+              "txPps": 1559.2407592393085,
+              "rxMbps": 31.9460779220482
+            }
+          }
+        },
+        "fiveSecondBins": [
+          {
+            "fromPhaseSecond": 0,
+            "seconds": 5.0,
+            "routerUptimeStart": 2047314.22,
+            "routerUptimeEnd": 2047319.22,
+            "clientTcpMbps": 30.332722736102582,
+            "busyPercent": 23.714428357463806,
+            "softirqPercent": 11.482775836245631,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 196,
+              "received": 196,
+              "unreturned": 0,
+              "rttP50Ms": 197.75600000000122,
+              "rttP95Ms": 198.44374999999854,
+              "rttMaxMs": 198.96560000001045,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.3842246153839649,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 31.830139199999998,
+                "txPps": 2949.2,
+                "rxMbps": 0.8042912
+              },
+              "lan4": {
+                "txMbps": 0.9302768,
+                "txPps": 1558.6,
+                "rxMbps": 31.9505968
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 5,
+            "seconds": 5.0,
+            "routerUptimeStart": 2047319.22,
+            "routerUptimeEnd": 2047324.22,
+            "clientTcpMbps": 29.728858333534603,
+            "busyPercent": 22.740963855421686,
+            "softirqPercent": 10.190763052208835,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 200,
+              "received": 200,
+              "unreturned": 0,
+              "rttP50Ms": 197.6791999999914,
+              "rttP95Ms": 198.34482999999892,
+              "rttMaxMs": 198.69620000000577,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.38591155778912384,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 31.9665488,
+                "txPps": 2959.4,
+                "rxMbps": 0.7956591999999999
+              },
+              "lan4": {
+                "txMbps": 0.9148415999999999,
+                "txPps": 1565.0,
+                "rxMbps": 32.102278399999996
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 10,
+            "seconds": 5.010000000009313,
+            "routerUptimeStart": 2047324.22,
+            "routerUptimeEnd": 2047329.23,
+            "clientTcpMbps": 30.286908092393077,
+            "busyPercent": 20.19377868434472,
+            "softirqPercent": 9.484956654767975,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 200,
+              "received": 200,
+              "unreturned": 0,
+              "rttP50Ms": 197.7228000000032,
+              "rttP95Ms": 198.42594500000268,
+              "rttMaxMs": 198.91670000000158,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.3928638190949797,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 31.547690219502233,
+                "txPps": 2917.7644710524605,
+                "rxMbps": 0.786829540916701
+              },
+              "lan4": {
+                "txMbps": 0.9447153692597209,
+                "txPps": 1553.493013969168,
+                "rxMbps": 31.79018922149779
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 15,
+            "seconds": 5.0,
+            "routerUptimeStart": 2047329.23,
+            "routerUptimeEnd": 2047334.23,
+            "clientTcpMbps": 30.342993422587238,
+            "busyPercent": 23.12753036437247,
+            "softirqPercent": 9.969635627530364,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 189,
+              "received": 189,
+              "unreturned": 0,
+              "rttP50Ms": 197.80079999999725,
+              "rttP95Ms": 198.47902000000468,
+              "rttMaxMs": 199.6771000000008,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.3898457446816115,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 31.700512,
+                "txPps": 2932.4,
+                "rxMbps": 0.7946544
+              },
+              "lan4": {
+                "txMbps": 0.9217232,
+                "txPps": 1550.0,
+                "rxMbps": 31.761878399999997
+              }
+            }
+          }
+        ]
+      },
+      {
+        "phase": "B",
+        "sampleCount": 41,
+        "acceleratedCounts": [
+          2
+        ],
+        "whole": {
+          "seconds": 20.010000000009313,
+          "routerUptimeStart": 2047339.82,
+          "routerUptimeEnd": 2047359.83,
+          "clientTcpMbps": 16.33131288304429,
+          "busyPercent": 15.515515515515515,
+          "softirqPercent": 4.82982982982983,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "udp": {
+            "sent": 811,
+            "received": 811,
+            "unreturned": 0,
+            "rttP50Ms": 197.1039000000019,
+            "rttP95Ms": 197.95650000000023,
+            "rttMaxMs": 201.52590000000782,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.2794354320991889,
+            "isCs2Metric": false
+          },
+          "interfaces": {
+            "rpwan5": {
+              "txMbps": 15.923557821082044,
+              "txPps": 1375.0624687649772,
+              "rxMbps": 0.30138810594688625
+            },
+            "lan4": {
+              "txMbps": 0.6692293853070348,
+              "txPps": 721.8390804594342,
+              "rxMbps": 17.648260269856856
+            }
+          }
+        },
+        "central10": {
+          "seconds": 10.010000000009313,
+          "routerUptimeStart": 2047344.83,
+          "routerUptimeEnd": 2047354.84,
+          "clientTcpMbps": 18.624561385542815,
+          "busyPercent": 16.953807740324596,
+          "softirqPercent": 4.943820224719101,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "udp": {
+            "sent": 412,
+            "received": 412,
+            "unreturned": 0,
+            "rttP50Ms": 197.12224999999307,
+            "rttP95Ms": 198.0589300000036,
+            "rttMaxMs": 201.52590000000782,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.32007639902742857,
+            "isCs2Metric": false
+          },
+          "interfaces": {
+            "rpwan5": {
+              "txMbps": 20.37570989009093,
+              "txPps": 1748.8511488495217,
+              "rxMbps": 0.4032967032963281
+            },
+            "lan4": {
+              "txMbps": 0.9018333666325276,
+              "txPps": 830.3696303688578,
+              "rxMbps": 19.34862977021177
+            }
+          }
+        },
+        "fiveSecondBins": [
+          {
+            "fromPhaseSecond": 0,
+            "seconds": 5.010000000009313,
+            "routerUptimeStart": 2047339.82,
+            "routerUptimeEnd": 2047344.83,
+            "clientTcpMbps": 14.391544972813712,
+            "busyPercent": 13.59320339830085,
+            "softirqPercent": 4.697651174412794,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 190,
+              "received": 190,
+              "unreturned": 0,
+              "rttP50Ms": 197.09334999999555,
+              "rttP95Ms": 197.8570949999994,
+              "rttMaxMs": 198.47550000000047,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.2506534391532932,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 11.118848702574141,
+                "txPps": 981.0379241498729,
+                "rxMbps": 0.19669940119723914
+              },
+              "lan4": {
+                "txMbps": 0.4490187624742152,
+                "txPps": 599.2015968052733,
+                "rxMbps": 15.789687824321947
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 5,
+            "seconds": 5.0,
+            "routerUptimeStart": 2047344.83,
+            "routerUptimeEnd": 2047349.83,
+            "clientTcpMbps": 18.142200546645725,
+            "busyPercent": 16.82523785678518,
+            "softirqPercent": 4.957436154231347,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 205,
+              "received": 205,
+              "unreturned": 0,
+              "rttP50Ms": 197.15059999999357,
+              "rttP95Ms": 198.11463999999688,
+              "rttMaxMs": 198.61530000000494,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.33059411764784896,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 22.952790399999998,
+                "txPps": 1965.6,
+                "rxMbps": 0.3921664
+              },
+              "lan4": {
+                "txMbps": 0.5399344,
+                "txPps": 772.2,
+                "rxMbps": 18.5475008
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 10,
+            "seconds": 5.010000000009313,
+            "routerUptimeStart": 2047349.83,
+            "routerUptimeEnd": 2047354.84,
+            "clientTcpMbps": 19.68260960186903,
+            "busyPercent": 17.08167330677291,
+            "softirqPercent": 4.930278884462151,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 203,
+              "received": 203,
+              "unreturned": 0,
+              "rttP50Ms": 197.1094000000012,
+              "rttP95Ms": 197.9854600000079,
+              "rttMaxMs": 201.52590000000782,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.31529009901059185,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 17.80377325345992,
+                "txPps": 1532.5349301368717,
+                "rxMbps": 0.41440479041839134
+              },
+              "lan4": {
+                "txMbps": 1.2630099800375723,
+                "txPps": 888.4231536909632,
+                "rxMbps": 20.148159680601267
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 15,
+            "seconds": 4.989999999990687,
+            "routerUptimeStart": 2047354.84,
+            "routerUptimeEnd": 2047359.83,
+            "clientTcpMbps": 14.008783322564087,
+            "busyPercent": 14.551863041289023,
+            "softirqPercent": 4.73313192346425,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 200,
+              "received": 200,
+              "unreturned": 0,
+              "rttP50Ms": 197.09305000000313,
+              "rttP95Ms": 197.74836000000215,
+              "rttMaxMs": 198.47060000000056,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.2279286432166551,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 11.816453707436883,
+                "txPps": 1020.8416833686388,
+                "rxMbps": 0.2020665330665094
+              },
+              "lan4": {
+                "txMbps": 0.42371623246572065,
+                "txPps": 627.2545090192068,
+                "rxMbps": 16.103320240511017
+              }
+            }
+          }
+        ]
+      },
+      {
+        "phase": "A2",
+        "sampleCount": 41,
+        "acceleratedCounts": [
+          0
+        ],
+        "whole": {
+          "seconds": 20.0,
+          "routerUptimeStart": 2047360.32,
+          "routerUptimeEnd": 2047380.32,
+          "clientTcpMbps": 31.191583587665644,
+          "busyPercent": 21.68214785596132,
+          "softirqPercent": 10.128515078254232,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "udp": {
+            "sent": 814,
+            "received": 814,
+            "unreturned": 0,
+            "rttP50Ms": 197.74139999999898,
+            "rttP95Ms": 198.42062999999763,
+            "rttMaxMs": 200.6932000000088,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.38318806888020773,
+            "isCs2Metric": false
+          },
+          "interfaces": {
+            "rpwan5": {
+              "txMbps": 32.6409484,
+              "txPps": 2958.55,
+              "rxMbps": 0.7980344
+            },
+            "lan4": {
+              "txMbps": 0.988564,
+              "txPps": 1567.25,
+              "rxMbps": 32.914816800000004
+            }
+          }
+        },
+        "central10": {
+          "seconds": 10.0,
+          "routerUptimeStart": 2047365.33,
+          "routerUptimeEnd": 2047375.33,
+          "clientTcpMbps": 30.706672469342525,
+          "busyPercent": 20.4938900203666,
+          "softirqPercent": 9.44501018329939,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "udp": {
+            "sent": 404,
+            "received": 404,
+            "unreturned": 0,
+            "rttP50Ms": 197.79839999999967,
+            "rttP95Ms": 198.46968999999518,
+            "rttMaxMs": 200.6932000000088,
+            "meanAbsoluteConsecutiveRttDeltaMs": 0.4085004962781065,
+            "isCs2Metric": false
+          },
+          "interfaces": {
+            "rpwan5": {
+              "txMbps": 31.9235808,
+              "txPps": 2954.3,
+              "rxMbps": 0.7857344
+            },
+            "lan4": {
+              "txMbps": 0.884596,
+              "txPps": 1543.2,
+              "rxMbps": 32.0658224
+            }
+          }
+        },
+        "fiveSecondBins": [
+          {
+            "fromPhaseSecond": 0,
+            "seconds": 5.010000000009313,
+            "routerUptimeStart": 2047360.32,
+            "routerUptimeEnd": 2047365.33,
+            "clientTcpMbps": 33.561595734437134,
+            "busyPercent": 23.451100870455708,
+            "softirqPercent": 11.264720942140297,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 201,
+              "received": 201,
+              "unreturned": 0,
+              "rttP50Ms": 197.66309999999066,
+              "rttP95Ms": 198.2710999999981,
+              "rttMaxMs": 199.1261999999988,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.2899169999988226,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 34.77699800392737,
+                "txPps": 2966.267465064346,
+                "rxMbps": 0.8010475049885308
+              },
+              "lan4": {
+                "txMbps": 1.2520766467042592,
+                "txPps": 1618.3632734500854,
+                "rxMbps": 35.424456686560895
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 5,
+            "seconds": 4.989999999990687,
+            "routerUptimeStart": 2047365.33,
+            "routerUptimeEnd": 2047370.32,
+            "clientTcpMbps": 31.065951869645914,
+            "busyPercent": 21.563617782319877,
+            "softirqPercent": 9.351047521716914,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 200,
+              "received": 200,
+              "unreturned": 0,
+              "rttP50Ms": 197.8559000000023,
+              "rttP95Ms": 198.40456000000412,
+              "rttMaxMs": 200.6932000000088,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.399471859296947,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 31.987185571201984,
+                "txPps": 2958.116232470451,
+                "rxMbps": 0.7812344689393338
+              },
+              "lan4": {
+                "txMbps": 0.8900825651319217,
+                "txPps": 1536.0721442914441,
+                "rxMbps": 32.11790460927838
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 10,
+            "seconds": 5.010000000009313,
+            "routerUptimeStart": 2047370.32,
+            "routerUptimeEnd": 2047375.33,
+            "clientTcpMbps": 30.644774524217127,
+            "busyPercent": 19.431760527650937,
+            "softirqPercent": 9.538305428716388,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 200,
+              "received": 200,
+              "unreturned": 0,
+              "rttP50Ms": 197.75349999999162,
+              "rttP95Ms": 198.5376299999967,
+              "rttMaxMs": 199.7317999999941,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.41693467336669376,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 31.860229940060535,
+                "txPps": 2950.499001990523,
+                "rxMbps": 0.7902163672640001
+              },
+              "lan4": {
+                "txMbps": 0.8791313373237151,
+                "txPps": 1550.2994011947228,
+                "rxMbps": 32.0139481037329
+              }
+            }
+          },
+          {
+            "fromPhaseSecond": 15,
+            "seconds": 4.989999999990687,
+            "routerUptimeStart": 2047375.33,
+            "routerUptimeEnd": 2047380.32,
+            "clientTcpMbps": 30.596135438925042,
+            "busyPercent": 22.295247724974722,
+            "softirqPercent": 10.364004044489382,
+            "timeSqueezeDelta": 0,
+            "softnetDropDelta": 0,
+            "udp": {
+              "sent": 201,
+              "received": 201,
+              "unreturned": 0,
+              "rttP50Ms": 197.73109999998996,
+              "rttP95Ms": 198.4256999999925,
+              "rttMaxMs": 199.45769999999902,
+              "meanAbsoluteConsecutiveRttDeltaMs": 0.4218644999987737,
+              "isCs2Metric": false
+            },
+            "interfaces": {
+              "rpwan5": {
+                "txMbps": 31.933947895851183,
+                "txPps": 2959.3186372800724,
+                "rxMbps": 0.8196585170355979
+              },
+              "lan4": {
+                "txMbps": 0.9323478957933233,
+                "txPps": 1564.1282565159454,
+                "rxMbps": 32.096509819699186
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "leafAcrossBNearbySnapshots": {
+      "8f05:": {
+        "delta": {
+          "bytes": 752710,
+          "packets": 12763,
+          "dropped": 0,
+          "overlimits": 0
+        },
+        "beforeBacklogPackets": 0,
+        "afterBacklogPackets": 0
+      },
+      "8f06:": {
+        "delta": {
+          "bytes": 137870,
+          "packets": 811,
+          "dropped": 0,
+          "overlimits": 0
+        },
+        "beforeBacklogPackets": 0,
+        "afterBacklogPackets": 0
+      }
+    },
+    "leafStatsAsynchronous": true,
+    "renewals": 6,
+    "clockAlignmentUncertaintyMs": 54.00002479553223,
+    "classifierToLeafAndNatAffinityVerified": true,
+    "protectedConfigurationRestored": true,
+    "gameQualityConclusion": false,
+    "upstreamQosVerified": true,
+    "uplinkLeafAcrossBNearbySnapshots": {
+      "8e05:": {
+        "delta": {
+          "bytes": 42385280,
+          "packets": 28329,
+          "dropped": 36,
+          "overlimits": 0
+        },
+        "beforeBacklogPackets": 0,
+        "afterBacklogPackets": 0
+      },
+      "8e06:": {
+        "delta": {
+          "bytes": 136000,
+          "packets": 800,
+          "dropped": 0,
+          "overlimits": 0
+        },
+        "beforeBacklogPackets": 0,
+        "afterBacklogPackets": 0
+      }
+    },
+    "uplinkPhysicalDevice": "wan",
+    "uplinkRootSharedByMacVlans": true,
+    "unselectedPhysicalFallbackMbps": 950,
+    "uplinkUnderCongestionAccepted": false,
+    "permanentClassifierPublicationUpTagZeroRetained": true,
+    "bulkDirection": "upload",
+    "tcpMetric": "server-confirmed received bytes",
+    "localSubmittedBytesNotUsedForThroughput": true
+  },
+  "nativeQueueOptions": {
+    "parentDumpHasKnownStockLimitation": true,
+    "queueCount": 4,
+    "nativeOptionsValidated": true,
+    "classCount": 5,
+    "complete": true
+  },
+  "nearBStatsSeconds": 20.359999999869615,
+  "leafAdditionalStats": {
+    "8f05:": {
+      "beforeBacklogRaw": "0b",
+      "beforeBacklogPackets": 0,
+      "afterBacklogRaw": "0b",
+      "afterBacklogPackets": 0,
+      "dropOverlimitDelta": 0,
+      "ecnMarkDelta": 0
+    },
+    "8f06:": {
+      "beforeBacklogRaw": "0b",
+      "beforeBacklogPackets": 0,
+      "afterBacklogRaw": "0b",
+      "afterBacklogPackets": 0,
+      "dropOverlimitDelta": 0,
+      "ecnMarkDelta": 0
+    }
+  },
+  "leafSentPlusConfigured38ByteOverheadAccountingMbps": 0.5526098231862501,
+  "asyncRateEstimateIsNotExactInstantaneousCap": true,
+  "nativeSessionUsedSeconds": 20.050000000046566,
+  "nativeSessionRemainingAtRetirementSeconds": 6.809999999823049,
+  "queueBacklogParserRawUnitsRetained": true
+}

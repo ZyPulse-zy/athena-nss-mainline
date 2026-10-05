@@ -1,18 +1,18 @@
 {
-  "round": "NSS119",
-  "checkedAt": "2026-10-05T19:53:32.654Z",
+  "round": "NSS118",
+  "checkedAt": "2026-10-05T19:42:51.334Z",
   "deploymentReference": "work/nss68/deployment-latest.json",
   "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
   "workerPid": 4859,
   "guardianPid": 17139,
   "nssPermanentlyEnabled": false,
   "residentClassifierChangedThisTurn": false,
-  "qualifiedExperimentalEntry": "work/nss119/controlled-session.mjs",
-  "qualifiedExperimentalEntryBoundInputs": 890,
+  "qualifiedExperimentalEntry": "work/nss118/controlled-session.mjs",
+  "qualifiedExperimentalEntryBoundInputs": 857,
   "currentNssAdmissionMustBeRefreshedBeforeWrite": true,
   "audit": {
     "passed": true,
-    "observedAt": "2026-10-05T19:51:39.148Z",
+    "observedAt": "2026-10-05T19:41:34.144Z",
     "readonly": true,
     "originalFullLockedNativeAudit": true,
     "unrelatedConfigurationMatches": true,
@@ -26,7 +26,7 @@
     "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
     "workerPid": 4859,
     "guardianPid": 17139,
-    "queryAge": 2.970000000204891,
+    "queryAge": 1.2700000000186265,
     "selectors": 0,
     "ecmStoppedAndZero": true,
     "noActiveTransaction": true,
@@ -44,7 +44,7 @@
   },
   "physicalRootRestoreAudit": {
     "passed": true,
-    "observedAt": "2026-10-05T19:53:32.654Z",
+    "observedAt": "2026-10-05T19:42:51.334Z",
     "readonly": true,
     "physicalWanOriginalMqFourFqCodelRestored": true,
     "lan4OriginalMqFourFqCodelRestored": true,
@@ -56,6 +56,6 @@
   },
   "realHumanGameAcceptance": false,
   "newMatchedCpuComparisonAccepted": false,
-  "nightContinuationUntilBeijing": "2026-10-06T10:00:00+08:00",
-  "historical118RuntimePreservedSha256": "cb3c597affe43b6777d23d43785804012aadce81d01aed340df2d58541f8c4f1"
+  "historical117RuntimePreservedSha256": "0981b2000117a1e4e904140f392aeae8d24deb649c4742a05770e7132482fd8a",
+  "nightContinuationUntilBeijing": "2026-10-06T10:00:00+08:00"
 }

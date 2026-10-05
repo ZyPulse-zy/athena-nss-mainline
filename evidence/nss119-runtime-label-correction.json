@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "originalExportV1PreservedSha256": "5b052a5c051a969d32edebc0587ab0db511300beda67b889ae1fde3d7bc4ccbb",
+  "changedFieldOnly": [
+    "historical117RuntimePreservedSha256",
+    "historical118RuntimePreservedSha256"
+  ],
+  "correctArchivedRuntime": "evidence/nss118-runtime.json",
+  "archivedRuntimeSha256": "cb3c597affe43b6777d23d43785804012aadce81d01aed340df2d58541f8c4f1",
+  "actualMeasurementsChanged": false,
+  "originalSourceExportUntouched": true,
+  "originalFailedCheckerRetained": true,
+  "historicPrefixSources": 1399,
+  "historicPrefixCanonicalSha256": "b5ce6b1890d9ef28d36bccf92348610597dafaf21cb15bdbc0ab8b929f42c112",
+  "newSource": "work/nss119/correct-runtime-label.py",
+  "newSourceSha256": "cbe4ac79fab2baf9cafeb32da8df706ee3ca04771dba020260c54cc6ad19d6a7"
+}

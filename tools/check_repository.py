@@ -1054,7 +1054,7 @@ assert proof118['historicPrefixSources']==1331 and proof118['sources']==33 and l
 assert hashlib.sha256(json.dumps(manifest['sources'][:1331],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof118['historicPrefixCanonicalSha256']
 for source,digest in proof118['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 assert proof118['privateOwnedHostBootstrapExcluded']and proof118['actualBindingTreesRetained']
-x118=json.loads((root/'evidence/nss118-mainline.json').read_text());rt118=json.loads((root/'evidence/current-runtime.json').read_text())
+x118=json.loads((root/'evidence/nss118-mainline.json').read_text());rt118=json.loads((root/'evidence/nss118-runtime.json').read_text())
 assert x118['round']==rt118['round']=='NSS118'and x118['boundInputs']==rt118['qualifiedExperimentalEntryBoundInputs']==857
 assert x118['onlyOfferedUploadChanged']and x118['offeredAveragePerConnectionMbps']==32 and x118['instantaneousLoadCatchupStillPossible']
 assert x118['hardwarePayloadByteExactFrom116']and x118['queueRatesUnchanged']and x118['completeFunctionalABA']and x118['shaperActivityObserved']
@@ -1077,5 +1077,42 @@ assert rt118['historical117RuntimePreservedSha256']==hashlib.sha256((root/'evide
 assert rt118['workerPid']==4859 and rt118['guardianPid']==17139 and rt118['currentNssAdmissionMustBeRefreshedBeforeWrite']
 assert all(rt118['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
 assert all(rt118['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
+
+proof119=json.loads((root/'evidence/nss119-source-proof.json').read_text())
+assert proof119['historicPrefixSources']==1364 and proof119['sources']==35 and len(manifest['sources'])>=1399
+assert hashlib.sha256(json.dumps(manifest['sources'][:1364],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof119['historicPrefixCanonicalSha256']
+for source,digest in proof119['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+x119=json.loads((root/'evidence/nss119-mainline.json').read_text());rt119=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x119['round']==rt119['round']=='NSS119'and x119['boundInputs']==rt119['qualifiedExperimentalEntryBoundInputs']==890
+assert x119['onlyUploadPacingChanged']and x119['offeredUploadMbps']==32 and x119['maximumPacerCreditBytes']==65536
+assert not x119['instantaneousLoadCatchupStillPossible']and not x119['sameWanAs118']and not x119['boundedPacerRestoredNssThroughput']
+assert x119['hardwarePayloadByteExactFrom116']and x119['queueRatesUnchanged']and x119['completeFunctionalABA']and x119['shaperActivityObserved']
+assert (x119['phaseSeconds'],x119['nativeSessionSeconds'],x119['independentOwnerSeconds'],x119['classifierMaximumLeaseSeconds'])==(20,27,100,6)
+assert x119['rtRepliesComplete']and x119['rtLeafDrop']==0 and x119['bulkLeafDrop']==36 and x119['temporaryEndpointsClosed']==1
+assert not any(x119[k]for k in ['newMatchedCpuComparisonAccepted','strictRateAccuracyAccepted','tcpThroughputRootCauseProved','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','residentClassifierChanged','nssPermanentlyEnabled','uiOperated','upstreamSubmitted'])
+t119=json.loads((root/'evidence/nss119-trial.json').read_text());assert t119['passed']and t119['completeABA']
+assert t119['sourceInputsCurrentAndFrozenMatch']and t119['guardianVerifiedBeforeFirstWrite']and t119['checkpointDownloadedShaAndGzipVerified']and all(t119['rollback'].values())
+assert t119['baseline']['configurationMatches']and t119['beforeFullAudit']['passed']and t119['afterFullAudit']['passed']
+m119=json.loads((root/'evidence/nss119-metrics.json').read_text());assert m119['offeredTcpMbps']==32 and m119['localSubmittedBytesNotUsedForThroughput']and m119['renewals']==6 and m119['oneWan']==5
+assert [p['acceleratedCounts']for p in m119['phases']]==[[0],[2],[0]]and [p['whole']['udp']['sent']for p in m119['phases']]==[798,811,814]
+assert all(p['whole']['udp']['unreturned']==p['whole']['timeSqueezeDelta']==p['whole']['softnetDropDelta']==0 for p in m119['phases'])
+assert 30<m119['phases'][0]['whole']['clientTcpMbps']<32 and m119['phases'][1]['whole']['clientTcpMbps']<20 and 30<m119['phases'][2]['whole']['clientTcpMbps']<32
+assert len(json.loads((root/'evidence/nss119-qualification.json').read_text()))==4
+c119=json.loads((root/'evidence/nss119-endpoint-closure.json').read_text())
+assert c119['temporaryFirewallRulesRemaining']==0 and c119['canonicalFirewallBaselineRestored']and c119['ownedUnitInactiveMainPidZeroPortsClosed']and c119['clientExited']and c119['clientGuardPassed']and c119['endpointGuardianVerifiedBeforeWrite']
+assert c119['independentFirewallExpirySeconds']==180 and c119['independentClientDeadlineSeconds']==210
+assert rt119['historical118RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss118-runtime.json').read_bytes()).hexdigest()
+assert rt119['workerPid']==4859 and rt119['guardianPid']==17139 and rt119['currentNssAdmissionMustBeRefreshedBeforeWrite']
+assert all(rt119['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert all(rt119['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
+
+label119=json.loads((root/'evidence/nss119-runtime-label-correction.json').read_text());v1raw=(root/'evidence/nss119-v1-runtime.json').read_bytes();v1=json.loads(v1raw)
+assert label119['passed']and label119['originalExportV1PreservedSha256']==hashlib.sha256(v1raw).hexdigest()
+assert v1.pop('historical117RuntimePreservedSha256')==rt119['historical118RuntimePreservedSha256']
+v2=rt119.copy();v2.pop('historical118RuntimePreservedSha256');assert v1==v2
+assert not label119['actualMeasurementsChanged']and label119['originalSourceExportUntouched']and label119['originalFailedCheckerRetained']
+assert label119['historicPrefixSources']==1399 and len(manifest['sources'])>=1400
+assert label119['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1399],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+assert label119['newSourceSha256']==hashlib.sha256((root/'code'/label119['newSource']).read_bytes()).hexdigest()
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

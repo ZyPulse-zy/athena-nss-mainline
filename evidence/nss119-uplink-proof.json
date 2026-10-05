@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "hardwareExecution": true,
+  "actualEcmTagsVerified": true,
+  "uplinkDevice": "wan",
+  "physicalIfindex": 6,
+  "physicalAeId": 5,
+  "uplinkBulkTag": 2382692352,
+  "uplinkRtTag": 2382757888,
+  "downstreamBulkRtTagsUnchanged": true,
+  "bothUplinkLeavesAdvancedNearAcceleratedPhase": true,
+  "leafSnapshotIntervalSeconds": 20.3499999998603,
+  "uplinkLeafDelta": {
+    "8e05:": {
+      "bytes": 42385280,
+      "packets": 28329,
+      "dropped": 36,
+      "overlimits": 0
+    },
+    "8e06:": {
+      "bytes": 136000,
+      "packets": 800,
+      "dropped": 0,
+      "overlimits": 0
+    }
+  },
+  "queueStatisticsAsynchronous": true,
+  "oneTcpUdpPairOnly": true,
+  "pbrCtMarkNatWanAffinityVerified": true,
+  "bothPhysicalRootsRestored": true,
+  "ownedModuleRemoved": true,
+  "upstreamCongestionLatencyAccepted": false,
+  "unselectedAuthEapolContinuityAccepted": false,
+  "residentClassifierPublicationUpTagZeroRetained": true,
+  "controlledUpTagsDerivedFromActualBulkRtClass": true,
+  "humanGameAcceptance": false
+}

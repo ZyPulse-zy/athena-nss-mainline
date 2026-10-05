@@ -56,6 +56,6 @@
   },
   "realHumanGameAcceptance": false,
   "newMatchedCpuComparisonAccepted": false,
-  "nightContinuationUntilBeijing": "2026-10-06T10:00:00+08:00",
-  "historical118RuntimePreservedSha256": "cb3c597affe43b6777d23d43785804012aadce81d01aed340df2d58541f8c4f1"
+  "historical117RuntimePreservedSha256": "cb3c597affe43b6777d23d43785804012aadce81d01aed340df2d58541f8c4f1",
+  "nightContinuationUntilBeijing": "2026-10-06T10:00:00+08:00"
 }

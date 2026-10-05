@@ -1,0 +1,24 @@
+[
+  {
+    "name": "actual-callback-model-keeps-32Mbps-average",
+    "passed": true,
+    "simulated": true,
+    "submittedBytes": 79986688
+  },
+  {
+    "name": "ten-second-channel-stall-cannot-create-forty-MB-debt",
+    "passed": true,
+    "simulated": true,
+    "resumeBurstBytes": 65536
+  },
+  {
+    "name": "clock-regression-refused",
+    "passed": true,
+    "simulated": true
+  },
+  {
+    "name": "nonfinite-configuration-or-clock-refused",
+    "passed": true,
+    "simulated": true
+  }
+]
