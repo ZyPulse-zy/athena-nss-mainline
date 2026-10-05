@@ -1,0 +1,30 @@
+[
+  {
+    "loadLocalPath": "work/nss125/load-20261005203746-9eed4af83fd2430a",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 6.0448447000000005,
+    "clientErrors": [
+      "SSH: Timed out while waiting for handshake"
+    ]
+  },
+  {
+    "loadLocalPath": "work/nss125/load-20261005204146-422ee18950ebb114",
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "independentFirewallExpirySeconds": 180,
+    "independentClientDeadlineSeconds": 210,
+    "endpointGuardianVerifiedBeforeWrite": true,
+    "clientRunSeconds": 180.00258970000002,
+    "clientErrors": []
+  }
+]

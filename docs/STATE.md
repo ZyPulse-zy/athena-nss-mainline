@@ -1,5 +1,21 @@
 # 当前状态
 
+更新：2026-10-06 04:45，北京时间。最新NSS126整理、实际125入口；常驻68/config581b5d46…c791d7、4859/17139不变，实验已撤销。
+
+**只给三段同一个观察器加五rpwan＋physicalwan＋lan4计数；UP60/DOWN30/有界32上传不改。实际WAN2完整20秒A/B/A2、ECM0→2→0、四leaf/mark/NAT/affinity/六续租和精确恢复通过。服务器确认30.356/29.956/30.734Mbps，softirq 10.237/4.496/10.011%，与124重复出现接近相同吞吐下的CPU下降。**
+
+见 [实际指标](../evidence/nss126-metrics.json)、[背景和对照](../evidence/nss126-comparison.json)、[轮次](../evidence/nss126-trial.json)、[汇总](../evidence/nss126-mainline.json)、[失败](../evidence/nss126-preparation-failure.json)、[关闭](../evidence/nss126-endpoint-closure.json)、[终态](../evidence/nss126-final-audit.json)。
+
+- 三段未选中WAN总RX＋TX 0.167/0.099/0.350Mbps，约80/64/103pps，选中TX约2942/2683/2951pps；TCP回复/ACK的包速差异保留。所有squeeze/softnet drop0，四leaf drop0；UDP收/发774/774、746/748、771/771，B少2个echo回复，仍非CS2指标。
+- 完整指标显示CPU信号与124一致，足以继续最小消费者工程；严格分析合同的背景流量范围0.2513Mbps略超过0.25，原comparability=false和没有正式相对收益值保留。它不作为扩大实验或重复追阈值的理由。短窗、非随机、部分包速不同和其它CPU工作未完全等同这些边界保持；非300Mbps/拥塞延迟/完整CAKE验收。
+- 首次125上传SSH握手6秒超时后客户端退出，0上传B、未checkpoint/stage/改队列/开放ECM；原失败冻结。126外部driver对同一1033项125入口只重试一次，没有修改源或超时。新观察器4项检查含目标机7接口实际只读、语法、bundle73521<73728和预计完整记录697727<原1MiB读上限；未放宽6/27/100或传输边界。
+- 实际新checkpoint/SHA/gzip、独立100秒owner写前核验，两个端点180秒FW/210秒客户端全退出；最终source3.05、ECM关闭全零、无事务/stage/state/模块，两个物理mq＋四fq_codel恢复，WAN4仍down/自然四路PBR不改。旧124 runtime原字节保留、实际输入私有冻结。
+- 下一步直接把消费者的上行tag映射绑定到实际class和同源身份，未知/未准入RT拒绝；保留resident upTag0、gate/kernel pin/lease，改类精确撤销后才重学，不因字段改变重装常驻。仅这条自动分类→双向leaf主线，不再追加CPU对照来追背景阈值；之后最后一次集中真人。UI停用、不新下载/扩WAN/WiFi/共享预算/autorate；09:50起收尾并暂停本夜接续。
+
+## NSS124历史
+
+# 当前状态
+
 更新：2026-10-06 04:28，北京时间。最新NSS124；常驻68/config581b5d46…c791d7、4859/17139不变，实验已撤销。
 
 **上行受控组30→60Mbps（bulk29→59、RT1、ceil60），下行30与有界32Mbps上传不改。实际自然WAN5、同一对flow完整20秒A/B/A2，ECM0→2→0、四leaf/mark/NAT/affinity/六次续租/恢复通过；服务器确认30.709/30.774/30.727Mbps，B不再降至约16Mbps。**

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "only-common-readonly-interface-list-changed",
+    "passed": true,
+    "localOnly": true
+  },
+  {
+    "name": "actual-seven-interfaces-counters-readable-and-fast-syntax",
+    "passed": true,
+    "readonly": true
+  },
+  {
+    "name": "full-bundle-remains-within-original-73728-cap",
+    "passed": true,
+    "localOnly": true,
+    "bytes": 73521
+  },
+  {
+    "name": "projected-complete-counter-record-under-existing-1MiB-read-bound",
+    "passed": true,
+    "localOnly": true,
+    "bytes": 697727
+  }
+]

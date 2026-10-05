@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "comparabilityAccepted": false,
+  "checks": {
+    "same_flow_functional_ABA": true,
+    "server_received_throughput_spread_le_10percent": true,
+    "physical_wan_transmit_spread_le_10percent": true,
+    "unselected_wan_total_below_0_5Mbps_each": true,
+    "unselected_wan_total_range_below_0_25Mbps": false,
+    "udp_send_rate_spread_le_10percent": true,
+    "full_twenty_second_phases": true
+  },
+  "sameObserverInAllPhases": true,
+  "serverConfirmedMbps": [
+    30.3561126421378,
+    29.956465676619608,
+    30.734170284233883
+  ],
+  "physicalWanTransmitMbps": [
+    32.01986526735141,
+    31.4030312,
+    32.14314602697154
+  ],
+  "unselectedWanTotalRxPlusTxMbps": [
+    0.16687736131926267,
+    0.09910399999999998,
+    0.35043798100933216
+  ],
+  "udpOfferedPps": [
+    38.680659670146916,
+    37.4,
+    38.53073463266573
+  ],
+  "softwareMeanSoftirqPercent": 10.12421001143096,
+  "nssSoftirqPercent": 4.495504495504496,
+  "softirqRelativeReductionPercent": null,
+  "softwareMeanBusyPercent": 21.404562657893067,
+  "nssBusyPercent": 14.947552447552448,
+  "metricScope": "single controlled TCP upload at about 32Mbps; UP60/DOWN30; one UDP probe; short twenty-second phases",
+  "limits": [
+    "Not randomized or long-term stability evidence",
+    "Counters bound background variation, not proof that every CPU task is identical",
+    "Different ACK/packet rates are retained in metrics and may accompany fast-path processing",
+    "UDP echo is not CS2 jitter/loss/Miss",
+    "No 300Mbps, congested latency, precise cap, or full CAKE replacement acceptance"
+  ],
+  "humanCs2Acceptance": false,
+  "highLoad300MbpsAcceptance": false,
+  "productionNssRetained": false
+}

@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "phase": "controlled-load-preparation",
+  "productionRouterWrites": false,
+  "ecmOpened": false,
+  "queueWrites": false,
+  "clientUploadBytes": 0,
+  "rejection": "SSH handshake timed out; upload client exited before candidate observation",
+  "originalFailurePreserved": true,
+  "originalFrozenReceiptSha256": "cacad8efd0e696450a151ced26ba3e5ed41778c70b61863e076bbee3090dd816",
+  "entryOrTimeoutChangedBeforeRetry": false
+}
