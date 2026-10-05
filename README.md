@@ -1,3 +1,7 @@
+# Athena NSS 主线
+
+最新 [NSS82受控工程闭环](evidence/nss82-mainline.json)：两次完整单WAN A/B/A2通过；同18Mbps负载softirq约下降55%，32Mbps发送负载bulk拥塞而RT队列零丢弃。当前NSS已撤销、常驻NSS68未改。工程无需反复开Steam/CS2，下一步直接更高单WAN受控带宽，真人游戏只留最后集中验收。先读 [状态](docs/STATE.md) 和 [计划](docs/PLAN.md)。下方旧结论为历史。
+
 # Athena NSS 主线记录
 
 最新 [NSS78](evidence/nss78-mainline.json)：轻载准备窗口已实测存在；目前无真实游戏/下载对，未开启NSS。入口仍NSS77，下一步直接集中闭环。现网原完整审核通过。下方77及更早为历史。

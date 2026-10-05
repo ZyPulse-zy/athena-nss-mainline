@@ -350,3 +350,15 @@
 - 未调用77的aba；355项绑定和已完RAM证明保持，不重放。没有CPU/softirq、time_squeeze或真人游戏收益结论，也没有新增回滚试验。
 - 原77 runtime原字节冻结，新增2份白名单源码、累计992。原始运行数据、core-guard原文和桌面内容留本地，未提交上游Issue/PR。
 
+
+
+## 2026-10-05 NSS79–82：受控真实TCP/UDP与完整工程闭环
+
+- 用户接受以自有端点受控TCP/UDP做工程，不再每轮等待Steam/CS2。公开新端口连通性准备失败保留：Aliyun/SG raw端口不可达，Dallas TCP/UDP初始PBR不同WAN；约1Mbps TCP被原分类器归BE，未强行BULK。最终复用自有SG既有已认证SSH TCP＋自有Dallas nonce等长UDP；自然尝试自己的socket端口找到同WAN，不改路由器PBR/系统服务。
+- 79同WAN5、TCP真实17.996/17.989/17.990Mbps，三段各5秒/11帧；ECM0→2→0，softirq9.65/4.31/9.48%、busy25.08/20.60/27.33，squeeze/drop均0。bulk/RT分别+9798/+271包、队列drop0/0；UDP未返回5/4/8，不是CS2指标。支持当前短窗18Mbps软件转发softirq改善，不能外推300Mbps或长期稳定。
+- 80第一次TCP450MiB有限上限后退出，A完成但学习前同源完整帧TCP缺失，UDP保留；无B。第二次三段均完成、ECM0→2→0，但A2最后软件NFT total/expected差一个60字节ACK，错误tag计数全0，原overall失败不改。bulk/RT drop69/0；实际吞吐13.66/18.03/17.33，不验收CPU。
+- 81最初本地expected SHA把LF字符串与实际CRLF文件混用，写前失败；改为实际字节SHA后新stage在initial getter出现down1包/1500字节偏差，无A/ECM。两个不同位置证据提示多规则counter dump不同时刻；不是已证明firmware误标或内核缺陷。
+- 82只统一五个getter的精确一次重读，允许原down1包1500字节或新up ACK1包60字节；所有其它计数需一致/错误tag与neighbor全0，第二次仍原严格getter。17项原生ACK正负案例通过；现场只触发down分支，第二次一致。完整payload目标编译/SHA与原transport大小限制保留。
+- 82在WAN2同一TCP/UDP跑完整5.00/5.01/5.02秒、各11帧；ECM0→2→0、正确bulk/RT tag、mark0x20000/NAT/出口、1次续租、精确撤销。发送32Mbps，实际14.90/17.16/18.08，不同吞吐不作CPU收益；softirq11.73/7.24/18.12、busy30.39/22.81/35.95、squeeze0。B观察bulk+8990包/drop143、RT+262/drop0；UDP203/203、213/213、203/202，p95约205.64/205.25/204.86ms，为自有端点RTT而非游戏。
+- 五个现场stage各新checkpoint下载/SHA/gzip、独立PPID1/45秒owner写前核验，最后全部保护配置/完整原审核恢复通过。17:05常驻4859/17139、config581b5d46…c791d7/source1.15；ECM关闭全零，无事务/stage/state/模块。临时端点180秒FW独立恢复与客户端guard通过，临时端口已关闭，无生产VPS服务替换、游戏/Steam/UI/HUD改动。
+- 新源码与脱敏聚合证据进私有仓库；完整原始CT、nonce、连接/凭据、checkpoint、模块、实际绑定输入仍留本地。旧78 runtime原字节保存。不提交上游；下一步直接提高单WAN受控带宽，再最后集中真人验收，不重装/重放旧准备或同时扩多WAN。

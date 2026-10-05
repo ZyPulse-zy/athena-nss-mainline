@@ -1,0 +1,339 @@
+{
+  "actual80FinalAckCounters": {
+    "tcp_writer_up": {
+      "packets": 16722,
+      "bytes": 1155332
+    },
+    "tcp_writer_down": {
+      "packets": 15456,
+      "bytes": 26797260
+    },
+    "udp_writer_up": {
+      "packets": 487,
+      "bytes": 75972
+    },
+    "udp_writer_down": {
+      "packets": 488,
+      "bytes": 76128
+    },
+    "tcp_post_up_total": {
+      "packets": 16722,
+      "bytes": 1155332
+    },
+    "tcp_post_up_expected": {
+      "packets": 16723,
+      "bytes": 1155392
+    },
+    "tcp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "tcp_post_down_total": {
+      "packets": 15456,
+      "bytes": 26797260
+    },
+    "tcp_post_down_expected": {
+      "packets": 15456,
+      "bytes": 26797260
+    },
+    "tcp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_up_total": {
+      "packets": 487,
+      "bytes": 75972
+    },
+    "udp_post_up_expected": {
+      "packets": 487,
+      "bytes": 75972
+    },
+    "udp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_total": {
+      "packets": 488,
+      "bytes": 76128
+    },
+    "udp_post_down_expected": {
+      "packets": 488,
+      "bytes": 76128
+    },
+    "udp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_total": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_zero": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_nonzero": {
+      "packets": 0,
+      "bytes": 0
+    }
+  },
+  "actual81InitialDownCounters": {
+    "tcp_writer_up": {
+      "packets": 57,
+      "bytes": 3580
+    },
+    "tcp_writer_down": {
+      "packets": 119,
+      "bytes": 172700
+    },
+    "udp_writer_up": {
+      "packets": 1,
+      "bytes": 156
+    },
+    "udp_writer_down": {
+      "packets": 1,
+      "bytes": 156
+    },
+    "tcp_post_up_total": {
+      "packets": 57,
+      "bytes": 3580
+    },
+    "tcp_post_up_expected": {
+      "packets": 57,
+      "bytes": 3580
+    },
+    "tcp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "tcp_post_down_total": {
+      "packets": 120,
+      "bytes": 174200
+    },
+    "tcp_post_down_expected": {
+      "packets": 121,
+      "bytes": 175700
+    },
+    "tcp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_up_total": {
+      "packets": 1,
+      "bytes": 156
+    },
+    "udp_post_up_expected": {
+      "packets": 1,
+      "bytes": 156
+    },
+    "udp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_total": {
+      "packets": 1,
+      "bytes": 156
+    },
+    "udp_post_down_expected": {
+      "packets": 1,
+      "bytes": 156
+    },
+    "udp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_total": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_zero": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_nonzero": {
+      "packets": 0,
+      "bytes": 0
+    }
+  },
+  "actual82BeforeLearningFirstCounters": {
+    "tcp_writer_up": {
+      "packets": 9095,
+      "bytes": 673688
+    },
+    "tcp_writer_down": {
+      "packets": 9558,
+      "bytes": 14279820
+    },
+    "udp_writer_up": {
+      "packets": 240,
+      "bytes": 37440
+    },
+    "udp_writer_down": {
+      "packets": 241,
+      "bytes": 37596
+    },
+    "tcp_post_up_total": {
+      "packets": 9095,
+      "bytes": 673688
+    },
+    "tcp_post_up_expected": {
+      "packets": 9095,
+      "bytes": 673688
+    },
+    "tcp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "tcp_post_down_total": {
+      "packets": 9558,
+      "bytes": 14279820
+    },
+    "tcp_post_down_expected": {
+      "packets": 9559,
+      "bytes": 14281320
+    },
+    "tcp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_up_total": {
+      "packets": 240,
+      "bytes": 37440
+    },
+    "udp_post_up_expected": {
+      "packets": 240,
+      "bytes": 37440
+    },
+    "udp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_total": {
+      "packets": 241,
+      "bytes": 37596
+    },
+    "udp_post_down_expected": {
+      "packets": 241,
+      "bytes": 37596
+    },
+    "udp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_total": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_zero": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_nonzero": {
+      "packets": 0,
+      "bytes": 0
+    }
+  },
+  "actual82BeforeLearningSecondCounters": {
+    "tcp_writer_up": {
+      "packets": 9302,
+      "bytes": 683896
+    },
+    "tcp_writer_down": {
+      "packets": 9779,
+      "bytes": 14611320
+    },
+    "udp_writer_up": {
+      "packets": 246,
+      "bytes": 38376
+    },
+    "udp_writer_down": {
+      "packets": 246,
+      "bytes": 38376
+    },
+    "tcp_post_up_total": {
+      "packets": 9302,
+      "bytes": 683896
+    },
+    "tcp_post_up_expected": {
+      "packets": 9302,
+      "bytes": 683896
+    },
+    "tcp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "tcp_post_down_total": {
+      "packets": 9779,
+      "bytes": 14611320
+    },
+    "tcp_post_down_expected": {
+      "packets": 9779,
+      "bytes": 14611320
+    },
+    "tcp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_up_total": {
+      "packets": 246,
+      "bytes": 38376
+    },
+    "udp_post_up_expected": {
+      "packets": 246,
+      "bytes": 38376
+    },
+    "udp_post_up_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_down_total": {
+      "packets": 246,
+      "bytes": 38376
+    },
+    "udp_post_down_expected": {
+      "packets": 246,
+      "bytes": 38376
+    },
+    "udp_post_down_unexpected": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_total": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_zero": {
+      "packets": 0,
+      "bytes": 0
+    },
+    "udp_post_neighbor_nonzero": {
+      "packets": 0,
+      "bytes": 0
+    }
+  },
+  "nativeQualification": {
+    "strictGetterRetained": true,
+    "nssAdmissionAllowed": false,
+    "cases": 17,
+    "passed": true,
+    "actualFailureCounterUsed": true,
+    "fastSha256": "ecb802d680c04f58ee7a05a25e95c7d0794cac45714a54a70b371e296f18a846"
+  },
+  "candidate": {
+    "passed": true,
+    "allGetterSitesOneExactReread": true,
+    "strictSecondGetterUnchanged": true,
+    "nativeLimitsUnchanged": true,
+    "qosParentMbps": 20,
+    "fastSha256": "ecb802d680c04f58ee7a05a25e95c7d0794cac45714a54a70b371e296f18a846"
+  },
+  "oneRereadAtAllFiveGetterSites": true,
+  "secondGetterOriginalStrictPredicatesRetained": true,
+  "actual82RereadUsedTcpDownPredicate": true,
+  "actual82AckPredicateLiveUseClaimed": false,
+  "allUnexpectedCountersZeroInRecordedFrames": true,
+  "secondSnapshotPassed": true,
+  "firmwareMisTagProved": false,
+  "kernelBugProved": false,
+  "upstreamSubmitted": false
+}

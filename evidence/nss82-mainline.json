@@ -1,0 +1,179 @@
+{
+  "round": "NSS82",
+  "roundsCovered": [
+    "NSS79",
+    "NSS80",
+    "NSS81",
+    "NSS82"
+  ],
+  "observedAt": "2026-10-05T09:05:27.539Z",
+  "hypothesis": "A real controlled automatically classified TCP/UDP pair can enter NSS bulk/RT leaves with correct NAT/PBR and measurable forwarding savings.",
+  "method": "Existing authenticated owned-host SSH TCP and nonce-authenticated 128-byte bidirectional UDP; no game or Steam required for engineering.",
+  "permanentClassifierChanged": false,
+  "productionFirmwareKernelChanged": false,
+  "residentDeployment": "work/nss68/deployment-latest.json",
+  "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+  "scope": {
+    "oneWanAtATime": true,
+    "controlledTcpFlows": 1,
+    "controlledUdpFlows": 1,
+    "qosGroupMbps": 20,
+    "bulkRateMbps": 19,
+    "rtRateMbps": 1,
+    "rtCanBorrowToMbps": 20,
+    "defaultFallbackMbps": 950,
+    "nssFqCodelTargetMs": 5,
+    "intervalMs": 100,
+    "bulkLimitPackets": 256,
+    "rtLimitPackets": 128,
+    "originalClassificationAndCoreAndNativeLeaseDeadlinesUnchanged": true
+  },
+  "stageCases": 5,
+  "successfulCompleteABA": 2,
+  "matched18": {
+    "actualTcpMbps": [
+      17.996155006595572,
+      17.988581858617884,
+      17.99027395150803
+    ],
+    "softirqPercent": [
+      9.653725078698846,
+      4.307213284898807,
+      9.476439790575917
+    ],
+    "relativeReductionAgainstMeanSoftwarePercent": 54.96940758919769,
+    "matchedShortWindowSoftirqBenefitSupported": true,
+    "timeSqueezeAllZero": true
+  },
+  "saturated32": {
+    "offeredTcpMbps": 32,
+    "actualClientTcpMbps": [
+      14.895758599080812,
+      17.160972689711993,
+      18.078896793808344
+    ],
+    "actualThroughputMatched": false,
+    "cpuBenefitAcceptance": false,
+    "bulkBObservationDrops": 143,
+    "rtBObservationDrops": 0,
+    "udpBReplies": 213,
+    "udpBSent": 213
+  },
+  "preWriteLocalFailures": {
+    "esmWindowsPathRequiredFileUri": true,
+    "sshGCrLfParserFixed": true,
+    "expectedFastHashLfVsActualCrLfCorrectedBeforeStage": true,
+    "noNssWriteFromTheseFailures": true
+  },
+  "endpointPreparation": {
+    "aliyunRawPortsUnreachable": true,
+    "sgRawPortsUnreachable": true,
+    "dallasTcpUdpNaturalPbrInitiallyDifferentWan": true,
+    "dallasRawTcpAbout1MbpsWasBE": true,
+    "workingBulkUsesExistingOwnedSgSshService": true,
+    "routerPbrPolicyUnchanged": true,
+    "unprovenUpstreamPortDropCauseNotDeclaredFixed": true
+  },
+  "conclusions": {
+    "realAutoClassifierToNssLeafPathProved": true,
+    "correctPbrCtMarkNatWanAffinityProved": true,
+    "matchedShortWindowSoftirqBenefitSupported": true,
+    "bulkCongestionAndRtQueueIsolationObserved": true,
+    "exactRatePrecisionProved": false,
+    "multiFlowFairnessProved": false,
+    "ecnProved": false,
+    "highLoad300MbpsBenefitProved": false,
+    "cs2JitterLossMissProved": false,
+    "realHumanExperienceProved": false,
+    "generalLongTermStabilityProved": false,
+    "upstreamSubmitted": false
+  },
+  "caveats": [
+    "Each A/B/A2 window is about 5 seconds with a common observer.",
+    "WAN netdev NSS statistics are batched; aligned client bytes are the throughput comparison.",
+    "The 32 Mbps sender offer is not 32 Mbps achieved; measured phase throughput is retained.",
+    "NSS leaf statistics are asynchronous observations spanning B, not exact per-phase dequeue counts.",
+    "Low-rate UDP echo RTT/unreturned counts are not CS2 jitter/loss/Miss.",
+    "CAKE per-tin packet statistics were not sampled per phase; its ten configurations were restored.",
+    "No host fairness, DiffServ tin semantics or autorate replacement is proved by this two-leaf test."
+  ],
+  "finalState": {
+    "passed": true,
+    "observedAt": "2026-10-05T09:05:27.539Z",
+    "readonly": true,
+    "configurationMatches": true,
+    "deploymentReference": "work/nss68/deployment-latest.json",
+    "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+    "workerPid": 4859,
+    "guardianPid": 17139,
+    "originalFullLockedAudit": true,
+    "selectors": 4,
+    "queryAge": 1.1499999999068677,
+    "sequence": 5403,
+    "ecmStoppedAndZero": true,
+    "noActiveTransaction": true,
+    "noStaging": true,
+    "publicationTrial": false,
+    "noExperimentState": true,
+    "noExperimentalModule": true,
+    "diagnostic": {
+      "events": [
+        {
+          "name": "locked-audit-start",
+          "at": 2008672.54
+        },
+        {
+          "name": "hashes-complete",
+          "at": 2008672.61
+        },
+        {
+          "name": "journal-parsed",
+          "at": 2008672.61
+        },
+        {
+          "name": "selectors-complete",
+          "at": 2008672.72
+        },
+        {
+          "name": "snapshot-parsed",
+          "at": 2008672.76
+        },
+        {
+          "name": "freshness-checked",
+          "at": 2008672.76
+        },
+        {
+          "name": "locked-audit-end",
+          "at": 2008672.76
+        }
+      ],
+      "freshness": {
+        "checkedAt": 2008672.76,
+        "publicationAge": 0.6300000001210719,
+        "sourceAge": 1.1499999999068677,
+        "queryStarted": 2008671.61,
+        "publishedAt": 2008672.13,
+        "sequence": 5403
+      }
+    },
+    "serviceEpochPinned": true,
+    "nssAdmissionAllowed": false
+  },
+  "endpointClosure": {
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "clientReachedFiniteByteCeilingAfterMeasurement": true,
+    "clientFinalErrors": [
+      "Byte ceiling reached"
+    ],
+    "wholeSessionUdpIsNotPhaseLoss": true,
+    "noExistingVpsServiceReplaced": true
+  },
+  "reportVerification": {
+    "sourceValidated": true,
+    "browserRendered": false
+  }
+}

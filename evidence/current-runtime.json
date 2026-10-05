@@ -1,6 +1,6 @@
 {
-  "round": "NSS78",
-  "checkedAt": "2026-10-05T06:56:23.498Z",
+  "round": "NSS82",
+  "checkedAt": "2026-10-05T09:05:27.539Z",
   "deploymentReference": "work/nss68/deployment-latest.json",
   "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
   "workerPid": 4859,
@@ -8,14 +8,16 @@
   "publicationCandidateInstalled": true,
   "permanentClassifierChangedThisTurn": false,
   "nssPermanentlyEnabled": false,
-  "nssOpenedThisTurn": false,
-  "qualifiedExperimentalEntry": "work/nss77/real-session.mjs",
-  "qualifiedExperimentalEntryBoundInputs": 355,
-  "entryPreparationQualified": true,
+  "nssOpenedThisTurn": true,
+  "qualifiedExperimentalEntry": "work/nss82/controlled-session.mjs",
+  "qualifiedExperimentalEntryBoundInputs": 405,
+  "controlledRealWanABACompleted": true,
+  "matched18MbpsSoftirqBenefitSupported": true,
   "entryFullHighLoadForwardingQualified": false,
+  "realHumanGameAcceptance": false,
   "audit": {
     "passed": true,
-    "observedAt": "2026-10-05T06:56:23.498Z",
+    "observedAt": "2026-10-05T09:05:27.539Z",
     "readonly": true,
     "configurationMatches": true,
     "deploymentReference": "work/nss68/deployment-latest.json",
@@ -23,26 +25,75 @@
     "workerPid": 4859,
     "guardianPid": 17139,
     "originalFullLockedAudit": true,
-    "selectors": 0,
-    "queryAge": 3.669999999925494,
-    "sequence": 2822,
+    "selectors": 4,
+    "queryAge": 1.1499999999068677,
+    "sequence": 5403,
     "ecmStoppedAndZero": true,
     "noActiveTransaction": true,
     "noStaging": true,
+    "publicationTrial": false,
     "noExperimentState": true,
     "noExperimentalModule": true,
+    "diagnostic": {
+      "events": [
+        {
+          "name": "locked-audit-start",
+          "at": 2008672.54
+        },
+        {
+          "name": "hashes-complete",
+          "at": 2008672.61
+        },
+        {
+          "name": "journal-parsed",
+          "at": 2008672.61
+        },
+        {
+          "name": "selectors-complete",
+          "at": 2008672.72
+        },
+        {
+          "name": "snapshot-parsed",
+          "at": 2008672.76
+        },
+        {
+          "name": "freshness-checked",
+          "at": 2008672.76
+        },
+        {
+          "name": "locked-audit-end",
+          "at": 2008672.76
+        }
+      ],
+      "freshness": {
+        "checkedAt": 2008672.76,
+        "publicationAge": 0.6300000001210719,
+        "sourceAge": 1.1499999999068677,
+        "queryStarted": 2008671.61,
+        "publishedAt": 2008672.13,
+        "sequence": 5403
+      }
+    },
     "serviceEpochPinned": true,
     "nssAdmissionAllowed": false
   },
   "finalClosure": {
     "passed": true
   },
-  "completePerformanceAndGameAcceptance": false,
+  "endpointClosure": {
+    "temporaryFirewallRulesRemaining": 0,
+    "canonicalFirewallBaselineRestored": true,
+    "ownedUnitInactiveMainPidZeroPortsClosed": true,
+    "clientExited": true,
+    "clientGuardPassed": true,
+    "clientReachedFiniteByteCeilingAfterMeasurement": true,
+    "clientFinalErrors": [
+      "Byte ceiling reached"
+    ],
+    "wholeSessionUdpIsNotPhaseLoss": true,
+    "noExistingVpsServiceReplaced": true
+  },
   "requiresLiveRevalidation": true,
-  "historical77RuntimePreservedSha256": "f030402663429f5b4ea15b0b51c94f64f1577e4f38f387e992e9aea1da1e6fdd",
-  "currentRealApplicationPairVisible": false,
-  "clientDownloadNetworkBpsObserved": 0,
-  "newClientDownloadStarted": false,
-  "clientHudChangedThisTurn": false,
-  "previousTurnClientFinalRestoreStillUnproved": true
+  "historical78RuntimePreservedSha256": "e7edac4e5fbea216de6de720b796ef1a5e2b7299c37728de5a6d099aa3d348db",
+  "next": "Use the controlled owner at higher single-WAN budget, then one concentrated real CS2 acceptance. No recurring Steam downloads."
 }

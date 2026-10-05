@@ -1,0 +1,13 @@
+{
+  "temporaryFirewallRulesRemaining": 0,
+  "canonicalFirewallBaselineRestored": true,
+  "ownedUnitInactiveMainPidZeroPortsClosed": true,
+  "clientExited": true,
+  "clientGuardPassed": true,
+  "clientReachedFiniteByteCeilingAfterMeasurement": true,
+  "clientFinalErrors": [
+    "Byte ceiling reached"
+  ],
+  "wholeSessionUdpIsNotPhaseLoss": true,
+  "noExistingVpsServiceReplaced": true
+}

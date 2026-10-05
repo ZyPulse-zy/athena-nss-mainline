@@ -1,0 +1,221 @@
+{
+  "schema": "nss79-controlled-actual-aba-v1",
+  "passed": true,
+  "oneWan": 5,
+  "requestedTcpMbps": 18,
+  "udpRequestedPps": 50,
+  "phases": [
+    {
+      "phase": "A",
+      "seconds": 5.010000000009313,
+      "sampleCount": 11,
+      "acceleratedCounts": [
+        0
+      ],
+      "busyPercent": 25.078698845750264,
+      "softirqPercent": 9.653725078698846,
+      "cores": [
+        {
+          "core": "cpu0",
+          "busyPercent": 23.660714285714285,
+          "softirqPercent": 6.696428571428571
+        },
+        {
+          "core": "cpu1",
+          "busyPercent": 23.170731707317074,
+          "softirqPercent": 6.9105691056910565
+        },
+        {
+          "core": "cpu2",
+          "busyPercent": 27.310924369747898,
+          "softirqPercent": 11.764705882352942
+        },
+        {
+          "core": "cpu3",
+          "busyPercent": 26.175869120654397,
+          "softirqPercent": 13.087934560327199
+        }
+      ],
+      "timeSqueezeDelta": 0,
+      "softnetDropDelta": 0,
+      "interfaces": {
+        "rpwan5": {
+          "mbps": 1.0822770459061717,
+          "txPps": 1718.962075845108,
+          "rxMbps": 18.825714970024883
+        },
+        "lan4": {
+          "mbps": 18.928381636691363,
+          "txPps": 1722.7544910147617,
+          "rxMbps": 1.1255217564849336
+        }
+      },
+      "clientTcpMbps": 17.996155006595572,
+      "udp": {
+        "sendWindowUtcEpoch": [
+          1791188458.317,
+          1791188463.327
+        ],
+        "excludedBoundarySeconds": 0.05900002002716064,
+        "sent": 224,
+        "received": 219,
+        "unreturned": 5,
+        "unreturnedPercent": 2.232142857142857,
+        "rttP50Ms": 190.5896999999968,
+        "rttP95Ms": 198.4322199999937,
+        "rttMaxMs": 199.47889999998733,
+        "meanAbsoluteConsecutiveRttDeltaMs": 0.6469674311927253,
+        "isCs2Metric": false
+      }
+    },
+    {
+      "phase": "B",
+      "seconds": 5.0,
+      "sampleCount": 11,
+      "acceleratedCounts": [
+        2
+      ],
+      "busyPercent": 20.60197197716658,
+      "softirqPercent": 4.307213284898807,
+      "cores": [
+        {
+          "core": "cpu0",
+          "busyPercent": 24.008810572687224,
+          "softirqPercent": 3.9647577092511015
+        },
+        {
+          "core": "cpu1",
+          "busyPercent": 22.016460905349795,
+          "softirqPercent": 5.967078189300412
+        },
+        {
+          "core": "cpu2",
+          "busyPercent": 16.598360655737704,
+          "softirqPercent": 0.20491803278688525
+        },
+        {
+          "core": "cpu3",
+          "busyPercent": 20.080321285140563,
+          "softirqPercent": 7.028112449799197
+        }
+      ],
+      "timeSqueezeDelta": 0,
+      "softnetDropDelta": 0,
+      "interfaces": {
+        "rpwan5": {
+          "mbps": 1.0297888,
+          "txPps": 1693.4,
+          "rxMbps": 18.6601392
+        },
+        "lan4": {
+          "mbps": 18.9454448,
+          "txPps": 1720.6,
+          "rxMbps": 1.0922256000000001
+        }
+      },
+      "clientTcpMbps": 17.988581858617884,
+      "udp": {
+        "sendWindowUtcEpoch": [
+          1791188467.487,
+          1791188472.487
+        ],
+        "excludedBoundarySeconds": 0.05900002002716064,
+        "sent": 225,
+        "received": 221,
+        "unreturned": 4,
+        "unreturnedPercent": 1.7777777777777777,
+        "rttP50Ms": 190.29679999999644,
+        "rttP95Ms": 198.04469999999856,
+        "rttMaxMs": 198.33179999999993,
+        "meanAbsoluteConsecutiveRttDeltaMs": 0.643180000000972,
+        "isCs2Metric": false
+      }
+    },
+    {
+      "phase": "A2",
+      "seconds": 5.0,
+      "sampleCount": 11,
+      "acceleratedCounts": [
+        0
+      ],
+      "busyPercent": 27.329842931937172,
+      "softirqPercent": 9.476439790575917,
+      "cores": [
+        {
+          "core": "cpu0",
+          "busyPercent": 26.59090909090909,
+          "softirqPercent": 7.045454545454546
+        },
+        {
+          "core": "cpu1",
+          "busyPercent": 28.34008097165992,
+          "softirqPercent": 6.275303643724697
+        },
+        {
+          "core": "cpu2",
+          "busyPercent": 25.726141078838175,
+          "softirqPercent": 11.410788381742739
+        },
+        {
+          "core": "cpu3",
+          "busyPercent": 28.484848484848484,
+          "softirqPercent": 12.929292929292929
+        }
+      ],
+      "timeSqueezeDelta": 0,
+      "softnetDropDelta": 0,
+      "interfaces": {
+        "rpwan5": {
+          "mbps": 1.0375056,
+          "txPps": 1707.6,
+          "rxMbps": 18.859664
+        },
+        "lan4": {
+          "mbps": 18.9520448,
+          "txPps": 1713.6,
+          "rxMbps": 1.0857776000000001
+        }
+      },
+      "clientTcpMbps": 17.99027395150803,
+      "udp": {
+        "sendWindowUtcEpoch": [
+          1791188473.067,
+          1791188478.067
+        ],
+        "excludedBoundarySeconds": 0.05900002002716064,
+        "sent": 225,
+        "received": 217,
+        "unreturned": 8,
+        "unreturnedPercent": 3.5555555555555554,
+        "rttP50Ms": 190.81449999999313,
+        "rttP95Ms": 198.6090200000006,
+        "rttMaxMs": 200.49030000000494,
+        "meanAbsoluteConsecutiveRttDeltaMs": 0.7438972222222489,
+        "isCs2Metric": false
+      }
+    }
+  ],
+  "leafCountersAcrossBObservation": {
+    "8f05:": {
+      "bytes": 14059244,
+      "packets": 9798,
+      "dropped": 0
+    },
+    "8f06:": {
+      "bytes": 46070,
+      "packets": 271,
+      "dropped": 0
+    }
+  },
+  "leafStatsAsynchronous": true,
+  "renewals": 1,
+  "nativeLimitsUnchanged": true,
+  "qosParentMbps": 20,
+  "clockAlignmentUncertaintyMs": 59.000020027160645,
+  "classifierToLeafAndNatAffinityVerified": true,
+  "checkpointAndIndependentOwnerRollbackVerified": true,
+  "protectedConfigurationRestored": true,
+  "gameQualityConclusion": false,
+  "highLoad300MbpsConclusion": false,
+  "shortWindowsIncludeSameObserverCost": true
+}

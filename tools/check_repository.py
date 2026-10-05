@@ -619,7 +619,7 @@ proof77=json.loads((root/'evidence/nss77-source-proof.json').read_text())
 assert hashlib.sha256(json.dumps(manifest['sources'][:868],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof77['historicPrefixCanonicalSha256']
 proof78=json.loads((root/'evidence/nss78-source-proof.json').read_text())
 assert hashlib.sha256(json.dumps(manifest['sources'][:990],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof78['historicPrefixCanonicalSha256']
-assert len(manifest['sources'])==868+proof77['sources']+proof78['sources']
+assert 992==868+proof77['sources']+proof78['sources']
 for source,digest in proof77['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 x77=json.loads((root/'evidence/nss77-mainline.json').read_text());rt77=json.loads((root/'evidence/nss77-runtime.json').read_text())
 assert x77['latestBoundInputs']==355 and x77['latestCandidateRamChecks']==9 and not x77['latestCandidateLiveTested']
@@ -636,7 +636,7 @@ assert rt77['round']=='NSS77' and not rt77['entryFullHighLoadForwardingQualified
 assert rt77['finalClosure']['passed'] and rt77['audit']['configurationMatches'] and rt77['audit']['originalFullLockedAudit']
 assert rt77['historical68RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss68-runtime.json').read_bytes()).hexdigest()
 
-rt78=json.loads((root/'evidence/current-runtime.json').read_text())
+rt78=json.loads((root/'evidence/nss78-runtime.json').read_text())
 x78=json.loads((root/'evidence/nss78-mainline.json').read_text())
 assert rt78['round']=='NSS78' and rt78['qualifiedExperimentalEntry']=='work/nss77/real-session.mjs'
 assert rt78['qualifiedExperimentalEntryBoundInputs']==355 and not rt78['entryFullHighLoadForwardingQualified']
@@ -650,5 +650,59 @@ assert not x78['interpretation']['selectedPairAdmissionVerified'] and not x78['i
 assert not x78['interpretation']['nss77LiveForwardingTested'] and not x78['rollback']['newRollbackTestClaimed']
 assert proof78['sources']==len(proof78['sourceHashes'])==2 and proof78['notAdditionalProductionAdmission']
 for source,digest in proof78['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+
+proof82=json.loads((root/'evidence/nss82-source-proof.json').read_text())
+assert proof82['historicPrefixSources']==992 and proof82['sources']==58
+assert len(manifest['sources'])==992+proof82['sources']
+assert hashlib.sha256(json.dumps(manifest['sources'][:992],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof82['historicPrefixCanonicalSha256']
+for source,digest in proof82['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert proof82['privateOwnedHostBootstrapExcluded'] and proof82['completePrivateSourceInputsRetained']
+trials82=json.loads((root/'evidence/nss82-trials.json').read_text())
+assert len(trials82)==5 and sum(t['passed'] for t in trials82)==2
+assert [t['ecmOpened'] for t in trials82]==[True,False,True,False,True]
+for t in trials82:
+    assert t['checkpointDownloadedShaAndGzipVerified'] and t['guardianVerifiedBeforeFirstWrite']
+    assert t['guardianPpid']==1 and t['independentOwnerSeconds']==45 and all(t['rollback'].values())
+    assert t['baseline']['configurationMatches'] and all(t['baseline']['checks'].values())
+    assert t['beforeFullAudit']['passed'] and t['afterFullAudit']['passed']
+    assert t['beforeFullAudit']['exactOwnedNativeAudit'] and t['afterFullAudit']['exactOwnedNativeAudit']
+    assert t['sourceInputsCurrentBytesMatchActualRun'] and not t['gameQualityConclusion'] and not t['highLoad300MbpsConclusion']
+    for c in t['softwareTagCounters'].values():
+        assert all(c[k]['packets']==c[k]['bytes']==0 for k in c if k.endswith('_unexpected') or k=='udp_post_neighbor_nonzero')
+matched82=json.loads((root/'evidence/nss82-matched18.json').read_text())
+sat82=json.loads((root/'evidence/nss82-saturated32.json').read_text())
+for m in (matched82,sat82):
+    assert m['passed'] and [p['acceleratedCounts'] for p in m['phases']]==[[0],[2],[0]]
+    assert m['qosParentMbps']==20 and m['renewals']==1 and m['protectedConfigurationRestored']
+    assert all(5<=p['seconds']<=6.5 and p['sampleCount']==11 for p in m['phases'])
+    assert all(p['timeSqueezeDelta']==p['softnetDropDelta']==0 for p in m['phases'])
+    assert not m['gameQualityConclusion'] and not m['highLoad300MbpsConclusion']
+tcp82=[p['clientTcpMbps'] for p in matched82['phases']];assert max(tcp82)/min(tcp82)<1.01
+assert sat82['leafCountersAcrossBObservation']['8f05:']['dropped']==143
+assert sat82['leafCountersAcrossBObservation']['8f06:']['dropped']==0
+assert sat82['phases'][1]['udp']['sent']==sat82['phases'][1]['udp']['received']==213
+tags82=json.loads((root/'evidence/nss82-tag-reader.json').read_text())
+ack=tags82['actual80FinalAckCounters'];down=tags82['actual81InitialDownCounters']
+assert ack['tcp_post_up_expected']['packets']-ack['tcp_post_up_total']['packets']==1
+assert ack['tcp_post_up_expected']['bytes']-ack['tcp_post_up_total']['bytes']==60
+assert down['tcp_post_down_expected']['packets']-down['tcp_post_down_total']['packets']==1
+assert down['tcp_post_down_expected']['bytes']-down['tcp_post_down_total']['bytes']==1500
+assert tags82['nativeQualification']['passed'] and tags82['nativeQualification']['cases']==17
+assert tags82['secondGetterOriginalStrictPredicatesRetained'] and tags82['secondSnapshotPassed']
+assert tags82['actual82RereadUsedTcpDownPredicate'] and not tags82['actual82AckPredicateLiveUseClaimed']
+assert not tags82['firmwareMisTagProved'] and not tags82['kernelBugProved'] and not tags82['upstreamSubmitted']
+x82=json.loads((root/'evidence/nss82-mainline.json').read_text());rt82=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x82['successfulCompleteABA']==2 and x82['stageCases']==5 and not x82['permanentClassifierChanged']
+assert x82['matched18']['matchedShortWindowSoftirqBenefitSupported']
+assert 50<x82['matched18']['relativeReductionAgainstMeanSoftwarePercent']<60
+assert not x82['saturated32']['actualThroughputMatched'] and not x82['saturated32']['cpuBenefitAcceptance']
+assert rt82['round']=='NSS82' and rt82['qualifiedExperimentalEntryBoundInputs']==405 and rt82['nssOpenedThisTurn']
+assert not rt82['nssPermanentlyEnabled'] and not rt82['entryFullHighLoadForwardingQualified'] and not rt82['realHumanGameAcceptance']
+assert all(rt82['audit'][k] for k in ['passed','configurationMatches','originalFullLockedAudit','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert rt82['workerPid']==4859 and rt82['guardianPid']==17139
+assert rt82['historical78RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss78-runtime.json').read_bytes()).hexdigest()
+closure82=json.loads((root/'evidence/nss82-endpoint-closure.json').read_text())
+assert closure82['temporaryFirewallRulesRemaining']==0 and closure82['canonicalFirewallBaselineRestored']
+assert closure82['ownedUnitInactiveMainPidZeroPortsClosed'] and closure82['clientExited'] and closure82['clientGuardPassed']
 
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))
