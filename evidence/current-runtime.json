@@ -54,5 +54,7 @@
   "historical107RuntimePreservedSha256": "2db941b9c6908e67e6022743d85531b673b47d6bd7f33a9529153f694cf7842a",
   "historical98RuntimePreservedSha256": "42cfb69ca8cfddda3e598314c5859bb1287d73ee6e4bbbcf80833e952ccd40cb",
   "historical92RuntimePreservedSha256": "71c9e49344c90d7bc7c856efbac57063dbe4ba54ff36dd46956ad6b1ac4c4584",
-  "historical82RuntimePreservedSha256": "9e56e02eee6c400aa59b71574df497a8628cf8a26bf64e774cf6b1578f458109"
+  "historical82RuntimePreservedSha256": "9e56e02eee6c400aa59b71574df497a8628cf8a26bf64e774cf6b1578f458109",
+  "pathLocalizationReference": "evidence/nss109-path-localization-v2.json",
+  "routingObservationMetadataClarifiedWithoutNewTrial": true
 }

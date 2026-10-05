@@ -4,7 +4,7 @@
 
 **两次实际8秒nonce/序号捕获定位到：484个请求均到服务器并发出echo；路由器最早Linux物理接口tap只见465个，之后private WAN→IFB→bridge→LAN→PC全部465个相同，链内缺包零。19/484（约3.93%）缺口在server软件TX→router最早Linux tap之间；上游链路与网卡接收早期尚未分开。**
 
-见 [序号证据](../evidence/nss109-path-localization.json)、[认证修复](../evidence/nss109-auth-repair.json)、[自然故障切换](../evidence/nss109-wan4-failover.json)、[捕获器边界](../evidence/nss109-instrumentation.json)、[关闭](../evidence/nss109-endpoint-closure.json)、[终态](../evidence/nss109-final-audit.json)。
+见 [序号证据](../evidence/nss109-path-localization-v2.json)、[认证修复](../evidence/nss109-auth-repair.json)、[自然故障切换](../evidence/nss109-wan4-failover.json)、[捕获器边界](../evidence/nss109-instrumentation.json)、[关闭](../evidence/nss109-endpoint-closure.json)、[终态](../evidence/nss109-final-audit.json)。
 
 - 首窗236发/227收，后窗248发/238收；内部窗口裁掉首1秒/尾2秒，使用最终PC日志和确切nonce序号，不假定服务器/路由器UTC同步。对应TCP44.407/47.999Mbps、UDP p95约209.51/209.35ms。自动分类实际TCP BULK WAN3、UDP RT WAN2：这是软件路径定位，非同WAN拥塞对照；没有NSS leaf、同窗CPU/softirq/squeeze或真人CS2新验收。
 - NSS108首次捕获自身drops160、退出2，不能作缺包定位；其server捕获被异常中断，不称完整保留。109只修socket接收顺序：protocol0→socket filter→bind ETH_P_ALL，两次实际drops0、九接口方向可见。host/目标解析同6例通过；WSL不支持AF_PACKET的实际socket测试失败，未把它称通过。helper本身最多12秒、外部14秒，checkpoint和独立480秒临时目录清理先于上传；108观察到到期后自然消失、109owner/inode核验后取消。

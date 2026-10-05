@@ -897,7 +897,7 @@ assert x107['reportVerification']['sourceValidated']and not x107['reportVerifica
 
 proof109=json.loads((root/'evidence/nss109-source-proof.json').read_text())
 assert proof109['historicPrefixSources']==1155 and proof109['sources']==30
-assert len(manifest['sources'])==1155+proof109['sources']
+assert len(manifest['sources'])==1155+proof109['sources']+2
 assert hashlib.sha256(json.dumps(manifest['sources'][:1155],sort_keys=True,separators=(',',':')).encode()).hexdigest()==proof109['historicPrefixCanonicalSha256']
 for source,digest in proof109['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 assert proof109['privateOwnedHostBootstrapExcluded']and proof109['successfulRepairAndCaptureCurrentSourcesAndPrivateInputsRetained']
@@ -907,7 +907,7 @@ assert x109['round']==rt109['round']=='NSS109'
 assert x109['eligibleRequests']==484 and x109['missingBeforeEarliestRouterLinuxTap']==19 and x109['missingInObservedRouterDownstreamChain']==0
 assert not any(x109[k]for k in ['routerPhysicalNicVsUpstreamSeparated','wan4AuthenticationRecovered','nssOpenedThisTurn','newMatchedABA','newCpuComparisonAccepted','sameWanCongestionComparison','humanCs2Acceptance','highLoad300MbpsAcceptance','fullCakeReplacementAccepted','acceleratedUplinkQosGuaranteed','residentClassifierChanged','nssPermanentlyEnabled','upstreamSubmitted'])
 assert x109['tcpBulkWan']==3 and x109['udpRtWan']==2 and x109['temporaryEndpointsClosed']==2
-localization109=json.loads((root/'evidence/nss109-path-localization.json').read_text())
+localization109=json.loads((root/'evidence/nss109-path-localization-v2.json').read_text())
 assert [t['qualifiedSequences']for t in localization109['trials']]==[236,248]
 assert [t['unreturned']for t in localization109['trials']]==[9,10]
 for t in localization109['trials']:
@@ -916,6 +916,16 @@ for t in localization109['trials']:
     assert counts['physicalWanDown']==counts['privateWanDown']==counts['ifbDown']==counts['bridgeDown']==counts['lanDown']==counts['pcReceived']
     assert t['boundaryTrimmed']and t['pcFinalLogUsed']and t['routerAndServerClocksNotAssumedAligned']and t['notMatchedNssABA']and t['notCs2Metric']
 assert not localization109['identity']['sameWanPair']and not localization109['identity']['nssPermissionGranted']
+assert not localization109['identity']['experimentChangedPbrOrNat']and localization109['identity']['naturalWan4FailoverObservedAndIndependentlyProved']
+assert not localization109['identity']['pbrTransitionTimingWithinCaptureWindowsMeasured']and localization109['identity']['noClaimThatAllRuntimePbrWasUnchanged']
+clarification109=json.loads((root/'evidence/nss109-routing-clarification.json').read_text())
+assert clarification109['oldV1EvidenceRetained']and clarification109['countsAndRawSequenceEvidenceUnchanged']and clarification109['metadataCorrectionOnly']
+assert clarification109['oldV1Sha256']==hashlib.sha256((root/'evidence/nss109-path-localization.json').read_bytes()).hexdigest()
+assert clarification109['newV2Sha256']==hashlib.sha256((root/'evidence/nss109-path-localization-v2.json').read_bytes()).hexdigest()
+assert clarification109['newSourceSha256']==hashlib.sha256((root/'code'/clarification109['newSource']).read_bytes()).hexdigest()
+assert clarification109['prior1185SourcePrefixSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1185],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+assert clarification109['textChecksumsUsePublishedLfBytes']and clarification109['originalCommittedV1BytesRetained']
+assert clarification109['publicTextNormalizationSourceSha256']==hashlib.sha256((root/'code'/clarification109['publicTextNormalizationSource']).read_bytes()).hexdigest()
 auth109=json.loads((root/'evidence/nss109-auth-repair.json').read_text())
 assert auth109['committed']and auth109['independent180SecondRollbackVerifiedBeforeWrite']and auth109['originalNativeAuditPassed']
 assert not auth109['authenticatorRestarted']and not auth109['interfacesRestarted']and not auth109['naturalRollbackTested']

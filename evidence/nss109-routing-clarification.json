@@ -1,0 +1,18 @@
+{
+  "metadataCorrectionOnly": true,
+  "oldV1EvidenceRetained": true,
+  "oldV1Sha256": "908df10ac5d45ad72c2d855ed48ed6dc84c9391b5ac96eb3f37295cd6603c69e",
+  "newV2Sha256": "f2996cc09180f8ed55e1640ceb2ddde7dc364c684ff92bb61c4839284e13b805",
+  "countsAndRawSequenceEvidenceUnchanged": true,
+  "ambiguousField": "routerPbrOrNatChanged",
+  "correctMeaning": "No experimental PBR/NAT writes; existing automatic WAN4 failover was observed; its timing inside the capture windows was not sampled",
+  "newSource": "work/nss109/clarify-routing-observation.py",
+  "newSourceSha256": "fea56ef10db6bea97e244752be35008b4137b669b67a1fb5115201ef504980d7",
+  "prior1185SourcePrefixSha256": "37693efa3ef273d1489deb51f5521c246cb60fa37bca1bd44c9187a0053b0cc6",
+  "originalWorkspaceOldV1Sha256": "dd4f2206a6530a87c4e74ba26f4726ca136b0bf595ee43590ae5f35f54823a5c",
+  "originalWorkspaceNewV2Sha256": "46c149ab11fd319ef1878c3bf52b3de6bbbdde69100c4bb287b35a504d553401",
+  "textChecksumsUsePublishedLfBytes": true,
+  "originalCommittedV1BytesRetained": true,
+  "publicTextNormalizationSource": "work/nss109/finalize-public-text.py",
+  "publicTextNormalizationSourceSha256": "0d36a35fb3fc35fa4dab9228ebd07705881cb8e778b593cc0703846963b508c8"
+}

@@ -8299,6 +8299,20 @@
       "sha256": "f3ed0d4a3740a78b8fec997ba6bc1c99575e33a2df7d0cd4c43ad0f3798fd1c2",
       "bytes": 23075,
       "role": "passive-RT-sequence-localization-and-scoped-auth-recovery"
+    },
+    {
+      "path": "code/work/nss109/clarify-routing-observation.py",
+      "workspaceSource": "work/nss109/clarify-routing-observation.py",
+      "sha256": "fea56ef10db6bea97e244752be35008b4137b669b67a1fb5115201ef504980d7",
+      "bytes": 2547,
+      "role": "clarify-runtime-PBR-observation-with-v1-retained"
+    },
+    {
+      "path": "code/work/nss109/finalize-public-text.py",
+      "workspaceSource": "work/nss109/finalize-public-text.py",
+      "sha256": "0d36a35fb3fc35fa4dab9228ebd07705881cb8e778b593cc0703846963b508c8",
+      "bytes": 1853,
+      "role": "verify-published-LF-text-checksums-on-Windows"
     }
   ],
   "lastAppendExport": "NSS109",
