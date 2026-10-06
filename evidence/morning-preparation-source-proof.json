@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "baseCommit": "e90c4a6a4354729741f846ab0c67697725a46920",
+  "historicPrefixSources": 3857,
+  "historicPrefixCanonicalSha256": "620656665fd29bbeaab56f8c281d54df74318b552c8c6888954f2f007b501fde",
+  "sourceHashes": {
+    "work/v27-raw/read-input-rule-order.mjs": "003f15aee807d4d13b46f29433a7d093f60286bf9f1b2d1b041774aa64b93be3",
+    "work/morning-20261007/publish-preparation.py": "f686dc2725b55b43c12b0fbcdb7b3240d53a0e168b67f8b26d401cf77bcf37d7",
+    "work/morning-20261007/read-endpoints.mjs": "7a3d756201759357afdf0fe67842776e7fc665d3c3e749bbe027a9ef4b251199",
+    "work/morning-20261007/read-owned-clients.ps1": "de75c255a75a9a721d6e6a1cbfdaa9b39aab6cdf9b0c77ec60f75c5ad85de355",
+    "work/morning-20261007/README.md": "eab9e7aef7062c8ff76b35c41b9451cc64400a68607ae3d473861470925e6bc1",
+    "work/morning-20261007/run.mjs": "d4dc60a0dd270a5d786ee181a78b7cd76b30653384f0c22620f5b37e6909d5ee"
+  },
+  "oldCodeAndEvidenceUnmodified": true,
+  "privateDataAndBinariesExcluded": true
+}

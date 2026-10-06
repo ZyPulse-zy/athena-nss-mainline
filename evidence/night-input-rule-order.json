@@ -1,0 +1,149 @@
+{
+  "readonly": true,
+  "rules": [
+    {
+      "index": 0,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "match"
+        ],
+        [
+          "accept"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": false,
+      "tcpOnly": false,
+      "terminalDeny": false
+    },
+    {
+      "index": 1,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "accept"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": false,
+      "tcpOnly": false,
+      "terminalDeny": false
+    },
+    {
+      "index": 2,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "drop"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": false,
+      "tcpOnly": false,
+      "terminalDeny": true
+    },
+    {
+      "index": 3,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "accept"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": false,
+      "tcpOnly": false,
+      "terminalDeny": false
+    },
+    {
+      "index": 4,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "accept"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": false,
+      "tcpOnly": false,
+      "terminalDeny": false
+    },
+    {
+      "index": 5,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "accept"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": false,
+      "tcpOnly": false,
+      "terminalDeny": false
+    },
+    {
+      "index": 6,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "match"
+        ],
+        [
+          "accept"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": true,
+      "tcpOnly": false,
+      "terminalDeny": false
+    },
+    {
+      "index": 7,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "match"
+        ],
+        [
+          "accept"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": false,
+      "tcpOnly": false,
+      "terminalDeny": false
+    },
+    {
+      "index": 8,
+      "statementKeys": [
+        [
+          "match"
+        ],
+        [
+          "accept"
+        ]
+      ],
+      "unconditionalTerminalDeny": false,
+      "sourceAddressFiltered": false,
+      "tcpOnly": false,
+      "terminalDeny": false
+    }
+  ]
+}

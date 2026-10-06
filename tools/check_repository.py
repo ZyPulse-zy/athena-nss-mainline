@@ -2062,4 +2062,9 @@ if manifest['lastAppendExport']=='V27_OWN_RAW_PREREQUISITE':
  assert h['localActualSenderChecks']==10 and h['localProtocolModels']==33 and all(h['exactClientClosure'][k] for k in ['passed','clientExitedBeforeDeadline','exactClientOnly']) and h['exactEndpointClosure']['passed'] and h['terminalCompleteAudit']['ecmClosedAndZero'] and h['terminalPhysicalRoots']['passed']
  assert p['historicPrefixSources']==3801 and p['oldEvidenceAndSourcesUnmodified'] and p['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3801],sort_keys=True,separators=(',',':')).encode()).hexdigest()
  for f,d in p['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
+if (root/'evidence/morning-preparation.json').exists():
+ mp=json.loads((root/'evidence/morning-preparation.json').read_text(encoding='utf8'));ms=json.loads((root/'evidence/morning-preparation-source-proof.json').read_text(encoding='utf8'))
+ assert mp['passed'] and mp['preparationOnly'] and not mp['morningFinalAuditPerformed'] and not mp['productionExperimentPermissionGranted'] and mp['localKnownEndpointUnitCount']==17
+ assert ms['historicPrefixSources']==3857 and ms['oldCodeAndEvidenceUnmodified'] and ms['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3857],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ for f,d in ms['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

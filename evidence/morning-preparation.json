@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "preparationOnly": true,
+  "morningFinalAuditPerformed": false,
+  "syntaxChecksPassed": true,
+  "localKnownEndpointUnitCount": 17,
+  "localClientInventoryAt0531": {
+    "passed": true,
+    "ownedProcessesRemaining": 0,
+    "namespaceCount": 16
+  },
+  "notBeforeUtc": "2026-10-06T23:40:00Z",
+  "deadlineUtc": "2026-10-07T00:00:00Z",
+  "productionExperimentPermissionGranted": false,
+  "newRunDirectoriesPreserveFailures": true,
+  "automaticPauseStillRequiredAfterPublication": true
+}
