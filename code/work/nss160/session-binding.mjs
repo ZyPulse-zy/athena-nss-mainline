@@ -1,0 +1,3 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+import {verifyPreparation as inherited} from '../nss159/session-binding-v4.mjs';
+export function verifyPreparation(){const old=inherited(),q=JSON.parse(fs.readFileSync('work/nss160/entry-qualified.json'));assert.ok(q.passed&&!q.productionExecution&&q.nativeUnchanged&&q.v1ScopeFrozen);for(const[f,h]of Object.entries(q.sourceManifest))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),h,f);return {...old,...q,sourceManifest:{...old.sourceManifest,...q.sourceManifest},externalSourceBindings:old.externalSourceBindings};}

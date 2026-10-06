@@ -1769,7 +1769,7 @@ assert rt156['physicalRootRestoreAudit']['physicalWanOriginalMqFourFqCodelRestor
 end156=rt156['endpointClientClosureAudit'];assert end156['passed'] and end156['previousLoadsChecked']==end156['ownedUnitsInactiveMainPidZero']==34 and end156['temporaryFirewallRulesRemaining']==end156['ownedClientOrGuardProcessesRemaining']==0
 assert end156['tcpAndUdpPortsClosed'] and end156['allCanonicalFirewallBaselinesMatch'] and not end156['remoteWrites'] and not end156['productionWrites']
 for k,file in [('ownedReceiverClosureAudit','receiver-closure'),('ownedDownloadReceiverClosureAudit','download-receiver-closure')]:assert rt156[k]==json.loads((root/f'evidence/nss156-{file}.json').read_text()) and rt156[k]['passed'] and rt156[k]['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
-assert manifest['lastAppendExport'] in ['NSS156','NSS158','NSS159']
+assert manifest['lastAppendExport'] in ['NSS156','NSS158','NSS159','NSS160_V1_FROZEN']
 
 # NSS158: actual NSS157 precise class retirement + new NSS158 functional ABA.
 load158=lambda n:json.loads((root/f'evidence/nss158-{n}.json').read_text())
@@ -1836,11 +1836,11 @@ for field,file in [('ownedReceiverClosureAudit','receiver-closure'),('ownedDownl
 
 wp158=load158('publication-whitespace-check');assert wp158['exitCode']==1 and wp158['commitAndPushStopped'] and not wp158['frozenSourceBytesChanged'] and wp158['sourceHashesStillMatch'] and len(wp158['exactPathAttributes'])==4
 assert hashlib.sha256((root/'code'/wp158['repairSource']).read_bytes()).hexdigest()==wp158['repairSourceSha256']
-assert manifest['lastAppendExport'] in ['NSS158','NSS159']
+assert manifest['lastAppendExport'] in ['NSS158','NSS159','NSS160_V1_FROZEN']
 
 # NSS159: actual bounded DOWNLOAD; functional success is not RT quality acceptance.
 load159=lambda n:json.loads((root/f'evidence/nss159-{n}.json').read_text())
-x159=load159('mainline');rt159=json.loads((root/'evidence/current-runtime.json').read_text())
+x159=load159('mainline');rt159=json.loads((root/'evidence/nss159-runtime.json').read_text())
 assert x159['passed'] and x159['round']==rt159['round']=='NSS159'
 assert x159['status']=='DOWNLOAD_FUNCTIONAL_ABA_PASSED_RT_ECHO_GAP_UNRESOLVED_CPU_COMPARABILITY_FAILED'
 assert x159['functionalTwentySecondDownloadABA'] and x159['downloadFlowDataRatherThanAck'] and x159['schoolPolicyPbrCtMarkNatAffinityUnchanged']
@@ -1889,8 +1889,62 @@ for field in ['ownedReceiverClosureAudit','ownedDownloadReceiverClosureAudit']:a
 recovery159=load159('wan4-natural-recovery');assert recovery159['passed'] and recovery159['unchangedProtectedHealthControllerSource'] and recovery159['tenRecoveryRampStepsReproduced'] and recovery159['exact300BucketSourceAlgorithmReproduced']
 assert recovery159['priorBucketCounts']==[75,75,75,0,75] and recovery159['newBucketCounts']==[60,60,60,60,60]
 assert recovery159['onlyThreeWan4DhcpRulesRestored'] and recovery159['wan4RulesDerivedFromActualLease'] and not recovery159['experimentRoutingMutation'] and not recovery159['nssPermissionGranted']
-assert manifest['lastAppendExport']=='NSS159'
+assert manifest['lastAppendExport'] in ['NSS159','NSS160_V1_FROZEN']
 
 publication159=load159('publication-whitespace-repair');assert publication159==x159['publicationWhitespaceRepair'] and publication159['passed'] and not publication159['initialStagedDiffCheckPassed'] and publication159['commitChainStoppedBeforeCommit'] and publication159['frozenSourceBytesUnchanged'] and publication159['noGlobalWhitespaceRelaxation']
 assert publication159['sourceSha256']==hashlib.sha256((root/publication159['sourcePath']).read_bytes()).hexdigest()
+
+# Final finite v1 observation: real game traffic is not human experience acceptance.
+load160=lambda n:json.loads((root/f'evidence/nss160-{n}.json').read_text(encoding='utf-8'))
+x160=load160('mainline');rt160=json.loads((root/'evidence/current-runtime.json').read_text(encoding='utf-8'))
+assert x160['round']==rt160['round']=='NSS160' and x160['passed']
+assert x160['coreFunctionalAcceptanceComplete'] and rt160['coreFunctionalAcceptanceComplete']
+assert not x160['v1FunctionalAcceptanceComplete'] and not rt160['v1FunctionalAcceptanceComplete']
+assert x160['humanSubjectiveAcceptance'] is None and rt160['humanSubjectiveAcceptance'] is None
+assert x160['userSelectedHudOnly'] and not x160['humanAcceptedInThisTrial']
+assert x160['noFurtherAutomaticExperiments'] and rt160['noFurtherAutomaticExperiments']
+assert not x160['permanentNssEnabled'] and not rt160['nssPermanentlyEnabled']
+assert not x160['permanentNssControllerInstalled'] and x160['kernelGateAndQosUnchanged']
+assert x160['boundInputs']==rt160['boundInputs']==2137
+assert x160['qualifiedFrozenEntry']=='work/nss160/real-session-v4.mjs'
+assert x160['sourceNativeOwnerClientSeconds']==[6,27,100,180] and x160['execRawBundleRecordBytes']==[9000,65536,73728,1048576]
+assert x160['original159RuntimeSha256']==rt160['historical159RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss159-runtime.json').read_bytes()).hexdigest()
+m160=load160('functional-metrics');assert m160==x160['functionalMetrics'] and m160['passed']
+assert m160['oneWan']==5 and m160['realCs2DeathmatchAndExistingSteamUpdate'] and m160['humanSubjectiveAcceptance'] is None
+assert [p['ecmAcceleratedCount'] for p in m160['phases']]==[0,2,0]
+assert all(20<=p['seconds']<21.5 and p['sampleCount']==41 for p in m160['phases'])
+assert m160['nativeRenewals']==6 and m160['actualBindingsAndFrozenCopiesVerified']==2137
+assert m160['payloadBytes']==73422 and m160['guardianExecBytes']==8947 and m160['nativeRecordBytes']<1048576
+assert m160['checkpointDownloadedShaGzipVerified'] and m160['independentPpidOneRollbackVerifiedBeforeWrite'] and all(m160['allOriginalRestoreChecks'].values())
+assert not m160['wholePcWasAccelerated'] and not m160['hudA2Captured'] and not m160['newCpuCausalBenefitClaimed'] and m160['newCpuCausalReductionPercent'] is None
+for slot,protocol,up,down in [('tcp',6,0x8e050000,0x8f050000),('udp',17,0x8e060000,0x8f060000)]:
+ f=m160['flowProof'][slot];assert f['protocol']==protocol and f['ctMark']==0x50000 and f['upTag']==up and f['downTag']==down
+ assert f['accelerated'] and f['natCorrect'] and f['wanAffinity']==5 and f['fromLan4'] and f['fromBridgeLan']
+assert all(v['packets']>0 for d in m160['fourLeavesNearbyAsynchronousSnapshots'].values() for v in d.values())
+assert m160['fourLeavesNearbyAsynchronousSnapshots']['down']['8f06:']['dropped']==m160['fourLeavesNearbyAsynchronousSnapshots']['up']['8e06:']['dropped']==0
+gap160=load160('gap-decision');assert gap160==x160['gapDecision'] and gap160['decision']=='KNOWN_LIMITATION_NO_ESTABLISHED_V1_BLOCKER'
+assert gap160['originalNss159Unreturned']==36 and not gap160['fixed'] and not gap160['locationProven'] and not gap160['nssCauseProven']
+assert not gap160['newNssEchoReproductionPerformed'] and gap160['oneBoundedInvestigationClosed'] and gap160['furtherGapExperimentsStopped']
+cpu160=load160('historical-cpu-reuse');assert cpu160==x160['historicalCpuEvidence'] and cpu160['passed'] and cpu160['currentFinalTrialCpuCausalConclusion'] is None
+assert cpu160['historicalEvidenceSha256']==hashlib.sha256((root/cpu160['historicalEvidenceReused']).read_bytes()).hexdigest()
+assert 48<cpu160['softirqRelativeReductionPercent']<49 and not cpu160['newCpuExperimentRequired']
+assert x160['finalAudit']==rt160['audit']==load160('final-audit') and rt160['audit']['queryAge']<6
+for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','allFiveWanHealthy','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule']:assert rt160['audit'][k]
+assert x160['originalRecoveryAudit']==load160('original-recovery-audit') and x160['originalRecoveryAudit']['passed']
+ui160=load160('client-restore');assert ui160==x160['clientRestore']==rt160['clientRestore'] and ui160['humanSubjectiveAcceptance'] is None
+for k in ['passed','cs2DisconnectedFromTestServer','cs2MainMenuVisuallyVerified','steamExistingUpdateCompleted','steamNoActiveDownload','originalSteamLimitDisabledAndEmptyRestored','ownedClientGuardCancelledAfterRestore','noFurtherDesktopTest']:assert ui160[k]
+assert load160('failures')==x160['failuresPreserved'] and all(v['originalFailurePreserved'] for v in load160('failures'))
+for q in load160('qualification'):
+ assert q['passed'] and not q['productionExecution']
+ for source,digest in q['sourceManifest'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+proof160=load160('source-proof');assert proof160['passed'] and proof160['historicPrefixSources']==2753 and proof160['sources']==len(proof160['sourceHashes'])
+assert proof160['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2753],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+assert proof160['historicManifestPrefixUnchanged'] and proof160['old159RuntimeExactGitBytes'] and proof160['actualInputsAndFrozenCopiesVerified']==2137
+for source,digest in proof160['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert manifest['lastAppendExport']=='NSS160_V1_FROZEN'
+publication160=load160('publication-whitespace')
+assert publication160['passed'] and not publication160['initialStagedDiffCheckPassed'] and publication160['exitCode']==1
+assert publication160['commitChainStoppedBeforeCommit'] and publication160['frozenSourceBytesUnchanged'] and publication160['noGlobalWhitespaceRelaxation'] and not publication160['productionChanges']
+assert hashlib.sha256((root/publication160['sourcePath']).read_bytes()).hexdigest()==publication160['sourceSha256']
+assert publication160['exactPathAttributes']==['/code/work/nss160/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

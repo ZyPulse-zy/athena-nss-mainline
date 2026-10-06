@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "decision": "KNOWN_LIMITATION_NO_ESTABLISHED_V1_BLOCKER",
+  "originalNss159Unreturned": 36,
+  "originalSingleContinuousBurstRetained": true,
+  "fixed": false,
+  "locationProven": false,
+  "nssCauseProven": false,
+  "newNssEchoReproductionPerformed": false,
+  "stableNssReproductionEstablished": false,
+  "oneBoundedInvestigationClosed": true,
+  "furtherGapExperimentsStopped": true,
+  "boundedAttempts": [
+    {
+      "result": "source6.31 exceeded unchanged6 limit before checkpoint/endpoint/NSS"
+    },
+    {
+      "result": "owned endpoint launch SSH timeout; no router checkpoint/stage/NSS"
+    },
+    {
+      "result": "natural UDP WAN4, no same-WAN TCP among eight own candidates; software only"
+    }
+  ],
+  "softwareOnlyObservation": {
+    "seconds": 53.9353141,
+    "udpSent": 2527,
+    "udpReceived": 2442,
+    "unreturned": 85,
+    "endpointAndFirewallRestored": true,
+    "closingPendingRequestsNotSteadyStateLoss": true,
+    "doesNotLocateOrExplainOriginalNssBurst": true
+  },
+  "finalRealGameObservation": "No disconnect/controller failure or obvious additional HUD deterioration at sparse NSS observation; no human experience confirmation",
+  "rtQueueDropZeroIsNotEndToEndDeliveryProof": true,
+  "noNewTapFirmwareInstrumentationOrGateChanges": true,
+  "preconditionsForReopening": [
+    "repeatable NSS-caused interruption",
+    "actual game deterioration linked to NSS",
+    "controller/restore/data corruption"
+  ]
+}

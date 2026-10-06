@@ -1,0 +1,13 @@
+// Only two already prepared passive endpoints. No router tap or kernel alteration.
+import fs from 'node:fs';import assert from 'node:assert/strict';import {spawn} from 'node:child_process';
+const root='work/nss160',python='C:/Users/lishu/AppData/Local/Programs/Python/Python312/python.exe',q=x=>"'"+x.replaceAll("'","'\\''")+"'";
+export async function startCapturePair(load,config){
+ const c={seconds:130,token:config.token,serverAddress:config.serverAddress,udpPort:config.udpPort,device:'\\Device\\NPF_{23187AD5-535E-4F65-A1B9-CFCBDD034DCD}'};
+ const cp=load.dir+'/wire-config-private.json';fs.writeFileSync(cp,JSON.stringify(c)+'\n',{flag:'wx'});
+ const source=fs.readFileSync(root+'/packet-parser.py','utf8')+'\n'+fs.readFileSync(root+'/server-wire-capture.py','utf8');
+ function run(name,file,args){const p=spawn(file,args,{windowsHide:true,stdio:['ignore','pipe','pipe']});let stdout='',stderr='';p.stdout.on('data',b=>{stdout+=b;assert.ok(Buffer.byteLength(stdout)<=1049000)});p.stderr.on('data',b=>stderr+=b);const timer=setTimeout(()=>p.kill(),136000);const done=new Promise(resolve=>p.once('close',code=>{clearTimeout(timer);fs.writeFileSync(load.dir+'/'+name+'-raw-private.json',JSON.stringify({code,stdout,stderr})+'\n',{flag:'wx'});let out;try{assert.equal(code,0,stderr);out=JSON.parse(stdout.trim().split(/\r?\n/).at(-1));assert.ok(out.passed);fs.writeFileSync(load.dir+'/'+name+'-private.json',JSON.stringify(out)+'\n',{flag:'wx'});resolve({passed:true,result:out})}catch(error){resolve({passed:false,error:String(error)})}}));return{p,done,ready:()=>stdout.includes('"ready": true')};}
+ const pc=run('pc-wire',python,['-X','utf8',root+'/pc-wire-capture.py',cp]);const server=run('server-wire','ssh',['-o','BatchMode=yes','-o','ConnectTimeout=8','sub2api-dallas','timeout -k 1 135 python3 -B -E -s -u -c '+q(source)+' '+q(JSON.stringify(c))]);
+ const due=performance.now()+8000;while((!pc.ready()||!server.ready())&&performance.now()<due)await new Promise(r=>setTimeout(r,30));assert.ok(pc.ready()&&server.ready(),'Both exact passive captures must be ready before NSS');
+ fs.writeFileSync(load.dir+'/wire-ready.json',JSON.stringify({passed:true,pcPid:pc.p.pid,sshPid:server.p.pid,routerTapAdded:false,seconds:130,nonPromiscuous:true,independentFiniteDeadlines:true})+'\n',{flag:'wx'});
+ return async()=>{const results=await Promise.all([pc.done,server.done]);assert.ok(results.every(x=>x.passed),'Wire receipt invalid; no loss-location conclusion');return {passed:true,pcRows:results[0].result.rows.length,serverRows:results[1].result.rows.length,pcCaptureDrops:results[0].result.pcapDropped,serverCaptureDrops:results[1].result.socketDrops}};
+}

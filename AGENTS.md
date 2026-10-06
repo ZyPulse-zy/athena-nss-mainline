@@ -1,3 +1,42 @@
+# Athena NSS v1 技术闭环完成并冻结；真人体感未验
+
+更新：2026-10-06 22:53，北京时间。NSS159为起点，本次为最终有界收尾，停止新增自动实验。
+
+**自动分类→单WAN NSS bulk/RT→真实CS2官方死斗＋现有Steam更新，完整20秒software→NSS→software已通过，ECM0→2→0。技术主线冻结；用户明确选择“目前无法接手，仅记录HUD”，因此不写`v1 functional acceptance complete`，严格的真人体感项保留未验。** 不再为这一项自动启动游戏、制造新负载或重复实验。
+
+WAN5一条真实Steam TCP BULK与一条CS2 UDP RT，程序socket归属、同query实际分类、双向四tag、完整ct mark `0x50000`、NAT和WAN affinity正确，六次续租通过。四个NSS FQ-CoDel leaf均有真实包，RT上下行drop0；bulk下行drop15。RT队列零drop不能证明端到端零丢包。UP60（bulk59/RT1）/DOWN30（bulk29/RT1），其余fallback950；没有把整台电脑或五WAN一起加速。
+
+| 最后真实负载窗口 | software A | NSS B | software A2 |
+|---|---:|---:|---:|
+| 秒数 / 帧数 | 20.05 / 41 | 20.05 / 41 | 20.03 / 41 |
+| ECM accelerated_count | 0 | 2 | 0 |
+| LAN4下行接口Mbps | 107.25 | 106.57 | 104.57 |
+| softirq % | 29.33 | 26.96 | 25.90 |
+| CPU busy % | 49.26 | 47.00 | 48.76 |
+| time_squeeze / softnet drop | 25 / 0 | 19 / 0 | 12 / 0 |
+
+本轮不宣称新CPU因果收益：B softirq并未低于A2。复用NSS128原七项可比条件已通过的约30Mbps上传证据：softirq10.034→5.246→10.393%，相对软件均值下降48.64%。不重复CPU门槛；该结论范围是历史单WAN受控短窗，不外推300Mbps或长期运行。
+
+| 实际CS2 HUD稀疏截图 | ping ms | 下行jitter ms | 下行Loss % | 下行Miss % |
+|---|---:|---:|---:|---:|
+| software A | 11 | 1 | 2.2 | 2.7 |
+| NSS B | 10 | 0 | 2.5 | 1.6 |
+| 恢复后 | 11 | 0 | 0 | 0 |
+
+截图在对应窗口内，时钟仅约2秒精度；A2 HUD缺失，无连续HUD遥测。软件路径更早出现15.2%下行Loss尖峰。NSS截图未显示明显额外恶化，未观察到断线或控制器异常；不能写零丢包、实际玩家无卡顿或完整真人验收通过。
+
+**NSS159连续36个UDP echo缺口：known limitation，当前无已证实v1 blocker，未修复、未定位。** 唯一有界定位中的source6.31写前拒绝、端点SSH启动超时与自然WAN不匹配全部保留；最后自有夹具仅software运行53.94秒，UDP2442/2527，尾部待返回不能当稳定丢包。这不是新的NSS复现实验，不能解释原WAN3的连续缺口。没有证据建立NSS/firmware/gate/lease系统性中断或控制器损坏；按照用户收敛标准停止gap支线，不再增加tap或故障模型。若以后出现稳定复现或真实游戏受损的明确证据，才重开blocker。
+
+内核gate、NSS158 native/QoS与实际二进制不变；只修复最终入口的有界程序socket读取及被误替换的历史NSS49字面路径，2137实际输入及冻结副本逐项SHA核验。checkpoint下载SHA/gzip、控制连接外PPID1独立回滚已在写前核验，payload73422/guardian8947满足原73728/9000上限，6/27/100/180秒与1MiB记录不放宽。原失败及早期客户端超时均保留。
+
+实验及最终原完整审核通过，source1.67秒，常驻NSS68/31767/17139、config581b5d46…c791d7不变，五路健康；ECM关闭全零，无事务/stage/state/实验模块。两物理原mq＋四fq_codel及保护配置恢复；自有端点/防火墙恢复。现有Forza更新完成、Steam0bps，临时100Mbps设置已恢复为原不限速/空值，精确客户端守护在恢复后撤销；CS2已断开测试服并目视回主菜单。未购买、重装或新增游戏下载，未永久启用NSS控制器。
+
+v1已知限制和v1.1/v2事项集中到BACKLOG。现有CAKE仅未加速流fallback/对照，不作为继续优化方向。**从现在起保持冻结，不开启NSS161+或重复准备；剩余真人体感仅等用户正常使用时确认，本次不要求继续挂机。**
+
+证据：[主线](evidence/nss160-mainline.json)、[真实指标](evidence/nss160-functional-metrics.json)、[缺口判断](evidence/nss160-gap-decision.json)、[历史CPU](evidence/nss160-historical-cpu-reuse.json)、[恢复](evidence/nss160-final-audit.json)、[客户端](evidence/nss160-client-restore.json)、[失败](evidence/nss160-failures.json)
+
+## NSS159及更早历史（不作为当前待办）
+
 # 真实下行功能闭环通过，实时质量仍有明确缺口
 
 更新：2026-10-06 19:48，北京时间。NSS159；本日20:00授权的晚间收尾。后台自有下载＋小UDP，没有操作桌面/Steam/CS2。

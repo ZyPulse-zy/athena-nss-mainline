@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "auditPurpose": "recovery",
+  "prelearningSchedulingRequested": false,
+  "nssAdmissionAllowed": false,
+  "originalLockedFreshnessPredicatesRetained": true,
+  "protectedConfigurationUnchanged": true,
+  "exactOwnedNativeAudit": true,
+  "selectors": 14,
+  "queryAge": 3.680000000167638,
+  "sequence": 825,
+  "ecmClosedAndZero": true,
+  "serviceEpochPinned": true,
+  "failedUnselectedWan4ProcessEpochMayChange": false,
+  "otherServiceChangesDuringExperimentAllowed": false,
+  "wan4ProcessOwnershipChecked": true,
+  "declaredAuthRepairExact": true,
+  "declaredManifestExact": true,
+  "allFiveHealthyWanBaseline": true,
+  "selectedWanStillRequiresOriginalNativePrerequisites": true,
+  "unknownRoutingDriftAllowed": false
+}

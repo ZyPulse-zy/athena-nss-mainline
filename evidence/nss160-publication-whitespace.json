@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "initialStagedDiffCheckPassed": false,
+  "exitCode": 1,
+  "originalError": "code/work/nss160/endpoint-firewall-guardian.py:119: new blank line at EOF.",
+  "commitChainStoppedBeforeCommit": true,
+  "sourcePath": "code/work/nss160/endpoint-firewall-guardian.py",
+  "sourceSha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+  "frozenSourceBytesUnchanged": true,
+  "exactPathAttributes": [
+    "/code/work/nss160/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof"
+  ],
+  "noGlobalWhitespaceRelaxation": true,
+  "productionChanges": false
+}

@@ -1,3 +1,17 @@
+# v1 冻结后的已知限制与 v1.1 / v2
+
+当前技术闭环完成，停止自动实验；真人体感由用户选择仅HUD而未验，不能伪写完整真人通过。
+
+- 已知限制：NSS159连续36个echo缺口无位置/因果/稳定复现证明，未修复；只有明确v1使用损害才重新升级blocker。
+- 稀疏CS2 HUD、缺失A2 HUD、软件原有Loss尖峰与没有真人主观反馈，限制体验结论。
+- 仅单WAN一TCP BULK＋一UDP RT，有界UP60/DOWN30；实验后NSS关闭，常驻分类器及CAKE fallback保留。
+- v1.1：正常用户体验确认；按真实需求考虑长期启用与支持范围。无需自动重放旧CPU/checkpoint/生命周期证明。
+- v1.1/v2：第二WAN、五WAN共享预算、Wi-Fi、autorate、完整CAKE语义、ECN、多流公平、300Mbps长压、重启恢复、极端crash/故障注入/race、更多根因调查。均不是当前v1 blocker。
+- bridge B-shaper、tc JSON、HTB dump、普通IFB/private MacVLAN直接挂NSS qdisc等兼容发现保留Issue/PR backlog，未提交上游。
+- 历史BULK→BE精确撤销/新epoch重学已由NSS138/139/158证明；下方旧“待验”说法属于历史，不能据此继续实验。
+
+## 旧支线记录（历史，不自动重开）
+
 # 暂存支线
 
 这些事项不能阻塞主线，也不代表确认的上游缺陷。

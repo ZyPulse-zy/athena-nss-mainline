@@ -1,3 +1,9 @@
+# Athena NSS v1 — frozen
+
+自动分类→单WAN双向NSS bulk/RT→真实CS2＋现有Steam更新的完整ABA已通过并恢复。技术闭环冻结；用户本次只允许记录HUD，真人体感未验。NSS159 echo缺口保留known limitation，不继续自动实验。详情见[STATE](docs/STATE.md)、[v1报告](reports/nss160-v1-report.html)、[限制及后续](docs/BACKLOG.md)。当前ECM关闭，未永久部署NSS控制器。
+
+## NSS159及更早历史
+
 # Athena NSS mainline
 
 最新[NSS159](evidence/nss159-mainline.json)：真实下行三段功能通过，NSS段36个UDP echo未返回，实时质量仍待定位；晚间全部恢复。先读[STATE](docs/STATE.md)。

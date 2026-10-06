@@ -1,0 +1,110 @@
+[
+  {
+    "passed": true,
+    "productionExecution": false,
+    "sourceManifest": {
+      "work/nss159/recovery-baseline-v2.mjs": "e0d284be6f4e0e8b31e866d02fc82e78ac5cdf1b56728a41ea3b70605d9e9a1a",
+      "work/nss160/application-filter.lua": "49f0b13aa0f1f3d6f2a596a9d798b0477879bccf5f0ebd7908b9d043c334f19e",
+      "work/nss160/application-ownership.mjs": "26aefed5a65adbff6ca1ec3ec45b3a34dc1b961a55c786f90389011d847e7013",
+      "work/nss160/capture-pair.mjs": "cd6f9dfe3f975308c6ad77a10d39c6f57be8d45b0e498f0c8bdcdbd7e13cf67f",
+      "work/nss160/client-watchdog.ps1": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "work/nss160/close-endpoint-v2.mjs": "02a08f93789c17a60d58124006a97ecafe1b622a75a9a0b5bb1c1bafcc11d068",
+      "work/nss160/current-audit-diagnostic.mjs": "1449705bf2e416fa56018e21af26c7ad5a10d596f0681d52febe5a8de8d63336",
+      "work/nss160/declared-baseline.mjs": "9763d456289dc7783dbaee45fb1e83896e2b7a8333b2393a4bc6172e248bc308",
+      "work/nss160/discover-peer.py": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "work/nss160/download-client.mjs": "64d9a7406273c27020d063c0a9157804b507fe3ae624021f99ae71b467226c0b",
+      "work/nss160/download-policy.mjs": "374574178ff1ab0ecd07a88bb78079439e20ca33b3acaadbd7b45a5fff5ebfcd",
+      "work/nss160/download-server.py": "1615d447dfccfdea1d84cf8b0694f5f90c1a6b3ddb97906c92c2bba218479063",
+      "work/nss160/endpoint-firewall-guardian.py": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "work/nss160/epoch-driver.mjs": "aea6b680aed31407e278e753b3d6f7626682fb0ef04832329824f96945539557",
+      "work/nss160/failed-wan-owner.lua": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "work/nss160/match-controlled.mjs": "6c2eaf3a73658160adc66ed53730b9d55209cdd89b4761c465f9f62214ed32a6",
+      "work/nss160/owned-load-policy.mjs": "7bc36f6c27d6312c18752315a1f921ef5c2db3b05126071aca7a19b3092ebbaf",
+      "work/nss160/packet-parser.py": "a1a8dc79ddc572928ee954c7250b862660bf4efbbd2c6b1d9dc61424b4e073ee",
+      "work/nss160/pc-wire-capture.py": "8017664d5aafed47ae5950424dfe3820918f3ca6336a71916455cdb8de3cea07",
+      "work/nss160/pilot-supervisor.mjs": "b20cb2eab80b136e942eeab9061dd1070411c61b7c45fdb7e268d0bcf6b589aa",
+      "work/nss160/prepare-bounded-entry.py": "cda37cc58b8002f141abbbed18509259d2399c95432e71fcf37180d4c084b8d2",
+      "work/nss160/prepare-real-entry.py": "7a66cf564d0726617e24b3e60076a3238001d61beb56eaba92d630cf131c10ad",
+      "work/nss160/probe-peer.py": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "work/nss160/qualify-v2.mjs": "665a37d59f06063feb6ed7467236619b3dc75f53e79a390b22a7f3b7ce10d270",
+      "work/nss160/qualify-v3.mjs": "9ba659f2867929b3007a68a9911228bac53cf179ec1c0108c61452751946e754",
+      "work/nss160/qualify.mjs": "929870624bbaaef4b9872a705db72aafe844386376154bfd66647f5cd1235214",
+      "work/nss160/read-controlled.mjs": "7319d445c52987756ca798516fd2b9d187b3537d8edcc74d52740eeb0f640ee3",
+      "work/nss160/read-current-health.mjs": "bec6b8198c8a2cdd7836137f0ea1f9949f148c4e1eedd7c441e1b975968705f3",
+      "work/nss160/read-real-candidates.mjs": "f769c7ddf4fa98be13cd590d393fe51cf4f99ac0bf3730197b7c1bdfbacc2338",
+      "work/nss160/real-session.mjs": "75ca0695beddb0841f4d8d89f018f1128f2d110a938787ff406412453ffa41e3",
+      "work/nss160/receiver.py": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "work/nss160/record-candidates.mjs": "4ec5bdd0a5f8b43cbb080bcb91ccc908d473787ad96f581d68e57415e8e561d2",
+      "work/nss160/server-wire-capture.py": "2c795a2ceff191cff8ccbd9b3df88dab11c296264f8793b56e71393898b97c22",
+      "work/nss160/server.py": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "work/nss160/session-binding.mjs": "430615fd013e802224271b5c90532b9dc3d5478348204b94a71fcfb597027fc1",
+      "work/nss160/start-dallas.mjs": "4c0f98cc90a6ee002dc72d11d448e160fdccb4ff399d745784f614c0fdc6b06e",
+      "work/nss160/test-packet-parser.py": "1387cbc989915bf9ca9f09348143e6175d68c59b1fca96766bd9464434813a2c"
+    },
+    "inheritedBindings": 2086,
+    "nativeUnchanged": true,
+    "v1ScopeFrozen": true,
+    "maximumGapHardwareAttempts": 1,
+    "lastRealHumanWindowOnly": true,
+    "wholeFactoryModelNotRepeated": true,
+    "historicalFunctionalAndCpuProofReused": true,
+    "originalBudgetsSeconds": [
+      6,
+      27,
+      100,
+      180
+    ],
+    "byteLimits": [
+      9000,
+      65536,
+      73728,
+      1048576
+    ],
+    "permanentDeployment": false
+  },
+  {
+    "passed": true,
+    "nativeUnchanged": true,
+    "v1ScopeFrozen": true,
+    "readonlyReaderOnlyChanged": true,
+    "applicationOwnershipUnchanged": true,
+    "limitsUnchanged": true,
+    "productionExecution": false,
+    "sourceManifest": {
+      "work/nss160/read-real-candidates-v2.mjs": "a0d71c6abda39bf9f46bf5f5de39a5f37924d66d9996ad08ab02ffa03d4002f1",
+      "work/nss160/record-candidates-v2.mjs": "f953a1b07ba5ddb67a8e0663f65a006e339b23e6ae1d9b2ac824bdbd5e052a23",
+      "work/nss160/real-session-v2.mjs": "31159ca14c777ff49a6994b876b1f37aeada309ddaa0997866cefd7af4c63e9b",
+      "work/nss160/session-binding-v2.mjs": "e48352ace040a72a04832dcc99a924ef6fa782cfcb75aaedc8913217e1f5ab69",
+      "work/nss160/qualify-v4.mjs": "5463a9c042e0619ead98abfcc69509b5c82cf12a10a74d8465e36048222ed3fc"
+    }
+  },
+  {
+    "passed": true,
+    "nativeUnchanged": true,
+    "v1ScopeFrozen": true,
+    "readonlyReaderOnlyChanged": true,
+    "applicationOwnershipUnchanged": true,
+    "limitsUnchanged": true,
+    "productionExecution": false,
+    "sourceManifest": {
+      "work/nss160/read-real-candidates-v3.mjs": "db574d06c9c464046901fa5655cf9e64c978c63195ca98206c12108e23d9bfba",
+      "work/nss160/record-candidates-v3.mjs": "9c3eb7dfac6f000d939885c24a00accdfd9d75bc0624a33418b7126d9971e948",
+      "work/nss160/real-session-v3.mjs": "7c975236c7f15da1ac6160c3ce8165ee3d1c457fff15d913872b6edce2d84f9f",
+      "work/nss160/session-binding-v3.mjs": "69fff5c2c93cad8326e0b37162c8b5fe0993b2e20ac561602fe66888e61093e0",
+      "work/nss160/qualify-v5.mjs": "3aa73cd8effaa783e353fa5a40ebe17ab09658afe4259613cc9e644c08cdbd7e",
+      "work/nss160/qualify-v6.mjs": "75b83fdc554c8c00136792eeffe022b6a197ac3957d20ee13eb363e3498da1f1"
+    }
+  },
+  {
+    "passed": true,
+    "nativeUnchanged": true,
+    "v1ScopeFrozen": true,
+    "originalHistoricalManifestLiteralRestored": true,
+    "productionExecution": false,
+    "sourceManifest": {
+      "work/nss160/real-session-v4.mjs": "428b923fcfa10390fdb53c33a636f3fa38166da63d3691783129e3ebc9009551",
+      "work/nss160/session-binding-v4.mjs": "a938cae338074a82dc083d12276b0bff57294617893aea736d2169fdebbe3dda",
+      "work/nss160/qualify-v7.mjs": "9a00025b488ed0f0cbb71c6b145f958fe905a2e461ac09279a09f91cdc9098ba"
+    }
+  }
+]

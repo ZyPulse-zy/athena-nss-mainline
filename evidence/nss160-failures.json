@@ -1,0 +1,62 @@
+[
+  {
+    "case": "initial-parser",
+    "originalFailurePreserved": true,
+    "impact": "offline packet parser preparation only"
+  },
+  {
+    "case": "initial-qualification",
+    "originalFailurePreserved": true,
+    "impact": "offline qualification/import mismatch; no connection"
+  },
+  {
+    "case": "bounded-source6.31",
+    "originalFailurePreserved": true,
+    "impact": "prewrite refusal; no NSS"
+  },
+  {
+    "case": "bounded-endpoint-launch-timeout",
+    "originalFailurePreserved": true,
+    "impact": "endpoint units absent after bounded cleanup; no NSS"
+  },
+  {
+    "case": "bounded-natural-WAN-mismatch",
+    "originalFailurePreserved": true,
+    "impact": "software load only; no NSS"
+  },
+  {
+    "case": "real-entry-v1-command-size",
+    "originalFailurePreserved": true,
+    "impact": "refused before connection; no size limit widened"
+  },
+  {
+    "case": "real-entry-v2-unfiltered-PC-sockets",
+    "originalFailurePreserved": true,
+    "impact": "native exact tuple/port subset filtering; original ownership limit unchanged"
+  },
+  {
+    "case": "qualify-v5-import",
+    "originalFailurePreserved": true,
+    "impact": "missing not-yet-generated binding-v3; fixed qualify-v6 only"
+  },
+  {
+    "case": "real-entry-v3-NSS49-literal",
+    "originalFailurePreserved": true,
+    "impact": "checkpoint/NSS stage not reached; original literal restored in v4"
+  },
+  {
+    "case": "real-entry-v3-after-audit-stale",
+    "originalFailurePreserved": true,
+    "impact": "read-only audit refused; later original full audit passed"
+  },
+  {
+    "case": "earlier-Steam-guard-expiry",
+    "originalFailurePreserved": true,
+    "impact": "independent exact timeout closed old Steam/CS2; UI restoration not claimed then; final separate UI/guard restored"
+  },
+  {
+    "case": "optional-evidence-file-lookup",
+    "originalFailurePreserved": true,
+    "impact": "read-only filename guesses failed; actual names discovered; no submit chain started"
+  }
+]

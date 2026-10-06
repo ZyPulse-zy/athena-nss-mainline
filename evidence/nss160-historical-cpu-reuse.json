@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "historicalEvidenceReused": "evidence/nss128-comparison.json",
+  "historicalEvidenceSha256": "7d2169dda345e5df541e12b3c5dd7fc2507f650e0290a78db0e0d9bd5a1b9037",
+  "softirqRelativeReductionPercent": 48.64018898472623,
+  "scope": "single controlled TCP upload at about 32Mbps; UP60/DOWN30; one UDP probe; short twenty-second phases",
+  "newCpuExperimentRequired": false,
+  "currentFinalTrialCpuCausalConclusion": null,
+  "not300MbpsLongTermOrAllFlowEvidence": true
+}
