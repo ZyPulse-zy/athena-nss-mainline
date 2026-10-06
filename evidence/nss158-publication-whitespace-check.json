@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "check": "git diff --cached --check",
+  "exitCode": 1,
+  "stdout": "code/work/nss157/endpoint-firewall-guardian.py:119: new blank line at EOF.\ncode/work/nss157/fast-path-v2.lua:223: trailing whitespace.\n+  \ncode/work/nss157/fast-path.lua:224: trailing whitespace.\n+  \ncode/work/nss158/fast-path.lua:223: trailing whitespace.\n+  \n",
+  "commitAndPushStopped": true,
+  "frozenSourceBytesChanged": false,
+  "exactPathAttributes": [
+    "code/work/nss157/endpoint-firewall-guardian.py",
+    "code/work/nss157/fast-path-v2.lua",
+    "code/work/nss157/fast-path.lua",
+    "code/work/nss158/fast-path.lua"
+  ],
+  "sourceHashesStillMatch": true,
+  "repairSource": "work/nss158/reporting/preserve-frozen-whitespace.py",
+  "repairSourceSha256": "6193f6e5f8d8d7c75cca88317d041e2bbb1b59d3e4649d5516c76755bbd203bf"
+}

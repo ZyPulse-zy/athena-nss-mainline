@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import {buildPayload} from './payload.mjs';
+const root='work/nss158';
+const ref=JSON.parse(fs.readFileSync('work/nss157/pilot-change-20261006095750-870d9521f64bee9a/second-case-private.json'));
+const input=JSON.parse(fs.readFileSync(ref.dir+'/stage-plan-private.json'));
+const sources={qos:'work/nss149/qos-physical.lua',phase:'work/nss69/core-guard-phase.lua',classifier:'work/nss157/classifier-complete-wait.lua',tags:'work/nss49/classified-tags.lua',normalizer:'work/nss149/tag-normalizer.lua'};
+const built=buildPayload(input,Object.fromEntries(Object.entries(sources).map(([k,p])=>[k,fs.readFileSync(p,'utf8')])));
+const bytes=Buffer.byteLength(built.stagedCode);
+const result={passed:bytes<=73728,historicalInput:true,actualEncodedBytes:bytes,maximumBundleBytes:73728,previousActualBundleBytes:input.qosCodeBytes,productionExecuted:false,routerConnected:false,fastSourceSha256:crypto.createHash('sha256').update(fs.readFileSync(root+'/fast-path.lua')).digest('hex')};
+fs.writeFileSync(root+'/historical-size.json',JSON.stringify(result,null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify(result));
+assert.ok(result.passed,'Candidate exceeds the unchanged bundle limit; preserved and not sent');

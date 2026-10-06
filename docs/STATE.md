@@ -1,3 +1,38 @@
+# 改类撤销与重学整合通过，完整三段对照已完成
+
+更新：2026-10-06 18:33，北京时间。最新NSS158，合并封存NSS157真实生命周期。未操作桌面、Steam或CS2。
+
+**自动分类→双向NSS bulk/RT leaf已在新整合版本完成真实20秒software→NSS→software。另一次实际暂停自有TCP发送造成BULK→BE/cooldown，完整同query仅TCP受影响；精确撤销TCP CI，ECM2→1且原UDP CI/tag保持，再结束旧代0。原TCP socket/CT与UDP继续，新query/checkpoint/owner/kernel pin和不同两个CI重学20.01秒2→0。**
+
+改类后WAN3上传30.384Mbps，softirq5.396%、UDP771/771、四leaf drop0与squeeze/drop0；没有软件对照，不宣称CPU收益。NSS158同WAN5三段各20.00/20.01/20.01秒：
+
+| 指标 | software A | NSS B | software A2 |
+|---|---:|---:|---:|
+| 服务器确认上传 Mbps | 30.767 | 30.101 | 30.426 |
+| softirq % | 10.242 | 1.283 | 7.122 |
+| CPU busy % | 26.422 | 17.053 | 23.548 |
+| UDP收/发 | 855/855 | 861/861 | 824/824 |
+| UDP echo RTT p95 ms | 181.700 | 181.718 | 181.736 |
+| time_squeeze / softnet drop | 0/0 | 0/0 | 0/0 |
+
+**功能闭环通过，CPU可比性未通过。** 原七项条件保留，仅五项通过：其它WAN背景1.956/1.648/1.981Mbps超原0.5Mbps上限且波动0.333Mbps超0.25Mbps。相对CPU收益null，不放宽条件或重试追门槛。物理WAN RX drop A/A2各1、B0也保留；UDP echo不是CS2 jitter/loss/Miss。本轮约30Mbps受控上传，下行主要ACK和小UDP，没有300Mbps下载、真人、长期稳定或拥塞AQM验收。
+
+定位两项兼容问题后只改实验入口：常驻classification投影比完整snapshot同query先400–550ms；完整证据最多等.65秒/15次且保留旧lease .5秒余量，最后一份完整query独立比较，不混旧事实、不延长source6秒。实际jsonc重复引用同对象导致class记录null，原run11精确native撤销通过但host整体失败保留；新版本只存一次完整对象并用字段名引用，9项实际改动函数RAM模型及随后真实完整pilot通过。14项完整读取RAM检查属于局部模型，整套factory模型未运行。
+
+新整合close四次整体失败：两次在真实ECM2关闭TCP并恢复旧pair成功，后继四软件TCP未匹配固定UDP WAN，没有新stage；另外两次初始不匹配、没有stage。最后TCP走WAN2/2/5/5、UDP留WAN1；只证明准入不匹配，未证明PBR故障，不盲重试、强制换WAN或扩大端口。NSS156旧版本新TCP重学成功仍保留，不能代替新整合版本后继通过。
+
+所有八个实际stage的完整绑定/冻结输入核验、checkpoint下载SHA/gzip、写前PPID1独立超时恢复与精确恢复通过。分类pilot2020、ABA2042绑定；source6/native27/owner100/client180、9000/65536/73728/1MiB不变；一健康WAN仅一TCP BULK＋一UDP RT，软件准备共享32Mbps/64KiB、最多8端口。PBR/完整ct mark/NAT/affinity和NSS68常驻配置未改。
+
+终态source3.62秒，NSS68/31657/17139健康，ECM关闭全零，无事务/stage/state/模块；两物理原mq+四fq_codel恢复，46历史端点/客户端/自有接收器全关闭。WAN4自然exec-minieap仍down、四路failover保持，未主动认证。
+
+下一步只完善新整合控制器的可部署生命周期和最后集中真人验证；不把有限pilot称为永久NSS部署，不扩第二WAN/共享预算/WiFi/autorate。继续本日授权到20:00；19:40最终只读收尾，19:50不新开生产实验，完成推送/archive后暂停heartbeat。凭据/完整CT/nonce/配置/checkpoint/二进制仅本地，仓库按用户新偏好保持public。
+
+证据：[主线](../evidence/nss158-mainline.json)、[改类实测](../evidence/nss158-class-lifecycle.json)、[三段数据](../evidence/nss158-aba-metrics.json)、[可比性](../evidence/nss158-aba-comparison.json)、[失败](../evidence/nss158-failures.json)、[入口](../evidence/nss158-qualification.json)、[完整恢复](../evidence/nss158-final-audit.json)、[端点](../evidence/nss158-endpoint-client-closure.json)
+
+首次暂存whitespace检查在提交前拒绝，提交/推送链已停止；保留原失败，只给四个固定冻结源码加路径专属blank-at-eof/blank-at-eol属性，原源码SHA不变。见 [格式检查证据](../evidence/nss158-publication-whitespace-check.json)。
+
+## NSS156及更早历史
+
 # 真实TCP退出、新TCP与原UDP重学通过
 
 更新：2026-10-06 16:38，北京时间。最新NSS156。后台自有流量，未操作桌面/Steam/CS2。

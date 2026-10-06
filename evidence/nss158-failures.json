@@ -1,0 +1,128 @@
+[
+  {
+    "case": "NSS157-run1",
+    "wholePilotPassed": false,
+    "cause": "Declared audit helper missing before fixture/checkpoint/stage",
+    "firstEpochStarted": false,
+    "originalFailureRecordSha256": "db1fc3c556f757c0e30fbb673414cd9bb5bc6432cf0fcd5de9ce1910ba349ba0",
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-run3",
+    "wholePilotPassed": false,
+    "cause": "First partial endpoint marker retained old namespace; refused before firewall/client/checkpoint",
+    "firstEpochStarted": false,
+    "originalFailureRecordSha256": "e952d4388c66605ae2a3c2a4ce5e840beee35fc5a20792872fe5c7c4945ade99",
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-run5",
+    "wholePilotPassed": false,
+    "cause": "Projection and full diagnostic query differ; old pair restored; first post-audit also refused transient WAN4 state",
+    "firstEpochStarted": true,
+    "originalFailureRecordSha256": "5a9e914fbb578177ed7b986b2b8ffcdb6daf33bc3c4e146da1d579b85795c606",
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-run7",
+    "wholePilotPassed": false,
+    "cause": "Four software TCP candidates had no same-WAN pair; no stage",
+    "firstEpochStarted": false,
+    "originalFailureRecordSha256": "013b77bcb496e5e4880cff91d51e4db3bd835c9d48218def2560d328a8fe2cf1",
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-run9",
+    "wholePilotPassed": false,
+    "cause": "Full read lagged projection; exact-class evidence unavailable; old pair restored",
+    "firstEpochStarted": true,
+    "originalFailureRecordSha256": "5a9e914fbb578177ed7b986b2b8ffcdb6daf33bc3c4e146da1d579b85795c606",
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-run11",
+    "wholePilotPassed": false,
+    "cause": "Actual target jsonc alias made class record null; native exact CI retirement passed but host pipeline failed",
+    "firstEpochStarted": true,
+    "originalFailureRecordSha256": "479025f39ecb73b8bf890a7c288a5ed6c5cea63a106e7647843defe41df2d658",
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-run13",
+    "wholePilotPassed": false,
+    "cause": "Four software candidates did not match fixed UDP WAN; no stage",
+    "firstEpochStarted": false,
+    "originalFailureRecordSha256": "013b77bcb496e5e4880cff91d51e4db3bd835c9d48218def2560d328a8fe2cf1",
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-run15",
+    "wholePilotPassed": false,
+    "cause": "Both finite software cohorts did not match fixed UDP WAN; no stage",
+    "firstEpochStarted": false,
+    "originalFailureRecordSha256": "c8a8464b24db1154396863ee6217ce31f0af45076210d6261aa8bd3ef85a00bd",
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-pilot-close-20261006100153-8d246782531e8587",
+    "wholePilotPassed": false,
+    "cause": "Finite original or successor software TCP cohort does not match the fixed UDP WAN",
+    "oldPairExitAndRestorePassed": false,
+    "newSuccessorEpochStarted": false,
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-pilot-close-20261006100622-ae7851105343aad2",
+    "wholePilotPassed": false,
+    "cause": "Finite original or successor software TCP cohort does not match the fixed UDP WAN",
+    "oldPairExitAndRestorePassed": true,
+    "newSuccessorEpochStarted": false,
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-pilot-close-20261006101118-776f414c8e053a93",
+    "wholePilotPassed": false,
+    "cause": "Finite original or successor software TCP cohort does not match the fixed UDP WAN",
+    "oldPairExitAndRestorePassed": false,
+    "newSuccessorEpochStarted": false,
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "NSS157-pilot-close-20261006102552-f1fcffd313c2b144",
+    "wholePilotPassed": false,
+    "cause": "Finite original or successor software TCP cohort does not match the fixed UDP WAN",
+    "oldPairExitAndRestorePassed": true,
+    "newSuccessorEpochStarted": false,
+    "originalSourceAndPrivateEvidencePreserved": true
+  },
+  {
+    "case": "publication-order-v1",
+    "cause": "Atomic publication inode changed during first read; original read refused; v2 records without mixing frames",
+    "productionWrite": false
+  },
+  {
+    "case": "qualification-current-full-v1/v2/v5",
+    "cause": "Three offline input/dependency assertions refused before production; original sources and errors retained",
+    "productionWrite": false
+  },
+  {
+    "case": "endpoint-audit-v2",
+    "cause": "Startup summary has no unit; refused before remote connect; v3 resolves same owned runtime-250 receipt",
+    "productionWrite": false
+  },
+  {
+    "case": "NSS158-size-model-v1",
+    "cause": "Stored plan lacked tag packet AST; reconstructed only from actual same complete input; prior exact payload matched",
+    "productionWrite": false
+  },
+  {
+    "case": "NSS158-qualification-v1/v2",
+    "cause": "Dependency scanner inspected Python replacement text, then a declared-baseline helper was missing; refused before connect and fixed in new sources",
+    "productionWrite": false
+  },
+  {
+    "case": "NSS158-analysis-v1",
+    "cause": "Local pretty record exceeded 1MiB; native compact record was within original 1MiB and target reader had passed; v2 fixes local analysis accounting only",
+    "productionWrite": false
+  }
+]

@@ -1,0 +1,13 @@
+from pathlib import Path
+r=Path(__file__).resolve().parent;s=(r/'publish-order.mjs').read_text(encoding='utf-8')
+s=s.replace("v=process.argv[2]??'v1'", "v=process.argv[2]??'v2'")
+s=s.replace("assert(a.type=='reg'and a.uid==0 and a.nlink==1)","assert(a.type=='reg'and a.uid==0 and a.nlink==1,'File ownership/type')")
+s=s.replace("assert(#s<=cap)","assert(#s<=cap,'File length')").replace("assert(a.ino==b.ino and a.dev==b.dev)","assert(a.ino==b.ino and a.dev==b.dev,'Atomic publication changed during read')").replace("return assert(j.parse(s))", "return assert(j.parse(s),'JSON parse')")
+s=s.replace("for i=1,24 do local a=", "for i=1,24 do local ok,row=pcall(function()local a=")
+s=s.replace("rows[#rows+1]={at=now()", "return{at=now()")
+s=s.replace("completeAge=now()-q.startedAtUptime};n.nanosleep", "completeAge=now()-q.startedAtUptime}end);rows[#rows+1]=ok and row or{at=now(),readFailed=true,error=tostring(row)};n.nanosleep")
+s=s.replace("x.rows.every(v=>v.sameProducer)","x.rows.filter(v=>!v.readFailed).every(v=>v.sameProducer)")
+s=s.replace("const gaps=x.rows.filter(v=>v.projectionQuery!==v.completeQuery)","const gaps=x.rows.filter(v=>!v.readFailed&&v.projectionQuery!==v.completeQuery)")
+s=s.replace("rows:24,differentQueryRows", "rows:24,readFailures:x.rows.filter(v=>v.readFailed),differentQueryRows")
+p=r/'publish-order-v2.mjs';assert not p.exists();p.write_text(s,encoding='utf-8',newline='')
+print('Failed atomic-read observation retained; each of 24 independent observations now records exact read failure.')

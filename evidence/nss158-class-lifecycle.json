@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "wan": 3,
+  "ecmSequence": [
+    0,
+    2,
+    1,
+    0,
+    2,
+    0
+  ],
+  "actualClassesAfterPause": {
+    "tcp": "BE",
+    "udp": "RT"
+  },
+  "affectedSlots": [
+    "tcp"
+  ],
+  "sameSingleCompleteQueryEvidence": true,
+  "completeReadCount": 2,
+  "completeWaitSeconds": 0.21000000042840838,
+  "targetTcpCiAbsentAndOriginalUdpCiTagsRetained": true,
+  "oldPairRestoredBeforeNewEpoch": true,
+  "sameTcpSocketCtAndOriginalUdp": true,
+  "freshQueryCheckpointOwnerPinsBothCis": true,
+  "oldGateNotReopened": true,
+  "exactRetirementAndNewEpochBothPassed": true,
+  "metrics": {
+    "phase": "NSS upload lifecycle",
+    "seconds": 20.010000000242144,
+    "sampleCount": 41,
+    "serverConfirmedTcpUploadMbps": 30.384449282817233,
+    "busyPercent": 20.06188118811881,
+    "softirqPercent": 5.396039603960396,
+    "timeSqueezeDelta": 0,
+    "softnetDropDelta": 0,
+    "nativeRenewals": 7,
+    "udp": {
+      "sent": 771,
+      "received": 771,
+      "unreturned": 0,
+      "rttP50Ms": 200.5448000000033,
+      "rttP95Ms": 201.48500000000058,
+      "rttMaxMs": 210.33510000001115,
+      "rttVariationMeanAbsoluteDeltaMs": 0.5413871428569063,
+      "cs2Metric": false
+    },
+    "nssLeavesNearbyAsynchronousSnapshots": {
+      "down": {
+        "8f05:": {
+          "bytes": 730542,
+          "packets": 12961,
+          "dropped": 0,
+          "overlimits": 0
+        },
+        "8f06:": {
+          "bytes": 131750,
+          "packets": 775,
+          "dropped": 0,
+          "overlimits": 0
+        }
+      },
+      "up": {
+        "8e05:": {
+          "bytes": 77158150,
+          "packets": 55959,
+          "dropped": 0,
+          "overlimits": 0
+        },
+        "8e06:": {
+          "bytes": 128520,
+          "packets": 756,
+          "dropped": 0,
+          "overlimits": 0
+        }
+      }
+    },
+    "interfaces": {
+      "rpwan3": {
+        "rxMbps": 0.3061001499213333,
+        "txMbps": 29.550992903190625,
+        "rxPps": 638.4307845999704,
+        "txPps": 2723.238380776641
+      },
+      "rpwan2": {
+        "rxMbps": 0.7882850574617252,
+        "txMbps": 0.07412093952933793,
+        "rxPps": 77.7111444268457,
+        "txPps": 65.46726636602436
+      },
+      "rpwan1": {
+        "rxMbps": 0.19818490754382861,
+        "txMbps": 0.4524193902993728,
+        "rxPps": 74.01299350235273,
+        "txPps": 85.15742128832483
+      },
+      "rpwan5": {
+        "rxMbps": 0.021019890054718146,
+        "txMbps": 0.024260269864773892,
+        "rxPps": 16.641679160218406,
+        "txPps": 11.844077960876163
+      },
+      "rpwan4": {
+        "rxMbps": 0.0009595202398684487,
+        "txMbps": 0.0007556221888964034,
+        "rxPps": 1.9990004997259347,
+        "txPps": 2.2488755621916767
+      },
+      "lan4": {
+        "rxMbps": 31.819611793717893,
+        "txMbps": 0.5134056971452116,
+        "rxPps": 2934.432783572686,
+        "txPps": 695.6021988921322
+      },
+      "wan": {
+        "rxMbps": 1.4592039979833415,
+        "txMbps": 32.33118720600556,
+        "rxPps": 843.6781609093308,
+        "txPps": 3084.1079459896655
+      }
+    },
+    "direction": "upload",
+    "tcpMetric": "server-confirmed received bytes",
+    "selectedWan": 3,
+    "sameLoadSoftwareNssSoftwareComparison": false,
+    "causalCpuReductionPercent": null,
+    "cs2Acceptance": false,
+    "permanentController": false,
+    "highLoad300Mbps": false,
+    "clockUncertaintyMs": 54.99995231628418
+  },
+  "matchedCpuComparison": false,
+  "cs2Acceptance": false
+}

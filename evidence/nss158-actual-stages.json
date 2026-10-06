@@ -1,0 +1,170 @@
+[
+  {
+    "epoch": "automatic-epoch-20261006090432-7899aa6d",
+    "round": "nss157",
+    "boundInputs": 1961,
+    "nativeResultPassed": false,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73519,
+    "guardianExecBytes": 8943,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "firmwareZeroAndPhysicalQueuesRestored": true,
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "rawRecordSha256": "3e089f33db9f5325162257f752b5fd40d4bff6bc6e34a33e6b2bbccde4ea8a95"
+  },
+  {
+    "epoch": "automatic-epoch-20261006092745-7a83c626",
+    "round": "nss157",
+    "boundInputs": 1982,
+    "nativeResultPassed": false,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73556,
+    "guardianExecBytes": 8931,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "firmwareZeroAndPhysicalQueuesRestored": true,
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "rawRecordSha256": "d6b3325e63e9394f576eb7894efc6a3b8b935fc9932970b883dd4a753904e7e1"
+  },
+  {
+    "epoch": "automatic-epoch-20261006093926-ac64f9f1",
+    "round": "nss157",
+    "boundInputs": 1995,
+    "nativeResultPassed": true,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73265,
+    "guardianExecBytes": 8931,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "firmwareZeroAndPhysicalQueuesRestored": true,
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "rawRecordSha256": "7b3990b422227ac717f793014c5ba73d4d2eafd185de91762ad3e721a6e07d71"
+  },
+  {
+    "epoch": "automatic-epoch-20261006095836-6f04bcf9",
+    "round": "nss157",
+    "boundInputs": 2020,
+    "nativeResultPassed": true,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73330,
+    "guardianExecBytes": 8939,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "firmwareZeroAndPhysicalQueuesRestored": true,
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "rawRecordSha256": "5c91564b63832d4b863b799dee57369cf2f1c16d7f1b244ff0e7e1da5381f834"
+  },
+  {
+    "epoch": "automatic-epoch-20261006095928-22a52e9c",
+    "round": "nss157",
+    "boundInputs": 2020,
+    "nativeResultPassed": true,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73330,
+    "guardianExecBytes": 8939,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "firmwareZeroAndPhysicalQueuesRestored": true,
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "rawRecordSha256": "f64a0b58b565f4053fbba100af8b48904fbefc05ea8c6a9669d8a1a5187b74b0"
+  },
+  {
+    "epoch": "automatic-epoch-20261006100705-ba7d7b99",
+    "round": "nss157",
+    "boundInputs": 2020,
+    "nativeResultPassed": true,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73330,
+    "guardianExecBytes": 8939,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "firmwareZeroAndPhysicalQueuesRestored": true,
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "rawRecordSha256": "ad274479d7709edbb6d394ef694ca6e27487f32f453f96e97c3e7371a90f5071"
+  },
+  {
+    "epoch": "automatic-epoch-20261006102636-615a1892",
+    "round": "nss157",
+    "boundInputs": 2020,
+    "nativeResultPassed": true,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73330,
+    "guardianExecBytes": 8931,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "firmwareZeroAndPhysicalQueuesRestored": true,
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "rawRecordSha256": "7dc12a58cbbe8173d11c0465e36d066d1c88777a3537d69e7d3d4cacd5642e69"
+  },
+  {
+    "epoch": "automatic-epoch-20261006101825-5d670b0d",
+    "round": "nss158",
+    "boundInputs": 2042,
+    "nativeResultPassed": true,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73426,
+    "guardianExecBytes": 8951,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "firmwareZeroAndPhysicalQueuesRestored": true,
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "rawRecordSha256": "79beada51010d6acc3680365c02af471d2a61ba1992cd29ce77bae6937a584d4"
+  }
+]

@@ -61,3 +61,12 @@
 /code/work/nss156/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
 /code/work/nss156/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /evidence/nss155-runtime.json -text
+
+# Frozen actual NSS156 runtime bytes.
+/evidence/nss156-runtime.json -text
+
+# Preserve the four exact frozen NSS157/158 sources after failed staged check.
+/code/work/nss157/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/nss157/fast-path-v2.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/nss157/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/nss158/fast-path.lua whitespace=cr-at-eol,-blank-at-eol

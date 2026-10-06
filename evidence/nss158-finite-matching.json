@@ -1,0 +1,51 @@
+{
+  "readonly": true,
+  "lastFullFrameSha256": "3920af88dc44fbb7b88ba12d154e1406bb3c80d04dbc8d1763065a1e3192cdb2",
+  "lastTcpWans": [
+    2,
+    2,
+    5,
+    5
+  ],
+  "lastUdpWans": [
+    1
+  ],
+  "lastSameWanPairs": 0,
+  "pbrChanged": false,
+  "forcedWanOrExpandedPorts": false,
+  "rootCauseProven": false,
+  "closePilots": [
+    {
+      "trial": "pilot-close-20261006100153-8d246782531e8587",
+      "wholePilotPassed": false,
+      "initialEpochStarted": false,
+      "newSuccessorEpochStarted": false
+    },
+    {
+      "trial": "pilot-close-20261006100622-ae7851105343aad2",
+      "wholePilotPassed": false,
+      "initialEpochStarted": true,
+      "newSuccessorEpochStarted": false,
+      "wan": 3,
+      "oldPairExitPassed": true,
+      "oldPairFirmwareZero": true,
+      "independentRestorePassed": true
+    },
+    {
+      "trial": "pilot-close-20261006101118-776f414c8e053a93",
+      "wholePilotPassed": false,
+      "initialEpochStarted": false,
+      "newSuccessorEpochStarted": false
+    },
+    {
+      "trial": "pilot-close-20261006102552-f1fcffd313c2b144",
+      "wholePilotPassed": false,
+      "initialEpochStarted": true,
+      "newSuccessorEpochStarted": false,
+      "wan": 1,
+      "oldPairExitPassed": true,
+      "oldPairFirmwareZero": true,
+      "independentRestorePassed": true
+    }
+  ]
+}

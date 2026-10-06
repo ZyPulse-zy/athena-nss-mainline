@@ -1,0 +1,15 @@
+{
+  "readonly": true,
+  "observations": 24,
+  "projectionAheadOneQueryObservations": 6,
+  "sameQueryFullPublishAfterProjectionSecondsRange": [
+    0.39999999990686774,
+    0.5499999998137355
+  ],
+  "permanentClassifierChanged": false,
+  "maximumCompleteWaitSeconds": 0.65,
+  "maximumCompleteReads": 15,
+  "oldEpochLeaseReserveSeconds": 0.5,
+  "querySourceSecondsNotExtended": true,
+  "factsTakenFromSingleFinalFullQuery": true
+}
