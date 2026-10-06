@@ -1304,7 +1304,7 @@ assert proof142['historicPrefixSources']==1885 and proof142['sources']==7 and le
 assert proof142['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1885],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 assert len(proof142['sourceHashes'])==7 and proof142['preparedBindings']==1385 and proof142['preparedInputsCurrentAndPreviouslyFrozenMatch']and proof142['privateHostBootstrapExcluded']and proof142['credentialsCtNoncesConfigurationCheckpointsAndBinariesExcluded']and proof142['originalFailuresKept']
 for source,digest in proof142['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-x142=json.loads((root/'evidence/nss142-mainline.json').read_text());rt142=json.loads((root/'evidence/current-runtime.json').read_text())
+x142=json.loads((root/'evidence/nss142-mainline.json').read_text());rt142=json.loads((root/'evidence/nss142-runtime.json').read_text())
 assert x142['round']==rt142['round']=='NSS142'and x142['preparedBindings']==rt142['preparedRealEntryBoundInputs']==1385
 assert all(x142[k]for k in ['morningClosureAfterBeijing0940','readonlyOnly','originalFullLockedNativeAuditPassed','bothPhysicalRootsExact','endpointsAndClientsClosed','currentAndPreviouslyFrozenInputsExact','residentUpTagZeroUnchanged','knownWan4AuthenticationFailureStillPresent','existingFourWanAutomaticFailoverExact','localToolSyntaxRejectionPreserved','historicEvidenceAndFailuresKept','pauseThisNightHeartbeatImmediatelyAfterPublishedArchiveVerification'])
 assert not any(x142[k]for k in ['residentClassifierChanged','productionWrites','checkpointOrStageStarted','ecmOpened','modelsReplayed','newHardwareAbaProof','newCpuComparison','humanCs2Acceptance','steamDownloadOperated','desktopOperated','nssPermanentlyEnabled','fullCakeReplacementAccepted'])
@@ -1321,4 +1321,108 @@ for f in reader142['files']:
  old=(root/'code/work/nss141'/f['file']).read_bytes();new=(root/'code/work/nss142'/f['file']).read_bytes()
  assert f['namespaceOnlyChange']and hashlib.sha256(old).hexdigest()==f['priorSha256']and hashlib.sha256(new).hexdigest()==f['sha256']and new.replace(b'work/nss142',b'work/nss141')==old
 fail142=json.loads((root/'evidence/nss142-failures.json').read_text());assert len(fail142)==1 and not fail142[0]['passed']and fail142[0]['originalFailurePreserved']and not fail142[0]['nestedToolsDispatched']and not fail142[0]['routerAuditStarted']and not fail142[0]['productionWrites']
+proof148=json.loads((root/'evidence/nss148-source-proof.json').read_text())
+assert proof148['historicPrefixSources']==1892
+assert proof148['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1892],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+assert proof148['sources']==len(proof148['sourceHashes']) and len(manifest['sources'])==1892+proof148['sources']+1
+assert proof148['sourcesByRound']=={'143':7,'144':21,'145':23,'146':45,'147':37,'148':9}
+assert all(proof148[k]for k in ['sourceBindingsActualAndFrozenMatch','privateHostBootstrapExcluded','credentialsCtNoncesConfigurationCheckpointsAndBinariesExcluded','historicFilesExceptCurrentRuntimeAllBytesRetained','originalFailuresKept','wholeFactoryRamAbaNotClaimed','actualWholeFactoryHardwareAbaPassed'])
+assert proof148['boundInputsInActualControlledCase']==1518 and proof148['realPreparedBoundInputs']==1527
+for source,digest in proof148['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+rt148=json.loads((root/'evidence/current-runtime.json').read_text());x148=json.loads((root/'evidence/nss148-mainline.json').read_text())
+assert rt148['round']==x148['round']=='NSS148'
+assert rt148['historical142RuntimePreservedSha256']==proof148['oldNss142RuntimeRetainedExactSha256']==hashlib.sha256((root/'evidence/nss142-runtime.json').read_bytes()).hexdigest()
+assert rt148['workerPid']==31657 and rt148['guardianPid']==17139 and rt148['classifierConfigSha256']==rt142['classifierConfigSha256']
+assert rt148['qualifiedExperimentalEntry']=='work/nss147/controlled-session.mjs' and rt148['qualifiedExperimentalEntryBoundInputs']==1518
+assert rt148['preparedRealEntry']=='work/nss148/real-session.mjs' and rt148['preparedRealEntryBoundInputs']==1527
+assert rt148['controlledExperimentalFactoryHardwareAbaPassed'] and not rt148['preparedRealEntryHardwareAbaTested']
+assert all(x148[k]for k in ['backgroundOwnedTcpAndUdpUsed','controlledHardwareAbaPassed','realDefaultInspectExecuted','residentUpTagZeroUnchanged','actualClassToFourTagsAndFourLeaves','pbrFullCtMarkNatWanAffinityUnchanged','rollbackAndAllEndpointsClosed','harnessBugRootCauseProved','oldNativeEpochOnlyBypassedWhenBothFrontendsStoppedAndEcmAllZero','sourceAndActiveNativeDeadlinesNotWidened','originalFailuresKept','nightHeartbeatRemainsPaused'])
+assert not any(x148[k]for k in ['residentClassifierChanged','desktopOperatedThisBackgroundTest','steamOrCs2OperatedThisBackgroundTest','preparedRealWrapperHardwareAbaPassed','newCpuComparisonAccepted','humanCs2Acceptance','highLoad300MbpsAcceptance','longTermAcceptance','fullCakeReplacementAccepted','productionNssPermanentlyEnabled','upstreamNssDefectClaimed','upstreamSubmitted'])
+assert not rt148['nssPermanentlyEnabled'] and not rt148['realHumanGameAcceptance'] and not rt148['newCpuComparisonAcceptedThisTurn'] and rt148['nightHeartbeatRemainsPaused']
+t148=json.loads((root/'evidence/nss148-trial.json').read_text())
+assert t148['round']=='NSS147' and t148['passed'] and t148['controlledRealWanPair'] and not t148['realCs2SteamPair']
+assert t148['oneWan']==5 and t148['tcpClass']=='BULK' and t148['udpClass']=='RT'
+assert t148['frames']==123 and t148['nativeRenewals']==7 and t148['sourceBindingsActualAndFrozen']==1518
+assert t148['guardianExecBytesActual']==8899 and t148['packetBundleBytesActual']==73686
+assert (t148['sourceMaximumSeconds'],t148['nativeMaximumSeconds'],t148['ownerMaximumSeconds'],t148['recordReadMaximumBytes'])==(6,27,100,1048576)
+assert [p['name']for p in t148['phases']]==['A','B','A2']
+assert [p['acceleratedCounts']for p in t148['phases']]==[[0],[2],[0]]
+assert all(p['completed']and 20<=p['seconds']<21.5 and p['samples']==41 for p in t148['phases'])
+assert all(t148[k]for k in ['newCheckpointDownloadedShaAndGzipVerified','independentRollbackVerifiedBeforeFirstWrite','detachedOwnerParentAndPipeIdentityVerified','actualFourEcmTagsVerified','pbrFullCtMarkNatWanAffinityVerified','allFourFqCodelLeavesHavePackets','freshSourceAndIdentityCheckedInSoftwarePhases','ecmStoppedAndAllCountsZeroRequiredBeforeClosedComparison','activeNativeLeaseAndRenewalStillStrict','terminalReclassificationBodyUnchangedFrom140','explicitEarlyRetirementAndFirmwareZero','fullProtectedBaselineRestored','bothPhysicalRootsRestored','exactStageStateModuleRemovalVerified'])
+assert not any(t148[k]for k in ['humanGameAcceptance','strictCpuComparabilityAccepted','fullCakeReplacementAccepted','nssPermanentlyEnabled'])
+m148=json.loads((root/'evidence/nss148-metrics.json').read_text())
+assert m148['passed']and m148['oneWan']==5 and m148['direction']=='download'
+assert not m148['comparabilityAccepted']and m148['softirqRelativeReductionPercent'] is None
+assert set(k for k,v in m148['comparisonChecks'].items() if not v)=={'unselectedWanTotalLe0_5MbpsEach','unselectedWanTotalRangeLe0_25Mbps'}
+assert len(m148['comparisonChecks'])==7 and m148['actualDualEcmTagsVerified']and m148['pbrCtMarkNatWanAffinityVerified']
+assert all(not p['classifierCheckDurationObserved']and p['classifierCheckSecondsMean'] is None and p['classifierQueryAgeSecondsMean']>=0 for p in m148['phases'])
+assert [p['whole']['udp']['sent']for p in m148['phases']]==[864,875,838]
+assert [p['whole']['udp']['received']for p in m148['phases']]==[863,873,824]
+assert all(p['whole']['timeSqueezeDelta']==p['whole']['softnetDropDelta']==0 and not p['whole']['udp']['isCs2Metric']for p in m148['phases'])
+assert all(25<p['whole']['clientTcpReceivedMbps']<28 for p in m148['phases'])
+leaf148=m148['leafDeltasAcrossBNearbyAsyncSnapshots']
+assert leaf148['down']['8f05:']['dropped']==379 and leaf148['down']['8f06:']['dropped']==0 and leaf148['up']['8e06:']['dropped']==0 and leaf148['up']['8e05:']['dropped']==0
+assert m148['leafStatisticsAsynchronous']and not m148['humanCs2Acceptance']and not m148['highLoad300MbpsAcceptance']and not m148['fullCakeReplacementAccepted']and not m148['productionNssRetained']
+q147=json.loads((root/'evidence/nss148-controlled-entry-qualification.json').read_text());q148=json.loads((root/'evidence/nss148-real-entry-qualification.json').read_text())
+assert q147['passed']and q147['actualFacadeIncluded']and q147['inheritedBoundInputs']==1481 and len(q147['sourceManifest'])==37
+assert q147['models']['checks']==9 and len(q147['models']['cases'])==9 and all(c['passed']and not c['hardwareProof']and not c['routerWrites']for c in q147['models']['cases'])
+assert q147['consumerModels']['checks']==8 and q147['completeActualConsumerTestedSeparately']and q147['phaseInspectorMockedExplicitly']
+assert not q147['wholeFactoryAbaExecutedWithMockedBackend']and not q147['productionExecution']
+assert q147['budgets']==q148['budgets']==[6,27,100,9000,65536,73728]
+assert q147['payloadBytes']==73685 and q147['qualificationGuardianExecBytes']==8903 and q147['modelExecBytes']==8375
+assert q148['passed']and q148['sameTestedNss147Factory']and q148['candidateVisibilityAdapter143']and q148['defaultReadonly']
+assert q148['inheritedBindings']==1518 and len(q148['sourceManifest'])==9 and q148['controlledHardwareAbaAccepted']and not q148['realWrapperHardwareAbaAccepted']
+assert q148['auditCaseNamespaceAndExactSourceDependenciesChecked']
+for q in [q147,q148]:
+ for source,digest in q['sourceManifest'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+# Verify the exact corrective diff; unchanged active lease and retirement code
+# cannot be replaced by a model-only passing receipt.
+c140=(root/'code/work/nss140/classifier.lua').read_text();c146=(root/'code/work/nss146/classifier.lua').read_text();c147=(root/'code/work/nss147/classifier.lua').read_text()
+assert c146.replace('function M.compareEpoch(epoch,s,c,now,closed)','function M.compareEpoch(epoch,s,c,now)').replace('or(not closed and now>=epoch.epochUntil)then','or now>=epoch.epochUntil then').replace('function out.compareObserved(closed)','function out.compareObserved()').replace('Consumer.compareEpoch(epoch,out.lastObservedSnapshot,out.lastObservedContext,now(),closed)','Consumer.compareEpoch(epoch,out.lastObservedSnapshot,out.lastObservedContext,now())')==c140
+assert c147.replace('function A.compareObserved(closed)return assert(activeInstance).compareObserved(closed)end','function A.compareObserved()return assert(activeInstance).compareObserved()end')==c146
+fast140=(root/'code/work/nss140/fast-path.lua').read_text();fast147=(root/'code/work/nss147/fast-path.lua').read_text()
+assert fast147.replace('  if not active then stopped()end\n','').replace('A.compareObserved(not active)','A.compareObserved()').replace('   R.rejectedComparison=C\n','')==fast140
+real148=(root/'code/work/nss148/real-session.mjs').read_text();audit148=(root/'code/work/nss148/current-audit-diagnostic.mjs').read_text()
+assert "from '../nss147/module-stage.mjs'"in real148 and "process.argv[2]??'inspect'"in real148
+assert "real-matched-aba"in audit148
+assert "'../nss143/candidate-adapter.mjs'"in (root/'code/work/nss148/read-real-candidates.mjs').read_text()
+for f in ['failed-wan-owner.lua','declared-baseline.mjs']:assert (root/'code/work/nss148'/f).read_bytes()==(root/'code/work/nss147'/f).read_bytes()
+r148=json.loads((root/'evidence/nss148-readonly-readiness.json').read_text())
+assert r148['mode']=='inspect'and r148['sameWanPairs']==0 and not r148['routerWrites']and not r148['trafficGenerated']and not r148['openFrontend']and not r148['nssPermissionGranted']
+assert r148==rt148['latestRealReadonlyInspect']
+end148=json.loads((root/'evidence/nss148-endpoint-client-closure.json').read_text())
+assert end148==rt148['endpointClientClosureAudit']and end148['passed']and end148['readonly']
+assert end148['previousLoadsChecked']==end148['ownedUnitsInactiveMainPidZero']==11 and end148['temporaryFirewallRulesRemaining']==end148['ownedClientOrGuardProcessesRemaining']==0
+assert end148['allCanonicalFirewallBaselinesMatch']and end148['tcpAndUdpPortsClosed']and end148['existingEndpointServicesUnchanged']and not end148['remoteWrites']and not end148['desktopOperated']
+assert all(rt148['audit'][k]for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','exactWan4AutomaticFailoverProved','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])and not rt148['audit']['allFiveWanHealthy']
+assert all(rt148['physicalRootRestoreAudit'][k]for k in ['passed','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
+assert rt148['ownedReceiverClosureAudit']['passed']and rt148['ownedReceiverClosureAudit']['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
+fail148=json.loads((root/'evidence/nss148-failures.json').read_text())
+assert len(fail148)==11 and all(not f['passed']and f['originalPreserved']for f in fail148)
+assert all(not f['ecmOpened']for f in fail148 if 'ecmOpened'in f)
+assert fail148[1]['firstUiClickDispatchedAfterFailedGuardCheck']and fail148[1]['downloadResumeWasNotProvenGuardedBeforeEffect']and not fail148[1]['finalUiRestoreClaimed']
+assert not fail148[4]['immediateRecoveryBaselineAuditPassed']and fail148[4]['subsequentOriginalFullHealthAuditPassed']and fail148[4]['rejectionReason']=='epoch expired'
+assert fail148[-1]['correctedDurationIsNullAndObservedFalse']and not fail148[-1]['hardwareExperimentRerun']
+pub148=json.loads((root/'evidence/nss148-publication-failure.json').read_text())
+assert not pub148['passed']and pub148['originalFailurePreserved']and pub148['firstExportPartiallyCompleted']and pub148['originalScriptAndExportedEvidenceBytesKept']
+assert not pub148['commitOrPushStarted']and not pub148['productionWrites']and not pub148['hardwareTestRerun']
+pubproof148=json.loads((root/'evidence/nss148-publication-recovery-source-proof.json').read_text())
+assert pubproof148['historicPrefixSources']==2041 and pubproof148['sources']==1
+assert pubproof148['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2041],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+for source,digest in pubproof148['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert pubproof148['originalPublicationSourceAndEvidenceBytesKept']and pubproof148['noOperationalBindingChanged']and not pubproof148['hardwareTestRerun']and not pubproof148['productionWrites']
+validation148=json.loads((root/'evidence/nss148-validation-failure.json').read_text())
+assert not validation148['passed']and validation148['originalFailurePreserved']and validation148['commitOrPushChainStopped']and validation148['actualTrialEvidenceWasAlreadyCorrect']
+assert validation148['actualStageBundleBytes']==t148['packetBundleBytesActual']==73686 and validation148['qualificationModelBundleBytes']==q147['payloadBytes']==73685
+assert not validation148['operationalSourceOrRuntimeChanged']and not validation148['hardwareTestRerun']
+whitespace148=json.loads((root/'evidence/nss148-whitespace-failure.json').read_text())
+assert not whitespace148['passed']and whitespace148['originalFailurePreserved']and whitespace148['commitOrPushChainStoppedBeforeCommit']
+assert len(whitespace148['files'])==6 and not whitespace148['sourceBytesChanged']
+attributes148=(root/'.gitattributes').read_text()
+for f in whitespace148['files']:
+ assert hashlib.sha256((root/f['path']).read_bytes()).hexdigest()==f['sha256']
+ assert '/'+f['path']+' whitespace=cr-at-eol,'+f['attribute']in attributes148
+whitespace2148=json.loads((root/'evidence/nss148-whitespace-attribute-failure.json').read_text())
+assert not whitespace2148['passed']and whitespace2148['originalFailurePreserved']and whitespace2148['commitOrPushChainStoppedBeforeCommit']
+assert whitespace2148['attributeOverrideDroppedInheritedCrAtEol']and not whitespace2148['sourceBytesChanged']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

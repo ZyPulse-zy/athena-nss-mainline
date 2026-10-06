@@ -1,0 +1,13 @@
+{
+  "historicPrefixSources": 2041,
+  "historicPrefixCanonicalSha256": "f4aaea686e0e918b674d25289c3f397b98762a9c03661ff2841ab117c7894ce7",
+  "sources": 1,
+  "sourceHashes": {
+    "work/nss148/complete-publication.py": "0918f1d406e3fe56f7356e32644cb0cc24a1248b5e3385dfb17f8e26a0e89d83"
+  },
+  "originalPublicationSourceAndEvidenceBytesKept": true,
+  "originalFailurePreserved": true,
+  "noOperationalBindingChanged": true,
+  "hardwareTestRerun": false,
+  "productionWrites": false
+}

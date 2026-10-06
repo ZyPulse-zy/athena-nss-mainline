@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-06T02:23:17.443Z",
+  "offlineOnly": true,
+  "routerWrites": false,
+  "execBytes": 6551,
+  "maximumExecBytes": 9000,
+  "rawBytes": 16094,
+  "unchangedInspectContextAndCandidateChecks": true,
+  "originalSocketEncodingUnchanged": true,
+  "readerOnlyApisRemoved": [
+    "pair",
+    "compareEpoch",
+    "ready",
+    "sample",
+    "renewal",
+    "retirement"
+  ]
+}

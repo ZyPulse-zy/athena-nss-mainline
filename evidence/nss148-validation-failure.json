@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "kind": "checker-confused-model-and-actual-bundle-length",
+  "originalFailurePreserved": true,
+  "commitOrPushChainStopped": true,
+  "failedCheckerSha256": "4bc81aac752b1ad84d79cbfc12529ee84179f5b35c9f3906ec667a0d6bd5471c",
+  "incorrectExpectedActualBundleBytes": 73685,
+  "qualificationModelBundleBytes": 73685,
+  "actualStageBundleBytes": 73686,
+  "actualStageExecBytes": 8899,
+  "actualTrialEvidenceWasAlreadyCorrect": true,
+  "operationalSourceOrRuntimeChanged": false,
+  "hardwareTestRerun": false,
+  "correction": "Keep trial evidence and correct checker and derived prose to actual stage length"
+}

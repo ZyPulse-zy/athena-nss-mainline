@@ -25,3 +25,11 @@
 
 # Keep the archived NSS141 runtime in the exact published Git bytes.
 /evidence/nss141-runtime.json -text
+
+# Retain whitespace in the exact new frozen runtime-source copies.
+/code/work/nss144/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/nss145/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/nss146/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/nss147/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/nss146/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/nss147/fast-path.lua whitespace=cr-at-eol,-blank-at-eol

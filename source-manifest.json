@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T01:48:43.607099+00:00",
+  "generatedAt": "2026-10-06T03:23:51.625956+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -13248,8 +13248,1058 @@
       "sha256": "53cc87eefc78efa4174fa41e677cfa15e1e81005a586542b805d6c02d31f970e",
       "bytes": 1915,
       "role": "scheduled-readonly-morning-closure"
+    },
+    {
+      "path": "code/work/nss143/candidate-adapter.mjs",
+      "workspaceSource": "work/nss143/candidate-adapter.mjs",
+      "sha256": "8b7d0a34a9e77596f048030988f51e98d4f58c0fec94f754508abe3e2c624053",
+      "bytes": 1507,
+      "role": "nss143-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss143/prepare-reader-entry.py",
+      "workspaceSource": "work/nss143/prepare-reader-entry.py",
+      "sha256": "3d8f04ded24d6913dbba87d155d8228964e2d4372c4d40fefe730ae9ccf8605e",
+      "bytes": 2430,
+      "role": "nss143-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss143/qualify-reader-entry.mjs",
+      "workspaceSource": "work/nss143/qualify-reader-entry.mjs",
+      "sha256": "612ee6d0a83b6741a82220bd71ecdd68062f5417dee667c5573bf44e3a11a22a",
+      "bytes": 3258,
+      "role": "nss143-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss143/read-real-candidates.mjs",
+      "workspaceSource": "work/nss143/read-real-candidates.mjs",
+      "sha256": "392990f5f6dd96ecd654817112716d58077d6fce7defd23aa04c5bb7f9025f82",
+      "bytes": 4732,
+      "role": "nss143-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss143/real-session.mjs",
+      "workspaceSource": "work/nss143/real-session.mjs",
+      "sha256": "533acca9c5aedfc3f7e5106b78a7e5fb0a13a43c8c1f2887960bd2c066f29186",
+      "bytes": 14347,
+      "role": "nss143-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss143/record-candidates.mjs",
+      "workspaceSource": "work/nss143/record-candidates.mjs",
+      "sha256": "d6ed6ec3c86b1c499ec33e9f6d10b03bcf2a9ccee6dc0486af1fc314fcb8019c",
+      "bytes": 1642,
+      "role": "nss143-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss143/session-binding.mjs",
+      "workspaceSource": "work/nss143/session-binding.mjs",
+      "sha256": "5e4f33e4ea8ddc60b93cb27ee0d2d878347e52976c36793f5505507c6c642738",
+      "bytes": 869,
+      "role": "nss143-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/client-watchdog.ps1",
+      "workspaceSource": "work/nss144/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/close-endpoint.mjs",
+      "workspaceSource": "work/nss144/close-endpoint.mjs",
+      "sha256": "25baecca56492f6c8028af69adb024c8f04219ae6db92d9580ece8ba03de543e",
+      "bytes": 1909,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/controlled-session.mjs",
+      "workspaceSource": "work/nss144/controlled-session.mjs",
+      "sha256": "771683e48183d4a5ba4c25c49843f0d0e75b17ea5850a88abfab5ae122ef431b",
+      "bytes": 14036,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss144/current-audit-diagnostic.mjs",
+      "sha256": "d86ddedfb599ec8a561121c8f9739ca07d49f4564f1a5f02da61db9a9eaa6e10",
+      "bytes": 5852,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/discover-peer.py",
+      "workspaceSource": "work/nss144/discover-peer.py",
+      "sha256": "aef3f025cd5229fef46165bc3d2e8f547cca87d194f0a4884fb035c7802a8835",
+      "bytes": 988,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/download-server.py",
+      "workspaceSource": "work/nss144/download-server.py",
+      "sha256": "9812803fcc62b6c2ad570c3160acb77f70090e0ebcfbe722702195c47c03dd13",
+      "bytes": 559,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss144/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/health.mjs",
+      "workspaceSource": "work/nss144/health.mjs",
+      "sha256": "4549ddee0ea97ca5c80d2b3a349474879611ad7fe397ee169e90ddba2655caf2",
+      "bytes": 6360,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/match-controlled.mjs",
+      "workspaceSource": "work/nss144/match-controlled.mjs",
+      "sha256": "ccf0a1cfb53dddd785196407379fd00e64862e0e62b5fdab0ce0fae9203f17f2",
+      "bytes": 2163,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/prepare.py",
+      "workspaceSource": "work/nss144/prepare.py",
+      "sha256": "e4932590bc7c8e751d2482bfead28f0ee7e2ed41437961bc1cbfd6e669faf1bf",
+      "bytes": 3418,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/probe-peer.py",
+      "workspaceSource": "work/nss144/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/qualify.mjs",
+      "workspaceSource": "work/nss144/qualify.mjs",
+      "sha256": "f7c3b975adade5ee3fad11d2d40642aaab96be06aa3a73e3db1f908df06bb728",
+      "bytes": 3634,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/read-controlled.mjs",
+      "workspaceSource": "work/nss144/read-controlled.mjs",
+      "sha256": "d0d6f45596297722f54dcaab54f24e2ebcd4196529bd8add25715ffb2b31ad17",
+      "bytes": 5570,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/read-final-physical.mjs",
+      "workspaceSource": "work/nss144/read-final-physical.mjs",
+      "sha256": "4934992f74b00ea01e21ca7ae95a652bf4d16c66d40e5e7cc06997b9efe17e04",
+      "bytes": 2047,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/run.mjs",
+      "workspaceSource": "work/nss144/run.mjs",
+      "sha256": "336095321434eb2fa039525ad9aef914ecce4c7d5b293847927af68ec238bcc8",
+      "bytes": 3192,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/server.py",
+      "workspaceSource": "work/nss144/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/session-binding.mjs",
+      "workspaceSource": "work/nss144/session-binding.mjs",
+      "sha256": "92b7a8f25b19571eeb830ce1d7ed00f7a721027117107fc8dd01129bfd54e0c9",
+      "bytes": 1015,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/ssh-client.mjs",
+      "workspaceSource": "work/nss144/ssh-client.mjs",
+      "sha256": "772abecd426bcc855a674fc328cdd2a64d7bbf06b788a76f5474604a3c5796e8",
+      "bytes": 5521,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/start-dallas.mjs",
+      "workspaceSource": "work/nss144/start-dallas.mjs",
+      "sha256": "e2119becabbd64b5499608d4f2c5b0e99393b35800b5eecb7ac3311e916f799d",
+      "bytes": 9267,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/verify-old-endpoints.mjs",
+      "workspaceSource": "work/nss144/verify-old-endpoints.mjs",
+      "sha256": "80c47cbc84565ff55724fc5ec365bfb48e1bb0d0c47d7227155f0f3c253485a8",
+      "bytes": 3569,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss144/verify-receivers.mjs",
+      "workspaceSource": "work/nss144/verify-receivers.mjs",
+      "sha256": "1b34c360a3da28344f9a7f1f12f8bd1a46a8b216b863f296728d92ddc43bc866",
+      "bytes": 1500,
+      "role": "nss144-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/client-watchdog.ps1",
+      "workspaceSource": "work/nss145/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/close-endpoint.mjs",
+      "workspaceSource": "work/nss145/close-endpoint.mjs",
+      "sha256": "c6e016ccbd3aeb1f55a3f9758c05203497c272cbf07c438b3c83436a879c0f51",
+      "bytes": 1909,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/controlled-session.mjs",
+      "workspaceSource": "work/nss145/controlled-session.mjs",
+      "sha256": "9a64ae100bf268023555d02f788b5669c590d2be36406e0efc0e6ed13eec5c27",
+      "bytes": 14036,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss145/current-audit-diagnostic.mjs",
+      "sha256": "567519af9e73b73b6652f22ec3f5ac158bde8a5267befbf2a4aee44c2f9e9d94",
+      "bytes": 5852,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/declared-baseline.mjs",
+      "workspaceSource": "work/nss145/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/discover-peer.py",
+      "workspaceSource": "work/nss145/discover-peer.py",
+      "sha256": "67b55f69c054183eaac33053bf8dafda9cf9e5b738815fd3c6b843c703764e32",
+      "bytes": 988,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/download-server.py",
+      "workspaceSource": "work/nss145/download-server.py",
+      "sha256": "9812803fcc62b6c2ad570c3160acb77f70090e0ebcfbe722702195c47c03dd13",
+      "bytes": 559,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss145/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/failed-wan-owner.lua",
+      "workspaceSource": "work/nss145/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/health.mjs",
+      "workspaceSource": "work/nss145/health.mjs",
+      "sha256": "d802cd17e89089402237248d9909f01ebc23db572d275df61cd1dfd0d9e83694",
+      "bytes": 6360,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/match-controlled.mjs",
+      "workspaceSource": "work/nss145/match-controlled.mjs",
+      "sha256": "5ccd0f0c226f3830003869a30c8529cd93223b8aa1d10f04675f15cb7d22a02f",
+      "bytes": 2163,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/prepare.py",
+      "workspaceSource": "work/nss145/prepare.py",
+      "sha256": "d06bbdc65b920df34330f48e9a4d86fb8db1f70ae81d4957504c7a37f22de70f",
+      "bytes": 2261,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/probe-peer.py",
+      "workspaceSource": "work/nss145/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/qualify.mjs",
+      "workspaceSource": "work/nss145/qualify.mjs",
+      "sha256": "0842e99bce149e273bc5cd078230cb0eb126406078f32796d1434ce6bd3351ed",
+      "bytes": 4159,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/read-controlled.mjs",
+      "workspaceSource": "work/nss145/read-controlled.mjs",
+      "sha256": "09a3702dadd9b61e8eae300b009c9dfbeb4989267854c7b917dc7796a8492a24",
+      "bytes": 5570,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/read-final-physical.mjs",
+      "workspaceSource": "work/nss145/read-final-physical.mjs",
+      "sha256": "e74b9b8f22d0adfbe825edafb2aaecf7b6b29242d20533e7370976799a996728",
+      "bytes": 2047,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/run.mjs",
+      "workspaceSource": "work/nss145/run.mjs",
+      "sha256": "f8a880f6a2ae48bf250a9a3ca017da10b35d03a6a44b1aeefacf16412ca4dbcd",
+      "bytes": 3192,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/server.py",
+      "workspaceSource": "work/nss145/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/session-binding.mjs",
+      "workspaceSource": "work/nss145/session-binding.mjs",
+      "sha256": "4125e7f1178f8e450f595b942ef707bd289bf2c9818c75e437080471319faabd",
+      "bytes": 1015,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/ssh-client.mjs",
+      "workspaceSource": "work/nss145/ssh-client.mjs",
+      "sha256": "772abecd426bcc855a674fc328cdd2a64d7bbf06b788a76f5474604a3c5796e8",
+      "bytes": 5521,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/start-dallas.mjs",
+      "workspaceSource": "work/nss145/start-dallas.mjs",
+      "sha256": "dbc7d4ceab323d8a006b7239e9f693ab2a7ad765a4870f4c15d874537d2ca3cf",
+      "bytes": 9267,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/verify-old-endpoints.mjs",
+      "workspaceSource": "work/nss145/verify-old-endpoints.mjs",
+      "sha256": "7545126d1eec90c6fee81ee2a23c16cb0b0bc47bbe059a8bf3be2c28e91b38e9",
+      "bytes": 3569,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss145/verify-receivers.mjs",
+      "workspaceSource": "work/nss145/verify-receivers.mjs",
+      "sha256": "ed49956d507dc4af22d19c9c09f3773fdf909d8b2deb58ea2803c9c1d3c47d87",
+      "bytes": 1500,
+      "role": "nss145-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/classifier.lua",
+      "workspaceSource": "work/nss146/classifier.lua",
+      "sha256": "2f19a1da9e85438e0c5b3f114999acaa94b32ed01c0a9995c31d25e3aa751342",
+      "bytes": 20592,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/client-watchdog.ps1",
+      "workspaceSource": "work/nss146/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/close-endpoint.mjs",
+      "workspaceSource": "work/nss146/close-endpoint.mjs",
+      "sha256": "b95fd5caba5f48f73b148f086c710144e4c86020b6852048ab76686e9fce9fdc",
+      "bytes": 1909,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/compact-default-queues.mjs",
+      "workspaceSource": "work/nss146/compact-default-queues.mjs",
+      "sha256": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+      "bytes": 849,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/consumer-models.lua",
+      "workspaceSource": "work/nss146/consumer-models.lua",
+      "sha256": "fc4b287efc879d25ca3ace85bb87acd2b460440e5c47a3b2988cd520c44ba405",
+      "bytes": 4273,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/controlled-session.mjs",
+      "workspaceSource": "work/nss146/controlled-session.mjs",
+      "sha256": "e89947a3728548f9aec740626596929439344b26f41a9a579bab64c53692a608",
+      "bytes": 14028,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss146/current-audit-diagnostic.mjs",
+      "sha256": "b10cba08165954af54df9a23fcd1666c434bdbab444ea579ea4c9d5ee3940501",
+      "bytes": 5852,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/declared-baseline.mjs",
+      "workspaceSource": "work/nss146/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/discover-peer.py",
+      "workspaceSource": "work/nss146/discover-peer.py",
+      "sha256": "bf50cfc542709d0a49ddfb908d1b4c826be9e8400de7e9d45bce28ee03bc553f",
+      "bytes": 988,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/download-server.py",
+      "workspaceSource": "work/nss146/download-server.py",
+      "sha256": "9812803fcc62b6c2ad570c3160acb77f70090e0ebcfbe722702195c47c03dd13",
+      "bytes": 559,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss146/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/failed-wan-owner.lua",
+      "workspaceSource": "work/nss146/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/fast-models-v2.lua",
+      "workspaceSource": "work/nss146/fast-models-v2.lua",
+      "sha256": "ff4f68f1435e5285c041cba8dcac5f4b6a1048994f759d34a6fb6c780cede8de",
+      "bytes": 8692,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/fast-models.lua",
+      "workspaceSource": "work/nss146/fast-models.lua",
+      "sha256": "ac15b6a64cc49c628f2952cf68b26d0ff0d59cf166c4d4e8c387e173cd0d4b3a",
+      "bytes": 8595,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/fast-path.lua",
+      "workspaceSource": "work/nss146/fast-path.lua",
+      "sha256": "9a4ceb7c4c913c8cdf171f1b960f9f6dccab36f9f832f0d4c97332ee32717610",
+      "bytes": 15953,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/health.mjs",
+      "workspaceSource": "work/nss146/health.mjs",
+      "sha256": "72000e99a19b4ea215017c20d0f2109a3ee78b3ba3fac5c03a43caa821e24914",
+      "bytes": 6360,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/match-controlled.mjs",
+      "workspaceSource": "work/nss146/match-controlled.mjs",
+      "sha256": "47b553d93b2c0190fc1f729a5cd826c5274e398145576d7c0eefcb8ca54ec625",
+      "bytes": 2163,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/module-stage-guardian.lua",
+      "workspaceSource": "work/nss146/module-stage-guardian.lua",
+      "sha256": "533ebc28ce0c9513048f10d34599a4577d3feed04f1e066a6f568fc32bf6bfec",
+      "bytes": 13171,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/module-stage.mjs",
+      "workspaceSource": "work/nss146/module-stage.mjs",
+      "sha256": "d456f30f920fdb8e1411e2162534d637cb3feb9022efb1a09528a1ea3bb1e3d4",
+      "bytes": 17684,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/pack-guardian.mjs",
+      "workspaceSource": "work/nss146/pack-guardian.mjs",
+      "sha256": "746a9c866d1e80f9494cead571af2f0e44bddacafbd0a55f7df8f75c96378927",
+      "bytes": 660,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/pack-lua.mjs",
+      "workspaceSource": "work/nss146/pack-lua.mjs",
+      "sha256": "d1a9982deb0acda6dd88fe70c630d176f7d5543ed4298d115bdd9b4d65186766",
+      "bytes": 1749,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss146/parse-ecm-any-wan.mjs",
+      "sha256": "6a17e97bd217b07f5169ae2375c210c6f1cab77dacb4d634355f406118327e60",
+      "bytes": 3651,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/payload.mjs",
+      "workspaceSource": "work/nss146/payload.mjs",
+      "sha256": "2bd4ff1862bd5f64636351e4fd2740eeffb87d82666caf6497bf90943d4f5715",
+      "bytes": 1910,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/phase-models.lua",
+      "workspaceSource": "work/nss146/phase-models.lua",
+      "sha256": "8fa21651c9c89ef862243f1fbfa22cae64daeb8245d0efb03d05d155c4021286",
+      "bytes": 7565,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/prepare-models.py",
+      "workspaceSource": "work/nss146/prepare-models.py",
+      "sha256": "66f77aed32d75a98bf35d886a3b199384b294bca0351713d87477ccb0f67c833",
+      "bytes": 3269,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/prepare.py",
+      "workspaceSource": "work/nss146/prepare.py",
+      "sha256": "7cc9ea4ab3265103a54c69be2a5086557175b6d54e2fb842079eba9eeec3b547",
+      "bytes": 3197,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/probe-peer.py",
+      "workspaceSource": "work/nss146/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/qos-physical.lua",
+      "workspaceSource": "work/nss146/qos-physical.lua",
+      "sha256": "05b9862c12bbf8fa9b59f392e9c34f692647fdafaed0c871a502519d63e90454",
+      "bytes": 10324,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/qualify-v2.mjs",
+      "workspaceSource": "work/nss146/qualify-v2.mjs",
+      "sha256": "1906373807d868fecdd67497e9cffbd8a1d5c164e142170b8e45a944387be23a",
+      "bytes": 7476,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/qualify-v3.mjs",
+      "workspaceSource": "work/nss146/qualify-v3.mjs",
+      "sha256": "97c57f68baffece64b389bd40306c3d34ab3109a8d46759bf71b4ef9dd483cf3",
+      "bytes": 7137,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/qualify-v4.mjs",
+      "workspaceSource": "work/nss146/qualify-v4.mjs",
+      "sha256": "79e9b480b3de1176b6204d62ad611936c35991e2141f2291b34c661d0c1d5d2d",
+      "bytes": 8512,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/qualify-v5.mjs",
+      "workspaceSource": "work/nss146/qualify-v5.mjs",
+      "sha256": "096b52b6f30764050318520295d67aa2b47f97d07e0043334c77b54b44948a15",
+      "bytes": 8454,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/qualify.mjs",
+      "workspaceSource": "work/nss146/qualify.mjs",
+      "sha256": "72392542f790e6f3f78519f999abbfe2fba58de0a7136a7a0a6fea8d1fa45c78",
+      "bytes": 7230,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/read-controlled.mjs",
+      "workspaceSource": "work/nss146/read-controlled.mjs",
+      "sha256": "5e9dde0dad8e2e733b8858db97bfb78440c47a1885462abf647670947ee0f1a9",
+      "bytes": 5570,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/read-final-physical.mjs",
+      "workspaceSource": "work/nss146/read-final-physical.mjs",
+      "sha256": "cabed4d45b064ab513c1d03a0180a8ff5e26861273ad7c3bea2a0f22f20bbc30",
+      "bytes": 2047,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/run.mjs",
+      "workspaceSource": "work/nss146/run.mjs",
+      "sha256": "36ae3e08bb4015e03018cc65ef9b63e2504c63230c0518f1d5570b1696dfb75d",
+      "bytes": 3192,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/server.py",
+      "workspaceSource": "work/nss146/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/service-epoch.mjs",
+      "workspaceSource": "work/nss146/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/session-binding.mjs",
+      "workspaceSource": "work/nss146/session-binding.mjs",
+      "sha256": "c0d4698e57c2dada00a9b6d5a05921783bb5e56d2958c287d4d3a74d872fb01f",
+      "bytes": 1192,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/ssh-client.mjs",
+      "workspaceSource": "work/nss146/ssh-client.mjs",
+      "sha256": "772abecd426bcc855a674fc328cdd2a64d7bbf06b788a76f5474604a3c5796e8",
+      "bytes": 5521,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/start-dallas.mjs",
+      "workspaceSource": "work/nss146/start-dallas.mjs",
+      "sha256": "4002df9fc7d9833056b79a62898551650fc2a5f47573cca9bbe3fe4068042f7f",
+      "bytes": 9267,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/tag-normalizer.lua",
+      "workspaceSource": "work/nss146/tag-normalizer.lua",
+      "sha256": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+      "bytes": 5128,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss146/uplink-tag-plan.mjs",
+      "sha256": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459",
+      "bytes": 1257,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/verify-old-endpoints.mjs",
+      "workspaceSource": "work/nss146/verify-old-endpoints.mjs",
+      "sha256": "f014a59610399625e8cb96156e7f0b8f5c409a4e5031d52b2e4a6228c16829ec",
+      "bytes": 3569,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss146/verify-receivers.mjs",
+      "workspaceSource": "work/nss146/verify-receivers.mjs",
+      "sha256": "6e742fe0e4ab2e878265baae61cfc0474091d4bc6dd6e5fdf69b51af308490ee",
+      "bytes": 1500,
+      "role": "nss146-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/analyze-download-v2.py",
+      "workspaceSource": "work/nss147/analyze-download-v2.py",
+      "sha256": "c41448721575d4143b3806ee9fe7a4d1fe5ca547c5cabcc0781ffc600315bf9b",
+      "bytes": 8753,
+      "role": "nss147-controlled-test-analysis-or-closure"
+    },
+    {
+      "path": "code/work/nss147/analyze-download.py",
+      "workspaceSource": "work/nss147/analyze-download.py",
+      "sha256": "367fa673aa5afb854c909aa364d921a226d0c89e48d2d71a9d873cd95894fc9a",
+      "bytes": 8680,
+      "role": "nss147-controlled-test-analysis-or-closure"
+    },
+    {
+      "path": "code/work/nss147/calibrate-clock.mjs",
+      "workspaceSource": "work/nss147/calibrate-clock.mjs",
+      "sha256": "aa0af6df6ba8cae6dac75342a4dddb42d4d7eb092746333489a30843ec0d5e93",
+      "bytes": 1026,
+      "role": "nss147-controlled-test-analysis-or-closure"
+    },
+    {
+      "path": "code/work/nss147/classifier.lua",
+      "workspaceSource": "work/nss147/classifier.lua",
+      "sha256": "ae945b4e832fcf0b9f271f55435bd9b59d4f8315c86a84f593b113e0f37318a5",
+      "bytes": 20604,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/client-watchdog.ps1",
+      "workspaceSource": "work/nss147/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/close-endpoint.mjs",
+      "workspaceSource": "work/nss147/close-endpoint.mjs",
+      "sha256": "8445e239f8538a8e5f687c3a966e019f143d83cbd8815398e3cda654c75ed330",
+      "bytes": 1909,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/compact-default-queues.mjs",
+      "workspaceSource": "work/nss147/compact-default-queues.mjs",
+      "sha256": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+      "bytes": 849,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/controlled-session.mjs",
+      "workspaceSource": "work/nss147/controlled-session.mjs",
+      "sha256": "1582dd5df864a176ba17e8d3535bc1febbedb21391ce647dd3f070abaeb571f8",
+      "bytes": 14028,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss147/current-audit-diagnostic.mjs",
+      "sha256": "1b306cfa1cb25010fa5839e38bcd39fe1403e691a62a55d0976ed03c9f14f1cc",
+      "bytes": 5852,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/declared-baseline.mjs",
+      "workspaceSource": "work/nss147/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/discover-peer.py",
+      "workspaceSource": "work/nss147/discover-peer.py",
+      "sha256": "4fa09e30b0ec63fcf4aef31e5b5d5afc39f0bcc05f09b57aaf20f833df3a6e76",
+      "bytes": 988,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/download-server.py",
+      "workspaceSource": "work/nss147/download-server.py",
+      "sha256": "9812803fcc62b6c2ad570c3160acb77f70090e0ebcfbe722702195c47c03dd13",
+      "bytes": 559,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss147/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/failed-wan-owner.lua",
+      "workspaceSource": "work/nss147/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/fast-path.lua",
+      "workspaceSource": "work/nss147/fast-path.lua",
+      "sha256": "9a4ceb7c4c913c8cdf171f1b960f9f6dccab36f9f832f0d4c97332ee32717610",
+      "bytes": 15953,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/health.mjs",
+      "workspaceSource": "work/nss147/health.mjs",
+      "sha256": "d1edfaeff9814a398581f6d6fcf1068e60b2fd1b77c96412bce96a12390308c6",
+      "bytes": 6360,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/match-controlled.mjs",
+      "workspaceSource": "work/nss147/match-controlled.mjs",
+      "sha256": "6d4a7a13a7dc9d351ff80cf418f9113a8d23a1085de0e80d36386e90b905eaf5",
+      "bytes": 2163,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/module-stage-guardian.lua",
+      "workspaceSource": "work/nss147/module-stage-guardian.lua",
+      "sha256": "533ebc28ce0c9513048f10d34599a4577d3feed04f1e066a6f568fc32bf6bfec",
+      "bytes": 13171,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/module-stage.mjs",
+      "workspaceSource": "work/nss147/module-stage.mjs",
+      "sha256": "37826ea92b195b3f33c1bf5ac3c2761b013316123ff5572376e20a5c601fca29",
+      "bytes": 17684,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/pack-guardian.mjs",
+      "workspaceSource": "work/nss147/pack-guardian.mjs",
+      "sha256": "746a9c866d1e80f9494cead571af2f0e44bddacafbd0a55f7df8f75c96378927",
+      "bytes": 660,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/pack-lua.mjs",
+      "workspaceSource": "work/nss147/pack-lua.mjs",
+      "sha256": "d1a9982deb0acda6dd88fe70c630d176f7d5543ed4298d115bdd9b4d65186766",
+      "bytes": 1749,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss147/parse-ecm-any-wan.mjs",
+      "sha256": "6a17e97bd217b07f5169ae2375c210c6f1cab77dacb4d634355f406118327e60",
+      "bytes": 3651,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/payload.mjs",
+      "workspaceSource": "work/nss147/payload.mjs",
+      "sha256": "37c8a7046192cdc8adc9e590cf6bfa9eca505278ea1c8ce4b45e16315bcfcdd7",
+      "bytes": 1910,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/phase-models.lua",
+      "workspaceSource": "work/nss147/phase-models.lua",
+      "sha256": "31bf5364ccdd2218d6747527cab9c47297ea27d65c4f3f200f7614e9f1989f5b",
+      "bytes": 7695,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/prepare.py",
+      "workspaceSource": "work/nss147/prepare.py",
+      "sha256": "e6415e0946d2fed8bae133cc21e7cccf8932306b592861ecbc7afa98a800e317",
+      "bytes": 3821,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/probe-peer.py",
+      "workspaceSource": "work/nss147/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/qos-physical.lua",
+      "workspaceSource": "work/nss147/qos-physical.lua",
+      "sha256": "05b9862c12bbf8fa9b59f392e9c34f692647fdafaed0c871a502519d63e90454",
+      "bytes": 10324,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/qualify.mjs",
+      "workspaceSource": "work/nss147/qualify.mjs",
+      "sha256": "21e7a72fd30da9c2d899b03d9603aad413653553b32f4b040de2072c93f575fc",
+      "bytes": 8783,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/read-controlled.mjs",
+      "workspaceSource": "work/nss147/read-controlled.mjs",
+      "sha256": "3e1163c3e12b22f88f05dd8968ac38736b1c2776605a37aa1b883915c15fbb32",
+      "bytes": 5570,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/read-final-physical.mjs",
+      "workspaceSource": "work/nss147/read-final-physical.mjs",
+      "sha256": "a9c0f97372bd329373c9301c16133c2ba262a72d5d12e4853f3ec6944e2afa20",
+      "bytes": 2047,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/run.mjs",
+      "workspaceSource": "work/nss147/run.mjs",
+      "sha256": "4eef04422e13a78bb737f4dc4b05fcfaf6693a3f6bdd8fcc2c12b18e4234dd52",
+      "bytes": 3192,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/server.py",
+      "workspaceSource": "work/nss147/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/service-epoch.mjs",
+      "workspaceSource": "work/nss147/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/session-binding.mjs",
+      "workspaceSource": "work/nss147/session-binding.mjs",
+      "sha256": "91a2f415cea4cb443b3c15829158fb15775c138770d09949e6eb9fc4cebbc2c8",
+      "bytes": 1229,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/ssh-client.mjs",
+      "workspaceSource": "work/nss147/ssh-client.mjs",
+      "sha256": "772abecd426bcc855a674fc328cdd2a64d7bbf06b788a76f5474604a3c5796e8",
+      "bytes": 5521,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/start-dallas.mjs",
+      "workspaceSource": "work/nss147/start-dallas.mjs",
+      "sha256": "1a1d74147e65a20668545bede6afdac3714e772c0e5b6290b88f8c97c741f2e8",
+      "bytes": 9267,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/tag-normalizer.lua",
+      "workspaceSource": "work/nss147/tag-normalizer.lua",
+      "sha256": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+      "bytes": 5128,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss147/uplink-tag-plan.mjs",
+      "sha256": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459",
+      "bytes": 1257,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/verify-all-endpoints.mjs",
+      "workspaceSource": "work/nss147/verify-all-endpoints.mjs",
+      "sha256": "6a00de7105ee546be2d334c0544dd337643cfdc9066749e3bbf3fd7e01ebaa0d",
+      "bytes": 3580,
+      "role": "nss147-controlled-test-analysis-or-closure"
+    },
+    {
+      "path": "code/work/nss147/verify-downloaders.mjs",
+      "workspaceSource": "work/nss147/verify-downloaders.mjs",
+      "sha256": "364362347b36b7b207f9156b88888fa14939f5450827ec4144a234ae76c5dfc5",
+      "bytes": 1520,
+      "role": "nss147-controlled-test-analysis-or-closure"
+    },
+    {
+      "path": "code/work/nss147/verify-old-endpoints.mjs",
+      "workspaceSource": "work/nss147/verify-old-endpoints.mjs",
+      "sha256": "7f9bdaeb985193d189bd172adb6fe2971b9f0044eb8240c7dff5e97cdabf196a",
+      "bytes": 3569,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss147/verify-receivers.mjs",
+      "workspaceSource": "work/nss147/verify-receivers.mjs",
+      "sha256": "9b26dfedb6119f353da954f1a5dbc3eb54e8296becb5f3b6888f8eeebc193573",
+      "bytes": 1500,
+      "role": "nss147-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss148/current-audit-diagnostic.mjs",
+      "sha256": "4fcc63a6a3109dcef7c002887391264e9b467f4b7277c870fcdd0de8d0728e57",
+      "bytes": 5846,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/declared-baseline.mjs",
+      "workspaceSource": "work/nss148/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/failed-wan-owner.lua",
+      "workspaceSource": "work/nss148/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/prepare.py",
+      "workspaceSource": "work/nss148/prepare.py",
+      "sha256": "d1460a092b0aa5e9b535dc2d317b4dd8f7c196cb061a34abccee47d44764ee91",
+      "bytes": 1552,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/qualify.mjs",
+      "workspaceSource": "work/nss148/qualify.mjs",
+      "sha256": "def43147d4da47bbe94c96318de3b8a3d76b4ea35321413288c461ed00517fcb",
+      "bytes": 2840,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/read-real-candidates.mjs",
+      "workspaceSource": "work/nss148/read-real-candidates.mjs",
+      "sha256": "af3aa66da225410dfc7757d34b2a6e3622560913fdeef660851b75185b79fe11",
+      "bytes": 4740,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/real-session.mjs",
+      "workspaceSource": "work/nss148/real-session.mjs",
+      "sha256": "657710acdd102cedb38b4a206a5f1550700073ba2f113902e6a219afb4a7f45c",
+      "bytes": 14347,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/record-candidates.mjs",
+      "workspaceSource": "work/nss148/record-candidates.mjs",
+      "sha256": "674615637724e912d2642851bacedc698ee564bfd6cc523605dd62b562e046b8",
+      "bytes": 1642,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/save-evidence.py",
+      "workspaceSource": "work/nss148/save-evidence.py",
+      "sha256": "c13531b18d1b654a8d948f528ba2372d264a9ce869867ea275547e928004dddb",
+      "bytes": 32745,
+      "role": "nss148-controlled-test-analysis-or-closure"
+    },
+    {
+      "path": "code/work/nss148/session-binding.mjs",
+      "workspaceSource": "work/nss148/session-binding.mjs",
+      "sha256": "c8858d6c960e37afabd40dc30ef7ae33796feb241aae767699279595d21b56b9",
+      "bytes": 945,
+      "role": "nss148-qualified-source-with-original-failed-attempts-retained"
+    },
+    {
+      "path": "code/work/nss148/verify-published.py",
+      "workspaceSource": "work/nss148/verify-published.py",
+      "sha256": "7b40c54add7bfd592a21e2abdf05bc0ff4280e7077989f5116be1ec666b13bf0",
+      "bytes": 2313,
+      "role": "nss148-controlled-test-analysis-or-closure"
+    },
+    {
+      "path": "code/work/nss148/complete-publication.py",
+      "workspaceSource": "work/nss148/complete-publication.py",
+      "sha256": "0918f1d406e3fe56f7356e32644cb0cc24a1248b5e3385dfb17f8e26a0e89d83",
+      "bytes": 4060,
+      "role": "local-export-failure-explicit-continuation"
     }
   ],
-  "lastAppendExport": "NSS142",
+  "lastAppendExport": "NSS148",
   "privateDataExcluded": true
 }

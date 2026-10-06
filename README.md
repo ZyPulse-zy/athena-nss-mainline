@@ -1,3 +1,9 @@
+# Athena NSS mainline
+
+最新 [NSS148](evidence/nss148-mainline.json)：修复测试程序的软件段旧epoch错误，147自有后台下载单WAN完整20秒A/B/A2、ECM0/2/0、双向四tag/四FQ-CoDel leaf及恢复通过。无需启动游戏或Steam。背景负载变化使本轮严格CPU对比未通过；不称真人CS2/300Mbps/长期验收。148真人入口使用已实测147 factory，默认只读已运行；实验均撤销，常驻68不变。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md)。
+
+## NSS142及更早历史
+
 # Athena NSS 主线
 
 最新 [NSS142晨间终态](evidence/nss142-mainline.json)：完整保护/两物理根/七端点/客户端收尾通过，常驻68且ECM关闭；140最后真人入口1385输入未变，整合版完整A/B/A2仍待一次集中真人验收。夜间任务在发布校验后暂停，10:00后不新实验。以 [STATE](docs/STATE.md) 与 [PLAN](docs/PLAN.md) 开头为准。

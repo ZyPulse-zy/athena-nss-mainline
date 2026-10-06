@@ -1,3 +1,39 @@
+# NSS148 · 后台单WAN闭环已通过
+
+更新：2026-10-06 11:17，北京时间。最新NSS148整理／147实测。用户正在使用电脑，本轮采用自有端点后台受控下载＋小UDP，没有启动或操作Steam/CS2、桌面或新增游戏。常驻仍NSS68/config581b5d46…c791d7、worker31657/guardian17139，全部实验已撤销。
+
+**修复了20秒软件对照误用旧6秒准入epoch的测试程序缺陷。147真实单WAN5、一TCP BULK＋一UDP RT完成三段各20.01秒、123帧、ECM0→2→0和7次native续租；实际四tag/四FQ-CoDel leaf、完整PBR/ct mark/NAT/WAN affinity及精确恢复通过。**
+
+见 [汇总](../evidence/nss148-mainline.json)、[实测轮次](../evidence/nss148-trial.json)、[完整指标](../evidence/nss148-metrics.json)、[失败记录](../evidence/nss148-failures.json)、[受控入口资格](../evidence/nss148-controlled-entry-qualification.json)、[真人入口资格](../evidence/nss148-real-entry-qualification.json)、[只读现网](../evidence/nss148-readonly-readiness.json)、[完整终态](../evidence/nss148-final-audit.json)、[物理队列](../evidence/nss148-physical-final.json)、[端点关闭](../evidence/nss148-endpoint-client-closure.json)。
+
+| 指标 | software A | NSS B | software A2 |
+|---|---:|---:|---:|
+| 实际下载payload Mbps | 26.681 | 26.971 | 25.442 |
+| softirq % | 17.549 | 3.008 | 8.061 |
+| CPU busy % | 34.171 | 18.820 | 25.983 |
+| time_squeeze / softnet drop | 0 / 0 | 0 / 0 | 0 / 0 |
+| UDP echo 收到/发出 | 863/864 | 873/875 | 824/838 |
+| UDP RTT p95 ms | 192.725 | 191.813 | 192.785 |
+| 其它WAN RX＋TX Mbps | 3.556 | 2.650 | 2.028 |
+
+- 功能闭环通过；严格CPU可比条件未通过，因为用户正常上网的背景流量超过原0.5Mbps/0.25Mbps范围。保存原七项判定、comparability=false和降幅null，不从以上原始softirq给出正式降幅，不要求用户停网重复追阈值。UDP echo未返回和RTT变化是受控端点数据，不能充当CS2 loss/jitter/Miss。
+- B附近异步leaf计数：下bulk＋48,285包/drop379，下RT＋922包/drop0；上bulk＋39,640包/drop0，上RT＋888包/drop0。支持真实加速流进入独立可控队列、RT leaf在这轮无自身丢弃，不能据此证明精确长期限速、游戏体验或把bulk drop都归因FQ/AQM。DOWN30/bulk29/RT1，UP60/bulk59/RT1/default950保持；软件A/A2也保留相同实验队列，比较的是软件转发和fast path。
+- 原140完整ABA此前从未跑过；145在A约4.5秒即旧6秒epoch过期拒绝，146虽修内层却漏顶层facade参数，仍在ECM前拒绝。147只在两frontend已stop、全部ECM计数0的软件段比较中跳过旧准入epoch截止；当前source/完整class/CT/producer严格，活动B的27秒native及续租/100秒owner不改，支持改类的精确撤销体不改。146即时恢复审核另有instance断言失败；随后原完整终态通过，两份结果分开保留。
+- 147实际factory完整硬件ABA通过；目标RAM仅8个完整Consumer案例＋9个实际compare/phase/facade案例，模型显式mock inspector，未声称整个factory在RAM执行。实际payload73,686/guardian8,899字节，资格模型73,685/8,903，原9000/65536/73728及1MiB边界不放宽；1518项实际绑定与冻结副本精确匹配。
+- 143真人候选读取因23TCP＋82UDP使命令9311>9000写前拒绝，两个压缩候选仍超限。最终只裁剪候选可见性reader中无用操作API，原inspect/readContext/candidates token stream不变；同历史输入6551，真实新读取6483。上一轮第一次UI点击发生在guard失败之后，不能声称下载始终提前受guard保护；后来v2验证及自然到期/物理Esc记录保留，本轮没有任何UI。
+- 144漏两个本地审核依赖、145/146失败、146三个模型资格/尺寸拒绝及helper语法失败、147未观测checkSeconds分析失败全部保留。新分析将该时长写null/observed=false，没有伪造持续时间，也没有为分析重跑硬件。
+- 已将147实测factory接回148真人入口，保留Steam TCP/CS2 UDP程序socket归属、checkpoint后最终选择、精确单WAN gate和改类撤销。1527绑定，默认inspect已真实只读运行，0pair/no writes。这个wrapper的完整真人ABA仍未执行；不再推荐有已知完整软件段缺陷的140入口。
+- 每轮stage有新checkpoint下载/SHA/gzip和控制连接外独立PPID1 owner写前证明；成功147精确早退恢复，最终source4.59秒、selectors4由原native ownership审核验证，ECM关闭全零、无事务/stage/state/模块，两物理wan/lan4原mq＋四fq_codel的options/handles精确恢复。11个已有自有负载unit inactive/MainPID0，canonical防火墙匹配、临时规则/端口/客户端/guard/SSH发送器0残留。WAN4原认证down和四路failover不变，未主动认证或改校园策略。
+- 阶段判定：单WAN自动class→NSS双向bulk/RT功能和真实改类撤销／新代重学已证明；受控上传128约30Mbps可比短窗CPU是历史证据。当前版本下载功能已证明，300Mbps主下载、长期、多WAN、ECN、真人CS2体验和完整CAKE替代尚未验收。夜间heartbeat维持暂停。继续工程可以用后台受控负载；真人体验只留用户方便时一次集中验证，不要求持续挂机，不扩第二WAN/共享预算/WiFi/autorate。
+
+本轮发布第一次在本地reports目录缺失时中断，部分导出已经完成，但没有开始提交或推送。原导出脚本及已生成证据保持原字节；单独的complete-publication接续只创建明确目录并复制原HTML、增加自身白名单和失败证明，随后重新校验，不重跑硬件。见 [发布失败](../evidence/nss148-publication-failure.json)。
+
+首次仓库校验把资格模型bundle73,685误作实际stage长度，拒绝了原本正确保存73,686的实测轮次。提交链停止，失败checker原源码和输出留本地，保留正确实测证据，仅更正checker与新报告文字；模型guardian8,903和实际8,899继续分开，未重跑硬件。见 [校验失败](../evidence/nss148-validation-failure.json)。
+
+暂存whitespace检查另拒绝六份冻结源码副本的原有空行；提交前停止，仅添加六个明确路径属性保留原字节，其它检查不放宽。见 [whitespace失败](../evidence/nss148-whitespace-failure.json)。
+
+## NSS142及更早历史
+
 # 当前状态
 
 更新：2026-10-06 09:43，北京时间。NSS142为本夜最后一次只读收尾，常驻仍NSS68/config581b5d46…c791d7，worker31657、guardian17139。实验已经撤销，ECM保持关闭全零。

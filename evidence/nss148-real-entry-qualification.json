@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "at": "2026-10-06T03:14:18.402Z",
+  "sameTestedNss147Factory": true,
+  "candidateVisibilityAdapter143": true,
+  "defaultReadonly": true,
+  "inheritedBindings": 1518,
+  "controlledFactoryBindings": 1518,
+  "controlledHardwareAbaAccepted": true,
+  "realWrapperHardwareAbaAccepted": false,
+  "sourceManifest": {
+    "work/nss148/current-audit-diagnostic.mjs": "4fcc63a6a3109dcef7c002887391264e9b467f4b7277c870fcdd0de8d0728e57",
+    "work/nss148/declared-baseline.mjs": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+    "work/nss148/failed-wan-owner.lua": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+    "work/nss148/prepare.py": "d1460a092b0aa5e9b535dc2d317b4dd8f7c196cb061a34abccee47d44764ee91",
+    "work/nss148/qualify.mjs": "def43147d4da47bbe94c96318de3b8a3d76b4ea35321413288c461ed00517fcb",
+    "work/nss148/read-real-candidates.mjs": "af3aa66da225410dfc7757d34b2a6e3622560913fdeef660851b75185b79fe11",
+    "work/nss148/real-session.mjs": "657710acdd102cedb38b4a206a5f1550700073ba2f113902e6a219afb4a7f45c",
+    "work/nss148/record-candidates.mjs": "674615637724e912d2642851bacedc698ee564bfd6cc523605dd62b562e046b8",
+    "work/nss148/session-binding.mjs": "c8858d6c960e37afabd40dc30ef7ae33796feb241aae767699279595d21b56b9"
+  },
+  "budgets": [
+    6,
+    27,
+    100,
+    9000,
+    65536,
+    73728
+  ],
+  "desktopOperated": false,
+  "productionExecution": false,
+  "auditCaseNamespaceAndExactSourceDependenciesChecked": true,
+  "gameQualityConclusion": false
+}

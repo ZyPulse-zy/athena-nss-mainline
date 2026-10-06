@@ -1,0 +1,136 @@
+[
+  {
+    "round": 143,
+    "kind": "real-candidate-command-size",
+    "passed": false,
+    "execBytes": 9311,
+    "maximumExecBytes": 9000,
+    "tcpSockets": 23,
+    "udpSockets": 82,
+    "packedCandidateExecBytes": 9203,
+    "compactSocketExecBytes": 9175,
+    "candidateOnlyAdapterExecBytes": 6551,
+    "originalPolicyTokenStreamUnchanged": true,
+    "checkpointOrStageStarted": false,
+    "ecmOpened": false,
+    "originalPreserved": true
+  },
+  {
+    "round": 143,
+    "kind": "client-guard-before-first-ui-effect",
+    "passed": false,
+    "firstGuardFailed": true,
+    "firstUiClickDispatchedAfterFailedGuardCheck": true,
+    "downloadResumeWasNotProvenGuardedBeforeEffect": true,
+    "subsequentV2GuardVerifiedAndExpiredNaturally": true,
+    "physicalEscStoppedUi": true,
+    "finalUiRestoreClaimed": false,
+    "originalPreserved": true
+  },
+  {
+    "round": 144,
+    "kind": "missing-local-audit-dependencies",
+    "passed": false,
+    "files": [
+      "failed-wan-owner.lua",
+      "declared-baseline.mjs"
+    ],
+    "checkpointOrStageStarted": false,
+    "ecmOpened": false,
+    "endpointAndLaterOriginalFullHealthClosed": true,
+    "originalPreserved": true
+  },
+  {
+    "round": 145,
+    "kind": "closed-software-phase-old-epoch-expiry",
+    "passed": false,
+    "stageStarted": true,
+    "newCheckpointAndIndependentRollbackBeforeWrite": true,
+    "softwareSamples": 10,
+    "acceleratedCounts": [
+      0
+    ],
+    "ecmOpened": false,
+    "twentySecondSoftwarePhaseComparedToInitialSixSecondEpoch": true,
+    "exactRestoreAndFullRecoveryAuditPassed": true,
+    "originalPreserved": true
+  },
+  {
+    "round": 146,
+    "kind": "top-adapter-dropped-closed-argument",
+    "passed": false,
+    "stageStarted": true,
+    "newCheckpointAndIndependentRollbackBeforeWrite": true,
+    "softwareSamples": 10,
+    "acceleratedCounts": [
+      0
+    ],
+    "rejectionReason": "epoch expired",
+    "affectedSlots": [
+      "tcp",
+      "udp"
+    ],
+    "ecmOpened": false,
+    "immediateRecoveryBaselineAuditPassed": false,
+    "immediateRecoveryAuditError": "Original ownership instance assertion failed",
+    "subsequentOriginalFullHealthAuditPassed": true,
+    "preciseUndoVerified": true,
+    "originalPreserved": true
+  },
+  {
+    "round": 146,
+    "kind": "strict-mapper-model-input",
+    "passed": false,
+    "historicalRenderedClassifierKeyOutsideCanonicalInput": true,
+    "beforeRouterConnection": true,
+    "routerWrites": false,
+    "originalPreserved": true
+  },
+  {
+    "round": 146,
+    "kind": "whole-factory-ram-model-too-large",
+    "passed": false,
+    "rawBytes": 27611,
+    "beforeRouterConnection": true,
+    "routerWrites": false,
+    "wholeFactoryModelNotRun": true,
+    "originalPreserved": true
+  },
+  {
+    "round": 146,
+    "kind": "combined-phase-model-too-large",
+    "passed": false,
+    "rawBytes": 18722,
+    "beforeRouterConnection": true,
+    "routerWrites": false,
+    "modelNotRun": true,
+    "originalPreserved": true
+  },
+  {
+    "round": 146,
+    "kind": "phase-model-helper-separator",
+    "passed": false,
+    "completeConsumerCasesAlreadyPassed": 8,
+    "phaseModelParseFailed": true,
+    "routerWrites": false,
+    "originalPreserved": true
+  },
+  {
+    "round": 145,
+    "kind": "read-only-process-search-matched-own-shell",
+    "passed": false,
+    "noDestructiveOperation": true,
+    "correctedExactPriorPidCheckPassed": true,
+    "originalPreserved": true
+  },
+  {
+    "round": 147,
+    "kind": "analysis-unobserved-field",
+    "passed": false,
+    "field": "observation.checkSeconds",
+    "hardwareExperimentRerun": false,
+    "failedOriginalSourceRetained": true,
+    "correctedDurationIsNullAndObservedFalse": true,
+    "originalPreserved": true
+  }
+]

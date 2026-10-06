@@ -1,0 +1,65 @@
+{
+  "round": "NSS147",
+  "passed": true,
+  "controlledRealWanPair": true,
+  "realCs2SteamPair": false,
+  "oneWan": 5,
+  "tcpClass": "BULK",
+  "udpClass": "RT",
+  "newCheckpointDownloadedShaAndGzipVerified": true,
+  "independentRollbackVerifiedBeforeFirstWrite": true,
+  "detachedOwnerParentAndPipeIdentityVerified": true,
+  "guardianExecBytesActual": 8899,
+  "packetBundleBytesActual": 73686,
+  "sourceMaximumSeconds": 6,
+  "nativeMaximumSeconds": 27,
+  "ownerMaximumSeconds": 100,
+  "recordReadMaximumBytes": 1048576,
+  "sourceBindingsActualAndFrozen": 1518,
+  "frames": 123,
+  "nativeRenewals": 7,
+  "phases": [
+    {
+      "name": "A",
+      "seconds": 20.010000000009313,
+      "samples": 41,
+      "completed": true,
+      "acceleratedCounts": [
+        0
+      ]
+    },
+    {
+      "name": "B",
+      "seconds": 20.010000000009313,
+      "samples": 41,
+      "completed": true,
+      "acceleratedCounts": [
+        2
+      ]
+    },
+    {
+      "name": "A2",
+      "seconds": 20.010000000009313,
+      "samples": 41,
+      "completed": true,
+      "acceleratedCounts": [
+        0
+      ]
+    }
+  ],
+  "actualFourEcmTagsVerified": true,
+  "pbrFullCtMarkNatWanAffinityVerified": true,
+  "allFourFqCodelLeavesHavePackets": true,
+  "freshSourceAndIdentityCheckedInSoftwarePhases": true,
+  "ecmStoppedAndAllCountsZeroRequiredBeforeClosedComparison": true,
+  "activeNativeLeaseAndRenewalStillStrict": true,
+  "terminalReclassificationBodyUnchangedFrom140": true,
+  "explicitEarlyRetirementAndFirmwareZero": true,
+  "fullProtectedBaselineRestored": true,
+  "bothPhysicalRootsRestored": true,
+  "exactStageStateModuleRemovalVerified": true,
+  "humanGameAcceptance": false,
+  "strictCpuComparabilityAccepted": false,
+  "fullCakeReplacementAccepted": false,
+  "nssPermanentlyEnabled": false
+}

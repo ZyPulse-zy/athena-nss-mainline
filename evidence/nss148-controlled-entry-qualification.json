@@ -1,0 +1,227 @@
+{
+  "passed": true,
+  "at": "2026-10-06T03:05:38.031Z",
+  "controlledCurrentFactory": true,
+  "nativePayloadUnchanged": false,
+  "controlledClosedPhaseCorrection": true,
+  "actualFacadeIncluded": true,
+  "inheritedBoundInputs": 1481,
+  "sourceManifest": {
+    "work/nss147/classifier.lua": "ae945b4e832fcf0b9f271f55435bd9b59d4f8315c86a84f593b113e0f37318a5",
+    "work/nss147/client-watchdog.ps1": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+    "work/nss147/close-endpoint.mjs": "8445e239f8538a8e5f687c3a966e019f143d83cbd8815398e3cda654c75ed330",
+    "work/nss147/compact-default-queues.mjs": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+    "work/nss147/controlled-session.mjs": "1582dd5df864a176ba17e8d3535bc1febbedb21391ce647dd3f070abaeb571f8",
+    "work/nss147/current-audit-diagnostic.mjs": "1b306cfa1cb25010fa5839e38bcd39fe1403e691a62a55d0976ed03c9f14f1cc",
+    "work/nss147/declared-baseline.mjs": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+    "work/nss147/discover-peer.py": "4fa09e30b0ec63fcf4aef31e5b5d5afc39f0bcc05f09b57aaf20f833df3a6e76",
+    "work/nss147/download-server.py": "9812803fcc62b6c2ad570c3160acb77f70090e0ebcfbe722702195c47c03dd13",
+    "work/nss147/endpoint-firewall-guardian.py": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+    "work/nss147/failed-wan-owner.lua": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+    "work/nss147/fast-path.lua": "9a4ceb7c4c913c8cdf171f1b960f9f6dccab36f9f832f0d4c97332ee32717610",
+    "work/nss147/health.mjs": "d1edfaeff9814a398581f6d6fcf1068e60b2fd1b77c96412bce96a12390308c6",
+    "work/nss147/match-controlled.mjs": "6d4a7a13a7dc9d351ff80cf418f9113a8d23a1085de0e80d36386e90b905eaf5",
+    "work/nss147/module-stage-guardian.lua": "533ebc28ce0c9513048f10d34599a4577d3feed04f1e066a6f568fc32bf6bfec",
+    "work/nss147/module-stage.mjs": "37826ea92b195b3f33c1bf5ac3c2761b013316123ff5572376e20a5c601fca29",
+    "work/nss147/pack-guardian.mjs": "746a9c866d1e80f9494cead571af2f0e44bddacafbd0a55f7df8f75c96378927",
+    "work/nss147/pack-lua.mjs": "d1a9982deb0acda6dd88fe70c630d176f7d5543ed4298d115bdd9b4d65186766",
+    "work/nss147/parse-ecm-any-wan.mjs": "6a17e97bd217b07f5169ae2375c210c6f1cab77dacb4d634355f406118327e60",
+    "work/nss147/payload.mjs": "37c8a7046192cdc8adc9e590cf6bfa9eca505278ea1c8ce4b45e16315bcfcdd7",
+    "work/nss147/phase-models.lua": "31bf5364ccdd2218d6747527cab9c47297ea27d65c4f3f200f7614e9f1989f5b",
+    "work/nss147/prepare.py": "e6415e0946d2fed8bae133cc21e7cccf8932306b592861ecbc7afa98a800e317",
+    "work/nss147/probe-peer.py": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+    "work/nss147/qos-physical.lua": "05b9862c12bbf8fa9b59f392e9c34f692647fdafaed0c871a502519d63e90454",
+    "work/nss147/qualify.mjs": "21e7a72fd30da9c2d899b03d9603aad413653553b32f4b040de2072c93f575fc",
+    "work/nss147/read-controlled.mjs": "3e1163c3e12b22f88f05dd8968ac38736b1c2776605a37aa1b883915c15fbb32",
+    "work/nss147/read-final-physical.mjs": "a9c0f97372bd329373c9301c16133c2ba262a72d5d12e4853f3ec6944e2afa20",
+    "work/nss147/run.mjs": "4eef04422e13a78bb737f4dc4b05fcfaf6693a3f6bdd8fcc2c12b18e4234dd52",
+    "work/nss147/server.py": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+    "work/nss147/service-epoch.mjs": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+    "work/nss147/session-binding.mjs": "91a2f415cea4cb443b3c15829158fb15775c138770d09949e6eb9fc4cebbc2c8",
+    "work/nss147/ssh-client.mjs": "772abecd426bcc855a674fc328cdd2a64d7bbf06b788a76f5474604a3c5796e8",
+    "work/nss147/start-dallas.mjs": "1a1d74147e65a20668545bede6afdac3714e772c0e5b6290b88f8c97c741f2e8",
+    "work/nss147/tag-normalizer.lua": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+    "work/nss147/uplink-tag-plan.mjs": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459",
+    "work/nss147/verify-old-endpoints.mjs": "7f9bdaeb985193d189bd172adb6fe2971b9f0044eb8240c7dff5e97cdabf196a",
+    "work/nss147/verify-receivers.mjs": "9b26dfedb6119f353da954f1a5dbc3eb54e8296becb5f3b6888f8eeebc193573"
+  },
+  "budgets": [
+    6,
+    27,
+    100,
+    9000,
+    65536,
+    73728
+  ],
+  "payloadBytes": 73685,
+  "qualificationGuardianExecBytes": 8903,
+  "modelExecBytes": 8375,
+  "changedSoftwarePhaseLoopsExecutedWithMockedBackend": true,
+  "actualConsumerAndPhaseFunctions": true,
+  "wholeFactoryAbaExecutedWithMockedBackend": false,
+  "models": {
+    "productionExecution": false,
+    "checks": 9,
+    "cases": [
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 7,
+        "phaseCount": 3,
+        "mockedIo": true,
+        "passed": true,
+        "case": "unchanged"
+      },
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 0,
+        "phaseCount": 1,
+        "mockedIo": true,
+        "passed": true,
+        "case": "stale-source"
+      },
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 0,
+        "phaseCount": 1,
+        "mockedIo": true,
+        "passed": true,
+        "case": "class-change"
+      },
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 0,
+        "phaseCount": 1,
+        "mockedIo": true,
+        "passed": true,
+        "case": "ct-change"
+      },
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 0,
+        "phaseCount": 1,
+        "mockedIo": true,
+        "passed": true,
+        "case": "mark-wan-change"
+      },
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 0,
+        "phaseCount": 1,
+        "mockedIo": true,
+        "passed": true,
+        "case": "nat-change"
+      },
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 0,
+        "phaseCount": 1,
+        "mockedIo": true,
+        "passed": true,
+        "case": "control-lost"
+      },
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 0,
+        "phaseCount": 2,
+        "mockedIo": true,
+        "passed": true,
+        "case": "active-expiry"
+      },
+      {
+        "routerWrites": false,
+        "actualConsumerAndPhaseFunctions": true,
+        "hardwareProof": false,
+        "nativeRenewals": 1,
+        "phaseCount": 2,
+        "mockedIo": true,
+        "passed": true,
+        "case": "active-class-change"
+      }
+    ],
+    "changedSoftwarePhaseLoopsExecutedWithMockedBackend": true,
+    "passed": true,
+    "wholeFactoryNotExecuted": true
+  },
+  "consumerModels": {
+    "completeActualConsumerExecuted": true,
+    "checks": 8,
+    "cases": [
+      {
+        "routerWrites": false,
+        "completeActualConsumerExecuted": true,
+        "passed": true,
+        "case": "unchanged"
+      },
+      {
+        "routerWrites": false,
+        "completeActualConsumerExecuted": true,
+        "passed": true,
+        "case": "active-expiry"
+      },
+      {
+        "routerWrites": false,
+        "completeActualConsumerExecuted": true,
+        "passed": true,
+        "case": "stale-source"
+      },
+      {
+        "routerWrites": false,
+        "completeActualConsumerExecuted": true,
+        "passed": true,
+        "case": "class-change"
+      },
+      {
+        "routerWrites": false,
+        "completeActualConsumerExecuted": true,
+        "passed": true,
+        "case": "ct-change"
+      },
+      {
+        "routerWrites": false,
+        "completeActualConsumerExecuted": true,
+        "passed": true,
+        "case": "mark-wan-change"
+      },
+      {
+        "routerWrites": false,
+        "completeActualConsumerExecuted": true,
+        "passed": true,
+        "case": "nat-change"
+      },
+      {
+        "routerWrites": false,
+        "completeActualConsumerExecuted": true,
+        "passed": true,
+        "case": "guardian-unhealthy"
+      }
+    ],
+    "passed": true,
+    "productionExecution": false
+  },
+  "completeActualConsumerTestedSeparately": true,
+  "phaseInspectorMockedExplicitly": true,
+  "activeNativeExpiryUnchanged": true,
+  "freshSourceAndIdentityChecksUnchanged": true,
+  "closedHardwareStoppedAndAllEcmZeroRequired": true,
+  "oneTcpOneUdp": true,
+  "offeredDownloadMbps": 32,
+  "desktopOperated": false,
+  "productionExecution": false,
+  "currentHardwareAbaCompleted": false
+}

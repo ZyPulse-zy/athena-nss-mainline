@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-06T03:10:17.990Z",
+  "readonly": true,
+  "originalFullLockedNativeAudit": true,
+  "unrelatedConfigurationMatches": true,
+  "knownExceptions": [
+    "Healthy native-audited classifier instance recovered before experiment",
+    "Auth PID-discovery source and exactly its manifest row",
+    "Naturally changed WAN4 PID/link/address/route state",
+    "Exact protected health-controller failover mapping and WAN4 DHCP rules"
+  ],
+  "exactWan4AutomaticFailoverProved": true,
+  "nativeDynamicSelectorsVerifiedByOriginalOwnershipAudit": true,
+  "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+  "workerPid": 31657,
+  "guardianPid": 17139,
+  "queryAge": 4.589999999850988,
+  "selectors": 4,
+  "ecmStoppedAndZero": true,
+  "noActiveTransaction": true,
+  "noStaging": true,
+  "noExperimentState": true,
+  "noExperimentalModule": true,
+  "authRepairCommitted": true,
+  "wan4Running": false,
+  "wan4Up": false,
+  "wan4Ipv4Present": false,
+  "allFiveWanHealthy": false,
+  "fullOriginalNssAdmissionEpochPassed": false,
+  "nssAdmissionAllowed": false,
+  "initialHealthFailurePreserved": true
+}

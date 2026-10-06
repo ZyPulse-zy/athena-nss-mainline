@@ -1,0 +1,20 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';import {spawnSync} from 'node:child_process';
+import {verifyPreparation as prior} from '../nss140/session-binding.mjs';import {candidateAdapter} from './candidate-adapter.mjs';
+import {tokens} from '../nss140/pack-lua.mjs';
+const root='work/nss143',h=b=>crypto.createHash('sha256').update(b).digest('hex'),previous=prior();
+const original=fs.readFileSync('work/nss49/classifier.lua','utf8'),a=candidateAdapter(original);
+for(const text of Object.values(a.retained))assert.ok(original.includes(text));
+assert.deepEqual(tokens(a.source),tokens(a.retained.exactInspect+'return M\nend)()\nlocal A={}\n'+a.retained.exactContext+' local out={}\n'+a.retained.exactCandidates+' return out\nend\nreturn A\n'));
+let reverted=fs.readFileSync(root+'/real-session.mjs','utf8');
+for(const f of['declared-baseline.mjs','compact-default-queues.mjs','service-epoch.mjs','parse-ecm-any-wan.mjs','module-stage.mjs','uplink-tag-plan.mjs'])reverted=reverted.replace("'../nss140/"+f+"'","'./"+f+"'");
+reverted=reverted.replace("observationRoot='work/nss143'","observationRoot='work/nss140'").replace("const dir='work/nss143/real-matched-aba-'","const dir='work/nss140/real-matched-aba-'");
+assert.equal(reverted,fs.readFileSync('work/nss140/real-session.mjs','utf8'),'Only qualified observation namespace and unchanged imports may differ');
+const names=['candidate-adapter.mjs','read-real-candidates.mjs','record-candidates.mjs','real-session.mjs','session-binding.mjs','qualify-reader-entry.mjs','prepare-reader-entry.py'];
+const sourceManifest={};for(const name of names){const file=root+'/'+name;sourceManifest[file]=h(fs.readFileSync(file));if(name.endsWith('.mjs')){const r=spawnSync(process.execPath,['--check',file],{encoding:'utf8',windowsHide:true});assert.equal(r.status,0,r.stderr);}}
+const p=spawnSync(process.execPath,[root+'/read-real-candidates.mjs'],{encoding:'utf8',windowsHide:true,timeout:30000});
+fs.writeFileSync(root+'/reader-qualification-command-private.json',JSON.stringify({status:p.status,stdout:p.stdout,stderr:p.stderr},null,2)+'\n',{flag:'wx'});assert.equal(p.status,0,p.stderr);
+const native=JSON.parse(fs.readFileSync(root+'/real-reader-qualified.json'));assert.ok(native.readonly&&native.controllerPrototypeOnly&&!native.nssAdmissionAllowed);
+const frame=JSON.parse(fs.readFileSync(root+'/real-candidates-private.json'));assert.ok(frame.execBytes<=9000&&frame.sourceAge<6);
+const proof={passed:true,at:new Date().toISOString(),visibilityReaderOnlyChange:true,sameOriginalNssFactory:true,nativeReadOnlyReaderExecuted:true,unchangedInspectContextCandidatesTokenStreams:true,originalBudgets:[6,27,100,65536,73728],maximumExecBytes:9000,currentReaderExecBytes:frame.execBytes,inheritedBoundInputs:Object.keys(previous.sourceManifest).length,sourceManifest,productionExecution:false,wholeFactoryAbaNotExecuted:true};
+fs.writeFileSync(root+'/entry-qualified.json',JSON.stringify(proof,null,2)+'\n',{flag:'wx'});
+const current=(await import('./session-binding.mjs')).verifyPreparation();console.log(JSON.stringify({passed:true,boundInputs:Object.keys(current.sourceManifest).length,newBindings:names.length,execBytes:frame.execBytes,routerWrites:false}));

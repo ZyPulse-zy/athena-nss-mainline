@@ -1,0 +1,13 @@
+{
+  "passed": false,
+  "kind": "local-export-report-parent-directory-missing",
+  "originalFailurePreserved": true,
+  "firstExportPartiallyCompleted": true,
+  "source": "work/nss148/save-evidence.py",
+  "line": 414,
+  "originalScriptAndExportedEvidenceBytesKept": true,
+  "commitOrPushStarted": false,
+  "productionWrites": false,
+  "hardwareTestRerun": false,
+  "correction": "Create the explicit reports directory and finish unchanged export"
+}

@@ -1,5 +1,11 @@
 # 接续此研究
 
+最新NSS148整理／147实测：用户使用电脑，不操作UI/Steam/CS2。自有32Mbps有界下载＋小UDP，单WAN5三段20.01秒/123帧、ECM0/2/0、四tag/四leaf/完整mark/NAT/affinity/7续租/精确恢复通过。下载26.681/26.971/25.442，softirq17.549/3.008/8.061；背景3.556/2.650/2.028违反原可比条件，comparison=false/降幅null，UDP不作CS2。下bulkdrop379/两RTdrop0，非300/真人/长期/完整CAKE验收。147修闭软件段旧epoch过期并补顶facade传参：只能stop且ECM全零时跳过旧6秒准入截止；当前source/class/CT仍严，active27/owner100不改。145/146 ECM前失败和146即时instance恢复审核失败／后续成功分开保留。1518实际绑定冻结精确、actualpayload73686/actualguardian8899；8consumer+9phase RAM分项，不称整个factory RAM。148真人wrapper用147已实测factory/143精简visibility reader，1527项/defaultinspect现场0pair/no writes，真人wrapper完整ABA未执行。1439311/9203/9175>9000失败及首UIguard失败后点击保存；144漏审核依赖、146资格/模型尺寸/语法、147分析缺字段均保存。常驻68/config581b5d46…c791d7/31657/17139/upTag0不变，最终ECM全零无残留/两根精确恢复，11端点/客户端/SSH sender关闭，WAN4down四路failover保持。142 runtime归档原字节，heartbeat保持暂停，不扩WAN/共享预算/WiFi/autorate/新游戏下载。工程可继续后台自有受控测试；最后真人只在用户方便时一次，不重复CPU门槛、不重装classifier。以STATE开头为准。
+
+## NSS142及更早历史
+
+# 接续此研究
+
 最新NSS142：09:40后晨间只读完整终态、两物理根、七端点与客户端/SSH receiver关闭核验全部通过；140准备入口1385当前/旧冻结输入精确相同，没有重跑模型/生产写入/ECM/负载/UI。常驻68/31657/17139、upTag0/config不变；WAN4仍down，既有四路failover精确不变。首次本地调用语法拒绝原记录保留，141 runtime原Git字节归档，旧证据不改。发布archive验证后立即暂停本夜heartbeat，10点后不新实验，临时keep-awake自到期。下一步用户醒来一次集中真人CS2＋已有下载的140单WAN三段20秒闭环；140整合完整ABA尚未执行，139撤销/重学和128约30Mbps CPU仅历史实测，不扩WAN/不新下载/不重复准备。以STATE开头为准。
 
 ## NSS141及更早历史

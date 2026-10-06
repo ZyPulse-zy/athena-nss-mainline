@@ -1,0 +1,52 @@
+{
+  "passed": false,
+  "originalFailurePreserved": true,
+  "commitOrPushChainStoppedBeforeCommit": true,
+  "sourceBytesChanged": false,
+  "files": [
+    {
+      "path": "code/work/nss144/endpoint-firewall-guardian.py",
+      "line": 119,
+      "error": "new blank line at EOF",
+      "attribute": "-blank-at-eof",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437"
+    },
+    {
+      "path": "code/work/nss145/endpoint-firewall-guardian.py",
+      "line": 119,
+      "error": "new blank line at EOF",
+      "attribute": "-blank-at-eof",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437"
+    },
+    {
+      "path": "code/work/nss146/endpoint-firewall-guardian.py",
+      "line": 119,
+      "error": "new blank line at EOF",
+      "attribute": "-blank-at-eof",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437"
+    },
+    {
+      "path": "code/work/nss147/endpoint-firewall-guardian.py",
+      "line": 119,
+      "error": "new blank line at EOF",
+      "attribute": "-blank-at-eof",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437"
+    },
+    {
+      "path": "code/work/nss146/fast-path.lua",
+      "line": 211,
+      "error": "trailing whitespace on existing empty line",
+      "attribute": "-blank-at-eol",
+      "sha256": "9a4ceb7c4c913c8cdf171f1b960f9f6dccab36f9f832f0d4c97332ee32717610"
+    },
+    {
+      "path": "code/work/nss147/fast-path.lua",
+      "line": 211,
+      "error": "trailing whitespace on existing empty line",
+      "attribute": "-blank-at-eol",
+      "sha256": "9a4ceb7c4c913c8cdf171f1b960f9f6dccab36f9f832f0d4c97332ee32717610"
+    }
+  ],
+  "correction": "Path-specific attributes for frozen proof copies only; other whitespace checks remain active",
+  "hardwareExperimentRerun": false
+}

@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NSS148 后台单WAN验收</title><style>
+body{font:16px/1.75 system-ui,"Microsoft YaHei",sans-serif;margin:0;background:#f4f6f8;color:#182334}
+main{max-width:1000px;margin:40px auto;padding:34px;background:white;border-radius:16px}
+h1{font-size:30px;margin:0 0 8px}h2{font-size:22px;margin-top:32px}.meta{color:#536174}
+.ok{background:#e5f4ed;padding:18px;border-radius:8px}.limit{background:#fff3de;padding:18px;border-radius:8px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{text-align:left;border-bottom:1px solid #dfe5ed;padding:10px}
+a{color:#1c579c}li{margin:8px 0}code{background:#f0f2f6;padding:2px 4px}@media(max-width:700px){main{margin:0;padding:20px}table{font-size:13px}th,td{padding:7px}}
+</style><main><h1>后台受控闭环已完成</h1><p class="meta">NSS148整理 · NSS147实测 · 2026-10-06 · 单WAN5 · 无桌面/Steam/CS2操作</p>
+<p class="ok">一条自有TCP下载＋一条低速UDP已完成software→NSS→software，各20.01秒。
+ECM 0→2→0；学习前自动class正确，bulk/RT分别进入独立NSS FQ-CoDel leaf。
+完整PBR/ct mark/NAT/WAN affinity、7次续租和精确恢复通过。</p>
+<h2>实际观测</h2><table><tr><th>阶段</th><th>下载Mbps</th><th>softirq</th><th>busy</th><th>UDP收到/发出</th><th>RTT p95 ms</th><th>squeeze/drop</th></tr><tr><th>A</th><td>26.681</td><td>17.549%</td><td>34.171%</td><td>863/864</td><td>192.725</td><td>0 / 0</td></tr><tr><th>B</th><td>26.971</td><td>3.008%</td><td>18.820%</td><td>873/875</td><td>191.813</td><td>0 / 0</td></tr><tr><th>A2</th><td>25.442</td><td>8.061%</td><td>25.983%</td><td>824/838</td><td>192.785</td><td>0 / 0</td></tr></table>
+<p class="limit">这是功能验收。其它WAN背景流量3.556→2.650→2.028 Mbps，不满足原严格CPU对照条件，因此正式相对降幅留空。
+UDP echo不是CS2 jitter/loss/Miss；本轮不声称真人体验、300Mbps、长期或五WAN验收。</p>
+<h2>队列与恢复</h2><p>附近异步快照：下bulk＋48,285包/drop379，下RT＋922包/drop0；上bulk＋39,640包/drop0，上RT＋888包/drop0。
+真实RT流进入独立leaf且本轮该leaf无自身丢弃。bulk丢弃不等于已证明AQM效果或上游全路径丢包原因，异步计数也不是精确长期限速证明。</p>
+<p>DOWN30/bulk29/RT1，UP60/bulk59/RT1，未选中fallback950。每次stage前新checkpoint及独立PPID1超时撤销核验。
+最终ECM关闭全零，无事务/stage/state/实验模块，两物理原mq＋四fq_codel精确恢复；
+11个已有自有负载及Windows客户端/guard、SSH发送器均关闭，防火墙基线匹配。常驻分类器68与原配置保持，WAN4既有认证故障仍存在。</p>
+<h2>此次修复了什么</h2><p>原完整20秒软件段误比较初始6秒学习凭证，导致约4.5秒提前拒绝。
+145失败后146内层修复仍漏顶facade传参；147补全传参后完整硬件ABA通过。
+只在两frontend已停止且ECM全零的软件段略过旧epoch截止；当前分类来源/身份仍核验，活动NSS的27秒native lease和100秒owner均未放宽。
+8个完整Consumer和9个目标RAM分项通过；整个factory RAM未执行，硬件实际完整执行已通过。</p>
+<p>失败全部保留：143超长候选命令及首UI guard失效后点击、144本地依赖缺失、145/146软件段拒绝、146立即恢复instance审核失败和后续通过、模型尺寸/语法问题、147未观测字段分析失败。
+这些是本地实验harness问题，不宣称NSS上游缺陷，也没有提交Issue/PR。</p>
+<h2>当前阶段和下一步</h2><p>单WAN自动分类→NSS双向bulk/RT、受控完整闭环与历史真实改类撤销／新epoch重学已证明。
+修复后的factory已接回148真人入口，默认inspect真实只读运行0pair/no writes。
+可以继续后台工程测试，无需用户挂机；真人体验只留方便时一次。
+本轮没有长期开放ECM，也没有把全部软件CAKE替换成NSS。第二WAN/共享预算/WiFi/autorate继续后置，夜间heartbeat保持暂停。</p>
+<p><a href="https://github.com/ZyPulse-zy/athena-nss-mainline/blob/main/docs/STATE.md">仓库状态</a> ·
+<a href="https://github.com/ZyPulse-zy/athena-nss-mainline/blob/main/docs/ISSUE_CONTROLLED_ABA_EPOCH.md">缺陷最小复现与修复</a></p></main></html>

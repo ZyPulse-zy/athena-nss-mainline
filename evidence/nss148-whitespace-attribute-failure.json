@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "originalFailurePreserved": true,
+  "commitOrPushChainStoppedBeforeCommit": true,
+  "attributeOverrideDroppedInheritedCrAtEol": true,
+  "sourceBytesChanged": false,
+  "correction": "Keep cr-at-eol in the same six exact-path whitespace attributes",
+  "operationalBindingsChanged": false,
+  "hardwareTestRerun": false
+}

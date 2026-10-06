@@ -1,3 +1,13 @@
+# 最新证据：NSS148整理／147后台实测
+
+- [状态](STATE.md)、[计划](PLAN.md)、[失败记录](../evidence/nss148-failures.json)
+- [汇总](../evidence/nss148-mainline.json)、[完整实测](../evidence/nss148-trial.json)、[实际指标](../evidence/nss148-metrics.json)
+- [源白名单及历史保留](../evidence/nss148-source-proof.json)、[软件段缺陷修复](ISSUE_CONTROLLED_ABA_EPOCH.md)
+- [终态](../evidence/nss148-final-audit.json)、[物理队列](../evidence/nss148-physical-final.json)、[端点关闭](../evidence/nss148-endpoint-client-closure.json)
+- [下一次真人入口](../code/work/nss148/real-session.mjs)，默认仅inspect；[只读结果](../evidence/nss148-readonly-readiness.json)
+
+## 历史索引
+
 # NSS142晨间只读收尾
 
 - [NSS142 mainline](../evidence/nss142-mainline.json)
