@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "completedEpochs": 2,
+  "supervisorItselfActuallyKilled": true,
+  "newSupervisorProcessFromDiskJournal": true,
+  "oldSupervisorAbsenceVerified": true,
+  "independentNativeRecoveryBeforeSuccessor": true,
+  "newQueryCheckpointOwnerKernelPinBothCis": true,
+  "sameSocketCtMarkNatWan": true,
+  "noOldGateReopenOrLeaseExtension": true,
+  "externalHarnessOnlyLoadKillRestart": true,
+  "matchedCpuComparison": false,
+  "cs2Acceptance": false,
+  "permanentNssDeployment": false
+}

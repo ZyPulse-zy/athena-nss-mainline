@@ -1,0 +1,20 @@
+[
+  {
+    "case": "run1",
+    "passed": false,
+    "cause": "Original read-only WAN prerequisite popen read returned nil; detailed independent repeat passed, root cause remains unproved",
+    "originalPreserved": true,
+    "beforeCheckpointAndNssStage": true,
+    "supervisorActuallyKilled": false,
+    "nssOrFirmwareFailure": false
+  },
+  {
+    "case": "run2",
+    "passed": false,
+    "cause": "Version generator changed a historical literal session-binding dependency to a nonexistent versioned path; corrected only in v3",
+    "originalPreserved": true,
+    "beforeCheckpointAndNssStage": true,
+    "supervisorActuallyKilled": false,
+    "nssOrFirmwareFailure": false
+  }
+]

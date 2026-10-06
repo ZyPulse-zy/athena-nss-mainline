@@ -1,0 +1,26 @@
+// Morning closure only: inspect existing endpoints and owned clients without mutation.
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+const rounds=[129,131,132,133,135,136,138,144,145,146,147,149,150,151,152],root='work/nss154';
+const loads=rounds.map(n=>JSON.parse(fs.readFileSync(`work/nss${n}/load-latest-private.json`,'utf8')));
+for(let i=0;i<loads.length;i++)assert.match(loads[i].unit,new RegExp(`^nss${rounds[i]}-[a-f0-9]{16}$`));
+for(const file of ['work/nss150/load-v1-reference-private.json','work/nss150/load-v3-reference-private.json','work/nss150/load-v4-reference-private.json','work/nss151/load-v2-reference-private.json']){const x=JSON.parse(fs.readFileSync(file));assert.match(x.unit,/^nss150-[a-f0-9]{16}$/);assert.ok(!loads.some(y=>y.unit===x.unit));loads.push(x);}
+const firstCrash=JSON.parse(fs.readFileSync('work/nss152/load-v3-reference-private.json'));assert.match(firstCrash.unit,/^nss152-[a-f0-9]{16}$/);assert.ok(!loads.some(y=>y.unit===firstCrash.unit));loads.push(firstCrash);
+const current=JSON.parse(fs.readFileSync('work/nss153/load-latest-private.json'));assert.match(current.unit,/^nss153-[a-f0-9]{16}$/);assert.ok(!loads.some(x=>x.unit===current.unit));loads.push(current);
+for(const file of ['work/nss154/load-v1-reference-private.json','work/nss154/load-v2-reference-private.json','work/nss154/load-latest-private.json']){const thisRound=JSON.parse(fs.readFileSync(file));assert.match(thisRound.unit,/^nss154-[a-f0-9]{16}$/);assert.ok(!loads.some(x=>x.unit===thisRound.unit));loads.push(thisRound);}
+const hashes=loads.map(s=>JSON.parse(fs.readFileSync(s.dir+'/firewall-checkpoint-private.json','utf8')).canonicalSha256);
+for(const h of hashes)assert.match(h,/^[a-f0-9]{64}$/);
+const guardian=fs.readFileSync('work/nss138/endpoint-firewall-guardian.py','utf8');
+const body=guardian+`\nexpected=${JSON.stringify(hashes)}\nunits=${JSON.stringify(loads.map(s=>s.unit))}\nnow=nft(['-j','list','ruleset'])\nowned=[x['rule'] for x in now['nftables'] if x.get('rule',{}).get('comment','').startswith('nss14-')]\ndigest=hashlib.sha256(canonical(now).encode()).hexdigest()\nassert not owned and all(h==digest for h in expected)\nclosed=0\nfor unit in units:\n p=subprocess.run(['systemctl','show',unit+'.service','-p','MainPID','-p','ActiveState'],capture_output=True,text=True,timeout=4)\n assert p.returncode==0 and 'MainPID=0' in p.stdout and 'ActiveState=inactive' in p.stdout\n closed+=1\nfor port in [45817,45818]:\n p=subprocess.run(['ss','-H','-lntup','sport','=',':'+str(port)],capture_output=True,text=True,timeout=4)\n assert p.returncode==0 and not p.stdout.strip()\nprint(json.dumps({'passed':True,'readonly':True,'previousLoadsChecked':len(units),'temporaryFirewallRulesRemaining':len(owned),'allCanonicalFirewallBaselinesMatch':True,'ownedUnitsInactiveMainPidZero':closed,'tcpAndUdpPortsClosed':True,'remoteWrites':False}))\n`;
+const save=(n,v)=>fs.writeFileSync(root+'/'+n+'.json',JSON.stringify(v,null,2)+'\n',{flag:'wx'});
+const remote=spawnSync('ssh',['-o','BatchMode=yes','-o','ConnectTimeout=8','sub2api-dallas','python3 -B -E -s -u -'],{input:body,encoding:'utf8',windowsHide:true,timeout:25000});
+save('endpoint-remote-raw-private',{code:remote.status,stdout:remote.stdout,stderr:remote.stderr});
+assert.equal(remote.status,0,remote.stderr);const endpoint=JSON.parse(remote.stdout);assert.ok(endpoint.passed);
+const paths=loads.map(s=>s.dir.replaceAll('\\','/'));
+const ps='$dirs=ConvertFrom-Json -InputObject '+"'"+JSON.stringify(paths).replaceAll("'","''")+"'"+'; $matches=@(Get-CimInstance Win32_Process | Where-Object { if ($_.ProcessId -eq $PID -or -not $_.CommandLine) { return $false }; $line=$_.CommandLine.Replace([char]92,[char]47); foreach ($dir in $dirs) { if ($line.IndexOf($dir,[StringComparison]::OrdinalIgnoreCase) -ge 0) { return $true } }; return $false } | Select-Object ProcessId,Name); @{readonly=$true; ownedClientOrGuardProcessesRemaining=$matches.Count} | ConvertTo-Json -Compress';
+const local=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',ps],{encoding:'utf8',windowsHide:true,timeout:12000});
+save('client-closure-raw-private',{code:local.status,stdout:local.stdout,stderr:local.stderr});assert.equal(local.status,0,local.stderr);
+const client=JSON.parse(local.stdout.replace(/^\uFEFF/,''));assert.equal(client.ownedClientOrGuardProcessesRemaining,0);
+const out={...endpoint,...client,observedAt:new Date().toISOString(),existingEndpointServicesUnchanged:true,clientProcessesMatchedByExactOwnedLoadPaths:true,productionWrites:false,desktopOperated:false};
+save('endpoint-client-closure',out);console.log(JSON.stringify(out));

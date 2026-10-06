@@ -1,0 +1,118 @@
+{
+  "versions": [
+    {
+      "passed": true,
+      "inheritedBindings": 1752,
+      "sourceManifest": {
+        "work/nss154/prepare.py": "122719159680d8a921756d8ced453c6622f9d73fd3075e1453ab84608f393712",
+        "work/nss154/start-dallas.mjs": "6445c3bd6450e33ddc0113351766820e41419cc5ee6768848e4d310b76ddf509",
+        "work/nss154/match-controlled.mjs": "79a0f994fbe047f55efd086e02dc2e3449e08ddac9b8b62afee0be70edd34a5c",
+        "work/nss154/read-controlled.mjs": "1c9376df14198174a25cdb2cf1f0eb0d937a615605e2d707ac507accd27a24b8",
+        "work/nss154/current-audit-diagnostic.mjs": "090c5ce4ccad8a047934e9c205414643b0520513ddcc033e7eeeb4be60e12067",
+        "work/nss154/failed-wan-owner.lua": "00b4192b8acf352125add0abe135efe6bcfe7b14955b5bba034ff505ecdb1067",
+        "work/nss154/declared-baseline.mjs": "d1f829d0224f9eff06aafc8250bd23bcc67615db1419ceca5628dab906bb0d98",
+        "work/nss154/ssh-client.mjs": "0e6a0f2835d6e054942480768c6c414394bec009d2d143e4a6b85f65c6873d12",
+        "work/nss154/bounded-pacer.mjs": "f126a177fa1afd9cd8af98ac858d4e0eacb44388efbb5357333949c52a48c09b",
+        "work/nss154/upload-ack.mjs": "a291bbcfc707964f399b11c7914f403530c7e06a8f33cd740bfd047945034221",
+        "work/nss154/upload-server.py": "de2a920b810e2f0eb74f255eab39be6de5c7d246f4506fbd276593de2f5d300a",
+        "work/nss154/server.py": "1a73eb25f043b4a21ef5ccd7f9e48ba0aedf49a51a86f66f1b3c9ee93a31ac45",
+        "work/nss154/discover-peer.py": "88d324572c216f53b2c2ccdc89ab3a517b1136054332bf75f505f5e16beac4af",
+        "work/nss154/probe-peer.py": "a358ad52ae56de34b4384057be33beb770cb1e5b65bf8bc95c95f0f1b07b7564",
+        "work/nss154/client-watchdog.ps1": "5590458fe66d600ddff8b730ceddfd2e1f0041d62a404911457685b638ec114d",
+        "work/nss154/endpoint-firewall-guardian.py": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+        "work/nss154/close-endpoint.mjs": "f39f2ad29ff0d636b408be322b34ed9169f876207c753940b6022ed410696739",
+        "work/nss154/crash-read.lua": "4ca8d4e4278a8249e8c59da6aad8cdeef082b8401349627433c080ae330ea612",
+        "work/nss154/epoch-driver.mjs": "5bf72b72945658dfb29841bd3d91c9fe28ceaf41c29df1142c7f6049def20a8d",
+        "work/nss154/journal.mjs": "a5fec3474fa060b3f7ed40c609f0cca19456ba09d79a6a23c4f55e3ed371f82a",
+        "work/nss154/process-identity.mjs": "a4b182762d485925fd83b9da25448bd51196804dfc67d9df2f7a4007d40f21b8",
+        "work/nss154/pilot-supervisor.mjs": "e341c9956ab0ce51478256f08f4dae7d0f08a41cdb78f320e41eb8ae6fda47f3",
+        "work/nss154/restart-harness.mjs": "37ec51c364b70b24fd62dac7d175a386c338535110abfb1704b8c484bedcfa1c",
+        "work/nss154/session-binding.mjs": "c2afa9c1b110dce0d49ba5757d56dbbbd4f37b6edc3e0d1a791dd4db75590fdc",
+        "work/nss154/journal-checks.mjs": "c9c5e4cb25401311bc55d1033e0d3ce6d5ddc4d4fc3f2e30e596d896e91b4806",
+        "work/nss154/qualify.mjs": "af6057247e02a8cb8b4f0409f6cdc97c5ac6e54c58c18b7cfe15bef19225c199"
+      },
+      "journalledSupervisor": true,
+      "nativeFactoryUnchanged": 149,
+      "budgets": [
+        6,
+        27,
+        100,
+        180,
+        9000,
+        65536,
+        73728
+      ],
+      "journalModels": {
+        "passed": true,
+        "acceptedSchemaModels": 2,
+        "rejectedMalformedJournalModels": 15,
+        "hardwareExecution": false,
+        "fullFactoryModelExecuted": false
+      },
+      "fullFactoryModelExecuted": false,
+      "productionExecution": false
+    },
+    {
+      "passed": true,
+      "inheritedBindings": 1778,
+      "sourceManifest": {
+        "work/nss154/prepare-retry.py": "eb5c2329739872c55c71ebda290e85d5aa6d3f11ff0e0c5ce7e73ea330308389",
+        "work/nss154/epoch-driver-v2.mjs": "f918c0ce44983fade96438d074fdf357e6cced986286bc32cc8ce9e45961464f",
+        "work/nss154/journal-v2.mjs": "c997342329a40b287c7277db671b4c8d11abe4e9a670d1e32c3b43a8b3d9f036",
+        "work/nss154/process-identity-v2.mjs": "f12af3ce2cac46a85d4a8f8e3c177d69c54f09ebcc2bf718e2f819df08672f17",
+        "work/nss154/pilot-supervisor-v2.mjs": "fcc84be7fc00309e5e1a1243af32d7c891e1ad9c9cf39a2a7f36279746c2d199",
+        "work/nss154/restart-harness-v2.mjs": "3fdf205f2b97efa645c47f94601aa952ebfbe41052e385cc8622c35341428c75",
+        "work/nss154/session-binding-v2.mjs": "a1a4787d43e8064b5f8bcb40c10d0fdbb93563c882af9323ee12fa65c53bd599",
+        "work/nss154/qualify-v2.mjs": "25686bc24056936003096b68cf83b6e767f911b0f7815df102c9bd04fbf17bea",
+        "work/nss154/read-prerequisite-diagnostic.mjs": "63ad6a8bce4a60bdf60b246196615592f8c21facc285544360d4df0ce284b51b"
+      },
+      "singleRetryOnly": true,
+      "originalFailurePreserved": true,
+      "readOnlyPrerequisiteRepeatPassed": true,
+      "transientReadRootCauseUnknown": true,
+      "nativeFactoryUnchanged": 149,
+      "budgets": [
+        6,
+        27,
+        100,
+        180,
+        9000,
+        65536,
+        73728
+      ],
+      "journalModelsReusedFromSameUnchangedPolicy": true,
+      "productionExecution": false
+    },
+    {
+      "passed": true,
+      "inheritedBindings": 1787,
+      "sourceManifest": {
+        "work/nss154/prepare-v3.py": "7c9c721afc7046828b825264216ab9102086e4d133d4ed2fd49c0ac57cebf3c6",
+        "work/nss154/epoch-driver-v3.mjs": "057f2fa5a0e94c634980a53771a332834386778cc715a1dd56ce1720e84f0991",
+        "work/nss154/journal-v3.mjs": "c8f6acf692ceb29b5572b6428396eddffcfeb2e008b9d3fbcd0f69707d1d5efa",
+        "work/nss154/process-identity-v3.mjs": "a619ca8fcfeaf2af1a1bb9b9a517d17c3f28b82b163e016c5c7f2db8f20e9c5b",
+        "work/nss154/pilot-supervisor-v3.mjs": "6f952988d4eeb1e48c36be68240446dd7c8445fcc20905043626d6aca434d2f4",
+        "work/nss154/restart-harness-v3.mjs": "6f22fe1cc7def8c2c41873c567c6ceec6114445a5a31433c20d23c5a6c1f48c7",
+        "work/nss154/session-binding-v3.mjs": "2fcdb9ab2bb3a21e017be48568242fdb2b749eeae1982aa45f3200ad110c8657",
+        "work/nss154/qualify-v3.mjs": "9be22907b3186736e2b70ef5f4bc8d1eb105c2279f0819a965b65d2ce86f1574"
+      },
+      "exactHistoricalDependencyRestored": true,
+      "literalAndRelativeDependenciesPresent": true,
+      "originalFailuresPreserved": true,
+      "nativeFactoryUnchanged": 149,
+      "budgets": [
+        6,
+        27,
+        100,
+        180,
+        9000,
+        65536,
+        73728
+      ],
+      "journalModelsReusedFromSameUnchangedPolicy": true,
+      "productionExecution": false
+    }
+  ],
+  "actualBindings": 1795,
+  "passed": true
+}
