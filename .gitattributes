@@ -53,3 +53,6 @@
 # Exact inherited guardian and archived NSS154 runtime bytes.
 /code/work/nss155/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
 /evidence/nss154-runtime.json -text
+
+# Preserve the exact qualified fast-path whitespace; scope this exception only.
+/code/work/nss155/fast-path.lua whitespace=cr-at-eol,-blank-at-eol

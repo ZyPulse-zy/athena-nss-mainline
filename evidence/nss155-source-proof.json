@@ -3,7 +3,7 @@
   "historicPrefixSources": 2371,
   "historicPrefixCanonicalSha256": "1ccb56be46a4e98a53177a4218ae3ab4112873c938f1a6f0a1e018db7e343d61",
   "historicManifestPrefixUnchanged": true,
-  "sources": 58,
+  "sources": 59,
   "sourceHashes": {
     "work/nss155/prepare.py": "e839246d5c520d2c57a922f8bb4ddc2c63ffe8df4c13b9432902a8252910e393",
     "work/nss155/prepare-native.py": "3abe71ba2ee88a4e95bedc8200da4373ece546b403c3f861e835cfb395a05e56",
@@ -62,7 +62,8 @@
     "work/nss155/transport-load32-diagnostic.mjs": "ed7a3642295240606a4ae830b2f09797685125c2a022e3bbc05a6fcd7aa7f60d",
     "work/nss155/reporting/export.py": "8ef3799b339c3bffa42750c937ed5631194b2c6049a4319022762537e98bc884",
     "work/nss155/reporting/update-checker.py": "a5741fe9e4155b4d4fd818c7fef73db4e19ccaac77a79d7ba8c9fc0c79ee6428",
-    "work/nss155/reporting/verify-published.py": "b347701003b29df4a7473bd545ac5fd324561c7850013d6bd300e5121089ea1b"
+    "work/nss155/reporting/verify-published.py": "b347701003b29df4a7473bd545ac5fd324561c7850013d6bd300e5121089ea1b",
+    "work/nss155/reporting/repair-publication-whitespace.py": "e0f28c23fdb8d54a8e0c549dc877598967647b25cadf5aa230c418e2c55bdd8c"
   },
   "actualBindings": 1836,
   "actualFlowExitBindings": [

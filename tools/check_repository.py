@@ -1703,7 +1703,8 @@ for t in t155:
  assert t['originalPreCloseCtMarkNatWanFourTagsCorrect'] and t['checkpointDownloadedShaGzipVerified'] and t['independentPpidOneRollbackVerifiedBeforeWrite']
  assert t['payloadBytes']<=73728 and t['guardianExecBytes']<=9000 and t['nativeHardSeconds']==27 and t['ownerMaxSeconds']==100 and all(t['undo'].values())
  assert not t['performanceComparison'] and t['cpuReductionConclusion'] is None and not t['cs2Acceptance'] and t['udpRepliesAfterClientClose']>10
-f155=json.loads((root/'evidence/nss155-failures.json').read_text());assert len(f155)==4 and x155['failuresPreserved']==4
+f155=json.loads((root/'evidence/nss155-failures.json').read_text());assert len(f155)==5 and x155['failuresPreserved']==5
+assert f155[4]['commitAndPushIncorrectlyContinuedAfterFailedCheck'] and f155[4]['workflowErrorAcknowledged'] and not f155[4]['frozenSourceEdited'] and not f155[4]['forcePushOrHistoryRewrite']
 for t in f155[:3]:assert not t['overallSuccessorPassed'] and not t['successorNssStageOccurred'] and t['originalFailureAndSourcesPreserved']
 assert not f155[0]['routerNssStageOccurred'] and f155[1]['oldFlowExitPassed'] and f155[2]['oldFlowExitPassed']
 assert f155[3]['correctedOnlyOutputNamespace'] and not f155[3]['previousEvidenceOverwritten'] and f155[3]['publicationStoppedUntilChecksPassed']

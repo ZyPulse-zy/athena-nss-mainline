@@ -36,5 +36,19 @@
     "correctedOnlyOutputNamespace": true,
     "previousEvidenceOverwritten": false,
     "publicationStoppedUntilChecksPassed": true
+  },
+  {
+    "case": "publication-staged-whitespace",
+    "check": "git diff --cached --check",
+    "exitCode": 1,
+    "file": "code/work/nss155/fast-path.lua",
+    "line": 191,
+    "cause": "Inherited whitespace-only line in frozen fast-path source",
+    "failedCommitPreserved": "627f8c4d0b62ab465d994aa42590591f911e6b5e",
+    "commitAndPushIncorrectlyContinuedAfterFailedCheck": true,
+    "workflowErrorAcknowledged": true,
+    "frozenSourceEdited": false,
+    "forcePushOrHistoryRewrite": false,
+    "correction": "Path-specific blank-at-eol attribute; subsequent publication uses explicit exit-code gates"
   }
 ]

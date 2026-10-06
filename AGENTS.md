@@ -14,6 +14,8 @@
 
 证据：[主线](evidence/nss155-mainline.json)、[退出实测](evidence/nss155-trials.json)、[入口](evidence/nss155-qualification.json)、[失败](evidence/nss155-failures.json)、[软件传输诊断](evidence/nss155-software-transport-diagnostics.json)、[终态](evidence/nss155-final-audit.json)、[端点](evidence/nss155-endpoint-client-closure.json)
 
+发布流程更正：首次暂存whitespace检查拒绝后编排仍提交并推送627f8c4，是本轮流程错误。该提交、原错误和冻结源码保留；只增加该源码路径的blank-at-eol属性例外。后续检查逐步核验退出码后才允许提交/推送，实际archive结果另存收据。
+
 ## NSS154及更早历史
 
 # 监督器自身重启后从磁盘接管通过

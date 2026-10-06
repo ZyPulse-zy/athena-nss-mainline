@@ -17007,6 +17007,13 @@
       "sha256": "85d46655fc50cc5821a7aeaf9f78224ca607ff6aa01f126634ede0b0e35c4745",
       "bytes": 1500,
       "role": "owned-flow-exit-experiment-or-explicit-diagnostic-reporting"
+    },
+    {
+      "path": "code/work/nss155/reporting/repair-publication-whitespace.py",
+      "workspaceSource": "work/nss155/reporting/repair-publication-whitespace.py",
+      "sha256": "e0f28c23fdb8d54a8e0c549dc877598967647b25cadf5aa230c418e2c55bdd8c",
+      "bytes": 4003,
+      "role": "explicit-publication-failure-correction"
     }
   ],
   "lastAppendExport": "NSS155",

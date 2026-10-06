@@ -39,8 +39,8 @@
   "steamOrCs2Started": false,
   "dayHeartbeatActiveUntilBeijing": "2026-10-06T20:00:00+08:00",
   "repositoryVisibility": "public",
-  "failuresPreserved": 4,
-  "exportedSources": 58,
+  "failuresPreserved": 5,
+  "exportedSources": 59,
   "old154RuntimeRetainedSha256": "03e9cb67a0da1f0a69fcc39eb37529c0db40899d512949bc490beafa1cf9e09c",
   "trials": [
     {
@@ -186,5 +186,6 @@
     "clientProcessesMatchedByExactOwnedLoadPaths": true,
     "productionWrites": false,
     "desktopOperated": false
-  }
+  },
+  "publicationWhitespaceFailureCommitPreserved": "627f8c4d0b62ab465d994aa42590591f911e6b5e"
 }
