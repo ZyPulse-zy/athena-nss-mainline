@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "stage": "actual Git archive checker",
+  "commit": "fd58d3efffd63fc4288dac4e8cac10badacd0c7c",
+  "exitCode": 1,
+  "originalAssertion": "cpu160['historicalEvidenceSha256']==hashlib.sha256((root/cpu160['historicalEvidenceReused']).read_bytes()).hexdigest()",
+  "commitChainStoppedAfterFailedArchive": true,
+  "failedArchiveRetainedLocally": true,
+  "experimentOrCpuMetricChanged": false
+}

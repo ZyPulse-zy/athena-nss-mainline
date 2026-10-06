@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "appliesTo": [
+    "evidence/nss160-historical-cpu-reuse.json:historicalEvidenceSha256",
+    "evidence/nss160-mainline.json:historicalCpuEvidence.historicalEvidenceSha256"
+  ],
+  "historicalEvidencePath": "evidence/nss128-comparison.json",
+  "historicalGitRef": "bcf1ee62991ef0aa4f6133d64fc582b8f4054ed9",
+  "originalRecordedWorkspaceBytesSha256": "7d2169dda345e5df541e12b3c5dd7fc2507f650e0290a78db0e0d9bd5a1b9037",
+  "actualGitBlobSha256": "bf94c2c4db162af0aad7f2d3857b12b2926156c50e5d7b72f53b74d7f0abbd49",
+  "reason": "Working copy CRLF became LF under existing text=auto eol=lf attributes; the original record used workspace bytes",
+  "onlyLineEndingsDiffer": true,
+  "jsonContentExactlyEqual": true,
+  "originalMetadataAndFailedCommitRetained": true,
+  "originalCpuMetricsUnchanged": true,
+  "originalExperimentalAndFrozenSourceBytesUnchanged": true,
+  "noNewProductionExperiment": true,
+  "failedPublicationCommit": "fd58d3efffd63fc4288dac4e8cac10badacd0c7c"
+}

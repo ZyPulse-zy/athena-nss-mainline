@@ -1926,7 +1926,14 @@ gap160=load160('gap-decision');assert gap160==x160['gapDecision'] and gap160['de
 assert gap160['originalNss159Unreturned']==36 and not gap160['fixed'] and not gap160['locationProven'] and not gap160['nssCauseProven']
 assert not gap160['newNssEchoReproductionPerformed'] and gap160['oneBoundedInvestigationClosed'] and gap160['furtherGapExperimentsStopped']
 cpu160=load160('historical-cpu-reuse');assert cpu160==x160['historicalCpuEvidence'] and cpu160['passed'] and cpu160['currentFinalTrialCpuCausalConclusion'] is None
-assert cpu160['historicalEvidenceSha256']==hashlib.sha256((root/cpu160['historicalEvidenceReused']).read_bytes()).hexdigest()
+digest160=load160('publication-archive-correction');archive_failure160=load160('publication-archive-failure')
+assert digest160['passed'] and digest160['onlyLineEndingsDiffer'] and digest160['jsonContentExactlyEqual']
+assert digest160['originalMetadataAndFailedCommitRetained'] and digest160['originalCpuMetricsUnchanged'] and digest160['originalExperimentalAndFrozenSourceBytesUnchanged'] and digest160['noNewProductionExperiment']
+assert digest160['originalRecordedWorkspaceBytesSha256']==cpu160['historicalEvidenceSha256']
+assert digest160['historicalEvidencePath']==cpu160['historicalEvidenceReused']
+assert digest160['actualGitBlobSha256']==hashlib.sha256((root/cpu160['historicalEvidenceReused']).read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+assert not archive_failure160['passed'] and archive_failure160['exitCode']==1 and archive_failure160['commitChainStoppedAfterFailedArchive'] and archive_failure160['failedArchiveRetainedLocally'] and not archive_failure160['experimentOrCpuMetricChanged']
+assert archive_failure160['commit']==digest160['failedPublicationCommit']
 assert 48<cpu160['softirqRelativeReductionPercent']<49 and not cpu160['newCpuExperimentRequired']
 assert x160['finalAudit']==rt160['audit']==load160('final-audit') and rt160['audit']['queryAge']<6
 for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','allFiveWanHealthy','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule']:assert rt160['audit'][k]

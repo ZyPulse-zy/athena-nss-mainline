@@ -2,6 +2,8 @@
 
 封存补记：首次 staged whitespace 检查拒绝继承 guardian 的尾部空行，提交链已停止；保留源码原字节，只添加该路径检查例外。[原始发布失败及处理](../evidence/nss160-publication-whitespace.json)。自动任务保持 PAUSED。
 
+首次实际Git archive检查另发现历史CPU文件的CRLF工作副本哈希与LF Git blob哈希不同。仅追加[字节口径修正](../evidence/nss160-publication-archive-correction.json)，保留[失败提交和断言](../evidence/nss160-publication-archive-failure.json)及原元数据；JSON内容、CPU指标、原实验和冻结源码都未改动。
+
 更新：2026-10-06 22:53，北京时间。NSS159为起点，本次为最终有界收尾，停止新增自动实验。
 
 **自动分类→单WAN NSS bulk/RT→真实CS2官方死斗＋现有Steam更新，完整20秒software→NSS→software已通过，ECM0→2→0。技术主线冻结；用户明确选择“目前无法接手，仅记录HUD”，因此不写`v1 functional acceptance complete`，严格的真人体感项保留未验。** 不再为这一项自动启动游戏、制造新负载或重复实验。
