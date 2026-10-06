@@ -1,3 +1,28 @@
+# 控制子进程中断后自动新代重学通过
+
+更新：2026-10-06 14:29，北京时间。最新 NSS153。用户不用电脑，直接以后台自有32Mbps上传＋小UDP完成单WAN测试；没有桌面、Steam、CS2操作。
+
+**WAN3同一TCP BULK＋UDP RT：ECM=2时实际终止精确自有PC控制子进程，路由器独立守护继续20秒并恢复；仍在运行的父监督器自动取得新分类query/checkpoint/owner/kernel pin和两个新CI，同socket/CT/完整mark/NAT/WAN完成第二代20秒并恢复。ECM0→2→0→2→0。**
+
+| 代 | WAN | NSS秒 | 服务器确认上传Mbps | softirq % | UDP收/发 | native续租 |
+|---|---:|---:|---:|---:|---:|---:|
+| 1 | 3 | 20.02 | 30.392 | 5.126 | 820/821 | 7 |
+| 2 | 3 | 20.02 | 30.794 | 0.517 | 840/841 | 7 |
+
+这是有限两代控制子进程中断接管证明。父监督器未被杀，未测试路由器重启；未长期安装NSS服务，未验收300Mbps或真人CS2。没有本轮software/NSS/software CPU因果对照，降幅null；UDP echo不是CS2 jitter/loss/Miss。CAKE仅作为未加速流fallback/对照，NSS主数据面QoS方向保持。
+
+1752个实际入口绑定及冻结副本匹配；每代都有新checkpoint下载SHA/gzip与写前PPID1独立恢复，原149factory/常驻分类器/内核gate不变。6/27/100/client180秒、9000/65536/73728/1MiB字节不变。控制终止同时记录null退出码和SIGTERM信号；缺显式信号的历史记录在新政策中拒绝。14个新增拒绝检查与模型终止字段上的历史native记录重放只是离线政策检查，不是整个factory模型或新硬件证据。四项本地生成/政策/依赖拒绝原样保留。
+
+终态原完整审核source1.42秒，常驻NSS68/config581b5d46…c791d7、31657/17139；ECM关闭全零，无事务/stage/state/模块，wan与lan4原mq+四fq_codel精确恢复。全部21个有限端点/客户端及自有SSH负载进程关闭。WAN4既有认证down和四路failover保持，heartbeat仍暂停。
+
+仓库设置纠正：用户在2026-10-05另一聊天已明确要求此仓库公开；NSS152按旧“私有仓库”说明改回private是误操作。本轮核验owner/admin后只恢复public，其它检查设置不变。旧NSS152实际操作收据保留，以本纠正为当前意图和状态。凭据、完整CT/nonce/配置/checkpoint/二进制仍不加入Git。
+
+下一步把有限监督器收敛为单WAN可部署pilot，先处理监督器自身restart和受控流退出，再决定有界较长运行；不扩第二WAN/共享预算/Wi-Fi/autorate，不重复下载和真人准备。
+
+证据：[主线](../evidence/nss153-mainline.json)、[两代实测](../evidence/nss153-trials.json)、[入口](../evidence/nss153-qualification.json)、[失败](../evidence/nss153-failures.json)、[终态](../evidence/nss153-final-audit.json)、[队列](../evidence/nss153-physical-final.json)、[端点](../evidence/nss153-endpoint-client-closure.json)、[仓库设置纠正](../evidence/nss153-repository-visibility-correction.json)
+
+## NSS152及更早历史
+
 # 自动改类重学与控制进程中断恢复已实测
 
 更新：2026-10-06 13:30，北京时间。最新 NSS152，包含 NSS151 自动改类闭环。仅后台自有有界 TCP 上传＋小 UDP，没有桌面、Steam、CS2 操作。

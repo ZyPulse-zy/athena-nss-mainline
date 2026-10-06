@@ -1,5 +1,11 @@
 # Athena NSS mainline
 
+最新[NSS153](evidence/nss153-mainline.json)：自有控制子进程中断后，独立恢复及同连接自动新代重学通过；单WAN有限两代，所有实验已撤销。仓库按用户最新设置要求恢复public。先读[STATE](docs/STATE.md)与[PLAN](docs/PLAN.md)。
+
+## NSS152及更早历史
+
+# Athena NSS mainline
+
 最新 [NSS152](evidence/nss152-mainline.json)：真实改类自动撤销/新代重学和精确PC控制进程中断后的路由器独立恢复通过。后台自有TCP/UDP，无需游戏或下载；所有实验已恢复，长期/300Mbps/真人仍未验收。先读 [STATE](docs/STATE.md) 与 [PLAN](docs/PLAN.md)。
 
 ## NSS150及更早历史

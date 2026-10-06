@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "completedEpochs": 2,
+  "controllerActuallyKilled": true,
+  "routerGuardianCompletedWithoutPcController": true,
+  "automaticSuccessorAfterVerifiedRestoration": true,
+  "newQueryCheckpointOwnerPinAndBothCis": true,
+  "sameSocketCtMarkNatWan": true,
+  "oldTerminalGateNeverReopened": true,
+  "finiteTwoEpochBudgetKept": true,
+  "matchedCpuComparison": false,
+  "cs2Acceptance": false,
+  "permanentNssDeployment": false
+}

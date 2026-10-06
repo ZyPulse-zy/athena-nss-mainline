@@ -1519,7 +1519,7 @@ for f in whitespace150['files']:
  assert hashlib.sha256((root/f['path']).read_bytes()).hexdigest()==f['sha256']
  assert '/'+f['path']+' whitespace=cr-at-eol,'+f['attribute']in (root/'.gitattributes').read_text()
 # NSS151/152: actual automatic class change and exact PC-controller crash recovery.
-x152=json.loads((root/'evidence/nss152-mainline.json').read_text());rt152=json.loads((root/'evidence/current-runtime.json').read_text())
+x152=json.loads((root/'evidence/nss152-mainline.json').read_text());rt152=json.loads((root/'evidence/nss152-runtime.json').read_text())
 assert x152['round']==rt152['round']=='NSS152' and x152['passed']
 for k in ['actualAutomaticClassTransitionAndRelearningPassed','actualControllerCrashIndependentRecoveryPassed','nightHeartbeatRemainsPaused']:assert x152[k] and rt152[k]
 assert x152['actual151Bindings']==1678 and x152['actual152Bindings']==rt152['boundInputs']==1725
@@ -1572,4 +1572,53 @@ assert visibility152==x152['repositoryVisibility'] and visibility152['passed'] a
 assert visibility152['repository']=='ZyPulse-zy/athena-nss-mainline' and visibility152['beforeVisibility']=='public' and visibility152['afterVisibility']=='private'
 for k in ['authenticatedOwnerVerified','adminVerified','restoredRequestedPrivateVisibility','zeroStarsForksAndPagesBeforeChange','onlyPrivateFieldPatched','otherCheckedSettingsUnchanged']:assert visibility152[k]
 assert not visibility152['credentialsSavedOrPrinted']
+# NSS153: one actual child-controller crash, independent completion, then a
+# fresh automatic successor on the original pair. Parent supervisor stayed up.
+x153=json.loads((root/'evidence/nss153-mainline.json').read_text());rt153=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x153['passed'] and x153['round']==rt153['round']=='NSS153'
+assert x153['boundInputs']==rt153['boundInputs']==1752 and x153['completedEpochs']==rt153['completedEpochs']==2
+for k in ['actualChildControllerCrashThenAutomaticRelearning','sameSocketCtMarkNatWanInSuccessor','newQueryCheckpointOwnerKernelPinAndBothCis','oldTerminalGateNeverReopened','controllerActuallyTerminatedDuringEcm2','routerGuardianNotKilled','parentSupervisorStayedAlive','nightHeartbeatRemainsPaused','repositoryVisibilityCorrectedToUserRequestedPublic']:assert x153[k]
+for k in ['routerRebootOrParentSupervisorCrashTested','matchedCpuComparison','realHumanGameAcceptance','highLoad300MbpsAcceptance','permanentNssControllerInstalled','nssPermanentlyEnabled','desktopOperated','steamOrCs2Started']:assert not x153[k]
+assert x153['qualifiedController']==rt153['qualifiedExperimentalController']=='work/nss153/supervisor.mjs'
+assert x153['nativeFactoryUnchanged']==149 and x153['sourceNativeOwnerSeconds']==[6,27,100] and x153['clientHardSeconds']==180 and x153['execRawBundleRecordBytes']==[9000,65536,73728,1048576]
+assert x153['cpuReductionConclusion'] is None and rt153['cpuConclusion'] is None
+assert x153['old152RuntimeRetainedSha256']==rt153['historical152RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss152-runtime.json').read_bytes()).hexdigest()
+assert rt153['classifierDeployment']=='NSS68' and rt153['classifierConfigSha256']==rt152['classifierConfigSha256'] and rt153['workerPid']==31657 and rt153['guardianPid']==17139
+proof153=json.loads((root/'evidence/nss153-source-proof.json').read_text())
+assert proof153['passed'] and proof153['historicPrefixSources']==2275 and proof153['sources']==x153['exportedSources']==42 and len(manifest['sources'])>=2317
+assert proof153['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2275],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+for k in ['historicManifestPrefixUnchanged','privateCapabilityInputContentsExcluded','originalRefusalSourcesKept','permanentClassifierAndKernelGateUnchanged']:assert proof153[k]
+assert proof153['actualBindings']==1752 and proof153['privateCapabilityInputsBoundLocally']==3 and proof153['nativeFactoryUnchanged']==149
+for source,digest in proof153['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+q153=json.loads((root/'evidence/nss153-qualification.json').read_text())
+assert q153['passed'] and q153['inheritedBindings']==1725 and len(q153['sourceManifest'])==27 and q153['finiteCrashSuccessor'] and not q153['productionExecution'] and q153['nativeFactoryUnchanged']==149
+assert q153['budgets']==[6,27,100,180,9000,65536,73728]
+pc153=q153['policyChecks'];assert pc153['passed'] and pc153['newParentPolicyRefusals']==14 and pc153['historicalNativeRecordWithExplicitModelTerminationAccepted']==1
+assert pc153['legacyMissingTerminationRefused'] and pc153['terminationProvenancePartlyModelOnly'] and pc153['normalHostReceiptNotInvented'] and not pc153['newHardwareExecution'] and not pc153['completeIntegratedFactoryModelExecuted']
+for source,digest in q153['sourceManifest'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+auto153=json.loads((root/'evidence/nss153-automatic-result.json').read_text());assert auto153['passed'] and auto153['completedEpochs']==2
+for k in ['controllerActuallyKilled','routerGuardianCompletedWithoutPcController','automaticSuccessorAfterVerifiedRestoration','newQueryCheckpointOwnerPinAndBothCis','sameSocketCtMarkNatWan','oldTerminalGateNeverReopened','finiteTwoEpochBudgetKept']:assert auto153[k]
+assert not auto153['matchedCpuComparison'] and not auto153['cs2Acceptance'] and not auto153['permanentNssDeployment']
+tr153=json.loads((root/'evidence/nss153-trials.json').read_text());assert tr153==x153['trials'] and len(tr153)==2
+assert [t['generation']for t in tr153]==[1,2] and [t['wan']for t in tr153]==[3,3] and [t['hostNormalCompletionReceiptPresent']for t in tr153]==[False,True]
+for t in tr153:
+ assert t['passed'] and t['observedEcmSequence']==[0,2,0] and t['fourTagsFourFqCodelLeaves'] and t['completeClassCtMarkNatWanAffinityCorrect'] and t['sourceBindingsActual']==1752
+ assert t['payloadBytesActual']<=73728 and t['guardianExecBytesActual']<=9000 and t['nativeHardSeconds']==27 and t['ownerMaxSeconds']==100 and t['nativeRenewals']==7
+ assert t['checkpointDownloadedShaGzipVerified'] and t['rollbackBeforeFirstWrite'] and t['detachedParentPidOne'] and t['fullyRestored'] and all(t['undo'].values())
+ m=t['metric'];assert m['direction']=='upload' and m['tcpMetric']=='server-confirmed received bytes' and 20<=m['seconds']<=21.5 and 0<m['serverConfirmedTcpUploadMbps']<35
+ assert m['causalCpuReductionPercent'] is None and not m['sameLoadSoftwareNssSoftwareComparison'] and not m['cs2Acceptance'] and not m['permanentController'] and not m['highLoad300Mbps']
+ assert m['selectedWan']==3 and m['nativeRenewals']==7 and m['udp']['received']<=m['udp']['sent'] and not m['udp']['cs2Metric']
+ assert all(v['packets']>0 for d in m['nssLeavesNearbyAsynchronousSnapshots'].values()for v in d.values())
+fail153=json.loads((root/'evidence/nss153-failures.json').read_text());assert len(fail153)==x153['failuresPreserved']==4 and all(not f['passed']and f['originalPreserved']and f['beforeConnectionAndProductionWrites']for f in fail153)
+for field,file,rtfield in [('finalAudit','final-audit','audit'),('physicalRestore','physical-final','physicalRootRestoreAudit'),('endpointClosure','endpoint-client-closure','endpointClientClosureAudit'),('receiverClosure','receiver-closure','ownedReceiverClosureAudit'),('downloadReceiverClosure','download-receiver-closure','ownedDownloadReceiverClosureAudit')]:assert x153[field]==json.loads((root/f'evidence/nss153-{file}.json').read_text())==rt153[rtfield]
+for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','exactWan4AutomaticFailoverProved','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule']:assert rt153['audit'][k]
+assert rt153['audit']['queryAge']<6 and rt153['audit']['nativeDynamicSelectorsVerifiedByOriginalOwnershipAudit'] and not rt153['audit']['wan4Up']
+assert rt153['physicalRootRestoreAudit']['physicalWanOriginalMqFourFqCodelRestored'] and rt153['physicalRootRestoreAudit']['lan4OriginalMqFourFqCodelRestored'] and rt153['physicalRootRestoreAudit']['defaultQueueOptionsAndHandlesExact']
+end153=rt153['endpointClientClosureAudit'];assert end153['passed'] and end153['previousLoadsChecked']==end153['ownedUnitsInactiveMainPidZero']==21 and end153['temporaryFirewallRulesRemaining']==end153['ownedClientOrGuardProcessesRemaining']==0
+assert end153['tcpAndUdpPortsClosed'] and end153['allCanonicalFirewallBaselinesMatch'] and not end153['remoteWrites'] and not end153['productionWrites']
+for k in ['ownedReceiverClosureAudit','ownedDownloadReceiverClosureAudit']:assert rt153[k]['passed'] and rt153[k]['readonly'] and rt153[k]['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
+visibility153=json.loads((root/'evidence/nss153-repository-visibility-correction.json').read_text())
+assert visibility153['passed'] and visibility153['repository']=='ZyPulse-zy/athena-nss-mainline' and visibility153['beforeVisibility']=='private' and visibility153['afterVisibility']==rt153['repositoryVisibility']=='public'
+for k in ['authenticatedOwnerVerified','adminVerified','correctedNss152VisibilityMistake','userPublicInstructionFromOtherChatVerified','onlyPrivateFieldPatched','otherCheckedSettingsUnchanged','historicalNss152ReceiptPreserved']:assert visibility153[k]
+assert not visibility153['credentialsSavedOrPrinted']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

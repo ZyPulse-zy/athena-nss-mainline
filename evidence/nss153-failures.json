@@ -1,0 +1,34 @@
+[
+  {
+    "case": "prepare-v1",
+    "cause": "Optional nonexistent client.mjs/client-guard.ps1 copied before dependency inventory; partial output preserved",
+    "passed": false,
+    "originalPreserved": true,
+    "beforeConnectionAndProductionWrites": true,
+    "notKernelOrNssFirmwareFailure": true
+  },
+  {
+    "case": "prepare-v2",
+    "cause": "Optional non-SSH client.py also absent; the initial diagnostic filename suggestion was invalid; exact refused branch retained",
+    "passed": false,
+    "originalPreserved": true,
+    "beforeConnectionAndProductionWrites": true,
+    "notKernelOrNssFirmwareFailure": true
+  },
+  {
+    "case": "parent-policy-v1",
+    "cause": "Legacy Windows child close code was null without an explicit signal; new controller now records code, signal and kill-return observation; legacy missing-signal receipt is refused",
+    "passed": false,
+    "originalPreserved": true,
+    "beforeConnectionAndProductionWrites": true,
+    "notKernelOrNssFirmwareFailure": true
+  },
+  {
+    "case": "qualifier-v1",
+    "cause": "Fresh SSH client namespace omitted its bounded-pacer dependency; refused before connection and dependency copied with exact qualified bytes",
+    "passed": false,
+    "originalPreserved": true,
+    "beforeConnectionAndProductionWrites": true,
+    "notKernelOrNssFirmwareFailure": true
+  }
+]
