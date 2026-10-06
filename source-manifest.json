@@ -24518,8 +24518,253 @@
       "sha256": "59de09e38be866ed8f29684bcb79cf748ee1e0e1a1ad8a8ae3dad573218dcefe",
       "bytes": 1880,
       "role": "v18-borrow-attempt-and-real-class-retirement"
+    },
+    {
+      "path": "code/work/v19-borrow/analyze-hardware.py",
+      "workspaceSource": "work/v19-borrow/analyze-hardware.py",
+      "sha256": "0925707ca08287d5bc559752741ad9329610e3f7f10e0efc9ad1aea775e823a3",
+      "bytes": 7776,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/candidate-policy.mjs",
+      "workspaceSource": "work/v19-borrow/candidate-policy.mjs",
+      "sha256": "df643a34be01cc34bc299a61aa1edc687779597b8f019de4f29083e74b4dc70b",
+      "bytes": 2584,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/class-leaf-map.mjs",
+      "workspaceSource": "work/v19-borrow/class-leaf-map.mjs",
+      "sha256": "1d400ffa1345503f7d554170428e5ccdc3bd4c31e8f12d91e64502433cc4674c",
+      "bytes": 3710,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/classified-tags.lua",
+      "workspaceSource": "work/v19-borrow/classified-tags.lua",
+      "sha256": "c9e983814087f007cca62c316d6d74a1bd5d36e3d1dd22045cc44eafe9320c30",
+      "bytes": 3875,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/classifier.lua",
+      "workspaceSource": "work/v19-borrow/classifier.lua",
+      "sha256": "9b3733f1cab9de119e2ac406bb896f850cac32ba539ae257126c61cf5f6c669b",
+      "bytes": 22185,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/client-watchdog.ps1",
+      "workspaceSource": "work/v19-borrow/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/close-endpoint.mjs",
+      "workspaceSource": "work/v19-borrow/close-endpoint.mjs",
+      "sha256": "6703bdc5d217459b43bf84790cf89f662dcf56653610fc222cbfce4ca2c388b1",
+      "bytes": 2252,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v19-borrow/current-audit-diagnostic.mjs",
+      "sha256": "37ea861ed76f829ffe5172a7a77b907d161d532162405d22748b21937a894fea",
+      "bytes": 5848,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/discover-peer.py",
+      "workspaceSource": "work/v19-borrow/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/download-server.py",
+      "workspaceSource": "work/v19-borrow/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v19-borrow/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/epoch-driver.mjs",
+      "workspaceSource": "work/v19-borrow/epoch-driver.mjs",
+      "sha256": "c77d9ef44dd3303d47df8fabe379b5116c620cec7d663b75d1d33f9059da012f",
+      "bytes": 15206,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/export-hardware.py",
+      "workspaceSource": "work/v19-borrow/export-hardware.py",
+      "sha256": "37e7d7eafa9f78ea6758727a56fac50081c2d4e5841097fbb03de84082756de8",
+      "bytes": 6236,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/fast-path.lua",
+      "workspaceSource": "work/v19-borrow/fast-path.lua",
+      "sha256": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b",
+      "bytes": 14618,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/guardian-plan.mjs",
+      "workspaceSource": "work/v19-borrow/guardian-plan.mjs",
+      "sha256": "30ce116ed9ab80f8472f0c79fd7accb916f89d37119b4a683248e121ad025d72",
+      "bytes": 447,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/match-controlled.mjs",
+      "workspaceSource": "work/v19-borrow/match-controlled.mjs",
+      "sha256": "b740d9788d94b5162ad588984b15cc5c375cbafd1d4a9657816a683e5c4a02c0",
+      "bytes": 1878,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/module-stage-guardian.lua",
+      "workspaceSource": "work/v19-borrow/module-stage-guardian.lua",
+      "sha256": "e128a6a25d128b6db0138bfebff2491ece51f63ddf448b9489e5ef32a1a649ad",
+      "bytes": 13560,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/module-stage.mjs",
+      "workspaceSource": "work/v19-borrow/module-stage.mjs",
+      "sha256": "5c1d7a745bb2d0084332747b0c56bd586d0c3f7a3bc76bd546873e180d464d65",
+      "bytes": 17906,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/native-client.mjs",
+      "workspaceSource": "work/v19-borrow/native-client.mjs",
+      "sha256": "a7b152bece071bb17692f0e0306b59662abaddad9ee4ea905effe9a4264d514a",
+      "bytes": 5414,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/owned-load-policy.mjs",
+      "workspaceSource": "work/v19-borrow/owned-load-policy.mjs",
+      "sha256": "218c569bcb5d62e668d6fd0d6b2899cc4cc9df60501dff4d81b398e3d8e12b34",
+      "bytes": 1016,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/parse-ecm.mjs",
+      "workspaceSource": "work/v19-borrow/parse-ecm.mjs",
+      "sha256": "bc0c752dd715488640bb00af7becc9f1a8549cfad317f38b160d594cf400df20",
+      "bytes": 3611,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/payload.mjs",
+      "workspaceSource": "work/v19-borrow/payload.mjs",
+      "sha256": "cb8e74a71754e8f3ea70f951592250ff3ed2a120e7de1ac6084579095fad6007",
+      "bytes": 4175,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/persistent-ssh.mjs",
+      "workspaceSource": "work/v19-borrow/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/pilot-supervisor.mjs",
+      "workspaceSource": "work/v19-borrow/pilot-supervisor.mjs",
+      "sha256": "6a0c30acaf95ecfe63a43df7dbfa63f756850fe7391482e85f60e635f3fa2a45",
+      "bytes": 4942,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/probe-peer.py",
+      "workspaceSource": "work/v19-borrow/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/qos-physical.lua",
+      "workspaceSource": "work/v19-borrow/qos-physical.lua",
+      "sha256": "5e0113ea43559862941fb7589328496763a8c96dfeb3ec818131ae8775ad55e1",
+      "bytes": 8968,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/qualify-workload.mjs",
+      "workspaceSource": "work/v19-borrow/qualify-workload.mjs",
+      "sha256": "adc41c16744fcb67caa77b3f0acb0b2cd97068ea46a12471d4fc7c42396c3ff3",
+      "bytes": 4351,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/read-controlled.mjs",
+      "workspaceSource": "work/v19-borrow/read-controlled.mjs",
+      "sha256": "b0c15bcfb29b5af528515eb562db0095bc509711326dccc636753d04cbc2f781",
+      "bytes": 6797,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/receiver.py",
+      "workspaceSource": "work/v19-borrow/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/server.py",
+      "workspaceSource": "work/v19-borrow/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/session-binding.mjs",
+      "workspaceSource": "work/v19-borrow/session-binding.mjs",
+      "sha256": "054bfe614d32afb2e3a563e527b5fd80bd871b81715e39d67b5b7412e9f5266b",
+      "bytes": 608,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/start-dallas.mjs",
+      "workspaceSource": "work/v19-borrow/start-dallas.mjs",
+      "sha256": "1bc71f5460ff6de236bd2683ffbf93fdd2c70aa1fe8123694b46325b5e6a6409",
+      "bytes": 10301,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/tag-normalizer.lua",
+      "workspaceSource": "work/v19-borrow/tag-normalizer.lua",
+      "sha256": "98ed0ecd1bc1b07f10a79d17bcfb9d4a426cc9c971d44e6bb542c4f529c29602",
+      "bytes": 5610,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/wan-scope.lua",
+      "workspaceSource": "work/v19-borrow/wan-scope.lua",
+      "sha256": "c1df8f235be2d479e740bb8b692cea7a7963cec1a99dcdf27bf5c5dadcda5254",
+      "bytes": 3540,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
+    },
+    {
+      "path": "code/work/v19-borrow/wan-tag-plan.mjs",
+      "workspaceSource": "work/v19-borrow/wan-tag-plan.mjs",
+      "sha256": "59de09e38be866ed8f29684bcb79cf748ee1e0e1a1ad8a8ae3dad573218dcefe",
+      "bytes": 1880,
+      "role": "v19-actual-multiwan-bandwidth-borrowing"
     }
   ],
-  "lastAppendExport": "V18_BORROW_RETIRED",
+  "lastAppendExport": "V19_BORROW_PASS",
   "privateDataExcluded": true
 }

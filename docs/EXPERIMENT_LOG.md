@@ -1,3 +1,15 @@
+# 多 WAN NSS 共享预算借用实测通过
+
+更新：2026-10-07北京时间03:45。保持v18的DOWN18借用／UP60硬上限政策与v16三槽gate，唯一负载变化28＋4→24＋8Mbps，总32和64KiB credit不变。实际WAN1／4／5三条TCP BULK、TCP BULK、UDP RT完成60.01秒／121帧，ECM持续3、20次续租；六tag、完整ct mark、NAT和WAN affinity正确。2497实际绑定，record808129字节在原1MiB内。
+
+附近异步队列窗两路bulk约7.05／8.26Mbps、合15.31；各WAN保障6Mbps，两个bulk均超过保障，且合计在共同18Mbps预算内，证明空闲份额借用已生效。RT上下行FQ-CoDel leaf drop0；保守B内部57.15秒的自有UDP2470发／2470返，RTT中位203.89ms、p95 204.93ms、p99 205.92ms。该echo不代表CS2 jitter/loss/Miss或真人体验；本轮不新增CPU因果、长期限速精度或常驻结论。
+
+原完整audit与模块、private WAN、两物理mq＋四fq_codel、端点、精确FW和客户端恢复全部通过。v18低速TCP真实改类失败保留；没有修改分类阈值或伪造BULK。下一步只扩QoS映射为五WAN的bulk/RT leaf，保留三条精确加速连接和未知默认拒绝；这是五WAN队列覆盖，不能称五WAN同时fast path。07:40收尾、07:50不新开生产、08:00前暂停。
+
+证据：[真实借用/RT与恢复](../evidence/v19-borrow-hardware.json)、[入口](../evidence/v19-borrow-qualification.json)、[复用RAM证明](../evidence/v19-borrow-native-qualification.json)、[源码](../evidence/v19-borrow-source-proof.json)。入口：[控制器](../code/work/v19-borrow/pilot-supervisor.mjs)。
+
+## 保留的改类失败与更早历史
+
 # 共享预算借用配置已建立；低速 TCP 改类后精确结束旧代
 
 更新：2026-10-07北京时间03:35。三条自然WAN1／4／5流进入ECM3，DOWN18共同父预算下按WAN和leaf可借用空闲份额、UP60按WAN硬上限保持，初始tag/ct mark/NAT/affinity正确。但B仅3.09秒，不能宣称60秒或借用吞吐验收通过；原控制器failed结果保持。

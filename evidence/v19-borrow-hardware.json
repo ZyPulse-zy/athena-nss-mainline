@@ -1,0 +1,278 @@
+{
+  "passed": true,
+  "actualHardware": true,
+  "actualBoundInputs": 2497,
+  "phase": {
+    "seconds": 60.010000000242144,
+    "cadenceSeconds": 0.5,
+    "requestedSeconds": 60,
+    "observer": "same-validated-classifier-and-counter-loop",
+    "endedAt": 2133137.68,
+    "name": "B",
+    "startedAt": 2133077.67,
+    "sampleStart": 2,
+    "sampleCount": 121,
+    "sampleEnd": 122,
+    "completed": true
+  },
+  "ecmCountsThroughoutB": [
+    3
+  ],
+  "finalEcmCount": 0,
+  "renewals": 20,
+  "flowProof": {
+    "tcp": {
+      "protocol": 6,
+      "accelerated": true,
+      "ctMark": 327680,
+      "downTag": 2404712448,
+      "upTag": 2387935232,
+      "natCorrect": true,
+      "wanAffinity": 5,
+      "fromLan4": true,
+      "fromBridgeLan": true
+    },
+    "udp": {
+      "protocol": 17,
+      "accelerated": true,
+      "ctMark": 65536,
+      "downTag": 2400583680,
+      "upTag": 2383806464,
+      "natCorrect": true,
+      "wanAffinity": 1,
+      "fromLan4": true,
+      "fromBridgeLan": true
+    },
+    "tcp2": {
+      "protocol": 6,
+      "accelerated": true,
+      "ctMark": 262144,
+      "downTag": 2403663872,
+      "upTag": 2386886656,
+      "natCorrect": true,
+      "wanAffinity": 4,
+      "fromLan4": true,
+      "fromBridgeLan": true
+    }
+  },
+  "wanSet": [
+    1,
+    4,
+    5
+  ],
+  "perWanClassLeavesNearbyAsynchronousSnapshots": {
+    "down": {
+      "nearbyAsynchronousWindowSeconds": 60.45999999996275,
+      "sharedMbps": 18,
+      "eachWanCeilingMbps": 18,
+      "eachWanGuaranteedMbps": 6.0,
+      "leaves": {
+        "8f15:": {
+          "active": false,
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0,
+          "options": "parent 8f00:15 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8f16:": {
+          "active": true,
+          "delta": {
+            "bytes": 439790,
+            "packets": 2587,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0581925239828344,
+          "options": "parent 8f00:16 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8f45:": {
+          "active": true,
+          "delta": {
+            "bytes": 62445182,
+            "packets": 42873,
+            "dropped": 40
+          },
+          "descriptiveMbps": 8.262677075757654,
+          "options": "parent 8f00:45 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8f46:": {
+          "active": false,
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0,
+          "options": "parent 8f00:46 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8f55:": {
+          "active": true,
+          "delta": {
+            "bytes": 53259112,
+            "packets": 35198,
+            "dropped": 80
+          },
+          "descriptiveMbps": 7.047186503477713,
+          "options": "parent 8f00:55 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8f56:": {
+          "active": false,
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0,
+          "options": "parent 8f00:56 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        }
+      }
+    },
+    "up": {
+      "nearbyAsynchronousWindowSeconds": 60.46999999973923,
+      "sharedMbps": 60,
+      "eachWanCeilingMbps": 20.0,
+      "eachWanGuaranteedMbps": 20.0,
+      "leaves": {
+        "8e15:": {
+          "active": false,
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0,
+          "options": "parent 8e00:15 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8e16:": {
+          "active": true,
+          "delta": {
+            "bytes": 441830,
+            "packets": 2599,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.05845278650595738,
+          "options": "parent 8e00:16 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8e45:": {
+          "active": true,
+          "delta": {
+            "bytes": 2719882,
+            "packets": 42563,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.3598322473969544,
+          "options": "parent 8e00:45 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8e46:": {
+          "active": false,
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0,
+          "options": "parent 8e00:46 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8e55:": {
+          "active": true,
+          "delta": {
+            "bytes": 2112194,
+            "packets": 35503,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.2794369439403484,
+          "options": "parent 8e00:55 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        },
+        "8e56:": {
+          "active": false,
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0,
+          "options": "parent 8e00:56 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0"
+        }
+      }
+    }
+  },
+  "rtLeafDrop": {
+    "down": 0,
+    "up": 0
+  },
+  "twoSimultaneousBulkFlowsProven": true,
+  "sharedBudgetBorrowingObserved": true,
+  "bulkWithinSharedDownBudget": true,
+  "bulkDownMbps": {
+    "tcp": 7.047186503477713,
+    "tcp2": 8.262677075757654
+  },
+  "bulkAggregateMbps": 15.309863579235367,
+  "eachWanConfiguredGuaranteeMbps": 6.0,
+  "eachWanConfiguredCeilingMbps": 18,
+  "offeredLoadMbps": {
+    "tcp": 24,
+    "tcp2": 8,
+    "total": 32
+  },
+  "comparisonToleranceForWireOverheadAndAsyncSampling": [
+    0.9,
+    1.05
+  ],
+  "longTermRateAccuracyProven": false,
+  "rtEchoDuringInteriorB": {
+    "boundedApproximateClockMapping": true,
+    "offsetUncertaintySeconds": 0.8586506843566895,
+    "interiorSeconds": 57.15134930610657,
+    "edgeExcludedSeconds": 1,
+    "sent": 2470,
+    "returned": 2470,
+    "unreturned": 0,
+    "rttMedianMs": 203.88899999999558,
+    "rttP95Ms": 204.9294000000009,
+    "rttP99Ms": 205.91730000000098,
+    "cs2Metrics": false,
+    "returnedRepliesCountedFromEntireFixture": true
+  },
+  "udpEchoIsNotCs2OrHumanAcceptance": true,
+  "rtQueueZeroDropIsNotEndToEndZeroLoss": true,
+  "newCpuCausalBenefitClaimed": false,
+  "descriptiveBOnly": {
+    "seconds": 60.010000000242144,
+    "cpuBusyPercent": 16.199049341690152,
+    "softirqPercent": 4.896310940983469,
+    "timeSqueezeDelta": 0,
+    "softnetDropDelta": 0
+  },
+  "nativeRecordBytes": 808129,
+  "actualRecordSha256": "685cd6a207f852d6e0cd89af1fb709e6c39226b503b46cffe4dc199f4354477f",
+  "originalRecoveryFlags": {
+    "moduleUnloaded": true,
+    "tagsRemoved": true,
+    "dualPhysicalQueuesRestored": true,
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "stateNodeRemoved": true,
+    "firmwareZeroAfterRetirement": true
+  },
+  "originalCompleteBaselineAuditPassed": true,
+  "exactEndpointRestored": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "humanCs2Acceptance": false,
+  "fiveWanOrPermanentNssAcceptance": false,
+  "sourceFreshnessSeconds": 6,
+  "kernelSeconds": 90,
+  "ownerSeconds": 180,
+  "clientSeconds": 180,
+  "nativeGateUnchangedFromV16": true,
+  "qosUnchangedFromV18": true,
+  "residentClassifierUnchanged": true,
+  "fixtureBounded32MbpsDownloadAndSmallUdp": true
+}
