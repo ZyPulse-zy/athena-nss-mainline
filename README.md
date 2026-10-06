@@ -1,3 +1,9 @@
+# Athena NSS 多 WAN / 高级 QoS 受控原型
+
+三流跨WAN、五WAN队列映射、共享下行预算借用和RT优先级已在硬件通过，晨间恢复核验全部正常。当前NSS关闭，五WAN同时加速、正常应用新factory和长期常驻尚未验收。见[晨间报告](docs/NIGHT_REPORT_2026-10-07.md)及[STATE](docs/STATE.md)。
+
+## 以下保留 v1 和历史记录
+
 # Athena NSS v1 — frozen
 
 自动分类→单WAN双向NSS bulk/RT→真实CS2＋现有Steam更新的完整ABA已通过并恢复。技术闭环冻结；用户本次只允许记录HUD，真人体感未验。NSS159 echo缺口保留known limitation，不继续自动实验。详情见[STATE](docs/STATE.md)、[v1报告](reports/nss160-v1-report.html)、[限制及后续](docs/BACKLOG.md)。当前ECM关闭，未永久部署NSS控制器。

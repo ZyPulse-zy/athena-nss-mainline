@@ -27045,6 +27045,27 @@
       "sha256": "d4dc60a0dd270a5d786ee181a78b7cd76b30653384f0c22620f5b37e6909d5ee",
       "bytes": 2777,
       "role": "readonly-morning-handoff-no-production-permission"
+    },
+    {
+      "path": "code/work/morning-20261007/publish-final-v2.py",
+      "workspaceSource": "work/morning-20261007/publish-final-v2.py",
+      "sha256": "ada51255176e58f6ee59ffb5bb1a7f36077dd6f30b0c1465be01a654fa721a36",
+      "bytes": 11666,
+      "role": "readonly-morning-final-closure"
+    },
+    {
+      "path": "code/work/morning-20261007/publish-final.py",
+      "workspaceSource": "work/morning-20261007/publish-final.py",
+      "sha256": "a32353b898f5ea865be69dd65455da478d1f5768d457100eda0959e6c93446c9",
+      "bytes": 11172,
+      "role": "readonly-morning-final-closure"
+    },
+    {
+      "path": "code/work/morning-20261007/read-physical-20261006234137-d2fdcbc7.mjs",
+      "workspaceSource": "work/morning-20261007/read-physical-20261006234137-d2fdcbc7.mjs",
+      "sha256": "4bd62f20dd42a9dfbf99b59def0f74518f1bf27476babd402ef908f58964e134",
+      "bytes": 2079,
+      "role": "readonly-morning-final-closure"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",

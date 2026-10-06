@@ -1,3 +1,15 @@
+# 夜间多 WAN / 高级 QoS 受控原型完成；晨间恢复核验通过
+
+更新：北京时间2026-10-07 07:44。07:41最后只读核验全部通过：原完整audit来源1.29秒、五WAN健康/保护配置保持/ECM关闭全零；两物理原mq＋四fq_codel所有选项和handle一致；17个自有端点退出、FW原基线一致/临时规则0/端口关闭；16个本机fixture namespace测试进程零残留。本次无生产实验或远端写入，原冻结源码/失败/证据保持。
+
+本夜交付的受控范围：两TCP BULK＋一UDP RT跨两个或三个WAN，60秒/ECM3/20续租、六双向tag/leaf及ct mark/NAT/affinity正确；五WAN队列映射、DOWN18共享借用、UP60每WAN12硬上限、RT prio0/FQ-CoDel在硬件成立。**五WAN同时fast path、v26正常应用整合factory和长期常驻仍未验。** 当前NSS关闭、常驻分类器NSS68/config581b5d46…c791d7与软件fallback保持。
+
+v27 raw TCP首包超时发生在checkpoint/stage/ECM前，原失败保留、根因未知，不盲重试或扩FW/学校策略。下一次正常使用只做一次v26有限应用会话，不要求挂机；五流前提问题和长期连续代进入后续。本夜结束新增实验，检查/提交/推送/实际archive后暂停heartbeat，08:00后不自动实验。
+
+详情：[晨间交付报告](NIGHT_REPORT_2026-10-07.md)、[实际终态](../evidence/morning-final.json)、[源码保存](../evidence/morning-final-source-proof.json)。
+
+## 以下保留原始夜间记录
+
 # 夜间受控多WAN已封存；晨间最后审核待执行
 
 更新：北京时间2026-10-07 05:32。v20的三流跨WAN、五WAN队列/下行共享借用/RT优先级已在硬件证明；当前没有五WAN同时加速、正常程序新factory或长期常驻声明。v27首TCP超时发生在NSS前，端点/FW/客户端与05:19原完整路由器审核/两物理默认队列均恢复通过，e90c4a6已推送并实际archive验证。额外只读input规则顺序没有发现无条件末尾drop，不能借此确定TCP超时根因。

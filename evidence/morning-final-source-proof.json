@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "baseCommit": "5386ab1ad5be8de061b65161ecdb35948fcc802a",
+  "historicPrefixSources": 3863,
+  "historicPrefixCanonicalSha256": "c6b0258a49a2b74c790a2849433235cc3ffbad839021f0cd10bbb897dc575278",
+  "sourceHashes": {
+    "work/morning-20261007/publish-final-v2.py": "ada51255176e58f6ee59ffb5bb1a7f36077dd6f30b0c1465be01a654fa721a36",
+    "work/morning-20261007/publish-final.py": "a32353b898f5ea865be69dd65455da478d1f5768d457100eda0959e6c93446c9",
+    "work/morning-20261007/read-physical-20261006234137-d2fdcbc7.mjs": "4bd62f20dd42a9dfbf99b59def0f74518f1bf27476babd402ef908f58964e134"
+  },
+  "oldCodeAndEvidenceUnmodified": true,
+  "oldCodeAndEvidenceBlobsChecked": 4386,
+  "gitFilteredBaselineAndOriginalWorktreeBytesChecked": true,
+  "firstPublisherFailurePreserved": {
+    "line": 45,
+    "path": "evidence/morning-preparation-source-proof.json",
+    "beforeAnyAppend": true,
+    "worktreeCRLF": 16,
+    "gitCRLF": 0,
+    "onlyCRLFConversionVerified": true,
+    "oldEvidenceNotEdited": true
+  },
+  "actualReadonlyProcessExitCodes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "rawProcessSshCtCredentialsAndCheckpointsExcluded": true,
+  "morningSummarySha256": "b30c8f9a327cff19acc3f2cc916598422e28628b275b9a2d164f29516efc79ef",
+  "localReadCorrection": {
+    "originalReadFailed": true,
+    "requestedPath": "athena-nss-mainline/manifest.json",
+    "originalExitCode": 1,
+    "originalError": "Cannot find path because it does not exist.",
+    "correctedPath": "athena-nss-mainline/source-manifest.json",
+    "originalToolTranscriptRetained": true,
+    "productionAuditAffected": false
+  }
+}

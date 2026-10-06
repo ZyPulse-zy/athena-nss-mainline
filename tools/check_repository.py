@@ -2067,4 +2067,17 @@ if (root/'evidence/morning-preparation.json').exists():
  assert mp['passed'] and mp['preparationOnly'] and not mp['morningFinalAuditPerformed'] and not mp['productionExperimentPermissionGranted'] and mp['localKnownEndpointUnitCount']==17
  assert ms['historicPrefixSources']==3857 and ms['oldCodeAndEvidenceUnmodified'] and ms['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3857],sort_keys=True,separators=(',',':')).encode()).hexdigest()
  for f,d in ms['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
+if (root/'evidence/morning-final.json').exists():
+ mf=json.loads((root/'evidence/morning-final.json').read_text(encoding='utf8'));sp=json.loads((root/'evidence/morning-final-source-proof.json').read_text(encoding='utf8'))
+ assert mf['passed'] and mf['readonly'] and not mf['productionExperimentsStarted']
+ assert '2026-10-06T23:40:00Z'<=mf['observedAt']<'2026-10-07T00:00:00Z'
+ assert mf['fullAudit']['passed'] and mf['fullAudit']['protectedConfigurationUnchanged'] and mf['fullAudit']['ecmClosedAndZero'] and mf['fullAudit']['allFiveHealthyWanBaseline'] and not mf['fullAudit']['nssAdmissionAllowed'] and mf['fullAudit']['queryAge']<6
+ assert mf['physicalQueues']['passed'] and mf['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and mf['physicalQueues']['physicalWanOriginalMqFourFqCodelRestored'] and mf['physicalQueues']['lan4OriginalMqFourFqCodelRestored']
+ assert mf['endpointClosure']['passed'] and mf['endpointClosure']['knownOwnedUnitsChecked']==17 and mf['endpointClosure']['ownedUnitsInactiveMainPidZero'] and mf['endpointClosure']['canonicalFirewallBaselineMatched'] and mf['endpointClosure']['temporaryFirewallRulesRemaining']==0 and mf['endpointClosure']['tcpAndUdpEndpointPortsClosed'] and not mf['endpointClosure']['remoteWrites']
+ assert mf['clientClosure']['passed'] and mf['clientClosure']['knownNightFixtureNamespacesChecked']==16 and mf['clientClosure']['ownedClientControllerGuardOrSenderProcessesRemaining']==0
+ assert sp['passed'] and sp['historicPrefixSources']==3863 and sp['oldCodeAndEvidenceUnmodified'] and sp['gitFilteredBaselineAndOriginalWorktreeBytesChecked'] and sp['rawProcessSshCtCredentialsAndCheckpointsExcluded'] and sp['actualReadonlyProcessExitCodes']==[0,0,0,0]
+ assert sp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3863],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ for f,d in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
+ assert sp['localReadCorrection']['originalReadFailed'] and sp['localReadCorrection']['originalExitCode']==1 and not sp['localReadCorrection']['productionAuditAffected']
+ assert sp['firstPublisherFailurePreserved']['beforeAnyAppend'] and sp['firstPublisherFailurePreserved']['onlyCRLFConversionVerified'] and sp['firstPublisherFailurePreserved']['oldEvidenceNotEdited']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

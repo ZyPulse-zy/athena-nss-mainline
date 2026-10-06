@@ -156,3 +156,8 @@
 
 /code/work/v27-raw/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/v27-raw/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+# Preserve the new actual readonly summary and exact Windows source copies.
+/evidence/morning-final.json -text
+/code/work/morning-20261007/publish-final-v2.py whitespace=cr-at-eol
+/code/work/morning-20261007/read-physical-20261006234137-d2fdcbc7.mjs whitespace=cr-at-eol
