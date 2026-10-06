@@ -1,3 +1,15 @@
+# 五 WAN NSS 队列映射与共享借用通过
+
+更新：2026-10-07北京时间03:50。上下行各18个HTB class、11个FQ-CoDel leaf已实际建立和完整读取，涵盖WAN1..5的BULK/RT以及default950。共同DOWN18：每WAN保障3、ceiling18可借用；共同UP60：每WAN12硬上限。原三槽native gate和常驻自动分类器保持，只放行两TCP BULK＋一UDP RT；实际自然WAN4／5，不声称五WAN同时fast path。
+
+60.00秒／121帧、ECM3、20续租，六tag、完整ct mark、NAT和WAN affinity正确。2533绑定，record844813字节在1MiB内；附近异步窗bulk6.72／8.28Mbps、合14.99，超过3Mbps保障并在共享18内，空闲份额借用继续成立。RT双向leaf drop0；保守B内部57.24秒UDP2434发／2434返，RTT中位197.68ms、p95 198.74ms、p99 200.14ms，仅自有echo，不代替CS2或真人体验。未活跃WAN/类别leaf保持零包。
+
+原完整audit、模块、private WAN、两物理原mq＋四fq_codel、端点/FW/客户端恢复通过。没有新CPU因果、长期或永久NSS声明；历史v18真实改类与失败不覆盖。下一步评估五条精确CT的同时准入，保持同一五WAN QoS政策、默认拒绝和独立撤销；实际前必须确认原传输/记录预算可容纳。07:40收尾、07:50不新开生产、08:00前暂停。
+
+证据：[五WAN映射/借用/RT与恢复](../evidence/v20-five-hardware.json)、[入口](../evidence/v20-five-qualification.json)、[新增映射RAM模型](../evidence/v20-five-native-qualification.json)、[源码](../evidence/v20-five-source-proof.json)。入口：[控制器](../code/work/v20-five/pilot-supervisor.mjs)。
+
+## 三流跨WAN借用与更早历史
+
 # 多 WAN NSS 共享预算借用实测通过
 
 更新：2026-10-07北京时间03:45。保持v18的DOWN18借用／UP60硬上限政策与v16三槽gate，唯一负载变化28＋4→24＋8Mbps，总32和64KiB credit不变。实际WAN1／4／5三条TCP BULK、TCP BULK、UDP RT完成60.01秒／121帧，ECM持续3、20次续租；六tag、完整ct mark、NAT和WAN affinity正确。2497实际绑定，record808129字节在原1MiB内。

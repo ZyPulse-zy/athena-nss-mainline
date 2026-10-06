@@ -134,3 +134,6 @@
 
 /code/work/v19-borrow/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/v19-borrow/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+/code/work/v20-five/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v20-five/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof

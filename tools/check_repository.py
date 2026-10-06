@@ -1769,7 +1769,7 @@ assert rt156['physicalRootRestoreAudit']['physicalWanOriginalMqFourFqCodelRestor
 end156=rt156['endpointClientClosureAudit'];assert end156['passed'] and end156['previousLoadsChecked']==end156['ownedUnitsInactiveMainPidZero']==34 and end156['temporaryFirewallRulesRemaining']==end156['ownedClientOrGuardProcessesRemaining']==0
 assert end156['tcpAndUdpPortsClosed'] and end156['allCanonicalFirewallBaselinesMatch'] and not end156['remoteWrites'] and not end156['productionWrites']
 for k,file in [('ownedReceiverClosureAudit','receiver-closure'),('ownedDownloadReceiverClosureAudit','download-receiver-closure')]:assert rt156[k]==json.loads((root/f'evidence/nss156-{file}.json').read_text()) and rt156[k]['passed'] and rt156[k]['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
-assert manifest['lastAppendExport'] in ['NSS156','NSS158','NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']
+assert manifest['lastAppendExport'] in ['NSS156','NSS158','NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']
 
 # NSS158: actual NSS157 precise class retirement + new NSS158 functional ABA.
 load158=lambda n:json.loads((root/f'evidence/nss158-{n}.json').read_text())
@@ -1836,7 +1836,7 @@ for field,file in [('ownedReceiverClosureAudit','receiver-closure'),('ownedDownl
 
 wp158=load158('publication-whitespace-check');assert wp158['exitCode']==1 and wp158['commitAndPushStopped'] and not wp158['frozenSourceBytesChanged'] and wp158['sourceHashesStillMatch'] and len(wp158['exactPathAttributes'])==4
 assert hashlib.sha256((root/'code'/wp158['repairSource']).read_bytes()).hexdigest()==wp158['repairSourceSha256']
-assert manifest['lastAppendExport'] in ['NSS158','NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']
+assert manifest['lastAppendExport'] in ['NSS158','NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']
 
 # NSS159: actual bounded DOWNLOAD; functional success is not RT quality acceptance.
 load159=lambda n:json.loads((root/f'evidence/nss159-{n}.json').read_text())
@@ -1889,7 +1889,7 @@ for field in ['ownedReceiverClosureAudit','ownedDownloadReceiverClosureAudit']:a
 recovery159=load159('wan4-natural-recovery');assert recovery159['passed'] and recovery159['unchangedProtectedHealthControllerSource'] and recovery159['tenRecoveryRampStepsReproduced'] and recovery159['exact300BucketSourceAlgorithmReproduced']
 assert recovery159['priorBucketCounts']==[75,75,75,0,75] and recovery159['newBucketCounts']==[60,60,60,60,60]
 assert recovery159['onlyThreeWan4DhcpRulesRestored'] and recovery159['wan4RulesDerivedFromActualLease'] and not recovery159['experimentRoutingMutation'] and not recovery159['nssPermissionGranted']
-assert manifest['lastAppendExport'] in ['NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']
+assert manifest['lastAppendExport'] in ['NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']
 
 publication159=load159('publication-whitespace-repair');assert publication159==x159['publicationWhitespaceRepair'] and publication159['passed'] and not publication159['initialStagedDiffCheckPassed'] and publication159['commitChainStoppedBeforeCommit'] and publication159['frozenSourceBytesUnchanged'] and publication159['noGlobalWhitespaceRelaxation']
 assert publication159['sourceSha256']==hashlib.sha256((root/publication159['sourcePath']).read_bytes()).hexdigest()
@@ -1948,13 +1948,13 @@ proof160=load160('source-proof');assert proof160['passed'] and proof160['histori
 assert proof160['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2753],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 assert proof160['historicManifestPrefixUnchanged'] and proof160['old159RuntimeExactGitBytes'] and proof160['actualInputsAndFrozenCopiesVerified']==2137
 for source,digest in proof160['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-assert manifest['lastAppendExport'] in ['NSS160_V1_FROZEN','V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']
+assert manifest['lastAppendExport'] in ['NSS160_V1_FROZEN','V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']
 publication160=load160('publication-whitespace')
 assert publication160['passed'] and not publication160['initialStagedDiffCheckPassed'] and publication160['exitCode']==1
 assert publication160['commitChainStoppedBeforeCommit'] and publication160['frozenSourceBytesUnchanged'] and publication160['noGlobalWhitespaceRelaxation'] and not publication160['productionChanges']
 assert hashlib.sha256((root/publication160['sourcePath']).read_bytes()).hexdigest()==publication160['sourceSha256']
 assert publication160['exactPathAttributes']==['/code/work/nss160/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof']
-if manifest['lastAppendExport'] in ['V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']:
+if manifest['lastAppendExport'] in ['V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']:
  v11=json.loads((root/'evidence/v11-entry-delivery.json').read_text(encoding='utf-8'))
  pq11=json.loads((root/'evidence/v11-package-qualification.json').read_text(encoding='utf-8'))
  live11=json.loads((root/'evidence/v11-live-start-stop.json').read_text(encoding='utf-8'))
@@ -1970,7 +1970,7 @@ if manifest['lastAppendExport'] in ['V11_BOUNDED_ENTRY','V13_TWO_WAN_NIGHT','V14
  assert sp11['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2805],sort_keys=True,separators=(',',':')).encode()).hexdigest()
  for src,digest in {**sp11['sourceHashes'],**pq11['sourceManifest']}.items():
   assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
-if manifest['lastAppendExport'] in ['V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']:
+if manifest['lastAppendExport'] in ['V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']:
  night=json.loads((root/'evidence/v13-night-mainline.json').read_text(encoding='utf-8'))
  np=json.loads((root/'evidence/v13-night-source-proof.json').read_text(encoding='utf-8'))
  nq=json.loads((root/'evidence/v13-night-qualification.json').read_text(encoding='utf-8'))
@@ -1982,7 +1982,7 @@ if manifest['lastAppendExport'] in ['V13_TWO_WAN_NIGHT','V14_TWO_WAN_DURATION','
  assert not nh['humanGameAcceptance'] and not nh['sameLoadCpuBenefitClaim'] and not nh['permanentNssDeployment']
  assert night['actualHardwareTwoWanCompletion']==nh['actualHardwareNssSessionCompleted']
  for src,digest in np['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
-if manifest['lastAppendExport'] in ['V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']:
+if manifest['lastAppendExport'] in ['V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']:
  duration=json.loads((root/'evidence/v14-duration-hardware.json').read_text(encoding='utf-8'))
  dp=json.loads((root/'evidence/v14-duration-source-proof.json').read_text(encoding='utf-8'))
  assert duration['passed'] and duration['actualHardware'] and duration['actualBoundInputs']==2300
@@ -1993,7 +1993,7 @@ if manifest['lastAppendExport'] in ['V14_TWO_WAN_DURATION','V15_WAN_CLASS_QOS','
  assert dp['passed'] and dp['historicPrefixSources']==3316 and dp['oldV13AndV1EvidenceUnchanged']
  assert dp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3316],sort_keys=True,separators=(',',':')).encode()).hexdigest()
  for f,h in dp['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==h,f
-if manifest['lastAppendExport'] in ['V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']:
+if manifest['lastAppendExport'] in ['V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']:
  h=json.loads((root/'evidence/v15-qos-hardware.json').read_text(encoding='utf-8'))
  p=json.loads((root/'evidence/v15-qos-source-proof.json').read_text(encoding='utf-8'))
  assert h['passed'] and h['actualHardware'] and h['actualBoundInputs']==2335 and h['nativeGateUnchanged'] and h['residentClassifierUnchanged']
@@ -2005,7 +2005,7 @@ if manifest['lastAppendExport'] in ['V15_WAN_CLASS_QOS','V16_THREE_FLOW_MULTIWAN
  for f,d in p['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
  for slot,wan,cls in [('tcp',3,5),('udp',2,6)]:
   v=h['flowProof'][slot];assert v['ctMark']==wan<<16 and v['wanAffinity']==wan and v['natCorrect'] and v['downTag']==(0x8f00+wan*16+cls)<<16 and v['upTag']==(0x8e00+wan*16+cls)<<16
-if manifest['lastAppendExport'] in ['V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']:
+if manifest['lastAppendExport'] in ['V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']:
  h=json.loads((root/'evidence/v16-three-hardware.json').read_text(encoding='utf-8'));p=json.loads((root/'evidence/v16-three-source-proof.json').read_text(encoding='utf-8'))
  assert h['passed'] and h['actualHardware'] and h['actualBoundInputs']==2389 and h['newThreeSlotNativeGateHardwareQualified'] and h['residentClassifierUnchanged']
  assert 60<=h['phase']['seconds']<61 and h['ecmCountsThroughoutB']==[3] and h['finalEcmCount']==0 and h['renewals']==20 and all(h['originalRecoveryFlags'].values())
@@ -2014,7 +2014,7 @@ if manifest['lastAppendExport'] in ['V16_THREE_FLOW_MULTIWAN','V17_BUDGET_RT','V
  for f,d in p['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
  for slot,wan,cls in [('tcp',1,5),('udp',2,6),('tcp2',2,5)]:
   x=h['flowProof'][slot];assert x['ctMark']==wan<<16 and x['wanAffinity']==wan and x['natCorrect'] and x['downTag']==(0x8f00+wan*16+cls)<<16 and x['upTag']==(0x8e00+wan*16+cls)<<16
-if manifest['lastAppendExport'] in ['V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS']:
+if manifest['lastAppendExport'] in ['V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']:
  h=json.loads((root/'evidence/v17-cap-hardware.json').read_text(encoding='utf8'));p=json.loads((root/'evidence/v17-cap-source-proof.json').read_text(encoding='utf8'))
  assert h['passed'] and h['actualHardware'] and h['actualBoundInputs']==2425 and h['nativeGateUnchangedFromV16'] and h['residentClassifierUnchanged']
  assert 60<=h['phase']['seconds']<61 and h['ecmCountsThroughoutB']==[3] and h['finalEcmCount']==0 and h['renewals']==20 and all(h['originalRecoveryFlags'].values()) and h['nativeRecordBytes']<1048576
@@ -2022,19 +2022,28 @@ if manifest['lastAppendExport'] in ['V17_BUDGET_RT','V18_BORROW_RETIRED','V19_BO
  assert h['rtLeafDrop']=={'down':0,'up':0} and h['rtEchoDuringInteriorB']['sent']==2365 and h['rtEchoDuringInteriorB']['returned']==2365 and h['rtEchoDuringInteriorB']['unreturned']==0 and h['rtEchoDuringInteriorB']['cs2Metrics']==False
  assert p['historicPrefixSources']==3432 and p['oldEvidenceAndSourcesUnchanged'] and p['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3432],sort_keys=True,separators=(',',':')).encode()).hexdigest()
  for f,d in p['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
-if manifest['lastAppendExport'] in ['V18_BORROW_RETIRED','V19_BORROW_PASS']:
+if manifest['lastAppendExport'] in ['V18_BORROW_RETIRED','V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']:
  h=json.loads((root/'evidence/v18-borrow-retirement.json').read_text(encoding='utf8'));p=json.loads((root/'evidence/v18-borrow-source-proof.json').read_text(encoding='utf8'))
  assert h['expectedPreciseRetirementVerified'] and not h['fullSixtySecondAcceptance'] and not h['borrowThroughputProven'] and h['originalControllerReportedFailurePreserved'] and h['sameQueryCompleteClassification'] and h['residentThresholdsUnchanged'] and h['ctExitNotInferred']
  assert 3<=h['phaseSeconds']<4 and h['actualNaturalWanSet']==[1,4,5] and h['ecm3BeforeRetirement'] and h['finalEcmCount']==0 and all(h['originalRecoveryFlags'].values()) and h['completeBaselineAuditPassed'] and h['endpointClosedAndRestored']
  assert h['classification']['tcp2']['class']=='BE' and h['classification']['tcp2']['reason']=='cooldown' and h['classification']['tcp2']['rateKbps']<h['actualFlowMaxKbps']==2000
  assert p['historicPrefixSources']==3467 and p['oldEvidenceAndSourcesUnchanged'] and p['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3467],sort_keys=True,separators=(',',':')).encode()).hexdigest()
  for f,d in p['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
-if manifest['lastAppendExport']=='V19_BORROW_PASS':
+if manifest['lastAppendExport'] in ['V19_BORROW_PASS','V20_FIVE_QUEUE_MAP']:
  h=json.loads((root/'evidence/v19-borrow-hardware.json').read_text(encoding='utf8'));p=json.loads((root/'evidence/v19-borrow-source-proof.json').read_text(encoding='utf8'))
  assert h['passed'] and h['actualHardware'] and h['actualBoundInputs']==2497 and h['nativeGateUnchangedFromV16'] and h['qosUnchangedFromV18'] and h['residentClassifierUnchanged']
  assert 60<=h['phase']['seconds']<61 and h['ecmCountsThroughoutB']==[3] and h['finalEcmCount']==0 and h['renewals']==20 and all(h['originalRecoveryFlags'].values()) and h['nativeRecordBytes']<1048576
  assert h['sharedBudgetBorrowingObserved'] and h['bulkWithinSharedDownBudget'] and h['twoSimultaneousBulkFlowsProven'] and not h['longTermRateAccuracyProven'] and not h['newCpuCausalBenefitClaimed'] and not h['humanCs2Acceptance'] and not h['fiveWanOrPermanentNssAcceptance']
  assert h['rtLeafDrop']=={'down':0,'up':0} and h['rtEchoDuringInteriorB']['sent']==2470 and h['rtEchoDuringInteriorB']['returned']==2470 and not h['rtEchoDuringInteriorB']['cs2Metrics']
  assert p['historicPrefixSources']==3502 and p['oldEvidenceAndSourcesUnchanged'] and p['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3502],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ for f,d in p['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
+if manifest['lastAppendExport']=='V20_FIVE_QUEUE_MAP':
+ h=json.loads((root/'evidence/v20-five-hardware.json').read_text(encoding='utf8'));p=json.loads((root/'evidence/v20-five-source-proof.json').read_text(encoding='utf8'))
+ assert h['passed'] and h['actualHardware'] and h['actualBoundInputs']==2533 and h['nativeGateUnchangedFromV16'] and h['onlyQosMapExpandedFromV19'] and h['residentClassifierUnchanged']
+ assert 60<=h['phase']['seconds']<61 and h['ecmCountsThroughoutB']==[3] and h['finalEcmCount']==0 and h['renewals']==20 and all(h['originalRecoveryFlags'].values()) and h['nativeRecordBytes']<1048576
+ assert h['fiveWanQueueCoverageVerified'] and h['queueWanSet']==[1,2,3,4,5] and h['simultaneouslyAdmittedExactFlowCount']==3 and not h['fiveWanConcurrentFastPathProven']
+ assert h['sharedBudgetBorrowingObserved'] and h['bulkWithinSharedDownBudget'] and h['twoSimultaneousBulkFlowsProven'] and not h['longTermRateAccuracyProven'] and not h['newCpuCausalBenefitClaimed'] and not h['humanCs2Acceptance'] and not h['fiveWanOrPermanentNssAcceptance']
+ assert h['rtLeafDrop']=={'down':0,'up':0} and h['rtEchoDuringInteriorB']['sent']==2434 and h['rtEchoDuringInteriorB']['returned']==2434 and not h['rtEchoDuringInteriorB']['cs2Metrics']
+ assert p['historicPrefixSources']==3537 and p['oldEvidenceAndSourcesUnchanged'] and p['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3537],sort_keys=True,separators=(',',':')).encode()).hexdigest()
  for f,d in p['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))
