@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "at": "2026-10-06T04:07:45.465Z",
+  "sourceManifest": {
+    "work/nss150/declared-baseline.mjs": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+    "work/nss150/run-v3.mjs": "9ec5cf4634eb509ddd252f99c8518e5cf54c60dc67c901e0e7c20572a0a2792f",
+    "work/nss150/controlled-session-v3.mjs": "23b44bf887242bea6493f4e88bb36774e2772d0f83a7d652ef42a3efb08deaf7",
+    "work/nss150/current-audit-diagnostic-v3.mjs": "fda53a879b614d9575bcea558a91a66df27846b7591e90783d48d833a625a29e",
+    "work/nss150/session-binding-v3.mjs": "8f21840f696f4cb5ea1c678b7541c4a82c983d50fa24367b950bfaf00386a3cd",
+    "work/nss150/qualify-v3.mjs": "6307187ec9cf26cf88ee017a61a89c9ae67affaee92e7af9cdf2400ab754658d",
+    "work/nss150/prepare-v3.py": "401b75a442f7c522e132285fe720043a79d329bd2bf8d7bf8bfe6c99deb6bee7"
+  },
+  "inheritedBindings": 1589,
+  "allOwnNamespaceLiteralSourceInputsPresent": true,
+  "checkedLiteralStaticInputs": 3,
+  "noFactoryOrPolicyChange": true,
+  "sameFactory": "NSS149",
+  "budgets": [
+    6,
+    27,
+    100,
+    9000,
+    65536,
+    73728
+  ],
+  "bothFailedEntryAndLogsPreserved": true,
+  "productionExecution": false
+}

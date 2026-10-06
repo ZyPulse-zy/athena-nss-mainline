@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "originalFailurePreserved": true,
+  "checkOutputPrivatePath": "work/nss150/reporting/repository-check-v1.txt",
+  "reason": "AGENTS.md new NSS150 block used a docs-directory relative evidence link from repository root",
+  "commitOrPushChainStoppedBeforeCommit": true,
+  "originalOperationalSourcesAndTrialEvidenceUnchanged": true,
+  "hardwareTestRerun": false,
+  "correction": "Only fix six links in repository-root AGENTS.md; keep docs-directory links unchanged"
+}

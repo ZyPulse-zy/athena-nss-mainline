@@ -1,0 +1,295 @@
+{
+  "passed": true,
+  "at": "2026-10-06T03:56:45.809Z",
+  "finiteTwoEpochSupervisor": true,
+  "actualNewRunModeled": true,
+  "fullFactoryModeled": false,
+  "productionExecution": false,
+  "inheritedBoundInputs": 1518,
+  "sourceManifest": {
+    "work/nss149/classifier.lua": "ae945b4e832fcf0b9f271f55435bd9b59d4f8315c86a84f593b113e0f37318a5",
+    "work/nss149/client-watchdog.ps1": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+    "work/nss149/close-endpoint.mjs": "0ab7af0ebf40a6790426dab3f4e87dbbb260736eaddf308012cb7d1739443b5b",
+    "work/nss149/compact-default-queues.mjs": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+    "work/nss149/controlled-session.mjs": "a1825120140ca9010a43564c5685e08cf8663770f0466fdc9cc1a8e45334e8a9",
+    "work/nss149/current-audit-diagnostic.mjs": "96e9de8a78d03833060568052b4597e015d1f42945c842e7ce6151458fa9fcc0",
+    "work/nss149/declared-baseline.mjs": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+    "work/nss149/discover-peer.py": "377386cb3226fb02509bb9266afaf505c2a487cafed17f72acc6a8c9c6ee3425",
+    "work/nss149/download-server.py": "9812803fcc62b6c2ad570c3160acb77f70090e0ebcfbe722702195c47c03dd13",
+    "work/nss149/endpoint-firewall-guardian.py": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+    "work/nss149/failed-wan-owner.lua": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+    "work/nss149/fast-path.lua": "ef44753b348fc41bd7f91de2848113584dcc655f32aae4a5fd480d379e1c64da",
+    "work/nss149/health.mjs": "4e5f268557035a969b163b288dd01911aa2da6db95ccb68002bd448ba5916fca",
+    "work/nss149/lifecycle-models.lua": "7f8212ae96e61ed5c4ff062ab9fee38f7c58b7073f8cb42226f3a9f14d1d290e",
+    "work/nss149/lifecycle-policy.mjs": "726a0c753af71f5ba7f8b51c452509c0649847ff374de6cf59d9192f20d7a007",
+    "work/nss149/match-controlled.mjs": "69d64d9b427fc9dcb022f1867df144df9e0a0d64cdf4b2b673d8d55140385d34",
+    "work/nss149/module-stage-guardian.lua": "b476d3b542d91a354aaf7daaa73eb18f051cbcbd1af6a1d9447ee5ad15e21a6c",
+    "work/nss149/module-stage.mjs": "cc3df10b89fbe49e8523bad2bb6be0d0408b6029861e4b8eb8d8248d6a9df03f",
+    "work/nss149/pack-guardian.mjs": "746a9c866d1e80f9494cead571af2f0e44bddacafbd0a55f7df8f75c96378927",
+    "work/nss149/pack-lua.mjs": "d1a9982deb0acda6dd88fe70c630d176f7d5543ed4298d115bdd9b4d65186766",
+    "work/nss149/parse-ecm-any-wan.mjs": "6a17e97bd217b07f5169ae2375c210c6f1cab77dacb4d634355f406118327e60",
+    "work/nss149/payload.mjs": "7d704e30d07fb8917bc9b819fa5adb226c2b7f430caa578af6549cabd5e72c42",
+    "work/nss149/policy-models.mjs": "2c6b80ee9272af1bf183e0a670530d4d9c90af2228fbcafa6b93dcda2204418c",
+    "work/nss149/prepare.py": "95ff1e0f59cfdc268feb9159dc5f808b429074a08974978dd689f2cc1734883b",
+    "work/nss149/probe-peer.py": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+    "work/nss149/qos-physical.lua": "05b9862c12bbf8fa9b59f392e9c34f692647fdafaed0c871a502519d63e90454",
+    "work/nss149/qualify-runner.mjs": "c20303c66219faa82e02f212bef1742ff8ef4a2c9a5aa94e88df1d011d8332c1",
+    "work/nss149/qualify.mjs": "9e8967a8a9f2c5cf0f1faf53471ad07b355399e0e407e0a4983265e5df574e61",
+    "work/nss149/read-controlled.mjs": "42de56dce50e126cc1c0332fe57d4636513140a72607d5a59b126a0a93f5d3c8",
+    "work/nss149/read-final-physical.mjs": "c935c98aa1d8763912530cce4f644d9585a4dfded913a49ac379cc14db965275",
+    "work/nss149/run.mjs": "1a64b079a1b089653586b9767da29c3030bdf1b761b0f7a170c68264dd8a58f4",
+    "work/nss149/server.py": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+    "work/nss149/service-epoch.mjs": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+    "work/nss149/session-binding.mjs": "cd31a625c0ca3762660b42b4f89ef03e0353a7d742c86c422d820b25af56fd6f",
+    "work/nss149/ssh-client.mjs": "772abecd426bcc855a674fc328cdd2a64d7bbf06b788a76f5474604a3c5796e8",
+    "work/nss149/start-dallas.mjs": "665b206da197c630a7cb7c5613a1a35eb01d222be6d9bf6a00122c9c5569646e",
+    "work/nss149/tag-normalizer.lua": "694c3955c428e296f7f76a09b8588edcc329c3bf3daad82aad922f0edeab030b",
+    "work/nss149/uplink-tag-plan.mjs": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459",
+    "work/nss149/verify-old-endpoints.mjs": "e480be462326f8168cb080d5a1745ed44c2ac567a9398309332e864ce60721ff",
+    "work/nss149/verify-receivers.mjs": "21fa6ba5a1ee7c5188eb09677feadad2326fb7985db7f9c70fedc688c3d31e14"
+  },
+  "budgets": [
+    6,
+    27,
+    100,
+    9000,
+    65536,
+    73728
+  ],
+  "payloadBytes": 73636,
+  "qualificationGuardianExecBytes": 8923,
+  "modelExecBytes": 7622,
+  "syntaxExecBytes": 7815,
+  "policyModels": {
+    "passed": true,
+    "checks": 35,
+    "historicalModelFixtureExplicit": true,
+    "newHardwareEpochNotClaimed": true,
+    "routerWrites": false,
+    "cases": [
+      {
+        "case": "mapped-historical-shape-accepts",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "fresh-complete-successor-accepts",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "old-owner-reused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "old-tag-owner-reused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "old-pin-hash-reused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "old-checkpoint-reused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "old-query-reused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "old-tcp-ci-reused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "old-udp-ci-reused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "source-producer-changed",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "ct-object-changed",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "nat-changed",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "mark-changed",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "wan-changed",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "class-not-bulk",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "unadmitted-rt",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "wrong-up-tag",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "old-stage-still-present",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "module-not-unloaded",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "firmware-not-zero",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "independent-owner-not-detached",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "rollback-not-before-write",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "checkpoint-not-verified",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "native-deadline-extended",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "failure-is-not-success",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "oversized-payload",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "physical-restore-failed",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "invalid-frontend-value",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "third-epoch-refused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "unknown-cleanup-refused",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "owned-fresh-client-accepts",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "stale-client",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "expired-client",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "wrong-client-pid",
+        "passed": true,
+        "modelOnly": true
+      },
+      {
+        "case": "tcp-exited",
+        "passed": true,
+        "modelOnly": true
+      }
+    ]
+  },
+  "nativeModels": {
+    "fullFactoryNotModeled": true,
+    "actualNewRunFunctionExecuted": true,
+    "checks": 5,
+    "routerWrites": false,
+    "passed": true,
+    "cases": [
+      {
+        "actualNewRunAndMeasurementFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "unchanged"
+      },
+      {
+        "actualNewRunAndMeasurementFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "missing-tags"
+      },
+      {
+        "actualNewRunAndMeasurementFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "wrong-ct-pin"
+      },
+      {
+        "actualNewRunAndMeasurementFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "diagnostic-gate"
+      },
+      {
+        "actualNewRunAndMeasurementFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "class-change"
+      }
+    ]
+  },
+  "exactPermanentClassifierAndNativeGateUnchanged": true,
+  "actualClassChangeRetirementImplementationUnchanged": true,
+  "newOwnerAfterCompleteRestorationOnly": true,
+  "desktopOperated": false
+}

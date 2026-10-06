@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "readonly": true,
+  "previousLoadsChecked": 16,
+  "temporaryFirewallRulesRemaining": 0,
+  "allCanonicalFirewallBaselinesMatch": true,
+  "ownedUnitsInactiveMainPidZero": 16,
+  "tcpAndUdpPortsClosed": true,
+  "remoteWrites": false,
+  "ownedClientOrGuardProcessesRemaining": 0,
+  "observedAt": "2026-10-06T04:26:03.207Z",
+  "existingEndpointServicesUnchanged": true,
+  "clientProcessesMatchedByExactOwnedLoadPaths": true,
+  "productionWrites": false,
+  "desktopOperated": false
+}

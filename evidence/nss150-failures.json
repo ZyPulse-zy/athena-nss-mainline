@@ -1,0 +1,89 @@
+[
+  {
+    "case": "149-static-v0-v1-v2-v4",
+    "passed": false,
+    "cause": "Textual source comparison rejected indentation/line-ending differences; a later attempt also refused to overwrite the first diff file",
+    "originalPreserved": true,
+    "beforeRouterConnection": true,
+    "correction": "Exact frozen raw SHA remains required; declared-code comparison uses the existing lexical packer; private outputs use distinct version directories"
+  },
+  {
+    "case": "149-size-v3",
+    "passed": false,
+    "cause": "First lifecycle payload exceeded the fixed 73728-byte limit",
+    "originalPreserved": true,
+    "ecmOpened": false,
+    "correction": "Remove unused software A/A2 orchestration and redundant snapshots; keep native/source/owner limits"
+  },
+  {
+    "case": "149-policy-v5",
+    "passed": false,
+    "cause": "Model incorrectly required frontend learning stop=0 throughout an already accelerated flow",
+    "originalPreserved": true,
+    "ecmOpened": false,
+    "correction": "Learning stop=1 can coexist with existing accelerated flows; still require exact count2, fresh class, and legal frontend values"
+  },
+  {
+    "case": "149-RAM-v6",
+    "passed": false,
+    "cause": "Model extractor missed the actual function due to an indentation-sensitive marker",
+    "originalPreserved": true,
+    "ecmOpened": false,
+    "correction": "Assert extraction boundaries and execute the actual run/measurement functions"
+  },
+  {
+    "case": "149-automatic-boundary",
+    "passed": false,
+    "completedEpochs": 1,
+    "cause": "First real 20-second epoch restored; the next owner was rejected by an unnecessary 100-second client-preparation requirement",
+    "originalPreserved": true,
+    "secondEpochWrites": false,
+    "correction": "Require 70 seconds of client preparation time; native27/owner100/client180 and all live readiness checks unchanged"
+  },
+  {
+    "case": "150-prepare-v1",
+    "passed": false,
+    "cause": "A reporting helper was incorrectly listed as a bound inherited preparation input",
+    "originalPreserved": true,
+    "ecmOpened": false,
+    "correction": "Complete only remaining bound sources, preserve partial copies"
+  },
+  {
+    "case": "150-initial-entry",
+    "passed": false,
+    "cause": "Own-namespace failed-WAN audit source missing",
+    "originalPreserved": true,
+    "checkpointCreated": false,
+    "ecmOpened": false,
+    "correction": "Bind the exact inherited helper and move full preflight before endpoint traffic"
+  },
+  {
+    "case": "150-v2-preflight",
+    "passed": false,
+    "cause": "Own-namespace baseline declaration source missing",
+    "originalPreserved": true,
+    "endpointTrafficStarted": false,
+    "ecmOpened": false,
+    "correction": "Bind the declaration and check literal namespace source closure"
+  },
+  {
+    "case": "150-v3-continuity",
+    "passed": false,
+    "cause": "Child read the old root continuity reference while the supervisor wrote a run-scoped reference",
+    "originalPreserved": true,
+    "checkpointCreated": false,
+    "ecmOpened": false,
+    "correction": "Pass the exact run-scoped private continuity path explicitly"
+  },
+  {
+    "case": "150-v4-WAN5",
+    "passed": false,
+    "cause": "Within the original initial-tag window, UDP uplink51 packets and TCP both directions matched, but UDP downstream0; native gate not loaded and ECM not opened",
+    "originalPreserved": true,
+    "checkpointCreated": true,
+    "ecmOpened": false,
+    "physicalRootsRestored": true,
+    "downstreamGapRootCauseResolved": false,
+    "correction": "No wait/lease enlargement. New load reused a prior owned UDP source port, with normal PBR selecting actual WAN3."
+  }
+]

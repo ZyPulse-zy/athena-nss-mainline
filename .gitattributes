@@ -33,3 +33,8 @@
 /code/work/nss147/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
 /code/work/nss146/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/nss147/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+# Preserve exact frozen NSS149/150 source bytes, including inherited blank lines.
+/code/work/nss149/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/nss149/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/nss150/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof

@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "at": "2026-10-06T04:10:48.901Z",
+  "sourceManifest": {
+    "work/nss150/run-v4.mjs": "6242fd169ca72bc3dadbb57cf11fee9d180e70d88715945f71ac67a9805a6e15",
+    "work/nss150/controlled-session-v4.mjs": "e7bd41682526e278feaf35a6cfe0437e1c3403ba3b147a3cdae1b1928afec607",
+    "work/nss150/current-audit-diagnostic-v4.mjs": "98f5da1c7e0b4a770b6e6ba8ceea25b2a0aad11d11882d3b774ce43bae444db6",
+    "work/nss150/session-binding-v4.mjs": "048c0270035bc22756b89ffeaf791718714fd3c642a800c4e87860e575e73f2d",
+    "work/nss150/qualify-v4.mjs": "7601a102ce5825a0ace2fdad8ce6d9ecc67d915aa281c260d94d93b5a4c55518",
+    "work/nss150/prepare-v4.py": "4ecb3cf276b21fa7f4771c3a586462eed6aea0316efd65eb87fe0b3ce8dbef46"
+  },
+  "inheritedBindings": 1596,
+  "exactSupervisorContinuityPathPassed": true,
+  "literalInputClosureChecked": true,
+  "sameFactory": "NSS149",
+  "policyUnchanged": true,
+  "budgets": [
+    6,
+    27,
+    100,
+    9000,
+    65536,
+    73728
+  ],
+  "staleV1ReferenceRejectionPreserved": true,
+  "productionExecution": false
+}

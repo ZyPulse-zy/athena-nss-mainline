@@ -1,0 +1,26 @@
+{
+  "passed": false,
+  "originalFailurePreserved": true,
+  "commitOrPushChainStoppedBeforeCommit": true,
+  "originalOutputPrivatePath": "work/nss150/reporting/staged-whitespace-v1.txt",
+  "files": [
+    {
+      "path": "code/work/nss149/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "attribute": "-blank-at-eof"
+    },
+    {
+      "path": "code/work/nss149/fast-path.lua",
+      "sha256": "ef44753b348fc41bd7f91de2848113584dcc655f32aae4a5fd480d379e1c64da",
+      "attribute": "-blank-at-eol"
+    },
+    {
+      "path": "code/work/nss150/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "attribute": "-blank-at-eof"
+    }
+  ],
+  "sourceBytesChanged": false,
+  "correction": "Only exact frozen paths receive whitespace exceptions with inherited cr-at-eol preserved",
+  "hardwareTestRerun": false
+}

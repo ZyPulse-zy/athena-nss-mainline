@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "at": "2026-10-06T04:05:37.851Z",
+  "sourceManifest": {
+    "work/nss150/failed-wan-owner.lua": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+    "work/nss150/current-audit-diagnostic-v2.mjs": "b312683f7d582492a35b3ec0456fdfcc9a0c7c08f4b2ec943f2593914fb7907d",
+    "work/nss150/controlled-session-v2.mjs": "e736fa59ca717697ae66221f42d1de58982680b1e1ea16dcd138649557377936",
+    "work/nss150/run-v2.mjs": "ad3abc152b402d756dad895aa78794832af20fed61d27ea7df3355dea6cb9510",
+    "work/nss150/session-binding-v2.mjs": "f777d70508dca4e0674df45cce4d375232e7ad936fa7dff236d74cc789700e20",
+    "work/nss150/qualify-v2.mjs": "69b90319b94c76e103282a92bfc7e9b15b58853803e161d312603fa8cc8ffa09",
+    "work/nss150/prepare-v2.py": "02702bd48e4f77af9b8b08e0092a6647e847e96edb6b5b3b001b8556eebb154a"
+  },
+  "inheritedBindings": 1582,
+  "exactMissingAuditDependencyBound": true,
+  "fullNamespacePreflightBeforeLoad": true,
+  "sameFactory": "NSS149",
+  "policyUnchanged": true,
+  "budgets": [
+    6,
+    27,
+    100,
+    9000,
+    65536,
+    73728
+  ],
+  "oldFailedEntryAndActualEvidenceRetained": true,
+  "productionExecution": false
+}

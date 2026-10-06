@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "at": "2026-10-06T04:19:35.168Z",
+  "sourceManifest": {
+    "work/nss150/run-v5.mjs": "714ecb49443ac5a654514297a72348836c0d122fe3ca835d6377839a8beeaa3b",
+    "work/nss150/controlled-session-v5.mjs": "ff2acc51260e0398ea8060fb8cd6f041671fc37bbfdc2404c89939e34ace62a0",
+    "work/nss150/current-audit-diagnostic-v5.mjs": "5eaf43733f573e9b31bf941f6dd0b22905b5045e7ebf9a0e0e246a8ae8a3e9c4",
+    "work/nss150/start-dallas-v5.mjs": "f2a277ca71408d10537e7d62143f1f9d2d72ee0cf8f906c3897bb199be000c3c",
+    "work/nss150/session-binding-v5.mjs": "bfeddb15328de55e4f93b1736fdba0e8368e2dd1d2cb9d1bc285e676c864361a",
+    "work/nss150/qualify-v5.mjs": "bc396569fccfc1051b544146359339a5eea528fce7c73dc5c1531b0891c00f3c",
+    "work/nss150/prepare-v5.py": "ebac3683cbc94592fb18874f395edc56c233e9bbfd6c24c2f16886833e161117"
+  },
+  "inheritedBindings": 1602,
+  "onlyOwnedUdpInitialPortSeedChanged": true,
+  "pbrNatAndFirewallScopeUnchanged": true,
+  "noUdpRotationWithinLoad": true,
+  "sameTestedFactory": "NSS149",
+  "sameControllerPolicy": true,
+  "budgets": [
+    6,
+    27,
+    100,
+    9000,
+    65536,
+    73728
+  ],
+  "independentDeadlinesUnchanged": true,
+  "wan5MissingDownstreamUdpTagRefusalRetained": true,
+  "productionExecution": false
+}

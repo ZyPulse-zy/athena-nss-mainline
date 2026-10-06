@@ -1,3 +1,26 @@
+# 单 WAN 自动生命周期已通过有限两代实测
+
+更新：2026-10-06 12:28，北京时间。最新 NSS150。用户使用电脑，本轮仅后台自有受控下载＋小UDP，无桌面、Steam、CS2 操作。
+
+**同一真实 TCP BULK＋UDP RT，在 WAN3 自动完成两代各20秒：第一代精确撤销和完整恢复后，自动取得新的分类 query、checkpoint、owner、kernel pin 和两个新 CI；原 socket、CT、完整 mark、NAT 与 WAN affinity 不变。每代 ECM0→2→0、四tag/四FQ-CoDel leaf及独立恢复通过。**
+
+| 代 | NSS秒 | 下载payload Mbps | softirq % | UDP收到/发出 | UDP RTT p95 ms | native续租 |
+|---|---:|---:|---:|---:|---:|---:|
+| 1 | 20.01 | 26.715 | 1.875 | 918/918 | 197.383 | 6 |
+| 2 | 20.01 | 26.533 | 4.798 | 910/910 | 197.359 | 6 |
+
+这是有限两代生命周期验收；没有本轮 software/NSS/software CPU因果对照，降幅为null；UDP是自有echo，不是CS2 jitter/loss/Miss。未部署长期NSS控制器、未验收300Mbps或长期稳定，未在新supervisor中复测改类/退出。
+
+修复了客户端准备时长误用、两个审核依赖遗漏、旧轮次连接参照路径。WAN5初始阶段UDP上行51包/下行0导致拒绝，未加载gate或开启ECM；其回包缺口根因仍未知，未放宽原1.2秒窗口或6/27/100期限。失败均保留。NSS149第一代20.01秒成功，第二代写前期限拒绝也单独保留。
+
+常驻仍NSS68/config581b5d46…c791d7、31657/17139、publication upTag0；ECM关闭全零，无事务/stage/state/实验模块；wan与lan4原mq+四fq_codel精确恢复；16负载端点/客户端、SSH下载发送器关闭。WAN4既有认证down，四路failover未改。heartbeat保持暂停。
+
+接下来仅把真实改类/退出事件接入这一已实测supervisor，并验证中断时独立恢复；之后再做单WAN有限常驻试运行。保留NSS承担主要QoS的方向，CAKE作为fallback/对照；不扩第二WAN、共享预算、Wi-Fi、autorate或新游戏下载。
+
+证据：[主线](evidence/nss150-mainline.json)、[两代](evidence/nss150-trials.json)、[失败](evidence/nss150-failures.json)、[终态](evidence/nss150-final-audit.json)、[物理根](evidence/nss150-physical-final.json)、[端点](evidence/nss150-endpoint-client-closure.json)。
+
+## NSS148及更早接续
+
 # 接续此研究
 
 最新NSS148整理／147实测：用户使用电脑，不操作UI/Steam/CS2。自有32Mbps有界下载＋小UDP，单WAN5三段20.01秒/123帧、ECM0/2/0、四tag/四leaf/完整mark/NAT/affinity/7续租/精确恢复通过。下载26.681/26.971/25.442，softirq17.549/3.008/8.061；背景3.556/2.650/2.028违反原可比条件，comparison=false/降幅null，UDP不作CS2。下bulkdrop379/两RTdrop0，非300/真人/长期/完整CAKE验收。147修闭软件段旧epoch过期并补顶facade传参：只能stop且ECM全零时跳过旧6秒准入截止；当前source/class/CT仍严，active27/owner100不改。145/146 ECM前失败和146即时instance恢复审核失败／后续成功分开保留。1518实际绑定冻结精确、actualpayload73686/actualguardian8899；8consumer+9phase RAM分项，不称整个factory RAM。148真人wrapper用147已实测factory/143精简visibility reader，1527项/defaultinspect现场0pair/no writes，真人wrapper完整ABA未执行。1439311/9203/9175>9000失败及首UIguard失败后点击保存；144漏审核依赖、146资格/模型尺寸/语法、147分析缺字段均保存。常驻68/config581b5d46…c791d7/31657/17139/upTag0不变，最终ECM全零无残留/两根精确恢复，11端点/客户端/SSH sender关闭，WAN4down四路failover保持。142 runtime归档原字节，heartbeat保持暂停，不扩WAN/共享预算/WiFi/autorate/新游戏下载。工程可继续后台自有受控测试；最后真人只在用户方便时一次，不重复CPU门槛、不重装classifier。以STATE开头为准。

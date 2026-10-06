@@ -1324,12 +1324,12 @@ fail142=json.loads((root/'evidence/nss142-failures.json').read_text());assert le
 proof148=json.loads((root/'evidence/nss148-source-proof.json').read_text())
 assert proof148['historicPrefixSources']==1892
 assert proof148['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1892],sort_keys=True,separators=(',',':')).encode()).hexdigest()
-assert proof148['sources']==len(proof148['sourceHashes']) and len(manifest['sources'])==1892+proof148['sources']+2
+assert proof148['sources']==len(proof148['sourceHashes']) and len(manifest['sources'])>=1892+proof148['sources']+2
 assert proof148['sourcesByRound']=={'143':7,'144':21,'145':23,'146':45,'147':37,'148':9}
 assert all(proof148[k]for k in ['sourceBindingsActualAndFrozenMatch','privateHostBootstrapExcluded','credentialsCtNoncesConfigurationCheckpointsAndBinariesExcluded','historicFilesExceptCurrentRuntimeAllBytesRetained','originalFailuresKept','wholeFactoryRamAbaNotClaimed','actualWholeFactoryHardwareAbaPassed'])
 assert proof148['boundInputsInActualControlledCase']==1518 and proof148['realPreparedBoundInputs']==1527
 for source,digest in proof148['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-rt148=json.loads((root/'evidence/current-runtime.json').read_text());x148=json.loads((root/'evidence/nss148-mainline.json').read_text())
+rt148=json.loads((root/'evidence/nss148-runtime.json').read_text());x148=json.loads((root/'evidence/nss148-mainline.json').read_text())
 assert rt148['round']==x148['round']=='NSS148'
 assert rt148['historical142RuntimePreservedSha256']==proof148['oldNss142RuntimeRetainedExactSha256']==hashlib.sha256((root/'evidence/nss142-runtime.json').read_bytes()).hexdigest()
 assert rt148['workerPid']==31657 and rt148['guardianPid']==17139 and rt148['classifierConfigSha256']==rt142['classifierConfigSha256']
@@ -1434,4 +1434,88 @@ assert archiveproof148['historicPrefixSources']==2042 and archiveproof148['sourc
 assert archiveproof148['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2042],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 for source,digest in archiveproof148['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 assert archiveproof148['comparisonUsesOriginalGitBlobs']and archiveproof148['failedFirstVerifierSourceBytesRetained']and not archiveproof148['operationalBindingsChanged']
+# NSS150 is a bounded automatic successor proof, not matched CPU or human-game acceptance.
+x150=json.loads((root/'evidence/nss150-mainline.json').read_text());rt150=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x150['round']==rt150['round']=='NSS150' and x150['passed'] and x150['boundedTwoEpochAutomaticLifecyclePassed']
+assert len(manifest['sources'])==2148 and x150['exportedSources']==105
+proof150=json.loads((root/'evidence/nss150-source-proof.json').read_text())
+assert proof150['historicPrefixSources']==2043 and proof150['sources']==len(proof150['sourceHashes'])==105
+assert proof150['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2043],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+assert proof150['historicManifestPrefixUnchanged'] and proof150['originalFailuresKept'] and proof150['credentialsCtNoncesConfigurationCheckpointsAndBinariesExcluded'] and proof150['qualifiedActualEntryBindings']==1609
+for source,digest in proof150['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert x150['actualWan']==rt150['controlledWan']==3 and x150['generations']==rt150['generations']==2
+assert x150['sourceBindingsActual']==rt150['boundInputs']==1609
+assert x150['qualifiedController']==rt150['qualifiedExperimentalController']=='work/nss150/run-v5.mjs'
+assert x150['factory']==rt150['controlledFactory']=='work/nss149/module-stage.mjs'
+assert rt150['workerPid']==rt148['workerPid']==31657 and rt150['guardianPid']==rt148['guardianPid']==17139
+assert rt150['classifierConfigSha256']==rt148['classifierConfigSha256'] and rt150['classifierDeployment']=='NSS68'
+assert rt150['historical148RuntimePreservedSha256']==x150['oldNss148RuntimeRetainedExactSha256']==hashlib.sha256((root/'evidence/nss148-runtime.json').read_bytes()).hexdigest()
+assert all(x150[k]for k in ['unchangedSocketCtMarkNatWanAcrossGenerations','newOwnerCheckpointTagNamespaceFrozenHashAndClassifierSequence','newNativeCisForBothFlows','oldNativeGateNeverReopened','oldEpochNeverExtended','classChangeRetirementCodeInheritedExactly','historical139ClassChangeProofNotRerun','wan5DownstreamUdpGapUnresolved','nightHeartbeatRemainsPaused','oldHistoryExperimentIndexEmptyPreserved','actualTrialReferencesRecoveredFromExactDriverReceipts','reportExportV1FailedBeforeRepositoryWrites'])
+assert not any(x150[k]for k in ['matchedCpuABARunThisTurn','cs2ExperienceConclusion','highLoad300MbpsConclusion','permanentNssControllerInstalled','permanentNssEnabled','autoClassChangeRelearnInThisNewSupervisorTested','desktopOperated','steamOrCs2Started'])
+assert x150['cpuReductionConclusion'] is None and rt150['cpuConclusion'] is None
+assert rt150['controlledAutomaticLifecyclePassed'] and rt150['nightHeartbeatRemainsPaused'] and not rt150['nssPermanentlyEnabled'] and not rt150['realHumanGameAcceptance']
+assert (x150['sourceNativeOwnerBudgets'],x150['clientHardSeconds'],x150['clientPreparationRemainingSeconds'])==([6,27,100],180,70)
+trials150=json.loads((root/'evidence/nss150-trials.json').read_text());assert trials150==x150['trials'] and len(trials150)==2
+for t150 in trials150:
+ assert t150['passed'] and 20<=t150['stableSeconds']<21.5 and t150['sampleCount']==41 and t150['nativeRenewals']==6
+ assert t150['observedEcmSequence']==[0,2,0] and t150['actualTagAndLeafCount']==4 and t150['sourceBindingsActual']==1609
+ assert t150['payloadBytesActual']<=73728 and t150['guardianExecBytesActual']<=9000
+ assert (t150['fixedNativeSessionSeconds'],t150['independentOwnerMaxSeconds'],t150['successGraceSeconds'])==(27,100,5)
+ assert all(t150[k]for k in ['fullMarkNatWanAffinityCorrect','originalCtAndSocketHeld','newKernelPin','newCheckpointDownloadedShaGzipVerified','independentRollbackBeforeFirstWrite','parentAndPipeIdentityVerified','gateRemoved','physicalRootsRestored']) and all(t150['undoVerified'].values())
+ mt150=t150['metrics'];assert mt150['selectedWan']==3 and 25<mt150['clientTcpReceivedMbps']<28 and mt150['sampleCount']==41 and mt150['nativeRenewals']==6
+ assert mt150['timeSqueezeDelta']==mt150['softnetDropDelta']==mt150['udp']['unreturned']==0
+ assert mt150['udp']['sent']==mt150['udp']['received'] and not mt150['udp']['cs2Metric'] and mt150['causalCpuReductionPercent'] is None
+ assert not any(mt150[k]for k in ['sameLoadSoftwareNssSoftwareComparison','cs2Acceptance','permanentController','highLoad300Mbps'])
+ leaves150=mt150['nssLeavesNearbyAsynchronousSnapshots'];assert all(v['packets']>0 for d in leaves150.values()for v in d.values())
+ assert leaves150['down']['8f06:']['dropped']==leaves150['up']['8e06:']['dropped']==0
+assert [t['metrics']['udp']['sent']for t in trials150]==[918,910]
+ar150=json.loads((root/'evidence/nss150-automatic-result.json').read_text());assert ar150['passed'] and ar150['completedEpochs']==2
+assert all(ar150[k]for k in ['finiteAutomaticSuccessorExecuted','sameSocketAndCtAcrossEpochs','newCheckpointOwnerClassificationPinAndCi','oldEpochNeverExtendedOrReopened'])
+assert not any(ar150[k]for k in ['matchedCpuComparison','cs2Acceptance','permanentNssDeployment'])
+q149=json.loads((root/'evidence/nss150-qualification149.json').read_text());q150=json.loads((root/'evidence/nss150-qualification-initial.json').read_text())
+assert q149['passed'] and q149['inheritedBoundInputs']==1518 and len(q149['sourceManifest'])==40
+assert q149['actualNewRunModeled'] and not q149['fullFactoryModeled'] and not q149['productionExecution'] and q149['finiteTwoEpochSupervisor']
+assert q149['payloadBytes']==73636 and q149['qualificationGuardianExecBytes']==8923 and q149['modelExecBytes']==7622
+assert q149['policyModels']['checks']==35 and q149['nativeModels']['checks']==5 and q149['nativeModels']['fullFactoryNotModeled'] and q149['nativeModels']['actualNewRunFunctionExecuted']
+assert all(v['passed']and v['modelOnly']for v in q149['policyModels']['cases'])
+assert all(v['passed']and v['actualNewRunAndMeasurementFunctions']and v['mockedBackend']and not v['hardwareProof']for v in q149['nativeModels']['cases'])
+assert all(q149[k]for k in ['exactPermanentClassifierAndNativeGateUnchanged','actualClassChangeRetirementImplementationUnchanged','newOwnerAfterCompleteRestorationOnly'])
+assert q150['passed'] and q150['inheritedBindings']==1558 and len(q150['sourceManifest'])==24 and q150['policyModels']['checks']==36
+assert q150['sameActuallyTested149Factory'] and q150['onlyClientPreparationMarginChanged'] and q150['clientIsNotRequiredForIndependentRollback'] and q150['actualSourceNativeOwnerBoundsUnchanged']
+assert (q150['requiredClientRemainingSeconds'],q150['clientHardDeadlineSeconds'],q150['independentOwnerHardDeadlineSeconds'])==(70,180,100)
+qs150=[q149,q150]
+for ver,old_count,new_count in [('v2',1582,7),('v3',1589,7),('v4',1596,6),('v5',1602,7)]:
+ qv150=json.loads((root/('evidence/nss150-qualification-'+ver+'.json')).read_text());assert qv150['passed'] and qv150['inheritedBindings']==old_count and len(qv150['sourceManifest'])==new_count and not qv150['productionExecution'];qs150.append(qv150)
+for qv150 in qs150:
+ assert qv150['budgets']==[6,27,100,9000,65536,73728]
+ for source,digest in qv150['sourceManifest'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert qs150[-1]['pbrNatAndFirewallScopeUnchanged'] and qs150[-1]['noUdpRotationWithinLoad'] and qs150[-1]['independentDeadlinesUnchanged'] and qs150[-1]['wan5MissingDownstreamUdpTagRefusalRetained']
+assert (root/'code/work/nss149/classifier.lua').read_bytes()==(root/'code/work/nss147/classifier.lua').read_bytes()
+for f in ['download-server.py','client-watchdog.ps1','endpoint-firewall-guardian.py']:
+ assert (root/'code/work/nss150'/f).read_bytes()==(root/'code/work/nss149'/f).read_bytes()
+assert "from '../nss149/module-stage.mjs'"in (root/'code/work/nss150/controlled-session-v5.mjs').read_text()
+fail150=json.loads((root/'evidence/nss150-failures.json').read_text());assert len(fail150)==x150['failuresPreserved']==10
+assert all(not f['passed']and f['originalPreserved']for f in fail150)
+assert fail150[4]['completedEpochs']==1 and not fail150[4]['secondEpochWrites']
+assert fail150[-1]['case']=='150-v4-WAN5' and fail150[-1]['checkpointCreated'] and not fail150[-1]['ecmOpened'] and fail150[-1]['physicalRootsRestored'] and not fail150[-1]['downstreamGapRootCauseResolved']
+for f in fail150:
+ if 'ecmOpened'in f:assert not f['ecmOpened']
+for key,name in [('finalAudit','nss150-final-audit.json'),('physicalRestore','nss150-physical-final.json'),('endpointClosure','nss150-endpoint-client-closure.json'),('receiverClosure','nss150-receiver-closure.json')]:
+ assert x150[key]==json.loads((root/'evidence'/name).read_text())
+assert rt150['audit']==x150['finalAudit'] and rt150['physicalRootRestoreAudit']==x150['physicalRestore'] and rt150['endpointClientClosureAudit']==x150['endpointClosure'] and rt150['ownedReceiverClosureAudit']==x150['receiverClosure']
+assert all(rt150['audit'][k]for k in ['passed','readonly','originalFullLockedNativeAudit','unrelatedConfigurationMatches','exactWan4AutomaticFailoverProved','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule'])
+assert rt150['audit']['queryAge']<6 and rt150['audit']['selectors']==2 and not rt150['audit']['allFiveWanHealthy'] and not rt150['audit']['wan4Up']
+assert all(rt150['physicalRootRestoreAudit'][k]for k in ['passed','readonly','physicalWanOriginalMqFourFqCodelRestored','lan4OriginalMqFourFqCodelRestored','defaultQueueOptionsAndHandlesExact'])
+end150=rt150['endpointClientClosureAudit'];assert end150['passed'] and end150['readonly'] and end150['previousLoadsChecked']==end150['ownedUnitsInactiveMainPidZero']==16
+assert end150['temporaryFirewallRulesRemaining']==end150['ownedClientOrGuardProcessesRemaining']==0 and end150['allCanonicalFirewallBaselinesMatch'] and end150['tcpAndUdpPortsClosed'] and end150['existingEndpointServicesUnchanged']
+assert not end150['remoteWrites'] and not end150['productionWrites'] and not end150['desktopOperated']
+assert rt150['ownedReceiverClosureAudit']['passed'] and rt150['ownedReceiverClosureAudit']['readonly'] and rt150['ownedReceiverClosureAudit']['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
+validation150=json.loads((root/'evidence/nss150-publication-validation-failure.json').read_text())
+assert not validation150['passed'] and validation150['originalFailurePreserved'] and validation150['commitOrPushChainStoppedBeforeCommit'] and validation150['originalOperationalSourcesAndTrialEvidenceUnchanged'] and not validation150['hardwareTestRerun']
+whitespace150=json.loads((root/'evidence/nss150-whitespace-failure.json').read_text())
+assert not whitespace150['passed'] and whitespace150['originalFailurePreserved'] and whitespace150['commitOrPushChainStoppedBeforeCommit'] and not whitespace150['sourceBytesChanged'] and not whitespace150['hardwareTestRerun']
+assert len(whitespace150['files'])==3
+for f in whitespace150['files']:
+ assert hashlib.sha256((root/f['path']).read_bytes()).hexdigest()==f['sha256']
+ assert '/'+f['path']+' whitespace=cr-at-eol,'+f['attribute']in (root/'.gitattributes').read_text()
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))
