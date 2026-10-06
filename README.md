@@ -1,5 +1,9 @@
 # Athena NSS 主线
 
+最新 [NSS142晨间终态](evidence/nss142-mainline.json)：完整保护/两物理根/七端点/客户端收尾通过，常驻68且ECM关闭；140最后真人入口1385输入未变，整合版完整A/B/A2仍待一次集中真人验收。夜间任务在发布校验后暂停，10:00后不新实验。以 [STATE](docs/STATE.md) 与 [PLAN](docs/PLAN.md) 开头为准。
+
+# Athena NSS 主线
+
 最新 [NSS141真人入口准备](evidence/nss141-mainline.json)：真实改类撤销与新代重学已在 [NSS139](evidence/nss139-class-lifecycle.json)通过，现已并入最后集中真人入口并完成必要离线/只读核验。常驻68、ECM关闭；140整合版本完整A/B/A2和真人验收尚未执行。以 [STATE](docs/STATE.md) 与 [PLAN](docs/PLAN.md) 开头为准，下方旧摘要仅历史。
 
 # Athena NSS 主线

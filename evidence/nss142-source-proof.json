@@ -1,0 +1,22 @@
+{
+  "round": "NSS142",
+  "historicPrefixSources": 1885,
+  "historicPrefixCanonicalSha256": "b7fc4f079a92fac0708c21e867d139c58a9f845dba8b3620298301418a6dde3c",
+  "sources": 7,
+  "sourceHashes": {
+    "work/nss142/health.mjs": "ebecf5f586b57dc5f264e146898151435f9242979e649732a6accbe8ce8b851e",
+    "work/nss142/read-final-physical.mjs": "42a07dd2500dc7a8962b94738721750011e144a6c8f87b25b300563d076edc74",
+    "work/nss142/verify-receivers.mjs": "f5c71244bac1274452dfa6294d0b5114d1cc5b8c5245a337e96008d33b32898c",
+    "work/nss142/verify-endpoints.mjs": "edb40cff275cc5610e3314f86e3ebf75ce70e56bcfcd9890dc636626bfa6eaaa",
+    "work/nss142/verify-bound-inputs.mjs": "c83451e1d95a2bc3607985fbf3135f25e050b8180e1e3dc5b0385aef4f675c78",
+    "work/nss142/save-evidence.py": "7b6461c6307d2dae6bd2a4b33bc0741264ab73235239f3070ad4eb2d38e497ff",
+    "work/nss142/verify-published.py": "53cc87eefc78efa4174fa41e677cfa15e1e81005a586542b805d6c02d31f970e"
+  },
+  "localArtifactsFrozen": 25,
+  "oldNss141RuntimeRetainedExactSha256": "f22d0051b02bbe80aeb6e7933ce2dc9904637730c1b8285264dbe21681b99ba1",
+  "preparedBindings": 1385,
+  "preparedInputsCurrentAndPreviouslyFrozenMatch": true,
+  "privateHostBootstrapExcluded": true,
+  "credentialsCtNoncesConfigurationCheckpointsAndBinariesExcluded": true,
+  "originalFailuresKept": true
+}

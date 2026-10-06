@@ -1,3 +1,21 @@
+# 下一步：一次集中真人验收
+
+更新：2026-10-06 09:43，北京时间。NSS142为本夜最后一次只读收尾，常驻仍NSS68/config581b5d46…c791d7，worker31657、guardian17139。实验已经撤销，ECM保持关闭全零。
+
+**晨间完整核验通过：自动分类器身份、原完整保护审核、两处物理队列、自有测试端点和客户端均已核验。140真人入口的1385项实际输入仍与既有冻结副本逐字节一致。此轮只封存终态，没有重新试装、开启NSS、运行负载或操作桌面。**
+
+见 [晨间汇总](../evidence/nss142-mainline.json)、[完整审核](../evidence/nss142-final-audit.json)、[物理队列](../evidence/nss142-physical-final.json)、[端点与客户端](../evidence/nss142-endpoint-client-closure.json)、[输入绑定](../evidence/nss142-prepared-bindings.json)、[失败记录](../evidence/nss142-failures.json)。
+
+- 原完整来源年龄1.53秒，动态selectors14由原native ownership审核验证；配置、服务、PBR/ct mark/NAT/连接粘性保护不变。无事务/stage/state/实验模块，物理wan与lan4原mq＋四fq_codel的options/handles精确匹配。
+- 七个既有有限负载的端点全部inactive/MainPID0；TCP/UDP端口关闭，临时规则0、七个canonical防火墙基线一致；Windows精确自有路径匹配的客户端/guard和自有SSH receiver均0残留。只读确认，不发送stop、不改防火墙。
+- WAN4仍认证down且无IPv4，既有四路健康权重100/100/100/0/100及300桶四路各75保持；未主动认证、重启或修改校园策略。
+- 139真实同CT自动BULK→BE精确撤销及新代重学仍为历史硬件证据；128约30Mbps受控上传可比短窗softirq相对低48.64%仍为历史性能证据。140新整合版本完整A/B/A2、真人CS2、300Mbps主下载、长期运行及完整CAKE替代均尚未验收。本轮没有新增CPU或游戏结论。
+- 晨间第一次批量调用在本地JavaScript语法解析即被拒绝，未派发检查/连接路由器；失败原样保留后修正调用，随后完整检查通过。不覆盖141及更早被冻结证据。
+- 本夜工作在发布检查、推送和实际Git archive读回后结束，立即暂停athena-nss；10:00授权截止，之后不新开生产实验，临时keep-awake自到期，不改电源计划。
+- 用户醒来后只集中一次：用140默认inspect确认真人CS2 UDP与已有正常下载的Steam BULK TCP同一健康WAN，再获取新分类/kernel pin/checkpoint和独立owner，做三段各20秒software→NSS→software。记录jitter/loss/Miss/体感及softirq/squeeze/吞吐；若改类，精确撤销、结束旧代，新epoch重进，中断不能算完整ABA。继续仅一TCP＋一UDP，不扩第二WAN/共享预算/WiFi/autorate/ECN。
+
+## NSS141及更早历史
+
 # 下一步：最后集中真人验收
 
 更新：2026-10-06 07:14，北京时间。最新NSS141整理、140入口离线整合；常驻NSS68/config581b5d46…c791d7，worker31657、guardian17139。本轮没有生产试装，ECM保持关闭。

@@ -22,3 +22,6 @@
 /code/work/nss140/fast-path-v2.lua whitespace=-blank-at-eol
 /code/work/nss140/fast-path-v3.lua whitespace=-blank-at-eol
 /code/work/nss140/fast-path.lua whitespace=-blank-at-eol
+
+# Keep the archived NSS141 runtime in the exact published Git bytes.
+/evidence/nss141-runtime.json -text

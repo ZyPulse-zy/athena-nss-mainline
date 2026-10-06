@@ -1,0 +1,12 @@
+[
+  {
+    "passed": false,
+    "stage": "local-batched-readonly-tool-invocation",
+    "error": "SyntaxError: Invalid or unexpected token",
+    "reason": "Malformed JavaScript property quoting in the batch descriptor was rejected by functions.exec before tool dispatch.",
+    "nestedToolsDispatched": false,
+    "routerAuditStarted": false,
+    "productionWrites": false,
+    "originalFailurePreserved": true
+  }
+]

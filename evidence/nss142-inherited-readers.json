@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "readOnlyReaders": true,
+  "files": [
+    {
+      "file": "health.mjs",
+      "namespaceOnlyChange": true,
+      "priorSha256": "8ff41aab37f4a38bec7022082a4d0a9fc11fb533b996ec6fcbf0e3a4c7c7b87d",
+      "sha256": "ebecf5f586b57dc5f264e146898151435f9242979e649732a6accbe8ce8b851e"
+    },
+    {
+      "file": "read-final-physical.mjs",
+      "namespaceOnlyChange": true,
+      "priorSha256": "29c09658cc57c7bdef21b2136b97374ac3857150e6e776e08e71f91709d66bad",
+      "sha256": "42a07dd2500dc7a8962b94738721750011e144a6c8f87b25b300563d076edc74"
+    },
+    {
+      "file": "verify-receivers.mjs",
+      "namespaceOnlyChange": true,
+      "priorSha256": "8deb58a266750f37c5da5faa8653a7c7388d6bff4dd1bb2ab93560c3fa0b83b7",
+      "sha256": "f5c71244bac1274452dfa6294d0b5114d1cc5b8c5245a337e96008d33b32898c"
+    }
+  ]
+}

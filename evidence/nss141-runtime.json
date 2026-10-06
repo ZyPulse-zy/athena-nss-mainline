@@ -1,6 +1,6 @@
 {
-  "round": "NSS142",
-  "checkedAt": "2026-10-06T01:43:04.061Z",
+  "round": "NSS141",
+  "checkedAt": "2026-10-05T23:14:56.969Z",
   "deploymentReference": "work/nss68/deployment-latest.json",
   "classifierConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
   "workerPid": 31657,
@@ -15,7 +15,7 @@
   "currentNssAdmissionMustBeRefreshedBeforeWrite": true,
   "audit": {
     "passed": true,
-    "observedAt": "2026-10-06T01:43:04.061Z",
+    "observedAt": "2026-10-05T23:14:56.969Z",
     "readonly": true,
     "originalFullLockedNativeAudit": true,
     "unrelatedConfigurationMatches": true,
@@ -30,8 +30,8 @@
     "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
     "workerPid": 31657,
     "guardianPid": 17139,
-    "queryAge": 1.5300000000279397,
-    "selectors": 14,
+    "queryAge": 4.399999999906868,
+    "selectors": 2,
     "ecmStoppedAndZero": true,
     "noActiveTransaction": true,
     "noStaging": true,
@@ -48,7 +48,7 @@
   },
   "physicalRootRestoreAudit": {
     "passed": true,
-    "observedAt": "2026-10-06T01:43:02.622Z",
+    "observedAt": "2026-10-05T23:14:55.321Z",
     "readonly": true,
     "physicalWanOriginalMqFourFqCodelRestored": true,
     "lan4OriginalMqFourFqCodelRestored": true,
@@ -63,33 +63,5 @@
   "realHumanGameAcceptance": false,
   "newCpuComparisonAcceptedThisTurn": false,
   "historical139RuntimePreservedSha256": "19559e29dd8e92ffc6c91a8f8937e2d9976df595a2305a5feca4301949045036",
-  "nightContinuationUntilBeijing": "2026-10-06T10:00:00+08:00",
-  "endpointClientClosureAudit": {
-    "passed": true,
-    "readonly": true,
-    "previousLoadsChecked": 7,
-    "temporaryFirewallRulesRemaining": 0,
-    "allSevenCanonicalFirewallBaselinesMatch": true,
-    "ownedUnitsInactiveMainPidZero": 7,
-    "tcpAndUdpPortsClosed": true,
-    "remoteWrites": false,
-    "ownedClientOrGuardProcessesRemaining": 0,
-    "observedAt": "2026-10-06T01:45:23.143Z",
-    "existingEndpointServicesUnchanged": true,
-    "clientProcessesMatchedByExactOwnedLoadPaths": true,
-    "productionWrites": false,
-    "desktopOperated": false
-  },
-  "ownedSshReceiverClosureAudit": {
-    "readonly": true,
-    "exactOwnedReceiverAndTimeoutProcessesRemaining": 0,
-    "ownReceiverMaximumSeconds": 180,
-    "independentTimeoutSeconds": 185,
-    "passed": true,
-    "observedAt": "2026-10-06T01:43:02.699Z",
-    "existingAuthenticatedSshServiceUnchanged": true
-  },
-  "morningReadonlyClosureCompleted": true,
-  "historical141RuntimePreservedSha256": "f22d0051b02bbe80aeb6e7933ce2dc9904637730c1b8285264dbe21681b99ba1",
-  "pauseNightHeartbeatAfterPublicationRequired": true
+  "nightContinuationUntilBeijing": "2026-10-06T10:00:00+08:00"
 }

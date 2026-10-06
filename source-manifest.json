@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T23:26:49.944975+00:00",
+  "generatedAt": "2026-10-06T01:48:43.607099+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -13199,8 +13199,57 @@
       "sha256": "3c80cf53fbaca74248418e5f75decb39536920d7c5e456ef92c6436bcf7322fe",
       "bytes": 16700,
       "role": "final-real-entry-offline-integration-and-readonly-health"
+    },
+    {
+      "path": "code/work/nss142/health.mjs",
+      "workspaceSource": "work/nss142/health.mjs",
+      "sha256": "ebecf5f586b57dc5f264e146898151435f9242979e649732a6accbe8ce8b851e",
+      "bytes": 6360,
+      "role": "scheduled-readonly-morning-closure"
+    },
+    {
+      "path": "code/work/nss142/read-final-physical.mjs",
+      "workspaceSource": "work/nss142/read-final-physical.mjs",
+      "sha256": "42a07dd2500dc7a8962b94738721750011e144a6c8f87b25b300563d076edc74",
+      "bytes": 2047,
+      "role": "scheduled-readonly-morning-closure"
+    },
+    {
+      "path": "code/work/nss142/verify-receivers.mjs",
+      "workspaceSource": "work/nss142/verify-receivers.mjs",
+      "sha256": "f5c71244bac1274452dfa6294d0b5114d1cc5b8c5245a337e96008d33b32898c",
+      "bytes": 1500,
+      "role": "scheduled-readonly-morning-closure"
+    },
+    {
+      "path": "code/work/nss142/verify-endpoints.mjs",
+      "workspaceSource": "work/nss142/verify-endpoints.mjs",
+      "sha256": "edb40cff275cc5610e3314f86e3ebf75ce70e56bcfcd9890dc636626bfa6eaaa",
+      "bytes": 3569,
+      "role": "scheduled-readonly-morning-closure"
+    },
+    {
+      "path": "code/work/nss142/verify-bound-inputs.mjs",
+      "workspaceSource": "work/nss142/verify-bound-inputs.mjs",
+      "sha256": "c83451e1d95a2bc3607985fbf3135f25e050b8180e1e3dc5b0385aef4f675c78",
+      "bytes": 1126,
+      "role": "scheduled-readonly-morning-closure"
+    },
+    {
+      "path": "code/work/nss142/save-evidence.py",
+      "workspaceSource": "work/nss142/save-evidence.py",
+      "sha256": "7b6461c6307d2dae6bd2a4b33bc0741264ab73235239f3070ad4eb2d38e497ff",
+      "bytes": 19289,
+      "role": "scheduled-readonly-morning-closure"
+    },
+    {
+      "path": "code/work/nss142/verify-published.py",
+      "workspaceSource": "work/nss142/verify-published.py",
+      "sha256": "53cc87eefc78efa4174fa41e677cfa15e1e81005a586542b805d6c02d31f970e",
+      "bytes": 1915,
+      "role": "scheduled-readonly-morning-closure"
     }
   ],
-  "lastAppendExport": "NSS141",
+  "lastAppendExport": "NSS142",
   "privateDataExcluded": true
 }
