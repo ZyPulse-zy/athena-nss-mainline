@@ -1,0 +1,81 @@
+[
+  {
+    "label": "initial endpoint transport",
+    "productionNssStarted": false,
+    "reason": "SSH connection timeouts before firewall/client/router admission; exact endpoint closure retained",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "raw TCP and SSH2 upload fixture",
+    "productionNssStarted": false,
+    "reason": "Zero confirmed application bytes and reset or keepalive termination; not attributed to NSS",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "native child timestamp",
+    "productionNssStarted": false,
+    "reason": "UTC versus local-time comparison; corrected using UTC on both sides",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "historical WAN4 exclusion",
+    "productionNssStarted": false,
+    "reason": "Old helper rejected currently healthy WAN4; new current full five-WAN audit required",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "single-WAN natural matching",
+    "productionNssStarted": false,
+    "reason": "Eight own TCP candidates did not match fixed UDP WAN; no PBR/mark changes",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "first two-WAN controller",
+    "productionNssStarted": false,
+    "reason": "Unspaced import retained old class helper; checkpoint/stage not reached",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "peer discovery",
+    "productionNssStarted": false,
+    "reason": "No authenticated probe observed; bounded same-port retry added, old failure retained",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "actual parent link format",
+    "productionNssStarted": false,
+    "reason": "Actual ip JSON has link=wan and no link_index; strict parent name/ifindex/MAC check corrected before checkpoint",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "post-checkpoint legacy refinement",
+    "productionNssStarted": false,
+    "reason": "Unspaced import retained old same-WAN refinement; checkpoint was created but stage and ECM not reached; actual distinct-WAN input and eight immutable-change refusals checked in corrected helper",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "WAN4 endpoint UDP probe",
+    "productionNssStarted": false,
+    "reason": "Actual software conntrack WAN4/proxy-bit clear/original packets30/reply0; endpoint capture empty before NSS, endpoint-specific WAN4 path not attributed to NSS",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "owned data SSH short keepalive",
+    "productionNssStarted": false,
+    "reason": "About 11 MB received then 3-second keepalive termination; only data keepalive disabled with all hard deadlines retained",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "successful router pilot endpoint read timeout",
+    "productionNssStarted": true,
+    "routerFunctionalResultPassed": true,
+    "reason": "First closure SSH read timed out after router restored; independent expiry and new exact persistent-transport closure verified zero owned rules and original firewall baseline; original timeout retained",
+    "originalEvidenceRetainedLocally": true
+  },
+  {
+    "label": "modeled payload and namespace",
+    "productionNssStarted": false,
+    "reason": "73728-byte refusal and namespace typo preserved; corrected candidate separately qualified",
+    "originalEvidenceRetainedLocally": true
+  }
+]

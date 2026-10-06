@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "actualHardwareNssSessionCompleted": true,
+  "humanGameAcceptance": false,
+  "sameLoadCpuBenefitClaim": false,
+  "permanentNssDeployment": false,
+  "allFiveWanSimultaneousAcceptance": false,
+  "controllerResultSha256": "526b2e1e981bd71f93964d9a7fbbf6235f06eb59e51bdb96e2385415043a2ada",
+  "endpointFinalClosure": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "originalEndpointReadTimeoutRetained": true,
+  "actualControllerResultPassed": true,
+  "finalScopedBaselineAudit": {
+    "configurationMatches": true,
+    "checks": {
+      "boot": true,
+      "native": true,
+      "lan4": true,
+      "rules": true,
+      "services": true,
+      "addresses": true,
+      "routes": true,
+      "originalFiles": true,
+      "protectedManifestSha256": true,
+      "pbrConfiguration": true,
+      "nftRulesetConfiguration": true,
+      "tenQueueConfigurations": true,
+      "protectedManifest": true,
+      "ecmStoppedAndZero": true
+    },
+    "rawRulesetIdentical": true,
+    "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true,
+    "originalFullNativeOwnershipAuditStillRequired": true,
+    "noRoutingStateExceptionDuringExperiment": true
+  },
+  "phaseSeconds": [
+    20.009999999776483
+  ],
+  "renewals": 6,
+  "automaticLifecycleCompleted": true,
+  "actualWanNumbers": [
+    5,
+    3
+  ],
+  "allSuccessfulRestorationFlags": {
+    "moduleUnloaded": true,
+    "tagsRemoved": true,
+    "dualPhysicalQueuesRestored": true,
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "stateNodeRemoved": true
+  },
+  "ecmAndTagsProof": {
+    "passed": true,
+    "connectionCount": 2,
+    "proof": {
+      "tcp": {
+        "serial": "1062235",
+        "protocol": 6,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 327680,
+        "downTag": 2399469568,
+        "upTag": 2382692352,
+        "natCorrect": true,
+        "wanAffinity": 5,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 6,
+        "fromPackets": 4,
+        "toPackets": 2
+      },
+      "udp": {
+        "serial": "1062236",
+        "protocol": 17,
+        "ecmOrientation": "client-first",
+        "accelerated": true,
+        "ctMark": 196608,
+        "downTag": 2399535104,
+        "upTag": 2382757888,
+        "natCorrect": true,
+        "wanAffinity": 3,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 2,
+        "fromPackets": 1,
+        "toPackets": 1
+      }
+    }
+  }
+}

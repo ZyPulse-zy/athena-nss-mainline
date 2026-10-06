@@ -1,0 +1,24 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import {spawnSync} from 'node:child_process';import assert from 'node:assert/strict';
+const root=process.cwd(),mode=process.argv[2];assert.ok(['pilot','apply'].includes(mode));
+const source=fs.readFileSync('work/nss32/endpoint-firewall-guardian.py','utf8');
+const owner=crypto.randomBytes(16).toString('hex');const dir=root+'/work/nss14/endpoint-firewall-'+mode+'-'+owner.slice(0,8);fs.mkdirSync(dir);
+fs.writeFileSync('work/nss14/endpoint-firewall-'+mode+'-latest.json',JSON.stringify({dir},null,2)+'\n');
+const peers=JSON.parse(fs.readFileSync('work/nss14/physical-peers-private.json','utf8'));
+function ssh(code,limit=20000){const p=spawnSync('ssh',['-o','BatchMode=yes','-o','ConnectTimeout=6','sub2api-dallas','python3 -B -E -s -u -'],{input:code,encoding:'utf8',timeout:limit,windowsHide:true});return {code:p.status,signal:p.signal,error:p.error?.code,stdout:p.stdout,stderr:p.stderr}}
+const partial={mode,owner,peers};
+const cpCode=source+`\nc=${JSON.stringify(partial)}\nbefore=nft(['-j','list','ruleset'])\nchains=[x['chain'] for x in before['nftables'] if 'chain' in x and x['chain']['family']=='inet' and x['chain']['table']=='sub2api' and x['chain']['name']=='input']\nassert len(chains)==1 and chains[0]['hook']=='input' and chains[0]['policy']=='drop'\nassert not any(x.get('rule',{}).get('comment','').startswith('nss14-') for x in before['nftables'])\nnft(['-c','-j','-f','-'],{'nftables':allow_commands(c)})\nwith open('/proc/sys/kernel/random/boot_id') as f:boot=f.read().strip()\nprint(json.dumps({'before':before,'boot':boot,'canonicalSha256':hashlib.sha256(canonical(before).encode()).hexdigest(),'dryRunPassed':True}))\n`;
+const cp=ssh(cpCode);fs.writeFileSync(dir+'/checkpoint-private.json',JSON.stringify(cp,null,2)+'\n');assert.equal(cp.code,0);const value=JSON.parse(cp.stdout);assert.ok(value.dryRunPassed);
+const checkpointSha=crypto.createHash('sha256').update(cp.stdout).digest('hex');
+const settings={...partial,boot:value.boot,baselineCanonicalSha256:value.canonicalSha256};fs.writeFileSync(dir+'/settings-private.json',JSON.stringify(settings,null,2)+'\n');
+fs.writeFileSync(dir+'/checkpoint-verified.json',JSON.stringify({mode,checkpointSha256:checkpointSha,canonicalSha256:value.canonicalSha256,sourceSha256:crypto.createHash('sha256').update(source).digest('hex'),remoteFilesWritten:false,actualFirewallWrite:mode==='apply',expirySeconds:mode==='pilot'?8:70,preciseProtocolsAndPorts:true},null,2)+'\n');
+const raw=ssh(source+'\nrun('+JSON.stringify(settings)+')\n');fs.writeFileSync(dir+'/guardian-private.json',JSON.stringify(raw,null,2)+'\n');assert.equal(raw.code,0);const receipt=JSON.parse(raw.stdout);assert.equal(receipt.applied,mode==='apply');assert.equal(receipt.rules.length,mode==='apply'?2:0);
+fs.writeFileSync(dir+'/receipt-private.json',JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify({checkpointVerified:true,guardianReceiptReceived:true,mode,actualRulesAdded:receipt.rules.length,originalControlConnectionClosed:true}));
+const check=source+`\nc=${JSON.stringify(settings)}\npid=${receipt.identity.pid}\nexpected=${JSON.stringify(receipt.identity)}\ni=identity(pid)\nassert i['start']==expected['start'] and i['pgrp']==pid and i['session']==pid and i['ppid']==1\nfds={x:os.readlink('/proc/'+str(pid)+'/fd/'+x) for x in os.listdir('/proc/'+str(pid)+'/fd')}\nassert fds=={'0':'/dev/null','1':'/dev/null','2':'/dev/null'}\nnow=nft(['-j','list','ruleset'])\nowned=[x['rule'] for x in now['nftables'] if x.get('rule',{}).get('comment','').startswith('nss14-'+c['owner']+'-')]\nassert len(owned)==${mode==='apply'?2:0}\nprint(json.dumps({'detachedIdentityVerified':True,'onlyNullStandardFds':True,'ownedRules':owned,'remainingSeconds':${receipt.deadline}-time.monotonic()}))\n`;
+let detached=ssh(check,12000);
+if(detached.code===null&&detached.error==='ETIMEDOUT'){
+ fs.writeFileSync(dir+'/detached-first-timeout-private.json',JSON.stringify(detached,null,2));detached=ssh(check,12000);
+}fs.writeFileSync(dir+'/detached-private.json',JSON.stringify(detached,null,2)+'\n');assert.equal(detached.code,0);const observed=JSON.parse(detached.stdout);assert.ok(observed.remainingSeconds>30);console.log(JSON.stringify({detachedIdentityVerified:true,onlyNullStandardFds:true,remainingSeconds:observed.remainingSeconds,mode}));
+if(mode==='apply')process.exit(0);
+await new Promise(r=>setTimeout(r,8500));
+const terminal=ssh(source+`\npid=${receipt.identity.pid}\ntry:i=identity(pid);alive=i['start']==${JSON.stringify(receipt.identity.start)}\nexcept FileNotFoundError:alive=False\nassert not alive\nprint(json.dumps({'guardianTerminated':True,'pilotFirewallWrites':False}))\n`,12000);
+fs.writeFileSync(dir+'/terminal-private.json',JSON.stringify(terminal,null,2)+'\n');assert.equal(terminal.code,0);console.log('INDEPENDENT_RAM_GUARDIAN_PILOT_PASS');

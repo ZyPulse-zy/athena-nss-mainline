@@ -1,0 +1,186 @@
+-- Callable adapter for the bounded NSS tag owner. It consumes the existing
+-- permanent classifier; it never starts a second private conntrack observer.
+local Consumer=(function()
+-- Pure admission planning. No permission, kernel pin, nft or ECM writes.
+local M={}
+local function int(v,a,b)return type(v)=='number'and v==math.floor(v)and v>=a and v<=b end
+local function equal(a,b)
+ if type(a)~=type(b)then return false end;if type(a)~='table'then return a==b end
+ for k,v in pairs(a)do if not equal(v,b[k])then return false end end
+ for k in pairs(b)do if a[k]==nil then return false end end;return true
+end
+local function tuple(t)
+ assert(type(t)=='table')
+ for _,k in ipairs({'src','dst'})do
+  assert(type(t[k])=='string'and t[k]:match('^%d+%.%d+%.%d+%.%d+$'))
+  local count=0;for x in t[k]:gmatch('%d+')do assert(#x<=3 and tonumber(x)<=255 and(#x==1 or x:sub(1,1)~='0'));count=count+1 end;assert(count==4)
+ end
+ assert(int(t.sport,1,65535)and int(t.dport,1,65535))
+ return{src=t.src,dst=t.dst,sport=t.sport,dport=t.dport}
+end
+function M.inspect(s,c,now)
+ assert(type(now)=='number'and now>=0)
+ assert(s.version==23 and s.status=='running'and not s.error and s.nssPermit==false,'Unhealthy classifier')
+ assert(s.generation==c.generation and s.boot==c.boot and s.configSha256==c.configSha256,'Classifier provenance changed')
+ assert(c.alive==true and c.workerArgv==table.concat({'/usr/bin/lua',c.base..'/worker.lua','watch',c.base,c.configSha256},'\0')..'\0','Classifier process absent or wrong argv')
+ assert(s.pid==c.pid and s.start==c.start and s.producer==c.generation..':'..c.boot..':'..c.pid..':'..c.start,'Classifier process instance changed')
+ assert(c.stopped==false and c.guardianHealthy==true,'Independent classifier guardian unhealthy')
+ assert(s.atUptime<=now and now-s.atUptime<6,'Classifier publication stale')
+ local snap=assert(s.snapshot);local p=assert(snap.provenance)
+ assert(p.version==1 and p.method=='conntrack-cli'and p.rawStatus==0 and p.exitCode==0 and p.boot==c.boot)
+ assert(p.command==c.sourceCommand and p.queryFamily=='ipv4'and p.queryZone==0 and p.authorizedClient=='192.168.237.0/24','Source scope changed')
+ assert(int(p.sequence,1,9007199254740991))
+ assert(type(p.startedAtUptime)=='number'and type(p.finishedAtUptime)=='number'and p.startedAtUptime<=p.finishedAtUptime and p.finishedAtUptime<=now)
+ assert(p.finishedAtUptime-p.startedAtUptime<=2 and now<p.startedAtUptime+6,'Classifier query stale')
+ local found,counts,keys={},{},{}
+ for _,f in ipairs(snap.flows)do
+  assert(type(f.key)=='string'and not keys[f.key],'Duplicate classifier identity');keys[f.key]=true
+  local i,d,l=assert(f.identity),assert(f.decision),assert(f.leaf)
+  assert(int(i.wan,1,5)and int(i.mark,0,4294967295)and math.floor(i.mark/65536)%256==i.wan)
+  assert(i.protocolNumber==6 or i.protocolNumber==17);assert(i.protocol==(i.protocolNumber==6 and'tcp'or'udp'))
+  assert(i.instanceTagSafe==true and i.instanceMetadataComplete==true and i.kernelCTObjectPinned==false and i.nssPermit==false)
+  assert(tonumber(i.zone)==0 and int(tonumber(i.connectionId),1,4294967295))
+  local o,r=tuple(i.original),tuple(i.reply);local u=tuple(i.natUpload)
+  assert(o.src:match('^192%.168%.237%.')and o.dst==r.src and o.dport==r.sport)
+  assert(equal(u,{src=r.dst,dst=r.src,sport=r.dport,dport=r.sport}),'NAT upload identity drift')
+  assert(f.key==table.concat({i.wan,i.mark,i.protocol,o.src,o.sport,r.src,r.dst,r.sport,r.dport,i.zone,i.connectionId},'|'),'Classifier key drift')
+  local q=assert(i.queryProvenance)
+  assert(q.querySequence==p.sequence and q.startedAtUptime==p.startedAtUptime and q.finishedAtUptime==p.finishedAtUptime and q.idFieldPresent==true and q.fullMarkFieldPresent==true)
+  assert(q.zoneSource=='successful-explicit-zone0-query'or q.zoneSource=='explicit-row-zone0')
+  assert(f.observationStartedAtUptime==p.startedAtUptime and f.observedAtUptime==p.finishedAtUptime)
+  assert(type(f.validUntilUptime)=='number'and f.validUntilUptime<=p.startedAtUptime+6 and now<f.validUntilUptime)
+  local rt=d.class=='RT'and d.budgetAdmitted==true
+  local bulk=d.class=='BULK'and d.reason=='bulk'
+  assert(l.nssPermit==false and l.requiresKernelCTPin==true and l.requiresFreshOwner==true and l.requiresDefaultDenyGate==true and l.changeRequiresExactRetire==true and l.upTag==0 and l.class==d.class)
+  assert(l.candidate==(rt or bulk)and l.downTag==(rt and 2399535104 or bulk and 2399469568 or 0),'Leaf mapping drift')
+  counts[d.class]=(counts[d.class]or 0)+1
+  if rt or bulk then found[#found+1]=f end
+ end
+ return{candidates=found,classCounts=counts,provenance=p,producer=s.producer,nssAdmissionAllowed=false}
+end
+function M.pair(s,c,now,selected)
+ local checked=M.inspect(s,c,now);local byKey={};for _,f in ipairs(checked.candidates)do byKey[f.key]=f end
+ local out={decisions={},producer=checked.producer,sourceSequence=checked.provenance.sequence,epochUntil=checked.provenance.startedAtUptime+5,nssAdmissionAllowed=false,kernelPinsStillRequired=true,tagGetterAndLeafProofStillRequired=true,continuousFreshnessAndScopedRetirementStillRequired=true}
+ assert(now<out.epochUntil-3,'Pre-learning time margin insufficient')
+ for _,slot in ipairs({'tcp','udp'})do
+  local w=assert(selected[slot]);local f=assert(byKey[w.classifierKey],'Selected class is not admitted');local i,d=f.identity,f.decision
+  local proto=slot=='tcp'and 6 or 17;local target=slot=='tcp'and'BULK'or'RT'
+  assert(i.protocolNumber==proto and w.protocol==proto and d.class==target)
+  assert(w.zone==0 and tonumber(i.connectionId)==w.id and i.mark==w.mark and i.wan==w.wan)
+  assert(equal(tuple(i.original),w.original)and equal(tuple(i.reply),w.reply),'Selected CT/NAT tuple drift')
+  assert(i.original.src==c.authorizedClient,'Selected client not authorized')
+  assert(math.floor(i.mark/8192)%2==0,'Proxy-marked flow refused')
+  local untilAt=math.min(out.epochUntil,f.validUntilUptime-1);assert(now<untilAt-3)
+  out.decisions[#out.decisions+1]={slot=slot,class=target,protocol=proto,downTag=f.leaf.downTag,upTag=0,flow=w,validUntilUptime=untilAt,classifierKey=f.key}
+ end
+ assert(selected.tcp.wan==selected.udp.wan and selected.tcp.reply.dst==selected.udp.reply.dst,'Pair has different WAN affinity')
+ return out
+end
+function M.compareEpoch(epoch,s,c,now)
+ local ok,checked=pcall(M.inspect,s,c,now);local affected={}
+ if not ok or epoch.producer~=(s and s.producer)or now>=epoch.epochUntil then
+  for _,d in ipairs(epoch.decisions)do affected[#affected+1]=d.slot end
+ else
+  local map={};for _,f in ipairs(checked.candidates)do map[f.key]=f end
+  for _,d in ipairs(epoch.decisions)do
+   local f=map[d.classifierKey];local i=f and f.identity
+   if not f or f.decision.class~=d.class or f.leaf.downTag~=d.downTag or tonumber(i.connectionId)~=d.flow.id or i.mark~=d.flow.mark or i.wan~=d.flow.wan or not equal(tuple(i.original),d.flow.original)or not equal(tuple(i.reply),d.flow.reply)then affected[#affected+1]=d.slot end
+  end
+ end
+ if #affected==0 then return{action='KEEP_IMMUTABLE_EPOCH',extendsExpiry=false,nssAdmissionAllowed=false}end
+ return{action='RETIRE_EXACT_SELECTED_SLOTS',affected=affected,nssAdmissionAllowed=false,clearConntrack=false,changeQoSBeforeRetirement=false,
+  order={'stop new ECM learning','deny affected gate slot','wait CPU reader barrier and request exact two-direction CI retirement','verify hardware retirement and CI absence','remove old exact tags','obtain fresh classification and CT pins before relearning'},
+  reason=not ok and tostring(checked)or now>=epoch.epochUntil and'epoch expired'or'producer, connection identity, or class changed'}
+end
+return M
+
+end)()
+local A={}
+local activeInstance
+function A.compareCurrentEpoch()return assert(activeInstance,'No owned classified epoch').compare()end
+function A.preLearningReady()return assert(activeInstance,'No classifier adapter').ready()end
+function A.proposeRenewal()return assert(activeInstance).proposeRenewal()end
+function A.acceptRenewal(p,ack)return assert(activeInstance).acceptRenewal(p,ack)end
+function A.new(P,fs,j,read,now,run,record)
+ local O=assert(P.classifierOwner);local base=assert(O.base);local hash=assert(O.configSha256)
+ assert(base:match('^/root/router%-project/classifier/nss23%-[%w%-]+$')and hash:match('^[0-9a-f]+$')and #hash==64)
+ local generation=base:match('/([^/]+)$');local ram='/tmp/router-project-game-classifier'
+ local function stable(path,cap)
+  local a=assert(fs.lstat(path));assert(a.type=='reg'and a.uid==0 and a.gid==0 and a.nlink==1)
+  local body=read(path,cap);local b=assert(fs.lstat(path))
+  assert(a.dev==b.dev and a.ino==b.ino,'Classifier publication changed during read');return body
+ end
+ assert(read('/root/router-project/game-classifier-generation',512)==base..' '..hash..'\n')
+ assert(run('/usr/bin/sha256sum '..base..'/config.json'):match('^(%x+) ')==hash)
+ local cfg=assert(j.parse(stable(base..'/config.json',131072)))
+ assert(cfg.generation==generation and cfg.files['worker.lua']==O.workerSha256)
+ assert(cfg.nssPublication=='classification.json','Early publication channel not qualified')
+ record.adapterUsesLongRunningOwner=true;record.adapterPrivateObserverSpawned=false
+ local function current()
+  assert(read('/proc/sys/kernel/random/boot_id',128):gsub('%s+$','')==P.boot)
+  assert(stable(ram..'/owner',256)==generation..' '..P.boot..'\n')
+  local s=assert(j.parse(stable(ram..'/classification.json',4194304)));local g=assert(j.parse(stable(ram..'/guardian.json',4194304)))
+  assert(s.publication=='before-software-baseline','Wrong classifier publication stage')
+  local text=read('/proc/'..s.pid..'/stat',8192);local fields={};for v in assert(text:match('^%d+ %b() (.*)$')):gmatch('%S+')do fields[#fields+1]=v end
+  local c={base=base,generation=generation,configSha256=hash,boot=P.boot,pid=s.pid,start=fields[20],alive=fields[1]~='Z',workerArgv=read('/proc/'..s.pid..'/cmdline',8192),stopped=fs.lstat(ram..'/stopped')~=nil,guardianHealthy=g.healthy==true and g.generation==generation and g.boot==P.boot and g.configSha256==hash and now()-g.atUptime<6,authorizedClient='192.168.237.207'}
+  c.sourceCommand=table.concat({cfg.source.groupRunnerPath,'1',cfg.source.conntrackPath,'-L','-f','ipv4','--zone','0','-s',cfg.source.authorizedClient,'-o','extended,id'},' ')
+  Consumer.inspect(s,c,now());return s,c
+ end
+ local epoch
+ local out={}
+ function out.candidates()
+  local s,c=current();local checked=Consumer.inspect(s,c,now())
+  return{flows=checked.candidates,producer=checked.producer,sourceSequence=checked.provenance.sequence,startedAtUptime=checked.provenance.startedAtUptime,finishedAtUptime=checked.provenance.finishedAtUptime,atUptime=now(),nssAdmissionAllowed=false}
+ end
+ function out.ready()
+  -- Reserve setup time before publishing packet tags. The later three-second
+  -- pin/learning barrier stays unchanged; a just-barely-current epoch is not ready.
+  local ok,result=pcall(function()local s,c=current();local e=Consumer.pair(s,c,now(),P.selected);assert(now()<e.epochUntil-4,'Fresh epoch lacks tag setup reserve');return true end)
+  return ok and result==true,not ok and tostring(result)or nil
+ end
+ function out.sample()
+  assert(now()<record.deadline-6)
+  local s,c=current();local nextEpoch=Consumer.pair(s,c,now(),P.selected);epoch=nextEpoch
+  local chosen={};for _,d in ipairs(nextEpoch.decisions)do
+   for _,f in ipairs(s.snapshot.flows)do if f.key==d.classifierKey then chosen[#chosen+1]=f end end
+  end
+  assert(#chosen==2);record.adapterProducer=s.producer;record.adapterSourceSequence=s.snapshot.provenance.sequence
+  return{flows=chosen,selection=s.snapshot.selection,provenance=s.snapshot.provenance}
+ end
+
+ local pending
+ function out.proposeRenewal()
+  assert(epoch and not pending,'Renewal already pending or no epoch')
+  local s,c=current()
+  local comparison=Consumer.compareEpoch(epoch,s,c,now())
+  assert(comparison.action=='KEEP_IMMUTABLE_EPOCH','Retire before renewing changed class/identity/owner')
+  if s.snapshot.provenance.sequence==epoch.sourceSequence then return nil end
+  assert(s.snapshot.provenance.sequence>epoch.sourceSequence,'Source sequence regressed')
+  local nextEpoch=Consumer.pair(s,c,now(),P.selected)
+  assert(nextEpoch.producer==epoch.producer and nextEpoch.epochUntil>epoch.epochUntil)
+  assert(now()<epoch.epochUntil-0.5,'Too late to renew')
+  pending={expectedSequence=epoch.sourceSequence,nextSequence=nextEpoch.sourceSequence,untilMs=math.floor(nextEpoch.epochUntil*1000),epoch=nextEpoch,nssAdmissionAllowed=false}
+  return pending
+ end
+ function out.acceptRenewal(proposal,ack)
+  assert(pending==proposal and ack.sequence==proposal.nextSequence and ack.classifierUntilMs==proposal.untilMs,'Kernel did not confirm this exact proposal')
+  local s,c=current()
+  assert(Consumer.compareEpoch(proposal.epoch,s,c,now()).action=='KEEP_IMMUTABLE_EPOCH','Publication changed during kernel update; retire exact pair')
+  epoch=proposal.epoch;pending=nil
+  record.adapterRenewals=(record.adapterRenewals or 0)+1
+  record.adapterSourceSequence=epoch.sourceSequence
+  return{sourceSequence=epoch.sourceSequence,epochUntil=epoch.epochUntil,producer=epoch.producer,nssAdmissionAllowed=false}
+ end
+ function out.compare()
+  assert(epoch,'No immutable classified epoch')
+  local ok,s,c=pcall(current)
+  if not ok then return{action='RETIRE_EXACT_SELECTED_SLOTS',affected={'tcp','udp'},reason=tostring(s),nssAdmissionAllowed=false,clearConntrack=false}end
+  return Consumer.compareEpoch(epoch,s,c,now())
+ end
+ return out
+end
+return setmetatable(A,{__call=function(_,P,fs,j,read,now,run,record)
+ local instance=A.new(P,fs,j,read,now,run,record)
+ activeInstance=instance;record.adapterRetirementComparatorAvailable=true
+ return instance.sample
+end})

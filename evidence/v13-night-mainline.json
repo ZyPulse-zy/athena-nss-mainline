@@ -1,0 +1,34 @@
+{
+  "version": "v1.2 overnight multi-WAN candidate",
+  "userAuthorizedExpansion": true,
+  "authorizedDeadlineBeijing": "2026-10-07 08:00",
+  "actualHardwareTwoWanCompletion": true,
+  "v1TechnicalEvidenceReusedAndFrozen": true,
+  "strictHumanV1ExperienceStillUnverified": true,
+  "oneTcpBulkOneUdpRtOnly": true,
+  "linuxPbrAndConnectionAffinityPreserved": true,
+  "sharedPhysicalNssLeaves": {
+    "upMbps": 60,
+    "upBulkMbps": 59,
+    "upRtMbps": 1,
+    "downMbps": 30,
+    "downBulkMbps": 29,
+    "downRtMbps": 1,
+    "unselectedFallbackMbps": 950
+  },
+  "advancedQosImplementedBeforeThisNight": [
+    "bidirectional bulk and RT tags",
+    "HTB subgroup budgets",
+    "four FQ-CoDel leaves"
+  ],
+  "advancedQosNotYetProven": [
+    "independent per-WAN NSS bandwidth budgets",
+    "simultaneous multiple bulk flows",
+    "five-WAN acceleration",
+    "continuous sessions",
+    "ECN full validation"
+  ],
+  "sleepingUserDesktopNotOperated": true,
+  "heartbeatResumedUntilDeadline": true,
+  "next": "Complete two-WAN hardware proof, extend bounded session, then implement shared or per-WAN QoS mapping with actual runtime support"
+}

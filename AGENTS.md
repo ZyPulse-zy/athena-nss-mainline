@@ -1,3 +1,21 @@
+# 双 WAN NSS 硬件闭环通过
+
+用户最新授权：自主推进到2026-10-07北京时间08:00，目标扩展为多 WAN 与高级 QoS。旧 v1 冻结及停止扩展的计划属于历史；其技术证据继续复用，真人体感未验仍保留。
+
+**一条真实受控 TCP BULK 与一条 UDP RT 在两个自然 WAN 完成约20秒 NSS 与恢复。** 实际生产范围仍只两条精确连接：一 TCP BULK＋一 UDP RT，自然分属两个健康 WAN；Linux 继续决定新连接 PBR，NSS 不重做负载均衡。完整 ct mark、NAT、WAN affinity 与 kernel CT pin 保留，未知流默认拒绝。
+
+已完成：新 gate 在原 Linux6.18.44 SDK 编译，15个实际 C 准入条件检查通过；独立两 WAN 模式 helper 的正常及第二步失败恢复模型通过。实际 `ip` 只返回 `link:wan`，已按真实格式核验接口 index/MAC/父接口名；历史 WAN4 排除与旧 import 失败保留。原生 OpenSSH 32Mbps 下载已实际收包，负载专用短保活已关闭，180/185/210秒硬截止保留。模型不能代替硬件。
+
+当前会话沿用20秒 B／27秒 kernel／100秒独立回滚／6秒分类来源，源与实际输入共2272项绑定。每次生产写前新 checkpoint 下载 SHA/gzip 与控制连接外独立恢复核验，保护五路认证/PBR/sing-box/Tailscale和十 CAKE fallback。没有桌面/Steam/CS2操作、购买或新游戏下载，没有认证请求、固件/内核/分区修改。
+
+QoS 当前是两物理口上的共享 bulk/RT HTB＋四 FQ-CoDel leaf，UP60（59/1）／DOWN30（29/1），未准入流 fallback950。还不能称为各 WAN 独立预算、五路同时加速或常驻服务。下一步顺序：双 WAN 实测 → 延长有界会话 → 可实现的共享／每 WAN预算和高级分类，不重复旧 CPU 门槛或 NSS159 gap。
+
+07:40最终恢复/审核/报告，07:50不新开生产，08:00前暂停 heartbeat。失败原证据保留；新源码与脱敏证据按白名单发布，完整 CT/nonce/凭据/config/checkpoint/二进制只本地。
+
+证据：[当前主线](evidence/v13-night-mainline.json)、[硬件结果](evidence/v13-night-hardware.json)、[资格范围](evidence/v13-night-qualification.json)、[保留失败](evidence/v13-night-failures.json)、[源校验](evidence/v13-night-source-proof.json)。入口：[双 WAN 有界控制器](code/work/v13-two/pilot-supervisor-v6.mjs)。
+
+## v1.1及更早历史
+
 # v1.1 单 WAN 有界启停入口已交付
 
 更新：2026-10-07 00:04，北京时间。用户要求一次推进交付，复用 v1 历史证据，不新增 NSS161 实验编号或重新打开 gap/CPU/故障注入支线。

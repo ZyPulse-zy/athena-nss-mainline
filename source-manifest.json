@@ -19779,8 +19779,3445 @@
       "sha256": "6dfd8e10d6f761d81a49878d2c1ba1dd7bf4a5b4163028563b9cba58c39406cc",
       "bytes": 595,
       "role": "ASCII-path-launcher-alias-same-script-bytes"
+    },
+    {
+      "path": "code/work/nss100/analyze-controlled.py",
+      "workspaceSource": "work/nss100/analyze-controlled.py",
+      "sha256": "72c3ac86b00bdc48bebaeffb9df1eb2caedc8daa0dc6e5227cb7e28f800856d6",
+      "bytes": 4575,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/capture-endpoint.mjs",
+      "workspaceSource": "work/nss100/capture-endpoint.mjs",
+      "sha256": "aabf0cd01e1709af26f24f16abed554d4df6eedd71d90fbd6fb85dd053c459f7",
+      "bytes": 2356,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/client-watchdog.ps1",
+      "workspaceSource": "work/nss100/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/close-endpoint.mjs",
+      "workspaceSource": "work/nss100/close-endpoint.mjs",
+      "sha256": "7afb8da5bfedaa26c04f4bf0fbc4710fc57d2553be90e488bd4d4f8c0ca1c9c3",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss100/current-audit-diagnostic.mjs",
+      "sha256": "4dd8a6cb776aee9081347cab76623fe462da80b55a9f9c82b5830240c3b63e2a",
+      "bytes": 4507,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/discover-peer.py",
+      "workspaceSource": "work/nss100/discover-peer.py",
+      "sha256": "6553daac4385be5748de2f4a379d00bf390bd43d9da65d8a47489ae652c50e67",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss100/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/probe-peer.py",
+      "workspaceSource": "work/nss100/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/server.py",
+      "workspaceSource": "work/nss100/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/ssh-client.mjs",
+      "workspaceSource": "work/nss100/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/start-dallas.mjs",
+      "workspaceSource": "work/nss100/start-dallas.mjs",
+      "sha256": "07b892f9db7099343e9b10aaac8039350cc7292d13b5a3babe8036bbbf946e91",
+      "bytes": 9235,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss100/tag-counter-audit.lua",
+      "workspaceSource": "work/nss100/tag-counter-audit.lua",
+      "sha256": "ebcd4af8c073bb72e159ee52fbc9c6977e60363abbb1dcd5de5ae9f87ecb6c15",
+      "bytes": 1684,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/analyze-controlled.py",
+      "workspaceSource": "work/nss105/analyze-controlled.py",
+      "sha256": "74ac7737c4c8b75810ae969a93fe31c9e0c882fd8d8349036159a669824eec0e",
+      "bytes": 4575,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/capture-endpoint.mjs",
+      "workspaceSource": "work/nss105/capture-endpoint.mjs",
+      "sha256": "6485b8124af928e611bd6c90097100c39096dd9b9bec18d0c130846d68e88f49",
+      "bytes": 2356,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/client-watchdog.ps1",
+      "workspaceSource": "work/nss105/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/close-endpoint.mjs",
+      "workspaceSource": "work/nss105/close-endpoint.mjs",
+      "sha256": "746710da31c84df23b9e170bbfa2ab5ec1cd2757c09cd81bf3674c41627cce27",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss105/current-audit-diagnostic.mjs",
+      "sha256": "b167b92063546f22842ac8328b600c0d1172a721d9b97d1a1589e1709af344aa",
+      "bytes": 4507,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/discover-peer.py",
+      "workspaceSource": "work/nss105/discover-peer.py",
+      "sha256": "381a1978c921e2722f357031cdc93834f5d289b17e2e7b38d7fa1cd1f17947cb",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss105/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/module-stage-guardian.lua",
+      "workspaceSource": "work/nss105/module-stage-guardian.lua",
+      "sha256": "bda7cd12fed3cb5ebd513c56fd9e154dca26c9c2e3fb9f5e51371476c94ce497",
+      "bytes": 12634,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/probe-peer.py",
+      "workspaceSource": "work/nss105/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/qos-physical.lua",
+      "workspaceSource": "work/nss105/qos-physical.lua",
+      "sha256": "2f7ba8b3ea60f98e4bc6b44649d78800b1582e7c232dc447dbce52b599d709db",
+      "bytes": 8472,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/server.py",
+      "workspaceSource": "work/nss105/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/ssh-client.mjs",
+      "workspaceSource": "work/nss105/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/start-dallas.mjs",
+      "workspaceSource": "work/nss105/start-dallas.mjs",
+      "sha256": "e02ce62fe021f05bae4079f5c50823f847810a5632afb0934cbf15f2b6c94f2b",
+      "bytes": 9235,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss105/tag-counter-audit.lua",
+      "workspaceSource": "work/nss105/tag-counter-audit.lua",
+      "sha256": "ebcd4af8c073bb72e159ee52fbc9c6977e60363abbb1dcd5de5ae9f87ecb6c15",
+      "bytes": 1684,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss11/v7-observe-repair/observe2/capture.lua",
+      "workspaceSource": "work/nss11/v7-observe-repair/observe2/capture.lua",
+      "sha256": "7fde73505cf112d775672c7c276a297da2bfa87b5269659abe19ad3fa685eaa5",
+      "bytes": 9206,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss11/v7-observe-repair/observe2/transport.mjs",
+      "workspaceSource": "work/nss11/v7-observe-repair/observe2/transport.mjs",
+      "sha256": "177817e9cf5d334867be5501e062138cfda39092cdd8d2ce606adcaf1ea6a5b3",
+      "bytes": 3328,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss110/client-watchdog.ps1",
+      "workspaceSource": "work/nss110/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss110/close-endpoint.mjs",
+      "workspaceSource": "work/nss110/close-endpoint.mjs",
+      "sha256": "f8765b6c074cf553f4e5efd0d8ba4c2dbc893b02240fc13731ec3c5ffe3480ea",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss110/discover-peer.py",
+      "workspaceSource": "work/nss110/discover-peer.py",
+      "sha256": "f12ee53cbbf2614133d661dff78fc6a9aad41d70c330d738770d17e5e8c2bf1c",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss110/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss110/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss110/probe-peer.py",
+      "workspaceSource": "work/nss110/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss110/server.py",
+      "workspaceSource": "work/nss110/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss110/ssh-client.mjs",
+      "workspaceSource": "work/nss110/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss110/start-dallas.mjs",
+      "workspaceSource": "work/nss110/start-dallas.mjs",
+      "sha256": "121abe739452095febe579701fa89c43fd6e4c18a4c9d82d13d8a48b6977b955",
+      "bytes": 9235,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss111/client-watchdog.ps1",
+      "workspaceSource": "work/nss111/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss111/close-endpoint.mjs",
+      "workspaceSource": "work/nss111/close-endpoint.mjs",
+      "sha256": "6c52306b90d9b3441298e135bbe707ec3ec58f1290eb8049605f1a215e53fd9f",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss111/discover-peer.py",
+      "workspaceSource": "work/nss111/discover-peer.py",
+      "sha256": "e7d127e9fbf8c00be3e6a6d5bb94ef1b9259f4611924b82d83d6b1d29522ce68",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss111/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss111/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss111/probe-peer.py",
+      "workspaceSource": "work/nss111/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss111/server.py",
+      "workspaceSource": "work/nss111/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss111/ssh-client.mjs",
+      "workspaceSource": "work/nss111/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss111/start-dallas.mjs",
+      "workspaceSource": "work/nss111/start-dallas.mjs",
+      "sha256": "779482960ce9bc7674e1fb0448b28ece7d930f2f30ebb1c7a4f7166425cc6a80",
+      "bytes": 9235,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/client-watchdog.ps1",
+      "workspaceSource": "work/nss112/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/close-endpoint.mjs",
+      "workspaceSource": "work/nss112/close-endpoint.mjs",
+      "sha256": "2587b5aa2924ef419fdb42ffa98c4cfd7e18216225aadf8b2d8e42c7a9e77185",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/discover-peer.py",
+      "workspaceSource": "work/nss112/discover-peer.py",
+      "sha256": "ad4ce40139c685f9260330a5ced542a3fdf34dd236d62ca96b03237d15e29c4b",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss112/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/failed-wan-owner.lua",
+      "workspaceSource": "work/nss112/failed-wan-owner.lua",
+      "sha256": "a624860233bca19b0d1d440ead2138b313b356cd25e566cf4475b8d39d9a32d7",
+      "bytes": 1403,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/probe-peer.py",
+      "workspaceSource": "work/nss112/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/server.py",
+      "workspaceSource": "work/nss112/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/ssh-client.mjs",
+      "workspaceSource": "work/nss112/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss112/start-dallas.mjs",
+      "workspaceSource": "work/nss112/start-dallas.mjs",
+      "sha256": "e302fdfff5e6e49fa8fae3cbfddcb9947209c2c8b38eabbf28b7d18897497111",
+      "bytes": 9235,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss113/client-watchdog.ps1",
+      "workspaceSource": "work/nss113/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss113/close-endpoint.mjs",
+      "workspaceSource": "work/nss113/close-endpoint.mjs",
+      "sha256": "ced607324df3591b35b4ca03bf51974386194f358dd0e1e8d25e89b53024390b",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss113/discover-peer.py",
+      "workspaceSource": "work/nss113/discover-peer.py",
+      "sha256": "dcc897732c19596dca78b90e4b36ed0b67adc188846f809446dc14eab5485708",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss113/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss113/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss113/probe-peer.py",
+      "workspaceSource": "work/nss113/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss113/server.py",
+      "workspaceSource": "work/nss113/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss113/ssh-client.mjs",
+      "workspaceSource": "work/nss113/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss113/start-dallas.mjs",
+      "workspaceSource": "work/nss113/start-dallas.mjs",
+      "sha256": "de2debff795f53ebbda3cd763255bc4f23cec77a81ca02899501ee76b34a4fef",
+      "bytes": 9235,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss114/client-watchdog.ps1",
+      "workspaceSource": "work/nss114/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss114/close-endpoint.mjs",
+      "workspaceSource": "work/nss114/close-endpoint.mjs",
+      "sha256": "815ee0058c5609a5ca8ed24fc00ce713d9faca2791e40f45ce3460d37feeaa63",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss114/discover-peer.py",
+      "workspaceSource": "work/nss114/discover-peer.py",
+      "sha256": "f9f279e5df08f38aa44173f03703746a1414113f553a086551199598a2fa41e7",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss114/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss114/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss114/probe-peer.py",
+      "workspaceSource": "work/nss114/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss114/server.py",
+      "workspaceSource": "work/nss114/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss114/ssh-client.mjs",
+      "workspaceSource": "work/nss114/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss114/start-dallas.mjs",
+      "workspaceSource": "work/nss114/start-dallas.mjs",
+      "sha256": "8cccb93e2527c96db592a457d9e9c4a0e9eb18d1040ef1bb5128f3785a0c269b",
+      "bytes": 9235,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss116/client-watchdog.ps1",
+      "workspaceSource": "work/nss116/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss116/close-endpoint.mjs",
+      "workspaceSource": "work/nss116/close-endpoint.mjs",
+      "sha256": "a70a6e64052cef653b8b9b51bb4769dbe5dd6bbaedef1ea47f0870d89440923d",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss116/discover-peer.py",
+      "workspaceSource": "work/nss116/discover-peer.py",
+      "sha256": "4d41b34d3dc4fe2b081ccfd70ba86e9a7945d6ff491e6d6acb057dd07cd30718",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss116/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss116/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss116/probe-peer.py",
+      "workspaceSource": "work/nss116/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss116/server.py",
+      "workspaceSource": "work/nss116/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss116/start-dallas.mjs",
+      "workspaceSource": "work/nss116/start-dallas.mjs",
+      "sha256": "39e1ea8ec937e5344cb59ebc2e5b8e0d4508a8db82eded107473016e5fc341cd",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss118/client-watchdog.ps1",
+      "workspaceSource": "work/nss118/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss118/close-endpoint.mjs",
+      "workspaceSource": "work/nss118/close-endpoint.mjs",
+      "sha256": "18bd8da8a211e9fb63a79d4cc25323b56b17ad5fb2d3edfa238ef5021cdbd249",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss118/discover-peer.py",
+      "workspaceSource": "work/nss118/discover-peer.py",
+      "sha256": "0807a59801636760eee37d61aec1f49d888d78c21c86b52a2906b1c2b1191943",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss118/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss118/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss118/probe-peer.py",
+      "workspaceSource": "work/nss118/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss118/server.py",
+      "workspaceSource": "work/nss118/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss118/start-dallas.mjs",
+      "workspaceSource": "work/nss118/start-dallas.mjs",
+      "sha256": "3e9d675c2f29bc1bb1abe609dd59e32f32d13b74a2bb2b9c5a3051d17f049b33",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss119/client-watchdog.ps1",
+      "workspaceSource": "work/nss119/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss119/close-endpoint.mjs",
+      "workspaceSource": "work/nss119/close-endpoint.mjs",
+      "sha256": "04462031ab2aa075045eeb1e62d1c385aac1705381259885d806ef6a359c5bb7",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss119/discover-peer.py",
+      "workspaceSource": "work/nss119/discover-peer.py",
+      "sha256": "bf0075dcc7b84e165c27e4670dcb133c84acd23378060136299afca4cf5d107d",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss119/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss119/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss119/probe-peer.py",
+      "workspaceSource": "work/nss119/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss119/server.py",
+      "workspaceSource": "work/nss119/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss119/start-dallas.mjs",
+      "workspaceSource": "work/nss119/start-dallas.mjs",
+      "sha256": "c8ebdd989c4d5bacb8eebcee0a7c6a1665d4702c39fb48dd02671f12a7794295",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss120/client-watchdog.ps1",
+      "workspaceSource": "work/nss120/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss120/close-endpoint.mjs",
+      "workspaceSource": "work/nss120/close-endpoint.mjs",
+      "sha256": "276319bf2f1955274888846c7e32798c46aa87f055f3f612fcdf1ed6f5bf81b4",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss120/discover-peer.py",
+      "workspaceSource": "work/nss120/discover-peer.py",
+      "sha256": "3293771ffd23d36ad0aae026162c3687b639d930794b924a4ac9dbc3732341df",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss120/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss120/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss120/probe-peer.py",
+      "workspaceSource": "work/nss120/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss120/server.py",
+      "workspaceSource": "work/nss120/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss120/start-dallas.mjs",
+      "workspaceSource": "work/nss120/start-dallas.mjs",
+      "sha256": "03a10b9c84408ceb94e25843075a122a738f561c0bd9861f5a560b9b08332146",
+      "bytes": 9288,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss123/client-watchdog.ps1",
+      "workspaceSource": "work/nss123/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss123/close-endpoint.mjs",
+      "workspaceSource": "work/nss123/close-endpoint.mjs",
+      "sha256": "56fcbc025b8382f8b2e73c6c9d5a09f9695eb0f1df1fdcc459baa16601da2429",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss123/discover-peer.py",
+      "workspaceSource": "work/nss123/discover-peer.py",
+      "sha256": "0a26e9d458c07f347f04e5e59ab75e6d3f82f37de136c736574e8672c2975fb2",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss123/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss123/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss123/natural-target.mjs",
+      "workspaceSource": "work/nss123/natural-target.mjs",
+      "sha256": "ff43e823b471a066296cd5eb70800b3ffbb2f0806d430cd3025d8fe965fbc8e1",
+      "bytes": 666,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss123/probe-peer.py",
+      "workspaceSource": "work/nss123/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss123/server.py",
+      "workspaceSource": "work/nss123/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss123/start-dallas.mjs",
+      "workspaceSource": "work/nss123/start-dallas.mjs",
+      "sha256": "41a437f6bb6c45ed74e1f973f6b7c7f7bb4f2b73611a55371bd8c159859f2ee3",
+      "bytes": 9288,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss124/client-watchdog.ps1",
+      "workspaceSource": "work/nss124/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss124/close-endpoint.mjs",
+      "workspaceSource": "work/nss124/close-endpoint.mjs",
+      "sha256": "cacd3e6edd16c96395ca95f4fecb4fdaedb2769c982cc6c259174f4c38767537",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss124/discover-peer.py",
+      "workspaceSource": "work/nss124/discover-peer.py",
+      "sha256": "4c4b71191eaa41557a997451053fbb31063ce1106ccc70f8f79579d974a0d07c",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss124/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss124/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss124/probe-peer.py",
+      "workspaceSource": "work/nss124/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss124/server.py",
+      "workspaceSource": "work/nss124/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss124/start-dallas.mjs",
+      "workspaceSource": "work/nss124/start-dallas.mjs",
+      "sha256": "608f500045338461f337b13d70f65020d63775c29188716f046fb6344799830c",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss125/client-watchdog.ps1",
+      "workspaceSource": "work/nss125/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss125/close-endpoint.mjs",
+      "workspaceSource": "work/nss125/close-endpoint.mjs",
+      "sha256": "5dcce1cf7fd7a2f244f15030e089cdebaf4a32a91d8663b51235b31327c1a7ec",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss125/discover-peer.py",
+      "workspaceSource": "work/nss125/discover-peer.py",
+      "sha256": "92c1e3c747a22ddc00970c580b3ceac11f2b54552e2886db4b85781b852654ed",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss125/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss125/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss125/probe-peer.py",
+      "workspaceSource": "work/nss125/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss125/server.py",
+      "workspaceSource": "work/nss125/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss125/start-dallas.mjs",
+      "workspaceSource": "work/nss125/start-dallas.mjs",
+      "sha256": "2f5c6ed4532b5270b9b9b75fbf7e9eb1c64d2d6ed4e8966eaa0f2a6fd2fbda16",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss128/client-watchdog.ps1",
+      "workspaceSource": "work/nss128/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss128/close-endpoint.mjs",
+      "workspaceSource": "work/nss128/close-endpoint.mjs",
+      "sha256": "6a917696774fe13585066272c5329eac9ddbe95d6cb74d5a195360dedc435ca1",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss128/discover-peer.py",
+      "workspaceSource": "work/nss128/discover-peer.py",
+      "sha256": "71da7fee3df8beb3271278a8346eebeed2a0acfeee475c5e288d114949bb5fc7",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss128/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss128/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss128/probe-peer.py",
+      "workspaceSource": "work/nss128/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss128/server.py",
+      "workspaceSource": "work/nss128/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss128/start-dallas.mjs",
+      "workspaceSource": "work/nss128/start-dallas.mjs",
+      "sha256": "d6f35eb2fcd4bdda207d50d29bd3b9a2970c9646b275a7fb778532d6616cce7e",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/client-watchdog.ps1",
+      "workspaceSource": "work/nss129/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/close-endpoint.mjs",
+      "workspaceSource": "work/nss129/close-endpoint.mjs",
+      "sha256": "22d4f701bbab950e776498dd68333bfb47bf6197b206dc3bed63d9f8e9d9f885",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/discover-peer.py",
+      "workspaceSource": "work/nss129/discover-peer.py",
+      "sha256": "e6d3b8e1a52dde686a55dbfc8e94fb33c5499fc3827c5507a0058c1c61893c99",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss129/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/finish-packing.py",
+      "workspaceSource": "work/nss129/finish-packing.py",
+      "sha256": "16cf4848e4b12e13921f07cfe2f53eaf9a3804ffcf1201ec8ec3e41a92cf8abe",
+      "bytes": 1707,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/implement.py",
+      "workspaceSource": "work/nss129/implement.py",
+      "sha256": "ad9a613de3120a2f88c6e97524c0b5fa3a2b6562a3f28c419b5c08522996a335",
+      "bytes": 10930,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/measure-payload.mjs",
+      "workspaceSource": "work/nss129/measure-payload.mjs",
+      "sha256": "c78f1d2980f155d12fe3c2d5bab3d566973dde41e2c0599953ca6f6890b8f65a",
+      "bytes": 1128,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/probe-peer.py",
+      "workspaceSource": "work/nss129/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/refactor-retirement.py",
+      "workspaceSource": "work/nss129/refactor-retirement.py",
+      "sha256": "a768536268f6f13b51979388bcbc6b7d753f9fc04500b7acad07b235f51e9427",
+      "bytes": 960,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/server.py",
+      "workspaceSource": "work/nss129/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/start-dallas.mjs",
+      "workspaceSource": "work/nss129/start-dallas.mjs",
+      "sha256": "386ef7d58e31395352a5263f656ea0d6f432aba82b84a185d5b58d6268cdd9a2",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/trim-metadata.py",
+      "workspaceSource": "work/nss129/trim-metadata.py",
+      "sha256": "9f7ef6d413745ce81da6de068d6f7e3b0c5fb210dbb62602014fdbbe972e2130",
+      "bytes": 2997,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss129/trim-observer.py",
+      "workspaceSource": "work/nss129/trim-observer.py",
+      "sha256": "46174a0d8d6e6863d303a1abb409e8e01d3e4dce94ef940ac4962a9266c910c9",
+      "bytes": 1114,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss131/client-watchdog.ps1",
+      "workspaceSource": "work/nss131/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss131/close-endpoint.mjs",
+      "workspaceSource": "work/nss131/close-endpoint.mjs",
+      "sha256": "d4536688430cbaf7bb0236b1e6ed2ff90af672456f5874788609712ed7ce37c5",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss131/discover-peer.py",
+      "workspaceSource": "work/nss131/discover-peer.py",
+      "sha256": "4955b973217a6a9d97dbbcc0ed7e4873ed3065cfae33cc9b45d60845c20d681c",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss131/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss131/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss131/measure-payload.mjs",
+      "workspaceSource": "work/nss131/measure-payload.mjs",
+      "sha256": "183284bdad6d05cf5a4a6a1b24be2ba4a516ac15ab4cd74cdde45c25937a6df5",
+      "bytes": 1128,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss131/probe-peer.py",
+      "workspaceSource": "work/nss131/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss131/server.py",
+      "workspaceSource": "work/nss131/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss131/start-dallas.mjs",
+      "workspaceSource": "work/nss131/start-dallas.mjs",
+      "sha256": "2dd7d3883ee7e7afd8364360eee69787b1d9fbc0baceb3c56261abb5359927d6",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss132/client-watchdog.ps1",
+      "workspaceSource": "work/nss132/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss132/close-endpoint.mjs",
+      "workspaceSource": "work/nss132/close-endpoint.mjs",
+      "sha256": "4497dba6c4194a9e08a461a5b13db78d894c4ed6d8d463367687b1c23c7a0446",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss132/discover-peer.py",
+      "workspaceSource": "work/nss132/discover-peer.py",
+      "sha256": "9d5fe39e47478d3304442e8c6cf0e47fb6751b092350aa679060afc333164086",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss132/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss132/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss132/probe-peer.py",
+      "workspaceSource": "work/nss132/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss132/server.py",
+      "workspaceSource": "work/nss132/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss132/start-dallas.mjs",
+      "workspaceSource": "work/nss132/start-dallas.mjs",
+      "sha256": "511a3d582bf187a3e2498e16163ebc03a095c481240ab4ee6f50f5594ba29761",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss133/client-watchdog.ps1",
+      "workspaceSource": "work/nss133/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss133/close-endpoint.mjs",
+      "workspaceSource": "work/nss133/close-endpoint.mjs",
+      "sha256": "fc0fd0457efbb1f83acf3d7fe41567a1698eb7e76ea4d314537b19465b46014e",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss133/discover-peer.py",
+      "workspaceSource": "work/nss133/discover-peer.py",
+      "sha256": "f69342a4a239df6a805a662db1ee2ef05583a8a75afff3736e690b01fb2651d9",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss133/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss133/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss133/probe-peer.py",
+      "workspaceSource": "work/nss133/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss133/server.py",
+      "workspaceSource": "work/nss133/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss133/start-dallas.mjs",
+      "workspaceSource": "work/nss133/start-dallas.mjs",
+      "sha256": "cc90bd0a7b9e754ad56020425e12cfcaa60999dd46a07a246f20cc4e1d6f5824",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss135/client-watchdog.ps1",
+      "workspaceSource": "work/nss135/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss135/close-endpoint.mjs",
+      "workspaceSource": "work/nss135/close-endpoint.mjs",
+      "sha256": "781a057a8b01b144c507075eed401d30c61fc08a39d6ab39b6b9efd439835051",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss135/discover-peer.py",
+      "workspaceSource": "work/nss135/discover-peer.py",
+      "sha256": "f7e285c9790302b3344ced681e25159a5ab33115f175327474c0f93f333004e4",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss135/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss135/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss135/probe-peer.py",
+      "workspaceSource": "work/nss135/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss135/server.py",
+      "workspaceSource": "work/nss135/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss135/start-dallas.mjs",
+      "workspaceSource": "work/nss135/start-dallas.mjs",
+      "sha256": "4c49672d60ebde505d3971cadeefa789b23d28ac6ce1dc8c9c56bce9ab4717f8",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss136/client-watchdog.ps1",
+      "workspaceSource": "work/nss136/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss136/close-endpoint.mjs",
+      "workspaceSource": "work/nss136/close-endpoint.mjs",
+      "sha256": "0abe438605ba1010900ae66023dab12339351bbf91cfba86c1b4317e3026f5ab",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss136/discover-peer.py",
+      "workspaceSource": "work/nss136/discover-peer.py",
+      "sha256": "4585817362c254c866548c460ee51cf409b1951a094545aa0d9aeb1d0ed037a7",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss136/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss136/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss136/probe-peer.py",
+      "workspaceSource": "work/nss136/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss136/server.py",
+      "workspaceSource": "work/nss136/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss136/start-dallas.mjs",
+      "workspaceSource": "work/nss136/start-dallas.mjs",
+      "sha256": "599c9f7258957ef8985acf660097634c3a377f97e5d5e6f7412de875cbce0a44",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss138/client-watchdog.ps1",
+      "workspaceSource": "work/nss138/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss138/close-endpoint.mjs",
+      "workspaceSource": "work/nss138/close-endpoint.mjs",
+      "sha256": "7b02c413737283b4ed350b07fb35d21d8bb794d45a3e6927254a2cf91f87986a",
+      "bytes": 1909,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss138/discover-peer.py",
+      "workspaceSource": "work/nss138/discover-peer.py",
+      "sha256": "6066689c846bf13bd2d389987d3be7120af6eff152dc18c42a6b07ee0a296ef4",
+      "bytes": 988,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss138/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss138/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss138/probe-peer.py",
+      "workspaceSource": "work/nss138/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss138/server.py",
+      "workspaceSource": "work/nss138/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss138/start-dallas.mjs",
+      "workspaceSource": "work/nss138/start-dallas.mjs",
+      "sha256": "a7ae1d9621f5599cd66e051007f145bfa625132401373422dfe751bf566323cf",
+      "bytes": 9265,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss15/baseline.mjs",
+      "workspaceSource": "work/nss15/baseline.mjs",
+      "sha256": "855575db944ccdc5743e14b539aef4c0a31725f73ff1f49ee8908bb71ae8e66b",
+      "bytes": 2242,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss15/packet-model.mjs",
+      "workspaceSource": "work/nss15/packet-model.mjs",
+      "sha256": "550984095f195ed11c24dc8497862dce57b3c66f6d5b58089a0fd281abbf4659",
+      "bytes": 4717,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss15/synchronized-load/client.py",
+      "workspaceSource": "work/nss15/synchronized-load/client.py",
+      "sha256": "2c9f2430668209b80051c1fd804522240e32cae13fa5f98c758edddf13001e13",
+      "bytes": 5754,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss15/synchronized-load/traffic.py",
+      "workspaceSource": "work/nss15/synchronized-load/traffic.py",
+      "sha256": "a420cac0509e9e91d2547074dce833be397307115b7f9beafc9d4fe618e34835",
+      "bytes": 12701,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss16/automatic-leaf-plan.mjs",
+      "workspaceSource": "work/nss16/automatic-leaf-plan.mjs",
+      "sha256": "af4589b55fae1d11d226b762adc92ef532bec6f8854fe88f6b11684488f0d624",
+      "bytes": 4010,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss16/paired-client.py",
+      "workspaceSource": "work/nss16/paired-client.py",
+      "sha256": "49abf6a1b233b6a73a0d88233bc4a832630dc206a6de2c28ae4504042546df7c",
+      "bytes": 5176,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss16/paired-server.py",
+      "workspaceSource": "work/nss16/paired-server.py",
+      "sha256": "99d0e5843a3704c45aa6473799313a3f5c3a893d8e72576956c3d1c159b52ac6",
+      "bytes": 6884,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss25/paired-client.py",
+      "workspaceSource": "work/nss25/paired-client.py",
+      "sha256": "91c79d7a87c3d2ff019dee59df9339669af72273ffda5039d2bf524c214c39be",
+      "bytes": 3344,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/classified-tags.lua",
+      "workspaceSource": "work/nss27/classified-tags.lua",
+      "sha256": "04e09a8ab05be9376163c99f5c0921b59299c392c89e4fb00632c0873fe691ba",
+      "bytes": 3738,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/classifier.lua",
+      "workspaceSource": "work/nss27/classifier.lua",
+      "sha256": "9ece4f17bddf7684ff3d982ff816cd951b24f964b5b94268ca0974a3ee50af05",
+      "bytes": 13626,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/core-guard-phase.lua",
+      "workspaceSource": "work/nss27/core-guard-phase.lua",
+      "sha256": "829bd226104e7edbbffd59431d9ab32bee8381979d3dfd86acc227bf992767a8",
+      "bytes": 5000,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/fast-path.lua",
+      "workspaceSource": "work/nss27/fast-path.lua",
+      "sha256": "1db07ca1a6d735dcdc83a20e80c0831b1caea1c4dade7255484e513ae3200998",
+      "bytes": 12028,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/module-stage-guardian.lua",
+      "workspaceSource": "work/nss27/module-stage-guardian.lua",
+      "sha256": "21019046f80dd7f3b9c158ac9cafc86fab0fc139ed1be23f7735a85d13de0900",
+      "bytes": 12565,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/module-stage.mjs",
+      "workspaceSource": "work/nss27/module-stage.mjs",
+      "sha256": "67d26bfd6add962efc1bb19c78d99a1c5bca321d858759c6a899d9564c91ccda",
+      "bytes": 15462,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/payload.mjs",
+      "workspaceSource": "work/nss27/payload.mjs",
+      "sha256": "bf0bf0b474eb3a3ab889b38cbc31dfc55d81e088c2a011f5a813f8c64d079a7c",
+      "bytes": 1792,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/qos-physical.lua",
+      "workspaceSource": "work/nss27/qos-physical.lua",
+      "sha256": "ad8a46064e6f924c7e4f282ba8a576cc29a290573172f54604ce5e595a52b4c8",
+      "bytes": 8402,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/read-prerequisites.lua",
+      "workspaceSource": "work/nss27/read-prerequisites.lua",
+      "sha256": "a4da4bbc1967105ff13c22faad4187bfbba86446d05832f44e1075d5f7fd88be",
+      "bytes": 2447,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/state-node.lua",
+      "workspaceSource": "work/nss27/state-node.lua",
+      "sha256": "ed1473e9469be00972c3b02c3be35143a05ca8e37f2a366924165e37ca26a45f",
+      "bytes": 2234,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/tag-normalizer.lua",
+      "workspaceSource": "work/nss27/tag-normalizer.lua",
+      "sha256": "717df9fdffcf343789b97ba164c5a308a36efb017d5d2db3b3db3fc52f1f39c1",
+      "bytes": 4841,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss27/wan-scope.lua",
+      "workspaceSource": "work/nss27/wan-scope.lua",
+      "sha256": "915f7e965ca580c530d95525b57863e6bf5da089057a0d54b26eb9c03ebb4f7d",
+      "bytes": 3324,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss32/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss32/endpoint-firewall-guardian.py",
+      "sha256": "7a1aa1ec1dfef90edb542c95e374084640356881aeadb7a62598be4bfdfc6986",
+      "bytes": 6340,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss32/endpoint-guardian-controller.mjs",
+      "workspaceSource": "work/nss32/endpoint-guardian-controller.mjs",
+      "sha256": "10bd4f464d7ea281529ae5984b8a9caa41912ba6773a551f7546e7263f75db5e",
+      "bytes": 4865,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss32/module-stage.mjs",
+      "workspaceSource": "work/nss32/module-stage.mjs",
+      "sha256": "d0c6b29da20d829fee9edce80a05f1a0b739e3f7aa19831479cd9f7f0a3cf109",
+      "bytes": 15492,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss32/payload.mjs",
+      "workspaceSource": "work/nss32/payload.mjs",
+      "sha256": "0bd3bcf3d9db75b2a8cccda32df619c3d9720fb0383de9a3dbe4d9cc6cd80beb",
+      "bytes": 1792,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss32/qualification.mjs",
+      "workspaceSource": "work/nss32/qualification.mjs",
+      "sha256": "b2fe782fa932d8b237eebc65ce1330f67feb659f540d94667cd71866d2f743ce",
+      "bytes": 1102,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss32/run-aba.mjs",
+      "workspaceSource": "work/nss32/run-aba.mjs",
+      "sha256": "6cf003b42aebf3f28b0a5465f32f07fe560adc1f36caecdb985dfb6d4b68f645",
+      "bytes": 28977,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss39/nss39-20261003151728-b555ee15/conntrack-source.lua",
+      "workspaceSource": "work/nss39/nss39-20261003151728-b555ee15/conntrack-source.lua",
+      "sha256": "5a542cb6ca82a74fcebe15af4012bf94d31a27bfae22fe384242d32132246653",
+      "bytes": 5970,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss39/nss39-20261003151728-b555ee15/guardian.lua",
+      "workspaceSource": "work/nss39/nss39-20261003151728-b555ee15/guardian.lua",
+      "sha256": "7ee5196643d02f5ed37441bc47e0a709e76c81f59177404bfac4927347cbb130",
+      "bytes": 4871,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss39/nss39-20261003151728-b555ee15/worker.lua",
+      "workspaceSource": "work/nss39/nss39-20261003151728-b555ee15/worker.lua",
+      "sha256": "8daf225a285797d15e80035a6dc4ab41ac37488c4e22898529b32d824d60c4d1",
+      "bytes": 26794,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/backend.lua",
+      "workspaceSource": "work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/backend.lua",
+      "sha256": "01ddeae3b7469034c9a0471dec32e9c1770198ecdbd538106b16d89ab06fa669",
+      "bytes": 11404,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/classifier-core.lua",
+      "workspaceSource": "work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/classifier-core.lua",
+      "sha256": "87626d72bab1d666dcdaebde7545d7022b7b099cd74b206624568bad330f34f8",
+      "bytes": 9543,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/conntrack-source.lua",
+      "workspaceSource": "work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/conntrack-source.lua",
+      "sha256": "e1e01fe23988aed2d92e1ba1f9ad3053c52756ab557f6c78d991954c394af109",
+      "bytes": 6404,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/guardian.lua",
+      "workspaceSource": "work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/guardian.lua",
+      "sha256": "97bb3f78076cade8fe44cfeec5c149085c63f2295b28cf1a505f89f3de80de70",
+      "bytes": 5279,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/worker.lua",
+      "workspaceSource": "work/nss47/cache-retain/nss47-retain-20261004063506-0d92279f/worker.lua",
+      "sha256": "9ab72a5af3bb997b25f8a43ee0cac002ec6f0fc3ba5ae091e5845f64e138719c",
+      "bytes": 28919,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss79/prepare-entry.py",
+      "workspaceSource": "work/nss79/prepare-entry.py",
+      "sha256": "4bcd098c60ad6aec6777492034046a22fd574b1ca6fd21584d6a78fbef1b6cf5",
+      "bytes": 6628,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss79/ssh-client.mjs",
+      "workspaceSource": "work/nss79/ssh-client.mjs",
+      "sha256": "0f1598d269d4fcdbe1ee021f90bd5b3871b7c21d1c7dd374e277e88c7186bc20",
+      "bytes": 5423,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss79/start-dallas.mjs",
+      "workspaceSource": "work/nss79/start-dallas.mjs",
+      "sha256": "de1133ed1efad9620a9bcd577aebfe32c4931ec3a3fda6b3c3c40a2b83de87c8",
+      "bytes": 9181,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss79/start-sg.mjs",
+      "workspaceSource": "work/nss79/start-sg.mjs",
+      "sha256": "ad4ed8c472a7e8229bdeda2dd49974e4887325462830b46d36947b555aba16b8",
+      "bytes": 4243,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss80/close-endpoint.mjs",
+      "workspaceSource": "work/nss80/close-endpoint.mjs",
+      "sha256": "d21137d25092fe1ad2872e047b56226c10489dc5f5c65d47a714b972c2f5cfd4",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss80/prepare.py",
+      "workspaceSource": "work/nss80/prepare.py",
+      "sha256": "deaffd74201259b52e635b82b590f94393f57029c3f4b352c0ce91b02433e135",
+      "bytes": 2770,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss80/ssh-client.mjs",
+      "workspaceSource": "work/nss80/ssh-client.mjs",
+      "sha256": "71fcaa6a41605dd8e74343bfc69c21e3e75881cdd0ea4e821bf070b1de4765c7",
+      "bytes": 5439,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss80/start-dallas.mjs",
+      "workspaceSource": "work/nss80/start-dallas.mjs",
+      "sha256": "416fe7b54878b06652bd406682e27a0d4440c8ab2eeafedd7bb8ce2270dab984",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss82/close-endpoint.mjs",
+      "workspaceSource": "work/nss82/close-endpoint.mjs",
+      "sha256": "8f64beee856fd6a0cc805c9c1e901fa60734660d1a5bdbb703812e94669d8df3",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss82/prepare.py",
+      "workspaceSource": "work/nss82/prepare.py",
+      "sha256": "17d32ba552e20ad87d46e0c1249b581e51836f2c4f59a49b40bf015e55bed000",
+      "bytes": 4506,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss82/ssh-client.mjs",
+      "workspaceSource": "work/nss82/ssh-client.mjs",
+      "sha256": "71fcaa6a41605dd8e74343bfc69c21e3e75881cdd0ea4e821bf070b1de4765c7",
+      "bytes": 5439,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss82/start-dallas.mjs",
+      "workspaceSource": "work/nss82/start-dallas.mjs",
+      "sha256": "250bc0e35a6eb0f0ea2d122a178e24ebfda2d1eba429721e584add8d8000079f",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/analyze-controlled.py",
+      "workspaceSource": "work/nss84/analyze-controlled.py",
+      "sha256": "40c4ad22a9cf3285209dc361d07dfe2cc080b013a360a30f079a28a13b331e3c",
+      "bytes": 4574,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/calibrate-clock.mjs",
+      "workspaceSource": "work/nss84/calibrate-clock.mjs",
+      "sha256": "bed7642590d945b6370da3a33ca40c4782cda4b8a718ce6da11644fb6d1aa7b8",
+      "bytes": 993,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/client-watchdog.ps1",
+      "workspaceSource": "work/nss84/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/close-endpoint.mjs",
+      "workspaceSource": "work/nss84/close-endpoint.mjs",
+      "sha256": "cf64ff4a71efdc753c4f5fefd4f84af407329a28743fdb39d17f442bc1d92dc2",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/controlled-session.mjs",
+      "workspaceSource": "work/nss84/controlled-session.mjs",
+      "sha256": "e2510cdb1f4e51f7e97aaee2a9549973b51c54aa2d1af5de385fb11fce809073",
+      "bytes": 12797,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss84/current-audit-diagnostic.mjs",
+      "sha256": "ecd6e93df515814ce9df54b7c5a7f7ef7662652f3d9083367a22ec0823dcfec6",
+      "bytes": 4501,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/discover-peer.py",
+      "workspaceSource": "work/nss84/discover-peer.py",
+      "sha256": "840ca64d7726ab7681f19a0d0d649731264d7bc4941b3622737710f10193448e",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss84/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/fast-path.lua",
+      "workspaceSource": "work/nss84/fast-path.lua",
+      "sha256": "ecb802d680c04f58ee7a05a25e95c7d0794cac45714a54a70b371e296f18a846",
+      "bytes": 15010,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/match-controlled.mjs",
+      "workspaceSource": "work/nss84/match-controlled.mjs",
+      "sha256": "5d84bbfcd520623685940560f4a6118c334b8b8785b741e67648f83e36b8ed04",
+      "bytes": 1625,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/module-stage.mjs",
+      "workspaceSource": "work/nss84/module-stage.mjs",
+      "sha256": "15a1e87ce74a9dde1a117bd86412116ac1784d7d420065fd6bda741382a4163c",
+      "bytes": 17285,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/payload.mjs",
+      "workspaceSource": "work/nss84/payload.mjs",
+      "sha256": "babf6e76ee061a88d4883f9407f73a0cc5e9a3a061d7b190a563bb35abc6d2e2",
+      "bytes": 1844,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/prepare-budget.py",
+      "workspaceSource": "work/nss84/prepare-budget.py",
+      "sha256": "173bb6e2b90efa2b36384ec132385420a33ca877d2d4e8fcd9828e933924f3c2",
+      "bytes": 4394,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/probe-peer.py",
+      "workspaceSource": "work/nss84/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/read-controlled.mjs",
+      "workspaceSource": "work/nss84/read-controlled.mjs",
+      "sha256": "f6afc91170b104085f124be23a8a876072ebe4245c78c5e05cf69f91d80c0878",
+      "bytes": 5545,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/server.py",
+      "workspaceSource": "work/nss84/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/session-binding.mjs",
+      "workspaceSource": "work/nss84/session-binding.mjs",
+      "sha256": "3de9130064d175b73635265049555846e08e5c53ed4c355109673ef15e6d3f40",
+      "bytes": 835,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/ssh-client.mjs",
+      "workspaceSource": "work/nss84/ssh-client.mjs",
+      "sha256": "c3a035a0b66173e863024261f3157f1dce54e0adadbeb990f21af8ac263b8e97",
+      "bytes": 5441,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss84/start-dallas.mjs",
+      "workspaceSource": "work/nss84/start-dallas.mjs",
+      "sha256": "d5cc278196d890b9471f67e812b602b23e1e2d3c32c2a9c16294e7bcc591da0e",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/analyze-controlled.py",
+      "workspaceSource": "work/nss85/analyze-controlled.py",
+      "sha256": "6fd4b28af7ff509691ab4f3ed84d0a25239da62310f50ff72fb9a0544ab769d0",
+      "bytes": 4574,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/calibrate-clock.mjs",
+      "workspaceSource": "work/nss85/calibrate-clock.mjs",
+      "sha256": "2270f9c0fa40eaee072a7a0045ac129dba3040eedb125477eee910df065a6bd4",
+      "bytes": 993,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/client-watchdog.ps1",
+      "workspaceSource": "work/nss85/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/close-endpoint.mjs",
+      "workspaceSource": "work/nss85/close-endpoint.mjs",
+      "sha256": "e0112207cc474c4321ca6e4d8ca203f38f0cd9604c533dfd3cc1c9fcd8e35ac4",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/controlled-session.mjs",
+      "workspaceSource": "work/nss85/controlled-session.mjs",
+      "sha256": "4e0df140f7588922d3cbb08438631813555da7d608dfd462cdec72c1798d5b0a",
+      "bytes": 12797,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss85/current-audit-diagnostic.mjs",
+      "sha256": "b883e1612d861b538e3ade8a5e5684a5bb0a4b8d1088f873f263bc07e70fd6cf",
+      "bytes": 4501,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/discover-peer.py",
+      "workspaceSource": "work/nss85/discover-peer.py",
+      "sha256": "d571d1e0a55cafa92e694efb0961cb4048c43091513d547085821a71e7a2e623",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss85/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/match-controlled.mjs",
+      "workspaceSource": "work/nss85/match-controlled.mjs",
+      "sha256": "78fffea46ddb5d3c75c9406e98521fe7b7b87468ed5ec3c46f3b6b2864220796",
+      "bytes": 2250,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/module-stage.mjs",
+      "workspaceSource": "work/nss85/module-stage.mjs",
+      "sha256": "9f6dd9e2231a555b82ccc991d50dbd23c858f36d33ddabaf56d124b4f328b056",
+      "bytes": 17285,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/payload.mjs",
+      "workspaceSource": "work/nss85/payload.mjs",
+      "sha256": "3000770c8a695d8768f61e6bccdc252b4f7ac6b50420140ede698f9724b433f3",
+      "bytes": 1844,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/prepare-observation.py",
+      "workspaceSource": "work/nss85/prepare-observation.py",
+      "sha256": "62dd10b9b94db354c94cef4637f30886ad662e3368bc7ca9e2fff9153c7369ce",
+      "bytes": 4041,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/probe-peer.py",
+      "workspaceSource": "work/nss85/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/qos-physical.lua",
+      "workspaceSource": "work/nss85/qos-physical.lua",
+      "sha256": "b8f4a0269cd111471c5f640214ed15919051f619616b9acc53debb6fc0e43511",
+      "bytes": 8402,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/read-controlled.mjs",
+      "workspaceSource": "work/nss85/read-controlled.mjs",
+      "sha256": "6f7ae61462ab1f39f2dd156f2b78f92167a734699812ad9b0b907385c68b9503",
+      "bytes": 5545,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/server.py",
+      "workspaceSource": "work/nss85/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/session-binding.mjs",
+      "workspaceSource": "work/nss85/session-binding.mjs",
+      "sha256": "8725b4904b4079e1274c85f6defbaafc57244a7c9024abe2ff5af9ca70a0a8b1",
+      "bytes": 686,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/ssh-client.mjs",
+      "workspaceSource": "work/nss85/ssh-client.mjs",
+      "sha256": "c3a035a0b66173e863024261f3157f1dce54e0adadbeb990f21af8ac263b8e97",
+      "bytes": 5441,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss85/start-dallas.mjs",
+      "workspaceSource": "work/nss85/start-dallas.mjs",
+      "sha256": "6e4d862b104fd160c301414e72cf165b7f1afb6565e99391c6a5f7a2ccb2a20b",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/analyze-controlled.py",
+      "workspaceSource": "work/nss86/analyze-controlled.py",
+      "sha256": "88b95471e3905ae7434f5993b987643de7a900d224febf5cef562f7af511a7ae",
+      "bytes": 4574,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/calibrate-clock.mjs",
+      "workspaceSource": "work/nss86/calibrate-clock.mjs",
+      "sha256": "1b80cd054a40750a544e27f89d03e4114a480e77f37bc8aff446c1319c7f7d8c",
+      "bytes": 993,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/client-watchdog.ps1",
+      "workspaceSource": "work/nss86/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/close-endpoint.mjs",
+      "workspaceSource": "work/nss86/close-endpoint.mjs",
+      "sha256": "b6fe2c225c3d2cc909c97320e28364de6b4758e0ca498b857b80d7eba25538af",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/controlled-session.mjs",
+      "workspaceSource": "work/nss86/controlled-session.mjs",
+      "sha256": "58bf8fcd909b5dfc2285cf7ef1549ba3d938de95a7248ca0abc8d83323d14e0b",
+      "bytes": 12797,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss86/current-audit-diagnostic.mjs",
+      "sha256": "2759e38aac4707ca4c9434aced1792fad4ffc5b8216b425ac4016ecc9127126c",
+      "bytes": 4501,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/discover-peer.py",
+      "workspaceSource": "work/nss86/discover-peer.py",
+      "sha256": "792d49d2b7df4fe54ca3a45a81b727155a61f8e4fd44dced33124f6dbfabef12",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss86/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/fast-path.lua",
+      "workspaceSource": "work/nss86/fast-path.lua",
+      "sha256": "50fed1c9da2738604df13a0a5ed4860b24067b07739a3e3f40584b5ec36e4569",
+      "bytes": 15153,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/match-controlled.mjs",
+      "workspaceSource": "work/nss86/match-controlled.mjs",
+      "sha256": "bf03109a4a3d1240ed69c12e7d1b3ea760d0406f09e4213d1a65dc7f4e23cc3e",
+      "bytes": 2244,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/module-stage.mjs",
+      "workspaceSource": "work/nss86/module-stage.mjs",
+      "sha256": "610d4e474bb3b1f628ca3f1ea8781e850ac075b9dd73972da6d182c6bf90931f",
+      "bytes": 17285,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/payload.mjs",
+      "workspaceSource": "work/nss86/payload.mjs",
+      "sha256": "81aa3067c4d5fe7604cc730c11e1119a96e5b0d23d84baa1900efcc2a5bb3f6b",
+      "bytes": 1844,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/prepare-baseline.py",
+      "workspaceSource": "work/nss86/prepare-baseline.py",
+      "sha256": "df03c4095ee3cab3ed14e1c7f89cd905e8d0b5eef2fd123e1f71e8a0942afe2c",
+      "bytes": 2449,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/probe-peer.py",
+      "workspaceSource": "work/nss86/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/qos-physical.lua",
+      "workspaceSource": "work/nss86/qos-physical.lua",
+      "sha256": "b8f4a0269cd111471c5f640214ed15919051f619616b9acc53debb6fc0e43511",
+      "bytes": 8402,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/read-controlled.mjs",
+      "workspaceSource": "work/nss86/read-controlled.mjs",
+      "sha256": "41fa82b81c18af2dc96d0e91611dcbf4c3db8c6ead0ab03d8ee50bb4c5243d1e",
+      "bytes": 5545,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/server.py",
+      "workspaceSource": "work/nss86/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/session-binding.mjs",
+      "workspaceSource": "work/nss86/session-binding.mjs",
+      "sha256": "0d34721c80e3ace6f817b9b225c3bb147b6f54c48a9b997f45d9604c39adbb18",
+      "bytes": 805,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/ssh-client.mjs",
+      "workspaceSource": "work/nss86/ssh-client.mjs",
+      "sha256": "c3a035a0b66173e863024261f3157f1dce54e0adadbeb990f21af8ac263b8e97",
+      "bytes": 5441,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss86/start-dallas.mjs",
+      "workspaceSource": "work/nss86/start-dallas.mjs",
+      "sha256": "42f031c2eb4c0f7245394a9d49eecc616883764f6ea3992d2e7753c2c3c72549",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/analyze-controlled.py",
+      "workspaceSource": "work/nss87/analyze-controlled.py",
+      "sha256": "1b4ce9a096d76e18edcf3736b5be25ce96886a0e9533d3d3252f7bd72caf2d8e",
+      "bytes": 4574,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/calibrate-clock.mjs",
+      "workspaceSource": "work/nss87/calibrate-clock.mjs",
+      "sha256": "05326a51e0b217c5dce8328ac7e938918477a08b29b2dd5c263ad4ebea6b4584",
+      "bytes": 993,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/capture-endpoint.mjs",
+      "workspaceSource": "work/nss87/capture-endpoint.mjs",
+      "sha256": "74459869ca17a0fd4455fd3eb70a7abb49cce9c49ac81254d999feb360df379c",
+      "bytes": 2310,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/client-watchdog.ps1",
+      "workspaceSource": "work/nss87/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/close-endpoint.mjs",
+      "workspaceSource": "work/nss87/close-endpoint.mjs",
+      "sha256": "2960b33ec766dc06912d7d145e2077d2b5c4177b4ed0dbfb319e3ffe1affdf8d",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/controlled-session.mjs",
+      "workspaceSource": "work/nss87/controlled-session.mjs",
+      "sha256": "4079e5ac72c8d63f953fac11f29ea69437f2e0493038d06af7d17abb93cab0a7",
+      "bytes": 12797,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss87/current-audit-diagnostic.mjs",
+      "sha256": "ac3f95e1a6bed258c38652615b3ffe8b4ba5bbbf32f205470211e6f0b282682a",
+      "bytes": 4501,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/discover-peer.py",
+      "workspaceSource": "work/nss87/discover-peer.py",
+      "sha256": "ffe1c162e907f530d4d296ddfd583255c82a5838c5e852ccac669dabd31c9bd0",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss87/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/fast-path.lua",
+      "workspaceSource": "work/nss87/fast-path.lua",
+      "sha256": "50fed1c9da2738604df13a0a5ed4860b24067b07739a3e3f40584b5ec36e4569",
+      "bytes": 15153,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/match-controlled.mjs",
+      "workspaceSource": "work/nss87/match-controlled.mjs",
+      "sha256": "0a17cefddcd00af91ff5c086ba9100dd7a1cbee60ae5b8522ad41780905982db",
+      "bytes": 2160,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/module-stage.mjs",
+      "workspaceSource": "work/nss87/module-stage.mjs",
+      "sha256": "bbe424702f6dfb323469060aca3ade62c5c39f13c6e1d7ab8b994417569019dd",
+      "bytes": 17285,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/payload.mjs",
+      "workspaceSource": "work/nss87/payload.mjs",
+      "sha256": "0414c50117605791bf08438dfc66f02944cf9be95160103b9b4a78af5a6f0237",
+      "bytes": 1844,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/prepare-continuous.py",
+      "workspaceSource": "work/nss87/prepare-continuous.py",
+      "sha256": "b76462d5e8f193b155cfbd14129f6017f0a603577dcf2ad8ec1071c5ffdf68fd",
+      "bytes": 2165,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/probe-peer.py",
+      "workspaceSource": "work/nss87/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/qos-physical.lua",
+      "workspaceSource": "work/nss87/qos-physical.lua",
+      "sha256": "b8f4a0269cd111471c5f640214ed15919051f619616b9acc53debb6fc0e43511",
+      "bytes": 8402,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/read-controlled.mjs",
+      "workspaceSource": "work/nss87/read-controlled.mjs",
+      "sha256": "d7b56a0e86788c629a42cf5ad457a7f1527abff0f74d6bb20f215147ac5db235",
+      "bytes": 5545,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/server.py",
+      "workspaceSource": "work/nss87/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/session-binding.mjs",
+      "workspaceSource": "work/nss87/session-binding.mjs",
+      "sha256": "8ef1bd724e9738461e3e2c7078a077cda26e253a02d624fef58848061593002a",
+      "bytes": 593,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/ssh-client.mjs",
+      "workspaceSource": "work/nss87/ssh-client.mjs",
+      "sha256": "c3a035a0b66173e863024261f3157f1dce54e0adadbeb990f21af8ac263b8e97",
+      "bytes": 5441,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss87/start-dallas.mjs",
+      "workspaceSource": "work/nss87/start-dallas.mjs",
+      "sha256": "40dd6a58fb9dbba15297e7dfa78ae3de6e9223233f9a602864e1b3b562bb3ec2",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/analyze-controlled.py",
+      "workspaceSource": "work/nss88/analyze-controlled.py",
+      "sha256": "58ede56fdf3497b7de3f2aa1f23da119fb06e5674a06a20d75b936c26ad35fe9",
+      "bytes": 4574,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/calibrate-clock.mjs",
+      "workspaceSource": "work/nss88/calibrate-clock.mjs",
+      "sha256": "6750989109e71b5192ee5db391f70e42e508e675cc2940fc983c40d7940a020a",
+      "bytes": 993,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/capture-endpoint.mjs",
+      "workspaceSource": "work/nss88/capture-endpoint.mjs",
+      "sha256": "8d784fae597a2d4e0384d978e34afbcd52ca0bde6d1c13d1de3b0866b164b90f",
+      "bytes": 2355,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/client-watchdog.ps1",
+      "workspaceSource": "work/nss88/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/close-endpoint.mjs",
+      "workspaceSource": "work/nss88/close-endpoint.mjs",
+      "sha256": "a39e0518bb7b342794b567234b12bbdee2369207754170e619889c9605327844",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/controlled-session.mjs",
+      "workspaceSource": "work/nss88/controlled-session.mjs",
+      "sha256": "e261079018a78d9f1ca7082745949460639b6397b379b93ab49b698e5cd85d08",
+      "bytes": 12797,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss88/current-audit-diagnostic.mjs",
+      "sha256": "3fe2b156d6d485996f78663b429c603a7f1ceaf0fdbc88535b6b3b544432b9c0",
+      "bytes": 4501,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/discover-peer.py",
+      "workspaceSource": "work/nss88/discover-peer.py",
+      "sha256": "6ce86a331a564955f094438c08d7d2316c696b7f61203fbec00a6ccfc94d545b",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss88/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/fast-path.lua",
+      "workspaceSource": "work/nss88/fast-path.lua",
+      "sha256": "50fed1c9da2738604df13a0a5ed4860b24067b07739a3e3f40584b5ec36e4569",
+      "bytes": 15153,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/match-controlled.mjs",
+      "workspaceSource": "work/nss88/match-controlled.mjs",
+      "sha256": "4ef5412e0dffcbc8b96505c3037b4646a38c94946856eb004da41d9a8a0e6355",
+      "bytes": 2160,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/module-stage.mjs",
+      "workspaceSource": "work/nss88/module-stage.mjs",
+      "sha256": "f4a503180288820c07f46c3e8139503190c230fb4e02c7257c405288539adccd",
+      "bytes": 17285,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/payload.mjs",
+      "workspaceSource": "work/nss88/payload.mjs",
+      "sha256": "e220b51c8819d7701a552074e09943ce4b5a5848e7a1a66121d69ca1fa591d1e",
+      "bytes": 1844,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/prepare-client.py",
+      "workspaceSource": "work/nss88/prepare-client.py",
+      "sha256": "881a222e9147c0affe8921d352e3bc8c6379491bd95df81033842b1f0a380bd5",
+      "bytes": 2685,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/probe-peer.py",
+      "workspaceSource": "work/nss88/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/qos-physical.lua",
+      "workspaceSource": "work/nss88/qos-physical.lua",
+      "sha256": "b8f4a0269cd111471c5f640214ed15919051f619616b9acc53debb6fc0e43511",
+      "bytes": 8402,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/read-controlled.mjs",
+      "workspaceSource": "work/nss88/read-controlled.mjs",
+      "sha256": "25c0bbfd78cca8b4891adcc150d80c70ce42491440ccdf9bf3575baa2c1d57ed",
+      "bytes": 5545,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/server.py",
+      "workspaceSource": "work/nss88/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/session-binding.mjs",
+      "workspaceSource": "work/nss88/session-binding.mjs",
+      "sha256": "b36b6e2f9faec583f86aef735f501baf03c603b705105a8ca1b01113cb3b17f8",
+      "bytes": 698,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/ssh-client.mjs",
+      "workspaceSource": "work/nss88/ssh-client.mjs",
+      "sha256": "aad59c803a57cb198bd3b981a8df63c03cf5820ce49b6e70200475104b121b8a",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss88/start-dallas.mjs",
+      "workspaceSource": "work/nss88/start-dallas.mjs",
+      "sha256": "7099a5eb224df698fdfd9681a5fb772f95a2d60d3fdcf6daf3723b1b6c761158",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss89/close-endpoint.mjs",
+      "workspaceSource": "work/nss89/close-endpoint.mjs",
+      "sha256": "3fa39a4806142d7aca03184b5def7787b0b87139f1e672d74b6f973a0d6464d3",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss89/discover-peer.py",
+      "workspaceSource": "work/nss89/discover-peer.py",
+      "sha256": "df873c626ee4c62de459ffaf4b91bb3c4113309afe11f8c684da215ad07fec91",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss89/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss89/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss89/prepare-observation.py",
+      "workspaceSource": "work/nss89/prepare-observation.py",
+      "sha256": "43503c1f9cc14d63a75291ebfc48fc34227f3a96b3f751454ced953e30a985a7",
+      "bytes": 2866,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss89/probe-peer.py",
+      "workspaceSource": "work/nss89/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss89/server.py",
+      "workspaceSource": "work/nss89/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss89/ssh-client.mjs",
+      "workspaceSource": "work/nss89/ssh-client.mjs",
+      "sha256": "aad59c803a57cb198bd3b981a8df63c03cf5820ce49b6e70200475104b121b8a",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss89/start-dallas.mjs",
+      "workspaceSource": "work/nss89/start-dallas.mjs",
+      "sha256": "798fa9177655c816d2895a7ed4c6bb1ca4a437da02092b5dc4be1714a7ee9256",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/capture-endpoint.mjs",
+      "workspaceSource": "work/nss96/capture-endpoint.mjs",
+      "sha256": "fa71942763e664f9c6d53d42c6aeafe13ed498ec06f0f2e9b662c078aaa3d6fe",
+      "bytes": 2355,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/client-watchdog.ps1",
+      "workspaceSource": "work/nss96/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/close-endpoint.mjs",
+      "workspaceSource": "work/nss96/close-endpoint.mjs",
+      "sha256": "e89e78163bc033a35c80a3b0c32b4d174ab172b0cf995e8ddff7ec66d566cb49",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss96/current-audit-diagnostic.mjs",
+      "sha256": "9cb547cd61afd6c07dd5b4235b9753ea5e86337af6ed0ecaa37d6ad91c138c24",
+      "bytes": 4501,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/discover-peer.py",
+      "workspaceSource": "work/nss96/discover-peer.py",
+      "sha256": "806fa47903152bfcd65759c3d827a0494f339d77c83f0ba934fb6824d93fc249",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss96/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/fast-path.lua",
+      "workspaceSource": "work/nss96/fast-path.lua",
+      "sha256": "bcd7bb213527b3b6a31cfe2090e4447d28f447c4d3a5952cd114621bc4140347",
+      "bytes": 14813,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/probe-peer.py",
+      "workspaceSource": "work/nss96/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/qos-physical.lua",
+      "workspaceSource": "work/nss96/qos-physical.lua",
+      "sha256": "b8f4a0269cd111471c5f640214ed15919051f619616b9acc53debb6fc0e43511",
+      "bytes": 8402,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/server.py",
+      "workspaceSource": "work/nss96/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/ssh-client.mjs",
+      "workspaceSource": "work/nss96/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/start-dallas.mjs",
+      "workspaceSource": "work/nss96/start-dallas.mjs",
+      "sha256": "1d267e93f596590b4aec88a1b445bf51c62d79e591167c0057c884e5651a4768",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss96/tag-counter-audit.lua",
+      "workspaceSource": "work/nss96/tag-counter-audit.lua",
+      "sha256": "ebcd4af8c073bb72e159ee52fbc9c6977e60363abbb1dcd5de5ae9f87ecb6c15",
+      "bytes": 1684,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/capture-endpoint.mjs",
+      "workspaceSource": "work/nss97/capture-endpoint.mjs",
+      "sha256": "8b4d2849b4dfa52b3d0abc8bfe246de3b7936561d15c2baeb8e082bf4e2549ca",
+      "bytes": 2355,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/client-watchdog.ps1",
+      "workspaceSource": "work/nss97/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/close-endpoint.mjs",
+      "workspaceSource": "work/nss97/close-endpoint.mjs",
+      "sha256": "d62762f02b8867276d265a9ffdfb0fa9e20203c7e50ce448e2b8fc79c55a2cb6",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss97/current-audit-diagnostic.mjs",
+      "sha256": "cc9ce68fb5163e740280e0f3b84b61d246308ae221698ce985df7191f4982a9b",
+      "bytes": 4501,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/discover-peer.py",
+      "workspaceSource": "work/nss97/discover-peer.py",
+      "sha256": "173f5e0186aebbad6082273fcf344159513a1b2c6639f81cbbf155eb26ff901f",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss97/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/fast-path.lua",
+      "workspaceSource": "work/nss97/fast-path.lua",
+      "sha256": "bcd7bb213527b3b6a31cfe2090e4447d28f447c4d3a5952cd114621bc4140347",
+      "bytes": 14813,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/probe-peer.py",
+      "workspaceSource": "work/nss97/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/server.py",
+      "workspaceSource": "work/nss97/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/ssh-client.mjs",
+      "workspaceSource": "work/nss97/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/start-dallas.mjs",
+      "workspaceSource": "work/nss97/start-dallas.mjs",
+      "sha256": "7f5a4d0f8f0e553ef345b0a1fb5da005236bbec0fed2d625f7e07e54fa0513fc",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss97/tag-counter-audit.lua",
+      "workspaceSource": "work/nss97/tag-counter-audit.lua",
+      "sha256": "ebcd4af8c073bb72e159ee52fbc9c6977e60363abbb1dcd5de5ae9f87ecb6c15",
+      "bytes": 1684,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/analyze-controlled.py",
+      "workspaceSource": "work/nss99/analyze-controlled.py",
+      "sha256": "b600ad4abfe8b3172a7d492871cac45eef8b24d8fdf0111d7dee7869530cc870",
+      "bytes": 4574,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/capture-endpoint.mjs",
+      "workspaceSource": "work/nss99/capture-endpoint.mjs",
+      "sha256": "3f79fa064a032b2e5970d03ea68b6b8d55d2d27f830728ea31d7652d6589f2bb",
+      "bytes": 2355,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/client-watchdog.ps1",
+      "workspaceSource": "work/nss99/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/close-endpoint.mjs",
+      "workspaceSource": "work/nss99/close-endpoint.mjs",
+      "sha256": "e62c9470461578597262497160bf4078a4df89768318653fdb72cdc5795e05a4",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss99/current-audit-diagnostic.mjs",
+      "sha256": "5d7ad256cb894c16a9dd3ada4b78ed74812a0d079084e0bc965530e9570029df",
+      "bytes": 4501,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/discover-peer.py",
+      "workspaceSource": "work/nss99/discover-peer.py",
+      "sha256": "fb94d444ce87c4fa6cbe787fc10cee08cbc7b21e47f5c9dde096fb30d8aee517",
+      "bytes": 987,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss99/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/probe-peer.py",
+      "workspaceSource": "work/nss99/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/qos-physical.lua",
+      "workspaceSource": "work/nss99/qos-physical.lua",
+      "sha256": "d487036dcd06b02960767c6d0c5421e704e7a9c4047deb59a9ef6cd1967498ec",
+      "bytes": 8472,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/server.py",
+      "workspaceSource": "work/nss99/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/ssh-client.mjs",
+      "workspaceSource": "work/nss99/ssh-client.mjs",
+      "sha256": "b10bddf23144b9aef799346ab0e6deec255413686216ad73a43773c0c8b8d715",
+      "bytes": 5573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/start-dallas.mjs",
+      "workspaceSource": "work/nss99/start-dallas.mjs",
+      "sha256": "a63c71066cc4890129931160218b1b3c9ca80ec29509e3149c70018b8af7c1a6",
+      "bytes": 9231,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/nss99/tag-counter-audit.lua",
+      "workspaceSource": "work/nss99/tag-counter-audit.lua",
+      "sha256": "ebcd4af8c073bb72e159ee52fbc9c6977e60363abbb1dcd5de5ae9f87ecb6c15",
+      "bytes": 1684,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/client-watchdog.ps1",
+      "workspaceSource": "work/v12/client-watchdog.ps1",
+      "sha256": "5590458fe66d600ddff8b730ceddfd2e1f0041d62a404911457685b638ec114d",
+      "bytes": 1039,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/close-endpoint.mjs",
+      "workspaceSource": "work/v12/close-endpoint.mjs",
+      "sha256": "5604df18a736e6f9d48c038cd4597030720891d84a663baecd523675a4795ef7",
+      "bytes": 1894,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v12/current-audit-diagnostic.mjs",
+      "sha256": "fe5ff807fe283cc70801192e6ce00e19db27b778b3f050566a289e75ddf2b275",
+      "bytes": 5775,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/discover-peer.py",
+      "workspaceSource": "work/v12/discover-peer.py",
+      "sha256": "70bfc9ee5bcb359cf006858e74e25d228522ad9332c35b710a4abc70d26a39cd",
+      "bytes": 972,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/download-client.mjs",
+      "workspaceSource": "work/v12/download-client.mjs",
+      "sha256": "1d1d793c4b892f50473a81a5b560c9eb3d3f19dd56f5c0aef05c88e60f0107ca",
+      "bytes": 6607,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/download-policy.mjs",
+      "workspaceSource": "work/v12/download-policy.mjs",
+      "sha256": "db67b6dcbcc0c8b648fa9529f5a5cee2a8c2792845968a36f75ea9181c82dda5",
+      "bytes": 692,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/download-server.py",
+      "workspaceSource": "work/v12/download-server.py",
+      "sha256": "5e6eb12141c8f26ec090162665ab23cbe6e0d86e1d4f2f36045a18c7d4e86a41",
+      "bytes": 1155,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/duration-model.lua",
+      "workspaceSource": "work/v12/duration-model.lua",
+      "sha256": "e641f3072cad0e5c6760b33e7d4663d5ac084c4ea88c699239004c59e7ca3c15",
+      "bytes": 6614,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v12/endpoint-firewall-guardian.py",
+      "sha256": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+      "bytes": 6341,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/build_local.py",
+      "workspaceSource": "work/v12/endpoint-gate/build_local.py",
+      "sha256": "66220546c7ce3ca1448e1eb0598f32deb4be6aacbb9f3563883f6725b7cada9a",
+      "bytes": 9579,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/control_harness.py",
+      "workspaceSource": "work/v12/endpoint-gate/control_harness.py",
+      "sha256": "9a7728db7100a22cb3cee1b9a4bbe2843f7cf921907b7cf531cbfaf0b9978ba9",
+      "bytes": 15918,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/ct_harness.py",
+      "workspaceSource": "work/v12/endpoint-gate/ct_harness.py",
+      "sha256": "e681b335d1e99645de71ccb7dc682322371f7e5bc5d90f777761cfeb92ac1897",
+      "bytes": 15322,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/ecm_ae_classifier_public.h",
+      "workspaceSource": "work/v12/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/predicate_test.c",
+      "workspaceSource": "work/v12/endpoint-gate/predicate_test.c",
+      "sha256": "aaaf883e31f143b522c4c3ad4bf72968759a4303f34b1fe7490a30e45c580513",
+      "bytes": 2050,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "workspaceSource": "work/v12/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "c97879ec103d09691fe6bc51d66df591a22c3b8d85d74bb100450c732cfd8ece",
+      "bytes": 26941,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/two_slot_predicate.h",
+      "workspaceSource": "work/v12/endpoint-gate/two_slot_predicate.h",
+      "sha256": "02beb7eb4d29483548b3f86efa20cdeb0dc06a88153021732dc1b5f3adf91ac5",
+      "bytes": 4184,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/epoch-driver.mjs",
+      "workspaceSource": "work/v12/epoch-driver.mjs",
+      "sha256": "ace1079565817c47d5c4071d906b084699e072a5d862cf6a14f32af9a0b45405",
+      "bytes": 14554,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/fast-path.lua",
+      "workspaceSource": "work/v12/fast-path.lua",
+      "sha256": "872d71144ecf230889d66412e0f5e1a11cf601e43d91fd0c6a1fa3285c32d6f5",
+      "bytes": 17339,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/match-controlled.mjs",
+      "workspaceSource": "work/v12/match-controlled.mjs",
+      "sha256": "42c6d05d430b9cac7845f63caaaa04605b6c5f335853d3c9501f64503a2d9391",
+      "bytes": 2855,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/module-stage-guardian.lua",
+      "workspaceSource": "work/v12/module-stage-guardian.lua",
+      "sha256": "8ed9ed98789b68997846fd20cfd6e5fb4eb5bb8aad50ab337e69646819363829",
+      "bytes": 13208,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/module-stage.mjs",
+      "workspaceSource": "work/v12/module-stage.mjs",
+      "sha256": "21a4c69dc6b90a78faced32ad1d1703cef2f340e84ae19353ee2c76b2634842a",
+      "bytes": 17692,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/owned-load-policy.mjs",
+      "workspaceSource": "work/v12/owned-load-policy.mjs",
+      "sha256": "ac4805a619f429897b75adf8c0bfbf410df5934ee58e86976bbc6d1aab41d8e8",
+      "bytes": 848,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/payload.mjs",
+      "workspaceSource": "work/v12/payload.mjs",
+      "sha256": "69b2b17e60b9a1604153d32d89f8db2ea85c5e7972eff27f401cf4162c72b047",
+      "bytes": 3964,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/pilot-supervisor.mjs",
+      "workspaceSource": "work/v12/pilot-supervisor.mjs",
+      "sha256": "5dd32308bd4fa9d0cfb81ac5b265a0179538a66d3229f5a23289c17da6ca1350",
+      "bytes": 4794,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/prepare-entry.py",
+      "workspaceSource": "work/v12/prepare-entry.py",
+      "sha256": "18ec7c219746c919baadf8cce7987d1c0327420aa34ddc600cb42c9316ad7498",
+      "bytes": 5164,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/prepare-long-session.py",
+      "workspaceSource": "work/v12/prepare-long-session.py",
+      "sha256": "29c62a6fa27f2c358e997f0f24f7eb16ecd666ff24f3b3eb436d68022bd4029f",
+      "bytes": 2592,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/prepare-qualification.py",
+      "workspaceSource": "work/v12/prepare-qualification.py",
+      "sha256": "89b6da16b01f381dd6e3e9f2b1d7b445cc9963e5922cdd67ff0733db320c754d",
+      "bytes": 2589,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/prepare-runtime.py",
+      "workspaceSource": "work/v12/prepare-runtime.py",
+      "sha256": "0eebde0183d5143f87b0647e150631f63f940c44d93ca99e7aea3c15d1dc7efc",
+      "bytes": 1803,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/probe-peer.py",
+      "workspaceSource": "work/v12/probe-peer.py",
+      "sha256": "a358ad52ae56de34b4384057be33beb770cb1e5b65bf8bc95c95f0f1b07b7564",
+      "bytes": 437,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/qualify-entry.mjs",
+      "workspaceSource": "work/v12/qualify-entry.mjs",
+      "sha256": "d953c89460f3f2b44b0e0f54a53b3ac44149ef50ad939d699a09636db29538a4",
+      "bytes": 2781,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/qualify-native.mjs",
+      "workspaceSource": "work/v12/qualify-native.mjs",
+      "sha256": "54e389937d2a1edf0492f613a5b18b0ca4e2cae2cb630cbc5b957a921b7cbe8d",
+      "bytes": 4514,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/qualify-session-cap.py",
+      "workspaceSource": "work/v12/qualify-session-cap.py",
+      "sha256": "8e54e8fa494761bcd8d1259a6046709fffd8becff6ff0722aebdf64c46b14327",
+      "bytes": 3269,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/read-controlled.mjs",
+      "workspaceSource": "work/v12/read-controlled.mjs",
+      "sha256": "8c8ec86b2d8f6bf5699bf475a0fb40f3dd30a2bf4f848cfa1382d19097220aee",
+      "bytes": 6019,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/receiver.py",
+      "workspaceSource": "work/v12/receiver.py",
+      "sha256": "8c07c3fa643e908d9aafb0a0b8280a3f95a32557ef2cc38a6b68ad6158297952",
+      "bytes": 1267,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/server.py",
+      "workspaceSource": "work/v12/server.py",
+      "sha256": "b17814c97b0d753a7511f0ce590c159a82455106fb395d9417168a6eb6f85285",
+      "bytes": 1958,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/session-binding.mjs",
+      "workspaceSource": "work/v12/session-binding.mjs",
+      "sha256": "22e089ef2f17104c61b1be50145f1d322d62330934aca3ae03e998de872c0f37",
+      "bytes": 727,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v12/start-dallas.mjs",
+      "workspaceSource": "work/v12/start-dallas.mjs",
+      "sha256": "a40811f18efad4805d434d584473376024076652a89a6a825bc695a4d264985c",
+      "bytes": 10646,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/bounded-pacer.mjs",
+      "workspaceSource": "work/v13-two/bounded-pacer.mjs",
+      "sha256": "f126a177fa1afd9cd8af98ac858d4e0eacb44388efbb5357333949c52a48c09b",
+      "bytes": 589,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/candidate-policy-v4.mjs",
+      "workspaceSource": "work/v13-two/candidate-policy-v4.mjs",
+      "sha256": "84471883a78eba79201e535d0baa8c082ebbb2f766196b951887ff794a299ed0",
+      "bytes": 2043,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/candidate-policy.mjs",
+      "workspaceSource": "work/v13-two/candidate-policy.mjs",
+      "sha256": "7e03c025be379198c8fd1fe48cf30156d6f13744ce2acb15822c2ce5fbe1a25c",
+      "bytes": 2063,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/class-leaf-map.mjs",
+      "workspaceSource": "work/v13-two/class-leaf-map.mjs",
+      "sha256": "c3cfa7c3f43ff9f6eaa45bd1bdb3fe319e7dd1f18cb7b9bdb7ab247f5ab3965d",
+      "bytes": 3596,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/classifier.lua",
+      "workspaceSource": "work/v13-two/classifier.lua",
+      "sha256": "58574a5939b4a3fb08bbca40f203df294e07c2f1c56aff9e66f1d101101b8211",
+      "bytes": 21832,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/client-watchdog.ps1",
+      "workspaceSource": "work/v13-two/client-watchdog.ps1",
+      "sha256": "5590458fe66d600ddff8b730ceddfd2e1f0041d62a404911457685b638ec114d",
+      "bytes": 1039,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/close-endpoint-retry.mjs",
+      "workspaceSource": "work/v13-two/close-endpoint-retry.mjs",
+      "sha256": "95a83e4999a9d8602cb47254a85792a5b7456b6e7c809231e8ffe1d2cc10beb7",
+      "bytes": 2216,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/close-endpoint.mjs",
+      "workspaceSource": "work/v13-two/close-endpoint.mjs",
+      "sha256": "fc74c5fde129b8cd8034c50604653edeafc28389fbc786bfbbf29f8b5d9051df",
+      "bytes": 1906,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/close-unverified-endpoint.mjs",
+      "workspaceSource": "work/v13-two/close-unverified-endpoint.mjs",
+      "sha256": "84ebafec4c99852ba6e4b1ee38bb884919ef70434332a8f359dc3c25c3cb6488",
+      "bytes": 2462,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v13-two/current-audit-diagnostic.mjs",
+      "sha256": "62dc0a9b71737010cfd85c075ad2d1abfbebaff40f4cc7f48bf2fb72b6a0933d",
+      "bytes": 5783,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/discover-peer.py",
+      "workspaceSource": "work/v13-two/discover-peer.py",
+      "sha256": "70bfc9ee5bcb359cf006858e74e25d228522ad9332c35b710a4abc70d26a39cd",
+      "bytes": 972,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/download-server.py",
+      "workspaceSource": "work/v13-two/download-server.py",
+      "sha256": "9812803fcc62b6c2ad570c3160acb77f70090e0ebcfbe722702195c47c03dd13",
+      "bytes": 559,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/duration-model.lua",
+      "workspaceSource": "work/v13-two/duration-model.lua",
+      "sha256": "2ddc50a7d868e6fd8b0fe5e310990703c6dec36d6abcf12799cbaf4e5209bb11",
+      "bytes": 6616,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v13-two/endpoint-firewall-guardian.py",
+      "sha256": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+      "bytes": 6341,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/epoch-driver-v2.mjs",
+      "workspaceSource": "work/v13-two/epoch-driver-v2.mjs",
+      "sha256": "923874d9f754702d2112574596b987d555dfbc450bbf5ae46e860650a00ec9ba",
+      "bytes": 14753,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/epoch-driver-v3.mjs",
+      "workspaceSource": "work/v13-two/epoch-driver-v3.mjs",
+      "sha256": "6a812d25cf088d93bdbf8dbb3701bdc1162489ee87441a724afc785c974acf1f",
+      "bytes": 14753,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/epoch-driver-v4.mjs",
+      "workspaceSource": "work/v13-two/epoch-driver-v4.mjs",
+      "sha256": "ae2ded66e201b1c27d3afc87dfbfb3e0aacd397f9336eb93e86f16f9d833c1aa",
+      "bytes": 14750,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/epoch-driver-v5.mjs",
+      "workspaceSource": "work/v13-two/epoch-driver-v5.mjs",
+      "sha256": "91ad20b1f1a3b516edc36c86a2a039342ae3ba04ab7afb52ac4ab582ee86a6d3",
+      "bytes": 14750,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/epoch-driver-v6.mjs",
+      "workspaceSource": "work/v13-two/epoch-driver-v6.mjs",
+      "sha256": "ffc456e8649a347b6c5ccbca69f9a5197d723cf51f562961b427ff350216a82f",
+      "bytes": 14750,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/epoch-driver.mjs",
+      "workspaceSource": "work/v13-two/epoch-driver.mjs",
+      "sha256": "e0fd690a2e5fdc872728a7b41dc739ba082ee170ed3657c69e712ab96865d407",
+      "bytes": 14732,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/export-night.py",
+      "workspaceSource": "work/v13-two/export-night.py",
+      "sha256": "d028f551ce6ebeccbde44105af43569259ace9132d078ae95af650a6ad55df8e",
+      "bytes": 14668,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/fast-path.lua",
+      "workspaceSource": "work/v13-two/fast-path.lua",
+      "sha256": "d54bebe9a02c0c1287553d0566380277d4882a9ad18dfad70588399ef623444e",
+      "bytes": 17311,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/match-controlled.mjs",
+      "workspaceSource": "work/v13-two/match-controlled.mjs",
+      "sha256": "bc53a04349f0492d8d05d8a4d9f48f217ae13b6d884271ef9f42c333f45fdd47",
+      "bytes": 1773,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/module-stage-guardian.lua",
+      "workspaceSource": "work/v13-two/module-stage-guardian.lua",
+      "sha256": "59ad299c375bf81040566d86cd0d9f1fe7823a3d6646b10464f6f118dc7f5154",
+      "bytes": 13208,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/module-stage-v4.mjs",
+      "workspaceSource": "work/v13-two/module-stage-v4.mjs",
+      "sha256": "827c604548f9d8e96f17b277010473a301f5e7dd627654d5c67b7f820d3f76c8",
+      "bytes": 17694,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/module-stage-v6.mjs",
+      "workspaceSource": "work/v13-two/module-stage-v6.mjs",
+      "sha256": "d8d3036d97a24107cbe7ab6d8bd24bcff1711cfe91d11f23a318272d62f3e2a7",
+      "bytes": 17656,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/module-stage.mjs",
+      "workspaceSource": "work/v13-two/module-stage.mjs",
+      "sha256": "9fa9640ee68eb8657e4a951c2f5f5a94069862fe6756c1a7ad9efa0f53436d54",
+      "bytes": 17685,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/native-client-v5.mjs",
+      "workspaceSource": "work/v13-two/native-client-v5.mjs",
+      "sha256": "e68f3f00f7ed8001da3e28a2517f1d39f644f5bb6d981a1c2e4056cfe757e346",
+      "bytes": 4544,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/native-client.mjs",
+      "workspaceSource": "work/v13-two/native-client.mjs",
+      "sha256": "dee9add75b34b2a1aeee70c7082755590654c2a2b5f45b269bdb0ff2b7240742",
+      "bytes": 4544,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/owned-load-policy.mjs",
+      "workspaceSource": "work/v13-two/owned-load-policy.mjs",
+      "sha256": "3d4fda6ceaa72c45dbbab7ae288c61c9407f0962d982c7864b84aaa384267ba6",
+      "bytes": 841,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/parse-ecm.mjs",
+      "workspaceSource": "work/v13-two/parse-ecm.mjs",
+      "sha256": "f9b05a743453e04c2b9deee652910c06244732f9c78ede79ec45e02552a2fdc4",
+      "bytes": 3504,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/payload-v4.mjs",
+      "workspaceSource": "work/v13-two/payload-v4.mjs",
+      "sha256": "62949850daeb05477320037d9987889de78d9ecda47012360fdde02323cf9170",
+      "bytes": 3973,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/payload.mjs",
+      "workspaceSource": "work/v13-two/payload.mjs",
+      "sha256": "94330a7d59b53b2af7772eac5f768cf7504e4189821f0b28172c0e64bb157caa",
+      "bytes": 3970,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/pending-policy.mjs",
+      "workspaceSource": "work/v13-two/pending-policy.mjs",
+      "sha256": "f647791dd542cbae2d6938d004d8d89d5102628b3d33a83254476ff557bcd9e1",
+      "bytes": 516,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/persistent-ssh.mjs",
+      "workspaceSource": "work/v13-two/persistent-ssh.mjs",
+      "sha256": "54a1b7e01886a8eb262b79b6965f58712750002a2785ac5c1f7b33c3fc5eb70e",
+      "bytes": 3005,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/pilot-supervisor-v2.mjs",
+      "workspaceSource": "work/v13-two/pilot-supervisor-v2.mjs",
+      "sha256": "ab05b8d7952139efe3d4ee7de0abf74c74033479699301f08400638741b35350",
+      "bytes": 4867,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/pilot-supervisor-v3.mjs",
+      "workspaceSource": "work/v13-two/pilot-supervisor-v3.mjs",
+      "sha256": "3dc4719b67106c7605609f4aec52f720e5642c7dc74c0584cea4ab554dc4bf00",
+      "bytes": 4870,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/pilot-supervisor-v4.mjs",
+      "workspaceSource": "work/v13-two/pilot-supervisor-v4.mjs",
+      "sha256": "e2ee3861556c4f5464049a7532b8be3e039be5f8dfedc9f34a4d71808a6e347c",
+      "bytes": 4870,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/pilot-supervisor-v5.mjs",
+      "workspaceSource": "work/v13-two/pilot-supervisor-v5.mjs",
+      "sha256": "7af710ff69cb2943fd88d205432992a56735ff827b92e7f81201d035437630d4",
+      "bytes": 4870,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/pilot-supervisor-v6.mjs",
+      "workspaceSource": "work/v13-two/pilot-supervisor-v6.mjs",
+      "sha256": "46bd44e9b534c1769bcf299c1d0fb6ef2d8ddb68e6845d6df9a60a2254cf244b",
+      "bytes": 4870,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/pilot-supervisor.mjs",
+      "workspaceSource": "work/v13-two/pilot-supervisor.mjs",
+      "sha256": "b37f4c2a13dcf01a695d52c4011b595d777db3bba0c145f860a4aa713a46cdc3",
+      "bytes": 4861,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/prepare-runtime.py",
+      "workspaceSource": "work/v13-two/prepare-runtime.py",
+      "sha256": "0eebde0183d5143f87b0647e150631f63f940c44d93ca99e7aea3c15d1dc7efc",
+      "bytes": 1803,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/probe-peer.py",
+      "workspaceSource": "work/v13-two/probe-peer.py",
+      "sha256": "a358ad52ae56de34b4384057be33beb770cb1e5b65bf8bc95c95f0f1b07b7564",
+      "bytes": 437,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-entry-v2.mjs",
+      "workspaceSource": "work/v13-two/qualify-entry-v2.mjs",
+      "sha256": "b5792c7928e20b5de2147b9947fe246e0c061c4748df0975d866d1ab3d4cf8ea",
+      "bytes": 3075,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-entry-v3.mjs",
+      "workspaceSource": "work/v13-two/qualify-entry-v3.mjs",
+      "sha256": "de9f418a9bd9669e4d92014c2412734d59e6b045581f21bd74d2badb5b70f5d9",
+      "bytes": 1533,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-entry-v4.mjs",
+      "workspaceSource": "work/v13-two/qualify-entry-v4.mjs",
+      "sha256": "56ea327b8cda8f78524b28e13cda3422d8cff2e6047a441b4449c2851e56d1ac",
+      "bytes": 2444,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-entry-v5.mjs",
+      "workspaceSource": "work/v13-two/qualify-entry-v5.mjs",
+      "sha256": "6505d2ec7d24f410542aa7936257330633a5e1caae52582249703e92ee3d7073",
+      "bytes": 1541,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-entry-v6.mjs",
+      "workspaceSource": "work/v13-two/qualify-entry-v6.mjs",
+      "sha256": "ab2e32c89629f3014e7f3193b313ec1da2a2da1c799babe0388ff1416eb36496",
+      "bytes": 2752,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-entry.mjs",
+      "workspaceSource": "work/v13-two/qualify-entry.mjs",
+      "sha256": "d87f2219603e0de1c39c18cb7532032007216fb6fda12753dd35ab7b384e6f25",
+      "bytes": 2862,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-native-v2.mjs",
+      "workspaceSource": "work/v13-two/qualify-native-v2.mjs",
+      "sha256": "ed1f6d8291a12dbf24c80ed7d7c7d55127584dd5ade164ec24168c28aa38fc12",
+      "bytes": 5482,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-native-v3.mjs",
+      "workspaceSource": "work/v13-two/qualify-native-v3.mjs",
+      "sha256": "1604fb60c5194a4337fca8e9a1df7b844a9edd70bcdff5ff045529a621a6d298",
+      "bytes": 5479,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-native.mjs",
+      "workspaceSource": "work/v13-two/qualify-native.mjs",
+      "sha256": "7e3e25307eeae66cea51bdc4bb8e1d3f2fa6cb748fceed8a3ea8d4d479fd4410",
+      "bytes": 5479,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/qualify-pin.py",
+      "workspaceSource": "work/v13-two/qualify-pin.py",
+      "sha256": "b239a0810b26dea210dd54bd2b744a01b2d9dd1661e2e592432a81dd94b82bc6",
+      "bytes": 2539,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/read-controlled.mjs",
+      "workspaceSource": "work/v13-two/read-controlled.mjs",
+      "sha256": "119cf65d682fcfa4dd5185158d012f2791124a237cdb9258076edac57754d49a",
+      "bytes": 6404,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/read-probe-identity.mjs",
+      "workspaceSource": "work/v13-two/read-probe-identity.mjs",
+      "sha256": "b36a1f00089a6e5a99d7f52f57e9033c088d8f9f1db961c17deff4c3a40bbf0e",
+      "bytes": 1725,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/receiver.py",
+      "workspaceSource": "work/v13-two/receiver.py",
+      "sha256": "8c07c3fa643e908d9aafb0a0b8280a3f95a32557ef2cc38a6b68ad6158297952",
+      "bytes": 1267,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/server.py",
+      "workspaceSource": "work/v13-two/server.py",
+      "sha256": "b17814c97b0d753a7511f0ce590c159a82455106fb395d9417168a6eb6f85285",
+      "bytes": 1958,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/session-binding-v2.mjs",
+      "workspaceSource": "work/v13-two/session-binding-v2.mjs",
+      "sha256": "ab3ac7007133e2a469d6c0903dfb6c411fdfd587addbd0a8d0ffea5bc11a9874",
+      "bytes": 599,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/session-binding-v3.mjs",
+      "workspaceSource": "work/v13-two/session-binding-v3.mjs",
+      "sha256": "5be93a26d2ade50b233971627513cec664d04d99b83b6f9954706f6a4456e2ce",
+      "bytes": 597,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/session-binding-v4.mjs",
+      "workspaceSource": "work/v13-two/session-binding-v4.mjs",
+      "sha256": "f8073a1a8fe970d08f0ef26ba60e8e032b7a8ba94d3e523410df9e269858eef2",
+      "bytes": 597,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/session-binding-v5.mjs",
+      "workspaceSource": "work/v13-two/session-binding-v5.mjs",
+      "sha256": "587b834f97f591aa9250b199669d8281dc69614d2ff70c4c4673c807aef661db",
+      "bytes": 597,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/session-binding-v6.mjs",
+      "workspaceSource": "work/v13-two/session-binding-v6.mjs",
+      "sha256": "80f687df9b6e45bb6940aaf699b214367bd1976464eb3ad92288689262408fab",
+      "bytes": 597,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/session-binding.mjs",
+      "workspaceSource": "work/v13-two/session-binding.mjs",
+      "sha256": "04b6bf78d77ffd08777b2590e2f74d310611077a587ec025b5e366354aa3caae",
+      "bytes": 596,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/start-dallas-v3.mjs",
+      "workspaceSource": "work/v13-two/start-dallas-v3.mjs",
+      "sha256": "1df5e07227411a4c03e91fec40bde8498d8ad24f6eb7e770d3ae20451a48525d",
+      "bytes": 10224,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/start-dallas-v5.mjs",
+      "workspaceSource": "work/v13-two/start-dallas-v5.mjs",
+      "sha256": "7424760fdc86ce68f64baa94845e399dee540deadd9354655f23fffd7cdaeab7",
+      "bytes": 10227,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/start-dallas.mjs",
+      "workspaceSource": "work/v13-two/start-dallas.mjs",
+      "sha256": "f13737fdc467036c117d977f0e39058dc61cc9b8727fd32042c15db3638d6839",
+      "bytes": 10034,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/upload-ack.mjs",
+      "workspaceSource": "work/v13-two/upload-ack.mjs",
+      "sha256": "a291bbcfc707964f399b11c7914f403530c7e06a8f33cd740bfd047945034221",
+      "bytes": 386,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/verify-night-archive.py",
+      "workspaceSource": "work/v13-two/verify-night-archive.py",
+      "sha256": "c8d27cd9cd738f228428e65ca4f4f641237537aa01e794fb2f1ec13887697279",
+      "bytes": 3191,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/wan-model-v4.lua",
+      "workspaceSource": "work/v13-two/wan-model-v4.lua",
+      "sha256": "768aae9cdca9b749cbc3e11c31b37e7e3012998d169842184c32152b84ef139a",
+      "bytes": 2401,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/wan-model.lua",
+      "workspaceSource": "work/v13-two/wan-model.lua",
+      "sha256": "810a7aa7a9f390805591148d0bcd4dd56b0556728863c822d374bb61e1683cf8",
+      "bytes": 2399,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/wan-scope-v4.lua",
+      "workspaceSource": "work/v13-two/wan-scope-v4.lua",
+      "sha256": "0c6ccbb9f9572b2393039f41c56a6b7afae7a34a9dc8c834141bc443b38fa874",
+      "bytes": 3380,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13-two/wan-scope.lua",
+      "workspaceSource": "work/v13-two/wan-scope.lua",
+      "sha256": "8e5d35076b6a47c25832f781e1dd8db400c5583e7597719f64ded4596b86344c",
+      "bytes": 3386,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/build_local.py",
+      "workspaceSource": "work/v13/endpoint-gate/build_local.py",
+      "sha256": "db4e4e756050beaa3e12c29ae02c88b8170b24c1a0a492bba7c33c3a183d886b",
+      "bytes": 9573,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/control_harness.py",
+      "workspaceSource": "work/v13/endpoint-gate/control_harness.py",
+      "sha256": "9a7728db7100a22cb3cee1b9a4bbe2843f7cf921907b7cf531cbfaf0b9978ba9",
+      "bytes": 15918,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/ct_harness.py",
+      "workspaceSource": "work/v13/endpoint-gate/ct_harness.py",
+      "sha256": "e681b335d1e99645de71ccb7dc682322371f7e5bc5d90f777761cfeb92ac1897",
+      "bytes": 15322,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/ecm_ae_classifier_public.h",
+      "workspaceSource": "work/v13/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/predicate_test.c",
+      "workspaceSource": "work/v13/endpoint-gate/predicate_test.c",
+      "sha256": "aaaf883e31f143b522c4c3ad4bf72968759a4303f34b1fe7490a30e45c580513",
+      "bytes": 2050,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "workspaceSource": "work/v13/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "2d406b3c31d019b28fc9eccf3c5b6b1dcc8f423c7535c4fcc90e8949f7e063c0",
+      "bytes": 27108,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/two_slot_predicate.h",
+      "workspaceSource": "work/v13/endpoint-gate/two_slot_predicate.h",
+      "sha256": "02beb7eb4d29483548b3f86efa20cdeb0dc06a88153021732dc1b5f3adf91ac5",
+      "bytes": 4184,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v13/qualify-pin.py",
+      "workspaceSource": "work/v13/qualify-pin.py",
+      "sha256": "b239a0810b26dea210dd54bd2b744a01b2d9dd1661e2e592432a81dd94b82bc6",
+      "bytes": 2539,
+      "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
     }
   ],
-  "lastAppendExport": "V11_BOUNDED_ENTRY",
+  "lastAppendExport": "V13_TWO_WAN_NIGHT",
   "privateDataExcluded": true
 }
