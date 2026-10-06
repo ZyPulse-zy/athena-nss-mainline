@@ -1,0 +1,33 @@
+{
+  "failedInitialChecker": true,
+  "originalAssertionLine": 1772,
+  "failure": "V11_BOUNDED_ENTRY missing from inherited export-label allowlist",
+  "toolReportedExitCode": 0,
+  "checkerTracebackDetected": true,
+  "subsequentReadOnlyGitDiffMaskedShellExitCode": true,
+  "submissionStoppedBeforeAnyCommit": true,
+  "historicalAssertionsRetained": true,
+  "onlyAddedNewDeliveryLabelToThreeInheritedLists": true,
+  "oldV1SourcesAndEvidenceUnchanged": true,
+  "launcherAliasPreventsLegacyCmdFilenameDecodingError": true,
+  "actualPowerShellStatusCommandPassed": true,
+  "launchScriptBytesIdentical": true,
+  "launcherChanges": [
+    {
+      "source": "work/v11/启用单WAN试用.cmd",
+      "beforeSha256": "fd4437cdaf59bd0d3d003a0fa7ee14c20eff78169c3fc04a7ce21315c94c3a97",
+      "afterSha256": "8b78a73ea3b83b75332c770a42dffe1945d36991727483f81257b46d5e39eec1"
+    },
+    {
+      "source": "work/v11/停止单WAN试用.cmd",
+      "beforeSha256": "56332a805349c62375b87e7188c6b6db26176a5a7c3b824452e8c2bc21a15dcd",
+      "afterSha256": "bc84d7b118204b82b99207fdea306eb7e0f86b7d80fb3f1c647f10b5b3b35131"
+    },
+    {
+      "source": "work/v11/查看单WAN状态.cmd",
+      "beforeSha256": "def61e34452f83aae0800afb5e8f46438102815431ccc24e397a0f963a7f74e8",
+      "afterSha256": "1170edf641ecd6f9b376da02a9f2b3a1a0cc15bf8fac33d27b9d93d1b483680a"
+    }
+  ],
+  "noNewRouterWritesOrHardwareExperiment": true
+}

@@ -1769,7 +1769,7 @@ assert rt156['physicalRootRestoreAudit']['physicalWanOriginalMqFourFqCodelRestor
 end156=rt156['endpointClientClosureAudit'];assert end156['passed'] and end156['previousLoadsChecked']==end156['ownedUnitsInactiveMainPidZero']==34 and end156['temporaryFirewallRulesRemaining']==end156['ownedClientOrGuardProcessesRemaining']==0
 assert end156['tcpAndUdpPortsClosed'] and end156['allCanonicalFirewallBaselinesMatch'] and not end156['remoteWrites'] and not end156['productionWrites']
 for k,file in [('ownedReceiverClosureAudit','receiver-closure'),('ownedDownloadReceiverClosureAudit','download-receiver-closure')]:assert rt156[k]==json.loads((root/f'evidence/nss156-{file}.json').read_text()) and rt156[k]['passed'] and rt156[k]['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
-assert manifest['lastAppendExport'] in ['NSS156','NSS158','NSS159','NSS160_V1_FROZEN']
+assert manifest['lastAppendExport'] in ['NSS156','NSS158','NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY']
 
 # NSS158: actual NSS157 precise class retirement + new NSS158 functional ABA.
 load158=lambda n:json.loads((root/f'evidence/nss158-{n}.json').read_text())
@@ -1836,7 +1836,7 @@ for field,file in [('ownedReceiverClosureAudit','receiver-closure'),('ownedDownl
 
 wp158=load158('publication-whitespace-check');assert wp158['exitCode']==1 and wp158['commitAndPushStopped'] and not wp158['frozenSourceBytesChanged'] and wp158['sourceHashesStillMatch'] and len(wp158['exactPathAttributes'])==4
 assert hashlib.sha256((root/'code'/wp158['repairSource']).read_bytes()).hexdigest()==wp158['repairSourceSha256']
-assert manifest['lastAppendExport'] in ['NSS158','NSS159','NSS160_V1_FROZEN']
+assert manifest['lastAppendExport'] in ['NSS158','NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY']
 
 # NSS159: actual bounded DOWNLOAD; functional success is not RT quality acceptance.
 load159=lambda n:json.loads((root/f'evidence/nss159-{n}.json').read_text())
@@ -1889,7 +1889,7 @@ for field in ['ownedReceiverClosureAudit','ownedDownloadReceiverClosureAudit']:a
 recovery159=load159('wan4-natural-recovery');assert recovery159['passed'] and recovery159['unchangedProtectedHealthControllerSource'] and recovery159['tenRecoveryRampStepsReproduced'] and recovery159['exact300BucketSourceAlgorithmReproduced']
 assert recovery159['priorBucketCounts']==[75,75,75,0,75] and recovery159['newBucketCounts']==[60,60,60,60,60]
 assert recovery159['onlyThreeWan4DhcpRulesRestored'] and recovery159['wan4RulesDerivedFromActualLease'] and not recovery159['experimentRoutingMutation'] and not recovery159['nssPermissionGranted']
-assert manifest['lastAppendExport'] in ['NSS159','NSS160_V1_FROZEN']
+assert manifest['lastAppendExport'] in ['NSS159','NSS160_V1_FROZEN','V11_BOUNDED_ENTRY']
 
 publication159=load159('publication-whitespace-repair');assert publication159==x159['publicationWhitespaceRepair'] and publication159['passed'] and not publication159['initialStagedDiffCheckPassed'] and publication159['commitChainStoppedBeforeCommit'] and publication159['frozenSourceBytesUnchanged'] and publication159['noGlobalWhitespaceRelaxation']
 assert publication159['sourceSha256']==hashlib.sha256((root/publication159['sourcePath']).read_bytes()).hexdigest()
@@ -1948,10 +1948,26 @@ proof160=load160('source-proof');assert proof160['passed'] and proof160['histori
 assert proof160['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2753],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 assert proof160['historicManifestPrefixUnchanged'] and proof160['old159RuntimeExactGitBytes'] and proof160['actualInputsAndFrozenCopiesVerified']==2137
 for source,digest in proof160['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
-assert manifest['lastAppendExport']=='NSS160_V1_FROZEN'
+assert manifest['lastAppendExport'] in ['NSS160_V1_FROZEN','V11_BOUNDED_ENTRY']
 publication160=load160('publication-whitespace')
 assert publication160['passed'] and not publication160['initialStagedDiffCheckPassed'] and publication160['exitCode']==1
 assert publication160['commitChainStoppedBeforeCommit'] and publication160['frozenSourceBytesUnchanged'] and publication160['noGlobalWhitespaceRelaxation'] and not publication160['productionChanges']
 assert hashlib.sha256((root/publication160['sourcePath']).read_bytes()).hexdigest()==publication160['sourceSha256']
 assert publication160['exactPathAttributes']==['/code/work/nss160/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof']
+if manifest['lastAppendExport']=='V11_BOUNDED_ENTRY':
+ v11=json.loads((root/'evidence/v11-entry-delivery.json').read_text(encoding='utf-8'))
+ pq11=json.loads((root/'evidence/v11-package-qualification.json').read_text(encoding='utf-8'))
+ live11=json.loads((root/'evidence/v11-live-start-stop.json').read_text(encoding='utf-8'))
+ sp11=json.loads((root/'evidence/v11-source-proof.json').read_text(encoding='utf-8'))
+ assert v11['v1Frozen'] and v11['oneSessionPerEnable'] and v11['automationRemainsPaused']
+ assert not v11['permanentNssDeployment'] and not v11['newIntegratedHardwareSessionExecuted']
+ assert pq11['passed'] and pq11['nativeSourcesUnchanged'] and pq11['noNewRouterSideLua']
+ assert pq11['inheritedV1Bindings']==2137 and pq11['totalBoundInputs']==2151 and pq11['hostCases']==11
+ assert live11['passed'] and live11['sessionsStarted']==0 and not live11['routerExperimentStarted']
+ assert live11['duplicateInvocationRefused'] and live11['activeAdmissionFileRemoved']
+ assert live11['finalPhase']=='STOPPED_NO_NSS_SESSION'
+ assert sp11['historicPrefixSources']==2805 and sp11['oldV1RuntimeUnchanged']
+ assert sp11['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2805],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ for src,digest in {**sp11['sourceHashes'],**pq11['sourceManifest']}.items():
+  assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

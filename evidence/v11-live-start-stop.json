@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "startedAt": "2026-10-06T16:00:44.094Z",
+  "lastReadonlyObservation": "2026-10-06T16:00:50.261Z",
+  "stopCompletedAt": "2026-10-06T16:01:20.275Z",
+  "realWindowsBackgroundWorkerStarted": true,
+  "duplicateInvocationRefused": true,
+  "stopRequestObserved": true,
+  "activeAdmissionFileRemoved": true,
+  "finalPhase": "STOPPED_NO_NSS_SESSION",
+  "sessionsStarted": 0,
+  "routerExperimentStarted": false,
+  "actualGameFlows": 0,
+  "actualSteamBulkFlows": 0,
+  "noDesktopOrDownloadOperation": true,
+  "newHardwareNssSessionExecuted": false,
+  "oneSessionPerEnable": true,
+  "permanentNssDeployment": false
+}

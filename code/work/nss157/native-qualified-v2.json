@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-06T09:42:58.627Z",
+  "fastSourceSha256": "91d8adbe7fdf663e0f4abcf0968a603a4bb0826ba10a309ef90c6ba02cb1f24c",
+  "model": {
+    "nativeSharedAliasNullReproduced": true,
+    "backendMocked": true,
+    "checks": 9,
+    "productionWrites": false,
+    "fullFactoryModeled": false,
+    "passed": true,
+    "cases": [
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "unchanged"
+      },
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "supported-class"
+      },
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "unsupported-class"
+      },
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "projection-missing"
+      },
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "identity-drift"
+      },
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "retire-not-acked"
+      },
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "missing-tags"
+      },
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "wrong-ct-pin"
+      },
+      {
+        "wireEvidencePreserved": true,
+        "actualObserveRetireTickRunFunctions": true,
+        "hardwareProof": false,
+        "mockedBackend": true,
+        "passed": true,
+        "case": "diagnostic-gate"
+      }
+    ]
+  },
+  "fullFactoryModeled": false,
+  "nativeFullFastSyntaxPassed": true,
+  "nativeExactTagReconstructionPassed": true,
+  "oneActualHistoricalClassInputHash": "77d19e24f0373be31407bccdd1d45522a0787b1149c8fc679b4edf2db644b3bf",
+  "combinedHistoricalPayloadBytes": 73331,
+  "originalCaps": [
+    9000,
+    65536,
+    73728
+  ],
+  "execBytes": {
+    "model": 7515,
+    "syntax": 8351,
+    "codec": 4083
+  },
+  "productionExecuted": false,
+  "filesWrittenOnRouter": false,
+  "evidenceRecordedExactlyOnceAndTerminalUsesFieldReference": true,
+  "originalPreciseGateRetirementBodyUnchanged": true
+}

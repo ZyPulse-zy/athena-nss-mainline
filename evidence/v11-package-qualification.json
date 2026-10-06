@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-06T15:59:35.791Z",
+  "sourceManifest": {
+    "work/v11/current-audit-diagnostic.mjs": "9b37f9283ee4f3a94c9010e09efc111331cf7f08087ef3722d7cdff571673496",
+    "work/v11/module-stage.mjs": "109d5edd4b010af6e9339e0f3ed0f7849127f89efa5c4d0af6ccedcc99644e4d",
+    "work/v11/payload.mjs": "3f45df24fb93bcf23c1cdccd88fc5e601e50d43a35d832d74bf80f6db9d395bf",
+    "work/v11/prepare-service.py": "8ff4ec9cd3f6d08cd3c5f438493264c13b3a3d488174865339c6d863020b4507",
+    "work/v11/qualify-service.mjs": "68680f68445d9acd6a6cdd036e18969b39fc5dc93d0526f9537f41a4500489ee",
+    "work/v11/read-real-candidates.mjs": "5b61200b44a83e4fd8a2d37b4e21e83ce1b7639c543cd00dec2a2040023bfbab",
+    "work/v11/record-candidates.mjs": "196ee7868221a59f8f04e44b65a9e409fbf7ddf863ebdf710a8d642534d4293e",
+    "work/v11/service-engine.mjs": "7bdba7f570c3876efeb6d023333f412a6ea443ec3c172405d82f05c57ba30ac2",
+    "work/v11/service-engine.test.mjs": "b8eb6f6866dcb13d59e3db35678309ed1e01c12e4773038013b6bafdbd8db2c0",
+    "work/v11/service.mjs": "79775e908f273c4187bb72a7ed38bbbcb20e97e81dee0a4363a2b4e4f0ed124d",
+    "work/v11/session-binding.mjs": "380ac9796494560f9016d2bd5d9f1ce4241a59eb5c971776c73ab2836c9ebf1d",
+    "work/v11/session.mjs": "8173b4bb4a7c9852f4b2141ce7c10c702b364f6b0e26ca8ad66c02ead9b36239",
+    "work/v11/操作Athena试用.ps1": "6dfd8e10d6f761d81a49878d2c1ba1dd7bf4a5b4163028563b9cba58c39406cc",
+    "work/nss157/fast-path-v2.lua": "91d8adbe7fdf663e0f4abcf0968a603a4bb0826ba10a309ef90c6ba02cb1f24c",
+    "work/nss157/payload-v4.mjs": "be359b0dda2629848ad2f87d48bdae55d590bcf3ca73d58ea646610ef3b97b16",
+    "work/nss157/native-qualified-v2.json": "af114242662ed87a36fdec479bcc98af528cdd4b692379266d8c56bcaee754b8"
+  },
+  "inheritedV1Bindings": 2137,
+  "totalBoundInputs": 2151,
+  "nativeSourcesUnchanged": true,
+  "exactExistingLifecyclePayloadReused": true,
+  "detachedGuardianAndRollbackUnchanged": true,
+  "actualHistoricalApplicationFramePayloadBytes": 73325,
+  "oneSessionPerEnable": true,
+  "hostCases": 11,
+  "noNewRouterSideLua": true,
+  "newIntegratedHardwareSessionExecuted": false,
+  "newCpuOrHumanAcceptanceClaimed": false,
+  "originalCaps": {
+    "sourceSeconds": 6,
+    "nativeSeconds": 27,
+    "ownerSeconds": 100,
+    "execBytes": 9000,
+    "payloadBytes": 73728,
+    "recordBytes": 1048576
+  }
+}

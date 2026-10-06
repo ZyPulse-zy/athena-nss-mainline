@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "sourceHashes": {
+    "work/v11/current-audit-diagnostic.mjs": "9b37f9283ee4f3a94c9010e09efc111331cf7f08087ef3722d7cdff571673496",
+    "work/v11/export-service.py": "0f564283f9d551484f1cc1d2b2094ae0f79f85308fa4a4e97df96f33c7c3f988",
+    "work/v11/module-stage.mjs": "109d5edd4b010af6e9339e0f3ed0f7849127f89efa5c4d0af6ccedcc99644e4d",
+    "work/v11/payload.mjs": "3f45df24fb93bcf23c1cdccd88fc5e601e50d43a35d832d74bf80f6db9d395bf",
+    "work/v11/prepare-service.py": "8ff4ec9cd3f6d08cd3c5f438493264c13b3a3d488174865339c6d863020b4507",
+    "work/v11/qualify-service.mjs": "68680f68445d9acd6a6cdd036e18969b39fc5dc93d0526f9537f41a4500489ee",
+    "work/v11/read-real-candidates.mjs": "5b61200b44a83e4fd8a2d37b4e21e83ce1b7639c543cd00dec2a2040023bfbab",
+    "work/v11/README.md": "420a3c1df91e136db9b8ee253e1aaae3d82b4b06bb0b42ce5eed64a24c763974",
+    "work/v11/record-candidates.mjs": "196ee7868221a59f8f04e44b65a9e409fbf7ddf863ebdf710a8d642534d4293e",
+    "work/v11/service-engine.mjs": "7bdba7f570c3876efeb6d023333f412a6ea443ec3c172405d82f05c57ba30ac2",
+    "work/v11/service-engine.test.mjs": "b8eb6f6866dcb13d59e3db35678309ed1e01c12e4773038013b6bafdbd8db2c0",
+    "work/v11/service.mjs": "79775e908f273c4187bb72a7ed38bbbcb20e97e81dee0a4363a2b4e4f0ed124d",
+    "work/v11/session-binding.mjs": "380ac9796494560f9016d2bd5d9f1ce4241a59eb5c971776c73ab2836c9ebf1d",
+    "work/v11/session.mjs": "8173b4bb4a7c9852f4b2141ce7c10c702b364f6b0e26ca8ad66c02ead9b36239",
+    "work/v11/停止单WAN试用.cmd": "bc84d7b118204b82b99207fdea306eb7e0f86b7d80fb3f1c647f10b5b3b35131",
+    "work/v11/启用单WAN试用.cmd": "8b78a73ea3b83b75332c770a42dffe1945d36991727483f81257b46d5e39eec1",
+    "work/v11/操作Athena试用.ps1": "6dfd8e10d6f761d81a49878d2c1ba1dd7bf4a5b4163028563b9cba58c39406cc",
+    "work/v11/查看单WAN状态.cmd": "1170edf641ecd6f9b376da02a9f2b3a1a0cc15bf8fac33d27b9d93d1b483680a",
+    "work/nss157/native-qualified-v2.json": "af114242662ed87a36fdec479bcc98af528cdd4b692379266d8c56bcaee754b8",
+    "work/v11/control.ps1": "6dfd8e10d6f761d81a49878d2c1ba1dd7bf4a5b4163028563b9cba58c39406cc"
+  },
+  "historicManifestPrefixUnchanged": true,
+  "historicPrefixSources": 2805,
+  "historicPrefixCanonicalSha256": "dfdb12c6bd30c2dd972afcd43a15c85e5716f9236bb9052c524a4c3dcf9eb893",
+  "oldV1RuntimeUnchanged": true,
+  "frozenV1EvidenceUnchanged": true,
+  "newRouterSideLua": false
+}
