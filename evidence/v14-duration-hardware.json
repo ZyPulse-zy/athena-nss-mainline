@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "actualHardware": true,
+  "actualBoundInputs": 2300,
+  "phase": {
+    "seconds": 60.010000000242144,
+    "cadenceSeconds": 0.5,
+    "requestedSeconds": 60,
+    "observer": "same-validated-classifier-and-counter-loop",
+    "endedAt": 2126999.95,
+    "name": "B",
+    "startedAt": 2126939.94,
+    "sampleStart": 2,
+    "sampleCount": 121,
+    "sampleEnd": 122,
+    "completed": true
+  },
+  "ecmCountsThroughoutB": [
+    2
+  ],
+  "finalEcmCount": 0,
+  "renewals": 20,
+  "flowProof": {
+    "tcp": {
+      "protocol": 6,
+      "accelerated": true,
+      "ctMark": 262144,
+      "downTag": 2399469568,
+      "upTag": 2382692352,
+      "natCorrect": true,
+      "wanAffinity": 4,
+      "fromLan4": true,
+      "fromBridgeLan": true
+    },
+    "udp": {
+      "protocol": 17,
+      "accelerated": true,
+      "ctMark": 196608,
+      "downTag": 2399535104,
+      "upTag": 2382757888,
+      "natCorrect": true,
+      "wanAffinity": 3,
+      "fromLan4": true,
+      "fromBridgeLan": true
+    }
+  },
+  "fourLeavesNearbyAsynchronousSnapshots": {
+    "down": {
+      "8f05:": {
+        "kind": "nssfq_codel",
+        "options": "parent 8f00:5 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+        "bytes": 170383768,
+        "packets": 112566,
+        "dropped": 25,
+        "overlimits": 0,
+        "requeues": 0
+      },
+      "8f06:": {
+        "kind": "nssfq_codel",
+        "options": "parent 8f00:6 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+        "bytes": 468180,
+        "packets": 2754,
+        "dropped": 0,
+        "overlimits": 0,
+        "requeues": 0
+      }
+    },
+    "up": {
+      "8e05:": {
+        "kind": "nssfq_codel",
+        "options": "parent 8e00:5 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+        "bytes": 6084098,
+        "packets": 103965,
+        "dropped": 0,
+        "overlimits": 0,
+        "requeues": 0
+      },
+      "8e06:": {
+        "kind": "nssfq_codel",
+        "options": "parent 8e00:6 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+        "bytes": 445570,
+        "packets": 2621,
+        "dropped": 0,
+        "overlimits": 0,
+        "requeues": 0
+      }
+    }
+  },
+  "queueSnapshotWindowSeconds": 64.18999999994412,
+  "rtQueueZeroDropIsNotEndToEndZeroLoss": true,
+  "newCpuCausalBenefitClaimed": false,
+  "descriptiveBOnly": {
+    "seconds": 60.010000000242144,
+    "cpuBusyPercent": 14.164172723386063,
+    "softirqPercent": 0.9576742197520308,
+    "timeSqueezeDelta": 0,
+    "softnetDropDelta": 0
+  },
+  "nativeRecordBytes": 623180,
+  "originalRecoveryFlags": {
+    "moduleUnloaded": true,
+    "tagsRemoved": true,
+    "dualPhysicalQueuesRestored": true,
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "stateNodeRemoved": true,
+    "firmwareZeroAfterRetirement": true
+  },
+  "originalCompleteBaselineAuditPassed": true,
+  "exactEndpointRestored": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "newSameLoadCpuTest": false,
+  "humanCs2Acceptance": false,
+  "fiveWanOrPermanentNssAcceptance": false,
+  "sourceFreshnessSeconds": 6,
+  "kernelSeconds": 90,
+  "ownerSeconds": 180,
+  "clientSeconds": 180,
+  "nativeGateUnchanged": true,
+  "fixtureBounded32MbpsDownloadAndSmallUdp": true,
+  "actualRecordSha256": "13b4fcd0741adc1752383fb26833d84f87b96d32cca3674aa757f476f1f6d27e"
+}

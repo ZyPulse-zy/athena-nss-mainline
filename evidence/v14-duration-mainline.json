@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "actualTwoWanSixtySecondSessionCompleted": true,
+  "nssNativeGateUnchanged": true,
+  "tcpWan": 4,
+  "udpWan": 3,
+  "nativeSeconds": 90,
+  "ownerSeconds": 180,
+  "sourceSeconds": 6,
+  "clientSeconds": 180,
+  "nssBSeconds": 60.010000000242144,
+  "renewals": 20,
+  "fourLeavesCarriedTraffic": true,
+  "allFiveWanHealthyAtCompleteAudit": true,
+  "perWanIndependentBudgetsProven": false,
+  "multipleBulkFlowsProven": false,
+  "humanExperienceAccepted": false,
+  "newCpuCausalBenefitClaim": false,
+  "permanentDeployment": false,
+  "next": "WAN and class leaf budgets on actual physical NSS shapers; then bounded multiple bulk flows"
+}

@@ -23216,8 +23216,218 @@
       "sha256": "b239a0810b26dea210dd54bd2b744a01b2d9dd1661e2e592432a81dd94b82bc6",
       "bytes": 2539,
       "role": "v13-two-wan-night-candidate-and-preserved-failed-entries"
+    },
+    {
+      "path": "code/work/v14-duration/analyze-hardware.py",
+      "workspaceSource": "work/v14-duration/analyze-hardware.py",
+      "sha256": "42e6cfc2eb7d01f6b4f91984685be66e741b5543e779b675fbc067830b392501",
+      "bytes": 4450,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/candidate-policy.mjs",
+      "workspaceSource": "work/v14-duration/candidate-policy.mjs",
+      "sha256": "84471883a78eba79201e535d0baa8c082ebbb2f766196b951887ff794a299ed0",
+      "bytes": 2043,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/class-leaf-map.mjs",
+      "workspaceSource": "work/v14-duration/class-leaf-map.mjs",
+      "sha256": "c3cfa7c3f43ff9f6eaa45bd1bdb3fe319e7dd1f18cb7b9bdb7ab247f5ab3965d",
+      "bytes": 3596,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/classifier.lua",
+      "workspaceSource": "work/v14-duration/classifier.lua",
+      "sha256": "58574a5939b4a3fb08bbca40f203df294e07c2f1c56aff9e66f1d101101b8211",
+      "bytes": 21832,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/client-watchdog.ps1",
+      "workspaceSource": "work/v14-duration/client-watchdog.ps1",
+      "sha256": "5590458fe66d600ddff8b730ceddfd2e1f0041d62a404911457685b638ec114d",
+      "bytes": 1039,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/close-endpoint.mjs",
+      "workspaceSource": "work/v14-duration/close-endpoint.mjs",
+      "sha256": "c28d81b61c12c68d5f9cdcdc545d581f888d424922f470c0ad9d3cfe19ba7be9",
+      "bytes": 2241,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v14-duration/current-audit-diagnostic.mjs",
+      "sha256": "43cbf6bf6322b0b56073b929e96b05b341d6b065c40cdf86eb6946ce7a1fd31f",
+      "bytes": 5793,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/discover-peer.py",
+      "workspaceSource": "work/v14-duration/discover-peer.py",
+      "sha256": "70bfc9ee5bcb359cf006858e74e25d228522ad9332c35b710a4abc70d26a39cd",
+      "bytes": 972,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/download-server.py",
+      "workspaceSource": "work/v14-duration/download-server.py",
+      "sha256": "9812803fcc62b6c2ad570c3160acb77f70090e0ebcfbe722702195c47c03dd13",
+      "bytes": 559,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v14-duration/endpoint-firewall-guardian.py",
+      "sha256": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+      "bytes": 6341,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/epoch-driver.mjs",
+      "workspaceSource": "work/v14-duration/epoch-driver.mjs",
+      "sha256": "7587ef9804f2cede96bea5e465cc3e061632a45404da77c5124f74248e4e4a0d",
+      "bytes": 14816,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/export-duration.py",
+      "workspaceSource": "work/v14-duration/export-duration.py",
+      "sha256": "33e64aedd5f8412e5521dcc29905f44858c63abcc43a9bad42d63bc944366f2c",
+      "bytes": 6497,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/fast-path.lua",
+      "workspaceSource": "work/v14-duration/fast-path.lua",
+      "sha256": "7dd56982374a226a0c16f45240dbbb2f368015f6c2060cba4bb8affca821bb29",
+      "bytes": 17313,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/match-controlled.mjs",
+      "workspaceSource": "work/v14-duration/match-controlled.mjs",
+      "sha256": "de3dcd4ca728d528b1f06f5bf7be3440e73030522a38e947981e0fa3dcf7bf7b",
+      "bytes": 1778,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/module-stage-guardian.lua",
+      "workspaceSource": "work/v14-duration/module-stage-guardian.lua",
+      "sha256": "a947de99a645ca6ca588c88c3f9f2b1124874bb98300de0834623a825b1731b6",
+      "bytes": 13208,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/module-stage.mjs",
+      "workspaceSource": "work/v14-duration/module-stage.mjs",
+      "sha256": "aaaa5e545a47cb370f2a38f05868d9830d4e365617ab2b7425c3541669da2f2f",
+      "bytes": 17667,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/native-client.mjs",
+      "workspaceSource": "work/v14-duration/native-client.mjs",
+      "sha256": "e68f3f00f7ed8001da3e28a2517f1d39f644f5bb6d981a1c2e4056cfe757e346",
+      "bytes": 4544,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/owned-load-policy.mjs",
+      "workspaceSource": "work/v14-duration/owned-load-policy.mjs",
+      "sha256": "3d4fda6ceaa72c45dbbab7ae288c61c9407f0962d982c7864b84aaa384267ba6",
+      "bytes": 841,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/parse-ecm.mjs",
+      "workspaceSource": "work/v14-duration/parse-ecm.mjs",
+      "sha256": "f9b05a743453e04c2b9deee652910c06244732f9c78ede79ec45e02552a2fdc4",
+      "bytes": 3504,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/payload.mjs",
+      "workspaceSource": "work/v14-duration/payload.mjs",
+      "sha256": "a30c098f66afc0a66076ea7109ea09e157e5d55e8516638241afc5fdefaae79d",
+      "bytes": 3980,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/persistent-ssh.mjs",
+      "workspaceSource": "work/v14-duration/persistent-ssh.mjs",
+      "sha256": "54a1b7e01886a8eb262b79b6965f58712750002a2785ac5c1f7b33c3fc5eb70e",
+      "bytes": 3005,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/pilot-supervisor.mjs",
+      "workspaceSource": "work/v14-duration/pilot-supervisor.mjs",
+      "sha256": "0a257d6af6cbbe1ca45b1b053673d46bad91f3e1e6751b6b47d76ec503319629",
+      "bytes": 4863,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/probe-peer.py",
+      "workspaceSource": "work/v14-duration/probe-peer.py",
+      "sha256": "a358ad52ae56de34b4384057be33beb770cb1e5b65bf8bc95c95f0f1b07b7564",
+      "bytes": 437,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/qualify-entry.mjs",
+      "workspaceSource": "work/v14-duration/qualify-entry.mjs",
+      "sha256": "267d38b93781d8f0a22eba6699cfe45140f92d7a897827e4e6ca1851b6efcfe3",
+      "bytes": 3251,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/read-controlled.mjs",
+      "workspaceSource": "work/v14-duration/read-controlled.mjs",
+      "sha256": "e865790fbd00d809da81567ed50b86cf1109b42105c23183f55a915355aadf76",
+      "bytes": 6409,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/receiver.py",
+      "workspaceSource": "work/v14-duration/receiver.py",
+      "sha256": "8c07c3fa643e908d9aafb0a0b8280a3f95a32557ef2cc38a6b68ad6158297952",
+      "bytes": 1267,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/server.py",
+      "workspaceSource": "work/v14-duration/server.py",
+      "sha256": "b17814c97b0d753a7511f0ce590c159a82455106fb395d9417168a6eb6f85285",
+      "bytes": 1958,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/session-binding.mjs",
+      "workspaceSource": "work/v14-duration/session-binding.mjs",
+      "sha256": "c8e20f03d29a9a17fba2a31afdef0cce620b1ab0e925399de1167dcc353bebdc",
+      "bytes": 608,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/start-dallas.mjs",
+      "workspaceSource": "work/v14-duration/start-dallas.mjs",
+      "sha256": "bae352593cdc5b0833dbd55a12840ad79311a2993b3345486b58b77a64c2817a",
+      "bytes": 10234,
+      "role": "v14-completed-two-wan-sixty-second-duration"
+    },
+    {
+      "path": "code/work/v14-duration/wan-scope.lua",
+      "workspaceSource": "work/v14-duration/wan-scope.lua",
+      "sha256": "0c6ccbb9f9572b2393039f41c56a6b7afae7a34a9dc8c834141bc443b38fa874",
+      "bytes": 3380,
+      "role": "v14-completed-two-wan-sixty-second-duration"
     }
   ],
-  "lastAppendExport": "V13_TWO_WAN_NIGHT",
+  "lastAppendExport": "V14_TWO_WAN_DURATION",
   "privateDataExcluded": true
 }

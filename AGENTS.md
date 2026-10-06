@@ -1,3 +1,17 @@
+# 双 WAN 60 秒 NSS 运行与完整恢复通过
+
+更新：2026-10-07北京时间02:15。真实受控 TCP BULK 自然走WAN4、小UDP RT走WAN3，Linux PBR仍决定出口。NSS B段60.01秒、121帧全程ECM2、20次续租，四tag/完整ct mark/NAT/WAN affinity正确；结束后ECM0、模块/两WAN/两物理原mq＋四fq_codel/端点FW/客户端全部恢复，原完整审核通过。
+
+上下行四个FQ-CoDel leaf均有实际流量。64.19秒附近异步队列快照下行bulk112566包/drop25，RT上下行2754/2621包/drop0；RT队列零drop不代表端到端零丢包。B仅描述性CPU busy14.16%、softirq0.96%、time_squeeze/softnet drop0，没有重新做CPU因果对照，不外推300Mbps、真人或长期部署。
+
+原two-slot gate二进制未变，仍只一TCP＋一UDP、两个自然健康WAN，未知流默认拒绝。source6秒；本次kernel90秒/最大120，独立owner180秒，client180/其它硬截止保留。2300实际绑定，完整紧凑record623180字节小于1MiB；每次生产写前新checkpoint下载SHA/gzip及控制连接外独立恢复已核验。原v13及所有失败证据保留。
+
+下一步只实现按WAN与类别映射可控NSS预算，再扩大受控bulk准入；保留Linux PBR连接粘性与CAKE fallback。07:40收尾、07:50不新开生产、08:00前暂停。睡眠期间无桌面/Steam/CS2操作或新游戏下载。
+
+证据：[硬件与恢复](evidence/v14-duration-hardware.json)、[准入范围](evidence/v14-duration-qualification.json)、[源码](evidence/v14-duration-source-proof.json)。入口：[60秒双WAN控制器](code/work/v14-duration/pilot-supervisor.mjs)。
+
+## 双WAN20秒及更早历史
+
 # 双 WAN NSS 硬件闭环通过
 
 用户最新授权：自主推进到2026-10-07北京时间08:00，目标扩展为多 WAN 与高级 QoS。旧 v1 冻结及停止扩展的计划属于历史；其技术证据继续复用，真人体感未验仍保留。

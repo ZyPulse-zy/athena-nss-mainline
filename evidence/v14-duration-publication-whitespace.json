@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "initialStagedDiffCheckPassed": false,
+  "exitCode": 2,
+  "commitChainStoppedBeforeCommit": true,
+  "frozenSourceBytesUnchanged": true,
+  "exactPathAttribute": "/code/work/v14-duration/fast-path.lua whitespace=cr-at-eol,-blank-at-eol",
+  "sourceSha256": "7dd56982374a226a0c16f45240dbbb2f368015f6c2060cba4bb8affca821bb29",
+  "noGlobalWhitespaceRelaxation": true,
+  "initialFailure": "code/work/v14-duration/fast-path.lua:223: trailing whitespace.\n+"
+}
