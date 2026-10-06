@@ -38,3 +38,7 @@
 /code/work/nss149/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
 /code/work/nss149/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/nss150/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+# Preserve exact inherited guardian bytes in NSS151/152.
+/code/work/nss151/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/nss152/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof

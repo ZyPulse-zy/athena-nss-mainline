@@ -1435,9 +1435,9 @@ assert archiveproof148['historicPrefixCanonicalSha256']==hashlib.sha256(json.dum
 for source,digest in archiveproof148['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
 assert archiveproof148['comparisonUsesOriginalGitBlobs']and archiveproof148['failedFirstVerifierSourceBytesRetained']and not archiveproof148['operationalBindingsChanged']
 # NSS150 is a bounded automatic successor proof, not matched CPU or human-game acceptance.
-x150=json.loads((root/'evidence/nss150-mainline.json').read_text());rt150=json.loads((root/'evidence/current-runtime.json').read_text())
+x150=json.loads((root/'evidence/nss150-mainline.json').read_text());rt150=json.loads((root/'evidence/nss150-runtime.json').read_text())
 assert x150['round']==rt150['round']=='NSS150' and x150['passed'] and x150['boundedTwoEpochAutomaticLifecyclePassed']
-assert len(manifest['sources'])==2148 and x150['exportedSources']==105
+assert len(manifest['sources'])>=2148 and x150['exportedSources']==105
 proof150=json.loads((root/'evidence/nss150-source-proof.json').read_text())
 assert proof150['historicPrefixSources']==2043 and proof150['sources']==len(proof150['sourceHashes'])==105
 assert proof150['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2043],sort_keys=True,separators=(',',':')).encode()).hexdigest()
@@ -1518,4 +1518,58 @@ assert len(whitespace150['files'])==3
 for f in whitespace150['files']:
  assert hashlib.sha256((root/f['path']).read_bytes()).hexdigest()==f['sha256']
  assert '/'+f['path']+' whitespace=cr-at-eol,'+f['attribute']in (root/'.gitattributes').read_text()
+# NSS151/152: actual automatic class change and exact PC-controller crash recovery.
+x152=json.loads((root/'evidence/nss152-mainline.json').read_text());rt152=json.loads((root/'evidence/current-runtime.json').read_text())
+assert x152['round']==rt152['round']=='NSS152' and x152['passed']
+for k in ['actualAutomaticClassTransitionAndRelearningPassed','actualControllerCrashIndependentRecoveryPassed','nightHeartbeatRemainsPaused']:assert x152[k] and rt152[k]
+assert x152['actual151Bindings']==1678 and x152['actual152Bindings']==rt152['boundInputs']==1725
+assert x152['qualified151Controller']=='work/nss151/run-v5.mjs' and x152['qualified152Controller']==rt152['qualifiedExperimentalController']=='work/nss152/crash-controller-v4.mjs'
+assert x152['nativeFactoriesUnchanged']==[138,149] and x152['sourceNativeOwnerSeconds']==[6,27,100]
+assert x152['clientHardSeconds']==180 and x152['execRawBundleRecordBytes']==[9000,65536,73728,1048576]
+for k in ['matchedCpuComparison','realHumanGameAcceptance','highLoad300MbpsAcceptance','permanentNssControllerInstalled','nssPermanentlyEnabled','desktopOperated','steamOrCs2Started']:assert not x152[k]
+assert x152['cpuReductionConclusion'] is None and rt152['cpuConclusion'] is None and not rt152['nssPermanentlyEnabled'] and not rt152['permanentNssControllerInstalled']
+assert rt152['classifierDeployment']=='NSS68' and rt152['classifierConfigSha256']==rt150['classifierConfigSha256']
+assert rt152['workerPid']==31657 and rt152['guardianPid']==17139
+assert x152['old150RuntimeRetainedSha256']==rt152['historical150RuntimePreservedSha256']==hashlib.sha256((root/'evidence/nss150-runtime.json').read_bytes()).hexdigest()
+proof152=json.loads((root/'evidence/nss152-source-proof.json').read_text())
+assert proof152['passed'] and proof152['historicPrefixSources']==2148 and proof152['sources']==x152['exportedSources']==127 and len(manifest['sources'])>=2275
+assert proof152['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2148],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+for k in ['historicManifestPrefixUnchanged','privateCapabilityInputContentsExcluded','originalFailureSourcesKept','permanentClassifierAndKernelGateUnchanged']:assert proof152[k]
+assert proof152['privateCapabilityInputsBoundLocally']==3 and proof152['actual151Bindings']==1678 and proof152['actual152Bindings']==1725
+for source,digest in proof152['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+cp152=json.loads((root/'evidence/nss152-class-transition.json').read_text());assert cp152==x152['classTransition'] and cp152['passed']
+assert cp152['tcpClassBefore']=='BULK' and cp152['tcpClassAfter']=='BE' and cp152['reason']=='cooldown'
+for k in ['realApplicationPause','originalTcpSocketAndCtStayedPresent','sameQueryCompleteActualClassEvidence','onlyTcpAffected','projectionAbsenceNotTreatedAsCtExit','learningStoppedBeforeTcpCloseAndDrain','targetTcpCiAbsentIndependentlyVerified','originalUdpCiAndRtDualTagsPreserved','cpuBarrierNotFirmwareAck','noTagChangeBeforeWithdrawal','oldEpochClosedAndFullyRestored','newQueryCheckpointOwnerPinAndBothCis','sameSocketCtMarkNatWanInSuccessor','oldTerminalGateNeverReopened']:assert cp152[k]
+assert cp152['nativeBudgetsUnchanged']==[6,27,100]
+cr152=json.loads((root/'evidence/nss152-controller-crash.json').read_text());assert cr152==x152['controllerCrash'] and cr152['passed']
+for k in ['originalControllerKilledDuringEcm2','exactFlowMarkNatWanAndDualTagsAtCrash','routerGuardianIndependentOfController','automatic20SecondEpochFinishedWithoutPcController','restoredWithoutManualRouterUndo','noRouterGuardianOrServiceKilled','physicalRootsTagsModulesRoutingRestored','normalHostControllerReceiptAbsent','controllerIsExperimentalPcController','permanentClassifierNotKilled','routerServiceNotKilled','noManualRouterRollbackDuringRecovery']:assert cr152[k]
+assert cr152['nativeRenewalsWithoutPcController']==6 and not cr152['matchedCpuComparison'] and not cr152['cs2Acceptance'] and not cr152['permanentNssDeployment']
+tr152=json.loads((root/'evidence/nss152-trials.json').read_text());assert tr152==x152['trials'] and len(tr152)==3
+assert [t['test']for t in tr152]==['real-class-transition','automatic-successor','controller-crash-independent-recovery']
+assert [t['wan']for t in tr152]==[5,5,1] and [t['sourceBindingsActual']for t in tr152]==[1678,1678,1725]
+for i,t in enumerate(tr152):
+ assert t['passed'] and t['actualTagsAndFqCodelLeaves']==4 and t['payloadBytesActual']<=73728 and t['guardianExecBytesActual']<=9000
+ assert t['observedEcmSequence']==([0,2,1,0]if i==0 else[0,2,0]) and (t['nativeHardSeconds'],t['ownerMaxSeconds'],t['successGraceSeconds'])==(27,100,5)
+ for k in ['fullMarkNatWanAffinityCorrect','checkpointDownloadedShaGzipVerified','independentRollbackBeforeFirstWrite','detachedParentPidOne','unchangedQoS','firmwareZeroAndAllOriginalStateRestored']:assert t[k]
+ assert all(t['undo'].values())
+ if i:
+  m=t['metric'];assert m['direction']=='upload' and m['tcpMetric']=='server-confirmed received bytes' and 20<=m['seconds']<=21.5 and t['nativeRenewals']==m['nativeRenewals']==6
+  assert m['selectedWan']==t['wan'] and m['causalCpuReductionPercent'] is None and not m['sameLoadSoftwareNssSoftwareComparison'] and not m['cs2Acceptance'] and not m['permanentController'] and not m['highLoad300Mbps']
+  assert 0<m['serverConfirmedTcpUploadMbps']<35 and m['udp']['received']<=m['udp']['sent'] and not m['udp']['cs2Metric']
+  assert all(v['packets']>0 for d in m['nssLeavesNearbyAsynchronousSnapshots'].values()for v in d.values())
+ else:assert t['metric'] is None
+fail152=json.loads((root/'evidence/nss152-failures.json').read_text());assert len(fail152)==x152['failuresPreserved']==10 and all(not f['passed'] and f['originalPreserved']for f in fail152)
+assert fail152[-1]['normalChildEpochSucceeded'] and not fail152[-1]['controllerKilled'] and not fail152[-1]['beforeProductionStage']
+for field,file,rtfield in [('finalAudit','final-audit','audit'),('physicalRestore','physical-final','physicalRootRestoreAudit'),('endpointClosure','endpoint-client-closure','endpointClientClosureAudit'),('receiverClosure','receiver-closure','ownedReceiverClosureAudit'),('downloadReceiverClosure','download-receiver-closure','ownedDownloadReceiverClosureAudit')]:assert x152[field]==json.loads((root/f'evidence/nss152-{file}.json').read_text())==rt152[rtfield]
+assert rt152['audit']['queryAge']<6 and rt152['audit']['nativeDynamicSelectorsVerifiedByOriginalOwnershipAudit'] and not rt152['audit']['wan4Up']
+for k in ['passed','originalFullLockedNativeAudit','unrelatedConfigurationMatches','exactWan4AutomaticFailoverProved','ecmStoppedAndZero','noActiveTransaction','noStaging','noExperimentState','noExperimentalModule']:assert rt152['audit'][k]
+assert rt152['physicalRootRestoreAudit']['physicalWanOriginalMqFourFqCodelRestored'] and rt152['physicalRootRestoreAudit']['lan4OriginalMqFourFqCodelRestored'] and rt152['physicalRootRestoreAudit']['defaultQueueOptionsAndHandlesExact']
+end152=rt152['endpointClientClosureAudit'];assert end152['passed'] and end152['previousLoadsChecked']==end152['ownedUnitsInactiveMainPidZero']==20
+assert end152['temporaryFirewallRulesRemaining']==end152['ownedClientOrGuardProcessesRemaining']==0 and end152['tcpAndUdpPortsClosed'] and end152['allCanonicalFirewallBaselinesMatch'] and not end152['remoteWrites'] and not end152['productionWrites']
+for k in ['ownedReceiverClosureAudit','ownedDownloadReceiverClosureAudit']:assert rt152[k]['passed'] and rt152[k]['readonly'] and rt152[k]['exactOwnedReceiverAndTimeoutProcessesRemaining']==0
+visibility152=json.loads((root/'evidence/nss152-repository-visibility.json').read_text())
+assert visibility152==x152['repositoryVisibility'] and visibility152['passed'] and x152['repositoryPrivateVisibilityRestored']
+assert visibility152['repository']=='ZyPulse-zy/athena-nss-mainline' and visibility152['beforeVisibility']=='public' and visibility152['afterVisibility']=='private'
+for k in ['authenticatedOwnerVerified','adminVerified','restoredRequestedPrivateVisibility','zeroStarsForksAndPagesBeforeChange','onlyPrivateFieldPatched','otherCheckedSettingsUnchanged']:assert visibility152[k]
+assert not visibility152['credentialsSavedOrPrinted']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

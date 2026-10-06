@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "originalControllerKilledDuringEcm2": true,
+  "exactFlowMarkNatWanAndDualTagsAtCrash": true,
+  "routerGuardianIndependentOfController": true,
+  "automatic20SecondEpochFinishedWithoutPcController": true,
+  "nativeRenewalsWithoutPcController": 6,
+  "restoredWithoutManualRouterUndo": true,
+  "noRouterGuardianOrServiceKilled": true,
+  "physicalRootsTagsModulesRoutingRestored": true,
+  "normalHostControllerReceiptAbsent": true,
+  "matchedCpuComparison": false,
+  "cs2Acceptance": false,
+  "permanentNssDeployment": false,
+  "controllerIsExperimentalPcController": true,
+  "permanentClassifierNotKilled": true,
+  "routerServiceNotKilled": true,
+  "noManualRouterRollbackDuringRecovery": true
+}

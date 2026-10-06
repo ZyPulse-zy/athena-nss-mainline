@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "realApplicationPause": true,
+  "originalTcpSocketAndCtStayedPresent": true,
+  "tcpClassBefore": "BULK",
+  "tcpClassAfter": "BE",
+  "reason": "cooldown",
+  "sameQueryCompleteActualClassEvidence": true,
+  "onlyTcpAffected": true,
+  "projectionAbsenceNotTreatedAsCtExit": true,
+  "learningStoppedBeforeTcpCloseAndDrain": true,
+  "targetTcpCiAbsentIndependentlyVerified": true,
+  "originalUdpCiAndRtDualTagsPreserved": true,
+  "cpuBarrierNotFirmwareAck": true,
+  "noTagChangeBeforeWithdrawal": true,
+  "oldEpochClosedAndFullyRestored": true,
+  "newQueryCheckpointOwnerPinAndBothCis": true,
+  "sameSocketCtMarkNatWanInSuccessor": true,
+  "oldTerminalGateNeverReopened": true,
+  "nativeBudgetsUnchanged": [
+    6,
+    27,
+    100
+  ]
+}

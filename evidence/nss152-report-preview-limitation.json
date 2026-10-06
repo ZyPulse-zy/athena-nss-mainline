@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "htmlUtf8AndStructureChecked": true,
+  "metricValuesMatchEvidence": true,
+  "visualRenderingVerified": false,
+  "browserAttemptRefused": true,
+  "browserReason": "The browser URL policy permits http/https and blocks file protocol",
+  "noAlternateBrowserOrProtocolWorkaroundAttempted": true,
+  "coreHardwareAndPublicationChecksUnchanged": true
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "completedEpochs": 2,
+  "actualClassChangeAutomaticallyRetired": true,
+  "onlyAffectedTcpRetiredBeforeEpochClose": true,
+  "originalUdpCiAndDualTagsHeld": true,
+  "newCheckpointOwnerQueryPinAndBothCis": true,
+  "sameSocketCtMarkNatWan": true,
+  "oldTerminalGateNeverReopened": true,
+  "matchedCpuComparison": false,
+  "cs2Acceptance": false,
+  "permanentNssDeployment": false
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T04:28:20.335965+00:00",
+  "generatedAt": "2026-10-06T05:31:11.456030+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -15040,8 +15040,897 @@
       "sha256": "98bd68f588a481c7fe8d77d0f2f7a6d25ece33ed88024d8e95b138613f73ffee",
       "bytes": 1500,
       "role": "bounded-automatic-lifecycle-source-or-explicit-reporting-helper"
+    },
+    {
+      "path": "code/work/nss151/bounded-pacer.mjs",
+      "workspaceSource": "work/nss151/bounded-pacer.mjs",
+      "sha256": "f126a177fa1afd9cd8af98ac858d4e0eacb44388efbb5357333949c52a48c09b",
+      "bytes": 589,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/calibrate-clock.mjs",
+      "workspaceSource": "work/nss151/calibrate-clock.mjs",
+      "sha256": "30bb7bf792036e50a4d0520daf1dddbf81510db2317e3fbebdd106c25741476a",
+      "bytes": 1040,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/class-session-v2.mjs",
+      "workspaceSource": "work/nss151/class-session-v2.mjs",
+      "sha256": "0758c6d504fc1d78e0b0ad35e49074a383a706b7560ef19f3ab5002ad7aeea3e",
+      "bytes": 14536,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/class-session-v3.mjs",
+      "workspaceSource": "work/nss151/class-session-v3.mjs",
+      "sha256": "25390945f53e3a378be05b892c3350bb6f4d8e3e8b86a7088569ca8e46c45258",
+      "bytes": 14533,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/class-session-v4.mjs",
+      "workspaceSource": "work/nss151/class-session-v4.mjs",
+      "sha256": "8310ac6a664c58d6a9f4faa7ccd293151f04cbd538d3215b5b90d5f9c53e68d4",
+      "bytes": 14533,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/class-session-v5.mjs",
+      "workspaceSource": "work/nss151/class-session-v5.mjs",
+      "sha256": "db1acd2a4f6a124c353a9ed15fbd5e7e1576d6f9cc13f32728a56e98bf94e660",
+      "bytes": 14533,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/class-session.mjs",
+      "workspaceSource": "work/nss151/class-session.mjs",
+      "sha256": "026ad25a25f014585844629c68504533e87b86b6d2eca12f680a86077fff3f16",
+      "bytes": 14521,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/client-watchdog.ps1",
+      "workspaceSource": "work/nss151/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/close-endpoint-v4.mjs",
+      "workspaceSource": "work/nss151/close-endpoint-v4.mjs",
+      "sha256": "e54e245cadc5e984006ec6a77912545b28ec9e4912a9911e72d81fa121a24125",
+      "bytes": 1903,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/close-endpoint.mjs",
+      "workspaceSource": "work/nss151/close-endpoint.mjs",
+      "sha256": "249eea3a81af6618285d7fc23eb79847c634f442b185b5d27bb97607105123fc",
+      "bytes": 1903,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/compact-default-queues.mjs",
+      "workspaceSource": "work/nss151/compact-default-queues.mjs",
+      "sha256": "951a87a4d911c9334d95d6d70a688c6526e9513aac39975d1372b479f1fffafc",
+      "bytes": 849,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/current-audit-diagnostic-v2.mjs",
+      "workspaceSource": "work/nss151/current-audit-diagnostic-v2.mjs",
+      "sha256": "3dc8369157d836eca144aee23eb5adf07a74f9947b9c9ca0e7b7df0566aa75ae",
+      "bytes": 5810,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/current-audit-diagnostic-v3.mjs",
+      "workspaceSource": "work/nss151/current-audit-diagnostic-v3.mjs",
+      "sha256": "288128e1698fec6f8e45b771846a94baecd42d543ded64bcc099f11f5261cbfe",
+      "bytes": 5810,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/current-audit-diagnostic-v4.mjs",
+      "workspaceSource": "work/nss151/current-audit-diagnostic-v4.mjs",
+      "sha256": "d743b6acdd74f648c7a09cac67e79423a3d4df000ad23369e0499f7a55ab3c08",
+      "bytes": 5810,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/current-audit-diagnostic-v5.mjs",
+      "workspaceSource": "work/nss151/current-audit-diagnostic-v5.mjs",
+      "sha256": "7aa7193929626c7d50e3815933f3c455fd1fbb01871aa5c2bfe0a51defe7edf2",
+      "bytes": 5810,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss151/current-audit-diagnostic.mjs",
+      "sha256": "8ffe4853841df18b26ea9794fe6451e690c0ac25f152bb7dd1c44305351fed24",
+      "bytes": 5807,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/declared-baseline.mjs",
+      "workspaceSource": "work/nss151/declared-baseline.mjs",
+      "sha256": "37dc44d18ff457e9b9692f97df5ff6c6fa412c0035a9cc2311824b6d6055cca1",
+      "bytes": 50,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/discover-peer.py",
+      "workspaceSource": "work/nss151/discover-peer.py",
+      "sha256": "609267960bf834d82ddc7dafa63754ba381480abeb575ec940cb0e13fab5f6a7",
+      "bytes": 972,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss151/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/epoch-session-v2.mjs",
+      "workspaceSource": "work/nss151/epoch-session-v2.mjs",
+      "sha256": "0f884e6ace63e4a7a6321dbc05a0b5d0b61d8b45b6a291dfaa7681dca0754c90",
+      "bytes": 14351,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/epoch-session-v3.mjs",
+      "workspaceSource": "work/nss151/epoch-session-v3.mjs",
+      "sha256": "368da7b0f0bbdba5cf30a997bdacac8ed53d583feb7a15ec0b8a7340254c2b85",
+      "bytes": 14348,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/epoch-session-v4.mjs",
+      "workspaceSource": "work/nss151/epoch-session-v4.mjs",
+      "sha256": "376c352e06a2c858240c3fe50f40a6d78bf46145f875e513df5a348f5cf0efa1",
+      "bytes": 14348,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/epoch-session-v5.mjs",
+      "workspaceSource": "work/nss151/epoch-session-v5.mjs",
+      "sha256": "392d1ea939d9d5e811c8add2ff4d3ad7193cd7e83b6a0921773a98bba7553614",
+      "bytes": 14348,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/epoch-session.mjs",
+      "workspaceSource": "work/nss151/epoch-session.mjs",
+      "sha256": "df161a2088bf00539e6cc039209f8e4d2d4fcac32dbb89eabdebb3a3cb348903",
+      "bytes": 14336,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/failed-wan-owner.lua",
+      "workspaceSource": "work/nss151/failed-wan-owner.lua",
+      "sha256": "38f743c224f2bbfdeec3c907aac25369170cc50c7eef24a3e87d2fa3e3e37ee5",
+      "bytes": 2650,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/health.mjs",
+      "workspaceSource": "work/nss151/health.mjs",
+      "sha256": "27f7a41756e65adcb104c1ef28c2ef43adad15623eb96f13b2c7f4795f0d8576",
+      "bytes": 6323,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/match-controlled.mjs",
+      "workspaceSource": "work/nss151/match-controlled.mjs",
+      "sha256": "97450826d59db769a9dd8c24915906804ab8553432739c0b74e782ba05636fe6",
+      "bytes": 2156,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/parse-ecm-any-wan.mjs",
+      "workspaceSource": "work/nss151/parse-ecm-any-wan.mjs",
+      "sha256": "6a17e97bd217b07f5169ae2375c210c6f1cab77dacb4d634355f406118327e60",
+      "bytes": 3651,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/pause-control.mjs",
+      "workspaceSource": "work/nss151/pause-control.mjs",
+      "sha256": "04713162ee00aa818db3722c0a8c300f259fa96b2d2149453faa6575d592bcee",
+      "bytes": 2594,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/policy-models.mjs",
+      "workspaceSource": "work/nss151/policy-models.mjs",
+      "sha256": "c98787fd8a4f32e1e816ee17c2f191229d457ffe09f136455b8dd8df36118e0e",
+      "bytes": 4954,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/prepare-complete-v2.py",
+      "workspaceSource": "work/nss151/prepare-complete-v2.py",
+      "sha256": "11a6e68f4b035926bc1eb32d379905350edaa0625ddcc933abf642dd69b03820",
+      "bytes": 1989,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/prepare-postchecks.py",
+      "workspaceSource": "work/nss151/prepare-postchecks.py",
+      "sha256": "3c9a5f59be4531dedb76e1ee22d3d384f06dcee5281ac12fd6318b9f5705d69a",
+      "bytes": 1169,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/prepare-v2.py",
+      "workspaceSource": "work/nss151/prepare-v2.py",
+      "sha256": "9babf87947797f4fdb85e3d2c37e104c885403c92993913108b7cafdf3a77edf",
+      "bytes": 1898,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/prepare-v3.py",
+      "workspaceSource": "work/nss151/prepare-v3.py",
+      "sha256": "48cb42698e501e21f14927af6aa15e1f7484edd4516b676652c49a99ff6ada5f",
+      "bytes": 2811,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/prepare-v4.py",
+      "workspaceSource": "work/nss151/prepare-v4.py",
+      "sha256": "469791ed3dcb539be65d1af89ef51214825ebd403e40ba3469b1ce7b4223fb67",
+      "bytes": 2198,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/prepare-v5.py",
+      "workspaceSource": "work/nss151/prepare-v5.py",
+      "sha256": "e2692dde5ac4bdab749266dea9088e239aa099e4b4042ee766cb99ea4b78c52e",
+      "bytes": 1718,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/prepare.py",
+      "workspaceSource": "work/nss151/prepare.py",
+      "sha256": "be67ce0095682465db1d66b819a16654e6a6918b1baed2ef4d7331982785bbf2",
+      "bytes": 3500,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/probe-peer.py",
+      "workspaceSource": "work/nss151/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/qualify-v1.mjs",
+      "workspaceSource": "work/nss151/qualify-v1.mjs",
+      "sha256": "27bb50ea01e30edbbbdf50e513a592d5313546fa458496b8ee745337ed3dbfdc",
+      "bytes": 4454,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/qualify-v2.mjs",
+      "workspaceSource": "work/nss151/qualify-v2.mjs",
+      "sha256": "a53de363ea5bb4062c048f71e9f15106bbf90f37eaef1e024a404528e271e10e",
+      "bytes": 2205,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/qualify-v3-initial.mjs",
+      "workspaceSource": "work/nss151/qualify-v3-initial.mjs",
+      "sha256": "8bd0aa726ca4c5543377913db57265e71b4eb7cad84e2aa27eed48020fe1e80c",
+      "bytes": 2578,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/qualify-v3.mjs",
+      "workspaceSource": "work/nss151/qualify-v3.mjs",
+      "sha256": "d2f952c1138795e57e4b1b6df29c0f57c5adfd5cc7ebe95d65a9b5591d316a94",
+      "bytes": 2657,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/qualify-v4-initial.mjs",
+      "workspaceSource": "work/nss151/qualify-v4-initial.mjs",
+      "sha256": "e9ace5739b8d569b5088f224c9ade273c7f84d71de06443dd4517e7831a1be5a",
+      "bytes": 2844,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/qualify-v4.mjs",
+      "workspaceSource": "work/nss151/qualify-v4.mjs",
+      "sha256": "863e80ebd2f6a582a7c9c1d6e0896e9deb55bde9c8364f2d4a1cabd8daad68e6",
+      "bytes": 3302,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/qualify-v5.mjs",
+      "workspaceSource": "work/nss151/qualify-v5.mjs",
+      "sha256": "fe174278a42e12914374f831b7bd610b0b198a01985ef8c31a49b94e08c0b8a4",
+      "bytes": 2461,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/qualify.mjs",
+      "workspaceSource": "work/nss151/qualify.mjs",
+      "sha256": "6a33227ade025a5a511671e3d9ca66da160ba34e140a3eb358eb34efa506be33",
+      "bytes": 4479,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/read-controlled.mjs",
+      "workspaceSource": "work/nss151/read-controlled.mjs",
+      "sha256": "45f8a2b31121995b537e402d3ef2b4f12fd13e889ac71207bd96743cf23b729d",
+      "bytes": 5551,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/read-final-physical.mjs",
+      "workspaceSource": "work/nss151/read-final-physical.mjs",
+      "sha256": "e18b53b6274f158c8da6e7f02686d5b97a0d577d0f7e29ad968093829bdb84fe",
+      "bytes": 2041,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/run-v2.mjs",
+      "workspaceSource": "work/nss151/run-v2.mjs",
+      "sha256": "75ee9d95c49c46de2fc2967baff472b542dc5c9e8013c3288b349cd14b45f53b",
+      "bytes": 6314,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/run-v3.mjs",
+      "workspaceSource": "work/nss151/run-v3.mjs",
+      "sha256": "416b43ca4f0691bb7bb014d11de95bc0919c87f2e07306ececd096db553815db",
+      "bytes": 6317,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/run-v4.mjs",
+      "workspaceSource": "work/nss151/run-v4.mjs",
+      "sha256": "304342f401fda8ad217c2f6a3a0e37c28cc447292968f5e807952a79967158a0",
+      "bytes": 6320,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/run-v5.mjs",
+      "workspaceSource": "work/nss151/run-v5.mjs",
+      "sha256": "42583e09d121aff30440f5b7f7ee11aeedc0ffe6bf0d8abe5baf65c51ff7504a",
+      "bytes": 6326,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/run.mjs",
+      "workspaceSource": "work/nss151/run.mjs",
+      "sha256": "e77c85164f0bce50ab5ca949b7b2a3a4fb650f2574b528bf4b715ec0e4d52c44",
+      "bytes": 6293,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/server.py",
+      "workspaceSource": "work/nss151/server.py",
+      "sha256": "19bb8cc5c8496a00eb2c6fa40eebf493199d379e71a75ae9a30952018c411af1",
+      "bytes": 2598,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/service-epoch.mjs",
+      "workspaceSource": "work/nss151/service-epoch.mjs",
+      "sha256": "2f3c1ed5c78c51f13e2877827e5a0cc4c45839f3ef952881e8548ebaa18a9c33",
+      "bytes": 46,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/session-binding-v2.mjs",
+      "workspaceSource": "work/nss151/session-binding-v2.mjs",
+      "sha256": "41856362bc291b9fec376f8f9c3c0fbe4b9e841b0fa54b76cf917172395c5ad1",
+      "bytes": 655,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/session-binding-v3.mjs",
+      "workspaceSource": "work/nss151/session-binding-v3.mjs",
+      "sha256": "463704cfaa11c1dbf492d95dd1f53601b9c8d7e0d38e74f36d4807c0edc4d498",
+      "bytes": 725,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/session-binding-v4.mjs",
+      "workspaceSource": "work/nss151/session-binding-v4.mjs",
+      "sha256": "92eb5ebbfaac33607994284659524f87228aa6efee6ed75b1d2f1be9581de39e",
+      "bytes": 698,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/session-binding-v5.mjs",
+      "workspaceSource": "work/nss151/session-binding-v5.mjs",
+      "sha256": "398f6ec1259e20ac131e751fb9d7a76ada5d229f6ba6f7178d5d9357359a8e70",
+      "bytes": 638,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/session-binding.mjs",
+      "workspaceSource": "work/nss151/session-binding.mjs",
+      "sha256": "e917eb06f3ab6fb9fad0f276a675c4581b7c3c9cae0fc5ef14254d4a62b45f03",
+      "bytes": 765,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/ssh-client.mjs",
+      "workspaceSource": "work/nss151/ssh-client.mjs",
+      "sha256": "0e6a0f2835d6e054942480768c6c414394bec009d2d143e4a6b85f65c6873d12",
+      "bytes": 6878,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/start-dallas-v3.mjs",
+      "workspaceSource": "work/nss151/start-dallas-v3.mjs",
+      "sha256": "660e88ebd9c14210bf67deddc9b8c0b569611d72c531fff8009938e7917f7353",
+      "bytes": 10506,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/start-dallas.mjs",
+      "workspaceSource": "work/nss151/start-dallas.mjs",
+      "sha256": "5240fba38f8a4050394d42da64761655235b3cca4d0c9aa876d1c9526358e725",
+      "bytes": 10506,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/transition-policy.mjs",
+      "workspaceSource": "work/nss151/transition-policy.mjs",
+      "sha256": "f7da3a794c383c410b1c0f213d48cff724daed22b2f03a6668f743418dc73c67",
+      "bytes": 7300,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/uplink-tag-plan.mjs",
+      "workspaceSource": "work/nss151/uplink-tag-plan.mjs",
+      "sha256": "f176040d32e30aca8ddb5f33afec72e901d7f5f4d84aa83e204c77ba92ed0459",
+      "bytes": 1257,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/upload-ack.mjs",
+      "workspaceSource": "work/nss151/upload-ack.mjs",
+      "sha256": "a291bbcfc707964f399b11c7914f403530c7e06a8f33cd740bfd047945034221",
+      "bytes": 386,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/upload-server.py",
+      "workspaceSource": "work/nss151/upload-server.py",
+      "sha256": "de2a920b810e2f0eb74f255eab39be6de5c7d246f4506fbd276593de2f5d300a",
+      "bytes": 632,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/verify-all-endpoints.mjs",
+      "workspaceSource": "work/nss151/verify-all-endpoints.mjs",
+      "sha256": "566e85c49ae9cd5d1813e0e6ccbaf57908259346ee181e7ba5bcdbdd85ea24a8",
+      "bytes": 3939,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/verify-downloaders.mjs",
+      "workspaceSource": "work/nss151/verify-downloaders.mjs",
+      "sha256": "cb79726c370e734fb8a977032ea24748295ee56670a0bf6163d240bf198b56e0",
+      "bytes": 1520,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/verify-receivers.mjs",
+      "workspaceSource": "work/nss151/verify-receivers.mjs",
+      "sha256": "a5132b279fad038825fee266afca578574c3ca4016949031d060a6af2c7f2408",
+      "bytes": 1500,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss151/watcher-read.lua",
+      "workspaceSource": "work/nss151/watcher-read.lua",
+      "sha256": "d8bca5d3ab38d01e9c027eae608186c0e38d8c8a3d852f663757486e06b09833",
+      "bytes": 772,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/analyze.py",
+      "workspaceSource": "work/nss152/analyze.py",
+      "sha256": "053b2d56ddee4e0cbc86ce2b308a5ca06bc082aee1e73e8951ceb5c5baa31843",
+      "bytes": 5061,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/bounded-pacer.mjs",
+      "workspaceSource": "work/nss152/bounded-pacer.mjs",
+      "sha256": "f126a177fa1afd9cd8af98ac858d4e0eacb44388efbb5357333949c52a48c09b",
+      "bytes": 589,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/calibrate-clock.mjs",
+      "workspaceSource": "work/nss152/calibrate-clock.mjs",
+      "sha256": "177786e2f2ee3bf6ba5017348b054de3b2c7850e3c704f1f7a4328e75d5ed9ad",
+      "bytes": 1048,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/client-watchdog.ps1",
+      "workspaceSource": "work/nss152/client-watchdog.ps1",
+      "sha256": "5590458fe66d600ddff8b730ceddfd2e1f0041d62a404911457685b638ec114d",
+      "bytes": 1039,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/close-endpoint.mjs",
+      "workspaceSource": "work/nss152/close-endpoint.mjs",
+      "sha256": "7604b8be1301169e6f33408b14a5a84f10dbce1d9963ad654b6f8bf9918649d8",
+      "bytes": 1903,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/crash-controller-v2.mjs",
+      "workspaceSource": "work/nss152/crash-controller-v2.mjs",
+      "sha256": "d2fdaa63f62fbb99a308f40064f8d1708cebe1745eef3576c106aaa9675117f3",
+      "bytes": 10386,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/crash-controller-v3.mjs",
+      "workspaceSource": "work/nss152/crash-controller-v3.mjs",
+      "sha256": "91d6219cf59eb29a8777d4bb76bb57c2ddf3fc2a0877cfa00b4d467b1fafb208",
+      "bytes": 10392,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/crash-controller-v4.mjs",
+      "workspaceSource": "work/nss152/crash-controller-v4.mjs",
+      "sha256": "b01cec8a237fbdd57a264cce43f0b4059dac955bd72c82219e1508a30bdb28f9",
+      "bytes": 10660,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/crash-controller.mjs",
+      "workspaceSource": "work/nss152/crash-controller.mjs",
+      "sha256": "0157f588de69ce78fbedc6f0db0bb6dbe27df69aadbe11b333059384958868a5",
+      "bytes": 10236,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/crash-read.lua",
+      "workspaceSource": "work/nss152/crash-read.lua",
+      "sha256": "4ca8d4e4278a8249e8c59da6aad8cdeef082b8401349627433c080ae330ea612",
+      "bytes": 850,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/current-audit-diagnostic-v2.mjs",
+      "workspaceSource": "work/nss152/current-audit-diagnostic-v2.mjs",
+      "sha256": "51f1fe66a89b0fb60853283ff3425de63ba4ec148fc81bf649a95f477bd8813e",
+      "bytes": 5810,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/current-audit-diagnostic-v3.mjs",
+      "workspaceSource": "work/nss152/current-audit-diagnostic-v3.mjs",
+      "sha256": "d9f42b1b9722c7bfd39586d900ef2b95e92ffdffb03a613ad12a8ef4aaf36dd6",
+      "bytes": 5810,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/current-audit-diagnostic-v4.mjs",
+      "workspaceSource": "work/nss152/current-audit-diagnostic-v4.mjs",
+      "sha256": "861d760107e2bfb090bd9e1f771b46d7d5cc260d9721068e29c0e7fe51040bd2",
+      "bytes": 5810,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss152/current-audit-diagnostic.mjs",
+      "sha256": "97889ddc79acad8d4a17e2cf366ae0f2190f58e66fb2ca1446d0faf08d6d270b",
+      "bytes": 5807,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/declared-baseline.mjs",
+      "workspaceSource": "work/nss152/declared-baseline.mjs",
+      "sha256": "d1f829d0224f9eff06aafc8250bd23bcc67615db1419ceca5628dab906bb0d98",
+      "bytes": 49,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/discover-peer.py",
+      "workspaceSource": "work/nss152/discover-peer.py",
+      "sha256": "661751c98ce5cb7a35e7abcc3e58d208267a86cca167c8d94f0fe3b645dd26d1",
+      "bytes": 972,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss152/endpoint-firewall-guardian.py",
+      "sha256": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+      "bytes": 6341,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/epoch-session-v2.mjs",
+      "workspaceSource": "work/nss152/epoch-session-v2.mjs",
+      "sha256": "0c1f361a5905394cc2d3b1f6bd510adc3c5e43275c5fcc0ce783022a612416e1",
+      "bytes": 14348,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/epoch-session-v3.mjs",
+      "workspaceSource": "work/nss152/epoch-session-v3.mjs",
+      "sha256": "cc190e0070fa81add6c26681fafca9b928e7596407f4737e260f280f225d2d45",
+      "bytes": 14360,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/epoch-session-v4.mjs",
+      "workspaceSource": "work/nss152/epoch-session-v4.mjs",
+      "sha256": "07b20219a64991913c592627158d11b3954001d0c1bdf153037c221afab81ebd",
+      "bytes": 14360,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/epoch-session.mjs",
+      "workspaceSource": "work/nss152/epoch-session.mjs",
+      "sha256": "160dba3863bb94acd308dd6152a2a0dc5081a7a82c580341a8825f59c33967e1",
+      "bytes": 14336,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/failed-wan-owner.lua",
+      "workspaceSource": "work/nss152/failed-wan-owner.lua",
+      "sha256": "00b4192b8acf352125add0abe135efe6bcfe7b14955b5bba034ff505ecdb1067",
+      "bytes": 2628,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/health-v3.mjs",
+      "workspaceSource": "work/nss152/health-v3.mjs",
+      "sha256": "7266c222e4abf2956013b0c44b8da8f00a3b4e4f1a81bf82df24e8c6f9173578",
+      "bytes": 6323,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/health.mjs",
+      "workspaceSource": "work/nss152/health.mjs",
+      "sha256": "27f7a41756e65adcb104c1ef28c2ef43adad15623eb96f13b2c7f4795f0d8576",
+      "bytes": 6323,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/match-controlled-v3.mjs",
+      "workspaceSource": "work/nss152/match-controlled-v3.mjs",
+      "sha256": "696b499409ebea536daab533d74a87bba1a28fe26d75ad69d904ab8ed33ead49",
+      "bytes": 2159,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/match-controlled.mjs",
+      "workspaceSource": "work/nss152/match-controlled.mjs",
+      "sha256": "015548e343633c553b91d4d4878a7ca0fad5cd114f16bccd173b3a4be0e7b6eb",
+      "bytes": 2156,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/prepare-analysis.py",
+      "workspaceSource": "work/nss152/prepare-analysis.py",
+      "sha256": "e7cbac477e290491df16357f0e5a6be7e77441c728485da0d8b332c326f0e1f9",
+      "bytes": 1554,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/prepare-postchecks.py",
+      "workspaceSource": "work/nss152/prepare-postchecks.py",
+      "sha256": "87d59bca4c7120b2802818885f7ea243754f95a9d2a40eb8a5a363b11dc2c482",
+      "bytes": 1168,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/prepare-v2.py",
+      "workspaceSource": "work/nss152/prepare-v2.py",
+      "sha256": "cd426cbb2edbaa7ab74724b4976acaa660af2d5cc1eb000eaa69a490823cd440",
+      "bytes": 1858,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/prepare-v3.py",
+      "workspaceSource": "work/nss152/prepare-v3.py",
+      "sha256": "0ff8af8d6df363206e8e8d5d5f430f772943a292db0153c254ea927582f3856c",
+      "bytes": 2112,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/prepare-v4.py",
+      "workspaceSource": "work/nss152/prepare-v4.py",
+      "sha256": "f37610057a35cc7f3f1694bdcbe15333d0adf5a304000f66292edfe22ec77336",
+      "bytes": 2398,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/prepare.py",
+      "workspaceSource": "work/nss152/prepare.py",
+      "sha256": "75d172ef5ab407c623f01fd3770cd747369d6fc5101e123bedee3914623df760",
+      "bytes": 1928,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/probe-peer.py",
+      "workspaceSource": "work/nss152/probe-peer.py",
+      "sha256": "a358ad52ae56de34b4384057be33beb770cb1e5b65bf8bc95c95f0f1b07b7564",
+      "bytes": 437,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/qualify-v2.mjs",
+      "workspaceSource": "work/nss152/qualify-v2.mjs",
+      "sha256": "2d4c2585a3fa0e5a46285fc7a881d49b2a3ebab29e8734591890f94c9adf987e",
+      "bytes": 3143,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/qualify-v3.mjs",
+      "workspaceSource": "work/nss152/qualify-v3.mjs",
+      "sha256": "13e4fea7063c4197923b75e71f87d1db322d77a8fe92308d41a39b4bd0941995",
+      "bytes": 2683,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/qualify-v4.mjs",
+      "workspaceSource": "work/nss152/qualify-v4.mjs",
+      "sha256": "8bddd5243c1915a5fbb0085417189be3989dd58e71d8e556d757a124553b05d5",
+      "bytes": 2126,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/qualify.mjs",
+      "workspaceSource": "work/nss152/qualify.mjs",
+      "sha256": "2748ff6ec23cd0c3c6e21cd9ae5041427b413656b261d75edd922a387cc0861c",
+      "bytes": 3216,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/read-controlled-v3.mjs",
+      "workspaceSource": "work/nss152/read-controlled-v3.mjs",
+      "sha256": "b517048dc5e58d9cbbedbced29abc8c563d9ee6d3f7f508876985bca0d236863",
+      "bytes": 5551,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/read-controlled.mjs",
+      "workspaceSource": "work/nss152/read-controlled.mjs",
+      "sha256": "45f8a2b31121995b537e402d3ef2b4f12fd13e889ac71207bd96743cf23b729d",
+      "bytes": 5551,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/read-final-physical-v3.mjs",
+      "workspaceSource": "work/nss152/read-final-physical-v3.mjs",
+      "sha256": "2e1463f31ea9cdf8ad3d9219163b3b4acdf1886972d9d3efe48e0d05a11ef98d",
+      "bytes": 2041,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/read-final-physical.mjs",
+      "workspaceSource": "work/nss152/read-final-physical.mjs",
+      "sha256": "e18b53b6274f158c8da6e7f02686d5b97a0d577d0f7e29ad968093829bdb84fe",
+      "bytes": 2041,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/reporting/export.py",
+      "workspaceSource": "work/nss152/reporting/export.py",
+      "sha256": "fe4e02a274222394013a24ad0c144ac233aaf71f9f66c74b06a97c7dd8f296fc",
+      "bytes": 20239,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/reporting/verify-published.py",
+      "workspaceSource": "work/nss152/reporting/verify-published.py",
+      "sha256": "6531ecae4f002d2795c55ec8e7b750d4792e340f1c10f55f416f19d22cef60f1",
+      "bytes": 2886,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/server.py",
+      "workspaceSource": "work/nss152/server.py",
+      "sha256": "1a73eb25f043b4a21ef5ccd7f9e48ba0aedf49a51a86f66f1b3c9ee93a31ac45",
+      "bytes": 2544,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/session-binding-v2.mjs",
+      "workspaceSource": "work/nss152/session-binding-v2.mjs",
+      "sha256": "c542caf65de41226cb6ee318baaea33f17f557f17e9ec8321e92f33936d93cef",
+      "bytes": 665,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/session-binding-v3.mjs",
+      "workspaceSource": "work/nss152/session-binding-v3.mjs",
+      "sha256": "4975a0aefdd5f4a9e734e648bfd1c3af42dbda9e072c09da5f0ece45e03f0071",
+      "bytes": 644,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/session-binding-v4.mjs",
+      "workspaceSource": "work/nss152/session-binding-v4.mjs",
+      "sha256": "152c9bcd520c4c8147ad031e5e74523ca7fb62b7d85f8e26f1c5cbaa3e99b7bd",
+      "bytes": 640,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/session-binding.mjs",
+      "workspaceSource": "work/nss152/session-binding.mjs",
+      "sha256": "bd980a783ffc3fd59da34f064107e5a2b0839ae02f142a4f34bd142ef366e0aa",
+      "bytes": 649,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/ssh-client.mjs",
+      "workspaceSource": "work/nss152/ssh-client.mjs",
+      "sha256": "0e6a0f2835d6e054942480768c6c414394bec009d2d143e4a6b85f65c6873d12",
+      "bytes": 6878,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/start-dallas-v3.mjs",
+      "workspaceSource": "work/nss152/start-dallas-v3.mjs",
+      "sha256": "60519415bd8ba5d7bc69c1cc9b9c7c832853897b546985d9af432d88ca8d50d4",
+      "bytes": 10506,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/start-dallas.mjs",
+      "workspaceSource": "work/nss152/start-dallas.mjs",
+      "sha256": "ae25aeb36b988e71b705c537df33be866f806acc65ee125bba39f2b0b7ce01c9",
+      "bytes": 10506,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/upload-ack.mjs",
+      "workspaceSource": "work/nss152/upload-ack.mjs",
+      "sha256": "a291bbcfc707964f399b11c7914f403530c7e06a8f33cd740bfd047945034221",
+      "bytes": 386,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/upload-server.py",
+      "workspaceSource": "work/nss152/upload-server.py",
+      "sha256": "de2a920b810e2f0eb74f255eab39be6de5c7d246f4506fbd276593de2f5d300a",
+      "bytes": 632,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/verify-all-endpoints.mjs",
+      "workspaceSource": "work/nss152/verify-all-endpoints.mjs",
+      "sha256": "0e31208ef363b458332f922947b533c9368469431ebeaf0b95568427d6178531",
+      "bytes": 4164,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/verify-downloaders.mjs",
+      "workspaceSource": "work/nss152/verify-downloaders.mjs",
+      "sha256": "1161ec7b12b4f3fd86fd50b53e3c013c9a938650c4e957af44534aba4bdbd3f5",
+      "bytes": 1520,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
+    },
+    {
+      "path": "code/work/nss152/verify-receivers.mjs",
+      "workspaceSource": "work/nss152/verify-receivers.mjs",
+      "sha256": "b8703891ce7f46d39dca77de6f73b77a9e037c647896b0ba8be5f034b59a52fa",
+      "bytes": 1500,
+      "role": "exact-class-change-controller-crash-or-explicit-reporting-source"
     }
   ],
-  "lastAppendExport": "NSS150",
+  "lastAppendExport": "NSS152",
   "privateDataExcluded": true
 }

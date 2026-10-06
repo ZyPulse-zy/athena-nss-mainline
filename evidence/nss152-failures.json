@@ -1,0 +1,85 @@
+[
+  {
+    "case": "151-initial-qualifier",
+    "cause": "Literal import/source checker applied to generator or non-module files; scoped to executable modules",
+    "beforeProductionStage": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "151-v1",
+    "cause": "Escaped audit namespace still referenced the preceding directory; rejected before connecting/loading",
+    "beforeProductionStage": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "151-v2-preparation",
+    "cause": "Windows default text decoding rejected UTF-8 generator input; partial original outputs preserved and exact completion checked",
+    "beforeProductionStage": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "151-v2-runtime",
+    "cause": "Missing local uplink-capability alias; unintended old audit basename alias also found before checkpoint",
+    "beforeProductionStage": true,
+    "endpointLoadStarted": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "151-v3-static",
+    "cause": "Launcher and exact closer unit prefixes differed; discovered before traffic",
+    "beforeProductionStage": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "151-v3-v4-checkers",
+    "cause": "Negative assertion text treated as a dependency, then checker expected one capability namespace for both wrappers; original failures kept",
+    "beforeProductionStage": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "151-v4-runtime",
+    "cause": "Readonly audit reused a write-exclusive evidence label; EEXIST refusal; fixed with unique case labels",
+    "beforeProductionStage": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "152-initial-static",
+    "cause": "State node path is derived by native setup and not serialized in the plan; baseline receipt name mismatch; checked before load",
+    "beforeProductionStage": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "152-v2-static",
+    "cause": "Passive-ready marker and bare observation root still referenced the earlier namespace; found before load",
+    "beforeProductionStage": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  },
+  {
+    "case": "152-v3-runtime",
+    "cause": "Supervisor counted audit files as experiment directories and refused before killing the controller; child completed its normal 20-second epoch and exact recovery",
+    "beforeProductionStage": false,
+    "controllerKilled": false,
+    "normalChildEpochSucceeded": true,
+    "passed": false,
+    "originalPreserved": true,
+    "notAnEstablishedNssKernelOrFirmwareDefect": true
+  }
+]

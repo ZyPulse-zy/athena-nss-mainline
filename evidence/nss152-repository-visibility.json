@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "repository": "ZyPulse-zy/athena-nss-mainline",
+  "authenticatedOwnerVerified": true,
+  "adminVerified": true,
+  "beforeVisibility": "public",
+  "afterVisibility": "private",
+  "restoredRequestedPrivateVisibility": true,
+  "zeroStarsForksAndPagesBeforeChange": true,
+  "onlyPrivateFieldPatched": true,
+  "otherCheckedSettingsUnchanged": true,
+  "credentialsSavedOrPrinted": false
+}

@@ -1,3 +1,28 @@
+# 自动改类重学与控制进程中断恢复已实测
+
+更新：2026-10-06 13:30，北京时间。最新 NSS152，包含 NSS151 自动改类闭环。仅后台自有有界 TCP 上传＋小 UDP，没有桌面、Steam、CS2 操作。
+
+**真实 BULK→BE 只撤销 TCP CI，ECM2→1，原 UDP CI/RT双向tag保持；旧代完整恢复后，同socket/CT自动取得新query/checkpoint/owner/pin和两个新CI并运行20秒。另一次在ECM2时实际终止精确自有PC控制进程，路由器独立守护仍完成20秒、续租、精确撤销与完整恢复。**
+
+| 测试 | WAN | NSS观测秒 | 服务器确认上传Mbps | softirq % | UDP收/发 | 续租 |
+|---|---:|---:|---:|---:|---:|---:|
+| automatic-successor | 5 | 20.00 | 30.261 | 1.446 | 801/801 | 6 |
+| controller-crash-independent-recovery | 1 | 20.01 | 29.693 | 2.886 | 827/829 | 6 |
+
+这些是生命周期和控制中断恢复实测；没有新的同负载CPU因果对照，降幅为null。UDP echo不是CS2 jitter/loss/Miss。未部署长期NSS控制器，未验收300Mbps或真人游戏；没有杀常驻分类器/路由服务，也没有放宽6/27/100秒及字节上限。
+
+版本拼接中的本地路径/标记/检查器错误均保留。首次中断测试把审计文件误计为目录，在kill前拒绝；其原控制器仍完成正常20秒及恢复，不能算中断恢复成功。随后修正只枚举目录，并实际执行一次kill证明。分类器/内核gate/原138及149factory均未改。
+
+终态常驻NSS68/config581b5d46…c791d7、31657/17139、publication upTag0不变；完整原审核source3.05秒，ECM关闭全零，无事务/stage/state/模块，两物理wan/lan4原mq+四fq_codel精确恢复。20个已有有限负载端点/客户端与自有SSH发送/接收器关闭，WAN4既有认证down和四路failover保持。heartbeat仍暂停。
+
+下一步是单WAN有限常驻supervisor试运行，继续一TCP BULK＋一UDP RT、fresh owner和独立恢复，处理真实改类/退出和控制器restart；通过后才考虑延长运行、多flow或第二WAN。真人体验只在用户方便时集中一次，不要求持续挂游戏、重复Steam下载。
+
+证据：[主线](../evidence/nss152-mainline.json)、[改类](../evidence/nss152-class-transition.json)、[中断](../evidence/nss152-controller-crash.json)、[实际轮次](../evidence/nss152-trials.json)、[失败](../evidence/nss152-failures.json)、[终态](../evidence/nss152-final-audit.json)、[物理根](../evidence/nss152-physical-final.json)、[端点](../evidence/nss152-endpoint-client-closure.json)
+
+仓库核验发现原为公开、0 star/0 fork/无Pages；已按用户要求恢复为私有并读回，只修改可见性。见 [仓库可见性核验](../evidence/nss152-repository-visibility.json)。新证据在恢复私有后推送。
+
+## NSS150及更早历史
+
 # 单 WAN 自动生命周期已通过有限两代实测
 
 更新：2026-10-06 12:28，北京时间。最新 NSS150。用户使用电脑，本轮仅后台自有受控下载＋小UDP，无桌面、Steam、CS2 操作。

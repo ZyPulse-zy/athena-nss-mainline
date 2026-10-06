@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {connectRouter} from '../nss20/connect-router.mjs';
+const dir=process.argv[2];
+assert.match(dir,/^work\/nss151\/(?:automatic-epoch|controlled-class)-\d+-[a-f0-9]+$/);
+const c=await connectRouter();const rows=[];
+try{
+ for(let i=0;i<3;i++){
+  const a=Date.now()/1000;
+  const raw=await c.run('cat /proc/uptime; cat /proc/sys/kernel/random/boot_id');
+  const b=Date.now()/1000;assert.equal(raw.code,0);
+  const lines=raw.stdout.trim().split('\n'),u=Number(lines[0].split(' ')[0]);
+  rows.push({beforePcEpoch:a,afterPcEpoch:b,routerUptime:u,boot:lines[1].trim(),midpointOffset:(a+b)/2-u,uncertaintySeconds:(b-a)/2+.005});
+ }
+ const chosen=rows.reduce((a,b)=>a.uncertaintySeconds<b.uncertaintySeconds?a:b);
+ fs.writeFileSync(dir+'/clock-calibration-private.json',JSON.stringify({rows,chosen},null,2)+'\n',{flag:'wx'});
+ console.log(JSON.stringify({calibrated:true,maximumBestUncertaintyMs:chosen.uncertaintySeconds*1000,afterMeasurementOnly:true}));
+}finally{c.close()}
