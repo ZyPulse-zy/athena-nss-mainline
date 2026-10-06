@@ -1,0 +1,106 @@
+[
+  {
+    "readonlyRouter": true,
+    "productionConfigurationWrites": false,
+    "nssEnabled": false,
+    "offeredTcpMbps": 2.62144,
+    "totalSubmittedBytes": 2899968,
+    "twoSequentialConnections": [
+      {
+        "received": 1409024,
+        "submitted": 1425408,
+        "errors": [],
+        "states": [
+          {
+            "state": "ESTABLISHED",
+            "wan": 2
+          }
+        ],
+        "socket": {
+          "bytesRead": 5894,
+          "bytesWritten": 1432374,
+          "destroyed": false
+        },
+        "stream": {
+          "writable": true,
+          "writableLength": 0,
+          "readableLength": 0
+        }
+      },
+      {
+        "received": 1474560,
+        "submitted": 1474560,
+        "errors": [],
+        "states": [
+          {
+            "state": "ESTABLISHED",
+            "wan": 3
+          }
+        ],
+        "socket": {
+          "bytesRead": 5962,
+          "bytesWritten": 1481634,
+          "destroyed": false
+        },
+        "stream": {
+          "writable": true,
+          "writableLength": 0,
+          "readableLength": 0
+        }
+      }
+    ],
+    "rootCauseProven": false
+  },
+  {
+    "readonlyRouter": true,
+    "productionConfigurationWrites": false,
+    "nssEnabled": false,
+    "offeredTcpMbps": 32,
+    "totalSubmittedBytes": 38273024,
+    "twoSequentialConnections": [
+      {
+        "received": 20168704,
+        "submitted": 20168704,
+        "errors": [],
+        "states": [
+          {
+            "state": "ESTABLISHED",
+            "wan": 3
+          }
+        ],
+        "socket": {
+          "bytesRead": 12122,
+          "bytesWritten": 20216854,
+          "destroyed": false
+        },
+        "stream": {
+          "writable": true,
+          "writableLength": 0,
+          "readableLength": 0
+        }
+      },
+      {
+        "received": 16596992,
+        "submitted": 18104320,
+        "errors": [],
+        "states": [
+          {
+            "state": "ESTABLISHED",
+            "wan": 1
+          }
+        ],
+        "socket": {
+          "bytesRead": 10694,
+          "bytesWritten": 18115094,
+          "destroyed": false
+        },
+        "stream": {
+          "writable": true,
+          "writableLength": 32768,
+          "readableLength": 0
+        }
+      }
+    ],
+    "rootCauseProven": false
+  }
+]

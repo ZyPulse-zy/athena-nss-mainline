@@ -49,3 +49,7 @@
 # Preserve exact inherited guardian and archived NSS153 runtime bytes.
 /code/work/nss154/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
 /evidence/nss153-runtime.json -text
+
+# Exact inherited guardian and archived NSS154 runtime bytes.
+/code/work/nss155/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/evidence/nss154-runtime.json -text

@@ -1,5 +1,11 @@
 # Athena NSS mainline
 
+最新[NSS155](evidence/nss155-mainline.json)：真实自有TCP退出后whole-pair恢复通过，新TCP后继仍待验证。继续至20:00，先读[STATE](docs/STATE.md)。
+
+## NSS154及更早历史
+
+# Athena NSS mainline
+
 最新[NSS154](evidence/nss154-mainline.json)：监督器自身被终止后，新进程从磁盘journal验证独立恢复并完成同连接新代重学。继续至20:00；先读[STATE](docs/STATE.md)。
 
 ## NSS153及更早历史

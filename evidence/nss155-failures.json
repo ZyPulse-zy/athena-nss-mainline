@@ -1,0 +1,40 @@
+[
+  {
+    "case": "run1",
+    "overallSuccessorPassed": false,
+    "cause": "Owned SSH upload Keepalive timeout before router checkpoint/staging; cause remains unproved",
+    "routerNssStageOccurred": false,
+    "oldFlowExitPassed": false,
+    "successorNssStageOccurred": false,
+    "originalFailureAndSourcesPreserved": true,
+    "rootCauseProven": false
+  },
+  {
+    "case": "run2",
+    "overallSuccessorPassed": false,
+    "cause": "Old pair restored successfully, but original eight-port candidate range exhausted before new TCP creation",
+    "routerNssStageOccurred": true,
+    "oldFlowExitPassed": true,
+    "successorNssStageOccurred": false,
+    "originalFailureAndSourcesPreserved": true,
+    "rootCauseProven": true
+  },
+  {
+    "case": "run3",
+    "overallSuccessorPassed": false,
+    "cause": "Old pair restored successfully; new SSH upload transport Keepalive timeout prevented successor qualification",
+    "routerNssStageOccurred": true,
+    "oldFlowExitPassed": true,
+    "successorNssStageOccurred": false,
+    "originalFailureAndSourcesPreserved": true,
+    "rootCauseProven": false
+  },
+  {
+    "case": "postcheck-output-path-v1",
+    "cause": "Copied postcheck contained literal output paths to frozen nss154, exclusive-create refused",
+    "sourceAndFailurePreserved": true,
+    "correctedOnlyOutputNamespace": true,
+    "previousEvidenceOverwritten": false,
+    "publicationStoppedUntilChecksPassed": true
+  }
+]
