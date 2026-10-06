@@ -1,0 +1,31 @@
+{
+  "v22-fiveflow/failed-qualification-newlines-v1.json": {
+    "passed": false,
+    "error": "pack-json.mjs changed outside inventory scope: CRLF versus LF from text copy",
+    "qualifierRejectedBeforePcSyntaxAndManifest": true,
+    "hardwareExecuted": false,
+    "productionWrites": false,
+    "priorSourceUnmodified": true
+  },
+  "v22-fiveflow/failed-qualification-copy-scope-v2.json": {
+    "passed": false,
+    "error": "Byte repair copied the old qualifier into the new qualifier path",
+    "missingModelInputRejectedBeforeHardware": true,
+    "productionWrites": false,
+    "originalFailedQualifierRetained": true
+  },
+  "v25-normal/failed-import-summary.json": {
+    "passed": false,
+    "error": "candidate-policy.mjs missing from copied local module dependency graph",
+    "pcInspected": false,
+    "routerConnected": false,
+    "nssWrites": false,
+    "priorQualificationOnlySyntaxAndPolicyModels": true
+  },
+  "v26-normal/failed-sanitizer-codec.json": {
+    "passed": false,
+    "error": "Python codec spelling utf8-sig unsupported; failed before reading any input",
+    "originalSourceRetained": true,
+    "repositoryWritten": false
+  }
+}

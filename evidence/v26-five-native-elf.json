@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "originalSha256": "640ce4b96a51ea73058aec47d3cf38db0f38ccfc010ecdae3b9f2a09e9ca6d27",
+  "runtimeSha256": "574ffbecdf3165508f8b2798acee41207431e5997d5268e2c3065dcec1ceb7d4",
+  "originalBytes": 195712,
+  "runtimeBytes": 55872,
+  "allocatedSectionsUnchanged": true,
+  "symbolicRuntimeRelocationsUnchanged": true,
+  "allocatedSectionCount": 20,
+  "runtimeRelocationCount": 675,
+  "runtimeLoaded": false,
+  "abiQualification": false,
+  "readerSha256": "1182500df6f0fcdc333b57f5e33b61488f76cc0739b8774dbcb68657f689df0d"
+}

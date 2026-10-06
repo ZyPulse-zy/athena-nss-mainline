@@ -1,0 +1,180 @@
+{
+  "passed": true,
+  "fiveExactFlowNativeCandidate": {
+    "compiledAndModelQualified": true,
+    "controlCases": 63,
+    "ctCases": 68,
+    "runtimeBytes": 55872,
+    "runtimeSha256": "574ffbecdf3165508f8b2798acee41207431e5997d5268e2c3065dcec1ceb7d4",
+    "allocatedSectionsAndRuntimeRelocationsUnchanged": true,
+    "hardwareLoaded": false,
+    "hardwareAcceptance": false,
+    "differentFiveWanCtRequirement": true,
+    "targetRamModels": 14,
+    "bundleLimit": 73728,
+    "execLimit": 9000,
+    "nftBatchLimit": 49152,
+    "recordLimit": 1048576,
+    "sourceSeconds": 6,
+    "kernelSeconds": 90,
+    "maximumKernelSeconds": 120,
+    "ownerSeconds": 180,
+    "clientSeconds": 180,
+    "modelSizes": {
+      "1": {
+        "bundleBytes": 78220,
+        "tagBatchBytes": 74152,
+        "guardianExecBytes": 8823
+      },
+      "2": {
+        "bundleBytes": 81331,
+        "tagBatchBytes": 46750,
+        "guardianExecBytes": 8763
+      },
+      "3": {
+        "bundleBytes": 72868,
+        "tagBatchBytes": 46750,
+        "guardianExecBytes": 8763
+      }
+    },
+    "losslessJsonDataEncodingAndEquivalentGuardFactoring": true
+  },
+  "failedFiveFlowPrerequisites": [
+    {
+      "version": "v21-fiveflow",
+      "passed": false,
+      "productionNssWrites": false,
+      "noCheckpointOrNativeStageStarted": true,
+      "rawResultSha256": "0b7d11d36d331a278c1138901d5658c26063c034b6c02bcff7320ef64c765056",
+      "originalFailurePreserved": true,
+      "endpointsStarted": true,
+      "reason": "Five natural WANs matched, but fixed client restoration margin was insufficient",
+      "exactEndpointFirewallAndClientClosurePassed": true,
+      "endpointClosureSha256": "acb0040a7d493e177bcc4da8419bc290cf0ec11ce459309e25a35f57e817600e",
+      "clientDurationSeconds": 60.5022071,
+      "ownHandshakeErrorOccurred": false
+    },
+    {
+      "version": "v22-fiveflow",
+      "passed": false,
+      "productionNssWrites": false,
+      "noCheckpointOrNativeStageStarted": true,
+      "rawResultSha256": "9ce34eebc7339febdc083cfc3908128e5bda28c035c2537d49a422d3560c0c2e",
+      "originalFailurePreserved": true,
+      "endpointsStarted": false,
+      "reason": "Stale local directory validator rejected before PC or router access"
+    },
+    {
+      "version": "v23-fiveflow",
+      "passed": false,
+      "productionNssWrites": false,
+      "noCheckpointOrNativeStageStarted": true,
+      "rawResultSha256": "acd243a695f389c2460dcbed455486c3036f972f58740188f45941b6e0cf7996",
+      "originalFailurePreserved": true,
+      "endpointsStarted": true,
+      "reason": "Own SSH fixture handshake failed before NSS; not an NSS data-plane failure",
+      "exactEndpointFirewallAndClientClosurePassed": true,
+      "endpointClosureSha256": "acb0040a7d493e177bcc4da8419bc290cf0ec11ce459309e25a35f57e817600e",
+      "clientDurationSeconds": 59.248489299999996,
+      "ownHandshakeErrorOccurred": true
+    },
+    {
+      "version": "v23-fiveflow",
+      "passed": false,
+      "productionNssWrites": false,
+      "noCheckpointOrNativeStageStarted": true,
+      "rawResultSha256": "acd243a695f389c2460dcbed455486c3036f972f58740188f45941b6e0cf7996",
+      "originalFailurePreserved": true,
+      "endpointsStarted": true,
+      "reason": "Own SSH fixture handshake failed before NSS; not an NSS data-plane failure",
+      "exactEndpointFirewallAndClientClosurePassed": true,
+      "endpointClosureSha256": "acb0040a7d493e177bcc4da8419bc290cf0ec11ce459309e25a35f57e817600e",
+      "clientDurationSeconds": 29.7427023,
+      "ownHandshakeErrorOccurred": true
+    },
+    {
+      "version": "v24-fiveflow",
+      "passed": false,
+      "productionNssWrites": false,
+      "noCheckpointOrNativeStageStarted": true,
+      "rawResultSha256": "a8ccf941f0cf76ea3b76b48244e5f0f311921c3162e91f3e0c6d52e492c7762f",
+      "originalFailurePreserved": true,
+      "endpointsStarted": true,
+      "reason": "Own SSH fixture handshake failed before NSS; not an NSS data-plane failure",
+      "exactEndpointFirewallAndClientClosurePassed": true,
+      "endpointClosureSha256": "acb0040a7d493e177bcc4da8419bc290cf0ec11ce459309e25a35f57e817600e",
+      "clientDurationSeconds": 41.316236100000005,
+      "ownHandshakeErrorOccurred": true,
+      "fourInitialOwnHandshakesCompleted": true,
+      "failureOccurredDuringOwnTcpRotation": true
+    }
+  ],
+  "localCopyAndModelFailuresRetained": true,
+  "nssOrFirmwareCauseOfOwnSshTimeoutEstablished": false,
+  "normalEntry": {
+    "passed": true,
+    "actualReadOnlyInspectionPassed": true,
+    "actualCs2RtCandidates": 0,
+    "actualSteamBulkCandidates": 0,
+    "noNssPermissionOrSession": true,
+    "trafficGenerated": false,
+    "desktopOperated": false,
+    "normalApplicationSelectorModels": 18,
+    "relativeDependenciesChecked": 46,
+    "normalApplicationFactoryHardwareAcceptance": false,
+    "humanGameAcceptance": false,
+    "permanentNssDeployment": false,
+    "dataPlaneAndFiveWanQosFromProvenV20Unchanged": true,
+    "firstMissingDependencyFailurePreserved": true,
+    "entryBindings": 2586,
+    "maximumSelectedExactFlows": 3,
+    "hardwareScopeReusedFromV20": "two TCP BULK plus one UDP RT, two or three WANs",
+    "readOnlySourceAgeSeconds": 0.9199999999254942,
+    "terminalCompleteAudit": {
+      "passed": true,
+      "auditPurpose": "prewrite",
+      "prelearningSchedulingRequested": true,
+      "nssAdmissionAllowed": false,
+      "originalLockedFreshnessPredicatesRetained": true,
+      "protectedConfigurationUnchanged": true,
+      "exactOwnedNativeAudit": true,
+      "selectors": 0,
+      "queryAge": 0.9500000001862645,
+      "sequence": 8400,
+      "ecmClosedAndZero": true,
+      "serviceEpochPinned": true,
+      "failedUnselectedWan4ProcessEpochMayChange": false,
+      "otherServiceChangesDuringExperimentAllowed": false,
+      "wan4ProcessOwnershipChecked": true,
+      "declaredAuthRepairExact": true,
+      "declaredManifestExact": true,
+      "allFiveHealthyWanBaseline": true,
+      "selectedWanStillRequiresOriginalNativePrerequisites": true,
+      "unknownRoutingDriftAllowed": false
+    },
+    "twoPhysicalRoots": {
+      "passed": true,
+      "readonly": true,
+      "observedAt": "2026-10-06T20:55:52.218Z",
+      "devices": {
+        "wan": {
+          "root": "mq",
+          "fqCodelChildren": 4,
+          "experimentalNssQdiscPresent": false
+        },
+        "lan4": {
+          "root": "mq",
+          "fqCodelChildren": 4,
+          "experimentalNssQdiscPresent": false
+        }
+      },
+      "experimentalGateAbsent": true,
+      "sourceSha256": "19d2de282ef691abeb7a17f7f6c6c741f8f54e6a038078a966f8d5afc9759988"
+    }
+  },
+  "provenMultiWanAdvancedQosHardwareEvidence": "v20-five-hardware.json",
+  "fiveWanConcurrentAccelerationNotClaimed": true,
+  "newCpuCausalBenefitNotClaimed": true,
+  "nightDeadlineBeijing": "2026-10-07 08:00",
+  "noFurtherFiveFlowExperimentWithoutNewExecutablePrerequisite": true
+}

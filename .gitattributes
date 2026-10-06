@@ -137,3 +137,19 @@
 
 /code/work/v20-five/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/v20-five/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+/code/work/v21-fiveflow/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v21-fiveflow/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+/code/work/v22-fiveflow/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v22-fiveflow/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+/code/work/v23-fiveflow/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v23-fiveflow/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+/code/work/v24-fiveflow/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v24-fiveflow/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+/code/work/v25-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+/code/work/v26-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol

@@ -1,3 +1,21 @@
+# 多 WAN 高级 QoS：受控硬件通过，正常流入口只读就绪
+
+更新：2026-10-07北京时间05:08。已通过的范围仍以v20真实硬件为准：两TCP BULK＋一UDP RT跨两个或三个WAN、60秒/121帧/ECM3/20续租；上下行五WAN各18class、11leaf，DOWN18共享借用、UP60每WAN12硬上限，RT优先级0/FQ-CoDel。完整tag、ct mark、NAT、WAN affinity和恢复通过。该范围是受控有界原型，尚未长期常驻或覆盖所有正常连接。
+
+新的正常流入口`v26-normal`直接接已有Steam、CS2 socket归属和自动分类，选择两个不同WAN的Steam BULK TCP＋一个已准入CS2 RT UDP；无造流、无启动游戏或下载。18选择/拒绝模型与46相对依赖检查通过，2586绑定；native/Lua/tag builder/QoS沿用v20确切字节。现场inspect为0游戏/0下载/0准入，无NSS写入。正常程序整合factory尚未硬件执行，不能用历史数据面替它宣布新入口或真人验收。
+
+五槽native候选同内核编译、63控制/68CT模型、20运行节/675重定位逐项比对及14目标RAM检查通过，55872字节runtime SHA574ffbec…ceb7d4；尚未加载硬件。五流尝试共五次均在NSS前结束：首次自然配齐五WAN但客户端恢复余量不足；一次本地旧目录拒绝；三次自有SSH建连/轮换失败。v24最初四次依次握手成功，后续轮换仍超时，原因未定；不得归因NSS/固件、放宽准入或修改SSH/学校策略。所有端点/FW恢复，四个原客户端独立退出证明通过。
+
+复制换行、错误复制qualifier、缺失本地依赖与sanitizer编码错误原始失败保留，分别更正后才继续。五槽初始78220/81331字节bundle超限原失败保持；现模型72868、guard8763、NFT46750，原9000/65536/73728/49152/1MiB、source6/kernel90最大120/owner180/client180均未放宽。压缩仅JSON数据，无损重构及完整guard分发等价已在目标RAM验证。
+
+04:55完整终态audit source0.95：保护配置不变、五WAN健康、ECM关闭全零；无实验gate，两物理原mq＋四fq_codel。常驻分类器NSS68/config581b5d46…c791d7保持。没有新增CPU因果、300Mbps/长期或真人体验声明。历史CPU证据继续复用；五WAN同时加速不算已通过。
+
+本轮剩余：封存/推送/实际Git archive读回，07:40最后只读终态核验和晨间报告，08:00前暂停heartbeat。无新的五流实验，除非有明确的新可执行前提；不重新开Steam/CS2或下载。下一正常使用时只需一次新整合入口会话，检查实际体验；长期连续新代、五流fixture和扩大加速池进入后续。
+
+证据：[进度和失败](../evidence/v26-progress.json)、[独立客户端和尺寸](../evidence/v26-restoration-limits.json)、[正常入口资格](../evidence/v26-normal-entry-qualification.json)、[五槽源码模型](../evidence/v26-five-native-source-models.json)、[目标RAM](../evidence/v26-five-target-ram.json)、[源码](../evidence/v26-source-proof.json)。[入口说明](../code/work/v26-normal/README.md)。
+
+## 保留的五WAN队列硬件证明
+
 # 五 WAN NSS 队列映射与共享借用通过
 
 更新：2026-10-07北京时间03:50。上下行各18个HTB class、11个FQ-CoDel leaf已实际建立和完整读取，涵盖WAN1..5的BULK/RT以及default950。共同DOWN18：每WAN保障3、ceiling18可借用；共同UP60：每WAN12硬上限。原三槽native gate和常驻自动分类器保持，只放行两TCP BULK＋一UDP RT；实际自然WAN4／5，不声称五WAN同时fast path。

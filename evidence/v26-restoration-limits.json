@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "exactClientClosures": [
+    {
+      "version": "v21-fiveflow",
+      "exactClientExitedBeforeDeadline": true,
+      "guardReceiptSha256": "2f3d24349bfe07010fbb898a72bb51d5dec7107ca741243cc382531773a2240b"
+    },
+    {
+      "version": "v23-fiveflow",
+      "exactClientExitedBeforeDeadline": true,
+      "guardReceiptSha256": "72857351fa325ea3ba6dd5903c80c61e092d197f8c8fdab5b0f81595f69b0bef"
+    },
+    {
+      "version": "v23-fiveflow",
+      "exactClientExitedBeforeDeadline": true,
+      "guardReceiptSha256": "3810b82f6a3a3292e1a863703271ccc05f4788bc086978c4c9e8f4892e072224"
+    },
+    {
+      "version": "v24-fiveflow",
+      "exactClientExitedBeforeDeadline": true,
+      "guardReceiptSha256": "4b94b7fac677a2a2f018bef731edbb917a5dbff42a8f6659f3f0a1fed2e20670"
+    }
+  ],
+  "localSizeModels": [
+    {
+      "version": 1,
+      "bundleBytes": 78220,
+      "tagBatchBytes": 74152,
+      "moduleArgumentCharacters": 944,
+      "guardianExecBytes": 8823,
+      "limits": {
+        "bundle": 73728,
+        "nftBatch": 49152,
+        "insmod": 2048,
+        "exec": 9000
+      },
+      "hardwareEligibility": false
+    },
+    {
+      "version": 2,
+      "bundleBytes": 81331,
+      "tagBatchBytes": 46750,
+      "moduleArgumentCharacters": 944,
+      "guardianExecBytes": 8763,
+      "limits": {
+        "bundle": 73728,
+        "nftBatch": 49152,
+        "insmod": 2048,
+        "exec": 9000
+      },
+      "hardwareEligibility": false
+    },
+    {
+      "version": 3,
+      "bundleBytes": 72868,
+      "tagBatchBytes": 46750,
+      "moduleArgumentCharacters": 944,
+      "guardianExecBytes": 8763,
+      "limits": {
+        "bundle": 73728,
+        "nftBatch": 49152,
+        "insmod": 2048,
+        "exec": 9000
+      },
+      "hardwareEligibility": false
+    }
+  ],
+  "earlierRawEvidenceUnmodified": true,
+  "clientsAndEndpointsAreSeparateProvenChecks": true,
+  "fiveNativeHardwareAcceptance": false
+}
