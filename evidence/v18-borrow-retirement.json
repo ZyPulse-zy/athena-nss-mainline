@@ -1,0 +1,72 @@
+{
+  "expectedPreciseRetirementVerified": true,
+  "fullSixtySecondAcceptance": false,
+  "originalControllerReportedFailurePreserved": true,
+  "borrowRuntimeConfigured": true,
+  "borrowThroughputProven": false,
+  "actualNaturalWanSet": [
+    1,
+    4,
+    5
+  ],
+  "phaseSeconds": 3.0899999998509884,
+  "ecm3BeforeRetirement": true,
+  "finalEcmCount": 0,
+  "classification": {
+    "udp": {
+      "class": "RT",
+      "reason": "interactive",
+      "rateKbps": 39.23478260576266,
+      "ctMatches": true,
+      "markMatches": true,
+      "replyMatches": true,
+      "wanMatches": true,
+      "present": true,
+      "targetClassMatches": true
+    },
+    "tcp": {
+      "class": "BULK",
+      "reason": "bulk",
+      "rateKbps": 4455.662875921098,
+      "ctMatches": true,
+      "markMatches": true,
+      "replyMatches": true,
+      "wanMatches": true,
+      "present": true,
+      "targetClassMatches": true
+    },
+    "tcp2": {
+      "class": "BE",
+      "reason": "cooldown",
+      "rateKbps": 1639.4167222854721,
+      "ctMatches": true,
+      "markMatches": true,
+      "replyMatches": true,
+      "wanMatches": true,
+      "present": true,
+      "targetClassMatches": false
+    }
+  },
+  "actualFlowMaxKbps": 2000,
+  "residentThresholdsUnchanged": true,
+  "ctExitNotInferred": true,
+  "sameQueryCompleteClassification": true,
+  "originalRecoveryFlags": {
+    "moduleUnloaded": true,
+    "tagsRemoved": true,
+    "dualPhysicalQueuesRestored": true,
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "stateNodeRemoved": true,
+    "terminalPairFirmwareZero": true
+  },
+  "completeBaselineAuditPassed": true,
+  "endpointClosedAndRestored": true,
+  "fixtureOfferedTcpMbps": {
+    "tcp": 28,
+    "tcp2": 4,
+    "total": 32
+  },
+  "nextStep": "Raise low sender to8 and lower high sender to24, same total32 and same borrowing policy; do not alter classifier to force BULK.",
+  "noNewCpuHumanOrPermanentDeploymentClaim": true
+}
