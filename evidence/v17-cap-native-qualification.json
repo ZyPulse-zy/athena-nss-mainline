@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "sourceSha256": "fb4f1f1d2e75712efc8fbf66a82ec05cce21caa0acbdcec2af06592950a28729",
+  "qosModel": {
+    "sharedDownMbps": 18,
+    "checks": 4,
+    "sharedUpMbps": 60,
+    "passed": true,
+    "backendMocked": true
+  },
+  "execBytes": 6375,
+  "productionWrites": false,
+  "wholeFactoryModeled": false,
+  "hardwareExecuted": false
+}

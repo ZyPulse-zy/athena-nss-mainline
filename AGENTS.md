@@ -1,3 +1,17 @@
+# 多 WAN NSS 下行预算响应与 RT 共存通过
+
+更新：2026-10-07北京时间03:20。唯一数据面改动为共享DOWN30→18Mbps，UP60保留；三槽native gate、分类器/标签/精确CT pin及其它Lua均复用v16字节。TCP BULK自然WAN3／WAN2、UDP RT在WAN3；60.00秒/121个B帧、ECM3、20次续租、六tag/完整ct mark/NAT/affinity正确，结束ECM0并完整恢复。2425绑定，实际guardian8831／bundle72637／record747019都在原上限内。
+
+两路bulk约6.54／6.70Mbps、合计13.24Mbps，RT双向leaf drop0、squeeze/drop0。相比先前DOWN30的22.16Mbps，流量描述性比例约0.597，与预算18/30的0.6接近；WAN/CT已不同，不能称同流因果A/B。未跑到各WAN9Mbps的90%，不宣称精确跑满或长期限速精度。bulk AQM有drop，TCP利用率和WAN/远端RTT影响列为后续描述，未自动升级blocker。
+
+直接复用既有PC时间、来源uptime和receipt时间戳，偏移不确定度0.85秒并排除边缘；NSS B内部可确定的57.15秒，UDP2365发／2365返、RTT中位199.62ms、p95 200.59ms、p99 201.71ms。是自有Dallas echo，不是CS2 jitter/loss/Miss或真人验收。没有新增tap/故障注入或CPU门槛。
+
+模块、private WAN、两物理原mq＋四fq_codel、精确端点FW和客户端全部恢复，原完整audit通过，常驻NSS68分类器未修改。下一步验证共享预算借用：保持总DOWN18和RT保障，让繁忙WAN在共同父预算下借用空闲份额；使用明确不对称但总量仍32Mbps的自有bulk负载。07:40收尾、07:50不新开生产、08:00前暂停；睡眠期间不操作桌面/Steam/CS2或新下载。
+
+证据：[真实硬件/队列/RT窗口与恢复](evidence/v17-cap-hardware.json)、[入口](evidence/v17-cap-qualification.json)、[新增预算RAM模型](evidence/v17-cap-native-qualification.json)、[源码](evidence/v17-cap-source-proof.json)。入口：[控制器](code/work/v17-cap/pilot-supervisor.mjs)。
+
+## 三流跨WAN及更早历史
+
 # 三流跨 WAN NSS 与独立 QoS leaf 实测通过
 
 更新：2026-10-07北京时间03:05。两条自有 TCP BULK 自然走WAN1／WAN2，小UDP RT走WAN2。新三槽gate实际运行60.01秒、121个B帧，ECM全程3、20次续租，结束后0。六个上下行按WAN/类别派生的tag、完整ct mark、NAT、LAN/bridge入口和WAN affinity全部正确。实际2389绑定，常驻自动分类器未修改。
