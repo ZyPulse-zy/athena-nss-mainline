@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "analysisOnly": true,
+  "phase": "B",
+  "sent": 884,
+  "received": 848,
+  "unreturned": 36,
+  "allClientLogReadUntilAfterSoftwareA2AndClientExit": true,
+  "missingRunLengths": [
+    36
+  ],
+  "missingRunsBRelativeSeconds": [
+    {
+      "count": 36,
+      "start": 10.976000308990479,
+      "end": 11.84000015258789
+    }
+  ],
+  "renewalBRelativeSeconds": [
+    2.029999999795109,
+    5.040000000037253,
+    8.020000000018626,
+    11.009999999776483,
+    14.009999999776483,
+    17.020000000018626,
+    20.020000000018626
+  ],
+  "clockAlignmentUncertaintyMs": 59.9999475479126,
+  "bulkDownFqCodelDropDelta": 370,
+  "rtDownFqCodelDropDelta": 0,
+  "rtUpFqCodelDropDelta": 0,
+  "lossLocationProven": false,
+  "causedByNssProven": false,
+  "applicationGameMetric": false,
+  "realTimeQualityAccepted": false,
+  "limits": [
+    "No per-packet server transmit trace in this fixture",
+    "No PC wire capture",
+    "Linux packet taps may be bypassed by accelerated traffic",
+    "RT leaf drop0 does not prove end-to-end delivery"
+  ]
+}

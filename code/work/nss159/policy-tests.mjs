@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';import {validateServerReady,canReplaceSender,nextPort} from './download-policy.mjs';import {requireOwnedDownload} from './owned-load-policy.mjs';
+let cases=0;const reject=f=>{assert.throws(f);cases++;};
+const ready={event:'ready',rateBytesPerSecond:4000000,creditBytes:65536,maximumSeconds:180};validateServerReady(ready);cases++;
+for(const [key,value] of [['rateBytesPerSecond',8000000],['creditBytes',65537],['maximumSeconds',181],['event','closed']])reject(()=>validateServerReady({...ready,[key]:value}));
+const closed={event:'closed',reason:'owned-stop',serverStopped:true,bytes:90000};assert.ok(canReplaceSender(0,closed));cases++;
+for(const x of [null,{...closed,serverStopped:false},{...closed,reason:'controller-eof'},{...closed,bytes:1073741825},{...closed,bytes:-1}])reject(()=>canReplaceSender(0,x));reject(()=>canReplaceSender(1,closed));
+assert.equal(nextPort(57000,57006,null),57007);cases++;reject(()=>nextPort(57000,57007,null));reject(()=>nextPort(57000,57000,57000));reject(()=>nextPort(57000,56999,null));
+const config={seconds:180,mbps:32,bulkDirection:'download',session:'model'},status={session:'model',pid:2,tcpConnected:true,at:100,elapsed:40,tcpMetric:'application received payload bytes',onlyOneRemoteSenderAtATime:true,pacerDebtCatchupAllowed:false,maximumPacerCreditBytes:65536};
+assert.equal(requireOwnedDownload(config,status,{clientPid:2},101).remainingSeconds,140);cases++;
+for(const change of [{elapsed:110},{at:99},{onlyOneRemoteSenderAtATime:false},{pacerDebtCatchupAllowed:true},{maximumPacerCreditBytes:65537},{tcpMetric:'application submitted payload bytes'}])reject(()=>requireOwnedDownload(config,{...status,...change},{clientPid:2},101));
+reject(()=>requireOwnedDownload({...config,bulkDirection:'upload'},status,{clientPid:2},101));
+console.log(JSON.stringify({passed:true,cases,onlyNewFixturePolicyModeled:true,completeFactoryModelExecuted:false,hardwareExecution:false}));

@@ -1,0 +1,29 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>NSS159 主线</title><style>body{font:16px/1.8 system-ui;max-width:980px;margin:40px auto;padding:24px;color:#182638;background:#f3f5f7}pre{white-space:pre-wrap;background:white;padding:25px}a{color:#1761a2}</style><body><h1>NSS159 · 下行闭环与实时缺口</h1><pre># 真实下行功能闭环通过，实时质量仍有明确缺口
+
+更新：2026-10-06 19:48，北京时间。NSS159；本日20:00授权的晚间收尾。后台自有下载＋小UDP，没有操作桌面/Steam/CS2。
+
+**新整合控制器已在WAN3完成三段各20秒software→NSS→software，ECM0→2→0。实际下载数据进入bulk leaf，小UDP进入RT leaf；TCP/UDP双向四tag、PBR/完整ct mark/NAT/WAN affinity、七次续租和完整独立恢复通过。** 复用NSS158 native/payload/stage原字节，只换有界下载夹具和精确输入命名空间。
+
+| 指标 | software A | NSS B | software A2 |
+|---|---:|---:|---:|
+| 客户端实际收到下载 Mbps | 25.676 | 26.856 | 25.672 |
+| softirq % | 14.289 | 6.245 | 12.962 |
+| CPU busy % | 28.832 | 20.035 | 28.273 |
+| UDP收/发 | 856/856 | 848/884 | 850/850 |
+| UDP echo RTT p95 ms | 194.847 | 194.836 | 194.843 |
+| time_squeeze / softnet drop | 0/0 | 0/0 | 0/0 |
+
+**实时质量未通过：NSS B有连续36个echo未返回，位于B第10.976–11.840秒，约4.07%；两个软件段完整返回。** bulk下行FQ-CoDel异步计数drop370，RT上下行drop0；这证明bulk队列实际工作，但RT drop0不能证明端到端交付。第11.01秒有一次成功续租，时间重叠不是因果。已核对与实际二进制绑定的gate源码：成功续租短暂admit=false、更新期限再true，没有显式firmware drain；.5秒计数全程ECM2仍不能排除更短事件。没有端点逐包TX与PC线级捕获，不把未返回定位到NSS或上游，也不贸然修改lease/gate。
+
+**CPU可比性仍5/7，降幅null。** 其它WAN背景0.933/1.640/2.340Mbps违反原上限与波动条件；保持原条件。观察到softirq下降，不能把本轮写成新的因果收益。UDP echo不是CS2 jitter/loss/Miss，没有300Mbps、真人、长期或永久NSS部署验收。NSS158上传与真实改类精确CI撤销/新代重学证明按原字节保存。
+
+夹具仅一自有SSH sender32Mbps/64KiB credit，严格接收旧sender STOP/退出0才启动下一条自己的TCP，最多8端口；UDP固定，Linux自然PBR，没有强制WAN。两次实际夹具均独立FW180秒/OS250秒、PC180秒与210秒guard、SSH185秒timeout并恢复。当前2086绑定/实际冻结输入逐项SHA核验，checkpoint下载SHA/gzip、写前PPID1恢复，payload73428/guardian8947满足73728/9000；原source6/native27/owner100/client180与1MiB记录不放宽。
+
+旧目录regex、继承NSS49依赖误替换和旧端点unit regex三个真实入口/恢复检查失败均保留。前两次router checkpoint/NSS stage前拒绝；首个endpoint helper在连接前拒绝，独立到期后正确精确helper确认恢复。补充实际静态literal依赖检查，旧不完整资格声明保留并明确失效范围；没有覆盖失败或修改冻结证据。
+
+晚间原完整审核source2.48秒，NSS68/31657/17139健康、配置不变；ECM关闭全零，无事务/stage/state/实验模块。两物理原mq+四fq_codel，48历史/新端点与自有接收/发送器、PC客户端/guard均退出，所有FW基线一致。WAN4自然恢复：原控制器十步恢复权重和全部300桶精确重现，五路各60桶；仅恢复三条由实际DHCP租约派生的WAN4规则。旧四路断言拒绝及首个DHCP模型错误均保留，未主动认证或修改路由。常驻分类器与CAKE fallback保留，本轮未长期启用NSS。
+
+下一步只定位这次受控下行UDP缺口：自有端点与PC同步逐包观测，关联firmware CI与续租；定位后再集中真人CS2验证。先不扩第二WAN/共享预算/WiFi/autorate，不重复CPU门槛，不为等待负载下载新游戏。本日到此封存，完成检查/推送/实际archive后暂停heartbeat。
+
+证据：源码与脱敏证据见GitHub STATE
+</pre><a href="https://github.com/ZyPulse-zy/athena-nss-mainline/blob/main/docs/STATE.md">GitHub STATE</a></body></html>

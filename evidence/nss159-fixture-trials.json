@@ -1,0 +1,30 @@
+[
+  {
+    "clientSeconds": 56.044945999999996,
+    "receivedApplicationBytes": 199622656,
+    "confirmedOldSendersClosedBeforeNext": 4,
+    "clientErrors": [],
+    "onlyOneRemoteSenderAtATime": true,
+    "fixedUdpAndMaximumEightTcpPorts": true,
+    "offeredMbps": 32,
+    "globalCreditBytes": 65536,
+    "client180AndGuard210Seconds": true,
+    "authenticatedSshRemote185SecondTimeout": true,
+    "exactTwoTemporaryFirewallRulesIndependent180ExpiryVerifiedBeforeWrite": true,
+    "firewallAndEndpointRestored": true
+  },
+  {
+    "clientSeconds": 152.902646,
+    "receivedApplicationBytes": 531890176,
+    "confirmedOldSendersClosedBeforeNext": 5,
+    "clientErrors": [],
+    "onlyOneRemoteSenderAtATime": true,
+    "fixedUdpAndMaximumEightTcpPorts": true,
+    "offeredMbps": 32,
+    "globalCreditBytes": 65536,
+    "client180AndGuard210Seconds": true,
+    "authenticatedSshRemote185SecondTimeout": true,
+    "exactTwoTemporaryFirewallRulesIndependent180ExpiryVerifiedBeforeWrite": true,
+    "firewallAndEndpointRestored": true
+  }
+]

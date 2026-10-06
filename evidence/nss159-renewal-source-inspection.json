@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "readOnlySourceInspection": true,
+  "compiledGateSourceHashVerified": "7cfd5b7e94cbe0c5d89363653b69c44a8b42024d6dda059888eab34304558237",
+  "source": "work/nss27/endpoint-gate/rp_ecm_gate_lab_ct.c",
+  "function": "renew_epoch",
+  "shortAdmitFalseThenDeadlineUpdateThenAdmitTrueOnSuccess": true,
+  "successfulBranchDoesNotExplicitlyDrainFirmware": true,
+  "briefTransientNotRuledOutByHalfSecondCounterSamples": true,
+  "bMissingRunOverlapsRenewalNear11Seconds": true,
+  "temporalOverlapIsNotCausation": true,
+  "firmwareAndWireTracingStillNeeded": true,
+  "kernelGateModified": false,
+  "rootCauseProven": false
+}

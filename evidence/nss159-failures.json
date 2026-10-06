@@ -1,0 +1,45 @@
+[
+  {
+    "case": "qualifier-v1",
+    "reason": "Scanner mistook quoted replacement text for an import; no connection/write",
+    "originalSourcesAndFailurePreserved": true,
+    "routerNssWrites": false
+  },
+  {
+    "case": "pilot-20261006111153",
+    "reason": "Old audit directory regex refused before connection/endpoint/checkpoint/stage",
+    "originalSourcesAndFailurePreserved": true,
+    "routerNssWrites": false
+  },
+  {
+    "case": "pilot-20261006111253",
+    "reason": "Namespace substitution changed an inherited literal NSS49 audit filename; matched download pair but no router checkpoint/stage",
+    "originalSourcesAndFailurePreserved": true,
+    "routerNssWrites": false
+  },
+  {
+    "case": "first-endpoint-closure",
+    "reason": "Old unit regex refused before cleanup connection; independent expiry then exact corrected helper confirmed baseline and endpoint closed",
+    "independentExpiryAndCorrectedExactClosurePassed": true,
+    "originalSourcesAndFailurePreserved": true
+  },
+  {
+    "case": "current-download-rt-quality",
+    "reason": "36 consecutive authenticated UDP echo sequences unreturned in NSS B; software A/A2 full return; location and causation unresolved",
+    "functionalAbaPassed": true,
+    "qualityAccepted": false,
+    "originalSourcesAndFailurePreserved": true
+  },
+  {
+    "case": "evening-four-wan-assertion",
+    "reason": "WAN4 naturally recovered; the old rigid four-WAN audit refused read-only closure. Original failure retained; unchanged-controller ten-step exact 300-bucket recovery replay verified",
+    "routerNssWrites": false,
+    "originalSourcesAndFailurePreserved": true
+  },
+  {
+    "case": "evening-dhcp-model-v1",
+    "reason": "First recovery model assumed subnet normalization and original insertion order; actual DHCP rule contains host/prefix and is appended among equal priorities. Exact removal leaves previous four-WAN rules byte-identical; corrected strict lease-derived three-rule model passed",
+    "routerNssWrites": false,
+    "originalSourcesAndFailurePreserved": true
+  }
+]

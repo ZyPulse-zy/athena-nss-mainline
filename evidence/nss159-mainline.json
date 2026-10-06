@@ -1,0 +1,643 @@
+{
+  "round": "NSS159",
+  "passed": true,
+  "status": "DOWNLOAD_FUNCTIONAL_ABA_PASSED_RT_ECHO_GAP_UNRESOLVED_CPU_COMPARABILITY_FAILED",
+  "observedAt": "2026-10-06T11:48:43.965Z",
+  "functionalTwentySecondDownloadABA": true,
+  "downloadFlowDataRatherThanAck": true,
+  "downloadMetrics": {
+    "schema": "nss159-controlled-download-aba-v1",
+    "passed": true,
+    "oneWan": 3,
+    "phases": [
+      {
+        "phase": "A",
+        "sampleCount": 41,
+        "acceleratedCounts": [
+          0
+        ],
+        "whole": {
+          "seconds": 20.0,
+          "clientTcpMbps": 25.67601081156395,
+          "busyPercent": 28.83248730964467,
+          "softirqPercent": 14.289340101522843,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "interfaces": {
+            "rpwan3": {
+              "rxMbps": 28.823583600000003,
+              "rxPps": 2089.55,
+              "txMbps": 1.632686,
+              "txPps": 2304.45,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan2": {
+              "rxMbps": 0.053257599999999995,
+              "rxPps": 36.2,
+              "txMbps": 0.2724608,
+              "txPps": 36.95,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan1": {
+              "rxMbps": 0.38190359999999995,
+              "rxPps": 79.25,
+              "txMbps": 0.15382120000000002,
+              "txPps": 80.5,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan5": {
+              "rxMbps": 0.0253864,
+              "rxPps": 17.9,
+              "txMbps": 0.0442964,
+              "txPps": 12.1,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan4": {
+              "rxMbps": 0.0008744,
+              "rxPps": 1.75,
+              "txMbps": 0.000756,
+              "txPps": 2.25,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "lan4": {
+              "rxMbps": 1.7402183999999998,
+              "rxPps": 2299.95,
+              "txMbps": 28.405285199999998,
+              "txPps": 2406.55,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "wan": {
+              "rxMbps": 29.524036,
+              "rxPps": 2580.15,
+              "txMbps": 2.1901716,
+              "txPps": 2436.3,
+              "rxDroppedDelta": 1,
+              "txDroppedDelta": 0
+            }
+          },
+          "udp": {
+            "sent": 856,
+            "received": 856,
+            "unreturned": 0,
+            "rttP50Ms": 193.86240000000544,
+            "rttP95Ms": 194.846924999998,
+            "rttVariationMeanAbsoluteDeltaMs": 0.5218146198828962,
+            "isCs2Metric": false
+          }
+        }
+      },
+      {
+        "phase": "B",
+        "sampleCount": 41,
+        "acceleratedCounts": [
+          2
+        ],
+        "whole": {
+          "seconds": 20.009999999776483,
+          "clientTcpMbps": 26.85558882683206,
+          "busyPercent": 20.034973769672746,
+          "softirqPercent": 6.245316012990258,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "interfaces": {
+            "rpwan3": {
+              "rxMbps": 26.585423288652787,
+              "rxPps": 2268.0659670418268,
+              "txMbps": 1.3480619690305504,
+              "txPps": 1963.8680659889535,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan2": {
+              "rxMbps": 0.24172753623458423,
+              "rxPps": 51.724137931612255,
+              "txMbps": 0.12179190404933646,
+              "txPps": 43.428285857556574,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan1": {
+              "rxMbps": 0.27033883058772745,
+              "rxPps": 62.0189905054404,
+              "txMbps": 0.4526336831634768,
+              "txPps": 93.80309845182242,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan5": {
+              "rxMbps": 0.4362238880608447,
+              "rxPps": 67.21639180484878,
+              "txMbps": 0.1152123938043854,
+              "txPps": 56.72163918104339,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan4": {
+              "rxMbps": 0.0012521739130574654,
+              "rxPps": 2.2488755622440113,
+              "txMbps": 0.0007556221889139878,
+              "txPps": 2.2488755622440113,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "lan4": {
+              "rxMbps": 1.4434870564878883,
+              "rxPps": 2019.340329857639,
+              "txMbps": 27.934487556533924,
+              "txPps": 2368.8155922303586,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "wan": {
+              "rxMbps": 30.222328436119703,
+              "rxPps": 2650.27486259832,
+              "txMbps": 2.2127004497998293,
+              "txPps": 2312.393803124281,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            }
+          },
+          "udp": {
+            "sent": 884,
+            "received": 848,
+            "unreturned": 36,
+            "rttP50Ms": 193.80515000000014,
+            "rttP95Ms": 194.8355850000058,
+            "rttVariationMeanAbsoluteDeltaMs": 0.3614805194807933,
+            "isCs2Metric": false
+          }
+        }
+      },
+      {
+        "phase": "A2",
+        "sampleCount": 41,
+        "acceleratedCounts": [
+          0
+        ],
+        "whole": {
+          "seconds": 20.009999999776483,
+          "clientTcpMbps": 25.67185065466709,
+          "busyPercent": 28.27258726899384,
+          "softirqPercent": 12.962012320328542,
+          "timeSqueezeDelta": 0,
+          "softnetDropDelta": 0,
+          "interfaces": {
+            "rpwan3": {
+              "rxMbps": 28.68119700181963,
+              "rxPps": 2084.507746150221,
+              "txMbps": 1.6906974512932484,
+              "txPps": 2316.591704173803,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan2": {
+              "rxMbps": 0.33163978011364953,
+              "rxPps": 66.0169915049853,
+              "txMbps": 0.08639320339926589,
+              "txPps": 43.22838580757932,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan1": {
+              "rxMbps": 0.5879640179975723,
+              "rxPps": 87.30634682756194,
+              "txMbps": 0.5081839080516536,
+              "txPps": 135.9320339845269,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan5": {
+              "rxMbps": 0.7193215392384199,
+              "rxPps": 94.20289855177691,
+              "txMbps": 0.10450854572830383,
+              "txPps": 80.80959520330147,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "rpwan4": {
+              "rxMbps": 0.0007444277861152621,
+              "rxPps": 1.4492753623350294,
+              "txMbps": 0.0007556221889139878,
+              "txPps": 2.2488755622440113,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "lan4": {
+              "rxMbps": 1.7755962019188845,
+              "rxPps": 2308.1959020747586,
+              "txMbps": 28.187848875877087,
+              "txPps": 2389.9050475029576,
+              "rxDroppedDelta": 0,
+              "txDroppedDelta": 0
+            },
+            "wan": {
+              "rxMbps": 30.564875962360407,
+              "rxPps": 2702.448775642381,
+              "txMbps": 2.4811478261146718,
+              "txPps": 2578.9605197689375,
+              "rxDroppedDelta": 1,
+              "txDroppedDelta": 0
+            }
+          },
+          "udp": {
+            "sent": 850,
+            "received": 850,
+            "unreturned": 0,
+            "rttP50Ms": 193.84154999998282,
+            "rttP95Ms": 194.84326499999807,
+            "rttVariationMeanAbsoluteDeltaMs": 0.481396348645581,
+            "isCs2Metric": false
+          }
+        }
+      }
+    ],
+    "offeredTcpMbps": 32,
+    "direction": "download",
+    "tcpMetric": "application received payload bytes",
+    "nativeRenewals": 7,
+    "fourLeavesNearbyAsynchronousSnapshots": {
+      "down": {
+        "8f05:": {
+          "bytes": 72296526,
+          "packets": 47779,
+          "dropped": 370,
+          "overlimits": 0
+        },
+        "8f06:": {
+          "bytes": 152830,
+          "packets": 899,
+          "dropped": 0,
+          "overlimits": 0
+        }
+      },
+      "up": {
+        "8e05:": {
+          "bytes": 2725856,
+          "packets": 38792,
+          "dropped": 0,
+          "overlimits": 0
+        },
+        "8e06:": {
+          "bytes": 152150,
+          "packets": 895,
+          "dropped": 0,
+          "overlimits": 0
+        }
+      }
+    },
+    "allWanBackgroundObserved": true,
+    "counterObserverSameInAllPhases": true,
+    "clockAlignmentUncertaintyMs": 59.9999475479126,
+    "requestedPhaseSeconds": 20,
+    "classifierNativeOwnerClientSeconds": [
+      6,
+      27,
+      100,
+      180
+    ],
+    "uplinkParentMbps": 60,
+    "downlinkParentMbps": 30,
+    "nativeRecordReadLimitBytes": 1048576,
+    "localCompactJsonBytes": 664539,
+    "nativeReadLimitEnforcedByVerifiedStageReader": true,
+    "newCpuComparisonAccepted": null,
+    "causalCpuReductionPercent": null,
+    "humanCs2Acceptance": false,
+    "highLoad300MbpsAcceptance": false,
+    "permanentNssDeployment": false,
+    "downlinkMainlyAckAndSmallUdp": false
+  },
+  "downloadComparison": {
+    "passed": true,
+    "comparabilityAccepted": false,
+    "checks": {
+      "same_flow_functional_ABA": true,
+      "client_received_throughput_spread_le_10percent": true,
+      "physical_wan_receive_spread_le_10percent": true,
+      "unselected_wan_total_below_0_5Mbps_each": false,
+      "unselected_wan_total_range_below_0_25Mbps": false,
+      "udp_send_rate_spread_le_10percent": true,
+      "full_twenty_second_phases": true
+    },
+    "sameObserverInAllPhases": true,
+    "clientReceivedMbps": [
+      25.67601081156395,
+      26.85558882683206,
+      25.67185065466709
+    ],
+    "physicalWanReceiveMbps": [
+      29.524036,
+      30.222328436119703,
+      30.564875962360407
+    ],
+    "unselectedWanTotalRxPlusTxMbps": [
+      0.9327564,
+      1.6399360320023264,
+      2.3395110445038942
+    ],
+    "udpOfferedPps": [
+      42.8,
+      44.17791104497124,
+      42.47876062016466
+    ],
+    "softwareMeanSoftirqPercent": 13.625676210925693,
+    "nssSoftirqPercent": 6.245316012990258,
+    "softirqRelativeReductionPercent": null,
+    "softwareMeanBusyPercent": 28.552537289319254,
+    "nssBusyPercent": 20.034973769672746,
+    "metricScope": "One controlled TCP download offered 32 Mbps, with NSS DOWN30 budget and one small UDP; UP60/DOWN30; three 20-second phases",
+    "limits": [
+      "Not randomized or long-term evidence",
+      "Background counters do not prove every CPU task identical",
+      "ACK and packet-rate differences are retained",
+      "UDP echo is not CS2 jitter/loss/Miss",
+      "No 300 Mbps download or full CAKE replacement acceptance"
+    ],
+    "humanCs2Acceptance": false,
+    "highLoad300MbpsAcceptance": false,
+    "productionNssRetained": false
+  },
+  "udpGap": {
+    "passed": true,
+    "analysisOnly": true,
+    "phase": "B",
+    "sent": 884,
+    "received": 848,
+    "unreturned": 36,
+    "allClientLogReadUntilAfterSoftwareA2AndClientExit": true,
+    "missingRunLengths": [
+      36
+    ],
+    "missingRunsBRelativeSeconds": [
+      {
+        "count": 36,
+        "start": 10.976000308990479,
+        "end": 11.84000015258789
+      }
+    ],
+    "renewalBRelativeSeconds": [
+      2.029999999795109,
+      5.040000000037253,
+      8.020000000018626,
+      11.009999999776483,
+      14.009999999776483,
+      17.020000000018626,
+      20.020000000018626
+    ],
+    "clockAlignmentUncertaintyMs": 59.9999475479126,
+    "bulkDownFqCodelDropDelta": 370,
+    "rtDownFqCodelDropDelta": 0,
+    "rtUpFqCodelDropDelta": 0,
+    "lossLocationProven": false,
+    "causedByNssProven": false,
+    "applicationGameMetric": false,
+    "realTimeQualityAccepted": false,
+    "limits": [
+      "No per-packet server transmit trace in this fixture",
+      "No PC wire capture",
+      "Linux packet taps may be bypassed by accelerated traffic",
+      "RT leaf drop0 does not prove end-to-end delivery"
+    ]
+  },
+  "renewalSourceInspection": {
+    "passed": true,
+    "readOnlySourceInspection": true,
+    "compiledGateSourceHashVerified": "7cfd5b7e94cbe0c5d89363653b69c44a8b42024d6dda059888eab34304558237",
+    "source": "work/nss27/endpoint-gate/rp_ecm_gate_lab_ct.c",
+    "function": "renew_epoch",
+    "shortAdmitFalseThenDeadlineUpdateThenAdmitTrueOnSuccess": true,
+    "successfulBranchDoesNotExplicitlyDrainFirmware": true,
+    "briefTransientNotRuledOutByHalfSecondCounterSamples": true,
+    "bMissingRunOverlapsRenewalNear11Seconds": true,
+    "temporalOverlapIsNotCausation": true,
+    "firmwareAndWireTracingStillNeeded": true,
+    "kernelGateModified": false,
+    "rootCauseProven": false
+  },
+  "flowAndRollbackProof": {
+    "passed": true,
+    "wan": 3,
+    "linuxPbrCtMarkNatWanAffinityCorrect": true,
+    "tcpBulkUdpRtFourTagsCorrect": true,
+    "fourFqCodelLeavesHavePackets": true,
+    "connectionCount": 2,
+    "wholeAbaEcmCounts": [
+      0,
+      2,
+      0
+    ],
+    "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+    "bindings": 2086,
+    "checkpointDownloadedShaGzipVerified": true,
+    "independentPpidOneRollbackVerifiedBeforeWrite": true,
+    "payloadBytes": 73428,
+    "guardianExecBytes": 8947,
+    "allOriginalRestoreChecks": {
+      "sameBoot": true,
+      "ownDirectoryAbsent": true,
+      "stateNodeDirectoryAbsent": true,
+      "guardianTerminated": true,
+      "moduleAbsent": true,
+      "qosModuleAbsent": true
+    },
+    "noGlobalConntrackFlush": true,
+    "classifierKernelGateAndQosSourceUnchanged": true
+  },
+  "fixtureTrials": [
+    {
+      "clientSeconds": 56.044945999999996,
+      "receivedApplicationBytes": 199622656,
+      "confirmedOldSendersClosedBeforeNext": 4,
+      "clientErrors": [],
+      "onlyOneRemoteSenderAtATime": true,
+      "fixedUdpAndMaximumEightTcpPorts": true,
+      "offeredMbps": 32,
+      "globalCreditBytes": 65536,
+      "client180AndGuard210Seconds": true,
+      "authenticatedSshRemote185SecondTimeout": true,
+      "exactTwoTemporaryFirewallRulesIndependent180ExpiryVerifiedBeforeWrite": true,
+      "firewallAndEndpointRestored": true
+    },
+    {
+      "clientSeconds": 152.902646,
+      "receivedApplicationBytes": 531890176,
+      "confirmedOldSendersClosedBeforeNext": 5,
+      "clientErrors": [],
+      "onlyOneRemoteSenderAtATime": true,
+      "fixedUdpAndMaximumEightTcpPorts": true,
+      "offeredMbps": 32,
+      "globalCreditBytes": 65536,
+      "client180AndGuard210Seconds": true,
+      "authenticatedSshRemote185SecondTimeout": true,
+      "exactTwoTemporaryFirewallRulesIndependent180ExpiryVerifiedBeforeWrite": true,
+      "firewallAndEndpointRestored": true
+    }
+  ],
+  "failuresPreserved": [
+    {
+      "case": "qualifier-v1",
+      "reason": "Scanner mistook quoted replacement text for an import; no connection/write",
+      "originalSourcesAndFailurePreserved": true,
+      "routerNssWrites": false
+    },
+    {
+      "case": "pilot-20261006111153",
+      "reason": "Old audit directory regex refused before connection/endpoint/checkpoint/stage",
+      "originalSourcesAndFailurePreserved": true,
+      "routerNssWrites": false
+    },
+    {
+      "case": "pilot-20261006111253",
+      "reason": "Namespace substitution changed an inherited literal NSS49 audit filename; matched download pair but no router checkpoint/stage",
+      "originalSourcesAndFailurePreserved": true,
+      "routerNssWrites": false
+    },
+    {
+      "case": "first-endpoint-closure",
+      "reason": "Old unit regex refused before cleanup connection; independent expiry then exact corrected helper confirmed baseline and endpoint closed",
+      "independentExpiryAndCorrectedExactClosurePassed": true,
+      "originalSourcesAndFailurePreserved": true
+    },
+    {
+      "case": "current-download-rt-quality",
+      "reason": "36 consecutive authenticated UDP echo sequences unreturned in NSS B; software A/A2 full return; location and causation unresolved",
+      "functionalAbaPassed": true,
+      "qualityAccepted": false,
+      "originalSourcesAndFailurePreserved": true
+    },
+    {
+      "case": "evening-four-wan-assertion",
+      "reason": "WAN4 naturally recovered; the old rigid four-WAN audit refused read-only closure. Original failure retained; unchanged-controller ten-step exact 300-bucket recovery replay verified",
+      "routerNssWrites": false,
+      "originalSourcesAndFailurePreserved": true
+    },
+    {
+      "case": "evening-dhcp-model-v1",
+      "reason": "First recovery model assumed subnet normalization and original insertion order; actual DHCP rule contains host/prefix and is appended among equal priorities. Exact removal leaves previous four-WAN rules byte-identical; corrected strict lease-derived three-rule model passed",
+      "routerNssWrites": false,
+      "originalSourcesAndFailurePreserved": true
+    }
+  ],
+  "realTimeQualityAccepted": false,
+  "cpuConclusion": null,
+  "qualifiedExperimentalController": "work/nss159/pilot-supervisor-v4.mjs",
+  "boundInputs": 2086,
+  "permanentNssEnabled": false,
+  "permanentControllerInstalled": false,
+  "humanCs2Acceptance": false,
+  "highLoad300MbpsAcceptance": false,
+  "desktopOperated": false,
+  "schoolPolicyPbrCtMarkNatAffinityUnchanged": true,
+  "sourceNativeOwnerClientSeconds": [
+    6,
+    27,
+    100,
+    180
+  ],
+  "execRawBundleRecordBytes": [
+    9000,
+    65536,
+    73728,
+    1048576
+  ],
+  "sourcesAdded": 66,
+  "repositoryVisibility": "public",
+  "prior158RuntimeSha256": "cbdd53328eeed65eb90263ca5be8d5ac3336f7afc925ff2ca2b6077d89a93c50",
+  "eveningAudit": {
+    "passed": true,
+    "observedAt": "2026-10-06T11:48:43.965Z",
+    "readonly": true,
+    "originalFullLockedNativeAudit": true,
+    "unrelatedConfigurationMatches": true,
+    "knownExceptions": [
+      "Healthy native-audited classifier instance recovered before experiment",
+      "Auth PID-discovery source and exactly its manifest row",
+      "Naturally changed WAN4 PID/link/address/route state",
+      "Exact protected health-controller ten-step recovery mapping and three lease-derived WAN4 DHCP rules"
+    ],
+    "exactWan4AutomaticRecoveryProved": true,
+    "nativeDynamicSelectorsVerifiedByOriginalOwnershipAudit": true,
+    "configSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+    "workerPid": 31657,
+    "guardianPid": 17139,
+    "queryAge": 2.4799999999813735,
+    "selectors": 10,
+    "ecmStoppedAndZero": true,
+    "noActiveTransaction": true,
+    "noStaging": true,
+    "noExperimentState": true,
+    "noExperimentalModule": true,
+    "authRepairCommitted": true,
+    "wan4Running": true,
+    "wan4Up": true,
+    "wan4Ipv4Present": true,
+    "allFiveWanHealthy": true,
+    "fullOriginalNssAdmissionEpochPassed": false,
+    "nssAdmissionAllowed": false,
+    "initialHealthFailurePreserved": true
+  },
+  "physicalRestore": {
+    "passed": true,
+    "observedAt": "2026-10-06T11:40:54.969Z",
+    "readonly": true,
+    "physicalWanOriginalMqFourFqCodelRestored": true,
+    "lan4OriginalMqFourFqCodelRestored": true,
+    "defaultQueueOptionsAndHandlesExact": true,
+    "failedWan4ProcessOwnerChecked": true,
+    "wan4Running": true,
+    "wan4Lifecycle": "exec-minieap",
+    "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
+  },
+  "endpointClosure": {
+    "passed": true,
+    "readonly": true,
+    "previousLoadsChecked": 48,
+    "temporaryFirewallRulesRemaining": 0,
+    "allCanonicalFirewallBaselinesMatch": true,
+    "ownedUnitsInactiveMainPidZero": 48,
+    "tcpAndUdpPortsClosed": true,
+    "remoteWrites": false,
+    "ownedClientOrGuardProcessesRemaining": 0,
+    "observedAt": "2026-10-06T11:40:58.049Z",
+    "existingEndpointServicesUnchanged": true,
+    "clientProcessesMatchedByExactOwnedLoadPaths": true,
+    "productionWrites": false,
+    "desktopOperated": false
+  },
+  "ownedReceiverClosure": {
+    "readonly": true,
+    "exactOwnedReceiverAndTimeoutProcessesRemaining": 0,
+    "ownReceiverMaximumSeconds": 180,
+    "independentTimeoutSeconds": 185,
+    "passed": true,
+    "observedAt": "2026-10-06T11:40:55.020Z",
+    "existingAuthenticatedSshServiceUnchanged": true
+  },
+  "ownedDownloadSenderClosure": {
+    "readonly": true,
+    "exactOwnedReceiverAndTimeoutProcessesRemaining": 0,
+    "ownReceiverMaximumSeconds": 180,
+    "independentTimeoutSeconds": 185,
+    "passed": true,
+    "observedAt": "2026-10-06T11:40:55.055Z",
+    "existingAuthenticatedSshServiceUnchanged": true
+  },
+  "nextStep": "Capture authenticated UDP at owned endpoint and PC wire, correlate exact firmware CI/renewal while holding the same bounded download; do not change the kernel lease based on temporal coincidence",
+  "publicationWhitespaceRepair": {
+    "passed": true,
+    "initialStagedDiffCheckPassed": false,
+    "initialFailure": "code/work/nss159/endpoint-firewall-guardian.py:119: new blank line at EOF.",
+    "commitChainStoppedBeforeCommit": true,
+    "frozenSourceBytesUnchanged": true,
+    "sourcePath": "code/work/nss159/endpoint-firewall-guardian.py",
+    "sourceSha256": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+    "pathSpecificWhitespaceAttribute": "whitespace=cr-at-eol,-blank-at-eof",
+    "noGlobalWhitespaceRelaxation": true
+  }
+}

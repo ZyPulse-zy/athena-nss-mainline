@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "wan": 3,
+  "linuxPbrCtMarkNatWanAffinityCorrect": true,
+  "tcpBulkUdpRtFourTagsCorrect": true,
+  "fourFqCodelLeavesHavePackets": true,
+  "connectionCount": 2,
+  "wholeAbaEcmCounts": [
+    0,
+    2,
+    0
+  ],
+  "fullPrivateInputsAndFrozenCopiesHashChecked": true,
+  "bindings": 2086,
+  "checkpointDownloadedShaGzipVerified": true,
+  "independentPpidOneRollbackVerifiedBeforeWrite": true,
+  "payloadBytes": 73428,
+  "guardianExecBytes": 8947,
+  "allOriginalRestoreChecks": {
+    "sameBoot": true,
+    "ownDirectoryAbsent": true,
+    "stateNodeDirectoryAbsent": true,
+    "guardianTerminated": true,
+    "moduleAbsent": true,
+    "qosModuleAbsent": true
+  },
+  "noGlobalConntrackFlush": true,
+  "classifierKernelGateAndQosSourceUnchanged": true
+}

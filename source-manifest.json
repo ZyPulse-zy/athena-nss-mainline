@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T10:40:51.997689+00:00",
+  "generatedAt": "2026-10-06T11:49:19.673600+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -18813,8 +18813,470 @@
       "sha256": "6193f6e5f8d8d7c75cca88317d041e2bbb1b59d3e4649d5516c76755bbd203bf",
       "bytes": 3172,
       "role": "publication-failed-check-preservation-only-exact-four-path-attributes"
+    },
+    {
+      "path": "code/work/nss158/evening-health-v2.mjs",
+      "workspaceSource": "work/nss158/evening-health-v2.mjs",
+      "sha256": "5f8620e046fecb7bc14ba32e60f6c31881f22b30aa8c1cd912f2f70a68559bf8",
+      "bytes": 6458,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/evening-health-v3.mjs",
+      "workspaceSource": "work/nss158/evening-health-v3.mjs",
+      "sha256": "c721709355bcbdcc23194737a9d9f9de7f2e28afc847555927bb61db4051b937",
+      "bytes": 6461,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/evening-health.mjs",
+      "workspaceSource": "work/nss158/evening-health.mjs",
+      "sha256": "7af9833a664f01961c79f99175dd33ef63373166ac5954a25f9c4acb8b0e52d8",
+      "bytes": 6340,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/evening-read-final-physical.mjs",
+      "workspaceSource": "work/nss158/evening-read-final-physical.mjs",
+      "sha256": "940d3d7ef8280057af7d604524591e4c802ecc78422cd5ea72135fb18558e73a",
+      "bytes": 2058,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/evening-verify-all-endpoints-v2.mjs",
+      "workspaceSource": "work/nss158/evening-verify-all-endpoints-v2.mjs",
+      "sha256": "9c5f9c516f6ac9e96d498f9ecd4f552256385e88aae142922f385e906bb70688",
+      "bytes": 8120,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/evening-verify-all-endpoints.mjs",
+      "workspaceSource": "work/nss158/evening-verify-all-endpoints.mjs",
+      "sha256": "715720a55ce8d8a72427adaf3d7df905de17d7a1e806ba84aaf369bdd8a1cd6c",
+      "bytes": 7585,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/evening-verify-downloaders-v2.mjs",
+      "workspaceSource": "work/nss158/evening-verify-downloaders-v2.mjs",
+      "sha256": "2d1b861bca257574fb61bc922d951f6914648f03f8b5ae6d0d55b29dc1d00596",
+      "bytes": 1629,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/evening-verify-downloaders.mjs",
+      "workspaceSource": "work/nss158/evening-verify-downloaders.mjs",
+      "sha256": "29124b0a8a732dd167497ac3d610ceb7a5c9ff53d45649cc54e29cc36fac790d",
+      "bytes": 1554,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/evening-verify-receivers.mjs",
+      "workspaceSource": "work/nss158/evening-verify-receivers.mjs",
+      "sha256": "c50b92f7d145add6f9e6677bafad9233a7d8791b130dfd78adfc42aef4bf29c6",
+      "bytes": 1534,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss158/prepare-evening.py",
+      "workspaceSource": "work/nss158/prepare-evening.py",
+      "sha256": "28e95b09356ef8b6782c2e57f525c88acdb55c69fad04bcf9c4165b23e760388",
+      "bytes": 1154,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/analyze-download.py",
+      "workspaceSource": "work/nss159/analyze-download.py",
+      "sha256": "a2f4203819e5668c73b7c533a5cd0d8dd4362a9c6278397ebd1a0cfc06f56102",
+      "bytes": 7103,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/analyze-udp-gap.py",
+      "workspaceSource": "work/nss159/analyze-udp-gap.py",
+      "sha256": "4e052ffea7da40411d68aad10ba5e2f920e1987120fd8dc329417991838d6455",
+      "bytes": 2598,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/calibrate-clock.mjs",
+      "workspaceSource": "work/nss159/calibrate-clock.mjs",
+      "sha256": "774763a7b8215fe1983e999289aafabaaa8ee1b6ef7870758491d76025a13b10",
+      "bytes": 1040,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/client-watchdog.ps1",
+      "workspaceSource": "work/nss159/client-watchdog.ps1",
+      "sha256": "5590458fe66d600ddff8b730ceddfd2e1f0041d62a404911457685b638ec114d",
+      "bytes": 1039,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/close-endpoint-v2.mjs",
+      "workspaceSource": "work/nss159/close-endpoint-v2.mjs",
+      "sha256": "7cd43a62bf5b0c935c1f05999c2a83bc8945cfa257e00ffe4d63abc467f31c89",
+      "bytes": 1903,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/close-endpoint.mjs",
+      "workspaceSource": "work/nss159/close-endpoint.mjs",
+      "sha256": "156f97fe0c0e4e3ea00638b3546423533362e15a2c0fdbb1a143aee75571eeed",
+      "bytes": 1903,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/compare-download.py",
+      "workspaceSource": "work/nss159/compare-download.py",
+      "sha256": "44f4fd76b215006d8fa67164518c48a4d3407f915f687fcd747fd687fcfbf1d2",
+      "bytes": 2686,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/current-audit-diagnostic-v2.mjs",
+      "workspaceSource": "work/nss159/current-audit-diagnostic-v2.mjs",
+      "sha256": "c9886448a2e52b8d0bc208bae80d11a3836487ef8350e65f1f4932216d93073e",
+      "bytes": 5810,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/current-audit-diagnostic-v3.mjs",
+      "workspaceSource": "work/nss159/current-audit-diagnostic-v3.mjs",
+      "sha256": "3517ef6f5c9d1bd6171152452dd395e84b6e2034bd496ac4a035dd9f213e106b",
+      "bytes": 5810,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/current-audit-diagnostic-v4.mjs",
+      "workspaceSource": "work/nss159/current-audit-diagnostic-v4.mjs",
+      "sha256": "0696b4eaa258a0b7c1bf2eb1c1845cade2e73926b89e52625c070da488ab82fc",
+      "bytes": 5810,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss159/current-audit-diagnostic.mjs",
+      "sha256": "e2e1b32219a221ca1c2ef9f5c507f0128375ea4e7967c2ccb5e803056da065a6",
+      "bytes": 5807,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/declared-baseline.mjs",
+      "workspaceSource": "work/nss159/declared-baseline.mjs",
+      "sha256": "d1f829d0224f9eff06aafc8250bd23bcc67615db1419ceca5628dab906bb0d98",
+      "bytes": 49,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/discover-peer.py",
+      "workspaceSource": "work/nss159/discover-peer.py",
+      "sha256": "70bfc9ee5bcb359cf006858e74e25d228522ad9332c35b710a4abc70d26a39cd",
+      "bytes": 972,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/download-client.mjs",
+      "workspaceSource": "work/nss159/download-client.mjs",
+      "sha256": "1d1d793c4b892f50473a81a5b560c9eb3d3f19dd56f5c0aef05c88e60f0107ca",
+      "bytes": 6607,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/download-policy.mjs",
+      "workspaceSource": "work/nss159/download-policy.mjs",
+      "sha256": "db67b6dcbcc0c8b648fa9529f5a5cee2a8c2792845968a36f75ea9181c82dda5",
+      "bytes": 692,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/download-server.py",
+      "workspaceSource": "work/nss159/download-server.py",
+      "sha256": "5e6eb12141c8f26ec090162665ab23cbe6e0d86e1d4f2f36045a18c7d4e86a41",
+      "bytes": 1155,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss159/endpoint-firewall-guardian.py",
+      "sha256": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+      "bytes": 6341,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/epoch-driver-v2.mjs",
+      "workspaceSource": "work/nss159/epoch-driver-v2.mjs",
+      "sha256": "bfee8d8c9feeff1ca5fa48abb143452e3c73efe6d3ab265081785b031ec0ad96",
+      "bytes": 14585,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/epoch-driver-v3.mjs",
+      "workspaceSource": "work/nss159/epoch-driver-v3.mjs",
+      "sha256": "4f522374e38284385537ee11395ed5ac90ecc7e1d2176b7ed35ac823a4a50b26",
+      "bytes": 14582,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/epoch-driver-v4.mjs",
+      "workspaceSource": "work/nss159/epoch-driver-v4.mjs",
+      "sha256": "afd6a048669389848c975321f185b37881ada355c9748292e7ae770471ca3cce",
+      "bytes": 14582,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/epoch-driver.mjs",
+      "workspaceSource": "work/nss159/epoch-driver.mjs",
+      "sha256": "57d05881e9be016fd252ca95114e3a04e3e8bff877f7838042887ec0404d8269",
+      "bytes": 14573,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/export-evening.py",
+      "workspaceSource": "work/nss159/export-evening.py",
+      "sha256": "1128b189dbdf194ea12885f35b47056abe0213166b5b96bca5145e9b3557437c",
+      "bytes": 19868,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/failed-wan-owner.lua",
+      "workspaceSource": "work/nss159/failed-wan-owner.lua",
+      "sha256": "00b4192b8acf352125add0abe135efe6bcfe7b14955b5bba034ff505ecdb1067",
+      "bytes": 2628,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/match-controlled.mjs",
+      "workspaceSource": "work/nss159/match-controlled.mjs",
+      "sha256": "fc770f8286669f6ff3ac522c55ad6967be743ed982dc0f15842dd9aefe398414",
+      "bytes": 2858,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/owned-load-policy.mjs",
+      "workspaceSource": "work/nss159/owned-load-policy.mjs",
+      "sha256": "ac4805a619f429897b75adf8c0bfbf410df5934ee58e86976bbc6d1aab41d8e8",
+      "bytes": 848,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/pilot-supervisor-v2.mjs",
+      "workspaceSource": "work/nss159/pilot-supervisor-v2.mjs",
+      "sha256": "71eae1e32415f257a4fae52bd2581305c06010c9f229c83f8ebcd677e9fa09e5",
+      "bytes": 4699,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/pilot-supervisor-v3.mjs",
+      "workspaceSource": "work/nss159/pilot-supervisor-v3.mjs",
+      "sha256": "fc88a756c287680b1565fd5bfdf538d7369e32bc13a7fae8ed75bd597fd97405",
+      "bytes": 4699,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/pilot-supervisor-v4.mjs",
+      "workspaceSource": "work/nss159/pilot-supervisor-v4.mjs",
+      "sha256": "8ec6399d46f5dede296bd73032a735462e9ef5278233c1ffa1a88c47d6e5305c",
+      "bytes": 4702,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/pilot-supervisor.mjs",
+      "workspaceSource": "work/nss159/pilot-supervisor.mjs",
+      "sha256": "922a83bb3f939f5d8e702b2a1638dc64f473a17805bf1c19bd2bd3d42695b51e",
+      "bytes": 4591,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/policy-tests.mjs",
+      "workspaceSource": "work/nss159/policy-tests.mjs",
+      "sha256": "c916f1bea1f86c41bea1fb1846b2493905b9e2a70101a6419d1526c77dcdd2ba",
+      "bytes": 1958,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/prepare-postchecks.py",
+      "workspaceSource": "work/nss159/prepare-postchecks.py",
+      "sha256": "d014059a03a18699e66867d21a3ed9817a5487d79711b7997b41969daa1db0f3",
+      "bytes": 2774,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/prepare-qualification-v2.py",
+      "workspaceSource": "work/nss159/prepare-qualification-v2.py",
+      "sha256": "ebfc32341803968c7ec9acc2da880760baf64691c3e09ec764b32becb50ef470",
+      "bytes": 778,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/prepare-recovery-publication.py",
+      "workspaceSource": "work/nss159/prepare-recovery-publication.py",
+      "sha256": "b8b89322e96a58b7063d364783fc563608f54040392c5bee1510756b51c3a8c7",
+      "bytes": 3405,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/prepare-v2.py",
+      "workspaceSource": "work/nss159/prepare-v2.py",
+      "sha256": "1c8d2ca41e93d3b9938ef1cc62a2823f9d4969d8fbd9fe77063f173cbbaffa1d",
+      "bytes": 2418,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/prepare-v3.py",
+      "workspaceSource": "work/nss159/prepare-v3.py",
+      "sha256": "27da3fc3211abf30b4e833c5cde816ff262b7421012c01b094a4028e6841278c",
+      "bytes": 3104,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/prepare-v4.py",
+      "workspaceSource": "work/nss159/prepare-v4.py",
+      "sha256": "acc81d1866a6420ff3f684abfd34939d246f734c76b71fe7328d3653c7cfc5b8",
+      "bytes": 2667,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/prepare.py",
+      "workspaceSource": "work/nss159/prepare.py",
+      "sha256": "a2816fcca776d36057d68e0681f91edd323f8fbbc9d3c0499d6eaed108e3e9b2",
+      "bytes": 2755,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/probe-peer.py",
+      "workspaceSource": "work/nss159/probe-peer.py",
+      "sha256": "a358ad52ae56de34b4384057be33beb770cb1e5b65bf8bc95c95f0f1b07b7564",
+      "bytes": 437,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/qualify-v2.mjs",
+      "workspaceSource": "work/nss159/qualify-v2.mjs",
+      "sha256": "81142419089855c3939197f1b630c064def1f8292b2b653b13672bca63bce1fb",
+      "bytes": 3661,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/qualify-v3.mjs",
+      "workspaceSource": "work/nss159/qualify-v3.mjs",
+      "sha256": "18628b0497a5bc704975be53576aa72f7a9fb11565791ef3bee77653742a23a8",
+      "bytes": 3946,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/qualify-v4.mjs",
+      "workspaceSource": "work/nss159/qualify-v4.mjs",
+      "sha256": "0a2f4b02c618b89ea9123bae04845b5a22b210641a790e8b80083b2afebc5a02",
+      "bytes": 4707,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/qualify-v5.mjs",
+      "workspaceSource": "work/nss159/qualify-v5.mjs",
+      "sha256": "30ea411c5e1090e81f0e465e63c16bccfc604ed998c532781b72e3fa8ac5080e",
+      "bytes": 5171,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/qualify.mjs",
+      "workspaceSource": "work/nss159/qualify.mjs",
+      "sha256": "0e2b5fab1b00aade8895ebac23774688a3528099a88ccbcb12cb4e22f4361256",
+      "bytes": 3605,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/read-controlled.mjs",
+      "workspaceSource": "work/nss159/read-controlled.mjs",
+      "sha256": "4f332655995e3b6c05dfebaf020a5de6acfbe1051661438439256dedccd35139",
+      "bytes": 6022,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/receiver.py",
+      "workspaceSource": "work/nss159/receiver.py",
+      "sha256": "8c07c3fa643e908d9aafb0a0b8280a3f95a32557ef2cc38a6b68ad6158297952",
+      "bytes": 1267,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/recovery-baseline-v2.mjs",
+      "workspaceSource": "work/nss159/recovery-baseline-v2.mjs",
+      "sha256": "e0d284be6f4e0e8b31e866d02fc82e78ac5cdf1b56728a41ea3b70605d9e9a1a",
+      "bytes": 4617,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/recovery-baseline.mjs",
+      "workspaceSource": "work/nss159/recovery-baseline.mjs",
+      "sha256": "246094288cae1635212458f2a1febb04a7b29eecb2e6fdc81924a67572ae6040",
+      "bytes": 4516,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/server.py",
+      "workspaceSource": "work/nss159/server.py",
+      "sha256": "b17814c97b0d753a7511f0ce590c159a82455106fb395d9417168a6eb6f85285",
+      "bytes": 1958,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/session-binding-v2.mjs",
+      "workspaceSource": "work/nss159/session-binding-v2.mjs",
+      "sha256": "ca155d97425caa486f332eb13701e4297a862d69b2de0cd9e89e7ce6232b599e",
+      "bytes": 648,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/session-binding-v3.mjs",
+      "workspaceSource": "work/nss159/session-binding-v3.mjs",
+      "sha256": "284eaaaf84abc99401a47e6e4965fbcb069d85537cdf4b4ae283dcf7aab20991",
+      "bytes": 651,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/session-binding-v4.mjs",
+      "workspaceSource": "work/nss159/session-binding-v4.mjs",
+      "sha256": "e3176580f47f44a76560eba893f6421978ecda07a79a5377b4189e92826f849a",
+      "bytes": 651,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/session-binding.mjs",
+      "workspaceSource": "work/nss159/session-binding.mjs",
+      "sha256": "880e5d9aead23b359da7890986e8b3dc592a4f8df3f512bffb4e6feabd91f82c",
+      "bytes": 653,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/start-dallas.mjs",
+      "workspaceSource": "work/nss159/start-dallas.mjs",
+      "sha256": "29abaa9496de42a9fd836be442d43954c4c52af07be676c0978a8d2462b6b976",
+      "bytes": 10652,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/update-checker.py",
+      "workspaceSource": "work/nss159/update-checker.py",
+      "sha256": "903952d3cba5851eaa44154fc7d5ec7b597b3c820f47fc1d65b6a6280ad990b3",
+      "bytes": 9249,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/verify-published.py",
+      "workspaceSource": "work/nss159/verify-published.py",
+      "sha256": "dbca111a04929fc391b7cf9b3d0a5243948a523edddb6e821f813bc1d1a9f894",
+      "bytes": 2618,
+      "role": "bounded-download-functional-aba-rt-gap-and-evening-closure"
+    },
+    {
+      "path": "code/work/nss159/publication-whitespace-repair.py",
+      "workspaceSource": "work/nss159/publication-whitespace-repair.py",
+      "sha256": "f5aa3786c46697d32c15e14d940f98977159ff6fc699a610310937a298c82370",
+      "bytes": 3086,
+      "role": "exact-path-whitespace-repair-preserve-frozen-source"
     }
   ],
-  "lastAppendExport": "NSS158",
+  "lastAppendExport": "NSS159",
   "privateDataExcluded": true
 }

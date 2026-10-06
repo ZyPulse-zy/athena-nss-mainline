@@ -70,3 +70,7 @@
 /code/work/nss157/fast-path-v2.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/nss157/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/nss158/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+# Preserve exact qualified NSS159 inherited guardian and historical runtime bytes.
+/code/work/nss159/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/evidence/nss158-runtime.json -text
