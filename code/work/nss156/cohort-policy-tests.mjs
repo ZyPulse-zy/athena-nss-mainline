@@ -1,0 +1,4 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {cohortPorts,validateChosen} from './cohort-policy.mjs';
+assert.deepEqual(cohortPorts(57100,0),[57100,57101,57102,57103]);assert.deepEqual(cohortPorts(57100,1),[57104,57105,57106,57107]);assert.equal(new Set([...cohortPorts(57100,0),...cohortPorts(57100,1)]).size,8);
+assert.throws(()=>cohortPorts(57100,2));assert.throws(()=>cohortPorts(1,0));assert.equal(validateChosen(57101,[57100,57101]),57101);assert.throws(()=>validateChosen(57102,[57100,57101]));assert.throws(()=>validateChosen('57101',[57101]));
+const r={passed:true,cases:8,eightTotalPorts:true,softwarePreparationOnly:true,fullFactoryModelExecuted:false};fs.writeFileSync('work/nss156/cohort-policy-qualified.json',JSON.stringify(r,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(r));

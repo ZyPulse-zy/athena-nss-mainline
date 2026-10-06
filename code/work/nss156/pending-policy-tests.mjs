@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import {nextPendingPort} from './pending-policy.mjs';
+const x={start:57000,port:57000,authenticated:false,elapsedMs:5499};
+assert.equal(nextPendingPort(x),null);assert.equal(nextPendingPort({...x,elapsedMs:5500}),57001);
+assert.equal(nextPendingPort({...x,failed:true}),57001);
+assert.equal(nextPendingPort({...x,authenticated:true,failed:true,elapsedMs:90000}),null);
+assert.throws(()=>nextPendingPort({...x,port:57007,failed:true}),/exhausted/);
+assert.throws(()=>nextPendingPort({...x,port:56999}),/Assertion/);
+assert.throws(()=>nextPendingPort({...x,elapsedMs:-1}),/Assertion/);
+assert.throws(()=>nextPendingPort({...x,authenticated:'true'}),/Assertion/);
+const r={passed:true,caseCount:8,pendingOnly:true,eightPortCeilingRetained:true,authenticatedFlowNeverRotated:true,factoryModelExecuted:false,routerExecution:false};
+fs.writeFileSync('work/nss156/pending-policy-qualified.json',JSON.stringify(r,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(r));

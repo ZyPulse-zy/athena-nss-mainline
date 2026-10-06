@@ -56,3 +56,8 @@
 
 # Preserve the exact qualified fast-path whitespace; scope this exception only.
 /code/work/nss155/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+# Preserve the exact inherited NSS156 guardian/native and archived NSS155 runtime.
+/code/work/nss156/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/nss156/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/evidence/nss155-runtime.json -text

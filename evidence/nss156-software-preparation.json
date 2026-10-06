@@ -1,0 +1,62 @@
+[
+  {
+    "case": "run1",
+    "seconds": 21.027767100000002,
+    "serverConfirmedBytes": 0,
+    "clientErrors": [
+      "TCP: connect ETIMEDOUT 172.93.163.251:45817 - Local (192.168.237.207:57162)"
+    ],
+    "noNssStage": true,
+    "transport": "raw nonce TCP",
+    "causeNotProven": true
+  },
+  {
+    "case": "run2",
+    "seconds": 57.3235346,
+    "serverConfirmedBytes": 71092932,
+    "clientErrors": [
+      "AssertionError [ERR_ASSERTION]: Original eight pending TCP candidates exhausted"
+    ],
+    "noNssStage": true,
+    "transport": "raw nonce TCP",
+    "causeNotProven": true
+  },
+  {
+    "case": "run3",
+    "seconds": 47.380151600000005,
+    "serverConfirmedBytes": 6240013,
+    "clientErrors": [],
+    "noNssStage": true,
+    "transport": "raw nonce TCP",
+    "causeNotProven": true
+  },
+  {
+    "case": "run4",
+    "seconds": 19.9594678,
+    "serverConfirmedBytes": 26800980,
+    "clientErrors": [],
+    "noNssStage": true,
+    "transport": "raw nonce TCP",
+    "causeNotProven": true
+  },
+  {
+    "case": "run5",
+    "seconds": 44.0485709,
+    "serverConfirmedBytes": 0,
+    "clientErrors": [
+      "AssertionError [ERR_ASSERTION]: Original eight pending TCP candidates exhausted"
+    ],
+    "noNssStage": true,
+    "transport": "raw nonce TCP",
+    "causeNotProven": true
+  },
+  {
+    "case": "run6",
+    "seconds": 80.49881930000001,
+    "serverConfirmedBytes": 264273920,
+    "clientErrors": [],
+    "noNssStage": true,
+    "transport": "existing SSH with owned-client Keepalive disabled",
+    "causeNotProven": true
+  }
+]

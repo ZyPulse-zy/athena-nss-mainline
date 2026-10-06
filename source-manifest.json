@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T07:42:50.929329+00:00",
+  "generatedAt": "2026-10-06T08:49:39.122712+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -17014,8 +17014,645 @@
       "sha256": "e0f28c23fdb8d54a8e0c549dc877598967647b25cadf5aa230c418e2c55bdd8c",
       "bytes": 4003,
       "role": "explicit-publication-failure-correction"
+    },
+    {
+      "path": "code/work/nss156/analyze.py",
+      "workspaceSource": "work/nss156/analyze.py",
+      "sha256": "1917536831264d4fc534c75a29dce3cee6b4616d0598c4e9de5d07a80f0954e8",
+      "bytes": 5091,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/bounded-pacer.mjs",
+      "workspaceSource": "work/nss156/bounded-pacer.mjs",
+      "sha256": "f126a177fa1afd9cd8af98ac858d4e0eacb44388efbb5357333949c52a48c09b",
+      "bytes": 589,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/calibrate-clock-v2.mjs",
+      "workspaceSource": "work/nss156/calibrate-clock-v2.mjs",
+      "sha256": "280f853c1e50f69fb18849b009c1812d0c88df0d9dd112951cab4d43325aaac5",
+      "bytes": 1040,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/calibrate-clock.mjs",
+      "workspaceSource": "work/nss156/calibrate-clock.mjs",
+      "sha256": "85e5ea133c08dd93f335c5a5d24316d472a70b6c7a007f603a62f7b72631ac44",
+      "bytes": 1040,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/client-watchdog.ps1",
+      "workspaceSource": "work/nss156/client-watchdog.ps1",
+      "sha256": "5590458fe66d600ddff8b730ceddfd2e1f0041d62a404911457685b638ec114d",
+      "bytes": 1039,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/close-control.mjs",
+      "workspaceSource": "work/nss156/close-control.mjs",
+      "sha256": "286b4faaa3bc181e189e8e97a80df856f9752184089670dc372dd778e14fbb33",
+      "bytes": 3997,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/close-endpoint.mjs",
+      "workspaceSource": "work/nss156/close-endpoint.mjs",
+      "sha256": "f05b1f3a69a73a79d4d4127e6467245f00b728bcb4fa77dd3a11b9024d864ffc",
+      "bytes": 1903,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/cohort-client.mjs",
+      "workspaceSource": "work/nss156/cohort-client.mjs",
+      "sha256": "7cc5a7a9316ba64713dcce07656477825b2d83bfffad86b3a36d060ea30d5838",
+      "bytes": 8783,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/cohort-policy-tests.mjs",
+      "workspaceSource": "work/nss156/cohort-policy-tests.mjs",
+      "sha256": "a732b92deb11305f5117dbfc1193578c79a5b61afbb8429386f3369302c73045",
+      "bytes": 825,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/cohort-policy.mjs",
+      "workspaceSource": "work/nss156/cohort-policy.mjs",
+      "sha256": "e751c0f33fe3f8724356aa1ae579321b9bc793870bffe3a6d911f4b8ba58d4f3",
+      "bytes": 410,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/crash-read.lua",
+      "workspaceSource": "work/nss156/crash-read.lua",
+      "sha256": "4ca8d4e4278a8249e8c59da6aad8cdeef082b8401349627433c080ae330ea612",
+      "bytes": 850,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/nss156/current-audit-diagnostic.mjs",
+      "sha256": "80c93a7f8063e6e33b77b8847f500c7e38eaa2c5f0a7eeb930b95ac8f0dce20c",
+      "bytes": 5807,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/declared-baseline.mjs",
+      "workspaceSource": "work/nss156/declared-baseline.mjs",
+      "sha256": "d1f829d0224f9eff06aafc8250bd23bcc67615db1419ceca5628dab906bb0d98",
+      "bytes": 49,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/diagnose-routing.mjs",
+      "workspaceSource": "work/nss156/diagnose-routing.mjs",
+      "sha256": "c5ececd7969a54b2f55452cf36989a4ac286994e4f7135e041e6b78af9f2aa71",
+      "bytes": 2373,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/discover-peer.py",
+      "workspaceSource": "work/nss156/discover-peer.py",
+      "sha256": "70bfc9ee5bcb359cf006858e74e25d228522ad9332c35b710a4abc70d26a39cd",
+      "bytes": 972,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/nss156/endpoint-firewall-guardian.py",
+      "sha256": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+      "bytes": 6341,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/epoch-driver-v2.mjs",
+      "workspaceSource": "work/nss156/epoch-driver-v2.mjs",
+      "sha256": "53f8eade052494c4714d7dfd5ec3f90e7c31fd2f859802cef9bd83d2f0ddf835",
+      "bytes": 15143,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/epoch-driver-v3.mjs",
+      "workspaceSource": "work/nss156/epoch-driver-v3.mjs",
+      "sha256": "96061285a8c1a0265bc64bd5fa20d432f5123c6caabad7a9e5676af15845e2ca",
+      "bytes": 15143,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/epoch-driver-v4.mjs",
+      "workspaceSource": "work/nss156/epoch-driver-v4.mjs",
+      "sha256": "39b7e73631dbe038948f1f9b84e6ec8123545fde5ab29a345e1e620aa26163fc",
+      "bytes": 15143,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/epoch-driver-v5.mjs",
+      "workspaceSource": "work/nss156/epoch-driver-v5.mjs",
+      "sha256": "b953159b3e096b95f94c63ef6f23b7529a01ee347c405497bce790e81cb3d5b2",
+      "bytes": 15143,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/epoch-driver-v6.mjs",
+      "workspaceSource": "work/nss156/epoch-driver-v6.mjs",
+      "sha256": "2b8688e4406503d5feb2a7e207483e35f59815f36fce18ba1663436f110b9808",
+      "bytes": 15143,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/epoch-driver-v7.mjs",
+      "workspaceSource": "work/nss156/epoch-driver-v7.mjs",
+      "sha256": "742472f5f454d3343476bda06542c4c5834175fcb634adab78ca08c76cfee8e3",
+      "bytes": 15155,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/epoch-driver.mjs",
+      "workspaceSource": "work/nss156/epoch-driver.mjs",
+      "sha256": "cd645a0ad88d6dd3bcfd2a2f7352b71c0adda9b246a03de104cc2a9905c09a8c",
+      "bytes": 15140,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/exit-policy.mjs",
+      "workspaceSource": "work/nss156/exit-policy.mjs",
+      "sha256": "ad66df8a6507bb1bca4afd91f0915c325f6513d66289775da3ef38d223bb133f",
+      "bytes": 4641,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/failed-wan-owner.lua",
+      "workspaceSource": "work/nss156/failed-wan-owner.lua",
+      "sha256": "00b4192b8acf352125add0abe135efe6bcfe7b14955b5bba034ff505ecdb1067",
+      "bytes": 2628,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/fast-path.lua",
+      "workspaceSource": "work/nss156/fast-path.lua",
+      "sha256": "34880828b5869617ed82cdfde75740c003cecd628eb3028f11ff21039d8dc8f7",
+      "bytes": 14222,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/fix-calibration-namespace.py",
+      "workspaceSource": "work/nss156/fix-calibration-namespace.py",
+      "sha256": "7335fd53ee00eb5c624289e8ffee90d019d4940c544e02e6b3bc9e7d1508a12f",
+      "bytes": 743,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/health.mjs",
+      "workspaceSource": "work/nss156/health.mjs",
+      "sha256": "79fbbd0a383a1de36fa19dbf84053542255188a04800e34c3aeb6401d7848bdf",
+      "bytes": 6323,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/match-cohort.mjs",
+      "workspaceSource": "work/nss156/match-cohort.mjs",
+      "sha256": "e2aa44d95529f524cbe44a0e348974042c080bcd02e7ba0a77b60f35fe6531d6",
+      "bytes": 2429,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/match-controlled.mjs",
+      "workspaceSource": "work/nss156/match-controlled.mjs",
+      "sha256": "d0743647393955d20063d4ff78234bd5084a1ae8b1e9de3535fb7170f12283e9",
+      "bytes": 2156,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/module-stage-guardian.lua",
+      "workspaceSource": "work/nss156/module-stage-guardian.lua",
+      "sha256": "0fd1b890323c0841761e3c61e0912678b3849cce73eb3475860cfea528eb11a5",
+      "bytes": 13185,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/module-stage.mjs",
+      "workspaceSource": "work/nss156/module-stage.mjs",
+      "sha256": "a99e46a750944475b0cb6d54f91bd305e8388de84b7cb7ec9b3bb0b7ab0251b1",
+      "bytes": 17692,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/payload.mjs",
+      "workspaceSource": "work/nss156/payload.mjs",
+      "sha256": "79e664cd943a34af81310ee4afd1835b789e16d01ec5ffd6f523c3db5127da3c",
+      "bytes": 1910,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pending-policy-tests.mjs",
+      "workspaceSource": "work/nss156/pending-policy-tests.mjs",
+      "sha256": "e8318f9bd1520b8f3dc8f8448fbcf79eb4b75bd12cc19cee4461f7c71c54f87d",
+      "bytes": 1028,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pending-policy.mjs",
+      "workspaceSource": "work/nss156/pending-policy.mjs",
+      "sha256": "f647791dd542cbae2d6938d004d8d89d5102628b3d33a83254476ff557bcd9e1",
+      "bytes": 516,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pilot-supervisor-v2.mjs",
+      "workspaceSource": "work/nss156/pilot-supervisor-v2.mjs",
+      "sha256": "f1e0e5e064ed1543f58750fd203f31a60a7c61ffd8c59b1f95739602c77fc5fd",
+      "bytes": 6928,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pilot-supervisor-v3.mjs",
+      "workspaceSource": "work/nss156/pilot-supervisor-v3.mjs",
+      "sha256": "25e3ada225f0721f7954bb0437c14c0b610d257d0f0f71320e6608f2b9c3a25b",
+      "bytes": 6928,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pilot-supervisor-v4.mjs",
+      "workspaceSource": "work/nss156/pilot-supervisor-v4.mjs",
+      "sha256": "d69c4fbd11f43177b1dede464f5def106f1085859a3b562f21b18a5366d7b0ce",
+      "bytes": 6928,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pilot-supervisor-v5.mjs",
+      "workspaceSource": "work/nss156/pilot-supervisor-v5.mjs",
+      "sha256": "3bbcd1df3e1e08d21afd85835497f6184a903d717cd14b34b0a25613b3757733",
+      "bytes": 6928,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pilot-supervisor-v6.mjs",
+      "workspaceSource": "work/nss156/pilot-supervisor-v6.mjs",
+      "sha256": "6e7bb4b16d0cd749abfab3ab3c9ec173c2c6159ccd416c13b238eb8e346d8d92",
+      "bytes": 6928,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pilot-supervisor-v7.mjs",
+      "workspaceSource": "work/nss156/pilot-supervisor-v7.mjs",
+      "sha256": "03e70b8a5b5a6c16af6076c05e9b3540ef8defc35c809caebb5cb7a54848acf8",
+      "bytes": 6876,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/pilot-supervisor.mjs",
+      "workspaceSource": "work/nss156/pilot-supervisor.mjs",
+      "sha256": "8b838de2723c551e4402f59a023cd64958f673a4800367131d22a6a9f5ea9ecf",
+      "bytes": 6910,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/prepare-postchecks.py",
+      "workspaceSource": "work/nss156/prepare-postchecks.py",
+      "sha256": "8f49bca6b31387e0de163b23598f5f92228a69ba70cec5a878edaf67eb54d3ce",
+      "bytes": 1641,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/prepare-v2.py",
+      "workspaceSource": "work/nss156/prepare-v2.py",
+      "sha256": "dc8914dcb54ac014d928d5b08abe8aba19732f09acc041718c45613ed37d2154",
+      "bytes": 3152,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/prepare-v3.py",
+      "workspaceSource": "work/nss156/prepare-v3.py",
+      "sha256": "b2037c52ace4a86fc219cfc0239784573296b0f832b2fe78aa327cdf934fd7b8",
+      "bytes": 1550,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/prepare-v4.py",
+      "workspaceSource": "work/nss156/prepare-v4.py",
+      "sha256": "dc6087e6e0acb0b4536b66839b3e1e346d849ba0cc4e05742a797d7b5e8164f9",
+      "bytes": 1029,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/prepare-v5.py",
+      "workspaceSource": "work/nss156/prepare-v5.py",
+      "sha256": "603a7ab506f831813f45f73ad338b97965422c859740b7d2230edfbdfad0a88a",
+      "bytes": 1091,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/prepare-v6.py",
+      "workspaceSource": "work/nss156/prepare-v6.py",
+      "sha256": "268a79fa36382859330fef7375c40e55c256698a20141f56e3b9845bb876cc72",
+      "bytes": 2462,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/prepare-v7.py",
+      "workspaceSource": "work/nss156/prepare-v7.py",
+      "sha256": "5e59b40962bb0868f7ceaefb9a0d79cf1162c32f35f3e4d6260bc53b1827144b",
+      "bytes": 2748,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/prepare.py",
+      "workspaceSource": "work/nss156/prepare.py",
+      "sha256": "6c0dadc236cd5f06e3be12e973fee9fff28161be64484fbb7bf2089526f40699",
+      "bytes": 2701,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/probe-peer.py",
+      "workspaceSource": "work/nss156/probe-peer.py",
+      "sha256": "a358ad52ae56de34b4384057be33beb770cb1e5b65bf8bc95c95f0f1b07b7564",
+      "bytes": 437,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/qualify-v2.mjs",
+      "workspaceSource": "work/nss156/qualify-v2.mjs",
+      "sha256": "567de868ec71c85e12a9e111bbcc028230051aec5104c6a848b4ea1d40643dc9",
+      "bytes": 1922,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/qualify-v3.mjs",
+      "workspaceSource": "work/nss156/qualify-v3.mjs",
+      "sha256": "ea4be68ae12480f12587b41ecf49c40cbde3aa91ab37345b32580d398caa6c8a",
+      "bytes": 1773,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/qualify-v4.mjs",
+      "workspaceSource": "work/nss156/qualify-v4.mjs",
+      "sha256": "b2b9a3009f4aa4f9811de6ab0e5a775cf737f70053d0532f6c7fd1533e68d4a1",
+      "bytes": 1447,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/qualify-v5.mjs",
+      "workspaceSource": "work/nss156/qualify-v5.mjs",
+      "sha256": "0d6b6171756db6c80100ea417714a2d59f9633ce818755d15a77be39ea5e49d3",
+      "bytes": 1973,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/qualify-v6.mjs",
+      "workspaceSource": "work/nss156/qualify-v6.mjs",
+      "sha256": "57be684ea288db83ae2875d5e560b5bfc88d212f39a244a00feb98c378a1f5d2",
+      "bytes": 2464,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/qualify-v7.mjs",
+      "workspaceSource": "work/nss156/qualify-v7.mjs",
+      "sha256": "b796f57516e0f129ecdd4b5a9e3adf2ee8ef1a078f1b858c28a5b4ea9128aaf0",
+      "bytes": 2741,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/qualify.mjs",
+      "workspaceSource": "work/nss156/qualify.mjs",
+      "sha256": "ce05289a3f35b933652cdbf02b8682eda1dd4f1f87a56f1ccd7d2d3a89c6a7b2",
+      "bytes": 2653,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/raw-client-v2.mjs",
+      "workspaceSource": "work/nss156/raw-client-v2.mjs",
+      "sha256": "acd02bfdda8c974b2e5d2c72da8e60deebe3f47bae6eeb1d165561e40494e1e9",
+      "bytes": 7000,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/raw-client.mjs",
+      "workspaceSource": "work/nss156/raw-client.mjs",
+      "sha256": "5a6c17f8356f1cda2d685e6c1db1642e31325c6b02a1a1d94570bcecc67c91ce",
+      "bytes": 6115,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/read-controlled-v7.mjs",
+      "workspaceSource": "work/nss156/read-controlled-v7.mjs",
+      "sha256": "ff12a89274818a2e365529b60f7509d53a124c6d04b2a10921156e854f70fd1c",
+      "bytes": 6022,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/read-controlled.mjs",
+      "workspaceSource": "work/nss156/read-controlled.mjs",
+      "sha256": "30cd7c5be3c1bc90287d7ace643d1e3435c98449b9e1f27bb6ce7debf438b5d1",
+      "bytes": 5551,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/read-final-physical.mjs",
+      "workspaceSource": "work/nss156/read-final-physical.mjs",
+      "sha256": "99982dfd325cc1f16ed6333537f62fc2d769be92f583a4227b64f4953097667b",
+      "bytes": 2041,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/read-pbr-source.mjs",
+      "workspaceSource": "work/nss156/read-pbr-source.mjs",
+      "sha256": "82c051b353eae6b969a23b6b9de5b206ba1114238c83ea83ce027747431a1438",
+      "bytes": 767,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/receiver-models.py",
+      "workspaceSource": "work/nss156/receiver-models.py",
+      "sha256": "7674e814a690fffa55f0013f5c762b486123499320f7ff24868e2befc3fd44a0",
+      "bytes": 2445,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/receiver.py",
+      "workspaceSource": "work/nss156/receiver.py",
+      "sha256": "8c07c3fa643e908d9aafb0a0b8280a3f95a32557ef2cc38a6b68ad6158297952",
+      "bytes": 1267,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/reporting/export-v2.py",
+      "workspaceSource": "work/nss156/reporting/export-v2.py",
+      "sha256": "6a6b32438fe2342abce6dad15a34b6de11619cf0014fce2265297bb5fb5ae127",
+      "bytes": 17297,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/reporting/export.py",
+      "workspaceSource": "work/nss156/reporting/export.py",
+      "sha256": "56be9856d6aa75a2f47f5fb1c94f23aefc0a3fb4e7d215fa03fd3431d2fb3d40",
+      "bytes": 16633,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/reporting/update-checker.py",
+      "workspaceSource": "work/nss156/reporting/update-checker.py",
+      "sha256": "b2329a8d126c5e811af2baaa4b6d9d9baed4adc77b6967a32b7c66df95794f68",
+      "bytes": 9742,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/reporting/verify-published.py",
+      "workspaceSource": "work/nss156/reporting/verify-published.py",
+      "sha256": "0d93b02f214c9e5c82166028bb695b3ef2adf8f4d1b10a0feb5749de18aa434e",
+      "bytes": 2574,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/server.py",
+      "workspaceSource": "work/nss156/server.py",
+      "sha256": "b17814c97b0d753a7511f0ce590c159a82455106fb395d9417168a6eb6f85285",
+      "bytes": 1958,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/session-binding-v2.mjs",
+      "workspaceSource": "work/nss156/session-binding-v2.mjs",
+      "sha256": "5a30ce2f7608cfe3b55aacfd0171f722598f3da239107e81b84cca7c2203d657",
+      "bytes": 624,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/session-binding-v3.mjs",
+      "workspaceSource": "work/nss156/session-binding-v3.mjs",
+      "sha256": "75325b8e902c04a51801baa225817b8ca645d9b855c5ab8d5ebc0696a7af240b",
+      "bytes": 627,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/session-binding-v4.mjs",
+      "workspaceSource": "work/nss156/session-binding-v4.mjs",
+      "sha256": "be4b8611249fa4215044ea8755a4f64657941ac3fc7d4ae9c36eb889442dac52",
+      "bytes": 627,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/session-binding-v5.mjs",
+      "workspaceSource": "work/nss156/session-binding-v5.mjs",
+      "sha256": "fba87e489c4031c3a40541583aaeb4c3125eb242e5a677f7ca1e098272b6fdce",
+      "bytes": 627,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/session-binding-v6.mjs",
+      "workspaceSource": "work/nss156/session-binding-v6.mjs",
+      "sha256": "ebae37ccda9ded6c3d4055cee1012abcbaa65ab39789803832393ce6509c7af6",
+      "bytes": 627,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/session-binding-v7.mjs",
+      "workspaceSource": "work/nss156/session-binding-v7.mjs",
+      "sha256": "8b8925b1e0a69421169484832e2abbfbacd224c3061546b67d328da04513f8f2",
+      "bytes": 627,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/session-binding.mjs",
+      "workspaceSource": "work/nss156/session-binding.mjs",
+      "sha256": "a613a749019998de735ea1dd7853e0a6821d6998254a163df5aa1ee5cf1ccb51",
+      "bytes": 632,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/ssh-client-v6.mjs",
+      "workspaceSource": "work/nss156/ssh-client-v6.mjs",
+      "sha256": "1aa92a1d7d1d9c2d7b666fc80ad097c66696412d3e1a73f138d44b1325f97a24",
+      "bytes": 7758,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/start-dallas-v2.mjs",
+      "workspaceSource": "work/nss156/start-dallas-v2.mjs",
+      "sha256": "532d42821ad54730614d7dac33d564077722b86cea48dadae989bd3ed8b81622",
+      "bytes": 9939,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/start-dallas-v3.mjs",
+      "workspaceSource": "work/nss156/start-dallas-v3.mjs",
+      "sha256": "582461a4cdf576a802c8ff91a64ad49503dc7797b0fafee12c7d88e1531de56d",
+      "bytes": 10046,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/start-dallas-v6.mjs",
+      "workspaceSource": "work/nss156/start-dallas-v6.mjs",
+      "sha256": "85b7bcbdcba165c469c82eeeaf63205f5f7fa1c4522da47cd4d48cb2fbfe6f3f",
+      "bytes": 10604,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/start-dallas-v7.mjs",
+      "workspaceSource": "work/nss156/start-dallas-v7.mjs",
+      "sha256": "7e3e82adce5486c8e900a4adc4b508d6f18f6bee58e260c368302b8993df37fd",
+      "bytes": 10604,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/start-dallas.mjs",
+      "workspaceSource": "work/nss156/start-dallas.mjs",
+      "sha256": "8f0c7f4cdc1dabebe10ea7a80a65b84ddece05f5cfb493701792ea9baade7a9c",
+      "bytes": 9936,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/stop-namespace-invalid.mjs",
+      "workspaceSource": "work/nss156/stop-namespace-invalid.mjs",
+      "sha256": "00c4e6998b20db0c0765d89ae73b7ef777ab3dcfb561283cd7651124d3456508",
+      "bytes": 1231,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/upload-ack.mjs",
+      "workspaceSource": "work/nss156/upload-ack.mjs",
+      "sha256": "a291bbcfc707964f399b11c7914f403530c7e06a8f33cd740bfd047945034221",
+      "bytes": 386,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/upload-server.py",
+      "workspaceSource": "work/nss156/upload-server.py",
+      "sha256": "de2a920b810e2f0eb74f255eab39be6de5c7d246f4506fbd276593de2f5d300a",
+      "bytes": 632,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/verify-all-endpoints.mjs",
+      "workspaceSource": "work/nss156/verify-all-endpoints.mjs",
+      "sha256": "26074ee5f26fac25e36309b7854eda25778daafacd532f27e52eb0e09f00d96c",
+      "bytes": 5493,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/verify-downloaders.mjs",
+      "workspaceSource": "work/nss156/verify-downloaders.mjs",
+      "sha256": "2258138bc809261e8666f68bc92b538eca546f229e67ab1384a0cea8205c8d9b",
+      "bytes": 1520,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/verify-receivers.mjs",
+      "workspaceSource": "work/nss156/verify-receivers.mjs",
+      "sha256": "5c150146a1c37e3f34ac7063023475e46b876b5b411b7878a0e3f04236bf3261",
+      "bytes": 1500,
+      "role": "bounded-owned-flow-lifecycle-fixture-and-explicit-reporting"
+    },
+    {
+      "path": "code/work/nss156/reporting/fix-checker-field.py",
+      "workspaceSource": "work/nss156/reporting/fix-checker-field.py",
+      "sha256": "84ad72a9bca2c2169c61d4feee31b77bc2666e21cfa27d6ce075b7e6e94d8d4c",
+      "bytes": 2747,
+      "role": "publication-field-name-repair-only"
     }
   ],
-  "lastAppendExport": "NSS155",
+  "lastAppendExport": "NSS156",
   "privateDataExcluded": true
 }

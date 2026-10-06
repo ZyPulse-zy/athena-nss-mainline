@@ -1,0 +1,73 @@
+[
+  {
+    "case": "run1",
+    "passed": false,
+    "cause": "Raw TCP initial connect timed out before any checkpoint or stage",
+    "routerCheckpointOrNssStageStarted": false,
+    "originalErrorAndSourcesPreserved": true,
+    "rootCauseOfNetworkTimeoutProven": false
+  },
+  {
+    "case": "run2",
+    "passed": false,
+    "cause": "Raw nonce TCP candidates exhausted without same-WAN pair",
+    "routerCheckpointOrNssStageStarted": false,
+    "originalErrorAndSourcesPreserved": true,
+    "rootCauseOfNetworkTimeoutProven": false
+  },
+  {
+    "case": "run3",
+    "passed": false,
+    "cause": "Same-WAN pair found only at last candidate; successor reservation refused before stage",
+    "routerCheckpointOrNssStageStarted": false,
+    "originalErrorAndSourcesPreserved": true,
+    "rootCauseOfNetworkTimeoutProven": false
+  },
+  {
+    "case": "run4",
+    "passed": false,
+    "cause": "Generated driver kept old exact directory allowlist; detected and owned load stopped; actual input refused before stage",
+    "routerCheckpointOrNssStageStarted": false,
+    "originalErrorAndSourcesPreserved": true,
+    "rootCauseOfNetworkTimeoutProven": false
+  },
+  {
+    "case": "run5",
+    "passed": false,
+    "cause": "Raw initial nonce TCP candidates exhausted; no NSS stage",
+    "routerCheckpointOrNssStageStarted": false,
+    "originalErrorAndSourcesPreserved": true,
+    "rootCauseOfNetworkTimeoutProven": false
+  },
+  {
+    "case": "run6",
+    "passed": false,
+    "cause": "SSH uploaded successfully without Keepalive error, but finite matching window found no same-WAN pair",
+    "routerCheckpointOrNssStageStarted": false,
+    "originalErrorAndSourcesPreserved": true,
+    "rootCauseOfNetworkTimeoutProven": false
+  },
+  {
+    "case": "post-calibration-namespace",
+    "cause": "Original calibration helper retained old nss155 input allowlist",
+    "refusedBeforeRouterConnect": true,
+    "oldSourceRetained": true,
+    "correctedOnlyNamespace": true,
+    "analysisRanOnlyAfterRepair": true
+  },
+  {
+    "case": "publication-proof-path",
+    "cause": "First export referenced two JSON proofs without file extensions; repair generator default GBK decode also refused before edits",
+    "failedBeforeGitWorkspaceMutation": true,
+    "submissionChainStoppedBeforeCommit": true,
+    "originalSourcePreserved": true,
+    "onlyProofFileExtensionsCorrected": true
+  },
+  {
+    "case": "publication-checker-field",
+    "cause": "Checker omitted Rt suffix in actual nssScopeOneTcpBulkOneUdpRt field",
+    "submissionChainStoppedBeforeCommit": true,
+    "exactFieldNameOnlyCorrected": true,
+    "frozenSourcesAndHardwareEvidenceUnchanged": true
+  }
+]

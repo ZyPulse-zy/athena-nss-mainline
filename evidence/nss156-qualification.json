@@ -1,0 +1,210 @@
+{
+  "passed": true,
+  "versions": [
+    {
+      "passed": true,
+      "inheritedBindings": 1836,
+      "sourceManifest": {
+        "work/nss156/prepare.py": "6c0dadc236cd5f06e3be12e973fee9fff28161be64484fbb7bf2089526f40699",
+        "work/nss156/start-dallas.mjs": "8f0c7f4cdc1dabebe10ea7a80a65b84ddece05f5cfb493701792ea9baade7a9c",
+        "work/nss156/match-controlled.mjs": "d0743647393955d20063d4ff78234bd5084a1ae8b1e9de3535fb7170f12283e9",
+        "work/nss156/read-controlled.mjs": "30cd7c5be3c1bc90287d7ace643d1e3435c98449b9e1f27bb6ce7debf438b5d1",
+        "work/nss156/current-audit-diagnostic.mjs": "80c93a7f8063e6e33b77b8847f500c7e38eaa2c5f0a7eeb930b95ac8f0dce20c",
+        "work/nss156/failed-wan-owner.lua": "00b4192b8acf352125add0abe135efe6bcfe7b14955b5bba034ff505ecdb1067",
+        "work/nss156/declared-baseline.mjs": "d1f829d0224f9eff06aafc8250bd23bcc67615db1419ceca5628dab906bb0d98",
+        "work/nss156/bounded-pacer.mjs": "f126a177fa1afd9cd8af98ac858d4e0eacb44388efbb5357333949c52a48c09b",
+        "work/nss156/upload-ack.mjs": "a291bbcfc707964f399b11c7914f403530c7e06a8f33cd740bfd047945034221",
+        "work/nss156/discover-peer.py": "70bfc9ee5bcb359cf006858e74e25d228522ad9332c35b710a4abc70d26a39cd",
+        "work/nss156/probe-peer.py": "a358ad52ae56de34b4384057be33beb770cb1e5b65bf8bc95c95f0f1b07b7564",
+        "work/nss156/client-watchdog.ps1": "5590458fe66d600ddff8b730ceddfd2e1f0041d62a404911457685b638ec114d",
+        "work/nss156/endpoint-firewall-guardian.py": "11f19588758565297d0e1a6025b44b630eda03e809e0e9bc6401c0efc3117fb6",
+        "work/nss156/close-endpoint.mjs": "f05b1f3a69a73a79d4d4127e6467245f00b728bcb4fa77dd3a11b9024d864ffc",
+        "work/nss156/crash-read.lua": "4ca8d4e4278a8249e8c59da6aad8cdeef082b8401349627433c080ae330ea612",
+        "work/nss156/module-stage.mjs": "a99e46a750944475b0cb6d54f91bd305e8388de84b7cb7ec9b3bb0b7ab0251b1",
+        "work/nss156/module-stage-guardian.lua": "0fd1b890323c0841761e3c61e0912678b3849cce73eb3475860cfea528eb11a5",
+        "work/nss156/payload.mjs": "79e664cd943a34af81310ee4afd1835b789e16d01ec5ffd6f523c3db5127da3c",
+        "work/nss156/fast-path.lua": "34880828b5869617ed82cdfde75740c003cecd628eb3028f11ff21039d8dc8f7",
+        "work/nss156/close-control.mjs": "286b4faaa3bc181e189e8e97a80df856f9752184089670dc372dd778e14fbb33",
+        "work/nss156/exit-policy.mjs": "ad66df8a6507bb1bca4afd91f0915c325f6513d66289775da3ef38d223bb133f",
+        "work/nss156/epoch-driver.mjs": "cd645a0ad88d6dd3bcfd2a2f7352b71c0adda9b246a03de104cc2a9905c09a8c",
+        "work/nss156/pilot-supervisor.mjs": "8b838de2723c551e4402f59a023cd64958f673a4800367131d22a6a9f5ea9ecf",
+        "work/nss156/receiver.py": "8c07c3fa643e908d9aafb0a0b8280a3f95a32557ef2cc38a6b68ad6158297952",
+        "work/nss156/server.py": "b17814c97b0d753a7511f0ce590c159a82455106fb395d9417168a6eb6f85285",
+        "work/nss156/raw-client.mjs": "5a6c17f8356f1cda2d685e6c1db1642e31325c6b02a1a1d94570bcecc67c91ce",
+        "work/nss156/receiver-models.py": "7674e814a690fffa55f0013f5c762b486123499320f7ff24868e2befc3fd44a0",
+        "work/nss156/session-binding.mjs": "a613a749019998de735ea1dd7853e0a6821d6998254a163df5aa1ee5cf1ccb51",
+        "work/nss156/qualify.mjs": "ce05289a3f35b933652cdbf02b8682eda1dd4f1f87a56f1ccd7d2d3a89c6a7b2"
+      },
+      "newFixtureOnly": true,
+      "nativeWholePairExitFactoryUnchanged": 155,
+      "classifierKernelGateAndQoSUnchanged": true,
+      "fwRulesPeerCountUnchanged": true,
+      "nonceAuthenticationAndCounterModels": {
+        "passed": true,
+        "localSocketpairCases": [
+          "fragmented_nonce_authorized_exact_bytes",
+          "wrong_nonce_no_ready_no_payload",
+          "short_nonce_eof_no_ready",
+          "receiver_byte_ceiling_refused"
+        ],
+        "caseCount": 4,
+        "routerOrNssExecution": false,
+        "fullFactoryModel": false
+      },
+      "budgets": [
+        6,
+        27,
+        100,
+        180,
+        9000,
+        65536,
+        73728
+      ],
+      "productionExecution": false
+    },
+    {
+      "passed": true,
+      "newFixtureOnly": true,
+      "productionExecution": false,
+      "inheritedBindings": 1865,
+      "sourceManifest": {
+        "work/nss156/pending-policy.mjs": "f647791dd542cbae2d6938d004d8d89d5102628b3d33a83254476ff557bcd9e1",
+        "work/nss156/pending-policy-tests.mjs": "e8318f9bd1520b8f3dc8f8448fbcf79eb4b75bd12cc19cee4461f7c71c54f87d",
+        "work/nss156/prepare-v2.py": "dc8914dcb54ac014d928d5b08abe8aba19732f09acc041718c45613ed37d2154",
+        "work/nss156/raw-client-v2.mjs": "acd02bfdda8c974b2e5d2c72da8e60deebe3f47bae6eeb1d165561e40494e1e9",
+        "work/nss156/start-dallas-v2.mjs": "532d42821ad54730614d7dac33d564077722b86cea48dadae989bd3ed8b81622",
+        "work/nss156/epoch-driver-v2.mjs": "53f8eade052494c4714d7dfd5ec3f90e7c31fd2f859802cef9bd83d2f0ddf835",
+        "work/nss156/pilot-supervisor-v2.mjs": "f1e0e5e064ed1543f58750fd203f31a60a7c61ffd8c59b1f95739602c77fc5fd",
+        "work/nss156/session-binding-v2.mjs": "5a30ce2f7608cfe3b55aacfd0171f722598f3da239107e81b84cca7c2203d657",
+        "work/nss156/qualify-v2.mjs": "567de868ec71c85e12a9e111bbcc028230051aec5104c6a848b4ea1d40643dc9"
+      },
+      "pendingOnlyNaturalPortRotation": true,
+      "knownAuthenticatedFlowNeverRotatedByTimeout": true,
+      "originalPortCeiling": 8,
+      "firewallUnchanged": true,
+      "nativeWholePairExitFactoryUnchanged": 155,
+      "pendingPolicyModel": {
+        "passed": true,
+        "caseCount": 8,
+        "pendingOnly": true,
+        "eightPortCeilingRetained": true,
+        "authenticatedFlowNeverRotated": true,
+        "factoryModelExecuted": false,
+        "routerExecution": false
+      }
+    },
+    {
+      "passed": true,
+      "newFixtureOnly": true,
+      "productionExecution": false,
+      "inheritedBindings": 1874,
+      "sourceManifest": {
+        "work/nss156/prepare-v3.py": "b2037c52ace4a86fc219cfc0239784573296b0f832b2fe78aa327cdf934fd7b8",
+        "work/nss156/start-dallas-v3.mjs": "582461a4cdf576a802c8ff91a64ad49503dc7797b0fafee12c7d88e1531de56d",
+        "work/nss156/epoch-driver-v3.mjs": "96061285a8c1a0265bc64bd5fa20d432f5123c6caabad7a9e5676af15845e2ca",
+        "work/nss156/pilot-supervisor-v3.mjs": "25e3ada225f0721f7954bb0437c14c0b610d257d0f0f71320e6608f2b9c3a25b",
+        "work/nss156/session-binding-v3.mjs": "75325b8e902c04a51801baa225817b8ca645d9b855c5ab8d5ebc0696a7af240b",
+        "work/nss156/qualify-v3.mjs": "ea4be68ae12480f12587b41ecf49c40cbde3aa91ab37345b32580d398caa6c8a"
+      },
+      "oneInitialUdpPortChosenBeforePeerAuthentication": true,
+      "udpRotatedDuringLoad": false,
+      "firewallPeerCountUnchanged": true,
+      "pbrCtMarkNatWanPolicyWrites": false,
+      "nativeWholePairExitFactoryUnchanged": 155,
+      "clientHardSeconds": 180
+    },
+    {
+      "passed": true,
+      "newFixtureOnly": true,
+      "productionExecution": false,
+      "inheritedBindings": 1880,
+      "sourceManifest": {
+        "work/nss156/prepare-v4.py": "dc6087e6e0acb0b4536b66839b3e1e346d849ba0cc4e05742a797d7b5e8164f9",
+        "work/nss156/epoch-driver-v4.mjs": "39b7e73631dbe038948f1f9b84e6ec8123545fde5ab29a345e1e620aa26163fc",
+        "work/nss156/pilot-supervisor-v4.mjs": "d69c4fbd11f43177b1dede464f5def106f1085859a3b562f21b18a5366d7b0ce",
+        "work/nss156/session-binding-v4.mjs": "be4b8611249fa4215044ea8755a4f64657941ac3fc7d4ae9c36eb889442dac52",
+        "work/nss156/qualify-v4.mjs": "b2b9a3009f4aa4f9811de6ab0e5a775cf737f70053d0532f6c7fd1533e68d4a1"
+      },
+      "outputNamespaceOnly": true,
+      "fixtureAndNativeV3BytesUnchanged": true
+    },
+    {
+      "passed": true,
+      "newFixtureOnly": true,
+      "productionExecution": false,
+      "inheritedBindings": 1885,
+      "sourceManifest": {
+        "work/nss156/prepare-v5.py": "603a7ab506f831813f45f73ad338b97965422c859740b7d2230edfbdfad0a88a",
+        "work/nss156/epoch-driver-v5.mjs": "b953159b3e096b95f94c63ef6f23b7529a01ee347c405497bce790e81cb3d5b2",
+        "work/nss156/pilot-supervisor-v5.mjs": "3bbcd1df3e1e08d21afd85835497f6184a903d717cd14b34b0a25613b3757733",
+        "work/nss156/session-binding-v5.mjs": "fba87e489c4031c3a40541583aaeb4c3125eb242e5a677f7ca1e098272b6fdce",
+        "work/nss156/qualify-v5.mjs": "0d6b6171756db6c80100ea417714a2d59f9633ce818755d15a77be39ea5e49d3"
+      },
+      "exactInputDirectoryCheckPassed": true,
+      "fullFactoryModelExecuted": false,
+      "nativeWholePairExitFactoryUnchanged": 155
+    },
+    {
+      "passed": true,
+      "newFixtureOnly": true,
+      "productionExecution": false,
+      "inheritedBindings": 1890,
+      "sourceManifest": {
+        "work/nss156/prepare-v6.py": "268a79fa36382859330fef7375c40e55c256698a20141f56e3b9845bb876cc72",
+        "work/nss156/ssh-client-v6.mjs": "1aa92a1d7d1d9c2d7b666fc80ad097c66696412d3e1a73f138d44b1325f97a24",
+        "work/nss156/upload-server.py": "de2a920b810e2f0eb74f255eab39be6de5c7d246f4506fbd276593de2f5d300a",
+        "work/nss156/start-dallas-v6.mjs": "85b7bcbdcba165c469c82eeeaf63205f5f7fa1c4522da47cd4d48cb2fbfe6f3f",
+        "work/nss156/epoch-driver-v6.mjs": "2b8688e4406503d5feb2a7e207483e35f59815f36fce18ba1663436f110b9808",
+        "work/nss156/pilot-supervisor-v6.mjs": "6e7bb4b16d0cd749abfab3ab3c9ec173c2c6159ccd416c13b238eb8e346d8d92",
+        "work/nss156/session-binding-v6.mjs": "ebae37ccda9ded6c3d4055cee1012abcbaa65ab39789803832393ce6509c7af6",
+        "work/nss156/qualify-v6.mjs": "57be684ea288db83ae2875d5e560b5bfc88d212f39a244a00feb98c378a1f5d2"
+      },
+      "exactInputDirectoryCheckPassed": true,
+      "nativeWholePairExitFactoryUnchanged": 155,
+      "keepaliveChangedOnlyForOwnedClient": true,
+      "hardClientAndReceiverDeadlinesRetained": true,
+      "systemSshConfigurationChanged": false,
+      "softwareMatchedComparison": false,
+      "sshKeepaliveRootCauseProven": false
+    },
+    {
+      "passed": true,
+      "newFixtureOnly": true,
+      "productionExecution": false,
+      "inheritedBindings": 1898,
+      "sourceManifest": {
+        "work/nss156/cohort-policy.mjs": "e751c0f33fe3f8724356aa1ae579321b9bc793870bffe3a6d911f4b8ba58d4f3",
+        "work/nss156/cohort-policy-tests.mjs": "a732b92deb11305f5117dbfc1193578c79a5b61afbb8429386f3369302c73045",
+        "work/nss156/cohort-client.mjs": "7cc5a7a9316ba64713dcce07656477825b2d83bfffad86b3a36d060ea30d5838",
+        "work/nss156/match-cohort.mjs": "e2aa44d95529f524cbe44a0e348974042c080bcd02e7ba0a77b60f35fe6531d6",
+        "work/nss156/prepare-v7.py": "5e59b40962bb0868f7ceaefb9a0d79cf1162c32f35f3e4d6260bc53b1827144b",
+        "work/nss156/start-dallas-v7.mjs": "7e3e82adce5486c8e900a4adc4b508d6f18f6bee58e260c368302b8993df37fd",
+        "work/nss156/read-controlled-v7.mjs": "ff12a89274818a2e365529b60f7509d53a124c6d04b2a10921156e854f70fd1c",
+        "work/nss156/epoch-driver-v7.mjs": "742472f5f454d3343476bda06542c4c5834175fcb634adab78ca08c76cfee8e3",
+        "work/nss156/pilot-supervisor-v7.mjs": "03e70b8a5b5a6c16af6076c05e9b3540ef8defc35c809caebb5cb7a54848acf8",
+        "work/nss156/session-binding-v7.mjs": "8b8925b1e0a69421169484832e2abbfbacd224c3061546b67d328da04513f8f2",
+        "work/nss156/qualify-v7.mjs": "b796f57516e0f129ecdd4b5a9e3adf2ee8ef1a078f1b858c28a5b4ea9128aaf0"
+      },
+      "exactInputDirectoryCheckPassed": true,
+      "nativeWholePairExitFactoryUnchanged": 155,
+      "softwareOnlyFourProbeCohort": true,
+      "totalPortAttemptsMax": 8,
+      "totalSoftwarePreparationOfferedMbps": 32,
+      "globalMaximumPacerCreditBytes": 65536,
+      "otherOwnTcpSocketsClosedBeforeNss": true,
+      "nssScopeUnchangedOneTcpOneUdp": true,
+      "pbrMarkNatWanPolicyChanged": false,
+      "clientHardSeconds": 180,
+      "cohortPolicyModel": {
+        "passed": true,
+        "cases": 8,
+        "eightTotalPorts": true,
+        "softwarePreparationOnly": true,
+        "fullFactoryModelExecuted": false
+      },
+      "fullFactoryModelExecuted": false
+    }
+  ],
+  "actualBindings": 1909,
+  "fullFactoryModelExecuted": false
+}

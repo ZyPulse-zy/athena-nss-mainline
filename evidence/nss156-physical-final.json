@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "observedAt": "2026-10-06T08:38:42.636Z",
+  "readonly": true,
+  "physicalWanOriginalMqFourFqCodelRestored": true,
+  "lan4OriginalMqFourFqCodelRestored": true,
+  "defaultQueueOptionsAndHandlesExact": true,
+  "failedWan4ProcessOwnerChecked": true,
+  "wan4Running": false,
+  "wan4Lifecycle": "not-running",
+  "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
+}

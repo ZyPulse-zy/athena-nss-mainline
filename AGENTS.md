@@ -1,3 +1,25 @@
+# 真实TCP退出、新TCP与原UDP重学通过
+
+更新：2026-10-06 16:38，北京时间。最新NSS156。后台自有流量，未操作桌面/Steam/CS2。
+
+**WAN3真实ECM0→2→0→2→0。ECM2时关闭自有TCP；旧双流代停止新学习、撤销并完整恢复，原UDP应用继续。旧固件/标签/队列恢复后才创建新TCP；新分类query、checkpoint、owner、kernel pin及两个新CI完成第二代20.01秒并恢复。UDP的socket/CT/完整mark/NAT/WAN保持，TCP为新socket/CT，旧gate未重开。**
+
+后继服务器确认上传30.009Mbps，busy14.361%、softirq0.883%，time_squeeze/drop均0；UDP 696/696，四个NSS bulk/RT双向FQ-CoDel leaf均有包、drop0。UDP echo RTT中位201.13ms、p95 201.97ms。没有同负载软件对照，CPU降幅null；echo不是CS2 jitter/loss/Miss，当前下行主要ACK与小UDP，不是300Mbps、真人或长期验收。
+
+匹配准备改为四条自有软件TCP共享同一个32Mbps/64KiB credit pacer；按真实分类/mark/NAT选择后关闭其它socket，只一TCP BULK＋一UDP RT进入NSS。四个额外端口留给旧代恢复后的新TCP，共8个候选，不改PBR/mark/NAT/affinity或扩大NSS允许范围。每代1909实际绑定和冻结输入核验、新checkpoint下载SHA/gzip、写前PPID1独立恢复；source6/native27/owner100/client180及9000/65536/73728/1MiB保持。
+
+最初raw TCP连接超时或用尽候选；第三轮仅最后候选匹配而拒绝；旧目录白名单生成错误在写前拒绝并修正。SSH仅此测试进程取消2秒保活，硬截止不变；一次80秒软件上传无该错误但未找到同WAN对，未证明保活是根因。全部六次失败保留且未开启router checkpoint/NSS stage。后处理时校时工具旧目录白名单在连接前拒绝，保留原源后只修正路径再分析。首版封存程序引用两个证明文件时漏了JSON后缀，在Git内容变更与提交前拒绝；修复生成器默认GBK读取也在改动前拒绝；原源保留后使用明确UTF8修正路径。未扩大FW来源/端口，没有系统SSH配置改动。
+
+终态原完整审核source3.39秒，NSS68/31657/17139配置不变，ECM关闭全零、无事务/stage/state/模块；两物理原mq+四fq_codel恢复，34个历史端点/客户端及自有SSH接收器关闭。WAN4既有down/四路failover保持。
+
+下一步把151已证明的精确BULK→BE CI撤销接回155 whole-pair终态，再做有限单WAN pilot。当前生产native仍是155 whole-pair分支；不把未整合的离线候选写成部署完成。仍按授权推进至20:00，19:40收尾、19:50不新开生产实验；凭据/CT/nonce/配置/checkpoint/二进制仅本地，仓库按用户明确偏好保持public。
+
+证据：[主线](evidence/nss156-mainline.json)、[两代实测](evidence/nss156-trials.json)、[入口](evidence/nss156-qualification.json)、[失败](evidence/nss156-failures.json)、[软件准备](evidence/nss156-software-preparation.json)、[终态](evidence/nss156-final-audit.json)、[端点](evidence/nss156-endpoint-client-closure.json)
+
+首轮仓库checker把实际字段nssScopeOneTcpBulkOneUdpRt漏写Rt，提交链当即停止；仅修正checker字段名，原冻结源码/硬件证据保留。
+
+## NSS155及更早历史
+
 # 真实流退出通过，新TCP后继仍待验证
 
 更新：2026-10-06 15:39，北京时间。最新NSS155。两次在真实ECM2时关闭自有TCP上传socket，旧双流代停止新学习、精确范围内撤销整个pair并完整恢复；原UDP应用继续收发。WAN5与WAN2分别验证，每次只有一个健康WAN。
