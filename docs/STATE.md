@@ -32,6 +32,8 @@
 
 暂存whitespace检查另拒绝六份冻结源码副本的原有空行；提交前停止，仅添加六个明确路径属性保留原字节，其它检查不放宽。见 [whitespace失败](../evidence/nss148-whitespace-failure.json)。
 
+首次实际Git archive的仓库checker已通过，但额外历史比较误用了Windows CRLF工作副本哈希；失败的107文件在原提交和新archive的Git字节实际相同。停止完成发布标记，保留第一verifier和失败，新增v2直接按原Git blob逐字节核验全部历史源码/证据，不修改旧文件。见 [归档校验失败](../evidence/nss148-archive-verifier-failure.json)。
+
 ## NSS142及更早历史
 
 # 当前状态

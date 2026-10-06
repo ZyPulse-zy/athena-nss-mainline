@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "originalFailurePreserved": true,
+  "firstPublishedCommit": "0beabfcc60cf99091cdef899ca87b01a7cec40dc",
+  "firstPublishedArchiveRepositoryCheckerPassed": true,
+  "failingHistoricalFile": "evidence/nss107-background-after.json",
+  "failingHistoricalFileOriginalGitBlobUnchanged": true,
+  "worktreeContainsCrLf": true,
+  "normalizationOnlyExplainsMismatch": true,
+  "originalGitSha256": "e974896cd9884590101a8ec9d4ee7b0aa4865d7034d76bc4c137686a6bd34385",
+  "worktreeSha256": "83e81067f77581a5a6ddb43ab9199ab8d4b18be4f71622e0fb6641ab3de8985a",
+  "historicalSourceOrEvidenceChanged": false,
+  "hardwareTestRerun": false,
+  "correction": "Compare actual archive directly with original Git blobs; do not modify or normalize historical evidence"
+}

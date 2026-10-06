@@ -1324,7 +1324,7 @@ fail142=json.loads((root/'evidence/nss142-failures.json').read_text());assert le
 proof148=json.loads((root/'evidence/nss148-source-proof.json').read_text())
 assert proof148['historicPrefixSources']==1892
 assert proof148['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:1892],sort_keys=True,separators=(',',':')).encode()).hexdigest()
-assert proof148['sources']==len(proof148['sourceHashes']) and len(manifest['sources'])==1892+proof148['sources']+1
+assert proof148['sources']==len(proof148['sourceHashes']) and len(manifest['sources'])==1892+proof148['sources']+2
 assert proof148['sourcesByRound']=={'143':7,'144':21,'145':23,'146':45,'147':37,'148':9}
 assert all(proof148[k]for k in ['sourceBindingsActualAndFrozenMatch','privateHostBootstrapExcluded','credentialsCtNoncesConfigurationCheckpointsAndBinariesExcluded','historicFilesExceptCurrentRuntimeAllBytesRetained','originalFailuresKept','wholeFactoryRamAbaNotClaimed','actualWholeFactoryHardwareAbaPassed'])
 assert proof148['boundInputsInActualControlledCase']==1518 and proof148['realPreparedBoundInputs']==1527
@@ -1425,4 +1425,13 @@ for f in whitespace148['files']:
 whitespace2148=json.loads((root/'evidence/nss148-whitespace-attribute-failure.json').read_text())
 assert not whitespace2148['passed']and whitespace2148['originalFailurePreserved']and whitespace2148['commitOrPushChainStoppedBeforeCommit']
 assert whitespace2148['attributeOverrideDroppedInheritedCrAtEol']and not whitespace2148['sourceBytesChanged']
+archivefail148=json.loads((root/'evidence/nss148-archive-verifier-failure.json').read_text())
+assert not archivefail148['passed']and archivefail148['originalFailurePreserved']and archivefail148['firstPublishedArchiveRepositoryCheckerPassed']
+assert archivefail148['failingHistoricalFileOriginalGitBlobUnchanged']and archivefail148['worktreeContainsCrLf']and archivefail148['normalizationOnlyExplainsMismatch']
+assert not archivefail148['historicalSourceOrEvidenceChanged']and not archivefail148['hardwareTestRerun']
+archiveproof148=json.loads((root/'evidence/nss148-archive-recovery-source-proof.json').read_text())
+assert archiveproof148['historicPrefixSources']==2042 and archiveproof148['sources']==1
+assert archiveproof148['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:2042],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+for source,digest in archiveproof148['sourceHashes'].items():assert hashlib.sha256((root/'code'/source).read_bytes()).hexdigest()==digest
+assert archiveproof148['comparisonUsesOriginalGitBlobs']and archiveproof148['failedFirstVerifierSourceBytesRetained']and not archiveproof148['operationalBindingsChanged']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

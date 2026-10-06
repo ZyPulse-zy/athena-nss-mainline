@@ -1,0 +1,11 @@
+{
+  "historicPrefixSources": 2042,
+  "historicPrefixCanonicalSha256": "a4d555bb597d2517e0ebf6208d9ed9687e8ed39dfac9b852fbd46c179cf0dd81",
+  "sources": 1,
+  "sourceHashes": {
+    "work/nss148/verify-published-v2.py": "f11e1a42886eedcd303b4433d52808f73652c949cf877528cfa1a400245bf2e5"
+  },
+  "comparisonUsesOriginalGitBlobs": true,
+  "failedFirstVerifierSourceBytesRetained": true,
+  "operationalBindingsChanged": false
+}
