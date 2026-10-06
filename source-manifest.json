@@ -23678,8 +23678,358 @@
       "sha256": "57f04168ea59e9c8419292f60b53038a3c1cfe9fbe56e746b5459ecfb855d9a9",
       "bytes": 1938,
       "role": "v15-actual-wan-class-tags-and-budgets"
+    },
+    {
+      "path": "code/work/v16-three/analyze-hardware.py",
+      "workspaceSource": "work/v16-three/analyze-hardware.py",
+      "sha256": "d874ecfb52888059c3d75eccbbb46525d3251a1c288500e15efa2b5e9516983d",
+      "bytes": 5804,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/candidate-policy.mjs",
+      "workspaceSource": "work/v16-three/candidate-policy.mjs",
+      "sha256": "df643a34be01cc34bc299a61aa1edc687779597b8f019de4f29083e74b4dc70b",
+      "bytes": 2584,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/class-leaf-map.mjs",
+      "workspaceSource": "work/v16-three/class-leaf-map.mjs",
+      "sha256": "1d400ffa1345503f7d554170428e5ccdc3bd4c31e8f12d91e64502433cc4674c",
+      "bytes": 3710,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/classified-tags.lua",
+      "workspaceSource": "work/v16-three/classified-tags.lua",
+      "sha256": "c9e983814087f007cca62c316d6d74a1bd5d36e3d1dd22045cc44eafe9320c30",
+      "bytes": 3875,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/classifier.lua",
+      "workspaceSource": "work/v16-three/classifier.lua",
+      "sha256": "9b3733f1cab9de119e2ac406bb896f850cac32ba539ae257126c61cf5f6c669b",
+      "bytes": 22185,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/client-watchdog.ps1",
+      "workspaceSource": "work/v16-three/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/close-endpoint.mjs",
+      "workspaceSource": "work/v16-three/close-endpoint.mjs",
+      "sha256": "05fc3ebfb61a4790e3d2508415ad73908ed6336e88c42be9679fc518c40f7c63",
+      "bytes": 2247,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v16-three/current-audit-diagnostic.mjs",
+      "sha256": "5a5be8033f0085534d342bed73be267668f48cf7c0a9e9fe940d478860712eae",
+      "bytes": 5846,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/discover-peer.py",
+      "workspaceSource": "work/v16-three/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/download-server.py",
+      "workspaceSource": "work/v16-three/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v16-three/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/build_local.py",
+      "workspaceSource": "work/v16-three/endpoint-gate/build_local.py",
+      "sha256": "ccd8f5dcc1a62b103c22f2afa34b02eefc6ca482ca96ef75bc585c8cb54e1477",
+      "bytes": 10072,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/control_harness.py",
+      "workspaceSource": "work/v16-three/endpoint-gate/control_harness.py",
+      "sha256": "2990d3ff3c5c87ba2651b586269249b72d68d02bbf13c9d92a78575a39207ad0",
+      "bytes": 8670,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/ct_harness.py",
+      "workspaceSource": "work/v16-three/endpoint-gate/ct_harness.py",
+      "sha256": "3815b27effe8f291a9c154f3184f86add49d73c2761639adbaf9cead84888dc5",
+      "bytes": 8744,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/ecm_ae_classifier_public.h",
+      "workspaceSource": "work/v16-three/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/predicate_test.c",
+      "workspaceSource": "work/v16-three/endpoint-gate/predicate_test.c",
+      "sha256": "705c01bf5cdf151408c40f7781108bb510bca1d98bbfae40c9cc513ab6221920",
+      "bytes": 807,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "workspaceSource": "work/v16-three/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "a570c6ec3af180764bdcb38eb8b011ae8d9ecd76e33d957912d9c58a5abbfc18",
+      "bytes": 29565,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/rp_ecm_gate_lab_ct.mod.c",
+      "workspaceSource": "work/v16-three/endpoint-gate/rp_ecm_gate_lab_ct.mod.c",
+      "sha256": "410772cca53324700b0610200e0cd16dff721f2a78fa43aedc0dcb9199d0908e",
+      "bytes": 389,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/two_slot_predicate.h",
+      "workspaceSource": "work/v16-three/endpoint-gate/two_slot_predicate.h",
+      "sha256": "4407302551dbcc1cdaae987026f2218871a113645ad1b411342cee7b1ae28b80",
+      "bytes": 5079,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/epoch-driver.mjs",
+      "workspaceSource": "work/v16-three/epoch-driver.mjs",
+      "sha256": "0362c26674d85bac6b34e21387977064ab897b2e068fc63d81969d6523d9d98d",
+      "bytes": 15201,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/export-hardware.py",
+      "workspaceSource": "work/v16-three/export-hardware.py",
+      "sha256": "b79681afb09b6fba450d94dd187ac5eeabe4fe4ff2776c294d7cdc5dd2b1e5c2",
+      "bytes": 8544,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/fast-path.lua",
+      "workspaceSource": "work/v16-three/fast-path.lua",
+      "sha256": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b",
+      "bytes": 14618,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/freeze-entry.mjs",
+      "workspaceSource": "work/v16-three/freeze-entry.mjs",
+      "sha256": "a60893c6df014b3d7b822afe9c41211b9c03aefee4d2efba1c6622cea5526e94",
+      "bytes": 1968,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/guardian-plan.mjs",
+      "workspaceSource": "work/v16-three/guardian-plan.mjs",
+      "sha256": "91a197c2ec265245286841389c104de9e3212114979239921d122609f1c56ed5",
+      "bytes": 440,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/integrate-client.py",
+      "workspaceSource": "work/v16-three/integrate-client.py",
+      "sha256": "c4cc7c87d2f89e73bfaebb792f1f1e51ea05a4ecf0777d554177bfaac3553995",
+      "bytes": 2875,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/integrate-three.py",
+      "workspaceSource": "work/v16-three/integrate-three.py",
+      "sha256": "7e89cb7564a3b17d8ce8eb9ba3ea7e9944245c09ac3e25725d3f5107a3605d0f",
+      "bytes": 8777,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/match-controlled.mjs",
+      "workspaceSource": "work/v16-three/match-controlled.mjs",
+      "sha256": "b925358622bfb1b83c8e517559ac273fce8a803633ef6876083bdaca88c23def",
+      "bytes": 1877,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/module-stage-guardian.lua",
+      "workspaceSource": "work/v16-three/module-stage-guardian.lua",
+      "sha256": "e128a6a25d128b6db0138bfebff2491ece51f63ddf448b9489e5ef32a1a649ad",
+      "bytes": 13560,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/module-stage.mjs",
+      "workspaceSource": "work/v16-three/module-stage.mjs",
+      "sha256": "6d5801043a7a58b7b806a9b596badf80f2ca7d1c412d57f319d1126dd9ef5db4",
+      "bytes": 17897,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/native-client.mjs",
+      "workspaceSource": "work/v16-three/native-client.mjs",
+      "sha256": "db08e9970a153f0a9d1514ec75b6733ef21326ace35dfcf0e7cde446bfbf360c",
+      "bytes": 5320,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/owned-load-policy.mjs",
+      "workspaceSource": "work/v16-three/owned-load-policy.mjs",
+      "sha256": "4decad100005a5a9523c6257118f19c2c8e7f1f4dfaff9b472b0dab444492dd2",
+      "bytes": 914,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/parse-ecm.mjs",
+      "workspaceSource": "work/v16-three/parse-ecm.mjs",
+      "sha256": "bc0c752dd715488640bb00af7becc9f1a8549cfad317f38b160d594cf400df20",
+      "bytes": 3611,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/payload.mjs",
+      "workspaceSource": "work/v16-three/payload.mjs",
+      "sha256": "d1ec332e47595660df338940b3545c8e90ad1bdd373639b3cbbb8f883b1ff16b",
+      "bytes": 4173,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/persistent-ssh.mjs",
+      "workspaceSource": "work/v16-three/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/pilot-supervisor.mjs",
+      "workspaceSource": "work/v16-three/pilot-supervisor.mjs",
+      "sha256": "8e8b8df0800e7cb8f9195cf95bbe9fed5c4780f02266aeef358af500f37eb6f1",
+      "bytes": 4943,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/prepare-runtime.py",
+      "workspaceSource": "work/v16-three/prepare-runtime.py",
+      "sha256": "0eebde0183d5143f87b0647e150631f63f940c44d93ca99e7aea3c15d1dc7efc",
+      "bytes": 1803,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/probe-peer.py",
+      "workspaceSource": "work/v16-three/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/qos-physical.lua",
+      "workspaceSource": "work/v16-three/qos-physical.lua",
+      "sha256": "fc4988b579600ff46c407d513af86f0d3e28fbe68a6da38ca53f5e39f114748f",
+      "bytes": 8863,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/qualify-entry-v2.mjs",
+      "workspaceSource": "work/v16-three/qualify-entry-v2.mjs",
+      "sha256": "9ec9db8d21e4bbf8db4e76a126dcda27dd700070af449bf8cfbe853635173fca",
+      "bytes": 4994,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/qualify-entry.mjs",
+      "workspaceSource": "work/v16-three/qualify-entry.mjs",
+      "sha256": "636d44dc79fb80adde43558e7baa1de198e54013cf84fa347b091680bfdeef76",
+      "bytes": 4976,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/qualify-native-source.py",
+      "workspaceSource": "work/v16-three/qualify-native-source.py",
+      "sha256": "533103619ae4c46ad691240e48d71c25d8b0bbdeac0208745870e3a485b7893a",
+      "bytes": 10093,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/qualify-native.mjs",
+      "workspaceSource": "work/v16-three/qualify-native.mjs",
+      "sha256": "0678946529e2d6d7417d03dbaa7f4420a11b1bf515e17967909017a07d6d975c",
+      "bytes": 8973,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/read-controlled.mjs",
+      "workspaceSource": "work/v16-three/read-controlled.mjs",
+      "sha256": "22e2e5b40d0a16a55c7c4b097efe4fcdbc05c4523b1ce0e5a0b02fd5cac44fc4",
+      "bytes": 6796,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/receiver.py",
+      "workspaceSource": "work/v16-three/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/server.py",
+      "workspaceSource": "work/v16-three/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/session-binding.mjs",
+      "workspaceSource": "work/v16-three/session-binding.mjs",
+      "sha256": "279e2904be0994d9f3711fd0e0c210064ae388c6309d1c4e49dca0e16301e417",
+      "bytes": 607,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/start-dallas.mjs",
+      "workspaceSource": "work/v16-three/start-dallas.mjs",
+      "sha256": "52861e963e4d2e6d7508f5748d2a19dd490d92fcb900d6557d271caf83c9f2ae",
+      "bytes": 10267,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/tag-normalizer.lua",
+      "workspaceSource": "work/v16-three/tag-normalizer.lua",
+      "sha256": "98ed0ecd1bc1b07f10a79d17bcfb9d4a426cc9c971d44e6bb542c4f529c29602",
+      "bytes": 5610,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/wan-scope.lua",
+      "workspaceSource": "work/v16-three/wan-scope.lua",
+      "sha256": "c1df8f235be2d479e740bb8b692cea7a7963cec1a99dcdf27bf5c5dadcda5254",
+      "bytes": 3540,
+      "role": "v16-three-exact-flows-multiwan-qos"
+    },
+    {
+      "path": "code/work/v16-three/wan-tag-plan.mjs",
+      "workspaceSource": "work/v16-three/wan-tag-plan.mjs",
+      "sha256": "459a40954956b88db0edd291aabae124ae719180d7924c5f9dd2ee1aa0c7a09b",
+      "bytes": 1866,
+      "role": "v16-three-exact-flows-multiwan-qos"
     }
   ],
-  "lastAppendExport": "V15_WAN_CLASS_QOS",
+  "lastAppendExport": "V16_THREE_FLOW_MULTIWAN",
   "privateDataExcluded": true
 }

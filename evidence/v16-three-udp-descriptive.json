@@ -1,0 +1,12 @@
+{
+  "wholeFixtureOnly": true,
+  "sent": 5469,
+  "returnedBeforeClientClose": 5458,
+  "unreturned": 11,
+  "unreturnedWithinOneSecondOfStop": 9,
+  "rttMedianMs": 200.70750000000407,
+  "rttP95Ms": 201.25530000000072,
+  "rttP99Ms": 202.0456000000013,
+  "nssSpecificLossAttribution": false,
+  "cs2Metrics": false
+}

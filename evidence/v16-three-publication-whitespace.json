@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "phase": "stagedWhitespaceCheck",
+  "commitChainStopped": true,
+  "path": "code/work/v16-three/endpoint-gate/rp_ecm_gate_lab_ct.mod.c",
+  "line": 19,
+  "message": "new blank line at EOF",
+  "repair": "Exact path blank-at-eof attribute; generated source bytes remain unchanged."
+}

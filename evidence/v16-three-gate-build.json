@@ -1,0 +1,174 @@
+{
+  "build": {
+    "schema": "v16-three-exact-private-build",
+    "router_connected": false,
+    "modules_loaded": false,
+    "live_permit_implemented": true,
+    "executed_build_script_sha256": "ccd8f5dcc1a62b103c22f2afa34b02eefc6ca482ca96ef75bc585c8cb54e1477",
+    "source_hashes": {
+      "Makefile": "2272913d8ef5116d323f197695d0b50452c494dc17227d5bb6e1a0763a795d99",
+      "two_slot_predicate.h": "4407302551dbcc1cdaae987026f2218871a113645ad1b411342cee7b1ae28b80",
+      "predicate_test.c": "705c01bf5cdf151408c40f7781108bb510bca1d98bbfae40c9cc513ab6221920",
+      "rp_ecm_gate_lab_ct.c": "a570c6ec3af180764bdcb38eb8b011ae8d9ecd76e33d957912d9c58a5abbfc18",
+      "ecm_ae_classifier_public.h": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "control_harness.py": "2990d3ff3c5c87ba2651b586269249b72d68d02bbf13c9d92a78575a39207ad0",
+      "ct_harness.py": "3815b27effe8f291a9c154f3184f86add49d73c2761639adbaf9cead84888dc5"
+    },
+    "ecm_sha256": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2",
+    "kernel_key_hashes": {
+      ".config": "24f0389ac9618779974c03d8c71f891b80a1ca58c1e4ef5a6877be4b6b9fe06c",
+      "Module.symvers": "b0782f7327ba04cf3a3f3ad85c735c6639af6accc0d8fa307b8abac9af46cd5d",
+      "include/generated/autoconf.h": "4ef35271b52eb223a7524fe6bb9f1af64c6cc7bc33f2e967843d0700fac397f7",
+      "include/config/kernel.release": "4691853a32eeaabefeb218351b0f75d2693475f463bc3219e358b38d0be1cf04",
+      "include/generated/utsrelease.h": "3549c01a94d2155024b810c393a78912a2eb3dfbacec92ba9a6ab80e2313c763",
+      "include/linux/netfilter.h": "97a644079e60fc386a8aee3b3900cc7d68450dac3f0841134817c293e20420f3"
+    },
+    "frozen_inputs": {
+      "work/nss7/rp_ecm_gate.ko": "5511df40355271b17302a711578bb991e013df4bddb735b71ddbb71033debb02",
+      "work/nss10/tcp-udp-gate/rp_ecm_gate_tcp_udp.ko": "d6a892e758619248266a2b7f0ba48723802e7aae090546800cff666ac302cd0a",
+      "work/nss10/tcp-udp-gate/build-manifest.json": "cda0394e4a44ff6da01165664c972df1b8ce5e450bd40cfe9f8651cfb084a7b1",
+      "work/nss11/tag-gate-review/rp_ecm_gate_game_deny.ko": "1e0625864203e0060424634da7266ac7b84ca6561d541f3da484679f4c68f5fc",
+      "work/nss11/tag-gate-review/build-manifest.json": "c347b5d8e67891cea7189b1fc33929094abaa567a4ab083ca26dae6505f9d7e6",
+      "work/nss11/tag-gate-review/SHA256SUMS": "7a1010e1d65c4fc61d5c6cc0d95211981aff19c707ceedfd02dd1241208a9c95"
+    },
+    "sdk_counts": {
+      "files": 11900,
+      "symlinks": 19
+    },
+    "private_build_root": "/tmp/athena-v16-three-exact-afj7006a",
+    "config_lines": [
+      "CONFIG_ARM64=y",
+      "CONFIG_SMP=y",
+      "CONFIG_MODULES=y",
+      "CONFIG_MODULE_UNLOAD=y",
+      "# CONFIG_MODVERSIONS is not set",
+      "# CONFIG_MODULE_SIG is not set",
+      "CONFIG_MODULE_STRIPPED=y",
+      "CONFIG_NETFILTER=y",
+      "CONFIG_NF_CONNTRACK=m",
+      "CONFIG_NF_CONNTRACK_MARK=y",
+      "CONFIG_NF_CONNTRACK_ZONES=y",
+      "CONFIG_NF_NAT=m",
+      "CONFIG_RANDSTRUCT_NONE=y"
+    ],
+    "actual_ecm_export_triples": {
+      "ecm_ae_classifier_ops_register": [
+        "0x18",
+        "0x1c",
+        "0x20"
+      ],
+      "ecm_ae_classifier_ops_unregister": [
+        "0x24",
+        "0x28",
+        "0x2c"
+      ],
+      "ecm_ae_classifier_decelerate_v4_connection": [
+        "0x0",
+        "0x4",
+        "0x8"
+      ],
+      "ecm_db_connection_count_get": [
+        "0x1bc",
+        "0x1c0",
+        "0x1c4"
+      ]
+    },
+    "private_wrapper_relocations": [
+      "scripts/basic/fixdep",
+      "scripts/mod/modpost"
+    ],
+    "symvers_origin": "locally reconstructed actual export names; CRC0 non-MODVERSIONS dependency records; not authentic ECM build CRC/ABI proof",
+    "predicate_and_ct_functions_reused": true,
+    "historical_predicate_scope": "unchanged header and tuple/pin functions; no repeated exhaustive predicate experiment",
+    "offline_tests": "{\"passed\": true, \"actualCFunctionsExtracted\": [\"classifier_now_ms\", \"classifier_live\", \"lease_now\", \"deny_locked\", \"drain_locked\", \"expiry\", \"parse_true\", \"permit_set\", \"renew_epoch\", \"deny_set\", \"close_set\", \"drain_set\", \"resume_set\", \"readonly_set\", \"select_exact\"], \"sourceSha256\": \"a570c6ec3af180764bdcb38eb8b011ae8d9ecd76e33d957912d9c58a5abbfc18\", \"stdout\": \"three-slot extracted control checks passed: 45\\n\", \"hardwareExecuted\": false, \"firmwareAckProven\": false}\n",
+    "ct_tests": "{\"passed\": true, \"sourceSha256\": \"a570c6ec3af180764bdcb38eb8b011ae8d9ecd76e33d957912d9c58a5abbfc18\", \"actualCFunctionsExtracted\": [\"tuple_equal_exact\", \"fill_tuple\", \"snapshot_matches\", \"instance_ready\", \"parse_nat\", \"drop_pins\", \"pin_instances\"], \"stdout\": \"three-slot CT checks passed: 52\\n\", \"hardwareExecuted\": false}\n",
+    "predicate_tests": "three-slot exact predicate checks passed\n",
+    "module_sha256": "a13b3c790fc6baf19dd30839ef63a6d18b0c04a0f5f6fb56a75474d032e4a524",
+    "module_modinfo": "\nString dump of section '.modinfo':\n  [     0]  license=GPL\n  [     c]  parmtype=frozen_record_sha256:charp\n  [    30]  parmtype=game_server_port:ushort\n  [    51]  parmtype=game_source_port:ushort\n  [    72]  parmtype=game_server:charp\n  [    8d]  parmtype=tcp2_server_port:ushort\n  [    ae]  parmtype=tcp_server_port:ushort\n  [    ce]  parmtype=tcp2_source_port:ushort\n  [    ef]  parmtype=tcp_source_port:ushort\n  [   10f]  parmtype=tcp2_server:charp\n  [   12a]  parmtype=tcp_server:charp\n  [   144]  parmtype=register_gate:bool\n  [   160]  parmtype=game_nat_port:ushort\n  [   17e]  parmtype=tcp2_nat_port:ushort\n  [   19c]  parmtype=tcp_nat_port:ushort\n  [   1b9]  parmtype=game_nat_address:charp\n  [   1d9]  parmtype=tcp2_nat_address:charp\n  [   1f9]  parmtype=tcp_nat_address:charp\n  [   218]  parmtype=game_ct_mark:uint\n  [   233]  parmtype=tcp2_ct_mark:uint\n  [   24e]  parmtype=tcp_ct_mark:uint\n  [   268]  parmtype=game_ct_id_raw:uint\n  [   285]  parmtype=tcp2_ct_id_raw:uint\n  [   2a2]  parmtype=tcp_ct_id_raw:uint\n  [   2be]  parmtype=classifier_sequence:ullong\n  [   2e2]  parmtype=session_until_ms:ullong\n  [   303]  parmtype=classifier_until_ms:ullong\n  [   327]  parmtype=diagnostic_only:bool\n  [   345]  depends=nf_conntrack,ecm\n  [   35e]  name=rp_ecm_gate_lab_ct\n  [   376]  vermagic=6.18.44 SMP mod_unload aarch64\n\n",
+    "imports": [
+      "__local_bh_enable_ip",
+      "__msecs_to_jiffies",
+      "__stack_chk_fail",
+      "_printk",
+      "cancel_delayed_work_sync",
+      "delayed_work_timer_fn",
+      "ecm_ae_classifier_decelerate_v4_connection",
+      "ecm_ae_classifier_ops_register",
+      "ecm_ae_classifier_ops_unregister",
+      "ecm_db_connection_count_get",
+      "in4_pton",
+      "init_net",
+      "jiffies",
+      "kstrtobool",
+      "ktime_get_with_offset",
+      "mutex_lock",
+      "mutex_unlock",
+      "nf_conntrack_find_get",
+      "nf_ct_destroy",
+      "nf_ct_get_id",
+      "nf_ct_zone_dflt",
+      "param_ops_bool",
+      "param_ops_charp",
+      "param_ops_uint",
+      "param_ops_ullong",
+      "param_ops_ushort",
+      "queue_delayed_work_on",
+      "queued_spin_lock_slowpath",
+      "refcount_warn_saturate",
+      "scnprintf",
+      "sscanf",
+      "strlen",
+      "synchronize_net",
+      "system_percpu_wq",
+      "timer_init_key"
+    ],
+    "unresolved_metadata_imports": [],
+    "versions_section_present": false,
+    "module_warnings": [
+      "WARNING: modpost: missing MODULE_DESCRIPTION() in rp_ecm_gate_lab_ct.o"
+    ],
+    "status": "built-classifier-epoch-offline; no runtime qualification",
+    "sdk_original_unchanged": true,
+    "old_gate_inputs_unchanged": true,
+    "source_inputs_unchanged": true
+  },
+  "control": {
+    "passed": true,
+    "actualCFunctionsExtracted": [
+      "classifier_now_ms",
+      "classifier_live",
+      "lease_now",
+      "deny_locked",
+      "drain_locked",
+      "expiry",
+      "parse_true",
+      "permit_set",
+      "renew_epoch",
+      "deny_set",
+      "close_set",
+      "drain_set",
+      "resume_set",
+      "readonly_set",
+      "select_exact"
+    ],
+    "sourceSha256": "a570c6ec3af180764bdcb38eb8b011ae8d9ecd76e33d957912d9c58a5abbfc18",
+    "stdout": "three-slot extracted control checks passed: 45\n",
+    "hardwareExecuted": false,
+    "firmwareAckProven": false
+  },
+  "ct": {
+    "passed": true,
+    "sourceSha256": "a570c6ec3af180764bdcb38eb8b011ae8d9ecd76e33d957912d9c58a5abbfc18",
+    "actualCFunctionsExtracted": [
+      "tuple_equal_exact",
+      "fill_tuple",
+      "snapshot_matches",
+      "instance_ready",
+      "parse_nat",
+      "drop_pins",
+      "pin_instances"
+    ],
+    "stdout": "three-slot CT checks passed: 52\n",
+    "hardwareExecuted": false
+  }
+}

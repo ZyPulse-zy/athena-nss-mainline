@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "threeSlotConsumerClassChangeModel": true,
+  "qosTwoOrThreeWanModel": true,
+  "nativeThirdTagNormalizationAndWrongTagRefusal": true,
+  "thirdSlotTagCounterDefaultDeny": true,
+  "guardianExecBytes": 8863,
+  "execBytes": {
+    "consumer": 7083,
+    "qos": 6405,
+    "normalizer": 5775,
+    "counters": 7591,
+    "guardianSyntax": 8915,
+    "classifierConsumerSyntax": 7431,
+    "classifierAdapterSyntax": 6967
+  },
+  "backendMocked": true,
+  "hardwareExecuted": false,
+  "productionWrites": false,
+  "routerFilesWritten": false,
+  "sourceHashes": {
+    "classifier": "9b3733f1cab9de119e2ac406bb896f850cac32ba539ae257126c61cf5f6c669b",
+    "qos": "fc4988b579600ff46c407d513af86f0d3e28fbe68a6da38ca53f5e39f114748f",
+    "normalizer": "98ed0ecd1bc1b07f10a79d17bcfb9d4a426cc9c971d44e6bb542c4f529c29602",
+    "fast": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b"
+  },
+  "results": {
+    "consumer": "TRIPLET_SAME_QUERY_CLASS_AND_CHANGE_PASS",
+    "qos": "{\"backendMocked\":true,\"passed\":true,\"checks\":3}",
+    "normalizer": "THIRD_SLOT_NATIVE_TAG_NORMALIZATION_PASS",
+    "counters": "THIRD_SLOT_COUNTER_DEFAULT_DENY_PASS",
+    "guardianSyntax": "GUARDIAN_SYNTAX_PASS",
+    "classifierConsumerSyntax": "CLASSIFIER_CONSUMER_SYNTAX_PASS",
+    "classifierAdapterSyntax": "CLASSIFIER_ADAPTER_SYNTAX_PASS"
+  }
+}

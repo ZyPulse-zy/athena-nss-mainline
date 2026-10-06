@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "GUARDIAN_TRANSPORT_SIZE_REFUSED",
+    "productionWrites": false,
+    "originalPreserved": true,
+    "cause": "Representative three-flow rollback exec9143 exceeded9000. Exact selection moved once into the existing SHA-pinned bundle; actual guardian8831 and bundle72637 fit original caps."
+  },
+  {
+    "kind": "REDUNDANT_FULL_CLASSIFIER_SYNTAX_SIZE_REFUSED",
+    "productionWrites": false,
+    "originalPreserved": true,
+    "cause": "Standalone full syntax copy9871 exceeded9000. Two balanced syntax parts checked in RAM; the exact full staged bundle compiled and ran on hardware."
+  },
+  {
+    "kind": "MODEL_JSON_NUL_ARGV",
+    "productionWrites": false,
+    "originalPreserved": true,
+    "cause": "JSON model NUL argv did not preserve the process command string. Model reconstructs it in Lua; production raw argv validation unchanged."
+  },
+  {
+    "kind": "MODEL_LUA_NEWLINE_ESCAPES",
+    "productionWrites": false,
+    "originalPreserved": true,
+    "cause": "Two model-only quoting mistakes rejected by Lua parser, then corrected. No production writes in those attempts."
+  }
+]

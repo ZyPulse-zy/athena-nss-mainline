@@ -1,3 +1,19 @@
+# 三流跨 WAN NSS 与独立 QoS leaf 实测通过
+
+更新：2026-10-07北京时间03:05。两条自有 TCP BULK 自然走WAN1／WAN2，小UDP RT走WAN2。新三槽gate实际运行60.01秒、121个B帧，ECM全程3、20次续租，结束后0。六个上下行按WAN/类别派生的tag、完整ct mark、NAT、LAN/bridge入口和WAN affinity全部正确。实际2389绑定，常驻自动分类器未修改。
+
+真实两路bulk分别进入8f15／8f25下行和8e15／8e25上行FQ-CoDel；RT进入WAN2的8f26／8e26。附近异步队列快照下行bulk约10.54／11.62Mbps，RT双向队列drop0，错误WAN类别leaf零包。DOWN共享30、UP共享60，每WAN15／30Mbps，RT保障1Mbps。已证明跨WAN两路bulk＋RT实际共存；总负载未跑满预算，尚不宣称饱和限速精度。
+
+新gate使用同内核/ECM，不升级固件；CT/predicate/control模型、实际二进制关联和三CI硬件运行成立。三个精确CT对象及zone0/fullmark/NAT约束、未知默认拒绝、全代租约保留。独立守护的连接身份放到原有SHA-pinned bundle中，owner/模块/恢复信息与硬截止仍独立。实际guardian8831、bundle72637、record925671字节都在原9000／73728／1MiB内；source6、kernel90(最大120)、owner180、client180未放宽。三流改类时结束旧代，不直接换tag；没有声称新增选择性改类分支通过。
+
+路由器模块、两个private WAN、两物理原mq＋四fq_codel完整恢复，原完整audit通过；自有端点、精确FW和客户端全部关闭。全fixture UDP5469发／5458返，11未返中9在停止前1秒内；RTT中位200.71ms、p95 201.26ms，仅自有Dallas echo描述，不能归为NSS特定丢包或CS2指标。B-only softirq4.37%、busy16.71%、squeeze/drop0是描述，不新增CPU因果或300Mbps/真人/长期部署结论。
+
+下一步只改变DOWN共享预算到16Mbps，让现有两路受控bulk压住各WAN8Mbps上限，观察限速与RT共存；UP60及其它主要变量保留。07:40晨间收尾、07:50不新开生产、08:00前暂停。睡眠期间不操作桌面/Steam/CS2、不新下载或主动认证。
+
+证据：[硬件与恢复](evidence/v16-three-hardware.json)、[入口绑定](evidence/v16-three-qualification.json)、[RAM模型](evidence/v16-three-native-qualification.json)、[gate构建](evidence/v16-three-gate-build.json)、[UDP描述](evidence/v16-three-udp-descriptive.json)、[失败](evidence/v16-three-failures.json)、[源码](evidence/v16-three-source-proof.json)。入口：[控制器](code/work/v16-three/pilot-supervisor.mjs)。
+
+## 双WAN两槽及更早历史
+
 # 双 WAN 独立类别 tag 与 NSS QoS 预算实测通过
 
 更新：2026-10-07北京时间02:35。受控TCP BULK自然走WAN3、UDP RT走WAN2。60.01秒、121帧全程ECM2，20次续租；四个按WAN/方向/类别派生的tag、完整ct mark、NAT及连接粘性正确。NSS gate与常驻自动分类器未变，实际2335绑定。测试结束ECM0，模块、两private WAN、两物理原mq＋四fq_codel、端点FW和客户端完整恢复；原完整审核通过。
