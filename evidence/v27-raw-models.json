@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "server": {
+    "passed": true,
+    "checks": 10,
+    "actualSenderLocalSocketsExercised": true,
+    "fourConcurrentSlots": true,
+    "nonceAndDuplicateRefusal": true,
+    "oldSlotReleasedBeforeReuse": true,
+    "productionWrites": false,
+    "routerTraffic": false
+  },
+  "policy": {
+    "passed": true,
+    "checks": 33,
+    "modelOnly": true,
+    "productionWrites": false,
+    "serverReadyFieldsExact": true,
+    "sourcePortsBounded": true
+  },
+  "onlyOwnFixtureTransportChanged": true,
+  "productionWrites": false
+}

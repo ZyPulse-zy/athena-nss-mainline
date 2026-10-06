@@ -1,0 +1,117 @@
+{
+  "passed": true,
+  "prerequisiteTestPassed": false,
+  "originalControllerFailurePreserved": true,
+  "productionNssWrites": false,
+  "checkpointOrNativeStageStarted": false,
+  "fiveSlotModuleHardwareLoaded": false,
+  "fiveWanConcurrentFastPathProven": false,
+  "sourceBindings": 2761,
+  "onlyOwnFixtureTransportChanged": true,
+  "nativeAndQosByteEquivalentToV24": true,
+  "localActualSenderChecks": 10,
+  "localProtocolModels": 33,
+  "client": {
+    "seconds": 8.0080919,
+    "tcpPayloadBytes": 0,
+    "error": "Error: Owned raw first-byte deadline tcp",
+    "udpWholeShortClientWindow": {
+      "sent": 257,
+      "returned": 251,
+      "nssQualityMetric": false
+    }
+  },
+  "endpointReadOnly": {
+    "serviceReadySeen": true,
+    "unhandledExceptionSeen": false,
+    "ownedRuleCounters": [
+      {
+        "protocol": "tcp",
+        "counters": [
+          {
+            "packets": 0,
+            "bytes": 0
+          }
+        ]
+      },
+      {
+        "protocol": "udp",
+        "counters": [
+          {
+            "packets": 1,
+            "bytes": 156
+          }
+        ]
+      }
+    ],
+    "tcpSourceOrPathCauseDetermined": false,
+    "firstControlSshTimedOutThenReadOnlyRetrySucceeded": true
+  },
+  "exactClientClosure": {
+    "exactClientOnly": true,
+    "observedAt": "2026-10-06T21:16:09.1910304Z",
+    "clientExitedBeforeDeadline": true,
+    "passed": true
+  },
+  "exactEndpointClosure": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "terminalCompleteAudit": {
+    "passed": true,
+    "auditPurpose": "prewrite",
+    "prelearningSchedulingRequested": true,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 2,
+    "queryAge": 1,
+    "sequence": 8875,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": false,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "allFiveHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "terminalPhysicalRoots": {
+    "passed": true,
+    "readonly": true,
+    "observedAt": "2026-10-06T21:19:37.589Z",
+    "devices": {
+      "wan": {
+        "root": "mq",
+        "fqCodelChildren": 4,
+        "experimentalNssQdiscPresent": false
+      },
+      "lan4": {
+        "root": "mq",
+        "fqCodelChildren": 4,
+        "experimentalNssQdiscPresent": false
+      }
+    },
+    "experimentalGateAbsent": true,
+    "sourceSha256": "8c45f4ee50df5fb51e81b2bc721c99a168dbb8e21469d1fca82e307783c0d782"
+  },
+  "firstDiagnosticSyntaxFailureRetained": true,
+  "firstDiagnosticRanNetworkTools": false,
+  "noFirmwareFaultOrNewCpuOrHumanAcceptanceClaim": true,
+  "retainedPublicationFailures": [
+    {
+      "error": "directory glob matched the load-latest JSON file",
+      "beforeRepositoryWrites": true
+    },
+    {
+      "error": "qualification JSON missing from the curated source copy",
+      "partialSourceCopiesVerifiedBeforeResume": true
+    }
+  ]
+}

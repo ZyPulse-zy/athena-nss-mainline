@@ -26611,8 +26611,400 @@
       "sha256": "b4efbde593527756f3c763017089ae211613947e593b9e037d5cf309b7197a7a",
       "bytes": 1917,
       "role": "preparation-sources-and-retained-copy-failures"
+    },
+    {
+      "path": "code/work/prepare-v27-raw.py",
+      "workspaceSource": "work/prepare-v27-raw.py",
+      "sha256": "1aec1bb99217380a1a5e321ad6b18c97f0caf3c028d49abe01e598e64ed02d30",
+      "bytes": 1038,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/candidate-policy.mjs",
+      "workspaceSource": "work/v27-raw/candidate-policy.mjs",
+      "sha256": "d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068",
+      "bytes": 2579,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/class-leaf-map.mjs",
+      "workspaceSource": "work/v27-raw/class-leaf-map.mjs",
+      "sha256": "815250459be21cce80e65bfe85f29a43cce7d49e8e9800cb3470e30d84d64722",
+      "bytes": 3740,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/classified-tags.lua",
+      "workspaceSource": "work/v27-raw/classified-tags.lua",
+      "sha256": "2756a538a16b66c45f4cc73ef89b2898c84672786cbb7bc896e579160fbf96e6",
+      "bytes": 3966,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/classifier.lua",
+      "workspaceSource": "work/v27-raw/classifier.lua",
+      "sha256": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+      "bytes": 22277,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/client-watchdog.ps1",
+      "workspaceSource": "work/v27-raw/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/close-endpoint.mjs",
+      "workspaceSource": "work/v27-raw/close-endpoint.mjs",
+      "sha256": "ae5c1fe31ff6a4c7813202f2ae7764d2dde8c1753dcfffaa69f0c19409f5c268",
+      "bytes": 2241,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/compact-post-guards.mjs",
+      "workspaceSource": "work/v27-raw/compact-post-guards.mjs",
+      "sha256": "83de00758cc0ba05270b81d3b51ddc76f39f30ed1275397a48080ff15aeb5cc3",
+      "bytes": 2597,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v27-raw/current-audit-diagnostic.mjs",
+      "sha256": "07f9eb5a3d04e917fbaa3d72e08412184314b2b7e09a7d660a4971e8a0036757",
+      "bytes": 5842,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/discover-peer.py",
+      "workspaceSource": "work/v27-raw/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/download-server.py",
+      "workspaceSource": "work/v27-raw/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v27-raw/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/epoch-driver.mjs",
+      "workspaceSource": "work/v27-raw/epoch-driver.mjs",
+      "sha256": "9381156a17ecc1da8ba63b6a8d02d59ac8b953559ca37ea004e941a59dc8bd8a",
+      "bytes": 15299,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/export-failure-v2.py",
+      "workspaceSource": "work/v27-raw/export-failure-v2.py",
+      "sha256": "883e3b17b2972e7261d9204de98ac9d198ebaffaf3fc83e4b0a4ccaf3303b586",
+      "bytes": 814,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/export-failure-v3.py",
+      "workspaceSource": "work/v27-raw/export-failure-v3.py",
+      "sha256": "2fe4917ae6f525454f4aa3cc17676e0de6ed051fd00071a6ccbe5cc30795156d",
+      "bytes": 2164,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/export-failure.py",
+      "workspaceSource": "work/v27-raw/export-failure.py",
+      "sha256": "f6d292d0d4b73e67aa55ec94ecc19595eef0f529bce316a654ecaccf720574eb",
+      "bytes": 9412,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/fast-path.lua",
+      "workspaceSource": "work/v27-raw/fast-path.lua",
+      "sha256": "15552eef44375a039fdc41affb8afb3ebe7954a711771e8a87881ca25dd88399",
+      "bytes": 15004,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/guardian-plan.mjs",
+      "workspaceSource": "work/v27-raw/guardian-plan.mjs",
+      "sha256": "397dd536261b19c8900e5755a99238f1f0d4d1ddd2e42e783f51ac2b1071a71c",
+      "bytes": 493,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/inspect-firstbyte-v2.mjs",
+      "workspaceSource": "work/v27-raw/inspect-firstbyte-v2.mjs",
+      "sha256": "afe0e5c292839fc8db2a8570539255e80e4d06811fc00bc92caa7fd0d4c17107",
+      "bytes": 1471,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/inspect-firstbyte.mjs",
+      "workspaceSource": "work/v27-raw/inspect-firstbyte.mjs",
+      "sha256": "a8083c670b9b618f91c64d773916405aed65914c7bd5b1dc6c989e9ce19fb455",
+      "bytes": 1454,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/inspect-own-ssh-failure.mjs",
+      "workspaceSource": "work/v27-raw/inspect-own-ssh-failure.mjs",
+      "sha256": "d8ad9a702d6a4e8fa7e59ab07f6bc2d4e4b04ff067447a9ccabc27ff02e5a3e1",
+      "bytes": 1296,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/match-controlled.mjs",
+      "workspaceSource": "work/v27-raw/match-controlled.mjs",
+      "sha256": "16a089cbe017b66f0c9e9cfb561ee01683e21915a642bfe65b1bcf19713d2c83",
+      "bytes": 2259,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/model-raw-policy.mjs",
+      "workspaceSource": "work/v27-raw/model-raw-policy.mjs",
+      "sha256": "75c086b11144d452ea752e25c8155f745e5cdef860b3453b09374dc5e4c17251",
+      "bytes": 996,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/model-raw-server.py",
+      "workspaceSource": "work/v27-raw/model-raw-server.py",
+      "sha256": "2eeb6b03355ed3ce8a50da5ad9aeec49088635e47d656aca227dd8d974782fb6",
+      "bytes": 1945,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/module-stage-guardian.lua",
+      "workspaceSource": "work/v27-raw/module-stage-guardian.lua",
+      "sha256": "261b0ee214c9e90287850bb7ccf404a4ec95c37914b94a91c09585c463d05044",
+      "bytes": 13682,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/module-stage.mjs",
+      "workspaceSource": "work/v27-raw/module-stage.mjs",
+      "sha256": "13f88af4c11b3aaa318eac23ea97fc62916d51efc34de0fdcc569723449362e8",
+      "bytes": 17919,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/native-client.mjs",
+      "workspaceSource": "work/v27-raw/native-client.mjs",
+      "sha256": "86a0a2bae1d766d38fecffb922dbb6580bce4b31f990c67adf18d4e666c6aa4f",
+      "bytes": 6028,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/native-qualified.json",
+      "workspaceSource": "work/v27-raw/native-qualified.json",
+      "sha256": "b53def985529c2c2dc6676fdf32c280661202562c23f8ce7129dd25288ed88cf",
+      "bytes": 1856,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/normalizer-qualified.json",
+      "workspaceSource": "work/v27-raw/normalizer-qualified.json",
+      "sha256": "a499de19ddced00f2dda5f0d11220b555b20243e6561696b26cde314c02eca3f",
+      "bytes": 177,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/owned-load-policy.mjs",
+      "workspaceSource": "work/v27-raw/owned-load-policy.mjs",
+      "sha256": "9b392617f2ae310942302cce47804a06145cf47fceeab6b92c0b29f1115e0cf2",
+      "bytes": 1100,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/pack-json.mjs",
+      "workspaceSource": "work/v27-raw/pack-json.mjs",
+      "sha256": "46dcbec7360960887700d94a1e620e53ee233b3e40be50b484011a9623ca75d2",
+      "bytes": 2196,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/parse-ecm.mjs",
+      "workspaceSource": "work/v27-raw/parse-ecm.mjs",
+      "sha256": "6a349403a008929d1020b5f491be7e015bccd20c587cc74c2a1908bd95e3a9b2",
+      "bytes": 3727,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/payload.mjs",
+      "workspaceSource": "work/v27-raw/payload.mjs",
+      "sha256": "ec38f02b95b9d5f006d0b2f1f2a26bf8bc328cf22c15bd055bda37c43c59a723",
+      "bytes": 4460,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/persistent-ssh.mjs",
+      "workspaceSource": "work/v27-raw/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/pilot-supervisor.mjs",
+      "workspaceSource": "work/v27-raw/pilot-supervisor.mjs",
+      "sha256": "b492ffeca8783040bc4ed3328818865c7461ff27b7d297e9250f56c8e63bbc93",
+      "bytes": 4974,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/probe-peer.py",
+      "workspaceSource": "work/v27-raw/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/qos-native-qualified.json",
+      "workspaceSource": "work/v27-raw/qos-native-qualified.json",
+      "sha256": "cd518823df23df884b51865c64f9a9bd943b31ac6e54f3f61a11df0f90459d86",
+      "bytes": 139,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/qos-physical.lua",
+      "workspaceSource": "work/v27-raw/qos-physical.lua",
+      "sha256": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+      "bytes": 8943,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/qualify-entry.mjs",
+      "workspaceSource": "work/v27-raw/qualify-entry.mjs",
+      "sha256": "afc075030894bb5a1b8060ab7d908a2a625db5ae0e71e5890872d39148096a95",
+      "bytes": 3236,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/raw-client.mjs",
+      "workspaceSource": "work/v27-raw/raw-client.mjs",
+      "sha256": "8e3edcea2f6dd2346e4f6c264c7730c102940ac5729eb31b078c34c69bde52ac",
+      "bytes": 5906,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/raw-model-qualified.json",
+      "workspaceSource": "work/v27-raw/raw-model-qualified.json",
+      "sha256": "b3254aebc302f7036575b11f74ffb249b572c6f790f8ffd734cad1f30f505c8c",
+      "bytes": 543,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/raw-policy.mjs",
+      "workspaceSource": "work/v27-raw/raw-policy.mjs",
+      "sha256": "b0b40fb948271157fb0a4a4faeb004ab4cce48a9ea5283626eeed21ebda17653",
+      "bytes": 518,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/raw-server.py",
+      "workspaceSource": "work/v27-raw/raw-server.py",
+      "sha256": "c1f7e933f94fcbd3ce387a57d5512b9defdf6e2574a328ad333820e870eb31d1",
+      "bytes": 4022,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/read-controlled.mjs",
+      "workspaceSource": "work/v27-raw/read-controlled.mjs",
+      "sha256": "027148daa2124cbad695667f4218d7a0a661fb6eb6b027693cc32de11e2c57bc",
+      "bytes": 7189,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/read-physical-restoration.mjs",
+      "workspaceSource": "work/v27-raw/read-physical-restoration.mjs",
+      "sha256": "8c45f4ee50df5fb51e81b2bc721c99a168dbb8e21469d1fca82e307783c0d782",
+      "bytes": 1718,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/README.md",
+      "workspaceSource": "work/v27-raw/README.md",
+      "sha256": "22b2ad40f7e5ce126489a003f3431c99bbce560aa52f0b01bea449ba244b6f39",
+      "bytes": 1751,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/receiver.py",
+      "workspaceSource": "work/v27-raw/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/server.py",
+      "workspaceSource": "work/v27-raw/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/session-binding.mjs",
+      "workspaceSource": "work/v27-raw/session-binding.mjs",
+      "sha256": "07b6a7ef32cf03ed2e03d5bd2f2b5f42f28027a7ecbc652d005f0d9388168945",
+      "bytes": 607,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/start-dallas.mjs",
+      "workspaceSource": "work/v27-raw/start-dallas.mjs",
+      "sha256": "2c4664b0fa0dcccc9ec78e628a5169375164d8039e900d62ff00f7d53ab47552",
+      "bytes": 10477,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/tag-normalizer.lua",
+      "workspaceSource": "work/v27-raw/tag-normalizer.lua",
+      "sha256": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+      "bytes": 6258,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/wait-four-raw.mjs",
+      "workspaceSource": "work/v27-raw/wait-four-raw.mjs",
+      "sha256": "40ba853cd7a2f45e8456b377dfdb6ebde2f04594a4e56011ac3fd9284e5abcd1",
+      "bytes": 1047,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/wait-four-ssh.mjs",
+      "workspaceSource": "work/v27-raw/wait-four-ssh.mjs",
+      "sha256": "79726d763e78bb4c6d76ff00bad86e1949e8e3a6c9f1c1051adb26783e91a166",
+      "bytes": 1054,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/wan-scope.lua",
+      "workspaceSource": "work/v27-raw/wan-scope.lua",
+      "sha256": "c2cbfd5eb8cf714341106f29cd0234d5388d2e88a45c1aaaba7880cd3d488677",
+      "bytes": 3525,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/wan-tag-plan.mjs",
+      "workspaceSource": "work/v27-raw/wan-tag-plan.mjs",
+      "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
+      "bytes": 2045,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
+    },
+    {
+      "path": "code/work/v27-raw/wire-raw-fixture.py",
+      "workspaceSource": "work/v27-raw/wire-raw-fixture.py",
+      "sha256": "c84c4d079e4a6fc551be89428e019082b3c0e79851e804c316e5bdc43382618b",
+      "bytes": 3787,
+      "role": "retained-owned-raw-fixture-prerequisite-refusal"
     }
   ],
-  "lastAppendExport": "V26_NORMAL_APP_ENTRY",
+  "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
   "privateDataExcluded": true
 }

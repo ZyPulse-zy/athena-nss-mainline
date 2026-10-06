@@ -1,3 +1,17 @@
+# 多 WAN高级QoS受控通过；五流新负载在NSS前拒绝
+
+更新：2026-10-07北京时间05:20。v20三流跨WAN和五WAN队列/共享借用硬件结论保持；v26正常Steam/CS2入口已发布并实际archive校验4975bcc。正常整合factory仍仅只读0流，五WAN同时加速和长期常驻未验。
+
+v27唯一改动为四条自有SSH bulk数据连接改成nonce认证raw TCP，固定小UDP/总32Mbps/合64KiB credit/client180及独立210退出保持；五槽native、数据面Lua、PBR/tag/队列/180秒owner与独立恢复均不变。实际sender本地socket10检查、33协议模型、2761绑定通过。现场首TCP约8.008秒首包超时、payload0，NSS stage/checkpoint/模块/放行均未开始；不能归因NSS/固件。旧SSH失败、首次只读诊断语法错误和实际失败保留。
+
+只读端点核查服务就绪、无未处理异常，精确TCP放行规则packet0、UDP规则packet1；控制SSH也曾超时后恢复。不能区分TCP路径与外部源地址差异，根因未定。独立防火墙到期后原canonical基线一致、规则0、精确端点关闭；客户端原实例独立退出通过。05:19完整终态audit source1.00、五WAN健康/保护配置不变/ECM关闭全零、两物理原mq＋四fq_codel、无实验gate。
+
+不盲重试五流或放宽源过滤/期限/认证。睡眠期间无桌面、游戏下载或认证操作。已成立的多WAN原型是两TCP BULK＋一UDP RT、DOWN18共享借用和UP60每WAN12硬上限、RT优先级0/FQ-CoDel；新的普通程序入口一次正常会话和长期连续代列为未验。剩余夜间整理报告并保持安静，07:40做最后完整健康/恢复/端点/客户端核验，07:50不新开实验，08:00前保存推送并暂停heartbeat。
+
+证据：[原生TCP前提与恢复](../evidence/v27-raw-prerequisite.json)、[资格](../evidence/v27-entry-qualification.json)、[本地实际sender与模型](../evidence/v27-raw-models.json)、[源码](../evidence/v27-source-proof.json)。[负载说明](../code/work/v27-raw/README.md)。
+
+## 保留的正常入口与历史硬件证明
+
 # 多 WAN 高级 QoS：受控硬件通过，正常流入口只读就绪
 
 更新：2026-10-07北京时间05:08。已通过的范围仍以v20真实硬件为准：两TCP BULK＋一UDP RT跨两个或三个WAN、60秒/121帧/ECM3/20续租；上下行五WAN各18class、11leaf，DOWN18共享借用、UP60每WAN12硬上限，RT优先级0/FQ-CoDel。完整tag、ct mark、NAT、WAN affinity和恢复通过。该范围是受控有界原型，尚未长期常驻或覆盖所有正常连接。

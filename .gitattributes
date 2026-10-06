@@ -153,3 +153,6 @@
 /code/work/v25-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 
 /code/work/v26-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+/code/work/v27-raw/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v27-raw/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
