@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "FIRST_HOST_SIZE_MODEL_INVALID",
+    "originalPreserved": true,
+    "productionWrites": false,
+    "cause": "Model omitted the same forward-counter removal used by the actual builder; corrected exact model payload72446 within73728."
+  },
+  {
+    "kind": "ENDPOINT_SSH_CONNECT_TIMEOUT",
+    "originalPreserved": true,
+    "productionWrites": false,
+    "cause": "Endpoint control SSH22 timed out before checkpoint or firewall writes; unchanged retry completed."
+  }
+]

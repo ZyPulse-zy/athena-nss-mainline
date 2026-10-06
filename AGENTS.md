@@ -1,3 +1,19 @@
+# 双 WAN 独立类别 tag 与 NSS QoS 预算实测通过
+
+更新：2026-10-07北京时间02:35。受控TCP BULK自然走WAN3、UDP RT走WAN2。60.01秒、121帧全程ECM2，20次续租；四个按WAN/方向/类别派生的tag、完整ct mark、NAT及连接粘性正确。NSS gate与常驻自动分类器未变，实际2335绑定。测试结束ECM0，模块、两private WAN、两物理原mq＋四fq_codel、端点FW和客户端完整恢复；原完整审核通过。
+
+两物理NSS HTB上分别设置共享DOWN30／UP60预算，选中两WAN各15／30Mbps；各WAN有BULK与RT FQ-CoDel leaf，RT保障1Mbps、bulk使用余量。下行WAN3 bulk和WAN2 RT、上行对应leaf实际有包；其它选中WAN类别leaf零包。附近60.46秒异步快照bulk下行约10.78Mbps、drop98，RT双向drop0。配置命令和真实leaf生效已证明；没有跑满15Mbps，不能宣称限速精度或两路bulk竞争已经通过。RT队列drop0不代表端到端零丢包。
+
+现有NSS HTB class dump将parent打印成root，实际层级依据本机源码和成功的parent attach命令判断，不用错误dump做层级证明。FQ-CoDel原参数保持；不新增ECN、Wi-Fi、autorate或完整CAKE语义结论。B-only busy13.71%、softirq0.90%、squeeze/drop0仅描述，不重跑CPU门槛或外推300Mbps/真人/常驻。
+
+source6／kernel90(最大120)／独立owner180／client180保持；record767123字节小于1MiB，payload72446小于73728。初次尺寸模型不等价、端点SSH超时均保留；修正后才继续，所有写前新checkpoint下载SHA/gzip与控制连接外自动恢复照常核验。
+
+下一步：两条受控TCP下载同时跨WAN加速，加一条UDP RT，验证共享与每WAN预算实际竞争。07:40收尾、07:50不新开生产、08:00前暂停；睡眠期间无桌面/Steam/CS2、新游戏下载或认证操作。
+
+证据：[实际硬件与恢复](evidence/v15-qos-hardware.json)、[新增准入](evidence/v15-qos-qualification.json)、[目标RAM模型](evidence/v15-qos-native-qualification.json)、[保留失败](evidence/v15-qos-failures.json)、[源码](evidence/v15-qos-source-proof.json)。入口：[控制器](code/work/v15-qos/pilot-supervisor.mjs)。
+
+## 双WAN60秒及更早历史
+
 # 双 WAN 60 秒 NSS 运行与完整恢复通过
 
 更新：2026-10-07北京时间02:15。真实受控 TCP BULK 自然走WAN4、小UDP RT走WAN3，Linux PBR仍决定出口。NSS B段60.01秒、121帧全程ECM2、20次续租，四tag/完整ct mark/NAT/WAN affinity正确；结束后ECM0、模块/两WAN/两物理原mq＋四fq_codel/端点FW/客户端全部恢复，原完整审核通过。

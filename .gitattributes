@@ -118,3 +118,6 @@
 
 /code/work/v14-duration/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
 /code/work/v14-duration/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+/code/work/v15-qos/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v15-qos/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof

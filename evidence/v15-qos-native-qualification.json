@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "qosSourceSha256": "56b04867fd69df6f15a1f2c311723d3915e770717bb34ae240468a0ae8541663",
+  "normalizerSourceSha256": "14e853994819f91f9c3ef0b1d4c037565b96643f389ddd72e3630c8dd7e335c4",
+  "qosModel": {
+    "checks": 2,
+    "firmwareAcceptance": false,
+    "actualSpecsAndValidatorExecuted": true,
+    "passed": true,
+    "backendMocked": true
+  },
+  "nativeTagNormalization": true,
+  "wrongTagRejected": true,
+  "wholeFactoryModeled": false,
+  "hardwareExecuted": false,
+  "productionWrites": false,
+  "routerFilesWritten": false,
+  "execBytes": {
+    "qos": 5223,
+    "normalizer": 5371
+  }
+}

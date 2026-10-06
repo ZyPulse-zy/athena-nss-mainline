@@ -1,0 +1,321 @@
+{
+  "passed": true,
+  "actualHardware": true,
+  "actualBoundInputs": 2335,
+  "phase": {
+    "seconds": 60.00999999977648,
+    "cadenceSeconds": 0.5,
+    "requestedSeconds": 60,
+    "observer": "same-validated-classifier-and-counter-loop",
+    "endedAt": 2128480.96,
+    "name": "B",
+    "startedAt": 2128420.95,
+    "sampleStart": 2,
+    "sampleCount": 121,
+    "sampleEnd": 122,
+    "completed": true
+  },
+  "ecmCountsThroughoutB": [
+    2
+  ],
+  "finalEcmCount": 0,
+  "renewals": 20,
+  "flowProof": {
+    "tcp": {
+      "protocol": 6,
+      "accelerated": true,
+      "ctMark": 196608,
+      "downTag": 2402615296,
+      "upTag": 2385838080,
+      "natCorrect": true,
+      "wanAffinity": 3,
+      "fromLan4": true,
+      "fromBridgeLan": true
+    },
+    "udp": {
+      "protocol": 17,
+      "accelerated": true,
+      "ctMark": 131072,
+      "downTag": 2401632256,
+      "upTag": 2384855040,
+      "natCorrect": true,
+      "wanAffinity": 2,
+      "fromLan4": true,
+      "fromBridgeLan": true
+    }
+  },
+  "perWanClassLeavesNearbyAsynchronousSnapshots": {
+    "down": {
+      "nearbyAsynchronousWindowSeconds": 60.45999999996275,
+      "sharedMbps": 30,
+      "eachWanCeilingMbps": 15,
+      "leaves": {
+        "8f25:": {
+          "active": false,
+          "first": {
+            "kind": "nssfq_codel",
+            "options": "parent 8f00:25 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "last": {
+            "kind": "nssfq_codel",
+            "options": "parent 8f00:25 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0
+        },
+        "8f26:": {
+          "active": true,
+          "first": {
+            "kind": "nssfq_codel",
+            "options": "parent 8f00:26 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 12750,
+            "packets": 75,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "last": {
+            "kind": "nssfq_codel",
+            "options": "parent 8f00:26 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 437920,
+            "packets": 2576,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "delta": {
+            "bytes": 425170,
+            "packets": 2501,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.05625802183265127
+        },
+        "8f35:": {
+          "active": true,
+          "first": {
+            "kind": "nssfq_codel",
+            "options": "parent 8f00:35 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 3012076,
+            "packets": 2074,
+            "dropped": 365,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "last": {
+            "kind": "nssfq_codel",
+            "options": "parent 8f00:35 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 84494906,
+            "packets": 55909,
+            "dropped": 463,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "delta": {
+            "bytes": 81482830,
+            "packets": 53835,
+            "dropped": 98
+          },
+          "descriptiveMbps": 10.781717499179651
+        },
+        "8f36:": {
+          "active": false,
+          "first": {
+            "kind": "nssfq_codel",
+            "options": "parent 8f00:36 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "last": {
+            "kind": "nssfq_codel",
+            "options": "parent 8f00:36 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0
+        }
+      }
+    },
+    "up": {
+      "nearbyAsynchronousWindowSeconds": 60.45999999996275,
+      "sharedMbps": 60,
+      "eachWanCeilingMbps": 30,
+      "leaves": {
+        "8e25:": {
+          "active": false,
+          "first": {
+            "kind": "nssfq_codel",
+            "options": "parent 8e00:25 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "last": {
+            "kind": "nssfq_codel",
+            "options": "parent 8e00:25 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0
+        },
+        "8e26:": {
+          "active": true,
+          "first": {
+            "kind": "nssfq_codel",
+            "options": "parent 8e00:26 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "last": {
+            "kind": "nssfq_codel",
+            "options": "parent 8e00:26 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 425000,
+            "packets": 2500,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "delta": {
+            "bytes": 425000,
+            "packets": 2500,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.05623552762160263
+        },
+        "8e35:": {
+          "active": true,
+          "first": {
+            "kind": "nssfq_codel",
+            "options": "parent 8e00:35 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "last": {
+            "kind": "nssfq_codel",
+            "options": "parent 8e00:35 target 5ms limit 256p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 3233288,
+            "packets": 53924,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "delta": {
+            "bytes": 3233288,
+            "packets": 53924,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.4278250744296384
+        },
+        "8e36:": {
+          "active": false,
+          "first": {
+            "kind": "nssfq_codel",
+            "options": "parent 8e00:36 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "last": {
+            "kind": "nssfq_codel",
+            "options": "parent 8e00:36 target 5ms limit 128p interval 100ms flows 1024 quantum 1514 accel_mode 0",
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0,
+            "overlimits": 0,
+            "requeues": 0
+          },
+          "delta": {
+            "bytes": 0,
+            "packets": 0,
+            "dropped": 0
+          },
+          "descriptiveMbps": 0.0
+        }
+      }
+    }
+  },
+  "perWanTagAndBudgetRuntimeConfigured": true,
+  "htbHierarchySourceAndCommandAckProven": true,
+  "classDumpParentKnownLimitation": true,
+  "twoSimultaneousBulkFlowsProven": false,
+  "saturatedRateAccuracyProven": false,
+  "rtQueueZeroDropIsNotEndToEndZeroLoss": true,
+  "newCpuCausalBenefitClaimed": false,
+  "descriptiveBOnly": {
+    "seconds": 60.00999999977648,
+    "cpuBusyPercent": 13.708358440216923,
+    "softirqPercent": 0.8995437720581906,
+    "timeSqueezeDelta": 0,
+    "softnetDropDelta": 0
+  },
+  "nativeRecordBytes": 767123,
+  "actualRecordSha256": "de9f1213bf22496116dc9096855e7068d8c6ad27a80dc0f861fba8892b4f9f60",
+  "originalRecoveryFlags": {
+    "moduleUnloaded": true,
+    "tagsRemoved": true,
+    "dualPhysicalQueuesRestored": true,
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "stateNodeRemoved": true,
+    "firmwareZeroAfterRetirement": true
+  },
+  "originalCompleteBaselineAuditPassed": true,
+  "exactEndpointRestored": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "humanCs2Acceptance": false,
+  "fiveWanOrPermanentNssAcceptance": false,
+  "sourceFreshnessSeconds": 6,
+  "kernelSeconds": 90,
+  "ownerSeconds": 180,
+  "clientSeconds": 180,
+  "nativeGateUnchanged": true,
+  "residentClassifierUnchanged": true,
+  "fixtureBounded32MbpsDownloadAndSmallUdp": true
+}
