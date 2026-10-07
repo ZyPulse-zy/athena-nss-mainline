@@ -1,3 +1,13 @@
+# 五 WAN 模拟前提有界拒绝，控制命令修正已封存
+
+更新：北京时间2026-10-07 13:51。按用户“继续”推进五 WAN 同时 NSS，使用自有四 TCP＋模拟 UDP，不操作 CS2 / Steam。v39已完成轮换命令在30秒后被重复检查导致客户端退出；v40新目录仅修正旧命令无操作，四 TCP健康、错误0，但实际分类 WAN2/3/3/4＋UDP WAN2未满足五个不同 WAN，准入前拒绝。两轮均无checkpoint/stage/模块/ECM放行，不归因NSS/固件，不再盲重试或改PBR/门槛/期限。
+
+3206/3254实际绑定冻结，五槽编译/63控制/68CT/14RAM旧证据复用；两次资格失败的原输出与源码保存。最后只读原audit source1.15、五WAN健康/保护配置/epoch保持/ECM关闭全零；两物理原mq＋四fq_codel全部选项/handle、两个端点FW基线与原客户端独立退出/零残留完整通过。
+
+**v38两WAN模拟功能验收及v20高级QoS已通过的范围保持；五WAN同时fast path尚未通过。** 常驻仍NSS68原config，无永久NSS；heartbeat保持暂停。后续仍用模拟包，不以CS2作为测试前提。详情：[本次报告](FIVE_WAN_SIMULATION_2026-10-07.md)。
+
+## 以下保留历史记录
+
 # 模拟实时流跨 WAN NSS 验收通过，完整恢复
 
 更新：北京时间2026-10-07 12:59。用户已停止 CS2 测试，后续使用自有脚本模拟游戏包。v38 实际 TCP BULK/UDP RT/TCP BULK走 WAN3/WAN3/WAN5；原自动分类、60秒 NSS / ECM3 / 20续租、双向六tag与bulk/RT leaf / mark / NAT / affinity通过。DOWN18共享借用保持，附近两个bulk约6.82/8.40Mbps；内部约57.17秒发出2443 UDP，全部回包，RT上下leaf零drop，RTT中位/P95/P99约199.92/200.79/202.51ms。是自有海外回包测量，非CS2 HUD/真人或新CPU证明。

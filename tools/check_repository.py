@@ -2292,4 +2292,42 @@ if (root/'evidence/v38-simulated-source-proof.json').exists():
  assert whitespace['inheritedV20GuardBytesPreserved'] and whitespace['noGlobalWhitespacePolicyChange'] and len(whitespace['exactPathAttributes'])==3
  for src,digest in whitespace['sourceHashes'].items():assert hashlib.sha256((root/src).read_bytes()).hexdigest()==digest==hashlib.sha256((root/'code/work/v20-five/endpoint-firewall-guardian.py').read_bytes()).hexdigest(),src
  for attr in whitespace['exactPathAttributes']:assert attr in (root/'.gitattributes').read_text(encoding='utf8')
+if (root/'evidence/v40-five-source-proof.json').exists():
+ sp=json.loads((root/'evidence/v40-five-source-proof.json').read_text(encoding='utf8'))
+ trial=json.loads((root/'evidence/v40-five-prerequisite.json').read_text(encoding='utf8'))
+ end=json.loads((root/'evidence/v40-five-restoration.json').read_text(encoding='utf8'))
+ assert manifest['lastFiveWanSimulationAttemptExport']=='V40_NATURAL_FIVE_WAN_PREREQUISITE_REFUSAL'
+ assert sp['passed'] and sp['historicPrefixSources']==4311 and sp['oldCodeAndEvidenceBlobsChecked']==4874 and sp['oldCodeAndEvidenceUnmodified']
+ assert sp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:4311],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ assert len(sp['sourceHashes'])==112 and sp['privateInputsCopiedExact']==20 and sp['qualificationFailuresPreserved'] and sp['allNewAttemptsEndedBeforeNss']
+ assert sp['actualRuntimeBindingsFrozenExact']=={'v39-five-sim':3206,'v40-five-sim':3254}
+ for src,digest in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ for scope,previous,entries in [('v39-five-sim',3159,47),('v40-five-sim',3206,48)]:
+  q=json.loads((root/('evidence/'+scope+'-entry-qualification.json')).read_text(encoding='utf8'))
+  assert q['passed'] and q['inheritedBindings']==previous and len(q['sourceManifest'])==entries and not q['hardwareExecuted']
+  assert q['fiveSlotNativeAndQosExactV24'] and q['priorNativeControlChecksReused']==63 and q['priorNativeCtChecksReused']==68 and q['priorTargetRamChecksReused']==14
+  assert (q['clientSeconds'],q['fixtureGuardSeconds'],q['phaseSeconds'],q['combinedTcpMbps'],q['combinedCreditBytes'],q['acquisitionWindowSeconds'],q['firstPayloadSeconds'])==(180,210,60,32,65536,30,8)
+  assert q['freezeBeforeCheckpoint'] and q['originalSourceAndSizeCapsRetained'] and q['cutoff']=='2026-10-07T08:00:00Z'
+  for src,digest in q['sourceManifest'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+  for name in ['classifier.lua','classified-tags.lua','fast-path.lua','wan-scope.lua','qos-physical.lua','tag-normalizer.lua','module-stage-guardian.lua']:
+   assert (root/'code/work'/scope/name).read_bytes()==(root/'code/work/v24-fiveflow'/name).read_bytes(),name
+ assert trial['passedAsPreservedObservation'] and trial['v39CompletedControlMessageIncorrectlyRecheckedAfterDeadline'] and trial['fixedInFreshV40NamespaceOnly'] and trial['v40ClientStayedHealthyUntilControllerStop']
+ assert trial['v40NaturalDistinctWanPrerequisiteRefused'] and trial['furtherFixtureAttemptsStopped'] and trial['noCs2OrSteamOperation']
+ assert not any(trial[k] for k in ['fiveWanConcurrentHardwareAcceptance','nativeOrFirmwareFailureEstablished','routingOrClassifierThresholdChanged'])
+ attempts=trial['attempts'];assert attempts['v39-five-sim']['clientErrors']==['AssertionError [ERR_ASSERTION]: Natural TCP acquisition is closed']
+ assert attempts['v40-five-sim']['clientErrors']==[] and attempts['v40-five-sim']['lastEligibleTcpWans']==[2,3,3,4] and attempts['v40-five-sim']['lastEligibleUdpWans']==[2]
+ for scope,a in attempts.items():
+  assert a['passedAsPreservedAttempt'] and a['fourTcpTransportsEstablished'] and a['independentClientExitPassed'] and a['edgePendingRepliesNotDeclaredPacketLoss']
+  assert a['finalEligibleFiveWanPairs']==0 and not any(a[k] for k in ['nssStarted','checkpointStarted','gateLoaded','ecmOpened'])
+  e=a['endpointRestoration'];assert e['passed'] and e['ownedRulesRemaining']==0 and e['baselineRestored'] and e['exactOwnedEndpointClosed']
+ assert end['passed'] and end['noRouterConfigurationWrites'] and end['heartbeatStillPaused']
+ assert not any(end[k] for k in ['newCheckpointStageOrNss','newCpuAcceptance','fiveWanConcurrentAcceptance','permanentNssDeployment'])
+ audit=end['finalFullAudit'];assert audit['passed'] and audit['queryAge']<6 and audit['ecmClosedAndZero'] and audit['protectedConfigurationUnchanged'] and audit['allFiveHealthyWanBaseline']
+ assert end['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and end['clientClosure']['passed'] and end['clientClosure']['ownedTestProcessesRemaining']==end['clientClosure']['cs2ProcessesRemaining']==0
+ assert len(end['clientClosure']['guards'])==2 and all(g['passed'] and g['clientExitedBeforeDeadline'] and g['exactClientOnly'] and g['ownedProcessesRemaining']==0 for g in end['clientClosure']['guards'])
+ whitespace=json.loads((root/'evidence/v40-frozen-whitespace.json').read_text(encoding='utf8'))
+ assert whitespace['passedAsPreservedSourcePolicy'] and whitespace['frozenGuardBytesUnmodifiedFromV24'] and whitespace['noGlobalWhitespacePolicyChange']
+ for attr in whitespace['exactPathAttributes']:
+  assert attr.startswith(('/code/work/v39-five-sim/','/code/work/v40-five-sim/')) and attr in (root/'.gitattributes').read_text(encoding='utf8')
+ for scope in attempts:assert (root/'code/work'/scope/'endpoint-firewall-guardian.py').read_bytes()==(root/'code/work/v24-fiveflow/endpoint-firewall-guardian.py').read_bytes()
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

@@ -1,5 +1,11 @@
 # Athena NSS 多WAN / 高级QoS受控原型
 
+两WAN模拟实时流硬件已通过；最新五WAN前提短测在NSS前安全拒绝，修正了已完成轮换命令重复检查问题。完整恢复、未永久启用NSS，见[STATE](docs/STATE.md)与[五WAN短测报告](docs/FIVE_WAN_SIMULATION_2026-10-07.md)。
+
+## 以下保留历史交付
+
+# Athena NSS 多WAN / 高级QoS受控原型
+
 最新脚本模拟实时流＋两条下载已完成 WAN3/WAN5 的60秒真实NSS和恢复，内部2443个UDP全部回包。后续使用模拟游戏包，CS2不再是测试前提。当前完整恢复、没有永久启用NSS，见[STATE](docs/STATE.md)与[实际报告](docs/SIMULATED_MULTIWAN_2026-10-07.md)。
 
 ## 以下保留历史交付

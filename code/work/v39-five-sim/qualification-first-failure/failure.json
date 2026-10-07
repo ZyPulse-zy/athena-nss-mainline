@@ -1,0 +1,1 @@
+{"exitCode":1,"assertion":"Five-slot previous bindings must remain inherited","actual":"undefined","expectedSha256":"d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068","rejectedBeforeRouterOrClientRead":true,"fix":"Union individually verified v38 and v24 inherited manifests; overlapping hashes must be equal"}

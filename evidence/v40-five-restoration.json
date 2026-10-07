@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "finalFullAudit": {
+    "passed": true,
+    "auditPurpose": "prewrite",
+    "prelearningSchedulingRequested": true,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 0,
+    "queryAge": 1.1499999999068677,
+    "sequence": 1477,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": false,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "allFiveHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "physicalQueues": {
+    "passed": true,
+    "observedAt": "2026-10-07T05:50:49.256Z",
+    "readonly": true,
+    "physicalWanOriginalMqFourFqCodelRestored": true,
+    "lan4OriginalMqFourFqCodelRestored": true,
+    "defaultQueueOptionsAndHandlesExact": true,
+    "failedWan4ProcessOwnerChecked": true,
+    "wan4Running": true,
+    "wan4Lifecycle": "exec-minieap",
+    "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
+  },
+  "clientClosure": {
+    "cs2Acceptance": false,
+    "guards": [
+      {
+        "independentGuardSeconds": 210,
+        "passed": true,
+        "clientExitedBeforeDeadline": true,
+        "ownedProcessesRemaining": 0,
+        "originalClientSeconds": 180,
+        "guardObservedAt": "2026-10-07T05:42:14.7958692Z",
+        "exactClientOnly": true,
+        "scope": "work/v39-five-sim"
+      },
+      {
+        "independentGuardSeconds": 210,
+        "passed": true,
+        "clientExitedBeforeDeadline": true,
+        "ownedProcessesRemaining": 0,
+        "originalClientSeconds": 180,
+        "guardObservedAt": "2026-10-07T05:46:36.2122536Z",
+        "exactClientOnly": true,
+        "scope": "work/v40-five-sim"
+      }
+    ],
+    "steamProcessesRunning": 1,
+    "steamFactoryAcceptance": false,
+    "passed": true,
+    "clientDeadlineReset": false,
+    "ownedTestProcessesRemaining": 0,
+    "cs2ProcessesRemaining": 0,
+    "observedAt": "2026-10-07T05:50:48.8069910Z",
+    "readonly": true
+  },
+  "endpointRestoration": {
+    "v39-five-sim": {
+      "passed": true,
+      "ownedRulesRemaining": 0,
+      "baselineRestored": true,
+      "exactOwnedEndpointClosed": true,
+      "originalFailedTransportRetained": true
+    },
+    "v40-five-sim": {
+      "passed": true,
+      "ownedRulesRemaining": 0,
+      "baselineRestored": true,
+      "exactOwnedEndpointClosed": true,
+      "originalFailedTransportRetained": true
+    }
+  },
+  "newCheckpointStageOrNss": false,
+  "noRouterConfigurationWrites": true,
+  "heartbeatStillPaused": true,
+  "newCpuAcceptance": false,
+  "fiveWanConcurrentAcceptance": false,
+  "permanentNssDeployment": false
+}

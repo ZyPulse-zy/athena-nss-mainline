@@ -30181,6 +30181,790 @@
       "sha256": "8ce53df587fe798e2dbc10a3d6b5e2a88a64d2df5624425eb01b9871fc9be337",
       "bytes": 20069,
       "role": "owned-simulated-multiwan-bounded-hardware-and-recovery"
+    },
+    {
+      "path": "code/work/v39-five-sim/candidate-policy.mjs",
+      "workspaceSource": "work/v39-five-sim/candidate-policy.mjs",
+      "sha256": "d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068",
+      "bytes": 2579,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/capture-client-closure.ps1",
+      "workspaceSource": "work/v39-five-sim/capture-client-closure.ps1",
+      "sha256": "0a85ddbe2a429685254135174a459920d0a62448f6b5de954aad3aae519c3f9d",
+      "bytes": 2534,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/class-leaf-map.mjs",
+      "workspaceSource": "work/v39-five-sim/class-leaf-map.mjs",
+      "sha256": "815250459be21cce80e65bfe85f29a43cce7d49e8e9800cb3470e30d84d64722",
+      "bytes": 3740,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/classified-tags.lua",
+      "workspaceSource": "work/v39-five-sim/classified-tags.lua",
+      "sha256": "2756a538a16b66c45f4cc73ef89b2898c84672786cbb7bc896e579160fbf96e6",
+      "bytes": 3966,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/classifier.lua",
+      "workspaceSource": "work/v39-five-sim/classifier.lua",
+      "sha256": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+      "bytes": 22277,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/client-watchdog.ps1",
+      "workspaceSource": "work/v39-five-sim/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/close-endpoint.mjs",
+      "workspaceSource": "work/v39-five-sim/close-endpoint.mjs",
+      "sha256": "07deb8537e546aba5ddee206ea87fd21ee891b300edc071a45f8eac91eb9c5f6",
+      "bytes": 2262,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/compact-post-guards.mjs",
+      "workspaceSource": "work/v39-five-sim/compact-post-guards.mjs",
+      "sha256": "83de00758cc0ba05270b81d3b51ddc76f39f30ed1275397a48080ff15aeb5cc3",
+      "bytes": 2597,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v39-five-sim/current-audit-diagnostic.mjs",
+      "sha256": "c80e2f3cd33d3ac7fbdd7f64a5cc145fa1506e3ba3354ad5cfaaf19399b1cde6",
+      "bytes": 5852,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/discover-peer.py",
+      "workspaceSource": "work/v39-five-sim/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/download-server.py",
+      "workspaceSource": "work/v39-five-sim/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v39-five-sim/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/epoch-driver.mjs",
+      "workspaceSource": "work/v39-five-sim/epoch-driver.mjs",
+      "sha256": "99d05639fb43a3cc22efe21813a6192f8673f8ceb53153b5216789dee02c4d2d",
+      "bytes": 15324,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/fast-path.lua",
+      "workspaceSource": "work/v39-five-sim/fast-path.lua",
+      "sha256": "15552eef44375a039fdc41affb8afb3ebe7954a711771e8a87881ca25dd88399",
+      "bytes": 15004,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/fixture-retry-policy.mjs",
+      "workspaceSource": "work/v39-five-sim/fixture-retry-policy.mjs",
+      "sha256": "50892e56b00817292dfbb8fdd88c340750baec860c04abe02c39cf549176ccdc",
+      "bytes": 282,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/guardian-plan.mjs",
+      "workspaceSource": "work/v39-five-sim/guardian-plan.mjs",
+      "sha256": "397dd536261b19c8900e5755a99238f1f0d4d1ddd2e42e783f51ac2b1071a71c",
+      "bytes": 493,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/inherited-bindings.mjs",
+      "workspaceSource": "work/v39-five-sim/inherited-bindings.mjs",
+      "sha256": "347c906a617b77ef0b61a8e3d8065a3fca6657eb871cd8cd5f0dd73938d6842d",
+      "bytes": 580,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/match-controlled.mjs",
+      "workspaceSource": "work/v39-five-sim/match-controlled.mjs",
+      "sha256": "250190037fdc6b8b68f78db84559fa1745ce92502b8e497eb6cf14b9501fa276",
+      "bytes": 2509,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/model-serial.mjs",
+      "workspaceSource": "work/v39-five-sim/model-serial.mjs",
+      "sha256": "ad3afb30b234f025af0992466354e8d3b8b2f66acf074f8f6206fc166b55429f",
+      "bytes": 2980,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/module-stage-guardian.lua",
+      "workspaceSource": "work/v39-five-sim/module-stage-guardian.lua",
+      "sha256": "261b0ee214c9e90287850bb7ccf404a4ec95c37914b94a91c09585c463d05044",
+      "bytes": 13682,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/module-stage.mjs",
+      "workspaceSource": "work/v39-five-sim/module-stage.mjs",
+      "sha256": "d2e5a62b34509baf2c5c6ba25066be56736fb57d953ee54667270715a9aa81c6",
+      "bytes": 17964,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/native-client.mjs",
+      "workspaceSource": "work/v39-five-sim/native-client.mjs",
+      "sha256": "09ef1f6dceab57b1f90ce0fe209b6be8c195f0d027c597383acff97fd28136a9",
+      "bytes": 7021,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/native-qualified.json",
+      "workspaceSource": "work/v39-five-sim/native-qualified.json",
+      "sha256": "b53def985529c2c2dc6676fdf32c280661202562c23f8ce7129dd25288ed88cf",
+      "bytes": 1856,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/normalizer-qualified.json",
+      "workspaceSource": "work/v39-five-sim/normalizer-qualified.json",
+      "sha256": "a499de19ddced00f2dda5f0d11220b555b20243e6561696b26cde314c02eca3f",
+      "bytes": 177,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/owned-load-policy.mjs",
+      "workspaceSource": "work/v39-five-sim/owned-load-policy.mjs",
+      "sha256": "dc02dd232c0409f0acca5c6b876f64dde0b8f29389586bf174efd09a5662ba87",
+      "bytes": 1088,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/pack-json.mjs",
+      "workspaceSource": "work/v39-five-sim/pack-json.mjs",
+      "sha256": "46dcbec7360960887700d94a1e620e53ee233b3e40be50b484011a9623ca75d2",
+      "bytes": 2196,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/parse-ecm.mjs",
+      "workspaceSource": "work/v39-five-sim/parse-ecm.mjs",
+      "sha256": "6a349403a008929d1020b5f491be7e015bccd20c587cc74c2a1908bd95e3a9b2",
+      "bytes": 3727,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/payload.mjs",
+      "workspaceSource": "work/v39-five-sim/payload.mjs",
+      "sha256": "78fa4c28e247134d52caccb7fbd99f06ba1e21fbec3b8316913385cb210f1bb4",
+      "bytes": 4470,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/persistent-ssh.mjs",
+      "workspaceSource": "work/v39-five-sim/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/pilot-supervisor.mjs",
+      "workspaceSource": "work/v39-five-sim/pilot-supervisor.mjs",
+      "sha256": "947004fda8e5ac2c409fce037042693f919f9338803b2cd894017b9d39d90274",
+      "bytes": 5256,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/prepare.py",
+      "workspaceSource": "work/v39-five-sim/prepare.py",
+      "sha256": "b33aa232f6b67f1fd8ad19f746e09928f9abcfa971f645beaf7682005efd79ba",
+      "bytes": 5318,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/probe-peer.py",
+      "workspaceSource": "work/v39-five-sim/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/qos-native-qualified.json",
+      "workspaceSource": "work/v39-five-sim/qos-native-qualified.json",
+      "sha256": "cd518823df23df884b51865c64f9a9bd943b31ac6e54f3f61a11df0f90459d86",
+      "bytes": 139,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/qos-physical.lua",
+      "workspaceSource": "work/v39-five-sim/qos-physical.lua",
+      "sha256": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+      "bytes": 8943,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/qualify-entry.mjs",
+      "workspaceSource": "work/v39-five-sim/qualify-entry.mjs",
+      "sha256": "2d19122a63c63bd2145a139db518b014478ae0104766c3cf86e7ce7913c41440",
+      "bytes": 4176,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/read-controlled.mjs",
+      "workspaceSource": "work/v39-five-sim/read-controlled.mjs",
+      "sha256": "1b635462828d4b3fc0efcc59d2db348d3c78a1b0f83553d9b18e8c1b3e34b2e6",
+      "bytes": 7565,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/read-final-health.mjs",
+      "workspaceSource": "work/v39-five-sim/read-final-health.mjs",
+      "sha256": "8e48389f13eade6f5432449cb9741bb4bee0acf6a7cf88298ac62cd131c54fdb",
+      "bytes": 1260,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/read-physical-final.mjs",
+      "workspaceSource": "work/v39-five-sim/read-physical-final.mjs",
+      "sha256": "e40000804860801a2273484c2be79853d206c5ffa7c0897f6fd7d2e4b0566b3a",
+      "bytes": 1981,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/receiver.py",
+      "workspaceSource": "work/v39-five-sim/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/serial-model-qualified.json",
+      "workspaceSource": "work/v39-five-sim/serial-model-qualified.json",
+      "sha256": "afba7d9c22f683127b4c94dd83265675775d4b3b8b6a0bc7da181ba238502f84",
+      "bytes": 298,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/server.py",
+      "workspaceSource": "work/v39-five-sim/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/session-binding.mjs",
+      "workspaceSource": "work/v39-five-sim/session-binding.mjs",
+      "sha256": "579f4773a6183095c6b6803eca3752fea91c73e0f2179898ca167ef2ab199936",
+      "bytes": 597,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/start-dallas.mjs",
+      "workspaceSource": "work/v39-five-sim/start-dallas.mjs",
+      "sha256": "f29a31241be1a870018230a5a2790599c9a388838b08d5c41ef22211c876ec76",
+      "bytes": 10318,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/tag-normalizer.lua",
+      "workspaceSource": "work/v39-five-sim/tag-normalizer.lua",
+      "sha256": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+      "bytes": 6258,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/wait-four-ssh.mjs",
+      "workspaceSource": "work/v39-five-sim/wait-four-ssh.mjs",
+      "sha256": "469260c3b51985b91453057da3b0204fc8fbdb0a912ab78ec4d97be3731734b6",
+      "bytes": 1059,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/wan-scope.lua",
+      "workspaceSource": "work/v39-five-sim/wan-scope.lua",
+      "sha256": "c2cbfd5eb8cf714341106f29cd0234d5388d2e88a45c1aaaba7880cd3d488677",
+      "bytes": 3525,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/wan-tag-plan.mjs",
+      "workspaceSource": "work/v39-five-sim/wan-tag-plan.mjs",
+      "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
+      "bytes": 2045,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/entry-qualified.json",
+      "workspaceSource": "work/v39-five-sim/entry-qualified.json",
+      "sha256": "74265f5fece830e0b3dce4c35228166a64d0b256ac8c169e62641bf2aa043914",
+      "bytes": 6144,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/prepare-receipt.json",
+      "workspaceSource": "work/v39-five-sim/prepare-receipt.json",
+      "sha256": "6bf4dd719654df276966fa6025748f16267c707156434b7369f2cce677832f25",
+      "bytes": 5220,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/candidate-policy.mjs",
+      "workspaceSource": "work/v40-five-sim/candidate-policy.mjs",
+      "sha256": "d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068",
+      "bytes": 2579,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/capture-client-closure.ps1",
+      "workspaceSource": "work/v40-five-sim/capture-client-closure.ps1",
+      "sha256": "cbd5fffa6722cb1d8d37420d424489c25bacb118a074fe879e5d0e478a5ba3bb",
+      "bytes": 2534,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/class-leaf-map.mjs",
+      "workspaceSource": "work/v40-five-sim/class-leaf-map.mjs",
+      "sha256": "815250459be21cce80e65bfe85f29a43cce7d49e8e9800cb3470e30d84d64722",
+      "bytes": 3740,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/classified-tags.lua",
+      "workspaceSource": "work/v40-five-sim/classified-tags.lua",
+      "sha256": "2756a538a16b66c45f4cc73ef89b2898c84672786cbb7bc896e579160fbf96e6",
+      "bytes": 3966,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/classifier.lua",
+      "workspaceSource": "work/v40-five-sim/classifier.lua",
+      "sha256": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+      "bytes": 22277,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/client-watchdog.ps1",
+      "workspaceSource": "work/v40-five-sim/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/close-endpoint.mjs",
+      "workspaceSource": "work/v40-five-sim/close-endpoint.mjs",
+      "sha256": "ccaaa44c3e5d8589b1979b7d7f5074b947b0086ab0006747a737cbae867d0418",
+      "bytes": 2262,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/compact-post-guards.mjs",
+      "workspaceSource": "work/v40-five-sim/compact-post-guards.mjs",
+      "sha256": "83de00758cc0ba05270b81d3b51ddc76f39f30ed1275397a48080ff15aeb5cc3",
+      "bytes": 2597,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v40-five-sim/current-audit-diagnostic.mjs",
+      "sha256": "659e0af3d5c715ee580209654891208bdf202459c414ad365c5a160cf5bfc03c",
+      "bytes": 5852,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/discover-peer.py",
+      "workspaceSource": "work/v40-five-sim/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/download-server.py",
+      "workspaceSource": "work/v40-five-sim/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v40-five-sim/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/epoch-driver.mjs",
+      "workspaceSource": "work/v40-five-sim/epoch-driver.mjs",
+      "sha256": "77a9d84e13598a7ab5d5e5974193d732d58321ef600a60953dce7accea2a0e17",
+      "bytes": 15324,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/fast-path.lua",
+      "workspaceSource": "work/v40-five-sim/fast-path.lua",
+      "sha256": "15552eef44375a039fdc41affb8afb3ebe7954a711771e8a87881ca25dd88399",
+      "bytes": 15004,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/fixture-retry-policy.mjs",
+      "workspaceSource": "work/v40-five-sim/fixture-retry-policy.mjs",
+      "sha256": "50892e56b00817292dfbb8fdd88c340750baec860c04abe02c39cf549176ccdc",
+      "bytes": 282,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/guardian-plan.mjs",
+      "workspaceSource": "work/v40-five-sim/guardian-plan.mjs",
+      "sha256": "397dd536261b19c8900e5755a99238f1f0d4d1ddd2e42e783f51ac2b1071a71c",
+      "bytes": 493,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/inherited-bindings.mjs",
+      "workspaceSource": "work/v40-five-sim/inherited-bindings.mjs",
+      "sha256": "347c906a617b77ef0b61a8e3d8065a3fca6657eb871cd8cd5f0dd73938d6842d",
+      "bytes": 580,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/match-controlled.mjs",
+      "workspaceSource": "work/v40-five-sim/match-controlled.mjs",
+      "sha256": "aa58986bc9083c754b10e0017e65a420f1f2f1e3a22208f70c00f4ab5559d78b",
+      "bytes": 2509,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/model-serial.mjs",
+      "workspaceSource": "work/v40-five-sim/model-serial.mjs",
+      "sha256": "1c014068b73cda06a9e21e5488cecde8c0596d02655e12cfc710450ca78e3ae4",
+      "bytes": 2980,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/module-stage-guardian.lua",
+      "workspaceSource": "work/v40-five-sim/module-stage-guardian.lua",
+      "sha256": "261b0ee214c9e90287850bb7ccf404a4ec95c37914b94a91c09585c463d05044",
+      "bytes": 13682,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/module-stage.mjs",
+      "workspaceSource": "work/v40-five-sim/module-stage.mjs",
+      "sha256": "bcaf51055da9b5e0442f86987ef029b9cb41e3b5ca8cd4739ea946fb0577f3c8",
+      "bytes": 17964,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/native-client.mjs",
+      "workspaceSource": "work/v40-five-sim/native-client.mjs",
+      "sha256": "2d37c89858a6a088c09f52ec126dd558f2a0ee0dbdd920596b116b5714881f51",
+      "bytes": 7023,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/native-qualified.json",
+      "workspaceSource": "work/v40-five-sim/native-qualified.json",
+      "sha256": "b53def985529c2c2dc6676fdf32c280661202562c23f8ce7129dd25288ed88cf",
+      "bytes": 1856,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/normalizer-qualified.json",
+      "workspaceSource": "work/v40-five-sim/normalizer-qualified.json",
+      "sha256": "a499de19ddced00f2dda5f0d11220b555b20243e6561696b26cde314c02eca3f",
+      "bytes": 177,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/owned-load-policy.mjs",
+      "workspaceSource": "work/v40-five-sim/owned-load-policy.mjs",
+      "sha256": "dc02dd232c0409f0acca5c6b876f64dde0b8f29389586bf174efd09a5662ba87",
+      "bytes": 1088,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/pack-json.mjs",
+      "workspaceSource": "work/v40-five-sim/pack-json.mjs",
+      "sha256": "46dcbec7360960887700d94a1e620e53ee233b3e40be50b484011a9623ca75d2",
+      "bytes": 2196,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/parse-ecm.mjs",
+      "workspaceSource": "work/v40-five-sim/parse-ecm.mjs",
+      "sha256": "6a349403a008929d1020b5f491be7e015bccd20c587cc74c2a1908bd95e3a9b2",
+      "bytes": 3727,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/payload.mjs",
+      "workspaceSource": "work/v40-five-sim/payload.mjs",
+      "sha256": "5f3e7972c8b9d8f0fbbf77c74f488535c39a40a2a0323a3fe64bcb52db1bd8e4",
+      "bytes": 4470,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/persistent-ssh.mjs",
+      "workspaceSource": "work/v40-five-sim/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/pilot-supervisor.mjs",
+      "workspaceSource": "work/v40-five-sim/pilot-supervisor.mjs",
+      "sha256": "decb866300c917be4be5e7eb90c8ac44fc39dbbdf8c3ffa7f12e91014a4aff66",
+      "bytes": 5256,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/prepare.py",
+      "workspaceSource": "work/v40-five-sim/prepare.py",
+      "sha256": "b6262fce8c79f7f927de59898e9f1a148703afa6829ef06d86e43c446ccbc19a",
+      "bytes": 2102,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/probe-peer.py",
+      "workspaceSource": "work/v40-five-sim/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/qos-native-qualified.json",
+      "workspaceSource": "work/v40-five-sim/qos-native-qualified.json",
+      "sha256": "cd518823df23df884b51865c64f9a9bd943b31ac6e54f3f61a11df0f90459d86",
+      "bytes": 139,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/qos-physical.lua",
+      "workspaceSource": "work/v40-five-sim/qos-physical.lua",
+      "sha256": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+      "bytes": 8943,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/qualify-entry.mjs",
+      "workspaceSource": "work/v40-five-sim/qualify-entry.mjs",
+      "sha256": "b7a154012757bb37b55674a03d1b2f4b615fed3ee7d26cad7beef69f9e318469",
+      "bytes": 3225,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/read-controlled.mjs",
+      "workspaceSource": "work/v40-five-sim/read-controlled.mjs",
+      "sha256": "e01eb64d7b1ca786626657d4f1435730c9bdcccdb77409df553166bdf36f2380",
+      "bytes": 7565,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/read-final-health.mjs",
+      "workspaceSource": "work/v40-five-sim/read-final-health.mjs",
+      "sha256": "ea957dadb44a274d7ce66ffb1cbc42a2b56ede4f3e4cf241d9b20d6803a5831f",
+      "bytes": 1260,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/read-physical-final.mjs",
+      "workspaceSource": "work/v40-five-sim/read-physical-final.mjs",
+      "sha256": "aa5b413e5780d2a9e109e1eaa0a1176a7d2e566592fb37f53e1300ec27129f81",
+      "bytes": 1981,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/receiver.py",
+      "workspaceSource": "work/v40-five-sim/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/repair-native-bytes.py",
+      "workspaceSource": "work/v40-five-sim/repair-native-bytes.py",
+      "sha256": "4c6eb373427f115c4ce98509d490548cde8afc450ab32d8dc3d6931b3463d6da",
+      "bytes": 1455,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/serial-model-qualified.json",
+      "workspaceSource": "work/v40-five-sim/serial-model-qualified.json",
+      "sha256": "afba7d9c22f683127b4c94dd83265675775d4b3b8b6a0bc7da181ba238502f84",
+      "bytes": 298,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/server.py",
+      "workspaceSource": "work/v40-five-sim/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/session-binding.mjs",
+      "workspaceSource": "work/v40-five-sim/session-binding.mjs",
+      "sha256": "6c54f846e078cb566fa161e65d02bb18f64a32945bf0cf2ab120fd3e386f8519",
+      "bytes": 610,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/start-dallas.mjs",
+      "workspaceSource": "work/v40-five-sim/start-dallas.mjs",
+      "sha256": "49f35148eac6bca4575b12092f4f45e150d0ba092bd3bddcaef94c558b800623",
+      "bytes": 10318,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/tag-normalizer.lua",
+      "workspaceSource": "work/v40-five-sim/tag-normalizer.lua",
+      "sha256": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+      "bytes": 6258,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/wait-four-ssh.mjs",
+      "workspaceSource": "work/v40-five-sim/wait-four-ssh.mjs",
+      "sha256": "4c95f995b8132d291b372aa37f901f7c5a354d8f3b62b07d643a06835224ed5e",
+      "bytes": 1059,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/wan-scope.lua",
+      "workspaceSource": "work/v40-five-sim/wan-scope.lua",
+      "sha256": "c2cbfd5eb8cf714341106f29cd0234d5388d2e88a45c1aaaba7880cd3d488677",
+      "bytes": 3525,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/wan-tag-plan.mjs",
+      "workspaceSource": "work/v40-five-sim/wan-tag-plan.mjs",
+      "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
+      "bytes": 2045,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/entry-qualified.json",
+      "workspaceSource": "work/v40-five-sim/entry-qualified.json",
+      "sha256": "88019ad02ba60e4ee9fb8b1b897bc4aafb3ccb4b41e34b24b7f1632fa62ce85e",
+      "bytes": 6414,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/prepare-receipt.json",
+      "workspaceSource": "work/v40-five-sim/prepare-receipt.json",
+      "sha256": "df3d3b6fe35f33c78ac3b690c1ce0067f0109b2b4b9353236d20378857f14644",
+      "bytes": 5693,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/prepare-analysis.py",
+      "workspaceSource": "work/v39-five-sim/prepare-analysis.py",
+      "sha256": "1ef508e4b4a650225098ac56996dabc9bfa475211fe3bafcf9ee14fad7fbc990",
+      "bytes": 1666,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/analyze-hardware.py",
+      "workspaceSource": "work/v39-five-sim/analyze-hardware.py",
+      "sha256": "8b713aded0f4b382ae59dd4bac6fca1120c1ece85fa72955b71386ed1407de52",
+      "bytes": 8193,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/prepare-analysis.py",
+      "workspaceSource": "work/v40-five-sim/prepare-analysis.py",
+      "sha256": "061106b65dbd8e9cfdc9bc8787c6ec3b8a6bc06ca7d685ff25143369ca121148",
+      "bytes": 355,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/analyze-hardware.py",
+      "workspaceSource": "work/v40-five-sim/analyze-hardware.py",
+      "sha256": "6fd389b5b0c0448df180b99bb76c6b62d55b35fcf434ea50de12aff3083e6dc1",
+      "bytes": 8193,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/prepare-closure.py",
+      "workspaceSource": "work/v40-five-sim/prepare-closure.py",
+      "sha256": "d76573577925cb4f40f90aca35f7fe0e8539b6a020e043d2adff9347c374a599",
+      "bytes": 384,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/capture-all-owned-closure.ps1",
+      "workspaceSource": "work/v40-five-sim/capture-all-owned-closure.ps1",
+      "sha256": "2fb211bdaa0138817ace4f21f5b6e0a7d42edbdf2bf22bb4a14f458516132c76",
+      "bytes": 2554,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/publish-five.py",
+      "workspaceSource": "work/v40-five-sim/publish-five.py",
+      "sha256": "7f6ae425990b5c47f13b6b51c99dbf136b536c444131b3f9fb68579f42eb0287",
+      "bytes": 14357,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/qualification-first-failure/qualify-entry.mjs",
+      "workspaceSource": "work/v39-five-sim/qualification-first-failure/qualify-entry.mjs",
+      "sha256": "603934c37cbc4ccb03efb80d0f5abe0e49e8211edab4e748fe1c6348ef3f2a6d",
+      "bytes": 4184,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/qualification-first-failure/session-binding.mjs",
+      "workspaceSource": "work/v39-five-sim/qualification-first-failure/session-binding.mjs",
+      "sha256": "f3977286ef6e0e94859523843f7f085fdf6a914ea9e05a3fe6435b55e4992db9",
+      "bytes": 605,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v39-five-sim/qualification-first-failure/failure.json",
+      "workspaceSource": "work/v39-five-sim/qualification-first-failure/failure.json",
+      "sha256": "affe85308f2defe00bf18a1f0d674cd4223d111b3a4101f0ec02d5fcec025d1b",
+      "bytes": 325,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/qualification-first-failure/qualify-entry.mjs",
+      "workspaceSource": "work/v40-five-sim/qualification-first-failure/qualify-entry.mjs",
+      "sha256": "b7a154012757bb37b55674a03d1b2f4b615fed3ee7d26cad7beef69f9e318469",
+      "bytes": 3225,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/qualification-first-failure/native-client.mjs",
+      "workspaceSource": "work/v40-five-sim/qualification-first-failure/native-client.mjs",
+      "sha256": "02eaa9e1c407a2ee2640d3677cc17d2540d4265031a867a26162de38fd754f6d",
+      "bytes": 7047,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v40-five-sim/qualification-first-failure/failure.json",
+      "workspaceSource": "work/v40-five-sim/qualification-first-failure/failure.json",
+      "sha256": "82ccda33e274827d43c74f5dd6cbc014db918ca1574d7a1ef2bf603025cd959e",
+      "bytes": 439,
+      "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -30190,5 +30974,6 @@
   "lastBoundedApplicationExport": "V32_STEAM_RECOVERY_AND_BOUNDED_WINDOW",
   "lastNormalApplicationAttemptExport": "V33_ACTUAL_NORMAL_PRECHECKPOINT_REFUSAL",
   "lastNormalAdmissionAttemptExport": "V34_POSTCHECKPOINT_OWNER_ADMISSION_REFUSAL",
-  "lastOwnedSimulationExport": "V38_SIMULATED_RT_TWO_WAN_HARDWARE_COMPLETE"
+  "lastOwnedSimulationExport": "V38_SIMULATED_RT_TWO_WAN_HARDWARE_COMPLETE",
+  "lastFiveWanSimulationAttemptExport": "V40_NATURAL_FIVE_WAN_PREREQUISITE_REFUSAL"
 }

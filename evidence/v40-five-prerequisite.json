@@ -1,0 +1,93 @@
+{
+  "passedAsPreservedObservation": true,
+  "attempts": {
+    "v39-five-sim": {
+      "passedAsPreservedAttempt": true,
+      "actualRuntimeBindings": 3206,
+      "fixtureSeconds": 30.001137300000003,
+      "deliveredTcpBytes": 85475328,
+      "fourTcpTransportsEstablished": true,
+      "tcpChildAttempts": {
+        "tcp": 1,
+        "tcp2": 4,
+        "tcp3": 1,
+        "tcp4": 1
+      },
+      "clientErrors": [
+        "AssertionError [ERR_ASSERTION]: Natural TCP acquisition is closed"
+      ],
+      "lastEligibleTcpWans": [
+        1,
+        4,
+        5
+      ],
+      "lastEligibleUdpWans": [
+        4
+      ],
+      "finalEligibleFiveWanPairs": 0,
+      "udpRequestsDuringSoftwareFixture": 1270,
+      "udpRepliesBeforeClientStop": 1262,
+      "edgePendingRepliesNotDeclaredPacketLoss": true,
+      "nssStarted": false,
+      "checkpointStarted": false,
+      "gateLoaded": false,
+      "ecmOpened": false,
+      "endpointRestoration": {
+        "passed": true,
+        "ownedRulesRemaining": 0,
+        "baselineRestored": true,
+        "exactOwnedEndpointClosed": true,
+        "originalFailedTransportRetained": true
+      },
+      "independentClientExitPassed": true
+    },
+    "v40-five-sim": {
+      "passedAsPreservedAttempt": true,
+      "actualRuntimeBindings": 3254,
+      "fixtureSeconds": 33.4731407,
+      "deliveredTcpBytes": 100548608,
+      "fourTcpTransportsEstablished": true,
+      "tcpChildAttempts": {
+        "tcp": 2,
+        "tcp2": 3,
+        "tcp3": 1,
+        "tcp4": 1
+      },
+      "clientErrors": [],
+      "lastEligibleTcpWans": [
+        2,
+        3,
+        3,
+        4
+      ],
+      "lastEligibleUdpWans": [
+        2
+      ],
+      "finalEligibleFiveWanPairs": 0,
+      "udpRequestsDuringSoftwareFixture": 1421,
+      "udpRepliesBeforeClientStop": 1411,
+      "edgePendingRepliesNotDeclaredPacketLoss": true,
+      "nssStarted": false,
+      "checkpointStarted": false,
+      "gateLoaded": false,
+      "ecmOpened": false,
+      "endpointRestoration": {
+        "passed": true,
+        "ownedRulesRemaining": 0,
+        "baselineRestored": true,
+        "exactOwnedEndpointClosed": true,
+        "originalFailedTransportRetained": true
+      },
+      "independentClientExitPassed": true
+    }
+  },
+  "v39CompletedControlMessageIncorrectlyRecheckedAfterDeadline": true,
+  "fixedInFreshV40NamespaceOnly": true,
+  "v40ClientStayedHealthyUntilControllerStop": true,
+  "v40NaturalDistinctWanPrerequisiteRefused": true,
+  "fiveWanConcurrentHardwareAcceptance": false,
+  "nativeOrFirmwareFailureEstablished": false,
+  "routingOrClassifierThresholdChanged": false,
+  "furtherFixtureAttemptsStopped": true,
+  "noCs2OrSteamOperation": true
+}

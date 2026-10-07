@@ -1,0 +1,8 @@
+{
+  "exitCode": 1,
+  "reason": "Mixed newline bytes were normalized in fixture preparation, then all lines were incorrectly changed to CRLF",
+  "networkOrNssStarted": false,
+  "repairedByExactOriginalBytesAndOnlyDeclaredControlReplacement": true,
+  "failedNativeSha256": "02eaa9e1c407a2ee2640d3677cc17d2540d4265031a867a26162de38fd754f6d",
+  "fixedNativeSha256": "2d37c89858a6a088c09f52ec126dd558f2a0ee0dbdd920596b116b5714881f51"
+}
