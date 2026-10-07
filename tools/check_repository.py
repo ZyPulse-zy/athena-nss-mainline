@@ -2099,4 +2099,57 @@ if (root/'evidence/v29-peer-source-proof.json').exists():
  for f,d in sp['sourceHashes'].items(): assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
  for item in sp['actualTrialSourceInputs']: assert hashlib.sha256((root/'code'/item['path']).read_bytes()).hexdigest()==item['sha256'],item['path']
  assert hashlib.sha256((root/'code/work/v27-raw/endpoint-firewall-guardian.py').read_bytes()).hexdigest()==sp['guardianSha256']
+if (root/'evidence/v31-normal-source-proof.json').exists():
+ sp=json.loads((root/'evidence/v31-normal-source-proof.json').read_text(encoding='utf8'))
+ q30=json.loads((root/'evidence/v30-normal-entry-qualification.json').read_text(encoding='utf8'))
+ q31=json.loads((root/'evidence/v31-normal-entry-qualification.json').read_text(encoding='utf8'))
+ refused=json.loads((root/'evidence/v30-normal-refusal.json').read_text(encoding='utf8'))
+ model=json.loads((root/'evidence/v31-last-selection-models.json').read_text(encoding='utf8'))
+ inspected=json.loads((root/'evidence/v31-normal-inspect.json').read_text(encoding='utf8'))
+ end=json.loads((root/'evidence/v31-normal-restoration.json').read_text(encoding='utf8'))
+ assert manifest['lastNormalApplicationExport']=='V31_PRESTAGE_TCP_SELECTION'
+ assert sp['passed'] and sp['baseCommit']=='e09c8cf4005a08613fc38b93130392522fb711d9' and sp['historicPrefixSources']==3878
+ assert sp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3878],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ assert sp['oldCodeAndEvidenceBlobsChecked']==4407 and sp['oldCodeAndEvidenceUnmodified'] and sp['actualFailedTrialBoundInputsAndFrozenCopiesExact']==2615
+ assert sp['v30Bindings']==2615 and sp['v31Bindings']==2651 and sp['unchangedDataPlaneAndImmutableCandidatePolicy'] and sp['oldQualifiedV30SourcesPreserved']
+ assert sp['onlyPreDetachedStageHostTcpSelectionChanged'] and sp['noInstalledGateRetargeting'] and sp['rawCtNoncesCredentialsConfigurationsCheckpointsBinariesAndProcessCommandLinesExcluded'] and sp['originalFailuresPreservedLocally'] and sp['partialUiRestorationExplicitlyReported']
+ for src,digest in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ for q in (q30,q31):
+  assert q['passed'] and not q['hardwareExecuted'] and not q['wholeFactoryModeled'] and not q['normalApplicationFactoryHardwareAcceptance'] and not q['humanAcceptance'] and not q['permanentNssDeployment']
+  assert q['sourceFreshnessSeconds']==6 and q['kernelSessionSeconds']==90 and q['kernelMaximumSeconds']==120 and q['ownerSeconds']==180 and q['phaseSeconds']==60 and q['maximumExactFlows']==3 and q['defaultInspectOnly']
+  for src,digest in q['sourceManifest'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ assert q30['inheritedBindings']==2586 and len(q30['sourceManifest'])==29 and q30['relativeDependenciesExist']==48
+ assert q31['inheritedBindings']==2615 and len(q31['sourceManifest'])==36 and q31['relativeDependenciesExist']==61 and q31['actualRefusalRegressionModels']==14 and q31['clientMaximumSeconds']==180
+ for name in ['candidate-policy.mjs','classifier.lua','classified-tags.lua','fast-path.lua','qos-physical.lua','module-stage-guardian.lua','native-qualified.json','normalizer-qualified.json','qos-native-qualified.json']:
+  assert (root/'code/work/v31-normal'/name).read_bytes()==(root/'code/work/v30-normal'/name).read_bytes(),name
+ assert not refused['trial']['passed'] and refused['trial']['errors']==['AssertionError [ERR_ASSERTION]: Controlled exact pair changed after original full audit']
+ diag=refused['diagnosis'];assert diag['passed'] and diag['refusalBeforeCheckpoint'] and not diag['anyCheckpointCreated'] and not diag['anyDetachedStageStarted'] and not diag['nssHardwareAcceptance']
+ assert not diag['slots']['tcp']['exactApplicationOwnedIdentityStillPresent'] and diag['slots']['udp']['exactApplicationOwnedIdentityStillPresent'] and diag['slots']['tcp2']['exactApplicationOwnedIdentityStillPresent'] and diag['producerMatchesInitial']
+ assert refused['actualReader']['actualCs2RtCandidates']==1 and refused['actualReader']['actualSteamBulkCandidates']==24 and refused['actualFrozenInputsExact']==2615
+ assert refused['missingQualifiedProjectionDoesNotProveCtExit'] and not refused['tcpLifetimeCauseEstablished'] and refused['originalFailureAndPrivateInputBytesPreserved']
+ assert not any(refused[k] for k in ['checkpointCreated','detachedStageStarted','ecmOpened'])
+ assert model['passed'] and model['modelOnly'] and model['checks']==14 and model['actualHistoricalRefusalFrameUsed'] and not model['hardwareExecuted']
+ assert model['actualFrameSha256']==diag['frameSha256'] and model['originalGameRetained'] and model['provisionalTcpMayChangeOnlyBeforeDetachedStage']
+ assert model['unchangedWanFullMarkNatAddressAndProtectedInputsRequired'] and model['originalImmutableRefinementStillRefusesChangedTcp'] and model['noGateRetargeting'] and model['noRouterWrites']
+ for src,digest in model['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ assert inspected['actualReader']['readonly'] and inspected['actualReader']['actualCs2RtCandidates']==1 and inspected['actualReader']['actualSteamBulkCandidates']==0 and not inspected['actualReader']['nssAdmissionAllowed']
+ assert inspected['declinedForNoBulkAndInsufficientRemainingClientTime'] and not any(inspected[k] for k in ['fullControllerSessionStarted','oneSessionAttemptFileCreated','checkpointCreated','detachedStageStarted','ecmOpened','clientDeadlineReset','newGuardForRetryStarted','factoryHardwareAcceptance','subjectiveHumanAcceptance'])
+ audit=end['reusedOriginalFullAudit'];assert audit['passed'] and audit['queryAge']<6 and audit['ecmClosedAndZero'] and audit['protectedConfigurationUnchanged'] and audit['allFiveHealthyWanBaseline'] and audit['serviceEpochPinned']
+ assert end['protectedBaseline']['configurationMatches'] and all(end['protectedBaseline']['checks'].values()) and end['protectedBaseline']['rawRulesetIdentical'] and end['noRouterConfigurationWritesAfterThatAudit']
+ physical=end['currentPhysicalQueues'];assert physical['passed'] and physical['readonly'] and physical['defaultQueueOptionsAndHandlesExact'] and physical['physicalWanOriginalMqFourFqCodelRestored'] and physical['lan4OriginalMqFourFqCodelRestored']
+ clients=end['clientProcessClosure'];assert clients['passed'] and clients['readonly'] and clients['ownedTestProcessesRemaining']==clients['cs2ProcessesRemaining']==clients['steamProcessesRemaining']==0
+ assert len(clients['guards'])==2 and all(g['readyBeforeDownload'] and g['naturalTimedExitPassed'] and g['guardProcessGone'] and g['deadlineSeconds']==180 and not g['originalClientUiRestoredByGuard'] for g in clients['guards'])
+ assert clients['independentProcessExitDoesNotProveOriginalUiRestoration'] and clients['noNewControllerOrGuardStarted']
+ ui=end['clientUiObservations'];assert not ui['automatedSubjectiveHumanExperience'] and not ui['v30']['nssEntered'] and not ui['v30']['nssOrSubjectiveGameQualityAcceptance']
+ assert ui['v31']['downloadPausedVisuallyVerifiedBeforeGuardExit'] and ui['v31']['networkAndDiskVisuallyZeroAfterPause'] and ui['v31']['originalLimitDisabledVisuallyVerifiedBeforeGuardExit']
+ assert not ui['v31']['jitterLossMissVisible'] and not ui['v31']['nssOrSubjectiveGameQualityAcceptance'] and not ui['v31']['inactiveLimitNumericValueByteRestorationProven']
+ assert ui['currentRestoration']['downloadAndLimitRestoredBeforeGuardExit'] and ui['currentRestoration']['ephemeralLoginWindowNotAutomated'] and not ui['currentRestoration']['originalUiRestorationComplete']
+ assert end['routerAndOwnedTestProcessClosurePassed'] and not any(end[k] for k in ['originalClientUiRestorationComplete','permanentNssDeployment','newCpuCausalAcceptance','normalFactoryHardwareAcceptance'])
+ whitespace=json.loads((root/'evidence/v31-publication-whitespace.json').read_text(encoding='utf8'))
+ assert whitespace['passed'] and not whitespace['initialStagedDiffCheckPassed'] and whitespace['originalFailureExitCode']==2 and whitespace['submissionStoppedBeforeCommit'] and whitespace['postAttributeStagedDiffCheckExitCode']==0
+ assert whitespace['inheritedFromV26ExactBytes'] and whitespace['noGlobalWhitespacePolicyChange'] and whitespace['experimentalSourcesAndPrivateInputsUnchanged']
+ assert whitespace['exactPathAttributes']==['/code/work/v30-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol','/code/work/v31-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol']
+ for src,digest in whitespace['sourceHashes'].items():
+  assert hashlib.sha256((root/src).read_bytes()).hexdigest()==digest==hashlib.sha256((root/'code/work/v26-normal/fast-path.lua').read_bytes()).hexdigest()
+ for attr in whitespace['exactPathAttributes']:assert attr in (root/'.gitattributes').read_text(encoding='utf8')
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

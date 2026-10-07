@@ -1,0 +1,26 @@
+{
+  "actualReader": {
+    "observedAt": "2026-10-07T01:05:18.821Z",
+    "readonly": true,
+    "gameProcessRunning": true,
+    "steamProcessRunning": true,
+    "actualCs2RtCandidates": 1,
+    "actualSteamBulkCandidates": 0,
+    "sameWanCandidates": [],
+    "sourceAge": 3.2400000002235174,
+    "sourceSequence": 13386,
+    "nssAdmissionAllowed": false,
+    "controllerPrototypeOnly": true,
+    "adapterSha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0"
+  },
+  "fullControllerSessionStarted": false,
+  "oneSessionAttemptFileCreated": false,
+  "checkpointCreated": false,
+  "detachedStageStarted": false,
+  "ecmOpened": false,
+  "clientDeadlineReset": false,
+  "newGuardForRetryStarted": false,
+  "declinedForNoBulkAndInsufficientRemainingClientTime": true,
+  "factoryHardwareAcceptance": false,
+  "subjectiveHumanAcceptance": false
+}

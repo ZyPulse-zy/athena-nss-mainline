@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": 18,
+  "modelOnly": true,
+  "sourceHistoricalProvenanceRetained": true,
+  "applicationRoleListsMocked": true,
+  "applicationSocketOwnershipStillUsesNss160Filter": true,
+  "realGameExecuted": false,
+  "multiWanRealApplicationFactoryHardwareExecuted": false,
+  "unknownAndWrongRoleDefaultDeny": true,
+  "slotCount": 3,
+  "twoDistinctTcpWanRequired": true,
+  "gameWanMayBeEitherOrThird": true
+}

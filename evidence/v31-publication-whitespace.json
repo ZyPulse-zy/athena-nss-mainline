@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "initialStagedDiffCheckPassed": false,
+  "originalFailureExitCode": 2,
+  "originalFailureOutput": "code/work/v30-normal/fast-path.lua:192: trailing whitespace.\n+  \ncode/work/v31-normal/fast-path.lua:192: trailing whitespace.\n+  \n",
+  "submissionStoppedBeforeCommit": true,
+  "inheritedFromV26ExactBytes": true,
+  "sourceHashes": {
+    "code/work/v30-normal/fast-path.lua": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b",
+    "code/work/v31-normal/fast-path.lua": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b"
+  },
+  "exactPathAttributes": [
+    "/code/work/v30-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol",
+    "/code/work/v31-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol"
+  ],
+  "noGlobalWhitespacePolicyChange": true,
+  "experimentalSourcesAndPrivateInputsUnchanged": true,
+  "postAttributeStagedDiffCheckExitCode": 0
+}

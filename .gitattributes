@@ -163,3 +163,43 @@
 /code/work/morning-20261007/read-physical-20261006234137-d2fdcbc7.mjs whitespace=cr-at-eol
 
 # Exact new peer-diagnosis Windows source paths.
+
+# Exact new normal-application Windows source paths.
+/code/work/v30-normal/candidate-policy.mjs whitespace=cr-at-eol
+/code/work/v30-normal/class-leaf-map.mjs whitespace=cr-at-eol
+/code/work/v30-normal/classified-tags.lua whitespace=cr-at-eol
+/code/work/v30-normal/classifier.lua whitespace=cr-at-eol
+/code/work/v30-normal/current-audit-diagnostic.mjs whitespace=cr-at-eol
+/code/work/v30-normal/epoch-driver.mjs whitespace=cr-at-eol
+/code/work/v30-normal/fast-path.lua whitespace=cr-at-eol
+/code/work/v30-normal/guardian-plan.mjs whitespace=cr-at-eol
+/code/work/v30-normal/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/v30-normal/module-stage.mjs whitespace=cr-at-eol
+/code/work/v30-normal/parse-ecm.mjs whitespace=cr-at-eol
+/code/work/v30-normal/payload.mjs whitespace=cr-at-eol
+/code/work/v30-normal/qos-physical.lua whitespace=cr-at-eol
+/code/work/v30-normal/session.mjs whitespace=cr-at-eol
+/code/work/v30-normal/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/v30-normal/wan-scope.lua whitespace=cr-at-eol
+/code/work/v30-normal/wan-tag-plan.mjs whitespace=cr-at-eol
+/code/work/v31-normal/candidate-policy.mjs whitespace=cr-at-eol
+/code/work/v31-normal/class-leaf-map.mjs whitespace=cr-at-eol
+/code/work/v31-normal/classified-tags.lua whitespace=cr-at-eol
+/code/work/v31-normal/classifier.lua whitespace=cr-at-eol
+/code/work/v31-normal/current-audit-diagnostic.mjs whitespace=cr-at-eol
+/code/work/v31-normal/epoch-driver.mjs whitespace=cr-at-eol
+/code/work/v31-normal/fast-path.lua whitespace=cr-at-eol
+/code/work/v31-normal/guardian-plan.mjs whitespace=cr-at-eol
+/code/work/v31-normal/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/v31-normal/module-stage.mjs whitespace=cr-at-eol
+/code/work/v31-normal/parse-ecm.mjs whitespace=cr-at-eol
+/code/work/v31-normal/payload.mjs whitespace=cr-at-eol
+/code/work/v31-normal/qos-physical.lua whitespace=cr-at-eol
+/code/work/v31-normal/session.mjs whitespace=cr-at-eol
+/code/work/v31-normal/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/v31-normal/wan-scope.lua whitespace=cr-at-eol
+/code/work/v31-normal/wan-tag-plan.mjs whitespace=cr-at-eol
+
+# Frozen V26 fast-path blank lines, inherited exactly by these two new copies.
+/code/work/v30-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v31-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol

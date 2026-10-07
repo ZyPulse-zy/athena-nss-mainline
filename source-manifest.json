@@ -27150,9 +27150,514 @@
       "sha256": "8fd829ea01d84ce1dd655dd4723545e0079eced1d23d35b9b6ddddbf27cb1254",
       "bytes": 12357,
       "role": "bounded-protocol-peer-diagnosis"
+    },
+    {
+      "path": "code/work/v30-normal/candidate-policy.mjs",
+      "workspaceSource": "work/v30-normal/candidate-policy.mjs",
+      "sha256": "df643a34be01cc34bc299a61aa1edc687779597b8f019de4f29083e74b4dc70b",
+      "bytes": 2584,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/class-leaf-map.mjs",
+      "workspaceSource": "work/v30-normal/class-leaf-map.mjs",
+      "sha256": "1d400ffa1345503f7d554170428e5ccdc3bd4c31e8f12d91e64502433cc4674c",
+      "bytes": 3710,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/classified-tags.lua",
+      "workspaceSource": "work/v30-normal/classified-tags.lua",
+      "sha256": "c9e983814087f007cca62c316d6d74a1bd5d36e3d1dd22045cc44eafe9320c30",
+      "bytes": 3875,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/classifier.lua",
+      "workspaceSource": "work/v30-normal/classifier.lua",
+      "sha256": "9b3733f1cab9de119e2ac406bb896f850cac32ba539ae257126c61cf5f6c669b",
+      "bytes": 22185,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v30-normal/current-audit-diagnostic.mjs",
+      "sha256": "729b2c17c484e2ba0e01611dd472b60aa73694b2182c6a492c875e06b622f246",
+      "bytes": 5848,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/epoch-driver.mjs",
+      "workspaceSource": "work/v30-normal/epoch-driver.mjs",
+      "sha256": "44f6ba6237bc2e532a5a2f45e412386831094a03e79789cfff974d1ef7449a5f",
+      "bytes": 15160,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/fast-path.lua",
+      "workspaceSource": "work/v30-normal/fast-path.lua",
+      "sha256": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b",
+      "bytes": 14618,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/guardian-plan.mjs",
+      "workspaceSource": "work/v30-normal/guardian-plan.mjs",
+      "sha256": "30ce116ed9ab80f8472f0c79fd7accb916f89d37119b4a683248e121ad025d72",
+      "bytes": 447,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/model-normal-policy.mjs",
+      "workspaceSource": "work/v30-normal/model-normal-policy.mjs",
+      "sha256": "8597f35d3e2f10a6ec22466839212b4704dc1520be026e8fab823826bdf6244f",
+      "bytes": 2175,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/module-stage-guardian.lua",
+      "workspaceSource": "work/v30-normal/module-stage-guardian.lua",
+      "sha256": "e128a6a25d128b6db0138bfebff2491ece51f63ddf448b9489e5ef32a1a649ad",
+      "bytes": 13560,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/module-stage.mjs",
+      "workspaceSource": "work/v30-normal/module-stage.mjs",
+      "sha256": "a5bfd9754dd27c64db193093bae3e3fab8ce672485a19f57232e1b6c1f5276dc",
+      "bytes": 17906,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/normal-policy.mjs",
+      "workspaceSource": "work/v30-normal/normal-policy.mjs",
+      "sha256": "28dbd5bd7bd8756485d210d3f837789d750200b0f7179739f5fa808a11283349",
+      "bytes": 1240,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/parse-ecm.mjs",
+      "workspaceSource": "work/v30-normal/parse-ecm.mjs",
+      "sha256": "bc0c752dd715488640bb00af7becc9f1a8549cfad317f38b160d594cf400df20",
+      "bytes": 3611,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/payload.mjs",
+      "workspaceSource": "work/v30-normal/payload.mjs",
+      "sha256": "fe37305de98118efd32bc456f9f800b1fa953c68034ff8f244000cbb2eee2ec0",
+      "bytes": 4175,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/prepare.py",
+      "workspaceSource": "work/v30-normal/prepare.py",
+      "sha256": "8bada2d2abf7eb0091737b7bd3aedc021f076325d404f214f316c9af34bcee5d",
+      "bytes": 2021,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/qos-physical.lua",
+      "workspaceSource": "work/v30-normal/qos-physical.lua",
+      "sha256": "69ceade747001b7bb20f3e1c8089bca00f829eb2a279c814b3f7ab0457b95390",
+      "bytes": 8930,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/qualify-entry.mjs",
+      "workspaceSource": "work/v30-normal/qualify-entry.mjs",
+      "sha256": "6a3f5d286fffc7deec8d8dd2871227d963708d2a772bbd32c613ad9fed38a766",
+      "bytes": 3670,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/read-controlled.mjs",
+      "workspaceSource": "work/v30-normal/read-controlled.mjs",
+      "sha256": "b456113c546f3005e9cc0b4839ebe362d3c86977415d065448b8a7a55fb06d77",
+      "bytes": 1467,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/read-physical-restoration.mjs",
+      "workspaceSource": "work/v30-normal/read-physical-restoration.mjs",
+      "sha256": "5cd37e04a559e72afd21708c2abf4fcb89a8cfefa5784ec3682e02904a18fcb9",
+      "bytes": 1721,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/read-real-candidates.mjs",
+      "workspaceSource": "work/v30-normal/read-real-candidates.mjs",
+      "sha256": "069b9337704c4b77ef1055551bf0197b8dafb0ac4f97bd8d816ec6081feede9e",
+      "bytes": 5239,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/session-binding.mjs",
+      "workspaceSource": "work/v30-normal/session-binding.mjs",
+      "sha256": "8161148fd1dc8f141498d95239b093011cff0a727be7aad522f98a7647637719",
+      "bytes": 606,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/session.mjs",
+      "workspaceSource": "work/v30-normal/session.mjs",
+      "sha256": "d4c47088db81525e8eb8c8d9f666c5a84fa548d5c833dda1f6e419b2479218ff",
+      "bytes": 2139,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/tag-normalizer.lua",
+      "workspaceSource": "work/v30-normal/tag-normalizer.lua",
+      "sha256": "98ed0ecd1bc1b07f10a79d17bcfb9d4a426cc9c971d44e6bb542c4f529c29602",
+      "bytes": 5610,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/wan-scope.lua",
+      "workspaceSource": "work/v30-normal/wan-scope.lua",
+      "sha256": "c1df8f235be2d479e740bb8b692cea7a7963cec1a99dcdf27bf5c5dadcda5254",
+      "bytes": 3540,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/wan-tag-plan.mjs",
+      "workspaceSource": "work/v30-normal/wan-tag-plan.mjs",
+      "sha256": "59de09e38be866ed8f29684bcb79cf748ee1e0e1a1ad8a8ae3dad573218dcefe",
+      "bytes": 1880,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/native-qualified.json",
+      "workspaceSource": "work/v30-normal/native-qualified.json",
+      "sha256": "f5d03b7995031fb67b1c4beb2c072f96abacabe62ab77050214b1db8d26fdc40",
+      "bytes": 494,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/normalizer-qualified.json",
+      "workspaceSource": "work/v30-normal/normalizer-qualified.json",
+      "sha256": "6f5a54208056171e4c320aa31cb5bd158b12e9a9a1cc7c23ab2e4e6da7336874",
+      "bytes": 176,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/qos-native-qualified.json",
+      "workspaceSource": "work/v30-normal/qos-native-qualified.json",
+      "sha256": "4e6e04301fa98e3263ea85ababf79a83229d7cbd5b075433960b89d5e902d58d",
+      "bytes": 139,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/normal-policy-qualified.json",
+      "workspaceSource": "work/v30-normal/normal-policy-qualified.json",
+      "sha256": "569c0f737d61bf66659ceac41ddb89b4bb90524426648e7d44d3b7901ab48353",
+      "bytes": 423,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/application-watchdog.ps1",
+      "workspaceSource": "work/v31-normal/application-watchdog.ps1",
+      "sha256": "4d1815805db0c8c12ed9be4c5b8cd49b72d1051ba8434c5ed27d3c586498cff5",
+      "bytes": 2448,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/candidate-policy.mjs",
+      "workspaceSource": "work/v31-normal/candidate-policy.mjs",
+      "sha256": "df643a34be01cc34bc299a61aa1edc687779597b8f019de4f29083e74b4dc70b",
+      "bytes": 2584,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/class-leaf-map.mjs",
+      "workspaceSource": "work/v31-normal/class-leaf-map.mjs",
+      "sha256": "1d400ffa1345503f7d554170428e5ccdc3bd4c31e8f12d91e64502433cc4674c",
+      "bytes": 3710,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/classified-tags.lua",
+      "workspaceSource": "work/v31-normal/classified-tags.lua",
+      "sha256": "c9e983814087f007cca62c316d6d74a1bd5d36e3d1dd22045cc44eafe9320c30",
+      "bytes": 3875,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/classifier.lua",
+      "workspaceSource": "work/v31-normal/classifier.lua",
+      "sha256": "9b3733f1cab9de119e2ac406bb896f850cac32ba539ae257126c61cf5f6c669b",
+      "bytes": 22185,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v31-normal/current-audit-diagnostic.mjs",
+      "sha256": "1834a22704bca1f00f03462ca8b4d7662f5b44c88147388102c001c101d1f57d",
+      "bytes": 5848,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/epoch-driver.mjs",
+      "workspaceSource": "work/v31-normal/epoch-driver.mjs",
+      "sha256": "16079ba8608347983bdb0bfe498049ec7324f67dab487406248c4ea4d05cb102",
+      "bytes": 15361,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/fast-path.lua",
+      "workspaceSource": "work/v31-normal/fast-path.lua",
+      "sha256": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b",
+      "bytes": 14618,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/guardian-plan.mjs",
+      "workspaceSource": "work/v31-normal/guardian-plan.mjs",
+      "sha256": "30ce116ed9ab80f8472f0c79fd7accb916f89d37119b4a683248e121ad025d72",
+      "bytes": 447,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/model-last-selection.mjs",
+      "workspaceSource": "work/v31-normal/model-last-selection.mjs",
+      "sha256": "f6a43c3fb6da84497d5c8eee59038205738f9fee2b11f09d9237c91d4f968284",
+      "bytes": 4229,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/model-normal-policy.mjs",
+      "workspaceSource": "work/v31-normal/model-normal-policy.mjs",
+      "sha256": "0e8c09785824ecb58883312ba00d3d8230e04b18d755f3da6fd20d0c2efe9f18",
+      "bytes": 2175,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/module-stage-guardian.lua",
+      "workspaceSource": "work/v31-normal/module-stage-guardian.lua",
+      "sha256": "e128a6a25d128b6db0138bfebff2491ece51f63ddf448b9489e5ef32a1a649ad",
+      "bytes": 13560,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/module-stage.mjs",
+      "workspaceSource": "work/v31-normal/module-stage.mjs",
+      "sha256": "aa7be6fd5ca757aab93052dca0f8bbd74dfdbf5e7a25ec08638c737c2a273bd6",
+      "bytes": 17975,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/normal-policy.mjs",
+      "workspaceSource": "work/v31-normal/normal-policy.mjs",
+      "sha256": "28dbd5bd7bd8756485d210d3f837789d750200b0f7179739f5fa808a11283349",
+      "bytes": 1240,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/normal-refinement.mjs",
+      "workspaceSource": "work/v31-normal/normal-refinement.mjs",
+      "sha256": "4652c738f39e0a390f54671b36649dc66ae10b14ae80af836d6ee0b6dc857943",
+      "bytes": 1182,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/normal-selection.mjs",
+      "workspaceSource": "work/v31-normal/normal-selection.mjs",
+      "sha256": "81140b39cda6560f9290322eb1db3299a964f8f42d91a4f32f3c49b304239817",
+      "bytes": 970,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/parse-ecm.mjs",
+      "workspaceSource": "work/v31-normal/parse-ecm.mjs",
+      "sha256": "bc0c752dd715488640bb00af7becc9f1a8549cfad317f38b160d594cf400df20",
+      "bytes": 3611,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/payload.mjs",
+      "workspaceSource": "work/v31-normal/payload.mjs",
+      "sha256": "34848da44e279cfd85185ba5a2e5b215a98407010469ba3be2aedffc475ac65b",
+      "bytes": 4175,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/prepare.py",
+      "workspaceSource": "work/v31-normal/prepare.py",
+      "sha256": "ea541d3dabf5db3a254d9a8472537c5c62669177c14b86e655444e4af667c308",
+      "bytes": 4129,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/qos-physical.lua",
+      "workspaceSource": "work/v31-normal/qos-physical.lua",
+      "sha256": "69ceade747001b7bb20f3e1c8089bca00f829eb2a279c814b3f7ab0457b95390",
+      "bytes": 8930,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/qualify-entry.mjs",
+      "workspaceSource": "work/v31-normal/qualify-entry.mjs",
+      "sha256": "768bdf774afe2bcdc96306e93fe00eff31ed2d5975fab9e49d2962856ee8986d",
+      "bytes": 3820,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/read-controlled.mjs",
+      "workspaceSource": "work/v31-normal/read-controlled.mjs",
+      "sha256": "43d24daef3e46e62e2c4606d9e85c6226464961295b696df6df28bdc46f84aa7",
+      "bytes": 1467,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/read-physical-restoration.mjs",
+      "workspaceSource": "work/v31-normal/read-physical-restoration.mjs",
+      "sha256": "88b0bf269b3ad0a66cd26023a00a90c33c489e1a5ee11fe0319e3ad80fc18817",
+      "bytes": 1721,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/read-real-candidates.mjs",
+      "workspaceSource": "work/v31-normal/read-real-candidates.mjs",
+      "sha256": "f6f2b6c836000bb7cf8f717238713835c9d3d643611ff3199597414d1e4f539a",
+      "bytes": 5239,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/run-session.mjs",
+      "workspaceSource": "work/v31-normal/run-session.mjs",
+      "sha256": "ca8782be78494b782d0d91113c1a274d02db791670763140adfb0681a34b8aa4",
+      "bytes": 1070,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/session-binding.mjs",
+      "workspaceSource": "work/v31-normal/session-binding.mjs",
+      "sha256": "fa7b383aa67e9ba74f73d612faced3eddbbea10f165e3caf8cf75fcfa5c7d7e0",
+      "bytes": 616,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/session.mjs",
+      "workspaceSource": "work/v31-normal/session.mjs",
+      "sha256": "8e31ac929d1abdad3f48dcdd71896720b373880fe0e6560166681ea1256edce5",
+      "bytes": 2139,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/start-application-guard.ps1",
+      "workspaceSource": "work/v31-normal/start-application-guard.ps1",
+      "sha256": "ca86520ae0be660c3375b536809a5c4ccd45fa237184f447bc2ddeeee397e7c5",
+      "bytes": 3052,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/tag-normalizer.lua",
+      "workspaceSource": "work/v31-normal/tag-normalizer.lua",
+      "sha256": "98ed0ecd1bc1b07f10a79d17bcfb9d4a426cc9c971d44e6bb542c4f529c29602",
+      "bytes": 5610,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/wan-scope.lua",
+      "workspaceSource": "work/v31-normal/wan-scope.lua",
+      "sha256": "c1df8f235be2d479e740bb8b692cea7a7963cec1a99dcdf27bf5c5dadcda5254",
+      "bytes": 3540,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/wan-tag-plan.mjs",
+      "workspaceSource": "work/v31-normal/wan-tag-plan.mjs",
+      "sha256": "59de09e38be866ed8f29684bcb79cf748ee1e0e1a1ad8a8ae3dad573218dcefe",
+      "bytes": 1880,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/native-qualified.json",
+      "workspaceSource": "work/v31-normal/native-qualified.json",
+      "sha256": "f5d03b7995031fb67b1c4beb2c072f96abacabe62ab77050214b1db8d26fdc40",
+      "bytes": 494,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/normalizer-qualified.json",
+      "workspaceSource": "work/v31-normal/normalizer-qualified.json",
+      "sha256": "6f5a54208056171e4c320aa31cb5bd158b12e9a9a1cc7c23ab2e4e6da7336874",
+      "bytes": 176,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/qos-native-qualified.json",
+      "workspaceSource": "work/v31-normal/qos-native-qualified.json",
+      "sha256": "4e6e04301fa98e3263ea85ababf79a83229d7cbd5b075433960b89d5e902d58d",
+      "bytes": 139,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/normal-policy-qualified.json",
+      "workspaceSource": "work/v31-normal/normal-policy-qualified.json",
+      "sha256": "569c0f737d61bf66659ceac41ddb89b4bb90524426648e7d44d3b7901ab48353",
+      "bytes": 423,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/last-selection-qualified.json",
+      "workspaceSource": "work/v31-normal/last-selection-qualified.json",
+      "sha256": "e5d66c675bb3e3d89ba7d0c0c21f119cdbef004ac73ef6c8881f4fade9a8e8b8",
+      "bytes": 958,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/analyze-refusal.mjs",
+      "workspaceSource": "work/v30-normal/analyze-refusal.mjs",
+      "sha256": "4ab0aad7b7ba9c7a1c85c2fea8efce04289cadfc60d0d0aa815dc7bc37eb97a5",
+      "bytes": 2159,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/application-watchdog.ps1",
+      "workspaceSource": "work/v30-normal/application-watchdog.ps1",
+      "sha256": "4d1815805db0c8c12ed9be4c5b8cd49b72d1051ba8434c5ed27d3c586498cff5",
+      "bytes": 2448,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/start-application-guard.ps1",
+      "workspaceSource": "work/v30-normal/start-application-guard.ps1",
+      "sha256": "36b1b84424af434a74c0007cd2983f44ad6127f652333dbc0317331d89b56a90",
+      "bytes": 2964,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v30-normal/run-session.mjs",
+      "workspaceSource": "work/v30-normal/run-session.mjs",
+      "sha256": "a4e00aa11a1a6d3219991666e99255bb7ff7ff14182c90c26b53e0e17da0d021",
+      "bytes": 1070,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/read-physical-final.mjs",
+      "workspaceSource": "work/v31-normal/read-physical-final.mjs",
+      "sha256": "7adc2b8747ab2e667e483bb30e5ed86849771e3a597d61671e4e616e43dca739",
+      "bytes": 2068,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/seal-closure.ps1",
+      "workspaceSource": "work/v31-normal/seal-closure.ps1",
+      "sha256": "f53919998ce9fb4d15d978f656bb08817fbbc5da82b8ff7b7e3dc3f7f2ea1d5d",
+      "bytes": 2884,
+      "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v31-normal/publish-normal-entry.py",
+      "workspaceSource": "work/v31-normal/publish-normal-entry.py",
+      "sha256": "3da53d092dd279e79942a23c38a485fb8669cbe8f6bfb790986665480787dc69",
+      "bytes": 15335,
+      "role": "normal-application-prestage-selection-and-closure"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
   "privateDataExcluded": true,
-  "lastPrerequisiteDiagnosticExport": "V29_PROTOCOL_SPECIFIC_PEER_PROOF"
+  "lastPrerequisiteDiagnosticExport": "V29_PROTOCOL_SPECIFIC_PEER_PROOF",
+  "lastNormalApplicationExport": "V31_PRESTAGE_TCP_SELECTION"
 }

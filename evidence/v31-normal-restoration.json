@@ -1,0 +1,153 @@
+{
+  "reusedOriginalFullAudit": {
+    "passed": true,
+    "auditPurpose": "recovery",
+    "prelearningSchedulingRequested": false,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 12,
+    "queryAge": 3.9399999999441206,
+    "sequence": 13107,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": false,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "allFiveHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "protectedBaseline": {
+    "configurationMatches": true,
+    "checks": {
+      "boot": true,
+      "native": true,
+      "lan4": true,
+      "rules": true,
+      "services": true,
+      "addresses": true,
+      "routes": true,
+      "originalFiles": true,
+      "protectedManifestSha256": true,
+      "pbrConfiguration": true,
+      "nftRulesetConfiguration": true,
+      "tenQueueConfigurations": true,
+      "protectedManifest": true,
+      "ecmStoppedAndZero": true
+    },
+    "rawRulesetIdentical": true,
+    "ignoredOnlyExistingDynamicDnsElementsAndAutorateBandwidth": true,
+    "originalFullNativeOwnershipAuditStillRequired": true,
+    "noRoutingStateExceptionDuringExperiment": true
+  },
+  "noRouterConfigurationWritesAfterThatAudit": true,
+  "currentPhysicalQueues": {
+    "passed": true,
+    "observedAt": "2026-10-07T01:09:56.273Z",
+    "readonly": true,
+    "physicalWanOriginalMqFourFqCodelRestored": true,
+    "lan4OriginalMqFourFqCodelRestored": true,
+    "defaultQueueOptionsAndHandlesExact": true,
+    "failedWan4ProcessOwnerChecked": true,
+    "wan4Running": true,
+    "wan4Lifecycle": "exec-minieap",
+    "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
+  },
+  "clientProcessClosure": {
+    "independentProcessExitDoesNotProveOriginalUiRestoration": true,
+    "ownedTestProcessesRemaining": 0,
+    "steamProcessesRemaining": 0,
+    "cs2ProcessesRemaining": 0,
+    "guards": [
+      {
+        "version": "v30-normal",
+        "naturalTimedExitPassed": true,
+        "deadlineSeconds": 180,
+        "guardProcessGone": true,
+        "sourceSha256": "4d1815805db0c8c12ed9be4c5b8cd49b72d1051ba8434c5ed27d3c586498cff5",
+        "originalClientUiRestoredByGuard": false,
+        "observedAt": "2026-10-07T00:52:21.6761698Z",
+        "readyBeforeDownload": true
+      },
+      {
+        "version": "v31-normal",
+        "naturalTimedExitPassed": true,
+        "deadlineSeconds": 180,
+        "guardProcessGone": true,
+        "sourceSha256": "4d1815805db0c8c12ed9be4c5b8cd49b72d1051ba8434c5ed27d3c586498cff5",
+        "originalClientUiRestoredByGuard": false,
+        "observedAt": "2026-10-07T01:07:30.9805811Z",
+        "readyBeforeDownload": true
+      }
+    ],
+    "observedAt": "2026-10-07T01:11:38.1339513Z",
+    "passed": true,
+    "readonly": true,
+    "noNewControllerOrGuardStarted": true
+  },
+  "clientUiObservations": {
+    "source": "Observed native Computer Use screenshots and returned windows",
+    "automatedSubjectiveHumanExperience": false,
+    "v30": {
+      "existingCs2Deathmatch": "Inferno",
+      "existingDownload": "Previously queued Dead by Daylight update",
+      "startupDownloadMbps": 71.3,
+      "softwareHudPingMs": 12,
+      "softwareHudLossPercent": {
+        "up": 0.0,
+        "down": 0.0
+      },
+      "softwareJitterGraphVisuallyGreen": true,
+      "twentyMsGraphScaleIsNotMeasuredJitter": true,
+      "downloadLaterCompletedNaturally": true,
+      "nssEntered": false,
+      "nssOrSubjectiveGameQualityAcceptance": false
+    },
+    "v31": {
+      "existingCs2Deathmatch": "Mirage",
+      "existingDownload": "Previously scheduled PUBG update",
+      "scheduledUpdateUiMb": 215.8,
+      "temporarySteamLimitKbps": 8000,
+      "originalLimitEnabled": false,
+      "originalLimitDisabledVisuallyVerifiedBeforeGuardExit": true,
+      "downloadPausedVisuallyVerifiedBeforeGuardExit": true,
+      "networkAndDiskVisuallyZeroAfterPause": true,
+      "pausedUiProgressPercent": 20,
+      "downloadedNetworkMbAtPause": 77.2,
+      "scoreboardPingMs": 11,
+      "jitterLossMissVisible": false,
+      "assistantDidNotActAsHumanPlayer": true,
+      "fullNssSessionStarted": false,
+      "clientDeadlineReset": false,
+      "nssOrSubjectiveGameQualityAcceptance": false,
+      "inactiveLimitNumericValueByteRestorationProven": false
+    },
+    "currentRestoration": {
+      "cs2Closed": true,
+      "ownedTestProcessesGone": true,
+      "downloadAndLimitRestoredBeforeGuardExit": true,
+      "originalSteamUiRestoredAfterGuardExit": false,
+      "steamLaunchAttempted": true,
+      "stableSteamWindowReturned": false,
+      "ephemeralLoginWindowNotAutomated": true,
+      "originalUiRestorationComplete": false,
+      "noCredentialsEnteredOrLoginSettingsChanged": true,
+      "noFurtherDesktopTest": true,
+      "causeOfSteamWindowExitEstablished": false
+    },
+    "failuresPreserved": [
+      "Initial pointer read used a missing plan field; corrected to existing plan-private.json without changing the guard",
+      "Initial process inventory exceeded serialization depth; preserved and replaced by a new minimal-property inventory file",
+      "Steam launch reported no targetable window; process-path launch briefly exposed a login window that disappeared before capture; fresh inventory remained empty"
+    ]
+  },
+  "routerAndOwnedTestProcessClosurePassed": true,
+  "originalClientUiRestorationComplete": false,
+  "permanentNssDeployment": false,
+  "newCpuCausalAcceptance": false,
+  "normalFactoryHardwareAcceptance": false
+}

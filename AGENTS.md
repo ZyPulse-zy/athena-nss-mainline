@@ -1,3 +1,17 @@
+# 正常应用写前拒绝已定位并修正；factory验收仍待完成
+
+更新：北京时间2026-10-07 09:14。v30实际CS2＋已有Steam更新识别1RT/24BULK，完整审核后原第一TCP不在合格应用候选中，原UDP和第二TCP保持；checkpoint/stage/ECM前拒绝。2615实际输入和冻结源码逐字节保持，缺失候选不当CT退出证据。
+
+v31只把TCP最终选择移到checkpoint下载/SHA/gzip后、detached stage前，固定原CS2及每TCP槽WAN/fullmark/zone/NAT地址；native/Lua/QoS/分类阈值与原immutable candidate policy不变。实际拒绝帧14模型、2651绑定/61相对依赖/语法通过；完整factory未在模型或硬件执行。Mirage死斗＋已有PUBG更新只读1RT/0BULK，客户端剩余时间不足，未调用完整控制器，不重置期限。
+
+原完整恢复audit source3.94、保护配置/epoch/五WAN健康/ECM关闭全零；随后无router配置写入。09:09新两物理原mq＋四fq_codel全选项/handle一致。两180秒客户端守护自然退出、CS2/测试进程0；下载暂停和原限速关闭在到期前视觉确认。**Steam重开未形成稳定窗口，原UI恢复未确认，不能标完整客户端验收。** 原失败保留、未操作登录。没有新NSS/CPU/主观真人验收声明。
+
+v20三流多WAN、五WAN队列与共享DOWN18/UP60每WAN12硬上限/RT优先级0的硬件结论保持。正常factory仍待一次自然配齐真实三流的有限会话；v31冻结截止不改，下一正常窗口用新目录/新绑定，先恢复SteamUI。本轮停止新增硬件实验，heartbeat继续暂停，不重放CPU/旧准备或新游戏下载。
+
+详情：[正常入口报告](docs/NORMAL_ENTRY_2026-10-07.md)、[拒绝](evidence/v30-normal-refusal.json)、[14模型](evidence/v31-last-selection-models.json)、[终态](evidence/v31-normal-restoration.json)、[源码](evidence/v31-normal-source-proof.json)。
+
+## 以下保留原传输与夜间记录
+
 # TCP协议源地址假设已修正；单TCP认证短测与恢复通过
 
 更新：北京时间2026-10-07 08:28。用户在08:00晨间封存后要求继续；本轮没有新NSS或router配置写入。v28只读实际TCP走WAN1、UDP走WAN5，公网源地址不同且上游改写TCP源端口；TCP metadata只作时间关联。v29分别取协议公网地址，原两个单IPv4规则/180秒独立FW撤销与原认证server保持，1.391秒首payload、25.007秒22960476字节、客户端无错误。旧v27具体失败连接的精确根因仍未追认。

@@ -1,0 +1,74 @@
+{
+  "trial": {
+    "passed": false,
+    "mode": "lifecycle",
+    "realApplicationOwnershipRequired": true,
+    "trafficGenerated": false,
+    "matchedForwardingABARequested": false,
+    "matchedForwardingABACompleted": false,
+    "classLifecycleCompleted": false,
+    "automaticLifecycleEpochCompleted": false,
+    "flowEligibilityExitCompleted": false,
+    "gameQualityConclusion": false,
+    "errors": [
+      "AssertionError [ERR_ASSERTION]: Controlled exact pair changed after original full audit"
+    ]
+  },
+  "diagnosis": {
+    "passed": true,
+    "diagnosticOnly": true,
+    "refusalBeforeCheckpoint": true,
+    "refusal": "Controlled exact pair changed after original full audit",
+    "slots": {
+      "tcp": {
+        "wan": 1,
+        "exactApplicationOwnedIdentityStillPresent": false,
+        "protocol": 6
+      },
+      "udp": {
+        "wan": 1,
+        "exactApplicationOwnedIdentityStillPresent": true,
+        "protocol": 17
+      },
+      "tcp2": {
+        "wan": 2,
+        "exactApplicationOwnedIdentityStillPresent": true,
+        "protocol": 6
+      }
+    },
+    "oldTripleWasFirstSelectorResult": false,
+    "bulkCandidateCount": 24,
+    "gameCandidateCount": 1,
+    "sourceAge": 2.1000000000931323,
+    "sourceSequence": 13105,
+    "producerMatchesInitial": true,
+    "anyCheckpointCreated": false,
+    "anyDetachedStageStarted": false,
+    "nssHardwareAcceptance": false,
+    "onlyFirstCandidateOrderingChanged": false,
+    "frameSha256": "6c014c0938205f90412b91dd38330f6780e21e2c5052ce853e6f387fc4a7d0a9"
+  },
+  "actualReader": {
+    "observedAt": "2026-10-07T00:51:13.475Z",
+    "readonly": true,
+    "gameProcessRunning": true,
+    "steamProcessRunning": true,
+    "actualCs2RtCandidates": 1,
+    "actualSteamBulkCandidates": 24,
+    "sameWanCandidates": [
+      1
+    ],
+    "sourceAge": 2.1000000000931323,
+    "sourceSequence": 13105,
+    "nssAdmissionAllowed": false,
+    "controllerPrototypeOnly": true,
+    "adapterSha256": "71c2aff00e5fd02378882c88960aebc778b81fff39981182da969ffb3e77bac0"
+  },
+  "actualFrozenInputsExact": 2615,
+  "checkpointCreated": false,
+  "detachedStageStarted": false,
+  "ecmOpened": false,
+  "missingQualifiedProjectionDoesNotProveCtExit": true,
+  "tcpLifetimeCauseEstablished": false,
+  "originalFailureAndPrivateInputBytesPreserved": true
+}

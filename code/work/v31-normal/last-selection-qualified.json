@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "modelOnly": true,
+  "checks": 14,
+  "actualHistoricalRefusalFrameUsed": true,
+  "originalGameRetained": true,
+  "provisionalTcpMayChangeOnlyBeforeDetachedStage": true,
+  "unchangedWanFullMarkNatAddressAndProtectedInputsRequired": true,
+  "originalImmutableRefinementStillRefusesChangedTcp": true,
+  "noGateRetargeting": true,
+  "noRouterWrites": true,
+  "hardwareExecuted": false,
+  "actualFrameSha256": "6c014c0938205f90412b91dd38330f6780e21e2c5052ce853e6f387fc4a7d0a9",
+  "originalSelectionSha256": "daf7a956e136d7c26ff76b5b482fa935d5dd99f219a689a370b81a240170440a",
+  "sourceHashes": {
+    "work/v31-normal/normal-selection.mjs": "81140b39cda6560f9290322eb1db3299a964f8f42d91a4f32f3c49b304239817",
+    "work/v31-normal/normal-refinement.mjs": "4652c738f39e0a390f54671b36649dc66ae10b14ae80af836d6ee0b6dc857943",
+    "work/v31-normal/model-last-selection.mjs": "f6a43c3fb6da84497d5c8eee59038205738f9fee2b11f09d9237c91d4f968284"
+  }
+}
