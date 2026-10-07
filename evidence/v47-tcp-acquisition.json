@@ -1,0 +1,252 @@
+{
+  "boundedHistoricalDiagnostic": true,
+  "firstSshdTagQueryRows": 0,
+  "resolvedUsingSameWindowUnitQuery": true,
+  "journalRows": 20,
+  "journalIdentifier": "sshd-session",
+  "acceptedPublickeyRows": 8,
+  "preauthClosureRows": 4,
+  "sshLimitOrPenaltyCausationProved": false,
+  "preciseFailedChildToServerLogMappingProved": false,
+  "rootCauseProved": false,
+  "sanitizedHistoricalLogEvents": [
+    {
+      "elapsedFromV46ClientStart": -4.304,
+      "categories": [
+        "Accepted publickey"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": -4.299,
+      "categories": [
+        "session opened"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 1.925,
+      "categories": [
+        "Accepted publickey"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 1.929,
+      "categories": [
+        "session opened"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 1.937,
+      "categories": [
+        "Accepted publickey"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 1.939,
+      "categories": [
+        "session opened"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 1.972,
+      "categories": [
+        "Accepted publickey"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 1.976,
+      "categories": [
+        "session opened"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 8.387,
+      "categories": [
+        "Connection reset",
+        "preauth"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 9.912,
+      "categories": [
+        "Accepted publickey"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 9.914,
+      "categories": [
+        "session opened"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 13.48,
+      "categories": [
+        "Accepted publickey"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 13.483,
+      "categories": [
+        "session opened"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 13.502,
+      "categories": [
+        "Accepted publickey"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 13.505,
+      "categories": [
+        "session opened"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 18.347,
+      "categories": [
+        "Accepted publickey"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 18.35,
+      "categories": [
+        "session opened"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 24.425,
+      "categories": [
+        "Connection closed",
+        "preauth"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 24.679,
+      "categories": [
+        "Connection reset",
+        "preauth"
+      ]
+    },
+    {
+      "elapsedFromV46ClientStart": 24.871,
+      "categories": [
+        "Connection reset",
+        "preauth"
+      ]
+    }
+  ],
+  "clientHadNoFirstPayload": true,
+  "historicalTcp2InitialTimeoutAlsoObserved": true,
+  "firstAllPayloadActuallyIncludedTcp2Retry": true,
+  "sameV45QualifiedSourcesReused": true,
+  "modelChecksReused": 24,
+  "modelSourceHashes": {
+    "work/v45-early-acquisition/entry.mjs": "675ab3f2ea27f19dde86a68fe866990c57f4f8e9c88d37fefbe70fb8606e7453",
+    "work/v45-early-acquisition/materialize.mjs": "9e998e330f949e218dcb87430bc7acee6e66b5d75ec3cb1b2bf4f158f893bf3e",
+    "work/v45-early-acquisition/check-model.mjs": "8cf14f72314ef55c24462a7922df82f680988b97e2acbff56d848e9f06cc085b",
+    "work/v45-early-acquisition/platform-preflight.mjs": "2698270b5c91720632aae367f9022bd37a2ea61a90477cb411b2b286ec862b6d",
+    "work/v45-early-acquisition/fixture-startup.mjs": "4a7b80d95223dcda09018500c0cfee6ac367c6142bab89ad22d63c48ed46ef96"
+  },
+  "actualBindings": 3406,
+  "inheritedBindings": 3354,
+  "sevenLuaByteExactV42": true,
+  "limits": {
+    "source": 6,
+    "kernel": 90,
+    "kernelMaximum": 120,
+    "owner": 180,
+    "client": 180,
+    "clientGuard": 210,
+    "server": 250,
+    "phase": 60,
+    "tcpMbps": 32,
+    "downMbps": 18,
+    "upMbps": 60,
+    "perWanUpMbps": 12,
+    "credit": 65536,
+    "exec": 9000,
+    "raw": 65536,
+    "bundle": 73728,
+    "record": 1048576
+  },
+  "fixtureAttempts": 1,
+  "driverEventCodes": [
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "failureCategory": "ROTATED_TCP3_ATTEMPT4_ORIGINAL_EIGHT_SECOND_FIRST_PAYLOAD_REFUSAL",
+  "matchingReads": 13,
+  "lastFiveWanPairs": 0,
+  "lastTcpChildren": [
+    {
+      "slot": "tcp",
+      "attempt": 1,
+      "connected": true
+    },
+    {
+      "slot": "tcp2",
+      "attempt": 1,
+      "connected": true
+    },
+    {
+      "slot": "tcp3",
+      "attempt": 4,
+      "connected": false
+    },
+    {
+      "slot": "tcp4",
+      "attempt": 1,
+      "connected": true
+    }
+  ],
+  "retainedWanSet": [
+    1,
+    3,
+    4
+  ],
+  "tcp3WanAtFailureUnknown": true,
+  "firstFourPidsSeconds": 0.09193309999999999,
+  "firstAllPayloadSeconds": 2.9169259,
+  "clientSeconds": 30.3614506,
+  "tcpPayloadBytes": 97992704,
+  "wholeSoftwareFixtureUdp": {
+    "sent": 1327,
+    "returned": 1319,
+    "notNssMeasurements": true
+  },
+  "nssCheckpointStarted": false,
+  "nssStageStarted": false,
+  "ecmOpened": false,
+  "hardwareEntryIntegrationPassed": false,
+  "transportAcquisitionFailureObservedAgain": true,
+  "stableUnderlyingCauseProved": false,
+  "v42HardwareAcceptanceRetained": true,
+  "originalLimitsKept": true,
+  "cs2OrSteamOperated": false,
+  "newCpuAcceptance": false,
+  "permanentNssDeployment": false,
+  "residentTrialAuthorizedAfterEntryClosure": true,
+  "residentTrialStarted": false,
+  "noFurtherFixtureOpened": true,
+  "inputSha256ByRole": {
+    "attempt": "4f608db5ae05c21eaaefa0a84c790e382d003262de0cbc280c0582b9f0ca930c",
+    "endpoint-preflight": "da0588b51562a61305da22a95d1535f71211dd74ef090421f8227c6c621d3c72",
+    "original-tag-query": "3820a09b88fd36d806a9e07f51e95b9b76359e7cd32ce57b4c03a7fab15c78f7",
+    "correct-unit-query": "b45e1a302fb4908143f84aefa51f9eaf5cdd88e01de1e39c26fbef44bb49fcca",
+    "v46-local-analysis": "ac8d5e6e50c6156264fb5175ab0d0d3923210000fe5bc9b1538177cfc8f8f3f9",
+    "driver": "eb11f612d3ff7e436f151a45ce131fa469b4f91ae83932da8bb9de135b54583a",
+    "actual-bindings": "7f6936b44c2d0c377407d09ee055db0de2925cda700ee730819a7c16bd8eaed4",
+    "entry-result": "c3c47c5be275201550d69fca460efb615ff89a442bc1ea1383c107f8d15329ad",
+    "fixture-result": "bbbf1c6832231ddace3821a2c31bc47eefdf40be6cc93bb2b812cf7c98d5e7bb",
+    "fixture-timeline": "bb8f90945e7f5c071c957db62f2af008397d3738f109714e6fbebe460e7edbdd",
+    "matching": "744fd7635fe7f863704b734721285ef83985720a48862c9343f7046beb982ee5",
+    "last-classification": "f23c89b65cda64cea6ad4d9acc84acaa6d0c92fca0bb6c4ff77a0d58e12c8191",
+    "final-audit": "42d7b686da6ff7fcd7ae20e60be78661baf27a352ec3d7f9f9b812abe81d94af",
+    "physical": "9d850516f13ac14ce4117b9e1ed628f56ca4754d3ad85675497664c075b060c8",
+    "endpoint-closure": "acb0040a7d493e177bcc4da8419bc290cf0ec11ce459309e25a35f57e817600e",
+    "client-closure": "52cfa7323e7ba8ffeeeb45fedeeb7611d3227f69aab82011f7b10dad1a52ccee"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "finalFullAudit": {
+    "passed": true,
+    "auditPurpose": "prewrite",
+    "prelearningSchedulingRequested": true,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 4,
+    "queryAge": 1.3599999998696148,
+    "sequence": 8033,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": false,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "allFiveHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "physicalQueues": {
+    "passed": true,
+    "observedAt": "2026-10-07T11:18:49.051Z",
+    "readonly": true,
+    "physicalWanOriginalMqFourFqCodelRestored": true,
+    "lan4OriginalMqFourFqCodelRestored": true,
+    "defaultQueueOptionsAndHandlesExact": true,
+    "failedWan4ProcessOwnerChecked": true,
+    "wan4Running": true,
+    "wan4Lifecycle": "exec-minieap",
+    "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
+  },
+  "endpointClosure": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "clientClosure": {
+    "passed": true,
+    "ownedTestProcessesRemaining": 0,
+    "clientDeadlineReset": false,
+    "guards": [
+      {
+        "independentGuardSeconds": 210,
+        "passed": true,
+        "clientExitedBeforeDeadline": true,
+        "ownedProcessesRemaining": 0,
+        "originalClientSeconds": 180,
+        "guardObservedAt": "2026-10-07T11:15:58.2590920Z",
+        "exactClientOnly": true,
+        "scope": "work/v45-run-20261007111504-9473cb52"
+      }
+    ]
+  },
+  "state": "RESTORED",
+  "lockReleasedAfterProof": true,
+  "original180SecondFirewallGuardianNaturalExpiryWaited": true,
+  "nssNeverOpened": true,
+  "heartbeatStillPaused": true,
+  "classifierNss68Unchanged": true
+}

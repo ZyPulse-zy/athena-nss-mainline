@@ -1,3 +1,9 @@
+# 当前入口：v45原字节，完整闭环仍待通过
+
+最新一次仍用`work/v45-early-acquisition/entry.mjs`的24模型／3406绑定；tcp3第4候选8秒无首包，NSS准入前退出并完整恢复。inspect／status／run／stop保持，勿把命令列表当作连续重试指令。常驻授权保留，尚未启动试用。见[最新记录](V47_TCP_ACQUISITION_2026-10-07.md)。
+
+## 以下为历史状态
+
 # 当前入口：v45同字节候选，已实测并发启动
 
 本地仍为`work/v45-early-acquisition/entry.mjs`，原24模型/3406绑定不变，inspect/status/run/stop方式保持。新一次接续四PID0.087秒齐备、四路第一次同时payload10.71秒；自然WAN去重替换后TCP候选首包超时，NSS写前退出并完整恢复。完整入口尚未通过，勿为配齐WAN盲重试。见[实际接续](V46_ENTRY_CONTINUATION_2026-10-07.md)。

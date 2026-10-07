@@ -2507,4 +2507,15 @@ if (root/'evidence/v46-entry-continuation.json').exists():
  assert s['passed'] and s['historicPrefixSources']==4910 and s['newSources']==len(s['sourceHashes']) and s['oldCodeEvidenceUnmodified'] and s['actualBindingsFrozenExact']==3406 and s['originalV45EntrySourcesAndFailureUnchanged'] and s['noGlobalWhitespacePolicyChange']
  for entry in [s['sourceHashes'],s['runtimeSourceHashes'],a['modelSourceHashes']]:
   for rel,digest in entry.items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+if (root/'evidence/v47-tcp-acquisition.json').exists():
+ a=json.loads((root/'evidence/v47-tcp-acquisition.json').read_text(encoding='utf8'));r=json.loads((root/'evidence/v47-restoration.json').read_text(encoding='utf8'));s=json.loads((root/'evidence/v47-source-proof.json').read_text(encoding='utf8'))
+ assert manifest['lastTransportAcquisitionExport']=='V47_AUTH_PHASE_DIAGNOSIS_BOUNDED_ENTRY_REFUSED_RESTORED'
+ assert a['boundedHistoricalDiagnostic'] and a['firstSshdTagQueryRows']==0 and a['resolvedUsingSameWindowUnitQuery'] and a['journalRows']==20 and a['journalIdentifier']=='sshd-session' and a['acceptedPublickeyRows']==8 and a['preauthClosureRows']==4
+ assert a['sameV45QualifiedSourcesReused'] and a['modelChecksReused']==24 and a['actualBindings']==3406 and a['inheritedBindings']==3354 and a['fixtureAttempts']==1 and a['driverEventCodes']==[0,0,0,1,0] and a['matchingReads']==13 and a['lastFiveWanPairs']==0
+ assert a['transportAcquisitionFailureObservedAgain'] and a['originalLimitsKept'] and a['v42HardwareAcceptanceRetained'] and a['noFurtherFixtureOpened'] and a['residentTrialAuthorizedAfterEntryClosure']
+ assert not any(a[k] for k in ['rootCauseProved','stableUnderlyingCauseProved','sshLimitOrPenaltyCausationProved','preciseFailedChildToServerLogMappingProved','nssCheckpointStarted','nssStageStarted','ecmOpened','hardwareEntryIntegrationPassed','cs2OrSteamOperated','newCpuAcceptance','permanentNssDeployment','residentTrialStarted'])
+ q=r['finalFullAudit'];e=r['endpointClosure'];c=r['clientClosure'];assert r['passed'] and q['passed'] and q['queryAge']<6 and q['ecmClosedAndZero'] and q['allFiveHealthyWanBaseline'] and q['protectedConfigurationUnchanged'] and r['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and e['passed'] and e['ownedRulesRemaining']==0 and e['baselineRestored'] and e['exactOwnedEndpointClosed'] and c['passed'] and c['ownedTestProcessesRemaining']==0 and not c['clientDeadlineReset']
+ assert s['passed'] and s['historicPrefixSources']==4959 and s['newSources']==len(s['sourceHashes']) and s['actualBindingsFrozenExact']==3406 and s['oldCodeEvidenceUnmodified'] and s['originalV45EntryAndV46EvidenceUnchanged']
+ for group in [s['sourceHashes'],s['runtimeSourceHashes'],a['modelSourceHashes']]:
+  for rel,digest in group.items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

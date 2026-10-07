@@ -765,3 +765,33 @@
 /code/work/v45-run-20261007103021-bfd051fe/tag-normalizer.lua whitespace=cr-at-eol
 /code/work/v45-run-20261007103021-bfd051fe/wan-scope.lua whitespace=cr-at-eol
 /code/work/v45-run-20261007103021-bfd051fe/wan-tag-plan.mjs whitespace=cr-at-eol
+
+# Exact fresh v47 runtime source bytes.
+/code/work/v45-run-20261007111504-9473cb52/candidate-policy.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/class-leaf-map.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/classified-tags.lua whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/classifier.lua whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/client-watchdog.ps1 whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/close-endpoint.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/current-audit-diagnostic.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/discover-peer.py whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/download-server.py whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+/code/work/v45-run-20261007111504-9473cb52/epoch-driver.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/v45-run-20261007111504-9473cb52/guardian-plan.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/module-stage.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/owned-load-policy.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/parse-ecm.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/payload.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/persistent-ssh.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/probe-peer.py whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/qos-physical.lua whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/read-controlled.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/receiver.py whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/server.py whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/start-dallas.mjs whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/wan-scope.lua whitespace=cr-at-eol
+/code/work/v45-run-20261007111504-9473cb52/wan-tag-plan.mjs whitespace=cr-at-eol

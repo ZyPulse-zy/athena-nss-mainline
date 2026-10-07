@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T10:38:53.670225+00:00",
+  "generatedAt": "2026-10-07T11:25:27.936431+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -34717,6 +34717,363 @@
       "sha256": "8a0da71a4c41ce9c369efaf9ec964689bca6405509ad1e199e68f2fad222d27e",
       "bytes": 2829,
       "role": "v46-same-v45-entry-concurrent-startup-and-pre-nss-acquisition-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/acquisition-model-qualified.json",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/acquisition-model-qualified.json",
+      "sha256": "60830eace9a6c47aaded23f817e13f2d0bd3e6b3016c53900010da0af42b374d",
+      "bytes": 686,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/acquisition-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/acquisition-plan.mjs",
+      "sha256": "798d5e35e5091e56a39ff299718add8542241dcbcab684f027942105a7c98061",
+      "bytes": 2790,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/candidate-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/candidate-policy.mjs",
+      "sha256": "d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068",
+      "bytes": 2579,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/capture-client-closure.ps1",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/capture-client-closure.ps1",
+      "sha256": "57bf072aa6af15eb51363357317beb12fb19de59b858208f6aa425819b2cf237",
+      "bytes": 2572,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/class-leaf-map.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/class-leaf-map.mjs",
+      "sha256": "815250459be21cce80e65bfe85f29a43cce7d49e8e9800cb3470e30d84d64722",
+      "bytes": 3740,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/classified-tags.lua",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/classified-tags.lua",
+      "sha256": "2756a538a16b66c45f4cc73ef89b2898c84672786cbb7bc896e579160fbf96e6",
+      "bytes": 3966,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/classifier.lua",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/classifier.lua",
+      "sha256": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+      "bytes": 22277,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/client-watchdog.ps1",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/close-endpoint.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/close-endpoint.mjs",
+      "sha256": "4e2974c982bd84ffe1153ede7557f179ee2c62281c8a8bc849cd6dacfe1fe86b",
+      "bytes": 2357,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/compact-post-guards.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/compact-post-guards.mjs",
+      "sha256": "83de00758cc0ba05270b81d3b51ddc76f39f30ed1275397a48080ff15aeb5cc3",
+      "bytes": 2597,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/current-audit-diagnostic.mjs",
+      "sha256": "8b15bba30cf1906aca349521afa8d10595158c91500ea5f57af0a7fc3ed41b4a",
+      "bytes": 5890,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/discover-peer.py",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/download-server.py",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/epoch-driver.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/epoch-driver.mjs",
+      "sha256": "ce2d485e36bca2dc612d14eff994fff545ec08f1ade0d7e9edf1166c369bc9d0",
+      "bytes": 15419,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/fast-path.lua",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/fast-path.lua",
+      "sha256": "637be7c84b7b5adff757730966a17ea10362b45626da09c7be3216fb3991b6f7",
+      "bytes": 15239,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/fixture-retry-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/fixture-retry-policy.mjs",
+      "sha256": "50892e56b00817292dfbb8fdd88c340750baec860c04abe02c39cf549176ccdc",
+      "bytes": 282,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/guardian-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/guardian-plan.mjs",
+      "sha256": "397dd536261b19c8900e5755a99238f1f0d4d1ddd2e42e783f51ac2b1071a71c",
+      "bytes": 493,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/inherited-bindings.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/inherited-bindings.mjs",
+      "sha256": "347c906a617b77ef0b61a8e3d8065a3fca6657eb871cd8cd5f0dd73938d6842d",
+      "bytes": 580,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/match-controlled.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/match-controlled.mjs",
+      "sha256": "b517c35ca50eee3f437b94f6c5925040dc51ab165c11d056015308cb21f71f1e",
+      "bytes": 2027,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/model-acquisition.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/model-acquisition.mjs",
+      "sha256": "b472e386fb01790ca11253872bcdcf16e6a831cb69bd0e5a79408a203d263638",
+      "bytes": 4117,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/module-stage-guardian.lua",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/module-stage-guardian.lua",
+      "sha256": "261b0ee214c9e90287850bb7ccf404a4ec95c37914b94a91c09585c463d05044",
+      "bytes": 13682,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/module-stage.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/module-stage.mjs",
+      "sha256": "467a135b42d5098c0ca4aaca5e57f6bb2a8c0e31270db351f90b72ce5585fba1",
+      "bytes": 18135,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/native-client.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/native-client.mjs",
+      "sha256": "bf5f8bd6d989eb4f0be398f846ecc8f172be41f5481d2bcfa56102412852ea2f",
+      "bytes": 6809,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/native-qualified.json",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/native-qualified.json",
+      "sha256": "b53def985529c2c2dc6676fdf32c280661202562c23f8ce7129dd25288ed88cf",
+      "bytes": 1856,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/normalizer-qualified.json",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/normalizer-qualified.json",
+      "sha256": "a499de19ddced00f2dda5f0d11220b555b20243e6561696b26cde314c02eca3f",
+      "bytes": 177,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/owned-load-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/owned-load-policy.mjs",
+      "sha256": "dc02dd232c0409f0acca5c6b876f64dde0b8f29389586bf174efd09a5662ba87",
+      "bytes": 1088,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/pack-json.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/pack-json.mjs",
+      "sha256": "46dcbec7360960887700d94a1e620e53ee233b3e40be50b484011a9623ca75d2",
+      "bytes": 2196,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/parse-ecm.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/parse-ecm.mjs",
+      "sha256": "6a349403a008929d1020b5f491be7e015bccd20c587cc74c2a1908bd95e3a9b2",
+      "bytes": 3727,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/payload.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/payload.mjs",
+      "sha256": "97fafca63b1dc327917d4df9239da2588763507ddc7d8db221538fde1e932958",
+      "bytes": 4508,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/persistent-ssh.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/pilot-supervisor.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/pilot-supervisor.mjs",
+      "sha256": "55176562923ef1d16886b262c53465cc5ddc3f0b8974eb981c32f6a5f6f76f84",
+      "bytes": 5450,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/probe-peer.py",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/qos-native-qualified.json",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/qos-native-qualified.json",
+      "sha256": "cd518823df23df884b51865c64f9a9bd943b31ac6e54f3f61a11df0f90459d86",
+      "bytes": 139,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/qos-physical.lua",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/qos-physical.lua",
+      "sha256": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+      "bytes": 8943,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/read-controlled.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/read-controlled.mjs",
+      "sha256": "2d0febfc5f2da5ffa2cbf36f276db2a73f8bfde504da21d3676b9597ed56d670",
+      "bytes": 7646,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/read-final-health.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/read-final-health.mjs",
+      "sha256": "77d047180dbb2b959cf5c9e99712ce909e2595bb216b3c615393671ac72d1240",
+      "bytes": 1307,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/read-physical-final.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/read-physical-final.mjs",
+      "sha256": "8ba6126bed93b6fd4d0a93cfc9030b6e2f4c3844724390fa238340060a90fb18",
+      "bytes": 2000,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/receiver.py",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/serial-model-qualified.json",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/serial-model-qualified.json",
+      "sha256": "afba7d9c22f683127b4c94dd83265675775d4b3b8b6a0bc7da181ba238502f84",
+      "bytes": 298,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/server.py",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/session-binding.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/session-binding.mjs",
+      "sha256": "08b22837cbd946a0094b2297ab22ba8057fa21fc1c5b1208ccfd78646f828cd3",
+      "bytes": 635,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/start-dallas.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/start-dallas.mjs",
+      "sha256": "c3fc2834dbc67afa3e183d42fbed0015fadcef14dc09902240881112bf821a2b",
+      "bytes": 10356,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/tag-normalizer.lua",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/tag-normalizer.lua",
+      "sha256": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+      "bytes": 6258,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/wait-four-ssh.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/wait-four-ssh.mjs",
+      "sha256": "e71e54d7b9bb49797ba368a8d497a88a2f75130f842c4647365a8194bce2dfd0",
+      "bytes": 1153,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/wan-scope.lua",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/wan-scope.lua",
+      "sha256": "c2cbfd5eb8cf714341106f29cd0234d5388d2e88a45c1aaaba7880cd3d488677",
+      "bytes": 3525,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007111504-9473cb52/wan-tag-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007111504-9473cb52/wan-tag-plan.mjs",
+      "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
+      "bytes": 2045,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v47-tcp-acquisition/diagnose.py",
+      "workspaceSource": "work/v47-tcp-acquisition/diagnose.py",
+      "sha256": "6239919f97d0becc315bab261da99520e522687ef20ec4980c9ca3461b629410",
+      "bytes": 5426,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v47-tcp-acquisition/publish.py",
+      "workspaceSource": "work/v47-tcp-acquisition/publish.py",
+      "sha256": "f07a7ebbb80bf6004b95c2cc5a51dd4408f0eed50877b0be4fdd1f9ba1c49e5a",
+      "bytes": 21665,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v47-tcp-acquisition/read-unit-log.py",
+      "workspaceSource": "work/v47-tcp-acquisition/read-unit-log.py",
+      "sha256": "a7adabac8ed53d76af5ceb6afaba9e70be1ce0738b9492309eed0223744e06e1",
+      "bytes": 2775,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
+    },
+    {
+      "path": "code/work/v47-tcp-acquisition/run-entry.py",
+      "workspaceSource": "work/v47-tcp-acquisition/run-entry.py",
+      "sha256": "61e83caff7d17a78dc5b19b26fe028b800341fe37943221f48300d06b28a3e7e",
+      "bytes": 3791,
+      "role": "v47-bounded-existing-ssh-log-diagnosis-and-single-unchanged-entry-refusal"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -34733,5 +35090,6 @@
   "lastBoundedEntryExport": "V43_REUSABLE_ENTRY_MODELS_COMPLETE_STARTUP_REFUSED_BEFORE_NETWORK",
   "lastBoundedEntryRepairExport": "V44_LOCAL_REPAIRS_ACQUISITION_REFUSED_READONLY_RESTORED",
   "lastEarlyAcquisitionExport": "V45_SOFTWARE_READY_PRELOAD_SSH_REFUSED_RESTORED",
-  "lastResumedEntryExport": "V46_CONCURRENT_STARTUP_PROVED_ROTATED_TCP_TIMEOUT_RESTORED"
+  "lastResumedEntryExport": "V46_CONCURRENT_STARTUP_PROVED_ROTATED_TCP_TIMEOUT_RESTORED",
+  "lastTransportAcquisitionExport": "V47_AUTH_PHASE_DIAGNOSIS_BOUNDED_ENTRY_REFUSED_RESTORED"
 }
