@@ -1,3 +1,9 @@
+# 当前交付：Multi-WAN resident controller RC1
+
+当前有界常驻控制器 soak 通过，完整恢复通过；采用Development Mode集中修复与一次里程碑发布。默认永久NSS保持关闭。见[当前状态](docs/STATE.md)和[控制器使用及范围](docs/RESIDENT_CONTROLLER.md)。五WAN数据面与CPU历史证明继续复用。
+
+## 以下保留历史介绍
+
 # Athena NSS 多WAN／高级QoS受控原型
 
 v54可复用五WAN入口60秒硬件闭环完成，现网完整恢复。常驻90秒候选尚未进入NSS；当前不是永久NSS部署。具体事实与限制见[最新记录](docs/ENTRY_REPAIR_RESIDENT_2026-10-07.md)、[STATE](docs/STATE.md)。

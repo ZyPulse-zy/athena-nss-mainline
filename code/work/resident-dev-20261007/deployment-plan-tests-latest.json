@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checks": 21,
+  "names": [
+    "target core is sole executable change; worker, RT policy and all support hashes stay pinned",
+    "backups are checksum verified before rollback readiness or the first stop",
+    "install and undo pointers contain a real newline and exact configuration identity",
+    "rollback requires existing held lock and exact transaction boot",
+    "every unchanged helper and executable is checked before install and undo",
+    "actual POSIX shell syntax: undo",
+    "actual POSIX shell syntax: install",
+    "actual POSIX shell syntax: backup",
+    "actual POSIX shell syntax: stop",
+    "actual POSIX shell syntax: cleanup",
+    "actual Lua5.1 compiles all seven remote bodies",
+    "single actual workflow reaches commit only after checkpoint, rollback proof and health",
+    "no later deployment writes after local failure at preflight",
+    "no later deployment writes after local failure at stage",
+    "no later deployment writes after local failure at arm",
+    "no later deployment writes after local failure at verifyRollback",
+    "no later deployment writes after local failure at install",
+    "no later deployment writes after local failure at healthy",
+    "no later deployment writes after local failure at commit",
+    "no later deployment writes after local failure at verifyCommit",
+    "no later deployment writes after local failure at cleanup"
+  ],
+  "shellScripts": 5,
+  "actualLua51Bodies": 7,
+  "routerAccess": false,
+  "hardwareExecuted": false,
+  "candidateCoreSha256": "9356a1218a348d1a94a7622f989e57a8157ff9cf5fb3767a411b9f167501957b"
+}

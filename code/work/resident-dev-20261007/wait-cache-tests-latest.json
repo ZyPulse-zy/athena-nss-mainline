@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": 2,
+  "actualLua51Executed": true,
+  "oldInodeReuseSchedulingRefusalReproduced": true,
+  "currentSnapshotParsedEachPoll": true,
+  "freshSourceUnderTwoSecondsRetained": true,
+  "routerAccess": false
+}

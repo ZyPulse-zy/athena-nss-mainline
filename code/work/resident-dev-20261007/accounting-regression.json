@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "label": "selected-tcp-1",
+      "dt": 3.010000000242144,
+      "increments": {
+        "upPackets": 187,
+        "downPackets": 216,
+        "upBytes": 8200,
+        "downBytes": 324000
+      },
+      "originalClass": "BE",
+      "originalReason": "cooldown",
+      "originalRateKbps": 882.923587968839,
+      "originalPps": 133.88704317859802
+    },
+    {
+      "label": "selected-tcp-2",
+      "dt": 3.010000000242144,
+      "increments": {
+        "upPackets": 371,
+        "downPackets": 371,
+        "upBytes": 16140,
+        "downBytes": 556500
+      },
+      "originalClass": "BE",
+      "originalReason": "cooldown",
+      "originalRateKbps": 1521.966777286201,
+      "originalPps": 246.51162788714575
+    }
+  ],
+  "reconstructedNumericDeltas": true,
+  "fullConntrackExported": false,
+  "originalNssSeconds": 4.25,
+  "originalNssSamples": 6,
+  "originalExactlyRetired": true,
+  "originalRecordSha256": "9380d25b4b62c23eb586793cabc49f49ed5dd215f040c93d38f31eb43c9a1a84",
+  "diagnosis": "active large-packet TCP mapped to BE on first low-rate sample",
+  "exactFirmwareAccountingCauseProven": false
+}

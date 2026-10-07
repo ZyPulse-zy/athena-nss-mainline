@@ -1,0 +1,22 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createClassificationFrameWriter,findExistingSelection} from './record-classification.mjs';
+const root='work/resident-dev-20261007',checks=[],test=(n,f)=>{f();checks.push(n);};
+const m=JSON.parse(fs.readFileSync(JSON.parse(fs.readFileSync(root+'/entry-model-latest-private.json')).receipt)),r=m.modelRuntime;
+const out={diagnosticOnly:true,nssAdmissionAllowed:false,sourceSequence:1},a=createClassificationFrameWriter(),b=createClassificationFrameWriter();
+let f1,f2;
+test('independent reader invocations can both append first frame without overwriting',()=>{f1=a(r,out);f2=b(r,out);assert.notEqual(f1,f2);assert.deepEqual(fs.readFileSync(f1),fs.readFileSync(f2));});
+test('later frames retain the exact first frame',()=>{const old=fs.readFileSync(f1);const next=a(r,{...out,sourceSequence:2});assert.notEqual(next,f1);assert.deepEqual(fs.readFileSync(f1),old);});
+test('record over original one MiB refuses before output',()=>assert.throws(()=>a(r,{value:'x'.repeat(1048576)})));
+const selected={tcp:{id:1},tcp2:{id:2},udp:{id:3}},other={tcp:{id:2},tcp2:{id:1},udp:{id:3}};
+test('sorting changes retain the original exact CT triple',()=>assert.deepEqual(findExistingSelection([other,selected],selected),selected));
+test('disappeared or changed original selection is not substituted',()=>assert.equal(findExistingSelection([other],selected),undefined));
+test('duplicate identities are refused',()=>assert.throws(()=>findExistingSelection([selected,selected],selected)));
+test('generated entry uses append writer and preparation scoped selection',()=>{
+ const reader=fs.readFileSync(r+'/read-controlled.mjs','utf8'),driver=fs.readFileSync(r+'/epoch-driver.mjs','utf8');
+ assert.ok(reader.includes('writeClassificationFrame(root,out);')&&!reader.includes('++readSequence'));
+ assert.ok(driver.includes('preauditSelected=choosePreparationPair(candidates,continuity.selected.udp);')&&!driver.includes('const preauditSelected=pair[0];'));
+ assert.ok(driver.includes('choosePreparationPair(frame,originalUdp,bulkScope)'));
+});
+fs.writeFileSync(root+'/frame-identity-qualified-'+Date.now()+'.json',JSON.stringify({passed:true,checks,sourceBindings:m.sourceBindings,hardwareExecuted:false,recordLimit:1048576,oldFramesNeverOverwritten:true,originalCtSelectionNeverSubstituted:true},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({passed:true,checks:checks.length,sourceBindings:m.sourceBindings,hardwareExecuted:false}));

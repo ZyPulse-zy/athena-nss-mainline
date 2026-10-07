@@ -1,3 +1,9 @@
+# 当前工作方式：Athena NSS Development Mode
+
+北京时间2026-10-08 00:41。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md及[常驻控制器文档](docs/RESIDENT_CONTROLLER.md)。以RC1当前结果为准；下方v58及更早“最新”是冻结历史。P0停止写入并恢复，P1针对性修复，P2在同一开发批次本地收敛，不“一bug一硬件版本”。原native120/owner180/client180及全部保护上限保持。当前90秒集成通过，soak实际COMPLETE；默认永久NSS关闭，heartbeat暂停。完成本次验收后不主动新增边界、CPU或功能实验。
+
+## 以下保留历史接续说明
+
 # 最新状态：五 WAN 入口闭环完成；常驻候选已修复程序错误，资格不足退出并恢复
 
 更新：北京时间2026-10-07 21:47。v54真实可复用入口3421绑定，四TCP BULK WAN1／2／4／5＋UDP RT WAN3，NSS B60.01秒／121采样／ECM5／20续租与完整恢复通过。旧入口未通过的记录为历史，当前入口闭环已完成。

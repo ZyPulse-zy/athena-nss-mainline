@@ -1,0 +1,23 @@
+{
+  "originalCoreSha256": "87626d72bab1d666dcdaebde7545d7022b7b099cd74b206624568bad330f34f8",
+  "candidateCoreSha256": "9356a1218a348d1a94a7622f989e57a8157ff9cf5fb3767a411b9f167501957b",
+  "originalConfigSha256": "581b5d46c9d3772ccd94f5f36510bccf665899f210c43b4deaa5155067c791d7",
+  "originalWorkerSha256": "40169ce6c8e866cc989c651b24d435777bc422bf10f67c58f5e9ab033e7f3828",
+  "sourceFreshnessSeconds": 6,
+  "maximumEvidenceIntervalSeconds": 6,
+  "tcpHistorySeconds": 30,
+  "rtRateKbps": 2000,
+  "rtMaxPps": 1000,
+  "rtGoodSamples": 2,
+  "largePacketBytes": 900,
+  "currentSampleDownPacketsMinimum": 6,
+  "currentSampleUpPacketsMinimum": 1,
+  "routerAccess": false,
+  "productionInstalled": false,
+  "hardwareValidated": false,
+  "coldOrUnknownFlowPromotion": false,
+  "oldClassForcedInConsumer": false,
+  "changedFiles": [
+    "classifier-core.lua"
+  ]
+}

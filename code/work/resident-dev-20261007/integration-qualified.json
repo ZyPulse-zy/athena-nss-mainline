@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": "two-TCP-BULK-and-one-UDP-RT-Multi-WAN-controller",
+  "runtimeRoot": "work/resident-rc1-run-20261007162534-0b1079c1",
+  "configHash": "b847302d9686349573a787be1abd9bdf515fb542646bc2dbe6ad736ecf5d317c",
+  "phaseSeconds": 90.01000000024214,
+  "samples": 181,
+  "renewals": 30,
+  "allBSamplesEcmThree": true,
+  "restorationPassed": true,
+  "selectedWanBySlot": {
+    "tcp": 1,
+    "udp": 3,
+    "tcp2": 3
+  },
+  "closedLearningRaceCorrection": true,
+  "tcpBulkShapeCorrection": true,
+  "restorationFlags": {
+    "moduleUnloaded": true,
+    "qosModuleUnloaded": true,
+    "qosRestored": true,
+    "wanRestored": true,
+    "dualPhysicalQueuesRestored": true,
+    "stateNodeRemoved": true,
+    "automaticPacketTagsCompleted": true,
+    "firmwareZeroAfterRetirement": true
+  },
+  "longerSoakPassed": false,
+  "defaultPermanentNss": false,
+  "newCpuBenchmark": false,
+  "cs2OrSteamOperated": false
+}

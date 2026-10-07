@@ -1,3 +1,9 @@
+# 2026-10-08 00:41 — Development Mode RC1 集中收敛
+
+批量P1/P2修复、本地回归和一次修正后90秒真实集成：181采样、ECM3、30续租、完整恢复。没有重复CPU或五WAN核心证明，没有CS2/Steam或新正式版本。更长控制器soak实际状态COMPLETE；每代独立checkpoint/恢复，全部实际结果与限制见[聚合结果](../evidence/resident-controller-rc1.json)及[使用文档](RESIDENT_CONTROLLER.md)。原失败/运行目录保留，普通开发未冻结数千输入或逐bug创建archive。
+
+## 以下保留历史记录
+
 # 最新状态：五 WAN 入口闭环完成；常驻候选已修复程序错误，资格不足退出并恢复
 
 更新：北京时间2026-10-07 21:47。v54真实可复用入口3421绑定，四TCP BULK WAN1／2／4／5＋UDP RT WAN3，NSS B60.01秒／121采样／ECM5／20续租与完整恢复通过。旧入口未通过的记录为历史，当前入口闭环已完成。

@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {nextUdpCandidate} from './udp-discovery.mjs';
+const root='work/resident-dev-20261007',checks=[],test=(n,f)=>{f();checks.push(n);};
+const v={attempt:2,peers:[],clientLaunched:false,firewallLaunched:false,used:[59000],draw:()=>0};
+test('second of original three attempts uses another natural UDP tuple',()=>assert.equal(nextUdpCandidate(v),59001));
+test('last original attempt also avoids both prior ports',()=>assert.equal(nextUdpCandidate({...v,attempt:3,used:[59000,59001]}),59002));
+test('first candidate is retained',()=>assert.equal(nextUdpCandidate({...v,attempt:1,used:[]}),undefined));
+test('authenticated peer freezes the UDP tuple',()=>assert.throws(()=>nextUdpCandidate({...v,peers:['verified']})));
+test('client or firewall launch freezes the UDP tuple',()=>{assert.throws(()=>nextUdpCandidate({...v,clientLaunched:true}));assert.throws(()=>nextUdpCandidate({...v,firewallLaunched:true}));});
+test('fourth attempt is prohibited',()=>assert.throws(()=>nextUdpCandidate({...v,attempt:4,used:[59000,59001,59002]})));
+test('duplicates and invalid random index are refused',()=>{assert.throws(()=>nextUdpCandidate({...v,attempt:3,used:[59000,59000]}));assert.throws(()=>nextUdpCandidate({...v,draw:n=>n}));});
+const model=JSON.parse(fs.readFileSync(JSON.parse(fs.readFileSync(root+'/entry-model-latest-private.json')).receipt)),source=fs.readFileSync(model.modelRuntime+'/start-dallas.mjs','utf8');
+test('candidate discovery precedes firewall and client launch with original deadlines',()=>{assert.ok(source.indexOf('usedUdpPorts=[]')<source.indexOf("save('firewall-launch-intent-private'"));assert.ok(source.includes('attempt<=3')&&source.includes('milliseconds:17000')&&source.includes('timeout:6000'));assert.ok(source.includes('conf.token')&&source.includes('r.nonceVerified&&r.destinationAddress===config.serverAddress'));});
+fs.writeFileSync(root+'/udp-discovery-qualified-'+Date.now()+'.json',JSON.stringify({passed:true,checks,sourceBindings:model.sourceBindings,maximumAttempts:3,hardwareExecuted:false,tupleChangesOnlyBeforeAuthenticationAndLaunch:true},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({passed:true,checks:checks.length,sourceBindings:model.sourceBindings,maximumAttempts:3,hardwareExecuted:false}));

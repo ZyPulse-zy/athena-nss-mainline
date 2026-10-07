@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T13:47:04.631668+00:00",
+  "generatedAt": "2026-10-07T16:41:06.916108+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -40702,6 +40702,475 @@
       "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
       "bytes": 2045,
       "role": "reusable-five-wan-entry-repair-and-bounded-resident-prerequisite-results"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/accounting-regression.json",
+      "workspaceSource": "work/resident-dev-20261007/accounting-regression.json",
+      "sha256": "281c89b0900a5a2a00ece4248f99a6e0c725c093d0e5f1c862a6a8ee14cb7b07",
+      "bytes": 1150,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/acquisition-order.mjs",
+      "workspaceSource": "work/resident-dev-20261007/acquisition-order.mjs",
+      "sha256": "074b5d86f10880dbadf9236b2f0a9e6c7149ff49fc7bcf84ac2e19fdb4248b26",
+      "bytes": 622,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/build-classifier.mjs",
+      "workspaceSource": "work/resident-dev-20261007/build-classifier.mjs",
+      "sha256": "2647b257faed2a21866a4850029f09de866f9480818ae6545478ba660ba50a81",
+      "bytes": 3139,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/build-wait-helpers.mjs",
+      "workspaceSource": "work/resident-dev-20261007/build-wait-helpers.mjs",
+      "sha256": "0c2ccec49d59991cfbe5f51246441bc404d30b2072d37df8a1a02a00a9518d6c",
+      "bytes": 809,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/capture-no-client-closure.ps1",
+      "workspaceSource": "work/resident-dev-20261007/capture-no-client-closure.ps1",
+      "sha256": "645583fe1c1e37b9993a1c3aee22a389ab1be67cd781b569043382f9c9223913",
+      "bytes": 1709,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/check-final-selection.mjs",
+      "workspaceSource": "work/resident-dev-20261007/check-final-selection.mjs",
+      "sha256": "70d35599d71c5de0555307f49bd225654574bded94647bc59fae3a25eee430c1",
+      "bytes": 4850,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/check-frame-identity.mjs",
+      "workspaceSource": "work/resident-dev-20261007/check-frame-identity.mjs",
+      "sha256": "b7f5685d317595d734bd48746306d8683051a36f057dc6f7998c61a029fe308c",
+      "bytes": 2495,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/check-model.mjs",
+      "workspaceSource": "work/resident-dev-20261007/check-model.mjs",
+      "sha256": "13d2aee8c759df8d0c78ac6551826b0c9ebe2d905d8b8834d158cdf1e7273a2a",
+      "bytes": 4203,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/check-route-acquisition.mjs",
+      "workspaceSource": "work/resident-dev-20261007/check-route-acquisition.mjs",
+      "sha256": "e941bcbbc90baf7fd508a34b0d5facc138ec3d300f1673721b9cb97b3d7b69ca",
+      "bytes": 5773,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/check-selected-acquisition.mjs",
+      "workspaceSource": "work/resident-dev-20261007/check-selected-acquisition.mjs",
+      "sha256": "d8fd1702f9a13757f50c39497068ca60a929c8014304c3cb8e075917796b2445",
+      "bytes": 2509,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/check-udp-discovery.mjs",
+      "workspaceSource": "work/resident-dev-20261007/check-udp-discovery.mjs",
+      "sha256": "a76f470d3166a28bf4543de5982f6de88cf57e5b394cd0ed04de6cd26094000d",
+      "bytes": 2314,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/check-udp-path.mjs",
+      "workspaceSource": "work/resident-dev-20261007/check-udp-path.mjs",
+      "sha256": "3a4346f6a4675c38bbeeb3fb2894c9a5199c5ba7916d61417b88a446f82684c9",
+      "bytes": 1530,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/classifier-build.json",
+      "workspaceSource": "work/resident-dev-20261007/classifier-build.json",
+      "sha256": "7e734b02f5d07fbc8c5c17f322b781dbd3112fdbb42ef94e4b3c6dce1083ff63",
+      "bytes": 856,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/classifier-core.lua",
+      "workspaceSource": "work/resident-dev-20261007/classifier-core.lua",
+      "sha256": "9356a1218a348d1a94a7622f989e57a8157ff9cf5fb3767a411b9f167501957b",
+      "bytes": 10070,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/classifier-regression.lua",
+      "workspaceSource": "work/resident-dev-20261007/classifier-regression.lua",
+      "sha256": "c87c489066d9adfd2e2d97dc3243f0ed6222dde7bf2472661ec23d0ece1fd14b",
+      "bytes": 9321,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/classifier-tests-latest.json",
+      "workspaceSource": "work/resident-dev-20261007/classifier-tests-latest.json",
+      "sha256": "f85d98ee5ec79082f0d4b14ed4fcebc3292a583d6f45985ac7f53f803ba6a390",
+      "bytes": 2038,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/controller.mjs",
+      "workspaceSource": "work/resident-dev-20261007/controller.mjs",
+      "sha256": "b7ccfb2f917aafdba95242ebaca2d4ccc18c2a9672f7d041290d4a19c99345fd",
+      "bytes": 5885,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/core-deployment-plan.mjs",
+      "workspaceSource": "work/resident-dev-20261007/core-deployment-plan.mjs",
+      "sha256": "aa6bb88746dca00dba6b474362ffdf5502a279f485a13a275a25b69de1a603b4",
+      "bytes": 6993,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/core-remote.mjs",
+      "workspaceSource": "work/resident-dev-20261007/core-remote.mjs",
+      "sha256": "fc53885ac31c286fc27720a87424a754b83e68c9e0d01f1be8f49dc7e0107e94",
+      "bytes": 8818,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/core-workflow.mjs",
+      "workspaceSource": "work/resident-dev-20261007/core-workflow.mjs",
+      "sha256": "4466bf423635cbe46a3e5033643c84ec34cc807e6d51c91a48aa0d6f7bf2fe14",
+      "bytes": 843,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/deploy-core.mjs",
+      "workspaceSource": "work/resident-dev-20261007/deploy-core.mjs",
+      "sha256": "48563e1a478877f177cdfc9901b67346151a77368cb2d9d1638d040fcb0ca6af",
+      "bytes": 13074,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/deployment-binding.mjs",
+      "workspaceSource": "work/resident-dev-20261007/deployment-binding.mjs",
+      "sha256": "b4800c3f5e76ac938f214d92b57ac27641763ea085d76185696b051d9d2a79d5",
+      "bytes": 3341,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/deployment-plan-tests-latest.json",
+      "workspaceSource": "work/resident-dev-20261007/deployment-plan-tests-latest.json",
+      "sha256": "050cc9c49e9299a7273a0a6575ccabc891396739d2cbaa3fdfe4d9ff186ca7a0",
+      "bytes": 1611,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/eligible-selection.mjs",
+      "workspaceSource": "work/resident-dev-20261007/eligible-selection.mjs",
+      "sha256": "d5df57b6040776cd406b7ae851d3a91c5380a998819f718358d4d09a7ff84933",
+      "bytes": 2302,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/entry.mjs",
+      "workspaceSource": "work/resident-dev-20261007/entry.mjs",
+      "sha256": "351a12368072d9a30be9fe0b6cf764be1928737428c88347f95651ecf93dfe14",
+      "bytes": 6594,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/extract-regression.mjs",
+      "workspaceSource": "work/resident-dev-20261007/extract-regression.mjs",
+      "sha256": "d0631c30a07ea8f2c4fd13bf074cad0bc00437b740ef2fa6cf5d1335dacff186",
+      "bytes": 2711,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/final-selection.mjs",
+      "workspaceSource": "work/resident-dev-20261007/final-selection.mjs",
+      "sha256": "3ce8c09465b05a691f2954faee04c284d6daf89416207da025a00c8eb8c7b05d",
+      "bytes": 4976,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/fixture-startup.mjs",
+      "workspaceSource": "work/resident-dev-20261007/fixture-startup.mjs",
+      "sha256": "4a7b80d95223dcda09018500c0cfee6ac367c6142bab89ad22d63c48ed46ef96",
+      "bytes": 809,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/full-classification.mjs",
+      "workspaceSource": "work/resident-dev-20261007/full-classification.mjs",
+      "sha256": "f16eb5c16f3421ad817f1956c717a5daa5b95c6648238965739943245797d24f",
+      "bytes": 4500,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/integration-qualified.json",
+      "workspaceSource": "work/resident-dev-20261007/integration-qualified.json",
+      "sha256": "35b4400ccbcb9ca19e6aa2b07f009cec8ff3983c8fb2dbaa943b853b57fcc1ef",
+      "bytes": 923,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/learning-alignment.mjs",
+      "workspaceSource": "work/resident-dev-20261007/learning-alignment.mjs",
+      "sha256": "ad49d5d3bc0596df51450f26b89c67493f70823c5b36393e1a76e993e2c92686",
+      "bytes": 1589,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/lua-local.mjs",
+      "workspaceSource": "work/resident-dev-20261007/lua-local.mjs",
+      "sha256": "20668f66962e88c8ce108f3783ceae6060aef37503d31ff2f17603a359db79ff",
+      "bytes": 1833,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/materialize.mjs",
+      "workspaceSource": "work/resident-dev-20261007/materialize.mjs",
+      "sha256": "acf5a208dd1614813e5564e3316f37b3cd0e8f42544307480c23a5d6ad81faff",
+      "bytes": 17993,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/persistent-ssh.mjs",
+      "workspaceSource": "work/resident-dev-20261007/persistent-ssh.mjs",
+      "sha256": "ee95d9b46cc159b995db1ea116d9488446a497bfc3f6b0843f0b0faac3de359d",
+      "bytes": 4416,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/platform-preflight.mjs",
+      "workspaceSource": "work/resident-dev-20261007/platform-preflight.mjs",
+      "sha256": "edde6d9823f8c308f2e33e16856dcf6d501012b473d8966b98489854aa51ced6",
+      "bytes": 1967,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/prepare-udp-seed.mjs",
+      "workspaceSource": "work/resident-dev-20261007/prepare-udp-seed.mjs",
+      "sha256": "4e317fce5db2f777fd69a44042e4d4d7b83cfc736e91321442c71586ae308b46",
+      "bytes": 1141,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/prepare.mjs",
+      "workspaceSource": "work/resident-dev-20261007/prepare.mjs",
+      "sha256": "d809d9a2a127e8b1b4608bb4881e736b70353d671e48b6cffa989afbba290d8d",
+      "bytes": 1180,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/read-rc-health.mjs",
+      "workspaceSource": "work/resident-dev-20261007/read-rc-health.mjs",
+      "sha256": "22b6b6efc4731e84a2a4084dd1e91291a0dcc3bdd68228c10701122c1395e40e",
+      "bytes": 1443,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/recheck-endpoint-readonly.mjs",
+      "workspaceSource": "work/resident-dev-20261007/recheck-endpoint-readonly.mjs",
+      "sha256": "8e260496f22232038cc5e30f856c6ff71dab6dca65efa7323e79a3a99c453dc3",
+      "bytes": 2631,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/recheck-partial-endpoint.mjs",
+      "workspaceSource": "work/resident-dev-20261007/recheck-partial-endpoint.mjs",
+      "sha256": "c05d760b5aa4413444fcf16d4a336c4c3bdedca2fb5bc6326e629351270e4171",
+      "bytes": 3451,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/reconcile-entry.mjs",
+      "workspaceSource": "work/resident-dev-20261007/reconcile-entry.mjs",
+      "sha256": "1ed9a2994d1d189c8ac34530b2d9835029053002f6915e0dbd386c318a6f3c56",
+      "bytes": 2274,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/record-classification.mjs",
+      "workspaceSource": "work/resident-dev-20261007/record-classification.mjs",
+      "sha256": "60628649840872263fef5ae50289d71108778eb92cf96d06297904c8b668bed2",
+      "bytes": 1013,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/register-integration.mjs",
+      "workspaceSource": "work/resident-dev-20261007/register-integration.mjs",
+      "sha256": "6520a18f03f9ca771086ff112e5e801438cc1caea37eec9210198d63240ba22f",
+      "bytes": 2137,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/resident-window.mjs",
+      "workspaceSource": "work/resident-dev-20261007/resident-window.mjs",
+      "sha256": "4ced65ce8c2437f2f392c5807d72de305e535dae4e67140d7872f9e01f8c09de",
+      "bytes": 1316,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/route-acquisition.mjs",
+      "workspaceSource": "work/resident-dev-20261007/route-acquisition.mjs",
+      "sha256": "01a578a14612df96fd7adb93328c5faed0b0946459c4b0b38a1fbfcb3ccc5b67",
+      "bytes": 5228,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/selected-acquisition.mjs",
+      "workspaceSource": "work/resident-dev-20261007/selected-acquisition.mjs",
+      "sha256": "7aee6f3213fcc4af04969797d25847be7d03b4e058b2a8996e0d1ef05808970d",
+      "bytes": 2023,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/setup-entry.mjs",
+      "workspaceSource": "work/resident-dev-20261007/setup-entry.mjs",
+      "sha256": "3bc9d1ea7317f9358d9c47b84ea2f081be51683e1d1ab227ae5b369cc9369a68",
+      "bytes": 2993,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/soak-workflow.mjs",
+      "workspaceSource": "work/resident-dev-20261007/soak-workflow.mjs",
+      "sha256": "5e921ad76abac4b9a311836ec5edf37ca8ef03ade55ad4bc8b5dffc0a5ec2aaa",
+      "bytes": 1388,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/ssh-options.mjs",
+      "workspaceSource": "work/resident-dev-20261007/ssh-options.mjs",
+      "sha256": "7d20c0b9586af49c9d83a00f194cf1e9042ca51f5b6901d082a5997db9c13dbb",
+      "bytes": 410,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/ssh-phase.mjs",
+      "workspaceSource": "work/resident-dev-20261007/ssh-phase.mjs",
+      "sha256": "e4c59d14530e47c22ba3fa2cbba7cc0c79610522ee4d66392fce7994ce601ad9",
+      "bytes": 4227,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/test-classifier.py",
+      "workspaceSource": "work/resident-dev-20261007/test-classifier.py",
+      "sha256": "41959429aa0c2ce3cc394763ba90f88fe1bb8c4ebb26866d15123ed87e9777e3",
+      "bytes": 2935,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/test-core-plan.mjs",
+      "workspaceSource": "work/resident-dev-20261007/test-core-plan.mjs",
+      "sha256": "4bd28e590faf0ccefd79926fc86865677cef46f32aa58ec0ed766524c696557b",
+      "bytes": 5425,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/test-deployment-binding.mjs",
+      "workspaceSource": "work/resident-dev-20261007/test-deployment-binding.mjs",
+      "sha256": "df1e59ab42fb9692539c8048f99a372f47b12c2046c84a25e6cf3bc175f24422",
+      "bytes": 1484,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/test-learning-alignment.mjs",
+      "workspaceSource": "work/resident-dev-20261007/test-learning-alignment.mjs",
+      "sha256": "6885eec825e0359fe6874c2badac843120f51914bdbfcf9ad1ede9b6c356deca",
+      "bytes": 5042,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/test-payload-budget.mjs",
+      "workspaceSource": "work/resident-dev-20261007/test-payload-budget.mjs",
+      "sha256": "9be211afd6849c7ea82ebebef90adfdcea784b6c3915f1d169a25850683cd09c",
+      "bytes": 1608,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/test-soak-workflow.mjs",
+      "workspaceSource": "work/resident-dev-20261007/test-soak-workflow.mjs",
+      "sha256": "9ad66b2e5410c8322c44c0b54bba732ba6b2a823d834c02b2f80e4436a7872ee",
+      "bytes": 1999,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/test-wait-binding.mjs",
+      "workspaceSource": "work/resident-dev-20261007/test-wait-binding.mjs",
+      "sha256": "95baf9c345a35b93a73def784cc20e82210c3fed0e15b6ce46b9fea9f5ec23fd",
+      "bytes": 1952,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/test-wait-cache.mjs",
+      "workspaceSource": "work/resident-dev-20261007/test-wait-cache.mjs",
+      "sha256": "e720a11999d1f1662ac3ab108e0167d4f3d4283b710be0694ade22886f3e941a",
+      "bytes": 4230,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/udp-discovery.mjs",
+      "workspaceSource": "work/resident-dev-20261007/udp-discovery.mjs",
+      "sha256": "038acd463204be5862285ec2e131b354acbb4cd8b8fd986fabf0f7d18999cab8",
+      "bytes": 2303,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/udp-preferred-port.json",
+      "workspaceSource": "work/resident-dev-20261007/udp-preferred-port.json",
+      "sha256": "6546542e0ba1683e4cd735bdf6b2c3d1addd3c4fcba6a870095419bdf29c7653",
+      "bytes": 284,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/udp-probe.mjs",
+      "workspaceSource": "work/resident-dev-20261007/udp-probe.mjs",
+      "sha256": "1054fcd4d3bfd4f2e24677232b66e17dab05c8f9690bb0bc67ce15ef424928a1",
+      "bytes": 1308,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/udp-probe.py",
+      "workspaceSource": "work/resident-dev-20261007/udp-probe.py",
+      "sha256": "236fcf20e89cd11ea981798c5c6e17be6cbde47817b99915e9fc7f6bbb4f7466",
+      "bytes": 968,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/udp-seed.mjs",
+      "workspaceSource": "work/resident-dev-20261007/udp-seed.mjs",
+      "sha256": "cf4207f9b2f8d0fdf3ac141c2b0153ab4c5d37f76079fd0e80f5d8ff18a97546",
+      "bytes": 701,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/wait-binding-tests-latest.json",
+      "workspaceSource": "work/resident-dev-20261007/wait-binding-tests-latest.json",
+      "sha256": "435fe83be9647984608cd5c3381311788c9ac90614e9d75520e3dac98db447e6",
+      "bytes": 208,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/wait-cache-tests-latest.json",
+      "workspaceSource": "work/resident-dev-20261007/wait-cache-tests-latest.json",
+      "sha256": "a56f0c3891171d82435e297aa59ecb7955794c94a1328217b44c4b257160bc9a",
+      "bytes": 231,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/wait-publication-metadata.mjs",
+      "workspaceSource": "work/resident-dev-20261007/wait-publication-metadata.mjs",
+      "sha256": "8cc69fbd6657931c83ece6f4df6c19efeedf5b3f6c30aaf393c5ea38fbad3a39",
+      "bytes": 4721,
+      "role": "resident-controller-development-rc1"
+    },
+    {
+      "path": "code/work/resident-dev-20261007/wait-ready-candidate.mjs",
+      "workspaceSource": "work/resident-dev-20261007/wait-ready-candidate.mjs",
+      "sha256": "5ec6106106821a6c02a5d839d306173a84699a9cb8ea6b6b7e8e6349c820059c",
+      "bytes": 5612,
+      "role": "resident-controller-development-rc1"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -40720,5 +41189,6 @@
   "lastEarlyAcquisitionExport": "V45_SOFTWARE_READY_PRELOAD_SSH_REFUSED_RESTORED",
   "lastResumedEntryExport": "V46_CONCURRENT_STARTUP_PROVED_ROTATED_TCP_TIMEOUT_RESTORED",
   "lastTransportAcquisitionExport": "V47_AUTH_PHASE_DIAGNOSIS_BOUNDED_ENTRY_REFUSED_RESTORED",
-  "lastEntryRepairExport": "V54_ENTRY_COMPLETE_V58_RESIDENT_PREREQUISITE_REFUSED_RESTORED"
+  "lastEntryRepairExport": "V54_ENTRY_COMPLETE_V58_RESIDENT_PREREQUISITE_REFUSED_RESTORED",
+  "residentDevelopmentExport": "RC1_CONSOLIDATED_DEVELOPMENT_AND_BOUNDED_SOAK"
 }

@@ -1,0 +1,13 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {selectedWanAcquisition}from'./selected-acquisition.mjs';
+const root='work/resident-dev-20261007',checks=[],test=(n,f)=>{f();checks.push(n);};
+const slots=['tcp','tcp2','tcp3','tcp4'],children=slots.map((slot,i)=>({slot,attempt:1,ownerPid:100+i,spawnedAt:'same'}));
+const route=(i,w)=>({wan:w,mark:w*65536,original:{sport:1000+i,dport:22},localOwnedSocketVerified:true});
+const frame={sourceAge:1,controlledClientPid:50,pairs:[{tcp:{wan:2,original:{sport:1000}},tcp2:{wan:4,original:{sport:1001}},udp:{wan:3}}],ownedTcpChildren:children,ownedTcpSlots:Object.fromEntries(slots.map((s,i)=>[s,1000+i])),ownedTransportRoutes:[route(0,2),route(1,4),route(2,3),route(3,1)]},status={pid:50,elapsed:10,tcpChildren:children};
+test('prior two eligible WANs proceed without acquiring unused fifth WAN',()=>assert.deepEqual(selectedWanAcquisition(frame,status,()=>{throw Error('must not invoke full five WAN plan')}).commands,[]));
+test('only unselected competitors sharing actual selected bulk WANs rotate',()=>{const f=structuredClone(frame);f.ownedTransportRoutes[2]=route(2,2);assert.deepEqual(selectedWanAcquisition(f,status,()=>{}).commands,[{slot:'tcp3',attempt:2}]);});
+test('selected connections are never rotated even when rate rank could change',()=>{const p=selectedWanAcquisition(frame,status,()=>{});assert.ok(!p.commands.some(x=>['tcp','tcp2'].includes(x.slot)));});
+test('original acquisition cutoff and eighth attempt remain refused for competitors',()=>{const f=structuredClone(frame);f.ownedTransportRoutes[2]=route(2,2);assert.throws(()=>selectedWanAcquisition(f,{...status,elapsed:30},()=>{}));const s=structuredClone(status);s.tcpChildren[2].attempt=8;f.ownedTcpChildren[2].attempt=8;assert.throws(()=>selectedWanAcquisition(f,s,()=>{}));});
+test('no eligible pair delegates to original bounded natural acquisition',()=>{let n=0;const p=selectedWanAcquisition({...frame,pairs:[]},status,()=>{n++;return{commands:[]};});assert.equal(n,1);assert.deepEqual(p.commands,[]);});
+const m=JSON.parse(fs.readFileSync(JSON.parse(fs.readFileSync(root+'/entry-model-latest-private.json')).receipt));
+fs.writeFileSync(root+'/selected-acquisition-qualified-'+Date.now()+'.json',JSON.stringify({passed:true,checks,sourceBindings:m.sourceBindings,hardwareExecuted:false,routerPolicyWrites:false},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({passed:true,checks:checks.length,sourceBindings:m.sourceBindings,hardwareExecuted:false}));

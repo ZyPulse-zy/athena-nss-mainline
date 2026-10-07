@@ -1167,3 +1167,9 @@
 /code/work/v58-run-20261007133308-5456c702/tag-normalizer.lua whitespace=cr-at-eol
 /code/work/v58-run-20261007133308-5456c702/wan-scope.lua whitespace=cr-at-eol
 /code/work/v58-run-20261007133308-5456c702/wan-tag-plan.mjs whitespace=cr-at-eol
+
+# Exact development RC1 source bytes.
+/code/work/resident-dev-20261007/classifier-tests-latest.json whitespace=cr-at-eol
+/code/work/resident-dev-20261007/persistent-ssh.mjs whitespace=cr-at-eol
+/code/work/resident-dev-20261007/wait-publication-metadata.mjs whitespace=cr-at-eol
+/code/work/resident-dev-20261007/wait-ready-candidate.mjs whitespace=cr-at-eol
