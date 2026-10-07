@@ -527,3 +527,8 @@
 /code/work/v42-counter-window/publish-first-failure/recovery-failure.json whitespace=cr-at-eol
 /code/work/v42-counter-window/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/v42-counter-window/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof
+
+# Preserve byte-exact v43 local model and refusal record endings.
+/code/work/v43-bounded-entry/publish-repaired.py whitespace=cr-at-eol
+/code/work/v43-bounded-entry/publication-first-failure/failure.json whitespace=cr-at-eol
+/code/work/v43-bounded-entry/initial-model-freeze/resume-read-failures.json whitespace=cr-at-eol

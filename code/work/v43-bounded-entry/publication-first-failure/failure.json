@@ -1,0 +1,11 @@
+{
+  "publicationBeforeSourceCopy": true,
+  "modelPointerIsNotProductionLoad": true,
+  "preserved": true,
+  "originalPublisherSha256": "4eb8c4dea71891490c2b4c1c2e5b6c8237766be69cf3b95efdc957e59abdb750",
+  "error": "AssertionError",
+  "line": 32,
+  "cause": "MODEL_NAMESPACE_CONTAINS_SYNTHETIC_LOAD_POINTER",
+  "productionExperimentRepeated": false,
+  "commitChainStopped": true
+}

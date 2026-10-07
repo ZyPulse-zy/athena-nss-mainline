@@ -1,5 +1,11 @@
 # Athena NSS 多WAN / 高级QoS受控原型
 
+五WAN硬件验收保持，新增可复用的默认预览、状态、一次运行和停止入口。软件检查通过；当前Windows进程身份读取条件不足，实际启动写前拒绝，没有新现场验收。见[入口使用与边界](docs/BOUNDED_MULTIWAN_ENTRY.md)和[STATE](docs/STATE.md)。
+
+## 以下保留历史交付
+
+# Athena NSS 多WAN / 高级QoS受控原型
+
 五WAN五条精确流已完成一次60秒NSS维持及高级QoS受控功能验收，并完整恢复。模拟UDP内部窗口2373包全部返回；这不代表全网、永久或长期部署。见[STATE](docs/STATE.md)、[本次报告](docs/FIVE_WAN_SIMULATED_ACCEPTANCE_2026-10-07.md)。
 
 ## 以下保留历史交付

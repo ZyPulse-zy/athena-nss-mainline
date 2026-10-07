@@ -1,0 +1,10 @@
+{
+  "productionStarted": false,
+  "trafficGenerated": false,
+  "modelCompleted": true,
+  "preserved": true,
+  "processReadFailure": "Get-CimInstance Win32_Process unavailable in current execution context",
+  "gitReadCorrection": "explicit git -C athena-nss-mainline",
+  "gitReadFailure": "git status called from non-repository workspace root",
+  "routerWrites": false
+}

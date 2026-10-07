@@ -1,0 +1,9 @@
+{
+  "preserved": true,
+  "originalModelChecksReported": 9,
+  "originalExtendedCutoffLabelWasNotSufficientEvidence": true,
+  "reason": "The original case added a character to the namespace, so namespace validation could reject before the cutoff predicate.",
+  "correctedModelUsesValidNamespaceAndChecksCutoffFailureMessage": true,
+  "originalSourceAndOutputUnmodified": true,
+  "productionWrites": false
+}

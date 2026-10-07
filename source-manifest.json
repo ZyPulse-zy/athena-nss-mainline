@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T06:52:09.907984+00:00",
+  "generatedAt": "2026-10-07T08:36:32.079674+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -31784,6 +31784,97 @@
       "sha256": "5c9bb90e1a9ec3cc5a347e7e830f4c41604dacade36f1a80129b0a29c35bae7b",
       "bytes": 382,
       "role": "five-wan-sixty-second-owned-simulation-and-complete-restoration"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/entry.mjs",
+      "workspaceSource": "work/v43-bounded-entry/entry.mjs",
+      "sha256": "585f060a3f2e4b7d50038729d2e3bdc7b629628d9cfa016ee7ac2452573e57ad",
+      "bytes": 5740,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/materialize.mjs",
+      "workspaceSource": "work/v43-bounded-entry/materialize.mjs",
+      "sha256": "2dfe6ebcf629de7953b9d02df655abd1be0a121f3345c58902c87555c1afd71a",
+      "bytes": 6912,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/check-model.mjs",
+      "workspaceSource": "work/v43-bounded-entry/check-model.mjs",
+      "sha256": "baa246ff626ea9005a26747bf6142f7311ff739b39c5c344d51039f22aa70126",
+      "bytes": 3560,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/platform-preflight.mjs",
+      "workspaceSource": "work/v43-bounded-entry/platform-preflight.mjs",
+      "sha256": "99dd14d7803dfa8e7aa540d77ef4ec5aab8f1ec1b42c7693c578a193a6eabff6",
+      "bytes": 1963,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/publish.py",
+      "workspaceSource": "work/v43-bounded-entry/publish.py",
+      "sha256": "4eb8c4dea71891490c2b4c1c2e5b6c8237766be69cf3b95efdc957e59abdb750",
+      "bytes": 17794,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/publish-repaired.py",
+      "workspaceSource": "work/v43-bounded-entry/publish-repaired.py",
+      "sha256": "18e63cc24b051a930761d643bda6fd859ec357bc6c4fbc96b374ccadad833d67",
+      "bytes": 19078,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/publication-first-failure/failure.json",
+      "workspaceSource": "work/v43-bounded-entry/publication-first-failure/failure.json",
+      "sha256": "829cec97fa337c94ee757edb42f9dec2585b38ad0d24074e61aaa902830f19d5",
+      "bytes": 390,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/initial-model-freeze/entry.mjs",
+      "workspaceSource": "work/v43-bounded-entry/initial-model-freeze/entry.mjs",
+      "sha256": "b9c19686e8737110dc37a5d38e3310869600644b6c29549f6f52e58330b27877",
+      "bytes": 5502,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/initial-model-freeze/materialize.mjs",
+      "workspaceSource": "work/v43-bounded-entry/initial-model-freeze/materialize.mjs",
+      "sha256": "9cc614449752bc8fe8a71b322a7ba1a13d4250d94e001f94dc1be5899b6acf94",
+      "bytes": 6818,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/initial-model-freeze/check-model.mjs",
+      "workspaceSource": "work/v43-bounded-entry/initial-model-freeze/check-model.mjs",
+      "sha256": "a40bdde89b66b6b4e2b9881d230f27048bd8ceba007fcb2dae9eb3286dd6e313",
+      "bytes": 2261,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/initial-model-freeze/entry-model-qualified.json",
+      "workspaceSource": "work/v43-bounded-entry/initial-model-freeze/entry-model-qualified.json",
+      "sha256": "b34ab59afa855cfc03aa5117a21018599a75154d08bc3a558441f9c60139032a",
+      "bytes": 968,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/initial-model-freeze/resume-read-failures.json",
+      "workspaceSource": "work/v43-bounded-entry/initial-model-freeze/resume-read-failures.json",
+      "sha256": "e617eef90adf029508437f30f0653593ce6ef4ce0d5fdf05120ffc56845fab57",
+      "bytes": 380,
+      "role": "bounded-reusable-entry-and-startup-refusal"
+    },
+    {
+      "path": "code/work/v43-bounded-entry/initial-model-freeze/model-coverage-correction.json",
+      "workspaceSource": "work/v43-bounded-entry/initial-model-freeze/model-coverage-correction.json",
+      "sha256": "a4bb97071f9a0c1da875988ad2c38132619d42e2250a22eb1599f3047169c384",
+      "bytes": 405,
+      "role": "bounded-reusable-entry-and-startup-refusal"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -31796,5 +31887,6 @@
   "lastOwnedSimulationExport": "V38_SIMULATED_RT_TWO_WAN_HARDWARE_COMPLETE",
   "lastFiveWanSimulationAttemptExport": "V40_NATURAL_FIVE_WAN_PREREQUISITE_REFUSAL",
   "lastFiveWanHardwareAttemptExport": "V41_FIVE_WAN_INITIAL_HIT_CLASS_RETIREMENT",
-  "lastFiveWanBoundedHardwareExport": "V42_FIVE_WAN_SIMULATED_FUNCTIONAL_ACCEPTANCE_COMPLETE"
+  "lastFiveWanBoundedHardwareExport": "V42_FIVE_WAN_SIMULATED_FUNCTIONAL_ACCEPTANCE_COMPLETE",
+  "lastBoundedEntryExport": "V43_REUSABLE_ENTRY_MODELS_COMPLETE_STARTUP_REFUSED_BEFORE_NETWORK"
 }

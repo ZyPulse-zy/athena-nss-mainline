@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "checks": [
+    "inspect has no traffic or remote writes",
+    "runtime inherits every 3354 binding",
+    "fixed policy and exact data plane retained",
+    "existing namespace refused",
+    "escaping namespace refused",
+    "extended cutoff refused",
+    "stop before client only writes own intent",
+    "stop writes session-bound owned client control",
+    "ended client is not restarted"
+  ],
+  "modelOnly": true,
+  "modelRuntimeRoot": "work/v43-run-20261007070555-2870ddc1",
+  "trafficGenerated": false,
+  "routerWrites": false,
+  "hardwareExecuted": false,
+  "sourceBindings": 3404,
+  "limits": {
+    "source": 6,
+    "kernel": 90,
+    "kernelMaximum": 120,
+    "owner": 180,
+    "client": 180,
+    "clientGuard": 210,
+    "server": 250,
+    "phase": 60,
+    "tcpMbps": 32,
+    "downMbps": 18,
+    "upMbps": 60,
+    "perWanUpMbps": 12,
+    "credit": 65536,
+    "exec": 9000,
+    "raw": 65536,
+    "bundle": 73728,
+    "record": 1048576
+  }
+}

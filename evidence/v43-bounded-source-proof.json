@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "historicPrefixSources": 4540,
+  "newSources": 13,
+  "sourceHashes": {
+    "work/v43-bounded-entry/entry.mjs": "585f060a3f2e4b7d50038729d2e3bdc7b629628d9cfa016ee7ac2452573e57ad",
+    "work/v43-bounded-entry/materialize.mjs": "2dfe6ebcf629de7953b9d02df655abd1be0a121f3345c58902c87555c1afd71a",
+    "work/v43-bounded-entry/check-model.mjs": "baa246ff626ea9005a26747bf6142f7311ff739b39c5c344d51039f22aa70126",
+    "work/v43-bounded-entry/platform-preflight.mjs": "99dd14d7803dfa8e7aa540d77ef4ec5aab8f1ec1b42c7693c578a193a6eabff6",
+    "work/v43-bounded-entry/publish.py": "4eb8c4dea71891490c2b4c1c2e5b6c8237766be69cf3b95efdc957e59abdb750",
+    "work/v43-bounded-entry/publish-repaired.py": "18e63cc24b051a930761d643bda6fd859ec357bc6c4fbc96b374ccadad833d67",
+    "work/v43-bounded-entry/publication-first-failure/failure.json": "829cec97fa337c94ee757edb42f9dec2585b38ad0d24074e61aaa902830f19d5",
+    "work/v43-bounded-entry/initial-model-freeze/entry.mjs": "b9c19686e8737110dc37a5d38e3310869600644b6c29549f6f52e58330b27877",
+    "work/v43-bounded-entry/initial-model-freeze/materialize.mjs": "9cc614449752bc8fe8a71b322a7ba1a13d4250d94e001f94dc1be5899b6acf94",
+    "work/v43-bounded-entry/initial-model-freeze/check-model.mjs": "a40bdde89b66b6b4e2b9881d230f27048bd8ceba007fcb2dae9eb3286dd6e313",
+    "work/v43-bounded-entry/initial-model-freeze/entry-model-qualified.json": "b34ab59afa855cfc03aa5117a21018599a75154d08bc3a558441f9c60139032a",
+    "work/v43-bounded-entry/initial-model-freeze/resume-read-failures.json": "e617eef90adf029508437f30f0653593ce6ef4ce0d5fdf05120ffc56845fab57",
+    "work/v43-bounded-entry/initial-model-freeze/model-coverage-correction.json": "a4bb97071f9a0c1da875988ad2c38132619d42e2250a22eb1599f3047169c384"
+  },
+  "oldCodeAndEvidenceBlobsChecked": 5121,
+  "oldCodeAndEvidenceUnmodified": true,
+  "privateInputsCopiedExact": 6,
+  "initialModelSourcesAndRefusalPreserved": true,
+  "noProductionExperimentRepeated": true,
+  "exactNewCrLfAttributes": [
+    "/code/work/v43-bounded-entry/publish-repaired.py whitespace=cr-at-eol",
+    "/code/work/v43-bounded-entry/publication-first-failure/failure.json whitespace=cr-at-eol",
+    "/code/work/v43-bounded-entry/initial-model-freeze/resume-read-failures.json whitespace=cr-at-eol"
+  ],
+  "noGlobalWhitespacePolicyChange": true
+}

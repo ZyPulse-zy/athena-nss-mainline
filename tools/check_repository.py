@@ -2421,4 +2421,22 @@ if (root/'evidence/v42-five-wan-source-proof.json').exists():
  for attr in whitespace['exactPathAttributes']:assert attr.startswith('/code/work/v42-counter-window/') and attr in (root/'.gitattributes').read_text(encoding='utf8')
  failure=json.loads((root/'code/work/v42-counter-window/publish-first-failure/failure.json').read_text(encoding='utf8'))
  assert failure['preserved'] and failure['commitChainStopped'] and not failure['productionExperimentRepeatedForThisFailure']
+if (root/'evidence/v43-bounded-entry.json').exists():
+ e=json.loads((root/'evidence/v43-bounded-entry.json').read_text(encoding='utf8'));s=json.loads((root/'evidence/v43-bounded-source-proof.json').read_text(encoding='utf8'))
+ assert manifest['lastBoundedEntryExport']=='V43_REUSABLE_ENTRY_MODELS_COMPLETE_STARTUP_REFUSED_BEFORE_NETWORK'
+ assert e['passedAsEntrySoftwareQualification'] and e['modelCheckCount']==len(e['modelChecks'])==13 and e['actualGeneratedBindings']==3405 and e['inheritedBindings']==3354
+ assert e['generatedQualifiedSourceCount']==51 and e['sevenDataPlaneSourcesExactV42'] and e['classificationQosAndLeasePolicyUnchanged']
+ assert e['defaultInspectExecuted'] and not e['defaultInspectTrafficGenerated'] and not e['defaultInspectRouterWrites'] and e['defaultInspectIsNotLiveAudit'] and e['statusAfterRefusal']=='IDLE'
+ t=e['startupAttempt'];assert t['attempted'] and t['exitCode']==1 and t['category']=='WINDOWS_CIM_PROCESS_IDENTITY_UNAVAILABLE' and t['refusedBeforeFixtureOrRouterConnection']
+ assert not any(t[k] for k in ['activeLedgerCreated','activeLockCreated','newHardwareExecuted','checkpointStarted','nssStageStarted','trafficGenerated','routerWrites'])
+ assert (e['limits']['source'],e['limits']['client'],e['limits']['phase'],e['limits']['bundle'],e['limits']['exec'],e['limits']['record'])==(6,180,60,73728,9000,1048576)
+ assert e['firstNineCheckModelPreserved'] and e['originalCutoffCaseHadInsufficientCoverage'] and e['revisedCutoffCasesUseValidNamespaceAndFailureMessage']
+ assert e['stopOnlyControlsOwnedClientAndStopsNextAdmission'] and e['stopIsNotImmediateHardwareRecoveryClaim'] and e['originalV41LimitationStillOpen']
+ assert not any(e[k] for k in ['automaticNewEpochOrDaemon','cs2OrSteamOperated','newCpuAcceptance','newHardwareEntryAcceptance','permanentNssDeployment'])
+ assert s['passed'] and s['historicPrefixSources']==4540 and s['newSources']==len(s['sourceHashes'])==13 and s['oldCodeAndEvidenceBlobsChecked']==5121 and s['oldCodeAndEvidenceUnmodified'] and s['privateInputsCopiedExact']==6
+ assert s['initialModelSourcesAndRefusalPreserved'] and s['noProductionExperimentRepeated'] and e['firstPublicationFailurePreserved'] and e['modelSyntheticClientPointerNotMistakenForProduction']
+ for rel,digest in s['sourceHashes'].items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+ for rel,digest in e['modelSourceHashes'].items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+ code=(root/'code/work/v43-bounded-entry/entry.mjs').read_text(encoding='utf8');assert code.index('platformPreflight();')<code.index('fs.mkdirSync(lock)')<code.index('materialize(runtimeRoot,')
+ correction=json.loads((root/'code/work/v43-bounded-entry/initial-model-freeze/model-coverage-correction.json').read_text(encoding='utf8'));assert correction['preserved'] and correction['originalExtendedCutoffLabelWasNotSufficientEvidence'] and correction['originalSourceAndOutputUnmodified']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

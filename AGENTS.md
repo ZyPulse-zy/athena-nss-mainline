@@ -1,3 +1,15 @@
+# 多 WAN 可复用入口已接入；现场启动写前拒绝
+
+更新：北京时间2026-10-07 16:36。v43新增默认inspect/status/run/stop入口，复用v42五WAN已验收数据面。13模型和默认inspect通过，模型3405绑定=原3354+51；七Lua原字节、分类/QoS/lease/恢复与字节上限保持。新命名空间/独占锁/同session停止支持显式一次运行，不自动连续新代或常驻。
+
+实际run因当前Windows CIM进程身份不可读返回1，在独占锁、记录、负载、SSH/router/checkpoint/stage之前拒绝，状态IDLE；没有新硬件验收或现网写入。原首版9模型及其中不足以证明cutoff的错误用例已保存，修订13项用合法命名空间验证。失败与原输出本地保留，没有为了检查重开fixture。
+
+v42五WAN60.01秒/ECM5/20续租/2373UDP全返回与完整恢复保持；v41计数差异仍known limitation，不重做CPU或旧核心证明。下一步只在能读取原进程身份的执行条件下补一次新入口整合，继续模拟UDP，不启动CS2/Steam；长期、永久、全网、WiFi/autorate/ECN留后续。heartbeat仍暂停。
+
+详情：[可复用入口](docs/BOUNDED_MULTIWAN_ENTRY.md)。
+
+## 以下保留历史记录
+
 # 五 WAN 模拟功能验收完成，完整恢复
 
 更新：北京时间2026-10-07 14:52。v42自有四TCP BULK＋模拟UDP RT自然走TCP WAN2/3/4/5＋UDP WAN1，实际NSS五流60.01秒/121采样ECM5/20续租、双向十tag/leaf/完整ct mark/NAT/affinity通过。共享DOWN18附近四bulk合计16.70Mbps，UP60每WAN12硬上限/RT prio0/FQ-CoDel保持；内部57.06秒2373 UDP全部回包、RT上下leaf零drop，RTT中位/P95/P99约196.47/198.68/200.36ms。不是CS2/HUD/真人、新CPU或长期常驻证明。
