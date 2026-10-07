@@ -2080,4 +2080,23 @@ if (root/'evidence/morning-final.json').exists():
  for f,d in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
  assert sp['localReadCorrection']['originalReadFailed'] and sp['localReadCorrection']['originalExitCode']==1 and not sp['localReadCorrection']['productionAuditAffected']
  assert sp['firstPublisherFailurePreserved']['beforeAnyAppend'] and sp['firstPublisherFailurePreserved']['onlyCRLFConversionVerified'] and sp['firstPublisherFailurePreserved']['oldEvidenceNotEdited']
+if (root/'evidence/v29-peer-source-proof.json').exists():
+ peer=json.loads((root/'evidence/v28-peer-path.json').read_text(encoding='utf8'));short=json.loads((root/'evidence/v29-peer-proof.json').read_text(encoding='utf8'));end=json.loads((root/'evidence/v29-peer-restoration.json').read_text(encoding='utf8'));sp=json.loads((root/'evidence/v29-peer-source-proof.json').read_text(encoding='utf8'))
+ assert manifest['lastAppendExport']=='V27_OWN_RAW_PREREQUISITE' and manifest['lastPrerequisiteDiagnosticExport']=='V29_PROTOCOL_SPECIFIC_PEER_PROOF'
+ assert peer['diagnosticCompleted'] and not peer['configurationWrites'] and not peer['nssStarted'] and peer['tcpPeerWasNotNonceAuthenticated'] and not peer['tcpAndUdpPublicSourceEqual']
+ assert not peer['correlationLimits']['tcpSynSourcePortMatchesOwnedClient'] and not peer['correlationLimits']['tcpSynSourcePortMatchesExactCtReplyPort']
+ assert {(x['protocol'],x['wan'],x['mark']) for x in peer['ctWanMarks']}=={('tcp',1,65536),('udp',5,327680)}
+ assert short['passed'] and short['tcpAuthenticatedReady'] and short['tcpPayloadBytes']==22960476 and 0<short['firstPayloadSeconds']<short['firstPayloadDeadlineSeconds']==8 and 25<=short['clientSeconds']<26
+ assert not short['clientErrors'] and short['singleTcpSlotMbps']==8 and short['protocolSpecificPublicPeersDiffer'] and short['exactFirewallRules']==2 and short['eachSourceRemainsOneIPv4Address']
+ assert short['independentFirewallExpirySeconds']==180 and short['independentEndpointExpirySeconds']==250 and short['clientIndependentDeadlineSeconds']==25 and short['checkpointDownloadShaAndGzipVerifiedBeforeWrite'] and short['guardianByteIdenticalToV27'] and short['serverAndProtocolByteIdenticalToV27']
+ assert not any(short[k] for k in ['nssStarted','routerConfigurationWrites','fourTcpOrFiveWanFixtureQualified','historicalV27ExactFailureCauseProven']) and short['udpCountersAreWholeDiagnosticNotLossAcceptance']
+ assert end['passed'] and end['readonly'] and not end['productionNssWrites'] and end['fullAudit']['ecmClosedAndZero'] and end['fullAudit']['protectedConfigurationUnchanged'] and end['fullAudit']['queryAge']<6 and end['fullAudit']['allFiveHealthyWanBaseline']
+ assert end['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and end['physicalQueues']['physicalWanOriginalMqFourFqCodelRestored'] and end['physicalQueues']['lan4OriginalMqFourFqCodelRestored']
+ close=end['endpointAndClientClosure']; assert close['passed'] and close['canonicalFirewallBaselineMatched'] and close['temporaryFirewallRulesRemaining']==0 and close['endpointPortsClosed'] and close['ownedUnitInactiveMainPidZero'] and close['independentGuardianPastNaturalDeadline'] and not close['sameGuardianStillLive'] and close['clientClosure']['ownedDiagnosticClientProcessesRemaining']==0 and not close['remoteWrites']
+ assert sp['passed'] and sp['historicPrefixSources']==3866 and sp['oldCodeAndEvidenceUnmodified'] and sp['oldCodeAndEvidenceBlobsChecked']==4391 and sp['rawCtPublicPeerAddressesNoncesCredentialsCheckpointsAndBinariesExcluded'] and sp['noNewNssCpuGameOrFiveWanHardwareAcceptanceClaim']
+ assert sp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3866],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ assert sp['firstRestorationFailure']['preserved'] and sp['firstRestorationFailure']['code']==1 and sp['firstRestorationFailure']['refusedBeforeFullRestorationAudit'] and sp['firstRestorationFailure']['oneLaterReadonlyRecheckPassed']
+ for f,d in sp['sourceHashes'].items(): assert hashlib.sha256((root/'code'/f).read_bytes()).hexdigest()==d,f
+ for item in sp['actualTrialSourceInputs']: assert hashlib.sha256((root/'code'/item['path']).read_bytes()).hexdigest()==item['sha256'],item['path']
+ assert hashlib.sha256((root/'code/work/v27-raw/endpoint-firewall-guardian.py').read_bytes()).hexdigest()==sp['guardianSha256']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

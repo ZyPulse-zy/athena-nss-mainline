@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "baseCommit": "e29d2e6ff5c2c055ffde7b3dca3cf9c238bf2996",
+  "historicPrefixSources": 3866,
+  "historicPrefixCanonicalSha256": "e6770467d26b0146b9812e20f1cc2f87af4b17bd1e5427d2bdbb77e61d2db28f",
+  "sourceHashes": {
+    "work/v28-peer-path/capture.py": "9807cb450929182e07eb88376dfb0a06a04ba574bc9fd2b99eb5e58939230e89",
+    "work/v28-peer-path/probe-client.mjs": "a478a73434bb057f6ef8f9bb292a51b23281afee4d34ff4b43ac553d48bc378f",
+    "work/v28-peer-path/run.mjs": "1ee622d2d8355bf7b6c429e5dd5ba1b9e6a3a90273c49b0f1f6d9465f52c5f1b",
+    "work/v29-peer-proof/run.mjs": "c4d7bb0d58175888a62bd3929c2254216f9618623bdf76cfa63ca7851375f695",
+    "work/v29-peer-proof/client.mjs": "7ec93285c222c5f651a9297c2ac16278014b1f9077f11da6319cb36e7c0b363e",
+    "work/v29-peer-proof/capture.py": "914a627c44b908ba5c344d0f4a672249471a8be2bfc41c6d83dda8ce859a17e8",
+    "work/v29-peer-proof/read-restoration.mjs": "a204177c2e91fff8fb9d2a23c2c3e9636b1295ef982d3f590b85f556b1387bfb",
+    "work/v29-peer-proof/read-restoration-v2.mjs": "fa67deadd247e02562dae3a6789123f8c7e48aa6514e23d8b0082f3520be7ffe",
+    "work/v29-peer-proof/read-deadline.mjs": "a8c89f46c23f3f07fb53537075b5d1f02c8d4d92444f65357606844acf3e2244",
+    "work/v29-peer-proof/finish-audit.mjs": "c64480beb9f7f121771c6248db7089e72d77ed7723c7f0f39da70a8636804ce5",
+    "work/v29-peer-proof/read-physical-v29-peer-final-1791332723698.mjs": "9670b7a94edcf4e9609da76f164e65e57eb5539eb5704dcd7781dc0fa394a7e4",
+    "work/v29-peer-proof/publish.py": "8fd829ea01d84ce1dd655dd4723545e0079eced1d23d35b9b6ddddbf27cb1254"
+  },
+  "actualTrialSourceInputs": [
+    {
+      "path": "work/v29-peer-proof/run.mjs",
+      "sha256": "c4d7bb0d58175888a62bd3929c2254216f9618623bdf76cfa63ca7851375f695",
+      "bytes": 9132
+    },
+    {
+      "path": "work/v29-peer-proof/client.mjs",
+      "sha256": "7ec93285c222c5f651a9297c2ac16278014b1f9077f11da6319cb36e7c0b363e",
+      "bytes": 2911
+    },
+    {
+      "path": "work/v29-peer-proof/capture.py",
+      "sha256": "914a627c44b908ba5c344d0f4a672249471a8be2bfc41c6d83dda8ce859a17e8",
+      "bytes": 3283
+    },
+    {
+      "path": "work/v27-raw/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460
+    },
+    {
+      "path": "work/v27-raw/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292
+    },
+    {
+      "path": "work/v27-raw/raw-server.py",
+      "sha256": "c1f7e933f94fcbd3ce387a57d5512b9defdf6e2574a328ad333820e870eb31d1",
+      "bytes": 4022
+    },
+    {
+      "path": "work/v27-raw/raw-policy.mjs",
+      "sha256": "b0b40fb948271157fb0a4a4faeb004ab4cce48a9ea5283626eeed21ebda17653",
+      "bytes": 518
+    },
+    {
+      "path": "work/v27-raw/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036
+    }
+  ],
+  "guardianSha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+  "oldCodeAndEvidenceBlobsChecked": 4391,
+  "oldCodeAndEvidenceUnmodified": true,
+  "rawCtPublicPeerAddressesNoncesCredentialsCheckpointsAndBinariesExcluded": true,
+  "firstRestorationFailure": {
+    "preserved": true,
+    "code": 1,
+    "message": "Wait for independent natural deadline before checking",
+    "refusedBeforeFullRestorationAudit": true,
+    "oneLaterReadonlyRecheckPassed": true
+  },
+  "localReadCorrection": {
+    "missingPath": "work/morning-20261007/verify_night_archive.py",
+    "correctedPath": "athena-nss-mainline/tools/verify_night_archive.py",
+    "originalToolTranscriptPreserved": true
+  },
+  "noNewNssCpuGameOrFiveWanHardwareAcceptanceClaim": true
+}

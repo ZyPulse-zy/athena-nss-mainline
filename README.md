@@ -1,3 +1,9 @@
+# Athena NSS 多WAN / QoS 受控原型
+
+三流跨WAN、五WAN队列映射和共享预算已硬件通过。最新TCP/UDP公网源地址假设修正，单TCP认证短测与完整恢复通过；当前NSS关闭，五WAN同时加速和正常应用新factory仍未验。见[STATE](docs/STATE.md)及[传输定位](docs/PEER_DIAGNOSIS_2026-10-07.md)。
+
+## 以下保留晨间交付和历史记录
+
 # Athena NSS 多 WAN / 高级 QoS 受控原型
 
 三流跨WAN、五WAN队列映射、共享下行预算借用和RT优先级已在硬件通过，晨间恢复核验全部正常。当前NSS关闭，五WAN同时加速、正常应用新factory和长期常驻尚未验收。见[晨间报告](docs/NIGHT_REPORT_2026-10-07.md)及[STATE](docs/STATE.md)。

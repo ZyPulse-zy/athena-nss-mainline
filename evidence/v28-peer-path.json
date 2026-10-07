@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "diagnosticCompleted": true,
+  "observedAt": "2026-10-07T00:11:03.310Z",
+  "configurationWrites": false,
+  "nssStarted": false,
+  "trafficGenerated": true,
+  "actualOrdinaryTcpAttempt": true,
+  "clientSeconds": 8.0145591,
+  "udpSent": 30,
+  "tcpConnected": false,
+  "tcpErrors": [],
+  "tcpSynMetadataRows": 4,
+  "nonceAuthenticatedUdpRows": 5,
+  "uniqueTcpPeers": 1,
+  "uniqueUdpPeers": 1,
+  "tcpAndUdpPublicSourceEqual": false,
+  "tcpMetadataNotAuthentication": true,
+  "exactOwnedCtRows": 2,
+  "ctWanMarks": [
+    {
+      "protocol": "udp",
+      "mark": 327680,
+      "wan": 5
+    },
+    {
+      "protocol": "tcp",
+      "mark": 65536,
+      "wan": 1
+    }
+  ],
+  "kernelFilterBeforeReceive": true,
+  "endpointPortsClosedBeforeProbe": true,
+  "clientExited": true,
+  "correlationLimits": {
+    "passed": true,
+    "tcpSynSourcePortMatchesOwnedClient": false,
+    "tcpSynSourcePortMatchesExactCtReplyPort": false,
+    "tcpMetadataWithinExactClientWindow": true,
+    "differentTcpAndUdpPublicSource": true,
+    "tcpWasNotNonceAuthenticated": true,
+    "noFirewallOrNssWrites": true
+  },
+  "tcpPeerWasNotNonceAuthenticated": true,
+  "notUdpLossOrGameQualityMeasurement": true
+}

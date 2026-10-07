@@ -1,3 +1,15 @@
+# TCP协议源地址假设已修正；单TCP认证短测与恢复通过
+
+更新：北京时间2026-10-07 08:28。用户在08:00晨间封存后要求继续；本轮没有新NSS或router配置写入。v28只读实际TCP走WAN1、UDP走WAN5，公网源地址不同且上游改写TCP源端口；TCP metadata只作时间关联。v29分别取协议公网地址，原两个单IPv4规则/180秒独立FW撤销与原认证server保持，1.391秒首payload、25.007秒22960476字节、客户端无错误。旧v27具体失败连接的精确根因仍未追认。
+
+08:25完整终态通过：原audit source1.55秒、五WAN健康/保护配置及epoch保持/ECM关闭全零；两物理原mq+四fq_codel全部选项/handle一致；FW自然到期规则0/canonical原基线一致、端点和客户端0。首次过早清理读取拒绝的原输出/源码保留，确认到期后一次只读重查通过。
+
+**这只证明单TCP传输前提，未新增五WAN同时fast path、正常Steam/CS2整合factory、CPU或长期验收。** v20三流多WAN和高级QoS硬件结论保持。五流必须逐TCP取实际公网归属，原精确FW政策容纳不了就写前拒绝，不复制UDP地址或盲重试。下一正常应用窗口用新版本和新绑定接v26有界会话；旧v26截止/源码不改。夜间heartbeat继续暂停。
+
+详情：[传输定位报告](docs/PEER_DIAGNOSIS_2026-10-07.md)、[短测](evidence/v29-peer-proof.json)、[终态](evidence/v29-peer-restoration.json)、[源码保存](evidence/v29-peer-source-proof.json)。
+
+## 以下保留晨间与夜间原记录
+
 # 夜间多 WAN / 高级 QoS 受控原型完成；晨间恢复核验通过
 
 更新：北京时间2026-10-07 07:44。07:41最后只读核验全部通过：原完整audit来源1.29秒、五WAN健康/保护配置保持/ECM关闭全零；两物理原mq＋四fq_codel所有选项和handle一致；17个自有端点退出、FW原基线一致/临时规则0/端口关闭；16个本机fixture namespace测试进程零残留。本次无生产实验或远端写入，原冻结源码/失败/证据保持。

@@ -1,0 +1,18 @@
+// One readonly check after the original guardian's natural deadline.
+import fs from 'node:fs';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
+import {persistentSsh} from '../v27-raw/persistent-ssh.mjs';
+const dir=process.argv[2];assert.match(dir,/^work\/v29-peer-proof\/run-\d{14}-[a-f0-9]{16}$/);
+const read=name=>JSON.parse(fs.readFileSync(dir+'/'+name+'.json'));
+const save=(name,x)=>fs.writeFileSync(dir+'/recheck-'+name+'.json',JSON.stringify(x,null,2)+'\n',{flag:'wx'});
+const initial=read('endpoint-checkpoint-private'),fw=read('firewall-settings-private'),receipt=read('firewall-receipt-private'),endpoint=read('independent-endpoint-deadline-private');
+assert.match(endpoint.unit,/^v29-peer-[a-f0-9]{16}$/);assert.equal(fw.baselineCanonicalSha256,initial.canonicalSha256);
+const channel=persistentSsh();
+try{
+ const source=fs.readFileSync('work/v27-raw/endpoint-firewall-guardian.py','utf8');
+ const code=source+`\nc=${JSON.stringify(fw)}\ndue=${receipt.deadline}\nassert time.monotonic()>due+1, 'Wait for independent natural deadline before checking'\nwith open('/proc/sys/kernel/random/boot_id') as f: assert f.read().strip()==c['boot']\nb=nft(['-j','list','ruleset'])\nassert hashlib.sha256(canonical(b).encode()).hexdigest()==c['baselineCanonicalSha256']\nrules=[x['rule'] for x in b['nftables'] if x.get('rule',{}).get('comment','').startswith('nss14-')]\nassert not rules\np=subprocess.run(['ss','-H','-lntup'],capture_output=True,text=True,check=True)\nassert ':45817 ' not in p.stdout and ':45818 ' not in p.stdout\nu=subprocess.run(['systemctl','show',${JSON.stringify(endpoint.unit)},'-p','MainPID','-p','ActiveState','-p','LoadState'],capture_output=True,text=True)\nvalues=dict(x.split('=',1) for x in u.stdout.splitlines() if '=' in x)\nassert values.get('MainPID')=='0' and values.get('ActiveState') in ('inactive','failed')\nlive=False\ntry:\n i=identity(${receipt.identity.pid})\n if i['start']==${JSON.stringify(receipt.identity.start)}:\n  with open('/proc/'+str(i['pid'])+'/stat') as f: state=f.read().rsplit(') ',1)[1].split()[0]\n  live=state not in ('Z','X')\nexcept FileNotFoundError: pass\nassert not live\nprint(json.dumps({'passed':True,'readonly':True,'canonicalFirewallBaselineMatched':True,'temporaryFirewallRulesRemaining':0,'endpointPortsClosed':True,'ownedUnitInactiveMainPidZero':True,'independentGuardianPastNaturalDeadline':True,'sameGuardianStillLive':False,'elapsedPastDeadlineSeconds':time.monotonic()-due,'remoteWrites':False,'unitState':values}))\n`;
+ assert.ok(Buffer.byteLength(code)<=65536);const result=await channel.exec('python3 -B -E -s -u -',code,{milliseconds:12000});save('endpoint-restoration-private',result);assert.equal(result.code,0,'Saved endpoint restoration check failed');
+ const remote=JSON.parse(result.stdout);
+ const script="$rows=@(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -and ($_.CommandLine -match 'work[/\\\\]v29-peer-proof[/\\\\]client\\.mjs|work[/\\\\]v28-peer-path[/\\\\]probe-client\\.mjs') }); @{passed=($rows.Count -eq 0);ownedDiagnosticClientProcessesRemaining=$rows.Count}|ConvertTo-Json -Compress";
+ const clients=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',script],{windowsHide:true,encoding:'utf8',timeout:10000});save('client-restoration-private',clients);assert.equal(clients.status,0);const local=JSON.parse(clients.stdout);assert.ok(local.passed);
+ const summary={...remote,observedAt:new Date().toISOString(),clientClosure:local,exactKnownEndpointOnly:true,noNssOrRouterWrites:true};save('restoration',summary);console.log(JSON.stringify(summary));
+}finally{channel.close();}

@@ -1,0 +1,33 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {spawn,spawnSync} from 'node:child_process';
+import {persistentSsh} from '../v27-raw/persistent-ssh.mjs';
+import {connectRouter} from '../nss20/connect-router.mjs';
+import {encode,receipt} from '../nss11/v7-observe-repair/observe2/transport.mjs';
+const root='work/v28-peer-path',stamp=new Date().toISOString().replace(/\D/g,'').slice(0,14),suffix=crypto.randomBytes(4).toString('hex'),dir=root+'/run-'+stamp+'-'+suffix;
+fs.mkdirSync(dir);const save=(name,x)=>fs.writeFileSync(dir+'/'+name+'.json',JSON.stringify(x,null,2)+'\n',{flag:'wx'});
+const c={clientAddress:'192.168.237.207',serverAddress:'172.93.163.251',tcpPort:45817,udpPort:45818,tcpSourcePort:57000+crypto.randomInt(1800),udpSourcePort:59000+crypto.randomInt(800),token:crypto.randomBytes(32).toString('hex')};
+const quote=x=>"'"+x.replaceAll("'","'\\''")+"'";
+const free=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',`$t=@(Get-NetTCPConnection -LocalPort ${c.tcpSourcePort} -ErrorAction SilentlyContinue);$u=@(Get-NetUDPEndpoint -LocalPort ${c.udpSourcePort} -ErrorAction SilentlyContinue);@{tcp=$t.Count;udp=$u.Count}|ConvertTo-Json -Compress`],{encoding:'utf8',windowsHide:true,timeout:8000});
+save('local-ports-private',free);assert.equal(free.status,0);assert.deepEqual(JSON.parse(free.stdout),{tcp:0,udp:0});
+save('config-private',c);const channel=persistentSsh();let router,client;
+try{
+ router=await connectRouter();
+ const pre=await channel.exec("python3 -B -E -s -u -",`import json,subprocess\nx=subprocess.check_output(['ss','-H','-lntup'],text=True)\nassert ':45817 ' not in x and ':45818 ' not in x\nprint(json.dumps({'endpointPortsClosed':True,'remoteWrites':False}))\n`,{milliseconds:12000});save('endpoint-preflight-private',pre);assert.equal(pre.code,0);
+ const src=fs.readFileSync(root+'/capture.py','utf8');let stream='',done=false;
+ const capture=channel.exec('timeout -k 1 12 python3 -B -E -s -u -c '+quote(src)+' '+quote(JSON.stringify(c)),'',{milliseconds:15000,onStdout:s=>stream+=s}).then(r=>{done=true;save('capture-private',r);return r;},e=>{done=true;const r={code:-1,stdout:stream,stderr:String(e)};save('capture-private',r);return r;});
+ const readyDeadline=performance.now()+5000;while(!stream.includes('OWNED_PEER_CAPTURE_READY')&&!done&&performance.now()<readyDeadline)await new Promise(r=>setTimeout(r,20));
+ assert.ok(stream.includes('OWNED_PEER_CAPTURE_READY'),'Capture not ready; no client probe started');
+ client=spawn(process.execPath,[root+'/probe-client.mjs',dir+'/config-private.json'],{windowsHide:true,stdio:['ignore','pipe','pipe']});let clientOut='',clientErr='';client.stdout.on('data',b=>clientOut+=b);client.stderr.on('data',b=>clientErr+=b);const clientExit=new Promise(resolve=>client.once('close',code=>resolve({code,stdout:clientOut,stderr:clientErr})));
+ await new Promise(r=>setTimeout(r,1400));
+ const lua=`local j=require('luci.jsonc');local o={};local f=assert(io.open('/proc/net/nf_conntrack','r'));for l in f:lines() do if l:find('src=${c.clientAddress}',1,true) and l:find('dst=${c.serverAddress}',1,true) and ((l:find('sport=${c.tcpSourcePort} ',1,true) and l:find('dport=45817 ',1,true)) or (l:find('sport=${c.udpSourcePort} ',1,true) and l:find('dport=45818 ',1,true))) then o[#o+1]=l end end;f:close();assert(#o<=4);print(j.stringify({rows=o,readonly=true}))\n`;
+ const e=encode("lua - <<'OWNED_CT_READ'\n"+lua+"\nOWNED_CT_READ\n"), rr=receipt(await router.run(e.command),e);save('router-ct-private',rr);assert.equal(rr.code,0);
+ const [captured,ended]=await Promise.all([capture,clientExit]);save('client-exit-private',ended);assert.equal(captured.code,0);assert.equal(ended.code,0,ended.stderr);
+ const data=JSON.parse(captured.stdout.trim().split(/\r?\n/).at(-1)),status=JSON.parse(fs.readFileSync(dir+'/client-result-private.json'));
+ const udp=data.rows.filter(x=>x.protocol==='udp'&&x.nonceVerified),tcp=data.rows.filter(x=>x.protocol==='tcp');
+ const udpPeers=[...new Set(udp.map(x=>x.sourceAddress))],tcpPeers=[...new Set(tcp.map(x=>x.sourceAddress))];
+ const ct=JSON.parse(rr.stdout),marks=ct.rows.map(l=>({protocol:l.includes(' tcp ')?'tcp':'udp',mark:Number(l.match(/\bmark=(\d+)/)?.[1]),wan:(Number(l.match(/\bmark=(\d+)/)?.[1])>>>16)&15}));
+ const summary={passed:true,diagnosticCompleted:true,observedAt:new Date().toISOString(),configurationWrites:false,nssStarted:false,trafficGenerated:true,actualOrdinaryTcpAttempt:true,clientSeconds:status.seconds,udpSent:status.udpSent,tcpConnected:status.tcpConnected,tcpErrors:status.errors.filter(x=>x.startsWith('tcp:')),tcpSynMetadataRows:tcp.length,nonceAuthenticatedUdpRows:udp.length,uniqueTcpPeers:tcpPeers.length,uniqueUdpPeers:udpPeers.length,tcpAndUdpPublicSourceEqual:tcpPeers.length===1&&udpPeers.length===1?tcpPeers[0]===udpPeers[0]:null,tcpMetadataNotAuthentication:true,exactOwnedCtRows:ct.rows.length,ctWanMarks:marks,kernelFilterBeforeReceive:data.kernelFilterBeforeReceive,endpointPortsClosedBeforeProbe:true,clientExited:true,output:dir};
+ save('summary',summary);console.log(JSON.stringify(summary));
+}finally{if(client&&client.exitCode===null)client.kill();router?.close();channel.close();}
