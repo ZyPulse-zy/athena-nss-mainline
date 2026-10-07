@@ -1,5 +1,11 @@
 # Athena NSS 多WAN / 高级QoS受控原型
 
+最新脚本模拟实时流＋两条下载已完成 WAN3/WAN5 的60秒真实NSS和恢复，内部2443个UDP全部回包。后续使用模拟游戏包，CS2不再是测试前提。当前完整恢复、没有永久启用NSS，见[STATE](docs/STATE.md)与[实际报告](docs/SIMULATED_MULTIWAN_2026-10-07.md)。
+
+## 以下保留历史交付
+
+# Athena NSS 多WAN / 高级QoS受控原型
+
 三流跨WAN及五WAN队列/共享借用已经硬件证明。最新真实CS2＋Steam进入checkpoint后的三流选择和独立暂存，但owner最终分类准入拒绝，正常程序factory仍未验收。当前完整恢复、NSS关闭、下载暂停，见[STATE](docs/STATE.md)与[实际报告](docs/NORMAL_ADMISSION_2026-10-07.md)。
 
 ## 以下保留历史交付

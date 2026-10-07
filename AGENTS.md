@@ -1,3 +1,17 @@
+# 模拟实时流跨 WAN NSS 验收通过，完整恢复
+
+更新：北京时间2026-10-07 12:59。用户已停止 CS2 测试，后续使用自有脚本模拟游戏包。v38 实际 TCP BULK/UDP RT/TCP BULK走 WAN3/WAN3/WAN5；原自动分类、60秒 NSS / ECM3 / 20续租、双向六tag与bulk/RT leaf / mark / NAT / affinity通过。DOWN18共享借用保持，附近两个bulk约6.82/8.40Mbps；内部约57.17秒发出2443 UDP，全部回包，RT上下leaf零drop，RTT中位/P95/P99约199.92/200.79/202.51ms。是自有海外回包测量，非CS2 HUD/真人或新CPU证明。
+
+新checkpoint下载SHA/gzip、原独立恢复写前通过；最终source2.03/selectors4审核、五WAN健康/保护配置/epoch保持，ECM关闭全零，两物理原mq＋四fq_codel所有选项/handle、端点FW基线、客户端/guard/sender完整恢复。Steam原下载暂停/临时限速关闭，CS2为0。常驻仍NSS68原config；没有永久NSS。
+
+v35已做10本地/7RAM选择与失败帧修正但普通程序factory未执行；v36第二自有SSH首包超时在NSS前退出，v37本地转义目录拒绝在连接前结束，原失败不改。v38只有8秒/最多3次/前30秒未准入自有TCP取得；成功轮均attempt1，超时根因未知。2979实际绑定冻结，重查一次本机只读退出检查的父进程误报；未重做网络/NSS/CPU/gap或五流。
+
+**受控模拟实时流的两WAN功能验收已完成。** 既有v1/v20与CPU证据复用；以后直接用脚本推进，CS2不再是必需条件。本轮封存、heartbeat仍暂停，不主动开启新轮次；五WAN同时fast path/长期常驻/多流公平/WiFi/autorate/ECN保留后续范围。
+
+详情：[本次报告](docs/SIMULATED_MULTIWAN_2026-10-07.md)、[硬件](evidence/v38-simulated-hardware.json)、[终态](evidence/v38-simulated-restoration.json)。
+
+## 以下保留历史记录
+
 # checkpoint 后三流选择通过；owner 最终准入拒绝，已完整恢复
 
 更新：北京时间2026-10-07 11:56。v34实际Cache死斗＋已有Hades临时32Mbps，自动分类1CS2 RT/11Steam BULK/1跨WAN三流。准备native后才冻结TCP/WAN，新checkpoint下载SHA/gzip及后续BULK/RT/BULK选择通过；独立owner/暂存/物理QoS实际执行，但首次owner准入报`Selected class is not admitted`。gate模块未加载、ECM未放行、NSS B段和正常程序factory未验收。

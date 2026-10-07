@@ -1,0 +1,70 @@
+{
+  "checks": 7,
+  "existingFailureDiagnosticsPreserved": true,
+  "modelOnly": true,
+  "passed": true,
+  "fullNewFastAlignFunctionExecuted": true,
+  "productionWrites": false,
+  "wholeFactoryExecuted": false,
+  "admissionAndTimingBoundsUnchanged": true,
+  "cases": [
+    {
+      "writes": 0,
+      "modeledOnly": true,
+      "moduleLoads": 0,
+      "passed": true,
+      "case": "ready"
+    },
+    {
+      "writes": 0,
+      "modeledOnly": true,
+      "moduleLoads": 0,
+      "passed": true,
+      "case": "missing-tcp"
+    },
+    {
+      "writes": 0,
+      "modeledOnly": true,
+      "moduleLoads": 0,
+      "passed": true,
+      "case": "missing-udp"
+    },
+    {
+      "writes": 0,
+      "modeledOnly": true,
+      "moduleLoads": 0,
+      "passed": true,
+      "case": "missing-tcp2"
+    },
+    {
+      "writes": 0,
+      "modeledOnly": true,
+      "moduleLoads": 0,
+      "passed": true,
+      "case": "bad-source"
+    },
+    {
+      "writes": 0,
+      "modeledOnly": true,
+      "moduleLoads": 0,
+      "passed": true,
+      "case": "unavailable"
+    },
+    {
+      "writes": 0,
+      "modeledOnly": true,
+      "moduleLoads": 0,
+      "passed": true,
+      "case": "stale"
+    }
+  ],
+  "sourceSha256": "fe7e160b31b8e0de23acc564de98252fc60f9a05bf15c18bbd2ed1a448dd2db1",
+  "modelSha256": "64b1964f6f88939b636dc98910d2ac680fb90574a3b8f359e6fc9ced08f6e955",
+  "renderedSha256": "0640095e845cda26c8592bd6f9137c0d38f7433205a44d7e76432a071d007f6e",
+  "execBytes": 8687,
+  "modelDirectory": "work/v35-normal/probe-model-20261007042517-f40d112c",
+  "actualRamModels": true,
+  "actualProductionGateLoaded": false,
+  "rootCauseEstablished": false,
+  "routerProductionWrites": false
+}

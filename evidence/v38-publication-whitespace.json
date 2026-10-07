@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "initialStagedDiffCheckPassed": false,
+  "originalFailureExitCode": 1,
+  "submissionStoppedBeforeCommit": true,
+  "inheritedV20GuardBytesPreserved": true,
+  "noGlobalWhitespacePolicyChange": true,
+  "sourceHashes": {
+    "code/work/v36-sim/endpoint-firewall-guardian.py": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+    "code/work/v37-sim/endpoint-firewall-guardian.py": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+    "code/work/v38-sim/endpoint-firewall-guardian.py": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437"
+  },
+  "exactPathAttributes": [
+    "/code/work/v36-sim/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof",
+    "/code/work/v37-sim/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof",
+    "/code/work/v38-sim/endpoint-firewall-guardian.py whitespace=cr-at-eol,-blank-at-eof"
+  ],
+  "postAttributeStagedDiffCheckExitCode": 0,
+  "noProductionChanges": true
+}

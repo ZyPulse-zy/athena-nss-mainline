@@ -1,0 +1,12 @@
+{
+  "passedAsPreservedFailure": true,
+  "oldEscapedSessionNamespaceNotRebased": true,
+  "rejectedBeforeRouterConnectionOrPcRead": true,
+  "endpointOrFixtureStarted": false,
+  "checkpointStarted": false,
+  "gateLoaded": false,
+  "ecmOpened": false,
+  "originalQualifiedSourcesAndErrorRetained": true,
+  "fixedInNewV38Namespace": true,
+  "originalV37SourcesNotEdited": true
+}

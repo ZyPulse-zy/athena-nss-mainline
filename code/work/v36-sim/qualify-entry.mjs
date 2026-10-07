@@ -1,0 +1,19 @@
+import fs from'node:fs';import path from'node:path';import crypto from'node:crypto';import assert from'node:assert/strict';import{spawnSync}from'node:child_process';import{verifyPreparation as inherited}from'../v35-normal/session-binding.mjs';import{selectNormalTriple}from'./normal-policy.mjs';
+const root='work/v36-sim',old=inherited(),prep=JSON.parse(fs.readFileSync(root+'/prepare-receipt.json')),hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+for(const[f,h]of Object.entries({...prep.oldHashes,...prep.fixtureSourceHashes}))assert.equal(hash(fs.readFileSync(f)),h,f);
+const rebase=b=>Buffer.from(b.toString().replaceAll('work/v35-normal','work/v36-sim').replaceAll('work\\/v35-normal\\/','work\\/v36-sim\\/'));
+for(const n of ['fast-path.lua','classifier.lua','module-stage-guardian.lua','module-stage.mjs','qos-physical.lua','normal-policy.mjs','normal-selection.mjs','prepared-selection.mjs','payload.mjs','candidate-policy.mjs'])assert.deepEqual(fs.readFileSync(root+'/'+n),rebase(fs.readFileSync('work/v35-normal/'+n)),n);
+for(const n of ['native-client.mjs','owned-load-policy.mjs','client-watchdog.ps1','persistent-ssh.mjs','download-server.py','endpoint-firewall-guardian.py','receiver.py','server.py','discover-peer.py','probe-peer.py'])assert.deepEqual(fs.readFileSync(root+'/'+n),fs.readFileSync('work/v20-five/'+n).toString().includes('work/v20-five')?Buffer.from(fs.readFileSync('work/v20-five/'+n,'utf8').replaceAll('work/v20-five','work/v36-sim').replaceAll('v20-five-','v36-sim-')):fs.readFileSync('work/v20-five/'+n),n);
+const original=JSON.parse(fs.readFileSync('work/v20-five/controlled-candidates-private.json')),frame={...original,bulk:original.tcp,game:original.udp,routerWrites:false};
+const selected=selectNormalTriple(frame);assert.equal(selected.length,1);assert.notEqual(selected[0].tcp.wan,selected[0].tcp2.wan);
+const missing=selectNormalTriple({...frame,game:[]});assert.equal(missing.length,0);
+const noBulk=selectNormalTriple({...frame,bulk:[]});assert.equal(noBulk.length,0);
+const wrongClass=selectNormalTriple({...frame,game:frame.game.map(f=>({...f,decision:{...f.decision,class:'BE'}}))});assert.equal(wrongClass.length,0);
+let dependencies=0;const manifest={};
+for(const n of fs.readdirSync(root))if(/\.(mjs|lua|py|ps1)$/.test(n)&&!n.includes('private')){
+ const f=root+'/'+n;manifest[f]=hash(fs.readFileSync(f));
+ if(n.endsWith('.mjs')){for(const m of fs.readFileSync(f,'utf8').matchAll(/(?:from\s*|import\s*)['"](\.{1,2}\/[^'"]+\.mjs)['"]/g)){assert.ok(fs.existsSync(path.resolve(root,m[1])),m[1]);dependencies++;}const p=spawnSync(process.execPath,['--check',f],{encoding:'utf8',windowsHide:true});assert.equal(p.status,0,p.stderr);}
+}
+for(const n of prep.copied.filter(n=>n.endsWith('.json')))manifest[root+'/'+n]=hash(fs.readFileSync(root+'/'+n));
+const evidence={passed:true,sourceManifest:manifest,inheritedBindings:Object.keys(old.sourceManifest).length,relativeDependenciesExist:dependencies,simulatedOwnedPacketFixture:true,actualCs2SteamRequired:false,existingTransportAndIndependentRestorationBytesReused:true,automaticClassAndKernelPinUnchanged:true,dataPlaneExactV35:true,onlyOwnedReaderOutputAdapted:true,currentRankingHistoricalFrameChecks:4,historicalCpuOrGapModelsReplayed:false,sourceSeconds:6,kernelSeconds:90,kernelMaximumSeconds:120,ownerSeconds:180,clientSeconds:180,fixtureGuardSeconds:210,phaseSeconds:60,combinedTcpMbps:32,udpPps:50,udpBytes:128,oneSessionAttemptOnly:true,cutoff:prep.cutoff,hardwareExecuted:false,cs2Acceptance:false,steamFactoryAcceptance:false,newCpuAcceptance:false};
+fs.writeFileSync(root+'/entry-qualified.json',JSON.stringify(evidence,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({passed:true,newSources:Object.keys(manifest).length,bindings:evidence.inheritedBindings+Object.keys(manifest).length,checks:4,dependencies,hardwareExecuted:false}));

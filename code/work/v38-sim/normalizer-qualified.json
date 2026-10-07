@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "sourceSha256": "98ed0ecd1bc1b07f10a79d17bcfb9d4a426cc9c971d44e6bb542c4f529c29602",
+  "modelOnly": true,
+  "targetRamValidationRequiredBeforeNss": true
+}

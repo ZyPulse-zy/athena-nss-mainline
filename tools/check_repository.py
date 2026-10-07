@@ -2260,4 +2260,36 @@ if (root/'evidence/v34-normal-source-proof.json').exists():
  assert end['newCheckpointAndIndependentStageActuallyStarted'] and end['temporaryPhysicalQosActuallyConfigured'] and end['clientUiSettingsRestoreConfirmed']
  assert end['noRouterConfigurationWritesAfterRecoveryAudit'] and end['strictCumulativeDownloadDurationNotProven'] and end['originalGuardDidNotRestoreUi'] and end['laterManualUiRestorationProvedSeparately']
  assert not any(end[k] for k in ['productionGateLoaded','ecmLearningOpened','normalFactoryHardwareAcceptance','humanExperienceAcceptance','newCpuAcceptance','permanentNssDeployment'])
+if (root/'evidence/v38-simulated-source-proof.json').exists():
+ sp=json.loads((root/'evidence/v38-simulated-source-proof.json').read_text(encoding='utf8'))
+ hardware=json.loads((root/'evidence/v38-simulated-hardware.json').read_text(encoding='utf8'))
+ end=json.loads((root/'evidence/v38-simulated-restoration.json').read_text(encoding='utf8'))
+ assert manifest['lastOwnedSimulationExport']=='V38_SIMULATED_RT_TWO_WAN_HARDWARE_COMPLETE'
+ assert sp['passed'] and sp['historicPrefixSources']==4083 and sp['oldCodeAndEvidenceBlobsChecked']==4635 and sp['oldCodeAndEvidenceUnmodified']
+ assert sp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:4083],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ assert len(sp['sourceHashes'])==228 and sp['actualRuntimeBindingCopiesExact']==2979 and sp['privateInputsCopiedExact']==37
+ assert sp['actualAcquisitionRetriesInSuccessfulFixture']==0 and not sp['transportTimeoutCauseFixedOrEstablished'] and not sp['historicalCpuOrGapExperimentsRepeated']
+ for src,digest in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ for scope,previous,entries in [('v35-normal',2762,44),('v36-sim',2806,57),('v37-sim',2863,58),('v38-sim',2921,58)]:
+  q=json.loads((root/('evidence/'+scope+'-entry-qualification.json')).read_text(encoding='utf8'))
+  assert q['passed'] and q['inheritedBindings']==previous and len(q['sourceManifest'])==entries and not q['hardwareExecuted']
+  for src,digest in q['sourceManifest'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ assert hardware['passed'] and hardware['actualHardware'] and hardware['actualBoundInputs']==2979 and hardware['wanSet']==[3,5]
+ assert hardware['phase']['seconds']==60 and hardware['renewals']==20 and hardware['ecmCountsThroughoutB']==[3] and hardware['finalEcmCount']==0
+ assert hardware['simultaneouslyAdmittedExactFlowCount']==3 and hardware['twoSimultaneousBulkFlowsProven'] and hardware['sharedBudgetBorrowingObserved'] and hardware['bulkWithinSharedDownBudget']
+ udp=hardware['rtEchoDuringInteriorB'];assert udp['sent']==udp['returned']==2443 and udp['unreturned']==0 and udp['boundedApproximateClockMapping'] and not udp['cs2Metrics']
+ assert hardware['rtLeafDrop']=={'down':0,'up':0} and all(hardware['originalRecoveryFlags'].values()) and hardware['nativeRecordBytes']<1048576
+ assert not any(hardware[k] for k in ['humanCs2Acceptance','fiveWanConcurrentFastPathProven','fiveWanOrPermanentNssAcceptance','newCpuCausalBenefitClaimed'])
+ assert end['passed'] and end['heartbeatStillPaused'] and end['noCs2TestAfterUserStop'] and end['onlyFailedReadonlyClientStepRecheckedOnce']
+ assert end['finalFullAudit']['passed'] and end['finalFullAudit']['queryAge']<6 and end['finalFullAudit']['ecmClosedAndZero'] and end['finalFullAudit']['protectedConfigurationUnchanged'] and end['finalFullAudit']['allFiveHealthyWanBaseline']
+ assert end['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and end['clientClosure']['ownedTestProcessesRemaining']==end['clientClosure']['cs2ProcessesRemaining']==0 and all(end['stageUndo'].values()) and all(end['protectedBaselineChecks'].values())
+ assert end['endpointRestoration']['ownedRulesRemaining']==0 and end['endpointRestoration']['baselineRestored'] and end['endpointRestoration']['exactOwnedEndpointClosed']
+ assert not any(end[k] for k in ['humanCs2Acceptance','steamFactoryAcceptance','newCpuAcceptance','permanentNssDeployment'])
+ for name in ['v36-owned-transport-refusal.json','v37-local-namespace-refusal.json']:
+  failed=json.loads((root/'evidence'/name).read_text(encoding='utf8'));assert failed['passedAsPreservedFailure'] and not failed['checkpointStarted'] and not failed['gateLoaded'] and not failed['ecmOpened']
+ whitespace=json.loads((root/'evidence/v38-publication-whitespace.json').read_text(encoding='utf8'))
+ assert whitespace['passed'] and not whitespace['initialStagedDiffCheckPassed'] and whitespace['originalFailureExitCode']==1 and whitespace['postAttributeStagedDiffCheckExitCode']==0 and whitespace['submissionStoppedBeforeCommit']
+ assert whitespace['inheritedV20GuardBytesPreserved'] and whitespace['noGlobalWhitespacePolicyChange'] and len(whitespace['exactPathAttributes'])==3
+ for src,digest in whitespace['sourceHashes'].items():assert hashlib.sha256((root/src).read_bytes()).hexdigest()==digest==hashlib.sha256((root/'code/work/v20-five/endpoint-firewall-guardian.py').read_bytes()).hexdigest(),src
+ for attr in whitespace['exactPathAttributes']:assert attr in (root/'.gitattributes').read_text(encoding='utf8')
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

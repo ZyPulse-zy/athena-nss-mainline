@@ -1,0 +1,24 @@
+{
+  "passedAsPreservedFailure": true,
+  "fixtureActuallyStarted": true,
+  "permanentClassifierObservedTcpBulk": 1,
+  "permanentClassifierObservedUdpRt": 1,
+  "secondTcpFirstPayloadBytes": 0,
+  "fixtureSecondsBeforeExit": 32.3853645,
+  "error": "Second owned SSH transport timed out before first payload; subsequent ownership read rejected the exited client",
+  "rootCauseEstablished": false,
+  "checkpointStarted": false,
+  "gateLoaded": false,
+  "ecmOpened": false,
+  "controllerOrFirmwareCauseEstablished": false,
+  "originalErrorAndMatchingOutputRetained": true,
+  "endpointRestoration": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "independentClientExitPassed": true,
+  "notAnNssBPhase": true
+}

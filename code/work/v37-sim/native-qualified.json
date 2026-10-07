@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "sourceSha256": "69ceade747001b7bb20f3e1c8089bca00f829eb2a279c814b3f7ab0457b95390",
+  "qosModel": {
+    "checks": 2,
+    "backendMocked": true,
+    "eachDirectionLeafCount": 11,
+    "passed": true,
+    "wanQueueMappings": 5
+  },
+  "execBytes": 6347,
+  "productionWrites": false,
+  "wholeFactoryModeled": false,
+  "hardwareExecuted": false,
+  "historicalDriverFiveWanClassCount": 17,
+  "historicalDriverFiveWanLeafCount": 11,
+  "currentRequestedClassesEachDirection": 18
+}

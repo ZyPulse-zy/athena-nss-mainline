@@ -1,0 +1,24 @@
+{
+  "passedAsPreservedObservation": true,
+  "qualifiedBindings": 2806,
+  "localRankingModels": 10,
+  "actualRouterRamProbeModels": 7,
+  "newNormalHardwareSessionStarted": false,
+  "newCs2AttemptDirectLauncherVacRefused": true,
+  "downloadWasNotResumed": true,
+  "userStoppedCs2Testing": true,
+  "temporarySteamLimitRestored": {
+    "observedAt": "2026-10-07T04:44:34.8418948Z",
+    "downloadStillPaused": true,
+    "temporaryRateLimitRemoved": true,
+    "directUiObserved": true,
+    "passed": true,
+    "userRequestedSimulation": true,
+    "rateLimitToggle": false,
+    "gameDownloadsResumedInV35": false,
+    "rateInputClearedBeforeToggle": true,
+    "cs2ProcessesRemaining": 0
+  },
+  "actualCs2SteamFactoryAccepted": false,
+  "previousModelFailuresRetainedLocally": true
+}

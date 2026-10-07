@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "modelOnly": true,
+  "checks": 10,
+  "actualV34PostCheckpointFrameUsed": true,
+  "highestObservedEligibleRatesPreferred": true,
+  "fixedWanAndOriginalGameRetained": true,
+  "unknownRatesDoNotAuthorize": true,
+  "classChangeStillRefused": true,
+  "classThresholdsChanged": false,
+  "rootCauseEstablished": false,
+  "hardwareExecuted": false,
+  "wholeFactoryExecuted": false,
+  "historicalModelsReplayed": false,
+  "sourceHashes": {
+    "work/v35-normal/normal-policy.mjs": "4c49909faba3974c3709b730fc7eb30f51400d88ba9dab979d44ddb27a44e67e",
+    "work/v35-normal/normal-selection.mjs": "1f3642064baa4c90c783240eb6955f64a2c7375e25089ab9cd5566eeaf9ae1ce",
+    "work/v35-normal/model-ranked-selection.mjs": "44f33ebce6538b734c8bf4e74ed1f9a3e8390ed505c8aac666cdf5af383bacfb"
+  }
+}
