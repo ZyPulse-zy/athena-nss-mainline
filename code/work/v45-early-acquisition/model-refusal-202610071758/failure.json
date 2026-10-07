@@ -1,0 +1,1 @@
+{"passed":false,"beforeFixtureAndSsh":true,"cause":"Regression assertion used acquisition-plan error text while checking match-controlled source","originalAssertion":"status.tcpConnected and Natural five-WAN acquisition window ended","actualMatchFailure":"Finite natural five-WAN matching expired without router stage","originalOutputRetainedInToolRecord":true}

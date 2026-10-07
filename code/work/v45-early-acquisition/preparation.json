@@ -1,0 +1,17 @@
+{
+  "prepared": true,
+  "originalCandidateHashes": {
+    "entry.mjs": "b91f298cc7c7597d26906115cf9acff974710813891f28352de6765da3d5a583",
+    "materialize.mjs": "19e3be91268ed400ef2e5db20919af99a2b877fc95567fec3e4a71fd532b7e52",
+    "check-model.mjs": "f6d4f1b77672ca22ff77f3dbd624983c52a85cae3162218ef58cf9ab3e8354a9",
+    "platform-preflight.mjs": "78edcaf17f382b91d1d01d13fca837028d196977769f31d168553915258036cd"
+  },
+  "change": "concurrent same four initial SSH child creation and earlier process-only readiness",
+  "observedV44FirstAllPidsSeconds": 16.0071,
+  "observedV44FirstAllPayloadSeconds": 18.8794,
+  "original30SecondAcquisitionDeadlineNotReset": true,
+  "finalPayloadIdentityClassificationAndFiveWanSelectionUnchanged": true,
+  "dataPlaneAndSafetyLimitsUnchanged": true,
+  "originalSourcesUnchanged": true,
+  "hardwareExecuted": false
+}

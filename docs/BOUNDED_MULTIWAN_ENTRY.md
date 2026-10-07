@@ -1,3 +1,18 @@
+# 可复用的有界入口：v45提前取得软件候选
+
+当前本地候选`work/v45-early-acquisition/entry.mjs`，命令仍为默认inspect / status / run / stop。24模型、默认inspect和实际最终恢复通过；唯一run在端点控制SSH连接超时处写前退出，未生成fixture流量，新启动时序尚未现场验证。核心五WAN数据面已由v42验收；完整最新入口整合仍未通过，勿自动盲重试。
+
+```powershell
+& 'C:/Users/lishu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe' 'work/v45-early-acquisition/entry.mjs' inspect
+& 'C:/Users/lishu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe' 'work/v45-early-acquisition/entry.mjs' status
+```
+
+同样四条初始自有TCP并发启动，四个唯一自有PID发布后提前观察实际WAN；最终四首包、CIM/socket/CT完整身份、4BULK＋1RT、五WAN、source6/原30秒取得和checkpoint/独立恢复保持。60秒B、kernel90最大120/owner180/client180/guard210/server250、32Mbps/64KiB和所有字节预算不变。stop只控制同session自有发送与下一准入，恢复未确认不得重开。
+
+已保留v44唯一最终label修复。旧v44 WAN列表是native数组顺序，真实自有槽为4/2/1/1、UDP3；原记录不改，见[本次记录与更正](V45_EARLY_ACQUISITION_2026-10-07.md)。
+
+## 以下保留历史描述，当前状态以上文为准
+
 # 可复用的有界多 WAN 入口：最新软件候选
 
 当前推荐的本地预览与状态候选是`work/v44-unique-label-entry/entry.mjs`，命令仍为默认inspect / status / run / stop。17项模型与默认inspect通过；run和stop的完整现场闭环尚未通过。本轮停止新增流量，勿把以下命令清单理解为自动重试计划。

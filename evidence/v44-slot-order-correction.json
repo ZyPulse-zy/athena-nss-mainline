@@ -1,0 +1,39 @@
+{
+  "existingFrozenFrameReadOnly": true,
+  "priorFrameSha256": "089942550a4c6f111b666c7a4832c2fc892c2352ef9d3bee197fefc26116edd3",
+  "originalPublicV44RecordUnchanged": true,
+  "incorrectFieldLabel": "tcpWanSetInSlotOrder",
+  "originalValuesWereNativeArrayOrder": [
+    1,
+    1,
+    2,
+    4
+  ],
+  "correctOwnedSlotRows": [
+    {
+      "slot": "tcp",
+      "class": "BULK",
+      "wan": 4
+    },
+    {
+      "slot": "tcp2",
+      "class": "BULK",
+      "wan": 2
+    },
+    {
+      "slot": "tcp3",
+      "class": "BULK",
+      "wan": 1
+    },
+    {
+      "slot": "tcp4",
+      "class": "BULK",
+      "wan": 1
+    }
+  ],
+  "udpWan": 3,
+  "correctedByExactOwnedLocalSocketPortMapping": true,
+  "completeTupleStayedLocal": true,
+  "v44NoFiveWanPairAndPreNssRefusalConclusionUnchanged": true,
+  "noNewTraffic": true
+}

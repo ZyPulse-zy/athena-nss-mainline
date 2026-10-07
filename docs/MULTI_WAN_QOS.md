@@ -1,5 +1,13 @@
 # 多 WAN / 高级 QoS 当前交付范围
 
+v42五WAN五流60.01秒/ECM5/20续租、2373/2373模拟RT回包、十tag/leaf/完整mark/NAT/affinity与恢复已验收。DOWN18共享借用、UP60每WAN12硬上限、RT prio0/FQ-CoDel保持，本次七Lua原字节。
+
+v45入口的24模型/默认inspect通过；实际run因端点SSH连接超时写前退出，fixture和NSS均未启动，最终完整恢复。并发取得候选尚未现场验证，完整可复用入口尚未验收。偶发SSH超时、自然WAN未齐、v41计数差异及普通程序factory未验仍是限制；永久、长期、全网、连续新代、WiFi/autorate/ECN留后续。见[本次记录](V45_EARLY_ACQUISITION_2026-10-07.md)。
+
+## 以下保留历史描述，当前状态以上文为准
+
+# 多 WAN / 高级 QoS 当前交付范围
+
 v42五WAN五流60.01秒/ECM5/20续租及双向十tag、leaf、完整mark/NAT/affinity和恢复已成立。DOWN18共享借用、UP60每WAN12硬上限、RT prio0/FQ-CoDel保持。数据面本轮原字节不改，历史CPU证据复用。
 
 可复用入口最新软件候选v44输出隔离17模型/默认inspect通过。唯一实际入口4BULK/1RT未在原30秒自然配齐五WAN，NSS写前拒绝并完整恢复；完整最新入口现场验收仍未通过。不从模型或有界v42验收推成全网、永久、长期交付，不盲重试或强改PBR取得资格。

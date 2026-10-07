@@ -2469,4 +2469,30 @@ if (root/'evidence/v44-bounded-entry.json').exists():
    assert (root/'code'/runtime/name).read_bytes()==(root/'code/work/v42-counter-window'/name).read_bytes(),name
  for attr in s['exactPathAttributes']:assert attr.startswith('/code/work/') and attr in (root/'.gitattributes').read_text(encoding='utf8')
  assert p['originalPublicationNowPushedAndArchiveChecked'] and p['refusedBeforeRouterConnectionAndFixture'] and p['readonlyConfirmationPassedBeforeOldLockRelease'] and p['originalRuntimeAndResultUnchanged']
+if (root/'evidence/v45-entry-startup.json').exists():
+ a=json.loads((root/'evidence/v45-entry-startup.json').read_text(encoding='utf8'))
+ r=json.loads((root/'evidence/v45-restoration.json').read_text(encoding='utf8'))
+ c=json.loads((root/'evidence/v44-slot-order-correction.json').read_text(encoding='utf8'))
+ s=json.loads((root/'evidence/v45-source-proof.json').read_text(encoding='utf8'))
+ assert manifest['lastEarlyAcquisitionExport']=='V45_SOFTWARE_READY_PRELOAD_SSH_REFUSED_RESTORED'
+ assert a['softwareQualificationPassed'] and a['modelCount']==len(a['modelChecks'])==24 and a['actualBindings']==3406 and a['inheritedBindings']==3354
+ assert a['entryAttemptCount']==1 and a['fixtureAttemptCount']==0 and a['driverEventCodes']==[0,1]
+ assert a['failureCategory']=='ENDPOINT_CONTROL_SSH_CONNECTION_TIMEOUT_BEFORE_ENDPOINT_CREATION'
+ assert a['earlyReadinessIsOnlyFourUniqueOwnedPids'] and a['finalFirstPayloadCimSocketCtClassAndFiveWanSelectionUnchanged'] and a['originalAcquisitionDeadlineNotReset']
+ assert a['classificationQosAndAllSafetyCapsUnchanged'] and a['originalFailureRetained'] and a['firstModelAssertionFailurePreserved'] and a['v42HardwareAcceptanceRetained']
+ assert not any(a[k] for k in ['endpointRemoteCheckpointCreated','endpointCreated','clientCreated','checkpointStarted','nssStageStarted','ecmOpened','entryHardwareIntegrationPassed','earlyStartupHardwareExecuted','sshRootCauseProved','sshTimeoutClaimedFixed','newFixtureRetryPerformed','newCpuAcceptance','cs2OrSteamOperated','permanentNssDeployment'])
+ assert a['exactOneReadonlyEndpointDiagnostic'] and a['endpointReadbackRecovered'] and a['restorationState']=='RESTORED'
+ assert r['passed'] and r['endpointNeverCreatedThisEntry'] and r['clientNeverCreatedThisEntry'] and r['ownedEntryFixtureNodesRemaining']==0 and r['noFixtureReopened'] and r['activeLockReleasedAfterProof']
+ q=r['finalFullAudit'];assert q['passed'] and q['queryAge']<6 and q['ecmClosedAndZero'] and q['allFiveHealthyWanBaseline'] and q['protectedConfigurationUnchanged']
+ assert r['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and r['endpointReadonlyReadback']['ownedEndpointPortRows']==r['endpointReadonlyReadback']['currentEntryUnitRows']==0
+ assert c['existingFrozenFrameReadOnly'] and c['originalPublicV44RecordUnchanged'] and c['originalValuesWereNativeArrayOrder']==[1,1,2,4] and [x['wan'] for x in c['correctOwnedSlotRows']]==[4,2,1,1] and c['udpWan']==3
+ assert c['correctedByExactOwnedLocalSocketPortMapping'] and c['v44NoFiveWanPairAndPreNssRefusalConclusionUnchanged'] and c['noNewTraffic']
+ assert s['passed'] and s['historicPrefixSources']==4757 and s['newSources']==len(s['sourceHashes']) and s['oldCodeAndEvidenceUnmodified'] and s['actualBindingSetFrozenExact']==3406 and s['noFixtureTrafficGenerated'] and s['noGlobalWhitespacePolicyChange']
+ for entry in [a['modelSourceHashes'],s['sourceHashes']]:
+  for rel,digest in entry.items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+ for runtime,value in s['runtimeSourceSets'].items():
+  assert value['actualBindings']==3406 and value['inheritedBindings']==3354 and len(value['sourceHashes'])==52 and value['sevenLuaByteExactV42'] and not value['fixtureTrafficGenerated']
+  for rel,digest in value['sourceHashes'].items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+  for name in ['fast-path.lua','classifier.lua','classified-tags.lua','module-stage-guardian.lua','qos-physical.lua','wan-scope.lua','tag-normalizer.lua']:
+   assert (root/'code'/runtime/name).read_bytes()==(root/'code/work/v42-counter-window'/name).read_bytes(),name
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

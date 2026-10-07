@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T09:36:25.427962+00:00",
+  "generatedAt": "2026-10-07T10:04:57.717888+00:00",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -33303,6 +33303,1077 @@
       "sha256": "cbe862ac40db6667966c981874da0a3e8c11831e5d40a96cee722298472159de",
       "bytes": 793,
       "role": "v44-bounded-entry-local-repair-refusal-and-readonly-restoration"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/check-model.mjs",
+      "workspaceSource": "work/v45-early-acquisition/check-model.mjs",
+      "sha256": "8cf14f72314ef55c24462a7922df82f680988b97e2acbff56d848e9f06cc085b",
+      "bytes": 8326,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/diagnose-endpoint-readonly.mjs",
+      "workspaceSource": "work/v45-early-acquisition/diagnose-endpoint-readonly.mjs",
+      "sha256": "790ee57720dd599486eb572643693f5abb3c659118e535dd634b6e21a428c99b",
+      "bytes": 4110,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/entry.mjs",
+      "workspaceSource": "work/v45-early-acquisition/entry.mjs",
+      "sha256": "675ab3f2ea27f19dde86a68fe866990c57f4f8e9c88d37fefbe70fb8606e7453",
+      "bytes": 5740,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/fixture-startup.mjs",
+      "workspaceSource": "work/v45-early-acquisition/fixture-startup.mjs",
+      "sha256": "4a7b80d95223dcda09018500c0cfee6ac367c6142bab89ad22d63c48ed46ef96",
+      "bytes": 809,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/materialize.mjs",
+      "workspaceSource": "work/v45-early-acquisition/materialize.mjs",
+      "sha256": "9e998e330f949e218dcb87430bc7acee6e66b5d75ec3cb1b2bf4f158f893bf3e",
+      "bytes": 8325,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/model-refusal-202610071758/check-model-original.mjs",
+      "workspaceSource": "work/v45-early-acquisition/model-refusal-202610071758/check-model-original.mjs",
+      "sha256": "2b9d4eed4a0109fb32d24bd83b50465efddc9113e0630b0a0dc7b09f652502f3",
+      "bytes": 8243,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/model-refusal-202610071758/failure.json",
+      "workspaceSource": "work/v45-early-acquisition/model-refusal-202610071758/failure.json",
+      "sha256": "3d82d48e669791b1bff76149fc7b09f27448cb0989df67688820410e2a7a4d49",
+      "bytes": 361,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/platform-preflight.mjs",
+      "workspaceSource": "work/v45-early-acquisition/platform-preflight.mjs",
+      "sha256": "2698270b5c91720632aae367f9022bd37a2ea61a90477cb411b2b286ec862b6d",
+      "bytes": 1967,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/preparation.json",
+      "workspaceSource": "work/v45-early-acquisition/preparation.json",
+      "sha256": "2bd20d60bd59160e7a6b8bda522f9fc766476c4b141c03c78348f407c50c6766",
+      "bytes": 870,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/publish.py",
+      "workspaceSource": "work/v45-early-acquisition/publish.py",
+      "sha256": "4a275e94ce5da249186ec54a535772b6b8ec458f2577dd773deccd5a234b32dc",
+      "bytes": 28288,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-early-acquisition/run-once.py",
+      "workspaceSource": "work/v45-early-acquisition/run-once.py",
+      "sha256": "9a14058193e58db44548ee3dbc444978ba6cac399cf7a03f1a638d68efb470d6",
+      "bytes": 2484,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-prepare-early-acquisition.py",
+      "workspaceSource": "work/v45-prepare-early-acquisition.py",
+      "sha256": "98764d6148420458f8101c4f219f2a124b4c5c51f72aa4503e26a97f99214eaf",
+      "bytes": 7413,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/acquisition-model-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/acquisition-model-qualified.json",
+      "sha256": "60830eace9a6c47aaded23f817e13f2d0bd3e6b3016c53900010da0af42b374d",
+      "bytes": 686,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/acquisition-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/acquisition-plan.mjs",
+      "sha256": "798d5e35e5091e56a39ff299718add8542241dcbcab684f027942105a7c98061",
+      "bytes": 2790,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/candidate-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/candidate-policy.mjs",
+      "sha256": "d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068",
+      "bytes": 2579,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/capture-client-closure.ps1",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/capture-client-closure.ps1",
+      "sha256": "43826f5eeba57e333d594683ba801609437b97894da9e502e43ee9ab37109978",
+      "bytes": 2572,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/class-leaf-map.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/class-leaf-map.mjs",
+      "sha256": "815250459be21cce80e65bfe85f29a43cce7d49e8e9800cb3470e30d84d64722",
+      "bytes": 3740,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/classified-tags.lua",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/classified-tags.lua",
+      "sha256": "2756a538a16b66c45f4cc73ef89b2898c84672786cbb7bc896e579160fbf96e6",
+      "bytes": 3966,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/classifier.lua",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/classifier.lua",
+      "sha256": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+      "bytes": 22277,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/client-watchdog.ps1",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/close-endpoint.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/close-endpoint.mjs",
+      "sha256": "46278965a77bdf116c81846643faabeaa63f3c8a7bf121c13cf4207076d484f3",
+      "bytes": 2357,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/compact-post-guards.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/compact-post-guards.mjs",
+      "sha256": "83de00758cc0ba05270b81d3b51ddc76f39f30ed1275397a48080ff15aeb5cc3",
+      "bytes": 2597,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/current-audit-diagnostic.mjs",
+      "sha256": "90949e3617a059e998fca8992a23552790a8247adcfa728925252938065c7bdb",
+      "bytes": 5890,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/discover-peer.py",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/download-server.py",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/epoch-driver.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/epoch-driver.mjs",
+      "sha256": "05a432e6fded5c4e4146063b3ced8951a786893f20eb4c7339269b7cd074a2bc",
+      "bytes": 15419,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/fast-path.lua",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/fast-path.lua",
+      "sha256": "637be7c84b7b5adff757730966a17ea10362b45626da09c7be3216fb3991b6f7",
+      "bytes": 15239,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/fixture-retry-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/fixture-retry-policy.mjs",
+      "sha256": "50892e56b00817292dfbb8fdd88c340750baec860c04abe02c39cf549176ccdc",
+      "bytes": 282,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/guardian-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/guardian-plan.mjs",
+      "sha256": "397dd536261b19c8900e5755a99238f1f0d4d1ddd2e42e783f51ac2b1071a71c",
+      "bytes": 493,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/inherited-bindings.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/inherited-bindings.mjs",
+      "sha256": "347c906a617b77ef0b61a8e3d8065a3fca6657eb871cd8cd5f0dd73938d6842d",
+      "bytes": 580,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/match-controlled.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/match-controlled.mjs",
+      "sha256": "d04255de5fb63a8f8d74e194bbd8d7799a26499ab7d3846cf9411bfc4554455d",
+      "bytes": 2027,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/model-acquisition.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/model-acquisition.mjs",
+      "sha256": "ce06d75d9a1fb5ffb13172a97ca28ff1aecb532b2d7d209c082b6572f9db60db",
+      "bytes": 4117,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/module-stage-guardian.lua",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/module-stage-guardian.lua",
+      "sha256": "261b0ee214c9e90287850bb7ccf404a4ec95c37914b94a91c09585c463d05044",
+      "bytes": 13682,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/module-stage.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/module-stage.mjs",
+      "sha256": "45d177c34637d3303d2ff380f2ef2b961914b7381eb374f925296c8a42fc7819",
+      "bytes": 18135,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/native-client.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/native-client.mjs",
+      "sha256": "bf5f8bd6d989eb4f0be398f846ecc8f172be41f5481d2bcfa56102412852ea2f",
+      "bytes": 6809,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/native-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/native-qualified.json",
+      "sha256": "b53def985529c2c2dc6676fdf32c280661202562c23f8ce7129dd25288ed88cf",
+      "bytes": 1856,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/normalizer-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/normalizer-qualified.json",
+      "sha256": "a499de19ddced00f2dda5f0d11220b555b20243e6561696b26cde314c02eca3f",
+      "bytes": 177,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/owned-load-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/owned-load-policy.mjs",
+      "sha256": "dc02dd232c0409f0acca5c6b876f64dde0b8f29389586bf174efd09a5662ba87",
+      "bytes": 1088,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/pack-json.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/pack-json.mjs",
+      "sha256": "46dcbec7360960887700d94a1e620e53ee233b3e40be50b484011a9623ca75d2",
+      "bytes": 2196,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/parse-ecm.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/parse-ecm.mjs",
+      "sha256": "6a349403a008929d1020b5f491be7e015bccd20c587cc74c2a1908bd95e3a9b2",
+      "bytes": 3727,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/payload.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/payload.mjs",
+      "sha256": "98918db27a5a6a345031cc010e0c19facce2557a2b51cecbecfad6dc74f2564d",
+      "bytes": 4508,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/persistent-ssh.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/pilot-supervisor.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/pilot-supervisor.mjs",
+      "sha256": "aad6dc14a9728f72f3e1afb3c1f17de31e382a2308d2e44dd38d76e84f226e60",
+      "bytes": 5450,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/probe-peer.py",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/qos-native-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/qos-native-qualified.json",
+      "sha256": "cd518823df23df884b51865c64f9a9bd943b31ac6e54f3f61a11df0f90459d86",
+      "bytes": 139,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/qos-physical.lua",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/qos-physical.lua",
+      "sha256": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+      "bytes": 8943,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/read-controlled.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/read-controlled.mjs",
+      "sha256": "b878bb4f01ee9d7a6115e3487e2000c0bdd7ba926be6bcd7388dae2595dfbd02",
+      "bytes": 7646,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/read-final-health.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/read-final-health.mjs",
+      "sha256": "a1b46018dc07ae8b7ac102cad7780d8077144f9d6ec04aebf2be29f822b7ec37",
+      "bytes": 1307,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/read-physical-final.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/read-physical-final.mjs",
+      "sha256": "4ffc652fe581f894e48cf73d8115d98d58a5be6c77c6ba962ca34c7b41d8c003",
+      "bytes": 2000,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/receiver.py",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/serial-model-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/serial-model-qualified.json",
+      "sha256": "afba7d9c22f683127b4c94dd83265675775d4b3b8b6a0bc7da181ba238502f84",
+      "bytes": 298,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/server.py",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/session-binding.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/session-binding.mjs",
+      "sha256": "4018f9a30826fae6d8d15471113e458093085f6e23ebd90212dd0aeb6bf62576",
+      "bytes": 635,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/start-dallas.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/start-dallas.mjs",
+      "sha256": "5a826a09e9bc02b6d82910adc7665ef7cedd973a1e68d308053282492676df7c",
+      "bytes": 10356,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/tag-normalizer.lua",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/tag-normalizer.lua",
+      "sha256": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+      "bytes": 6258,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/wait-four-ssh.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/wait-four-ssh.mjs",
+      "sha256": "b2af2221246c85a1a2b8ba25c367dedb672d0b20ab7f92756e12a6453fce55d9",
+      "bytes": 1153,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/wan-scope.lua",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/wan-scope.lua",
+      "sha256": "c2cbfd5eb8cf714341106f29cd0234d5388d2e88a45c1aaaba7880cd3d488677",
+      "bytes": 3525,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095552-bdd974e0/wan-tag-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095552-bdd974e0/wan-tag-plan.mjs",
+      "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
+      "bytes": 2045,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/acquisition-model-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/acquisition-model-qualified.json",
+      "sha256": "60830eace9a6c47aaded23f817e13f2d0bd3e6b3016c53900010da0af42b374d",
+      "bytes": 686,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/acquisition-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/acquisition-plan.mjs",
+      "sha256": "798d5e35e5091e56a39ff299718add8542241dcbcab684f027942105a7c98061",
+      "bytes": 2790,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/candidate-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/candidate-policy.mjs",
+      "sha256": "d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068",
+      "bytes": 2579,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/capture-client-closure.ps1",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/capture-client-closure.ps1",
+      "sha256": "9c8ff4022fe2c57b044ed859a74cdb1d90f83ca75e60e4ba3cb6387e878bca6b",
+      "bytes": 2572,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/class-leaf-map.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/class-leaf-map.mjs",
+      "sha256": "815250459be21cce80e65bfe85f29a43cce7d49e8e9800cb3470e30d84d64722",
+      "bytes": 3740,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/classified-tags.lua",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/classified-tags.lua",
+      "sha256": "2756a538a16b66c45f4cc73ef89b2898c84672786cbb7bc896e579160fbf96e6",
+      "bytes": 3966,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/classifier.lua",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/classifier.lua",
+      "sha256": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+      "bytes": 22277,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/client-watchdog.ps1",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/close-endpoint.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/close-endpoint.mjs",
+      "sha256": "4f328c27b2d66fafa9c276eeb608a32f28568b1a50c2f6497a8be8e15d7f8718",
+      "bytes": 2357,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/compact-post-guards.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/compact-post-guards.mjs",
+      "sha256": "83de00758cc0ba05270b81d3b51ddc76f39f30ed1275397a48080ff15aeb5cc3",
+      "bytes": 2597,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/current-audit-diagnostic.mjs",
+      "sha256": "1377e5d9818af1382b8669f69c52ce36259c2c169014600711881af476520548",
+      "bytes": 5890,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/discover-peer.py",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/download-server.py",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/epoch-driver.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/epoch-driver.mjs",
+      "sha256": "e7024350f1098562b5d0adc94a535060c79af1749a8585bcce8afd4d1b408acc",
+      "bytes": 15419,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/fast-path.lua",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/fast-path.lua",
+      "sha256": "637be7c84b7b5adff757730966a17ea10362b45626da09c7be3216fb3991b6f7",
+      "bytes": 15239,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/fixture-retry-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/fixture-retry-policy.mjs",
+      "sha256": "50892e56b00817292dfbb8fdd88c340750baec860c04abe02c39cf549176ccdc",
+      "bytes": 282,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/guardian-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/guardian-plan.mjs",
+      "sha256": "397dd536261b19c8900e5755a99238f1f0d4d1ddd2e42e783f51ac2b1071a71c",
+      "bytes": 493,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/inherited-bindings.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/inherited-bindings.mjs",
+      "sha256": "347c906a617b77ef0b61a8e3d8065a3fca6657eb871cd8cd5f0dd73938d6842d",
+      "bytes": 580,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/match-controlled.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/match-controlled.mjs",
+      "sha256": "36cdc2c89feeb11dcafab93e0ec776ce0393d9b4017fea47ecd49557f013ba96",
+      "bytes": 2027,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/model-acquisition.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/model-acquisition.mjs",
+      "sha256": "37f9918e03739be5a3bcd612ba1ab66aefcd3076b03843ec9ad3245c751ee310",
+      "bytes": 4117,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/module-stage-guardian.lua",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/module-stage-guardian.lua",
+      "sha256": "261b0ee214c9e90287850bb7ccf404a4ec95c37914b94a91c09585c463d05044",
+      "bytes": 13682,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/module-stage.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/module-stage.mjs",
+      "sha256": "c5a65de4cb3375039ea0ff7566dc8f86247bb45c46c6710380067ac7b4c3303d",
+      "bytes": 18135,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/native-client.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/native-client.mjs",
+      "sha256": "bf5f8bd6d989eb4f0be398f846ecc8f172be41f5481d2bcfa56102412852ea2f",
+      "bytes": 6809,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/native-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/native-qualified.json",
+      "sha256": "b53def985529c2c2dc6676fdf32c280661202562c23f8ce7129dd25288ed88cf",
+      "bytes": 1856,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/normalizer-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/normalizer-qualified.json",
+      "sha256": "a499de19ddced00f2dda5f0d11220b555b20243e6561696b26cde314c02eca3f",
+      "bytes": 177,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/owned-load-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/owned-load-policy.mjs",
+      "sha256": "dc02dd232c0409f0acca5c6b876f64dde0b8f29389586bf174efd09a5662ba87",
+      "bytes": 1088,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/pack-json.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/pack-json.mjs",
+      "sha256": "46dcbec7360960887700d94a1e620e53ee233b3e40be50b484011a9623ca75d2",
+      "bytes": 2196,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/parse-ecm.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/parse-ecm.mjs",
+      "sha256": "6a349403a008929d1020b5f491be7e015bccd20c587cc74c2a1908bd95e3a9b2",
+      "bytes": 3727,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/payload.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/payload.mjs",
+      "sha256": "4fde669c7abbbd3df34d12a73db70469bab8e85678189cfe7682ffd144a33b42",
+      "bytes": 4508,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/persistent-ssh.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/pilot-supervisor.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/pilot-supervisor.mjs",
+      "sha256": "c9ce598ea86ea7809747a9094734dbed94df5b574c12fff5889589e39252113d",
+      "bytes": 5450,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/probe-peer.py",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/qos-native-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/qos-native-qualified.json",
+      "sha256": "cd518823df23df884b51865c64f9a9bd943b31ac6e54f3f61a11df0f90459d86",
+      "bytes": 139,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/qos-physical.lua",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/qos-physical.lua",
+      "sha256": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+      "bytes": 8943,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/read-controlled.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/read-controlled.mjs",
+      "sha256": "c5abb99d54258ad021c81ec6e8b5b71106d335f4f9d0bafac99ae7b2a785bee0",
+      "bytes": 7646,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/read-final-health.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/read-final-health.mjs",
+      "sha256": "800387852e4600539a5f8cc12a5d9e7f7752633120786b6f10d7197c36d15234",
+      "bytes": 1307,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/read-physical-final.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/read-physical-final.mjs",
+      "sha256": "430600027ad1c13cd48144d435b88875e70364ffc95374a338476366b3b7a08b",
+      "bytes": 2000,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/receiver.py",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/serial-model-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/serial-model-qualified.json",
+      "sha256": "afba7d9c22f683127b4c94dd83265675775d4b3b8b6a0bc7da181ba238502f84",
+      "bytes": 298,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/server.py",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/session-binding.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/session-binding.mjs",
+      "sha256": "33031cf2e7872a71996698634fa46cc41f1b25e1ca2bbce8decf090a96cdfba3",
+      "bytes": 635,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/start-dallas.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/start-dallas.mjs",
+      "sha256": "408a802b608bc3692d4c7e869a447aa1c0b5925b526d7c21596c23fa1518f557",
+      "bytes": 10356,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/tag-normalizer.lua",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/tag-normalizer.lua",
+      "sha256": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+      "bytes": 6258,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/wait-four-ssh.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/wait-four-ssh.mjs",
+      "sha256": "600591934d86a789855edeed11a62e09396a85b05fbc81ab75cee3c49085281e",
+      "bytes": 1153,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/wan-scope.lua",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/wan-scope.lua",
+      "sha256": "c2cbfd5eb8cf714341106f29cd0234d5388d2e88a45c1aaaba7880cd3d488677",
+      "bytes": 3525,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095603-e786850b/wan-tag-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095603-e786850b/wan-tag-plan.mjs",
+      "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
+      "bytes": 2045,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/acquisition-model-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/acquisition-model-qualified.json",
+      "sha256": "60830eace9a6c47aaded23f817e13f2d0bd3e6b3016c53900010da0af42b374d",
+      "bytes": 686,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/acquisition-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/acquisition-plan.mjs",
+      "sha256": "798d5e35e5091e56a39ff299718add8542241dcbcab684f027942105a7c98061",
+      "bytes": 2790,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/candidate-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/candidate-policy.mjs",
+      "sha256": "d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068",
+      "bytes": 2579,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/capture-client-closure.ps1",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/capture-client-closure.ps1",
+      "sha256": "8d956302660d8b503dd8b9a06ff348377f271461b62596dc880088790f4e1122",
+      "bytes": 2572,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/class-leaf-map.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/class-leaf-map.mjs",
+      "sha256": "815250459be21cce80e65bfe85f29a43cce7d49e8e9800cb3470e30d84d64722",
+      "bytes": 3740,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/classified-tags.lua",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/classified-tags.lua",
+      "sha256": "2756a538a16b66c45f4cc73ef89b2898c84672786cbb7bc896e579160fbf96e6",
+      "bytes": 3966,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/classifier.lua",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/classifier.lua",
+      "sha256": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+      "bytes": 22277,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/client-watchdog.ps1",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/close-endpoint.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/close-endpoint.mjs",
+      "sha256": "cbbeb59805208b5b0fed8f1ca3a4916452553ebee42e5fae822931d29760800a",
+      "bytes": 2357,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/compact-post-guards.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/compact-post-guards.mjs",
+      "sha256": "83de00758cc0ba05270b81d3b51ddc76f39f30ed1275397a48080ff15aeb5cc3",
+      "bytes": 2597,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/current-audit-diagnostic.mjs",
+      "sha256": "1a5b18290e05b45016c8e6d41e7fbee59e4430ed96dd95034b1032099f8816a0",
+      "bytes": 5890,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/discover-peer.py",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/download-server.py",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/epoch-driver.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/epoch-driver.mjs",
+      "sha256": "6fb81a5c0401c0ff42729105b6a91bcf85ec371e792c1d237954638122f4e376",
+      "bytes": 15419,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/fast-path.lua",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/fast-path.lua",
+      "sha256": "637be7c84b7b5adff757730966a17ea10362b45626da09c7be3216fb3991b6f7",
+      "bytes": 15239,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/fixture-retry-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/fixture-retry-policy.mjs",
+      "sha256": "50892e56b00817292dfbb8fdd88c340750baec860c04abe02c39cf549176ccdc",
+      "bytes": 282,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/guardian-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/guardian-plan.mjs",
+      "sha256": "397dd536261b19c8900e5755a99238f1f0d4d1ddd2e42e783f51ac2b1071a71c",
+      "bytes": 493,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/inherited-bindings.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/inherited-bindings.mjs",
+      "sha256": "347c906a617b77ef0b61a8e3d8065a3fca6657eb871cd8cd5f0dd73938d6842d",
+      "bytes": 580,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/match-controlled.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/match-controlled.mjs",
+      "sha256": "98062b847abbbf8929f722e4130f3cd26d7057e36a39e740d5813c95930b1f6c",
+      "bytes": 2027,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/model-acquisition.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/model-acquisition.mjs",
+      "sha256": "25a93f5c9f7cd9807cce50268e75e4f192bc3a81460cc6fbef880f840c3d7bc5",
+      "bytes": 4117,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/module-stage-guardian.lua",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/module-stage-guardian.lua",
+      "sha256": "261b0ee214c9e90287850bb7ccf404a4ec95c37914b94a91c09585c463d05044",
+      "bytes": 13682,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/module-stage.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/module-stage.mjs",
+      "sha256": "a5c3435f565527076767614a7afecca857be1baa22d2863a2d4088c6cb848b0b",
+      "bytes": 18135,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/native-client.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/native-client.mjs",
+      "sha256": "bf5f8bd6d989eb4f0be398f846ecc8f172be41f5481d2bcfa56102412852ea2f",
+      "bytes": 6809,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/native-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/native-qualified.json",
+      "sha256": "b53def985529c2c2dc6676fdf32c280661202562c23f8ce7129dd25288ed88cf",
+      "bytes": 1856,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/normalizer-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/normalizer-qualified.json",
+      "sha256": "a499de19ddced00f2dda5f0d11220b555b20243e6561696b26cde314c02eca3f",
+      "bytes": 177,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/owned-load-policy.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/owned-load-policy.mjs",
+      "sha256": "dc02dd232c0409f0acca5c6b876f64dde0b8f29389586bf174efd09a5662ba87",
+      "bytes": 1088,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/pack-json.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/pack-json.mjs",
+      "sha256": "46dcbec7360960887700d94a1e620e53ee233b3e40be50b484011a9623ca75d2",
+      "bytes": 2196,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/parse-ecm.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/parse-ecm.mjs",
+      "sha256": "6a349403a008929d1020b5f491be7e015bccd20c587cc74c2a1908bd95e3a9b2",
+      "bytes": 3727,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/payload.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/payload.mjs",
+      "sha256": "42d9d43139c11dbac92e27e7d3691fa2c3b561b4b58229a64665d682e7e9c2b1",
+      "bytes": 4508,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/persistent-ssh.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/pilot-supervisor.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/pilot-supervisor.mjs",
+      "sha256": "1f4faf96332d752d871c1f53d9bbcb45cfe78be387807b8529058d91406c4da3",
+      "bytes": 5450,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/probe-peer.py",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/qos-native-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/qos-native-qualified.json",
+      "sha256": "cd518823df23df884b51865c64f9a9bd943b31ac6e54f3f61a11df0f90459d86",
+      "bytes": 139,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/qos-physical.lua",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/qos-physical.lua",
+      "sha256": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+      "bytes": 8943,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/read-controlled.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/read-controlled.mjs",
+      "sha256": "870e9ab9e47f76a950e739095013100988c3514ab0bed8042732e48f2df00f7a",
+      "bytes": 7646,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/read-final-health.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/read-final-health.mjs",
+      "sha256": "9788431f9543e1e4f904862f05f740c8069fadb30037b0bb785d27b0e8661b0e",
+      "bytes": 1307,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/read-physical-final.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/read-physical-final.mjs",
+      "sha256": "130a1848aed8fd1391f4b777f353c60915fb2e13305df60f95d377c875962915",
+      "bytes": 2000,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/receiver.py",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/serial-model-qualified.json",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/serial-model-qualified.json",
+      "sha256": "afba7d9c22f683127b4c94dd83265675775d4b3b8b6a0bc7da181ba238502f84",
+      "bytes": 298,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/server.py",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/session-binding.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/session-binding.mjs",
+      "sha256": "94fea458f14d40431ab17b5ac7244a67899fa03458ac7f3d0c013938b2ed0fb4",
+      "bytes": 635,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/start-dallas.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/start-dallas.mjs",
+      "sha256": "632e65a72304cd5eaec64ad95ceb6b644bb0d48b79ee1c640fa4c42def38152d",
+      "bytes": 10356,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/tag-normalizer.lua",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/tag-normalizer.lua",
+      "sha256": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+      "bytes": 6258,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/wait-four-ssh.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/wait-four-ssh.mjs",
+      "sha256": "7de34a11c1525df33f44cc67c2bf10e8576b335edc8711952e5bf8edb4f3e591",
+      "bytes": 1153,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/wan-scope.lua",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/wan-scope.lua",
+      "sha256": "c2cbfd5eb8cf714341106f29cd0234d5388d2e88a45c1aaaba7880cd3d488677",
+      "bytes": 3525,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
+    },
+    {
+      "path": "code/work/v45-run-20261007095704-273a9586/wan-tag-plan.mjs",
+      "workspaceSource": "work/v45-run-20261007095704-273a9586/wan-tag-plan.mjs",
+      "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
+      "bytes": 2045,
+      "role": "v45-earlier-owned-acquisition-candidate-and-preload-ssh-refusal"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -33317,5 +34388,6 @@
   "lastFiveWanHardwareAttemptExport": "V41_FIVE_WAN_INITIAL_HIT_CLASS_RETIREMENT",
   "lastFiveWanBoundedHardwareExport": "V42_FIVE_WAN_SIMULATED_FUNCTIONAL_ACCEPTANCE_COMPLETE",
   "lastBoundedEntryExport": "V43_REUSABLE_ENTRY_MODELS_COMPLETE_STARTUP_REFUSED_BEFORE_NETWORK",
-  "lastBoundedEntryRepairExport": "V44_LOCAL_REPAIRS_ACQUISITION_REFUSED_READONLY_RESTORED"
+  "lastBoundedEntryRepairExport": "V44_LOCAL_REPAIRS_ACQUISITION_REFUSED_READONLY_RESTORED",
+  "lastEarlyAcquisitionExport": "V45_SOFTWARE_READY_PRELOAD_SSH_REFUSED_RESTORED"
 }
