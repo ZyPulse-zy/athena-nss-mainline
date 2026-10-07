@@ -1,3 +1,9 @@
+# 多WAN / 高级QoS当前交付范围
+
+v42五WAN60.01秒/ECM5/20续租、2373RT全回、十tag/leaf/mark/NAT/affinity与恢复保持。DOWN18共享借用、UP60每WAN12、RT prio0/FQ-CoDel不变。v45入口并发启动已实测，候选首包取得失败导致最新完整整合仍未通过；本次未开启NSS并已完整恢复，非永久/全网/长期交付。见[本次接续](V46_ENTRY_CONTINUATION_2026-10-07.md)。
+
+## 以下为历史状态
+
 # 多 WAN / 高级 QoS 当前交付范围
 
 v42五WAN五流60.01秒/ECM5/20续租、2373/2373模拟RT回包、十tag/leaf/完整mark/NAT/affinity与恢复已验收。DOWN18共享借用、UP60每WAN12硬上限、RT prio0/FQ-CoDel保持，本次七Lua原字节。

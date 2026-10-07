@@ -2495,4 +2495,16 @@ if (root/'evidence/v45-entry-startup.json').exists():
   for rel,digest in value['sourceHashes'].items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
   for name in ['fast-path.lua','classifier.lua','classified-tags.lua','module-stage-guardian.lua','qos-physical.lua','wan-scope.lua','tag-normalizer.lua']:
    assert (root/'code'/runtime/name).read_bytes()==(root/'code/work/v42-counter-window'/name).read_bytes(),name
+if (root/'evidence/v46-entry-continuation.json').exists():
+ a=json.loads((root/'evidence/v46-entry-continuation.json').read_text(encoding='utf8'));r=json.loads((root/'evidence/v46-restoration.json').read_text(encoding='utf8'));s=json.loads((root/'evidence/v46-source-proof.json').read_text(encoding='utf8'))
+ assert manifest['lastResumedEntryExport']=='V46_CONCURRENT_STARTUP_PROVED_ROTATED_TCP_TIMEOUT_RESTORED'
+ assert a['sameV45QualifiedSourcesReused'] and a['modelChecksReused']==24 and a['actualBindings']==3406 and a['inheritedBindings']==3354 and a['entryContinuationAttempts']==a['fixtureAttempts']==1 and a['driverEventCodes']==[0,0,0,1,0]
+ assert a['concurrentStartupActuallyExecuted'] and 0<a['firstAllFourPidsSeconds']<.1 and 0<a['firstAllFourPayloadSeconds']<12 and a['failureAfterNaturalWanDeduplicationRotations'] and a['tcp3FinalAttempt']==3 and a['matchingReads']==10 and a['fiveWanPairs']==0
+ assert a['originalAcquisitionRetryRotationAndDeadlineLimitsKept'] and a['originalV45FailureUnchanged'] and a['v42HardwareAcceptanceRetained'] and a['wholeFixtureUdp']['notNssMeasurements']
+ assert not any(a[k] for k in ['rootCauseProved','checkpointStarted','nssStageStarted','ecmOpened','hardwareEntryIntegrationPassed','newCpuAcceptance','cs2OrSteamOperated','permanentNssDeployment'])
+ q=r['finalFullAudit'];assert r['passed'] and q['passed'] and q['queryAge']<6 and q['allFiveHealthyWanBaseline'] and q['ecmClosedAndZero'] and q['protectedConfigurationUnchanged'] and r['physicalQueues']['defaultQueueOptionsAndHandlesExact']
+ e=r['endpointClosure'];c=r['clientClosure'];assert e['passed'] and e['ownedRulesRemaining']==0 and e['baselineRestored'] and e['exactOwnedEndpointClosed'] and c['passed'] and c['ownedTestProcessesRemaining']==0 and not c['clientDeadlineReset']
+ assert s['passed'] and s['historicPrefixSources']==4910 and s['newSources']==len(s['sourceHashes']) and s['oldCodeEvidenceUnmodified'] and s['actualBindingsFrozenExact']==3406 and s['originalV45EntrySourcesAndFailureUnchanged'] and s['noGlobalWhitespacePolicyChange']
+ for entry in [s['sourceHashes'],s['runtimeSourceHashes'],a['modelSourceHashes']]:
+  for rel,digest in entry.items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

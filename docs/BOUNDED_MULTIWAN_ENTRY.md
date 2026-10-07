@@ -1,3 +1,9 @@
+# 当前入口：v45同字节候选，已实测并发启动
+
+本地仍为`work/v45-early-acquisition/entry.mjs`，原24模型/3406绑定不变，inspect/status/run/stop方式保持。新一次接续四PID0.087秒齐备、四路第一次同时payload10.71秒；自然WAN去重替换后TCP候选首包超时，NSS写前退出并完整恢复。完整入口尚未通过，勿为配齐WAN盲重试。见[实际接续](V46_ENTRY_CONTINUATION_2026-10-07.md)。
+
+## 以下为历史状态
+
 # 可复用的有界入口：v45提前取得软件候选
 
 当前本地候选`work/v45-early-acquisition/entry.mjs`，命令仍为默认inspect / status / run / stop。24模型、默认inspect和实际最终恢复通过；唯一run在端点控制SSH连接超时处写前退出，未生成fixture流量，新启动时序尚未现场验证。核心五WAN数据面已由v42验收；完整最新入口整合仍未通过，勿自动盲重试。

@@ -1,5 +1,11 @@
 # Athena NSS 多WAN / 高级QoS受控原型
 
+五WAN核心硬件功能已验收。原v45入口本次并发启动已实测，但自然WAN去重后的TCP候选首包超时，NSS写前拒绝并完整恢复；完整最新入口尚未通过，没有永久部署。见[当前接续](docs/V46_ENTRY_CONTINUATION_2026-10-07.md)、[STATE](docs/STATE.md)。
+
+## 以下为历史状态
+
+# Athena NSS 多WAN / 高级QoS受控原型
+
 五WAN核心硬件功能已验收。v45有界入口的软件检查24项通过，实际入口因端点SSH连接超时在任何fixture或NSS写前退出；完整恢复，最新入口现场整合尚未通过。没有操作CS2/Steam，没有永久开启NSS。见[本次进展](docs/V45_EARLY_ACQUISITION_2026-10-07.md)、[STATE](docs/STATE.md)。
 
 ## 以下保留历史描述，当前状态以上文为准
