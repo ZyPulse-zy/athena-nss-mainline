@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "modelOnly": true,
+  "productionWrites": false,
+  "routerFilesWritten": false,
+  "wholeFactoryModeled": false,
+  "fiveClassQueryAndPreciseChangeModel": true,
+  "fiveCounterAndUnknownTagRefusal": true,
+  "factoredIdentityGuardsEquivalent": true,
+  "losslessTagJsonReconstruction": true,
+  "nftCheckOnlyPassed": true,
+  "sourceHashes": {
+    "classifier": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+    "qos": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+    "normalizer": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+    "fast": "15552eef44375a039fdc41affb8afb3ebe7954a711771e8a87881ca25dd88399"
+  },
+  "execBytes": {
+    "consumer": 7259,
+    "qos": 6980,
+    "normalizer": 6607,
+    "counters": 7671,
+    "tagDecoder": 4989,
+    "guardianSyntax": 8823,
+    "fast-path.luaSyntax": 7471,
+    "classified-tags.luaSyntax": 3650,
+    "wan-scope.luaSyntax": 3454,
+    "qos-physical.luaSyntax": 5086,
+    "tag-normalizer.luaSyntax": 5840,
+    "classifierConsumerSyntax": 7476,
+    "classifierAdapterSyntax": 6971,
+    "nftCheck": 3239
+  },
+  "bundleBytes": 72868,
+  "results": {
+    "consumer": "FIVE_SAME_QUERY_CLASS_AND_PRECISE_CHANGE_PASS",
+    "qos": "FIVE_QUEUE_OPTIONS_PASS",
+    "normalizer": "FIVE_NATIVE_TAG_AND_DISPATCHER_DEFAULT_DENY_PASS",
+    "counters": "FIVE_COUNTER_DEFAULT_DENY_PASS",
+    "tagDecoder": "LOSSLESS_FIVE_POLICY_RECONSTRUCTION_PASS",
+    "guardianSyntax": "GUARDIAN_SYNTAX_PASS",
+    "fast-path.luaSyntax": "SYNTAX_PASS",
+    "classified-tags.luaSyntax": "SYNTAX_PASS",
+    "wan-scope.luaSyntax": "SYNTAX_PASS",
+    "qos-physical.luaSyntax": "SYNTAX_PASS",
+    "tag-normalizer.luaSyntax": "SYNTAX_PASS",
+    "classifierConsumerSyntax": "CONSUMER_SYNTAX_PASS",
+    "classifierAdapterSyntax": "ADAPTER_SYNTAX_PASS",
+    "nftCheck": ""
+  }
+}

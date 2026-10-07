@@ -1,0 +1,15 @@
+{
+  "prepared": true,
+  "originalV44EntryHashes": {
+    "entry.mjs": "b91f298cc7c7597d26906115cf9acff974710813891f28352de6765da3d5a583",
+    "materialize.mjs": "a2bd134f07c8d9974de13f0ecd4097c6fafce37f325df70a3103238d24a38cfa",
+    "check-model.mjs": "019e1951ba398e008ad9e213dba923951387207bf16058bce8ee67bc5c5d1fb2",
+    "platform-preflight.mjs": "aaf352971e9cad2b68cbdc37bb809647ef6f7e6e07517db4ef5b9dc699834a1d"
+  },
+  "change": "fresh runtime namespace in final readonly publication label",
+  "provenFailure": "fixed v44-final label collided with prior readonly output under nss122",
+  "twoOutputIsolationRegressionChecksAdded": true,
+  "classificationQosDataPlaneAndSafetyCapsUnchanged": true,
+  "noNewTrafficOrHardwareAttempt": true,
+  "originalSourcesUnchanged": true
+}

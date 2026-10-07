@@ -2439,4 +2439,34 @@ if (root/'evidence/v43-bounded-entry.json').exists():
  for rel,digest in e['modelSourceHashes'].items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
  code=(root/'code/work/v43-bounded-entry/entry.mjs').read_text(encoding='utf8');assert code.index('platformPreflight();')<code.index('fs.mkdirSync(lock)')<code.index('materialize(runtimeRoot,')
  correction=json.loads((root/'code/work/v43-bounded-entry/initial-model-freeze/model-coverage-correction.json').read_text(encoding='utf8'));assert correction['preserved'] and correction['originalExtendedCutoffLabelWasNotSufficientEvidence'] and correction['originalSourceAndOutputUnmodified']
+if (root/'evidence/v44-bounded-entry.json').exists():
+ a=json.loads((root/'evidence/v44-bounded-entry.json').read_text(encoding='utf8'))
+ r=json.loads((root/'evidence/v44-restoration.json').read_text(encoding='utf8'))
+ c=json.loads((root/'evidence/v44-unique-label-candidate.json').read_text(encoding='utf8'))
+ s=json.loads((root/'evidence/v44-source-proof.json').read_text(encoding='utf8'))
+ p=json.loads((root/'evidence/v43-resumed-local-refusal.json').read_text(encoding='utf8'))
+ assert manifest['lastBoundedEntryRepairExport']=='V44_LOCAL_REPAIRS_ACQUISITION_REFUSED_READONLY_RESTORED'
+ assert a['entryModelChecksPassed'] and a['modelCount']==len(a['modelChecks'])==15 and a['actualBindings']==3405 and a['inheritedBindings']==3354
+ assert a['fixtureAttemptCount']==1 and a['failureCategory']=='NATURAL_FIVE_WAN_ACQUISITION_WINDOW_ENDED' and a['acquisitionSecondsLimit']==30
+ f=a['actualLastFrame'];assert f['sourceAge']<6 and f['tcpClasses']==['BULK']*4 and f['udpClasses']==['RT'] and f['tcpWanSetInSlotOrder']==[1,1,2,4] and f['udpWan']==3 and f['fiveDistinctWanPairs']==0
+ assert not any(a[k] for k in ['entryHardwareIntegrationPassed','checkpointStarted','nssStageStarted','ecmOpened','caseCreated','controllerOwnerCreated','newHardwareAcceptance','newCpuAcceptance','cs2OrSteamOperated','permanentNssDeployment'])
+ assert a['noBlindFixtureRetry'] and a['noPbrOrClassificationThresholdChange'] and a['restorationState']=='RESTORED' and a['originalResultState']=='RESTORATION_UNCONFIRMED' and a['originalResultAndErrorsUnchanged']
+ assert a['clientErrors']==0 and a['clientRuntimeSeconds']<180 and a['clientUdpWholeFixture']['notNssMeasurements'] and a['v42HardwareAcceptanceStillValid']
+ assert r['passed'] and r['readonlySupplementAttempts']==1 and r['originalFailuresPreserved'] and r['noFixtureReopened'] and r['activeLockReleasedOnlyAfterProof']
+ q=r['finalFullAudit'];assert q['passed'] and q['queryAge']<6 and q['ecmClosedAndZero'] and q['protectedConfigurationUnchanged'] and q['allFiveHealthyWanBaseline']
+ assert r['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and r['clientClosure']['ownedTestProcessesRemaining']==0 and r['ownedEntryProcessesRemaining']==0
+ e=r['endpointClosure'];assert e['passed'] and e['ownedRulesRemaining']==0 and e['baselineRestored'] and e['exactOwnedEndpointClosed']
+ assert c['passedAsSoftwareCandidate'] and c['modelOnly'] and c['modelCount']==len(c['modelChecks'])==17 and c['sourceBindings']==3405 and c['runtimeNamespaceAddedToFinalAuditLabel'] and c['twoNewOutputIsolationRegressions']
+ assert c['sharedPublicationHelperUnchanged'] and c['sevenLuaAndPolicyUnchanged'] and c['defaultInspectExecuted'] and not any(c[k] for k in ['hardwareExecuted','routerWrites','trafficGenerated','newLiveEntryAcceptance'])
+ assert s['passed'] and s['historicPrefixSources']==4553 and s['newSources']==len(s['sourceHashes']) and s['originalCodeAndEvidenceBlobsChecked']==5136 and s['oldCodeAndEvidenceUnmodified']
+ assert s['twoActualBindingSetsFrozenExact']=={'v43-local-refusal':3405,'v44-acquisition-refusal':3405} and s['originalV43AndV44FailuresPreserved'] and s['candidateNeverUsedForTraffic'] and s['noGlobalWhitespacePolicyChange']
+ for entry in [a['modelSourceHashes'],c['sourceHashes'],s['sourceHashes']]:
+  for rel,digest in entry.items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+ for runtime,value in s['runtimeSourceSets'].items():
+  assert value['actualBindings']==3405 and value['sevenLuaByteExactV42'] and len(value['sourceHashes'])==51
+  for rel,digest in value['sourceHashes'].items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+  for name in ['fast-path.lua','classifier.lua','classified-tags.lua','module-stage-guardian.lua','qos-physical.lua','wan-scope.lua','tag-normalizer.lua']:
+   assert (root/'code'/runtime/name).read_bytes()==(root/'code/work/v42-counter-window'/name).read_bytes(),name
+ for attr in s['exactPathAttributes']:assert attr.startswith('/code/work/') and attr in (root/'.gitattributes').read_text(encoding='utf8')
+ assert p['originalPublicationNowPushedAndArchiveChecked'] and p['refusedBeforeRouterConnectionAndFixture'] and p['readonlyConfirmationPassedBeforeOldLockRelease'] and p['originalRuntimeAndResultUnchanged']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

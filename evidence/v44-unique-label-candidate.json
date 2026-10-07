@@ -1,0 +1,47 @@
+{
+  "passedAsSoftwareCandidate": true,
+  "modelOnly": true,
+  "modelCount": 17,
+  "modelChecks": [
+    "inspect has no traffic or remote writes",
+    "runtime inherits every 3354 binding",
+    "fixed policy and exact data plane retained",
+    "existing namespace refused",
+    "escaping namespace refused",
+    "extended cutoff refused before namespace creation",
+    "short cutoff refused before namespace creation",
+    "unreadable process identity refuses admission",
+    "incomplete process identity refuses admission",
+    "readable process identity alone makes no network writes",
+    "generated readonly audit accepts exact owned session path",
+    "generated namespace prefixes retain trailing separator and reject escape",
+    "stop before client only writes own intent",
+    "stop writes session-bound owned client control",
+    "ended client is not restarted",
+    "final audit label includes its complete fresh runtime namespace",
+    "separate runtime final labels cannot collide in shared publication outputs"
+  ],
+  "sourceHashes": {
+    "work/v44-unique-label-entry/entry.mjs": "b91f298cc7c7597d26906115cf9acff974710813891f28352de6765da3d5a583",
+    "work/v44-unique-label-entry/materialize.mjs": "19e3be91268ed400ef2e5db20919af99a2b877fc95567fec3e4a71fd532b7e52",
+    "work/v44-unique-label-entry/check-model.mjs": "f6d4f1b77672ca22ff77f3dbd624983c52a85cae3162218ef58cf9ab3e8354a9",
+    "work/v44-unique-label-entry/platform-preflight.mjs": "78edcaf17f382b91d1d01d13fca837028d196977769f31d168553915258036cd"
+  },
+  "sourceBindings": 3405,
+  "inheritedBindings": 3354,
+  "runtimeNamespaceAddedToFinalAuditLabel": true,
+  "twoNewOutputIsolationRegressions": true,
+  "sharedPublicationHelperUnchanged": true,
+  "separatorRepairRetained": true,
+  "sevenLuaAndPolicyUnchanged": true,
+  "defaultInspectExecuted": true,
+  "trafficGenerated": false,
+  "routerWrites": false,
+  "hardwareExecuted": false,
+  "newLiveEntryAcceptance": false,
+  "candidateRoot": "work/v44-unique-label-entry",
+  "inputSha256ByRole": {
+    "unique-label-models": "270635fd2aed20b29ced6dabc2828dc374857984ee5dc4b69fd3240f3d06465e",
+    "unique-label-inspect": "dda4a80e62eb1430e150ba57a427ea1ac45d3b2b62487f7fdaa2ee46bebd0ed8"
+  }
+}

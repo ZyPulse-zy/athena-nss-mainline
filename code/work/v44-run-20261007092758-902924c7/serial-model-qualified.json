@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": 6,
+  "actualStartTcpSourceModeled": true,
+  "maximumUnauthenticatedOwnHandshakeCount": 1,
+  "firstByteDeadlineMilliseconds": 8000,
+  "perTcpMbps": 8,
+  "combinedMbps": 32,
+  "combinedCreditBytes": 65536,
+  "hardwareExecuted": false,
+  "nssGateOrQosChanged": false
+}

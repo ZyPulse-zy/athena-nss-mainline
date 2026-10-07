@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "readonlySupplementAttempts": 1,
+  "originalSupervisorExitCode": 1,
+  "originalFinalAuditExitCode": 1,
+  "originalFailuresPreserved": true,
+  "uniqueAuditOutputLabel": "session-20261007092758-082499cc-restoration",
+  "finalFullAudit": {
+    "passed": true,
+    "auditPurpose": "prewrite",
+    "prelearningSchedulingRequested": true,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 6,
+    "queryAge": 1.220000000204891,
+    "sequence": 5822,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": false,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "allFiveHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "physicalQueues": {
+    "passed": true,
+    "observedAt": "2026-10-07T09:28:12.912Z",
+    "readonly": true,
+    "physicalWanOriginalMqFourFqCodelRestored": true,
+    "lan4OriginalMqFourFqCodelRestored": true,
+    "defaultQueueOptionsAndHandlesExact": true,
+    "failedWan4ProcessOwnerChecked": true,
+    "wan4Running": true,
+    "wan4Lifecycle": "exec-minieap",
+    "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
+  },
+  "endpointClosure": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "clientClosure": {
+    "cs2Acceptance": false,
+    "guards": [
+      {
+        "independentGuardSeconds": 210,
+        "passed": true,
+        "clientExitedBeforeDeadline": true,
+        "ownedProcessesRemaining": 0,
+        "originalClientSeconds": 180,
+        "guardObservedAt": "2026-10-07T09:21:53.3870610Z",
+        "exactClientOnly": true,
+        "scope": "work/v44-run-20261007092055-97375ff9"
+      }
+    ],
+    "steamProcessesRunning": 1,
+    "steamFactoryAcceptance": false,
+    "passed": true,
+    "clientDeadlineReset": false,
+    "ownedTestProcessesRemaining": 0,
+    "cs2ProcessesRemaining": 1,
+    "observedAt": "2026-10-07T09:24:44.8119400Z",
+    "readonly": true
+  },
+  "ownedEntryProcessesRemaining": 0,
+  "alreadyPassedEndpointAndClientEvidenceReused": true,
+  "noFixtureReopened": true,
+  "nssNeverOpenedThisAttempt": true,
+  "activeLockReleasedOnlyAfterProof": true,
+  "mutableLedgerState": "RESTORED",
+  "originalRuntimeResultState": "RESTORATION_UNCONFIRMED",
+  "heartbeatStillPaused": true,
+  "classifierNss68Unchanged": true,
+  "cs2OrSteamOperated": false,
+  "permanentNssDeployment": false
+}

@@ -1,3 +1,17 @@
+# v44入口准入前退出，已完整恢复；五WAN硬件验收保持
+
+更新：北京时间2026-10-07 17:36。执行权限恢复后，原v43提交`b0a3c47965ba7d0113b592f4049a2893005ee946`已推送并实际archive读回，4553源SHA/5209文件/1442链接。v43首次恢复尝试因本地路径替换漏尾部分隔符，在连接/fixture前拒绝；新v44分隔符修复15模型通过，旧失败不改。
+
+唯一一次v44自有四TCP＋模拟UDP实际31.96秒，分类4BULK/1RT，TCP WAN1/1/2/4、UDP WAN3。原30秒自然取得窗口结束，未配齐五WAN，在NSS checkpoint/owner/stage/ECM前退出；客户端错误0，没有NSS B或新硬件验收，不放宽PBR/期限、不盲重试。
+
+端点规则0/FW基线与客户端退出通过。最终audit固定label与先前只读记录冲突EEXIST，原失败保留；只在新目录补一次失败只读步骤，source1.22/selectors6、五WAN健康/配置不变/ECM关闭全零、两物理原mq＋四fq_codel选项/handle和自有进程0通过。可变ledger RESTORED，原RESTORATION_UNCONFIRMED结果原字节保留。
+
+新`work/v44-unique-label-entry`以完整新runtime隔离最终输出，17模型/默认inspect通过，没有新流量；完整可复用入口现场验收仍未通过。v42五WAN60.01秒/ECM5/20续租/2373UDP全回与高级QoS功能验收保持；v41差异仍known limitation。常驻NSS68未改，无CS2/Steam、新CPU或永久部署，heartbeat仍暂停。
+
+本轮封存，不自动开启新实验。自然取得未配齐是有界前提限制；最新入口候选待有新可执行条件时的一次整合，不强行重试。详情：[入口整合报告](BOUNDED_ENTRY_INTEGRATION_2026-10-07.md)、[入口使用](BOUNDED_MULTIWAN_ENTRY.md)。
+
+## 以下为原历史记录，旧“未推送”和“权限不可用”只对应当时状态
+
 # v43 发布接续：本地已提交，远端未发布
 
 更新时间：北京时间2026-10-07 16:50。可复用入口的13模型、默认inspect、4553源SHA与暂存检查通过；本地候选提交`854e28b440ffbabc656c32e6d9c98956096e1ef8`保留。实际启动在Windows CIM身份检查处写前拒绝，没有新硬件会话。

@@ -1,3 +1,18 @@
+# 可复用的有界多 WAN 入口：最新软件候选
+
+当前推荐的本地预览与状态候选是`work/v44-unique-label-entry/entry.mjs`，命令仍为默认inspect / status / run / stop。17项模型与默认inspect通过；run和stop的完整现场闭环尚未通过。本轮停止新增流量，勿把以下命令清单理解为自动重试计划。
+
+```powershell
+& 'C:/Users/lishu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe' 'work/v44-unique-label-entry/entry.mjs' inspect
+& 'C:/Users/lishu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe' 'work/v44-unique-label-entry/entry.mjs' status
+```
+
+未来明确一次run仍需要本地已绑定源、部署资料和SSH；在原30秒自然取得期限内必须配齐五WAN，未知默认拒绝。原60秒B、source6/kernel90最大120/owner180/client180/guard210/server250和各字节预算保持，写前仍需新checkpoint下载/SHA/gzip与独立恢复。恢复未确认保留锁，禁止下一代。stop只控制同session自有发送和下一次准入；收到请求不等于硬件恢复已通过。
+
+v43固定命名空间替换漏分隔符和v44固定审核label冲突均有实际本地失败证据；最新候选保留分隔符，并将最终label绑定完整新runtime。没有改分类、QoS、七Lua数据面或共享publication helper。v44唯一实际流量窗4BULK/1RT，但TCP WAN1/1/2/4＋UDP WAN3未配齐，NSS写前退出；一次新目录只读补核验确认完整恢复。见[本次完整记录](BOUNDED_ENTRY_INTEGRATION_2026-10-07.md)、[17模型候选](../evidence/v44-unique-label-candidate.json)。
+
+## 以下保留v43原软件与失败记录，旧权限描述仅对应当时
+
 # 可复用的有界多 WAN 入口
 
 当前已接入四个命令：`inspect`（默认）、`status`、`run`、`stop`。入口沿用 v42 的四条自有 TCP 下载＋一条模拟 UDP 实时流，以及已验收的五 WAN 数据面。默认预览只核对本地源码和既有验收依据，不产生流量，不连接路由器，也不代表新的现网健康审核。

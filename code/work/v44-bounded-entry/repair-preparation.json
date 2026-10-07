@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "originalV43SourcesUnmodified": {
+    "entry.mjs": "585f060a3f2e4b7d50038729d2e3bdc7b629628d9cfa016ee7ac2452573e57ad",
+    "materialize.mjs": "2dfe6ebcf629de7953b9d02df655abd1be0a121f3345c58902c87555c1afd71a",
+    "check-model.mjs": "baa246ff626ea9005a26747bf6142f7311ff739b39c5c344d51039f22aa70126",
+    "platform-preflight.mjs": "99dd14d7803dfa8e7aa540d77ef4ec5aab8f1ec1b42c7693c578a193a6eabff6"
+  },
+  "localPathSeparatorDefect": true,
+  "onlyNamespaceCopiesAndSeparatorChanged": true,
+  "classificationQosLeaseAndLimitsUnchanged": true,
+  "originalFailureRuntime": "work/v43-run-20261007090613-69b7cd24",
+  "originalFailureBeforeRouterConnectionAndFixture": true,
+  "newRegressionChecks": 2
+}

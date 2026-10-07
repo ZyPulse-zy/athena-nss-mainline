@@ -1,0 +1,45 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {entryRoot,materialize,read,save,hash} from './materialize.mjs';
+
+const oldRoot='work/v43-bounded-entry',ledger=oldRoot+'/active-private.json',lock=oldRoot+'/active-lock';
+const oldBytes=fs.readFileSync(ledger),old=JSON.parse(oldBytes);
+assert.equal(old.state,'RESTORATION_UNCONFIRMED');
+assert.equal(old.runtimeRoot,'work/v43-run-20261007090613-69b7cd24');
+assert.ok(!old.hardwareCompleted&&!fs.existsSync(old.runtimeRoot+'/load-latest-private.json'));
+const oldPilot=read(old.runtimeRoot+'/pilot-reference-private.json').directory;
+const events=read(oldPilot+'/driver-private.json');
+assert.equal(events.length,1);assert.equal(events[0].code,1);
+assert.ok(events[0].file.endsWith('/current-audit-diagnostic.mjs')&&events[0].stderr.includes('input did not match the regular expression'));
+assert.ok(!fs.existsSync(oldPilot+'/case-reference-private.json'));
+const oldAudit=fs.readFileSync(old.runtimeRoot+'/current-audit-diagnostic.mjs','utf8');
+assert.ok(oldAudit.indexOf('assert.match(caseDir,')<oldAudit.indexOf('await connectRouter()'));
+const model=read(read(entryRoot+'/entry-model-latest-private.json').receipt);
+assert.ok(model.passed&&model.modelOnly&&model.checks.length===15);
+const runtimeRoot='work/v44-run-'+new Date().toISOString().replace(/\D/g,'').slice(0,14)+'-'+crypto.randomBytes(4).toString('hex');
+const q=materialize(runtimeRoot,Date.now()+600000);
+save(entryRoot+'/prior-refusal-readonly-pointer-private.json',{runtimeRoot,priorRuntime:old.runtimeRoot,readonly:true});
+for(const name of ['read-final-health.mjs','read-physical-final.mjs']){
+ const p=spawnSync(process.execPath,[runtimeRoot+'/'+name],{windowsHide:true,encoding:'utf8',timeout:95000});
+ save(runtimeRoot+'/'+name+'.process-private.json',{code:p.status,stdout:p.stdout,stderr:p.stderr,error:p.error?.code??null});
+ assert.equal(p.status,0,'Prior local-refusal readonly confirmation failed; original output retained');
+}
+const audit=read(runtimeRoot+'/v44-final-audit.json'),closure=read(runtimeRoot+'/closure-pointer.json').directory,physical=read(closure+'/physical-final.json');
+assert.ok(audit.passed&&audit.queryAge<6&&audit.ecmClosedAndZero&&audit.protectedConfigurationUnchanged&&audit.allFiveHealthyWanBaseline);
+assert.ok(physical.passed&&physical.defaultQueueOptionsAndHandlesExact);
+const ps="$ErrorActionPreference='Stop';$nssOld=@(Get-CimInstance Win32_Process -Filter \"Name='node.exe'\" | Where-Object {$_.CommandLine -match 'work[\\\\/]v43-run-20261007090613-69b7cd24' -or $_.ProcessId -eq "+old.wrapperPid+"});@{ownedPriorNodeCount=$nssOld.Count}|ConvertTo-Json -Compress";
+const p=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',ps],{windowsHide:true,encoding:'utf8',timeout:12000});
+save(runtimeRoot+'/prior-process-inventory-private.json',{code:p.status,stdout:p.stdout,stderr:p.stderr});
+assert.equal(p.status,0);assert.equal(JSON.parse(p.stdout).ownedPriorNodeCount,0);
+const expectedLock=path.resolve('work/v43-bounded-entry/active-lock');assert.equal(path.resolve(lock),expectedLock);assert.ok(expectedLock.startsWith(path.resolve('work')+path.sep));
+const identity=fs.statSync(lock);assert.equal(fs.readdirSync(lock).length,0);assert.equal(hash(fs.readFileSync(ledger)),hash(oldBytes));
+fs.writeFileSync(runtimeRoot+'/prior-ledger-original-private.json',oldBytes,{flag:'wx'});
+const proof={passed:true,readonly:true,priorFailureBeforeRouterConnectionAndFixture:true,noCheckpointOrNssStage:true,fullAudit:audit,physicalQueues:physical,ownedPriorNodeCount:0,bindings:q.actualBindings,originalLedgerSha256:hash(oldBytes),priorErrorsPreserved:true,hardwareAcceptance:false};
+save(runtimeRoot+'/prior-local-refusal-confirmed-private.json',proof);
+const updated={...old,state:'RESTORED',restorationPassed:true,externalReadonlyRestorationProof:runtimeRoot+'/prior-local-refusal-confirmed-private.json'};
+const tmp=ledger+'.confirmed-'+crypto.randomBytes(4).toString('hex');save(tmp,updated);fs.renameSync(tmp,ledger);
+const current=fs.statSync(lock);assert.equal(current.dev,identity.dev);assert.equal(current.ino,identity.ino);fs.rmdirSync(lock);
+console.log(JSON.stringify({passed:true,priorLocalFailurePreserved:true,restorationPassed:true,queryAge:audit.queryAge,physicalQueueOptionsExact:true,ownedPriorNodeCount:0,priorLockReleasedAfterProof:true,runtimeRoot}));

@@ -1,3 +1,9 @@
+# Athena NSS 多WAN / 高级QoS受控原型
+
+五WAN硬件功能验收保持。可复用入口已补本地分隔符和输出隔离：17模型、默认inspect通过；唯一实际流量窗口未自然配齐五WAN，在NSS写前拒绝并完整恢复，最新入口现场验收仍未通过。原v43推送和归档已补齐。见[本次整合](docs/BOUNDED_ENTRY_INTEGRATION_2026-10-07.md)、[入口使用](docs/BOUNDED_MULTIWAN_ENTRY.md)和[STATE](docs/STATE.md)。
+
+## 以下保留历史交付，旧状态按当时记录解读
+
 > v43发布状态：13项软件模型与本地提交通过；当前执行环境的CIM身份检查和GitHub写入批准不可用，尚未推送或取得新入口硬件验收。远端仍为v42，后续从本地保存的提交接续。
 
 # Athena NSS 多WAN / 高级QoS受控原型

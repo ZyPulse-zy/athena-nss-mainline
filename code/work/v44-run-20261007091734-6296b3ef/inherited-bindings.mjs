@@ -1,0 +1,2 @@
+import assert from'node:assert/strict';import{verifyPreparation as simulated}from'../v38-sim/session-binding.mjs';import{verifyPreparation as five}from'../v24-fiveflow/session-binding.mjs';
+export function verifyInherited(){const a=simulated(),b=five();for(const[f,h]of Object.entries(b.sourceManifest))if(f in a.sourceManifest)assert.equal(a.sourceManifest[f],h,'Overlapping inherited bytes differ');return{...a,sourceManifest:{...a.sourceManifest,...b.sourceManifest},externalSourceBindings:[...new Set([...(a.externalSourceBindings??[]),...(b.externalSourceBindings??[])])]};}

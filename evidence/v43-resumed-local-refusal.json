@@ -1,0 +1,26 @@
+{
+  "originalPublicationNowPushedAndArchiveChecked": true,
+  "publicationCommit": "b0a3c47965ba7d0113b592f4049a2893005ee946",
+  "publishedSourceHashes": 4553,
+  "archiveSha256": "76766238664e1c25765eaeeeff0604cf24aef5c8e5d7ec09c879d626cec35db6",
+  "windowsIdentityReadableInResumedEnvironment": true,
+  "entryAttemptPassed": false,
+  "actualBindings": 3405,
+  "failureCategory": "LOCAL_ESCAPED_NAMESPACE_TRAILING_SEPARATOR_MISSING",
+  "refusedBeforeRouterConnectionAndFixture": true,
+  "checkpointStarted": false,
+  "nssStageStarted": false,
+  "trafficGenerated": false,
+  "originalFailurePreserved": true,
+  "separatorFixedOnlyInNewV44Sources": true,
+  "readonlyConfirmationPassedBeforeOldLockRelease": true,
+  "originalRuntimeAndResultUnchanged": true,
+  "newHardwareAcceptance": false,
+  "inputSha256ByRole": {
+    "v43-resumed-publication": "885edfe4a3bb84e51c4e14706a1ff3ccec66b27c4fae1ff8111d4cbc94169de8",
+    "v43-supervisor-refusal": "aa2007d5d958d17a71990ae664a1d6ff81ece392958df9d455171e511193a546",
+    "v43-original-result": "8c361afe9c8370df249688e904f42cbbe68aea71abe9a8aa648e1537ee367cdb",
+    "v43-actual-bindings": "2666b4a6e43f8273be1847a5227491c7829367bdc86fae6a4ffee508b84c3055",
+    "v43-readonly-confirmation": "5631d2213307ee7b013e9d759ca307b4bf8756331f8f349674d29f136e9e1cdd"
+  }
+}
