@@ -1,0 +1,71 @@
+{
+  "passedAsObservation": true,
+  "actualCs2DeathmatchConnectedBeforeDownload": true,
+  "mapDuringWindow": "Mirage",
+  "downloadTemporaryLimitKbps": 32000,
+  "downloadSpeedObservedMbps": [
+    32.9,
+    32.0
+  ],
+  "guardReadyBeforeDownload": true,
+  "clientDeadlineSeconds": 180,
+  "clientDeadlineReset": false,
+  "guardNaturalExactApplicationExitPassed": true,
+  "guardExitObservedAt": "2026-10-07T03:00:02.6199191Z",
+  "hudSamples": [
+    {
+      "phase": "software",
+      "roundTimeShown": "9:50",
+      "pingMsShown": 15,
+      "lossDownPercentShown": 0.0,
+      "lossUpPercentShown": 0.0,
+      "jitterChartsGreenObserved": true,
+      "numericJitterMeasuredMs": null,
+      "missValueObserved": false
+    },
+    {
+      "phase": "software",
+      "roundTimeShown": "8:53",
+      "deathScreen": true,
+      "pingMsShown": null,
+      "lossDownPercentShown": null,
+      "lossUpPercentShown": null,
+      "missValueObserved": false
+    },
+    {
+      "phase": "software",
+      "roundTimeShown": "8:23",
+      "pingMsShown": 15,
+      "lossDownPercentShown": 0.0,
+      "lossUpPercentShown": 0.0,
+      "jitterChartsGreenObserved": true,
+      "numericJitterMeasuredMs": null,
+      "missValueObserved": false
+    }
+  ],
+  "hudIsNssPhaseEvidence": false,
+  "subjectiveHumanExperienceAccepted": false,
+  "startupAndRecoveryAutomaticDownloadResumptionObserved": true,
+  "strictCumulative180SecondDownloadProofAvailable": false,
+  "currentUiRestoration": {
+    "observedAt": "2026-10-07T03:06:29.070Z",
+    "capRestoreObservedAt": "2026-10-07T03:06:14.262Z",
+    "observationMethod": "sky focused window screenshots reviewed",
+    "passed": true,
+    "downloadPaused": true,
+    "downloadProgressPercent": 30,
+    "networkBps": 0,
+    "diskBps": 0,
+    "downloadLimitEnabled": false,
+    "downloadLimitValueClearedBeforeDisable": true,
+    "downloadRegionUnchanged": true,
+    "bitsDisplayUnchanged": true,
+    "allowDownloadsDuringGameplayUnchanged": true,
+    "cs2ExitPreviouslyConfirmed": true,
+    "guardDeadlineWasNotExtended": true,
+    "strictCumulativeDownloadDurationProven": false,
+    "startupAndRecoveryAutoResumeFragmentsOutsideOriginalGuard": true,
+    "subjectiveExperienceAccepted": false
+  },
+  "fullNssFactoryAcceptance": false
+}

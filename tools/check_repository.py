@@ -2175,4 +2175,43 @@ if (root/'evidence/v32-normal-source-proof.json').exists():
  assert end['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and end['clientProcessClosure']['naturalTimedExitPassed'] and end['clientProcessClosure']['ownedTestProcessesRemaining']==end['clientProcessClosure']['cs2ProcessesRemaining']==0
  assert end['passed'] and end['readonly'] and end['clientUiSettingsRestoreConfirmed'] and end['noRouterConfigurationWrites'] and end['strictCumulativeDownloadDurationNotProven']
  assert not any(end[k] for k in ['newNssSessionStarted','normalFactoryHardwareAcceptance','humanExperienceAcceptance','newCpuAcceptance','permanentNssDeployment'])
+if (root/'evidence/v33-normal-source-proof.json').exists():
+ sp=json.loads((root/'evidence/v33-normal-source-proof.json').read_text(encoding='utf8'))
+ q=json.loads((root/'evidence/v33-normal-entry-qualification.json').read_text(encoding='utf8'))
+ refusal=json.loads((root/'evidence/v33-normal-refusal.json').read_text(encoding='utf8'))
+ window=json.loads((root/'evidence/v33-client-window.json').read_text(encoding='utf8'))
+ end=json.loads((root/'evidence/v33-normal-restoration.json').read_text(encoding='utf8'))
+ assert manifest['lastNormalApplicationAttemptExport']=='V33_ACTUAL_NORMAL_PRECHECKPOINT_REFUSAL'
+ assert sp['passed'] and sp['historicPrefixSources']==3993 and sp['oldCodeAndEvidenceBlobsChecked']==4534 and sp['oldCodeAndEvidenceUnmodified']
+ assert sp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3993],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ assert len(sp['sourceHashes'])==44 and sp['qualificationSourceCopiesExact']==36 and sp['privateInputsCopiedExact']==30
+ assert sp['actualRuntimeBindingCopiesExact']==sp['entryBindings']==2723 and not sp['modelsReplayed']
+ for src,digest in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ assert q['passed'] and q['inheritedBindings']==2687 and len(q['sourceManifest'])==36 and q['relativeDependenciesExist']==57
+ assert q['unchangedDataPlaneAndImmutableCandidatePolicy'] and q['unchangedV31PreStageSelection'] and q['noModelsReplayed']
+ assert q['originalSelectorModelsReused']==18 and q['actualRefusalRegressionModelsReused']==14
+ assert (q['sourceFreshnessSeconds'],q['kernelSessionSeconds'],q['kernelMaximumSeconds'],q['ownerSeconds'],q['clientMaximumSeconds'],q['phaseSeconds'],q['maximumExactFlows'])==(6,90,120,180,180,60,3)
+ assert q['temporaryClientLimitMbps']==32 and q['cutoff']=='2026-10-07T03:30:00Z'
+ assert not q['hardwareExecuted'] and not q['wholeFactoryModeled'] and not q['normalApplicationFactoryHardwareAcceptance']
+ assert refusal['passed'] and refusal['originalRefusalPreserved'] and refusal['controllerFactoryInvoked'] and refusal['controllerExitCode']==1
+ assert refusal['selectedStillEligible']=={'tcp':False,'udp':True,'tcp2':False} and refusal['sameWanOriginalGameAlternatives']==0
+ assert refusal['loadBeforeController']=={'actualCs2Rt':1,'actualSteamBulk':9,'eligibleMultiWanTriples':1}
+ assert not any(refusal[k] for k in ['checkpointCreated','detachedStageStarted','nssStarted','normalApplicationFactoryAcceptance','classifierClassChangeCauseEstablished','rootCauseBeyondEligibilityEstablished'])
+ local=refusal['localFrozenFrameComparison']
+ assert local['passed'] and local['localFrozenInputOnly'] and local['networkReads']==local['routerWrites']==0
+ assert local['originalTcpSocketsStillOwned']=={'tcp':True,'tcp2':True} and local['originalWanSlotAlternatives']==0 and local['otherWanSlotAlternatives']==1
+ assert local['otherSlotsDoNotAuthorizeRetargeting'] and not local['originalCtExitEstablished'] and not local['firmwareFaultEstablished']
+ assert window['actualCs2DeathmatchConnectedBeforeDownload'] and window['guardReadyBeforeDownload'] and window['clientDeadlineSeconds']==180
+ assert window['guardNaturalExactApplicationExitPassed'] and not window['clientDeadlineReset'] and not window['strictCumulative180SecondDownloadProofAvailable']
+ assert not window['hudIsNssPhaseEvidence'] and not window['subjectiveHumanExperienceAccepted'] and not window['fullNssFactoryAcceptance']
+ assert all(h['phase']=='software' and not h['missValueObserved'] for h in window['hudSamples'])
+ assert window['hudSamples'][1]['pingMsShown'] is None and window['hudSamples'][1]['lossDownPercentShown'] is None and window['hudSamples'][1]['lossUpPercentShown'] is None
+ ui=window['currentUiRestoration']
+ assert ui['passed'] and ui['downloadPaused'] and ui['downloadProgressPercent']==30 and ui['networkBps']==ui['diskBps']==0 and not ui['downloadLimitEnabled']
+ assert ui['downloadLimitValueClearedBeforeDisable'] and ui['downloadRegionUnchanged'] and ui['bitsDisplayUnchanged'] and ui['allowDownloadsDuringGameplayUnchanged']
+ audit=end['fullAudit'];assert audit['passed'] and audit['queryAge']<6 and audit['ecmClosedAndZero'] and audit['protectedConfigurationUnchanged'] and audit['allFiveHealthyWanBaseline']
+ assert end['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and end['clientProcessClosure']['naturalTimedExitPassed'] and end['clientProcessClosure']['ownedTestProcessesRemaining']==end['clientProcessClosure']['cs2ProcessesRemaining']==0
+ assert end['passed'] and end['readonlyRouterAudit'] and end['clientUiSettingsRestoreConfirmed'] and end['noRouterConfigurationWrites']
+ assert end['originalGuardDidNotRestoreUi'] and end['laterManualUiRestorationProvedSeparately'] and end['strictCumulativeDownloadDurationNotProven']
+ assert not any(end[k] for k in ['newCheckpointStageOrNss','normalFactoryHardwareAcceptance','humanExperienceAcceptance','newCpuAcceptance','permanentNssDeployment'])
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

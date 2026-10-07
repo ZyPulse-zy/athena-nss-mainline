@@ -1,3 +1,17 @@
+# 正常程序已识别三流；NSS 写前拒绝，恢复通过
+
+更新：北京时间2026-10-07 11:12。v33实际Mirage死斗＋已有Hades约32Mbps，自动分类1CS2 RT/9Steam BULK/1跨WAN三流，完整控制器已调用。准备期间两条选中TCP不再合格，checkpoint/stage/模块/ECM前拒绝，普通应用NSS factory验收仍未完成。
+
+失败帧保留：原UDP仍合格，两条TCP socket仍由Steam持有；原WAN槽合格替代0组，其它WAN槽1组。缺失合格候选不当CT退出或NSS故障，不能用新WAN替换已冻结参数。2723绑定/57依赖通过，18＋14模型复用未重跑；数据面与选择合同不变，旧v32/v31截止/源码/失败保持。
+
+11:01原完整audit source1.24/native selectors2、五WAN健康/保护配置/epoch保持、ECM关闭全零；11:02两物理原mq＋四fq_codel全部选项/handle一致。原180秒客户端守护自然退出，CS2/controller/guard0；11:06手动恢复Steam原限速OFF/空数字、下载30%暂停0bps。初次启动和恢复重开曾自动续传，累计下载期限未测，不宣称严格180秒总量/时长。
+
+软件HUD见ping15/loss上下0，数值jitter/Miss/真人体感未知，没有NSS B段。v20三流多WAN及高级QoS硬件和历史CPU继续复用；当前正常入口TCP在准备期间失去资格是具体未验边界，不放宽准入、不盲重试或扩五流。本轮停止新增生产实验，后续只修有证据支持的正常入口准备顺序，heartbeat保持暂停。
+
+详情：[本轮报告](docs/NORMAL_ATTEMPT_2026-10-07.md)、[实际拒绝](evidence/v33-normal-refusal.json)、[终态](evidence/v33-normal-restoration.json)、[源码](evidence/v33-normal-source-proof.json)。
+
+## 以下保留原正常入口与夜间记录
+
 # Steam 已恢复；普通应用 NSS 验收尚未完成
 
 更新：北京时间2026-10-07 10:12。v32承接用户继续推进及一次Hades家庭库限时下载许可，实际约32Mbps；死斗首次被remote host关闭，原180秒守护内只再匹配一次，最终连接/HUD和负载中的程序分类未取得。完整NSS factory、checkpoint/stage/ECM均未启动，不能标硬件/真人验收通过。

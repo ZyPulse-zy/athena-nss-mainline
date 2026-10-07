@@ -224,3 +224,24 @@
 /code/work/v32-normal/wan-tag-plan.mjs whitespace=cr-at-eol
 /code/work/v32-normal/prepare-receipt.json whitespace=cr-at-eol
 /code/work/v32-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+# Preserve exact v33 Windows source bytes and inherited Lua whitespace.
+/code/work/v33-normal/candidate-policy.mjs whitespace=cr-at-eol
+/code/work/v33-normal/class-leaf-map.mjs whitespace=cr-at-eol
+/code/work/v33-normal/classified-tags.lua whitespace=cr-at-eol
+/code/work/v33-normal/classifier.lua whitespace=cr-at-eol
+/code/work/v33-normal/current-audit-diagnostic.mjs whitespace=cr-at-eol
+/code/work/v33-normal/epoch-driver.mjs whitespace=cr-at-eol
+/code/work/v33-normal/fast-path.lua whitespace=cr-at-eol
+/code/work/v33-normal/guardian-plan.mjs whitespace=cr-at-eol
+/code/work/v33-normal/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/v33-normal/module-stage.mjs whitespace=cr-at-eol
+/code/work/v33-normal/parse-ecm.mjs whitespace=cr-at-eol
+/code/work/v33-normal/payload.mjs whitespace=cr-at-eol
+/code/work/v33-normal/qos-physical.lua whitespace=cr-at-eol
+/code/work/v33-normal/session.mjs whitespace=cr-at-eol
+/code/work/v33-normal/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/v33-normal/wan-scope.lua whitespace=cr-at-eol
+/code/work/v33-normal/wan-tag-plan.mjs whitespace=cr-at-eol
+/code/work/v33-normal/prepare-receipt.json whitespace=cr-at-eol
+/code/work/v33-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol

@@ -1,3 +1,9 @@
+# Athena NSS 多WAN / 高级QoS受控原型
+
+三流跨WAN及五WAN队列/共享借用已在硬件证明。最新实际CS2＋Steam已配齐三流，但准备期间TCP不再合格，NSS写前安全拒绝，普通应用factory仍未验收。当前NSS关闭、下载暂停、原设置已恢复，见[STATE](docs/STATE.md)与[实际报告](docs/NORMAL_ATTEMPT_2026-10-07.md)。
+
+## 以下保留历史交付
+
 # Athena NSS 多WAN / QoS 受控原型
 
 三流跨WAN和五WAN队列/共享预算已有硬件证明。本次Steam恢复可用、限时下载与客户端退出完成；死斗连接问题发生在NSS前，普通应用factory尚未执行。当前NSS关闭、下载暂停，见[STATE](docs/STATE.md)和[实际窗口报告](docs/NORMAL_WINDOW_2026-10-07.md)。

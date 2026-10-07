@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "diagnosticOnly": true,
+  "originalRefusalPreserved": true,
+  "observedAt": "2026-10-07T02:59:40.120Z",
+  "selectedStillEligible": {
+    "tcp": false,
+    "udp": true,
+    "tcp2": false
+  },
+  "actualGameCandidates": 1,
+  "actualBulkCandidates": 5,
+  "sameWanOriginalGameAlternatives": 0,
+  "originalGameAndWanSlotsCouldBeRetained": false,
+  "checkpointCreated": false,
+  "detachedStageStarted": false,
+  "nssStarted": false,
+  "missingCandidateDoesNotProveCtExit": true,
+  "rootCauseBeyondEligibilityEstablished": false,
+  "controllerFactoryInvoked": true,
+  "controllerExitCode": 1,
+  "refusalMessage": "AssertionError [ERR_ASSERTION]: Exact controlled socket pair changed before staging",
+  "loadBeforeController": {
+    "actualCs2Rt": 1,
+    "actualSteamBulk": 9,
+    "eligibleMultiWanTriples": 1
+  },
+  "localFrozenFrameComparison": {
+    "passed": true,
+    "localFrozenInputOnly": true,
+    "networkReads": 0,
+    "routerWrites": 0,
+    "originalRefusalPreserved": true,
+    "originalGamePreserved": true,
+    "originalTcpSocketsStillOwned": {
+      "tcp": true,
+      "tcp2": true
+    },
+    "originalWanSlotAlternatives": 0,
+    "otherWanSlotAlternatives": 1,
+    "otherSlotsDoNotAuthorizeRetargeting": true,
+    "originalCtExitEstablished": false,
+    "firmwareFaultEstablished": false,
+    "newCheckpointStageOrNss": false,
+    "completeFactoryAcceptance": false
+  },
+  "normalApplicationFactoryAcceptance": false,
+  "classifierClassChangeCauseEstablished": false
+}
