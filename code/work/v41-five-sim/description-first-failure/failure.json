@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "error": "AssertionError: checkpoint receipt has no passed field; actual undefined expected true",
+  "line": 12,
+  "hardwareRecordChanged": false,
+  "frozenInputsChanged": false
+}

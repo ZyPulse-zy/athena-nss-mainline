@@ -1,0 +1,426 @@
+{
+  "passedAsPreservedObservation": true,
+  "caseDirectoryKeptLocal": true,
+  "recordSha256": "cf9a0fac2b20a1be5cbacd8d9cc0f94dcc20522af99d1a5de2e96aa70a7a005f",
+  "actualRuntimeBindings": 3303,
+  "actualFiveWanInitialHit": true,
+  "fiveWanSixtySecondAcceptance": false,
+  "initialFiveFlowProof": {
+    "passed": true,
+    "connectionCount": 5,
+    "proof": {
+      "tcp": {
+        "protocol": 6,
+        "ecmOrientation": "client-first",
+        "accelerated": true,
+        "ctMark": 131072,
+        "downTag": 2401566720,
+        "upTag": 2384789504,
+        "natCorrect": true,
+        "wanAffinity": 2,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 5,
+        "fromPackets": 4,
+        "toPackets": 1
+      },
+      "udp": {
+        "protocol": 17,
+        "ecmOrientation": "client-first",
+        "accelerated": true,
+        "ctMark": 65536,
+        "downTag": 2400583680,
+        "upTag": 2383806464,
+        "natCorrect": true,
+        "wanAffinity": 1,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 2,
+        "fromPackets": 1,
+        "toPackets": 1
+      },
+      "tcp2": {
+        "protocol": 6,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 262144,
+        "downTag": 2403663872,
+        "upTag": 2386886656,
+        "natCorrect": true,
+        "wanAffinity": 4,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 7,
+        "fromPackets": 6,
+        "toPackets": 1
+      },
+      "tcp3": {
+        "protocol": 6,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 327680,
+        "downTag": 2404712448,
+        "upTag": 2387935232,
+        "natCorrect": true,
+        "wanAffinity": 5,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 7,
+        "fromPackets": 5,
+        "toPackets": 2
+      },
+      "tcp4": {
+        "protocol": 6,
+        "ecmOrientation": "server-first",
+        "accelerated": true,
+        "ctMark": 196608,
+        "downTag": 2402615296,
+        "upTag": 2385838080,
+        "natCorrect": true,
+        "wanAffinity": 3,
+        "fromLan4": true,
+        "fromBridgeLan": true,
+        "slowPathPackets": 6,
+        "fromPackets": 5,
+        "toPackets": 1
+      }
+    }
+  },
+  "actualWanBySlot": {
+    "tcp": 2,
+    "udp": 1,
+    "tcp2": 4,
+    "tcp3": 5,
+    "tcp4": 3
+  },
+  "phase": {
+    "seconds": 3.8999999999068677,
+    "cadenceSeconds": 0.5,
+    "requestedSeconds": 60,
+    "completed": false,
+    "sampleStart": 2,
+    "endedAt": 2170659.9,
+    "startedAt": 2170656,
+    "name": "B",
+    "observer": "same-validated-classifier-and-counter-loop",
+    "sampleCount": 6,
+    "sampleEnd": 7,
+    "terminatedByEligibilityInvalidation": true
+  },
+  "bSamples": 6,
+  "ecmCountsDuringRecordedB": [
+    5
+  ],
+  "renewals": 0,
+  "actualClassRejection": {
+    "tcp": {
+      "validRemainingSeconds": 4.899999999906868,
+      "expectedClass": "BULK",
+      "present": true,
+      "class": "BE",
+      "reason": "cooldown",
+      "reasonCode": "TARGET_CLASS_MISMATCH",
+      "budgetAdmitted": false,
+      "replyMatches": true,
+      "matches": 1,
+      "validUntilUptime": 2170664.17,
+      "ctMatches": true,
+      "zoneMatches": true,
+      "wanMatches": true,
+      "selectedInputPresent": true,
+      "candidate": false,
+      "pps": 248.50498336871297,
+      "leafTagMatches": false,
+      "rateKbps": 1506.0199334336633,
+      "originalMatches": true,
+      "markMatches": true,
+      "targetClassMatches": false,
+      "downTag": 0
+    },
+    "tcp2": {
+      "validRemainingSeconds": 4.899999999906868,
+      "expectedClass": "BULK",
+      "present": true,
+      "class": "BE",
+      "reason": "cooldown",
+      "reasonCode": "TARGET_CLASS_MISMATCH",
+      "budgetAdmitted": false,
+      "replyMatches": true,
+      "matches": 1,
+      "validUntilUptime": 2170664.17,
+      "ctMatches": true,
+      "zoneMatches": true,
+      "wanMatches": true,
+      "selectedInputPresent": true,
+      "candidate": false,
+      "pps": 259.4684385173327,
+      "leafTagMatches": false,
+      "rateKbps": 1656.5049832554444,
+      "originalMatches": true,
+      "markMatches": true,
+      "targetClassMatches": false,
+      "downTag": 0
+    },
+    "tcp3": {
+      "validRemainingSeconds": 4.899999999906868,
+      "expectedClass": "BULK",
+      "present": true,
+      "class": "BE",
+      "reason": "cooldown",
+      "reasonCode": "TARGET_CLASS_MISMATCH",
+      "budgetAdmitted": false,
+      "replyMatches": true,
+      "matches": 1,
+      "validUntilUptime": 2170664.17,
+      "ctMatches": true,
+      "zoneMatches": true,
+      "wanMatches": true,
+      "selectedInputPresent": true,
+      "candidate": false,
+      "pps": 272.4252491475196,
+      "leafTagMatches": false,
+      "rateKbps": 1688.6750829206305,
+      "originalMatches": true,
+      "markMatches": true,
+      "targetClassMatches": false,
+      "downTag": 0
+    },
+    "tcp4": {
+      "validRemainingSeconds": 4.899999999906868,
+      "expectedClass": "BULK",
+      "present": true,
+      "class": "BE",
+      "reason": "cooldown",
+      "reasonCode": "TARGET_CLASS_MISMATCH",
+      "budgetAdmitted": false,
+      "replyMatches": true,
+      "matches": 1,
+      "validUntilUptime": 2170664.17,
+      "ctMatches": true,
+      "zoneMatches": true,
+      "wanMatches": true,
+      "selectedInputPresent": true,
+      "candidate": false,
+      "pps": 262.790697653278,
+      "leafTagMatches": false,
+      "rateKbps": 1669.7833885699908,
+      "originalMatches": true,
+      "markMatches": true,
+      "targetClassMatches": false,
+      "downTag": 0
+    },
+    "udp": {
+      "validRemainingSeconds": 4.899999999906868,
+      "expectedClass": "RT",
+      "present": true,
+      "class": "RT",
+      "reason": "interactive",
+      "reasonCode": "TARGET_CLASS_ADMITTED",
+      "budgetAdmitted": true,
+      "replyMatches": true,
+      "matches": 1,
+      "validUntilUptime": 2170664.17,
+      "ctMatches": true,
+      "zoneMatches": true,
+      "wanMatches": true,
+      "selectedInputPresent": true,
+      "candidate": true,
+      "pps": 30.897009964291854,
+      "leafTagMatches": true,
+      "rateKbps": 38.55946843543623,
+      "originalMatches": true,
+      "markMatches": true,
+      "targetClassMatches": true,
+      "downTag": 2399535104
+    }
+  },
+  "sameQueryCompleteDiagnosis": true,
+  "projectionAbsenceNotUsedAsCtExit": true,
+  "ctAndFullMarkNatWanUnchanged": true,
+  "udpRemainedRtAdmitted": true,
+  "affectedSlots": [
+    "tcp",
+    "tcp2",
+    "tcp3",
+    "tcp4"
+  ],
+  "terminalReason": "AUTHENTICATED_PAIR_NO_LONGER_ADMITTED",
+  "reportedTcpRateBelowOriginal2000KbpsThreshold": true,
+  "qosLeafSnapshots": {
+    "down": {
+      "nearbyAsynchronousWindowSeconds": 3.9499999997206032,
+      "validation": {
+        "parentDumpHasKnownStockLimitation": true,
+        "perWanCeilingMbps": 18,
+        "complete": true,
+        "nativeOptionsValidated": true,
+        "perWanGuaranteedMbps": 3,
+        "sharedMbps": 18
+      },
+      "values": {
+        "tcp": {
+          "wan": 2,
+          "handle": "8f25:",
+          "delta": {
+            "bytes": 1795712,
+            "packets": 1188,
+            "drop": 38
+          },
+          "nearbyDescriptiveMbps": 3.6368850635483883
+        },
+        "udp": {
+          "wan": 1,
+          "handle": "8f16:",
+          "delta": {
+            "bytes": 27540,
+            "packets": 162,
+            "drop": 0
+          },
+          "nearbyDescriptiveMbps": 0.05577721519381873
+        },
+        "tcp2": {
+          "wan": 4,
+          "handle": "8f45:",
+          "delta": {
+            "bytes": 2110798,
+            "packets": 1399,
+            "drop": 81
+          },
+          "nearbyDescriptiveMbps": 4.27503392435302
+        },
+        "tcp3": {
+          "wan": 5,
+          "handle": "8f55:",
+          "delta": {
+            "bytes": 2225960,
+            "packets": 1450,
+            "drop": 12
+          },
+          "nearbyDescriptiveMbps": 4.508273418040404
+        },
+        "tcp4": {
+          "wan": 3,
+          "handle": "8f35:",
+          "delta": {
+            "bytes": 2260564,
+            "packets": 1496,
+            "drop": 63
+          },
+          "nearbyDescriptiveMbps": 4.5783574686782735
+        }
+      }
+    },
+    "up": {
+      "nearbyAsynchronousWindowSeconds": 3.9499999997206032,
+      "validation": {
+        "parentDumpHasKnownStockLimitation": true,
+        "perWanCeilingMbps": 12,
+        "complete": true,
+        "nativeOptionsValidated": true,
+        "perWanGuaranteedMbps": 12,
+        "sharedMbps": 60
+      },
+      "values": {
+        "tcp": {
+          "wan": 2,
+          "handle": "8e25:",
+          "delta": {
+            "bytes": 63466,
+            "packets": 901,
+            "drop": 0
+          },
+          "nearbyDescriptiveMbps": 0.12853873418630715
+        },
+        "udp": {
+          "wan": 1,
+          "handle": "8e16:",
+          "delta": {
+            "bytes": 22610,
+            "packets": 133,
+            "drop": 0
+          },
+          "nearbyDescriptiveMbps": 0.04579240506653019
+        },
+        "tcp2": {
+          "wan": 4,
+          "handle": "8e45:",
+          "delta": {
+            "bytes": 96502,
+            "packets": 1185,
+            "drop": 0
+          },
+          "nearbyDescriptiveMbps": 0.19544708862141957
+        },
+        "tcp3": {
+          "wan": 5,
+          "handle": "8e55:",
+          "delta": {
+            "bytes": 80394,
+            "packets": 1253,
+            "drop": 0
+          },
+          "nearbyDescriptiveMbps": 0.16282329115075755
+        },
+        "tcp4": {
+          "wan": 3,
+          "handle": "8e35:",
+          "delta": {
+            "bytes": 85644,
+            "packets": 1176,
+            "drop": 0
+          },
+          "nearbyDescriptiveMbps": 0.1734562025439147
+        }
+      }
+    }
+  },
+  "bulkLeafAggregateNearbyMbps": 16.998549874620085,
+  "classificationAndLeafWindowsDiffer": true,
+  "nssCounterFeedbackRootCauseProven": false,
+  "firmwareOrCtCorruptionProven": false,
+  "classificationPolicyChanged": false,
+  "permanentClassifierUnchanged": true,
+  "newCpuBenefitClaimed": false,
+  "cs2OrHumanAcceptance": false,
+  "checkpointVerifiedBeforeWrite": true,
+  "independentStageBeforeWriteVerified": true,
+  "restoration": {
+    "moduleUnloaded": true,
+    "tagsRemoved": true,
+    "qosRestored": true,
+    "qosModuleUnloaded": true,
+    "dualPhysicalQueuesRestored": true,
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "stateNodeRemoved": true,
+    "firmwareZeroAfterRetirement": true
+  },
+  "originalBaselineAuditPassed": true,
+  "recordBytes": 298392,
+  "fixture": {
+    "seconds": 91.338075,
+    "deliveredTcpBytes": 303366144,
+    "clientErrors": [],
+    "tcpAttempts": {
+      "tcp": 1,
+      "tcp2": 1,
+      "tcp3": 4,
+      "tcp4": 1
+    },
+    "targetCombinedMbps": 32,
+    "combinedCreditBytes": 65536,
+    "udpBytes": 128,
+    "targetUdpPps": 50,
+    "clientMaximumSeconds": 180,
+    "independentGuardSeconds": 210,
+    "naturalAcquisitionSeconds": 30,
+    "cs2OrSteamOperated": false
+  },
+  "actualEncodedSizes": {
+    "bundleBytes": 72939,
+    "execBytes": 8799,
+    "bundleMaximumBytes": 73728,
+    "execMaximumBytes": 9000,
+    "recordMaximumBytes": 1048576
+  }
+}

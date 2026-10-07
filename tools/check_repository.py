@@ -2330,4 +2330,48 @@ if (root/'evidence/v40-five-source-proof.json').exists():
  for attr in whitespace['exactPathAttributes']:
   assert attr.startswith(('/code/work/v39-five-sim/','/code/work/v40-five-sim/')) and attr in (root/'.gitattributes').read_text(encoding='utf8')
  for scope in attempts:assert (root/'code/work'/scope/'endpoint-firewall-guardian.py').read_bytes()==(root/'code/work/v24-fiveflow/endpoint-firewall-guardian.py').read_bytes()
+if (root/'evidence/v41-five-source-proof.json').exists():
+ sp=json.loads((root/'evidence/v41-five-source-proof.json').read_text(encoding='utf8'))
+ hit=json.loads((root/'evidence/v41-five-initial-hit.json').read_text(encoding='utf8'))
+ end=json.loads((root/'evidence/v41-five-restoration.json').read_text(encoding='utf8'))
+ q=json.loads((root/'evidence/v41-five-qualification.json').read_text(encoding='utf8'))
+ model=json.loads((root/'evidence/v41-acquisition-models.json').read_text(encoding='utf8'))
+ assert manifest['lastFiveWanHardwareAttemptExport']=='V41_FIVE_WAN_INITIAL_HIT_CLASS_RETIREMENT'
+ assert sp['passed'] and sp['historicPrefixSources']==4423 and sp['oldCodeAndEvidenceBlobsChecked']==4992 and sp['oldCodeAndEvidenceUnmodified']
+ assert sp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:4423],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ assert len(sp['sourceHashes'])==57 and sp['actualRuntimeBindingsFrozenExact']==3303 and sp['privateInputsCopiedExact']==26
+ assert sp['pilotAndCaseBindingsAndFrozenCopiesExact'] and sp['productionFailureAndOriginalRecordPreserved'] and sp['localDescriptionFailurePreservedAndCorrected']
+ for src,digest in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ assert q['passed'] and q['inheritedBindings']==3254 and len(q['sourceManifest'])==49 and not q['hardwareExecuted']
+ assert q['duplicateOwnedTcpAcquiredInBatch'] and q['currentPcChildIdentityCarriedWithoutNewIo'] and q['classificationNativeQosAdmissionAndRestorationUnchanged']
+ assert q['acquisitionModelChecks']==11 and q['cutoff']=='2026-10-07T09:00:00Z'
+ assert (q['clientSeconds'],q['fixtureGuardSeconds'],q['phaseSeconds'],q['combinedTcpMbps'],q['combinedCreditBytes'],q['acquisitionWindowSeconds'],q['firstPayloadSeconds'])==(180,210,60,32,65536,30,8)
+ for src,digest in q['sourceManifest'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ for name in ['classifier.lua','classified-tags.lua','fast-path.lua','wan-scope.lua','qos-physical.lua','tag-normalizer.lua','module-stage-guardian.lua']:
+  assert (root/'code/work/v41-five-sim'/name).read_bytes()==(root/'code/work/v24-fiveflow'/name).read_bytes(),name
+ assert model['passed'] and model['checks']==11 and not model['hardwareExecuted'] and not model['nssOrRouterPolicyWrites']
+ assert model['historicalInputDoesNotGrantNewAdmission'] and model['preBulkTransportWanDoesNotAuthorizeNss'] and model['atomicValidationBeforeStarts']
+ assert hit['passedAsPreservedObservation'] and hit['actualFiveWanInitialHit'] and hit['actualRuntimeBindings']==3303 and hit['bSamples']==6 and hit['ecmCountsDuringRecordedB']==[5]
+ assert hit['actualWanBySlot']=={'tcp':2,'udp':1,'tcp2':4,'tcp3':5,'tcp4':3} and hit['renewals']==0
+ assert 3.8<hit['phase']['seconds']<4 and not hit['phase']['completed'] and hit['phase']['terminatedByEligibilityInvalidation']
+ assert hit['initialFiveFlowProof']['passed'] and hit['initialFiveFlowProof']['connectionCount']==5
+ for slot,p in hit['initialFiveFlowProof']['proof'].items():
+  wan=p['wanAffinity'];low=6 if slot=='udp' else 5
+  assert p['accelerated'] and p['natCorrect'] and p['ctMark']==wan<<16 and p['downTag']==(0x8f00+wan*16+low)<<16 and p['upTag']==(0x8e00+wan*16+low)<<16
+  assert p['fromLan4'] and p['fromBridgeLan'] and 'serial' not in p
+  s=hit['actualClassRejection'][slot];assert s['present'] and all(s[k] for k in ['ctMatches','zoneMatches','markMatches','wanMatches','originalMatches','replyMatches'])
+  assert s['class']==('RT' if slot=='udp' else 'BE') and s['reason']==('interactive' if slot=='udp' else 'cooldown')
+ assert hit['sameQueryCompleteDiagnosis'] and hit['ctAndFullMarkNatWanUnchanged'] and hit['udpRemainedRtAdmitted'] and hit['projectionAbsenceNotUsedAsCtExit']
+ assert hit['reportedTcpRateBelowOriginal2000KbpsThreshold'] and hit['classificationAndLeafWindowsDiffer'] and all(hit['restoration'].values())
+ assert not any(hit[k] for k in ['fiveWanSixtySecondAcceptance','nssCounterFeedbackRootCauseProven','firmwareOrCtCorruptionProven','classificationPolicyChanged','newCpuBenefitClaimed','cs2OrHumanAcceptance'])
+ for d in ['up','down']:assert hit['qosLeafSnapshots'][d]['values']['udp']['delta']['drop']==0 and hit['qosLeafSnapshots'][d]['validation']['nativeOptionsValidated']
+ assert hit['recordBytes']<1048576 and hit['actualEncodedSizes']['bundleBytes']<=73728 and hit['actualEncodedSizes']['execBytes']<=9000 and hit['fixture']['clientErrors']==[]
+ assert end['passed'] and end['heartbeatStillPaused'] and end['downloadedCheckpointShaAndGzipVerified'] and end['independentUndoBeforeWriteVerified'] and all(end['stageUndo'].values()) and all(end['protectedBaselineChecks'].values())
+ assert end['finalFullAudit']['passed'] and end['finalFullAudit']['queryAge']<6 and end['finalFullAudit']['ecmClosedAndZero'] and end['finalFullAudit']['protectedConfigurationUnchanged'] and end['finalFullAudit']['allFiveHealthyWanBaseline']
+ assert end['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and end['clientClosure']['passed'] and end['clientClosure']['ownedTestProcessesRemaining']==end['clientClosure']['cs2ProcessesRemaining']==0
+ e=end['endpointRestoration'];assert e['passed'] and e['ownedRulesRemaining']==0 and e['baselineRestored'] and e['exactOwnedEndpointClosed']
+ assert not any(end[k] for k in ['cs2OrSteamOperated','newCpuAcceptance','fiveWanSixtySecondAcceptance','permanentNssDeployment'])
+ whitespace=json.loads((root/'evidence/v41-frozen-whitespace.json').read_text(encoding='utf8'))
+ assert whitespace['passedAsPreservedSourcePolicy'] and whitespace['frozenDataPlaneBytesUnmodifiedFromV24'] and whitespace['noGlobalWhitespacePolicyChange']
+ for attr in whitespace['exactPathAttributes']:assert attr.startswith('/code/work/v41-five-sim/') and attr in (root/'.gitattributes').read_text(encoding='utf8')
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

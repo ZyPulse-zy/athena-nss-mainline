@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "operation": "local progress directory enumeration",
+  "error": "NotADirectoryError: session glob also matched an audit JSON file",
+  "cause": "Local enumeration omitted is_dir",
+  "productionStepAffected": false,
+  "correction": "Filter actual directories before reading progress"
+}

@@ -1,5 +1,11 @@
 # Athena NSS 多WAN / 高级QoS受控原型
 
+最新五WAN已同时进入NSS，四TCP改类后按规则完整恢复；60秒维持验收仍未通过。已有两WAN/三流与高级QoS硬件结论保持，见[STATE](docs/STATE.md)和[五WAN实际命中报告](docs/FIVE_WAN_INITIAL_HIT_2026-10-07.md)。
+
+## 以下保留历史交付
+
+# Athena NSS 多WAN / 高级QoS受控原型
+
 两WAN模拟实时流硬件已通过；最新五WAN前提短测在NSS前安全拒绝，修正了已完成轮换命令重复检查问题。完整恢复、未永久启用NSS，见[STATE](docs/STATE.md)与[五WAN短测报告](docs/FIVE_WAN_SIMULATION_2026-10-07.md)。
 
 ## 以下保留历史交付

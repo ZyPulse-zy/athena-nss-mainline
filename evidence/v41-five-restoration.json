@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "finalFullAudit": {
+    "passed": true,
+    "auditPurpose": "prewrite",
+    "prelearningSchedulingRequested": true,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 4,
+    "queryAge": 1.1600000001490116,
+    "sequence": 1828,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": false,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "allFiveHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "physicalQueues": {
+    "passed": true,
+    "observedAt": "2026-10-07T06:09:23.236Z",
+    "readonly": true,
+    "physicalWanOriginalMqFourFqCodelRestored": true,
+    "lan4OriginalMqFourFqCodelRestored": true,
+    "defaultQueueOptionsAndHandlesExact": true,
+    "failedWan4ProcessOwnerChecked": true,
+    "wan4Running": true,
+    "wan4Lifecycle": "exec-minieap",
+    "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
+  },
+  "clientClosure": {
+    "cs2Acceptance": false,
+    "guards": [
+      {
+        "independentGuardSeconds": 210,
+        "passed": true,
+        "clientExitedBeforeDeadline": true,
+        "ownedProcessesRemaining": 0,
+        "originalClientSeconds": 180,
+        "guardObservedAt": "2026-10-07T06:05:27.6319055Z",
+        "exactClientOnly": true,
+        "scope": "work/v41-five-sim"
+      }
+    ],
+    "steamProcessesRunning": 1,
+    "steamFactoryAcceptance": false,
+    "passed": true,
+    "clientDeadlineReset": false,
+    "ownedTestProcessesRemaining": 0,
+    "cs2ProcessesRemaining": 0,
+    "observedAt": "2026-10-07T06:09:24.0368170Z",
+    "readonly": true
+  },
+  "endpointRestoration": {
+    "passed": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalFailedTransportRetained": true
+  },
+  "stageUndo": {
+    "moduleUnloaded": true,
+    "tagsRemoved": true,
+    "qosRestored": true,
+    "qosModuleUnloaded": true,
+    "dualPhysicalQueuesRestored": true,
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "stateNodeRemoved": true,
+    "firmwareZeroAfterRetirement": true
+  },
+  "protectedBaselineChecks": {
+    "boot": true,
+    "native": true,
+    "lan4": true,
+    "rules": true,
+    "services": true,
+    "addresses": true,
+    "routes": true,
+    "originalFiles": true,
+    "protectedManifestSha256": true,
+    "pbrConfiguration": true,
+    "nftRulesetConfiguration": true,
+    "tenQueueConfigurations": true,
+    "protectedManifest": true,
+    "ecmStoppedAndZero": true
+  },
+  "downloadedCheckpointShaAndGzipVerified": true,
+  "independentUndoBeforeWriteVerified": true,
+  "heartbeatStillPaused": true,
+  "cs2OrSteamOperated": false,
+  "newCpuAcceptance": false,
+  "fiveWanSixtySecondAcceptance": false,
+  "permanentNssDeployment": false
+}

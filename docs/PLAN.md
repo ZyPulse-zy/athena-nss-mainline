@@ -1,3 +1,15 @@
+# 五 WAN 首次同时 NSS 命中；60 秒维持未通过，完整恢复
+
+更新：北京时间2026-10-07 14:15。v41使用自有四TCP＋模拟UDP，原自动分类自然取得TCP WAN2/4/5/3＋UDP WAN1；新checkpoint下载SHA/gzip与独立守护写前通过，五条实际NSS/ECM5、双向十tag/leaf/ct mark/NAT/affinity已取得。B仅3.90秒/6采样/0续租，不能标60秒验收。
+
+同query完整帧证明四TCP仍同CT/mark/NAT/WAN，但类变BE/cooldown、约1506–1689Kbps；UDP仍RT。附近leaf四bulk合计17.00Mbps但计数窗不同，统计反馈精确根因未证实。控制器按原改类规则停止新学习并结束旧代；失败/完整帧/3303实际绑定原字节保留，不强续租或改tag，不把投影缺失当CT退出。
+
+最终audit source1.16、五WAN健康/保护配置/epoch保持/ECM关闭全零；两物理原mq＋四fq_codel全选项/handle，独立端点FW基线与client/controller/guard/sender零残留通过。常驻NSS68原config、heartbeat暂停；没有CS2/Steam操作或新CPU/长期声明。
+
+**已有v38两WAN60秒和v20高级QoS保持；五WAN60秒维持仍未通过。** 下一步只处理已观测的五流BULK分类维持边界，先核对计数窗再决定修正；不盲重试、不放宽阈值/期限、不中途强制改类。详情：[本次报告](FIVE_WAN_INITIAL_HIT_2026-10-07.md)。
+
+## 以下保留历史记录
+
 # 五 WAN 模拟前提有界拒绝，控制命令修正已封存
 
 更新：北京时间2026-10-07 13:51。按用户“继续”推进五 WAN 同时 NSS，使用自有四 TCP＋模拟 UDP，不操作 CS2 / Steam。v39已完成轮换命令在30秒后被重复检查导致客户端退出；v40新目录仅修正旧命令无操作，四 TCP健康、错误0，但实际分类 WAN2/3/3/4＋UDP WAN2未满足五个不同 WAN，准入前拒绝。两轮均无checkpoint/stage/模块/ECM放行，不归因NSS/固件，不再盲重试或改PBR/门槛/期限。

@@ -30965,6 +30965,405 @@
       "sha256": "82ccda33e274827d43c74f5dd6cbc014db918ca1574d7a1ef2bf603025cd959e",
       "bytes": 439,
       "role": "bounded-five-wan-prerequisite-refusal-and-owned-control-fix"
+    },
+    {
+      "path": "code/work/v41-five-sim/acquisition-model-qualified.json",
+      "workspaceSource": "work/v41-five-sim/acquisition-model-qualified.json",
+      "sha256": "60830eace9a6c47aaded23f817e13f2d0bd3e6b3016c53900010da0af42b374d",
+      "bytes": 686,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/acquisition-plan.mjs",
+      "workspaceSource": "work/v41-five-sim/acquisition-plan.mjs",
+      "sha256": "798d5e35e5091e56a39ff299718add8542241dcbcab684f027942105a7c98061",
+      "bytes": 2790,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/candidate-policy.mjs",
+      "workspaceSource": "work/v41-five-sim/candidate-policy.mjs",
+      "sha256": "d16c254ca9e14e948b808691db655d70ab4ada9829990e7f2b4a46289f467068",
+      "bytes": 2579,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/capture-client-closure.ps1",
+      "workspaceSource": "work/v41-five-sim/capture-client-closure.ps1",
+      "sha256": "aa92971e99da8109af93aefc202c89a02840c42051501e0ba23ce14b9371a3b3",
+      "bytes": 2534,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/class-leaf-map.mjs",
+      "workspaceSource": "work/v41-five-sim/class-leaf-map.mjs",
+      "sha256": "815250459be21cce80e65bfe85f29a43cce7d49e8e9800cb3470e30d84d64722",
+      "bytes": 3740,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/classified-tags.lua",
+      "workspaceSource": "work/v41-five-sim/classified-tags.lua",
+      "sha256": "2756a538a16b66c45f4cc73ef89b2898c84672786cbb7bc896e579160fbf96e6",
+      "bytes": 3966,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/classifier.lua",
+      "workspaceSource": "work/v41-five-sim/classifier.lua",
+      "sha256": "0a9ff75c92341d4309451dbe6206bf747c547618a5b09272b288832fe795906e",
+      "bytes": 22277,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/client-watchdog.ps1",
+      "workspaceSource": "work/v41-five-sim/client-watchdog.ps1",
+      "sha256": "5d39b987380f731180eaabcf80e3336691b35f0d0c1a449fefc8b2e488162a9c",
+      "bytes": 1051,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/close-endpoint.mjs",
+      "workspaceSource": "work/v41-five-sim/close-endpoint.mjs",
+      "sha256": "768dbdf3637d68d28c9209983022183b4b0c570784ce7d7904163753b85e2ca9",
+      "bytes": 2262,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/compact-post-guards.mjs",
+      "workspaceSource": "work/v41-five-sim/compact-post-guards.mjs",
+      "sha256": "83de00758cc0ba05270b81d3b51ddc76f39f30ed1275397a48080ff15aeb5cc3",
+      "bytes": 2597,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v41-five-sim/current-audit-diagnostic.mjs",
+      "sha256": "5e4a25753f91b3cdf947a3eea77824a0d8010544172eef6f497314acf6d76acc",
+      "bytes": 5852,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/discover-peer.py",
+      "workspaceSource": "work/v41-five-sim/discover-peer.py",
+      "sha256": "0cfea4bffdbfac65a9a12db0e5e0f2f4c343421f398f88a0f4de4535e78a4587",
+      "bytes": 988,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/download-server.py",
+      "workspaceSource": "work/v41-five-sim/download-server.py",
+      "sha256": "ce2530a2abbe80af246e44c41352890c50b2ade3dd3632c12c044687c879492c",
+      "bytes": 576,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/endpoint-firewall-guardian.py",
+      "workspaceSource": "work/v41-five-sim/endpoint-firewall-guardian.py",
+      "sha256": "574cb7e49acee157d482209f0ee5841fa7b045f71a1290655ac2a814dca08437",
+      "bytes": 6460,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/epoch-driver.mjs",
+      "workspaceSource": "work/v41-five-sim/epoch-driver.mjs",
+      "sha256": "27480b555b7c103e1a283919d572839709d53684687e29bd20ecc0b963a97b05",
+      "bytes": 15324,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/fast-path.lua",
+      "workspaceSource": "work/v41-five-sim/fast-path.lua",
+      "sha256": "15552eef44375a039fdc41affb8afb3ebe7954a711771e8a87881ca25dd88399",
+      "bytes": 15004,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/fixture-retry-policy.mjs",
+      "workspaceSource": "work/v41-five-sim/fixture-retry-policy.mjs",
+      "sha256": "50892e56b00817292dfbb8fdd88c340750baec860c04abe02c39cf549176ccdc",
+      "bytes": 282,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/guardian-plan.mjs",
+      "workspaceSource": "work/v41-five-sim/guardian-plan.mjs",
+      "sha256": "397dd536261b19c8900e5755a99238f1f0d4d1ddd2e42e783f51ac2b1071a71c",
+      "bytes": 493,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/inherited-bindings.mjs",
+      "workspaceSource": "work/v41-five-sim/inherited-bindings.mjs",
+      "sha256": "347c906a617b77ef0b61a8e3d8065a3fca6657eb871cd8cd5f0dd73938d6842d",
+      "bytes": 580,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/match-controlled.mjs",
+      "workspaceSource": "work/v41-five-sim/match-controlled.mjs",
+      "sha256": "902c15b1f06df569090a709ac5d86fc251d3f5e1d5f5b2bbca5056e933d431fb",
+      "bytes": 2008,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/model-acquisition.mjs",
+      "workspaceSource": "work/v41-five-sim/model-acquisition.mjs",
+      "sha256": "aaefc9eeba61772c13111606a67749bb8911fe95915c36faa0527098e62e4f65",
+      "bytes": 4098,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/module-stage-guardian.lua",
+      "workspaceSource": "work/v41-five-sim/module-stage-guardian.lua",
+      "sha256": "261b0ee214c9e90287850bb7ccf404a4ec95c37914b94a91c09585c463d05044",
+      "bytes": 13682,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/module-stage.mjs",
+      "workspaceSource": "work/v41-five-sim/module-stage.mjs",
+      "sha256": "1667d9d0b31af36daa85a8b9f30d42033fa2023ff135d7bb7eb6945426c91df8",
+      "bytes": 17964,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/native-client.mjs",
+      "workspaceSource": "work/v41-five-sim/native-client.mjs",
+      "sha256": "061051eaa40bf193df19c04f6b140684f99180cc0e05cc04fa40f05d41a7a152",
+      "bytes": 6982,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/native-qualified.json",
+      "workspaceSource": "work/v41-five-sim/native-qualified.json",
+      "sha256": "b53def985529c2c2dc6676fdf32c280661202562c23f8ce7129dd25288ed88cf",
+      "bytes": 1856,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/normalizer-qualified.json",
+      "workspaceSource": "work/v41-five-sim/normalizer-qualified.json",
+      "sha256": "a499de19ddced00f2dda5f0d11220b555b20243e6561696b26cde314c02eca3f",
+      "bytes": 177,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/owned-load-policy.mjs",
+      "workspaceSource": "work/v41-five-sim/owned-load-policy.mjs",
+      "sha256": "dc02dd232c0409f0acca5c6b876f64dde0b8f29389586bf174efd09a5662ba87",
+      "bytes": 1088,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/pack-json.mjs",
+      "workspaceSource": "work/v41-five-sim/pack-json.mjs",
+      "sha256": "46dcbec7360960887700d94a1e620e53ee233b3e40be50b484011a9623ca75d2",
+      "bytes": 2196,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/parse-ecm.mjs",
+      "workspaceSource": "work/v41-five-sim/parse-ecm.mjs",
+      "sha256": "6a349403a008929d1020b5f491be7e015bccd20c587cc74c2a1908bd95e3a9b2",
+      "bytes": 3727,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/payload.mjs",
+      "workspaceSource": "work/v41-five-sim/payload.mjs",
+      "sha256": "f5e452d29705edd2a232d5b9984add4f53f4e22e8273bcb06eba113ae510c083",
+      "bytes": 4470,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/persistent-ssh.mjs",
+      "workspaceSource": "work/v41-five-sim/persistent-ssh.mjs",
+      "sha256": "64eb2c79e0b5070d98b337d9bc52759e141fd3acc093ad288de77cfe1d9b7dd4",
+      "bytes": 3036,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/pilot-supervisor.mjs",
+      "workspaceSource": "work/v41-five-sim/pilot-supervisor.mjs",
+      "sha256": "343c9fe37175d2f0a65e112f3b810e6424b9e6aab4354e7514e24e73964460ce",
+      "bytes": 5279,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/prepare.py",
+      "workspaceSource": "work/v41-five-sim/prepare.py",
+      "sha256": "463c26056b72a176e6d511838bc3f376780df771df142f20f170fed30ef3de61",
+      "bytes": 3016,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/probe-peer.py",
+      "workspaceSource": "work/v41-five-sim/probe-peer.py",
+      "sha256": "1aea147ce350cecc67187cb92226f27517b1ea309f0c160e37a09a7bd30a5aef",
+      "bytes": 445,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/qos-native-qualified.json",
+      "workspaceSource": "work/v41-five-sim/qos-native-qualified.json",
+      "sha256": "cd518823df23df884b51865c64f9a9bd943b31ac6e54f3f61a11df0f90459d86",
+      "bytes": 139,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/qos-physical.lua",
+      "workspaceSource": "work/v41-five-sim/qos-physical.lua",
+      "sha256": "e93e6410e12409ce0f50819d625554dbdd9ac1ca8bf97a107a3e90cd204cab4e",
+      "bytes": 8943,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/qualify-entry.mjs",
+      "workspaceSource": "work/v41-five-sim/qualify-entry.mjs",
+      "sha256": "6e5999f0e0f9dbc6699f2c7298683e35c17b5d54afcf5f2cfb4015eae1d5bf1b",
+      "bytes": 4092,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/read-controlled.mjs",
+      "workspaceSource": "work/v41-five-sim/read-controlled.mjs",
+      "sha256": "1661202c1a98ea9206fa4f8c013ac2dd4a0187a3f39d7becae030862ee7a4cdc",
+      "bytes": 7627,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/read-final-health.mjs",
+      "workspaceSource": "work/v41-five-sim/read-final-health.mjs",
+      "sha256": "67aa19861144991ac991e1df144ace8f3aaeaaecc16c869dbd48f136330548c7",
+      "bytes": 1260,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/read-physical-final.mjs",
+      "workspaceSource": "work/v41-five-sim/read-physical-final.mjs",
+      "sha256": "f2880ad4eaa6649906169fa6bf186bc7749fccde0a1d42d22b3a4b7ee8282a19",
+      "bytes": 1981,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/receiver.py",
+      "workspaceSource": "work/v41-five-sim/receiver.py",
+      "sha256": "5b75f3a2232879d73f7f37f2ce94e2e253f166107eb52c67c14eb5623c2fb3ee",
+      "bytes": 1292,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/serial-model-qualified.json",
+      "workspaceSource": "work/v41-five-sim/serial-model-qualified.json",
+      "sha256": "afba7d9c22f683127b4c94dd83265675775d4b3b8b6a0bc7da181ba238502f84",
+      "bytes": 298,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/server.py",
+      "workspaceSource": "work/v41-five-sim/server.py",
+      "sha256": "0c270a1a14e29be415536d7790dfec11810049fda7bce715c82cd52f997cf18b",
+      "bytes": 1996,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/session-binding.mjs",
+      "workspaceSource": "work/v41-five-sim/session-binding.mjs",
+      "sha256": "220765cdc54abcabee835523745a71495c86a1561e578647d14369af537612fb",
+      "bytes": 610,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/start-dallas.mjs",
+      "workspaceSource": "work/v41-five-sim/start-dallas.mjs",
+      "sha256": "ebdbc5c7ae3973e3191912b78afd414582104762cb4b1f6aed2b9f0790bb6868",
+      "bytes": 10318,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/tag-normalizer.lua",
+      "workspaceSource": "work/v41-five-sim/tag-normalizer.lua",
+      "sha256": "62c624ef14d2f934ba31ee12413a7da4e101913f98734289f0002d6565ca4cd4",
+      "bytes": 6258,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/wait-four-ssh.mjs",
+      "workspaceSource": "work/v41-five-sim/wait-four-ssh.mjs",
+      "sha256": "0237233505df1c2bac43c48a17ba1ca9bdc99de555035c217022a7fa641d0b73",
+      "bytes": 1059,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/wan-scope.lua",
+      "workspaceSource": "work/v41-five-sim/wan-scope.lua",
+      "sha256": "c2cbfd5eb8cf714341106f29cd0234d5388d2e88a45c1aaaba7880cd3d488677",
+      "bytes": 3525,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/wan-tag-plan.mjs",
+      "workspaceSource": "work/v41-five-sim/wan-tag-plan.mjs",
+      "sha256": "677b120b7334f9f548b8a29af59b5c8a4147b1c24c09f8763b2702758c4e5672",
+      "bytes": 2045,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/entry-qualified.json",
+      "workspaceSource": "work/v41-five-sim/entry-qualified.json",
+      "sha256": "886e258dd74dd88751cb9c22582dd699ae28d4bec1dd26f93362f3fe375d6f82",
+      "bytes": 6739,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/prepare-receipt.json",
+      "workspaceSource": "work/v41-five-sim/prepare-receipt.json",
+      "sha256": "31c8c94bebd1602a7c5bf44370e404c2decffe5035e3fe2159435d16b4d75c67",
+      "bytes": 8829,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/describe-terminal.mjs",
+      "workspaceSource": "work/v41-five-sim/describe-terminal.mjs",
+      "sha256": "4f3b0832ca33f4a408d8b94979e3869e8c4a2ce560f0b1d96648796d08f42014",
+      "bytes": 5433,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/analyze-hardware.py",
+      "workspaceSource": "work/v41-five-sim/analyze-hardware.py",
+      "sha256": "7e35639fd6775468d5ad09c1487acaa81c493f5db76732636fcf104459ee8c20",
+      "bytes": 8193,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/publish-terminal.py",
+      "workspaceSource": "work/v41-five-sim/publish-terminal.py",
+      "sha256": "c0f78883ad7547ea1adfa4ccf90cf604b5fae93139bc5bd738d115f69ac17f84",
+      "bytes": 15365,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/local-progress-first-failure.json",
+      "workspaceSource": "work/v41-five-sim/local-progress-first-failure.json",
+      "sha256": "42ee1fff6009c2691e1ae7fccf3503a52abbb0122b7ed4ac7871ad42ec180dc0",
+      "bytes": 315,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/description-first-failure/describe-terminal.mjs",
+      "workspaceSource": "work/v41-five-sim/description-first-failure/describe-terminal.mjs",
+      "sha256": "4392d6395ea3a0ffe29c7ff89323aa253e1a87a3a201225ba8b80e2dcf6f269a",
+      "bytes": 5229,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
+    },
+    {
+      "path": "code/work/v41-five-sim/description-first-failure/failure.json",
+      "workspaceSource": "work/v41-five-sim/description-first-failure/failure.json",
+      "sha256": "c9be572bcbfadf50a28b2a49bd5fae71995febfb250f3132e64e02d5c515c22d",
+      "bytes": 210,
+      "role": "five-wan-initial-hardware-hit-and-authenticated-class-retirement"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -30975,5 +31374,6 @@
   "lastNormalApplicationAttemptExport": "V33_ACTUAL_NORMAL_PRECHECKPOINT_REFUSAL",
   "lastNormalAdmissionAttemptExport": "V34_POSTCHECKPOINT_OWNER_ADMISSION_REFUSAL",
   "lastOwnedSimulationExport": "V38_SIMULATED_RT_TWO_WAN_HARDWARE_COMPLETE",
-  "lastFiveWanSimulationAttemptExport": "V40_NATURAL_FIVE_WAN_PREREQUISITE_REFUSAL"
+  "lastFiveWanSimulationAttemptExport": "V40_NATURAL_FIVE_WAN_PREREQUISITE_REFUSAL",
+  "lastFiveWanHardwareAttemptExport": "V41_FIVE_WAN_INITIAL_HIT_CLASS_RETIREMENT"
 }

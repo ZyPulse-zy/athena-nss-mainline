@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": 11,
+  "historicalFrameHash": "7b3c919a8e1dca621bc971ec6c85f31bdb7376d8d61974a3761faa71a4ee37ed",
+  "historicalClientHash": "2623680fd9ce09e8783e2328c87d0bfb9780e8b07ba25cf6113f40bc1fbace77",
+  "syntheticElapsedSeconds": 20,
+  "historicalInputDoesNotGrantNewAdmission": true,
+  "batchDuplicateSlots": [
+    "tcp3",
+    "tcp4"
+  ],
+  "ownedProcessIdentityRequired": true,
+  "preBulkTransportWanDoesNotAuthorizeNss": true,
+  "originalSourceSeconds": 6,
+  "acquisitionSeconds": 30,
+  "maximumCandidatesPerSlot": 8,
+  "staleCompletedControlNoop": true,
+  "atomicValidationBeforeStarts": true,
+  "nssOrRouterPolicyWrites": false,
+  "hardwareExecuted": false
+}
