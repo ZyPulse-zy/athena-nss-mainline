@@ -27654,10 +27654,312 @@
       "sha256": "3da53d092dd279e79942a23c38a485fb8669cbe8f6bfb790986665480787dc69",
       "bytes": 15335,
       "role": "normal-application-prestage-selection-and-closure"
+    },
+    {
+      "path": "code/work/v32-normal/application-watchdog.ps1",
+      "workspaceSource": "work/v32-normal/application-watchdog.ps1",
+      "sha256": "4d1815805db0c8c12ed9be4c5b8cd49b72d1051ba8434c5ed27d3c586498cff5",
+      "bytes": 2448,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/candidate-policy.mjs",
+      "workspaceSource": "work/v32-normal/candidate-policy.mjs",
+      "sha256": "df643a34be01cc34bc299a61aa1edc687779597b8f019de4f29083e74b4dc70b",
+      "bytes": 2584,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/class-leaf-map.mjs",
+      "workspaceSource": "work/v32-normal/class-leaf-map.mjs",
+      "sha256": "1d400ffa1345503f7d554170428e5ccdc3bd4c31e8f12d91e64502433cc4674c",
+      "bytes": 3710,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/classified-tags.lua",
+      "workspaceSource": "work/v32-normal/classified-tags.lua",
+      "sha256": "c9e983814087f007cca62c316d6d74a1bd5d36e3d1dd22045cc44eafe9320c30",
+      "bytes": 3875,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/classifier.lua",
+      "workspaceSource": "work/v32-normal/classifier.lua",
+      "sha256": "9b3733f1cab9de119e2ac406bb896f850cac32ba539ae257126c61cf5f6c669b",
+      "bytes": 22185,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/current-audit-diagnostic.mjs",
+      "workspaceSource": "work/v32-normal/current-audit-diagnostic.mjs",
+      "sha256": "9597de68c1945fb0dcb3f024ce7d8661865f4a9490350254d87e3f086918add9",
+      "bytes": 5848,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/epoch-driver.mjs",
+      "workspaceSource": "work/v32-normal/epoch-driver.mjs",
+      "sha256": "c15a5195005b7d865b221e828938be85eab88a617603ab51ae3b33a1b3ab896d",
+      "bytes": 15361,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/fast-path.lua",
+      "workspaceSource": "work/v32-normal/fast-path.lua",
+      "sha256": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b",
+      "bytes": 14618,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/guardian-plan.mjs",
+      "workspaceSource": "work/v32-normal/guardian-plan.mjs",
+      "sha256": "30ce116ed9ab80f8472f0c79fd7accb916f89d37119b4a683248e121ad025d72",
+      "bytes": 447,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/model-last-selection.mjs",
+      "workspaceSource": "work/v32-normal/model-last-selection.mjs",
+      "sha256": "a5d5a4ca2ef0962b40be18199b94ab7c3ce3b88491d841f971b7a307584ce720",
+      "bytes": 4229,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/model-normal-policy.mjs",
+      "workspaceSource": "work/v32-normal/model-normal-policy.mjs",
+      "sha256": "ce4b55e4b26ec5f850cdc5f201938afa053216d61306a6ace2b95690f30045d9",
+      "bytes": 2175,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/module-stage-guardian.lua",
+      "workspaceSource": "work/v32-normal/module-stage-guardian.lua",
+      "sha256": "e128a6a25d128b6db0138bfebff2491ece51f63ddf448b9489e5ef32a1a649ad",
+      "bytes": 13560,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/module-stage.mjs",
+      "workspaceSource": "work/v32-normal/module-stage.mjs",
+      "sha256": "e69982fd62a068896a0003e4c3c5b62566f3257755b1690c71ab42caf591bf0c",
+      "bytes": 17975,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/normal-policy.mjs",
+      "workspaceSource": "work/v32-normal/normal-policy.mjs",
+      "sha256": "28dbd5bd7bd8756485d210d3f837789d750200b0f7179739f5fa808a11283349",
+      "bytes": 1240,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/normal-refinement.mjs",
+      "workspaceSource": "work/v32-normal/normal-refinement.mjs",
+      "sha256": "4652c738f39e0a390f54671b36649dc66ae10b14ae80af836d6ee0b6dc857943",
+      "bytes": 1182,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/normal-selection.mjs",
+      "workspaceSource": "work/v32-normal/normal-selection.mjs",
+      "sha256": "81140b39cda6560f9290322eb1db3299a964f8f42d91a4f32f3c49b304239817",
+      "bytes": 970,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/parse-ecm.mjs",
+      "workspaceSource": "work/v32-normal/parse-ecm.mjs",
+      "sha256": "bc0c752dd715488640bb00af7becc9f1a8549cfad317f38b160d594cf400df20",
+      "bytes": 3611,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/payload.mjs",
+      "workspaceSource": "work/v32-normal/payload.mjs",
+      "sha256": "8cd122133398c11d94f035870d75cb66b32a6a02663b93a6fa83c299ed75bbe6",
+      "bytes": 4175,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/prepare.py",
+      "workspaceSource": "work/v32-normal/prepare.py",
+      "sha256": "ffa3593974007a29856e8aedd06758af2833cd7affc7e5e42b2895e13942f34e",
+      "bytes": 2038,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/qos-physical.lua",
+      "workspaceSource": "work/v32-normal/qos-physical.lua",
+      "sha256": "69ceade747001b7bb20f3e1c8089bca00f829eb2a279c814b3f7ab0457b95390",
+      "bytes": 8930,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/qualify-entry.mjs",
+      "workspaceSource": "work/v32-normal/qualify-entry.mjs",
+      "sha256": "e91b3315218d38761e7700139fd53388cc5ecef1d5a5d61b211c4e620355061e",
+      "bytes": 3670,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/read-controlled.mjs",
+      "workspaceSource": "work/v32-normal/read-controlled.mjs",
+      "sha256": "9bbbca0758798da426f18625e47055768de0fc8ef9fb823ea49bf21ada5ef81c",
+      "bytes": 1467,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/read-physical-restoration.mjs",
+      "workspaceSource": "work/v32-normal/read-physical-restoration.mjs",
+      "sha256": "b469f1f191ea8b8437ec50e6a73dd581fec183f9d186a5a5e7582dac69a2e422",
+      "bytes": 1721,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/read-real-candidates.mjs",
+      "workspaceSource": "work/v32-normal/read-real-candidates.mjs",
+      "sha256": "4583eba5ae195f51b76cf3fa903ef8ad6600ee8782c4c76e25f09b12be4b0913",
+      "bytes": 5239,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/run-session.mjs",
+      "workspaceSource": "work/v32-normal/run-session.mjs",
+      "sha256": "9bf51f70a62a26e39b8082b32da772af3c2121c96b3e4916d32d812a60228256",
+      "bytes": 1070,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/session-binding.mjs",
+      "workspaceSource": "work/v32-normal/session-binding.mjs",
+      "sha256": "326d523aa6dd3439cf49254363f2984752e84fd9085b7ad3bcdc1c3ecf1928fd",
+      "bytes": 616,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/session.mjs",
+      "workspaceSource": "work/v32-normal/session.mjs",
+      "sha256": "c261a7431f801cdb6040310e9c1a4ece57bf61f76db25f88bc99c462d9c1beb1",
+      "bytes": 2139,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/start-application-guard.ps1",
+      "workspaceSource": "work/v32-normal/start-application-guard.ps1",
+      "sha256": "1e5b03f2ae9295d8830f6f820ca9abf434239f4f641888ad3b98641e7ee44b65",
+      "bytes": 3130,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/tag-normalizer.lua",
+      "workspaceSource": "work/v32-normal/tag-normalizer.lua",
+      "sha256": "98ed0ecd1bc1b07f10a79d17bcfb9d4a426cc9c971d44e6bb542c4f529c29602",
+      "bytes": 5610,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/wan-scope.lua",
+      "workspaceSource": "work/v32-normal/wan-scope.lua",
+      "sha256": "c1df8f235be2d479e740bb8b692cea7a7963cec1a99dcdf27bf5c5dadcda5254",
+      "bytes": 3540,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/wan-tag-plan.mjs",
+      "workspaceSource": "work/v32-normal/wan-tag-plan.mjs",
+      "sha256": "59de09e38be866ed8f29684bcb79cf748ee1e0e1a1ad8a8ae3dad573218dcefe",
+      "bytes": 1880,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/native-qualified.json",
+      "workspaceSource": "work/v32-normal/native-qualified.json",
+      "sha256": "f5d03b7995031fb67b1c4beb2c072f96abacabe62ab77050214b1db8d26fdc40",
+      "bytes": 494,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/normalizer-qualified.json",
+      "workspaceSource": "work/v32-normal/normalizer-qualified.json",
+      "sha256": "6f5a54208056171e4c320aa31cb5bd158b12e9a9a1cc7c23ab2e4e6da7336874",
+      "bytes": 176,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/qos-native-qualified.json",
+      "workspaceSource": "work/v32-normal/qos-native-qualified.json",
+      "sha256": "4e6e04301fa98e3263ea85ababf79a83229d7cbd5b075433960b89d5e902d58d",
+      "bytes": 139,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/normal-policy-qualified.json",
+      "workspaceSource": "work/v32-normal/normal-policy-qualified.json",
+      "sha256": "569c0f737d61bf66659ceac41ddb89b4bb90524426648e7d44d3b7901ab48353",
+      "bytes": 423,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/last-selection-qualified.json",
+      "workspaceSource": "work/v32-normal/last-selection-qualified.json",
+      "sha256": "e5d66c675bb3e3d89ba7d0c0c21f119cdbef004ac73ef6c8881f4fade9a8e8b8",
+      "bytes": 958,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/entry-qualified.json",
+      "workspaceSource": "work/v32-normal/entry-qualified.json",
+      "sha256": "03d369179986bb2de66ece815386bcfa245d4bfef4471cf2a00c5a0430aac952",
+      "bytes": 4946,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/prepare-receipt.json",
+      "workspaceSource": "work/v32-normal/prepare-receipt.json",
+      "sha256": "8c00973d41e518d5f186d4fd9445b5e571d16da7cac3a1faa4fcee437a3a39c1",
+      "bytes": 5198,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/seal-client-window.ps1",
+      "workspaceSource": "work/v32-normal/seal-client-window.ps1",
+      "sha256": "212a232a4566594bc7d7eb78687465bdc9a1cddf389b35ed9414967897e46752",
+      "bytes": 3113,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/seal-first-observations.py",
+      "workspaceSource": "work/v32-normal/seal-first-observations.py",
+      "sha256": "482cb911943dac9b6792268cb38fd0fa633244340bdbb71429e0cbe289954779",
+      "bytes": 4054,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/read-final-health.mjs",
+      "workspaceSource": "work/v32-normal/read-final-health.mjs",
+      "sha256": "ae1bff7a6ac4c0433723fc9459ff11c1f790669cfa1b78d30693aaa25ad7a7a4",
+      "bytes": 1518,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/read-physical-final.mjs",
+      "workspaceSource": "work/v32-normal/read-physical-final.mjs",
+      "sha256": "b1c965e6f7c10bf45e2c483cf3cfe1377204317a335d80df179db15add2078fc",
+      "bytes": 1992,
+      "role": "normal-application-bounded-window-and-readonly-closure"
+    },
+    {
+      "path": "code/work/v32-normal/publish-client-window.py",
+      "workspaceSource": "work/v32-normal/publish-client-window.py",
+      "sha256": "285bc8e87532dfd13c13154e0bdef76b5753f99c271710de8aaaf33d1f5d7b2d",
+      "bytes": 12998,
+      "role": "normal-application-bounded-window-and-readonly-closure"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
   "privateDataExcluded": true,
   "lastPrerequisiteDiagnosticExport": "V29_PROTOCOL_SPECIFIC_PEER_PROOF",
-  "lastNormalApplicationExport": "V31_PRESTAGE_TCP_SELECTION"
+  "lastNormalApplicationExport": "V31_PRESTAGE_TCP_SELECTION",
+  "lastBoundedApplicationExport": "V32_STEAM_RECOVERY_AND_BOUNDED_WINDOW"
 }

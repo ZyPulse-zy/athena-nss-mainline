@@ -1,0 +1,8 @@
+import fs from'node:fs';import crypto from'node:crypto';import assert from'node:assert/strict';
+import{verifyPreparation as inherited}from'../v31-normal/session-binding.mjs';
+export function verifyPreparation(){
+ const old=inherited(),q=JSON.parse(fs.readFileSync('work/v32-normal/entry-qualified.json'));
+ assert.ok(q.passed&&!q.hardwareExecuted);
+ for(const[f,h]of Object.entries(q.sourceManifest))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),h,f);
+ return{...old,sourceManifest:{...old.sourceManifest,...q.sourceManifest},externalSourceBindings:old.externalSourceBindings};
+}

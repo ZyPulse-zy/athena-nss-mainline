@@ -2152,4 +2152,27 @@ if (root/'evidence/v31-normal-source-proof.json').exists():
  for src,digest in whitespace['sourceHashes'].items():
   assert hashlib.sha256((root/src).read_bytes()).hexdigest()==digest==hashlib.sha256((root/'code/work/v26-normal/fast-path.lua').read_bytes()).hexdigest()
  for attr in whitespace['exactPathAttributes']:assert attr in (root/'.gitattributes').read_text(encoding='utf8')
+if (root/'evidence/v32-normal-source-proof.json').exists():
+ sp=json.loads((root/'evidence/v32-normal-source-proof.json').read_text(encoding='utf8'))
+ q=json.loads((root/'evidence/v32-normal-entry-qualification.json').read_text(encoding='utf8'))
+ window=json.loads((root/'evidence/v32-client-window.json').read_text(encoding='utf8'))
+ end=json.loads((root/'evidence/v32-normal-restoration.json').read_text(encoding='utf8'))
+ assert manifest['lastBoundedApplicationExport']=='V32_STEAM_RECOVERY_AND_BOUNDED_WINDOW'
+ assert sp['passed'] and sp['historicPrefixSources']==3950 and sp['oldCodeAndEvidenceBlobsChecked']==4487 and sp['oldCodeAndEvidenceUnmodified']
+ assert sp['historicPrefixCanonicalSha256']==hashlib.sha256(json.dumps(manifest['sources'][:3950],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ assert sp['qualificationSourceCopiesExact']==36 and sp['privateInputsCopiedExact']==11 and sp['entryBindings']==2687 and not sp['modelsReplayed']
+ for src,digest in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ assert q['passed'] and q['inheritedBindings']==2651 and len(q['sourceManifest'])==36 and q['relativeDependenciesExist']==57
+ assert q['unchangedDataPlaneAndImmutableCandidatePolicy'] and q['unchangedV31PreStageSelection'] and q['noModelsReplayed']
+ assert q['originalSelectorModelsReused']==18 and q['actualRefusalRegressionModelsReused']==14 and q['clientMaximumSeconds']==180 and q['temporaryClientLimitMbps']==32
+ assert not q['hardwareExecuted'] and not q['wholeFactoryModeled'] and not q['normalApplicationFactoryHardwareAcceptance']
+ assert window['humanAuthorizedOneHadesFamilyLibraryDownload'] and window['guardNaturalExactApplicationExitPassed'] and not window['clientDeadlineReset']
+ assert not any(window[k] for k in ['newNssSessionStarted','checkpointCreated','detachedStageStarted','ecmOpened','gameHudJitterLossMissObserved','actualGameAndBulkClassificationDuringLoadObserved','factoryHardwareAcceptance','humanExperienceAcceptance'])
+ resumed=window['steamRelaunchForRestoration'];assert resumed['automaticDownloadResumptionObserved'] and resumed['downloadPausedByUi'] and resumed['lastDownloadedAmountShownMB']==540.5
+ assert resumed['measuredCumulativeDownloadDurationSeconds'] is None and not resumed['strictCumulative180SecondDownloadProofAvailable']
+ ui=window['currentUiRestoration'];assert ui['steamLoggedInAndUsable'] and ui['uiSettingsRestoreConfirmed'] and ui['hadesPaused'] and ui['networkBps']==ui['diskBps']==0 and not ui['steamDownloadLimitEnabled']
+ audit=end['fullAudit'];assert audit['passed'] and audit['queryAge']<6 and audit['ecmClosedAndZero'] and audit['protectedConfigurationUnchanged'] and audit['allFiveHealthyWanBaseline']
+ assert end['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and end['clientProcessClosure']['naturalTimedExitPassed'] and end['clientProcessClosure']['ownedTestProcessesRemaining']==end['clientProcessClosure']['cs2ProcessesRemaining']==0
+ assert end['passed'] and end['readonly'] and end['clientUiSettingsRestoreConfirmed'] and end['noRouterConfigurationWrites'] and end['strictCumulativeDownloadDurationNotProven']
+ assert not any(end[k] for k in ['newNssSessionStarted','normalFactoryHardwareAcceptance','humanExperienceAcceptance','newCpuAcceptance','permanentNssDeployment'])
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

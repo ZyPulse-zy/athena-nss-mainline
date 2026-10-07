@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-10-07T02:08:42.878281+00:00",
+  "humanAuthorizedOneHadesFamilyLibraryDownload": true,
+  "requestedMaximumDownloadSeconds": 180,
+  "temporaryClientLimitMbps": 32,
+  "guardReadyBeforeDownload": true,
+  "clientDeadlineReset": false,
+  "newNssSessionStarted": false,
+  "checkpointCreated": false,
+  "detachedStageStarted": false,
+  "ecmOpened": false,
+  "newControllerAttemptFileCreated": false,
+  "defaultInspectBeforeLoad": {
+    "gameCandidates": 0,
+    "bulkCandidates": 0,
+    "routerWrites": false
+  },
+  "actualDownloadObserved": {
+    "libraryPercent": 1,
+    "networkMbps": 31.9
+  },
+  "firstGameMatch": {
+    "mode": "Deathmatch",
+    "mapGroup": "Defusal Group Alpha",
+    "connectionResult": "The remote host closed the connection.",
+    "nssWasStarted": false,
+    "rootCauseEstablished": false
+  },
+  "secondGameMatch": {
+    "sameGuardDeadline": true,
+    "searchTimerObserved": "00:01",
+    "finalConnectionOutcomeObserved": false
+  },
+  "gameHudJitterLossMissObserved": false,
+  "actualGameAndBulkClassificationDuringLoadObserved": false,
+  "factoryHardwareAcceptance": false,
+  "humanExperienceAcceptance": false,
+  "guardNaturalExactApplicationExitPassed": true,
+  "guardDoesNotRestoreSteamSettingsOrPauseOnNextLaunch": true,
+  "steamRelaunchForRestoration": {
+    "initialToolResult": "launched app did not expose a targetable window: process:C:\\Program Files (x86)\\Steam\\steam.exe",
+    "freshWindowThenObserved": true,
+    "automaticDownloadResumptionObserved": true,
+    "downloadPausedByUi": true,
+    "lastDownloadedAmountShownMB": 540.5,
+    "libraryPercent": 5,
+    "measuredCumulativeDownloadDurationSeconds": null,
+    "strictCumulative180SecondDownloadProofAvailable": false
+  },
+  "currentUiRestoration": {
+    "steamLoggedInAndUsable": true,
+    "hadesPaused": true,
+    "networkBps": 0,
+    "diskBps": 0,
+    "steamDownloadLimitEnabled": false,
+    "originalInactiveNumericLimitWasBlank": true,
+    "inactiveNumericLimitClearedBeforeDisabling": true,
+    "bitsPerSecondDisplayEnabled": true,
+    "downloadsDuringGameplayEnabled": true,
+    "downloadRegionPreserved": true,
+    "cs2AndOwnedGuardProcessesRemaining": 0,
+    "downloadFragmentIntentionallyRetained": true,
+    "hadesNotLaunched": true,
+    "purchasedAnything": false,
+    "uiSettingsRestoreConfirmed": true
+  },
+  "oldSteamStartupCrashes": {
+    "exceptionCode": "c0000005",
+    "module": "ntdll.dll",
+    "causeEstablished": false,
+    "newStableSteamWindowConfirmed": true,
+    "longTermSteamCrashFixClaim": false
+  },
+  "nextDownloadWindowRequiresSeparateUserAuthorization": true,
+  "qualificationSourceCopiesExact": 36
+}

@@ -203,3 +203,24 @@
 # Frozen V26 fast-path blank lines, inherited exactly by these two new copies.
 /code/work/v30-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 /code/work/v31-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+# Preserve exact v32 Windows bytes and inherited frozen Lua whitespace.
+/code/work/v32-normal/candidate-policy.mjs whitespace=cr-at-eol
+/code/work/v32-normal/class-leaf-map.mjs whitespace=cr-at-eol
+/code/work/v32-normal/classified-tags.lua whitespace=cr-at-eol
+/code/work/v32-normal/classifier.lua whitespace=cr-at-eol
+/code/work/v32-normal/current-audit-diagnostic.mjs whitespace=cr-at-eol
+/code/work/v32-normal/epoch-driver.mjs whitespace=cr-at-eol
+/code/work/v32-normal/fast-path.lua whitespace=cr-at-eol
+/code/work/v32-normal/guardian-plan.mjs whitespace=cr-at-eol
+/code/work/v32-normal/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/v32-normal/module-stage.mjs whitespace=cr-at-eol
+/code/work/v32-normal/parse-ecm.mjs whitespace=cr-at-eol
+/code/work/v32-normal/payload.mjs whitespace=cr-at-eol
+/code/work/v32-normal/qos-physical.lua whitespace=cr-at-eol
+/code/work/v32-normal/session.mjs whitespace=cr-at-eol
+/code/work/v32-normal/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/v32-normal/wan-scope.lua whitespace=cr-at-eol
+/code/work/v32-normal/wan-tag-plan.mjs whitespace=cr-at-eol
+/code/work/v32-normal/prepare-receipt.json whitespace=cr-at-eol
+/code/work/v32-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol

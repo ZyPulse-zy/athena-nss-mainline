@@ -1,3 +1,17 @@
+# Steam 已恢复；普通应用 NSS 验收尚未完成
+
+更新：北京时间2026-10-07 10:12。v32承接用户继续推进及一次Hades家庭库限时下载许可，实际约32Mbps；死斗首次被remote host关闭，原180秒守护内只再匹配一次，最终连接/HUD和负载中的程序分类未取得。完整NSS factory、checkpoint/stage/ECM均未启动，不能标硬件/真人验收通过。
+
+新入口2687绑定、57相对依赖/语法通过，数据面及v31的pre-stage TCP选择不变，18＋14模型复用未重跑。旧v31截止/源码/失败保持。本次原180秒客户端守护自然退出，CS2/controller/guard零残留；Steam重开恢复设置时自动续传，随后UI暂停至0bps，显示540.5MB/5%。原限速关闭、空数字、bit/s/游戏中下载/地区保持已视觉核实；累计下载秒数未测，不宣称严格180秒总下载证明。
+
+10:09最后只读原完整audit source1.60/native selectors4、五WAN健康/保护配置/epoch保持、ECM关闭全零；两物理原mq＋四fq_codel全部选项/handle一致。当前Steam可用、下载暂停；v31当时UI未恢复证据单独保留。
+
+v20三流多WAN与五WAN队列/共享借用/RT优先级硬件结果继续复用，普通应用factory仍待一次实际会话。先确认死斗已连接，再开始新的明确下载许可窗口；原180秒期限不重置，续传许可尚待回答。没有新增五WAN同时fast path、长期常驻、CPU或真人体验声明。heartbeat继续暂停。
+
+详情：[本轮报告](NORMAL_WINDOW_2026-10-07.md)、[实际窗口](../evidence/v32-client-window.json)、[终态](../evidence/v32-normal-restoration.json)、[源码](../evidence/v32-normal-source-proof.json)。
+
+## 以下保留原正常入口与夜间记录
+
 # 正常应用写前拒绝已定位并修正；factory验收仍待完成
 
 更新：北京时间2026-10-07 09:14。v30实际CS2＋已有Steam更新识别1RT/24BULK，完整审核后原第一TCP不在合格应用候选中，原UDP和第二TCP保持；checkpoint/stage/ECM前拒绝。2615实际输入和冻结源码逐字节保持，缺失候选不当CT退出证据。

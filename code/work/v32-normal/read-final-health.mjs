@@ -1,0 +1,10 @@
+import fs from'node:fs';import crypto from'node:crypto';import assert from'node:assert/strict';import{spawnSync}from'node:child_process';
+const root='work/v32-normal',closure=JSON.parse(fs.readFileSync(root+'/first-window-closure-pointer.json','utf8').replace(/^\uFEFF/,''));
+assert.ok(!fs.existsSync(root+'/active-run-private.json')&&!fs.existsSync(root+'/one-session-attempt.json'),'Controller started; first-window-only closure invalid');
+const dir=root+'/session-'+new Date().toISOString().replace(/\D/g,'').slice(0,14)+'-'+crypto.randomBytes(4).toString('hex');fs.mkdirSync(dir);
+fs.writeFileSync(dir+'/audit-only.json',JSON.stringify({readOnlyAuditNamespace:true,fullControllerSessionStarted:false,routerConfigurationWrites:false})+'\n',{flag:'wx'});
+const p=spawnSync(process.execPath,[root+'/current-audit-diagnostic.mjs','v32-final','prewrite',dir],{encoding:'utf8',windowsHide:true,timeout:90000});
+for(const[k,v]of Object.entries({stdout:p.stdout??'',stderr:p.stderr??''}))fs.writeFileSync(closure.directory+'/final-audit-'+k+'-private.txt',v,{flag:'wx'});
+const result={passed:p.status===0,exitCode:p.status,signal:p.signal,error:p.error?.code??null,observedAt:new Date().toISOString(),readonly:true,auditNamespace:dir,fullControllerSessionStarted:false,routerConfigurationWrites:false};
+fs.writeFileSync(closure.directory+'/final-audit-process.json',JSON.stringify(result,null,2)+'\n',{flag:'wx'});
+assert.equal(p.status,0,'Final readonly audit failed; raw output retained');console.log(p.stdout.trim());
