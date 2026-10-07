@@ -1,0 +1,95 @@
+{
+  "passedAsObservation": true,
+  "actualCs2DeathmatchConnectedBeforeDownload": true,
+  "mapDuringWindow": "Cache",
+  "downloadTemporaryLimitKbps": 32000,
+  "downloadSpeedObservedMbps": [
+    33.4,
+    32.0
+  ],
+  "guardReadyBeforeDownload": true,
+  "clientDeadlineSeconds": 180,
+  "clientDeadlineReset": false,
+  "guardNaturalExactApplicationExitPassed": true,
+  "guardExitObservedAt": "2026-10-07T03:49:15.9701043Z",
+  "hudObservations": {
+    "humanExperienceVerified": false,
+    "noNssBPhaseOccurred": true,
+    "continuousTelemetryProven": false,
+    "hiddenValuesAreUnknown": true,
+    "observationMethod": "sky focused screenshots reviewed",
+    "observations": [
+      {
+        "jitterMs": null,
+        "observedAt": "2026-10-07T03:45:46Z",
+        "pingMs": 15,
+        "missPercent": null,
+        "phase": "software before download",
+        "roundRemaining": "9:46",
+        "lossUpPercent": 0,
+        "lossDownPercent": 0
+      },
+      {
+        "observedAt": "2026-10-07T03:47:06Z",
+        "valuesHidden": true,
+        "pingMs": null,
+        "roundRemaining": "8:27",
+        "phase": "software during preparation",
+        "lossUpPercent": null,
+        "lossDownPercent": null
+      },
+      {
+        "pingMs": 15,
+        "observedAt": "2026-10-07T03:47:37Z",
+        "networkChartsGreen": true,
+        "roundRemaining": "7:56",
+        "lossDownPercent": 0,
+        "missPercent": null,
+        "phase": "software, staging or restoring",
+        "jitterMs": null,
+        "lossUpPercent": 0
+      },
+      {
+        "pingMs": 15,
+        "observedAt": "2026-10-07T03:48:02Z",
+        "networkChartsGreen": true,
+        "roundRemaining": "7:30",
+        "lossDownPercent": 0,
+        "missPercent": null,
+        "phase": "software after admission refused",
+        "jitterMs": null,
+        "lossUpPercent": 0
+      }
+    ]
+  },
+  "hudIsNssPhaseEvidence": false,
+  "subjectiveHumanExperienceAccepted": false,
+  "recoveryAutomaticDownloadResumptionObserved": true,
+  "strictCumulative180SecondDownloadProofAvailable": false,
+  "currentUiRestoration": {
+    "downloadLimitValueClearedBeforeDisable": true,
+    "cs2ExitPreviouslyConfirmed": true,
+    "strictCumulativeDownloadDurationProven": false,
+    "downloadLimitEnabled": false,
+    "networkBps": 0,
+    "recoveryAutoResumeOutsideOriginalGuard": true,
+    "recoveryPauseAppliedByUi": true,
+    "passed": true,
+    "downloadProgressPercent": 48,
+    "recoveryPeakObservedMbps": 333.7,
+    "bitsDisplayUnchanged": true,
+    "guardDeadlineWasNotExtended": true,
+    "recoveryAutoResumeObservedMbps": 327.2,
+    "subjectiveExperienceAccepted": false,
+    "capRestoreObservedAt": "2026-10-07T03:51:42Z",
+    "allowDownloadsDuringGameplayUnchanged": true,
+    "diskBps": 0,
+    "recoveryLaunchToolError": "Steam launch succeeded but returned no targetable process window; actual steamwebhelper window enumerated; no second launch",
+    "observedAt": "2026-10-07T03:51:55Z",
+    "downloadRegionUnchanged": true,
+    "observationMethod": "sky focused screenshots reviewed",
+    "downloadPaused": true,
+    "windowClosedByGuardToolError": "Settings window disappeared at independent guard deadline; final client readback then completed after reopening Steam"
+  },
+  "fullNssFactoryAcceptance": false
+}

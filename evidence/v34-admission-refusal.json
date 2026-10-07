@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "localExistingInputsOnly": true,
+  "networkReads": 0,
+  "routerWrites": 0,
+  "originalAdmissionFailurePreserved": true,
+  "oneControllerAttemptOnly": true,
+  "loadBeforeController": {
+    "actualCs2Rt": 1,
+    "actualSteamBulk": 11,
+    "eligibleMultiWanTriples": 1
+  },
+  "preparedNativeWanCount": 5,
+  "initialWanFreezeAfterNativePreparationPassed": true,
+  "postCheckpointSelectionPassed": true,
+  "lastPostCheckpointSelectedClasses": {
+    "tcp": "BULK",
+    "udp": "RT",
+    "tcp2": "BULK"
+  },
+  "lastPostCheckpointSequence": 16620,
+  "initialOwnerProbeCount": 1,
+  "initialOwnerProbeSucceeded": false,
+  "initialOwnerRejection": "Selected class is not admitted",
+  "initialOwnerFullClassifierSnapshotCaptured": false,
+  "classifierSnapshotRecords": 0,
+  "exactAbsentSlotAndClassChangeCauseEstablished": false,
+  "missingCandidateDoesNotProveCtExit": true,
+  "firmwareFaultEstablished": false,
+  "checkpointCreated": true,
+  "checkpointDownloadedShaAndGzipVerified": true,
+  "detachedStageStarted": true,
+  "independentUndoBeforeFirstWrite": true,
+  "selectedWanSet": [
+    1,
+    2,
+    5
+  ],
+  "nssGateModuleLoaded": false,
+  "ecmPermitGranted": false,
+  "fastPathMeasurementStarted": false,
+  "wholeFactoryAcceptance": false,
+  "installedGateRetargeted": false,
+  "stageUndoVerified": {
+    "sameBoot": true,
+    "ownDirectoryAbsent": true,
+    "stateNodeDirectoryAbsent": true,
+    "guardianTerminated": true,
+    "moduleAbsent": true,
+    "qosModuleAbsent": true
+  },
+  "lastPostCheckpointInputCopiesExact": 7,
+  "observedAt": "2026-10-07T03:53:57.164Z",
+  "controllerFactoryInvoked": true,
+  "controllerExitCode": 1,
+  "normalApplicationFactoryAcceptance": false,
+  "temporaryPhysicalQosConfigured": true,
+  "independentUndoCompleted": true,
+  "actualClassAtFailedOwnerProbeUnknown": true
+}

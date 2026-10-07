@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "modelOnly": true,
+  "checks": 13,
+  "actualV33RefusalFrameReused": true,
+  "nativePrerequisitesModeledOnly": true,
+  "hardwareExecuted": false,
+  "normalFactoryExecuted": false,
+  "networkReads": 0,
+  "routerWrites": 0,
+  "sourceHashes": {
+    "work/v34-normal/prepared-selection.mjs": "84451fd79e490a020ffc0329c26224a45afb36ba14ec804e65ec6a4587cac512",
+    "work/v34-normal/model-prepared-selection.mjs": "16049b92c50539aa2f49f180b043bb8558be01b3ebbff2555738bda2e5e911fe"
+  }
+}

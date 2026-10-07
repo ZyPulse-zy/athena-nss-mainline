@@ -1,3 +1,17 @@
+# checkpoint 后三流选择通过；owner 最终准入拒绝，已完整恢复
+
+更新：北京时间2026-10-07 11:56。v34实际Cache死斗＋已有Hades临时32Mbps，自动分类1CS2 RT/11Steam BULK/1跨WAN三流。准备native后才冻结TCP/WAN，新checkpoint下载SHA/gzip及后续BULK/RT/BULK选择通过；独立owner/暂存/物理QoS实际执行，但首次owner准入报`Selected class is not admitted`。gate模块未加载、ECM未放行、NSS B段和正常程序factory未验收。
+
+13新顺序模型/2762绑定/61依赖通过，18＋14历史模型和v20数据面保持。最后PC帧是checkpoint后选择，不是失败时owner分类；owner完整失败帧缺失，具体slot/改类原因未知，不能推成CT退出或固件故障。原失败、checkpoint/守护/来源按字节保存，旧v33及全部历史code/evidence不改。
+
+11:51完整audit source1.22/selectors2、五WAN健康/保护配置/epoch保持、ECM关闭全零；两物理原mq＋四fq_codel全部选项/handle恢复、stage/state/模块及实验进程零残留。原180客户端guard自然退出；Steam后来手动恢复，下载48%暂停0bps、原限速OFF/数字清空。重开又自动续传，累计严格180秒/720MB不成立。
+
+软件HUD可见ping15/loss上下0、绿色网络图；数值jitter/Miss/真人体感未知。v20三流多WAN、高级QoS及历史CPU证据复用；下一步只解决已证实的正常下载选择到owner准入边界，并封住恢复启动的下载窗口。当前不放宽准入、不盲重试/扩五流，heartbeat保持暂停。
+
+详情：[本轮报告](NORMAL_ADMISSION_2026-10-07.md)、[准入拒绝](../evidence/v34-admission-refusal.json)、[终态](../evidence/v34-normal-restoration.json)、[源码](../evidence/v34-normal-source-proof.json)。
+
+## 以下保留原正常入口及历史记录
+
 # 正常程序已识别三流；NSS 写前拒绝，恢复通过
 
 更新：北京时间2026-10-07 11:12。v33实际Mirage死斗＋已有Hades约32Mbps，自动分类1CS2 RT/9Steam BULK/1跨WAN三流，完整控制器已调用。准备期间两条选中TCP不再合格，checkpoint/stage/模块/ECM前拒绝，普通应用NSS factory验收仍未完成。

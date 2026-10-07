@@ -245,3 +245,24 @@
 /code/work/v33-normal/wan-tag-plan.mjs whitespace=cr-at-eol
 /code/work/v33-normal/prepare-receipt.json whitespace=cr-at-eol
 /code/work/v33-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+# Preserve exact frozen v34 source bytes; attributes apply only to new paths.
+/code/work/v34-normal/candidate-policy.mjs whitespace=cr-at-eol
+/code/work/v34-normal/class-leaf-map.mjs whitespace=cr-at-eol
+/code/work/v34-normal/classified-tags.lua whitespace=cr-at-eol
+/code/work/v34-normal/classifier.lua whitespace=cr-at-eol
+/code/work/v34-normal/current-audit-diagnostic.mjs whitespace=cr-at-eol
+/code/work/v34-normal/epoch-driver.mjs whitespace=cr-at-eol
+/code/work/v34-normal/fast-path.lua whitespace=cr-at-eol
+/code/work/v34-normal/guardian-plan.mjs whitespace=cr-at-eol
+/code/work/v34-normal/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/v34-normal/module-stage.mjs whitespace=cr-at-eol
+/code/work/v34-normal/parse-ecm.mjs whitespace=cr-at-eol
+/code/work/v34-normal/payload.mjs whitespace=cr-at-eol
+/code/work/v34-normal/qos-physical.lua whitespace=cr-at-eol
+/code/work/v34-normal/session.mjs whitespace=cr-at-eol
+/code/work/v34-normal/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/v34-normal/wan-scope.lua whitespace=cr-at-eol
+/code/work/v34-normal/wan-tag-plan.mjs whitespace=cr-at-eol
+/code/work/v34-normal/prepare-receipt.json whitespace=cr-at-eol
+/code/work/v34-normal/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
