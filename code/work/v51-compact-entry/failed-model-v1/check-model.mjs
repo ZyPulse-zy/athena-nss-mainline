@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {materialize,save,entryRoot} from './materialize.mjs';
+import {compactSshOptions} from './ssh-options.mjs';
+const root='work/v51-run-'+new Date().toISOString().replace(/\D/g,'').slice(0,14)+'-'+crypto.randomBytes(4).toString('hex');
+const q=materialize(root,Date.now()+600000),checks=[],test=(name,f)=>{f();checks.push(name);};
+test('all inherited bindings and exact firmware data plane kept',()=>{assert.equal(q.inheritedBindings,3354);assert.ok(q.dataPlaneByteExact&&q.classificationAndQosPolicyUnchanged);});
+test('compact offers are bound before connection',()=>assert.ok(q.sourceManifest[entryRoot+'/ssh-options.mjs']));
+test('only previously negotiated modern algorithms offered',()=>assert.deepEqual(compactSshOptions,['-o','KexAlgorithms=curve25519-sha256','-o','Ciphers=chacha20-poly1305@openssh.com','-o','HostKeyAlgorithms=ssh-ed25519','-o','MACs=hmac-sha2-256-etm@openssh.com','-o','Compression=no']));
+test('every direct endpoint SSH invocation uses the owned compact options',()=>{
+ let n=0;for(const p of Object.keys(q.sourceManifest).filter(p=>p.startsWith(root+'/')&&p.endsWith('.mjs'))){const s=fs.readFileSync(p,'utf8');for(const x of s.matchAll(/spawn(?:Sync)?\('ssh',\[([^\n]*)/g)){assert.ok(x[1].startsWith('...compactSshOptions,'),p);n++;}}assert.ok(n>=3);
+});
+test('native data children use compact options and original first-payload timer',()=>{const s=fs.readFileSync(root+'/native-client.mjs','utf8');assert.ok(s.includes("spawn(sshExe,['-v',...compactSshOptions,")&&s.includes('},8000)'));});
+test('existing rollback recheck reference now resolves to a bound real source',()=>{const s=fs.readFileSync(entryRoot+'/entry.mjs','utf8');assert.ok(s.includes("runtimeRoot+'/recheck-endpoint-readonly.mjs'"));assert.ok(q.sourceManifest[root+'/recheck-endpoint-readonly.mjs']);});
+test('fallback only reads original owned baseline after independent deadline',()=>{const s=fs.readFileSync(root+'/recheck-endpoint-readonly.mjs','utf8');assert.ok(s.includes('252000')&&s.includes('baselineCanonicalSha256')&&!s.includes('systemctl stop')&&!s.includes("'mode':'apply'"));});
+test('acquisition retry caps and all lifetime limits kept',()=>{assert.deepEqual(fs.readFileSync(root+'/fixture-retry-policy.mjs'),fs.readFileSync('work/v42-counter-window/fixture-retry-policy.mjs'));assert.ok(q.limits.client===180&&q.limits.owner===180&&q.limits.clientGuard===210&&q.limits.kernelMaximum===120&&q.limits.bundle===73728);});
+const receipt=entryRoot+'/model-'+Date.now()+'-'+crypto.randomBytes(4).toString('hex')+'.json';
+save(receipt,{passed:true,checks,sourceBindings:q.actualBindings,sourceHashes:q.sourceManifest,modelRuntime:root,liveNetworkAudited:false,hardwareExecuted:false});
+save(entryRoot+'/entry-model-latest-private.json',{receipt});console.log(JSON.stringify({passed:true,checks:checks.length,sourceBindings:q.actualBindings,receipt,hardwareExecuted:false}));

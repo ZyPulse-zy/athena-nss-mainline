@@ -1,0 +1,17 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';import {spawnSync} from 'node:child_process';
+import {persistentSsh} from './persistent-ssh.mjs';import {connectRouter} from '../nss20/connect-router.mjs';import {encode,receipt} from '../nss11/v7-observe-repair/observe2/transport.mjs';
+const root='work/v56-control-bootstrap',save=(n,v)=>fs.writeFileSync(root+'/'+n+'.json',JSON.stringify(v,null,2)+'\n',{flag:'wx'}),quote=s=>"'"+s.replaceAll("'","'\\''")+"'";
+assert.ok(!fs.existsSync(root+'/probe-once-private.json'));save('probe-once-private',{at:new Date().toISOString(),maximumChannels:8,originalEightSecondCommandLimit:true,readOnlyRemoteCommands:true,noFixtureOrFirewallOrNssWrites:true});
+const all=[];
+for(let batch=0;batch<2;batch++){
+ const channels=[false,true,false,true].map((bootstrap,index)=>({bootstrap,index:batch*4+index,channel:persistentSsh({bootstrap})}));
+ try{
+  const tasks=channels.map(async x=>{const v={index:x.index,bootstrap:x.bootstrap,pid:x.channel.pid};try{v.connection=await x.channel.exec('python3 -B -E -s -u -c '+quote("import json;print(json.dumps({'ready':True}))"),'',{milliseconds:8000});assert.equal(v.connection.code,0);const input='C'.repeat(16384),hash=crypto.createHash('sha256').update(input).digest('hex');v.large=await x.channel.exec('python3 -B -E -s -u -c '+quote("import sys,json,hashlib;b=sys.stdin.buffer.read();assert len(b)==16384 and hashlib.sha256(b).hexdigest()=='"+hash+"';print(json.dumps({'passed':True,'inputBytes':len(b)}))"),input,{milliseconds:8000});v.passed=v.large.code===0&&JSON.parse(v.large.stdout).passed;}catch(e){v.passed=false;v.error=String(e);}v.phase=x.channel.phase();save('channel-'+x.index+'-raw-private',v);return v;});
+  await new Promise(r=>setTimeout(r,700));const ids=channels.map(x=>x.channel.pid).join(',');
+  const p=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',"@(Get-NetTCPConnection -OwningProcess "+ids+" -ErrorAction SilentlyContinue|Select-Object OwningProcess,LocalPort,RemotePort,State)|ConvertTo-Json -Compress"],{encoding:'utf8',windowsHide:true,timeout:8000,maxBuffer:65536});save('local-sockets-'+batch+'-raw-private',{code:p.status,stdout:p.stdout,stderr:p.stderr});assert.equal(p.status,0);const values=JSON.parse(p.stdout||'[]'),sockets=Array.isArray(values)?values:[values];
+  const router=await connectRouter();let raw;try{const e=encode('conntrack -L -p tcp --orig-src 192.168.237.207 --orig-dst 172.93.163.251 -o extended,id');raw=receipt(await router.run(e.command),e);save('conntrack-'+batch+'-raw-private',raw);assert.equal(raw.code,0);}finally{router.close();}
+  for(const v of await Promise.all(tasks)){const port=sockets.find(x=>x.OwningProcess===v.pid&&x.RemotePort===22)?.LocalPort;const row=port?raw.stdout.split('\n').find(s=>s.includes('sport='+port+' ')&&s.includes('dport=22 ')):null;const mark=row?Number(row.match(/\bmark=(\d+)/)?.[1]):null;all.push({index:v.index,bootstrap:v.bootstrap,passed:v.passed,phase:v.phase.phase,largeInputBytes:v.passed?16384:0,localSocketMatched:!!port,ctMatched:!!row,wan:mark!==null?((mark&0xff0000)>>>16):null});}
+ }finally{for(const x of channels)x.channel.close();}
+ if(all.some(x=>x.bootstrap&&x.wan===5&&x.passed))break;
+}
+const result={passed:all.some(x=>x.bootstrap&&x.wan===5&&x.passed),readOnlyRemoteCommands:true,noFixtureOrFirewallOrNssWrites:true,probes:all,mtuRootCauseProved:false,largeInitialCommandAvoided:true};save('summary',result);console.log(JSON.stringify(result));

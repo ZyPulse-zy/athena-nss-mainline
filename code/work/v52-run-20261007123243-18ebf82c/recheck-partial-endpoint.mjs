@@ -1,0 +1,15 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
+import {compactSshOptions} from '../v52-udp-preflight/ssh-options.mjs';
+const root='work/v52-run-20261007123243-18ebf82c',read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+assert.match(root,/^work\/v52-run-\d{14}-[a-f0-9]{8}$/);
+assert.ok(!fs.existsSync(root+'/load-latest-private.json'),'Full client requires its original closure');
+const setup=read(root+'/endpoint-setup-private.json');assert.ok(setup.dir.startsWith(root+'/load-'));
+assert.match(setup.unit,/^v52-run-\d{14}-[a-f0-9]{8}-[a-f0-9]{16}$/);
+assert.ok(Date.now()>=fs.statSync(setup.dir+'/server-deadline-private.json').mtimeMs+252000,'Original server deadline must have elapsed');
+const c=read(setup.dir+'/firewall-settings-private.json');
+const code=fs.readFileSync(root+'/endpoint-firewall-guardian.py','utf8')+`\nc=${JSON.stringify(c)}\nwith open('/proc/sys/kernel/random/boot_id') as f:assert f.read().strip()==c['boot']\nrules=nft(['-j','list','ruleset'])\nassert not [x for x in rules['nftables'] if x.get('rule',{}).get('comment','').startswith('nss14-'+c['owner']+'-')]\nassert hashlib.sha256(canonical(rules).encode()).hexdigest()==c['baselineCanonicalSha256']\np=subprocess.run(['ss','-H','-lntup'],capture_output=True,text=True,timeout=5)\nassert p.returncode==0 and not any(':45817 ' in x or ':45818 ' in x for x in p.stdout.splitlines())\nq=subprocess.run(['systemctl','show',${JSON.stringify(setup.unit)},'-p','MainPID','-p','ActiveState'],capture_output=True,text=True,timeout=5)\nassert 'MainPID=0' in q.stdout and 'ActiveState=active' not in q.stdout\nprint(json.dumps({'passed':True,'readonly':True,'ownedRulesRemaining':0,'baselineRestored':True,'exactOwnedEndpointClosed':True,'independentNaturalDeadlinesKept':True,'beforeClientFailureAccounted':True}))\n`;
+assert.ok(Buffer.byteLength(code)<=65536);
+const p=spawnSync('ssh',[...compactSshOptions,'-o','BatchMode=yes','-o','StrictHostKeyChecking=yes','-o','ConnectTimeout=8','-o','ServerAliveInterval=3','-o','ServerAliveCountMax=1','sub2api-dallas','python3 -B -E -s -u -'],{input:code,encoding:'utf8',windowsHide:true,timeout:20000,maxBuffer:65536});
+fs.writeFileSync(setup.dir+'/partial-endpoint-closure-raw-private.json',JSON.stringify({code:p.status,stdout:p.stdout,stderr:p.stderr,error:p.error?.code??null},null,2)+'\n',{flag:'wx'});
+assert.equal(p.status,0,'Partial endpoint readonly closure failed; raw output retained');const result=JSON.parse(p.stdout);assert.ok(result.passed&&result.readonly);
+fs.writeFileSync(setup.dir+'/partial-endpoint-closure.json',JSON.stringify(result,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(result));

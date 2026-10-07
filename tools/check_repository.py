@@ -2518,4 +2518,22 @@ if (root/'evidence/v47-tcp-acquisition.json').exists():
  assert s['passed'] and s['historicPrefixSources']==4959 and s['newSources']==len(s['sourceHashes']) and s['actualBindingsFrozenExact']==3406 and s['oldCodeEvidenceUnmodified'] and s['originalV45EntryAndV46EvidenceUnchanged']
  for group in [s['sourceHashes'],s['runtimeSourceHashes'],a['modelSourceHashes']]:
   for rel,digest in group.items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+if (root/'evidence/v58-entry-repair-resident.json').exists():
+ a=json.loads((root/'evidence/v58-entry-repair-resident.json').read_text(encoding='utf8'));s=json.loads((root/'evidence/v58-source-proof.json').read_text(encoding='utf8'))
+ assert a['passed'] and a['reusableEntryHardwareCompleted'] and not a['residentNinetySecondHardwareCompleted'] and a['latestState']=='RESTORED'
+ assert manifest['lastEntryRepairExport']=='V54_ENTRY_COMPLETE_V58_RESIDENT_PREREQUISITE_REFUSED_RESTORED'
+ h=a['runtimeResults']['v54']['hardware'];assert h['passed'] and 60<=h['phase']['seconds']<=61.5 and h['phase']['sampleCount']==121 and h['renewals']==20 and h['allBSamplesEcmFive'] and set(h['selectedWanBySlot'].values())=={1,2,3,4,5}
+ for v,r in a['runtimeResults'].items():
+  assert r['state']=='RESTORED' and r['restorationPassed'] and r['lockRemoved'];q=r['finalFullAudit'];assert q['passed'] and q['queryAge']<6 and q['ecmClosedAndZero'] and q['allFiveHealthyWanBaseline'] and q['protectedConfigurationUnchanged'] and r['physicalQueues']['defaultQueueOptionsAndHandlesExact']
+  if v!='v54':assert not r['hardwareCompleted'] and not r['nssCheckpointOrStageStarted']
+  if 'endpointClosure' in r:assert r['endpointClosure']['passed'] and r['endpointClosure']['ownedRulesRemaining']==0 and r['endpointClosure']['baselineRestored'] and r['endpointClosure']['exactOwnedEndpointClosed'] and r['clientClosure']['ownedTestProcessesRemaining']==0
+ r=a['runtimeResults']['v58'];assert r['actualBindings']==3424 and r['matchingReads']==34 and r['fixture']['errors']==[] and r['lastMatchingSummary']['tcpBulk']==3 and r['lastMatchingSummary']['udpRt']==1
+ assert sorted(x['wan'] for x in r['lastAcquisition']['retained'])==[1,2,4,5]
+ assert a['models']['v58-resident-timeout']['checks']==9 and a['routeAcquisitionVerification']['nodeCases']==11 and a['routeAcquisitionVerification']['ramCases']==9
+ assert a['originalV55UnconfirmedResultRetained'] and a['v55EndpointRecoveryFollowupPassed'] and a['sourceFreshnessSeconds']==6 and a['nativeMaximumSeconds']==120 and a['ownerSeconds']==180 and a['clientSeconds']==180 and a['naturalAcquisitionSeconds']==30 and a['firstPayloadSeconds']==8 and a['slotMaximumAttempts']==8
+ assert not any(a[k] for k in ['mtuRootCauseProved','permanentNssDeployment','cs2OrSteamOperated','newCpuAcceptance'])
+ assert s['passed'] and s['historicPrefixSources']==5010 and s['newSources']==len(s['sourceHashes']) and s['oldCodeEvidenceUnmodified']
+ groups=[s['sourceHashes'],*a['sourceHashesByRuntime'].values(),*(m['sourceHashes'] for m in a['models'].values())]
+ for group in groups:
+  for rel,digest in group.items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

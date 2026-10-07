@@ -1,3 +1,9 @@
+# 当前入口与常驻候选
+
+已通过的可复用入口是`work/v54-owned-control/entry.mjs`：显式inspect／status／run／stop，一代60秒／五WAN／完整恢复。最新修正版`work/v58-resident-timeout/entry.mjs`是90秒常驻候选，实际五WAN已齐但第四TCP缺BULK资格，在NSS前拒绝，硬件未验。两者均需新namespace和checkpoint／独立恢复；勿把入口命令列表当作连续重试指令。见[本次记录](ENTRY_REPAIR_RESIDENT_2026-10-07.md)。
+
+## 以下为历史状态
+
 # 当前入口：v45原字节，完整闭环仍待通过
 
 最新一次仍用`work/v45-early-acquisition/entry.mjs`的24模型／3406绑定；tcp3第4候选8秒无首包，NSS准入前退出并完整恢复。inspect／status／run／stop保持，勿把命令列表当作连续重试指令。常驻授权保留，尚未启动试用。见[最新记录](V47_TCP_ACQUISITION_2026-10-07.md)。
