@@ -1,0 +1,12 @@
+{
+  "preserved": true,
+  "exception": "FileNotFoundError",
+  "line": 119,
+  "missingBasename": "owned-process-inventory-private.json",
+  "cause": "Empty PowerShell pipeline did not create the optional raw inventory file",
+  "originalClientClosureSavedZeroOwnedProcesses": true,
+  "commitChainStopped": true,
+  "partialCandidateSourceFilesPreserved": 56,
+  "frozenRuntimeSourcesModified": false,
+  "productionExperimentRepeatedForThisFailure": false
+}

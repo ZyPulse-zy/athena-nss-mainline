@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "finalFullAudit": {
+    "passed": true,
+    "auditPurpose": "prewrite",
+    "prelearningSchedulingRequested": true,
+    "nssAdmissionAllowed": false,
+    "originalLockedFreshnessPredicatesRetained": true,
+    "protectedConfigurationUnchanged": true,
+    "exactOwnedNativeAudit": true,
+    "selectors": 6,
+    "queryAge": 1.1200000001117587,
+    "sequence": 2457,
+    "ecmClosedAndZero": true,
+    "serviceEpochPinned": true,
+    "failedUnselectedWan4ProcessEpochMayChange": false,
+    "otherServiceChangesDuringExperimentAllowed": false,
+    "wan4ProcessOwnershipChecked": true,
+    "declaredAuthRepairExact": true,
+    "declaredManifestExact": true,
+    "allFiveHealthyWanBaseline": true,
+    "selectedWanStillRequiresOriginalNativePrerequisites": true,
+    "unknownRoutingDriftAllowed": false
+  },
+  "physicalQueues": {
+    "passed": true,
+    "observedAt": "2026-10-07T06:40:33.150Z",
+    "readonly": true,
+    "physicalWanOriginalMqFourFqCodelRestored": true,
+    "lan4OriginalMqFourFqCodelRestored": true,
+    "defaultQueueOptionsAndHandlesExact": true,
+    "failedWan4ProcessOwnerChecked": true,
+    "wan4Running": true,
+    "wan4Lifecycle": "exec-minieap",
+    "wrapperSha256": "f3f7bced136fba1a2b171da5b68645c5439d1fe8a104bceb4f9556571159d072"
+  },
+  "clientClosure": {
+    "cs2Acceptance": false,
+    "guards": [
+      {
+        "independentGuardSeconds": 210,
+        "passed": true,
+        "clientExitedBeforeDeadline": true,
+        "ownedProcessesRemaining": 0,
+        "originalClientSeconds": 180,
+        "guardObservedAt": "2026-10-07T06:36:55.1072758Z",
+        "exactClientOnly": true,
+        "scope": "work/v42-counter-window"
+      }
+    ],
+    "steamProcessesRunning": 1,
+    "steamFactoryAcceptance": false,
+    "passed": true,
+    "clientDeadlineReset": false,
+    "ownedTestProcessesRemaining": 0,
+    "cs2ProcessesRemaining": 1,
+    "observedAt": "2026-10-07T06:40:32.9513262Z",
+    "readonly": true
+  },
+  "endpointReadonlyRecheck": {
+    "passed": true,
+    "readonly": true,
+    "ownedRulesRemaining": 0,
+    "baselineRestored": true,
+    "exactOwnedEndpointClosed": true,
+    "originalClosureTransportFailurePreserved": true,
+    "independentEndpointDeadlineElapsed": true
+  },
+  "originalNssRecoveryFlags": {
+    "moduleUnloaded": true,
+    "tagsRemoved": true,
+    "dualPhysicalQueuesRestored": true,
+    "wanRestored": true,
+    "mwan3Restored": true,
+    "stateNodeRemoved": true,
+    "firmwareZeroAfterRetirement": true
+  },
+  "qosRestored": true,
+  "qosModuleUnloaded": true,
+  "originalSupervisorExitCode": 1,
+  "originalClosureFailureCategory": "SSH_CONNECT_TIMEOUT_BEFORE_REMOTE_COMMAND",
+  "originalFailurePreserved": true,
+  "readonlyRecheckAttempts": 1,
+  "checkpointDownloadedShaGzipVerifiedBeforeWrite": true,
+  "independentGuardianBeforeWriteVerified": true,
+  "cs2OrSteamOperated": false,
+  "userApplicationsNotClosedByFixtureCleanup": true,
+  "heartbeatStillPaused": true,
+  "permanentNssDeployment": false,
+  "newCpuAcceptance": false
+}

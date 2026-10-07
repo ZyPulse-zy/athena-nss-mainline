@@ -2374,4 +2374,51 @@ if (root/'evidence/v41-five-source-proof.json').exists():
  whitespace=json.loads((root/'evidence/v41-frozen-whitespace.json').read_text(encoding='utf8'))
  assert whitespace['passedAsPreservedSourcePolicy'] and whitespace['frozenDataPlaneBytesUnmodifiedFromV24'] and whitespace['noGlobalWhitespacePolicyChange']
  for attr in whitespace['exactPathAttributes']:assert attr.startswith('/code/work/v41-five-sim/') and attr in (root/'.gitattributes').read_text(encoding='utf8')
+if (root/'evidence/v42-five-wan-source-proof.json').exists():
+ sp=json.loads((root/'evidence/v42-five-wan-source-proof.json').read_text(encoding='utf8'))
+ hw=json.loads((root/'evidence/v42-five-wan-hardware.json').read_text(encoding='utf8'))
+ end=json.loads((root/'evidence/v42-five-wan-restoration.json').read_text(encoding='utf8'))
+ q=json.loads((root/'evidence/v42-five-wan-qualification.json').read_text(encoding='utf8'))
+ aligned=json.loads((root/'evidence/v42-v41-window-alignment.json').read_text(encoding='utf8'))
+ assert manifest['lastFiveWanBoundedHardwareExport']=='V42_FIVE_WAN_SIMULATED_FUNCTIONAL_ACCEPTANCE_COMPLETE'
+ assert sp['passed'] and sp['historicPrefixSources']==4480 and sp['oldCodeAndEvidenceBlobsChecked']==5055 and sp['oldCodeAndEvidenceUnmodified']
+ assert len(sp['sourceHashes'])==60 and sp['actualRuntimeBindingsFrozenExact']==3354 and sp['privateInputsCopiedExact']==22
+ assert sp['pilotAndCaseBindingsAndFrozenCopiesExact'] and sp['frozenV41FailureAndAllHistoricSourcesPreserved'] and sp['firstPublicationFailureAndCandidatePreserved']
+ for src,digest in sp['sourceHashes'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ assert q['passed'] and q['actualBindings']==3354 and q['qualifiedSources']==51 and len(q['sourceManifest'])==49 and not q['hardwareExecutedAtQualification']
+ assert q['twoOfflineAnalysisFilesKeptLocalToExcludePrivateRunPaths'] and q['dataPlaneAndClassifierPolicyUnchanged'] and q['fastPathOnlyAddsReadTimingAndProtectedTerminalRead']
+ assert q['terminalReadMaximumExtraReads']==1 and q['terminalReadAfterStopNewLearning'] and not q['terminalBranchHardwareExecuted']
+ assert (q['sourceSeconds'],q['clientSeconds'],q['fixtureGuardSeconds'],q['phaseSeconds'],q['combinedTcpMbps'],q['combinedCreditBytes'])==(6,180,210,60,32,65536)
+ assert (q['priorNativeControlChecksReused'],q['priorNativeCtChecksReused'],q['priorTargetRamChecksReused'])==(63,68,14)
+ for src,digest in q['sourceManifest'].items():assert hashlib.sha256((root/'code'/src).read_bytes()).hexdigest()==digest,src
+ for name in ['classifier.lua','classified-tags.lua','wan-scope.lua','qos-physical.lua','tag-normalizer.lua','module-stage-guardian.lua']:
+  assert (root/'code/work/v42-counter-window'/name).read_bytes()==(root/'code/work/v24-fiveflow'/name).read_bytes(),name
+ assert hw['passed'] and hw['actualHardware'] and hw['fiveWanBoundedHardwareAcceptance'] and hw['fiveWanConcurrentFastPathProven']
+ assert hw['actualBoundInputs']==3354 and hw['wanSet']==hw['queueWanSet']==[1,2,3,4,5] and hw['simultaneouslyAdmittedExactFlowCount']==5
+ assert hw['phase']['completed'] and hw['phase']['sampleCount']==121 and 60<=hw['phase']['seconds']<61 and hw['ecmCountsThroughoutB']==[5] and hw['renewals']==20 and hw['finalEcmCount']==0
+ for slot,p in hw['flowProof'].items():
+  wan=p['wanAffinity'];low=6 if slot=='udp' else 5
+  assert p['accelerated'] and p['natCorrect'] and p['ctMark']==wan<<16 and p['downTag']==(0x8f00+wan*16+low)<<16 and p['upTag']==(0x8e00+wan*16+low)<<16
+  assert p['fromLan4'] and p['fromBridgeLan'] and 'serial' not in p
+ assert hw['sharedBudgetBorrowingObserved'] and hw['bulkWithinSharedDownBudget'] and 16<hw['bulkAggregateMbps']<18.9
+ assert hw['rtLeafDrop']=={'down':0,'up':0}
+ udp=hw['rtEchoDuringInteriorB'];assert udp['sent']==udp['returned']==2373 and udp['unreturned']==0 and 56<udp['interiorSeconds']<60
+ assert udp['offsetUncertaintySeconds']<3 and udp['rttVariationIsNotCs2HudJitter'] and not udp['cs2Metrics']
+ assert hw['encodedBundleBytes']==73138<=73728 and hw['guardianExecBytes']==8799<=9000 and hw['nativeRecordBytes']==634752<1048576
+ assert hw['v41ClassificationRetirementNotReproducedThisRun'] and not hw['v41GapFixedClaimed'] and not hw['diagnosticTerminalReadExecuted']
+ assert not any(hw[k] for k in ['humanCs2Acceptance','permanentNssAcceptance','newCpuCausalBenefitClaimed','longTermRateAccuracyProven'])
+ assert aligned['passedAsOfflineAlignment'] and aligned['sourceQuerySequences']==[1767,1768] and aligned['payloadCountersAreClientStdoutNotWireBytes'] and aligned['sshPipelineBufferingNotBoundedByPacerCredit']
+ assert aligned['strictCTReadInteriorAboveThresholdSlots']==['tcp','tcp3','tcp4'] and not aligned['nssOrFirmwareCounterSyncRootCauseProven'] and not aligned['productionWrites']
+ assert 'inputSha256' not in aligned and len(aligned['inputSha256ByRole'])==3
+ assert end['passed'] and end['originalSupervisorExitCode']==1 and end['originalClosureFailureCategory']=='SSH_CONNECT_TIMEOUT_BEFORE_REMOTE_COMMAND' and end['originalFailurePreserved'] and end['readonlyRecheckAttempts']==1
+ assert end['checkpointDownloadedShaGzipVerifiedBeforeWrite'] and end['independentGuardianBeforeWriteVerified'] and all(end['originalNssRecoveryFlags'].values()) and end['qosRestored'] and end['qosModuleUnloaded']
+ audit=end['finalFullAudit'];assert audit['passed'] and audit['queryAge']<6 and audit['ecmClosedAndZero'] and audit['protectedConfigurationUnchanged'] and audit['allFiveHealthyWanBaseline']
+ assert end['physicalQueues']['defaultQueueOptionsAndHandlesExact'] and end['clientClosure']['passed'] and end['clientClosure']['ownedTestProcessesRemaining']==0
+ e=end['endpointReadonlyRecheck'];assert e['passed'] and e['readonly'] and e['ownedRulesRemaining']==0 and e['baselineRestored'] and e['exactOwnedEndpointClosed']
+ assert end['heartbeatStillPaused'] and end['userApplicationsNotClosedByFixtureCleanup'] and not any(end[k] for k in ['cs2OrSteamOperated','permanentNssDeployment','newCpuAcceptance'])
+ whitespace=json.loads((root/'evidence/v42-frozen-whitespace.json').read_text(encoding='utf8'))
+ assert whitespace['passedAsPreservedSourcePolicy'] and whitespace['noGlobalWhitespacePolicyChange']
+ for attr in whitespace['exactPathAttributes']:assert attr.startswith('/code/work/v42-counter-window/') and attr in (root/'.gitattributes').read_text(encoding='utf8')
+ failure=json.loads((root/'code/work/v42-counter-window/publish-first-failure/failure.json').read_text(encoding='utf8'))
+ assert failure['preserved'] and failure['commitChainStopped'] and not failure['productionExperimentRepeatedForThisFailure']
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

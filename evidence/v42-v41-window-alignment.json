@@ -1,0 +1,88 @@
+{
+  "passedAsOfflineAlignment": true,
+  "productionWrites": false,
+  "sourceQuerySequences": [
+    1767,
+    1768
+  ],
+  "classifierFinishedWindowSeconds": 3.010000000242144,
+  "oldCTReadDurationSeconds": 0.19999999972060323,
+  "newCTReadDurationSeconds": 0.20000000018626451,
+  "pcToRouterClockBracketSeconds": 0.8179354667663574,
+  "pcWallMonotonicMaximumDeviationSeconds": 0.0009354343322804937,
+  "payloadCountersAreClientStdoutNotWireBytes": true,
+  "sshPipelineBufferingNotBoundedByPacerCredit": true,
+  "finishedWindowAllFourPayloadLowerBoundsAboveOriginal2000Kbps": true,
+  "strictCTReadInteriorAboveThresholdSlots": [
+    "tcp",
+    "tcp3",
+    "tcp4"
+  ],
+  "facts": {
+    "tcp": {
+      "reportedClass": "BE",
+      "reportedReason": "cooldown",
+      "reportedCTRateKbps": 1506.0199334336633,
+      "ctIdentityUnchanged": true,
+      "queryFinishWindow": {
+        "payloadBytesLowerBound": 966656,
+        "payloadKbpsLowerBound": 2569.185381853119
+      },
+      "interiorOfAllPossibleCTReadWindows": {
+        "payloadBytesLowerBound": 851968,
+        "payloadKbpsLowerBound": 2264.3667772264776
+      }
+    },
+    "tcp2": {
+      "reportedClass": "BE",
+      "reportedReason": "cooldown",
+      "reportedCTRateKbps": 1656.5049832554444,
+      "ctIdentityUnchanged": true,
+      "queryFinishWindow": {
+        "payloadBytesLowerBound": 868352,
+        "payloadKbpsLowerBound": 2307.9122921731405
+      },
+      "interiorOfAllPossibleCTReadWindows": {
+        "payloadBytesLowerBound": 507904,
+        "payloadKbpsLowerBound": 1349.910963346554
+      }
+    },
+    "tcp3": {
+      "reportedClass": "BE",
+      "reportedReason": "cooldown",
+      "reportedCTRateKbps": 1688.6750829206305,
+      "ctIdentityUnchanged": true,
+      "queryFinishWindow": {
+        "payloadBytesLowerBound": 1294336,
+        "payloadKbpsLowerBound": 3440.095680786379
+      },
+      "interiorOfAllPossibleCTReadWindows": {
+        "payloadBytesLowerBound": 1294336,
+        "payloadKbpsLowerBound": 3440.095680786379
+      }
+    },
+    "tcp4": {
+      "reportedClass": "BE",
+      "reportedReason": "cooldown",
+      "reportedCTRateKbps": 1669.7833885699908,
+      "ctIdentityUnchanged": true,
+      "queryFinishWindow": {
+        "payloadBytesLowerBound": 933888,
+        "payloadKbpsLowerBound": 2482.0943519597927
+      },
+      "interiorOfAllPossibleCTReadWindows": {
+        "payloadBytesLowerBound": 868352,
+        "payloadKbpsLowerBound": 2307.9122921731405
+      }
+    }
+  },
+  "nssOrFirmwareCounterSyncRootCauseProven": false,
+  "classificationPolicyChanged": false,
+  "sixtySecondAcceptance": false,
+  "privateInputsKeptLocal": true,
+  "inputSha256ByRole": {
+    "postCheckpointReceipt": "86d1155f84889ef499804b225297231658b5659ae8672fa2f44375c98890bd8a",
+    "lastRecord": "cf9a0fac2b20a1be5cbacd8d9cc0f94dcc20522af99d1a5de2e96aa70a7a005f",
+    "clientSamples": "bdb719a596e3c1ed5a8439eddcee16e8632ea4ee2f5a8acced4151130cf1a88f"
+  }
+}

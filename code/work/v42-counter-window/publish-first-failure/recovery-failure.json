@@ -1,0 +1,10 @@
+{
+  "preserved": true,
+  "failedAssertion": "git status empty after exact source-manifest blob restored",
+  "originalBlobAndWorkingFileByteEqual": true,
+  "gitDiffStatEmpty": true,
+  "indexRefreshReportedNeedsUpdateBeforeConverging": true,
+  "indexAndHeadAndFilteredHashMatched": true,
+  "followedByMissingRepairedSourceLaunchFailure": true,
+  "productionWrites": false
+}

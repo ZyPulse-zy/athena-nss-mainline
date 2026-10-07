@@ -1,3 +1,15 @@
+# 五 WAN 模拟功能验收完成，完整恢复
+
+更新：北京时间2026-10-07 14:52。v42自有四TCP BULK＋模拟UDP RT自然走TCP WAN2/3/4/5＋UDP WAN1，实际NSS五流60.01秒/121采样ECM5/20续租、双向十tag/leaf/完整ct mark/NAT/affinity通过。共享DOWN18附近四bulk合计16.70Mbps，UP60每WAN12硬上限/RT prio0/FQ-CoDel保持；内部57.06秒2373 UDP全部回包、RT上下leaf零drop，RTT中位/P95/P99约196.47/198.68/200.36ms。不是CS2/HUD/真人、新CPU或长期常驻证明。
+
+v41原BE/cooldown退出和全部旧证据不改。对齐后PC交付与分类计数有差异，但SSH缓冲/计时限制使精确同步根因仍未知；本次没有修改分类、没有复现该退出，最多一次终止计数读取分支未执行。该问题保留known limitation/follow-up，不妨碍本次有界功能验收，不称已修复。
+
+3354实际绑定、fresh checkpoint SHA/gzip和原独立恢复写前通过，bundle73138/exec8799/record634752在原上限内。NSS正常完整恢复后，端点关闭SSH超时导致监督器退出1，原失败保留；原独立期限后一次仅只读新目录重查确认精确服务/端口关闭、规则0/FW基线一致。最后完整audit source1.12/selectors6，五WAN健康、保护配置/epoch/ECM关闭全零；两物理原mq＋四fq_codel全选项/handle、自有进程全部退出。常驻NSS68原config、heartbeat暂停，无CS2/Steam操作。
+
+**五WAN五流60秒与高级QoS受控功能验收完成，本轮停止新增实验。** 已知v41进入窗计数差异/偶发SSH取得超时/普通应用factory未验收留后续；不将本次等同全网、永久或长期部署。详情：[本次报告](docs/FIVE_WAN_SIMULATED_ACCEPTANCE_2026-10-07.md)。
+
+## 以下保留历史记录
+
 # 五 WAN 首次同时 NSS 命中；60 秒维持未通过，完整恢复
 
 更新：北京时间2026-10-07 14:15。v41使用自有四TCP＋模拟UDP，原自动分类自然取得TCP WAN2/4/5/3＋UDP WAN1；新checkpoint下载SHA/gzip与独立守护写前通过，五条实际NSS/ECM5、双向十tag/leaf/ct mark/NAT/affinity已取得。B仅3.90秒/6采样/0续租，不能标60秒验收。

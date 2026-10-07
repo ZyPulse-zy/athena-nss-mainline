@@ -1,0 +1,11 @@
+{
+  "preserved": true,
+  "failures": [
+    {"path": "work/v41-five-sim/qualified.json", "error": "Cannot find path because it does not exist", "correctedPath": "work/v41-five-sim/entry-qualified.json"},
+    {"path": "work/v41-five-sim/final-audit.mjs", "error": "Cannot find path because it does not exist", "correctedPath": "work/v41-five-sim/read-final-health.mjs"},
+    {"path": "work/v42-counter-window/analyze-hardware.py", "error": "Cannot find path because it does not exist", "correctedBy": "New analysis source copied from the existing v41 source before first execution"}
+  ],
+  "readOnlyLocalPathLookups": true,
+  "productionStateChangedByTheseFailures": false,
+  "repositoryChecksNotSkipped": true
+}
