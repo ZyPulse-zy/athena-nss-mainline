@@ -1,3 +1,9 @@
+# 2026-10-08 dev-h：独立合格流准入开发批次
+
+固定三流要求撤下，optional native1..3槽/同WANTCP、动态class/tag/counter/lease/cleanup与正常归属入口一起收敛。本地33/119/124和native157/109/134模型、七子集Lua/尺寸及6.18.44编译通过；本地首CT夹具/尺寸/路径断言失败保存后修复，不各开硬件版本。dev-g13:51已有checkpoint/stage后初始分类拒绝，native/NSS前退出并恢复；原缺详细probe不据此推断CT退出或实际改类。新probe保留，仅无NSS并完整恢复的已知准备期拒绝允许新鲜代等待。dev-h首启动旧byte-exact断言在网络前拒绝，P2本地修复和startup模型后实际启动完整只读审核通过。14:43进程运行、BULK0/RT0/0新NSS、准入未暂停；actual optional native尚未加载，没有现场集成通过。当前自然负载消失，不造流量；新鲜条件到来仅接续一次有限集成。源码/脱敏事实集中提交，不新正式版本/HTML/archive；原历史源码及私有失败保持。见[事实](../evidence/resident-service-dev-h.json)。
+
+## 以下保留历史记录
+
 # 2026-10-08 dev-g：最终分类后置于Windows归属读取
 
 13:18完整快照＋本机socket确认WAN3 CS2 RT1（197.26pps／1.261Mbps）。13:15 dev-f另一入口在OS归属查询后触发source6拒绝，checkpoint/stage前退出；原中间恢复审核失败保留，最终完整保护和原物理队列恢复通过。本批P2时序修复以首次分类仅发现端口、OS后最终分类替换，source6/OS6、owner/CT/mark/NAT/WAN/lease校验与数据面保持，180本地检查通过。13:30切换原手动任务，启动完整审核通过；13:32三次读取成功、RT1/BULK0、ECM0，没有新NSS代或正式硬件版本。新完整集成及体验仍未验收。不生成HTML或archive，源码和脱敏事实集中提交。见[摘要](../evidence/resident-service-dev-g.json)。

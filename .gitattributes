@@ -1222,3 +1222,8 @@ code/work/resident-service-dev-f-20261008/test-generation-outcome.mjs whitespace
 
 code/work/resident-service-dev-g-20261008/generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
 code/work/resident-service-dev-g-20261008/test-generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
+
+code/work/resident-general-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.mod.c whitespace=cr-at-eol,-blank-at-eof
+code/work/resident-service-dev-h-20261008/generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
+code/work/resident-service-dev-h-20261008/test-generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
+code/work/resident-task-dev-h-20261008/upgrade.ps1 whitespace=cr-at-eol,-blank-at-eof

@@ -1,3 +1,11 @@
+# 当前最短路径：dev-h自然合格流的一次有界集成
+
+本地开发批次已收敛，独立准入候选已运行。下一条原有普通流自然达到BULK或已准入RT时，由现有有限入口取得新checkpoint下载/SHA/gzip和控制连接外独立恢复，再验证“新入口→NSS→完整恢复”。不要求游戏、不造fixture、不因无候选反复开实验。没有合格源时保持常驻观察；未知失败暂停并定位，P0先恢复。
+
+通过一次相关子集集成后结束本开发批次；复用既有五WAN/QoS/CPU/恢复证明，不重做全核心或寻找新边界。常驻仍为有限90秒代/20分钟四次，未扩全LAN、IPv6、代理/QUIC、WiFi/autorate/ECN；游戏丢包体验P1单独保持未关闭。新optional-slot内核当前仅本地资格，实际集成待自然负载。详见[STATE](STATE.md)和[本批事实](../evidence/resident-service-dev-h.json)。
+
+## 以下保留历史记录
+
 # 当前接续：dev-g已恢复自动观察，当前RT1／BULK0
 
 2026-10-08 13:32只读快照：CS2 RT1，下载BULK0、组合0；控制器运行，准入未暂停，三次读取成功且来源序列推进，实际ECM关闭全零。使用 work/resident-service-dev-g-20261008/service.ps1 Status / Stop / Start，先核对状态，不重复启动。启动完整健康和两物理原队列全部选项/handle通过。下载保持，不操作游戏或制造流量，heartbeat仍暂停。

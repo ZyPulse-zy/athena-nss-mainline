@@ -1,3 +1,9 @@
+# 当前接续：dev-h独立合格流入口候选运行
+
+先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_SERVICE；使用work/resident-service-dev-h-20261008/service.ps1 Status，不重复启动。14:43启动完整只读/两物理恢复审核通过，BULK0/RT0/0新NSS，准入未暂停，heartbeat暂停。独立1..3槽位、最多2BULK＋1RT、允许同WAN，原分类/归属/CT/NAT/mark/affinity/pin/lease和全部期限/字节/恢复保护保持。33一般/119入口/124服务及native157/109/134模型、七子集Lua/尺寸、6.18.44编译通过，新optional native尚未硬件加载；仅等待自然负载一次有界集成，不造fixture/操作游戏/新下载/重做CPU。准备期已stage的缺资格须完整恢复后才等新代，旧g失败细节缺失不retro分类。游戏丢包P1尚未关闭。
+
+## 以下保留历史记录
+
 # 当前接续：dev-g已恢复，RT1／BULK0等待自然组合
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md及RESIDENT_SERVICE.md；使用 work/resident-service-dev-g-20261008/service.ps1 Status核对，不重复启动。13:32运行且准入未暂停，RT1/BULK0/ECM0，三次只读成功。dev-f 13:15来源在OS查询后过期，checkpoint/stage前拒绝并最终恢复；原中间审核拒绝保留。180本地检查完成最终分类读取后置修复，source6/OS6和全部保护保持，当前完整90秒集成仍待自然合格负载。保持下载，不操作游戏/造fixture/重做CPU，heartbeat仍暂停。旧RT0不当作无UDP或CT退出。

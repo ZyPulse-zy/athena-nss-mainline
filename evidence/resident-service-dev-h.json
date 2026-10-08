@@ -1,0 +1,369 @@
+{
+  "developmentBatch": "dev-h",
+  "observedAt": "2026-10-08T06:47:02.725Z",
+  "milestone": "Independent eligible flow admission for resident Multi-WAN NSS controller",
+  "problem": {
+    "previousEntryRequiredTwoBulkDistinctWanAndOneRt": true,
+    "previousPreparationClassRefusalWasAfterCheckpointAndStage": true,
+    "exactCauseOfOldProjectionOrClassAbsenceUnknown": true,
+    "oldDetailedProbeUnavailable": true,
+    "oldFailureAndRestorationPreserved": true,
+    "userDownloadGameLossStillUnclosedP1": true
+  },
+  "implementation": {
+    "independentEligibleSlots": [
+      "tcp",
+      "udp",
+      "tcp2"
+    ],
+    "nonemptyMasks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "maximumTcpBulk": 2,
+    "maximumUdpRt": 1,
+    "twoTcpMayShareWan": true,
+    "unusedSlotsDefaultDenied": true,
+    "ipv4DirectOwnedClientOnly": true,
+    "arbitraryReadableProcessOwnedSocketEligible": true,
+    "existingClassifierClassAndRtBudgetRequired": true,
+    "unknownAndInvalidFlowsRefused": true,
+    "immutableEpochNoHotInsertionOrRetag": true,
+    "newFlowsRequireFreshGenerationCheckpointPinsAndOwner": true,
+    "knownInitialRefusalWaitRequiresNoNssAndFullStagedRestore": true,
+    "projectionAbsenceNeverProvesCtExitOrRealClassChange": true,
+    "unknownFailureStillPauses": true
+  },
+  "localRegression": {
+    "generalChecks": 33,
+    "normalChecks": 119,
+    "serviceChecks": 124,
+    "generalJavascriptSyntax": 16,
+    "normalJavascriptSyntax": 22,
+    "serviceJavascriptSyntax": 14,
+    "powershellSyntax": 2,
+    "nativeControlChecks": 157,
+    "nativeCtChecks": 109,
+    "nativePredicateChecks": 134,
+    "sevenSubsetLua51SyntaxAndCounterLeaseModelsPassed": true,
+    "subsetSizeModels": {
+      "passed": true,
+      "checks": 33,
+      "names": [
+        "mask 1 maps exact qualified classes and active leaves",
+        "mask 1 candidate scope includes only active WANs",
+        "mask 1 retains bundle and transport limits",
+        "mask 1 preserves frozen active preparation scope",
+        "mask 2 maps exact qualified classes and active leaves",
+        "mask 2 candidate scope includes only active WANs",
+        "mask 2 retains bundle and transport limits",
+        "mask 2 preserves frozen active preparation scope",
+        "mask 3 maps exact qualified classes and active leaves",
+        "mask 3 candidate scope includes only active WANs",
+        "mask 3 retains bundle and transport limits",
+        "mask 3 preserves frozen active preparation scope",
+        "mask 4 maps exact qualified classes and active leaves",
+        "mask 4 candidate scope includes only active WANs",
+        "mask 4 retains bundle and transport limits",
+        "mask 4 preserves frozen active preparation scope",
+        "mask 5 maps exact qualified classes and active leaves",
+        "mask 5 candidate scope includes only active WANs",
+        "mask 5 retains bundle and transport limits",
+        "mask 5 preserves frozen active preparation scope",
+        "mask 6 maps exact qualified classes and active leaves",
+        "mask 6 candidate scope includes only active WANs",
+        "mask 6 retains bundle and transport limits",
+        "mask 6 preserves frozen active preparation scope",
+        "mask 7 maps exact qualified classes and active leaves",
+        "mask 7 candidate scope includes only active WANs",
+        "mask 7 retains bundle and transport limits",
+        "mask 7 preserves frozen active preparation scope",
+        "actual Lua51 syntax, tag counters and native lease acknowledgments for seven masks",
+        "unknown selected slot refused",
+        "empty selected scope refused",
+        "duplicate native flow refused",
+        "changed mark cannot inherit qualification"
+      ],
+      "shapes": [
+        {
+          "mask": 1,
+          "slots": [
+            "tcp"
+          ],
+          "bundleBytes": 68752,
+          "guardianExecBytes": 8867
+        },
+        {
+          "mask": 2,
+          "slots": [
+            "udp"
+          ],
+          "bundleBytes": 69215,
+          "guardianExecBytes": 8871
+        },
+        {
+          "mask": 3,
+          "slots": [
+            "tcp",
+            "udp"
+          ],
+          "bundleBytes": 71296,
+          "guardianExecBytes": 8923
+        },
+        {
+          "mask": 4,
+          "slots": [
+            "tcp2"
+          ],
+          "bundleBytes": 68749,
+          "guardianExecBytes": 8871
+        },
+        {
+          "mask": 5,
+          "slots": [
+            "tcp",
+            "tcp2"
+          ],
+          "bundleBytes": 70609,
+          "guardianExecBytes": 8915
+        },
+        {
+          "mask": 6,
+          "slots": [
+            "udp",
+            "tcp2"
+          ],
+          "bundleBytes": 71297,
+          "guardianExecBytes": 8887
+        },
+        {
+          "mask": 7,
+          "slots": [
+            "tcp",
+            "udp",
+            "tcp2"
+          ],
+          "bundleBytes": 73170,
+          "guardianExecBytes": 8931
+        }
+      ],
+      "runtime": "work/resident-rc1-run-20261008062822-09c09087",
+      "luaDirectory": "work/resident-dev-20261007/tests/general-subsets-1791440918995-99c5b693",
+      "modelOnly": true,
+      "routerAccess": false,
+      "hardwareQualified": false
+    },
+    "modelOnly": true,
+    "newOptionalNativeHardwareQualified": false
+  },
+  "nativeBuild": {
+    "sourceSha256": "2b009916d3de9eca7ccfcb338779e1827f045ff3d56c2125bcad84d8ad53b167",
+    "headerSha256": "f8fdc261ad2d585080acd78718024ff13ab7bead2075fdbc66f48ae269083308",
+    "kernel": "6.18.44",
+    "buildCompleted": true,
+    "debugStripAllocatedSectionsAndRelocationsPreserved": true,
+    "runtimeComparison": {
+      "passed": true,
+      "originalSha256": "923afce1e50feaf77bebd0a7c823291f3954f5bec3fe1f0a1578e64d22e689ae",
+      "runtimeSha256": "49ad75f4cd30f1ae50d4a6e9a62993bc52e923b13efd8575554a8a9f48afc0be",
+      "originalBytes": 176616,
+      "runtimeBytes": 45848,
+      "allocatedSectionsUnchanged": true,
+      "symbolicRuntimeRelocationsUnchanged": true,
+      "allocatedSectionCount": 20,
+      "runtimeRelocationCount": 556,
+      "runtimeLoaded": false,
+      "abiQualification": false,
+      "readerSha256": "1182500df6f0fcdc333b57f5e33b61488f76cc0739b8774dbcb68657f689df0d"
+    },
+    "hardwareLoaded": false,
+    "oldSdkAndFrozenInputsPreserved": true
+  },
+  "startup": {
+    "firstFailure": "P2 obsolete byte-exact assertion refused before router connection",
+    "firstFailureGenerations": 0,
+    "firstFailurePreserved": true,
+    "assertionReplacedWithCurrentCandidateAndOriginalBounds": true,
+    "currentReadonlyAuditAndPhysicalQueuesPassed": true,
+    "ecmClosedAndZero": true,
+    "protectedConfigurationUnchanged": true,
+    "defaultQueueOptionsAndHandlesExact": true,
+    "privateStartupNamespacePreserved": true
+  },
+  "live": {
+    "state": "WAITING_FLOW",
+    "startedAt": "2026-10-08T06:42:35.595Z",
+    "heartbeatAt": "2026-10-08T06:46:55.784Z",
+    "lastObservation": {
+      "sourceAge": 2.8918221997951044,
+      "sourceSequence": 394,
+      "tcpBulk": 0,
+      "udpRt": 0,
+      "triples": 0
+    },
+    "reads": 9,
+    "readFailures": 0,
+    "generationsStarted": 0,
+    "generationsCompleted": 0,
+    "nssSeconds": 0,
+    "startupHealthPassed": true,
+    "admissionPaused": false,
+    "normalEntryCreatesTraffic": false,
+    "automaticStartAtLogon": false,
+    "uninterruptedNssClaim": false,
+    "running": true,
+    "identityVerified": true,
+    "heartbeatFresh": true,
+    "controllerLockPresent": true,
+    "activeGenerationLockPresent": false,
+    "runDirectory": "work/resident-service-run-20261008064235-1814475d"
+  },
+  "deployment": {
+    "onlyOwnedTaskLaunchArgumentsChanged": true,
+    "otherRelatedTasksUnchanged": true,
+    "otherRelatedTasks": 2,
+    "noLogonTrigger": true,
+    "noFailureRestart": true,
+    "noForceTermination": true,
+    "heartbeatRemainsPaused": true
+  },
+  "actualIntegration": {
+    "attempted": false,
+    "reason": "No eligible natural flow at final fresh read; no traffic created",
+    "newCheckpointOrStage": false,
+    "newModuleLoaded": false,
+    "newNssPermission": false,
+    "completed": false
+  },
+  "priorActualFailure": {
+    "startedAt": "2026-10-08T05:51:17.861Z",
+    "finishedAt": "2026-10-08T05:55:38.693Z",
+    "checkpointCreated": true,
+    "stageCreated": true,
+    "nativeLoaded": false,
+    "nssPermission": false,
+    "hardwareCompleted": false,
+    "restorationPassed": true,
+    "oldRuntime": "work/resident-rc1-run-20261008055107-ba4ee68e"
+  },
+  "limits": {
+    "source": 6,
+    "osSource": 6,
+    "kernelMaximum": 120,
+    "owner": 180,
+    "client": 180,
+    "phase": 90,
+    "startsPer20Minutes": 4,
+    "exec": 9000,
+    "raw": 65536,
+    "bundle": 73728,
+    "nft": 49152,
+    "record": 1048576,
+    "actualInputEncodingBeforeEveryWrite": true,
+    "freshCheckpointDownloadShaGzipAndIndependentRestoreBeforeEveryWrite": true
+  },
+  "protected": {
+    "classificationPolicyUnchanged": true,
+    "fiveWanPbrNatMarkAffinityUnchanged": true,
+    "schoolAuthenticationUnchanged": true,
+    "singboxTailscaleAndTenCakePreserved": true,
+    "qosBudgetsAndTreeUnchanged": true,
+    "downSharedMbps": 18,
+    "upMbps": 60,
+    "upPerWanMaximumMbps": 12,
+    "rtPriority": 0
+  },
+  "limitations": [
+    "New optional-slot native candidate has local qualification only; actual bounded integration pending natural eligible flow",
+    "At most two TCP BULK plus one admitted UDP RT per finite generation",
+    "No all-LAN IPv6 proxy QUIC unknown-class admission",
+    "Process residence is continuous; NSS generations remain finite90s and rate bounded",
+    "No proof that reported CS2 download loss is fixed"
+  ],
+  "scope": {
+    "desktopOperated": false,
+    "newDownloadOrTrafficCreated": false,
+    "downloadPausedOrRateChanged": false,
+    "newCpuExperiment": false,
+    "newFormalHardwareVersion": false,
+    "archiveCreated": false,
+    "privateInputsExported": false
+  },
+  "sourceHashes": {
+    "work/resident-general-dev-20261008/adapt-plane.mjs": "5955fe698bcd6abc495b3aa21c06175ebc4b44f61954220ad2444d25fad45a6a",
+    "work/resident-general-dev-20261008/adapt-runtime.mjs": "fc72e5a79378ad3ca8126e168616de61ad5440d3fdc5dc5510a46849c42419ab",
+    "work/resident-general-dev-20261008/bind-batch.mjs": "37a518f92c584216b766b0ff0fddbfa9602360bb92dff5d20698d4294d62e560",
+    "work/resident-general-dev-20261008/candidate-policy.mjs": "1d1b210ce0c3f66c32c2dc0885e1919dfc2ecd1a2f1276aaf3a8dd8e900ef646",
+    "work/resident-general-dev-20261008/class-leaf-map.mjs": "6336e45faa73bb96a11edd5855f73d47d2e72a89c5f6974e1927ee855c0828ac",
+    "work/resident-general-dev-20261008/endpoint-gate/Makefile": "2272913d8ef5116d323f197695d0b50452c494dc17227d5bb6e1a0763a795d99",
+    "work/resident-general-dev-20261008/endpoint-gate/build_local.py": "9620793ae91197d1cea13b150bce2e6fdc8c93a5ca30ad3a05c04dd5703de6ab",
+    "work/resident-general-dev-20261008/endpoint-gate/control-harness.generated.c": "df3ae9d1a9e2c85eb7b3abe6136ca99a621405fc7d90ed427ce5abd32dc24e82",
+    "work/resident-general-dev-20261008/endpoint-gate/control_harness.py": "2fe032780554f1ba061bf0a7f4f55dcb0aaa0d8f15ce93cc7bf187fe71bded54",
+    "work/resident-general-dev-20261008/endpoint-gate/ct_harness.generated.c": "e99ee2645e721eaee78175185a2e05ccf652dbfab718df4d8be2975dc444c5f1",
+    "work/resident-general-dev-20261008/endpoint-gate/ct_harness.py": "d99d1c65abe12362b01945c638157e5a9a70d75b469823514e11ede1fb56275e",
+    "work/resident-general-dev-20261008/endpoint-gate/ecm_ae_classifier_public.h": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+    "work/resident-general-dev-20261008/endpoint-gate/predicate_test.c": "a6923472fcf2a44bec33c50ce59b7790526a6442e5ba9b467112fb1d529aa8f2",
+    "work/resident-general-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.c": "2b009916d3de9eca7ccfcb338779e1827f045ff3d56c2125bcad84d8ad53b167",
+    "work/resident-general-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.mod.c": "410772cca53324700b0610200e0cd16dff721f2a78fa43aedc0dcb9199d0908e",
+    "work/resident-general-dev-20261008/endpoint-gate/two_slot_predicate.h": "f8fdc261ad2d585080acd78718024ff13ab7bead2075fdbc66f48ae269083308",
+    "work/resident-general-dev-20261008/fix-native-fixture.py": "e22ec65a1eac3368c8275db00e9c4c0caec0a1f2cf5ffbeec2362a4368748387",
+    "work/resident-general-dev-20261008/guardian-plan.mjs": "355b818607dff78f0e45d847db8c1286d58cd5528a870a9430139c5e6e8627b4",
+    "work/resident-general-dev-20261008/live-read.mjs": "49da6a51baebeac426208290ee953f50989db53bf1023002f679ca66de5f542b",
+    "work/resident-general-dev-20261008/make-live-scope.mjs": "44af25c1fd1dfaec42b45c5687f74ef03b994d19366c1f35c71269f04b23c4f6",
+    "work/resident-general-dev-20261008/parse-ecm.mjs": "b882c047a550846a8a56de93f30b8befe04e58839674774bb3a8ea8bd0dfa0c4",
+    "work/resident-general-dev-20261008/prepare-js.mjs": "a8f38d99b0718c6652c822f4ea20ab9ae334ae120deafbdee7caa083abc1d0e2",
+    "work/resident-general-dev-20261008/prepare-models.py": "715068afbe3ce571f077d42a5a5fd9f8a12909b78ac45c472c5c52c2f701842a",
+    "work/resident-general-dev-20261008/prepare-native.mjs": "974cdabb88a009f8819978a5d06a5fe02ecc50e1984859208b53e042d6ce693f",
+    "work/resident-general-dev-20261008/prepare-regression.mjs": "f0d2842fb60ca64b48f29b8fb226471b3ea80562be24cc4da5ba33d775917e9a",
+    "work/resident-general-dev-20261008/prepare-runtime.py": "a2acd3bf14d0fb93d28206c306f67faa5c53a1f5ab64340d992eda13a67e4ecf",
+    "work/resident-general-dev-20261008/qualification.mjs": "5959b2c9439316f3b79450eb340780c7b7525b8fe7af68edd129be8298f89092",
+    "work/resident-general-dev-20261008/selection.mjs": "b6c20fb576cf8ee59c2690c1b1b1779b04829fcbf6e4507f8e45206d52b49842",
+    "work/resident-general-dev-20261008/test-subsets.mjs": "f42195ea20d54b365cde49def2741d75cabb710a5a28096479d538a4d027796a",
+    "work/resident-general-dev-20261008/wan-tag-plan.mjs": "41c2299d059e41fc73625df54f0ef5a1612df8b10c955d848680591a30d1a7ca",
+    "work/resident-normal-dev-h-20261008/controller.mjs": "ea53cd3c770d5e836df8f388b64b1cc65666031120344fb38161fd8e6250cf78",
+    "work/resident-normal-dev-h-20261008/fixture.mjs": "91850043c8d27bc1ec0a608d262865309da7d61144330eebd2b5b2b275538b8e",
+    "work/resident-normal-dev-h-20261008/fresh-ownership.mjs": "e1138b12e4ed599c2d193c644321366d630f9acb96e3c1c96c9c55d805e1b19a",
+    "work/resident-normal-dev-h-20261008/integration.mjs": "97b189360ed6a968d366244221cb3f930f2d1da17cf3e0dc29adfc7631728c94",
+    "work/resident-normal-dev-h-20261008/materialize-normal.mjs": "1bcc2e6caf06ed8daf6dbb7741347c9f7308c26d386b267e6901c47ebc4d5045",
+    "work/resident-normal-dev-h-20261008/normal-entry.mjs": "eecb955e0ffc6ddca299c27f905c33a31db6d46fd2fd37e4717781ee77987394",
+    "work/resident-normal-dev-h-20261008/normal-policy.mjs": "bd1a0ffb710dfb4f7158085da42f16b3811c1ad4b094adbf58deddeb320347bb",
+    "work/resident-normal-dev-h-20261008/normal-reader.mjs": "bbfd0f253ae5fd58be233152457b8aae1c1069be80159ff315c69d76b2a42115",
+    "work/resident-normal-dev-h-20261008/observe.mjs": "0dac878230e7cf53ce6f1627d2d01543cefaa59b78e9e118663ff62ab9a06ff3",
+    "work/resident-normal-dev-h-20261008/publication-read.mjs": "e9a34379d1a3a71587a923da3161e445cc8e3eccb59572c79d03115d0c17c96f",
+    "work/resident-normal-dev-h-20261008/qualification.mjs": "ddef2d4fddf00d8486411dc1dd6e7c7ca9ab52da4152ebc237daaf1dc8fde7f5",
+    "work/resident-normal-dev-h-20261008/read-prerequisites.mjs": "db5d01c659426593d2ff0e4378038069dc78c35a48ae9df163c7aea6f9432990",
+    "work/resident-normal-dev-h-20261008/run-generation.mjs": "98c110d3b2030eaa025c74d45e4c133c4f5ec0a1338d6cbb37ca2883cf3c55fc",
+    "work/resident-normal-dev-h-20261008/test-fixture.mjs": "9e9eabbb6fe338615ad34ec1c6ec2257d8917c605f3bc8e5ba5788aa99f70720",
+    "work/resident-normal-dev-h-20261008/test-fresh-ownership.mjs": "075c9b143ab2224bc2bf46794a641a2cc4d1a56cbed1d7bacbb3e466ba01dd82",
+    "work/resident-normal-dev-h-20261008/test-materialize.mjs": "a79366266b73076d93f54f7d4b2cb4dd581e94b4666f7ccfdb33d6534da2cdcb",
+    "work/resident-normal-dev-h-20261008/test-natural-selection.mjs": "b24b54e7ba1d96201c03c40c663ecf873cca3f3fe5600f93395723e3e0b3a92b",
+    "work/resident-normal-dev-h-20261008/test-normal-policy.mjs": "d3873a4280ae005d4358febd34854e6606d28d524f8c0bfc56f21545264afdd3",
+    "work/resident-normal-dev-h-20261008/test-prerequisites.mjs": "8114f23a3a97e15c16d557a07ddec3d09bb92d7384f68b8dded825462a4cebd9",
+    "work/resident-normal-dev-h-20261008/test-publication-read.mjs": "96f493d513dda6c2127ccbb107dd7f1d1c718e0b2941c168188e35b84c84b31d",
+    "work/resident-normal-dev-h-20261008/test-workflow.mjs": "2fbd2c99887f0d150d54cd4d659ec870c2f6449ed643158165c460be6da007b4",
+    "work/resident-normal-dev-h-20261008/workflow.mjs": "49c9c789e25fa8dff0eaa7b1692933577a08bb4afd5a8e4a453b2d7b02d7c624",
+    "work/resident-service-dev-h-20261008/daemon.mjs": "ec2046b6dacb69840143a1b549a310aee6c3e1be571f738936be58e49dd15c55",
+    "work/resident-service-dev-h-20261008/generation-outcome.mjs": "af0384228cedd097973165d1988ce3374c430aacc3afed7607d52537ada85b72",
+    "work/resident-service-dev-h-20261008/identity.mjs": "fe13d21afafa613ae2d63f4a4cc4e7710384981c11a85e5b38104df92e6ec281",
+    "work/resident-service-dev-h-20261008/policy.mjs": "65f5def9330d1d9192c8bc3113be762a704c93285b8c1b4cec9377adc27788d9",
+    "work/resident-service-dev-h-20261008/qualification.mjs": "cd9cb01fd45929c6c3e9ce4825bd41d82e5f5ff3fd654fff79379155a4294918",
+    "work/resident-service-dev-h-20261008/service-launch.ps1": "46a51ab0be9b8eb25ad0525f8581274b20b40c6f3baf250028cdfd5851d09f5c",
+    "work/resident-service-dev-h-20261008/service.ps1": "f04164b26fcb580faa9173b76aa392b13f297c81a1e002e38da63f991d86a6a6",
+    "work/resident-service-dev-h-20261008/startup-health.mjs": "2d36f0ea99c576a46c5af046a033609890511cde527598fd14dff2690062d673",
+    "work/resident-service-dev-h-20261008/storage.mjs": "babb003e68566bd361a234cb84920fb13ad3cd3e29ac2e15fe464b15678f72c0",
+    "work/resident-service-dev-h-20261008/test-generation-outcome.mjs": "15d3185c2a05c94b9d26647b7de68c5357c242d20ff43bc8e9a4edbe001aa971",
+    "work/resident-service-dev-h-20261008/test-late-candidate.mjs": "2cc7ef4be3514073e143d0f42eb3eab67d5b04a2ab3126c2712e5b477a00a154",
+    "work/resident-service-dev-h-20261008/test-policy.mjs": "7729d84cebf03b4f9e876b678bb0f3baf5850bb7c6b532788b35fbefa9d50957",
+    "work/resident-service-dev-h-20261008/test-prepared-candidate.mjs": "90794e32b9d1fd87980f57ca5b630efe313e329e2bf7e09babc8fd12f08ca038",
+    "work/resident-service-dev-h-20261008/test-startup-candidate.mjs": "25ad89097590d092d9b589f0a44d93b40a0a3acad781d560fbee399615af7a2c",
+    "work/resident-service-dev-h-20261008/test-storage.mjs": "41b33c54928e73d72cea856d0505dab4da174aa0401fac0111ad87ededbd55aa",
+    "work/resident-service-dev-h-20261008/test-workspace.mjs": "2cb85253c823cbaab62f885d306752687ceb1b5e0614b36361859bb0c6ffe290",
+    "work/resident-task-dev-h-20261008/publish.mjs": "4755b82898f330b62df49ba9fa0f9243eef8bf3d947a09e2a6e73b15fe6aa2df",
+    "work/resident-task-dev-h-20261008/upgrade.ps1": "cb43030718ff86bb65d27ef62e144f1944ebf96dc105dc1067a9714b6bebde77"
+  }
+}

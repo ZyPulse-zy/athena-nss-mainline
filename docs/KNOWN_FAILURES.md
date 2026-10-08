@@ -1,3 +1,11 @@
+# 当前blocker与限制：独立准入现场集成待自然负载
+
+P1：新optional-slot native尚未现场集成，用户大下载游戏丢包仍未关闭。已有正常三流/五WAN/CPU证明不重做。P2：固定组合/不同WAN限制、初始probe诊断丢失、旧startup byte-exact断言本批一起修复，集中本地回归通过。dev-g原拒绝确实已有checkpoint/stage，native和NSS尚未放行且最终恢复通过；缺少原详细probe，精确原因未知，不追溯标为“无写入”或“CT退出”。
+
+dev-h准备期失去准入只有在完整证明无NSS＋stage清理＋保护和两物理恢复通过时返回等待；未知错误/已进入NSS错误仍暂停，P0恢复优先。七种组合仅模型资格，实际无候选不当成功。其它非阻塞限制：有限代而非连续永久NSS；最多两BULK/一RT；单PC直接IPv4；其它协议/代理/全网和高阶功能后续。见[本批事实](../evidence/resident-service-dev-h.json)。
+
+## 以下保留历史记录
+
 # 当前接续：dev-g已恢复自动观察，当前RT1／BULK0
 
 2026-10-08 13:32只读快照：CS2 RT1，下载BULK0、组合0；控制器运行，准入未暂停，三次读取成功且来源序列推进，实际ECM关闭全零。使用 work/resident-service-dev-g-20261008/service.ps1 Status / Stop / Start，先核对状态，不重复启动。启动完整健康和两物理原队列全部选项/handle通过。下载保持，不操作游戏或制造流量，heartbeat仍暂停。

@@ -1,3 +1,17 @@
+# 当前接续：dev-h独立合格流入口已部署，等待自然流的现场集成
+
+2026-10-08 14:43，控制器运行、身份和心跳已核对，启动完整只读审核及两物理原队列全部选项/handle通过，ECM关闭全零；当前BULK0/RT0、0新代，准入未暂停。控制使用 work/resident-service-dev-h-20261008/service.ps1 Status / Stop / Start，先核对，不重复启动。heartbeat仍暂停。
+
+本批将固定“两个不同WAN TCP BULK＋一个RT”改为合格流独立准入：1..3有效槽位、最多2 TCP BULK＋1已准入UDP RT；RT可单独进入，BULK无需等待RT，两个TCP可同WAN。Windows可读进程/socket归属、原分类和RT预算、完整CT/mark/NAT/affinity/kernel pin/lease仍必需；未知、代理标记及未用槽位默认拒绝。新流进入新代，旧epoch不热插入或强续。
+
+本地33一般模型、119正常入口、124服务检查及native157控制/109CT/134匹配检查通过；七种非空组合Lua5.1语法、counter/lease及原73728 bundle/9000 exec尺寸模型通过，同6.18.44编译完成。新optional-slot内核尚未加载硬件，完整90秒集成尚未完成；最后新鲜读取无自然合格流，未造流量。现网部署是候选等待，不是硬件验收。
+
+dev-g 13:51拒绝发生在checkpoint/stage后、tag/native/NSS放行前，完整恢复通过；旧probe细节缺失，不能判定CT退出或实际改类。dev-h仅在同帧明确初始准入缺失、无NSS、stage全撤销和最终保护/物理恢复全通过时回到等待，新代重新取源/pin/checkpoint/owner；其它失败仍暂停。首次启动旧源码字节相等断言在连接前拒绝，原输出保存，P2本地修复后实际启动审核通过。
+
+分类、PBR/NAT/mark/affinity、认证、singbox/Tailscale、十CAKE及DOWN18共享/UP60每WAN12/RT优先级保持。source6/OS6/native120/owner180/client180、每20分钟4代、每代90秒和全部字节上限不放宽。没有游戏操作、fixture、新下载、限速/暂停或CPU重测。用户下载时60–70%游戏丢包仍是未关闭P1，不能用本批代码或等待状态宣称体验修复。见[本批事实](../evidence/resident-service-dev-h.json)。
+
+## 以下保留历史记录
+
 # 当前接续：dev-g已恢复自动观察，当前RT1／BULK0
 
 2026-10-08 13:32只读快照：CS2 RT1，下载BULK0、组合0；控制器运行，准入未暂停，三次读取成功且来源序列推进，实际ECM关闭全零。使用 work/resident-service-dev-g-20261008/service.ps1 Status / Stop / Start，先核对状态，不重复启动。启动完整健康和两物理原队列全部选项/handle通过。下载保持，不操作游戏或制造流量，heartbeat仍暂停。

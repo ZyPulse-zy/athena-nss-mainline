@@ -1,3 +1,5 @@
+当前接续：dev-h独立合格流入口已部署，启动只读审核通过；合格BULK/RT无需凑齐固定三流。当前0合格流/0新NSS，optional-slot硬件集成待自然负载；原保护和有限代上限保持。见[状态](docs/STATE.md)。
+
 当前接续：dev-g只修分类＋Windows归属读取时序，180本地检查和现场只读通过；13:32 RT1/BULK0/ECM0，控制器运行且准入未暂停，完整90秒NSS集成仍待自然合格组合。见[状态](docs/STATE.md)与[本批事实](evidence/resident-service-dev-g.json)。
 
 # 当前接续：dev-f正常应用常驻，P1读取修复待完整集成

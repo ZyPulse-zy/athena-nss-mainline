@@ -1,3 +1,11 @@
+# 当前控制：dev-h独立合格流常驻候选
+
+原工作区运行 powershell -File work/resident-service-dev-h-20261008/service.ps1 -Mode Status / Stop / Start。任务Athena-NSS-Controller-Manual，仅启动参数变更，其它相关任务、权限、触发、重启和终止设置保持；进程运行与实际ECM分别核对。当前运行、BULK0/RT0、0新代，完整现场集成待自然合格负载。
+
+任一合格BULK或已准入RT可独立进入；最多2BULK＋1RT，TCP无需不同WAN。新代仍严格原分类/归属/CT/NAT/mark/affinity/pin/tag/lease、fresh checkpoint及独立恢复；已启动epoch不热替换。没有合格流就等待；只有已证明无NSS且完整恢复的初始准入缺失可再等新源，未知失败暂停。每代90秒/20分钟四次，非永久全网NSS；新native本地资格已通过、硬件待验。见[事实](../evidence/resident-service-dev-h.json)。
+
+## 以下保留历史记录
+
 # 当前接续：dev-g已恢复自动观察，当前RT1／BULK0
 
 2026-10-08 13:32只读快照：CS2 RT1，下载BULK0、组合0；控制器运行，准入未暂停，三次读取成功且来源序列推进，实际ECM关闭全零。使用 work/resident-service-dev-g-20261008/service.ps1 Status / Stop / Start，先核对状态，不重复启动。启动完整健康和两物理原队列全部选项/handle通过。下载保持，不操作游戏或制造流量，heartbeat仍暂停。

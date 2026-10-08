@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T05:35:18.266Z",
+  "generatedAt": "2026-10-08T06:47:02.717Z",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -42760,6 +42760,496 @@
       "sha256": "9fe7bedca0ebfe33688aa2f4be45923802476e2a75be82d60f36118e78d02d73",
       "bytes": 4292,
       "role": "normal-resident-final-classification-after-os-ownership-development-batch"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/adapt-plane.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/adapt-plane.mjs",
+      "sha256": "5955fe698bcd6abc495b3aa21c06175ebc4b44f61954220ad2444d25fad45a6a",
+      "bytes": 5163,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/adapt-runtime.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/adapt-runtime.mjs",
+      "sha256": "fc72e5a79378ad3ca8126e168616de61ad5440d3fdc5dc5510a46849c42419ab",
+      "bytes": 6061,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/bind-batch.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/bind-batch.mjs",
+      "sha256": "37a518f92c584216b766b0ff0fddbfa9602360bb92dff5d20698d4294d62e560",
+      "bytes": 1519,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/candidate-policy.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/candidate-policy.mjs",
+      "sha256": "1d1b210ce0c3f66c32c2dc0885e1919dfc2ecd1a2f1276aaf3a8dd8e900ef646",
+      "bytes": 2790,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/class-leaf-map.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/class-leaf-map.mjs",
+      "sha256": "6336e45faa73bb96a11edd5855f73d47d2e72a89c5f6974e1927ee855c0828ac",
+      "bytes": 3760,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/Makefile",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/Makefile",
+      "sha256": "2272913d8ef5116d323f197695d0b50452c494dc17227d5bb6e1a0763a795d99",
+      "bytes": 31,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/build_local.py",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/build_local.py",
+      "sha256": "9620793ae91197d1cea13b150bce2e6fdc8c93a5ca30ad3a05c04dd5703de6ab",
+      "bytes": 10090,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/control-harness.generated.c",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/control-harness.generated.c",
+      "sha256": "df3ae9d1a9e2c85eb7b3abe6136ca99a621405fc7d90ed427ce5abd32dc24e82",
+      "bytes": 16119,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/control_harness.py",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/control_harness.py",
+      "sha256": "2fe032780554f1ba061bf0a7f4f55dcb0aaa0d8f15ce93cc7bf187fe71bded54",
+      "bytes": 9684,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/ct_harness.generated.c",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/ct_harness.generated.c",
+      "sha256": "e99ee2645e721eaee78175185a2e05ccf652dbfab718df4d8be2975dc444c5f1",
+      "bytes": 11362,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/ct_harness.py",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/ct_harness.py",
+      "sha256": "d99d1c65abe12362b01945c638157e5a9a70d75b469823514e11ede1fb56275e",
+      "bytes": 9522,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/ecm_ae_classifier_public.h",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/predicate_test.c",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/predicate_test.c",
+      "sha256": "a6923472fcf2a44bec33c50ce59b7790526a6442e5ba9b467112fb1d529aa8f2",
+      "bytes": 1083,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "2b009916d3de9eca7ccfcb338779e1827f045ff3d56c2125bcad84d8ad53b167",
+      "bytes": 29923,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.mod.c",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.mod.c",
+      "sha256": "410772cca53324700b0610200e0cd16dff721f2a78fa43aedc0dcb9199d0908e",
+      "bytes": 389,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/two_slot_predicate.h",
+      "workspaceSource": "work/resident-general-dev-20261008/endpoint-gate/two_slot_predicate.h",
+      "sha256": "f8fdc261ad2d585080acd78718024ff13ab7bead2075fdbc66f48ae269083308",
+      "bytes": 5530,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/fix-native-fixture.py",
+      "workspaceSource": "work/resident-general-dev-20261008/fix-native-fixture.py",
+      "sha256": "e22ec65a1eac3368c8275db00e9c4c0caec0a1f2cf5ffbeec2362a4368748387",
+      "bytes": 1238,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/guardian-plan.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/guardian-plan.mjs",
+      "sha256": "355b818607dff78f0e45d847db8c1286d58cd5528a870a9430139c5e6e8627b4",
+      "bytes": 467,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/live-read.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/live-read.mjs",
+      "sha256": "49da6a51baebeac426208290ee953f50989db53bf1023002f679ca66de5f542b",
+      "bytes": 1009,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/make-live-scope.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/make-live-scope.mjs",
+      "sha256": "44af25c1fd1dfaec42b45c5687f74ef03b994d19366c1f35c71269f04b23c4f6",
+      "bytes": 1460,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/parse-ecm.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/parse-ecm.mjs",
+      "sha256": "b882c047a550846a8a56de93f30b8befe04e58839674774bb3a8ea8bd0dfa0c4",
+      "bytes": 3436,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/prepare-js.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/prepare-js.mjs",
+      "sha256": "a8f38d99b0718c6652c822f4ea20ab9ae334ae120deafbdee7caa083abc1d0e2",
+      "bytes": 6067,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/prepare-models.py",
+      "workspaceSource": "work/resident-general-dev-20261008/prepare-models.py",
+      "sha256": "715068afbe3ce571f077d42a5a5fd9f8a12909b78ac45c472c5c52c2f701842a",
+      "bytes": 4529,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/prepare-native.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/prepare-native.mjs",
+      "sha256": "974cdabb88a009f8819978a5d06a5fe02ecc50e1984859208b53e042d6ce693f",
+      "bytes": 6660,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/prepare-regression.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/prepare-regression.mjs",
+      "sha256": "f0d2842fb60ca64b48f29b8fb226471b3ea80562be24cc4da5ba33d775917e9a",
+      "bytes": 4613,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/prepare-runtime.py",
+      "workspaceSource": "work/resident-general-dev-20261008/prepare-runtime.py",
+      "sha256": "a2acd3bf14d0fb93d28206c306f67faa5c53a1f5ab64340d992eda13a67e4ecf",
+      "bytes": 1829,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/qualification.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/qualification.mjs",
+      "sha256": "5959b2c9439316f3b79450eb340780c7b7525b8fe7af68edd129be8298f89092",
+      "bytes": 2360,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/selection.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/selection.mjs",
+      "sha256": "b6c20fb576cf8ee59c2690c1b1b1779b04829fcbf6e4507f8e45206d52b49842",
+      "bytes": 3167,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/test-subsets.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/test-subsets.mjs",
+      "sha256": "f42195ea20d54b365cde49def2741d75cabb710a5a28096479d538a4d027796a",
+      "bytes": 7633,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/wan-tag-plan.mjs",
+      "workspaceSource": "work/resident-general-dev-20261008/wan-tag-plan.mjs",
+      "sha256": "41c2299d059e41fc73625df54f0ef5a1612df8b10c955d848680591a30d1a7ca",
+      "bytes": 1896,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/controller.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/controller.mjs",
+      "sha256": "ea53cd3c770d5e836df8f388b64b1cc65666031120344fb38161fd8e6250cf78",
+      "bytes": 4027,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/fixture.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/fixture.mjs",
+      "sha256": "91850043c8d27bc1ec0a608d262865309da7d61144330eebd2b5b2b275538b8e",
+      "bytes": 7140,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/fresh-ownership.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/fresh-ownership.mjs",
+      "sha256": "e1138b12e4ed599c2d193c644321366d630f9acb96e3c1c96c9c55d805e1b19a",
+      "bytes": 2185,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/integration.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/integration.mjs",
+      "sha256": "97b189360ed6a968d366244221cb3f930f2d1da17cf3e0dc29adfc7631728c94",
+      "bytes": 3890,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/materialize-normal.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/materialize-normal.mjs",
+      "sha256": "1bcc2e6caf06ed8daf6dbb7741347c9f7308c26d386b267e6901c47ebc4d5045",
+      "bytes": 9084,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/normal-entry.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/normal-entry.mjs",
+      "sha256": "eecb955e0ffc6ddca299c27f905c33a31db6d46fd2fd37e4717781ee77987394",
+      "bytes": 5499,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/normal-policy.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/normal-policy.mjs",
+      "sha256": "bd1a0ffb710dfb4f7158085da42f16b3811c1ad4b094adbf58deddeb320347bb",
+      "bytes": 4840,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/normal-reader.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/normal-reader.mjs",
+      "sha256": "bbfd0f253ae5fd58be233152457b8aae1c1069be80159ff315c69d76b2a42115",
+      "bytes": 6067,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/observe.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/observe.mjs",
+      "sha256": "0dac878230e7cf53ce6f1627d2d01543cefaa59b78e9e118663ff62ab9a06ff3",
+      "bytes": 595,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/publication-read.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/publication-read.mjs",
+      "sha256": "e9a34379d1a3a71587a923da3161e445cc8e3eccb59572c79d03115d0c17c96f",
+      "bytes": 1711,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/qualification.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/qualification.mjs",
+      "sha256": "ddef2d4fddf00d8486411dc1dd6e7c7ca9ab52da4152ebc237daaf1dc8fde7f5",
+      "bytes": 2598,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/read-prerequisites.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/read-prerequisites.mjs",
+      "sha256": "db5d01c659426593d2ff0e4378038069dc78c35a48ae9df163c7aea6f9432990",
+      "bytes": 4232,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/run-generation.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/run-generation.mjs",
+      "sha256": "98c110d3b2030eaa025c74d45e4c133c4f5ec0a1338d6cbb37ca2883cf3c55fc",
+      "bytes": 2628,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/test-fixture.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/test-fixture.mjs",
+      "sha256": "9e9eabbb6fe338615ad34ec1c6ec2257d8917c605f3bc8e5ba5788aa99f70720",
+      "bytes": 4293,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/test-fresh-ownership.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/test-fresh-ownership.mjs",
+      "sha256": "075c9b143ab2224bc2bf46794a641a2cc4d1a56cbed1d7bacbb3e466ba01dd82",
+      "bytes": 4928,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/test-materialize.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/test-materialize.mjs",
+      "sha256": "a79366266b73076d93f54f7d4b2cb4dd581e94b4666f7ccfdb33d6534da2cdcb",
+      "bytes": 2729,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/test-natural-selection.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/test-natural-selection.mjs",
+      "sha256": "b24b54e7ba1d96201c03c40c663ecf873cca3f3fe5600f93395723e3e0b3a92b",
+      "bytes": 4635,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/test-normal-policy.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/test-normal-policy.mjs",
+      "sha256": "d3873a4280ae005d4358febd34854e6606d28d524f8c0bfc56f21545264afdd3",
+      "bytes": 7300,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/test-prerequisites.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/test-prerequisites.mjs",
+      "sha256": "8114f23a3a97e15c16d557a07ddec3d09bb92d7384f68b8dded825462a4cebd9",
+      "bytes": 8122,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/test-publication-read.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/test-publication-read.mjs",
+      "sha256": "96f493d513dda6c2127ccbb107dd7f1d1c718e0b2941c168188e35b84c84b31d",
+      "bytes": 5703,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/test-workflow.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/test-workflow.mjs",
+      "sha256": "2fbd2c99887f0d150d54cd4d659ec870c2f6449ed643158165c460be6da007b4",
+      "bytes": 3569,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-normal-dev-h-20261008/workflow.mjs",
+      "workspaceSource": "work/resident-normal-dev-h-20261008/workflow.mjs",
+      "sha256": "49c9c789e25fa8dff0eaa7b1692933577a08bb4afd5a8e4a453b2d7b02d7c624",
+      "bytes": 2468,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/daemon.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/daemon.mjs",
+      "sha256": "ec2046b6dacb69840143a1b549a310aee6c3e1be571f738936be58e49dd15c55",
+      "bytes": 6578,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/generation-outcome.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/generation-outcome.mjs",
+      "sha256": "af0384228cedd097973165d1988ce3374c430aacc3afed7607d52537ada85b72",
+      "bytes": 8417,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/identity.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/identity.mjs",
+      "sha256": "fe13d21afafa613ae2d63f4a4cc4e7710384981c11a85e5b38104df92e6ec281",
+      "bytes": 1275,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/policy.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/policy.mjs",
+      "sha256": "65f5def9330d1d9192c8bc3113be762a704c93285b8c1b4cec9377adc27788d9",
+      "bytes": 4298,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/qualification.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/qualification.mjs",
+      "sha256": "cd9cb01fd45929c6c3e9ce4825bd41d82e5f5ff3fd654fff79379155a4294918",
+      "bytes": 3613,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/service-launch.ps1",
+      "workspaceSource": "work/resident-service-dev-h-20261008/service-launch.ps1",
+      "sha256": "46a51ab0be9b8eb25ad0525f8581274b20b40c6f3baf250028cdfd5851d09f5c",
+      "bytes": 1279,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/service.ps1",
+      "workspaceSource": "work/resident-service-dev-h-20261008/service.ps1",
+      "sha256": "f04164b26fcb580faa9173b76aa392b13f297c81a1e002e38da63f991d86a6a6",
+      "bytes": 3725,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/startup-health.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/startup-health.mjs",
+      "sha256": "2d36f0ea99c576a46c5af046a033609890511cde527598fd14dff2690062d673",
+      "bytes": 2047,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/storage.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/storage.mjs",
+      "sha256": "babb003e68566bd361a234cb84920fb13ad3cd3e29ac2e15fe464b15678f72c0",
+      "bytes": 3018,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/test-generation-outcome.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/test-generation-outcome.mjs",
+      "sha256": "15d3185c2a05c94b9d26647b7de68c5357c242d20ff43bc8e9a4edbe001aa971",
+      "bytes": 3043,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/test-late-candidate.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/test-late-candidate.mjs",
+      "sha256": "2cc7ef4be3514073e143d0f42eb3eab67d5b04a2ab3126c2712e5b477a00a154",
+      "bytes": 3088,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/test-policy.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/test-policy.mjs",
+      "sha256": "7729d84cebf03b4f9e876b678bb0f3baf5850bb7c6b532788b35fbefa9d50957",
+      "bytes": 5582,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/test-prepared-candidate.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/test-prepared-candidate.mjs",
+      "sha256": "90794e32b9d1fd87980f57ca5b630efe313e329e2bf7e09babc8fd12f08ca038",
+      "bytes": 5566,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/test-startup-candidate.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/test-startup-candidate.mjs",
+      "sha256": "25ad89097590d092d9b589f0a44d93b40a0a3acad781d560fbee399615af7a2c",
+      "bytes": 1235,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/test-storage.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/test-storage.mjs",
+      "sha256": "41b33c54928e73d72cea856d0505dab4da174aa0401fac0111ad87ededbd55aa",
+      "bytes": 2054,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-service-dev-h-20261008/test-workspace.mjs",
+      "workspaceSource": "work/resident-service-dev-h-20261008/test-workspace.mjs",
+      "sha256": "2cb85253c823cbaab62f885d306752687ceb1b5e0614b36361859bb0c6ffe290",
+      "bytes": 4292,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-task-dev-h-20261008/publish.mjs",
+      "workspaceSource": "work/resident-task-dev-h-20261008/publish.mjs",
+      "sha256": "4755b82898f330b62df49ba9fa0f9243eef8bf3d947a09e2a6e73b15fe6aa2df",
+      "bytes": 18154,
+      "role": "independent-eligible-flow-admission-development-candidate"
+    },
+    {
+      "path": "code/work/resident-task-dev-h-20261008/upgrade.ps1",
+      "workspaceSource": "work/resident-task-dev-h-20261008/upgrade.ps1",
+      "sha256": "cb43030718ff86bb65d27ef62e144f1944ebf96dc105dc1067a9714b6bebde77",
+      "bytes": 4583,
+      "role": "independent-eligible-flow-admission-development-candidate"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -42782,5 +43272,5 @@
   "residentDevelopmentExport": "RC1_CONSOLIDATED_DEVELOPMENT_AND_BOUNDED_SOAK",
   "normalResidentExport": "NORMAL_SOURCE_AND_FOUR_GENERATION_BOUNDED_COORDINATION",
   "residentServiceExport": "MANUAL_RESIDENT_PROCESS_NORMAL_FLOW_WAITING",
-  "residentServiceDevBatch": "DEV_G_FINAL_FRESH_CLASSIFICATION_AFTER_OS_QUERY"
+  "residentServiceDevBatch": "DEV_H_INDEPENDENT_ELIGIBLE_FLOW_ADMISSION_CANDIDATE"
 }
