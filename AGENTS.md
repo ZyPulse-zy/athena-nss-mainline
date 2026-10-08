@@ -1,3 +1,9 @@
+# 当前接续：手动常驻进程运行中
+
+常驻进程已部署并保留WAITING_FLOW，任务Athena-NSS-Controller-Manual，无登录触发或故障自动重启。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md与RESIDENT_SERVICE.md，并核对实际service.ps1 Status；不要重复启动、重做已结束soak或重开fixture。18本地检查和实际启动/源推进/停止/重启通过；当前0新NSS代。源/绑定/入口拒绝会暂停准入，P0禁止后续写入并先确认恢复。原入口/数据面/所有期限不变，heartbeat仍暂停。用户常驻授权持续有效。
+
+## 以下保留历史接续
+
 # 当前开发接续：正常流常驻 controller
 
 2026-10-08 08:10，正常流入口和四代有界常驻协调通过，恢复通过。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和[正常入口](docs/RESIDENT_NORMAL_CONTROLLER.md)。P0停止写入并恢复，P1定向修复，P2本地批量收敛。原source6/native120/owner180/client180全部保护上限保持；默认永久NSS关闭、heartbeat暂停。本批结束，不主动新增实验或边界问题。

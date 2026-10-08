@@ -1,0 +1,143 @@
+{
+  "milestone": "manual resident process deployment with existing normal-flow entry",
+  "manualResidentPilotStarted": true,
+  "gracefulStopAndRestartPassed": true,
+  "originalNormalEntryUnmodified": true,
+  "sevenDataPlaneLuaUnmodified": true,
+  "unchangedHistoricalNormalSoakReused": true,
+  "localChecks": 18,
+  "javascriptSyntaxSources": 8,
+  "powershellSyntaxSources": 2,
+  "plan": {
+    "pollSeconds": 30,
+    "maximumReadFailures": 3,
+    "maximumGenerationsPerWindow": 4,
+    "windowSeconds": 1200,
+    "minimumGenerationMarginSeconds": 360,
+    "generationCutoffSeconds": 600,
+    "phaseSeconds": 90,
+    "retainedObservationGroups": 16,
+    "sourceSeconds": 6,
+    "kernelMaximumSeconds": 120,
+    "ownerSeconds": 180,
+    "clientSeconds": 180,
+    "automaticFixtureRetries": 0,
+    "normalEntryCreatesTraffic": false,
+    "automaticStartAtLogon": false,
+    "uninterruptedNssClaim": false,
+    "automaticRestartOnFailure": false
+  },
+  "first": {
+    "observedAt": "2026-10-08T02:28:57.374Z",
+    "reads": 2,
+    "sourceSequence": 12499,
+    "sourceAge": 2.146308800037252
+  },
+  "progress": {
+    "observedAt": "2026-10-08T02:29:53.131Z",
+    "reads": 4,
+    "sourceSequence": 12520,
+    "sourceAge": 0.9460676000558742
+  },
+  "stopped": {
+    "observedAt": "2026-10-08T02:30:05.554Z",
+    "state": "STOPPED",
+    "startedAt": "2026-10-08T02:27:45.478Z",
+    "heartbeatAt": "2026-10-08T02:29:54.444Z",
+    "lastObservation": {
+      "sourceAge": 0.9460676000558742,
+      "sourceSequence": 12520,
+      "tcpBulk": 0,
+      "udpRt": 0,
+      "triples": 0
+    },
+    "reads": 4,
+    "readFailures": 0,
+    "generationsStarted": 0,
+    "generationsCompleted": 0,
+    "nssSeconds": 0,
+    "startupHealthPassed": true,
+    "admissionPaused": false,
+    "restorationPassed": true,
+    "normalEntryCreatesTraffic": false,
+    "automaticStartAtLogon": false,
+    "uninterruptedNssClaim": false,
+    "running": false,
+    "identityVerified": false,
+    "heartbeatFresh": false,
+    "controllerLockPresent": false,
+    "activeGenerationLockPresent": false
+  },
+  "retained": {
+    "observedAt": "2026-10-08T02:35:26.461685+00:00",
+    "state": "WAITING_FLOW",
+    "startedAt": "2026-10-08T02:30:09.004Z",
+    "heartbeatAt": "2026-10-08T02:35:09.090Z",
+    "lastObservation": {
+      "sourceAge": 2.962368600130372,
+      "sourceSequence": 12629,
+      "tcpBulk": 0,
+      "udpRt": 0,
+      "triples": 0
+    },
+    "reads": 10,
+    "readFailures": 0,
+    "generationsStarted": 0,
+    "generationsCompleted": 0,
+    "nssSeconds": 0,
+    "startupHealthPassed": true,
+    "admissionPaused": false,
+    "normalEntryCreatesTraffic": false,
+    "automaticStartAtLogon": false,
+    "uninterruptedNssClaim": false,
+    "running": true,
+    "identityVerified": true,
+    "heartbeatFresh": true,
+    "controllerLockPresent": true,
+    "activeGenerationLockPresent": false
+  },
+  "startupHealth": [
+    {
+      "passed": true,
+      "queryAge": 2.0300000002607703,
+      "ecmClosedAndZero": true,
+      "allFiveHealthyWanBaseline": true,
+      "protectedConfigurationUnchanged": true,
+      "physicalQueuesOptionsAndHandlesExact": true
+    },
+    {
+      "passed": true,
+      "queryAge": 1.680000000167638,
+      "ecmClosedAndZero": true,
+      "allFiveHealthyWanBaseline": true,
+      "protectedConfigurationUnchanged": true,
+      "physicalQueuesOptionsAndHandlesExact": true
+    }
+  ],
+  "task": {
+    "unlimitedProcessResidence": true,
+    "logonTriggerCount": 0,
+    "runLevel": "Limited",
+    "knownTaskFingerprintsUnchanged": 4,
+    "passed": true,
+    "hardTerminationDisabled": true,
+    "taskExists": true,
+    "taskState": "Running",
+    "restartCount": 0
+  },
+  "newHardwareGenerations": 0,
+  "newNssHardwareAcceptanceClaim": false,
+  "automaticStartAtLogon": false,
+  "automaticRestartOnFailure": false,
+  "trafficGenerated": false,
+  "cs2OrSteamOperated": false,
+  "newCpuBenchmark": false,
+  "uninterruptedNssClaim": false,
+  "knownLimitations": [
+    "Manual on-demand Windows task, no logon trigger; process residence is distinct from uninterrupted NSS.",
+    "Current natural traffic has zero eligible triples; no new active NSS hardware or long normal-use soak is claimed.",
+    "The unchanged entry selects two TCP BULK on distinct natural WANs and one admitted UDP RT for this PC.",
+    "Three consecutive source refusals, source binding changes or restored entry refusal pause admission; failures are not blindly restarted.",
+    "Per-generation checkpoint and detached restoration remain required; all original data-plane bounds stay unchanged."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "passedEvidence": false,
+  "developmentOnly": true,
+  "routerWrites": false,
+  "hardwareExperimentStartedForTheseFailures": false,
+  "items": [
+    {
+      "type": "P2",
+      "scope": "local model test",
+      "error": "Expected six starts although the fake clock allowed a seventh start before its stop threshold",
+      "resolution": "Use an explicit1450second model stop; rolling-window quota assertions and full local batch pass",
+      "originalRawSha256": "6f404cdbda9b1172c36877691a1e72615b1c8a7296ae8edd94b77b9c0805d59c"
+    },
+    {
+      "type": "P2",
+      "scope": "task metadata capture",
+      "error": "Read nonexistent DisallowHardTerminate property; original raw output failed validation and is invalid evidence",
+      "resolution": "Read actual AllowHardTerminate=false; task configuration unchanged",
+      "originalRawSha256": "e680f4b231cc33c27edff2a02d724b2a65f1408816c89eb5547e1613f28517c5"
+    }
+  ]
+}

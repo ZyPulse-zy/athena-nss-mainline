@@ -1,3 +1,9 @@
+# 当前交付：手动常驻 Multi-WAN controller
+
+常驻进程已保留运行，真实启动/停止/重启与源读取推进通过；无登录自启。当前等待合格自然流量，尚无新的NSS代，原硬件证据复用。见[状态](docs/STATE.md)及[控制与限制](docs/RESIDENT_SERVICE.md)。
+
+## 以下保留历史介绍
+
 # 当前交付：正常流 Multi-WAN controller
 
 正常流入口和四代有界常驻协调通过，完整恢复。控制器观察已有socket/自动分类，不创建流量；默认永久NSS关闭。见[当前状态](docs/STATE.md)及[正常流控制器](docs/RESIDENT_NORMAL_CONTROLLER.md)。

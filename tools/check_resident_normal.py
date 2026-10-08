@@ -23,7 +23,11 @@ def check(root):
   assert 900<=h['controllerSeconds']<=1200 and 360<=h['nssSeconds']<=366
  assert s['passed'] and s['oldCodeEvidenceUnmodified'] and s['noPrivateRuntimeInputsExported'] and s['milestonePublicationOnly']
  assert m['normalResidentExport']=='NORMAL_SOURCE_AND_FOUR_GENERATION_BOUNDED_COORDINATION'
- assert len(m['sources'])==s['historicalSourcePrefix']+s['newSources'] and len(s['sourceHashes'])==s['newSources']
+ # This completed milestone keeps its exact ordered manifest slice when a
+ # subsequent deployment milestone appends new sources.
+ end=s['historicalSourcePrefix']+s['newSources']
+ assert len(m['sources'])>=end and len(s['sourceHashes'])==s['newSources']
+ assert {x['workspaceSource']:x['sha256'] for x in m['sources'][s['historicalSourcePrefix']:end]}==s['sourceHashes']
  for rel,expected in s['sourceHashes'].items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==expected,rel
  return {'passed':True,'normalIntegrationPassed':h['integrationPassed'],'generations':len(h['windows']),'newSourceHashesChecked':s['newSources']}
 
