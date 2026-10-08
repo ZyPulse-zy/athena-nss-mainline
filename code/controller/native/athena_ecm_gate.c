@@ -23,12 +23,13 @@ extern struct ecm_db_connection_instance *ecm_db_connection_find_and_ref(
 extern u32 ecm_db_connection_serial_get(struct ecm_db_connection_instance *);
 extern int ecm_db_connection_deref(struct ecm_db_connection_instance *);
 #define CAPACITY 32
-enum entry_state { FREE, LIVE, REVOKING, ACKED, NEVER_CREATED, UNCONFIRMED };
+enum entry_state { FREE, LIVE, REVOKING, ACKED, NEVER_CREATED, UNCONFIRMED, FIRMWARE_ABSENT };
 struct entry {
  enum entry_state state;
  struct nf_conn *ct;
  struct nf_conntrack_tuple original,reply;
  u32 raw_id,mark,serial;
+ u32 removal_response,removal_error;
  u64 generation,until,sequence,binding,selected,revoke_at;
  struct ecm_db_connection_instance *ci;
  bool request_done,receipt_armed,self_pinned;
@@ -138,17 +139,27 @@ static void request_revoke(struct entry *e)
  }
  e->request_done=true;
  synchronize_net(); /* A defunct CI can no longer start an unobserved CREATE. */
+ /* A natural firmware flush/eviction may leave ECM already decelerated.
+  * Its public decel then sends nothing. Ask the same observed exact tuple;
+  * only a real response can confirm removal or NO_CONNECTION_ENTRY. */
+ athena_receipt_request_destroy(e->serial,e->generation);
 }
 static void poll_revoke(struct entry *e)
 {
  struct athena_receipt r;
  if (athena_receipt_read(e->serial,e->generation,&r)) { e->state=UNCONFIRMED; return; }
+ if (r.state==ATHENA_ARMED && r.create_ack && !r.create_pending) {
+  athena_receipt_request_destroy(e->serial,e->generation);
+  if (athena_receipt_read(e->serial,e->generation,&r)) { e->state=UNCONFIRMED; return; }
+ }
  if (r.state==ATHENA_ACK) e->state=ACKED;
+ else if (athena_receipt_firmware_absent(&r)) e->state=FIRMWARE_ABSENT;
  else if (!r.create_pending && !r.create_ack && r.state==ATHENA_ARMED)
   e->state=NEVER_CREATED; /* No transmitted CREATE, or explicit firmware CREATE NACK. */
  else if (r.state==ATHENA_NACK || r.state==ATHENA_TX_FAILED || now_ms()-e->revoke_at>6000)
   e->state=UNCONFIRMED;
- if (e->state==ACKED || e->state==NEVER_CREATED) {
+ if (e->state==ACKED || e->state==NEVER_CREATED || e->state==FIRMWARE_ABSENT) {
+  e->removal_response=r.response;e->removal_error=r.error;
   if (athena_receipt_release(e->serial,e->generation)) { e->state=UNCONFIRMED; return; }
   e->receipt_armed=false; release_pins(e);
  }
@@ -228,7 +239,7 @@ static ssize_t control_write(struct file *file,const char __user *input,
   spin_lock_bh(&entry_lock); e->until=until; e->sequence=sequence;
   spin_unlock_bh(&entry_lock); result=0; goto out;
  }
- if (e->state!=FREE && e->state!=ACKED && e->state!=NEVER_CREATED) { result=-EBUSY; goto out; }
+ if (e->state!=FREE && e->state!=ACKED && e->state!=NEVER_CREATED && e->state!=FIRMWARE_ABSENT) { result=-EBUSY; goto out; }
  /* A pending tombstone for the same complete identity cannot be bypassed by
   * using another array position. Reused CT IDs do not match a different tuple. */
  for (n=0;n<CAPACITY;n++) if (entries[n].ct && tuple_equal(&entries[n].original,&value.original)) {
@@ -252,14 +263,14 @@ out:
 static int status_show(struct seq_file *s,void *data)
 {
  int n; mutex_lock(&control_mutex);
- seq_printf(s,"abi=1 capacity=%u stopping=%u firmware_receipts=1 now_ms=%llu routed_attempts=%llu tuple_matches=%llu instance_rejections=%llu\n",CAPACITY,stopping,now_ms(),routed_attempts,tuple_matches,instance_rejections);
+ seq_printf(s,"abi=2 capacity=%u stopping=%u firmware_receipts=1 now_ms=%llu routed_attempts=%llu tuple_matches=%llu instance_rejections=%llu\n",CAPACITY,stopping,now_ms(),routed_attempts,tuple_matches,instance_rejections);
  for (n=0;n<CAPACITY;n++) { struct entry *e=&entries[n];
   struct athena_receipt receipt={0};int result=-ENOENT;
   if(e->serial)result=athena_receipt_read(e->serial,e->receipt_armed ? e->generation : 0,&receipt);
-  if (e->state!=FREE) seq_printf(s,"slot=%u state=%u generation=%llu id=%u serial=%u until_ms=%llu sequence=%llu selected=%llu receipt_present=%u receipt=%u create_pending=%u create_ack=%u qos_observed=%u flow_qos=%u return_qos=%u igs_flow=%u igs_return=%u\n",
+  if (e->state!=FREE) seq_printf(s,"slot=%u state=%u generation=%llu id=%u serial=%u until_ms=%llu sequence=%llu selected=%llu receipt_present=%u receipt=%u create_pending=%u create_ack=%u qos_observed=%u flow_qos=%u return_qos=%u igs_flow=%u igs_return=%u removal_response=%u removal_error=%u\n",
    n,e->state,e->generation,ntohl((__force __be32)e->raw_id),e->serial,e->until,e->sequence,e->selected,
    !result,receipt.state,receipt.create_pending,receipt.create_ack,receipt.qos_observed,
-   receipt.flow_qos,receipt.return_qos,receipt.igs_flow,receipt.igs_return);
+   receipt.flow_qos,receipt.return_qos,receipt.igs_flow,receipt.igs_return,e->removal_response,e->removal_error);
  }
  mutex_unlock(&control_mutex); return 0;
 }
@@ -284,4 +295,4 @@ static void __exit gate_exit(void)
 }
 module_init(gate_init); module_exit(gate_exit);
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Athena dynamically leased exact CT gate, ABI 1");
+MODULE_DESCRIPTION("Athena dynamically leased exact CT gate, ABI 2, explicit firmware absence");

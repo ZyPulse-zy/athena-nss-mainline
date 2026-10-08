@@ -27,12 +27,12 @@ local function pin(p,sha)assert(command('/usr/bin/sha256sum '..p):match('^(%x+) 
 local function store(r)write(root..'/status.json',j.stringify(r))end
 local function count(path)return tonumber(assert(read('/sys/kernel/debug/ecm/'..path)))end
 local function native_status()
- if not loaded('athena_ecm_gate') then return {loaded=false,live=0,pending=0,acked=0,neverCreated=0,unconfirmed=0} end
+ if not loaded('athena_ecm_gate') then return {loaded=false,live=0,pending=0,acked=0,neverCreated=0,unconfirmed=0,firmwareAbsent=0} end
  local s=command('/bin/cat /sys/kernel/debug/athena_ecm_gate/status')
- assert(s:match('^abi=1 capacity=32 '))
- local r={loaded=true,live=0,pending=0,acked=0,neverCreated=0,unconfirmed=0,raw=s}
+ assert(s:match('^abi=2 capacity=32 '),'Native gate ABI mismatch; retain the existing owner')
+ local r={loaded=true,live=0,pending=0,acked=0,neverCreated=0,unconfirmed=0,firmwareAbsent=0,raw=s}
  for state in s:gmatch('slot=%d+ state=(%d+) ')do
-  local key=({[1]='live',[2]='pending',[3]='acked',[4]='neverCreated',[5]='unconfirmed'})[tonumber(state)]
+  local key=({[1]='live',[2]='pending',[3]='acked',[4]='neverCreated',[5]='unconfirmed',[6]='firmwareAbsent'})[tonumber(state)]
   assert(key);r[key]=r[key]+1
  end
  return r
@@ -44,6 +44,7 @@ local function rollback(r)
   put('/sys/kernel/debug/ecm/front_end_ipv4_stop','1\n')
   put('/sys/kernel/debug/ecm/front_end_ipv6_stop','1\n')
  end
+ r.hardwareAdmissionEnabled=false;r.running=false;store(r)
  -- Reap this guardian's own reader before removing the stop marker. Otherwise
  -- a fast successful rollback could let the one-second reader miss it and
  -- continue publishing after the transaction has released its lock.
@@ -63,11 +64,10 @@ local function rollback(r)
   local untilAt=now()+9
   repeat
    local s=native_status();r.native=s;store(r)
-   assert(s.unconfirmed==0,'Firmware removal unconfirmed; modules retained')
-   if s.live==0 and s.pending==0 then break end
+   if s.live==0 and s.pending==0 and s.unconfirmed==0 then break end
    n.nanosleep(0,100000000)
   until now()>=untilAt
-  assert(r.native.live==0 and r.native.pending==0,'Native revoke did not finish')
+  assert(r.native.live==0 and r.native.pending==0 and r.native.unconfirmed==0,'Firmware removal unconfirmed; modules retained')
   command('/sbin/rmmod athena_ecm_gate')
  end
  if r.tagsAttempted then
@@ -127,6 +127,7 @@ end
 if mode=='status' then
  local r=json(root..'/status.json') or {running=false,phase='not-started'}
  if loaded('athena_ecm_gate') then r.native=native_status();r.accelerated=count('ecm_nss_ipv4/accelerated_count') end
+ if loaded('ecm') then r.hardwareAdmissionEnabled=count('front_end_ipv4_stop')==0 end
  r.privateBaselinePresent=r.baseline~=nil;r.baseline=nil;r.pins=nil
  r.wans=nil;r.ownedFlows=nil
  if r.native then r.native.raw=nil end
@@ -136,10 +137,19 @@ if mode=='stop' or mode=='rollback' then
  if not fs.stat(root..'/lock') then print(j.stringify({running=false,rollbackConfirmed=true}));return end
  put(root..'/stop','1\n')
  for _=1,60 do if not fs.stat(root..'/lock') then print(j.stringify({running=false,rollbackConfirmed=true}));return end;n.nanosleep(0,250000000)end
+ local r=assert(json(root..'/status.json'))
+ if r.running==false and r.guardianPid and r.guardianStart and process_start(r.guardianPid)~=r.guardianStart then
+  assert(fs.mkdir(root..'/recovery-lock','700'),'A rollback retry is already running')
+  local ok,why=pcall(rollback,r)
+  assert(fs.rmdir(root..'/recovery-lock'))
+  if not ok then r.phase='rollback-unconfirmed';r.error=tostring(why);store(r);error(why)end
+  print(j.stringify({running=false,rollbackConfirmed=true,retried=true}));return
+ end
  error('Independent rollback did not confirm; inspect status and guardian-private.log')
 end
 if mode=='guard' then
  local r=assert(json(root..'/status.json'));local due=r.durationSeconds==0 and math.huge or now()+(r.durationSeconds or 290)
+ r.guardianPid=n.getpid();r.guardianStart=assert(process_start(r.guardianPid));store(r)
  local ok,err=pcall(function()
   write(root..'/guard-ready',tostring(now()))
   local staged,stageError=pcall(stage,r)

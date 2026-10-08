@@ -6,7 +6,7 @@ function M.new(root,command,read,put,now,store,r)
  local tc='/root/router-project/experiments/nss8-htb2-20261001/tc-nss'
  local gate='/sys/kernel/debug/athena_ecm_gate/'
  local owned,filters={},{};local binding=0;local rejected={};local lastTags
- local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,identityRejected=0,selected=0,firmwareCreated=0}
+ local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0}
  local function dec(x)return string.format('%.0f',x)end
  local function hex(x)return string.format('%x%04x',math.floor(x/65536),x%65536)end
  local function write_control(text)
@@ -19,7 +19,7 @@ function M.new(root,command,read,put,now,store,r)
  end
  local function status()
   local rows={};local text=assert(read(gate..'status'))
-  assert(text:match('^abi=1 capacity=32 stopping=0 '))
+  assert(text:match('^abi=2 capacity=32 stopping=0 '))
   for line in text:gmatch('[^\n]+')do
    local e={};for key,value in line:gmatch('([%w_]+)=(%d+)')do e[key]=tonumber(value)end
    if e.slot then rows[e.slot]=e end
@@ -143,8 +143,8 @@ function M.new(root,command,read,put,now,store,r)
    assert(e.state~=5,'Exact firmware removal unconfirmed')
    if e.selected>0 then stats.selected=stats.selected+1 end
    if e.state==1 and e.receipt_present==1 and e.receipt==0 and e.create_ack==1 and e.create_pending==0 then stats.firmwareCreated=stats.firmwareCreated+1 end
-   if e.state==3 or e.state==4 then
-    local name=e.state==3 and 'retiredAck' or 'retiredNeverCreated';stats[name]=stats[name]+1;owned[slot]=nil
+   if e.state==3 or e.state==4 or e.state==6 then
+    local name=({[3]='retiredAck',[4]='retiredNeverCreated',[6]='retiredFirmwareAbsent'})[e.state];stats[name]=stats[name]+1;owned[slot]=nil
    elseif e.state==1 then
     local fresh=desired[p.key]
     local eligible=fresh and (fresh.candidate or fresh.reason=='candidate-capacity-software-fallback')
@@ -166,7 +166,7 @@ function M.new(root,command,read,put,now,store,r)
   end end
   local additions={}
   for _,e in ipairs(choices)do if not proposed[e.key] and rejected[e.key]~=e.sequence then
-   local slot;for k=0,31 do if not occupied[k] and (not native[k] or native[k].state==3 or native[k].state==4)then slot=k;break end end
+   local slot;for k=0,31 do if not occupied[k] and (not native[k] or native[k].state==3 or native[k].state==4 or native[k].state==6)then slot=k;break end end
    if slot then occupied[slot]=true;additions[#additions+1]={slot=slot,flow=e}end
   end end
   for _,p in pairs(owned)do local e=desired[p.key];if e and not tagKeys[e.key]then tags[#tags+1]=e;tagKeys[e.key]=true end end
@@ -175,7 +175,9 @@ function M.new(root,command,read,put,now,store,r)
   for _,a in ipairs(additions)do
    local e=a.flow;binding=binding+1
    if e.validUntil>now()+0.1 and write_control('add '..a.slot..' '..pin_command(e,binding))then
-    owned[a.slot]={key=e.key,binding=e.binding,class=e.class,sequence=e.sequence,token=binding}
+    owned[a.slot]={key=e.key,binding=e.binding,class=e.class,sequence=e.sequence,token=binding,
+     client=e.client,egress=e.egress,connectionId=e.connectionId,mark=e.mark,protocol=e.protocol,
+     original=e.original,reply=e.reply,wan=e.wan}
     stats.admitted=stats.admitted+1
    else rejected[e.key]=e.sequence;stats.identityRejected=stats.identityRejected+1 end
   end
@@ -183,8 +185,12 @@ function M.new(root,command,read,put,now,store,r)
   local createdClients,createdExits={},{};r.ownedFlows={}
   for slot,p in pairs(owned)do
    local flow=desired[p.key];local e=native[slot]
+   -- Retiring identities remain available even after the desired CT vanished.
+   r.ownedFlows[#r.ownedFlows+1]={slot=slot,key=p.key,class=p.class,client=p.client,egress=p.egress,
+    connectionId=p.connectionId,mark=p.mark,protocol=p.protocol,wan=p.wan,original=p.original,reply=p.reply,
+    retiring=p.retiring or false,serial=e and e.id==p.connectionId and e.serial or nil,
+    generation=e and e.id==p.connectionId and e.generation or nil}
    if flow then
-    r.ownedFlows[#r.ownedFlows+1]={slot=slot,key=p.key,class=p.class,client=flow.client,egress=flow.egress}
     if e and e.state==1 and e.receipt_present==1 and e.receipt==0 and e.create_ack==1 and e.create_pending==0 then
      createdClients[flow.client]=true;createdExits[flow.egress]=(createdExits[flow.egress] or 0)+1
     end
@@ -194,7 +200,7 @@ function M.new(root,command,read,put,now,store,r)
   r.flowState={tracked=result.summary.tracked,clients=result.summary.clients,exits=result.summary.exits,
    classes=result.summary.classes,sourceFresh=result.summary.sourceFresh,sourceSequence=result.summary.sourceSequence,
    nativeOwned=count,actualCreatedReceipts=stats.firmwareCreated,actualCreatedClients=createdClientCount,actualCreatedExits=createdExits,selected=stats.selected,
-   admitted=stats.admitted,renewed=stats.renewed,retiredAck=stats.retiredAck,retiredNeverCreated=stats.retiredNeverCreated,
+   admitted=stats.admitted,renewed=stats.renewed,retiredAck=stats.retiredAck,retiredNeverCreated=stats.retiredNeverCreated,retiredFirmwareAbsent=stats.retiredFirmwareAbsent,
    identityRejected=stats.identityRejected,perDeviceQuotas=false}
   store(r)
  end

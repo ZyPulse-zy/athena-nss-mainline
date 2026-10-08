@@ -1,3 +1,11 @@
+# 当前 P0：旧 ABI1 引用未释放，完整回退未确认
+
+本次重新启用最大 NSS14 后，五条规则删除回执缺失。精确恢复请求实际得到五个 ENACK4/error5 NO_ENTRY；固件无这五条规则，但旧 gate 只接受 DESTROY ACK，自引用5/ECM CI5仍在。软件队列、WAN模式与保护服务已恢复，NSS0、准入关闭。此前“没有未确认回退P0”仅属历史交付快照。
+
+ABI2 精确删除请求/独立固件不存在状态已实现，134 C mock/目标writer-NFT模型/目标解析/编译通过并保存，未加载；P0不能据此关闭。规则为何先在固件中消失尚无直接通知证据。普通模块卸载不能通过；不强卸载/伪造ACK/修改内核内存，重启需要用户明确授权。P1真人游戏、Wi-Fi station/字节覆盖/长期CPU及开机验收仍未通过。
+
+## 以下为本次启用前的历史记录，不代表当前状态
+
 # v2 当前问题
 
 本批恢复全部确认，没有未确认回退的P0。uint32/errno/full snapshot、qdisc kind/root filter、NFT空表及同CI重新CREATE旧ACK问题已修复并定向验证。物理NSS root无tcf block，用自有clsact完成软件上行标签。96 receipt mock及最终模块加载通过；IGS partial-bind故障仅mock，未现场注入。

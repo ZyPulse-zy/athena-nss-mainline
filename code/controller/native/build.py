@@ -37,7 +37,7 @@ def main():
     ecm_exports=['ecm_ae_classifier_ops_register','ecm_ae_classifier_ops_unregister',
        'ecm_ae_classifier_decelerate_v4_connection','ecm_db_connection_find_and_ref',
        'ecm_db_connection_serial_get','ecm_db_connection_deref']
-    driver_exports=['nss_ipv4_tx','nss_if_tx_msg','nss_igs_get_context']
+    driver_exports=['nss_ipv4_tx','nss_ipv4_get_mgr','nss_ipv4_msg_init','nss_if_tx_msg','nss_igs_get_context']
     for binary, symbols, label in [(a.ecm,ecm_exports,'ecm'),(a.driver,driver_exports,'driver')]:
         output=run([nm,binary],label+'-symbols-private.txt')
         for symbol in symbols: assert '__kstrtab_'+symbol in output, symbol+' not exported'
@@ -45,6 +45,11 @@ def main():
                 '--disassemble=nss_if_tx_msg_with_size',a.driver],'driver-if-size-private.txt')
     assert re.search(r'mov\s+w2, #0x60[^\n]*\n[^\n]*\bbl\b[^\n]*nss_core_send_cmd',disasm), 'Installed nss_if_msg size changed'
     report['installedInterfaceMessageBytes']=96
+    ipv4=run([a.toolchain/'aarch64-openwrt-linux-musl-objdump','-dr',
+              '--disassemble=nss_ipv4_tx',a.driver],'driver-ipv4-size-private.txt')
+    assert re.search(r'cmp\s+w0, #0xa1',ipv4),'Installed IPv4 interface changed'
+    assert re.search(r'mov\s+w2, #0x2e0[^\n]*\n[^\n]*\bbl\b[^\n]*nss_core_send_cmd',ipv4),'Installed IPv4 message size changed'
+    report.update(installedIPv4MessageBytes=736,installedIPv4Interface=161,nativeGateAbi=2)
     old_imports=run([nm,'-u',a.ecm],'ecm-imports-before.txt')
     assert ' U nss_ipv4_tx\n' in old_imports
     patched=a.output/'ecm-receipts.ko'

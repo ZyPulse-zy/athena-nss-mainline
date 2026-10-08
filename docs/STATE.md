@@ -1,3 +1,15 @@
+# 当前：启用请求触发 NO_ENTRY 恢复缺陷，修复版已保存、旧模块待释放
+
+2026-10-09，用户要求立即启用。旧版重新启动实测最大 NSS14，随后五条撤销没有 DESTROY 回执，进入 rollback-unconfirmed。对这五条已否决的 serial/generation，用已安装 ECM 的公开 getter 取得实际固件 tuple、匹配原 receipt，逐条发送精确 DESTROY；五条全部返回原始 ENACK=4 / NO_CONNECTION_ENTRY=5。未发送 CREATE、伪造 ACK、强卸载或重启。
+
+已恢复本次 nft 标记、IGS/共同物理队列、五 MacVLAN bridge/mwan0；46 原队列结构和非速率选项、保护配置/磁盘模块哈希一致，五 WAN、认证、原 autorate/分类、代理、Tailscale 正常且 PID 未改变。现时 NSS0，reader/guardian/旧 Windows continuous 均已停止。旧 ABI1 gate 的五个自引用和 ECM CI 引用仍在，普通卸载无法通过，完整回退仍未确认。
+
+同一 code/controller 修复为 ABI2：ECM 已减速而未发 DESTROY 时请求原 observer 的精确 tuple；真实 NO_ENTRY 为独立 FIRMWARE_ABSENT 状态，原 NACK/错误保留，未知返回仍拒绝。支持已确认不存在后的新 CREATE 周期，保存已从 desired 消失的 retiring 身份，关闭准入立即修正 status，有限等待删除与 owner 退出后重试 rollback。134 实际 C mock、目标 Lua writer/NFT 模型、5 文件目标解析及 6.18.44 构建通过；未加载修复模块。修复版已保存本机服务目录，旧版私有备份完整、自启仍关闭。
+
+阻断：旧 ABI1 模块没有释放 NO_ENTRY 引用的接口。保留它们，不通过修改内核内存/伪造 ACK/强卸载绕过。用户原明确要求不擅自重启；需要确认一次路由器重启后，才可清除旧内存模块并实测启用修复版。真人游戏/下载验收仍延期，无流量夹具、刷机、升级或 EDMA 更换。
+
+## 以下为本次启用前的历史记录，不代表当前状态
+
 # 当前：v2 本机 native 服务已实测，停用待真人验收
 
 2026-10-08，基于main 04d98a3与附件v2（SHA256 2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1）。[维护及操作入口](../code/controller/README.md)，[脱敏证据](../evidence/dorm-v2-native.json)。用户“先不测试了哈”延期真人测试。本机服务已安装停止、关闭自启、无respawn；原Windows continuous恢复。全宿舍游戏质量与长期生产未验收。

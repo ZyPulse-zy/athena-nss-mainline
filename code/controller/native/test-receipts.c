@@ -5,9 +5,11 @@
 #include <string.h>
 #define ATHENA_RECEIPT_UNIT_TEST
 #include "athena_nss_receipts.c"
-struct message { struct common_prefix cm; unsigned char payload[192]; };
+struct message { struct common_prefix cm; unsigned char payload[696]; };
 static int transport_status,original_calls,checks;
 static struct message *sent;
+static struct message exact_sent;
+static unsigned ipv4_calls;
 static struct message if_sent[8];
 static unsigned if_count;
 static void original(void *data,struct nss_ipv4_msg *m)
@@ -17,7 +19,10 @@ static void original(void *data,struct nss_ipv4_msg *m)
  original_calls++;
 }
 int nss_ipv4_tx(struct nss_ctx_instance *ctx,struct nss_ipv4_msg *m)
-{ sent=(void *)m; return transport_status; }
+{ ipv4_calls++;sent=(void *)m;if(sent->cm.interface==161){memcpy(&exact_sent,m,736);sent=&exact_sent;}return transport_status; }
+struct nss_ctx_instance *nss_ipv4_get_mgr(void) { return NULL; }
+void nss_ipv4_msg_init(struct nss_ipv4_msg *message,u16 interface,u32 type,u32 length,nss_callback cb,void *data)
+{struct common_prefix *cm=(void *)message;*cm=(struct common_prefix){.interface=interface,.type=type,.len=length,.cb=(u64)(unsigned long)cb,.app_data=(u64)(unsigned long)data};}
 int nss_if_tx_msg(struct nss_ctx_instance *ctx,struct nss_if_msg *m)
 { if_count++;memcpy(&if_sent[if_count-1],m,96);sent=&if_sent[if_count-1];return transport_status; }
 struct nss_ctx_instance *nss_igs_get_context(void) { return NULL; }
@@ -117,6 +122,42 @@ int main(void)
  m=message(1,14,tuple);check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
  check(!athena_receipt_read(14,5,&r) && r.state==ATHENA_ACK);
  check(!athena_receipt_release(14,5));
+ /* Real incident: ECM was already decelerated, so its public method emitted
+  * no DESTROY. The armed generation requests only its observed firmware tuple.
+  * NO_ENTRY remains an original NACK and is distinct from a removal ACK. */
+ check(athena_receipt_request_destroy(22,22)==-ENOENT);
+ m=message(0,22,tuple);check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));
+ check(athena_receipt_request_destroy(22,0)==-ENOENT);
+ check(!athena_receipt_arm(22,22,&tuple));
+ check(athena_receipt_request_destroy(22,22)==-EPERM);respond(0);
+ check(!athena_receipt_request_destroy(22,22));
+ check(sent->cm.interface==161&&sent->cm.type==1&&sent->cm.len==20);
+ check(!memcmp(sent->payload,&tuple.src,4)&&!memcmp(sent->payload+4,&tuple.sport,4));
+ check(!memcmp(sent->payload+8,&tuple.dst,4)&&!memcmp(sent->payload+12,&tuple.dport,4)&&sent->payload[16]==tuple.protocol);
+ {unsigned calls=ipv4_calls;check(!athena_receipt_request_destroy(22,22));check(ipv4_calls==calls);
+  struct message duplicate=message(1,22,tuple);duplicate.cm.cb=(u64)(unsigned long)exact_destroy_received;
+  check(athena_nss_ipv4_tx_receipt(NULL,(void *)&duplicate)==1);check(ipv4_calls==calls);}
+ sent->cm.error=5;respond(4);
+ check(!athena_receipt_read(22,22,&r)&&r.state==ATHENA_NACK&&r.response==4&&r.error==5);
+ check(athena_receipt_firmware_absent(&r));
+ {unsigned calls=ipv4_calls;check(!athena_receipt_request_destroy(22,22));check(ipv4_calls==calls);}
+ check(!athena_receipt_release(22,22));
+ m=message(0,23,tuple);check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
+ check(!athena_receipt_arm(23,23,&tuple));check(!athena_receipt_request_destroy(23,23));sent->cm.error=6;respond(4);
+ check(!athena_receipt_read(23,23,&r)&&r.state==ATHENA_NACK&&!athena_receipt_firmware_absent(&r));
+ check(athena_receipt_request_destroy(23,23)==-EPERM);check(!athena_receipt_release(23,23));
+ m=message(0,24,tuple);check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
+ check(!athena_receipt_arm(24,24,&tuple));transport_status=1;check(athena_receipt_request_destroy(24,24)==1);
+ check(!athena_receipt_read(24,24,&r)&&r.state==ATHENA_TX_FAILED&&!athena_receipt_firmware_absent(&r));
+ transport_status=0;check(!athena_receipt_release(24,24));
+ m=message(0,25,tuple);check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
+ m=message(1,25,tuple);check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));sent->cm.error=5;respond(4);
+ check(!athena_receipt_read(25,0,&r)&&athena_receipt_firmware_absent(&r));
+ m=message(0,25,tuple);check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));
+ check(!athena_receipt_read(25,0,&r)&&r.state==ATHENA_ARMED&&r.create_pending&&!r.create_ack&&!r.response&&!r.error);
+ respond(0);check(!athena_receipt_arm(25,25,&tuple));check(!athena_receipt_request_destroy(25,25));respond(0);
+ check(!athena_receipt_read(25,25,&r)&&r.state==ATHENA_ACK&&!athena_receipt_firmware_absent(&r));
+ check(!athena_receipt_release(25,25));
  for(n=0;n<RECEIPT_CAPACITY;n++) check(!athena_receipt_arm(100+n,100+n,&tuple));
  check(athena_receipt_arm(200,200,&tuple)==-ENOSPC);
  m=message(0,200,tuple);check(athena_nss_ipv4_tx_receipt(NULL,(void *)&m)==1);

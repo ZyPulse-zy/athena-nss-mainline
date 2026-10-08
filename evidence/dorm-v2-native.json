@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "capturedAt": "2026-10-08T15:21:12.275Z",
+  "capturedAt": "2026-10-08T16:18:19.563Z",
   "repository": "ZyPulse-zy/athena-nss-mainline",
   "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
   "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
-  "method": "Passive normal client traffic; no traffic fixture, game launch, reboot, flash, firmware/kernel/EDMA upgrade.",
+  "method": "Passive normal client traffic; no traffic fixture, game launch, reboot, flash, firmware/kernel/EDMA upgrade. Subsequent user-requested activation failed; exact denied-rule firmware recovery, software-only restoration, ABI2 repair build and storage; no reboot or forced unload.",
   "implementation": {
     "routerLocal": true,
     "ctNamespace": "init_net",
@@ -113,6 +113,26 @@
       "stopPassed": true,
       "rollbackPassed": true,
       "capturedAt": "2026-10-08T14:55:11.854Z"
+    },
+    "receiptRecoveryModels": {
+      "passed": true,
+      "count": 134,
+      "mockedTransport": true,
+      "firmwareProof": false
+    },
+    "writerRecoveryModel": {
+      "firmwareAbsentSlotReused": true,
+      "retiringIdentityPreserved": true,
+      "emptyMapParsed": true,
+      "mockedKernel": true,
+      "passed": true,
+      "dataPlaneWrites": false
+    },
+    "changedLuaParser": {
+      "passed": true,
+      "files": 5,
+      "targetRuntime": true,
+      "dataPlaneWrites": false
     }
   },
   "firmwareCreateTagExamples": [
@@ -400,6 +420,84 @@
     }
   },
   "final": {
+    "at": "2026-10-08T16:13:01.986Z",
+    "protectedUnchanged": true,
+    "softwareQueueStructureAndNonRateOptionsRestored": true,
+    "originalDiskModulesUnchanged": true,
+    "existingServicesUnchanged": true,
+    "wans": [
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "identityPreserved": true,
+        "up": true
+      },
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "identityPreserved": true,
+        "up": true
+      },
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "identityPreserved": true,
+        "up": true
+      },
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "identityPreserved": true,
+        "up": true
+      },
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "identityPreserved": true,
+        "up": true
+      }
+    ],
+    "phase": "software-restored-native-module-blocked",
+    "softwareRollbackConfirmed": true,
+    "hardwareAdmissionEnabled": false,
+    "gateReferences": 5,
+    "ecmConnections": 5,
+    "accelerated": 0,
+    "tagOwnerPresent": false,
+    "mwan": 0,
+    "modules": {
+      "qca_nss_qdisc": false,
+      "athena_nss_receipts": true,
+      "ecm": true,
+      "athena_nss_recover": false,
+      "athena_ecm_gate": true,
+      "act_nssmirred": false
+    },
+    "fullRollbackConfirmed": false
+  },
+  "unresolved": [
+    "P0: old ABI1 gate self references 5 / ECM CI references 5 remain; five exact firmware NO_ENTRY replies confirmed, software state restored, ABI2 repair stored but not loaded. Requires approved restart for ordinary module replacement.",
+    "User deferred three real wired/Wi-Fi game/download acceptance scenarios",
+    "Wi-Fi firmware per-station RT QoS and same-device game/download quality not verified",
+    "Eligible traffic byte/packet NSS coverage and mixed-path latency/throughput not measured",
+    "Software path retains CAKE before NSS; additional queueing impact not measured",
+    "Actual boot/reboot recovery and long-term CPU/softirq budget not verified",
+    "IGS partial-bind failure recovery mocked but not deliberately injected on hardware"
+  ],
+  "rawConntrackMacAddressesCredentialsAndBinariesIncluded": false,
+  "releaseState": {
+    "installed": true,
+    "running": false,
+    "bootEnabled": false,
+    "legacyRunning": false,
+    "nativeGateAbiStored": 2,
+    "loadedGateAbi": 1,
+    "hardwareAdmissionEnabled": false,
+    "softwareRollbackConfirmed": true,
+    "fullRollbackConfirmed": false,
+    "requiresExplicitRestartApproval": true
+  },
+  "previousStoppedDeliveryFinal": {
     "passed": true,
     "capturedAt": "2026-10-08T15:15:53.682Z",
     "queuesUnchanged": false,
@@ -504,14 +602,168 @@
       "activeGeneration": false
     }
   },
-  "unresolved": [
-    "User deferred three real wired/Wi-Fi game/download acceptance scenarios",
-    "Wi-Fi firmware per-station RT QoS and same-device game/download quality not verified",
-    "Eligible traffic byte/packet NSS coverage and mixed-path latency/throughput not measured",
-    "Software path retains CAKE before NSS; additional queueing impact not measured",
-    "Actual boot/reboot recovery and long-term CPU/softirq budget not verified",
-    "IGS partial-bind failure recovery mocked but not deliberately injected on hardware"
-  ],
-  "rawConntrackMacAddressesCredentialsAndBinariesIncluded": false,
-  "releaseState": "Native manual procd installed, tested and stopped; boot disabled; existing production controller restored; whole-dorm game quality not accepted"
+  "previousStoppedDeliveryReleaseState": "Native manual procd installed, tested and stopped; boot disabled; existing production controller restored; whole-dorm game quality not accepted",
+  "activationRecovery": {
+    "attempts": [
+      {
+        "statusSamples": 22,
+        "maxAccelerated": 5,
+        "localHealthParserFailed": true,
+        "rollbackConfirmed": true
+      },
+      {
+        "statusSamples": 11,
+        "maxAccelerated": 14,
+        "failedExactRemoval": true,
+        "fullRollbackConfirmed": false
+      }
+    ],
+    "firmwareReplies": [
+      {
+        "ack": false,
+        "firmwareNoEntry": true,
+        "response": 4,
+        "error": 5
+      },
+      {
+        "ack": false,
+        "firmwareNoEntry": true,
+        "response": 4,
+        "error": 5
+      },
+      {
+        "ack": false,
+        "firmwareNoEntry": true,
+        "response": 4,
+        "error": 5
+      },
+      {
+        "ack": false,
+        "firmwareNoEntry": true,
+        "response": 4,
+        "error": 5
+      },
+      {
+        "ack": false,
+        "firmwareNoEntry": true,
+        "response": 4,
+        "error": 5
+      }
+    ],
+    "exactTupleValidatedByExistingObserver": true,
+    "createSent": false,
+    "forcedUnload": false,
+    "kernelMemoryPatched": false,
+    "hardwareRestarted": false,
+    "firmwareAbsenceDoesNotMeanModuleReferencesReleased": true,
+    "softwareReadback": {
+      "at": "2026-10-08T16:13:01.986Z",
+      "protectedUnchanged": true,
+      "softwareQueueStructureAndNonRateOptionsRestored": true,
+      "originalDiskModulesUnchanged": true,
+      "existingServicesUnchanged": true,
+      "wans": [
+        {
+          "addressPresent": true,
+          "mode": "bridge",
+          "identityPreserved": true,
+          "up": true
+        },
+        {
+          "addressPresent": true,
+          "mode": "bridge",
+          "identityPreserved": true,
+          "up": true
+        },
+        {
+          "addressPresent": true,
+          "mode": "bridge",
+          "identityPreserved": true,
+          "up": true
+        },
+        {
+          "addressPresent": true,
+          "mode": "bridge",
+          "identityPreserved": true,
+          "up": true
+        },
+        {
+          "addressPresent": true,
+          "mode": "bridge",
+          "identityPreserved": true,
+          "up": true
+        }
+      ],
+      "phase": "software-restored-native-module-blocked",
+      "softwareRollbackConfirmed": true,
+      "hardwareAdmissionEnabled": false,
+      "gateReferences": 5,
+      "ecmConnections": 5,
+      "accelerated": 0,
+      "tagOwnerPresent": false,
+      "mwan": 0,
+      "modules": {
+        "qca_nss_qdisc": false,
+        "athena_nss_receipts": true,
+        "ecm": true,
+        "athena_nss_recover": false,
+        "athena_ecm_gate": true,
+        "act_nssmirred": false
+      },
+      "fullRollbackConfirmed": false
+    },
+    "repairStorage": {
+      "at": "2026-10-08T16:17:54.664Z",
+      "repairStored": true,
+      "nativeGateAbi": 2,
+      "bootEnabled": false,
+      "oldModulesRetained": true,
+      "newModulesLoaded": false,
+      "oldRuntimeBackedUp": true,
+      "hashes": {
+        "transaction.lua": "7b5f7840be7d85bf7aee4098977d173290370d117262b467d1f218a1a5ae6624",
+        "writer.lua": "72804f40d50b696bf1b5e9b7fc52097435fceb591279a3b71c8fd1346e7b6141",
+        "athena_ecm_gate.ko": "db733844c58d2d6dc140e4dd00fd791bd6503f8314aa274ce70c42459e1fa7dc",
+        "athena_nss_receipts.ko": "779a00d8001293696aa229d03be478dc3eaab9bb3216396698f3e4bdfec7d0a2",
+        "build-result.json": "87d6e9a1e693fdca91af2fdc975d3a05ded33afaa13e438b5f03f7df7659baba"
+      }
+    },
+    "newRepairModulesLoaded": false
+  },
+  "repairBuild": {
+    "passed": true,
+    "nativeGateAbi": 2,
+    "originalKernelHashesPreserved": {
+      ".config": "24f0389ac9618779974c03d8c71f891b80a1ca58c1e4ef5a6877be4b6b9fe06c",
+      "Module.symvers": "b0782f7327ba04cf3a3f3ad85c735c6639af6accc0d8fa307b8abac9af46cd5d",
+      "include/generated/autoconf.h": "4ef35271b52eb223a7524fe6bb9f1af64c6cc7bc33f2e967843d0700fac397f7"
+    },
+    "driverUnchanged": true,
+    "ecmCodeSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".text.unlikely",
+      ".init.text",
+      ".exit.text"
+    ],
+    "ingressCodeSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".init.text",
+      ".exit.text",
+      ".text.unlikely"
+    ],
+    "installedIPv4MessageBytes": 736,
+    "installedIPv4Interface": 161,
+    "gate": {
+      "sha256": "db733844c58d2d6dc140e4dd00fd791bd6503f8314aa274ce70c42459e1fa7dc",
+      "bytes": 123976
+    },
+    "receipts": {
+      "sha256": "779a00d8001293696aa229d03be478dc3eaab9bb3216396698f3e4bdfec7d0a2",
+      "bytes": 138768
+    }
+  }
 }

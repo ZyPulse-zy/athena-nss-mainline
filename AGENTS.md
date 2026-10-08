@@ -1,3 +1,11 @@
+# 当前接续：NSS启用请求受旧模块引用阻断，ABI2修复已保存
+
+先读 STATE 当前首段与 evidence/dorm-v2-native.json activationRecovery。NSS0、软件队列/五WAN/保护服务已恢复；旧Windows停止，ABI1 gate自引用5/ECM CI5仍在，完整回退未确认。五个精确 DESTROY 原始 ENACK4/error5 实测证明规则不存在；新 ABI2 源码、134 C mock、目标writer-NFT模型/解析/编译通过并存入 /usr/lib/athena-dorm-native，未加载、自启关闭。不要重复start、旧实验、强卸载、伪造ACK或修改内核内存。
+
+最新用户“为什么停用 启用啊”允许启用；仍需遵守先前不擅自重启。一次重启明确批准后核对现场、加载修复版实测并保留运行。真人“先不测试了哈”保持，不询问设备/时间，不造夹具。保留五WAN认证/PBR/NAT/代理/Tailscale/管理通道及原模块；仅维护code/controller，旧6304源码和失败证据冻结。
+
+## 以下为本次启用前的历史记录，不代表当前状态
+
 # 当前接续：v2 本机服务实测后停用，真人验收延期
 
 先读docs/STATE.md当前段、code/controller/README.md及evidence/dorm-v2-native.json。仅维护code/controller；旧code/work/失败及6304历史源码冻结。32成本槽已有真实多客户端/有线/两AP NSS、逐流/IGS FW ACK、共同上行clsact、119秒无健康固定寿命、活跃stop/reader-loss和手动procd owner退出恢复。最终receipt周期修复96 mock与模块加载通过。本机候选安装停止/关闭自启/无respawn，旧Windows continuous恢复；先Status核对，不重复启动。

@@ -33,6 +33,8 @@ struct nss_ipv4_msg;
 struct nss_if_msg;
 typedef void (*nss_callback)(void *, struct nss_ipv4_msg *);
 extern int nss_ipv4_tx(struct nss_ctx_instance *, struct nss_ipv4_msg *);
+extern struct nss_ctx_instance *nss_ipv4_get_mgr(void);
+extern void nss_ipv4_msg_init(struct nss_ipv4_msg *,u16,u32,u32,nss_callback,void *);
 int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *,struct nss_ipv4_msg *);
 extern int nss_if_tx_msg(struct nss_ctx_instance *,struct nss_if_msg *);
 extern struct nss_ctx_instance *nss_igs_get_context(void);
@@ -57,6 +59,7 @@ struct ticket { nss_callback original; void *data; u32 serial; u64 generation;
 static struct record records[RECEIPT_CAPACITY];
 static DEFINE_SPINLOCK(receipt_lock);
 static u64 attempts;
+static void exact_destroy_received(void *,struct nss_ipv4_msg *);
 static struct record *find_serial(u32 serial)
 {
  int n; for (n=0;n<RECEIPT_CAPACITY;n++)
@@ -180,7 +183,8 @@ int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *ctx,
    * cannot reuse an earlier automatic DESTROY ACK as removal proof. */
   if (r && (r->receipt.generation || r->receipt.create_pending ||
       r->receipt.state==ATHENA_SENT ||
-      (r->receipt.create_ack && r->receipt.state!=ATHENA_ACK) ||
+      (r->receipt.create_ack && r->receipt.state!=ATHENA_ACK &&
+       !athena_receipt_firmware_absent(&r->receipt)) ||
       !tuple_equal(&r->tuple,&tuple_message))) {
    spin_unlock_bh(&receipt_lock);return 1;
   }
@@ -189,6 +193,7 @@ int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *ctx,
    .receipt={ .serial=(u32)m->cm.app_data, .state=ATHENA_ARMED } }; }
   if (r) { r->receipt.create_seen=true; r->receipt.create_pending=true;
    r->receipt.state=ATHENA_ARMED;r->receipt.qos_observed=false;
+   r->receipt.response=0;r->receipt.error=0;
    r->receipt.create_ack=false; r->create_attempt=++attempts; }
   /* QCA's IPv4 create ABI: common=40, flags+tuple=24, connection=44,
    * TCP=28, PPPoE=16, QoS=8; IGS follows at byte 208. Observe the
@@ -222,6 +227,7 @@ int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *ctx,
   if (r) { r->receipt.create_pending=false; r->receipt.create_ack=false; }
   spin_unlock_bh(&receipt_lock); return 1;
  }
+ if (!t && m->cm.cb==(u64)(unsigned long)exact_destroy_received) return 1;
  if (!t) return nss_ipv4_tx(ctx,message);
  m->cm.cb=(u64)(unsigned long)received; m->cm.app_data=(u64)(unsigned long)t;
  status=nss_ipv4_tx(ctx,message);
@@ -235,6 +241,28 @@ int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *ctx,
  return status;
 }
 EXPORT_SYMBOL(athena_nss_ipv4_tx_receipt);
+/* Installed-driver ABI: full IPv4 message is 736 bytes, interface 161.
+ * Never submit a prefix-sized buffer: nss_ipv4_tx copies the full message.
+ * No CREATE, unobserved tuple, unarmed generation or duplicate pending TX. */
+struct ipv4_destroy_message { struct common_prefix cm;struct athena_tuple tuple;u8 remaining[676]; };
+static void exact_destroy_received(void *data,struct nss_ipv4_msg *message) { }
+int athena_receipt_request_destroy(u32 serial,u64 generation)
+{
+ struct record *r;struct ipv4_destroy_message message={0};int result;
+ BUILD_BUG_ON(sizeof(message)!=736);
+ spin_lock_bh(&receipt_lock);r=find(serial,generation);
+ if(!r || !generation) { result=-ENOENT;goto out; }
+ if(r->receipt.state==ATHENA_SENT || r->receipt.state==ATHENA_ACK ||
+    athena_receipt_firmware_absent(&r->receipt)) { result=0;goto out; }
+ if(r->receipt.state!=ATHENA_ARMED || r->receipt.create_pending ||
+    !r->receipt.create_ack) { result=-EPERM;goto out; }
+ message.tuple=r->tuple;result=1;
+out:spin_unlock_bh(&receipt_lock);
+ if(result!=1)return result;
+ nss_ipv4_msg_init((void *)&message,161,1,20,exact_destroy_received,(void *)(unsigned long)serial);
+ return athena_nss_ipv4_tx_receipt(nss_ipv4_get_mgr(),(void *)&message);
+}
+EXPORT_SYMBOL_GPL(athena_receipt_request_destroy);
 /* Observe interface configuration ACKs used by IGS. The RAM ingress module
  * forwards here; the actual NSS driver and its message payload stay intact. */
 #define IGS_RECEIPT_CAPACITY 64

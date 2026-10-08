@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T15:22:16.949Z",
+  "generatedAt": "2026-10-08T16:19:47.681Z",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -44363,6 +44363,78 @@
       "bytes": 6715,
       "role": "router-local-controller-source-or-test",
       "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "ac7a52cc7d0909e6228eb5a136f3b6e39c3091b086e66d48923a7dc25d06e09f",
+      "bytes": 5592,
+      "role": "router-native-maintenance-documentation",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/native/athena_ecm_gate.c",
+      "workspaceSource": "code/controller/native/athena_ecm_gate.c",
+      "sha256": "1c2debb593b551480c0722c78defc66f74f92ff37c8203299295ce254989be8b",
+      "bytes": 14192,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/native/athena_nss_receipts.c",
+      "workspaceSource": "code/controller/native/athena_nss_receipts.c",
+      "sha256": "475b2711a675622bca7a22566d8a2a0204147d78efb92b8663ff2eac738c0004",
+      "bytes": 18368,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/native/build.py",
+      "workspaceSource": "code/controller/native/build.py",
+      "sha256": "dd8f17be94bc89257bbd5ffcd5352919dec2bf785a7c430613feedf8a325ecc2",
+      "bytes": 9478,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/native/receipts.h",
+      "workspaceSource": "code/controller/native/receipts.h",
+      "sha256": "94fd5a4d93cbb66d036641a506f5fd1e222b377653fa387aad1be03296e55b8a",
+      "bytes": 1421,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/native/test-receipts.c",
+      "workspaceSource": "code/controller/native/test-receipts.c",
+      "sha256": "9465cf2490cbc9df60b51e4bcbd9d9a5f415cac20ebb8852ac1c8c5e711603ea",
+      "bytes": 10415,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/native/test-writer.lua",
+      "workspaceSource": "code/controller/native/test-writer.lua",
+      "sha256": "e344e7cb7a54c79d5448f352091ad6c9c7e9e027e7659bd3746d2a7b46a8a4d3",
+      "bytes": 4174,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "workspaceSource": "code/controller/native/transaction.lua",
+      "sha256": "7b5f7840be7d85bf7aee4098977d173290370d117262b467d1f218a1a5ae6624",
+      "bytes": 16158,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "workspaceSource": "code/controller/native/writer.lua",
+      "sha256": "72804f40d50b696bf1b5e9b7fc52097435fceb591279a3b71c8fd1346e7b6141",
+      "bytes": 12259,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-firmware-absence-recovery"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44388,5 +44460,5 @@
   "residentServiceDevBatch": "DEV_H_INDEPENDENT_ELIGIBLE_FLOW_ADMISSION_CANDIDATE",
   "independentAdmissionIntegration": "RT_ONLY_BOUNDED90_AND_RESTORED",
   "lastContinuousResidentExport": "ROLLING_QUALIFIED_RESIDENCY_INTEGRATED_AND_RETAINED",
-  "lastRouterLocalExport": "DORM_V2_NATIVE_MANUAL_PROCD_VERIFIED_STOPPED_BOOT_DISABLED"
+  "lastRouterLocalExport": "DORM_V2_NATIVE_ABI2_REPAIR_STORED_OLD_MODULE_REFERENCES_BLOCKED"
 }

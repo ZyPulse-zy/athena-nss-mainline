@@ -1,6 +1,6 @@
-# Athena 路由器本机宿舍 QoS
+# Athena 全宿舍 v2 本机控制器
 
-code/controller是唯一维护目录，包含影子与实际加载过的native候选。新后端读取整个LAN，不依赖Windows/.207，32个独立CT成本槽，不按人/设备分带宽。[当前状态](../../docs/STATE.md)，[真实证据](../../evidence/dorm-v2-native.json)。本机服务已安装手动验证，当前停止/关闭自启/无respawn；现网仍用旧continuous，真人游戏测试延期。
+当前修复版 ABI2 已保存、未加载，NSS0。启用旧版后发现五条 NO_ENTRY 回执未被接受，软件路径已恢复，旧 ABI1 模块仍持有五个引用；需要用户批准一次重启才能正常替换。旧 Windows continuous 已停止，自启关闭，完整回退未确认。见 [当前状态](../../docs/STATE.md) 与 [实际证据](../../evidence/dorm-v2-native.json)。
 
 ## 已安装服务的操作
 
@@ -18,11 +18,11 @@ sh /usr/lib/athena-dorm-native/athena-qos rollback
 
 start是异步procd请求，返回不代表数据面就绪；status应确认native-running、owner PID、actual accelerated与CREATE ACK。独立setsid guardian用PID/start token检查owner，退出时恢复；默认无健康固定期限。未执行开机/重启验证，也未enable。init service的inspect提供JSON，rc.common的status只表示进程状态。
 
-stop/rollback等guardian关准入、逐流撤销/FW确认、回收reader、IGS RESET/CLEAR确认及还原原MACVLAN bridge/mwan/ECM/root；重复rollback幂等。未知删除/NACK时保留锁/模块/私有日志并报告未确认，不强行释放。status.json/guardian-private.log位于root私有/tmp/athena-dorm-native；只清理明确自有文件，不拿旧全量归档覆盖新配置。
+stop/rollback等guardian关准入、逐流撤销/FW确认、回收reader、IGS RESET/CLEAR确认及还原原MACVLAN bridge/mwan/ECM/root；重复rollback幂等。ABI2 将经精确 tuple/generation 的原始 ENACK4/error5 NO_ENTRY 记为独立固件不存在状态；原 NACK/错误保留，不改写为 ACK。ECM 已减速时使用 observer 记录的精确 tuple 请求 DESTROY；其它未知 NACK/删除超时仍保留锁/模块/日志并报告未确认。owner 已退出时可重试 rollback，仍需真实回执，不强行释放。status.json/guardian-private.log位于root私有/tmp/athena-dorm-native；只清理明确自有文件，不拿旧全量归档覆盖新配置。
 
 ## 数据和队列路径
 
-core.lua/collector.lua及native/reader.lua只读现网分类/DHCP/neigh/FDB/AP/完整CT，发布init_net/zone0 confirmed CT ID、full mark、original/reply NAT、MAC/出口绑定和6秒到期。native/writer.lua由独立guardian单独执行native/tc/nft；reader心跳失联8秒恢复。健康owned流不因排名波动撤销；新RT可逐条替换BE/BULK，等旧流真实FW删除ACK后重用。
+core.lua/collector.lua及native/reader.lua只读现网分类/DHCP/neigh/FDB/AP/完整CT，发布init_net/zone0 confirmed CT ID、full mark、original/reply NAT、MAC/出口绑定和6秒到期。native/writer.lua由独立guardian单独执行native/tc/nft；reader心跳失联8秒恢复。健康owned流不因排名波动撤销；新RT可逐条替换BE/BULK，等旧流真实 FW 删除 ACK 或精确 NO_ENTRY 回执后重用。
 
 athena_ecm_gate.c持有独立CT/CI引用与租约，athena_nss_receipts.c转发原消息/回调，原回调完成后发布serial/tuple/generation ACK/NACK。自然DESTROY后重新CREATE重置确认周期，pending重复CREATE不覆盖旧记录。同步屏障/public decel布尔值不是FW ACK；未知/代理/IPv6保持软件。
 

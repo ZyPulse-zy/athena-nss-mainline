@@ -16,4 +16,14 @@ int athena_receipt_find_tuple(const struct athena_tuple *tuple,u32 *serial);
 int athena_receipt_read(u32 serial, u64 generation,
  struct athena_receipt *receipt);
 int athena_receipt_release(u32 serial, u64 generation);
+/* After admission is denied, request the observed exact firmware tuple when
+ * ECM has already decelerated and cannot issue another DESTROY itself. */
+int athena_receipt_request_destroy(u32 serial, u64 generation);
+static inline bool athena_receipt_firmware_absent(const struct athena_receipt *r)
+{
+ /* NSS_CMN_RESPONSE_ENACK=4, NSS_IPV4_DR_NO_CONNECTION_ENTRY_ERROR=5.
+  * Preserve the original NACK and error; this is a separate absence result. */
+ return r->state==ATHENA_NACK && r->response==4 && r->error==5 &&
+  !r->create_pending;
+}
 #endif
