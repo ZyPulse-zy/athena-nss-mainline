@@ -1203,3 +1203,7 @@
 /code/work/resident-rc1-run-20261008000711-77b1d8a2/qos-physical.lua whitespace=cr-at-eol
 /code/work/resident-rc1-run-20261008000711-77b1d8a2/tag-normalizer.lua whitespace=cr-at-eol
 /code/work/resident-rc1-run-20261008000711-77b1d8a2/wan-scope.lua whitespace=cr-at-eol
+
+# Preserve exact already deployed dev-b source hashes; only its final empty lines differ.
+/code/work/resident-service-dev-b-20261008/generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
+/code/work/resident-service-dev-b-20261008/test-generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof

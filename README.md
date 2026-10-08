@@ -1,3 +1,9 @@
+# 当前接续：常驻调度 dev-b 运行
+
+先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md；核对work/resident-service-dev-b-20261008/service.ps1 Status，不重复启动。37项本地检查通过：仅完整证明checkpoint前无候选且恢复正常的拒绝继续等待新鲜流，其它错误仍暂停。原入口/数据面/期限保持；没有新正式硬件轮次。用户要求NSS开启持续有效，进程运行与实际NSS命中分别核对。下载时网络回弹待核验；已有只读软件路径处理压力证据，不能宣称根因或体验修复。不操作游戏/造新fixture/重复CPU证明，heartbeat仍暂停。
+
+## 以下保留历史介绍
+
 # 当前交付：手动常驻 Multi-WAN controller
 
 常驻进程已保留运行，真实启动/停止/重启与源读取推进通过；无登录自启。当前等待合格自然流量，尚无新的NSS代，原硬件证据复用。见[状态](docs/STATE.md)及[控制与限制](docs/RESIDENT_SERVICE.md)。

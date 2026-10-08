@@ -1,0 +1,142 @@
+{
+  "developmentBatch": "dev-b",
+  "observedAt": "2026-10-08T03:08:05.963Z",
+  "localChecks": 37,
+  "javascriptSyntaxSources": 10,
+  "powershellSyntaxSources": 2,
+  "tests": [
+    {
+      "passed": true,
+      "checks": 15,
+      "names": [
+        "idle residency continues without creating traffic or NSS generations",
+        "four starts per rolling20minute window then safe waiting",
+        "new generation only after prior restoration returned",
+        "P0 restoration refusal stops further admission",
+        "short successful phase is a targeted P1 refusal",
+        "restored entry refusal latches admission without blind retry",
+        "verified candidate loss returns to fresh normal observation",
+        "repeated safe waits still obey original four-start window",
+        "safe-wait marker cannot bypass dirty restoration P0",
+        "three read failures pause admission and cease router polling",
+        "changed binding pauses before calling entry",
+        "stop request before work causes no source read or entry",
+        "stop during restored generation ends with no successor",
+        "stop during refused generation still requires restoration",
+        "original per-generation bounds and no task auto restart preserved"
+      ],
+      "modelOnly": true,
+      "routerAccess": false
+    },
+    {
+      "passed": true,
+      "checks": 6,
+      "names": [
+        "bounded operational observation groups",
+        "only matching operational records pruned",
+        "foreign owner refused before deleting",
+        "frozen or foreign namespace refused",
+        "marker ownership retained",
+        "PID alone is not residence proof"
+      ],
+      "routerAccess": false,
+      "modelOnly": true
+    },
+    {
+      "passed": true,
+      "checks": 16,
+      "names": [
+        "actual first natural-flow refusal remains a verified pre-write wait outcome",
+        "unsafe or incomplete result restorationPassed stays paused",
+        "unsafe or incomplete result hardwareCompleted stays paused",
+        "unsafe or incomplete result code stays paused",
+        "unsafe or incomplete result nssSeconds stays paused",
+        "unsafe or incomplete result renewals stays paused",
+        "unsafe or incomplete result samples stays paused",
+        "unsafe or incomplete result stopRequested stays paused",
+        "unsafe or incomplete result stopError stays paused",
+        "badSupervisor cannot become safe wait",
+        "dirtyFinalAudit cannot become safe wait",
+        "badPhysical cannot become safe wait",
+        "checkpointPresent cannot become safe wait",
+        "foreignPilot cannot become safe wait",
+        "malformedOutput cannot become safe wait",
+        "original entry result remains intact"
+      ],
+      "routerAccess": false,
+      "modelOnly": true,
+      "actualRefusalReplayed": true
+    }
+  ],
+  "fixedIssue": "P1 controller scheduling: verified candidate loss before checkpoint must wait for fresh traffic",
+  "originalEntryAndSevenDataPlaneLuaUnmodified": true,
+  "unknownOrWritePhaseFailureStillPauses": true,
+  "originalQuotasAndDeadlinesUnchanged": true,
+  "originalNaturalAttempt": {
+    "beforeCheckpoint": true,
+    "routerWrites": false,
+    "restorationPassed": true,
+    "hardwareCompleted": false
+  },
+  "serviceSnapshot": {
+    "state": "WAITING_FLOW",
+    "startedAt": "2026-10-08T03:03:33.956Z",
+    "heartbeatAt": "2026-10-08T03:08:05.030Z",
+    "lastObservation": {
+      "sourceAge": 3.5515739996460907,
+      "sourceSequence": 13258,
+      "tcpBulk": 4,
+      "udpRt": 0,
+      "triples": 0
+    },
+    "reads": 7,
+    "readFailures": 0,
+    "generationsStarted": 0,
+    "generationsCompleted": 0,
+    "nssSeconds": 0,
+    "startupHealthPassed": true,
+    "admissionPaused": false,
+    "normalEntryCreatesTraffic": false,
+    "automaticStartAtLogon": false,
+    "uninterruptedNssClaim": false,
+    "running": true,
+    "identityVerified": true,
+    "heartbeatFresh": true,
+    "controllerLockPresent": true,
+    "activeGenerationLockPresent": false
+  },
+  "taskUpdate": {
+    "onlyOwnedLaunchArgumentsChanged": true,
+    "otherRelatedTasksUnchanged": true,
+    "noLogonTrigger": true,
+    "noFailureRestart": true,
+    "noForceTermination": true
+  },
+  "readonlyLoad": {
+    "seconds": 18.100000000093132,
+    "physicalWanRxMbps": 404.6322780089677,
+    "cpuBusyPercent": 84.17116742833403,
+    "softirqPercent": 62.74754189170475,
+    "cpu0TimeSqueezeIncrease": 729,
+    "softnetDrops": 0,
+    "ecmClosedAndZero": true,
+    "gameRtWan": [
+      1
+    ]
+  },
+  "gamePriorityQueue": {
+    "newDownloadDrops": 0,
+    "newUploadDrops": 0,
+    "maxDownloadPeakDelayMicroseconds": 379,
+    "maxUploadPeakDelayMicroseconds": 317,
+    "endToEndLossProved": false
+  },
+  "userSymptom": "Movement rubber-banding and higher latency or loss during download",
+  "gameplayFixedClaim": false,
+  "exactRootCauseProved": false,
+  "newFormalHardwareExperiment": false,
+  "newCpuBenchmark": false,
+  "trafficGenerated": false,
+  "cs2OrSteamInputSent": false,
+  "routerPolicyChangedForDiagnosis": false
+}

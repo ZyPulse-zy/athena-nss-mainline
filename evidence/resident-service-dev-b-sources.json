@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "historicalSourcePrefix": 5952,
+  "newSources": 12,
+  "sourceHashes": {
+    "work/resident-service-dev-b-20261008/daemon.mjs": "16c4558a01bbf499dd7ba26e2a6f4077d64d350627bf4c22d42d869587f82fdd",
+    "work/resident-service-dev-b-20261008/generation-outcome.mjs": "8635c5f897b82435ade7c357fdc52d01534d41d55934700d775aefaf0f624ab3",
+    "work/resident-service-dev-b-20261008/identity.mjs": "c0b84141ff1ff8f5ac1b7da8b664c530421d3b213becd9db65ac530b76719713",
+    "work/resident-service-dev-b-20261008/policy.mjs": "7c926add8c092b8aeae1a1563acc2dc4cee17ba774c025f20aa5fada66a914c0",
+    "work/resident-service-dev-b-20261008/qualification.mjs": "517ad6e7ebf42086c782fa83dd2d472e86806088676613e2c8cd220db43a2826",
+    "work/resident-service-dev-b-20261008/service-launch.ps1": "962da9dd44c955bd4fc5f0f05fece8f5d319cfbb82ab3cf81231de7e1206da38",
+    "work/resident-service-dev-b-20261008/service.ps1": "f04164b26fcb580faa9173b76aa392b13f297c81a1e002e38da63f991d86a6a6",
+    "work/resident-service-dev-b-20261008/startup-health.mjs": "52f0b8e50501c542da0b63cd33a5b5333d5b246f58f5bc163a5c82630b103282",
+    "work/resident-service-dev-b-20261008/storage.mjs": "c2d737c691cbd7b0d989ffc05d1e26737ed715df81a06e13e0291bdbbebd9322",
+    "work/resident-service-dev-b-20261008/test-generation-outcome.mjs": "f759dd752cdc20319f4a319b72b09ccb86234c4868e776dd3373132a5590ac4a",
+    "work/resident-service-dev-b-20261008/test-policy.mjs": "8fa0845b02a6e614d4bacca5744e79a2ff40a083034646d6da27acfb69f9ab00",
+    "work/resident-service-dev-b-20261008/test-storage.mjs": "41b33c54928e73d72cea856d0505dab4da174aa0401fac0111ad87ededbd55aa"
+  },
+  "noPrivateRuntimeInputsExported": true,
+  "normalEntryAndDataPlaneUnmodified": true
+}

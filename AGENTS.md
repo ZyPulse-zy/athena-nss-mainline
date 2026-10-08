@@ -1,3 +1,9 @@
+# 当前接续：常驻调度 dev-b 运行
+
+先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md；核对work/resident-service-dev-b-20261008/service.ps1 Status，不重复启动。37项本地检查通过：仅完整证明checkpoint前无候选且恢复正常的拒绝继续等待新鲜流，其它错误仍暂停。原入口/数据面/期限保持；没有新正式硬件轮次。用户要求NSS开启持续有效，进程运行与实际NSS命中分别核对。下载时网络回弹待核验；已有只读软件路径处理压力证据，不能宣称根因或体验修复。不操作游戏/造新fixture/重复CPU证明，heartbeat仍暂停。
+
+## 以下保留历史介绍
+
 # 当前接续：手动常驻进程运行中
 
 常驻进程已部署并保留WAITING_FLOW，任务Athena-NSS-Controller-Manual，无登录触发或故障自动重启。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md与RESIDENT_SERVICE.md，并核对实际service.ps1 Status；不要重复启动、重做已结束soak或重开fixture。18本地检查和实际启动/源推进/停止/重启通过；当前0新NSS代。源/绑定/入口拒绝会暂停准入，P0禁止后续写入并先确认恢复。原入口/数据面/所有期限不变，heartbeat仍暂停。用户常驻授权持续有效。
