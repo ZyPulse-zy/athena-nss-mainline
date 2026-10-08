@@ -1,3 +1,11 @@
+# 当前控制：dev-i独立准入已集成并保留
+
+原工作区使用 powershell -File work/resident-service-dev-i-20261008/service.ps1 -Mode Status / Stop / Start。现有手动任务仅启动参数更新，其它任务、权限、触发/重启/终止设置保持。当前进程运行、启动审核通过、准入未暂停；无合格流时ECM0，进程运行不当作当下NSS命中。
+
+RT单独进入的实际90秒/ECM1/30续租和完整撤销已通过。独立最多2BULK＋1RT、同WANTCP允许，仍需原分类与预算/精确OS归属/CT/mark/NAT/affinity/pin/lease；新流进入新代，旧epoch不热插入。原每代90秒/20分钟四次及全部保护不变，不是永久全网NSS。[实测与限制](../evidence/resident-independent-admission.json)。
+
+## 以下保留历史记录
+
 # 当前控制：dev-h独立合格流常驻候选
 
 原工作区运行 powershell -File work/resident-service-dev-h-20261008/service.ps1 -Mode Status / Stop / Start。任务Athena-NSS-Controller-Manual，仅启动参数变更，其它相关任务、权限、触发、重启和终止设置保持；进程运行与实际ECM分别核对。当前运行、BULK0/RT0、0新代，完整现场集成待自然合格负载。

@@ -1,3 +1,5 @@
+独立准入闭环已完成并保留dev-i常驻观察：RT单流实际NSS90秒/181采样/30续租与完整恢复通过，合格BULK/RT无需固定三流组合。当前仍是最多2BULK/1RT的有限代控制器；大下载CS2丢包未宣称修复。见[状态](docs/STATE.md)。
+
 当前接续：dev-h独立合格流入口已部署，启动只读审核通过；合格BULK/RT无需凑齐固定三流。当前0合格流/0新NSS，optional-slot硬件集成待自然负载；原保护和有限代上限保持。见[状态](docs/STATE.md)。
 
 当前接续：dev-g只修分类＋Windows归属读取时序，180本地检查和现场只读通过；13:32 RT1/BULK0/ECM0，控制器运行且准入未暂停，完整90秒NSS集成仍待自然合格组合。见[状态](docs/STATE.md)与[本批事实](evidence/resident-service-dev-g.json)。

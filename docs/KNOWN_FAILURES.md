@@ -1,3 +1,11 @@
+# 当前问题分级：准入集成已通过，体验P1仍未关闭
+
+新optional native实际RT mask2已90秒/ECM1/30续租，完整恢复通过，独立准入开发批次完成。P2旧模块绑定在fork前拒绝已纠正，原失败/首次checkpoint/恢复保持；16本地守护执行检查覆盖旧错误和错误hash/大小/boot/ECM状态。收尾脚本两种固定frontend状态假设与初始队列快照误用仅本地更正，不制造硬件失败结论或重跑实验。
+
+未关闭P1：用户大下载时游戏高丢包，本次模拟不证明体感修复。已知限制：最多2BULK/1RT，直接进程归属IPv4客户端，有限90秒代/20分钟四次；其它mask仅模型与历史核心证据，未硬件逐一验收；未知/代理/IPv6/QUIC保持软件路径。非关键环境取得/报告细节进入backlog，不阻止保留已通过的候选。[实测与限制](../evidence/resident-independent-admission.json)。
+
+## 以下保留历史记录
+
 # 当前blocker与限制：独立准入现场集成待自然负载
 
 P1：新optional-slot native尚未现场集成，用户大下载游戏丢包仍未关闭。已有正常三流/五WAN/CPU证明不重做。P2：固定组合/不同WAN限制、初始probe诊断丢失、旧startup byte-exact断言本批一起修复，集中本地回归通过。dev-g原拒绝确实已有checkpoint/stage，native和NSS尚未放行且最终恢复通过；缺少原详细probe，精确原因未知，不追溯标为“无写入”或“CT退出”。

@@ -1,3 +1,17 @@
+# 独立准入闭环完成，dev-i已保留常驻观察
+
+北京时间2026-10-08 15:12，dev-i已运行、启动完整只读健康和两物理原队列全部选项/handle审核通过，准入未暂停。使用 work/resident-service-dev-i-20261008/service.ps1 Status / Stop / Start；先核对，不重复启动。heartbeat保持暂停。当前无自然合格流，ECM关闭全零；等待状态不代表此次集成未完成。
+
+沿用用户已授权的模拟游戏包方式，仅做一个相关RT子集的成功集成。新入口独立选择一条已分类/预算准入且精确进程/socket归属的UDP RT，active mask2；实际加载optional native、ECM1，NSS连续90秒/181采样/30续租。全部B采样保持单一加速CI；两个未选TCP槽permit=N，完整mark/NAT/WAN affinity和双向tag通过。既有B结束后的RT leaf计数上4129/下4313包，队列drop均0；这些计数包含该队列安装期间的数据，不当作整段纯NSS端到端丢包率。
+
+新checkpoint下载/SHA/gzip、控制连接外独立恢复写前证明通过。结束后ECM关闭全零，tag/模块/状态清除，WAN/mwan3与保护配置及两物理原队列全部选项/handle恢复，端点/精确FW基线和独立客户端守护退出核验通过。先停止旧观察服务、测试完整清理后才启动dev-i，没有重叠准入。
+
+首次dev-h尝试在旧44616字节模块SHA绑定处、detached guardian fork前拒绝，已创建checkpoint、未获stage receipt/未加载模块或放行NSS，完整恢复和客户端清理通过，原失败保存。dev-i仅纠正守护绑定到同一45848字节已编译模块，补执行到pre-fork边界的本地回归；native源码/二进制与dev-h逐字节相同。49一般/119入口/124服务和10测试范围检查通过，16守护前置检查复现旧失败。原尺寸模型拒绝及收尾脚本快照误用均保留、本地修复，没有为P2另开硬件轮次。
+
+本开发批次结束，不新增边界/CPU/五WAN实验。最多2 TCP BULK＋1已准入UDP RT、同WANTCP允许、合格流无需凑齐固定组合；仍需原分类/归属/完整CT/NAT/mark/affinity/pin/lease。实际新optional native只验RT mask2，其它子集有本地模型与历史核心证据，未宣称每个mask都硬件验收。每代90秒/20分钟四次及source6/OS6/native120/owner180/client180和全部字节上限保持；仍非连续永久或全LAN/IPv6/代理/QUIC NSS。用户大下载CS2丢包仍为未关闭体验P1，本次模拟不能证明它已修复。[实测与限制](../evidence/resident-independent-admission.json)。
+
+## 以下保留历史记录
+
 # 当前接续：dev-h独立合格流入口已部署，等待自然流的现场集成
 
 2026-10-08 14:43，控制器运行、身份和心跳已核对，启动完整只读审核及两物理原队列全部选项/handle通过，ECM关闭全零；当前BULK0/RT0、0新代，准入未暂停。控制使用 work/resident-service-dev-h-20261008/service.ps1 Status / Stop / Start，先核对，不重复启动。heartbeat仍暂停。

@@ -1,3 +1,9 @@
+# 2026-10-08 独立准入集成收尾：RT单流通过，候选保留
+
+沿用既有模拟授权，旧服务正常停止后启动一次RT子集测试；dev-h旧模块44616字节/SHA断言在stage guardian fork前拒绝，新checkpoint及完整恢复保留。native源码/二进制不改，同批修写前绑定、本地49/119/124和16守护前置执行/七子集模型通过，再做同范围集成。dev-i实际mask2/ECM1/90秒/181采样/30续租，未用TCP槽permit=N，完整mark/NAT/WAN affinity/双向tag与RT leaf通过；既有after-B计数上4129/下4313、drop0。整体恢复、端点精确FW基线、独立客户端守护清理通过后保留dev-i。收尾报告固定frontend/初始快照误用原失败保存，只本地更正。无CS2/Steam/新下载/CPU实验，不再新增轮次；旧源码/证据字节保持。其它mask未逐一硬件验收，游戏体验P1仍未关闭。[实测与限制](../evidence/resident-independent-admission.json)。
+
+## 以下保留历史记录
+
 # 2026-10-08 dev-h：独立合格流准入开发批次
 
 固定三流要求撤下，optional native1..3槽/同WANTCP、动态class/tag/counter/lease/cleanup与正常归属入口一起收敛。本地33/119/124和native157/109/134模型、七子集Lua/尺寸及6.18.44编译通过；本地首CT夹具/尺寸/路径断言失败保存后修复，不各开硬件版本。dev-g13:51已有checkpoint/stage后初始分类拒绝，native/NSS前退出并恢复；原缺详细probe不据此推断CT退出或实际改类。新probe保留，仅无NSS并完整恢复的已知准备期拒绝允许新鲜代等待。dev-h首启动旧byte-exact断言在网络前拒绝，P2本地修复和startup模型后实际启动完整只读审核通过。14:43进程运行、BULK0/RT0/0新NSS、准入未暂停；actual optional native尚未加载，没有现场集成通过。当前自然负载消失，不造流量；新鲜条件到来仅接续一次有限集成。源码/脱敏事实集中提交，不新正式版本/HTML/archive；原历史源码及私有失败保持。见[事实](../evidence/resident-service-dev-h.json)。

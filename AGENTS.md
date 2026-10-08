@@ -1,3 +1,11 @@
+# 当前接续：独立准入集成完成，dev-i常驻观察
+
+先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_SERVICE并用work/resident-service-dev-i-20261008/service.ps1 Status核对，不重复启动。RT mask2实际NSS90秒/181采样/ECM1/30续租、完整恢复及端点/客户端清理通过；15:12保留dev-i，启动完整只读健康/两物理原队列审核通过。原dev-h模块绑定失败已本地修正，旧失败/源码/证据保存。49/119/124与16守护pre-fork回归通过；native源码和二进制未改。
+
+本开发批次结束，不因当前缺流重开fixture/游戏/CPU/全核心或更多mask实验。现有有限代自动观察保留；最多2BULK/1已准入RT、同WANTCP允许，原分类/归属/CT/NAT/mark/affinity/pin/lease、期限和字节限制保持，未知默认拒绝。新optional native仅RT子集硬件事实，其它子集模型不冒充硬件。游戏大下载丢包体验P1仍未关闭，heartbeat保持暂停。
+
+## 以下保留历史记录
+
 # 当前接续：dev-h独立合格流入口候选运行
 
 先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_SERVICE；使用work/resident-service-dev-h-20261008/service.ps1 Status，不重复启动。14:43启动完整只读/两物理恢复审核通过，BULK0/RT0/0新NSS，准入未暂停，heartbeat暂停。独立1..3槽位、最多2BULK＋1RT、允许同WAN，原分类/归属/CT/NAT/mark/affinity/pin/lease和全部期限/字节/恢复保护保持。33一般/119入口/124服务及native157/109/134模型、七子集Lua/尺寸、6.18.44编译通过，新optional native尚未硬件加载；仅等待自然负载一次有界集成，不造fixture/操作游戏/新下载/重做CPU。准备期已stage的缺资格须完整恢复后才等新代，旧g失败细节缺失不retro分类。游戏丢包P1尚未关闭。
