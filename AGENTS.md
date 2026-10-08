@@ -1,3 +1,11 @@
+# 当前接续：用户 v2 规格，路由器本机影子已实测
+
+先读 docs/STATE.md 当前首段、code/controller/README.md 和 evidence/dorm-v2-shadow.json。主线是全宿舍有线/Wi-Fi 游戏稳定、BULK 借用余量、长期 NSS/QoS；不新增设备公平配额。code/controller 是唯一新维护入口，旧 code/work 和原失败保持冻结。本批仅授权 /tmp 五分钟影子运行，试用已停止清理；不将其解释成新数据面授权。
+
+旧 Windows continuous 控制器仍运行，应从原工作区 service.ps1 Status 核对，不重复启动或停止。04d98a3 已取消健康 90 秒与四次限制；.207/Windows/内核三槽/LAN4/18-60实验预算仍在。不要把 shadow 动态表、revoke 或 accelerated=0 宣称成 native 覆盖/固件清除/游戏改善。20模型和目标启停回退已过，未改的旧五WAN/核心/CPU不用重跑。凭据、原始CT/MAC、敏感归档/二进制留本地。后续状态和结果更新同一 STATE，按实际影响测试并集中提交。
+
+## 以下保留历史，旧范围/上限不得覆盖当前用户规格与事实
+
 # 当前接续：连续合格NSS控制器已部署
 
 先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_CONTINUOUS；用 work/resident-continuous-dev-20261008/service.ps1 Status 核对，禁止重复启动。2026-10-08，取消健康代90秒退出和20分钟四次启动限制。合格流持续自动续租；分类/socket6秒新鲜度、native滚动120秒、guardian滚动180秒及失联撤销保持。实际RT mask2连续NSS 196.75秒／393采样校验／65续租，跨原90/120/180秒后主动Stop和完整恢复通过。

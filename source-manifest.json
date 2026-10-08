@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T11:18:40.483572+00:00",
+  "generatedAt": "2026-10-08T12:06:34.503Z",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -44132,6 +44132,69 @@
       "sha256": "70193747547ccf9096bc798323e0c2ef655d57253022df2b038fe102f3a6220b",
       "bytes": 1579,
       "role": "continuous-qualified-residency-and-related-fixture-repair"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "d57bf3154d302c0c560fbf601f63162faba5da8695e36409fc7a935c8a3f1bb8",
+      "bytes": 2645,
+      "role": "router-local-shadow-source"
+    },
+    {
+      "path": "code/controller/athena-qos",
+      "workspaceSource": "code/controller/athena-qos",
+      "sha256": "e772ce5d84872984b3ad9502a26ae1601da6f649662297a0d23fb516d40715b2",
+      "bytes": 1365,
+      "role": "router-local-shadow-source"
+    },
+    {
+      "path": "code/controller/collector.lua",
+      "workspaceSource": "code/controller/collector.lua",
+      "sha256": "80a945e86a2a134279aef66696377f6721c05943bc41315515726bd2408347d7",
+      "bytes": 3860,
+      "role": "router-local-shadow-source"
+    },
+    {
+      "path": "code/controller/config.example.json",
+      "workspaceSource": "code/controller/config.example.json",
+      "sha256": "415c34f129bd8c4d57c35e9e060dfb13523d5be2b23fe9a7ae2d92b8795a9f11",
+      "bytes": 196,
+      "role": "router-local-shadow-source"
+    },
+    {
+      "path": "code/controller/core.lua",
+      "workspaceSource": "code/controller/core.lua",
+      "sha256": "1ef8d7fffde59624e99b1bf4a21a8533adba097cb49e77e52e9d54ca919d3e24",
+      "bytes": 8681,
+      "role": "router-local-shadow-source"
+    },
+    {
+      "path": "code/controller/init.sh",
+      "workspaceSource": "code/controller/init.sh",
+      "sha256": "1fd047add3fd286d94060e49224b8ba1a8745bfe6c898f901f531c5e5333651d",
+      "bytes": 428,
+      "role": "router-local-shadow-source"
+    },
+    {
+      "path": "code/controller/service.lua",
+      "workspaceSource": "code/controller/service.lua",
+      "sha256": "a7d36eeea4128596a1edb0cc9cb1ae79f3256b9e3f0b34c26ee2e55b7ab67738",
+      "bytes": 4409,
+      "role": "router-local-shadow-source"
+    },
+    {
+      "path": "code/controller/test-core.lua",
+      "workspaceSource": "code/controller/test-core.lua",
+      "sha256": "97d9015d11cf4e8cae8d804eb45e32107272c6f30b53ec1689246d78d4dd349e",
+      "bytes": 6356,
+      "role": "affected-controller-test"
+    },
+    {
+      "path": "code/controller/.gitattributes",
+      "workspaceSource": "code/controller/.gitattributes",
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+      "bytes": 14,
+      "role": "router-local-source-line-endings"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",

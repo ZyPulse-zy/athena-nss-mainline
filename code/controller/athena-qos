@@ -1,0 +1,28 @@
+#!/bin/sh
+# Installed path: /usr/lib/athena-dorm-qos. No edits to the existing data plane.
+set -eu
+base=${ATHENA_QOS_BASE:-/usr/lib/athena-dorm-qos}
+case "${1:-status}" in
+  status) exec lua "$base/service.lua" status ;;
+  sample) exec lua "$base/service.lua" once "$base/config.example.json" ;;
+  start)
+    if test -d /tmp/athena-dorm-qos/lock; then echo 'Shadow already owns its lock; inspect status' >&2; exit 1; fi
+    rm -f /tmp/athena-dorm-qos/stop
+    if test "${ATHENA_QOS_TEMPORARY:-0}" = 1; then
+      seconds=${ATHENA_QOS_TEST_SECONDS:-120}
+      case "$seconds" in ''|*[!0-9]*) echo 'Invalid test duration' >&2; exit 2;; esac
+      test "$seconds" -ge 1 && test "$seconds" -le 290
+      lua "$base/service.lua" launch "$base/config.example.json" "$seconds"
+    else
+      /etc/init.d/athena-dorm-qos start
+    fi
+    exec lua "$base/service.lua" wait ;;
+  stop|rollback)
+    if test -d /tmp/athena-dorm-qos/lock; then : > /tmp/athena-dorm-qos/stop; fi
+    tries=0
+    while test -d /tmp/athena-dorm-qos/lock && test "$tries" -lt 8; do sleep 1; tries=$((tries+1)); done
+    if test -d /tmp/athena-dorm-qos/lock; then echo 'Shadow stop unconfirmed; lock retained' >&2; exit 1; fi
+    echo '{"stopped":true,"hardwareWrites":false,"legacyControllerChanged":false}'
+    ;;
+  *) echo 'Usage: athena-qos status|sample|start|stop|rollback' >&2; exit 2 ;;
+esac

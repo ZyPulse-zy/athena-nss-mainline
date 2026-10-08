@@ -1,3 +1,30 @@
+# 当前：v2 接手完成，路由器本机影子服务已实测
+
+2026-10-08。本批以用户附件 v2 为规格（SHA256 2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1），接手 main 04d98a3；原本机 checkout 干净，远端 main 同步。当前维护入口是 [code/controller](../code/controller/README.md)，本批只发布影子后端。**全宿舍 NSS/QoS 和游戏体验目标尚未完成。**
+
+| 核对项 | 当前事实 |
+| --- | --- |
+| dev-i 之后 | 04d98a3 已取消健康代 90 秒寿命和 20 分钟四次限制；六秒分类/socket 新鲜度及滚动 native/guardian 撤销仍保留。旧控制器实际运行、身份/心跳新鲜，WAITING_FLOW，0 新 NSS 代。 |
+| 固定电脑与三槽 | 旧入口仍绑定 .207、Windows socket，最多 2 TCP BULK + 1 UDP RT；内核 gate 三槽、退出一流撤销旧代。影子代码取消这些发现/候选限制，**没有替换旧内核 gate**。 |
+| 有线/Wi-Fi | br-lan 含 lan1–4 和三个 AP，ath11k NSS offload=1；旧实验 NSS 下行队列只装 LAN4。影子实测识别 LAN4、phy0-ap0、phy2-ap0；这不证明固件无线主队列受控。 |
+| 18/60 预算 | 仍在旧 NSS 实验方案中：共享 DOWN18、UP60（每 WAN12），默认叶 950。现网软件 CAKE 是五路上行各 40、下行各 70 Mbps；配置总和不等于实测共享容量。 |
+| 配置与旧记录差异 | rpifb5 当前 flows/nonat/no-split-gso；rpifb1–4 是 dual-dsthost/nat/split-gso。五路 autorate 正在运行。保留现状；新代码没有再引入设备份额或第二个 tc 写入者。 |
+| 分类范围 | 已部署分类器本来就覆盖全 LAN；Windows/.207 限制发生在旧 NSS 准入层。原每主机 RT 保护限额及全局 12000 Kbps 准入保护未改，不能把影子无配额误读为现网分类限额已取消。 |
+
+影子实现保存 CT ID/zone、完整 NAT original/reply、mark、真实 MAC/出口、业务类别及每流六秒租约。同源同序列完整快照缺流只撤销该记录；投影缺失只停止续租，MAC/漫游变化只失效受影响绑定。RT 与 BULK 的候选选择独立于 TCP/UDP；实际加速另列且恒为零。2048 记录/32 候选是可调观察上限，未当作固件容量。
+
+**真实验证：** 20 项相关模型在目标 Lua 5.1 通过；经用户明确允许，写入自有 /tmp 后连续观察至少 95.87 秒，来源序列 6512→6543，识别 4 客户端、3 associated station、两个 Wi-Fi 出口和 LAN4。运行中主动 stop、运行中 rollback（另一短试用 8.77 秒）、停止后的幂等回退与 status 均通过。短试用 4 次采样，最大单次采样墙钟 0.21 秒、结束 RSS 3280 KiB；不是 CPU 压测或长期性能结论。影子进程/锁和临时源文件全部清理。
+
+前后 tc 队列完整配置一致，network/firewall/wireless/分类配置哈希一致；最终五 WAN up、有地址、五认证和 autorate、代理/Tailscale、分类器及其守护均在运行，ECM IPv4/IPv6 stop=1、accelerated=0。旧 Windows 控制器保持运行。未改认证、PBR/NAT、代理、无线、队列、EDMA、固件或重启。
+
+**回退基线：** main 的完整 Git bundle 已验证；敏感路由器归档 479574 字节/327 条目、SHA256 e1b7c1f022fc66820b96a76c9f3035ece7ff90524a4e8cda62e4de851cba6898，包含 /etc/config、服务/脚本、当前分类源码及指针，现有 19:11 checkpoint 也已下载。归档和原始 CT/失败输出仅在接手工作区 work/baseline 与 work/shadow-review，未提交。回退仅操作本批对象；不得拿旧整包覆盖当前配置。影子 rollback 只停止自有观察服务，不能宣称恢复了硬件后端。
+
+**剩余阻断：** 动态内核 gate、逐流固件删除确认、软件/NSS/有线/Wi-Fi 共同预算和真实无线排队控制仍未实现/验证。现有 AE decelerate 的 bool 表示找到并请求，不是 firmware ACK；不能把影子 revoke 或停止新学习当成硬件已清除。常驻 procd 源已提供但未安装/验收，独立路由器 native 守护未接入。数据面变更超出本批临时影子授权，需明确现场范围后执行；三类真人游戏+下载场景未测，大下载丢包 P1 保持未关闭。没有新 fixture、CPU 或旧全量回归。
+
+[本批脱敏证据](../evidence/dorm-v2-shadow.json) · [操作入口与源码](../code/controller/README.md)
+
+## 以下均为冻结历史；以本页上方当前事实为准
+
 # 当前：连续合格NSS控制器已保留
 
 2026-10-08，取消健康代90秒退出和20分钟四次启动限制。合格流持续自动续租；分类/socket6秒新鲜度、native滚动120秒、guardian滚动180秒及失联撤销保持。实际RT mask2连续NSS 196.75秒／393采样校验／65续租，跨原90/120/180秒后主动Stop和完整恢复通过。
