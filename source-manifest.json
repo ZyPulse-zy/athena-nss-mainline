@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T03:39:29.354Z",
+  "generatedAt": "2026-10-08T03:59:52.938Z",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -41955,6 +41955,97 @@
       "sha256": "41b33c54928e73d72cea856d0505dab4da174aa0401fac0111ad87ededbd55aa",
       "bytes": 2054,
       "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/daemon.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/daemon.mjs",
+      "sha256": "58d2f385103466a3b2cfd15a80d85515e62f14755170c35bc5dd9aff581d1456",
+      "bytes": 6471,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/generation-outcome.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/generation-outcome.mjs",
+      "sha256": "18993be02ea0339198197a377614bde7ec086b917d1bb04b6eccbdbd69d69f4d",
+      "bytes": 2715,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/identity.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/identity.mjs",
+      "sha256": "fe13d21afafa613ae2d63f4a4cc4e7710384981c11a85e5b38104df92e6ec281",
+      "bytes": 1275,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/policy.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/policy.mjs",
+      "sha256": "f356a42c507f44cf5c2fa2b8eecc3084ce6a56723e32ce1545a28a6351159f4c",
+      "bytes": 3913,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/qualification.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/qualification.mjs",
+      "sha256": "3a92a1477d30c2f20128e1e00dd95e4be5eac12f4fc4f7e94ec55595d3a3c2d4",
+      "bytes": 3409,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/service-launch.ps1",
+      "workspaceSource": "work/resident-service-dev-d-20261008/service-launch.ps1",
+      "sha256": "46a51ab0be9b8eb25ad0525f8581274b20b40c6f3baf250028cdfd5851d09f5c",
+      "bytes": 1279,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/service.ps1",
+      "workspaceSource": "work/resident-service-dev-d-20261008/service.ps1",
+      "sha256": "f04164b26fcb580faa9173b76aa392b13f297c81a1e002e38da63f991d86a6a6",
+      "bytes": 3725,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/startup-health.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/startup-health.mjs",
+      "sha256": "d31509e307bcaa7cf555f36a8fcc2ccfb18269952b1265c9fee6335975204355",
+      "bytes": 1523,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/storage.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/storage.mjs",
+      "sha256": "d68b5f297056d3cd1a7f9ff251d9239dc6fc63aa9c70b8106e8ea949fe59bd26",
+      "bytes": 3018,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/test-generation-outcome.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/test-generation-outcome.mjs",
+      "sha256": "f759dd752cdc20319f4a319b72b09ccb86234c4868e776dd3373132a5590ac4a",
+      "bytes": 2955,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/test-policy.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/test-policy.mjs",
+      "sha256": "8fa0845b02a6e614d4bacca5744e79a2ff40a083034646d6da27acfb69f9ab00",
+      "bytes": 4789,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/test-storage.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/test-storage.mjs",
+      "sha256": "41b33c54928e73d72cea856d0505dab4da174aa0401fac0111ad87ededbd55aa",
+      "bytes": 2054,
+      "role": "resident-controller-fixed-workspace-resolution"
+    },
+    {
+      "path": "code/work/resident-service-dev-d-20261008/test-workspace.mjs",
+      "workspaceSource": "work/resident-service-dev-d-20261008/test-workspace.mjs",
+      "sha256": "a8a1916a96d02e2341e9b1389a4e7ec0d7faeb8d67e3dd5c00a2e6b1bdcbfd25",
+      "bytes": 4292,
+      "role": "resident-controller-fixed-workspace-resolution"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -41977,5 +42068,5 @@
   "residentDevelopmentExport": "RC1_CONSOLIDATED_DEVELOPMENT_AND_BOUNDED_SOAK",
   "normalResidentExport": "NORMAL_SOURCE_AND_FOUR_GENERATION_BOUNDED_COORDINATION",
   "residentServiceExport": "MANUAL_RESIDENT_PROCESS_NORMAL_FLOW_WAITING",
-  "residentServiceDevBatch": "DEV_C_READONLY_PREREQUISITE_PIPE_REPAIR"
+  "residentServiceDevBatch": "DEV_D_FIXED_WORKSPACE_RESOLUTION"
 }

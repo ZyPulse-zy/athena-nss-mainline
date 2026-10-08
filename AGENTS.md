@@ -1,3 +1,9 @@
+# 当前接续：dev-d进程运行，实际NSS等待合格流
+
+先核对work/resident-service-dev-d-20261008/service.ps1 Status，不重复启动。dev-c异步cwd路径退出已本地复现并修复；48服务检查、11 JS/2 PS语法及实际启动审核通过。当前WAITING_FLOW/0新NSS，未宣称下载游戏丢包解决。旧源码/错误/空锁保留，原入口、数据面及全部保护不变；heartbeat仍暂停。详见docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md。
+
+## 以下保留历史记录
+
 # 当前接续：dev-c运行，实际下载游戏丢包待闭环
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md、RESIDENT_SERVICE.md，并核对work/resident-service-dev-c-20261008/service.ps1 Status，不重复启动。P2前置Lua空值读已修，65入口/37服务本地回归及三WAN只读查询通过。RT1/BULK0、新NSS0，自动准入未暂停。用户60–70%丢包在下载降速后消失；P1体验尚未关闭，不能宣称根因或NSS改善已证实。保持原数据面/准入/期限/恢复，复用历史证明，不操作游戏/制造fixture/重复CPU/逐bug archive；heartbeat仍暂停。

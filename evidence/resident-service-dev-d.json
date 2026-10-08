@@ -1,0 +1,76 @@
+{
+  "developmentBatch": "dev-d",
+  "observedAt": "2026-10-08T03:59:52.946Z",
+  "classification": "P2 controller filesystem and launch status",
+  "originalFailure": {
+    "lastHeartbeatAt": "2026-10-08T03:49:13.539Z",
+    "error": "ENOENT in asynchronous heartbeat while connector temporarily changed cwd",
+    "originalProcessAbsent": true,
+    "generationsStarted": 0,
+    "originalFailureAndSourceBytesPreserved": true
+  },
+  "localRegression": {
+    "passed": true,
+    "serviceChecks": 48,
+    "serviceJavascriptSyntax": 11,
+    "powershellSyntax": 2,
+    "originalTimerCwdFailureReproduced": true,
+    "fixedTimerWritesToOwnedWorkspace": true,
+    "foreignAndTraversalWritesRefused": true,
+    "childNonzeroExitActuallyReadBack": true,
+    "routerAccess": false
+  },
+  "unchanged": {
+    "normalEntry": true,
+    "dataPlane": true,
+    "classification": true,
+    "sourceAndLeaseLimits": true,
+    "checkpointAndIndependentRestore": true
+  },
+  "restart": {
+    "ecmClosedAndZero": true,
+    "gateAbsent": true,
+    "previousEntryRestored": true,
+    "noActiveGeneration": true,
+    "oldEmptyLockPreserved": true,
+    "noForceTermination": true,
+    "onlyOwnedTaskLaunchArgumentsChanged": true,
+    "otherRelatedTasksUnchanged": true,
+    "noLogonStart": true,
+    "noFailureRestart": true
+  },
+  "currentSnapshot": {
+    "state": "WAITING_FLOW",
+    "startedAt": "2026-10-08T03:57:59.470Z",
+    "heartbeatAt": "2026-10-08T03:59:48.744Z",
+    "lastObservation": {
+      "sourceAge": 2.260708800074499,
+      "sourceSequence": 14270,
+      "tcpBulk": 0,
+      "udpRt": 1,
+      "triples": 0
+    },
+    "reads": 4,
+    "readFailures": 0,
+    "generationsStarted": 0,
+    "generationsCompleted": 0,
+    "nssSeconds": 0,
+    "startupHealthPassed": true,
+    "admissionPaused": false,
+    "normalEntryCreatesTraffic": false,
+    "automaticStartAtLogon": false,
+    "uninterruptedNssClaim": false,
+    "running": true,
+    "identityVerified": true,
+    "heartbeatFresh": true,
+    "controllerLockPresent": true,
+    "activeGenerationLockPresent": false
+  },
+  "normalApplicationNssAccelerated": false,
+  "severeDownloadGameLossResolved": false,
+  "newFormalHardwareExperiment": false,
+  "trafficCreated": false,
+  "cs2OrSteamOperated": false,
+  "routerPoliciesChanged": false,
+  "archiveCreated": false
+}
