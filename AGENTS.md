@@ -1,6 +1,14 @@
+# 当前接续：v2 本机服务实测后停用，真人验收延期
+
+先读docs/STATE.md当前段、code/controller/README.md及evidence/dorm-v2-native.json。仅维护code/controller；旧code/work/失败及6304历史源码冻结。32成本槽已有真实多客户端/有线/两AP NSS、逐流/IGS FW ACK、共同上行clsact、119秒无健康固定寿命、活跃stop/reader-loss和手动procd owner退出恢复。最终receipt周期修复96 mock与模块加载通过。本机候选安装停止/关闭自启/无respawn，旧Windows continuous恢复；先Status核对，不重复启动。
+
+用户“先不测试了哈”延期真人验收，不再索要设备/IP/时间或启动游戏/下载。原“可以 那继续吧 直接可以做到最后一步”允许连续相关代码/编译/可恢复验证；保留五WAN/PBR/NAT/代理/Tailscale/管理，不升级/刷机/重启/换EDMA。现网旧.207/Windows/三槽/LAN4/预算仍在，新候选尚未替换生产。不要拼接各轮成绩、以accelerated>0关闭游戏P1、重复旧五WAN/CPU/核心或自动启动24小时观察。开机/无线station/字节覆盖/长期CPU未验；凭据/原CT/MAC/归档/二进制仅本地。
+
+## 以下保留历史，旧范围及“当前”不得覆盖上方事实
+
 # 当前接续：用户 v2 规格，路由器本机影子已实测
 
-先读 docs/STATE.md 当前首段、code/controller/README.md 和 evidence/dorm-v2-shadow.json。主线是全宿舍有线/Wi-Fi 游戏稳定、BULK 借用余量、长期 NSS/QoS；不新增设备公平配额。code/controller 是唯一新维护入口，旧 code/work 和原失败保持冻结。本批仅授权 /tmp 五分钟影子运行，试用已停止清理；不将其解释成新数据面授权。
+先读 docs/STATE.md 当前首段、code/controller/README.md 和 evidence/dorm-v2-shadow.json。主线是全宿舍有线/Wi-Fi 游戏稳定、BULK 借用余量、长期 NSS/QoS；不新增设备公平配额。code/controller 是唯一新维护入口，旧 code/work 和原失败保持冻结。影子试用已停止清理；随后用户明确授权“可以 那继续吧 直接可以做到最后一步”，可连续推进相关代码、编译、可回退现场部署及最终验收。仍保留五 WAN/PBR/NAT/代理/Tailscale/管理通道，不升级、刷机、重启或替换 EDMA。用户提供自己的 Wi-Fi 电脑用于最后验收，具体设备与真人测试时间未给出。
 
 旧 Windows continuous 控制器仍运行，应从原工作区 service.ps1 Status 核对，不重复启动或停止。04d98a3 已取消健康 90 秒与四次限制；.207/Windows/内核三槽/LAN4/18-60实验预算仍在。不要把 shadow 动态表、revoke 或 accelerated=0 宣称成 native 覆盖/固件清除/游戏改善。20模型和目标启停回退已过，未改的旧五WAN/核心/CPU不用重跑。凭据、原始CT/MAC、敏感归档/二进制留本地。后续状态和结果更新同一 STATE，按实际影响测试并集中提交。
 

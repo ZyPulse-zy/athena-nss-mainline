@@ -1,3 +1,28 @@
+# 当前：v2 本机 native 服务已实测，停用待真人验收
+
+2026-10-08，基于main 04d98a3与附件v2（SHA256 2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1）。[维护及操作入口](../code/controller/README.md)，[脱敏证据](../evidence/dorm-v2-native.json)。用户“先不测试了哈”延期真人测试。本机服务已安装停止、关闭自启、无respawn；原Windows continuous恢复。全宿舍游戏质量与长期生产未验收。
+
+| 项目 | 实际事实 |
+| --- | --- |
+| dev-i之后 | 04d98a3已取消健康90秒/四次限制，不重复修复。现网旧入口仍有.207/Windows、三槽、LAN4与18/60预算；新候选已突破范围，尚未替换生产。 |
+| 本机准入 | 32个独立成本槽，init_net/zone0 confirmed CT引用/ID/full mark/original-reply NAT/MAC出口绑定，6秒逐流租约，不按人/设备分带宽；原RT防滥用分类保留。119秒轮观测8客户端，真实CREATE ACK同时最多4客户端，含LAN4/phy0-ap0/phy2-ap0。 |
+| 健康持续与撤销 | 0模式运行118.82秒/52采样/984正常续租/7次逐流FW退休ACK；随后主动结束。活跃stop轮停前3条真实NSS并完整恢复。reader失联修正后定向复验通过、reader回收、nativeOwned0。 |
+| 原始ACK | 原回调完成后发布serial/tuple/generation ACK/NACK；同步屏障/public decel布尔值不冒充固件确认。自然DESTROY后同CI重建开启新周期，旧ACK不能释放新规则；pending重复CREATE不覆盖旧记录。96实际C mock和最终模块实测通过。RAM ECM/act仅符号重定向、executable sections相同，磁盘原模块/NSS driver/EDMA未替换。 |
+| 共同下行 | 物理WAN NSS IGS位于LAN/AP分叉前，软件6秒探测NSS队列+34,021,166 bytes/22,837 packets，WAN RX+39,462,742 bytes；bind/unbind取得FW ACK。native实际RT/BE叶及CREATE IGS tag命中，异步窗口不是精确覆盖率。 |
+| 共同上行 | 物理NSS root无tcf block，postrouting标签单独使用时软件大量落default；自有clsact在MacVLAN/原CAKE后按实际NAT账号/精确RT tuple补标签，五账号叶和RT叶有流量。管理/EAP/ARP/未知保留default，未宣称零字节或全量覆盖。 |
+| 预算与写入者 | 新NSS账号树跟随原CAKE实时预算，接手主要40/70 Mbps；RT优先、BE/BULK借用该账号余量，无设备份额。独立guardian是本后端唯一写入者，原五autorate继续管理CAKE。 |
+| 最终模块/服务 | 最终receipt周期修复实测NSS最大5/停前4，两个CREATE客户端、两个AP出口，回退通过。手动procd PID匹配，持有3条真实NSS时退出owner，独立guardian完成恢复/reader回收/幂等stop与rollback。已安装/usr/lib/athena-dorm-native及/etc/init.d/athena-dorm-native，停止且未enable；开机未测。 |
+| 受影响验证 | 21策略模型、96实际receipt C mock、目标NFT空表解析/公开prepare、6.18.44构建/加载通过。mock不是硬件证明，不重复未改旧五WAN/CPU/核心套件。 |
+| 最终现场 | 新模块/规则/IFB/进程/锁为零，RAM清理；46原qdisc结构及非速率选项一致。rpwan1：接手40、最终47.305 Mbps，原autorate运行，未强制改回。保护文件/磁盘模块哈希相同，五WAN/认证/autorate/分类/代理/Tailscale正常；五bridge、mwan0、stop4/6=1、NSS0。旧continuous WAITING_FLOW，身份/心跳新鲜，2读取/0失败/0新代。 |
+
+已集中修复现场qdisc kind/root filter EINVAL、Lua高uint32/errno位置/full snapshot大小、NFT行结束/空elements及重新CREATE旧ACK。119秒健康阶段之后的reader故障曾发现空NFT语法错误并完成恢复；修正后直接复验通过。reader-loss轮最大NSS16，但终止reader时已经0，不能写成“持有16条时故障”；各轮并发与客户端成绩不拼接。
+
+未验收：三类真人游戏加下载、同机Wi-Fi firmware/station RT队列、符合资格业务的NSS字节/包覆盖、混合路径时延/吞吐、原CAKE再经过NSS的额外排队、实际开机/重启恢复、长期CPU/softirq预算。IGS部分绑定失败恢复仅mock，未现场注入。24小时观察未启动，也不是本轮门槛。
+
+回退基线：work/baseline有效Git bundle及327条目/479574字节私有归档（SHA256 e1b7c1f022fc66820b96a76c9f3035ece7ff90524a4e8cda62e4de851cba6898）；原CT/失败/模块/构建保留work/native-review和work/native-build，不发布。只恢复本批对象，不用旧大包覆盖新配置。未升级/刷机/重启/换EDMA。
+
+## 以下保留历史，旧范围及“当前”不得覆盖上方事实
+
 # 当前：v2 接手完成，路由器本机影子服务已实测
 
 2026-10-08。本批以用户附件 v2 为规格（SHA256 2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1），接手 main 04d98a3；原本机 checkout 干净，远端 main 同步。当前维护入口是 [code/controller](../code/controller/README.md)，本批只发布影子后端。**全宿舍 NSS/QoS 和游戏体验目标尚未完成。**

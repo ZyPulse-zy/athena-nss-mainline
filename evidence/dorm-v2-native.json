@@ -1,0 +1,517 @@
+{
+  "version": 2,
+  "capturedAt": "2026-10-08T15:21:12.275Z",
+  "repository": "ZyPulse-zy/athena-nss-mainline",
+  "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
+  "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
+  "method": "Passive normal client traffic; no traffic fixture, game launch, reboot, flash, firmware/kernel/EDMA upgrade.",
+  "implementation": {
+    "routerLocal": true,
+    "ctNamespace": "init_net",
+    "ctZone": 0,
+    "capacity": 32,
+    "capacityMeaning": "Controller cost bound, not firmware capacity or per-device quota",
+    "leaseSeconds": 6,
+    "readerHeartbeatLossSeconds": 8,
+    "healthySessionLimitSeconds": null,
+    "perDeviceQuotas": false,
+    "sharedDownstream": "Physical WAN NSS IGS before LAN/AP exits",
+    "sharedUpstream": "Physical WAN NSS HTB with host clsact egress tagging after MacVLAN/CAKE",
+    "nativeBootServiceInstalled": true,
+    "nativeBootEnabled": false,
+    "nativeAutomaticRespawn": false,
+    "existingClassifierRtAbuseProtectionsPreserved": true
+  },
+  "tests": {
+    "flowPolicyModels": {
+      "passed": true,
+      "count": 21,
+      "target": "Existing router Lua 5.1"
+    },
+    "receiptModuleModels": {
+      "passed": true,
+      "count": 96,
+      "mockedTransport": true,
+      "firmwareProof": false,
+      "includes": "Natural DESTROY then same-CI CREATE resets deletion cycle; pending duplicate CREATE preserves original; late callback ownership; affected-only retirement; IGS partial-bind recovery"
+    },
+    "emptyNftMap": {
+      "emptyMapParsed": true,
+      "mockedKernel": true,
+      "passed": true,
+      "dataPlaneWrites": false
+    },
+    "publicPrepare": {
+      "privateBaseline": true,
+      "kernel": "6.18.44",
+      "prepared": true,
+      "dataPlaneWrites": false
+    },
+    "healthyContinuous": {
+      "seconds": 118.816,
+      "configuredSessionLimitSeconds": 0,
+      "statusSamples": 52,
+      "maxAccelerated": 8,
+      "minSampledAccelerated": 1,
+      "maxActualCreatedClients": 4,
+      "actualCreatedExits": [
+        "phy0-ap0",
+        "lan4",
+        "phy2-ap0"
+      ],
+      "retireFirmwareAcks": 7,
+      "endedBy": "Explicit reader termination after normal interval",
+      "postTerminationError": "Empty nft map syntax rejected; independent rollback restored baseline. Fixed and retested below.",
+      "renewalsBeforeTermination": 984,
+      "renewalsAfterFault": 989
+    },
+    "activeStop": {
+      "maxAccelerated": 12,
+      "acceleratedImmediatelyBeforeStop": 3,
+      "retireFirmwareAcks": 11,
+      "readerReaped": true,
+      "rollbackConfirmed": true
+    },
+    "correctedReaderLoss": {
+      "maxAccelerated": 16,
+      "acceleratedBeforeReaderTermination": 0,
+      "retireFirmwareAcks": 16,
+      "readerReaped": true,
+      "rollbackConfirmed": true,
+      "executionError": null,
+      "afterStopNativeOwned": 0
+    },
+    "finalReceiptModuleIntegration": {
+      "maxAccelerated": 5,
+      "acceleratedImmediatelyBeforeStop": 4,
+      "maxActualCreatedClients": 2,
+      "actualCreatedExits": [
+        "phy0-ap0",
+        "phy2-ap0"
+      ],
+      "observedClients": 9,
+      "renewals": 188,
+      "retireFirmwareAcks": 1,
+      "readerReaped": true,
+      "rollbackConfirmed": true,
+      "afterStopNativeOwned": 0,
+      "executionError": null,
+      "usesFinalReceiptCycleFix": true
+    },
+    "nativeManualProcd": {
+      "installed": true,
+      "running": false,
+      "bootEnabled": false,
+      "autoRespawn": false,
+      "foregroundPidVerified": true,
+      "maxAccelerated": 3,
+      "acceleratedBeforeOwnerExit": 3,
+      "ownerExitRollbackConfirmed": true,
+      "ownerExited": true,
+      "readerReaped": true,
+      "executionError": null,
+      "stopPassed": true,
+      "rollbackPassed": true,
+      "capturedAt": "2026-10-08T14:55:11.854Z"
+    }
+  },
+  "firmwareCreateTagExamples": [
+    {
+      "flow": "7e560006",
+      "reply": "7a560006",
+      "igsFlow": "0",
+      "igsReply": "7a56"
+    },
+    {
+      "flow": "7e360006",
+      "reply": "7a360006",
+      "igsFlow": "0",
+      "igsReply": "7a36"
+    },
+    {
+      "flow": "7e450000",
+      "reply": "7a450000",
+      "igsFlow": "0",
+      "igsReply": "7a45"
+    },
+    {
+      "flow": "7e150000",
+      "reply": "7a150000",
+      "igsFlow": "0",
+      "igsReply": "7a15"
+    },
+    {
+      "flow": "7e460006",
+      "reply": "7a460006",
+      "igsFlow": "0",
+      "igsReply": "7a46"
+    },
+    {
+      "flow": "7e550000",
+      "reply": "0",
+      "igsFlow": "0",
+      "igsReply": "7a55"
+    },
+    {
+      "flow": "7e450000",
+      "reply": "0",
+      "igsFlow": "0",
+      "igsReply": "7a45"
+    },
+    {
+      "flow": "7e550000",
+      "reply": "7a550000",
+      "igsFlow": "0",
+      "igsReply": "7a55"
+    },
+    {
+      "flow": "7e350000",
+      "reply": "0",
+      "igsFlow": "0",
+      "igsReply": "7a35"
+    },
+    {
+      "flow": "7e250000",
+      "reply": "0",
+      "igsFlow": "0",
+      "igsReply": "7a25"
+    },
+    {
+      "flow": "7e260006",
+      "reply": "0",
+      "igsFlow": "0",
+      "igsReply": "7a25"
+    },
+    {
+      "flow": "7e460006",
+      "reply": "0",
+      "igsFlow": "0",
+      "igsReply": "7a45"
+    },
+    {
+      "flow": "7e350000",
+      "reply": "7a350000",
+      "igsFlow": "0",
+      "igsReply": "7a35"
+    },
+    {
+      "flow": "7e250000",
+      "reply": "7a250000",
+      "igsFlow": "0",
+      "igsReply": "7a25"
+    }
+  ],
+  "queueLeafSamples": {
+    "captureKind": "Asynchronous firmware counters; sums are not byte coverage or throughput",
+    "correctedAccountEgress": [
+      {
+        "kind": "nsshtb",
+        "handle": "7a00",
+        "bytes": 68455599,
+        "packets": 63273
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a45",
+        "bytes": 15090081,
+        "packets": 12584
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a36",
+        "bytes": 7020,
+        "packets": 71
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a25",
+        "bytes": 7791567,
+        "packets": 6704
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a55",
+        "bytes": 5539376,
+        "packets": 6920
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a16",
+        "bytes": 9173,
+        "packets": 40
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a46",
+        "bytes": 348427,
+        "packets": 760
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7aff",
+        "bytes": 469555,
+        "packets": 1400
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a35",
+        "bytes": 38830037,
+        "packets": 25887
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a26",
+        "bytes": 12968989,
+        "packets": 14233
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a15",
+        "bytes": 3754362,
+        "packets": 5077
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7a56",
+        "bytes": 71882,
+        "packets": 85
+      },
+      {
+        "kind": "nsshtb",
+        "handle": "7e00",
+        "bytes": 12207532,
+        "packets": 55933
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e56",
+        "bytes": 7151,
+        "packets": 71
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e45",
+        "bytes": 2034270,
+        "packets": 11421
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e36",
+        "bytes": 5442,
+        "packets": 67
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e25",
+        "bytes": 1096071,
+        "packets": 6611
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e16",
+        "bytes": 10020,
+        "packets": 43
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e55",
+        "bytes": 1733576,
+        "packets": 6877
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e46",
+        "bytes": 37125,
+        "packets": 537
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e35",
+        "bytes": 2553555,
+        "packets": 25587
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7eff",
+        "bytes": 6874,
+        "packets": 39
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e26",
+        "bytes": 4051306,
+        "packets": 7724
+      },
+      {
+        "kind": "nssfq_codel",
+        "handle": "7e15",
+        "bytes": 1764296,
+        "packets": 5570
+      },
+      {
+        "kind": "clsact",
+        "handle": "ffff",
+        "bytes": 81222971,
+        "packets": 121242
+      }
+    ]
+  },
+  "build": {
+    "passed": true,
+    "kernel": "6.18.44",
+    "kernelChanged": false,
+    "originalEcmSha256": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2",
+    "originalDriverSha256": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+    "originalIngressSha256": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb",
+    "ecmExecutableSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".text.unlikely",
+      ".init.text",
+      ".exit.text"
+    ],
+    "ingressExecutableSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".init.text",
+      ".exit.text",
+      ".text.unlikely"
+    ],
+    "installedIfMessageBytes": 96,
+    "gate": {
+      "sha256": "b89bfcc9d2ddfacf67ed8e4751fa9524028cf7f29e7f7b24ea95f2f5f64d59a7",
+      "bytes": 122920
+    },
+    "receipts": {
+      "sha256": "b970baa806104cfc4bd146bf47394027f4e3c5b96680f7f8c9e5144359a94dee",
+      "bytes": 132904
+    },
+    "sourceHashes": {
+      "athena_ecm_gate.c": "5cf65bbfad2e1b3f4a23b830a7ebc74b2c52009f885c86a6800ab3d67b69ad8a",
+      "athena_nss_receipts.c": "74d1eac190d1afec8b2e96ccf96559d738affef4140557d03cda0f3557ee03df",
+      "build.py": "d4ae13631c6295945bd0b77faf9350faea67fe0a1c919e5a82beaa4c24d7a6e2",
+      "ecm_ae_classifier_public.h": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "Makefile": "57161558b522da5a56a32d29187fc0dcf3d5c1f386fae5577c4d9b7d5ed5c13f",
+      "receipts.h": "162d18a0cfc96f369aa6dc476d7c5c2534d70870d6faed41a66ad75ba33fa42b",
+      "test-receipts.c": "519f15d781d7f0c8d1f269e0a8f72df54e5dc1f799f1fae08be2b8a4a96a0a7c",
+      "test-receipts.py": "451ad6463f78575abeb0b5db0811c494483460e6c0e38794d629e5d3aea822e6"
+    }
+  },
+  "final": {
+    "passed": true,
+    "capturedAt": "2026-10-08T15:15:53.682Z",
+    "queuesUnchanged": false,
+    "queueTopologyAndNonRateOptionsUnchanged": true,
+    "qdiscCount": 46,
+    "autorateBandwidthChanges": [
+      {
+        "dev": "rpwan1",
+        "beforeBitsPerSecond": 40000000,
+        "currentBitsPerSecond": 47305000,
+        "originalAutorateRunning": true
+      }
+    ],
+    "existingServicesRunning": true,
+    "protectedUnchanged": true,
+    "wans": [
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "name": "wan1",
+        "up": true
+      },
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "name": "wan2",
+        "up": true
+      },
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "name": "wan3",
+        "up": true
+      },
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "name": "wan4",
+        "up": true
+      },
+      {
+        "addressPresent": true,
+        "mode": "bridge",
+        "name": "wan5",
+        "up": true
+      }
+    ],
+    "services": {
+      "router-project-minieap": {
+        "wan5": true,
+        "wan4": true,
+        "wan1": true,
+        "wan2": true,
+        "wan3": true
+      },
+      "sing-box-athena": {
+        "core": true,
+        "guard": true
+      },
+      "router-project-game-classifier": {
+        "classifier": true,
+        "guardian": true
+      },
+      "tailscale-athena": {
+        "daemon": true,
+        "integration": true
+      },
+      "router-project-autorate": {
+        "wan5": true,
+        "wan4": true,
+        "wan1": true,
+        "wan2": true,
+        "wan3": true
+      }
+    },
+    "nativeProcesses": 0,
+    "lockPresent": false,
+    "tagOwnerPresent": false,
+    "modules": {
+      "qca_nss_qdisc": false,
+      "athena_nss_receipts": false,
+      "ecm": true,
+      "athena_ecm_gate": false,
+      "act_nssmirred": false
+    },
+    "accelerated4": 0,
+    "accelerated6": 0,
+    "mwan": 0,
+    "originalModuleHashesUnchanged": true,
+    "temporaryNativeFilesRemoved": true,
+    "nativeServiceInstalled": true,
+    "nativeServiceRunning": false,
+    "nativeBootEnabled": false,
+    "legacyController": {
+      "state": "WAITING_FLOW",
+      "running": true,
+      "identityVerified": true,
+      "heartbeatFresh": true,
+      "reads": 2,
+      "readFailures": 0,
+      "generationsStarted": 0,
+      "activeGeneration": false
+    }
+  },
+  "unresolved": [
+    "User deferred three real wired/Wi-Fi game/download acceptance scenarios",
+    "Wi-Fi firmware per-station RT QoS and same-device game/download quality not verified",
+    "Eligible traffic byte/packet NSS coverage and mixed-path latency/throughput not measured",
+    "Software path retains CAKE before NSS; additional queueing impact not measured",
+    "Actual boot/reboot recovery and long-term CPU/softirq budget not verified",
+    "IGS partial-bind failure recovery mocked but not deliberately injected on hardware"
+  ],
+  "rawConntrackMacAddressesCredentialsAndBinariesIncluded": false,
+  "releaseState": "Native manual procd installed, tested and stopped; boot disabled; existing production controller restored; whole-dorm game quality not accepted"
+}

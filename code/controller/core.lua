@@ -101,7 +101,7 @@ function M.tick(state, projection, full, topology, now)
           if previous and previous.binding~=binding then retire(key,'client-or-egress-changed'); previous=nil end
           local class=({RT=true,BULK=true,BE=true,UNKNOWN=true})[d.class] and d.class or 'UNKNOWN'
           local candidate=binding and ((class=='RT' and d.budgetAdmitted==true) or
-            (class=='BULK' and d.reason=='bulk')) or false
+            (class=='BULK' and d.reason=='bulk') or (cfg.includeBestEffort==true and class=='BE')) or false
           -- QoS class and actual acceleration are separate. No unverified Wi-Fi
           -- or shared-budget path is silently enabled by discovery.
           local e={key=key,connectionId=tonumber(i.connectionId),zone=0,namespace='init_net',

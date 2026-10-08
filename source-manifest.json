@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T12:06:34.503Z",
+  "generatedAt": "2026-10-08T15:22:16.949Z",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -44195,6 +44195,174 @@
       "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
       "bytes": 14,
       "role": "router-local-source-line-endings"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "18434109642556034c5a4589c6c1c96b5649e40bc68522277340ee2e40368d6b",
+      "bytes": 5292,
+      "role": "router-native-maintenance-documentation",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/athena-qos",
+      "workspaceSource": "code/controller/athena-qos",
+      "sha256": "fd8326399a2b91888c9337eaaae5cf3834edf3e8fb9753f37386472de0db0260",
+      "bytes": 2152,
+      "role": "router-local-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/core.lua",
+      "workspaceSource": "code/controller/core.lua",
+      "sha256": "857c0633d37d1d3438191e4822f63706eca68c96f5e32885f59215baa18359aa",
+      "bytes": 8730,
+      "role": "router-local-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/Makefile",
+      "workspaceSource": "code/controller/native/Makefile",
+      "sha256": "57161558b522da5a56a32d29187fc0dcf3d5c1f386fae5577c4d9b7d5ed5c13f",
+      "bytes": 58,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/athena_ecm_gate.c",
+      "workspaceSource": "code/controller/native/athena_ecm_gate.c",
+      "sha256": "5cf65bbfad2e1b3f4a23b830a7ebc74b2c52009f885c86a6800ab3d67b69ad8a",
+      "bytes": 13351,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/athena_nss_receipts.c",
+      "workspaceSource": "code/controller/native/athena_nss_receipts.c",
+      "sha256": "74d1eac190d1afec8b2e96ccf96559d738affef4140557d03cda0f3557ee03df",
+      "bytes": 16709,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/build.py",
+      "workspaceSource": "code/controller/native/build.py",
+      "sha256": "d4ae13631c6295945bd0b77faf9350faea67fe0a1c919e5a82beaa4c24d7a6e2",
+      "bytes": 8984,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/ecm_ae_classifier_public.h",
+      "workspaceSource": "code/controller/native/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/ingress_probe.lua",
+      "workspaceSource": "code/controller/native/ingress_probe.lua",
+      "sha256": "5aa86300b9b9ba7b61371aa6ee023d41bead197d51b95e8d4c3addf68a0a5c38",
+      "bytes": 7204,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/init.sh",
+      "workspaceSource": "code/controller/native/init.sh",
+      "sha256": "d83134a6116d3b06c48a01903bbcacdb354be905713cecaf5019c12ad433ab45",
+      "bytes": 855,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "workspaceSource": "code/controller/native/launch.sh",
+      "sha256": "bbb4974f1a4eaad9aa96383092b5cdc52b8fb37857b6a50ab69b398fb0cfaf0b",
+      "bytes": 836,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/prepare.lua",
+      "workspaceSource": "code/controller/native/prepare.lua",
+      "sha256": "957402e739145af6a0850e17c23782820531bcfc5d1b33c46c57793e0bfcab2a",
+      "bytes": 1883,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/queue_plan.lua",
+      "workspaceSource": "code/controller/native/queue_plan.lua",
+      "sha256": "9af524f9c5e8ef7cb9b53cad17a790e6492464ec1d3a677c92def1b63cf9a997",
+      "bytes": 1775,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/reader.lua",
+      "workspaceSource": "code/controller/native/reader.lua",
+      "sha256": "110908f01c74bbb7292954327b47c804dea281fe9b6766a6d806f5daaed6ceb0",
+      "bytes": 1064,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/receipts.h",
+      "workspaceSource": "code/controller/native/receipts.h",
+      "sha256": "162d18a0cfc96f369aa6dc476d7c5c2534d70870d6faed41a66ad75ba33fa42b",
+      "bytes": 880,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/test-receipts.c",
+      "workspaceSource": "code/controller/native/test-receipts.c",
+      "sha256": "519f15d781d7f0c8d1f269e0a8f72df54e5dc1f799f1fae08be2b8a4a96a0a7c",
+      "bytes": 6988,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/test-receipts.py",
+      "workspaceSource": "code/controller/native/test-receipts.py",
+      "sha256": "451ad6463f78575abeb0b5db0811c494483460e6c0e38794d629e5d3aea822e6",
+      "bytes": 1436,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/test-writer.lua",
+      "workspaceSource": "code/controller/native/test-writer.lua",
+      "sha256": "0beb58687d9b81efae00370ed3049c9a4feafc383c4158289f082411e9ed3b79",
+      "bytes": 1837,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "workspaceSource": "code/controller/native/transaction.lua",
+      "sha256": "784d9f39f4b32470ebff8b3fa14ddac78c929ee49ed612f9458ab99239a49937",
+      "bytes": 15326,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "workspaceSource": "code/controller/native/writer.lua",
+      "sha256": "edd583b916f2517b782cf8fd87f5d7675002f07eb36c47a69ada6924fc757066",
+      "bytes": 11634,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
+    },
+    {
+      "path": "code/controller/test-core.lua",
+      "workspaceSource": "code/controller/test-core.lua",
+      "sha256": "6265832161e824ed445db17e94714c6fee458d68e8f7796dfc4942744c5a0195",
+      "bytes": 6715,
+      "role": "router-local-controller-source-or-test",
+      "revision": "dorm-v2-native-manual-procd"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44219,5 +44387,6 @@
   "residentServiceExport": "MANUAL_RESIDENT_PROCESS_NORMAL_FLOW_WAITING",
   "residentServiceDevBatch": "DEV_H_INDEPENDENT_ELIGIBLE_FLOW_ADMISSION_CANDIDATE",
   "independentAdmissionIntegration": "RT_ONLY_BOUNDED90_AND_RESTORED",
-  "lastContinuousResidentExport": "ROLLING_QUALIFIED_RESIDENCY_INTEGRATED_AND_RETAINED"
+  "lastContinuousResidentExport": "ROLLING_QUALIFIED_RESIDENCY_INTEGRATED_AND_RETAINED",
+  "lastRouterLocalExport": "DORM_V2_NATIVE_MANUAL_PROCD_VERIFIED_STOPPED_BOOT_DISABLED"
 }

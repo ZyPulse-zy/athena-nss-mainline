@@ -81,4 +81,8 @@ c=collector.resolve(n,{}, {},station,100)
 check(c[n[1].dst].valid and c[n[1].dst].wireless,'Station association resolves an NSS-offloaded wireless exit')
 station[2]={mac=n[1].lladdr,ifname='phy0-ap0'};c=collector.resolve(n,{}, {},station,100)
 check(not c[n[1].dst].valid,'Ambiguous roaming does not select an old AP')
+local nativeCfg=copy(cfg);nativeCfg.includeBestEffort=true
+local bePub=pub({flow(7,'192.168.237.11','BE')});local beState=core.new(nativeCfg)
+local beResult=core.tick(beState,bePub,bePub,topology,10)
+check(beResult.summary.candidates==1 and beResult.flows[1].class=='BE','Shared-account native profile may admit validated best effort without a client quota')
 print(require('luci.jsonc').stringify({passed=true,checks=checks,modelOnly=true,routerNetworkWrites=false}))

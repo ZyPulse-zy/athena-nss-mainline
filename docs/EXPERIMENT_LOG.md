@@ -1,3 +1,13 @@
+# 2026-10-08：v2 本机服务和完整恢复
+
+原kernel/NSS/EDMA保持；gate/receipt真实编译加载，RAM ECM/act符号重定向而executable sections相同。真实CT pin/单流撤销、CREATE/DESTROY原始ACK、IGS bind/unbind ACK和6秒软件共同下行已执行。软件上行初落default/root filter EINVAL，clsact在原CAKE后补标签修复，五账号/RT叶取得流量。
+
+无固定健康期限轮118.82秒、NSS最大8/FW最多4客户端/有线和两AP；活跃stop轮最大12/停前3；reader-loss轮最大16/故障前0，各轮不拼接。119秒后的故障阶段NFT空表错误修正并定向复验。receipt自然DESTROY再CREATE周期修复后96 mock通过，最终模块最大5/停前4/完整恢复。
+
+手动procd安装/PID所有权、持有3条NSS时owner退出、独立恢复/reader回收和幂等stop/rollback通过。新服务停止/关闭自启/无respawn，RAM清理，旧continuous恢复。46原qdisc结构与非速率选项一致，原autorate速率变化单列证据；保护文件/原模块哈希及五WAN服务保持。21策略/96 receipt mock及目标prepare/NFT/编译通过。没有游戏/下载夹具、CPU压力、拔电、升级、重启或EDMA更换。真人测试延期。[脱敏证据](../evidence/dorm-v2-native.json)。
+
+## 以下保留历史，旧范围及“当前”不得覆盖上方事实
+
 # 2026-10-08：v2 接手与授权临时影子实测
 
 取得真实附件 v2，核对 main 04d98a3 和 dev-i 后进度，保存 Git bundle/327 条目敏感归档。复用全 LAN 分类器，新增唯一 code/controller 维护目录及动态按流影子状态。20 个受影响模型在目标 Lua 5.1 执行通过，没有新网络 fixture 或旧核心重测。

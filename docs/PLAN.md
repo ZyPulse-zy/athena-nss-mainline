@@ -1,3 +1,11 @@
+# v2 实际完成与未验收项
+
+本机全LAN准入、逐流FW ACK、共同IGS/上行clsact、实时账号预算、独立恢复、统一入口及手动procd服务已实现并实测。[STATE](STATE.md)列出证据。新服务安装后停止/关闭自启，旧continuous恢复运行。
+
+用户延期三类真人游戏测试；Wi-Fi station队列、NSS字节覆盖、混合队列质量、实际开机恢复与长期CPU预算待验。本轮不重复旧五WAN/CPU，不造流量夹具，不自动启动24小时观察。继续维护同一code/controller，未验证的生产质量不能标为完成。
+
+## 以下保留历史，旧范围及“当前”不得覆盖上方事实
+
 # v2 本批执行结果与当前接续
 
 已完成实际仓库/现场核验、敏感回退基线、路由器本机全 LAN 动态影子表、相关 20 项模型和 /tmp 运行中的 status/start/stop/rollback。事实集中在 [STATE](STATE.md)，源码统一在 [code/controller](../code/controller/README.md)，不复制新的逐 bug 版本。

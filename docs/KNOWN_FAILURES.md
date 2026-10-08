@@ -1,3 +1,11 @@
+# v2 当前问题
+
+本批恢复全部确认，没有未确认回退的P0。uint32/errno/full snapshot、qdisc kind/root filter、NFT空表及同CI重新CREATE旧ACK问题已修复并定向验证。物理NSS root无tcf block，用自有clsact完成软件上行标签。96 receipt mock及最终模块加载通过；IGS partial-bind故障仅mock，未现场注入。
+
+P1仍为三类游戏质量、同机Wi-Fi固件队列、符合资格流NSS字节覆盖及混合队列质量；用户延期真人测试。手动procd/持有3条NSS时owner退出恢复已通过，实际开机和长期CPU/softirq未测。現网仍用旧Windows continuous，.207/三槽/LAN4/旧预算仍存在；停用的新候选不等于生产已经替换。
+
+## 以下保留历史，旧范围及“当前”不得覆盖上方事实
+
 # v2 当前未关闭问题
 
 P1：全宿舍有线/Wi-Fi 游戏稳定及下载利用余量尚未验收。旧 NSS 仍固定 .207/Windows/三槽/LAN4，旧 DOWN18/UP60 只是实验预算。新影子流表与软件状态撤销已运行验证，但没有动态 native permit、固件逐流 ACK、无线队列和共同容量控制。旧健康 90 秒/四次限制已取消，不重复修复。

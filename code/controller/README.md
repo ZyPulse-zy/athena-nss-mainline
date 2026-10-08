@@ -1,31 +1,60 @@
-# 路由器本机的宿舍 QoS 影子控制器
+# Athena 路由器本机宿舍 QoS
 
-复用现网 NSS68 分类发布，观察整个 LAN 的 IPv4 conntrack；读取 DHCP、邻居、桥 FDB 和 AP station，识别真实有线/Wi-Fi 出口。Windows、固定 `.207` 和固定三种槽位不参与这个控制器的候选选择。
+code/controller是唯一维护目录，包含影子与实际加载过的native候选。新后端读取整个LAN，不依赖Windows/.207，32个独立CT成本槽，不按人/设备分带宽。[当前状态](../../docs/STATE.md)，[真实证据](../../evidence/dorm-v2-native.json)。本机服务已安装手动验证，当前停止/关闭自启/无respawn；现网仍用旧continuous，真人游戏测试延期。
 
-**本目录目前只发布影子后端。** `mode` 只接受 `shadow`，实际加速数始终为零，不写 tc/nft/conntrack/ECM，也不停止旧控制器。动态表和 `revoke` 输出是观察状态与撤销意图，不能代替内核 gate、固件删除确认或无线队列验证。旧 NSS 入口仍有三槽限制。
+## 已安装服务的操作
 
-`core.lua` 保存完整 original/reply、CT ID/zone/mark、客户端绑定及独立六秒租约；完整同序列快照缺流只撤销该流，投影缺失只停止续租。`collector.lua` 复用已安装的工具。`service.lua` 每两秒采样并发布摘要，`athena-qos` 提供统一控制。RT/BULK 类别和实际加速分开，不增加设备配额。
-
-默认上限是 2048 个观察记录、32 个影子候选，RT 优先，其余保留软件路径；这些是控制器开销参数，不是硬件表容量证明。未知/代理/IPv6 保留现有路径。当前 IPv4 subnet 在 `config.example.json` 配置。
-
-## 已授权的临时运行方式
-
-将本目录的 `core.lua`、`collector.lua`、`service.lua`、`config.example.json`、`athena-qos` 放进已核对的自有 `/tmp/athena-dorm-qos-review`，然后执行：
+在路由器root会话中使用：
 
 ```sh
-export ATHENA_QOS_BASE=/tmp/athena-dorm-qos-review
-export ATHENA_QOS_TEMPORARY=1
-export ATHENA_QOS_TEST_SECONDS=120
+sh /usr/lib/athena-dorm-native/athena-qos status
+sh /usr/lib/athena-dorm-native/athena-qos start
+sh /usr/lib/athena-dorm-native/athena-qos status
+sh /usr/lib/athena-dorm-native/athena-qos stop
+sh /usr/lib/athena-dorm-native/athena-qos rollback
+```
+
+**启动前从原Windows工作区停止旧continuous，确认STOPPED/restorationPassed；“当前无活跃代”不能排除下一次竞争。** 原入口为旧任务目录work/resident-continuous-dev-20261008/service.ps1 -Mode Stop/Status。新候选停止回退后，用原入口-Mode Start恢复旧控制器；不同时运行两套准入写入者。
+
+start是异步procd请求，返回不代表数据面就绪；status应确认native-running、owner PID、actual accelerated与CREATE ACK。独立setsid guardian用PID/start token检查owner，退出时恢复；默认无健康固定期限。未执行开机/重启验证，也未enable。init service的inspect提供JSON，rc.common的status只表示进程状态。
+
+stop/rollback等guardian关准入、逐流撤销/FW确认、回收reader、IGS RESET/CLEAR确认及还原原MACVLAN bridge/mwan/ECM/root；重复rollback幂等。未知删除/NACK时保留锁/模块/私有日志并报告未确认，不强行释放。status.json/guardian-private.log位于root私有/tmp/athena-dorm-native；只清理明确自有文件，不拿旧全量归档覆盖新配置。
+
+## 数据和队列路径
+
+core.lua/collector.lua及native/reader.lua只读现网分类/DHCP/neigh/FDB/AP/完整CT，发布init_net/zone0 confirmed CT ID、full mark、original/reply NAT、MAC/出口绑定和6秒到期。native/writer.lua由独立guardian单独执行native/tc/nft；reader心跳失联8秒恢复。健康owned流不因排名波动撤销；新RT可逐条替换BE/BULK，等旧流真实FW删除ACK后重用。
+
+athena_ecm_gate.c持有独立CT/CI引用与租约，athena_nss_receipts.c转发原消息/回调，原回调完成后发布serial/tuple/generation ACK/NACK。自然DESTROY后重新CREATE重置确认周期，pending重复CREATE不覆盖旧记录。同步屏障/public decel布尔值不是FW ACK；未知/代理/IPv6保持软件。
+
+下行物理WAN NSS IGS在LAN/AP分叉前；上行物理WAN NSS HTB，host clsact在MacVLAN/原CAKE后补实际NAT账号/精确RT标签。新NSS树跟随CAKE实时账号预算，接手主要40/70 Mbps，RT优先、BE/BULK借用账号余量。原五autorate与RT防滥用分类保持，管理/非IP/未知保留default。原CAKE再经过NSS的额外排队、全量覆盖及Wi-Fi firmware station质量未验收。
+
+## 构建与临时试用
+
+仅针对已验证Athena ARM64 6.18.44/MODVERSIONS-disabled及原模块ABI。在私有目录放原ecm.ko/qca-nss-drv.ko/act_nssmirred.ko，使用已有prepared kernel/toolchain：
+
+```sh
+python3 code/controller/native/build.py --kernel PREPARED_KERNEL --toolchain CROSS_BIN --ecm PRIVATE/ecm.ko --driver PRIVATE/qca-nss-drv.ko --output PRIVATE_BUILD
+```
+
+build.py不连接路由器，在私有kernel copy构建并校验导出/消息尺寸。ECM/act RAM副本executable sections相同，磁盘原kernel/NSS/ECM/act与EDMA保持；零CRC不是通用ABI保证。构建物仅私有、不提交Git。
+
+把native运行Lua、四个构建.ko/build-result.json及父目录core.lua/collector.lua/athena-qos平铺到私有/tmp/athena-dorm-native（0700/文件0600）。停止旧控制器且保存基线后：
+
+```sh
+lua /tmp/athena-dorm-native/prepare.lua
+export ATHENA_QOS_BASE=/tmp/athena-dorm-native
+export ATHENA_QOS_BACKEND=native
+export ATHENA_QOS_NATIVE_SECONDS=120
 sh "$ATHENA_QOS_BASE/athena-qos" start
 sh "$ATHENA_QOS_BASE/athena-qos" status
 sh "$ATHENA_QOS_BASE/athena-qos" stop
 sh "$ATHENA_QOS_BASE/athena-qos" rollback
 ```
 
-测试内部期限可选 1–290 秒，独立 `timeout` 强制上限 300 秒。此上限只用于临时影子试用；普通 `run` 没有健康服务固定寿命。启动必须观察到新心跳才成功；停止/回退只等待自有进程退出，失败会明确返回非零。`rollback` 也可在运行中调用，其回退范围只有影子服务。
-
-常驻安装的候选路径为 `/usr/lib/athena-dorm-qos`，`init.sh` 是 procd 服务源；本批没有写入 `/etc/init.d`、启用自启或实际测试 procd 启停。不得将常驻安装或数据面写入视为临时试用授权。
+prepare只写自有RAM pins并核对构建/保护配置。0无固定健康期限，1–290临时期限。前提是原root/五bridge及ECM无其它owner；五private/mwan1仅候选期生效，MAC/index/IP/认证/PBR保持。已安装native/launch.sh会从/usr/lib/athena-dorm-native平铺上述文件、prepare并foreground 0；native/init.sh对应/etc/init.d/athena-dorm-native，无需再安装或enable。
 
 ## 验证
 
-目标路由器已有 Lua 5.1、luci.jsonc、nixio，以及 ip/brctl/iw。模型测试可执行 `lua ./code/controller/test-core.lua`，不制造网络流量；模型不能证明游戏体验。现场结果及回退基线见 [STATE](../../docs/STATE.md) 和 [脱敏证据](../../evidence/dorm-v2-shadow.json)。
+21策略模型（目标Lua5.1）、实际receipt C的96 mock、目标nft -c空表/prepare、6.18.44编译/加载；119秒续租/逐流FW ACK、活跃stop、reader退出、手动procd持有3条NSS时owner退出后的独立恢复。IGS部分绑定失败恢复仅mock，未现场注入。各轮最大8/12/16/5条不能当成一次并发成绩，详情见STATE。
+
+影子默认ATHENA_QOS_BACKEND=shadow，原service.lua/config.example.json和同一入口，设置ATHENA_QOS_TEMPORARY=1/ATHENA_QOS_TEST_SECONDS=120后使用start/status/stop/rollback。它不写数据面，accelerated恒零。父目录init.sh是未安装影子服务，native/init.sh是已安装候选。
