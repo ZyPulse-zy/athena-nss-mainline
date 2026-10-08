@@ -1,3 +1,9 @@
+# 当前接续：dev-f正常应用常驻，P1读取修复待完整集成
+
+先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md与RESIDENT_SERVICE.md；使用work/resident-service-dev-f-20261008/service.ps1 Status核对，不重复启动。dev-e已实际Steam／CS2三流NSS3、54.07秒／18续租后inode读取拒绝，完整恢复通过。165本地检查修复不同WAN选择、严格checkpoint前无候选及三个发布通道一次50ms重读，六份其它Lua和全部保护／期限保持。12:28运行WAITING_FLOW，BULK4／RT0，ECM0；新完整90秒未完成。用户自报小丢包约1%以内、比之前好，非匹配因果验收。保持下载，不操作游戏/造fixture/重复CPU；有合格原流接续一次有界集成，没有条件则常驻等待。未知进入后失败暂停，P0优先恢复；heartbeat仍暂停。
+
+## 以下保留历史记录
+
 # 当前接续：dev-d进程运行，实际NSS等待合格流
 
 先核对work/resident-service-dev-d-20261008/service.ps1 Status，不重复启动。dev-c异步cwd路径退出已本地复现并修复；48服务检查、11 JS/2 PS语法及实际启动审核通过。当前WAITING_FLOW/0新NSS，未宣称下载游戏丢包解决。旧源码/错误/空锁保留，原入口、数据面及全部保护不变；heartbeat仍暂停。详见docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md。

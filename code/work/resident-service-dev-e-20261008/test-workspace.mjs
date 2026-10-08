@@ -1,0 +1,47 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {workspaceRoot,resolveLocal,save,read,atomic,createObserver,rotateObserver} from './storage.mjs';
+import {atomic as originalAtomic} from '../resident-service-dev-c-20261008/storage.mjs';
+const checks=[];
+const stamp=new Date().toISOString().replace(/\D/g,'').slice(0,14);
+const owner='work/resident-service-run-'+stamp+'-'+crypto.randomBytes(4).toString('hex');
+fs.mkdirSync(resolveLocal(owner));
+const foreign=fs.mkdtempSync(path.join(os.tmpdir(),'athena-nss-cwd-'));
+const previous=process.cwd();
+try{
+ const testPath=owner+'/heartbeat-model-private.json';save(testPath,{tick:0});
+ let originalError,newError,ticks=0;
+ const originalTimer=setInterval(()=>{try{originalAtomic(testPath,{tick:1});}catch(e){originalError=e;}},5);
+ const fixedTimer=setInterval(()=>{try{atomic(testPath,{tick:++ticks});}catch(e){newError=e;}},5);
+ process.chdir(foreign);
+ await new Promise(r=>setTimeout(r,65));
+ clearInterval(originalTimer);clearInterval(fixedTimer);
+ assert.equal(originalError?.code,'ENOENT');checks.push('original asynchronous heartbeat ENOENT reproduced during connector-style cwd change');
+ assert.equal(newError,undefined);assert.ok(ticks>=2);assert.equal(read(testPath).tick,ticks);checks.push('fixed asynchronous heartbeat remains in the owned workspace');
+ assert.equal(fs.readdirSync(foreign).length,0);checks.push('no files written in connector or foreign workspace');
+ assert.equal(resolveLocal(testPath),path.join(workspaceRoot,testPath));checks.push('workspace identity remains fixed while cwd changes');
+ assert.ok(fs.existsSync(resolveLocal(owner)));checks.push('lock and run directory presence remains visible from foreign cwd');
+ assert.throws(()=>resolveLocal('../escape.json'),/Foreign workspace/);assert.throws(()=>resolveLocal(path.join(foreign,'escape.json')),/Foreign workspace/);checks.push('relative traversal and foreign absolute writes refused');
+ const observer=createObserver(owner);
+ for(let i=0;i<17;i++){const token=crypto.randomUUID();save(observer+'/normal-frame-'+token+'-private.json',{model:true,index:i});}
+ save(observer+'/frozen-history-private.json',{mustRemain:true});
+ assert.deepEqual(rotateObserver(observer,owner),{groupsRetained:16,groupsPruned:1});
+ assert.equal(read(observer+'/frozen-history-private.json').mustRemain,true);checks.push('owned observation creation and exact rotation work during cwd change');
+ const daemon=fs.readFileSync(resolveLocal('work/resident-service-dev-e-20261008/daemon.mjs'),'utf8');
+ assert.ok(daemon.includes('fs.existsSync(resolveLocal(p))'));assert.ok(daemon.includes('fs.statSync(resolveLocal(p))'));assert.ok(daemon.includes('fs.rmdirSync(resolveLocal(p))'));checks.push('daemon stop and lock operations use fixed workspace');
+ const identity=fs.readFileSync(resolveLocal('work/resident-service-dev-e-20261008/identity.mjs'),'utf8');
+ assert.ok(identity.includes("resolveLocal(serviceRoot+'/daemon.mjs')"));checks.push('process command identity is independent of temporary cwd');
+ const startup=fs.readFileSync(resolveLocal('work/resident-service-dev-e-20261008/startup-health.mjs'),'utf8');
+ assert.ok(startup.includes('cwd:workspaceRoot'));assert.ok(startup.includes("resolveLocal(root+'/'+name)"));checks.push('readonly audit children launch in the owned workspace');
+ const launcher=fs.readFileSync(resolveLocal('work/resident-service-dev-e-20261008/service-launch.ps1'),'utf8');
+ const tail=launcher.slice(launcher.indexOf('$nssChild.WaitForExit()'));
+ const node=process.execPath.replaceAll("'","''");
+ const ps="$ErrorActionPreference='Stop';$nssChild=Start-Process -FilePath '"+node+"' -ArgumentList @('-e','process.exit(7)') -WindowStyle Hidden -PassThru;"+tail;
+ const exit=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',ps],{encoding:'utf8',windowsHide:true,timeout:12000});
+ assert.equal(exit.status,7,exit.stderr);checks.push('actual launcher completion reports a nonzero child exit');
+}finally{process.chdir(previous);}
+console.log(JSON.stringify({passed:true,checks:checks.length,names:checks,routerAccess:false,modelOnly:true,usesLocalChildExitTest:true}));

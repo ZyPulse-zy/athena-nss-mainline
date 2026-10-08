@@ -1213,3 +1213,9 @@ code/work/resident-service-dev-c-20261008/test-generation-outcome.mjs whitespace
 
 code/work/resident-service-dev-d-20261008/generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
 code/work/resident-service-dev-d-20261008/test-generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
+
+code/work/resident-service-dev-e-20261008/generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
+code/work/resident-service-dev-e-20261008/test-generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
+
+code/work/resident-service-dev-f-20261008/generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
+code/work/resident-service-dev-f-20261008/test-generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof

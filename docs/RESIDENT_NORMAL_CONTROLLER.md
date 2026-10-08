@@ -1,3 +1,9 @@
+# 当前正常入口：dev-f
+
+[入口生成器](../code/work/resident-normal-dev-f-20261008/materialize-normal.mjs)接续dev-e不同自然WAN排序和严格checkpoint前空候选等待。仅classifier.lua的stable辅助函数允许三个发布通道一次50ms内重读；其余分类／CT／mark／NAT／WAN／lease检查及六Lua原字节。104入口本地回归通过，原dev-e实际NSS3／54.07秒／18续租后中断已恢复；dev-f完整90秒硬件尚未完成。常驻使用[控制脚本](../code/work/resident-service-dev-f-20261008/service.ps1)，未知/进入后失败仍暂停，不把缺失投影当真实CT退出，不重复历史数据面/CPU证明。
+
+## 以下保留历史记录
+
 # 正常流入口和四代有界常驻协调通过
 
 北京时间2026-10-08 08:10。沿用 RC1 已证明的数据面，接入正常本机进程/socket归属和当前自动分类；controller自身不启动游戏、下载或测试流。只有两条不同自然WAN的TCP BULK和一条已准入UDP RT可进入原三槽NSS，其它/未知/归属不明确流保持软件路径。
