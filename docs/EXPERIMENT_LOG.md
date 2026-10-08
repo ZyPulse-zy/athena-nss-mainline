@@ -1,3 +1,9 @@
+# 2026-10-08 08:10 — 正常流常驻控制器批次
+
+正常流入口和四代有界常驻协调通过，实际COMPLETE，恢复通过。57本地检查集中收敛P2，四代协调的实际时长与限制见[正常流控制器](RESIDENT_NORMAL_CONTROLLER.md)。数据面/CPU历史证据复用；不逐bug创建硬件版本。
+
+## 以下保留历史记录
+
 # 2026-10-08 00:41 — Development Mode RC1 集中收敛
 
 批量P1/P2修复、本地回归和一次修正后90秒真实集成：181采样、ECM3、30续租、完整恢复。没有重复CPU或五WAN核心证明，没有CS2/Steam或新正式版本。更长控制器soak实际状态COMPLETE；每代独立checkpoint/恢复，全部实际结果与限制见[聚合结果](../evidence/resident-controller-rc1.json)及[使用文档](RESIDENT_CONTROLLER.md)。原失败/运行目录保留，普通开发未冻结数千输入或逐bug创建archive。

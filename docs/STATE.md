@@ -1,3 +1,18 @@
+# 正常流入口和四代有界常驻协调通过
+
+北京时间2026-10-08 08:10。沿用 RC1 已证明的数据面，接入正常本机进程/socket归属和当前自动分类；controller自身不启动游戏、下载或测试流。只有两条不同自然WAN的TCP BULK和一条已准入UDP RT可进入原三槽NSS，其它/未知/归属不明确流保持软件路径。
+
+本批57项本地回归及15份源码语法检查通过，集中修复清理重入和部分启动目录登记等P2。七份数据面Lua逐字节复用RC1，没有重复五WAN、QoS或CPU实验。
+
+预定四代各90秒、controller900–1200秒。实际状态 **COMPLETE**；控制器运行 **900.14秒**，完成 **4代**，NSS累计 **360.02秒**。每代独立下载/SHA/gzip checkpoint及写前恢复守护，完整撤销后才进入下一代。终态ECM关闭全零、五WAN健康、保护配置及两物理原队列全部选项/handle一致，端点规则和自有客户端残留0。实测明细见[结果](../evidence/resident-normal-controller.json)。
+
+该集成由独立自有模拟器提供正常socket和连接轮换，未操作CS2/Steam；这是正常入口集成与有界协调证明，不声称第三方应用全面覆盖、连续15分钟NSS或默认永久常驻。
+
+
+详见[正常流控制器](RESIDENT_NORMAL_CONTROLLER.md)。
+
+## 以下保留历史状态
+
 # Athena NSS Development Mode：有界常驻控制器 soak 通过
 
 北京时间2026-10-08 00:41。当前交付目标是可复用、逐步常驻的 Multi-WAN controller。使用同一 RC1 批量修复并本地回归，没有新增正式实验版本；五 WAN NSS、QoS、NAT/mark/affinity 与 CPU 历史证据继续复用。

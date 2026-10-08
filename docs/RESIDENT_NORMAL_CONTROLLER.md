@@ -1,0 +1,23 @@
+# 正常流入口和四代有界常驻协调通过
+
+北京时间2026-10-08 08:10。沿用 RC1 已证明的数据面，接入正常本机进程/socket归属和当前自动分类；controller自身不启动游戏、下载或测试流。只有两条不同自然WAN的TCP BULK和一条已准入UDP RT可进入原三槽NSS，其它/未知/归属不明确流保持软件路径。
+
+本批57项本地回归及15份源码语法检查通过，集中修复清理重入和部分启动目录登记等P2。七份数据面Lua逐字节复用RC1，没有重复五WAN、QoS或CPU实验。
+
+预定四代各90秒、controller900–1200秒。实际状态 **COMPLETE**；控制器运行 **900.14秒**，完成 **4代**，NSS累计 **360.02秒**。每代独立下载/SHA/gzip checkpoint及写前恢复守护，完整撤销后才进入下一代。终态ECM关闭全零、五WAN健康、保护配置及两物理原队列全部选项/handle一致，端点规则和自有客户端残留0。实测明细见[结果](../evidence/resident-normal-controller.json)。
+
+该集成由独立自有模拟器提供正常socket和连接轮换，未操作CS2/Steam；这是正常入口集成与有界协调证明，不声称第三方应用全面覆盖、连续15分钟NSS或默认永久常驻。
+
+## 使用
+
+原工作区运行 `node work/resident-normal-dev-20261008/controller.mjs inspect|status|run|stop`。默认inspect只检查本地；run观察已有负载，在预定20分钟以内最多完成四代，无合格流则等待并有界退出。stop禁止新准入，当前独立owner按原硬截止恢复，不停止用户应用。单代入口为`normal-entry.mjs inspect|status|run|stop`。源码：[controller](../code/work/resident-normal-dev-20261008/controller.mjs)、[正常流入口](../code/work/resident-normal-dev-20261008/normal-entry.mjs)。当前原工作区含本地凭据/模块/部署输入，公开代码不能替代这些私有写前条件。
+
+## 已知限制与下一milestone
+
+- 正常入口仍为两TCP BULK＋一UDP RT；五WAN同时ECM5/QoS/CPU历史证明继续有效。
+- 已通过的是独立模拟器提供的进程/socket，第三方程序及长期无人值守覆盖留后续。
+- 默认永久NSS保持关闭；后续只评估正常使用和默认常驻部署，独立恢复和原硬截止不放宽。
+- 自然流量不足/类型变化/偶发SSH或端点取得拒绝有界结束；不自动重试fixture、不强换WAN或tag。
+- Wi-Fi、autorate、ECN、新分类、新QoS、CPU benchmark、极端崩溃与新增边界继续不扩展。
+
+本开发批次到此收尾，不主动寻找新的边界问题。[源码摘要](../evidence/resident-normal-source-proof.json)。

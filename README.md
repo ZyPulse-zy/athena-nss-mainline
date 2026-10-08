@@ -1,3 +1,9 @@
+# 当前交付：正常流 Multi-WAN controller
+
+正常流入口和四代有界常驻协调通过，完整恢复。控制器观察已有socket/自动分类，不创建流量；默认永久NSS关闭。见[当前状态](docs/STATE.md)及[正常流控制器](docs/RESIDENT_NORMAL_CONTROLLER.md)。
+
+## 以下保留历史介绍
+
 # 当前交付：Multi-WAN resident controller RC1
 
 当前有界常驻控制器 soak 通过，完整恢复通过；采用Development Mode集中修复与一次里程碑发布。默认永久NSS保持关闭。见[当前状态](docs/STATE.md)和[控制器使用及范围](docs/RESIDENT_CONTROLLER.md)。五WAN数据面与CPU历史证明继续复用。

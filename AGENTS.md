@@ -1,3 +1,9 @@
+# 当前开发接续：正常流常驻 controller
+
+2026-10-08 08:10，正常流入口和四代有界常驻协调通过，恢复通过。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和[正常入口](docs/RESIDENT_NORMAL_CONTROLLER.md)。P0停止写入并恢复，P1定向修复，P2本地批量收敛。原source6/native120/owner180/client180全部保护上限保持；默认永久NSS关闭、heartbeat暂停。本批结束，不主动新增实验或边界问题。
+
+## 以下保留历史接续
+
 # 当前工作方式：Athena NSS Development Mode
 
 北京时间2026-10-08 00:41。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md及[常驻控制器文档](docs/RESIDENT_CONTROLLER.md)。以RC1当前结果为准；下方v58及更早“最新”是冻结历史。P0停止写入并恢复，P1针对性修复，P2在同一开发批次本地收敛，不“一bug一硬件版本”。原native120/owner180/client180及全部保护上限保持。当前90秒集成通过，soak实际COMPLETE；默认永久NSS关闭，heartbeat暂停。完成本次验收后不主动新增边界、CPU或功能实验。

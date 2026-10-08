@@ -2536,4 +2536,7 @@ if (root/'evidence/v58-entry-repair-resident.json').exists():
  groups=[s['sourceHashes'],*a['sourceHashesByRuntime'].values(),*(m['sourceHashes'] for m in a['models'].values())]
  for group in groups:
   for rel,digest in group.items():assert hashlib.sha256((root/'code'/rel).read_bytes()).hexdigest()==digest,rel
+if (root/'evidence/resident-normal-controller.json').exists():
+ import runpy
+ runpy.run_path(str(root/'tools/check_resident_normal.py'))['check'](root)
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

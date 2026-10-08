@@ -1173,3 +1173,33 @@
 /code/work/resident-dev-20261007/persistent-ssh.mjs whitespace=cr-at-eol
 /code/work/resident-dev-20261007/wait-publication-metadata.mjs whitespace=cr-at-eol
 /code/work/resident-dev-20261007/wait-ready-candidate.mjs whitespace=cr-at-eol
+
+# Exact normal resident milestone source bytes.
+/code/work/resident-rc1-run-20261007235555-87e0f77e/classified-tags.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235555-87e0f77e/classifier.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235555-87e0f77e/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/resident-rc1-run-20261007235555-87e0f77e/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235555-87e0f77e/qos-physical.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235555-87e0f77e/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235555-87e0f77e/wan-scope.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235940-d3d5a5c7/classified-tags.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235940-d3d5a5c7/classifier.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235940-d3d5a5c7/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/resident-rc1-run-20261007235940-d3d5a5c7/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235940-d3d5a5c7/qos-physical.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235940-d3d5a5c7/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261007235940-d3d5a5c7/wan-scope.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000326-cdc4bc7f/classified-tags.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000326-cdc4bc7f/classifier.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000326-cdc4bc7f/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/resident-rc1-run-20261008000326-cdc4bc7f/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000326-cdc4bc7f/qos-physical.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000326-cdc4bc7f/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000326-cdc4bc7f/wan-scope.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000711-77b1d8a2/classified-tags.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000711-77b1d8a2/classifier.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000711-77b1d8a2/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+/code/work/resident-rc1-run-20261008000711-77b1d8a2/module-stage-guardian.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000711-77b1d8a2/qos-physical.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000711-77b1d8a2/tag-normalizer.lua whitespace=cr-at-eol
+/code/work/resident-rc1-run-20261008000711-77b1d8a2/wan-scope.lua whitespace=cr-at-eol
