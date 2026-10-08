@@ -1,3 +1,11 @@
+# 当前手动常驻：持续续租，健康寿命不设固定截止
+
+2026-10-08，取消健康代90秒退出和20分钟四次启动限制。合格流持续自动续租；分类/socket6秒新鲜度、native滚动120秒、guardian滚动180秒及失联撤销保持。实际RT mask2连续NSS 196.75秒／393采样校验／65续租，跨原90/120/180秒后主动Stop和完整恢复通过。
+
+使用 work/resident-continuous-dev-20261008/service.ps1 Status / Stop / Start。同名任务设置、其它相关任务不变，无登录触发或失败自重启。Stop停止新准入、向精确当前owner送停止请求并完整恢复；失联保护保持。程序不制造下载或操作桌面；单代最多2BULK/1RT。[实现、实测与限制](RESIDENT_CONTINUOUS.md)
+
+## 以下保留历史记录
+
 # 当前控制：dev-i独立准入已集成并保留
 
 原工作区使用 powershell -File work/resident-service-dev-i-20261008/service.ps1 -Mode Status / Stop / Start。现有手动任务仅启动参数更新，其它任务、权限、触发/重启/终止设置保持。当前进程运行、启动审核通过、准入未暂停；无合格流时ECM0，进程运行不当作当下NSS命中。

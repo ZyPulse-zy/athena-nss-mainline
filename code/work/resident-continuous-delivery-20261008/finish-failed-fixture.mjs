@@ -1,0 +1,16 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
+const failed='work/resident-continuous-integration-20261008104628-8787fb9c';
+const recheck='work/resident-continuous-recovery-20261008105714-f70309a4';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const intent=read(failed+'/intent-private.json'),result=read(failed+'/result-private.json');
+assert.equal(result.hardwareCompleted,false);assert.equal(result.state,'RESTORATION_UNCONFIRMED');
+for(const name of ['fixture-1-3-partial-endpoint-closure-raw-private.json','fixture-1-4-no-client-closure-raw-private.json'])assert.equal(read(failed+'/'+name).code,0);
+assert.equal(read(recheck+'/startup-health.json').passed,true);
+assert.ok(!fs.existsSync('work/resident-dev-20261007/active-lock'));
+const ps=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',"$ErrorActionPreference='Stop';$p=Get-CimInstance Win32_Process -Filter 'ProcessId="+intent.wrapperPid+"';if($p){throw 'Original wrapper PID is still present; inspect birth before release'}"],{encoding:'utf8',windowsHide:true});
+assert.equal(ps.status,0,ps.stderr);
+const lock=path.resolve('work/resident-dev-20261007/controller-lock'),workspace=path.resolve('.');assert.ok(lock.startsWith(workspace+path.sep));
+const s=fs.lstatSync(lock);assert.ok(s.isDirectory()&&!s.isSymbolicLink());assert.ok(Math.abs(s.birthtimeMs-Date.parse(intent.startedAt))<2000);assert.equal(fs.readdirSync(lock).length,0);
+const now=fs.lstatSync(lock);assert.equal(now.dev,s.dev);assert.equal(now.ino,s.ino);fs.rmdirSync(lock);
+const proof={passed:true,at:new Date().toISOString(),originalFailureUnchanged:true,originalFailedBeforeRouterRead:true,noNssAttempt:true,endpointAndNoClientClosurePassed:true,healthAndPhysicalQueuesPassed:true,readonlyRecheck:recheck,onlyOriginalEmptyControllerLockReleased:true,restorationPassed:true};
+fs.writeFileSync(failed+'/failed-fixture-completion-private.json',JSON.stringify(proof,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(proof));

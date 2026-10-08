@@ -1,3 +1,11 @@
+# 当前接续：连续合格NSS控制器已部署
+
+先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_CONTINUOUS；用 work/resident-continuous-dev-20261008/service.ps1 Status 核对，禁止重复启动。2026-10-08，取消健康代90秒退出和20分钟四次启动限制。合格流持续自动续租；分类/socket6秒新鲜度、native滚动120秒、guardian滚动180秒及失联撤销保持。实际RT mask2连续NSS 196.75秒／393采样校验／65续租，跨原90/120/180秒后主动Stop和完整恢复通过。
+
+本开发批次结束，不新增fixture/CPU/更多mask/边界；正常合格流持续自动续租，未知错误先恢复。无登录触发/自动重启，heartbeat暂停。凭据/nonce/完整CT/checkpoint/二进制仅本地，旧冻结源码/失败不覆盖，游戏体验P1仍未关闭。[实现、实测与限制](docs/RESIDENT_CONTINUOUS.md)
+
+## 以下保留历史记录
+
 # 当前接续：独立准入集成完成，dev-i常驻观察
 
 先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_SERVICE并用work/resident-service-dev-i-20261008/service.ps1 Status核对，不重复启动。RT mask2实际NSS90秒/181采样/ECM1/30续租、完整恢复及端点/客户端清理通过；15:12保留dev-i，启动完整只读健康/两物理原队列审核通过。原dev-h模块绑定失败已本地修正，旧失败/源码/证据保存。49/119/124与16守护pre-fork回归通过；native源码和二进制未改。

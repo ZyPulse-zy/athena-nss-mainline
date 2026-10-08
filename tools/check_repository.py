@@ -2542,4 +2542,7 @@ if (root/'evidence/resident-normal-controller.json').exists():
 if (root/'evidence/resident-service-runtime.json').exists():
  import runpy
  runpy.run_path(str(root/'tools/check_resident_service.py'))['check'](root)
+if (root/'evidence/resident-continuous.json').exists():
+ import runpy
+ runpy.run_path(str(root/'tools/check_resident_continuous.py'))['check'](root)
 print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

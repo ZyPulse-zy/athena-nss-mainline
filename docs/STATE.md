@@ -1,3 +1,15 @@
+# 当前：连续合格NSS控制器已保留
+
+2026-10-08，取消健康代90秒退出和20分钟四次启动限制。合格流持续自动续租；分类/socket6秒新鲜度、native滚动120秒、guardian滚动180秒及失联撤销保持。实际RT mask2连续NSS 196.75秒／393采样校验／65续租，跨原90/120/180秒后主动Stop和完整恢复通过。
+
+同名手动任务只换启动参数，无登录触发/故障自动重启，heartbeat仍暂停。控制使用 work/resident-continuous-dev-20261008/service.ps1 Status / Stop / Start；先核对，不重复启动。当前快照状态 WAITING_FLOW，实际NSS命中与进程常驻分别判断。
+
+27项本批回归及4409 native控制检查、七子集尺寸/语法和2虚拟小时模型通过。仅相关RT子集做真实跨期限验证，不重做五WAN/CPU。原夹具两次失败、本地源码绑定拒绝和所有恢复输出保存：首轮未进入NSS，次轮发送器182秒闹钟连带停UDP，NSS运行109.80秒后安全撤销；最终修正发送/停止/清理参数，背景流降16Mbps而字节上限保持。
+
+最多2 BULK＋1准入RT，未知默认拒绝，原CT/NAT/mark/affinity/QoS及恢复保护保持。异常或流退出仍结束旧代，新流取新分类/pin/checkpoint/owner。尚非全网、不限流数或长期soak证明，用户大下载游戏高丢包P1仍未关闭。[实现、实测与限制](RESIDENT_CONTINUOUS.md)
+
+## 以下保留历史记录
+
 # 独立准入闭环完成，dev-i已保留常驻观察
 
 北京时间2026-10-08 15:12，dev-i已运行、启动完整只读健康和两物理原队列全部选项/handle审核通过，准入未暂停。使用 work/resident-service-dev-i-20261008/service.ps1 Status / Stop / Start；先核对，不重复启动。heartbeat保持暂停。当前无自然合格流，ECM关闭全零；等待状态不代表此次集成未完成。
