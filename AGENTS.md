@@ -1,3 +1,9 @@
+# 当前接续：dev-c运行，实际下载游戏丢包待闭环
+
+先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md、RESIDENT_SERVICE.md，并核对work/resident-service-dev-c-20261008/service.ps1 Status，不重复启动。P2前置Lua空值读已修，65入口/37服务本地回归及三WAN只读查询通过。RT1/BULK0、新NSS0，自动准入未暂停。用户60–70%丢包在下载降速后消失；P1体验尚未关闭，不能宣称根因或NSS改善已证实。保持原数据面/准入/期限/恢复，复用历史证明，不操作游戏/制造fixture/重复CPU/逐bug archive；heartbeat仍暂停。
+
+## 以下保留历史记录
+
 # 当前接续：常驻调度 dev-b 运行
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md；核对work/resident-service-dev-b-20261008/service.ps1 Status，不重复启动。37项本地检查通过：仅完整证明checkpoint前无候选且恢复正常的拒绝继续等待新鲜流，其它错误仍暂停。原入口/数据面/期限保持；没有新正式硬件轮次。用户要求NSS开启持续有效，进程运行与实际NSS命中分别核对。下载时网络回弹待核验；已有只读软件路径处理压力证据，不能宣称根因或体验修复。不操作游戏/造新fixture/重复CPU证明，heartbeat仍暂停。

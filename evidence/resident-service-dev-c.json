@@ -1,0 +1,118 @@
+{
+  "developmentBatch": "dev-c",
+  "observedAt": "2026-10-08T03:39:29.362Z",
+  "milestone": "Usable resident Multi-WAN controller",
+  "unresolvedP1": "Severe game packet loss under unrestricted download; load-related user report, normal application NSS integration and quality not yet accepted",
+  "userReport": {
+    "packetLossPercentRange": [
+      60,
+      70
+    ],
+    "downloadSlowedAndLossDisappeared": true,
+    "hudIndependentlyCaptured": false
+  },
+  "originalNaturalAttempt": {
+    "failedBeforeCheckpoint": true,
+    "checkpointOrStageStarted": false,
+    "ecmOpened": false,
+    "restorationPassed": true,
+    "ecmClosedAndZero": true,
+    "physicalQueuesExact": true,
+    "primaryError": "Lua prerequisite cmd: attempt to index local 's' (a nil value)",
+    "intermediateRecoveryAuditFailed": true,
+    "laterOriginalFinalAuditPassed": true
+  },
+  "fixedP2": "Shell captures exact bounded command output; Lua applies original checks to supplied outputs; raw command receipts retained before refusal",
+  "localNormalChecks": 65,
+  "localServiceChecks": 37,
+  "javascriptSyntaxSources": 27,
+  "powershellSyntaxSources": 2,
+  "originalLuaNilReadLocallyReproduced": true,
+  "sevenDataPlaneLuaByteExactWithRc1": true,
+  "unknownOrFailedReadStillRefuses": true,
+  "originalQuotasAndDeadlinesUnchanged": true,
+  "originalWanCommandsMaximumSeconds": 3,
+  "prerequisiteProcessGroupMaximumSeconds": 6,
+  "readonlyWanQueries": {
+    "passed": true,
+    "seconds": 3.2472815,
+    "wanQueries": [
+      {
+        "wan": 3,
+        "up": true,
+        "bridge": true
+      },
+      {
+        "wan": 5,
+        "up": true,
+        "bridge": true
+      },
+      {
+        "wan": 4,
+        "up": true,
+        "bridge": true
+      }
+    ],
+    "ctEligibilityNotReused": true,
+    "nssAdmissionAllowed": false
+  },
+  "readonlyLoad": {
+    "seconds": 4.360000000335276,
+    "physicalWanRxMbps": 326.854359607893,
+    "cpuBusyPercent": 78.184892897407,
+    "softirqPercent": 54.847801578354,
+    "cpu0TimeSqueezeIncrease": 23,
+    "ecmClosedAndZero": true,
+    "gameRtWan": [
+      3
+    ],
+    "endToEndLossProved": false
+  },
+  "serviceSnapshot": {
+    "state": "WAITING_FLOW",
+    "startedAt": "2026-10-08T03:34:42.803Z",
+    "heartbeatAt": "2026-10-08T03:39:12.889Z",
+    "lastObservation": {
+      "sourceAge": 3.0453223999441255,
+      "sourceSequence": 13857,
+      "tcpBulk": 0,
+      "udpRt": 1,
+      "triples": 0
+    },
+    "reads": 9,
+    "readFailures": 0,
+    "generationsStarted": 0,
+    "generationsCompleted": 0,
+    "nssSeconds": 0,
+    "startupHealthPassed": true,
+    "admissionPaused": false,
+    "normalEntryCreatesTraffic": false,
+    "automaticStartAtLogon": false,
+    "uninterruptedNssClaim": false,
+    "running": true,
+    "identityVerified": true,
+    "heartbeatFresh": true,
+    "controllerLockPresent": true,
+    "activeGenerationLockPresent": false
+  },
+  "taskUpdate": {
+    "onlyOwnedLaunchArgumentsChanged": true,
+    "otherRelatedTasksUnchanged": true,
+    "noLogonTrigger": true,
+    "noFailureRestart": true,
+    "noForceTermination": true
+  },
+  "latestDownloadLog": {
+    "localTime": "2026-10-08 11:28:43",
+    "rateMbps": 0
+  },
+  "exactUnderlyingNilReadCauseProved": false,
+  "packetLossRootCauseProved": false,
+  "gameplayFixedClaim": false,
+  "newNssHardwareAcceptanceClaim": false,
+  "newFormalHardwareExperiment": false,
+  "newCpuBenchmark": false,
+  "trafficGenerated": false,
+  "cs2OrSteamInputSent": false,
+  "routerPolicyChangedForDiagnosis": false
+}

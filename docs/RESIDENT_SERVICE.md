@@ -1,3 +1,9 @@
+# 当前控制：dev-c 自动准入运行
+
+原工作区执行 powershell -File work/resident-service-dev-c-20261008/service.ps1 -Mode Status / Stop / Start。任务仍Athena-NSS-Controller-Manual；只读前置接收修复，七份数据面Lua与原90秒代/20分钟四次上限不变。当前WAITING_FLOW，RT1/BULK0、新NSS0；连续/默认永久NSS及大下载游戏体验尚未验收。详见[本批事实](../evidence/resident-service-dev-c.json)。
+
+## 以下保留历史记录
+
 # 常驻调度 dev-b 已恢复运行；下载时游戏卡顿待核验
 
 2026-10-08：用户报告人物回弹、延迟或丢包升高。首次自然流入口因UDP资格在下一次读取前消失，在checkpoint前退出，无生产写入；原完整恢复及两物理队列全部选项/handle检查通过。当时NSS未进入，不能把卡顿归为NSS转发故障。

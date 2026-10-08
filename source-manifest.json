@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T03:08:05.953Z",
+  "generatedAt": "2026-10-08T03:39:29.354Z",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -41752,6 +41752,209 @@
       "sha256": "41b33c54928e73d72cea856d0505dab4da174aa0401fac0111ad87ededbd55aa",
       "bytes": 2054,
       "role": "resident-controller-local-scheduling-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/controller.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/controller.mjs",
+      "sha256": "ea53cd3c770d5e836df8f388b64b1cc65666031120344fb38161fd8e6250cf78",
+      "bytes": 4027,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/fixture.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/fixture.mjs",
+      "sha256": "91850043c8d27bc1ec0a608d262865309da7d61144330eebd2b5b2b275538b8e",
+      "bytes": 7140,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/integration.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/integration.mjs",
+      "sha256": "97b189360ed6a968d366244221cb3f930f2d1da17cf3e0dc29adfc7631728c94",
+      "bytes": 3890,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/materialize-normal.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/materialize-normal.mjs",
+      "sha256": "2e1740e411d1d64bc27c15e44f6be05b211469226fbef5112b875706b63bed01",
+      "bytes": 7501,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/normal-entry.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/normal-entry.mjs",
+      "sha256": "f565d4e461cc5c8d98b580b8f7bf0f994d9d87926746d8bd86cedd4308e23064",
+      "bytes": 5417,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/normal-policy.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/normal-policy.mjs",
+      "sha256": "266e456d2cdaaf53f60138f14c3969ecdfdadfbbce645e5c4e5741ef6c09db31",
+      "bytes": 4326,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/normal-reader.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/normal-reader.mjs",
+      "sha256": "486e614bd070f16b302b31fc909d9d5d732d4c25b6fab1ccaa4d0b7eaa694d22",
+      "bytes": 5602,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/observe.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/observe.mjs",
+      "sha256": "0dac878230e7cf53ce6f1627d2d01543cefaa59b78e9e118663ff62ab9a06ff3",
+      "bytes": 595,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/qualification.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/qualification.mjs",
+      "sha256": "98b51c78462479a9e85cc26e170aadb8a6f890fa3ece1c25d9dcbdb2de7564ba",
+      "bytes": 2274,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/read-prerequisites.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/read-prerequisites.mjs",
+      "sha256": "b9cc4d9be019b5cab7ea278cfe32e01c4c8c9a4849d8c7fb60253e37a34e02f6",
+      "bytes": 4158,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/run-generation.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/run-generation.mjs",
+      "sha256": "98c110d3b2030eaa025c74d45e4c133c4f5ec0a1338d6cbb37ca2883cf3c55fc",
+      "bytes": 2628,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/test-fixture.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/test-fixture.mjs",
+      "sha256": "ebda55b063e025d31db8c7d2eb00f01a2708ad1f1b2182fecc46bfb80305b353",
+      "bytes": 4293,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/test-materialize.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/test-materialize.mjs",
+      "sha256": "d141a0cd4cac29f9c3970d42d167455d254aa06e3dcc4e00b1f8d7207ed3df75",
+      "bytes": 2618,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/test-normal-policy.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/test-normal-policy.mjs",
+      "sha256": "59f2a4963a6cca8490fe0aaf1e0772997f1d79de6a23a926d1f887c301700acd",
+      "bytes": 6908,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/test-prerequisites.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/test-prerequisites.mjs",
+      "sha256": "8c9842d4137be32ac4551e6fd805920a75fef41f2b94cb5779d465900f0de6f8",
+      "bytes": 8052,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/test-workflow.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/test-workflow.mjs",
+      "sha256": "f0383e921767db0a5acc381f1c7269fa6b4e04cbce0d4ab98167a1323ff1f991",
+      "bytes": 3569,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-normal-dev-c-20261008/workflow.mjs",
+      "workspaceSource": "work/resident-normal-dev-c-20261008/workflow.mjs",
+      "sha256": "49c9c789e25fa8dff0eaa7b1692933577a08bb4afd5a8e4a453b2d7b02d7c624",
+      "bytes": 2468,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/daemon.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/daemon.mjs",
+      "sha256": "88381fbad5b93a360b488ab17ecccdce445eee1c466d2534c32b7d079b4917cf",
+      "bytes": 6268,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/generation-outcome.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/generation-outcome.mjs",
+      "sha256": "3a9f606e1aeaf7577d6535e022a04577cea5f7cdfed515881d0e0cd0bc1008ed",
+      "bytes": 2682,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/identity.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/identity.mjs",
+      "sha256": "c0b84141ff1ff8f5ac1b7da8b664c530421d3b213becd9db65ac530b76719713",
+      "bytes": 1261,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/policy.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/policy.mjs",
+      "sha256": "f356a42c507f44cf5c2fa2b8eecc3084ce6a56723e32ce1545a28a6351159f4c",
+      "bytes": 3913,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/qualification.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/qualification.mjs",
+      "sha256": "e521f7adc1831116153d590e2b962e4f748234329b94c812b7bd5da622606730",
+      "bytes": 3397,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/service-launch.ps1",
+      "workspaceSource": "work/resident-service-dev-c-20261008/service-launch.ps1",
+      "sha256": "962da9dd44c955bd4fc5f0f05fece8f5d319cfbb82ab3cf81231de7e1206da38",
+      "bytes": 1144,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/service.ps1",
+      "workspaceSource": "work/resident-service-dev-c-20261008/service.ps1",
+      "sha256": "f04164b26fcb580faa9173b76aa392b13f297c81a1e002e38da63f991d86a6a6",
+      "bytes": 3725,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/startup-health.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/startup-health.mjs",
+      "sha256": "46a7e88bf4fed0fbc9a0d606e5b520d8b624f5dbdfa48606b01ab6f4e273c122",
+      "bytes": 1464,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/storage.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/storage.mjs",
+      "sha256": "a68cb21665776548eb1345309a4bda5df5bed1fb4c16fbeccec09e1f06776813",
+      "bytes": 2492,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/test-generation-outcome.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/test-generation-outcome.mjs",
+      "sha256": "f759dd752cdc20319f4a319b72b09ccb86234c4868e776dd3373132a5590ac4a",
+      "bytes": 2955,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/test-policy.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/test-policy.mjs",
+      "sha256": "8fa0845b02a6e614d4bacca5744e79a2ff40a083034646d6da27acfb69f9ab00",
+      "bytes": 4789,
+      "role": "resident-controller-readonly-prerequisite-fix"
+    },
+    {
+      "path": "code/work/resident-service-dev-c-20261008/test-storage.mjs",
+      "workspaceSource": "work/resident-service-dev-c-20261008/test-storage.mjs",
+      "sha256": "41b33c54928e73d72cea856d0505dab4da174aa0401fac0111ad87ededbd55aa",
+      "bytes": 2054,
+      "role": "resident-controller-readonly-prerequisite-fix"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -41774,5 +41977,5 @@
   "residentDevelopmentExport": "RC1_CONSOLIDATED_DEVELOPMENT_AND_BOUNDED_SOAK",
   "normalResidentExport": "NORMAL_SOURCE_AND_FOUR_GENERATION_BOUNDED_COORDINATION",
   "residentServiceExport": "MANUAL_RESIDENT_PROCESS_NORMAL_FLOW_WAITING",
-  "residentServiceDevBatch": "DEV_B_SAFE_PRECHECK_CANDIDATE_WAIT"
+  "residentServiceDevBatch": "DEV_C_READONLY_PREREQUISITE_PIPE_REPAIR"
 }
