@@ -1,3 +1,9 @@
+# 当前接续：dev-g已恢复，RT1／BULK0等待自然组合
+
+先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md及RESIDENT_SERVICE.md；使用 work/resident-service-dev-g-20261008/service.ps1 Status核对，不重复启动。13:32运行且准入未暂停，RT1/BULK0/ECM0，三次只读成功。dev-f 13:15来源在OS查询后过期，checkpoint/stage前拒绝并最终恢复；原中间审核拒绝保留。180本地检查完成最终分类读取后置修复，source6/OS6和全部保护保持，当前完整90秒集成仍待自然合格负载。保持下载，不操作游戏/造fixture/重做CPU，heartbeat仍暂停。旧RT0不当作无UDP或CT退出。
+
+## 以下保留历史记录
+
 # 当前接续：dev-f正常应用常驻，P1读取修复待完整集成
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md与RESIDENT_SERVICE.md；使用work/resident-service-dev-f-20261008/service.ps1 Status核对，不重复启动。dev-e已实际Steam／CS2三流NSS3、54.07秒／18续租后inode读取拒绝，完整恢复通过。165本地检查修复不同WAN选择、严格checkpoint前无候选及三个发布通道一次50ms重读，六份其它Lua和全部保护／期限保持。12:28运行WAITING_FLOW，BULK4／RT0，ECM0；新完整90秒未完成。用户自报小丢包约1%以内、比之前好，非匹配因果验收。保持下载，不操作游戏/造fixture/重复CPU；有合格原流接续一次有界集成，没有条件则常驻等待。未知进入后失败暂停，P0优先恢复；heartbeat仍暂停。

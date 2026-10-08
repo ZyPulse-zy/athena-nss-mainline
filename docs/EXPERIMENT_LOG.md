@@ -1,3 +1,9 @@
+# 2026-10-08 dev-g：最终分类后置于Windows归属读取
+
+13:18完整快照＋本机socket确认WAN3 CS2 RT1（197.26pps／1.261Mbps）。13:15 dev-f另一入口在OS归属查询后触发source6拒绝，checkpoint/stage前退出；原中间恢复审核失败保留，最终完整保护和原物理队列恢复通过。本批P2时序修复以首次分类仅发现端口、OS后最终分类替换，source6/OS6、owner/CT/mark/NAT/WAN/lease校验与数据面保持，180本地检查通过。13:30切换原手动任务，启动完整审核通过；13:32三次读取成功、RT1/BULK0、ECM0，没有新NSS代或正式硬件版本。新完整集成及体验仍未验收。不生成HTML或archive，源码和脱敏事实集中提交。见[摘要](../evidence/resident-service-dev-g.json)。
+
+## 以下保留历史记录
+
 # 2026-10-08 dev-e/f 开发批次：正常应用准入与读取中断
 
 P2不同自然WAN排名和严格checkpoint前空候选等待本地收敛；dev-e实际Steam两TCP＋CS2一UDP，WAN4／3／5，ECM3、109成功采样54.07秒、18续租，发布读取inode更换退出。新checkpoint下载SHA/gzip、独立守护写前证明及最终完整恢复通过；90秒未完成，原失败留存。dev-f同一批修读取P1：仅三个发布通道最多一次立即重读／50ms，其它字节和期限不变，104入口＋61服务检查与启动现网审核通过；新候选完整硬件集成未完成。用户估计小丢包1%以内、比之前好，但反馈跨恢复，非因果证据。下载一直保持。源码/脱敏事实集中同步，无新正式硬件版本、HTML或archive。见[摘要](../evidence/resident-service-dev-f.json)。

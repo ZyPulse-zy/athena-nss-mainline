@@ -1,3 +1,15 @@
+# 当前接续：dev-g已恢复自动观察，当前RT1／BULK0
+
+2026-10-08 13:32只读快照：CS2 RT1，下载BULK0、组合0；控制器运行，准入未暂停，三次读取成功且来源序列推进，实际ECM关闭全零。使用 work/resident-service-dev-g-20261008/service.ps1 Status / Stop / Start，先核对状态，不重复启动。启动完整健康和两物理原队列全部选项/handle通过。下载保持，不操作游戏或制造流量，heartbeat仍暂停。
+
+13:18完整分类和本机socket匹配已确认CS2 RT在WAN3，约197pps、1.26Mbps。旧RT0仅表示当时未匹配合格候选；早先快照缺记录的精确原因未证明，不能据此认定游戏无UDP或CT退出。dev-f 13:15另一次真实入口在Windows socket查询后source6过期，checkpoint/stage前退出；中间恢复审核拒绝原输出保留，最后完整审核和原物理队列恢复通过。
+
+本批只修P2读取时序对P1准入的影响：首次分类只发现端口，Windows精确归属之后读取最终分类，分别保留source6和OS6，完整计入最终网络耗时；owner变化、query倒退及未查过端口仍拒绝。119入口＋61服务本地检查、实际Lua5.1语法、34 JS／2 PS通过。六份其它数据面Lua保持RC1、classifier.lua保持dev-f，分类/QoS/期限/checkpoint/独立恢复不改。仅切换已有手动任务启动参数，两个其它任务保持。
+
+新候选现场只读来源3.04秒及当前1.23秒通过，完整90秒NSS集成尚未完成，游戏丢包P1仍待闭环。最短路径仅接续已有自然下载＋RT；缺合格组合则等待，不新增fixture、边界、CPU或QoS实验。见[本批事实](../evidence/resident-service-dev-g.json)。
+
+## 以下保留历史记录
+
 # 当前接续：dev-f运行，正常应用NSS中断已局部修复
 
 2026-10-08 12:28快照：控制器运行、自动准入未暂停，下载BULK4／RT0／组合0，实际ECM全零。当前控制使用 work/resident-service-dev-f-20261008/service.ps1 Status / Stop / Start；先核对状态，不重复启动。下载按用户要求保持，没有暂停、限速或游戏操作，heartbeat仍暂停。
