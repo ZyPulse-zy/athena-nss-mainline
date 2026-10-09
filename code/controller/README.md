@@ -1,7 +1,7 @@
 <!-- longterm-deployment-fix-20261009 -->
 # 当前维护：已安装精确标签与有限自动恢复
 
-复核 2026-10-09 14:48:06.480 UTC：native-running，实际NSS4、来源新鲜、未确认0；开机自启已开启，五WAN/代理/Tailscale正常，保护配置与19个已安装源码哈希通过，九张规则表可读。
+复核 2026-10-09 15:18:51.319 UTC：native-running，实际NSS1、来源新鲜、未确认0；本次启动来源累计暂停/恢复2/2。开机自启已开启，五WAN/代理/Tailscale正常，保护配置与19个已安装源码哈希通过，九张规则表可读。
 
 已安装此前精确标签候选，保留完整11字段身份与双向RT/BE标签；NSS32成本槽、路由器本机全LAN识别、无健康固定90秒/18-60实验寿命、无按人/设备配额保持。新增单一procd监督器，最多三次自动重试、5/15/30秒退避：运行后失败只在本次owner完整恢复确认后重试；启动前失败须无native记录/guardian并确认软件基线。手动stop阻止重试，rollback同时关闭开机自启。等待五WAN及原十个队列合同就绪后，复用原分类器精确恢复，不改其源码/配置或autorate速率。
 
@@ -17,11 +17,15 @@ sh /usr/lib/athena-dorm-native/athena-qos diagnose 60
 
 先status：running代表owner状态，实际accelerated数/CREATE与硬件字节要另核对；supervision显示等待依赖、launching、running、waiting-restoration、backoff或blocked及原因，bootEnabled来自真实init配置。尚无native事务时也返回监督状态。start异步，不用命令退出成功代替运行确认。stop在当前会话设置手动停止标记，保留开机配置；rollback先关闭开机自启再stop，仅在phase=restored/rollbackConfirmed、ECM/NSS0、native模块/锁清理和原guard/队列恢复后算完成。blocked不会无限复活；排除原因并确认软件基线后才手动start。启动本身不会替操作者开启boot；当前部署已经明确授权enable。
 
+默认diagnose仅采集来源、精确CREATE/租约与实际命中，rtQueueDropsMeasured=false且不返回未测的rtQueueDropDelta。只在需要硬件队列计数时显式使用diagnose 60 --queues；此查询会读取固件队列，已有读取超时与原分类器tc子进程清理失败同窗的真实记录，不能认为“只读”必然不影响时序。缺失读保留，未观测不等于零drop；本轮没有重复该重查询。
+
 supervisor.lua/lifecycle.lua负责单一外层procd与有限预算，transaction.lua的独立guardian绑定外层/owner PID和start；外层丢失撤回NSS。原guard只在验证许可时跳过IPv4关闭，IPv6/PBR/日志行为保留。启动前等待原五WAN与十个CAKE根就绪，120秒仍未就绪阻止启动；classifier_recovery仅修原diffserv/基础规则，install_core_guard仅接受原始或本控制器已知hook字节。前一次事务没有完整恢复凭据时不走启动前例外。
 
 维护测试：native/test-lifecycle.lua(25)、test-core-guard.lua(26)、test-tag-rules.lua(20)及test-tag-nft.sh(0/2/80，独立无hook表)在独立目标模型目录执行；不要覆盖运行中的/tmp源码。此次实际fork/wait模型以替换依赖/软件恢复事实验证四场景，真实owner退出/rollback另有现场证据。C/固件/EDMA未改、旧134 receipt mock复用。
 
-第一轮获准重启失败事实保留：五WAN/代理/Tailscale恢复，但启动前子进程退出1，尚无native事务记录，监督器阻止了后续启动。原分类器出现terminal stop；稍后原精确恢复工具修复十个diffserv4队列和十对基础规则、确认原cleanup后重启原分类器成功。初次stderr未完整保留，不能断定唯一初因。 第二轮真实重启验收等待用户新许可；最新启动修复已上线且手动启动通过，尚不能宣布无人值守冷启动通过。
+第一轮获准重启失败事实保留：五WAN/代理/Tailscale恢复，但启动前子进程退出1，尚无native事务记录，监督器阻止了后续启动。原分类器出现terminal stop；稍后原精确恢复工具修复十个diffserv4队列和十对基础规则、确认原cleanup后重启原分类器成功。初次stderr未完整保留，不能断定唯一初因。 修复后第二轮获准重启已通过无人值守恢复：启动后113.06秒观察到五WAN和全部服务恢复、NSS本机服务运行，自动重试0次；没有手动start或分类器repair。
+
+重启后89.95秒/19样本：NSS0..2，硬件转发字节增加10119523；五WAN网关/公网合计100/100回应。但来源暂停/恢复新增2/2，硬件队列读取缺失2次；原分类器audit捕获tc子进程清理未确认、rawStatus256/耗时4.17秒并精确恢复。其与硬件队列读取超时同窗，低频ICMP也与采样重叠，因果未证明；不能把缺失读当零drop或说全部长期问题已解决。 默认diagnose已取消硬件tc队列查询，需显式--queues才请求；未观测队列drop不再输出零。真实60秒/21样本轻量诊断：最长单读0.02秒、来源新增暂停0/恢复0、NSS0..2、两次活跃RT样本均有当前CREATE；没有重启服务、修改数据面设置或重做硬件查询。该短窗不能证明所有历史tc/恢复失败已消失。
 
 正式游戏/下载验收仍按用户要求延期；满载空闲带宽利用、每Wi-Fi station/TID/同设备混合负载、全端口字节覆盖、长期CPU/softirq、历史recover超时和固件规则提前消失原因尚未闭环。短窗零队列drop不是端到端零Loss/Miss。未升级/刷机/更换EDMA或修改五WAN认证、PBR/NAT、代理/Tailscale/无线配置。
 

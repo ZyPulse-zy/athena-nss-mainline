@@ -44803,6 +44803,30 @@
       "bytes": 17886,
       "role": "router-native-source-test-or-maintenance",
       "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/athena-qos",
+      "workspaceSource": "code/controller/athena-qos",
+      "sha256": "0363467ae50505bf5edd409915d68f3ba5ed78b0bc653897723d7dde27418e5a",
+      "bytes": 2362,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/native/diagnose.lua",
+      "workspaceSource": "code/controller/native/diagnose.lua",
+      "sha256": "950ade68272087afb0e83c1d6a212adfb0c2a4fd78449bcb4a2e7efc52c7d983",
+      "bytes": 4153,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "47f3cbdbc2884532f02b86897227782c038b6098646493925dc48112bfd14a1f",
+      "bytes": 19232,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44887,11 +44911,11 @@
   },
   "lastRouterLocalLongtermExport": {
     "revision": "dorm-v2-bounded-longterm-recovery",
-    "capturedAt": "2026-10-09T14:48:06.480Z",
+    "capturedAt": "2026-10-09T15:18:51.319Z",
     "latestEvidenceKey": "longtermDeploymentFix",
     "productionDeployed": true,
-    "fullColdBootAccepted": false,
-    "historicSourcePrefixLength": 6381,
-    "appendedControllerSources": 8
+    "fullColdBootAccepted": true,
+    "historicSourcePrefixLength": 6389,
+    "appendedControllerSources": 3
   }
 }

@@ -1,6 +1,8 @@
 -- Read-only, bounded capture. No full classifier snapshot or per-station dump.
 local root=assert(arg[0]:match('^(.*)/[^/]+$'))
 local seconds=tonumber(arg[1]or'60');assert(seconds and seconds%1==0 and seconds>=1 and seconds<=180,'Duration must be 1..180 seconds')
+local queueMode=arg[2]or'';assert(queueMode==''or queueMode=='--queues','Queue statistics require optional --queues')
+local queryQueues=queueMode=='--queues'
 local j=require('luci.jsonc');local n=require('nixio');local health=dofile(root..'/health.lua')
 local function read(p,cap)
  local f=io.open(p);if not f then return nil end;local s=f:read((cap or 4194304)+1)or'';f:close()
@@ -26,7 +28,7 @@ local function collect()
    state=g.state,createAck=g.create_ack,createPending=g.create_pending,untilMs=g.until_ms,serial=g.serial,generation=g.generation}
  end end
  local queues={};local queueReads=0
- if gate:match('^abi=2 capacity=32 ')then
+ if queryQueues and gate:match('^abi=2 capacity=32 ')then
   for _,dev in ipairs{'wan','athenaigs'}do
    local text=run('/root/router-project/experiments/nss8-htb2-20261001/tc-nss -s -d qdisc show dev '..dev)
    if text then local rows=health.queues(text,dev);if #rows==5 then queueReads=queueReads+1 end
@@ -42,10 +44,13 @@ local function collect()
 end
 local state=health.new();local start=now();local queueReadFailures=0;local last
 repeat
- last=collect();health.tick(state,last);if last.queueReads~=2 then queueReadFailures=queueReadFailures+1 end
+ last=collect();health.tick(state,last);if queryQueues and last.queueReads~=2 then queueReadFailures=queueReadFailures+1 end
  local remaining=start+seconds-now();if remaining<=0 then break end
  local wait=math.min(3,remaining);n.nanosleep(math.floor(wait),math.floor((wait%1)*1000000000))
 until false
-local report=health.report(state);report.lastPhase=last.phase;report.queueReadIncompleteSamples=queueReadFailures
-report.requestedSeconds=seconds;report.scopeNotice='Includes non-game RT flows. Counter resets and missing reads are retained, not treated as zero drops.'
+local report=health.report(state);report.lastPhase=last.phase
+report.queueStatisticsRequested=queryQueues;report.rtQueueDropsMeasured=queryQueues and queueReadFailures==0
+if queryQueues then report.queueReadIncompleteSamples=queueReadFailures end
+if not report.rtQueueDropsMeasured then report.rtQueueDropDelta=nil end
+report.requestedSeconds=seconds;report.scopeNotice='Includes non-game RT flows. Hardware tc queries require explicit --queues; missing or unrequested queue counters do not prove zero drops.'
 print(j.stringify(report))

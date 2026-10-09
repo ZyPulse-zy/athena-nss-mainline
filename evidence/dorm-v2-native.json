@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "capturedAt": "2026-10-09T14:48:06.480Z",
+  "capturedAt": "2026-10-09T15:18:51.319Z",
   "repository": "ZyPulse-zy/athena-nss-mainline",
   "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
   "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
@@ -504,7 +504,7 @@
     "approvedRouterRebootCompleted": true,
     "requiresExplicitRestartApproval": false,
     "requiresExplicitRouterRebootApproval": true,
-    "fullAutomaticColdBootAccepted": false,
+    "fullAutomaticColdBootAccepted": true,
     "maximumAutomaticRetries": 3,
     "unconditionalRespawn": false
   },
@@ -3885,7 +3885,7 @@
     }
   },
   "longtermDeploymentFix": {
-    "capturedAt": "2026-10-09T14:48:06.480Z",
+    "capturedAt": "2026-10-09T15:18:51.319Z",
     "scope": "Installed exact labels, storage cleanup, bounded startup/recovery; natural traffic only",
     "baseline": {
       "at": "2026-10-09T14:06:34.589Z",
@@ -4118,15 +4118,44 @@
       "manualClassifierRecoveryUsedAfterFirstReboot": true,
       "latestColdFixRebootVerified": false
     },
-    "secondApprovedColdBoot": null,
-    "fullColdBootAccepted": false,
-    "finalReadback": {
-      "at": "2026-10-09T14:48:06.480Z",
+    "secondApprovedColdBoot": {
+      "at": "2026-10-09T15:03:12.228Z",
+      "passed": true,
+      "bootChanged": true,
+      "automaticStart": true,
+      "manualStartOrRepairUsed": false,
+      "allFiveWansUp": true,
+      "existingServicesRunning": true,
       "phase": "native-running",
-      "nss": 4,
+      "nss": 0,
       "sourceFresh": true,
-      "sourcePauses": 0,
-      "sourceResumes": 0,
+      "unconfirmed": 0,
+      "bootEnabled": true,
+      "automaticRetries": 0,
+      "uptimeSeconds": 113.06,
+      "readyObservedSecondsAfterRequest": 140.011,
+      "classifierRecovery": {
+        "configUnchanged": true,
+        "filterPairsRestored": 10,
+        "classifierRestarted": true,
+        "classifierWasRunning": false,
+        "terminalMarkerClearedAfterExactRecovery": true,
+        "queueRepairsNeeded": 10,
+        "filterPairsNeeded": 10,
+        "queueRepairs": 10,
+        "mode": "repair",
+        "classifierPublicationFresh": true,
+        "classifierRunning": true
+      }
+    },
+    "fullColdBootAccepted": true,
+    "finalReadback": {
+      "at": "2026-10-09T15:18:51.319Z",
+      "phase": "native-running",
+      "nss": 1,
+      "sourceFresh": true,
+      "sourcePauses": 2,
+      "sourceResumes": 2,
       "unconfirmed": 0,
       "bootEnabled": true,
       "maximumAutomaticRetries": 3,
@@ -4204,19 +4233,300 @@
         "oom": 0,
         "firmwareCrash": 0
       },
-      "overlay": "Filesystem           1K-blocks      Used Available Use% Mounted on\n/dev/mmcblk0p25         998060    833976    137216  86% /overlay\n",
+      "overlay": "Filesystem           1K-blocks      Used Available Use% Mounted on\n/dev/mmcblk0p25         998060    833980    137212  86% /overlay\n",
       "routerRebooted": true,
-      "fullColdBootAccepted": false,
+      "fullColdBootAccepted": true,
       "gameAcceptance": false
     },
     "unresolved": [
-      "Latest installed cold startup fix has not passed a new automatic router reboot acceptance.",
+      "Two source gaps and two missing hardware queue reads occurred in the post-boot sampling window; original audit tc-child cleanup failed. Cause not proved, automatic recovery observed.",
       "Formal game/download, Wi-Fi per-station/TID and same-device mixed-load end-to-end acceptance deferred by user.",
       "Saturation bandwidth borrowing, all-port byte coverage and long-duration CPU/softirq not proved.",
       "Historical classifier recover timeout and spontaneous firmware rule loss have no directly proved initial cause.",
       "Physical RX drop counter changes are not attributed to any game flow."
     ],
-    "rawConntrackMacIpCredentialsLogsAndBinariesIncluded": false
+    "rawConntrackMacIpCredentialsLogsAndBinariesIncluded": false,
+    "postRebootSampling": {
+      "at": "2026-10-09T15:07:22.194Z",
+      "sampleSeconds": 89.95,
+      "samples": 19,
+      "nssMin": 0,
+      "nssMax": 2,
+      "sourceFreshAll": false,
+      "sourceNewPauses": 2,
+      "sourceNewResumes": 2,
+      "unconfirmedMax": 0,
+      "physicalWanMbps": {
+        "mean": 5.048,
+        "p95": 42.066,
+        "maximum": 42.066
+      },
+      "readSecondsMax": 2.94,
+      "nssHardwareForwardingByteDelta": 10119523,
+      "rt": {
+        "progressingSamples": 1,
+        "currentCreateSamples": 1,
+        "withoutCurrentCreateSamples": 0,
+        "queueCounterResets": 0,
+        "incompleteQueueReads": 2,
+        "events": [],
+        "endToEndPacketLossMeasured": false,
+        "observedRtQueueDropDelta": 0,
+        "rtQueueDropsFullyMeasured": false
+      },
+      "cpuMeanBusyPct": 20.548,
+      "softnet": [
+        {
+          "cpu": 0,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 1,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 2,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 3,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        }
+      ],
+      "physicalWanRxDropDelta": 3,
+      "lowRateIcmpOverlappedSampling": true,
+      "classifierAuditError": "tc child cleanup not proved; outer mutation must terminate",
+      "classifierAuditRawStatus": 256,
+      "classifierAuditSeconds": 4.17,
+      "originalClassifierExactRecoveryLogged": true,
+      "queryTimeoutCausalityProved": false
+    },
+    "postRebootWanProbes": {
+      "at": "2026-10-09T15:07:24.593Z",
+      "readOnlyConfiguration": true,
+      "generatedLowRateIcmp": true,
+      "routerOriginatedNotClientGameTraffic": true,
+      "tests": [
+        {
+          "wan": 1,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 1.089,
+                "avg": 1.82,
+                "max": 6.042
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 38.942,
+                "avg": 39.252,
+                "max": 39.561
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        },
+        {
+          "wan": 2,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 1.02,
+                "avg": 1.607,
+                "max": 5.821
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 39.035,
+                "avg": 39.413,
+                "max": 39.854
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        },
+        {
+          "wan": 3,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 1.045,
+                "avg": 1.655,
+                "max": 4.121
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 39.104,
+                "avg": 39.46,
+                "max": 39.814
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        },
+        {
+          "wan": 4,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 1.002,
+                "avg": 1.174,
+                "max": 1.634
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 42.246,
+                "avg": 43.404,
+                "max": 44.376
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        },
+        {
+          "wan": 5,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 0.979,
+                "avg": 1.555,
+                "max": 3.454
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 10,
+              "received": 10,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 39.952,
+                "avg": 40.322,
+                "max": 40.876
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        }
+      ]
+    },
+    "observationMitigation": {
+      "at": "2026-10-09T15:17:09.326Z",
+      "installed": true,
+      "installedFiles": {
+        "diagnose.lua": "950ade68272087afb0e83c1d6a212adfb0c2a4fd78449bcb4a2e7efc52c7d983",
+        "athena-qos": "0363467ae50505bf5edd409915d68f3ba5ed78b0bc653897723d7dde27418e5a"
+      },
+      "parsersPassed": 2,
+      "invalidOptionRejected": true,
+      "requestedSeconds": 60,
+      "actualReport": {
+        "sourceRestores": 0,
+        "readOnly": true,
+        "scopeNotice": "Includes non-game RT flows. Hardware tc queries require explicit --queues; missing or unrequested queue counters do not prove zero drops.",
+        "endToEndLossMeasured": false,
+        "counterResets": 0,
+        "rtNotCreatedSamples": 0,
+        "maxReadSeconds": 0.01999999999998181,
+        "sourceGaps": 0,
+        "sampleSeconds": 60,
+        "requestedSeconds": 60,
+        "rtQueueDropsMeasured": false,
+        "rtFlowAliasLimit": 256,
+        "rtBindingChanges": 0,
+        "queueStatisticsRequested": false,
+        "lastPhase": "native-running",
+        "generatedTraffic": false,
+        "samples": 21,
+        "scope": "all-budget-admitted-RT-flows-not-game-exclusive",
+        "interpretation": "No local event does not prove zero loss or jitter. A CREATE receipt is not a per-packet delivery acknowledgement.",
+        "actualNssMin": 0,
+        "events": [],
+        "actualNssMax": 2,
+        "rtFlowAliases": 10,
+        "rtProgressingSamples": 2,
+        "rtCreatedSamples": 2,
+        "eventsOmitted": 0
+      },
+      "defaultHardwareTcReads": false,
+      "unobservedQueueDropNotClaimedZero": true,
+      "servicePidsUnchanged": true,
+      "newSourcePauses": 0,
+      "newSourceResumes": 0,
+      "finalNss": 0,
+      "sourceFresh": true,
+      "unconfirmed": 0,
+      "dataPlaneSettingsChanged": false,
+      "routerRebooted": false
+    }
   },
   "releaseStateBeforeLongtermFix": {
     "installed": true,
