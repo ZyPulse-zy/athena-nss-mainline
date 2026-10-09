@@ -1,3 +1,15 @@
+<!-- audit-deployment-20261010 -->
+# 当前：审查修复已部署，NSS持续运行
+
+用户明确要求直接进行后，db872e0已通过正常退出/完整回退、11文件成套安装及start上线。2026-10-10 00:55:06北京时间：native-running/NSS8/sourceFresh/未确认0，新会话暂停/恢复0/0、自动重试0；安装与运行RAM哈希一致，五WAN、受保护配置、原十个软件CAKE根选项及主要服务身份保留。private回退副本已本地/路由器验证，安装暂存清理；没有重启路由器或改无线。
+
+一次60秒自然轻量诊断NSS6..9、global硬件RX/TX增长4156949/4270237字节。新核验检出6个标签verified/116个mismatch流样本：多数无线RT的return_qos高位仍等于up，低位6和下行IGS正确。**部署成功，完整双向标签与空口/端到端验收尚未通过**；没有用mismatch触发撤销或更改预期。
+
+[部署与验收报告](docs/DORM_V2_DEPLOYMENT_ACCEPTANCE.md) · [部署证据](evidence/dorm-v2-audit-deployment.json) · [代码修复与模型](docs/DORM_V2_AUDIT_REMEDIATION.md)。PR #1保持draft、未合并。
+
+## 以下为部署前候选与历史记录
+<!-- /audit-deployment-20261010 -->
+
 <!-- audit-remediation-20261010 -->
 # 当前：审查问题已修复为候选，现网保留原部署
 

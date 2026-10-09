@@ -1,3 +1,17 @@
+<!-- audit-deployment-20261010 -->
+# 当前：db872e0已获准切换并保持运行
+
+用户随后明确要求直接部署，本次已完成：原控制器正常stop/独立完整回退约3.254秒；6Lua+4模块副本+build-result共11文件安装校验；新start约3.905秒进入native-running。原磁盘ECM/driver/IGS不替换，既有owner和core-guard按流程重载，认证/分类器/autorate/代理/Tailscale未重启。原安装私有归档328653字节在本地及路由器持久副本均核验，旧备份保留，RAM安装暂存清理。
+
+2026-10-10 **00:55:06北京时间最终复核**：native-running/sourceFresh/NSS8/未确认0，新会话来源0/0/自动重试0；11文件持久与RAM哈希匹配db872e0、五WAN身份/保护配置/十个软件CAKE根句柄和除autorate动态bandwidth外所有选项一致；自启保留。一次默认60秒/21样本：NSS6..9、无新增来源间断、采集最大0.04秒，全局硬件RX/TX分别增4156949/4270237字节，不构造逐CT覆盖率。
+
+新核验真实发现6个verified/116个mismatch流样本。末次五条无线RT的低位6和下行IGS7a正确，但return_qos高位仍等于up7e，与预期down7a不同；不视作双向标签合格，也不直接归因为游戏丢包或空口优先级失败。没有因该差异撤销流或重启NSS。真实恢复事件/满槽未发生，仍区分模型与实测；Wi-Fi TID/AC、有线持续FDB、同口径字节覆盖和历史分类器间断待查。
+
+[部署完整报告](DORM_V2_DEPLOYMENT_ACCEPTANCE.md) · [本次结构化证据](../evidence/dorm-v2-audit-deployment.json)。本轮仅执行获准单次部署与只读验收，没有刷机/路由器重启、改无线、主动拥塞/故障或新的多轮CPU测试。PR #1保持draft，不合并。
+
+## 以下为本次部署前候选与历史记录
+<!-- /audit-deployment-20261010 -->
+
 <!-- audit-remediation-20261010 -->
 # 当前：审查修复已完成开发验证，尚未现场切换
 

@@ -1734,7 +1734,7 @@
     ],
     "rawIdentitiesMacCredentialsAndBinariesIncluded": false
   },
-  "latestEvidenceKey": "codeReviewRemediation",
+  "latestEvidenceKey": "codeReviewDeployment",
   "repositoryReview": {
     "reviewedSourceCommit": "c8ab8123298b63751a8bfc665b297f6e11a97e27",
     "scope": [
@@ -4634,5 +4634,40 @@
       "actualNss": 1
     },
     "endToEndGameLossOrWifiAirQueuesVerified": false
+  },
+  "codeReviewDeployment": {
+    "capturedAt": "2026-10-09T16:55:06.467Z",
+    "revision": "dorm-v2-audit-production-deployed-20261010",
+    "sourceCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
+    "evidence": "evidence/dorm-v2-audit-deployment.json",
+    "report": "docs/DORM_V2_DEPLOYMENT_ACCEPTANCE.md",
+    "productionCandidateDeployed": true,
+    "draftPullRequestPreserved": true,
+    "finalReadback": {
+      "at": "2026-10-09T16:55:06.467Z",
+      "sourceCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
+      "phase": "native-running",
+      "sourceFresh": true,
+      "actualNss": 8,
+      "unconfirmed": 0,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "automaticRetries": 0,
+      "runtimeBundleHashesMatched": true,
+      "installedBundleHashesMatched": true,
+      "allWansUp": true,
+      "wanIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "coreGuardRunning": true,
+      "bootEnabledPreserved": true,
+      "softwareContractInspectSucceeded": true,
+      "softwareConfigUnchanged": true
+    },
+    "qosLabelsAccepted": false,
+    "observedLabelMismatchFlowSamples": 116,
+    "sampleCountsAreUniqueConnectionsOrLossRate": false,
+    "endToEndGameLossOrWifiAirQueuesVerified": false,
+    "historicalRecordsRetained": true
   }
 }

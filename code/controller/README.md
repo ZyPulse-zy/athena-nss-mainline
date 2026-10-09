@@ -1,3 +1,17 @@
+<!-- audit-deployment-20261010 -->
+# 当前维护：db872e0审查修复已安装并运行
+
+用户随后明确要求直接进行，已完成一次正常stop/独立完整回退、11文件成套安装和start。2026-10-10 00:55:06北京时间native-running/NSS8/sourceFresh/未确认0，新会话来源0/0/自动重试0，持久及运行RAM11文件哈希与该候选一致。十个软件CAKE根句柄/选项与原哈希配置匹配，五WAN/认证/分类器/autorate/代理/Tailscale和自启保留；native owner及其core-guard按既有流程重载。原安装private备份已本地/路由器验证，暂存已清理。
+
+默认一次diagnose 60实测21样本/NSS6..9/来源无新增间断/global硬件RX/TX分别增长4156949/4270237字节。新flowEvidence确实检出6个verified/116个mismatch流样本：多数无线RT return_qos高位等于up7e，低位6和下行IGS7a正确；完整双向标签还未合格。不要通过改预期或因mismatch撤销健康流让结果变绿。pending/rejected/recovery末次均0，未发生真实满槽或恢复事件，仍不能把模型当固件故障验收。
+
+运行期不要调用启动前专用classifier_recovery.lua（inspect同样要求无gate/lock）；本次该保护拒绝后，独立只读按原配置核对十个软件CAKE根通过，没有取消保护或再次停NSS。status/diagnose仍为正常观察入口，默认无硬件tc；不新建常驻监控。
+
+[本次部署与限制](../../docs/DORM_V2_DEPLOYMENT_ACCEPTANCE.md) · [本次证据](../../evidence/dorm-v2-audit-deployment.json)。PR保持draft，未合并；不重复本次部署或扩大无线/故障范围。
+
+## 以下为部署前候选与此前安装历史
+<!-- /audit-deployment-20261010 -->
+
 <!-- audit-remediation-20261010 -->
 # 当前维护：审查修复候选，现网仍为此前部署
 

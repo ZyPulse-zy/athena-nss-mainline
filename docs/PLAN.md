@@ -1,3 +1,13 @@
+<!-- audit-deployment-20261010 -->
+# 当前交接：部署已完成，定向追查真实标签差异
+
+用户随后明确要求直接进行，db872e0已完成正常单次切换、完整回退确认与新会话验收，并保持NSS运行。不要再等待本次部署许可或重复start/stop；不要抹去guard重载与历史失败。见[完成记录](DORM_V2_DEPLOYMENT_ACCEPTANCE.md)。
+
+下一优先项是已实测的return_qos高位与up相同（RT低位/下行IGS正确）：只读关联软件包priority、ECM分类器与CREATE时刻后决定最小修复，不能先改预期或无证据驱逐。真实满槽/CREATE失败事件、Wi-Fi空口、有线FDB和同口径字节覆盖在自然证据可得时推进；不泛化多轮CPU/故障/拥塞，不改原无线或扩大lease/BE。PR #1继续draft，不合并。
+
+## 以下为部署前计划与历史记录
+<!-- /audit-deployment-20261010 -->
+
 <!-- audit-remediation-20261010 -->
 # 当前交接：候选开发完成，等待获准窗口验收
 

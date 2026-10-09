@@ -1,3 +1,16 @@
+<!-- audit-deployment-20261010 -->
+# 当前：修复已上线，双向标签差异已实测
+
+db872e0已经用户明确授权安装并保持NSS运行，不能继续写候选尚未部署。正常stop/完整回退、11文件持久/RAM匹配、五WAN/原软件CAKE及保护核验通过；未重启路由器。见[部署验收](DORM_V2_DEPLOYMENT_ACCEPTANCE.md)、[结构化证据](../evidence/dorm-v2-audit-deployment.json)。
+
+- 当前优先1：60秒新核验中6个verified/116个mismatch流样本；多数无线RT return_qos高位等于up7e而非预期down7a，RT低位6/IGS下行7a正确。根因未定位，不能改预期、触发无证据撤销或归为游戏丢包。流样本计数不是116条连接或丢包率。
+- 真实CREATE失败后ECM再次选择与两次有限重试尚无自然事件；恢复tracked/withdrawals0、无满32槽，模型198/其它定向证据保持，不能宣称现场故障验收通过。
+- 新会话短窗来源0/0不否定旧4/4与历史tc/recover清理问题。Wi-Fi逐TID/AC、同设备游戏+下载、客户端上行空口、有线>60秒FDB和包含BE的同口径字节覆盖仍未验证。
+- 运行期调用仅用于启动前的classifier_recovery inspect被其无gate/锁保护拒绝，没有修改；未取消保护或再次停止NSS。独立只读十个软件根的kind/handle/选项核验已通过。
+
+## 以下为部署前候选与历史问题
+<!-- /audit-deployment-20261010 -->
+
 <!-- audit-remediation-20261010 -->
 # 当前：代码缺陷已有修复候选，硬件与端到端验收尚缺证据
 
