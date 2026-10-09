@@ -44827,6 +44827,14 @@
       "bytes": 19232,
       "role": "router-native-source-test-or-maintenance",
       "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "7d7b9b882a160ca601d093cd85de403d0786d4d48219c8fbad2362ccfddc8489",
+      "bytes": 19455,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44915,7 +44923,7 @@
     "latestEvidenceKey": "longtermDeploymentFix",
     "productionDeployed": true,
     "fullColdBootAccepted": true,
-    "historicSourcePrefixLength": 6389,
-    "appendedControllerSources": 3
+    "historicSourcePrefixLength": 6392,
+    "appendedControllerSources": 1
   }
 }

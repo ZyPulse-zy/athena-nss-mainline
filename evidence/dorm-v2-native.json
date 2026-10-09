@@ -4239,6 +4239,7 @@
       "gameAcceptance": false
     },
     "unresolved": [
+      "Further recovered source gaps were observed after the light diagnosis. Reducing diagnostic tc reads did not eliminate the source interruption problem.",
       "Two source gaps and two missing hardware queue reads occurred in the post-boot sampling window; original audit tc-child cleanup failed. Cause not proved, automatic recovery observed.",
       "Formal game/download, Wi-Fi per-station/TID and same-device mixed-load end-to-end acceptance deferred by user.",
       "Saturation bandwidth borrowing, all-port byte coverage and long-duration CPU/softirq not proved.",
@@ -4526,6 +4527,19 @@
       "unconfirmed": 0,
       "dataPlaneSettingsChanged": false,
       "routerRebooted": false
+    },
+    "subsequentDeliveryStatus": {
+      "at": "2026-10-09T15:24:36.740Z",
+      "phase": "native-running",
+      "nss": 1,
+      "sourceFresh": true,
+      "sourcePauses": 4,
+      "sourceResumes": 4,
+      "unconfirmed": 0,
+      "hardwareAdmissionEnabled": true,
+      "bootEnabled": true,
+      "supervisorPhase": "running",
+      "automaticRetries": 0
     }
   },
   "releaseStateBeforeLongtermFix": {
