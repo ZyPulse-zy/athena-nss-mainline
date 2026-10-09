@@ -1,3 +1,17 @@
+# 当前维护：可读的精确标签候选，现网仍为f1f58cc
+
+当前现网仍为 f1f58cc，NSS继续运行；2026/10/9 18:52:48 北京时间最终复核：NSS1、sourceFresh、IPv4开启、未确认0，owner/guardian/reader与服务/保护/已安装源码不变。用户此前回报“不卡了”；正式游戏验收及端到端零Loss/Miss仍未证明。
+
+仅修改维护代码的修复候选：用一个标量CT ID成员集合快速跳过无关包，再做至多80条策略的完整11字段精确匹配，保留mark/NAT/WAN、双向队列标签和RT/BE低位；不以CT ID单独授权、不新增配额、不改C/固件/EDMA。6组模型、26 Lua/Shell解析及另1个维护Shell解析通过；真实目标无hook模型0/2/80策略安装、文本/JSON读取、导出重解析、字段/标签校验及清理通过。候选未安装、运行性能未验收，现网继续原版本。
+
+新tag_rules.lua由writer加载、launch复制。test-tag-rules.lua是纯模型；test-tag-nft.sh须与tag_rules/queue_plan放在独立目标模型目录，使用独立名称的无hook临时表验证0/2/80条策略可读取/导出，确认清理。不得在/tmp/athena-dorm-native覆盖运行源码来运行模型。候选尚未部署；安装时新tag_rules必须与writer/launch同批，完整退出/回退确认后再启动。
+
+原status/start/stop/rollback/diagnose入口不变，本轮只调用status与独立测试，不为验证重复停止正常现网。自启/有限重试策略和本候选负载性能未验收。
+
+[实际状态](../../docs/STATE.md) · [证据](../../evidence/dorm-v2-native.json)
+
+## 以下为此前记录，不能覆盖本次部署差异
+
 # 当前：运行保留，增加Loss/Miss只读诊断
 
 2026-10-09T08:57:33.823Z（北京时间16:57）复核：NSS保持运行。当前用户报告约0.4% Loss与Miss，方向不明；尚未复现或证明根因，不能宣布已解决。

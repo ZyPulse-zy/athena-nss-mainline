@@ -11,7 +11,7 @@ chmod 700 "$target"
 cp "$source/classifier_recovery.lua" "$target/classifier_recovery.lua"
 chmod 600 "$target/classifier_recovery.lua"
 lua "$target/classifier_recovery.lua" repair >"$target/classifier-recovery.json"
-for name in transaction.lua ingress_probe.lua queue_plan.lua writer.lua reader.lua prepare.lua core_guard_permission.lua install_core_guard.lua core.lua collector.lua flow_json.lua health.lua diagnose.lua athena-qos athena_ecm_gate.ko athena_nss_receipts.ko ecm-receipts.ko act_nssmirred-receipts.ko build-result.json; do
+for name in transaction.lua ingress_probe.lua queue_plan.lua tag_rules.lua writer.lua reader.lua prepare.lua core_guard_permission.lua install_core_guard.lua core.lua collector.lua flow_json.lua health.lua diagnose.lua athena-qos athena_ecm_gate.ko athena_nss_receipts.ko ecm-receipts.ko act_nssmirred-receipts.ko build-result.json; do
  cp "$source/$name" "$target/$name"
  chmod 600 "$target/$name"
 done

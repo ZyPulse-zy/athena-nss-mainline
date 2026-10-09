@@ -1,3 +1,15 @@
+# 当前接续：f1f58cc现网运行，标签修复候选尚未部署
+
+当前现网仍为 f1f58cc，NSS继续运行；2026/10/9 18:52:48 北京时间最终复核：NSS1、sourceFresh、IPv4开启、未确认0，owner/guardian/reader与服务/保护/已安装源码不变。用户此前回报“不卡了”；正式游戏验收及端到端零Loss/Miss仍未证明。
+
+长期部署尚有实际问题：持久存储97%/约32MiB可用（约567MiB历史备份、118MiB暂存，无本窗口增长，未删除）；nft读取当前athena_dorm_qos标签表会用户态断言退出，其它八表可读；开机自启和确认回退后的有限恢复仍关闭，重启后不会自动启用NSS，原分类器冷启动基础规则修复也尚未完成无人值守验收。历史recover超时、短暂RT规则变化、Wi-Fi station队列/TID/同机混合负载继续未闭环。
+
+仅修改维护代码的修复候选：用一个标量CT ID成员集合快速跳过无关包，再做至多80条策略的完整11字段精确匹配，保留mark/NAT/WAN、双向队列标签和RT/BE低位；不以CT ID单独授权、不新增配额、不改C/固件/EDMA。6组模型、26 Lua/Shell解析及另1个维护Shell解析通过；真实目标无hook模型0/2/80策略安装、文本/JSON读取、导出重解析、字段/标签校验及清理通过。候选未安装、运行性能未验收，现网继续原版本。
+
+先读STATE和deploymentReadinessReview。仓库writer/launch/tag_rules是新候选，不能再用工作区writer哈希直接判旧f1f58cc现场漂移；对照本次已安装基线。既有临时表已清理，不能重复同一定位实验。保留冻结code/work、manifest历史、五WAN/PBR/NAT/代理/Tailscale/管理。未获维护窗口授权不停止/替换当前运行服务，不启用boot/respawn或重启；先前的一次重启已用。
+
+## 以下为此前记录，不能覆盖本次部署差异
+
 # 当前接续：NSS继续运行，Loss/Miss诊断已安装
 
 先读STATE及evidence/dorm-v2-native.json lossMissInvestigation。2026-10-09T08:57:33.823Z（北京时间16:57）复核：NSS保持运行。当前用户报告约0.4% Loss与Miss，方向不明；尚未复现或证明根因，不能宣布已解决。

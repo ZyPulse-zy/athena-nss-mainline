@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "capturedAt": "2026-10-09T08:57:33.823Z",
+  "capturedAt": "2026-10-09T10:52:48.532Z",
   "repository": "ZyPulse-zy/athena-nss-mainline",
   "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
   "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
@@ -1730,7 +1730,7 @@
     ],
     "rawIdentitiesMacCredentialsAndBinariesIncluded": false
   },
-  "latestEvidenceKey": "lossMissInvestigation",
+  "latestEvidenceKey": "deploymentReadinessReview",
   "repositoryReview": {
     "reviewedSourceCommit": "c8ab8123298b63751a8bfc665b297f6e11a97e27",
     "scope": [
@@ -2563,6 +2563,1321 @@
       "historicalManifestPrefixPreserved": 6368,
       "frozenCodeUnmodified": true,
       "obviousSecretChecksPassed": true
+    }
+  },
+  "deploymentReadinessReview": {
+    "at": "2026-10-09T10:52:48.532Z",
+    "deployedCommit": "f1f58ccb94922977d6d81331c2a3341636b10e1a",
+    "productionChanged": false,
+    "readiness": "current-service-working-but-unattended-longterm-not-accepted",
+    "userReport": {
+      "noLongerLagging": true,
+      "endToEndLossResolvedProved": false
+    },
+    "passiveAudit": {
+      "at": "2026-10-09T10:30:02.914Z",
+      "headCommit": "f1f58ccb94922977d6d81331c2a3341636b10e1a",
+      "scope": "Non-disruptive predeployment audit; no controlled saturation or hardware fault injection",
+      "sampleSeconds": 899.95,
+      "samples": 181,
+      "configurationReadOnly": true,
+      "controllerRestarted": false,
+      "routerRestarted": false,
+      "bulkTrafficGenerated": false,
+      "lowRateIcmpGenerated": true,
+      "phaseStable": true,
+      "hardwareAdmissionAlwaysEnabled": true,
+      "nssMin": 1,
+      "nssMax": 9,
+      "sourceFreshAll": true,
+      "sourceNewPauses": 0,
+      "sourceNewResumes": 0,
+      "sourceLifetimePauses": 7,
+      "sourceLifetimeResumes": 7,
+      "maximumSourceAgeSeconds": 3.61,
+      "unconfirmedMax": 0,
+      "identityStable": true,
+      "servicePidStable": true,
+      "wanHealthy": true,
+      "originalProtectionHashesUnchanged": true,
+      "installedHashesUnchanged": true,
+      "cakeContractUnchanged": true,
+      "nssHardwareIpv4CounterDeltas": {
+        "ipv4_rx_pkts": 223919,
+        "ipv4_rx_byts": 812047218,
+        "ipv4_tx_pkts": 223919,
+        "ipv4_tx_byts": 149898397,
+        "ipv4_rx_queue[0]_drops": 0,
+        "ipv4_rx_queue[1]_drops": 0,
+        "ipv4_rx_queue[2]_drops": 0,
+        "ipv4_rx_queue[3]_drops": 0,
+        "ipv4_rx_bytes": 146807952,
+        "ipv4_tx_bytes": 149942818,
+        "ipv4_create_requests": 128,
+        "ipv4_create_collisions": 0,
+        "ipv4_create_invalid_interface": 0,
+        "ipv4_destroy_requests": 128,
+        "ipv4_destroy_misses": 23,
+        "ipv4_hash_hits": 363628,
+        "ipv4_hash_reorders": 0,
+        "ipv4_flushes": 23,
+        "ipv4_evictions": 0,
+        "ipv4_fragmentations": 0,
+        "ipv4_by_rule_drops": 0,
+        "ipv4_mc_create_requests": 0,
+        "ipv4_mc_update_requests": 0,
+        "ipv4_mc_create_invalid_interface": 0,
+        "ipv4_mc_destroy_requests": 0,
+        "ipv4_mc_destroy_misses": 0,
+        "ipv4_mc_flushes": 0,
+        "ipv4_mirror_invalid_ifnum_conn_create_req": 0,
+        "ipv4_mirror_invalid_iftype_conn_create_req": 0,
+        "ipv4_mirror_failures": 0,
+        "ipv4_icmp_hdr_incomplete": 0,
+        "ipv4_icmp_unhandled_type": 17688,
+        "ipv4_icmp_ipv4_hdr_incomplete": 0,
+        "ipv4_icmp_ipv4_udp_hdr_incomplete": 0,
+        "ipv4_icmp_ipv4_tcp_header_incomplete": 0,
+        "ipv4_icmp_sipv4_unknown_protocol": 12,
+        "ipv4_icmp_no_icme": 379,
+        "ipv4_icmp_flush_to_host": 1,
+        "ipv4_tcp_header_incomplete": 0,
+        "ipv4_tcp_no_icme": 448810,
+        "ipv4_tcp_ip_option": 0,
+        "ipv4_tcp_ip_fragment": 0,
+        "ipv4_tcp_small_ttl": 0,
+        "ipv4_tcp_needs_fragmentation": 0,
+        "ipv4_tcp_flags": 22,
+        "ipv4_tcp_seq_exceeds_right_edge": 0,
+        "ipv4_tcp_small_data_offs": 0,
+        "ipv4_tcp_bad_sack": 0,
+        "ipv4_tcp_big_data_offs": 0,
+        "ipv4_tcp_seq_before_left_edge": 0,
+        "ipv4_tcp_ack_exceeds_right_edge": 0,
+        "ipv4_tcp_ack_before_left_edge": 0,
+        "ipv4_udp_header_incomplete": 0,
+        "ipv4_udp_no_icme": 377963,
+        "ipv4_udp_ip_option": 0,
+        "ipv4_udp_ip_fragment": 0,
+        "ipv4_udp_small_ttl": 0,
+        "ipv4_udp_needs_fragmentation": 0,
+        "ipv4_wrong_target_mac": 0,
+        "ipv4_header_incomplete": 0,
+        "ipv4_bad_total_length": 0,
+        "ipv4_bad_checksum": 0,
+        "ipv4_non_initial_fragment": 0,
+        "ipv4_datagram_incomplete": 2,
+        "ipv4_options_incomplete": 1,
+        "ipv4_unknown_protocol": 163,
+        "ipv4_esp_header_incomplete": 0,
+        "ipv4_esp_no_icme": 0,
+        "ipv4_esp_ip_option": 0,
+        "ipv4_esp_ip_fragment": 0,
+        "ipv4_esp_small_ttl": 0,
+        "ipv4_esp_needs_fragmentation": 0,
+        "ipv4_ingress_vid_mismatch": 0,
+        "ipv4_ingress_vid_missing": 0,
+        "ipv4_6rd_no_icme": 0,
+        "ipv4_6rd_ip_option": 0,
+        "ipv4_6rd_ip_fragment": 0,
+        "ipv4_6rd_needs_fragmentation": 0,
+        "ipv4_dscp_marking_mismatch": 0,
+        "ipv4_vlan_marking_mismatch": 0,
+        "ipv4_interface_mismatch": 0,
+        "ipv4_gre_header_incomplete": 0,
+        "ipv4_gre_no_icme": 0,
+        "ipv4_gre_ip_option": 0,
+        "ipv4_gre_ip_fragment": 0,
+        "ipv4_gre_small_ttl": 0,
+        "ipv4_gre_needs_fragmentation": 0,
+        "ipv4_pptp_gre_session_match_fail": 0,
+        "ipv4_pptp_gre_invalid_proto": 0,
+        "ipv4_pptp_gre_no_cme": 0,
+        "ipv4_pptp_gre_ip_option": 0,
+        "ipv4_pptp_gre_ip_fragment": 0,
+        "ipv4_pptp_gre_small_ttl": 0,
+        "ipv4_pptp_gre_needs_fragmentation": 0,
+        "ipv4_destroy": 0,
+        "ipv4_frag_df_set": 0,
+        "ipv4_frag_fail": 0,
+        "ipv4_icmp_ipv4_udplite_header_incomplete": 0,
+        "ipv4_udplite_header_incomplete": 0,
+        "ipv4_udplite_no_icme": 0,
+        "ipv4_udplite_ip_option": 0,
+        "ipv4_udplite_ip_fragment": 0,
+        "ipv4_udplite_small_ttl": 0,
+        "ipv4_udplite_needs_fragmentation": 0,
+        "ipv4_mc_udp_no_icme": 0,
+        "ipv4_mc_mem_alloc_failure": 0,
+        "ipv4_mc_update_failure": 0,
+        "ipv4_mc_pbuf_alloc_failure": 0,
+        "ipv4_pppoe_bridge_no_icme": 0,
+        "ipv4_pppoe_no_session": 0,
+        "ipv4_icmp_ipv4_gre_hdr_incomplete": 0,
+        "ipv4_icmp_ipv4_esp_hdr_incomplete": 0,
+        "ipv4_emesh_prio_mismatch": 0,
+        "ipv4_mc_ucast_dmac_failure": 0
+      },
+      "n2hCounterDeltas": {
+        "n2h_rx_pkts": 2911975,
+        "n2h_rx_byts": 1962129130,
+        "n2h_tx_pkts": 1336494,
+        "n2h_tx_byts": 1368715139,
+        "n2h_rx_queue[0]_drops": 0,
+        "n2h_rx_queue[1]_drops": 0,
+        "n2h_rx_queue[2]_drops": 0,
+        "n2h_rx_queue[3]_drops": 0,
+        "n2h_queue_drops": 0,
+        "n2h_ticks": 0,
+        "n2h_worst_ticks": 0,
+        "n2h_iterations": 0,
+        "n2h_pbuf_ocm_total_count": 0,
+        "n2h_pbuf_ocm_free_count": 27,
+        "n2h_pbuf_ocm_alloc_fail_payload": 0,
+        "n2h_pbuf_ocm_alloc_fail_nopayload": 0,
+        "n2h_pbuf_def_total_count": 0,
+        "n2h_pbuf_def_free_count": -31,
+        "n2h_pbuf_def_alloc_fail_payload": 0,
+        "n2h_pbuf_def_alloc_fail_nopayload": 0,
+        "n2h_payload_alloc_fails": 0,
+        "n2h_payload_free_count": 26,
+        "n2h_h2n_control_pkts": 43667,
+        "n2h_h2n_control_byts": 177208448,
+        "n2h_n2h_control_pkts": 1585319,
+        "n2h_n2h_control_byts": 765652200,
+        "n2h_h2n_data_pkts": 1292827,
+        "n2h_h2n_data_byts": 1191506691,
+        "n2h_n2h_data_pkts": 1326656,
+        "n2h_n2h_data_byts": 1196476930,
+        "n2h_n2h_tot_payloads": 30,
+        "n2h_n2h_data_interface_invalid": 0,
+        "n2h_n2h_enqueue_retries": 0
+      },
+      "edmaCounterDeltas": {
+        "edma_err_axi_rd_err": 0,
+        "edma_err_axi_wr_err": 0,
+        "edma_err_rx_desc_fifo_full_err": 0,
+        "edma_err_rx_buf_size_err": 0,
+        "edma_err_tx_sram_full_err": 0,
+        "edma_err_tx_cmpl_buf_full_err": 0,
+        "edma_err_pkt_len_la64k_err": 0,
+        "edma_err_pkt_len_le33_err": 0,
+        "edma_err_data_len_err": 0,
+        "edma_err_alloc_fail_cnt": 0,
+        "edma_err_qos_inval_dst_drops": 0
+      },
+      "rt": {
+        "flowAliases": 145,
+        "progressingSamples": 525,
+        "currentCreateSamples": 520,
+        "withoutCurrentCreateSamples": 5,
+        "rtQueueDropDelta": 0,
+        "queueDropDeltas": {
+          "wan/7e56:": 0,
+          "wan/7e36:": 0,
+          "wan/7e16:": 0,
+          "wan/7e46:": 0,
+          "wan/7e26:": 0,
+          "athenaigs/7a36:": 0,
+          "athenaigs/7a16:": 0,
+          "athenaigs/7a46:": 0,
+          "athenaigs/7a26:": 0,
+          "athenaigs/7a56:": 0
+        },
+        "queueCounterResets": 0,
+        "incompleteQueueReads": 0,
+        "events": [
+          {
+            "at": "2026-10-09T10:17:42.891Z",
+            "flow": 14,
+            "created": false,
+            "wan": 2,
+            "egress": "lan4",
+            "sourceFresh": true,
+            "kind": "active-rt-without-current-create"
+          },
+          {
+            "at": "2026-10-09T10:17:42.891Z",
+            "flow": 13,
+            "created": true,
+            "wan": 1,
+            "egress": "lan4",
+            "sourceFresh": true,
+            "kind": "active-rt-binding-changed"
+          },
+          {
+            "at": "2026-10-09T10:17:57.830Z",
+            "flow": 14,
+            "created": true,
+            "wan": 2,
+            "egress": "lan4",
+            "sourceFresh": true,
+            "kind": "active-rt-binding-changed"
+          },
+          {
+            "at": "2026-10-09T10:19:32.820Z",
+            "flow": 31,
+            "created": false,
+            "wan": 2,
+            "egress": "phy0-ap0",
+            "sourceFresh": true,
+            "kind": "active-rt-without-current-create"
+          },
+          {
+            "at": "2026-10-09T10:20:07.841Z",
+            "flow": 37,
+            "created": false,
+            "wan": 2,
+            "egress": "phy2-ap0",
+            "sourceFresh": true,
+            "kind": "active-rt-without-current-create"
+          },
+          {
+            "at": "2026-10-09T10:23:02.953Z",
+            "flow": 39,
+            "created": false,
+            "wan": 4,
+            "egress": "phy2-ap0",
+            "sourceFresh": true,
+            "kind": "active-rt-without-current-create"
+          },
+          {
+            "at": "2026-10-09T10:23:02.953Z",
+            "flow": 119,
+            "created": true,
+            "wan": 5,
+            "egress": "phy0-ap0",
+            "sourceFresh": true,
+            "kind": "active-rt-binding-changed"
+          },
+          {
+            "at": "2026-10-09T10:25:42.840Z",
+            "flow": 41,
+            "created": false,
+            "wan": 5,
+            "egress": "lan4",
+            "sourceFresh": true,
+            "kind": "active-rt-without-current-create"
+          },
+          {
+            "at": "2026-10-09T10:27:27.837Z",
+            "flow": 138,
+            "created": true,
+            "wan": 5,
+            "egress": "lan4",
+            "sourceFresh": true,
+            "kind": "active-rt-binding-changed"
+          },
+          {
+            "at": "2026-10-09T10:27:42.837Z",
+            "flow": 138,
+            "created": true,
+            "wan": 5,
+            "egress": "lan4",
+            "sourceFresh": true,
+            "kind": "active-rt-binding-changed"
+          }
+        ],
+        "eventsOmitted": 0,
+        "scope": "All budget-admitted RT flows, not exclusively games",
+        "endToEndPacketLossMeasured": false
+      },
+      "cpu": {
+        "cpu": {
+          "busyMeanPct": 25.4,
+          "softirqMeanPct": 4.951,
+          "busyP95Pct": 36.456,
+          "busyMaxPct": 42.797,
+          "softirqMaxPct": 15.953
+        },
+        "cpu0": {
+          "busyMeanPct": 32.481,
+          "softirqMeanPct": 12.402,
+          "busyP95Pct": 45.726,
+          "busyMaxPct": 57.708,
+          "softirqMaxPct": 30.769
+        },
+        "cpu1": {
+          "busyMeanPct": 22.927,
+          "softirqMeanPct": 2.516,
+          "busyP95Pct": 36.016,
+          "busyMaxPct": 45.621,
+          "softirqMaxPct": 17.836
+        },
+        "cpu2": {
+          "busyMeanPct": 22.718,
+          "softirqMeanPct": 2.294,
+          "busyP95Pct": 37.903,
+          "busyMaxPct": 45.868,
+          "softirqMaxPct": 17.2
+        },
+        "cpu3": {
+          "busyMeanPct": 23.488,
+          "softirqMeanPct": 2.609,
+          "busyP95Pct": 39.069,
+          "busyMaxPct": 51.4,
+          "softirqMaxPct": 14
+        }
+      },
+      "net": {
+        "lan1": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "lan2": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "lan3": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "lan4": {
+          "rxMbps": 0.325,
+          "txMbps": 1.609,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 1,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "wan": {
+          "rxMbps": 5.854,
+          "txMbps": 1.4,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 30,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "br-lan": {
+          "rxMbps": 1.373,
+          "txMbps": 5.738,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "phy0-ap0": {
+          "rxMbps": 0,
+          "txMbps": 3.032,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "phy1-ap0": {
+          "rxMbps": 0,
+          "txMbps": 0.003,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "phy2-ap0": {
+          "rxMbps": 0,
+          "txMbps": 0.882,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpwan1": {
+          "rxMbps": 1.596,
+          "txMbps": 0.373,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpwan2": {
+          "rxMbps": 0.968,
+          "txMbps": 0.376,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpwan3": {
+          "rxMbps": 0.7,
+          "txMbps": 0.118,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpwan4": {
+          "rxMbps": 1.222,
+          "txMbps": 0.261,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpwan5": {
+          "rxMbps": 1.218,
+          "txMbps": 0.25,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpifb1": {
+          "rxMbps": 0.85,
+          "txMbps": 0.85,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpifb2": {
+          "rxMbps": 0.961,
+          "txMbps": 0.961,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpifb3": {
+          "rxMbps": 0.668,
+          "txMbps": 0.668,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpifb4": {
+          "rxMbps": 1.176,
+          "txMbps": 1.176,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        },
+        "rpifb5": {
+          "rxMbps": 0.968,
+          "txMbps": 0.968,
+          "rxErrorDelta": 0,
+          "rxDropDelta": 0,
+          "txErrorDelta": 0,
+          "txDropDelta": 0
+        }
+      },
+      "softnet": [
+        {
+          "cpu": 0,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 1,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 2,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 3,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        }
+      ],
+      "physicalWanFiveSecondRxMbps": {
+        "mean": 5.854,
+        "p95": 24.582,
+        "maximum": 52.355
+      },
+      "memory": {
+        "totalKiB": 919296,
+        "availableMinKiB": 278828,
+        "availableFirstKiB": 325884,
+        "availableLastKiB": 339692
+      },
+      "thermal": {
+        "nss-top-thermal": {
+          "minC": 66.6,
+          "maxC": 68.3
+        },
+        "nss-thermal": {
+          "minC": 66.3,
+          "maxC": 67.6
+        },
+        "wcss-phya0-thermal": {
+          "minC": 65.9,
+          "maxC": 67.6
+        },
+        "wcss-phya1-thermal": {
+          "minC": 65.3,
+          "maxC": 66.6
+        },
+        "cpu-thermal": {
+          "minC": 66.6,
+          "maxC": 69.6
+        }
+      },
+      "kernelIssuesSinceService": {
+        "panic": 0,
+        "oops": 0,
+        "bug": 0,
+        "lockup": 0,
+        "oom": 0,
+        "firmwareCrash": 0
+      },
+      "storageBefore": [
+        {
+          "mount": "/overlay",
+          "totalKiB": 998060,
+          "usedKiB": 938200,
+          "availableKiB": 32992,
+          "usedPct": 97
+        },
+        {
+          "mount": "/tmp",
+          "totalKiB": 459648,
+          "usedKiB": 11820,
+          "availableKiB": 447828,
+          "usedPct": 3
+        }
+      ],
+      "storageAfter": [
+        {
+          "mount": "/overlay",
+          "totalKiB": 998060,
+          "usedKiB": 938200,
+          "availableKiB": 32992,
+          "usedPct": 97
+        },
+        {
+          "mount": "/tmp",
+          "totalKiB": 459648,
+          "usedKiB": 11460,
+          "availableKiB": 448188,
+          "usedPct": 2
+        }
+      ],
+      "wifi": {
+        "phy0-ap0": {
+          "stationsBefore": 3,
+          "stationsAfter": 3,
+          "observations": [
+            {
+              "station": 1,
+              "sameAssociation": true,
+              "signalBeforeDbm": -55,
+              "signalAfterDbm": -53,
+              "txPacketDelta": 14,
+              "txByteDelta": 471,
+              "rxPacketDelta": 28,
+              "retryDelta": 0,
+              "reportedFailedBefore": 189850007,
+              "reportedFailedAfter": 189850007,
+              "reportedFailedDelta": 0,
+              "counterComparableToTraffic": false
+            },
+            {
+              "station": 2,
+              "sameAssociation": true,
+              "signalBeforeDbm": -58,
+              "signalAfterDbm": -57,
+              "txPacketDelta": 0,
+              "txByteDelta": 0,
+              "rxPacketDelta": 0,
+              "retryDelta": 0,
+              "reportedFailedBefore": 2309,
+              "reportedFailedAfter": 2309,
+              "reportedFailedDelta": 0,
+              "counterComparableToTraffic": false
+            },
+            {
+              "station": 3,
+              "sameAssociation": true,
+              "signalBeforeDbm": -55,
+              "signalAfterDbm": -48,
+              "txPacketDelta": 22,
+              "txByteDelta": 2662,
+              "rxPacketDelta": 44,
+              "retryDelta": 0,
+              "reportedFailedBefore": 30,
+              "reportedFailedAfter": 38,
+              "reportedFailedDelta": 8,
+              "counterComparableToTraffic": false
+            }
+          ]
+        },
+        "phy1-ap0": {
+          "stationsBefore": 0,
+          "stationsAfter": 0,
+          "observations": []
+        },
+        "phy2-ap0": {
+          "stationsBefore": 2,
+          "stationsAfter": 2,
+          "observations": [
+            {
+              "station": 1,
+              "sameAssociation": true,
+              "signalBeforeDbm": -42,
+              "signalAfterDbm": -58,
+              "txPacketDelta": 42,
+              "txByteDelta": 1974,
+              "rxPacketDelta": 58,
+              "retryDelta": 0,
+              "reportedFailedBefore": 11164986,
+              "reportedFailedAfter": 11395079,
+              "reportedFailedDelta": 230093,
+              "counterComparableToTraffic": false
+            },
+            {
+              "station": 2,
+              "sameAssociation": true,
+              "signalBeforeDbm": -38,
+              "signalAfterDbm": -35,
+              "txPacketDelta": 34,
+              "txByteDelta": 2579,
+              "rxPacketDelta": 16,
+              "retryDelta": 0,
+              "reportedFailedBefore": 158379,
+              "reportedFailedAfter": 167570,
+              "reportedFailedDelta": 9191,
+              "counterComparableToTraffic": false
+            }
+          ]
+        }
+      },
+      "readSecondsMax": 0.22,
+      "bootEnabled": false,
+      "automaticProcdRespawnConfigured": false,
+      "gameAcceptancePerformed": false,
+      "unresolved": [
+        "Persistent storage 97% full with 32 MiB remaining; historical backups and staging dominate",
+        "Boot autostart and bounded post-rollback recovery policy absent",
+        "Historical classifier recovery timeout remains unexplained",
+        "Wi-Fi per-station firmware queue/TID and same-device mixed-load acceptance not measured",
+        "Controlled saturation, outage and post-reboot acceptance not performed this audit"
+      ]
+    },
+    "wanProbes": {
+      "at": "2026-10-09T10:20:16.715Z",
+      "readOnlyConfiguration": true,
+      "generatedLowRateIcmp": true,
+      "routerOriginatedNotClientGameTraffic": true,
+      "tests": [
+        {
+          "wan": 1,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 1.014,
+                "avg": 1.269,
+                "max": 3.25
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 38.655,
+                "avg": 39.282,
+                "max": 41.24
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        },
+        {
+          "wan": 2,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 0.988,
+                "avg": 1.28,
+                "max": 2.408
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 38.975,
+                "avg": 39.546,
+                "max": 41.482
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        },
+        {
+          "wan": 3,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 0.882,
+                "avg": 1.284,
+                "max": 3.338
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 39.026,
+                "avg": 39.567,
+                "max": 42.032
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        },
+        {
+          "wan": 4,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 1.092,
+                "avg": 1.655,
+                "max": 7.602
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 42.068,
+                "avg": 42.577,
+                "max": 45.314
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        },
+        {
+          "wan": 5,
+          "tests": [
+            {
+              "target": "gateway",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 0.98,
+                "avg": 1.605,
+                "max": 3.488
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            },
+            {
+              "target": "public",
+              "sent": 60,
+              "received": 60,
+              "lossPct": 0,
+              "rttMs": {
+                "min": 39.735,
+                "avg": 40.246,
+                "max": 42.253
+              },
+              "probeExit": 0,
+              "routeExit": 0,
+              "routeUsesSelectedInterface": true
+            }
+          ]
+        }
+      ]
+    },
+    "windowsGatewayProbe": {
+      "p95Ms": 3,
+      "maximumMs": 14,
+      "receivedErrorDelta": 0,
+      "at": "2026-10-09T10:23:22.8555235+00:00",
+      "gameLossMeasured": false,
+      "sent": 300,
+      "receivedDiscardDelta": 0,
+      "lossPct": 0,
+      "sentErrorDelta": 0,
+      "medianMs": 1,
+      "sentDiscardDelta": 0,
+      "generatedLowRateIcmp": true,
+      "p99Ms": 4,
+      "received": 300
+    },
+    "deployedSourceModels": {
+      "at": "2026-10-09T10:20:50.884Z",
+      "passed": true,
+      "targetParsedFiles": 24,
+      "parsed": [
+        "athena-qos",
+        "collector.lua",
+        "core.lua",
+        "flow_json.lua",
+        "init.sh",
+        "service.lua",
+        "test-core.lua",
+        "native/classifier_recovery.lua",
+        "native/core_guard_permission.lua",
+        "native/diagnose.lua",
+        "native/health.lua",
+        "native/ingress_probe.lua",
+        "native/init.sh",
+        "native/install_core_guard.lua",
+        "native/launch.sh",
+        "native/prepare.lua",
+        "native/queue_plan.lua",
+        "native/reader.lua",
+        "native/test-core-guard.lua",
+        "native/test-efficiency.lua",
+        "native/test-health.lua",
+        "native/test-writer.lua",
+        "native/transaction.lua",
+        "native/writer.lua"
+      ],
+      "tests": [
+        {
+          "name": "test-core.lua",
+          "output": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":21}",
+          "passed": true
+        },
+        {
+          "name": "test-core-guard.lua",
+          "output": "core-guard-permission-models-passed 23",
+          "passed": true
+        },
+        {
+          "name": "test-efficiency.lua",
+          "output": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+          "passed": true
+        },
+        {
+          "name": "test-writer.lua",
+          "output": "{\"firmwareAbsentSlotReused\":true,\"leaseBeforeSelectiveBudgetBatch\":true,\"sourceGapExpiredFlowRetired\":true,\"passed\":true,\"retiringIdentityPreserved\":true,\"mockedKernel\":true,\"emptyMapParsed\":true,\"freshSourceResumesAdmission\":true,\"dataPlaneWrites\":false,\"sourceGapBlocksAddAndRenew\":true}",
+          "passed": true
+        },
+        {
+          "name": "test-health.lua",
+          "output": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":20}",
+          "passed": true
+        }
+      ],
+      "modelOnly": true,
+      "realNftSyntaxChecked": true,
+      "generatedTraffic": false,
+      "dataPlaneWrites": false
+    },
+    "candidateModels": {
+      "at": "2026-10-09T10:48:00.357Z",
+      "passed": true,
+      "targetParsedFiles": 26,
+      "parsed": [
+        "athena-qos",
+        "collector.lua",
+        "core.lua",
+        "flow_json.lua",
+        "init.sh",
+        "service.lua",
+        "test-core.lua",
+        "native/classifier_recovery.lua",
+        "native/core_guard_permission.lua",
+        "native/diagnose.lua",
+        "native/health.lua",
+        "native/ingress_probe.lua",
+        "native/init.sh",
+        "native/install_core_guard.lua",
+        "native/launch.sh",
+        "native/prepare.lua",
+        "native/queue_plan.lua",
+        "native/reader.lua",
+        "native/tag_rules.lua",
+        "native/test-core-guard.lua",
+        "native/test-efficiency.lua",
+        "native/test-health.lua",
+        "native/test-tag-rules.lua",
+        "native/test-writer.lua",
+        "native/transaction.lua",
+        "native/writer.lua"
+      ],
+      "tests": [
+        {
+          "name": "test-core.lua",
+          "output": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":21}",
+          "passed": true
+        },
+        {
+          "name": "test-core-guard.lua",
+          "output": "core-guard-permission-models-passed 23",
+          "passed": true
+        },
+        {
+          "name": "test-efficiency.lua",
+          "output": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+          "passed": true
+        },
+        {
+          "name": "test-writer.lua",
+          "output": "{\"firmwareAbsentSlotReused\":true,\"leaseBeforeSelectiveBudgetBatch\":true,\"sourceGapExpiredFlowRetired\":true,\"emptyPolicyParsed\":true,\"passed\":true,\"retiringIdentityPreserved\":true,\"mockedKernel\":true,\"freshSourceResumesAdmission\":true,\"dataPlaneWrites\":false,\"sourceGapBlocksAddAndRenew\":true}",
+          "passed": true
+        },
+        {
+          "name": "test-health.lua",
+          "output": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":20}",
+          "passed": true
+        },
+        {
+          "name": "test-tag-rules.lua",
+          "output": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}",
+          "passed": true
+        }
+      ],
+      "modelOnly": true,
+      "realNftSyntaxChecked": true,
+      "generatedTraffic": false,
+      "dataPlaneWrites": false
+    },
+    "receiptTransportModel": {
+      "passed": true,
+      "checks": 134,
+      "mockedTransport": true,
+      "firmwareProof": false
+    },
+    "nftReadability": {
+      "productionTableReadFails": true,
+      "failure": "Assertion failed: ilen > 0 (src/mergesort.c: concat_expr_msort_value: 23)",
+      "otherEightTablesReadable": true,
+      "independentReproducer": [
+        {
+          "fields": 1,
+          "mode": "typeof",
+          "twoElements": true,
+          "exit": 0,
+          "assertion": false,
+          "cleanupConfirmed": true
+        },
+        {
+          "fields": 2,
+          "mode": "typeof",
+          "twoElements": true,
+          "exit": 0,
+          "assertion": false,
+          "cleanupConfirmed": true
+        },
+        {
+          "fields": 11,
+          "mode": "typeof",
+          "twoElements": true,
+          "exit": 134,
+          "assertion": true,
+          "cleanupConfirmed": true
+        },
+        {
+          "fields": 11,
+          "mode": "explicit",
+          "twoElements": true,
+          "exit": 134,
+          "assertion": true,
+          "cleanupConfirmed": true
+        }
+      ],
+      "singleElementElevenFieldsReadable": true,
+      "kernelForwardingFailureProved": false
+    },
+    "candidate": {
+      "revision": "dorm-v2-readable-exact-labels-candidate",
+      "productionDeployed": false,
+      "changes": "Scalar CT ID membership gate plus bounded per-flow rules preserving all eleven CT/mark/protocol/original/reply fields and both priority values",
+      "maxPolicies": 80,
+      "perDeviceQuotas": false,
+      "linearExactChainGuardedByScalarMembership": true,
+      "packetPathThroughputAcceptance": false,
+      "roundtrip": {
+        "at": "2026-10-09T10:49:08.003Z",
+        "passed": true,
+        "productionDeployed": false,
+        "controllerRestarted": false,
+        "isolatedUnhookedMetadataOnly": true,
+        "results": [
+          {
+            "policies": 0,
+            "sourceBytes": 717,
+            "realTargetParse": true,
+            "realTargetMetadataInstall": true,
+            "textReadbackPassed": true,
+            "jsonReadbackPassed": true,
+            "exportedTextReparsed": true,
+            "allElevenIdentityFieldsPreserved": true,
+            "bothDirectionsPriorityValuesPreserved": true,
+            "rules": 6,
+            "noTrafficHooks": true,
+            "cleanupConfirmed": true
+          },
+          {
+            "policies": 2,
+            "sourceBytes": 2080,
+            "realTargetParse": true,
+            "realTargetMetadataInstall": true,
+            "textReadbackPassed": true,
+            "jsonReadbackPassed": true,
+            "exportedTextReparsed": true,
+            "allElevenIdentityFieldsPreserved": true,
+            "bothDirectionsPriorityValuesPreserved": true,
+            "rules": 10,
+            "noTrafficHooks": true,
+            "cleanupConfirmed": true
+          },
+          {
+            "policies": 80,
+            "sourceBytes": 54701,
+            "realTargetParse": true,
+            "realTargetMetadataInstall": true,
+            "textReadbackPassed": true,
+            "jsonReadbackPassed": true,
+            "exportedTextReparsed": true,
+            "allElevenIdentityFieldsPreserved": true,
+            "bothDirectionsPriorityValuesPreserved": true,
+            "rules": 166,
+            "noTrafficHooks": true,
+            "cleanupConfirmed": true
+          }
+        ]
+      },
+      "maintainedTargetRegression": {
+        "targetShellParsed": true,
+        "passed": true,
+        "results": [
+          {
+            "modelOnly": true,
+            "rules": 6,
+            "exportReparsed": true,
+            "noTrafficHooks": true,
+            "textAndJsonReadback": true,
+            "fullIdentityAndLabelsPreserved": true,
+            "passed": true,
+            "policies": 0
+          },
+          {
+            "modelOnly": true,
+            "rules": 10,
+            "exportReparsed": true,
+            "noTrafficHooks": true,
+            "textAndJsonReadback": true,
+            "fullIdentityAndLabelsPreserved": true,
+            "passed": true,
+            "policies": 2
+          },
+          {
+            "modelOnly": true,
+            "rules": 166,
+            "exportReparsed": true,
+            "noTrafficHooks": true,
+            "textAndJsonReadback": true,
+            "fullIdentityAndLabelsPreserved": true,
+            "passed": true,
+            "policies": 80
+          },
+          {
+            "passed": true,
+            "cleanupConfirmed": true,
+            "productionRulesChanged": false
+          }
+        ]
+      }
+    },
+    "finalRuntime": {
+      "at": "2026-10-09T10:52:48.532Z",
+      "phase": "native-running",
+      "nss": 1,
+      "sourceFresh": true,
+      "sourcePauses": 7,
+      "sourceResumes": 7,
+      "hardwareAdmissionEnabled": true,
+      "unconfirmed": 0,
+      "ownerGuardianReaderUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "installedSourcesUnchanged": true,
+      "servicesAllRunning": true,
+      "coreGuardPermission": true,
+      "modelTablesRemoved": true,
+      "tableReads": [
+        {
+          "family": "inet",
+          "name": "fw4",
+          "passed": true,
+          "assertion": false
+        },
+        {
+          "family": "inet",
+          "name": "dnsmasq",
+          "passed": true,
+          "assertion": false
+        },
+        {
+          "family": "inet",
+          "name": "rp_core",
+          "passed": true,
+          "assertion": false
+        },
+        {
+          "family": "inet",
+          "name": "rp_pbr",
+          "passed": true,
+          "assertion": false
+        },
+        {
+          "family": "bridge",
+          "name": "rp_wifi_qos",
+          "passed": true,
+          "assertion": false
+        },
+        {
+          "family": "inet",
+          "name": "rp_singbox",
+          "passed": true,
+          "assertion": false
+        },
+        {
+          "family": "inet",
+          "name": "rp_tailscale_subnet",
+          "passed": true,
+          "assertion": false
+        },
+        {
+          "family": "inet",
+          "name": "rp_tailscale_p2p",
+          "passed": true,
+          "assertion": false
+        },
+        {
+          "family": "inet",
+          "name": "athena_dorm_qos",
+          "passed": false,
+          "assertion": true
+        }
+      ],
+      "tailscale": [
+        {
+          "commandPassed": true,
+          "backendState": "Running",
+          "selfOnline": true
+        }
+      ],
+      "productionCandidateDeployed": false,
+      "controllerRestarted": false,
+      "routerRestarted": false
+    },
+    "privateCheckpoint": {
+      "saved": true,
+      "compressedBytes": 759843,
+      "downloadDigestMatched": true,
+      "gzipValidated": true,
+      "archivePrivateAndNotPublished": true,
+      "restoredThisAudit": false
+    },
+    "scope": {
+      "productionRulesChanged": false,
+      "testTablesHadNoPacketHooks": true,
+      "allOwnedTestTablesRemoved": true,
+      "routerRebooted": false,
+      "controllerRestarted": false,
+      "authenticationPbrNatProxyTailscaleRadioFirmwareEdmaUnchanged": true,
+      "bootEnabled": false,
+      "respawnEnabled": false,
+      "highLoadControlledTest": false,
+      "gameAcceptancePerformed": false,
+      "stopRollbackRepeated": false
+    },
+    "longtermIssues": [
+      {
+        "kind": "Persistent storage",
+        "state": "open",
+        "usedPct": 97,
+        "freeKiB": 32992,
+        "backupsKiB": 580952,
+        "stagingKiB": 120892,
+        "usageGrewDuringWindow": false,
+        "cleanupPerformed": false
+      },
+      {
+        "kind": "Unreadable exact-label table",
+        "state": "candidate-fix-tested-not-deployed"
+      },
+      {
+        "kind": "Cold startup and bounded recovery after full confirmed rollback",
+        "state": "not-enabled-not-accepted"
+      },
+      {
+        "kind": "RT rule changes and historical classifier recovery timeout",
+        "state": "unresolved"
+      },
+      {
+        "kind": "Wi-Fi firmware station queue/TID and mixed-load end-to-end acceptance",
+        "state": "deferred"
+      }
+    ],
+    "repositoryValidation": {
+      "passed": true,
+      "filesChecked": 7050,
+      "sourceHashesChecked": 6342,
+      "sourceRevisionRecords": 6381,
+      "markdownLinksChecked": 1663,
+      "obviousSecretChecksPassed": true,
+      "historicalPrefixRecords": 6374,
+      "historicalPrefixPreserved": true,
+      "frozenCodeWorkUnmodified": true
     }
   }
 }

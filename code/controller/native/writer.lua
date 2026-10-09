@@ -6,6 +6,7 @@ function M.new(root,command,read,put,now,store,r)
  local tc='/root/router-project/experiments/nss8-htb2-20261001/tc-nss'
  local gate='/sys/kernel/debug/athena_ecm_gate/'
  local owned,filters={},{};local binding=0;local rejected={};local lastTags
+ local tagRules=dofile(root..'/tag_rules.lua')
  local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0,sourcePauses=0,sourceResumes=0}
  local sourceUnavailableSince,lastSourceResumedAt
  local function dec(x)return string.format('%.0f',x)end
@@ -38,34 +39,20 @@ function M.new(root,command,read,put,now,store,r)
    p.src,dec(p.sport),p.dst,dec(p.dport)},' . ')
  end
  local function sync_tags(rows)
-  local up,down={},{}
+  local up,down,policies={},{},{}
   for _,e in ipairs(rows)do
    local rt=e.class=='RT' and e.budgetAdmitted
    local class=rt and 'RT' or 'BE';local low=rt and 6 or 0
-   up[#up+1]=key_elements(e)..' : '..dec(r.ingress.up.tags[e.wan][class]*65536+low)
-   down[#down+1]=key_elements(e)..' : '..dec(r.ingress.down.tags[e.wan][class]*65536+low)
+   local upPriority=r.ingress.up.tags[e.wan][class]*65536+low
+   local downPriority=r.ingress.down.tags[e.wan][class]*65536+low
+   up[#up+1]=key_elements(e)..' : '..dec(upPriority)
+   down[#down+1]=key_elements(e)..' : '..dec(downPriority)
+   policies[#policies+1]={flow=e,up=upPriority,down=downPriority}
   end
   table.sort(up);table.sort(down)
   local signature=table.concat(up,',')..'|'..table.concat(down,',')
   if signature==lastTags then return end
-  local expr='ct id . ct mark . meta l4proto . ct original ip saddr . ct original proto-src . ct original ip daddr . ct original proto-dst . ct reply ip saddr . ct reply proto-src . ct reply ip daddr . ct reply proto-dst'
-  local lines={}
-  if r.tagsOwned then lines[#lines+1]='delete table inet athena_dorm_qos' end
-  lines[#lines+1]='table inet athena_dorm_qos {'
-  for _,x in ipairs({{'up',up},{'down',down}})do
-   local elements=#x[2]>0 and (' elements = { '..table.concat(x[2],', ')..' };') or ''
-   lines[#lines+1]='map '..x[1]..' { typeof '..expr..' : meta priority;'..elements..' }'
-  end
-  lines[#lines+1]='chain tags { type filter hook postrouting priority 0; policy accept;'
-  for w=1,5 do
-   lines[#lines+1]='ct direction original ct mark & 0x00ff0000 == '..dec(w*65536)..
-    ' meta priority set (meta priority & 0x0000ffff) | '..dec(r.ingress.up.tags[w].BE*65536)
-  end
-  lines[#lines+1]='ct direction original meta priority set '..expr..' map @up'
-  lines[#lines+1]='ct direction reply meta priority set '..expr..' map @down'
-  lines[#lines+1]='}'
-  lines[#lines+1]='}'
-  put(root..'/tags.nft',table.concat(lines,'\n')..'\n')
+  put(root..'/tags.nft',tagRules.render(policies,r.ingress,{removePrevious=r.tagsOwned}))
   command('/usr/sbin/nft -c -f '..root..'/tags.nft')
   r.tagsAttempted=true;store(r);command('/usr/sbin/nft -f '..root..'/tags.nft');r.tagsOwned=true;store(r);lastTags=signature
  end

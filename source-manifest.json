@@ -44683,6 +44683,62 @@
       "bytes": 3544,
       "role": "router-native-source-test-or-maintenance",
       "revision": "dorm-v2-bounded-loss-diagnostics"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "d12a4833109d1e6f7cea95f48d030d5c263d77ba238122e792f10e13edd63e17",
+      "bytes": 13999,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-readable-exact-labels-candidate"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "workspaceSource": "code/controller/native/writer.lua",
+      "sha256": "4e86ef9417e3f3bdf07d2cf30db4d0420da2604428b28327d523335d73775b41",
+      "bytes": 12564,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-readable-exact-labels-candidate"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "workspaceSource": "code/controller/native/launch.sh",
+      "sha256": "e1cfd89f170c78c0ff0106579943e7a563a542c6df721fd1694a215764d01c04",
+      "bytes": 1217,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-readable-exact-labels-candidate"
+    },
+    {
+      "path": "code/controller/native/test-writer.lua",
+      "workspaceSource": "code/controller/native/test-writer.lua",
+      "sha256": "f5692e4ad3b88c3e19c01fbcd5eec95e0249d658f174678452e15d8f7b54e386",
+      "bytes": 6833,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-readable-exact-labels-candidate"
+    },
+    {
+      "path": "code/controller/native/tag_rules.lua",
+      "workspaceSource": "code/controller/native/tag_rules.lua",
+      "sha256": "40428f104d8900f906d7a72a7183e27cbbb179cb15060a17a70882222352f07d",
+      "bytes": 3408,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-readable-exact-labels-candidate"
+    },
+    {
+      "path": "code/controller/native/test-tag-rules.lua",
+      "workspaceSource": "code/controller/native/test-tag-rules.lua",
+      "sha256": "b2003e25bc1dd02f56bdcf69024408bf0ebc7db1c05b5801f68b3419be7946a1",
+      "bytes": 2876,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-readable-exact-labels-candidate"
+    },
+    {
+      "path": "code/controller/native/test-tag-nft.sh",
+      "workspaceSource": "code/controller/native/test-tag-nft.sh",
+      "sha256": "fd70865c16ce97a0f8e7707c2e8c3a2daa1e0045c098eaa9030de04e4e251119",
+      "bytes": 3764,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-readable-exact-labels-candidate"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44756,5 +44812,13 @@
     "capturedAt": "2026-10-09T05:23:24.961Z",
     "latestEvidenceKey": "downloadLoadEfficiency",
     "appendedControllerSources": 9
+  },
+  "lastRouterLocalCandidateExport": {
+    "revision": "dorm-v2-readable-exact-labels-candidate",
+    "capturedAt": "2026-10-09T10:52:48.532Z",
+    "deployedCommit": "f1f58ccb94922977d6d81331c2a3341636b10e1a",
+    "productionDeployed": false,
+    "latestEvidenceKey": "deploymentReadinessReview",
+    "appendedControllerSources": 7
   }
 }

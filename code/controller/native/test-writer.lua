@@ -22,7 +22,7 @@ local function command(c)
  if c=='/usr/sbin/nft -c -f '..root..'/tags.nft' then
   local input=assert(io.open(root..'/tags.nft'));local text=input:read('*a');input:close()
   -- Publication is mocked, so remove only the mock previous-table deletion.
-  -- Every generated table/map still goes through the real nft parser.
+  -- Every generated full-identity rule still goes through the real nft parser.
   text=text:gsub('^delete table inet athena_dorm_qos\n','')
   local output=assert(io.open(root..'/tags-parser.nft','w'));assert(output:write(text));output:close()
   local f=assert(io.popen('/usr/sbin/nft -c -f '..root..'/tags-parser.nft 2>&1; printf "\\nATHENA_EXIT_%s\\n" "$?"'))
@@ -87,4 +87,4 @@ writer.tick({wans=r.wans,flows={flow},operations={},summary=summary})
 assert(renewals==2 and batchCommands==4 and r.flowState.budgetUpdates.lastCommands==4)
 assert(r.ingress.down.rates[1]==64000 and r.ingress.down.rates[2]==70000)
 nixio.open=originalOpen
-print(j.stringify({passed=true,emptyMapParsed=true,retiringIdentityPreserved=true,firmwareAbsentSlotReused=true,sourceGapBlocksAddAndRenew=true,sourceGapExpiredFlowRetired=true,freshSourceResumesAdmission=true,leaseBeforeSelectiveBudgetBatch=true,dataPlaneWrites=false,mockedKernel=true}))
+print(j.stringify({passed=true,emptyPolicyParsed=true,retiringIdentityPreserved=true,firmwareAbsentSlotReused=true,sourceGapBlocksAddAndRenew=true,sourceGapExpiredFlowRetired=true,freshSourceResumesAdmission=true,leaseBeforeSelectiveBudgetBatch=true,dataPlaneWrites=false,mockedKernel=true}))
