@@ -14,9 +14,13 @@ local function command(cmd,limit)
   return s and #s<=(limit or 262144) and s or nil
 end
 local function parse(s) return s and json.parse(s) or nil end
-function M.publications()
+function M.publications(includeFull)
   local base='/tmp/router-project-game-classifier/'
-  return parse(read(base..'classification.json')),parse(read(base..'snapshot.json'))
+  local projection=parse(read(base..'classification.json'))
+  -- Native admission needs RT/BULK candidates, not the much larger diagnostic
+  -- publication that waits for software reconciliation. Shadow callers can
+  -- still request the complete observation. Neither path extends a lease.
+  return projection,includeFull~=false and parse(read(base..'snapshot.json')) or nil
 end
 function M.now() return assert(tonumber(assert(read('/proc/uptime',256)):match('^[%d.]+'))) end
 function M.resolve(neighbors,leases,fdb,stations,wallNow)
@@ -45,25 +49,45 @@ function M.resolve(neighbors,leases,fdb,stations,wallNow)
   end
   return clients
 end
+function M.station_clients(clients,ifname)
+  local out={}
+  for mac,c in pairs(clients) do
+    if type(mac)=='string' and mac:match('^%x%x:%x%x:%x%x:%x%x:%x%x:%x%x$') and
+       type(c)=='table' and c.assoc==true and c.authorized==true then
+      out[#out+1]={mac=mac:lower(),ifname=ifname}
+    end
+  end
+  return out
+end
 function M.topology()
   local neighbors=parse(command('ip -j -4 neigh show dev br-lan')) or {}
   local leases={}
   for expiry,mac,ip in (read('/tmp/dhcp.leases',262144) or ''):gmatch('(%d+)%s+([%x:]+)%s+(%d+%.%d+%.%d+%.%d+)') do
     leases[#leases+1]={expires=tonumber(expiry),mac=mac:lower(),ip=ip}
   end
-  local ports={};local dir=fs.dir('/sys/class/net/br-lan/brif')
+  local ports,aps={},{};local dir=fs.dir('/sys/class/net/br-lan/brif')
   if dir then for name in dir do
     local port=tonumber(read('/sys/class/net/br-lan/brif/'..name..'/port_no',128) or '')
     if port then ports[port]=name end
+    if name:match('^phy%d+%-ap%d+$') then aps[#aps+1]=name end
   end end
   local fdb={}
   for p,mac,localEntry,age in (command('brctl showmacs br-lan') or ''):gmatch('(%d+)%s+([%x:]+)%s+(%a+)%s+([%d.]+)') do
     if ports[tonumber(p)] then fdb[#fdb+1]={mac=mac:lower(),ifname=ports[tonumber(p)],localEntry=localEntry=='yes',age=tonumber(age)} end
   end
-  local stations={};local devs=command('iw dev') or ''
-  for name in devs:gmatch('Interface ([%w%-]+)') do
-    for mac in (command('iw dev '..name..' station dump') or ''):gmatch('Station ([%x:]+)') do
-      stations[#stations+1]={mac=mac:lower(),ifname=name}
+  local stations={};local stationSources={hostapd=0,iwFallback=0}
+  for _,name in ipairs(aps) do
+    local status=parse(command('ubus call hostapd.'..name..' get_clients'))
+    if status and type(status.clients)=='table' then
+      for _,s in ipairs(M.station_clients(status.clients,name)) do stations[#stations+1]=s end
+      stationSources.hostapd=stationSources.hostapd+1
+    else
+      -- Older APs without ubus retain the existing association read. Do not
+      -- reuse a cached association across roaming or authorization changes.
+      for mac in (command('iw dev '..name..' station dump') or ''):gmatch('Station ([%x:]+)') do
+        stations[#stations+1]={mac=mac:lower(),ifname=name}
+      end
+      stationSources.iwFallback=stationSources.iwFallback+1
     end
   end
   local wans={}
@@ -73,6 +97,6 @@ function M.topology()
     end
   end
   return {clients=M.resolve(neighbors,leases,fdb,stations,os.time()),wans=wans,
-    associatedStations=#stations,bridgeFdbEntries=#fdb}
+    associatedStations=#stations,bridgeFdbEntries=#fdb,stationSources=stationSources}
 end
 return M

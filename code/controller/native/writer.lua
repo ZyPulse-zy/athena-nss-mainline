@@ -109,21 +109,24 @@ function M.new(root,command,read,put,now,store,r)
   end end
   return values
  end
- local budgetAt=0
+ local budgetAt=0;local budgetStats={batches=0,lastCommands=0,lastSeconds=0}
  local function sync_budgets()
   if now()<budgetAt+3 then return end;budgetAt=now()
   local values=budget_snapshot();local plan=dofile(root..'/queue_plan.lua')
+  local batches={};local plans={}
   for _,direction in ipairs({'up','down'})do
    local old=r.ingress[direction];local fresh=plan.plan(direction=='up' and 0x7e00 or 0x7a00,values[direction])
-   local changed=false;for w=1,5 do if old.rates[w]~=fresh.rates[w]then changed=true end end
-   if changed then
-    -- A shared queue serves hardware AND software before the account's CAKE;
-    -- independent software autorate remains the only writer of its CAKE rate.
-    for _,line in ipairs(fresh.commands)do if line:match('^class add ')then
-     command(tc..' '..string.format(line:gsub('^class add ','class change '),direction=='up' and 'wan' or 'athenaigs'))
-    end end
-    r.ingress[direction]=fresh;store(r)
-   end
+   for _,line in ipairs(plan.changes(old,fresh))do batches[#batches+1]=string.format(line,direction=='up' and 'wan' or 'athenaigs')end
+   plans[direction]=fresh
+  end
+  budgetStats.lastCommands=#batches;budgetStats.lastSeconds=0
+  if #batches>0 then
+   -- One owner and one tc process. Touch only changed classes, never roots or
+   -- leaf queues; the original autorater still owns every software CAKE rate.
+   put(root..'/budgets.tc',table.concat(batches,'\n')..'\n');local began=now()
+   command(tc..' -batch '..root..'/budgets.tc')
+   budgetStats.lastSeconds=now()-began;budgetStats.batches=budgetStats.batches+1
+   r.ingress.up=plans.up;r.ingress.down=plans.down;store(r)
   end
  end
  local out={}
@@ -136,7 +139,7 @@ function M.new(root,command,read,put,now,store,r)
    sourceUnavailableSince=nil;lastSourceResumedAt=now();stats.sourceResumes=stats.sourceResumes+1
   end
   for w=1,5 do assert(result.wans['rpwan'..w]==r.wans['rpwan'..w],'WAN/NAT address changed; withdraw native backend')end
-  sync_budgets();local native=status();local desired={};local choices={};local tags={};local tagKeys={}
+  local native=status();local desired={};local choices={};local tags={};local tagKeys={}
   local withdrawn={};for _,op in ipairs(result.operations or {})do if op.op=='revoke' then withdrawn[op.key]=true end end
   stats.selected=0;stats.firmwareCreated=0
   for _,e in ipairs(result.flows or {})do
@@ -189,6 +192,8 @@ function M.new(root,command,read,put,now,store,r)
     stats.admitted=stats.admitted+1
    else rejected[e.key]=e.sequence;stats.identityRejected=stats.identityRejected+1 end
   end
+  -- Renew already verified CT leases before updating adaptive queue budgets.
+  sync_budgets()
   local count=0;for _ in pairs(owned)do count=count+1 end
   local createdClients,createdExits={},{};r.ownedFlows={}
   for slot,p in pairs(owned)do
@@ -207,6 +212,7 @@ function M.new(root,command,read,put,now,store,r)
   local createdClientCount=0;for _ in pairs(createdClients)do createdClientCount=createdClientCount+1 end
   r.flowState={tracked=result.summary.tracked,clients=result.summary.clients,exits=result.summary.exits,
    classes=result.summary.classes,sourceFresh=result.summary.sourceFresh,sourceSequence=result.summary.sourceSequence,
+   reader=result.summary.reader,budgetUpdates=budgetStats,
    admissionPaused=not sourceFresh,admissionState=sourceFresh and 'ready' or 'waiting-source',sourceUnavailableSince=sourceUnavailableSince,
    sourcePauses=stats.sourcePauses,sourceResumes=stats.sourceResumes,lastSourceResumedAt=lastSourceResumedAt,
    nativeOwned=count,actualCreatedReceipts=stats.firmwareCreated,actualCreatedClients=createdClientCount,actualCreatedExits=createdExits,selected=stats.selected,

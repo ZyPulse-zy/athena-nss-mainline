@@ -1,6 +1,6 @@
 # Athena 全宿舍 v2 本机控制器
 
-当前ABI2本机服务保持运行，来源暂停/恢复已定向修复。只读复核 2026-10-09T04:35:32.408Z：同一本机服务保持 native-running，实际 NSS26，两次来源暂停均已恢复（sourcePauses/sourceResumes=2/2），来源新鲜、准入开启、未确认0。恢复部署核验五WAN身份/原软件队列/保护文件/原模块与服务通过；旧Windows停止，自启关闭。 真人游戏/下载与长期质量仍延期。见 [当前状态](../../docs/STATE.md) 与 [实际证据](../../evidence/dorm-v2-native.json)。
+复核 2026-10-09T05:23:24.961Z：本机 native-running，实际 NSS1，来源新鲜、IPv4准入开启、未确认0；本次启动来源暂停/恢复 1/1。五WAN、原软件队列、认证/PBR/NAT、代理/Tailscale、管理与原磁盘模块核验通过，旧Windows停止，自启关闭。 用户自然游戏/舍友下载已被动观察，当前回报暂时改善；端到端丢包与长期质量未通过。见 [当前状态](../../docs/STATE.md) 与 [实际证据](../../evidence/dorm-v2-native.json)。
 
 ## 已安装服务的操作
 
@@ -33,6 +33,16 @@ status中的flowState.admissionState为ready或waiting-source；admissionPaused�
 flowState.sourcePauses/sourceResumes/sourceUnavailableSince/lastSourceResumedAt记录本次服务中的来源变化。原guard只读核验输出保存在私有/tmp/athena-dorm-native/core-guard-last-check.json；准入在writer外关闭时，status.coreGuardLastCheck保存最近理由，不能把外部关闭等同于人为操作。status仍需读取实际accelerated及固件CREATE回执，waiting-source不证明仍有加速流。
 
 原分类器子进程详细stderr已丢失，底层apply失败原因尚未完全定位；未修改其冻结源码。真人游戏/下载和长期性能仍延期，现场没有造流量、杀分类器或新故障注入。
+
+## 下载负载下的采集与预算更新
+
+仅维护code/controller：本机reader改读较小的RT/BULK候选投影，不再解析完整诊断快照或跟踪空闲BE；新鲜hostapd关联/授权表替代每秒完整iw station统计；逐流分段JSON编码；仅变化的队列类别一次批量更新，先续精确CT租约。原分类规则和6秒租约不放宽，32槽/无按人设备配额保持。
+
+collector.publications(false)只读原before-software-baseline候选投影；投影遗漏不当作CT退出，旧资格只存活到既有6秒期限。普通BE/UNKNOWN保持原软件路径，NSS名额优先有效RT及BULK。hostapd仅接受assoc与authorized均为true的MAC，关联表不跨轮缓存，歧义出口仍拒绝。flow_json.lua逐流使用真实jsonc，减少大对象编码开销。
+
+flowState.reader报告topology/publication/policy/上一轮encode耗时；flowState.budgetUpdates报告批次数、本次命令数与耗时。queue_plan.changes只改变已有类的速率/上限，不重建qdisc或重置队列，writer先续租再批量更新。原autorate仍唯一维护软件CAKE速率。测试入口为test-core.lua、native/test-efficiency.lua及native/test-writer.lua，在独立模型目录运行；不启动现场数据面。
+
+用户回报“暂时没有明显丢包/瞬移”。这是当前主观改善，不是端到端零丢包或长期稳定验收；游戏固件规则仍有撤销/重建，来源后续一次恢复、CPU0 time_squeeze增26及早先部分低速TCP RT回执混合标签保持为待查事实。诊断时大快照重编码有CPU开销，不能把捕获的超时直接归为全部游戏丢包的唯一原因。
 
 ## 数据和队列路径
 

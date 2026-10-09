@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "capturedAt": "2026-10-09T00:48:42.825Z",
+  "capturedAt": "2026-10-09T05:23:24.961Z",
   "repository": "ZyPulse-zy/athena-nss-mainline",
   "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
   "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
@@ -1121,5 +1121,614 @@
       "No classifier service kill or fault injection was performed; source pause/resume was observed under natural traffic.",
       "Human game/download, Wi-Fi station quality, full byte coverage and long-term performance acceptance remain deferred."
     ]
-  }
+  },
+  "downloadLoadEfficiency": {
+    "capturedAt": "2026-10-09T05:23:24.961Z",
+    "scope": "natural wired game plus roommate downloads; no new generated traffic",
+    "userSymptom": "User has no download, normal latency, fluctuating game loss/teleporting while roommate downloads.",
+    "initialObservation": {
+      "sampleSeconds": 16.54,
+      "physicalDownloadMbps": 294.048,
+      "nssMin": 29,
+      "nssMax": 31,
+      "cpuBusyPctIncludingObservation": 59.8,
+      "softnet": [
+        {
+          "cpu": 0,
+          "processed": 32106,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 1,
+          "processed": 222418,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 2,
+          "processed": 87160,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 3,
+          "processed": 126977,
+          "dropped": 0,
+          "timeSqueeze": 0
+        }
+      ],
+      "activeGameSocketCorrelation": {
+        "process": "cs2",
+        "wan": 1,
+        "class": "RT",
+        "nativeCreated": true,
+        "igsReturnTag": "7a16",
+        "replyPacketDelta": 1737,
+        "rtQueueDropDelta": 0
+      }
+    },
+    "laterIncident": {
+      "at": "2026-10-09T04:59:37.392Z",
+      "observedSourcePauses": 25,
+      "sourceResumes": 24,
+      "actualNativeConnections": 0,
+      "servicePhase": "native-running",
+      "projectionError": "bounded-software-snapshot-expiry",
+      "sourceFreshnessSeconds": 6,
+      "recoveryChildExitCode": 124,
+      "recoveryChildElapsedSeconds": 6.18,
+      "classifierSourceAndConfigUnchanged": true,
+      "mutationChildDetailedStderrNotRetained": true,
+      "measurementLimit": "The initial detailed observer re-encoded the large full publication. Its CPU overhead can contribute to expiry; this window is not proof that every game loss was caused by this error."
+    },
+    "implementation": {
+      "nativeReadsCandidateProjectionOnly": true,
+      "idleBestEffortTrackingRemoved": true,
+      "associationSource": "fresh associated and authorized hostapd clients; iw fallback only if unsupported",
+      "flowEncoding": "independent flow objects through real jsonc",
+      "queueUpdates": "changed classes in one tc batch after CT lease renewal",
+      "classifierPolicyAndSixSecondKernelLeasesUnchanged": true,
+      "perDeviceQuotas": false,
+      "cAndDiskDriversUnchanged": true
+    },
+    "validation": {
+      "models": {
+        "at": "2026-10-09T05:08:11.182Z",
+        "passed": true,
+        "targetParserFiles": 10,
+        "tests": [
+          {
+            "name": "test-core.lua",
+            "result": {
+              "routerNetworkWrites": false,
+              "modelOnly": true,
+              "passed": true,
+              "checks": 21
+            }
+          },
+          {
+            "name": "test-efficiency.lua",
+            "result": {
+              "selectiveBudgetClasses": true,
+              "dataPlaneWrites": false,
+              "authorizedAssociationsOnly": true,
+              "chunkedFlowRoundTrip": true,
+              "passed": true,
+              "modelOnly": true
+            }
+          },
+          {
+            "name": "test-writer.lua",
+            "result": {
+              "firmwareAbsentSlotReused": true,
+              "leaseBeforeSelectiveBudgetBatch": true,
+              "sourceGapExpiredFlowRetired": true,
+              "passed": true,
+              "retiringIdentityPreserved": true,
+              "mockedKernel": true,
+              "emptyMapParsed": true,
+              "freshSourceResumesAdmission": true,
+              "dataPlaneWrites": false,
+              "sourceGapBlocksAddAndRenew": true
+            }
+          }
+        ],
+        "passive": {
+          "publicationSeconds": 0.010000000002037268,
+          "hardwareWrites": false,
+          "tracked": 35,
+          "totalSeconds": 0.11999999999898137,
+          "encodedBytes": 35408,
+          "encodeSeconds": 0,
+          "readOnly": true,
+          "sourceFresh": true,
+          "classes": {
+            "BE": 0,
+            "RT": 11,
+            "UNKNOWN": 0,
+            "BULK": 24
+          },
+          "policySeconds": 0.00999999999839929,
+          "stationSources": {
+            "iwFallback": 0,
+            "hostapd": 3
+          },
+          "fullPublicationRead": false,
+          "exits": {
+            "phy0-ap0": 31,
+            "lan4": 3,
+            "phy2-ap0": 1
+          },
+          "topologySeconds": 0.09999999999854481,
+          "clients": 4,
+          "candidates": 32
+        },
+        "dataPlaneWrites": false
+      },
+      "deployment": {
+        "at": "2026-10-09T05:11:01.161Z",
+        "running": true,
+        "phase": "native-running",
+        "accelerated": 29,
+        "maxAccelerated": 32,
+        "elapsedSeconds": 32.79000000000087,
+        "sourceFresh": true,
+        "sourcePauses": 0,
+        "sourceResumes": 0,
+        "reader": {
+          "topologySeconds": 0.06000000000130967,
+          "previousEncodeSeconds": 0.00999999999839929,
+          "publicationSeconds": 0.039999999997235136,
+          "policySeconds": 0.010000000002037268,
+          "classificationSource": "candidate-projection",
+          "stationSources": {
+            "hostapd": 3,
+            "iwFallback": 0
+          }
+        },
+        "budgetUpdates": {
+          "batches": 9,
+          "lastSeconds": 0.020000000000436557,
+          "lastCommands": 11
+        },
+        "unconfirmed": 0,
+        "actualCreatedClients": 4,
+        "actualCreatedExits": {
+          "phy0-ap0": 26,
+          "phy2-ap0": 3,
+          "lan4": 1
+        },
+        "softwareQueuesPreserved": true,
+        "wanIdentityPreserved": true,
+        "protectedUnchanged": true,
+        "originalDiskModulesUnchanged": true,
+        "existingServicesRunning": true,
+        "baselineRollbackConfirmed": true,
+        "installedSourceFiles": [
+          "collector.lua",
+          "flow_json.lua",
+          "native/reader.lua",
+          "native/queue_plan.lua",
+          "native/writer.lua",
+          "native/launch.sh"
+        ],
+        "bootEnabled": false,
+        "rebooted": false,
+        "trafficGenerated": false,
+        "humanGameAcceptance": false
+      },
+      "passiveObservation": {
+        "at": "2026-10-09T05:14:38.195Z",
+        "samples": 31,
+        "sampleSeconds": 115.79,
+        "readOnly": true,
+        "generatedTraffic": false,
+        "allRunning": true,
+        "allSourceFresh": true,
+        "allClassifierRunning": true,
+        "sourcePausesFirst": 0,
+        "sourcePausesLast": 0,
+        "newSourcePauses": 0,
+        "nssMin": 0,
+        "nssMax": 32,
+        "nssLast": 0,
+        "maxUnconfirmed": 0,
+        "maxPassiveReadSeconds": 2.7300000000032014,
+        "maxTopologySeconds": 0.2000000000007276,
+        "maxPublicationSeconds": 0.11999999999898137,
+        "maxEncodeSeconds": 0.09000000000014552,
+        "maxBudgetUpdateSeconds": 0.07999999999810825,
+        "physicalDownloadMbps": 284.47,
+        "cpuBusyPct": 62.1,
+        "softirqPct": 33.3,
+        "softnet": [
+          {
+            "cpu": 0,
+            "dropDelta": 0,
+            "timeSqueezeDelta": 26
+          },
+          {
+            "cpu": 1,
+            "dropDelta": 0,
+            "timeSqueezeDelta": 0
+          },
+          {
+            "cpu": 2,
+            "dropDelta": 0,
+            "timeSqueezeDelta": 0
+          },
+          {
+            "cpu": 3,
+            "dropDelta": 0,
+            "timeSqueezeDelta": 0
+          }
+        ],
+        "game": [
+          {
+            "flow": 1,
+            "wan": 5,
+            "samples": 31,
+            "packetDelta": 11612,
+            "byteDelta": 10080972,
+            "allRT": true,
+            "allFirmwareCreated": false,
+            "correctReturnTags": false,
+            "firmwareSerialCount": 6,
+            "firmwareGenerationCount": 6
+          },
+          {
+            "flow": 2,
+            "wan": 2,
+            "samples": 3,
+            "packetDelta": 0,
+            "byteDelta": 0,
+            "allRT": true,
+            "allFirmwareCreated": false,
+            "correctReturnTags": false,
+            "firmwareSerialCount": 2,
+            "firmwareGenerationCount": 2
+          }
+        ],
+        "queues": {
+          "up": [
+            {
+              "wan": 1,
+              "class": "RT",
+              "packetDelta": 810,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 1,
+              "class": "BE",
+              "packetDelta": 228297,
+              "dropDelta": 0,
+              "maxBacklogPackets": 28
+            },
+            {
+              "wan": 2,
+              "class": "RT",
+              "packetDelta": 1422,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 2,
+              "class": "BE",
+              "packetDelta": 588800,
+              "dropDelta": 0,
+              "maxBacklogPackets": 114
+            },
+            {
+              "wan": 3,
+              "class": "RT",
+              "packetDelta": 4077,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 3,
+              "class": "BE",
+              "packetDelta": 577517,
+              "dropDelta": 0,
+              "maxBacklogPackets": 104
+            },
+            {
+              "wan": 4,
+              "class": "RT",
+              "packetDelta": 425,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 4,
+              "class": "BE",
+              "packetDelta": 464032,
+              "dropDelta": 0,
+              "maxBacklogPackets": 132
+            },
+            {
+              "wan": 5,
+              "class": "RT",
+              "packetDelta": 5708,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 5,
+              "class": "BE",
+              "packetDelta": 556130,
+              "dropDelta": 0,
+              "maxBacklogPackets": 92
+            }
+          ],
+          "down": [
+            {
+              "wan": 1,
+              "class": "RT",
+              "packetDelta": 542,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 1,
+              "class": "BE",
+              "packetDelta": 260319,
+              "dropDelta": 535,
+              "maxBacklogPackets": 384
+            },
+            {
+              "wan": 2,
+              "class": "RT",
+              "packetDelta": 803,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 2,
+              "class": "BE",
+              "packetDelta": 602545,
+              "dropDelta": 16199,
+              "maxBacklogPackets": 486
+            },
+            {
+              "wan": 3,
+              "class": "RT",
+              "packetDelta": 1826,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 3,
+              "class": "BE",
+              "packetDelta": 613633,
+              "dropDelta": 9724,
+              "maxBacklogPackets": 484
+            },
+            {
+              "wan": 4,
+              "class": "RT",
+              "packetDelta": 1690,
+              "dropDelta": 0,
+              "maxBacklogPackets": 0
+            },
+            {
+              "wan": 4,
+              "class": "BE",
+              "packetDelta": 488662,
+              "dropDelta": 3050,
+              "maxBacklogPackets": 456
+            },
+            {
+              "wan": 5,
+              "class": "RT",
+              "packetDelta": 10799,
+              "dropDelta": 0,
+              "maxBacklogPackets": 2
+            },
+            {
+              "wan": 5,
+              "class": "BE",
+              "packetDelta": 581094,
+              "dropDelta": 8528,
+              "maxBacklogPackets": 496
+            }
+          ]
+        },
+        "lastReader": {
+          "topologySeconds": 0.13999999999941792,
+          "previousEncodeSeconds": 0.029999999998835847,
+          "stationSources": {
+            "iwFallback": 0,
+            "hostapd": 3
+          },
+          "policySeconds": 0.020000000000436557,
+          "classificationSource": "candidate-projection",
+          "publicationSeconds": 0.06000000000130967
+        },
+        "lastBudget": {
+          "batches": 31,
+          "lastSeconds": 0.020000000000436557,
+          "lastCommands": 20
+        },
+        "actualCreatedClients": 5,
+        "humanGameLossMeasured": false,
+        "longTermStabilityValidated": false,
+        "gameCreatedTagChecks": [
+          {
+            "flow": 1,
+            "createdSamples": 25,
+            "notCreatedSamples": 6,
+            "allCreatedReturnTagsCorrect": true
+          },
+          {
+            "flow": 2,
+            "createdSamples": 0,
+            "notCreatedSamples": 3,
+            "allCreatedReturnTagsCorrect": false
+          }
+        ]
+      },
+      "current": {
+        "at": "2026-10-09T05:23:24.961Z",
+        "readOnly": true,
+        "phase": "native-running",
+        "running": true,
+        "hardwareAdmissionEnabled": true,
+        "frontends": [
+          0,
+          1
+        ],
+        "accelerated": 1,
+        "ecmDatabase": 1,
+        "pendingAccel": 0,
+        "pendingDecel": 0,
+        "sourceFresh": true,
+        "unconfirmed": 0,
+        "lockPresent": true,
+        "readerHeartbeatAge": 0.03,
+        "modules": {
+          "qca_nss_qdisc": true,
+          "athena_nss_receipts": true,
+          "ecm": true,
+          "athena_ecm_gate": true,
+          "act_nssmirred": true
+        },
+        "servicesRunning": {
+          "router-project-autorate": true,
+          "sing-box-athena": true,
+          "router-project-game-classifier": true,
+          "tailscale-athena": true,
+          "athena-dorm-native": true,
+          "router-project-core": true,
+          "router-project-minieap": true
+        },
+        "wans": [
+          {
+            "addressPresent": true,
+            "up": true
+          },
+          {
+            "addressPresent": true,
+            "up": true
+          },
+          {
+            "addressPresent": true,
+            "up": true
+          },
+          {
+            "addressPresent": true,
+            "up": true
+          },
+          {
+            "addressPresent": true,
+            "up": true
+          }
+        ],
+        "executionError": null,
+        "stageError": null,
+        "error": null,
+        "guardianLog": "",
+        "elapsedSeconds": 775.2,
+        "retiredFirmwareAbsent": 128,
+        "sourcePauses": 1,
+        "sourceResumes": 1,
+        "reader": {
+          "topologySeconds": 0.039999999997235136,
+          "previousEncodeSeconds": 0,
+          "stationSources": {
+            "iwFallback": 0,
+            "hostapd": 3
+          },
+          "policySeconds": 0,
+          "classificationSource": "candidate-projection",
+          "publicationSeconds": 0
+        },
+        "budgetUpdates": {
+          "batches": 98,
+          "lastSeconds": 0,
+          "lastCommands": 0
+        },
+        "nativeGateAbi": 2,
+        "healthySessionLimitSeconds": null,
+        "renewed": 6141,
+        "actualCreatedClients": 1,
+        "actualCreatedExits": {
+          "lan4": 1
+        },
+        "actualCoreGuardPermissionPassed": true,
+        "ownerPidVerified": true,
+        "softwareQueuesPreserved": true,
+        "wanIdentityPreserved": true,
+        "existingServicesRunning": true,
+        "protectedUnchanged": true,
+        "originalDiskModulesUnchanged": true,
+        "installedCandidateHashesVerified": true,
+        "bootEnabled": false,
+        "trafficFixture": false,
+        "humanGameAcceptance": false,
+        "classes": {
+          "BE": 0,
+          "RT": 1,
+          "UNKNOWN": 0,
+          "BULK": 0
+        }
+      },
+      "productionFaultInjection": false,
+      "generatedTraffic": false,
+      "userFeedback": {
+        "answer": "暂时没有明显丢包/瞬移",
+        "kind": "subjective current game feedback",
+        "formalThreeScenarioAcceptance": false
+      },
+      "finalReadback": {
+        "at": "2026-10-09T05:23:24.961Z",
+        "phase": "native-running",
+        "running": true,
+        "nativeGateAbi": 2,
+        "hardwareAdmissionEnabled": true,
+        "accelerated": 1,
+        "ecmDatabase": 1,
+        "elapsedSeconds": 775.2,
+        "healthySessionLimitSeconds": null,
+        "sourceFresh": true,
+        "unconfirmed": 0,
+        "renewed": 6141,
+        "retiredFirmwareAbsent": 128,
+        "actualCreatedClients": 1,
+        "actualCreatedExits": {
+          "lan4": 1
+        },
+        "actualCoreGuardPermissionPassed": true,
+        "ownerPidVerified": true,
+        "softwareQueuesPreserved": true,
+        "wanIdentityPreserved": true,
+        "existingServicesRunning": true,
+        "protectedUnchanged": true,
+        "originalDiskModulesUnchanged": true,
+        "installedCandidateHashesVerified": true,
+        "bootEnabled": false,
+        "trafficFixture": false,
+        "humanGameAcceptance": false
+      },
+      "finalCandidateClasses": {
+        "BE": 0,
+        "RT": 1,
+        "UNKNOWN": 0,
+        "BULK": 0
+      },
+      "baselineStopTestScope": "The deployed-before revision was stopped and independently rolled back; rollback code and C modules were unchanged. New start/status and protected readback were then verified."
+    },
+    "unresolved": [
+      "End-to-end loss percentage and causal attribution were not measured.",
+      "NSS was 0 in several samples despite a fresh classifier; the RT game remained classified RT and all RT queue drop deltas were zero. Firmware retirement/recreation still requires longer validation.",
+      "A later readback had one recovered source gap in this final startup. The original classifier apply/recovery timeout cause is not fully closed.",
+      "CPU0 time_squeeze increased by 26 in the 115.79 second window; softnet drop deltas stayed zero.",
+      "Other earlier low-rate TCP RT receipts had mixed IGS tags; they were not correlated to the active UDP game.",
+      "No formal mixed wired/Wi-Fi game acceptance, station quality or long-term reliability proof."
+    ],
+    "rawIdentitiesMacCredentialsAndBinariesIncluded": false
+  },
+  "latestEvidenceKey": "downloadLoadEfficiency"
 }

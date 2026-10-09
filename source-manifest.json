@@ -44555,6 +44555,78 @@
       "bytes": 13040,
       "role": "router-native-controller-source-or-test",
       "revision": "dorm-v2-source-outage-recovery"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "b4eaf819c4f1384d6d576a4c332064a3fbdb110c5682cce97798d854ec43a67c",
+      "bytes": 9911,
+      "role": "router-native-maintenance-documentation",
+      "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/collector.lua",
+      "workspaceSource": "code/controller/collector.lua",
+      "sha256": "bbf5ec24f7f35da33ee95e7278d99f6ffdc617fda3ff97f1cf64f77da8d3ea6b",
+      "bytes": 5088,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/flow_json.lua",
+      "workspaceSource": "code/controller/flow_json.lua",
+      "sha256": "a811fa335cb1b506a828b89d7b36395eaeb89445feaaabce26beb11f59eebb7c",
+      "bytes": 672,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/native/queue_plan.lua",
+      "workspaceSource": "code/controller/native/queue_plan.lua",
+      "sha256": "25d0d35fb9c20b8f55fb8989dc0e8bc6126c63acfb619d3209b58f490a7ed1ab",
+      "bytes": 2238,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/native/reader.lua",
+      "workspaceSource": "code/controller/native/reader.lua",
+      "sha256": "c72cc71edb7df0abd481485811e02ae9a3669e4217e6b5933a1e10757a488b9c",
+      "bytes": 1629,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "workspaceSource": "code/controller/native/writer.lua",
+      "sha256": "5696f647af5080204aecc14a2fd91b9ff87d46faa764fe47e96332f184d51fb3",
+      "bytes": 13424,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "workspaceSource": "code/controller/native/launch.sh",
+      "sha256": "10be85b2228fdb7d35c958ca3083b11c08445134c7c3e3eabb7ba2f27684a6ee",
+      "bytes": 1179,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/native/test-writer.lua",
+      "workspaceSource": "code/controller/native/test-writer.lua",
+      "sha256": "3e12ea71b5d3d9a5b47c21bfa0b773671327e5f2529735a385c3be972aae5ba8",
+      "bytes": 6821,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/native/test-efficiency.lua",
+      "workspaceSource": "code/controller/native/test-efficiency.lua",
+      "sha256": "d48ebdbd9d25cfd609c55727fe6e07fd41dd3a9087c83589d3ee2172705e0864",
+      "bytes": 1985,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-download-load-efficiency"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44580,5 +44652,53 @@
   "residentServiceDevBatch": "DEV_H_INDEPENDENT_ELIGIBLE_FLOW_ADMISSION_CANDIDATE",
   "independentAdmissionIntegration": "RT_ONLY_BOUNDED90_AND_RESTORED",
   "lastContinuousResidentExport": "ROLLING_QUALIFIED_RESIDENCY_INTEGRATED_AND_RETAINED",
-  "lastRouterLocalExport": "DORM_V2_NATIVE_SOURCE_PAUSE_RESUME_VERIFIED"
+  "lastRouterLocalExport": {
+    "0": "D",
+    "1": "O",
+    "2": "R",
+    "3": "M",
+    "4": "_",
+    "5": "V",
+    "6": "2",
+    "7": "_",
+    "8": "N",
+    "9": "A",
+    "10": "T",
+    "11": "I",
+    "12": "V",
+    "13": "E",
+    "14": "_",
+    "15": "S",
+    "16": "O",
+    "17": "U",
+    "18": "R",
+    "19": "C",
+    "20": "E",
+    "21": "_",
+    "22": "P",
+    "23": "A",
+    "24": "U",
+    "25": "S",
+    "26": "E",
+    "27": "_",
+    "28": "R",
+    "29": "E",
+    "30": "S",
+    "31": "U",
+    "32": "M",
+    "33": "E",
+    "34": "_",
+    "35": "V",
+    "36": "E",
+    "37": "R",
+    "38": "I",
+    "39": "F",
+    "40": "I",
+    "41": "E",
+    "42": "D",
+    "revision": "dorm-v2-download-load-efficiency",
+    "capturedAt": "2026-10-09T05:23:24.961Z",
+    "latestEvidenceKey": "downloadLoadEfficiency",
+    "appendedControllerSources": 9
+  }
 }

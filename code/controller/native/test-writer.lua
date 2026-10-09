@@ -7,10 +7,17 @@ local plan=dofile(root..'/queue_plan.lua')
 local r={wans={},ingress={up=plan.plan(0x7e00,{40000,40000,40000,40000,40000}),
  down=plan.plan(0x7a00,{70000,70000,70000,70000,70000})}}
 for w=1,5 do r.wans['rpwan'..w]='198.51.100.'..w end
-local parsed=false
+local parsed=false;local downBudget=8750000;local batchCommands=0;local events={}
 local function command(c)
  if c:match('^/sbin/tc %-j %-d qdisc show dev rp')then
-  return j.stringify({{kind='cake',options={bandwidth=c:find('rpifb',1,true) and 8750000 or 5000000}}})
+  return j.stringify({{kind='cake',options={bandwidth=c:find('rpifb1',1,true) and downBudget or c:find('rpifb',1,true) and 8750000 or 5000000}}})
+ end
+ if c=='/root/router-project/experiments/nss8-htb2-20261001/tc-nss -batch '..root..'/budgets.tc' then
+  assert(events[#events]=='renew','Lease must renew before the budget batch')
+  local f=assert(io.open(root..'/budgets.tc'));local text=f:read('*a');f:close()
+  assert(not text:find('qdisc',1,true) and not text:find('dev wan ',1,true))
+  for line in text:gmatch('[^\n]+')do assert(line:match('^class change dev athenaigs '));batchCommands=batchCommands+1 end
+  events[#events+1]='budgets';return ''
  end
  if c=='/usr/sbin/nft -c -f '..root..'/tags.nft' then
   local input=assert(io.open(root..'/tags.nft'));local text=input:read('*a');input:close()
@@ -30,7 +37,7 @@ nixio.open=function(p,mode)
  return {write=function(_,text)
   writes=writes+1
   if text:match('^add 0 ')then additions=additions+1;row='slot=0 state=1 generation='..additions..' id=12 serial=20 selected=1 receipt_present=1 receipt=0 create_pending=0 create_ack=1\n'
-  elseif text:match('^renew 0 ')then renewals=renewals+1
+  elseif text:match('^renew 0 ')then renewals=renewals+1;events[#events+1]='renew'
   elseif text=='revoke 0\n' then row='slot=0 state=6 generation=1 id=12 serial=20 selected=1 receipt_present=0 receipt=0 create_pending=0 create_ack=0 removal_response=4 removal_error=5\n'
   else error('Unexpected native model write: '..text)end
   return #text
@@ -38,7 +45,7 @@ nixio.open=function(p,mode)
 end
 local function read(p)assert(p=='/sys/kernel/debug/athena_ecm_gate/status');return 'abi=2 capacity=32 stopping=0 firmware_receipts=1\n'..row end
 local function put(p,s)
- assert(p==root..'/tags.nft');local f=assert(io.open(p,'w'));assert(f:write(s));assert(f:close())
+ assert(p==root..'/tags.nft' or p==root..'/budgets.tc');local f=assert(io.open(p,'w'));assert(f:write(s));assert(f:close())
 end
 local writer=dofile(root..'/writer.lua').new(root,command,read,put,function()return at end,function()end,r)
 writer.tick({wans=r.wans,flows={},operations={},summary={tracked=0,clients=0,exits={},classes={},sourceFresh=false,sourceSequence=1}})
@@ -75,5 +82,9 @@ assert(additions==3 and writes==4 and r.flowState.nativeOwned==1 and not r.flowS
 assert(r.flowState.sourcePauses==2 and r.flowState.sourceResumes==2 and r.flowState.lastSourceResumedAt==108)
 flow.sequence=7;writer.tick({wans=r.wans,flows={flow},operations={},summary=summary})
 assert(renewals==1 and writes==5)
+at=111;flow.sequence=8;downBudget=8000000
+writer.tick({wans=r.wans,flows={flow},operations={},summary=summary})
+assert(renewals==2 and batchCommands==4 and r.flowState.budgetUpdates.lastCommands==4)
+assert(r.ingress.down.rates[1]==64000 and r.ingress.down.rates[2]==70000)
 nixio.open=originalOpen
-print(j.stringify({passed=true,emptyMapParsed=true,retiringIdentityPreserved=true,firmwareAbsentSlotReused=true,sourceGapBlocksAddAndRenew=true,sourceGapExpiredFlowRetired=true,freshSourceResumesAdmission=true,dataPlaneWrites=false,mockedKernel=true}))
+print(j.stringify({passed=true,emptyMapParsed=true,retiringIdentityPreserved=true,firmwareAbsentSlotReused=true,sourceGapBlocksAddAndRenew=true,sourceGapExpiredFlowRetired=true,freshSourceResumesAdmission=true,leaseBeforeSelectiveBudgetBatch=true,dataPlaneWrites=false,mockedKernel=true}))

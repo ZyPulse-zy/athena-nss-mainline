@@ -28,4 +28,17 @@ function M.plan(base,rates)
  end
  return {commands=commands,tags=tags,totalKbps=total,rates=rates,root=root,perDeviceQuotas=false}
 end
+function M.changes(old,fresh)
+ assert(old.root==fresh.root)
+ local previous={};local changes={}
+ for _,line in ipairs(old.commands) do
+  if line:match('^class add ') then previous[assert(line:match(' classid (%S+) '))]=line end
+ end
+ for _,line in ipairs(fresh.commands) do
+  if line:match('^class add ') and previous[assert(line:match(' classid (%S+) '))]~=line then
+   changes[#changes+1]=line:gsub('^class add ','class change ')
+  end
+ end
+ return changes
+end
 return M

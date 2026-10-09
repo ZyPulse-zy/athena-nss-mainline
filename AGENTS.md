@@ -1,12 +1,14 @@
-# 当前接续：分类来源中断自动恢复已修复，NSS仍运行
+# 当前接续：下载并发游戏采集优化已部署，短时改善
 
-先读STATE首段及evidence/dorm-v2-native.json sourceOutageRecovery。只读复核 2026-10-09T04:35:32.408Z：同一本机服务保持 native-running，实际 NSS26，两次来源暂停均已恢复（sourcePauses/sourceResumes=2/2），来源新鲜、准入开启、未确认0。恢复部署核验五WAN身份/原软件队列/保护文件/原模块与服务通过；旧Windows停止，自启关闭。
+先读STATE首段和evidence/dorm-v2-native.json downloadLoadEfficiency。复核 2026-10-09T05:23:24.961Z：本机 native-running，实际 NSS1，来源新鲜、IPv4准入开启、未确认0；本次启动来源暂停/恢复 1/1。五WAN、原软件队列、认证/PBR/NAT、代理/Tailscale、管理与原磁盘模块核验通过，旧Windows停止，自启关闭。
 
-今天约10:13，原分类器 apply 子进程先失败（退出1、耗时4.84秒，lastQuery1998），随后发布中断；旧许可要求 sourceFresh=true，自动 core guard 关闭 NSS，writer 误把这类可恢复来源中断升级为整体退出并回退。该启动运行5333.13秒（约89分钟）；没有单独记录当时关闭进程，错误文字不代表有人手动关闭。
+仅维护code/controller：本机reader改读较小的RT/BULK候选投影，不再解析完整诊断快照或跟踪空闲BE；新鲜hostapd关联/授权表替代每秒完整iw station统计；逐流分段JSON编码；仅变化的队列类别一次批量更新，先续精确CT租约。原分类规则和6秒租约不放宽，32槽/无按人设备配额保持。
 
-仅维护本机控制器：新鲜reader/owner/guardian与ABI2正常时，sourceFresh=false进入waiting-source，停止新增和续租，六秒内核逐流租约照常到期/精确固件撤销；新鲜分类恢复后同一服务恢复准入。八秒reader失联、owner失联和未知固件撤销仍完整退出。原guard最后一次核验理由写入私有RAM文件，writer在外部准入关闭时保存该理由。
+受影响核心21模型、采集/编码/预算模型、真实目标NFT解析的writer租约/批量更新模型及10文件目标解析通过。候选只读采集0.12秒。真实stop及独立完整回退后部署6文件，随后start/status和保护基线通过；未改C/模块、未重启、未造流量。部署后115.79秒/31样本，平均自然下行284.47 Mbps，来源无新增中断，所有实时队列drop增量0；NSS实际0..32，尾样本0，不能隐去这些点。随后复核实际NSS1、候选RT1/BULK0，一次来源暂停已恢复。
 
-原分类器子进程详细stderr已丢失，底层apply失败原因尚未完全定位；未修改其冻结源码。真人游戏/下载和长期性能仍延期，现场没有造流量、杀分类器或新故障注入。 正常核验允许sourceFresh=false且admissionState=waiting-source；这是暂停新准入，不是整体停用。实际NSS单独读取。不要重复start、恢复旧Windows、擅自重启/关闭路由器或开启boot/respawn。保留五WAN/PBR/NAT/代理/Tailscale/管理与原模块；原始CT/MAC/凭据/失败原件只留私有work。
+用户回报“暂时没有明显丢包/瞬移”。这是当前主观改善，不是端到端零丢包或长期稳定验收；游戏固件规则仍有撤销/重建，来源后续一次恢复、CPU0 time_squeeze增26及早先部分低速TCP RT回执混合标签保持为待查事实。诊断时大快照重编码有CPU开销，不能把捕获的超时直接归为全部游戏丢包的唯一原因。
+
+先status，不重复start、不恢复旧Windows、不重跑旧实验或造游戏/下载/故障夹具。原“先不测试”指正式配合验收延期，本次只被动读取用户自然游戏/舍友下载。保留五WAN/PBR/NAT/代理/Tailscale/管理；不擅自重启、升级、刷机、换EDMA、boot enable或自动长观察。原始CT/MAC/错误与有效回退基线只留私有work；仅维护code/controller，旧6304源码与失败冻结。
 
 ## 以下为修复前的历史状态，不代表当前运行状态
 
