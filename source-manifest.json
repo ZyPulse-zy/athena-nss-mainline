@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T16:19:47.681Z",
+  "generatedAt": "2026-10-09T00:49:28.353Z",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -44435,6 +44435,70 @@
       "bytes": 12259,
       "role": "router-native-controller-source-or-test",
       "revision": "dorm-v2-native-firmware-absence-recovery"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "8cac21cf0e00ba09810515f2de46be5bf7a3e31c04ca73bd3abc0b7ceb790a05",
+      "bytes": 7050,
+      "role": "router-native-maintenance-documentation",
+      "revision": "dorm-v2-approved-reboot-native-integration"
+    },
+    {
+      "path": "code/controller/native/classifier_recovery.lua",
+      "workspaceSource": "code/controller/native/classifier_recovery.lua",
+      "sha256": "0b158af2b72dd950d8086a31639cc96aa5fcd5c597a9538cf298ee5e96125a14",
+      "bytes": 7268,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-approved-reboot-native-integration"
+    },
+    {
+      "path": "code/controller/native/core_guard_permission.lua",
+      "workspaceSource": "code/controller/native/core_guard_permission.lua",
+      "sha256": "87e4e3a33f0cf4dae240f5244801faac1434305654bd52e1dea1e27e97fa552a",
+      "bytes": 2464,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-approved-reboot-native-integration"
+    },
+    {
+      "path": "code/controller/native/install_core_guard.lua",
+      "workspaceSource": "code/controller/native/install_core_guard.lua",
+      "sha256": "8e017b5984055ee7823477d0b0d6f2fdc0fc095c1e8b311365315d6a7ae73bb0",
+      "bytes": 4147,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-approved-reboot-native-integration"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "workspaceSource": "code/controller/native/launch.sh",
+      "sha256": "4ec627bfdf6c38cc0d782239708e24ebacae55bb1ada33834a2d2bf418dd4dc3",
+      "bytes": 1165,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-approved-reboot-native-integration"
+    },
+    {
+      "path": "code/controller/native/prepare.lua",
+      "workspaceSource": "code/controller/native/prepare.lua",
+      "sha256": "6c0d7bedd1819535d0264cd6845eb82c50c22bb2b8e123452d44905261ee5f2b",
+      "bytes": 2017,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-approved-reboot-native-integration"
+    },
+    {
+      "path": "code/controller/native/test-core-guard.lua",
+      "workspaceSource": "code/controller/native/test-core-guard.lua",
+      "sha256": "05d66ff2410712647a37ae2644e49ac31f80fb8b8fa6aaf0443bffd0d3ecd06a",
+      "bytes": 1656,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-approved-reboot-native-integration"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "workspaceSource": "code/controller/native/transaction.lua",
+      "sha256": "3097c714fcebd8a0e2102506a5b35f99461547e72bab62019c831bc4f0532f52",
+      "bytes": 16706,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-approved-reboot-native-integration"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44460,5 +44524,5 @@
   "residentServiceDevBatch": "DEV_H_INDEPENDENT_ELIGIBLE_FLOW_ADMISSION_CANDIDATE",
   "independentAdmissionIntegration": "RT_ONLY_BOUNDED90_AND_RESTORED",
   "lastContinuousResidentExport": "ROLLING_QUALIFIED_RESIDENCY_INTEGRATED_AND_RETAINED",
-  "lastRouterLocalExport": "DORM_V2_NATIVE_ABI2_REPAIR_STORED_OLD_MODULE_REFERENCES_BLOCKED"
+  "lastRouterLocalExport": "DORM_V2_NATIVE_ABI2_RUNNING_ACTIVE_STOP_ROLLBACK_RESTART_VERIFIED"
 }

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "capturedAt": "2026-10-08T16:18:19.563Z",
+  "capturedAt": "2026-10-09T00:48:42.825Z",
   "repository": "ZyPulse-zy/athena-nss-mainline",
   "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
   "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
-  "method": "Passive normal client traffic; no traffic fixture, game launch, reboot, flash, firmware/kernel/EDMA upgrade. Subsequent user-requested activation failed; exact denied-rule firmware recovery, software-only restoration, ABI2 repair build and storage; no reboot or forced unload.",
+  "method": "Explicitly authorized single router reboot; original classifier baseline and core guard integration repair; actual ABI2 local service start/status, active-flow stop/full rollback/idempotent rollback, final restart left running. Natural traffic only; human game tests deferred.",
   "implementation": {
     "routerLocal": true,
     "ctNamespace": "init_net",
@@ -133,6 +133,38 @@
       "files": 5,
       "targetRuntime": true,
       "dataPlaneWrites": false
+    },
+    "coreGuardPermissionModels": {
+      "passed": true,
+      "count": 17,
+      "dataPlaneWrites": false
+    },
+    "bootIntegrationSyntax": {
+      "passed": true,
+      "targetLuaAndShell": true
+    },
+    "abi2ActiveLifecycle": {
+      "at": "2026-10-09T00:43:55.331Z",
+      "nativeGateAbi": 2,
+      "acceleratedAtStop": 24,
+      "activeFlowRevocationTested": true,
+      "stopPassed": true,
+      "fullRollbackConfirmed": true,
+      "idempotentRollbackPassed": true,
+      "queuesRestored": true,
+      "wanRestored": true,
+      "servicesRunning": true,
+      "protectedUnchanged": true,
+      "originalDiskModulesUnchanged": true,
+      "modulesRestored": true,
+      "coreGuardOriginalRestored": true,
+      "ecmDatabase": 0,
+      "accelerated": 0,
+      "ownTagsRemoved": true,
+      "ownLockRemoved": true,
+      "bootEnabled": false,
+      "trafficFixture": false,
+      "restartStillNeededToLeaveRunning": true
     }
   },
   "firmwareCreateTagExamples": [
@@ -420,82 +452,57 @@
     }
   },
   "final": {
-    "at": "2026-10-08T16:13:01.986Z",
-    "protectedUnchanged": true,
-    "softwareQueueStructureAndNonRateOptionsRestored": true,
-    "originalDiskModulesUnchanged": true,
-    "existingServicesUnchanged": true,
-    "wans": [
-      {
-        "addressPresent": true,
-        "mode": "bridge",
-        "identityPreserved": true,
-        "up": true
-      },
-      {
-        "addressPresent": true,
-        "mode": "bridge",
-        "identityPreserved": true,
-        "up": true
-      },
-      {
-        "addressPresent": true,
-        "mode": "bridge",
-        "identityPreserved": true,
-        "up": true
-      },
-      {
-        "addressPresent": true,
-        "mode": "bridge",
-        "identityPreserved": true,
-        "up": true
-      },
-      {
-        "addressPresent": true,
-        "mode": "bridge",
-        "identityPreserved": true,
-        "up": true
-      }
-    ],
-    "phase": "software-restored-native-module-blocked",
-    "softwareRollbackConfirmed": true,
-    "hardwareAdmissionEnabled": false,
-    "gateReferences": 5,
-    "ecmConnections": 5,
-    "accelerated": 0,
-    "tagOwnerPresent": false,
-    "mwan": 0,
-    "modules": {
-      "qca_nss_qdisc": false,
-      "athena_nss_receipts": true,
-      "ecm": true,
-      "athena_nss_recover": false,
-      "athena_ecm_gate": true,
-      "act_nssmirred": false
+    "at": "2026-10-09T00:48:42.825Z",
+    "phase": "native-running",
+    "running": true,
+    "nativeGateAbi": 2,
+    "hardwareAdmissionEnabled": true,
+    "accelerated": 28,
+    "ecmDatabase": 31,
+    "elapsedSeconds": 264.85,
+    "healthySessionLimitSeconds": null,
+    "sourceFresh": true,
+    "unconfirmed": 0,
+    "renewed": 2665,
+    "retiredFirmwareAbsent": 11,
+    "actualCreatedClients": 2,
+    "actualCreatedExits": {
+      "lan4": 30,
+      "phy0-ap0": 1
     },
-    "fullRollbackConfirmed": false
+    "actualCoreGuardPermissionPassed": true,
+    "ownerPidVerified": true,
+    "softwareQueuesPreserved": true,
+    "wanIdentityPreserved": true,
+    "existingServicesRunning": true,
+    "protectedUnchanged": true,
+    "originalDiskModulesUnchanged": true,
+    "installedCandidateHashesVerified": true,
+    "bootEnabled": false,
+    "trafficFixture": false,
+    "humanGameAcceptance": false
   },
   "unresolved": [
-    "P0: old ABI1 gate self references 5 / ECM CI references 5 remain; five exact firmware NO_ENTRY replies confirmed, software state restored, ABI2 repair stored but not loaded. Requires approved restart for ordinary module replacement.",
     "User deferred three real wired/Wi-Fi game/download acceptance scenarios",
     "Wi-Fi firmware per-station RT QoS and same-device game/download quality not verified",
     "Eligible traffic byte/packet NSS coverage and mixed-path latency/throughput not measured",
     "Software path retains CAKE before NSS; additional queueing impact not measured",
-    "Actual boot/reboot recovery and long-term CPU/softirq budget not verified",
-    "IGS partial-bind failure recovery mocked but not deliberately injected on hardware"
+    "IGS partial-bind failure recovery mocked but not deliberately injected on hardware",
+    "One authorized reboot followed by manual activation verified; automatic boot enable remains off and long-term CPU/softirq budget not verified.",
+    "Original cause of early firmware rule disappearance lacks direct notification evidence; exact NO_ENTRY cleanup is now implemented and observed."
   ],
   "rawConntrackMacAddressesCredentialsAndBinariesIncluded": false,
   "releaseState": {
     "installed": true,
-    "running": false,
+    "running": true,
     "bootEnabled": false,
     "legacyRunning": false,
     "nativeGateAbiStored": 2,
-    "loadedGateAbi": 1,
-    "hardwareAdmissionEnabled": false,
-    "softwareRollbackConfirmed": true,
-    "fullRollbackConfirmed": false,
-    "requiresExplicitRestartApproval": true
+    "loadedGateAbi": 2,
+    "hardwareAdmissionEnabled": true,
+    "lastStopFullRollbackConfirmed": true,
+    "approvedRouterRebootCompleted": true,
+    "requiresExplicitRestartApproval": false
   },
   "previousStoppedDeliveryFinal": {
     "passed": true,
@@ -764,6 +771,198 @@
     "receipts": {
       "sha256": "779a00d8001293696aa229d03be478dc3eaab9bb3216396698f3e4bdfec7d0a2",
       "bytes": 138768
+    }
+  },
+  "methodBeforeApprovedReboot": "Passive normal client traffic; no traffic fixture, game launch, reboot, flash, firmware/kernel/EDMA upgrade. Subsequent user-requested activation failed; exact denied-rule firmware recovery, software-only restoration, ABI2 repair build and storage; no reboot or forced unload.",
+  "approvedRebootDelivery": {
+    "reboot": {
+      "at": "2026-10-09T00:26:20.748Z",
+      "bootChanged": true,
+      "uptimeSeconds": 94.08,
+      "wans": [
+        {
+          "addressPresent": true,
+          "up": true
+        },
+        {
+          "addressPresent": true,
+          "up": true
+        },
+        {
+          "addressPresent": true,
+          "up": true
+        },
+        {
+          "addressPresent": true,
+          "up": true
+        },
+        {
+          "addressPresent": true,
+          "up": true
+        }
+      ],
+      "servicesRunning": {
+        "router-project-minieap": true,
+        "sing-box-athena": true,
+        "router-project-game-classifier": false,
+        "tailscale-athena": true,
+        "athena-dorm-native": false,
+        "router-project-autorate": true
+      },
+      "oldGateGone": true,
+      "oldObserverGone": true,
+      "ecmDatabase": 0,
+      "accelerated": 0,
+      "frontends": [
+        1,
+        1
+      ],
+      "bootEnabled": false
+    },
+    "classifierBaselineRecovery": {
+      "at": "2026-10-09T00:32:50.086Z",
+      "queueRepairs": 0,
+      "filterPairsRestored": 10,
+      "classifierRestarted": true,
+      "terminalMarkerClearedAfterExactRecovery": true,
+      "queueRepairsNeeded": 0,
+      "filterPairsNeeded": 10,
+      "classifierPublicationFresh": true,
+      "mode": "repair",
+      "classifierRunning": true,
+      "configUnchanged": true,
+      "targetLuaParserPassed": true,
+      "launcherShellSyntaxPassed": true,
+      "onlyExistingDiffservModeChanged": true,
+      "queueModesRestoredEarlierInThisTask": 10,
+      "baseFilterPairsRestored": 10,
+      "originalClassifierCodeAndConfigUnchanged": true
+    },
+    "coreGuardIntegration": {
+      "at": "2026-10-09T00:40:58.221Z",
+      "coreGuardRunning": true,
+      "coreGuardReloaded": true,
+      "ipv6StillClosed": true,
+      "changed": false,
+      "coreGuardHookInstalled": true,
+      "originalCoreGuardRestored": false,
+      "originalBackupVerified": true,
+      "otherGuardActionsPreserved": true,
+      "permissionModels": 17,
+      "targetSyntaxFiles": 5,
+      "absentOwnerDenied": true,
+      "noFirmwareKernelOrEdmaChange": true,
+      "originalCoreGuardServiceReloaded": true
+    },
+    "firstActivation": {
+      "at": "2026-10-09T00:43:14.794Z",
+      "nativeGateAbi": 2,
+      "running": true,
+      "healthySessionLimitSeconds": null,
+      "sourceFresh": true,
+      "maxAccelerated": 17,
+      "accelerated": 17,
+      "statusSamples": 22,
+      "renewed": 318,
+      "retiredFirmwareAbsent": 0,
+      "actualCreatedClients": 1,
+      "actualCreatedExits": {
+        "lan4": 19
+      },
+      "softwareQueuesPreserved": true,
+      "wanIdentityPreserved": true,
+      "protectedUnchanged": true,
+      "originalDiskModulesUnchanged": true,
+      "existingServicesRunning": true,
+      "ownerPidVerified": true,
+      "legacyStopped": true,
+      "bootEnabled": false,
+      "trafficFixture": false,
+      "humanGameAcceptance": false
+    },
+    "activeStopAndRollback": {
+      "at": "2026-10-09T00:43:55.331Z",
+      "nativeGateAbi": 2,
+      "acceleratedAtStop": 24,
+      "activeFlowRevocationTested": true,
+      "stopPassed": true,
+      "fullRollbackConfirmed": true,
+      "idempotentRollbackPassed": true,
+      "queuesRestored": true,
+      "wanRestored": true,
+      "servicesRunning": true,
+      "protectedUnchanged": true,
+      "originalDiskModulesUnchanged": true,
+      "modulesRestored": true,
+      "coreGuardOriginalRestored": true,
+      "ecmDatabase": 0,
+      "accelerated": 0,
+      "ownTagsRemoved": true,
+      "ownLockRemoved": true,
+      "bootEnabled": false,
+      "trafficFixture": false,
+      "restartStillNeededToLeaveRunning": true
+    },
+    "finalActivation": {
+      "at": "2026-10-09T00:44:52.124Z",
+      "nativeGateAbi": 2,
+      "running": true,
+      "healthySessionLimitSeconds": null,
+      "sourceFresh": true,
+      "maxAccelerated": 23,
+      "accelerated": 23,
+      "statusSamples": 22,
+      "renewed": 343,
+      "retiredFirmwareAbsent": 2,
+      "actualCreatedClients": 1,
+      "actualCreatedExits": {
+        "lan4": 26
+      },
+      "softwareQueuesPreserved": true,
+      "wanIdentityPreserved": true,
+      "protectedUnchanged": true,
+      "originalDiskModulesUnchanged": true,
+      "existingServicesRunning": true,
+      "ownerPidVerified": true,
+      "legacyStopped": true,
+      "bootEnabled": false,
+      "trafficFixture": false,
+      "humanGameAcceptance": false
+    },
+    "closedPreRebootReferenceBlocker": true,
+    "sourceFilesChangedOnlyUnderController": true,
+    "failedAttemptsPreservedPrivately": true,
+    "samplingToolDeviceOmissionCorrected": true,
+    "deliveryReadback": {
+      "at": "2026-10-09T00:48:42.825Z",
+      "phase": "native-running",
+      "running": true,
+      "nativeGateAbi": 2,
+      "hardwareAdmissionEnabled": true,
+      "accelerated": 28,
+      "ecmDatabase": 31,
+      "elapsedSeconds": 264.85,
+      "healthySessionLimitSeconds": null,
+      "sourceFresh": true,
+      "unconfirmed": 0,
+      "renewed": 2665,
+      "retiredFirmwareAbsent": 11,
+      "actualCreatedClients": 2,
+      "actualCreatedExits": {
+        "lan4": 30,
+        "phy0-ap0": 1
+      },
+      "actualCoreGuardPermissionPassed": true,
+      "ownerPidVerified": true,
+      "softwareQueuesPreserved": true,
+      "wanIdentityPreserved": true,
+      "existingServicesRunning": true,
+      "protectedUnchanged": true,
+      "originalDiskModulesUnchanged": true,
+      "installedCandidateHashesVerified": true,
+      "bootEnabled": false,
+      "trafficFixture": false,
+      "humanGameAcceptance": false
     }
   }
 }

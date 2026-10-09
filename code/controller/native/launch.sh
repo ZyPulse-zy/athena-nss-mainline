@@ -1,5 +1,5 @@
 #!/bin/sh
-# Manual procd candidate. Originals, configuration and boot enable stay intact.
+# Manual procd candidate. Restore only the existing classifier queue contract.
 set -eu
 source=/usr/lib/athena-dorm-native
 target=/tmp/athena-dorm-native
@@ -8,11 +8,15 @@ test ! -d /sys/module/athena_ecm_gate
 test ! -d /sys/module/athena_nss_receipts
 mkdir -p "$target"
 chmod 700 "$target"
-for name in transaction.lua ingress_probe.lua queue_plan.lua writer.lua reader.lua prepare.lua core.lua collector.lua athena-qos athena_ecm_gate.ko athena_nss_receipts.ko ecm-receipts.ko act_nssmirred-receipts.ko build-result.json; do
+cp "$source/classifier_recovery.lua" "$target/classifier_recovery.lua"
+chmod 600 "$target/classifier_recovery.lua"
+lua "$target/classifier_recovery.lua" repair >"$target/classifier-recovery.json"
+for name in transaction.lua ingress_probe.lua queue_plan.lua writer.lua reader.lua prepare.lua core_guard_permission.lua install_core_guard.lua core.lua collector.lua athena-qos athena_ecm_gate.ko athena_nss_receipts.ko ecm-receipts.ko act_nssmirred-receipts.ko build-result.json; do
  cp "$source/$name" "$target/$name"
  chmod 600 "$target/$name"
 done
+lua "$target/install_core_guard.lua" >"$target/core-guard-integration.json"
 lua "$target/prepare.lua"
 # procd tracks this foreground owner. Its separate setsid guardian restores
 # on owner exit, even if procd terminates the owner without invoking stop.
-exec lua "$target/transaction.lua" foreground 0
+exec /usr/bin/lua "$target/transaction.lua" foreground 0

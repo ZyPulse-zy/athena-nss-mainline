@@ -1,3 +1,19 @@
+# 当前：获准重启后 ABI2 NSS 已启用并保持本机运行
+
+交付只读复核 2026-10-09T00:48:42.825Z：同一最终启动已运行 264.85 秒，实际 NSS28/ECM31，2 个实际 CREATE 客户端、出口 lan4/phy0-ap0，2665 次续租、11 次真实固件不存在撤销，未确认0。原 core guard 对真实 owner 的许可、来源新鲜度、原软件队列/五 WAN/服务/保护配置/模块及已安装候选哈希全部通过；继续运行，自启关闭。
+
+2026-10-09，用户明确“现在可以重启了”后执行一次路由器重启，boot ID 改变，旧 ABI1 gate/receipt 与五个残留引用消失，五 WAN、认证、autorate、代理与 Tailscale 恢复。已加载 ABI2，最终本机服务保持 native-running、IPv4 准入开启/IPv6 关闭、32 成本槽、健康寿命 0；旧 Windows continuous 停止，自启仍关闭。
+
+重启暴露真实启动差异：十个原 CAKE 回到 besteffort、40900/41900 基础过滤规则未恢复，原分类器进入 terminal stop。新增 classifier_recovery.lua 只把已核对的队列恢复 diffserv4，保留实时 bandwidth/root/其他选项，补齐原有十对基础规则，通过原 cleanup 精确恢复后解除终止标记；原分类器源码/配置哈希未改，数据发布恢复。原 core-guard 每五秒关闭 NSS；新增只读 owner/guardian PID+start、8 秒数据/心跳及 ABI2 默认拒绝 gate 核验钩子，仅有效时跳过 IPv4 关闭，保留 PBR、日志和 IPv6 行为。原 shell watch 需重载才能使用钩子；stop/rollback 精确还原原脚本字节并重载，已实测。
+
+完整受影响验证：第一轮 22 样本最大 NSS17，实际停止时 NSS24，固件撤销、ECM0/NSS0、46 原队列结构/非速率选项、五 bridge/mwan0、原磁盘模块/保护配置/原服务、原 core guard 字节、标签/锁清理全部通过；重复 rollback 通过。重新 start 后另 22 样本最大/结束 NSS23/23，343 续租、真实 FIRMWARE_ABSENT 撤销2，结束 CREATE 客户端1，来源/owner/队列/WAN/原服务核验通过并保留运行。各轮计数不合并，未造流量夹具。
+
+17 个 core-guard 权限模型、受影响目标 Lua/Shell 解析通过；此前 134 实际 receipt C mock、目标 writer/NFT 模型、原 6.18.44 构建复用，C 源码和构建物本轮未改。未升级/刷机/更换 EDMA/修改认证、PBR/NAT、代理/Tailscale配置，也未开启自启。
+
+旧引用阻断 P0 已通过获准重启释放，ABI2 真实删除及完整回退通过。规则最初为何提前从固件消失仍无直接通知证据。真人游戏/下载验收按用户要求延期；全端口/每 Wi-Fi station/字节覆盖、混合软件-NSS双重排队质量、长期 CPU/softirq 和重启自动启用仍未验收。
+
+## 以下为批准重启前的历史记录，不代表当前状态
+
 # 当前：启用请求触发 NO_ENTRY 恢复缺陷，修复版已保存、旧模块待释放
 
 2026-10-09，用户要求立即启用。旧版重新启动实测最大 NSS14，随后五条撤销没有 DESTROY 回执，进入 rollback-unconfirmed。对这五条已否决的 serial/generation，用已安装 ECM 的公开 getter 取得实际固件 tuple、匹配原 receipt，逐条发送精确 DESTROY；五条全部返回原始 ENACK=4 / NO_CONNECTION_ENTRY=5。未发送 CREATE、伪造 ACK、强卸载或重启。

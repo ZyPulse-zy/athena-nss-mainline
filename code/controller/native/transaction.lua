@@ -104,7 +104,13 @@ local function rollback(r)
  if loaded('athena_nss_receipts') then command('/sbin/rmmod athena_nss_receipts') end
  assert(not loaded('athena_ecm_gate') and not loaded('athena_nss_receipts'))
  assert(count('front_end_ipv4_stop')==r.baseline.stop4 and count('front_end_ipv6_stop')==r.baseline.stop6)
- for p,sha in pairs(r.pins.protected)do pin(p,sha)end
+ if r.nativeRun then
+  local restored=assert(j.parse(command('/usr/bin/lua '..root..'/install_core_guard.lua restore')))
+  assert(restored.originalCoreGuardRestored and restored.coreGuardRunning,'Original core guard restoration failed')
+  pin('/root/router-project/scripts/core-guard.sh',r.pins.coreGuardOriginalSha256)
+  r.coreGuardRestored=true;store(r)
+ end
+ for p,sha in pairs(r.pins.protected)do if p~='/root/router-project/scripts/core-guard.sh' or not r.nativeRun then pin(p,sha)end end
  r.phase='restored';r.finishedAtUptime=now();r.running=false;r.rollbackConfirmed=true;store(r)
  r.hardwareAdmissionEnabled=false;r.accelerated=count('ecm_nss_ipv4/accelerated_count');r.native=native_status();store(r)
  if r.flowState then
@@ -192,6 +198,7 @@ if mode=='guard' then
       put('/sys/kernel/debug/ecm/front_end_ipv4_stop','0\n')
       initialized=true;r.phase='native-running';r.hardwareAdmissionEnabled=true
      end
+     assert(count('front_end_ipv4_stop')==0,'NSS admission was closed externally; withdraw native backend')
      r.native=native_status();r.accelerated=count('ecm_nss_ipv4/accelerated_count');store(r)
     end
     n.nanosleep(0,250000000)

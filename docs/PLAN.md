@@ -1,3 +1,11 @@
+# 当前交付：本机 NSS 运行，真人验收延期
+
+实施和受影响验证已完成，保持已运行的新本机服务，旧 Windows 停止。正常状态先只读 status，禁止重复 start 或并行恢复旧控制器。status 应为 native-running/sourceFresh/IPv4 准入开启，当前命中数单独读取；健康寿命 0、32 槽、共同 WAN/IGS 路径，不依赖 .207/Windows/三槽/90 秒/18-60 实验预算。
+
+stop/rollback 已在 24 条活跃 NSS 时完整验证，之后已重新 start。不再重复旧实验、不制造游戏/下载负载，不自行做 24 小时观察或 boot enable。未来真实游戏/无线 station/字节覆盖和长期性能验收需按用户新指示；用户目前“先不测试了哈”。status/start/stop/rollback 与启动修复规则见 code/controller/README.md。
+
+## 以下为批准重启前的历史记录，不代表当前状态
+
 # 当前唯一现场阻断：旧模块引用待重启释放
 
 修复与受影响验证已执行，不重跑旧实验。先经用户明确批准一次重启，再核对五 WAN/保护配置/软件基线、启动已保存 ABI2 本机服务、验证真实 NSS/CREATE、逐流 NO_ENTRY/stop/rollback，再连续运行。不得在现有 ABI1 gate/锁仍在时重新 start 或恢复旧 Windows 控制器。真人验收仍延期，未批准重启前保持软件路径和现有服务。

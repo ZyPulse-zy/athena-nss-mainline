@@ -18,9 +18,11 @@ assert(sha('/lib/modules/6.18.44/act_nssmirred.ko')==pins.ingressOriginalSha256)
 for _,name in ipairs({'athena_ecm_gate.ko','athena_nss_receipts.ko'})do assert(sha(root..'/'..name)==pins[name].sha256)end
 assert(sha(root..'/ecm-receipts.ko')==pins.ecmReceiptCopySha256)
 assert(sha(root..'/act_nssmirred-receipts.ko')==pins.ingressReceiptCopySha256)
+pins.coreGuardOriginalSha256=sha('/usr/lib/athena-dorm-native/core-guard.original.sh')
 pins.protected={}
 for _,p in ipairs({'/etc/config/network','/etc/config/firewall','/etc/config/wireless',
- '/root/router-project/classifier/nss23-20261002122153-58e283ed/config.json'})do pins.protected[p]=sha(p)end
+ '/root/router-project/classifier/nss23-20261002122153-58e283ed/config.json',
+ '/root/router-project/scripts/core-guard.sh'})do pins.protected[p]=sha(p)end
 assert(fs.chmod(root,'700'));f=assert(io.open(root..'/pins.json.new','w'))
 assert(f:write(j.stringify(pins)));assert(f:close());assert(fs.chmod(root..'/pins.json.new','600'))
 assert(fs.rename(root..'/pins.json.new',root..'/pins.json'))

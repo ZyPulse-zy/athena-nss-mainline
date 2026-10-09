@@ -1,3 +1,13 @@
+# 当前接续：ABI2 NSS 已运行，批准重启与完整回退已实测
+
+先读 STATE 当前首段及 evidence/dorm-v2-native.json approvedRebootDelivery。用户明确允许一次重启，已执行；旧 gate 引用消失。最新交付复核本机 ABI2 32 槽/NSS28/sourceFresh/健康寿命0/IPv4开启，同一启动264.85秒、两个实际CREATE客户端（有线+Wi-Fi），旧 Windows STOPPED，自启关闭。不要重复 start、恢复旧 Windows 或擅自重启。
+
+已修复重启后 diffserv/base filters/terminal marker 和 core guard 无条件关闭 NSS；仅 code/controller 为维护入口，旧 6304 源码/失败冻结。第一轮活跃 NSS24 stop/full rollback/idempotent rollback 通过；原 guard 字节、原软件队列/五WAN/模块/保护服务恢复，随后再次启动并保留运行。真人“先不测试了哈”仍有效，不再问设备/时间，不造流量夹具或重复 CPU/旧实验。所有原始 CT/MAC/凭据/二进制/私有备份仅本地。
+
+原“完成后关机”的目标设备尚未明确，不能擅自关闭路由器或破坏持续服务；一次重启授权不等于再次重启或关路由器。
+
+## 以下为批准重启前的历史记录，不代表当前状态
+
 # 当前接续：NSS启用请求受旧模块引用阻断，ABI2修复已保存
 
 先读 STATE 当前首段与 evidence/dorm-v2-native.json activationRecovery。NSS0、软件队列/五WAN/保护服务已恢复；旧Windows停止，ABI1 gate自引用5/ECM CI5仍在，完整回退未确认。五个精确 DESTROY 原始 ENACK4/error5 实测证明规则不存在；新 ABI2 源码、134 C mock、目标writer-NFT模型/解析/编译通过并存入 /usr/lib/athena-dorm-native，未加载、自启关闭。不要重复start、旧实验、强卸载、伪造ACK或修改内核内存。
