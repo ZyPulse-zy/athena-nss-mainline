@@ -44635,6 +44635,54 @@
       "bytes": 10927,
       "role": "router-native-maintenance-documentation",
       "revision": "dorm-v2-repository-review"
+    },
+    {
+      "path": "code/controller/athena-qos",
+      "workspaceSource": "code/controller/athena-qos",
+      "sha256": "b56838569580e930f5cadaf1d398a279e4a1225ea54222d244843174d0fe96a0",
+      "bytes": 2322,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-loss-diagnostics"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "34ecf75dea7a29010e96893c599928c3e5a1c1a851e07d39007099c680866858",
+      "bytes": 12337,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-loss-diagnostics"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "workspaceSource": "code/controller/native/launch.sh",
+      "sha256": "741300272f04e4fd5b2044b4f9a4c4d446b171a913ddbfb6fe06f40c870835a1",
+      "bytes": 1203,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-loss-diagnostics"
+    },
+    {
+      "path": "code/controller/native/health.lua",
+      "workspaceSource": "code/controller/native/health.lua",
+      "sha256": "592fbf39a6b986a2c548a3ee3d4a70dc61123e179827d013bff722ddea140cab",
+      "bytes": 5360,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-loss-diagnostics"
+    },
+    {
+      "path": "code/controller/native/diagnose.lua",
+      "workspaceSource": "code/controller/native/diagnose.lua",
+      "sha256": "7c1c9486d9ab6fb4c0ca1650bfa3d2c4fe132dfb9706094d4715934dfa421f91",
+      "bytes": 3722,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-loss-diagnostics"
+    },
+    {
+      "path": "code/controller/native/test-health.lua",
+      "workspaceSource": "code/controller/native/test-health.lua",
+      "sha256": "57f4128b6bb35d184bf77937621933040ebce26d10a4a0693bdd2529c1d41f46",
+      "bytes": 3544,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-loss-diagnostics"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",

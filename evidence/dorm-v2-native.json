@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "capturedAt": "2026-10-09T06:16:26.931Z",
+  "capturedAt": "2026-10-09T08:57:33.823Z",
   "repository": "ZyPulse-zy/athena-nss-mainline",
   "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
   "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
@@ -1730,7 +1730,7 @@
     ],
     "rawIdentitiesMacCredentialsAndBinariesIncluded": false
   },
-  "latestEvidenceKey": "repositoryReview",
+  "latestEvidenceKey": "lossMissInvestigation",
   "repositoryReview": {
     "reviewedSourceCommit": "c8ab8123298b63751a8bfc665b297f6e11a97e27",
     "scope": [
@@ -1876,5 +1876,693 @@
     ],
     "disposition": "Related repository maintenance fixes may be committed on the existing draft PR; keep runtime and long-term acceptance limits open and do not merge or enable auto-start.",
     "recordedAt": "2026-10-09T06:16:26.931Z"
+  },
+  "lossMissInvestigation": {
+    "capturedAt": "2026-10-09T08:57:33.823Z",
+    "userReport": "Occasional about 0.4 percent Loss and Miss; direction not recalled; gaming and downloads otherwise mostly smooth.",
+    "symptomResolved": false,
+    "rootCauseProved": false,
+    "liveHudLossMissCaptured": false,
+    "humanFormalAcceptance": false,
+    "directObservation": {
+      "at": "2026-10-09T08:27:17.306Z",
+      "sampleSeconds": 91.84,
+      "samples": 31,
+      "gameProcessSocketMatched": true,
+      "currentLanAddressResolved": true,
+      "gameFlowAliases": 1,
+      "gameFlowPresentSamples": 16,
+      "gameFlowCreateReceiptSamples": 16,
+      "activeGameSamples": 12,
+      "activeGameCreateReceiptSamples": 12,
+      "activeGameBindingsStable": true,
+      "gameFlowCeasedPacketProgressDuringWindow": true,
+      "gameFlowAbsentAtEnd": true,
+      "totalWanRxMbps": 1.35,
+      "concurrentHighDownloadSample": false,
+      "sourcePauses": 7,
+      "sourceResumes": 7,
+      "newSourcePauses": 0,
+      "sourceFreshAllSamples": true,
+      "nssMin": 1,
+      "nssMax": 3,
+      "unconfirmedMax": 0,
+      "queueDeltas": {
+        "wan": [
+          {
+            "handle": "7e56:",
+            "class": "RT",
+            "packets": 3462,
+            "drops": 0
+          },
+          {
+            "handle": "7e45:",
+            "class": "BE",
+            "packets": 2697,
+            "drops": 0
+          },
+          {
+            "handle": "7e36:",
+            "class": "RT",
+            "packets": 4,
+            "drops": 0
+          },
+          {
+            "handle": "7e25:",
+            "class": "BE",
+            "packets": 902,
+            "drops": 0
+          },
+          {
+            "handle": "7e16:",
+            "class": "RT",
+            "packets": 1803,
+            "drops": 0
+          },
+          {
+            "handle": "7e55:",
+            "class": "BE",
+            "packets": 1581,
+            "drops": 0
+          },
+          {
+            "handle": "7e46:",
+            "class": "RT",
+            "packets": 327,
+            "drops": 0
+          },
+          {
+            "handle": "7e35:",
+            "class": "BE",
+            "packets": 1443,
+            "drops": 0
+          },
+          {
+            "handle": "7e26:",
+            "class": "RT",
+            "packets": 2,
+            "drops": 0
+          },
+          {
+            "handle": "7e15:",
+            "class": "BE",
+            "packets": 1915,
+            "drops": 0
+          }
+        ],
+        "athenaigs": [
+          {
+            "handle": "7a45:",
+            "class": "BE",
+            "packets": 3038,
+            "drops": 206
+          },
+          {
+            "handle": "7a36:",
+            "class": "RT",
+            "packets": 0,
+            "drops": 0
+          },
+          {
+            "handle": "7a25:",
+            "class": "BE",
+            "packets": 854,
+            "drops": 0
+          },
+          {
+            "handle": "7a55:",
+            "class": "BE",
+            "packets": 1835,
+            "drops": 0
+          },
+          {
+            "handle": "7a16:",
+            "class": "RT",
+            "packets": 3716,
+            "drops": 0
+          },
+          {
+            "handle": "7a46:",
+            "class": "RT",
+            "packets": 545,
+            "drops": 0
+          },
+          {
+            "handle": "7a35:",
+            "class": "BE",
+            "packets": 1241,
+            "drops": 0
+          },
+          {
+            "handle": "7a26:",
+            "class": "RT",
+            "packets": 3,
+            "drops": 0
+          },
+          {
+            "handle": "7a15:",
+            "class": "BE",
+            "packets": 1710,
+            "drops": 0
+          },
+          {
+            "handle": "7a56:",
+            "class": "RT",
+            "packets": 4810,
+            "drops": 0
+          }
+        ]
+      },
+      "cpu": {
+        "cpu": {
+          "busyPct": 17.5,
+          "softirqPct": 1
+        },
+        "cpu0": {
+          "busyPct": 20.3,
+          "softirqPct": 2.4
+        },
+        "cpu1": {
+          "busyPct": 16.6,
+          "softirqPct": 0.7
+        },
+        "cpu2": {
+          "busyPct": 16.2,
+          "softirqPct": 0.6
+        },
+        "cpu3": {
+          "busyPct": 17.2,
+          "softirqPct": 0.4
+        }
+      },
+      "softnet": [
+        {
+          "cpu": 0,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 1,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 2,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 3,
+          "dropped": 0,
+          "timeSqueeze": 0
+        }
+      ],
+      "interfaces": {
+        "lan4": {
+          "rxMbps": 0.41,
+          "txMbps": 1.32,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "wan": {
+          "rxMbps": 1.35,
+          "txMbps": 0.44,
+          "rxErrors": 0,
+          "rxDrops": 3,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "br-lan": {
+          "rxMbps": 0.4,
+          "txMbps": 1.33,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "phy0-ap0": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "phy1-ap0": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "phy2-ap0": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        }
+      },
+      "maximumObservationSeconds": 0.030000000002473826
+    },
+    "naturalDownloadObservation": {
+      "at": "2026-10-09T08:57:33.823Z",
+      "sampleSeconds": 92.57,
+      "samples": 31,
+      "generatedTraffic": false,
+      "userCoordinatedScenario": false,
+      "concurrentDownload": true,
+      "wanRxMbps": 267.14,
+      "gameProcessSocketMatched": true,
+      "currentLanAddressResolved": true,
+      "gameFlowPresentSamples": 26,
+      "activeGameSamples": 22,
+      "activeGameRtAllSamples": true,
+      "activeGameCreateReceiptsAllSamples": true,
+      "activeGameLeasePositiveAllSamples": true,
+      "activeGameBindingStable": true,
+      "lastMatchedGameFlowCeasedPacketProgress": true,
+      "gameFlowAbsentAtEnd": true,
+      "sourceFreshAllSamples": true,
+      "newSourcePauses": 0,
+      "sourcePauses": 7,
+      "sourceResumes": 7,
+      "actualNssMin": 14,
+      "actualNssMax": 20,
+      "unconfirmedMax": 0,
+      "queueDeltas": {
+        "wan": [
+          {
+            "handle": "7e56:",
+            "class": "RT",
+            "packets": 2,
+            "drops": 0
+          },
+          {
+            "handle": "7e45:",
+            "class": "BE",
+            "packets": 438911,
+            "drops": 0
+          },
+          {
+            "handle": "7e36:",
+            "class": "RT",
+            "packets": 1329,
+            "drops": 0
+          },
+          {
+            "handle": "7e25:",
+            "class": "BE",
+            "packets": 349524,
+            "drops": 0
+          },
+          {
+            "handle": "7e16:",
+            "class": "RT",
+            "packets": 17,
+            "drops": 0
+          },
+          {
+            "handle": "7e55:",
+            "class": "BE",
+            "packets": 259348,
+            "drops": 0
+          },
+          {
+            "handle": "7e46:",
+            "class": "RT",
+            "packets": 4033,
+            "drops": 0
+          },
+          {
+            "handle": "7e35:",
+            "class": "BE",
+            "packets": 326333,
+            "drops": 0
+          },
+          {
+            "handle": "7e26:",
+            "class": "RT",
+            "packets": 17,
+            "drops": 0
+          },
+          {
+            "handle": "7e15:",
+            "class": "BE",
+            "packets": 297452,
+            "drops": 0
+          }
+        ],
+        "athenaigs": [
+          {
+            "handle": "7a45:",
+            "class": "BE",
+            "packets": 504053,
+            "drops": 27167
+          },
+          {
+            "handle": "7a36:",
+            "class": "RT",
+            "packets": 1850,
+            "drops": 0
+          },
+          {
+            "handle": "7a25:",
+            "class": "BE",
+            "packets": 431452,
+            "drops": 2982
+          },
+          {
+            "handle": "7a55:",
+            "class": "BE",
+            "packets": 312275,
+            "drops": 286
+          },
+          {
+            "handle": "7a16:",
+            "class": "RT",
+            "packets": 2,
+            "drops": 0
+          },
+          {
+            "handle": "7a46:",
+            "class": "RT",
+            "packets": 5421,
+            "drops": 0
+          },
+          {
+            "handle": "7a35:",
+            "class": "BE",
+            "packets": 391847,
+            "drops": 5020
+          },
+          {
+            "handle": "7a26:",
+            "class": "RT",
+            "packets": 2,
+            "drops": 0
+          },
+          {
+            "handle": "7a15:",
+            "class": "BE",
+            "packets": 354779,
+            "drops": 1752
+          },
+          {
+            "handle": "7a56:",
+            "class": "RT",
+            "packets": 32,
+            "drops": 0
+          }
+        ]
+      },
+      "cpu": {
+        "cpu": {
+          "busyPct": 25.8,
+          "softirqPct": 6.7
+        },
+        "cpu0": {
+          "busyPct": 28.5,
+          "softirqPct": 8.4
+        },
+        "cpu1": {
+          "busyPct": 24.5,
+          "softirqPct": 6.1
+        },
+        "cpu2": {
+          "busyPct": 26,
+          "softirqPct": 7.2
+        },
+        "cpu3": {
+          "busyPct": 24.3,
+          "softirqPct": 5.1
+        }
+      },
+      "softnet": [
+        {
+          "cpu": 0,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 1,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 2,
+          "dropped": 0,
+          "timeSqueeze": 0
+        },
+        {
+          "cpu": 3,
+          "dropped": 0,
+          "timeSqueeze": 0
+        }
+      ],
+      "interfaces": {
+        "lan4": {
+          "rxMbps": 11.13,
+          "txMbps": 262.22,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "wan": {
+          "rxMbps": 267.14,
+          "txMbps": 11.15,
+          "rxErrors": 0,
+          "rxDrops": 3,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "br-lan": {
+          "rxMbps": 8.37,
+          "txMbps": 263.4,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "phy0-ap0": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "phy1-ap0": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        },
+        "phy2-ap0": {
+          "rxMbps": 0,
+          "txMbps": 0,
+          "rxErrors": 0,
+          "rxDrops": 0,
+          "txErrors": 0,
+          "txDrops": 0
+        }
+      },
+      "maxReadSeconds": 0.08000000000174623,
+      "liveGameHudCaptured": false,
+      "endToEndLossProvedZero": false
+    },
+    "windows": {
+      "at": "2026-10-09T08:33:26.7737748Z",
+      "samples": 7,
+      "gameRunning": true,
+      "udpReceived": 4264,
+      "udpSent": 1957,
+      "udpPortDiscards": 14,
+      "udpErrors": 0,
+      "physicalAdapterCounters": [
+        {
+          "receivedDiscards": 0,
+          "receivedErrors": 0,
+          "outboundDiscards": 0,
+          "outboundErrors": 0
+        }
+      ]
+    },
+    "earlierClassifierFailure": {
+      "observedAt": "2026-10-09T08:27:08.307Z",
+      "ageSeconds": 8655.98,
+      "action": "recover",
+      "rawStatus": 31744,
+      "elapsedSeconds": 6.2299999999996,
+      "detailedChildStderrRetained": false,
+      "currentlyGuardianHealthy": true
+    },
+    "finalProtectedReadback": {
+      "at": "2026-10-09T08:54:05.712Z",
+      "phase": "native-running",
+      "running": true,
+      "actualNss": 17,
+      "hardwareAdmissionEnabled": true,
+      "sourceFresh": true,
+      "sourcePauses": 7,
+      "sourceResumes": 7,
+      "unconfirmed": 0,
+      "sameOwnerGuardianReader": true,
+      "sameServiceStart": true,
+      "protectedHashesUnchanged": true,
+      "activeControllerSourceHashesPassed": true,
+      "servicesUnchangedAndRunning": true,
+      "fiveWanIdentityUnchangedAndUp": true,
+      "actualCoreGuardPermission": true,
+      "bootEnabled": false,
+      "controllerRestarted": false,
+      "dataPlaneWrites": false
+    },
+    "deployedChange": {
+      "kind": "Read-only bounded diagnostics",
+      "installed": {
+        "at": "2026-10-09T08:45:07.922Z",
+        "installed": true,
+        "files": [
+          "health.lua",
+          "diagnose.lua",
+          "athena-qos",
+          "launch.sh"
+        ],
+        "sourceHashes": {
+          "health.lua": "592fbf39a6b986a2c548a3ee3d4a70dc61123e179827d013bff722ddea140cab",
+          "diagnose.lua": "7c1c9486d9ab6fb4c0ca1650bfa3d2c4fe132dfb9706094d4715934dfa421f91",
+          "athena-qos": "b56838569580e930f5cadaf1d398a279e4a1225ea54222d244843174d0fe96a0",
+          "launch.sh": "741300272f04e4fd5b2044b4f9a4c4d446b171a913ddbfb6fe06f40c870835a1"
+        },
+        "sameOwnerGuardianReader": true,
+        "sameServiceStart": true,
+        "protectedHashesUnchanged": true,
+        "fiveWanIdentityUnchanged": true,
+        "serviceProcessesUnchanged": true,
+        "hardwareAdmissionStillEnabled": true,
+        "unconfirmed": 0,
+        "controllerRestarted": false,
+        "dataPlaneWrites": false,
+        "rollbackBaselineSaved": true
+      },
+      "tests": {
+        "at": "2026-10-09T08:42:56.717Z",
+        "passed": true,
+        "targetParsedFiles": 5,
+        "model": {
+          "dataPlaneWrites": false,
+          "modelOnly": true,
+          "passed": true,
+          "checks": 20
+        },
+        "invalidDurationRejected": true,
+        "actualReadOnlyCapture": {
+          "sourceRestores": 0,
+          "readOnly": true,
+          "endToEndLossMeasured": false,
+          "counterResets": 0,
+          "rtNotCreatedSamples": 0,
+          "maxReadSeconds": 0.030000000002473826,
+          "sourceGaps": 0,
+          "sampleSeconds": 1,
+          "scopeNotice": "Includes non-game RT flows. Counter resets and missing reads are retained, not treated as zero drops.",
+          "requestedSeconds": 1,
+          "rtFlowAliasLimit": 256,
+          "rtBindingChanges": 0,
+          "queueReadIncompleteSamples": 0,
+          "lastPhase": "native-running",
+          "generatedTraffic": false,
+          "samples": 2,
+          "scope": "all-budget-admitted-RT-flows-not-game-exclusive",
+          "rtQueueDropDelta": 0,
+          "interpretation": "No local event does not prove zero loss or jitter. A CREATE receipt is not a per-packet delivery acknowledgement.",
+          "actualNssMin": 1,
+          "events": [],
+          "actualNssMax": 1,
+          "rtFlowAliases": 2,
+          "rtProgressingSamples": 0,
+          "rtCreatedSamples": 0,
+          "eventsOmitted": 0
+        },
+        "trafficGenerated": false,
+        "controllerRestarted": false
+      },
+      "actualCapture": {
+        "at": "2026-10-09T08:47:00.086Z",
+        "sourceRestores": 0,
+        "readOnly": true,
+        "endToEndLossMeasured": false,
+        "counterResets": 0,
+        "rtNotCreatedSamples": 0,
+        "maxReadSeconds": 0.040000000000873115,
+        "sourceGaps": 0,
+        "sampleSeconds": 60,
+        "scopeNotice": "Includes non-game RT flows. Counter resets and missing reads are retained, not treated as zero drops.",
+        "requestedSeconds": 60,
+        "rtFlowAliasLimit": 256,
+        "rtBindingChanges": 0,
+        "queueReadIncompleteSamples": 0,
+        "lastPhase": "native-running",
+        "generatedTraffic": false,
+        "samples": 21,
+        "scope": "all-budget-admitted-RT-flows-not-game-exclusive",
+        "rtQueueDropDelta": 0,
+        "interpretation": "No local event does not prove zero loss or jitter. A CREATE receipt is not a per-packet delivery acknowledgement.",
+        "actualNssMin": 1,
+        "events": [],
+        "actualNssMax": 2,
+        "rtFlowAliases": 6,
+        "rtProgressingSamples": 20,
+        "rtCreatedSamples": 20,
+        "eventsOmitted": 0
+      },
+      "command": "sh /usr/lib/athena-dorm-native/athena-qos diagnose 60",
+      "durationRangeSeconds": [
+        1,
+        180
+      ],
+      "backgroundMonitor": false,
+      "activeWriterReaderCoreUnchanged": true,
+      "classificationRulesUnchanged": true,
+      "queueRatePolicyAndOptionsUntouched": true,
+      "gameBufferingUnchanged": true,
+      "noRouterReboot": true,
+      "noFirmwareEdmaChange": true,
+      "noAutomaticBootOrRespawnChange": true
+    },
+    "interpretation": [
+      "The directly correlated game flow retained its RT class and the same observed CREATE binding while packets progressed. Later packet activity ceased and the candidate disappeared; this is not evidence of active-game acceleration failure.",
+      "The first window averaged only 1.35 Mbps physical WAN RX. A separate 92.57 second natural download window averaged 267.14 Mbps; directly matched active game samples retained RT/positive leases/the same CREATE binding, with no RT queue drop increment or new source pause.",
+      "CREATE receipts, NIC counters and RT queue drop counters do not measure end-to-end CS2 packet loss or Miss.",
+      "Fourteen Windows UDP port-error discards cannot be assigned to CS2; receive errors and NIC discard/error increments were zero in that separate interval.",
+      "NSS firmware allocation/flush totals are cumulative; no per-game causal claim or arbitrary buffer/rate change follows from them.",
+      "The earlier classifier recover timeout remains an engineering issue; its precise child stderr was not retained. This diagnostic addition does not repair that timeout."
+    ],
+    "remaining": [
+      "The reported 0.4 percent Loss/Miss was not captured in the current HUD; upstream, client scheduling and load-dependent router causes remain unseparated.",
+      "Classifier intermittent failure and firmware recreation root causes remain open; bounded restart/boot policy and full coverage remain as previously documented."
+    ],
+    "references": {
+      "valveTelemetry": "https://help.steampowered.com/en/faqs/view/5E6F-5B36-5485-F6B9",
+      "windowsUdp": "https://learn.microsoft.com/en-us/dotnet/api/system.net.networkinformation.udpstatistics?view=net-10.0"
+    },
+    "repositoryValidation": {
+      "passed": true,
+      "filesChecked": 7047,
+      "currentSourceHashes": 6339,
+      "sourceRevisionRecords": 6374,
+      "markdownLinksChecked": 1655,
+      "historicalManifestPrefixPreserved": 6368,
+      "frozenCodeUnmodified": true,
+      "obviousSecretChecksPassed": true
+    }
   }
 }

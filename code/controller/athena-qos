@@ -9,13 +9,15 @@ if test "$backend" = native; then
     case "${1:-status}" in
       start|stop|rollback) exec /etc/init.d/athena-dorm-native "${1:-status}" ;;
       status) exec /etc/init.d/athena-dorm-native inspect ;;
-      *) echo 'Usage: athena-qos status|start|stop|rollback' >&2; exit 2 ;;
+      diagnose) exec lua "$base/diagnose.lua" "${2:-60}" ;;
+      *) echo 'Usage: athena-qos status|start|stop|rollback|diagnose [1..180 seconds]' >&2; exit 2 ;;
     esac
   fi
   case "${1:-status}" in
     start) exec lua "$base/transaction.lua" start-native "${ATHENA_QOS_NATIVE_SECONDS:-0}" ;;
+    diagnose) exec lua "$base/diagnose.lua" "${2:-60}" ;;
     status|stop|rollback) exec lua "$base/transaction.lua" "$1" ;;
-    *) echo 'Usage: athena-qos status|start|stop|rollback' >&2; exit 2 ;;
+    *) echo 'Usage: athena-qos status|start|stop|rollback|diagnose [1..180 seconds]' >&2; exit 2 ;;
   esac
 fi
 test "$backend" = shadow
