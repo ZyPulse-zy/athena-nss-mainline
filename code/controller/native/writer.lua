@@ -6,7 +6,8 @@ function M.new(root,command,read,put,now,store,r)
  local tc='/root/router-project/experiments/nss8-htb2-20261001/tc-nss'
  local gate='/sys/kernel/debug/athena_ecm_gate/'
  local owned,filters={},{};local binding=0;local rejected={};local lastTags
- local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0}
+ local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0,sourcePauses=0,sourceResumes=0}
+ local sourceUnavailableSince,lastSourceResumedAt
  local function dec(x)return string.format('%.0f',x)end
  local function hex(x)return string.format('%x%04x',math.floor(x/65536),x%65536)end
  local function write_control(text)
@@ -127,6 +128,13 @@ function M.new(root,command,read,put,now,store,r)
  end
  local out={}
  function out.tick(result)
+  assert(type(result.summary.sourceFresh)=='boolean','Reader source state invalid')
+  local sourceFresh=result.summary.sourceFresh
+  if not sourceFresh and not sourceUnavailableSince then
+   sourceUnavailableSince=now();stats.sourcePauses=stats.sourcePauses+1
+  elseif sourceFresh and sourceUnavailableSince then
+   sourceUnavailableSince=nil;lastSourceResumedAt=now();stats.sourceResumes=stats.sourceResumes+1
+  end
   for w=1,5 do assert(result.wans['rpwan'..w]==r.wans['rpwan'..w],'WAN/NAT address changed; withdraw native backend')end
   sync_budgets();local native=status();local desired={};local choices={};local tags={};local tagKeys={}
   local withdrawn={};for _,op in ipairs(result.operations or {})do if op.op=='revoke' then withdrawn[op.key]=true end end
@@ -134,7 +142,7 @@ function M.new(root,command,read,put,now,store,r)
   for _,e in ipairs(result.flows or {})do
    if e.binding and e.validUntil>now() then
     desired[e.key]=e
-    if e.candidate then choices[#choices+1]=e end
+    if sourceFresh and e.candidate then choices[#choices+1]=e end
     if e.class=='RT' and e.budgetAdmitted and #tags<48 then tags[#tags+1]=e;tagKeys[e.key]=true end
    end
   end
@@ -150,7 +158,7 @@ function M.new(root,command,read,put,now,store,r)
     local eligible=fresh and (fresh.candidate or fresh.reason=='candidate-capacity-software-fallback')
     if not eligible or withdrawn[p.key] or fresh.binding~=p.binding or fresh.class~=p.class then
      assert(write_control('revoke '..slot));p.retiring=true
-    elseif fresh.sequence~=p.sequence then
+    elseif sourceFresh and fresh.sequence~=p.sequence then
      if write_control('renew '..slot..' '..pin_command(fresh,p.token))then p.sequence=fresh.sequence;stats.renewed=stats.renewed+1 end
     end
    end
@@ -199,6 +207,8 @@ function M.new(root,command,read,put,now,store,r)
   local createdClientCount=0;for _ in pairs(createdClients)do createdClientCount=createdClientCount+1 end
   r.flowState={tracked=result.summary.tracked,clients=result.summary.clients,exits=result.summary.exits,
    classes=result.summary.classes,sourceFresh=result.summary.sourceFresh,sourceSequence=result.summary.sourceSequence,
+   admissionPaused=not sourceFresh,admissionState=sourceFresh and 'ready' or 'waiting-source',sourceUnavailableSince=sourceUnavailableSince,
+   sourcePauses=stats.sourcePauses,sourceResumes=stats.sourceResumes,lastSourceResumedAt=lastSourceResumedAt,
    nativeOwned=count,actualCreatedReceipts=stats.firmwareCreated,actualCreatedClients=createdClientCount,actualCreatedExits=createdExits,selected=stats.selected,
    admitted=stats.admitted,renewed=stats.renewed,retiredAck=stats.retiredAck,retiredNeverCreated=stats.retiredNeverCreated,retiredFirmwareAbsent=stats.retiredFirmwareAbsent,
    identityRejected=stats.identityRejected,perDeviceQuotas=false}

@@ -964,5 +964,162 @@
       "trafficFixture": false,
       "humanGameAcceptance": false
     }
+  },
+  "sourceOutageRecovery": {
+    "capturedAt": "2026-10-09T04:35:32.408Z",
+    "incident": {
+      "approxStoppedAt": "2026-10-09T02:13:09.629Z",
+      "previousActiveSeconds": 5333.13,
+      "lastDesiredSourceFresh": false,
+      "lastDesiredSourceSequence": 1997,
+      "lastDesiredAtUptime": 6500.94,
+      "rollbackFinishedAtUptime": 6503.16,
+      "rollbackConfirmed": true,
+      "classifierFailure": {
+        "atUptime": 6496.31,
+        "pid": 5217,
+        "start": "48138",
+        "lastQuerySequence": 1998,
+        "error": ".../classifier/nss23-20261002122153-58e283ed/worker.lua:271: Classifier mutation child failed; action=apply; rawStatus=256; elapsed=4.8400000000001\nstack traceback:\n\t[C]: in function 'assert'\n\t.../classifier/nss23-20261002122153-58e283ed/worker.lua:271: in function 'withMutation'\n\t.../classifier/nss23-20261002122153-58e283ed/worker.lua:510: in function <.../classifier/nss23-20261002122153-58e283ed/worker.lua:490>\n\t[C]: in function 'xpcall'\n\t.../classifier/nss23-20261002122153-58e283ed/worker.lua:490: in main chunk\n\t[C]: ?",
+        "reason": null
+      },
+      "errorMeaning": "Outside the native writer includes automatic core guard; it does not identify a human operator",
+      "reproducedAutomaticClosurePath": "Old permission denied sourceFresh=false, so the existing 5-second core guard could close IPv4 NSS; writer then withdrew and fully restored",
+      "closingProcessRecorded": false,
+      "underlyingMutationChildStderrRetained": false
+    },
+    "change": {
+      "sourceOutagePausesAddAndRenew": true,
+      "exactKernelLeaseSecondsUnchanged": 6,
+      "readerHeartbeatLossSecondsUnchanged": 8,
+      "sourceRecoveryResumesInSameService": true,
+      "firmwareUnknownStillWithdraws": true,
+      "ownerLossStillWithdraws": true,
+      "guardCheckReasonPreserved": true,
+      "kernelFirmwareDriverEdmaUnchanged": true,
+      "legacyWindowsStopped": true,
+      "bootEnabled": false
+    },
+    "validation": {
+      "models": {
+        "at": "2026-10-09T04:27:41.403Z",
+        "passed": true,
+        "targetSyntaxFiles": 9,
+        "tests": [
+          {
+            "name": "test-core-guard.lua",
+            "output": "core-guard-permission-models-passed 23"
+          },
+          {
+            "name": "test-writer.lua",
+            "output": "{\"firmwareAbsentSlotReused\":true,\"mockedKernel\":true,\"sourceGapExpiredFlowRetired\":true,\"passed\":true,\"retiringIdentityPreserved\":true,\"emptyMapParsed\":true,\"freshSourceResumesAdmission\":true,\"dataPlaneWrites\":false,\"sourceGapBlocksAddAndRenew\":true}"
+          }
+        ],
+        "dataPlaneWrites": false,
+        "kernelMock": true
+      },
+      "activation": {
+        "at": "2026-10-09T04:33:29.520Z",
+        "phase": "native-running",
+        "running": true,
+        "accelerated": 22,
+        "maxAccelerated": 25,
+        "ecmDatabase": 23,
+        "hardwareAdmissionEnabled": true,
+        "elapsedSeconds": 40.55,
+        "sourceFresh": false,
+        "admissionState": "waiting-source",
+        "sourcePauses": 2,
+        "sourceResumes": 1,
+        "renewed": 204,
+        "retiredFirmwareAbsent": 5,
+        "unconfirmed": 0,
+        "actualCreatedClients": 3,
+        "actualCreatedExits": {
+          "phy2-ap0": 18,
+          "lan4": 4
+        },
+        "actualGuardPermission": {
+          "sourceFresh": false,
+          "atUptime": 14922.92,
+          "allowed": true,
+          "reason": "waiting-source"
+        },
+        "softwareQueuesPreserved": true,
+        "wanIdentityPreserved": true,
+        "protectedUnchanged": true,
+        "existingServicesRunning": true,
+        "originalDiskModulesUnchanged": true,
+        "installedSourceFiles": [
+          "core_guard_permission.lua",
+          "install_core_guard.lua",
+          "transaction.lua",
+          "writer.lua"
+        ],
+        "bootEnabled": false,
+        "rebooted": false,
+        "trafficFixture": false,
+        "humanGameAcceptance": false
+      },
+      "naturalTrafficObservation": {
+        "at": "2026-10-09T04:35:32.408Z",
+        "readOnly": true,
+        "samples": 15,
+        "allNativeRunning": true,
+        "maxAccelerated": 26,
+        "sourceUnavailableSamples": 0,
+        "first": {
+          "sourcePauses": 2,
+          "atUptime": 15022.6,
+          "publicationSequence": 2834,
+          "running": true,
+          "renewed": 982,
+          "sourceResumes": 2,
+          "querySeconds": 0.22000000000116415,
+          "admissionState": "ready",
+          "phase": "native-running",
+          "publicationStatus": "running",
+          "sourceFresh": true,
+          "readerAt": 15021.75,
+          "accelerated": 24,
+          "lastErrorSequence": 1998,
+          "lastErrorAt": 6496.31,
+          "publicationDataHealthy": true,
+          "admissionEnabled": true,
+          "queryAge": 2.720000000001164,
+          "unconfirmed": 0
+        },
+        "last": {
+          "sourcePauses": 2,
+          "atUptime": 15045.77,
+          "publicationSequence": 2842,
+          "running": true,
+          "renewed": 1202,
+          "sourceResumes": 2,
+          "querySeconds": 0.2000000000007276,
+          "admissionState": "ready",
+          "phase": "native-running",
+          "publicationStatus": "running",
+          "sourceFresh": true,
+          "readerAt": 15045.4,
+          "accelerated": 26,
+          "lastErrorSequence": 1998,
+          "lastErrorAt": 6496.31,
+          "publicationDataHealthy": true,
+          "admissionEnabled": true,
+          "queryAge": 1.8800000000010186,
+          "unconfirmed": 0
+        },
+        "noTrafficFixture": true,
+        "noFaultInjection": true
+      },
+      "productionFaultInjection": false,
+      "humanGameAcceptance": false
+    },
+    "limitations": [
+      "The original classifier apply child exited 1 after 4.84 seconds; its detailed stderr is no longer retained, so its lower-level cause is unresolved.",
+      "No classifier service kill or fault injection was performed; source pause/resume was observed under natural traffic.",
+      "Human game/download, Wi-Fi station quality, full byte coverage and long-term performance acceptance remain deferred."
+    ]
   }
 }

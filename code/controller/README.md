@@ -1,6 +1,6 @@
 # Athena 全宿舍 v2 本机控制器
 
-当前 ABI2 本机服务已实际启用并保留运行：获准一次重启后解除旧引用，最新只读复核 NSS28、同一启动264.85秒、有线+Wi-Fi两个实际CREATE客户端；24 条活跃流停止及完整、重复回退通过。旧 Windows continuous 停止，自启关闭。真人游戏/下载验收延期，长期质量未宣称通过。见 [当前状态](../../docs/STATE.md) 与 [实际证据](../../evidence/dorm-v2-native.json)。
+当前ABI2本机服务保持运行，来源暂停/恢复已定向修复。只读复核 2026-10-09T04:35:32.408Z：同一本机服务保持 native-running，实际 NSS26，两次来源暂停均已恢复（sourcePauses/sourceResumes=2/2），来源新鲜、准入开启、未确认0。恢复部署核验五WAN身份/原软件队列/保护文件/原模块与服务通过；旧Windows停止，自启关闭。 真人游戏/下载与长期质量仍延期。见 [当前状态](../../docs/STATE.md) 与 [实际证据](../../evidence/dorm-v2-native.json)。
 
 ## 已安装服务的操作
 
@@ -24,7 +24,15 @@ stop/rollback等guardian关准入、逐流撤销/FW确认、回收reader、IGS R
 
 classifier_recovery.lua 只接受原 nss23 配置哈希、十个 CAKE root/全部非速率选项及已确认的 diffserv4/besteffort 差异；缺少基础规则时补原40900/41900规则，未知/部分规则不覆盖。原 worker/config 不改，autorate 的 bandwidth 继续由原服务维护。
 
-install_core_guard.lua 只对 SHA256 已核验的原 core-guard.sh 安装 IPv4 关闭操作的条件跳过，私有目录保存原文件。core_guard_permission.lua 每次只读核对 foreground owner、独立 guardian 的 PID/start/完整命令、8秒新鲜数据和心跳，以及 ABI2默认拒绝gate；失效即由原 guard 关闭。它不打开 NSS，IPv6/PBR/日志操作保留。shell watch 只有重载后才使用新函数；安装器记录 PID/start 避免重复重载。回退还原原脚本和进程，未知文件变化拒绝覆盖。
+install_core_guard.lua 只对 SHA256 已核验的原 core-guard.sh 安装 IPv4 关闭操作的条件跳过，私有目录保存原文件。core_guard_permission.lua 每次只读核对 foreground owner、独立 guardian 的 PID/start/完整命令、8秒新鲜reader发布和心跳，以及 ABI2默认拒绝gate；owner/reader失联或固件异常时由原guard关闭。它不打开 NSS，IPv6/PBR/日志操作保留。shell watch 只有重载后才使用新函数；安装器记录 PID/start 避免重复重载。回退还原原脚本和进程，未知文件变化拒绝覆盖。
+
+## 分类来源中断与恢复
+
+status中的flowState.admissionState为ready或waiting-source；admissionPaused只表示暂停新增/续租。分类器暂时error/degraded或快照到期时，保持可核验的本机服务和原软件路径，停止新增/续租；现有精确CT的六秒内核租约不延长。来源恢复后同一writer恢复准入，无需再次start。reader本身失联8秒、owner退出、未知固件撤销仍触发原完整回退。
+
+flowState.sourcePauses/sourceResumes/sourceUnavailableSince/lastSourceResumedAt记录本次服务中的来源变化。原guard只读核验输出保存在私有/tmp/athena-dorm-native/core-guard-last-check.json；准入在writer外关闭时，status.coreGuardLastCheck保存最近理由，不能把外部关闭等同于人为操作。status仍需读取实际accelerated及固件CREATE回执，waiting-source不证明仍有加速流。
+
+原分类器子进程详细stderr已丢失，底层apply失败原因尚未完全定位；未修改其冻结源码。真人游戏/下载和长期性能仍延期，现场没有造流量、杀分类器或新故障注入。
 
 ## 数据和队列路径
 

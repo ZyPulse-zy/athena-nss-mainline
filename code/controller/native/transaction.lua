@@ -198,7 +198,11 @@ if mode=='guard' then
       put('/sys/kernel/debug/ecm/front_end_ipv4_stop','0\n')
       initialized=true;r.phase='native-running';r.hardwareAdmissionEnabled=true
      end
-     assert(count('front_end_ipv4_stop')==0,'NSS admission was closed externally; withdraw native backend')
+     if count('front_end_ipv4_stop')~=0 then
+      -- Persist the guard's reason before rollback restores the original loop.
+      r.coreGuardLastCheck=json(root..'/core-guard-last-check.json');store(r)
+      error('NSS admission closed outside native writer; inspect coreGuardLastCheck')
+     end
      r.native=native_status();r.accelerated=count('ecm_nss_ipv4/accelerated_count');store(r)
     end
     n.nanosleep(0,250000000)

@@ -1,3 +1,15 @@
+# 当前接续：分类来源中断自动恢复已修复，NSS仍运行
+
+先读STATE首段及evidence/dorm-v2-native.json sourceOutageRecovery。只读复核 2026-10-09T04:35:32.408Z：同一本机服务保持 native-running，实际 NSS26，两次来源暂停均已恢复（sourcePauses/sourceResumes=2/2），来源新鲜、准入开启、未确认0。恢复部署核验五WAN身份/原软件队列/保护文件/原模块与服务通过；旧Windows停止，自启关闭。
+
+今天约10:13，原分类器 apply 子进程先失败（退出1、耗时4.84秒，lastQuery1998），随后发布中断；旧许可要求 sourceFresh=true，自动 core guard 关闭 NSS，writer 误把这类可恢复来源中断升级为整体退出并回退。该启动运行5333.13秒（约89分钟）；没有单独记录当时关闭进程，错误文字不代表有人手动关闭。
+
+仅维护本机控制器：新鲜reader/owner/guardian与ABI2正常时，sourceFresh=false进入waiting-source，停止新增和续租，六秒内核逐流租约照常到期/精确固件撤销；新鲜分类恢复后同一服务恢复准入。八秒reader失联、owner失联和未知固件撤销仍完整退出。原guard最后一次核验理由写入私有RAM文件，writer在外部准入关闭时保存该理由。
+
+原分类器子进程详细stderr已丢失，底层apply失败原因尚未完全定位；未修改其冻结源码。真人游戏/下载和长期性能仍延期，现场没有造流量、杀分类器或新故障注入。 正常核验允许sourceFresh=false且admissionState=waiting-source；这是暂停新准入，不是整体停用。实际NSS单独读取。不要重复start、恢复旧Windows、擅自重启/关闭路由器或开启boot/respawn。保留五WAN/PBR/NAT/代理/Tailscale/管理与原模块；原始CT/MAC/凭据/失败原件只留私有work。
+
+## 以下为修复前的历史状态，不代表当前运行状态
+
 # 当前接续：ABI2 NSS 已运行，批准重启与完整回退已实测
 
 先读 STATE 当前首段及 evidence/dorm-v2-native.json approvedRebootDelivery。用户明确允许一次重启，已执行；旧 gate 引用消失。最新交付复核本机 ABI2 32 槽/NSS28/sourceFresh/健康寿命0/IPv4开启，同一启动264.85秒、两个实际CREATE客户端（有线+Wi-Fi），旧 Windows STOPPED，自启关闭。不要重复 start、恢复旧 Windows 或擅自重启。

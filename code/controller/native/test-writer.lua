@@ -24,12 +24,13 @@ local function command(c)
  if c=='/usr/sbin/nft -f '..root..'/tags.nft' then return '' end -- Mock publication only.
  error('Unexpected mutation: '..c)
 end
-local row='';local additions=0;local writes=0;local nixio=require('nixio');local originalOpen=nixio.open
+local row='';local additions=0;local writes=0;local renewals=0;local at=100;local nixio=require('nixio');local originalOpen=nixio.open
 nixio.open=function(p,mode)
  if p~='/sys/kernel/debug/athena_ecm_gate/control' then return originalOpen(p,mode)end
  return {write=function(_,text)
   writes=writes+1
   if text:match('^add 0 ')then additions=additions+1;row='slot=0 state=1 generation='..additions..' id=12 serial=20 selected=1 receipt_present=1 receipt=0 create_pending=0 create_ack=1\n'
+  elseif text:match('^renew 0 ')then renewals=renewals+1
   elseif text=='revoke 0\n' then row='slot=0 state=6 generation=1 id=12 serial=20 selected=1 receipt_present=0 receipt=0 create_pending=0 create_ack=0 removal_response=4 removal_error=5\n'
   else error('Unexpected native model write: '..text)end
   return #text
@@ -39,7 +40,7 @@ local function read(p)assert(p=='/sys/kernel/debug/athena_ecm_gate/status');retu
 local function put(p,s)
  assert(p==root..'/tags.nft');local f=assert(io.open(p,'w'));assert(f:write(s));assert(f:close())
 end
-local writer=dofile(root..'/writer.lua').new(root,command,read,put,function()return 100 end,function()end,r)
+local writer=dofile(root..'/writer.lua').new(root,command,read,put,function()return at end,function()end,r)
 writer.tick({wans=r.wans,flows={},operations={},summary={tracked=0,clients=0,exits={},classes={},sourceFresh=false,sourceSequence=1}})
 assert(parsed and r.flowState.nativeOwned==0)
 local flow={key='one',binding='source',class='BULK',candidate=true,budgetAdmitted=false,client='192.0.2.12',egress='phy0-ap0',
@@ -54,5 +55,25 @@ writer.tick({wans=r.wans,flows={},operations={},summary=summary})
 assert(r.flowState.retiredFirmwareAbsent==1 and r.flowState.nativeOwned==0 and #r.ownedFlows==0)
 flow.sequence=4;writer.tick({wans=r.wans,flows={flow},operations={},summary=summary})
 assert(additions==2 and writes==3 and r.flowState.nativeOwned==1)
+-- A classifier restart publishes unavailable data before returning with a
+-- fresh producer. Stop add/renew immediately, preserve only unexpired leases,
+-- observe their independently confirmed retirement, then admit fresh data.
+summary.sourceFresh=false;flow.sequence=5
+local second={};for k,v in pairs(flow)do second[k]=v end;second.key='two'
+for t=101,105 do
+ at=t;writer.tick({wans=r.wans,flows={flow,second},operations={},summary=summary})
+ assert(writes==3 and renewals==0 and additions==2 and not r.ownedFlows[1].retiring)
+ assert(r.flowState.admissionPaused and r.flowState.admissionState=='waiting-source')
+end
+-- The native expiry/FW receipt is mocked; no expiry time is extended here.
+at=107;row='slot=0 state=6 generation=2 id=12 serial=20 selected=1 receipt_present=0 receipt=0 create_pending=0 create_ack=0 removal_response=4 removal_error=5\n'
+writer.tick({wans=r.wans,flows={flow},operations={},summary=summary})
+assert(writes==3 and r.flowState.nativeOwned==0 and r.flowState.retiredFirmwareAbsent==2)
+at=108;summary.sourceFresh=true;flow.sequence=6;flow.validUntil=114
+writer.tick({wans=r.wans,flows={flow},operations={},summary=summary})
+assert(additions==3 and writes==4 and r.flowState.nativeOwned==1 and not r.flowState.admissionPaused)
+assert(r.flowState.sourcePauses==2 and r.flowState.sourceResumes==2 and r.flowState.lastSourceResumedAt==108)
+flow.sequence=7;writer.tick({wans=r.wans,flows={flow},operations={},summary=summary})
+assert(renewals==1 and writes==5)
 nixio.open=originalOpen
-print(j.stringify({passed=true,emptyMapParsed=true,retiringIdentityPreserved=true,firmwareAbsentSlotReused=true,dataPlaneWrites=false,mockedKernel=true}))
+print(j.stringify({passed=true,emptyMapParsed=true,retiringIdentityPreserved=true,firmwareAbsentSlotReused=true,sourceGapBlocksAddAndRenew=true,sourceGapExpiredFlowRetired=true,freshSourceResumesAdmission=true,dataPlaneWrites=false,mockedKernel=true}))

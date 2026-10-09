@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T00:49:28.353Z",
+  "generatedAt": "2026-10-09T04:37:41.667Z",
   "preservesOriginalSourceBytes": true,
   "routerCredentialsIncluded": false,
   "rawCapturesIncluded": false,
@@ -44499,6 +44499,62 @@
       "bytes": 16706,
       "role": "router-native-controller-source-or-test",
       "revision": "dorm-v2-approved-reboot-native-integration"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "f98d53073a00f6a7b2af3d395176edb2ca21a91ecf91ca6eb626bacba0efe735",
+      "bytes": 8294,
+      "role": "router-native-maintenance-documentation",
+      "revision": "dorm-v2-source-outage-recovery"
+    },
+    {
+      "path": "code/controller/native/core_guard_permission.lua",
+      "workspaceSource": "code/controller/native/core_guard_permission.lua",
+      "sha256": "2d62944f00e1feba20a1b68c2475f0d43d02454767ed2e2b06306dcb96d3270f",
+      "bytes": 3252,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-source-outage-recovery"
+    },
+    {
+      "path": "code/controller/native/install_core_guard.lua",
+      "workspaceSource": "code/controller/native/install_core_guard.lua",
+      "sha256": "9256fea875ce7b337a3d429d51d92a8fccced607f9c464efd698c17f618cd347",
+      "bytes": 4195,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-source-outage-recovery"
+    },
+    {
+      "path": "code/controller/native/test-core-guard.lua",
+      "workspaceSource": "code/controller/native/test-core-guard.lua",
+      "sha256": "b59711d69a9dd9fa96e950938d1a4e0b5ecab06b88ee4e167fb2fc082ef0a5ec",
+      "bytes": 2097,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-source-outage-recovery"
+    },
+    {
+      "path": "code/controller/native/test-writer.lua",
+      "workspaceSource": "code/controller/native/test-writer.lua",
+      "sha256": "f8b9b6e8d423a8d0f6428f52230c3dfef9e4aa660154f41d485fc1eadcf5eeb0",
+      "bytes": 5848,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-source-outage-recovery"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "workspaceSource": "code/controller/native/transaction.lua",
+      "sha256": "0937e63ba8b0916cc34a34c7141c7ff081a3d1cfcf9012db07163fc6e243f0b0",
+      "bytes": 16896,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-source-outage-recovery"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "workspaceSource": "code/controller/native/writer.lua",
+      "sha256": "f2775a79a383044fde3a2885d2a9bfc454a08d69000d6d611e21e49d219e309f",
+      "bytes": 13040,
+      "role": "router-native-controller-source-or-test",
+      "revision": "dorm-v2-source-outage-recovery"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44524,5 +44580,5 @@
   "residentServiceDevBatch": "DEV_H_INDEPENDENT_ELIGIBLE_FLOW_ADMISSION_CANDIDATE",
   "independentAdmissionIntegration": "RT_ONLY_BOUNDED90_AND_RESTORED",
   "lastContinuousResidentExport": "ROLLING_QUALIFIED_RESIDENCY_INTEGRATED_AND_RETAINED",
-  "lastRouterLocalExport": "DORM_V2_NATIVE_ABI2_RUNNING_ACTIVE_STOP_ROLLBACK_RESTART_VERIFIED"
+  "lastRouterLocalExport": "DORM_V2_NATIVE_SOURCE_PAUSE_RESUME_VERIFIED"
 }

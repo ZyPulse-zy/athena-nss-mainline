@@ -12,8 +12,14 @@ r.phase='rolling-back';check(false);r.phase='native-running'
 r.running=false;check(false);r.running=true
 r.nativeRun=false;check(false);r.nativeRun=true
 r.hardwareAdmissionEnabled=false;check(false);r.hardwareAdmissionEnabled=true
-r.flowState.sourceFresh=false;check(false);r.flowState.sourceFresh=true
-d.summary.sourceFresh=false;check(false);d.summary.sourceFresh=true
+r.flowState.sourceFresh=false;check(true);r.flowState.sourceFresh=true
+d.summary.sourceFresh=false;check(true);d.summary.sourceFresh=true
 d.summary.atUptime=90;check(false);d.summary.atUptime=110;check(false);d.summary.atUptime=100
 r.guardianStart='21';check(false);r.guardianStart='20';check(true)
+r.flowState.sourceFresh=false;d.summary.sourceFresh=false;check(true)
+local allowed,reason=m.allowed(r,d,100,gate,101,process);assert(allowed and reason=='waiting-source')
+check(false,90);check(false,100,gate:gsub('state=1','state=5'))
+d.summary.sourceFresh=nil;check(false);d.summary.sourceFresh=false
+r.flowState.sourceFresh=nil;check(false);r.flowState.sourceFresh=false
+r.supervisedOwnerStart='11';check(false);r.supervisedOwnerStart='10'
 print('core-guard-permission-models-passed '..count)

@@ -20,7 +20,7 @@ else assert(sha(target)==expected,'Unknown core guard revision');original=read(t
 local needle=' for p in /sys/kernel/debug/ecm/front_end_ipv4_stop /sys/kernel/debug/ecm/front_end_ipv6_stop; do\n'
 local at=assert(original:find(needle,1,true));assert(not original:find(needle,at+#needle,true))
 local hook='  # Athena native: defer IPv4 closure only for a verified local ABI2 owner.\n'..
- '  if [ "$p" = /sys/kernel/debug/ecm/front_end_ipv4_stop ] && /usr/bin/lua /usr/lib/athena-dorm-native/core_guard_permission.lua >/dev/null 2>&1; then continue; fi\n'
+ '  if [ "$p" = /sys/kernel/debug/ecm/front_end_ipv4_stop ] && /usr/bin/lua /usr/lib/athena-dorm-native/core_guard_permission.lua >/tmp/athena-dorm-native/core-guard-last-check.json 2>/dev/null; then continue; fi\n'
 local patched=original:sub(1,at+#needle-1)..hook..original:sub(at+#needle)
 local current=read(target);assert(current==original or current==patched,'Core guard changed externally')
 local desired=mode=='restore' and original or patched
