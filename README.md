@@ -1,3 +1,18 @@
+<!-- longterm-deployment-fix-20261009 -->
+# 当前：长期部署修复已上线，冷启动验收未完成
+
+复核 2026-10-09 14:48:06.480 UTC：native-running，实际NSS4、来源新鲜、未确认0；开机自启已开启，五WAN/代理/Tailscale正常，保护配置与19个已安装源码哈希通过，九张规则表可读。
+
+第二轮真实重启验收等待用户新许可；最新启动修复已上线且手动启动通过，尚不能宣布无人值守冷启动通过。 仅清除经本地归档、全部六文件及已安装二进制哈希核对的重复Tailscale安装缓存，释放104240KiB；overlay由97%/32976KiB可用降至86%/137216KiB可用。约567MiB回退备份保留，已安装Tailscale/代理未替换。新私有基线330成员已下载并验证，凭据/原始CT/日志/归档/二进制不入Git。
+
+[当前状态](docs/STATE.md) · [实际操作](code/controller/README.md) · [未解决问题](docs/KNOWN_FAILURES.md) · [结构化证据](evidence/dorm-v2-native.json)。代码在codex/dorm-qos-v2草稿PR，未合并。
+
+正式游戏/下载验收仍按用户要求延期；满载空闲带宽利用、每Wi-Fi station/TID/同设备混合负载、全端口字节覆盖、长期CPU/softirq、历史recover超时和固件规则提前消失原因尚未闭环。短窗零队列drop不是端到端零Loss/Miss。未升级/刷机/更换EDMA或修改五WAN认证、PBR/NAT、代理/Tailscale/无线配置。
+
+## 以下为历史记录
+
+<!-- /longterm-deployment-fix-20261009 -->
+
 # 当前：NSS现网正常运行，长期无人值守部署尚未验收
 
 当前现网仍为 f1f58cc，NSS继续运行；2026/10/9 18:52:48 北京时间最终复核：NSS1、sourceFresh、IPv4开启、未确认0，owner/guardian/reader与服务/保护/已安装源码不变。用户此前回报“不卡了”；正式游戏验收及端到端零Loss/Miss仍未证明。

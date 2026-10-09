@@ -44739,6 +44739,70 @@
       "bytes": 3764,
       "role": "router-native-source-test-or-maintenance",
       "revision": "dorm-v2-readable-exact-labels-candidate"
+    },
+    {
+      "path": "code/controller/native/core_guard_permission.lua",
+      "workspaceSource": "code/controller/native/core_guard_permission.lua",
+      "sha256": "e7cc9906d35b243e9b75cef58b9cb240c7415241872615ad945d7be244bef653",
+      "bytes": 3471,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/native/init.sh",
+      "workspaceSource": "code/controller/native/init.sh",
+      "sha256": "7cff7a083850ff0bc715e46247fff320c0c65aeef4b9f1c10306147e3b748e09",
+      "bytes": 1693,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/native/lifecycle.lua",
+      "workspaceSource": "code/controller/native/lifecycle.lua",
+      "sha256": "6a0f5cc739c91c0aa8669b813daeaba5658ae98cbb2c8f0b92c092d64ef1bdd8",
+      "bytes": 1442,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/native/supervisor.lua",
+      "workspaceSource": "code/controller/native/supervisor.lua",
+      "sha256": "4093bd016561574eae12bf4069653227d7b5f1b326bfd502faa7d5e67d63a7b1",
+      "bytes": 6701,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/native/test-core-guard.lua",
+      "workspaceSource": "code/controller/native/test-core-guard.lua",
+      "sha256": "9c45aaac9dcdac8426c5a62cce54ece28c4ca49f270142b02537db280bfb2d5f",
+      "bytes": 2395,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/native/test-lifecycle.lua",
+      "workspaceSource": "code/controller/native/test-lifecycle.lua",
+      "sha256": "c9e9e87a0f33e66c9ee8fd529cb471fb355b8007481b2b7b133c2f2ce7f01085",
+      "bytes": 1549,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "workspaceSource": "code/controller/native/transaction.lua",
+      "sha256": "4455e3be1287f885dd1025d484a8f3fd858616fe9d25e29d559f6f86155a9fcd",
+      "bytes": 17658,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "76a67148ead8f2dbc482652e1ed8aa29ed70530293c8a9c5a9c097bd57bb6acc",
+      "bytes": 17886,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-bounded-longterm-recovery"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44820,5 +44884,14 @@
     "productionDeployed": false,
     "latestEvidenceKey": "deploymentReadinessReview",
     "appendedControllerSources": 7
+  },
+  "lastRouterLocalLongtermExport": {
+    "revision": "dorm-v2-bounded-longterm-recovery",
+    "capturedAt": "2026-10-09T14:48:06.480Z",
+    "latestEvidenceKey": "longtermDeploymentFix",
+    "productionDeployed": true,
+    "fullColdBootAccepted": false,
+    "historicSourcePrefixLength": 6381,
+    "appendedControllerSources": 8
   }
 }

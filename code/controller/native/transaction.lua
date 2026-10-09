@@ -130,13 +130,17 @@ local function stage(r)
  r.phase='staged-frontends-closed';r.native=native_status();r.accelerated=count('ecm_nss_ipv4/accelerated_count')
  r.hardwareAdmissionEnabled=false;store(r)
 end
-if mode=='status' then
+if mode=='status' or mode=='status-supervised' then
  local r=json(root..'/status.json') or {running=false,phase='not-started'}
  if loaded('athena_ecm_gate') then r.native=native_status();r.accelerated=count('ecm_nss_ipv4/accelerated_count') end
  if loaded('ecm') then r.hardwareAdmissionEnabled=count('front_end_ipv4_stop')==0 end
  r.privateBaselinePresent=r.baseline~=nil;r.baseline=nil;r.pins=nil
  r.wans=nil;r.ownedFlows=nil
  if r.native then r.native.raw=nil end
+ if mode=='status-supervised' then
+  r.supervision=json(root..'/supervisor.json')
+  r.bootEnabled=os.execute('/etc/init.d/athena-dorm-native enabled >/dev/null 2>&1')==0
+ end
  print(j.stringify(r));return
 end
 if mode=='stop' or mode=='rollback' then
@@ -188,6 +192,9 @@ if mode=='guard' then
    while not fs.stat(root..'/stop') and now()<due do
     if r.supervisedOwnerPid and process_start(r.supervisedOwnerPid)~=r.supervisedOwnerStart then
      r.ownerExited=true;store(r);break
+    end
+    if r.supervisorPid and process_start(r.supervisorPid)~=r.supervisorStart then
+     r.supervisorExited=true;store(r);break
     end
     local heartbeat=tonumber(read(root..'/heartbeat'))
     if not heartbeat or now()-heartbeat>8 then break end
@@ -255,7 +262,15 @@ local r={version=1,phase='prepared',running=true,startedAtUptime=now(),pins=pins
 r.ingressProbe=mode=='probe-ingress';r.queuesChanged=r.ingressProbe
 r.nativeRun=mode=='start-native' or mode=='foreground';r.queuesChanged=r.queuesChanged or r.nativeRun
 r.durationSeconds=duration
-if mode=='foreground' then r.supervisedOwnerPid=n.getpid();r.supervisedOwnerStart=assert(process_start(r.supervisedOwnerPid))end
+if mode=='foreground' then
+ r.supervisedOwnerPid=n.getpid();r.supervisedOwnerStart=assert(process_start(r.supervisedOwnerPid))
+ local supervisor=json(root..'/supervisor.json')
+ if supervisor and supervisor.childPid==r.supervisedOwnerPid and supervisor.phase=='launching' then
+  assert(process_start(supervisor.pid)==supervisor.start and
+   read('/proc/'..supervisor.pid..'/cmdline')=='/usr/bin/lua\0/usr/lib/athena-dorm-native/supervisor.lua\0','Supervisor identity changed')
+  r.supervisorPid=supervisor.pid;r.supervisorStart=supervisor.start
+ end
+end
 if r.nativeRun then
  r.baseline.mwan=assert(tonumber(read('/proc/sys/net/ecm/mwan3_enable')))
  assert(r.baseline.mwan==0,'Existing ECM mwan owner is active')

@@ -22,4 +22,8 @@ check(false,90);check(false,100,gate:gsub('state=1','state=5'))
 d.summary.sourceFresh=nil;check(false);d.summary.sourceFresh=false
 r.flowState.sourceFresh=nil;check(false);r.flowState.sourceFresh=false
 r.supervisedOwnerStart='11';check(false);r.supervisedOwnerStart='10'
+r.supervisorPid=3;r.supervisorStart='30';check(false)
+local function supervised(pid,start,mode)return process(pid,start,mode) or pid==3 and start=='30' and mode=='supervisor' end
+check(true,100,gate,101,supervised)
+r.supervisorStart='31';check(false,100,gate,101,supervised);r.supervisorStart='30'
 print('core-guard-permission-models-passed '..count)

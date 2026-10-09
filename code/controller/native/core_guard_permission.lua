@@ -7,6 +7,7 @@ function M.allowed(r,desired,heartbeat,gate,at,process)
  if type(gate)~='string' or not gate:match('^abi=2 capacity=32 stopping=0 firmware_receipts=1') then return false,'gate-unavailable-or-stopping' end
  for state in gate:gmatch('slot=%d+ state=(%d+) ')do if tonumber(state)==5 then return false,'firmware-removal-unconfirmed' end end
  if not process(r.supervisedOwnerPid,r.supervisedOwnerStart,'foreground') or not process(r.guardianPid,r.guardianStart,'guard') then return false,'owner-or-guardian-identity-lost' end
+ if r.supervisorPid and not process(r.supervisorPid,r.supervisorStart,'supervisor')then return false,'supervisor-identity-lost' end
  -- An observed source outage pauses add/renew in the writer. The kernel gate
  -- expires each exact CT lease independently. A healthy reader reporting that
  -- outage must not turn a recoverable classifier restart into a service stop.
@@ -27,7 +28,7 @@ if arg and arg[0] and arg[0]:match('/core_guard_permission.lua$')then
    if type(pid)~='number' or pid<1 or pid~=math.floor(pid) or type(start)~='string' then return false end
    local s=read('/proc/'..pid..'/stat',8192);if not s then return false end
    local fields={};for v in (s:match('^%d+ %b() (.*)$') or ''):gmatch('%S+')do fields[#fields+1]=v end
-   local command='/usr/bin/lua\0'..root..'/transaction.lua\0'..mode..'\0'..(mode=='foreground' and '0\0' or '')
+   local command=mode=='supervisor' and '/usr/bin/lua\0/usr/lib/athena-dorm-native/supervisor.lua\0' or '/usr/bin/lua\0'..root..'/transaction.lua\0'..mode..'\0'..(mode=='foreground' and '0\0' or '')
    return fields[1]~='Z' and fields[20]==start and read('/proc/'..pid..'/cmdline',8192)==command
   end
   at=tonumber(assert(read('/proc/uptime',128)):match('^[%d.]+'))

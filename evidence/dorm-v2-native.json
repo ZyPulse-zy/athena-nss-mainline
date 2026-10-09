@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "capturedAt": "2026-10-09T10:52:48.532Z",
+  "capturedAt": "2026-10-09T14:48:06.480Z",
   "repository": "ZyPulse-zy/athena-nss-mainline",
   "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
   "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
@@ -495,14 +495,18 @@
   "releaseState": {
     "installed": true,
     "running": true,
-    "bootEnabled": false,
+    "bootEnabled": true,
     "legacyRunning": false,
     "nativeGateAbiStored": 2,
     "loadedGateAbi": 2,
     "hardwareAdmissionEnabled": true,
     "lastStopFullRollbackConfirmed": true,
     "approvedRouterRebootCompleted": true,
-    "requiresExplicitRestartApproval": false
+    "requiresExplicitRestartApproval": false,
+    "requiresExplicitRouterRebootApproval": true,
+    "fullAutomaticColdBootAccepted": false,
+    "maximumAutomaticRetries": 3,
+    "unconditionalRespawn": false
   },
   "previousStoppedDeliveryFinal": {
     "passed": true,
@@ -1730,7 +1734,7 @@
     ],
     "rawIdentitiesMacCredentialsAndBinariesIncluded": false
   },
-  "latestEvidenceKey": "deploymentReadinessReview",
+  "latestEvidenceKey": "longtermDeploymentFix",
   "repositoryReview": {
     "reviewedSourceCommit": "c8ab8123298b63751a8bfc665b297f6e11a97e27",
     "scope": [
@@ -3879,5 +3883,351 @@
       "historicalPrefixPreserved": true,
       "frozenCodeWorkUnmodified": true
     }
+  },
+  "longtermDeploymentFix": {
+    "capturedAt": "2026-10-09T14:48:06.480Z",
+    "scope": "Installed exact labels, storage cleanup, bounded startup/recovery; natural traffic only",
+    "baseline": {
+      "at": "2026-10-09T14:06:34.589Z",
+      "saved": true,
+      "privateOnly": true,
+      "sha256": "655240368117b7f8069e0fa4d27610ea5c3ccb65ef5fd532776ce5c260155768",
+      "bytes": 760650,
+      "members": 330,
+      "gzipAndDownloadVerified": true
+    },
+    "storage": {
+      "at": "2026-10-09T14:14:54.898Z",
+      "cleaned": true,
+      "privateRestoreArchiveVerified": true,
+      "removedOnlyDuplicateTailscaleInstallCache": true,
+      "before": {
+        "usedKiB": 938216,
+        "availableKiB": 32976,
+        "usedPercent": 97
+      },
+      "after": {
+        "usedKiB": 833976,
+        "availableKiB": 137216,
+        "usedPercent": 86
+      },
+      "freedKiB": 104240,
+      "backupsRetained": true,
+      "originalStageBackupRetained": true,
+      "installedBinariesChanged": false
+    },
+    "exactLabels": {
+      "installed": true,
+      "liveTableReadable": true,
+      "allNineLiveTablesReadable": true,
+      "scalarCtIdMembershipIsOnlyAnEarlySkip": true,
+      "elevenFieldExactAuthorizationRetained": true,
+      "maximumPolicyRules": 80,
+      "perDeviceQuotasAdded": false,
+      "kernelCOrModulesChangedThisBatch": false
+    },
+    "supervisor": {
+      "installed": true,
+      "bootEnabled": true,
+      "maximumAutomaticRetries": 3,
+      "backoffSeconds": [
+        5,
+        15,
+        30
+      ],
+      "unconditionalProcdRespawn": false,
+      "fixedHealthySessionLifetime": false,
+      "manualStopPreventsRetry": true,
+      "rollbackDisablesBoot": true,
+      "retryRequiresThisOwnerConfirmedRestoration": true,
+      "preTransactionFailureRequiresNoNativeRecordOrGuardianAndClosedSoftwareState": true,
+      "startupDependencyQueueInspectionAdded": true,
+      "unknownStartedTransactionStillBlocksRetry": true
+    },
+    "tests": {
+      "affectedParsersBeforeInitialDeployment": 12,
+      "targetCoreGuardPermissionCases": 26,
+      "targetTagRuleCases": 20,
+      "targetNftNoHookCases": [
+        0,
+        2,
+        80
+      ],
+      "targetUpdatedLifecycleCases": 25,
+      "actualProcessModel": {
+        "at": "2026-10-09T14:37:04.052Z",
+        "passed": true,
+        "cases": [
+          {
+            "mode": "unexpected",
+            "automaticRetries": 3,
+            "launches": 4,
+            "phase": "blocked",
+            "passed": true
+          },
+          {
+            "mode": "manual",
+            "automaticRetries": 0,
+            "launches": 1,
+            "phase": "stopped",
+            "passed": true
+          },
+          {
+            "mode": "unconfirmed",
+            "automaticRetries": 0,
+            "launches": 1,
+            "phase": "blocked",
+            "passed": true
+          },
+          {
+            "mode": "startup",
+            "automaticRetries": 1,
+            "launches": 2,
+            "phase": "stopped",
+            "passed": true
+          }
+        ],
+        "actualForkWaitAndFiles": true,
+        "dependenciesAndRollbackMocked": true,
+        "backoffShortenedInModel": true,
+        "liveDataPlaneWrites": false
+      },
+      "statusBeforeNativeTransactionTestPassed": true
+    },
+    "liveRecovery": {
+      "at": "2026-10-09T14:16:13.363Z",
+      "passed": true,
+      "actualOwnedExitTested": true,
+      "confirmedRollbackBeforeRetry": true,
+      "backoffObserved": true,
+      "oneAutomaticRetryObserved": true,
+      "recoverySeconds": 10.400000000001455,
+      "manualRollbackDisablesBoot": true,
+      "manualRollbackDoesNotRespawn": true,
+      "manualStartPassed": true,
+      "finalBootEnabled": true,
+      "finalAutomaticRetries": 0,
+      "sourceFresh": true,
+      "unconfirmed": 0,
+      "routerRebooted": false
+    },
+    "windowsGatewayProbeDuringLifecycleValidation": {
+      "gameLossMeasured": false,
+      "sent": 150,
+      "sentErrorDelta": 0,
+      "generatedLowRateIcmp": true,
+      "medianMs": 1,
+      "sentDiscardDelta": 0,
+      "at": "2026-10-09T14:18:25.7057196+00:00",
+      "receivedErrorDelta": 0,
+      "received": 150,
+      "p99Ms": 9,
+      "maximumMs": 11.0,
+      "p95Ms": 2,
+      "receivedDiscardDelta": 0,
+      "lossPct": 0
+    },
+    "postInitialDeploymentPassiveSample": {
+      "at": "2026-10-09T14:21:19.246Z",
+      "sampleSeconds": 89.95,
+      "samples": 19,
+      "nssMin": 0,
+      "nssMax": 6,
+      "sourceFreshAll": true,
+      "sourceNewPauses": 0,
+      "sourceNewResumes": 0,
+      "unconfirmedMax": 0,
+      "physicalWanMbps": {
+        "mean": 3.864,
+        "p95": 16.225,
+        "maximum": 16.225
+      },
+      "nssHardwareForwardingByteDelta": 2317571,
+      "rt": {
+        "progressingSamples": 24,
+        "currentCreateSamples": 24,
+        "withoutCurrentCreateSamples": 0,
+        "rtQueueDropDelta": 0,
+        "queueCounterResets": 0,
+        "incompleteQueueReads": 0,
+        "events": [],
+        "endToEndPacketLossMeasured": false
+      },
+      "cpuMeanBusyPct": 22.338,
+      "softnet": [
+        {
+          "cpu": 0,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 1,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 2,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        },
+        {
+          "cpu": 3,
+          "dropDelta": 0,
+          "timeSqueezeDelta": 0
+        }
+      ],
+      "physicalWanRxDropDelta": 3,
+      "lan4RxDropDelta": 1,
+      "dropCounterAttributionUnknown": true,
+      "controlledSaturation": false,
+      "controlledGameAcceptance": false
+    },
+    "firstApprovedColdBoot": {
+      "at": "2026-10-09T14:25:59.596Z",
+      "passed": false,
+      "rebootCompleted": true,
+      "allFiveWansProxyAndTailscaleRecovered": true,
+      "nativeAutomaticallyStarted": false,
+      "nativeTransactionRecordPresent": false,
+      "startupChildExitCode": 1,
+      "supervisorStoppedWith": "this-attempt-restoration-unconfirmed",
+      "originalClassifierUnhealthyTerminalObserved": true,
+      "initialStartupStderrRecovered": false,
+      "subsequentPinnedClassifierRepairSucceeded": true,
+      "queueModeRepairs": 10,
+      "originalFilterPairsRestored": 10,
+      "originalClassifierConfigAndSourceChanged": false,
+      "notAnAutomaticColdBootPass": true
+    },
+    "targetedColdFixInstalledAfterManualRecovery": {
+      "at": "2026-10-09T14:43:42.295Z",
+      "running": true,
+      "nss": 0,
+      "sourceFresh": true,
+      "unconfirmed": 0,
+      "maximumAutomaticRetries": 3,
+      "automaticRetries": 0,
+      "bootEnabled": true,
+      "liveTableReadable": true,
+      "allExistingServicesRunning": true,
+      "allFiveWansUp": true,
+      "installedFiles": {
+        "lifecycle.lua": "6a0f5cc739c91c0aa8669b813daeaba5658ae98cbb2c8f0b92c092d64ef1bdd8",
+        "supervisor.lua": "4093bd016561574eae12bf4069653227d7b5f1b326bfd502faa7d5e67d63a7b1"
+      },
+      "manualClassifierRecoveryUsedAfterFirstReboot": true,
+      "latestColdFixRebootVerified": false
+    },
+    "secondApprovedColdBoot": null,
+    "fullColdBootAccepted": false,
+    "finalReadback": {
+      "at": "2026-10-09T14:48:06.480Z",
+      "phase": "native-running",
+      "nss": 4,
+      "sourceFresh": true,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "unconfirmed": 0,
+      "bootEnabled": true,
+      "maximumAutomaticRetries": 3,
+      "automaticRetries": 0,
+      "supervisorAndOwnerBound": true,
+      "protectedHashesUnchanged": true,
+      "installedSourceHashesVerified": true,
+      "installedSourceCount": 19,
+      "allServicesRunning": true,
+      "approvedRebootChangedServicePids": true,
+      "wanConfiguredMacsUnchanged": true,
+      "allNineTablesReadable": true,
+      "tables": [
+        {
+          "family": "inet",
+          "name": "fw4",
+          "readable": true
+        },
+        {
+          "family": "inet",
+          "name": "dnsmasq",
+          "readable": true
+        },
+        {
+          "family": "inet",
+          "name": "rp_core",
+          "readable": true
+        },
+        {
+          "family": "inet",
+          "name": "rp_pbr",
+          "readable": true
+        },
+        {
+          "family": "bridge",
+          "name": "rp_wifi_qos",
+          "readable": true
+        },
+        {
+          "family": "inet",
+          "name": "rp_singbox",
+          "readable": true
+        },
+        {
+          "family": "inet",
+          "name": "rp_tailscale_subnet",
+          "readable": true
+        },
+        {
+          "family": "inet",
+          "name": "rp_tailscale_p2p",
+          "readable": true
+        },
+        {
+          "family": "inet",
+          "name": "athena_dorm_qos",
+          "readable": true
+        }
+      ],
+      "tailscale": [
+        {
+          "running": true,
+          "selfOnline": true
+        },
+        {
+          "running": true,
+          "selfOnline": true
+        }
+      ],
+      "kernelIssuesSinceBoot": {
+        "panic": 0,
+        "oops": 0,
+        "bug": 0,
+        "lockup": 0,
+        "oom": 0,
+        "firmwareCrash": 0
+      },
+      "overlay": "Filesystem           1K-blocks      Used Available Use% Mounted on\n/dev/mmcblk0p25         998060    833976    137216  86% /overlay\n",
+      "routerRebooted": true,
+      "fullColdBootAccepted": false,
+      "gameAcceptance": false
+    },
+    "unresolved": [
+      "Latest installed cold startup fix has not passed a new automatic router reboot acceptance.",
+      "Formal game/download, Wi-Fi per-station/TID and same-device mixed-load end-to-end acceptance deferred by user.",
+      "Saturation bandwidth borrowing, all-port byte coverage and long-duration CPU/softirq not proved.",
+      "Historical classifier recover timeout and spontaneous firmware rule loss have no directly proved initial cause.",
+      "Physical RX drop counter changes are not attributed to any game flow."
+    ],
+    "rawConntrackMacIpCredentialsLogsAndBinariesIncluded": false
+  },
+  "releaseStateBeforeLongtermFix": {
+    "installed": true,
+    "running": true,
+    "bootEnabled": false,
+    "legacyRunning": false,
+    "nativeGateAbiStored": 2,
+    "loadedGateAbi": 2,
+    "hardwareAdmissionEnabled": true,
+    "lastStopFullRollbackConfirmed": true,
+    "approvedRouterRebootCompleted": true,
+    "requiresExplicitRestartApproval": false
   }
 }
