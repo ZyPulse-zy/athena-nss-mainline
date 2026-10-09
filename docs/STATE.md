@@ -1,3 +1,17 @@
+<!-- audit-remediation-20261010 -->
+# 当前：审查修复已完成开发验证，尚未现场切换
+
+本次固定远端 be46953（上轮审查3208540），确认最新部署尚无这些修复后，集中修改 code/controller：每条等待RT预留一个安全位置、有界 rejected、回执门控的两次单连接重试、只读分层标签/字节核验，以及采集完整性/限时与实际租约余量。内核 !selected 和撤销终态保护完整保留。原样旧writer延迟ACK四轮撤销4条BULK，候选只撤销1条。
+
+定向验证通过：writer198/health35/core25/collector86，共344断言在本地与路由器原Lua库执行；27目标文件解析、C回执137/选择器13、ARM64 Linux6.18.44交叉构建通过。目标测试替换真实I/O，无hook/数据面写入，独立RAM目录清理。真实候选采集器发现并修正BusyBox timeout选择bare ip applet的JSON不兼容，改/sbin/ip后六查询全部成功、0.05秒。
+
+2026-10-10 00:23:42北京时间最终只读复核：native-running、NSS1/sourceFresh/IPv4开启/未确认0、五WAN正常；服务身份、保护哈希和已安装五源码与起始现场一致，来源累计暂停/恢复4/4。**新候选未安装**，已安装的是下方此前修复版本。00:00:49起71.60秒自然样本无新增暂停，NSS0..4，全局硬件RX/TX分别增长3334551/3396389字节；同Wi-Fi设备RT+BULK同时出现4/8样本。未取得逐CT硬件覆盖、逐TID/AC、持续有线>60秒FDB或端到端游戏丢包证据。
+
+[完整源码证据、限制与可执行验收](DORM_V2_AUDIT_REMEDIATION.md) · [结构化修复证据](../evidence/dorm-v2-audit-remediation.json)。本轮只做离线/无hook模型和轻量只读检查；停止/替换现网、加载模块、重启、改QoS/无线、主动拥塞/故障须另获明确许可。未改五WAN认证/PBR/NAT、CAKE/autorate、代理/Tailscale或无线配置，不新增配额，PR #1 保持draft、不合并。
+
+## 以下为此前已安装版本与历史记录
+<!-- /audit-remediation-20261010 -->
+
 <!-- longterm-deployment-fix-20261009 -->
 # 当前：精确标签、存储及有限恢复修复已安装
 

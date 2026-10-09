@@ -51,7 +51,7 @@ struct common_prefix { u16 version, len; u32 interface, response, type, error,
  reserved; u64 cb, app_data; };
 struct destroy_prefix { struct common_prefix cm;
  u32 src, sport, dst, dport; u8 protocol, reserved[3]; };
-struct record { bool used; u64 create_attempt,destroy_attempt; struct athena_tuple tuple;
+struct record { bool used,igs_observed; u64 create_attempt,destroy_attempt; struct athena_tuple tuple;
  struct athena_receipt receipt; };
 struct ticket { nss_callback original; void *data; u32 serial; u64 generation;
  u64 create_attempt,destroy_attempt; bool create; struct athena_tuple tuple; };
@@ -127,6 +127,16 @@ int athena_receipt_read(u32 serial, u64 generation,
  spin_unlock_bh(&receipt_lock); return result;
 }
 EXPORT_SYMBOL_GPL(athena_receipt_read);
+int athena_receipt_read_observation(u32 serial, u64 generation,
+ struct athena_observation *observation)
+{
+ struct record *r; int result=-ENOENT;
+ spin_lock_bh(&receipt_lock); r=find(serial,generation);
+ if (r) { *observation=(struct athena_observation){ .receipt=r->receipt,
+  .tuple=r->tuple,.igs_observed=r->igs_observed }; result=0; }
+ spin_unlock_bh(&receipt_lock); return result;
+}
+EXPORT_SYMBOL_GPL(athena_receipt_read_observation);
 int athena_receipt_release(u32 serial, u64 generation)
 {
  struct record *r; int result=-ENOENT;
@@ -192,7 +202,7 @@ int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *ctx,
    .tuple={tuple_message.src,tuple_message.sport,tuple_message.dst,tuple_message.dport,tuple_message.protocol},
    .receipt={ .serial=(u32)m->cm.app_data, .state=ATHENA_ARMED } }; }
   if (r) { r->receipt.create_seen=true; r->receipt.create_pending=true;
-   r->receipt.state=ATHENA_ARMED;r->receipt.qos_observed=false;
+   r->receipt.state=ATHENA_ARMED;r->receipt.qos_observed=false;r->igs_observed=false;
    r->receipt.response=0;r->receipt.error=0;
    r->receipt.create_ack=false; r->create_attempt=++attempts; }
   /* QCA's IPv4 create ABI: common=40, flags+tuple=24, connection=44,
@@ -201,6 +211,7 @@ int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *ctx,
   if (r && m->cm.len>=172) {
    u16 valid;memcpy(&valid,(char *)message+40,2);
    r->receipt.qos_observed=(valid&8)!=0;
+   r->igs_observed=(valid&0x800)!=0;
    memcpy(&r->receipt.flow_qos,(char *)message+152,4);
    memcpy(&r->receipt.return_qos,(char *)message+156,4);
    memcpy(&r->receipt.igs_flow,(char *)message+208,2);

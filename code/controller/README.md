@@ -1,3 +1,19 @@
+<!-- audit-remediation-20261010 -->
+# 当前维护：审查修复候选，现网仍为此前部署
+
+维护源码已实现RT pending预留、防重复撤销、32项/6秒 rejected、单连接回执门控的两次重试/1与3秒退避、分层只读分类/lease/CREATE/双向QoS/硬件字节及采集完整性。新gate保留!selected；receipt旧结构ABI不变，新观察API以独立导出要求匹配provider。344目标Lua断言、27目标解析、C137+13及6.18.44交叉构建通过；实际collector六查询0.05秒成功。所有候选目标执行在独立RAM目录，无hook/配置写入，清理完成。
+
+**这些修复尚未安装**。2026-10-10 00:23:42北京时间原现场native-running/NSS1/sourceFresh/未确认0、五WAN正常，源码/服务身份/保护哈希不变；来源累计4/4。不要用当前候选源码哈希判旧现场漂移。既有boot/supervisor与旧授权冷启动证据保留，但本轮未授权再次停止、安装或重启。
+
+新diagnose默认仍不查询硬件tc；flowEvidence分别展示候选RT/BULK的分类、当前精确身份及lease、CREATE、双向标签。标签核验依据真实CREATE payload及ACK/方向/valid flags，不是独立固件队列读取。hardware分别展示全局NSS IPv4 special RX/TX字节，perFlowAttribution=false、byteCoverage.measured=false；缺读/方向未知不能填零或合格。writer额外展示pendingRt、rejectedCache、recovery/newIdentityAdmissionPaused、十个CAKE查询耗时与实际最小租约余量。
+
+recovery只依据观察过的CREATE失败或真实DESTROY/NO_CONNECTION回执，等待原精确撤销终态后加新代；至多两次，失败预算满或用尽回到软件。pending、回执缺失、QoS不符/空闲字节不触发猜测恢复；UNCONFIRMED保留原阻止机制。原CAKE/autorate、五WAN/PBR/NAT、代理/Tailscale/无线/无配额及六秒lease不变。
+
+本轮新增native/test-writer-policy.lua、native/test-selection.py、test-collector.lua；Lua测试需把维护Lua文件置于独立flattened模型目录执行，IO默认拒绝，不能覆盖运行中的/tmp/athena-dorm-native来测试。C测试在本地编译真实源函数与mock transport，不加载模块。详细命令、源码证据和获准部署/自然验收见 [完整报告](../../docs/DORM_V2_AUDIT_REMEDIATION.md)、[结构化证据](../../evidence/dorm-v2-audit-remediation.json)。
+
+## 以下为此前已安装入口、部署与历史记录
+<!-- /audit-remediation-20261010 -->
+
 <!-- longterm-deployment-fix-20261009 -->
 # 当前维护：已安装精确标签与有限自动恢复
 

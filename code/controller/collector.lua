@@ -8,10 +8,15 @@ local function read(p,limit)
   if not s or #s>(limit or 4194304) then return nil end
   return s
 end
-local function command(cmd,limit)
-  local f=io.popen(cmd);if not f then return nil end
-  local s=f:read((limit or 262144)+1);f:close()
-  return s and #s<=(limit or 262144) and s or nil
+local function command(cmd,limit,name,diagnostics)
+  local began=M.now();limit=limit or 262144
+  local f=io.popen('/usr/bin/timeout -k 1 1 '..cmd..' 2>/dev/null; printf "\nATHENA_COLLECT_EXIT_%s\n" "$?"')
+  local s=f and f:read(limit+1);if f then f:close()end
+  local body,code;if s and #s<=limit then body,code=s:match('^(.*)\nATHENA_COLLECT_EXIT_(%d+)\n$')end
+  local ok=code=='0'
+  diagnostics.commands[name]={seconds=M.now()-began,exitCode=tonumber(code),ok=ok}
+  if not ok then diagnostics.failures=diagnostics.failures+1 end
+  return ok and body or nil
 end
 local function parse(s) return s and json.parse(s) or nil end
 function M.publications(includeFull)
@@ -60,43 +65,53 @@ function M.station_clients(clients,ifname)
   return out
 end
 function M.topology()
-  local neighbors=parse(command('ip -j -4 neigh show dev br-lan')) or {}
+  local diagnostics={commands={},failures=0};local complete=true
+  local function query(cmd,name)return command(cmd,nil,name,diagnostics)end
+  -- BusyBox timeout may prefer its own ip applet for a bare command name;
+  -- select ip-full explicitly because these reads require JSON support.
+  local neighbors=parse(query('/sbin/ip -j -4 neigh show dev br-lan','neighbors'))
+  if type(neighbors)~='table'then complete=false;neighbors={}end
   local leases={}
   for expiry,mac,ip in (read('/tmp/dhcp.leases',262144) or ''):gmatch('(%d+)%s+([%x:]+)%s+(%d+%.%d+%.%d+%.%d+)') do
     leases[#leases+1]={expires=tonumber(expiry),mac=mac:lower(),ip=ip}
   end
   local ports,aps={},{};local dir=fs.dir('/sys/class/net/br-lan/brif')
+  if not dir then complete=false end
   if dir then for name in dir do
     local port=tonumber(read('/sys/class/net/br-lan/brif/'..name..'/port_no',128) or '')
     if port then ports[port]=name end
     if name:match('^phy%d+%-ap%d+$') then aps[#aps+1]=name end
   end end
   local fdb={}
-  for p,mac,localEntry,age in (command('brctl showmacs br-lan') or ''):gmatch('(%d+)%s+([%x:]+)%s+(%a+)%s+([%d.]+)') do
+  local fdbText=query('brctl showmacs br-lan','fdb');if not fdbText then complete=false end
+  for p,mac,localEntry,age in (fdbText or ''):gmatch('(%d+)%s+([%x:]+)%s+(%a+)%s+([%d.]+)') do
     if ports[tonumber(p)] then fdb[#fdb+1]={mac=mac:lower(),ifname=ports[tonumber(p)],localEntry=localEntry=='yes',age=tonumber(age)} end
   end
   local stations={};local stationSources={hostapd=0,iwFallback=0}
   for _,name in ipairs(aps) do
-    local status=parse(command('ubus call hostapd.'..name..' get_clients'))
+    local status=parse(query('ubus call hostapd.'..name..' get_clients','hostapd-'..name))
     if status and type(status.clients)=='table' then
       for _,s in ipairs(M.station_clients(status.clients,name)) do stations[#stations+1]=s end
       stationSources.hostapd=stationSources.hostapd+1
     else
       -- Older APs without ubus retain the existing association read. Do not
       -- reuse a cached association across roaming or authorization changes.
-      for mac in (command('iw dev '..name..' station dump') or ''):gmatch('Station ([%x:]+)') do
+      local iw=query('iw dev '..name..' station dump','iw-'..name);if not iw then complete=false end
+      for mac in (iw or ''):gmatch('Station ([%x:]+)') do
         stations[#stations+1]={mac=mac:lower(),ifname=name}
       end
       stationSources.iwFallback=stationSources.iwFallback+1
     end
   end
   local wans={}
-  for _,a in ipairs(parse(command('ip -j -4 address show')) or {}) do
+  local addresses=parse(query('/sbin/ip -j -4 address show','wan-addresses'))
+  if type(addresses)~='table'then complete=false;addresses={}end
+  for _,a in ipairs(addresses) do
     if a.ifname and a.ifname:match('^rpwan[1-5]$') then
       for _,v in ipairs(a.addr_info or {}) do if v.family=='inet' and v.scope=='global' then wans[a.ifname]=v['local'] end end
     end
   end
   return {clients=M.resolve(neighbors,leases,fdb,stations,os.time()),wans=wans,
-    associatedStations=#stations,bridgeFdbEntries=#fdb,stationSources=stationSources}
+    associatedStations=#stations,bridgeFdbEntries=#fdb,stationSources=stationSources,complete=complete,collection=diagnostics}
 end
 return M

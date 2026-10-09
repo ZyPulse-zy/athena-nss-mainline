@@ -44835,6 +44835,134 @@
       "bytes": 19455,
       "role": "router-native-source-test-or-maintenance",
       "revision": "dorm-v2-bounded-longterm-recovery"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "730dfd59b0ef90af16ad39ca0e8c8d0d34a4e8f97ca516dee6364cefeece7b45",
+      "bytes": 21931,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/collector.lua",
+      "workspaceSource": "code/controller/collector.lua",
+      "sha256": "f73b73793a0a5f5524eae31df8b07f09e187001c3369ab490f1efae4ab2fa32e",
+      "bytes": 6155,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/core.lua",
+      "workspaceSource": "code/controller/core.lua",
+      "sha256": "cc9a2e31ab8ddbc49303ac4f619f16793deb0a6e27f957cd6338f54477cf0728",
+      "bytes": 8759,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/athena_ecm_gate.c",
+      "workspaceSource": "code/controller/native/athena_ecm_gate.c",
+      "sha256": "5b0b469801ccabbde935a0246264f7ffa8104aee65d4e48027454cc02d1eadf3",
+      "bytes": 15127,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/athena_nss_receipts.c",
+      "workspaceSource": "code/controller/native/athena_nss_receipts.c",
+      "sha256": "680321a57431d7cc4a3d6ed4dd455ef9b5156f944c074035698d6fa859ef5e9b",
+      "bytes": 18880,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/diagnose.lua",
+      "workspaceSource": "code/controller/native/diagnose.lua",
+      "sha256": "81d658d497bce06ef7a947c21c72ac490ecd14f409bccbd63dbfdcbd55b23c64",
+      "bytes": 4759,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/health.lua",
+      "workspaceSource": "code/controller/native/health.lua",
+      "sha256": "19beb7381a758ef62bfc1ce603d55cec65d32a883c91019e4e63676df1fd045c",
+      "bytes": 9501,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/reader.lua",
+      "workspaceSource": "code/controller/native/reader.lua",
+      "sha256": "16fcb20607eade821b5c210aa79f084f61ee9ce6e5b1010bad9a7601871c4cb7",
+      "bytes": 1719,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/receipts.h",
+      "workspaceSource": "code/controller/native/receipts.h",
+      "sha256": "2070c49f6697df16ee732bc50fd8e79d7901504f0478f0c85be39b5a784e7588",
+      "bytes": 1792,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/test-health.lua",
+      "workspaceSource": "code/controller/native/test-health.lua",
+      "sha256": "e7e27b05b65ba9ddc3b617323962ff2865652f15a5a4ab721385a3ce57a6f731",
+      "bytes": 5546,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/test-receipts.c",
+      "workspaceSource": "code/controller/native/test-receipts.c",
+      "sha256": "7a1f27760ebcb71db46c75ef24b0cf17fe097090908b5def505dd9aea88ef0a1",
+      "bytes": 10798,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/test-selection.py",
+      "workspaceSource": "code/controller/native/test-selection.py",
+      "sha256": "01e7995d632c48fdfffb97d5ee0942934e94947a889d9eb404abdc76e6254afa",
+      "bytes": 3826,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/test-writer-policy.lua",
+      "workspaceSource": "code/controller/native/test-writer-policy.lua",
+      "sha256": "86c8ecdf7d1a3282e45f59c702b209790485f654fda2841225a1a2cfb98ea5b3",
+      "bytes": 8553,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "workspaceSource": "code/controller/native/writer.lua",
+      "sha256": "b201025fe57769ed89a5fbf5a770bbd4878ae4700f64fb2e4aa289821bf0ffe7",
+      "bytes": 17900,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/test-collector.lua",
+      "workspaceSource": "code/controller/test-collector.lua",
+      "sha256": "10553256420a8269bb3963782d38666c06d073a33a2da91f63affff440c4a6a5",
+      "bytes": 3304,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
+    },
+    {
+      "path": "code/controller/test-core.lua",
+      "workspaceSource": "code/controller/test-core.lua",
+      "sha256": "ea05c6008c93ee928db8aebd3155b307f2042ac06cf9e170c2dce635751bdc32",
+      "bytes": 7461,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-audit-remediation-20261010"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -44925,5 +45053,13 @@
     "fullColdBootAccepted": true,
     "historicSourcePrefixLength": 6392,
     "appendedControllerSources": 1
+  },
+  "lastRouterLocalAuditRemediationExport": {
+    "capturedAt": "2026-10-09T16:35:11.851Z",
+    "revision": "dorm-v2-audit-remediation-20261010",
+    "sourceRecordsAppended": 16,
+    "productionCandidateDeployed": false,
+    "evidence": "evidence/dorm-v2-audit-remediation.json",
+    "reviewBase": "3208540780e56b0b498616d75a136e1e1011dd21"
   }
 }

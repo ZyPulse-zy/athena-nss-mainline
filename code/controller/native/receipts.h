@@ -10,11 +10,17 @@ struct athena_receipt { u64 generation; u32 serial, response, error;
  enum athena_receipt_state state;
  bool create_seen, create_pending, create_ack, qos_observed;
  u32 flow_qos,return_qos; u16 igs_flow,igs_return; };
+/* Keep the existing read ABI intact. A new symbol makes a new gate require
+ * the observation-capable provider instead of silently mixing struct sizes. */
+struct athena_observation { struct athena_receipt receipt;
+ struct athena_tuple tuple; bool igs_observed; };
 int athena_receipt_arm(u32 serial, u64 generation,
  const struct athena_tuple *tuple);
 int athena_receipt_find_tuple(const struct athena_tuple *tuple,u32 *serial);
 int athena_receipt_read(u32 serial, u64 generation,
  struct athena_receipt *receipt);
+int athena_receipt_read_observation(u32 serial, u64 generation,
+ struct athena_observation *observation);
 int athena_receipt_release(u32 serial, u64 generation);
 /* After admission is denied, request the observed exact firmware tuple when
  * ECM has already decelerated and cannot issue another DESTROY itself. */

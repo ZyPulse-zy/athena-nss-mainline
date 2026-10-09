@@ -1734,7 +1734,7 @@
     ],
     "rawIdentitiesMacCredentialsAndBinariesIncluded": false
   },
-  "latestEvidenceKey": "longtermDeploymentFix",
+  "latestEvidenceKey": "codeReviewRemediation",
   "repositoryReview": {
     "reviewedSourceCommit": "c8ab8123298b63751a8bfc665b297f6e11a97e27",
     "scope": [
@@ -4553,5 +4553,86 @@
     "lastStopFullRollbackConfirmed": true,
     "approvedRouterRebootCompleted": true,
     "requiresExplicitRestartApproval": false
+  },
+  "codeReviewRemediation": {
+    "capturedAt": "2026-10-09T16:35:11.851Z",
+    "evidence": "evidence/dorm-v2-audit-remediation.json",
+    "report": "docs/DORM_V2_AUDIT_REMEDIATION.md",
+    "revision": "dorm-v2-audit-remediation-20261010",
+    "productionCandidateDeployed": false,
+    "baselineRemoteHead": "be469530a891944c5a5ed83e4c149b971517384b",
+    "tests": {
+      "targetLuaAssertions": 344,
+      "targetLuaParsers": 27,
+      "cReceipts": 137,
+      "cSelection": 13,
+      "crossBuildPassed": true
+    },
+    "finalReadback": {
+      "at": "2026-10-09T16:23:42.021Z",
+      "readOnly": true,
+      "generatedTraffic": false,
+      "configurationWrites": false,
+      "productionCandidateDeployed": false,
+      "phase": "native-running",
+      "sourceFresh": true,
+      "sourcePauses": 4,
+      "sourceResumes": 4,
+      "unconfirmed": 0,
+      "admission": 0,
+      "allWansUp": true,
+      "serviceIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "installedFilesMatchInitialBaseline": true,
+      "gateObservationFieldsPresent": false,
+      "candidateCollector": {
+        "seconds": 0.0500000000001819,
+        "stationSources": {
+          "iwFallback": 0,
+          "hostapd": 3
+        },
+        "bridgeFdbEntries": 11,
+        "collection": {
+          "failures": 0,
+          "commands": {
+            "hostapd-phy1-ap0": {
+              "ok": true,
+              "seconds": 0,
+              "exitCode": 0
+            },
+            "wan-addresses": {
+              "ok": true,
+              "seconds": 0,
+              "exitCode": 0
+            },
+            "hostapd-phy2-ap0": {
+              "ok": true,
+              "seconds": 0.009999999999308784,
+              "exitCode": 0
+            },
+            "neighbors": {
+              "ok": true,
+              "seconds": 0.010000000000218279,
+              "exitCode": 0
+            },
+            "fdb": {
+              "ok": true,
+              "seconds": 0.010000000000218279,
+              "exitCode": 0
+            },
+            "hostapd-phy0-ap0": {
+              "ok": true,
+              "seconds": 0.010000000000218279,
+              "exitCode": 0
+            }
+          }
+        },
+        "associatedStations": 3,
+        "complete": true
+      },
+      "isolatedDirectoryCleaned": true,
+      "actualNss": 1
+    },
+    "endToEndGameLossOrWifiAirQueuesVerified": false
   }
 }

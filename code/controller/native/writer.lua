@@ -5,11 +5,21 @@ function M.new(root,command,read,put,now,store,r)
  local core=dofile(root..'/core.lua');local j=require('luci.jsonc');local fs=require('nixio.fs');local n=require('nixio')
  local tc='/root/router-project/experiments/nss8-htb2-20261001/tc-nss'
  local gate='/sys/kernel/debug/athena_ecm_gate/'
- local owned,filters={},{};local binding=0;local rejected={};local lastTags
+ local owned,filters={},{};local binding=0;local rejected={};local pending={};local recovery={};local lastTags
+ local rejectLimit,rejectTtl=32,6
  local tagRules=dofile(root..'/tag_rules.lua')
- local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0,sourcePauses=0,sourceResumes=0}
+ local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0,sourcePauses=0,sourceResumes=0,rtPreemptions=0,rejectedPruned=0,recoveryWithdrawals=0,recoveryExhausted=0}
  local sourceUnavailableSince,lastSourceResumedAt
  local function dec(x)return string.format('%.0f',x)end
+ local function reject(e)
+  local count,oldest,oldestAt=0,nil,math.huge
+  for key,v in pairs(rejected)do
+   count=count+1
+   if v.at<oldestAt or v.at==oldestAt and (not oldest or key<oldest)then oldest,oldestAt=key,v.at end
+  end
+  if not rejected[e.key] and count>=rejectLimit then rejected[oldest]=nil;stats.rejectedPruned=stats.rejectedPruned+1 end
+  rejected[e.key]={sequence=e.sequence,at=now(),expires=now()+rejectTtl}
+ end
  local function hex(x)return string.format('%x%04x',math.floor(x/65536),x%65536)end
  local function write_control(text)
   local f,err,code=n.open(gate..'control','w');assert(f,err)
@@ -96,10 +106,11 @@ function M.new(root,command,read,put,now,store,r)
   end end
   return values
  end
- local budgetAt=0;local budgetStats={batches=0,lastCommands=0,lastSeconds=0}
+ local budgetAt=0;local budgetStats={batches=0,lastCommands=0,lastSeconds=0,lastReadSeconds=0,lastReadCommands=0}
  local function sync_budgets()
   if now()<budgetAt+3 then return end;budgetAt=now()
-  local values=budget_snapshot();local plan=dofile(root..'/queue_plan.lua')
+  local beganRead=now();local values=budget_snapshot();budgetStats.lastReadSeconds=now()-beganRead;budgetStats.lastReadCommands=10;budgetStats.lastReadAtUptime=now()
+  local plan=dofile(root..'/queue_plan.lua')
   local batches={};local plans={}
   for _,direction in ipairs({'up','down'})do
    local old=r.ingress[direction];local fresh=plan.plan(direction=='up' and 0x7e00 or 0x7a00,values[direction])
@@ -118,6 +129,7 @@ function M.new(root,command,read,put,now,store,r)
  end
  local out={}
  function out.tick(result)
+  local tickBegan=now()
   assert(type(result.summary.sourceFresh)=='boolean','Reader source state invalid')
   local sourceFresh=result.summary.sourceFresh
   if not sourceFresh and not sourceUnavailableSince then
@@ -125,7 +137,7 @@ function M.new(root,command,read,put,now,store,r)
   elseif sourceFresh and sourceUnavailableSince then
    sourceUnavailableSince=nil;lastSourceResumedAt=now();stats.sourceResumes=stats.sourceResumes+1
   end
-  for w=1,5 do assert(result.wans['rpwan'..w]==r.wans['rpwan'..w],'WAN/NAT address changed; withdraw native backend')end
+  if sourceFresh then for w=1,5 do assert(result.wans['rpwan'..w]==r.wans['rpwan'..w],'WAN/NAT address changed; withdraw native backend')end end
   local native=status();local desired={};local choices={};local tags={};local tagKeys={}
   local withdrawn={};for _,op in ipairs(result.operations or {})do if op.op=='revoke' then withdrawn[op.key]=true end end
   stats.selected=0;stats.firmwareCreated=0
@@ -135,6 +147,12 @@ function M.new(root,command,read,put,now,store,r)
     if sourceFresh and e.candidate then choices[#choices+1]=e end
     if e.class=='RT' and e.budgetAdmitted and #tags<48 then tags[#tags+1]=e;tagKeys[e.key]=true end
    end
+  end
+  local recoveryCount=0
+  for key,v in pairs(recovery)do
+   local e=desired[key]
+   if not e or e.binding~=v.binding or e.class~=v.class then recovery[key]=nil
+   else recoveryCount=recoveryCount+1 end
   end
   for slot,p in pairs(owned)do
    local e=native[slot];assert(e,'Owned native entry disappeared')
@@ -146,26 +164,83 @@ function M.new(root,command,read,put,now,store,r)
    elseif e.state==1 then
     local fresh=desired[p.key]
     local eligible=fresh and (fresh.candidate or fresh.reason=='candidate-capacity-software-fallback')
-    if not eligible or withdrawn[p.key] or fresh.binding~=p.binding or fresh.class~=p.class then
+    if p.retiring then -- A requested withdrawal must never be renewed.
+    elseif not eligible or withdrawn[p.key] or fresh.binding~=p.binding or fresh.class~=p.class then
      assert(write_control('revoke '..slot));p.retiring=true
-    elseif sourceFresh and fresh.sequence~=p.sequence then
-     if write_control('renew '..slot..' '..pin_command(fresh,p.token))then p.sequence=fresh.sequence;stats.renewed=stats.renewed+1 end
+    else
+     -- Preserve the kernel's one-selection protection. Recovery first denies
+     -- this exact binding, then waits for normal firmware retirement before
+     -- adding a new generation. Pending/missing receipts, idle bytes and QoS
+     -- observations alone are never reasons to withdraw a healthy flow.
+     local failed=e.selected>0 and e.receipt_present==1 and e.create_pending==0 and e.create_seen==1 and e.create_ack==0 and e.receipt==0
+     local removed=e.selected>0 and e.receipt_present==1 and e.create_pending==0 and
+      (e.receipt==2 or e.receipt==3 and e.receipt_response==4 and e.receipt_error==5)
+     local v=recovery[p.key]
+     if sourceFresh and (failed or removed) and not v and recoveryCount<32 then
+      v={binding=p.binding,class=p.class,attempts=0,nextAt=0};recovery[p.key]=v;recoveryCount=recoveryCount+1
+     end
+     if sourceFresh and (failed or removed) and v and v.attempts<2 and now()>=v.nextAt then
+      assert(write_control('revoke '..slot));p.retiring=true
+      v.attempts=v.attempts+1;v.nextAt=now()+({1,3})[v.attempts]
+      v.reason=failed and 'observed-create-failure' or 'observed-rule-removal';stats.recoveryWithdrawals=stats.recoveryWithdrawals+1
+     elseif sourceFresh and (failed or removed) and v and v.attempts>=2 then
+      if not v.exhausted then v.exhausted=true;stats.recoveryExhausted=stats.recoveryExhausted+1 end
+      -- Let this entry's independent lease retire; remain in software for
+      -- this verified identity epoch rather than restart a shared backend.
+     elseif sourceFresh and (failed or removed) and not v then
+      -- A full bounded retry ledger cannot justify renewing a known failure.
+      -- Its independent lease expires; admission below cannot bypass the cap.
+     elseif sourceFresh and fresh.sequence~=p.sequence then
+      if write_control('renew '..slot..' '..pin_command(fresh,p.token))then p.sequence=fresh.sequence;p.leaseUntil=fresh.validUntil;stats.renewed=stats.renewed+1 end
+     end
     end
    end
   end
+  for key,v in pairs(rejected)do
+   local e=desired[key]
+   if not e or not e.candidate or e.sequence~=v.sequence or now()>=v.expires then
+    rejected[key]=nil;stats.rejectedPruned=stats.rejectedPruned+1
+   end
+  end
+  local function blocked(e)
+   local v=recovery[e.key]
+   return rejected[e.key] and rejected[e.key].sequence==e.sequence or v and (v.exhausted or now()<v.nextAt) or not v and recoveryCount>=32
+  end
   local proposed={};local occupied={};for slot,p in pairs(owned)do occupied[slot]=true;proposed[p.key]=true end
-  -- Ranking changes do not churn a healthy pinned flow. A new RT flow may
-  -- preempt only a best-effort/bulk entry; the replacement waits for its ACK.
-  for _,e in ipairs(choices)do if e.class=='RT' and not proposed[e.key]then
-   local free=false;for k=0,31 do if not occupied[k]then free=true;break end end
-   if not free then for slot,p in pairs(owned)do
-    if p.class~='RT' and not p.retiring then assert(write_control('revoke '..slot));p.retiring=true;break end
+  local function reusable(slot)
+   local e=native[slot]
+   return not occupied[slot] and (not e or e.state==3 or e.state==4 or e.state==6)
+  end
+  local reserved={}
+  for key,v in pairs(pending)do
+   local e=desired[key]
+   if not e or not e.candidate or e.class~='RT' or e.binding~=v.binding or withdrawn[key] or proposed[key]then pending[key]=nil
+   else reserved[v.slot]=key end
+  end
+  -- Reserve one position per waiting RT, including withdrawals already in
+  -- flight. A delayed ACK cannot evict another BULK for the same RT. Free
+  -- positions count towards demand, and BULK cannot take a promised position.
+  for _,e in ipairs(choices)do if e.class=='RT' and not proposed[e.key] and not pending[e.key] and not blocked(e)then
+   local slot
+   for k=0,31 do if not reserved[k] and reusable(k)then slot=k;break end end
+   if not slot then for k=0,31 do local p=owned[k]
+    if not reserved[k] and p and p.class~='RT' and p.retiring then slot=k;break end
    end end
+   if not slot then
+    local lowest=math.huge
+    for k=0,31 do local p=owned[k];local rate=p and desired[p.key] and desired[p.key].rateKbps or 0
+     if not reserved[k] and p and p.class~='RT' and not p.retiring and rate<lowest then slot,lowest=k,rate end
+    end
+    if slot then assert(write_control('revoke '..slot));owned[slot].retiring=true;stats.rtPreemptions=stats.rtPreemptions+1 end
+   end
+   if slot then pending[e.key]={slot=slot,binding=e.binding};reserved[slot]=e.key end
   end end
   local additions={}
-  for _,e in ipairs(choices)do if not proposed[e.key] and rejected[e.key]~=e.sequence then
-   local slot;for k=0,31 do if not occupied[k] and (not native[k] or native[k].state==3 or native[k].state==4 or native[k].state==6)then slot=k;break end end
-   if slot then occupied[slot]=true;additions[#additions+1]={slot=slot,flow=e}end
+  for _,e in ipairs(choices)do if not proposed[e.key] and not blocked(e)then
+   local slot;local reservation=pending[e.key]
+   if reservation then if reusable(reservation.slot)then slot=reservation.slot end
+   else for k=0,31 do if not reserved[k] and reusable(k)then slot=k;break end end end
+   if slot then occupied[slot]=true;proposed[e.key]=true;additions[#additions+1]={slot=slot,flow=e}end
   end end
   for _,p in pairs(owned)do local e=desired[p.key];if e and not tagKeys[e.key]then tags[#tags+1]=e;tagKeys[e.key]=true end end
   for _,a in ipairs(additions)do local e=a.flow;if not tagKeys[e.key]then tags[#tags+1]=e;tagKeys[e.key]=true end end
@@ -173,14 +248,20 @@ function M.new(root,command,read,put,now,store,r)
   for _,a in ipairs(additions)do
    local e=a.flow;binding=binding+1
    if e.validUntil>now()+0.1 and write_control('add '..a.slot..' '..pin_command(e,binding))then
-    owned[a.slot]={key=e.key,binding=e.binding,class=e.class,sequence=e.sequence,token=binding,
+    owned[a.slot]={key=e.key,binding=e.binding,class=e.class,sequence=e.sequence,token=binding,leaseUntil=e.validUntil,
      client=e.client,egress=e.egress,connectionId=e.connectionId,mark=e.mark,protocol=e.protocol,
      original=e.original,reply=e.reply,wan=e.wan}
     stats.admitted=stats.admitted+1
-   else rejected[e.key]=e.sequence;stats.identityRejected=stats.identityRejected+1 end
+    rejected[e.key]=nil;pending[e.key]=nil
+   else reject(e);stats.identityRejected=stats.identityRejected+1 end
   end
   -- Renew already verified CT leases before updating adaptive queue budgets.
-  sync_budgets()
+  local leaseMargin
+  for _,p in pairs(owned)do if not p.retiring then leaseMargin=math.min(leaseMargin or math.huge,p.leaseUntil-now())end end
+  budgetStats.leaseMarginBeforeReadSeconds=leaseMargin
+  local budgetBegan=now();budgetStats.skippedSourceGap=not sourceFresh
+  if sourceFresh then sync_budgets()end
+  budgetStats.leaseMarginAfterReadSeconds=leaseMargin and leaseMargin-(now()-budgetBegan) or nil
   local count=0;for _ in pairs(owned)do count=count+1 end
   local createdClients,createdExits={},{};r.ownedFlows={}
   for slot,p in pairs(owned)do
@@ -188,6 +269,7 @@ function M.new(root,command,read,put,now,store,r)
    -- Retiring identities remain available even after the desired CT vanished.
    r.ownedFlows[#r.ownedFlows+1]={slot=slot,key=p.key,class=p.class,client=p.client,egress=p.egress,
     connectionId=p.connectionId,mark=p.mark,protocol=p.protocol,wan=p.wan,original=p.original,reply=p.reply,
+    bindingToken=p.token,
     retiring=p.retiring or false,serial=e and e.id==p.connectionId and e.serial or nil,
     generation=e and e.id==p.connectionId and e.generation or nil}
    if flow then
@@ -197,14 +279,17 @@ function M.new(root,command,read,put,now,store,r)
    end
   end
   local createdClientCount=0;for _ in pairs(createdClients)do createdClientCount=createdClientCount+1 end
+  local pendingCount,rejectedCount=0,0;for _ in pairs(pending)do pendingCount=pendingCount+1 end;for _ in pairs(rejected)do rejectedCount=rejectedCount+1 end
   r.flowState={tracked=result.summary.tracked,clients=result.summary.clients,exits=result.summary.exits,
    classes=result.summary.classes,sourceFresh=result.summary.sourceFresh,sourceSequence=result.summary.sourceSequence,
-   reader=result.summary.reader,budgetUpdates=budgetStats,
+   reader=result.summary.reader,budgetUpdates=budgetStats,writerTickSeconds=now()-tickBegan,
    admissionPaused=not sourceFresh,admissionState=sourceFresh and 'ready' or 'waiting-source',sourceUnavailableSince=sourceUnavailableSince,
    sourcePauses=stats.sourcePauses,sourceResumes=stats.sourceResumes,lastSourceResumedAt=lastSourceResumedAt,
    nativeOwned=count,actualCreatedReceipts=stats.firmwareCreated,actualCreatedClients=createdClientCount,actualCreatedExits=createdExits,selected=stats.selected,
    admitted=stats.admitted,renewed=stats.renewed,retiredAck=stats.retiredAck,retiredNeverCreated=stats.retiredNeverCreated,retiredFirmwareAbsent=stats.retiredFirmwareAbsent,
-   identityRejected=stats.identityRejected,perDeviceQuotas=false}
+   identityRejected=stats.identityRejected,pendingRt=pendingCount,rtPreemptions=stats.rtPreemptions,
+   recovery={tracked=recoveryCount,limit=32,maximumRetries=2,withdrawals=stats.recoveryWithdrawals,exhausted=stats.recoveryExhausted,newIdentityAdmissionPaused=recoveryCount>=32},
+   rejectedCache={entries=rejectedCount,limit=rejectLimit,ttlSeconds=rejectTtl,pruned=stats.rejectedPruned},perDeviceQuotas=false}
   store(r)
  end
  return out

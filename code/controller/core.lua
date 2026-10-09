@@ -73,7 +73,7 @@ function M.tick(state, projection, full, topology, now)
     state.entries[key]=nil; state.retired=state.retired+1
   end
   -- An unavailable projection only stops renewal. Its absence is not CT exit.
-  local fresh=frame_ok(projection,now)
+  local fresh=frame_ok(projection,now) and topology.complete~=false
   local complete=false
   if fresh then
     local q=projection.snapshot.provenance

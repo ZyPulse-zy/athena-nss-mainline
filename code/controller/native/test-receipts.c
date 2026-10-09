@@ -50,7 +50,7 @@ int main(void)
  m=message(1,99,tuple);check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));
  check(m.cm.cb==(u64)(unsigned long)original);respond(0);check(original_calls==1);
  m=message(0,10,tuple);m.cm.len=172;
- memcpy(m.payload,&(unsigned short){8},2);
+ memcpy(m.payload,&(unsigned short){0x808},2);
  memcpy(m.payload+112,&(unsigned){0x7e150000},4);
  memcpy(m.payload+116,&(unsigned){6},4);
  memcpy(m.payload+168,&(unsigned short){0},2);
@@ -60,6 +60,11 @@ int main(void)
  check(!athena_receipt_arm(10,1,&tuple));
  check(!athena_receipt_read(10,1,&r) && r.create_pending && !r.create_ack);
  check(r.qos_observed && r.flow_qos==0x7e150000 && r.return_qos==6 && r.igs_return==0x7a15);
+ struct athena_observation observation;
+ check(!athena_receipt_read_observation(10,1,&observation));
+ check(observation.tuple.src==tuple.src && observation.tuple.sport==tuple.sport &&
+  observation.tuple.dst==tuple.dst && observation.tuple.dport==tuple.dport && observation.tuple.protocol==tuple.protocol);
+ check(observation.igs_observed && observation.receipt.create_pending);
  check(athena_receipt_release(10,1)==-EBUSY);respond(0);
  check(!athena_receipt_read(10,1,&r) && !r.create_pending && r.create_ack);
  check(athena_receipt_arm(10,2,&tuple)==-EBUSY);

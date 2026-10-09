@@ -85,4 +85,11 @@ local nativeCfg=copy(cfg);nativeCfg.includeBestEffort=true
 local bePub=pub({flow(7,'192.168.237.11','BE')});local beState=core.new(nativeCfg)
 local beResult=core.tick(beState,bePub,bePub,topology,10)
 check(beResult.summary.candidates==1 and beResult.flows[1].class=='BE','Shared-account native profile may admit validated best effort without a client quota')
+state=core.new(cfg);p=pub(rows,1,9);r=core.tick(state,p,p,topology,10)
+local expiry=r.flows[1].validUntil;local unavailable=copy(topology);unavailable.complete=false;unavailable.wans={};unavailable.clients={}
+r=core.tick(state,pub(rows,2,10),nil,unavailable,11)
+check(not r.summary.sourceFresh and #r.operations==0 and r.flows[1].validUntil==expiry,'Failed topology must stop renewal without inventing CT exit')
+r=core.tick(state,nil,nil,unavailable,16);check(r.summary.tracked==0,'Topology failure cannot extend the six-second lease')
+fdb[1].age=60;c=collector.resolve(n,{},fdb,{},100);check(c[n[1].dst].valid,'FDB age 60 is valid')
+fdb[1].age=61;c=collector.resolve(n,{},fdb,{},100);check(not c[n[1].dst].valid,'FDB age 61 still fails closed')
 print(require('luci.jsonc').stringify({passed=true,checks=checks,modelOnly=true,routerNetworkWrites=false}))

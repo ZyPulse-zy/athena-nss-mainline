@@ -1,3 +1,15 @@
+<!-- audit-remediation-20261010 -->
+# 当前接续：审查修复已验证，候选尚未部署
+
+本次以远端 be46953 / 审查 3208540 的 ABI2 本机32槽为基线，已实现 pending RT、防重复撤销、有界 rejected、回执门控的有限单连接恢复、分层只读证据及采集失败/耗时。见 docs/DORM_V2_AUDIT_REMEDIATION.md 与 evidence/dorm-v2-audit-remediation.json。内核 !selected 保留；新 gate/receipt provider 须成套部署，新导出不允许混用旧 provider。只维护 code/controller，冻结 code/work 与 manifest 历史。
+
+2026-10-10 00:23:42 北京时间只读复核：原部署 native-running/NSS1/sourceFresh/未确认0、五WAN正常，服务PID/启动时间、保护和已安装五文件哈希不变；来源累计4/4。新候选未安装。344 Lua定向断言/27目标解析、137回执C/13选择器C、6.18.44交叉构建通过；实际候选采集器只读六查询0.05秒，独立RAM目录均已清理。模型不代表固件恢复或空口验收。
+
+用户本轮仅授权开发分支实现、测试和推送，PR #1 保持 draft，禁止擅自合并。共享网络 stop/restart、候选安装、刷机/重启、修改QoS/无线、主动拥塞/故障必须另获明确许可；此前的部署或重启授权不能沿用到本窗口。不开新常驻监控，不恢复旧Windows，不扩大租约/BE/缓存或新增设备配额。保持五WAN认证/PBR/NAT、原CAKE/autorate、代理/Tailscale/无线设置。下一步是获准窗口的单次成套切换及自然流量验收，不能重复已完成的旧夹具。
+
+## 以下为已安装旧部署与历史证据
+<!-- /audit-remediation-20261010 -->
+
 <!-- longterm-deployment-fix-20261009 -->
 # 当前接续：长期部署修复已上线，冷启动验收通过
 

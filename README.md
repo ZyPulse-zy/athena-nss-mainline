@@ -1,3 +1,15 @@
+<!-- audit-remediation-20261010 -->
+# 当前：审查问题已修复为候选，现网保留原部署
+
+以 be46953 / 上轮3208540为基线，新增满槽RT预留、防重复BULK撤销、32项/6秒失败缓存、保留内核一次选择保护的单连接有限恢复、分层CREATE/双向标签/硬件字节证据与采集完整性/耗时。旧/新实际writer四轮模型：撤销4条降为1条；目标344 Lua断言/27解析、C137+13、6.18.44模块构建通过，候选真实只读采集六查询0.05秒。
+
+2026-10-10 00:23:42北京时间，原部署仍native-running/NSS1/sourceFresh/未确认0，五WAN、服务身份/保护配置/已安装源码不变，来源累计4/4。**新候选未安装**；没有停止/重启、改现网QoS/无线或造流量/故障。部署须另获明确许可，PR #1 保持draft。
+
+[逐优先级修复、风险与验收](docs/DORM_V2_AUDIT_REMEDIATION.md) · [当前状态](docs/STATE.md) · [操作](code/controller/README.md) · [修复证据](evidence/dorm-v2-audit-remediation.json)。Wi-Fi逐TID/AC、持续有线FDB、同口径逐CT字节覆盖及真实固件恢复仍未验证，不能把模型/全局字节当端到端体验。
+
+## 以下为原部署与历史记录
+<!-- /audit-remediation-20261010 -->
+
 <!-- longterm-deployment-fix-20261009 -->
 # 当前：长期部署修复已上线，冷启动验收通过
 

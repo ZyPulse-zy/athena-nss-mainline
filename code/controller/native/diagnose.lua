@@ -21,12 +21,14 @@ local function collect()
  local p=json('/tmp/router-project-game-classifier/classification.json');local gate=read('/sys/kernel/debug/athena_ecm_gate/status',65536)or''
  local slots={};for line in gate:gmatch('[^\n]+')do local e={};for k,v in line:gmatch('([%w_]+)=(%d+)')do e[k]=tonumber(v)end;if e.slot then slots[e.slot]=e end end
  local owned={};for _,v in ipairs(s.ownedFlows or{})do owned[v.key]=v end
- local flows={};for _,f in ipairs(d.flows or{})do if f.class=='RT'and f.budgetAdmitted then
+ local flows={};for _,f in ipairs(d.flows or{})do
   local a=owned[f.key];local g=a and slots[a.slot]or{}
   flows[#flows+1]={key=f.key,class=f.class,budgetAdmitted=f.budgetAdmitted,replyPackets=f.reply and f.reply.packets,owned=a~=nil,
    identityMatches=health.identity(f,a,g),
-   state=g.state,createAck=g.create_ack,createPending=g.create_pending,untilMs=g.until_ms,serial=g.serial,generation=g.generation}
- end end
+   state=g.state,createAck=g.create_ack,createPending=g.create_pending,untilMs=g.until_ms,serial=g.serial,generation=g.generation,
+   receiptPresent=g.receipt_present,receiptState=g.receipt,qosObserved=g.qos_observed,igsObserved=g.igs_observed,qosDirection=g.qos_direction,
+   flowQos=g.flow_qos,returnQos=g.return_qos,igsFlow=g.igs_flow,igsReturn=g.igs_return,wan=f.wan,egress=f.egress,wireless=f.wireless}
+ end
  local queues={};local queueReads=0
  if queryQueues and gate:match('^abi=2 capacity=32 ')then
   for _,dev in ipairs{'wan','athenaigs'}do
@@ -40,6 +42,9 @@ local function collect()
  local fresh=d.summary and d.summary.sourceFresh==true and p.status=='running'and type(started)=='number'and started<=at and at-started<6
  return{atUptime=at,phase=s.phase,sourceFresh=fresh==true,actualNss=tonumber(read('/sys/kernel/debug/ecm/ecm_nss_ipv4/accelerated_count',128)),
   unconfirmed=s.native and s.native.unconfirmed,gateNowMs=tonumber(gate:match('now_ms=(%d+)')),flows=flows,queues=queues,
+  tags={up=s.ingress and s.ingress.up and s.ingress.up.tags,down=s.ingress and s.ingress.down and s.ingress.down.tags},
+  hardware=health.hardware(read('/sys/kernel/debug/qca-nss-drv/stats/ipv4',65536)or''),
+  reader=s.flowState and s.flowState.reader,budgetUpdates=s.flowState and s.flowState.budgetUpdates,
   queueReads=queueReads,readSeconds=now()-at}
 end
 local state=health.new();local start=now();local queueReadFailures=0;local last
@@ -53,4 +58,5 @@ report.queueStatisticsRequested=queryQueues;report.rtQueueDropsMeasured=queryQue
 if queryQueues then report.queueReadIncompleteSamples=queueReadFailures end
 if not report.rtQueueDropsMeasured then report.rtQueueDropDelta=nil end
 report.requestedSeconds=seconds;report.scopeNotice='Includes non-game RT flows. Hardware tc queries require explicit --queues; missing or unrequested queue counters do not prove zero drops.'
+report.reader=last.reader;report.budgetUpdates=last.budgetUpdates
 print(j.stringify(report))

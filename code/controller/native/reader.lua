@@ -17,7 +17,8 @@ while not fs.stat(root..'/stop')do
  result.wans=topology.wans
  result.summary.reader={classificationSource='candidate-projection',topologySeconds=topologyAt-began,
   publicationSeconds=publicationAt-topologyAt,policySeconds=collector.now()-publicationAt,
-  previousEncodeSeconds=previousEncodeSeconds,stationSources=topology.stationSources}
+  previousEncodeSeconds=previousEncodeSeconds,stationSources=topology.stationSources,collection=topology.collection,
+  topologyComplete=topology.complete,sourceLeaseSeconds=6}
  -- Contains private CT/topology identities; the directory must remain 0700.
  local encodingAt=collector.now();local text=flowJson.stringify(result,j);previousEncodeSeconds=collector.now()-encodingAt
  atomic('desired.json',text);atomic('heartbeat',tostring(collector.now()))

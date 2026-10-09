@@ -265,12 +265,24 @@ static int status_show(struct seq_file *s,void *data)
  int n; mutex_lock(&control_mutex);
  seq_printf(s,"abi=2 capacity=%u stopping=%u firmware_receipts=1 now_ms=%llu routed_attempts=%llu tuple_matches=%llu instance_rejections=%llu\n",CAPACITY,stopping,now_ms(),routed_attempts,tuple_matches,instance_rejections);
  for (n=0;n<CAPACITY;n++) { struct entry *e=&entries[n];
-  struct athena_receipt receipt={0};int result=-ENOENT;
-  if(e->serial)result=athena_receipt_read(e->serial,e->receipt_armed ? e->generation : 0,&receipt);
-  if (e->state!=FREE) seq_printf(s,"slot=%u state=%u generation=%llu id=%u serial=%u until_ms=%llu sequence=%llu selected=%llu receipt_present=%u receipt=%u create_pending=%u create_ack=%u qos_observed=%u flow_qos=%u return_qos=%u igs_flow=%u igs_return=%u removal_response=%u removal_error=%u\n",
+  struct athena_observation observation={0};struct athena_receipt receipt;
+  int result=-ENOENT;unsigned qos_direction=0;
+  if(e->serial)result=athena_receipt_read_observation(e->serial,e->receipt_armed ? e->generation : 0,&observation);
+  receipt=observation.receipt;
+  /* CREATE flow/return may be reversed relative to the CT original. Resolve
+   * against the observed non-NAT wire tuple, never guess from the QoS values. */
+  if (!result && observation.tuple.protocol==e->original.dst.protonum) {
+   struct athena_tuple *t=&observation.tuple;
+   u32 src=ntohl(e->original.src.u3.ip),dst=ntohl(e->original.dst.u3.ip);
+   u32 sport=ntohs(e->original.src.u.all),dport=ntohs(e->original.dst.u.all);
+   if (t->src==src && t->sport==sport && t->dst==dst && t->dport==dport) qos_direction=1;
+   else if (t->src==dst && t->sport==dport && t->dst==src && t->dport==sport) qos_direction=2;
+  }
+  if (e->state!=FREE) seq_printf(s,"slot=%u state=%u generation=%llu id=%u serial=%u until_ms=%llu sequence=%llu selected=%llu receipt_present=%u receipt=%u create_pending=%u create_ack=%u qos_observed=%u flow_qos=%u return_qos=%u igs_flow=%u igs_return=%u removal_response=%u removal_error=%u create_seen=%u receipt_response=%u receipt_error=%u qos_direction=%u igs_observed=%u binding=%llu\n",
    n,e->state,e->generation,ntohl((__force __be32)e->raw_id),e->serial,e->until,e->sequence,e->selected,
    !result,receipt.state,receipt.create_pending,receipt.create_ack,receipt.qos_observed,
-   receipt.flow_qos,receipt.return_qos,receipt.igs_flow,receipt.igs_return,e->removal_response,e->removal_error);
+   receipt.flow_qos,receipt.return_qos,receipt.igs_flow,receipt.igs_return,e->removal_response,e->removal_error,
+   receipt.create_seen,receipt.response,receipt.error,qos_direction,observation.igs_observed,e->binding);
  }
  mutex_unlock(&control_mutex); return 0;
 }
