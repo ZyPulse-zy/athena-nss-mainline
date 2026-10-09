@@ -44627,6 +44627,14 @@
       "bytes": 1985,
       "role": "router-native-controller-source-or-test",
       "revision": "dorm-v2-download-load-efficiency"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "fed53a5b364a318e552fd7388a51a0fe6cf9748b868ea18da6f8803d54c65aba",
+      "bytes": 10927,
+      "role": "router-native-maintenance-documentation",
+      "revision": "dorm-v2-repository-review"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "capturedAt": "2026-10-09T05:23:24.961Z",
+  "capturedAt": "2026-10-09T06:16:26.931Z",
   "repository": "ZyPulse-zy/athena-nss-mainline",
   "baseCommit": "04d98a3622bb54dafe50294e468b2999be8264de",
   "specSha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1",
@@ -1730,5 +1730,151 @@
     ],
     "rawIdentitiesMacCredentialsAndBinariesIncluded": false
   },
-  "latestEvidenceKey": "downloadLoadEfficiency"
+  "latestEvidenceKey": "repositoryReview",
+  "repositoryReview": {
+    "reviewedSourceCommit": "c8ab8123298b63751a8bfc665b297f6e11a97e27",
+    "scope": [
+      "Exact flow identity and six-second kernel expiry",
+      "Reader/owner loss and recoverable source outages",
+      "Selective budget batch failure and independent rollback",
+      "Current protected baseline and installed source hashes",
+      "Repository revision hashes, entry-point accuracy and credential exclusions"
+    ],
+    "codeReview": {
+      "newBlockingRuntimeIssueFound": false,
+      "controllerOrModulesChanged": false,
+      "productionWrites": false,
+      "automaticBootOrRespawnChanged": false,
+      "findings": [
+        {
+          "id": "repository-entry-point-stale",
+          "before": "Root README described shadow-only acceleration zero and old Windows/three-slot limits.",
+          "resolution": "Current native status and limitations precede the unchanged historical blocks."
+        },
+        {
+          "id": "repository-hash-revision-mismatch",
+          "before": "The standard repository checker failed on code/controller/README.md because it compared every retained revision with one current file.",
+          "resolution": "Validate the latest named maintained-controller revision, retain every historical record, and reject changed frozen-source revisions."
+        }
+      ]
+    },
+    "validation": {
+      "snapshot": {
+        "at": "2026-10-09T06:13:21.785Z",
+        "phase": "native-running",
+        "running": true,
+        "nativeGateAbi": 2,
+        "hardwareAdmissionEnabled": true,
+        "accelerated": 30,
+        "ecmDatabase": 30,
+        "elapsedSeconds": 3771.88,
+        "healthySessionLimitSeconds": null,
+        "sourceFresh": true,
+        "unconfirmed": 0,
+        "renewed": 18844,
+        "retiredFirmwareAbsent": 402,
+        "actualCreatedClients": 2,
+        "actualCreatedExits": {
+          "lan4": 30,
+          "phy2-ap0": 1
+        },
+        "actualCoreGuardPermissionPassed": true,
+        "ownerPidVerified": true,
+        "softwareQueuesPreserved": true,
+        "wanIdentityPreserved": true,
+        "existingServicesRunning": true,
+        "protectedUnchanged": true,
+        "originalDiskModulesUnchanged": true,
+        "installedCandidateHashesVerified": true,
+        "bootEnabled": false,
+        "trafficFixture": false,
+        "humanGameAcceptance": false
+      },
+      "kernel": {
+        "at": "2026-10-09T06:16:26.931Z",
+        "sourcePauses": 6,
+        "stageErrorPresent": false,
+        "minimumLeaseRemainingMs": 250,
+        "sourceResumes": 6,
+        "startedAtUptime": 17141.46,
+        "gateHealthy": true,
+        "logScope": "Current dmesg buffer since this native startup; not proof that older logs were retained",
+        "generatedTraffic": false,
+        "unconfirmedSlots": 0,
+        "readOnly": true,
+        "kernelIssuesSinceStart": {
+          "lockup": 0,
+          "panic": 0,
+          "outOfMemory": 0,
+          "kernelBug": 0,
+          "oops": 0
+        },
+        "executionErrorPresent": false,
+        "sourceFresh": true,
+        "elapsedSeconds": 3958.84,
+        "maximumLeaseRemainingMs": 3270,
+        "liveLeases": 32,
+        "memory": {
+          "totalKiB": 919296,
+          "availableKiB": 370816
+        }
+      },
+      "sourcePauses": 6,
+      "sourceResumes": 6,
+      "admissionState": "ready",
+      "executionErrorPresent": false,
+      "stageErrorPresent": false,
+      "earlierPassiveCheck": {
+        "at": "2026-10-09T05:57:38.304Z",
+        "sampleSeconds": 15.66,
+        "nssMin": 27,
+        "nssMax": 31,
+        "nssLast": 31,
+        "sourcePauses": 1,
+        "sourceResumes": 1,
+        "generatedTraffic": false
+      },
+      "newSourcePausesSinceEarlierCheck": 5,
+      "manifestRegressionTests": {
+        "passed": true,
+        "cases": 4,
+        "checks": [
+          "Current controller bytes use the latest named revision",
+          "Unrecorded byte tampering still fails",
+          "Frozen historical code cannot be revised",
+          "Controller changes require a revision name"
+        ]
+      },
+      "standardRepositoryCheck": {
+        "passed": true,
+        "initialFailure": "code/controller/README.md historical revision hash mismatch",
+        "stage": "Final documented repository before commit",
+        "filesChecked": 7044,
+        "currentSourceHashesChecked": 6336,
+        "sourceRevisionRecords": 6368,
+        "markdownLinksChecked": 1655,
+        "obviousSecretPatternsPassed": true
+      },
+      "historicalBaselineAndControllerEvidenceReplayed": false,
+      "trafficFixture": false,
+      "productionFaultInjection": false,
+      "humanGameAcceptance": false,
+      "longTermStabilityValidated": false,
+      "historicalManifestPrefix": {
+        "preserved": true,
+        "sourceRecords": 6367,
+        "controllerRevisionAppendedOnly": true,
+        "frozenLegacyCodeUnmodified": true
+      }
+    },
+    "remainingLimits": [
+      "Intermittent classification interruptions remain: cumulative source pauses/resumes increased from 1/1 to 6/6; each observed interruption recovered, but the underlying cause is unresolved.",
+      "Previously recorded firmware expiry/recreation and transient NSS zero samples remain unresolved; this readback does not prove continuous acceleration.",
+      "Boot enable and automatic respawn remain off. A router reboot or service exit requires manual inspection/recovery rather than an automatic NSS restart.",
+      "Formal multi-client gaming/download acceptance, end-to-end packet loss, Wi-Fi station quality and long-term load remain unverified.",
+      "The dmesg result covers only retained log lines since this native startup; it does not prove all older logs were retained."
+    ],
+    "disposition": "Related repository maintenance fixes may be committed on the existing draft PR; keep runtime and long-term acceptance limits open and do not merge or enable auto-start.",
+    "recordedAt": "2026-10-09T06:16:26.931Z"
+  }
 }

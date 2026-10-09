@@ -1,3 +1,22 @@
+# 当前交付：路由器本机 NSS 已运行，仓库复核完成
+
+只读复核 2026-10-09T06:13:21.785Z（北京时间14:13）：本机 native-running，实际 NSS30，来源新鲜、IPv4准入开启、未确认0；同一启动已运行约63分钟。五WAN、原软件队列、认证/PBR/NAT、代理/Tailscale、管理通道、原磁盘模块及已安装源码均与保护基线核验一致。
+
+32流槽、健康运行无固定寿命，动态识别宿舍有线/Wi-Fi RT/BULK；旧Windows入口已停止，本机准入不依赖固定.207、三槽、90秒或18/60实验预算，不新增按人/设备公平配额。
+
+修正仓库首页仍写影子模式的过期说明；标准源码校验改用有名称的code/controller最新修订，保留全部历史记录，并拒绝冻结旧源码的不同哈希修订。4项针对性的哈希回归检查通过，标准全仓库校验通过。没有修改或重启现场控制器，没有造流量、重启路由器、升级/刷机、改EDMA或开启自启。
+
+来源累计暂停/恢复6/6，较13:57的1/1新增5次，当前均已恢复；间歇来源中断和固件规则撤销/重建的原因仍未闭环，不能将本次核验当作长期稳定或端到端零丢包。自启和自动respawn关闭，重启/退出后须先手动status核对。
+
+先读[当前状态](docs/STATE.md)、[本次证据](evidence/dorm-v2-native.json)与[status/start/stop/rollback](code/controller/README.md)。代码留在codex/dorm-qos-v2及草稿PR，未合并。源码校验入口：
+
+```sh
+python tools/test_source_manifest.py
+python tools/check_repository.py
+```
+
+## 以下为此前记录，不代表当前运行状态
+
 # 当前交付：v2 路由器本机全 LAN 影子控制器
 
 新增 [可维护源码与 status/start/stop/rollback](code/controller/README.md)，20项相关模型及用户授权的 /tmp 临时连续采样、运行中停止/回退通过。现网与回退基线已核对，4客户端、两个Wi-Fi出口和LAN4可识别；没有新增设备份额。
