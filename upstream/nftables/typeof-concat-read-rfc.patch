@@ -10,6 +10,9 @@ This candidate is verified by an internal-source component regression
 linked to the built libnftables helpers. The isolated kernel list/text/JSON
 round trip remains untested on this WSL1 host. Do not equate it with the
 historical vendor mergesort assertion or submit as a confirmed crash fix.
+This decoder-only change also does not fix concat typeof metadata's separate
+four-field producer/parser limit in expression.c or userdata size handling.
+The eleven-field key was manually assembled; a complete fix needs both paths.
 ---
 --- a/src/netlink.c
 +++ b/src/netlink.c

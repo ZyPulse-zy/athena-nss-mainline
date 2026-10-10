@@ -12,6 +12,9 @@ native-running/sourceFresh，未确认回执 0。180 秒自然观察 NSS 0..4，
 
 [部署和短窗证据](docs/DORM_V2_RECOVERY_DEPLOYMENT.md) · [恢复表逻辑](docs/DORM_V2_RECOVERY_LEDGER.md) · [ECM 草稿 #78](https://github.com/qosmio/nss-packages/pull/78)
 
+[上游贡献复查](docs/DORM_V2_UPSTREAM_REVIEW.md)：新增 ECM 完整分类器的真实头文件编译证据，
+并复现 nftables 五字段以上的 typeof 元数据截断；完整模块与 Netfilter 原生回读仍待验证。
+
 <details>
 <summary>此前阶段记录（历史事实，部署授权不可沿用）</summary>
 

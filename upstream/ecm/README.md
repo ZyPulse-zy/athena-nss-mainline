@@ -58,6 +58,15 @@ the classification algorithm. It mocks CT/skb and kernel surroundings, and
 compiles with `-Wall -Wextra -Werror`. It does not build a complete kernel
 module or run a firmware CREATE transaction.
 
+The complete patched `ecm_classifier_dscp.c` translation unit now also
+compiles through Kbuild for ARM64 Linux 6.18.44 with genuine prepared kernel
+headers and QSDK 12.5 NSS driver headers, with NSS enabled and IGS disabled
+and enabled. These builds use no CT/skb mocks. Exact object/input hashes,
+the command and the full-module limitations are in
+[CLASSIFIER_BUILD.md](CLASSIFIER_BUILD.md) and
+[classifier-build.json](classifier-build.json). This does not replace the
+firmware/air-interface or complete feed-package validation.
+
 A concrete failing input is an early UDP packet with priority `33`, cached
 flow/return values `50/51`, original/reply priorities `0x00160006/0x00260006`,
 both PRIO flags, sender SRC and original CT direction. Expected CREATE fields
@@ -77,8 +86,9 @@ copies a forward-chain packet priority's major into directional IGS fields.
 It neither preserves the ordinary 32-bit QoS pair in this UDP classifier nor
 changes its selection. It is retained and tested rather than reimplemented.
 
-The generic patch is ready for a **draft** feed PR, with full package/module
-build and hardware confirmation explicitly outstanding. No proprietary ELF
+The generic patch is in [draft PR #78](https://github.com/qosmio/nss-packages/pull/78),
+with full package/module build and hardware confirmation explicitly
+outstanding. No proprietary ELF
 symbol adapter, campus configuration or production deployment is included.
 QSDK 14.0's patch is provided for maintainer comparison; opening two duplicate
 PRs is unnecessary before the first review.

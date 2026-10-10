@@ -12,5 +12,9 @@
   "firmwareTested": false,
   "deployed": false,
   "merged": false,
-  "secondFeedPrOpened": false
+  "secondFeedPrOpened": false,
+  "completeClassifierTranslationUnitCompiled": true,
+  "classifierIgsDisabledCompiled": true,
+  "classifierIgsEnabledCompiled": true,
+  "classifierBuildEvidence": "classifier-build.json"
 }
