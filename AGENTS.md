@@ -1,4 +1,16 @@
-# 当前任务约束：恢复表修复部署已完成，后续保持正常运行
+# 当前任务约束：Wi-Fi 观察与三个离线补丁完成，现网未部署候选
+
+先读 docs/STATE.md、code/controller/README.md、docs/DORM_V2_WIFI_AUDIT.md 和 evidence/dorm-v2-wifi-audit.json。
+本轮远端起点 112dfc2，实际安装仍为 2996d40；19 个安装维护文件哈希已复核，不能把仓库新增入口当已安装。
+手动无线观察与六秒循环分离，使用 SSH stdin 只读执行，不安装文件，不主动扫描、不启用额外统计。
+当前三个源码候选为跨 peer 丢弃累加、未初始化 host queue、ath11k/NSS 统计结构宏不一致；均有定向复现，均未安装。
+源码已重建原 Backports 299 补丁和 NSS 20 补丁；整套模块构建、固件统计 ABI、最终 TID/AC 仍未验证。
+NSS/driver 路径跳过 host TXQ，AQL 开关值不等于有效限制。不得由 CREATE 标签或失真的 peer 计数宣称空口 QoS/零丢包。
+任何无线重载/参数变化、模块替换、服务重启、主动拥塞或现场部署，都需新的明确许可。
+五 WAN、认证/PBR/NAT、NSS、原 CAKE/autorate、代理/Tailscale、WMM/聚合/省电保持；正式游戏验收继续延期。
+维护 code/controller，冻结 code/work 和历史证据，manifest 只追加命名版本；PR #1 保持 draft，不合并。
+
+## 现网恢复表版本及此前单次部署边界
 
 先读 docs/DORM_V2_RECOVERY_DEPLOYMENT.md 和 evidence/dorm-v2-recovery-deployment.json。
 用户在此前离线阶段之后明确授权“可以部署”；一次完整 stop/恢复确认/单 writer 替换/start 已完成。

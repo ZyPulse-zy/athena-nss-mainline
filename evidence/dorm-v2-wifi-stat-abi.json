@@ -1,0 +1,74 @@
+{
+  "actualHeaderStructuresUsed": true,
+  "syntheticWireMessage": true,
+  "fullModuleBuilt": false,
+  "firmwareAbiRuntimeValidated": false,
+  "routerModified": false,
+  "headerSha256": "83705654d09a8673a18ff0bd6d5b49f1d530a20bd774c998aaaf8be0b1122439",
+  "patchSha256": "35984f59b79bcd7680e88acb9a1efc0a386e57788452e61baaea823220d33f8c",
+  "runs": [
+    {
+      "revision": "original",
+      "consumerFlags": [],
+      "matchesProvider": false,
+      "peerBytes": 196,
+      "retryOffset": 180,
+      "peers": [
+        {
+          "id": 1001,
+          "txPackets": 10,
+          "txBytes": 1000,
+          "rxBytes": 2000,
+          "txFailedRetries": 0
+        },
+        {
+          "id": 40,
+          "txPackets": 0,
+          "txBytes": 0,
+          "rxBytes": 0,
+          "txFailedRetries": 0
+        },
+        {
+          "id": 0,
+          "txPackets": 0,
+          "txBytes": 0,
+          "rxBytes": 0,
+          "txFailedRetries": 0
+        }
+      ]
+    },
+    {
+      "revision": "patched",
+      "consumerFlags": [
+        "-DNSS_FIRMWARE_VERSION_12_5"
+      ],
+      "matchesProvider": true,
+      "peerBytes": 212,
+      "retryOffset": 188,
+      "peers": [
+        {
+          "id": 1001,
+          "txPackets": 10,
+          "txBytes": 1000,
+          "rxBytes": 2000,
+          "txFailedRetries": 30
+        },
+        {
+          "id": 1002,
+          "txPackets": 11,
+          "txBytes": 1001,
+          "rxBytes": 2001,
+          "txFailedRetries": 31
+        },
+        {
+          "id": 1003,
+          "txPackets": 12,
+          "txBytes": 1002,
+          "rxBytes": 2002,
+          "txFailedRetries": 32
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

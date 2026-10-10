@@ -4,6 +4,17 @@ set -eu
 base=${ATHENA_QOS_BASE:-/usr/lib/athena-dorm-qos}
 backend=${ATHENA_QOS_BACKEND:-shadow}
 if test "${0%/*}" = /usr/lib/athena-dorm-native; then base=/usr/lib/athena-dorm-native; backend=native; fi
+if test "${1:-}" = wifi-diagnose; then
+  test "$#" -le 2 || { echo 'Usage: athena-qos wifi-diagnose [5..120 seconds]' >&2; exit 2; }
+  seconds=${2:-30}
+  case "$seconds" in ''|*[!0-9]*) echo 'Invalid wireless observation duration' >&2; exit 2;; esac
+  test "$seconds" -ge 5 && test "$seconds" -le 120 || { echo 'Duration must be 5..120 seconds' >&2; exit 2; }
+  while test "${seconds#0}" != "$seconds"; do seconds=${seconds#0}; done
+  diagnostic="$base/wifi-diagnose.lua"
+  if test ! -f "$diagnostic"; then diagnostic="$base/native/wifi-diagnose.lua"; fi
+  test -f "$diagnostic" || { echo 'Wireless observer is not installed in this base' >&2; exit 2; }
+  exec /usr/bin/timeout -k 2 "$((seconds + 45))" lua "$diagnostic" "$seconds"
+fi
 if test "$backend" = native; then
   if test "$base" = /usr/lib/athena-dorm-native; then
     case "${1:-status}" in

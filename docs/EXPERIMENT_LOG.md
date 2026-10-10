@@ -1,3 +1,24 @@
+# 2026-10-10 至 11：独立 Wi-Fi 观察、精确源码和离线修复
+
+远端起点 112dfc2，安装维护文件仍全匹配 2996d40；不使用 main 旧 Windows 三槽方案。
+新增手动只读入口/匿名 reducer/有界 collector/stdin 客户端，没有部署、扫描、统计启用、模式或服务变化。
+最终两端点默认 30 秒实际 31.30 秒/120 查询，84 成功、36 缺失、最大 0.14 秒、查询墙钟合计 1.28 秒。
+实际 149/36 均为不同频块的 80 MHz、CN、20 dBm；末窗 busy 8.44%/5.13%，survey TX 1058/196 ms。
+此前两个窗口偏向 36，末窗偏向 149，未证明持续负载偏斜；不构造外部干扰率或混合口径重试率，不改变无线。
+
+原 Backports 7.2 的 301 配方/补丁 Git blob 及全 299 补丁验证，NSS 固定 6aa14c78 的配方/20 补丁也验证并应用。
+现场 hwflags 证实 HAS_TX_QUEUE/TID/NSS，源路径跳过 host TXQ/AQL；最终 firmware TID/AC 仍缺证据。
+三个实际源码缺陷对应三个一行补丁：多 peer drop 累加、未初始化 host queue、consumer/provider 统计宏及 stride 196/212 不一致。
+原版定向失败保留；修后 peer 函数两宏各 41 断言、TX 完整函数 160 断言、真实头文件三 peer ABI 往返通过。
+无线模型 158 断言，10 Lua/2 C 来源维护测试、33 Lua 语法及四项客户端传输测试通过。
+
+首次长 SSH exec 被拒绝，改 stdin 后通过；首次保护路径猜测缺失，改为维护 prepare 已固定的 classifier config 后完整 31 文件哈希核验通过。
+这些读取失败保留为失败。最终 49 服务实例 PID/运行态、五 WAN 设备/地址、boot、十软件 CAKE 根固定选项和 31 文件哈希保持。
+末次 00:27:39 UTC+8 为 native-running/sourceFresh/未确认0；来源暂停/恢复新增 0/0，既有恢复表新增两个撤销恢复，末次无 tracked/exhausted/quarantined/pending，未做故障注入或归因查询。
+原始 MAC/终端/日志/模块/连接資料仅留私有目录。候选未安装，完整构建/二进制复现、固件统计 ABI、最终空口和正式游戏验收待完成；PR #1 仍草稿。
+
+[完整核查与具体调优依据](DORM_V2_WIFI_AUDIT.md) · [结构化汇总](../evidence/dorm-v2-wifi-audit.json)
+
 <!-- longterm-deployment-fix-20261009 -->
 # 2026-10-09：长期部署修复、实际恢复与冷启动验证
 

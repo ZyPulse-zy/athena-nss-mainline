@@ -1,4 +1,7 @@
 * text=auto eol=lf
+# Unified-diff context markers must precede original tabs and empty lines.
+/code/controller/native/patches/001-ath11k-nss-isolate-peer-drop-totals.patch whitespace=-space-before-tab,-blank-at-eol,-blank-at-eof
+/code/controller/native/patches/002-mac80211-initialize-offload-host-queue.patch whitespace=-space-before-tab,-blank-at-eol
 # These are byte-exact evidence sources, including existing CRLF line endings.
 /code/** -text
 # Frozen runtime references carry byte hashes and must retain their source endings.

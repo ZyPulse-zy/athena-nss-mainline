@@ -45258,6 +45258,110 @@
       "bytes": 27760,
       "role": "controller-maintenance-readme",
       "revision": "dorm-v2-recovery-ledger-deployed-20261010"
+    },
+    {
+      "path": "code/controller/athena-qos",
+      "workspaceSource": "code/controller/athena-qos",
+      "sha256": "693e0dec1913826fc6f7558111ac77bbbaf20e20d14dea6eb5912e4fcfb5d6f6",
+      "bytes": 3128,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/wifi-observe.mjs",
+      "workspaceSource": "code/controller/wifi-observe.mjs",
+      "sha256": "73449c2085b8d0711726199a15ed1c923d70c197f4a4c90d9152c4c232b5e788",
+      "bytes": 4212,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/wifi.lua",
+      "workspaceSource": "code/controller/native/wifi.lua",
+      "sha256": "15bb00e0f49c716d5fc246ffb6818ff2fd5364c531f156d4dc8f0ba8bfacf20b",
+      "bytes": 16753,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/wifi_collect.lua",
+      "workspaceSource": "code/controller/native/wifi_collect.lua",
+      "sha256": "2e47994f913dc13353898057711a4c81f90627a32f5b3630c7706b5788f89cfc",
+      "bytes": 3819,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/wifi-diagnose.lua",
+      "workspaceSource": "code/controller/native/wifi-diagnose.lua",
+      "sha256": "9fa6dd21684512ab895b86a29ac106862d1e8134a635e77ff2ec8b51d31d35ed",
+      "bytes": 2394,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/test-wifi.lua",
+      "workspaceSource": "code/controller/native/test-wifi.lua",
+      "sha256": "8d3c4354f28ab57e63fabdaf424dc5553aee77ddf02183d03dd98bfb2bccf0ea",
+      "bytes": 9171,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/test-wifi-peer-drop.c",
+      "workspaceSource": "code/controller/native/test-wifi-peer-drop.c",
+      "sha256": "65ec9bc219dc281ad16fd744d1a64f8eeaa1978830e2b94a90b3834968d5ed5a",
+      "bytes": 4476,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/test-wifi-tx-queue.c",
+      "workspaceSource": "code/controller/native/test-wifi-tx-queue.c",
+      "sha256": "8defe8fbbcd827d34411b38314107367bfa10c6ef7640e693cc1ee51cf38cec7",
+      "bytes": 4654,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/test-wifi-stat-abi.c",
+      "workspaceSource": "code/controller/native/test-wifi-stat-abi.c",
+      "sha256": "2d028d502c087c7e323f51ad656764f87c416c4538111ca9a706103b777dbb74",
+      "bytes": 1700,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/patches/001-ath11k-nss-isolate-peer-drop-totals.patch",
+      "workspaceSource": "code/controller/native/patches/001-ath11k-nss-isolate-peer-drop-totals.patch",
+      "sha256": "bdd1503ff39154d7b737c37545667549f7c9b14c30c499e4bbc0cc3b3d5bc0c3",
+      "bytes": 1045,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/patches/002-mac80211-initialize-offload-host-queue.patch",
+      "workspaceSource": "code/controller/native/patches/002-mac80211-initialize-offload-host-queue.patch",
+      "sha256": "5525cc8fabbfe18d683508a5f5b63d4dc433dd38d56d4c4f0e46616612c79f96",
+      "bytes": 783,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch",
+      "workspaceSource": "code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch",
+      "sha256": "35984f59b79bcd7680e88acb9a1efc0a386e57788452e61baaea823220d33f8c",
+      "bytes": 723,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "e2a0cb4a96dbc31b1da6ea29eb90a7e43f7c75639e0b61101031b7c2afd38626",
+      "bytes": 29195,
+      "role": "maintained-controller-documentation",
+      "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -45408,5 +45512,14 @@
     "productionCandidateDeployed": false,
     "sourceRecordsAppended": 1,
     "evidence": "evidence/dorm-v2-recheck-20261010.json"
+  },
+  "lastOfflineWifiAuditExport": {
+    "capturedAt": "2026-10-10T16:21:39.492034+00:00",
+    "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011",
+    "sourceRecordsAppended": 13,
+    "productionCandidateDeployed": false,
+    "evidence": "evidence/dorm-v2-wifi-audit.json",
+    "finalAirTidAcVerified": false,
+    "driverPatchCandidates": 3
   }
 }

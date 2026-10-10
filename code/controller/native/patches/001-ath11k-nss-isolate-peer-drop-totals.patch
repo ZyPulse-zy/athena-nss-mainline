@@ -1,0 +1,21 @@
+From: Athena NSS maintainers
+Subject: [PATCH] ath11k: nss: reset dropped total for each peer statistics entry
+
+tx_dropped is initialized once before the peer loop. Later peers receive
+the sum of their own drops and all preceding peers' drops in the message.
+Reset the temporary immediately before summing the current peer's bins.
+This changes statistics accounting only. It does not change TX scheduling,
+TID classification, WMM, firmware settings or packet handling.
+
+Candidate for firmware source 90448eeb2b8f5d172caedfe6d96ab3bacb058c09
+after its mac80211 patch sequence. Not installed or submitted upstream.
+--- a/drivers/net/wireless/ath/ath11k/nss.c
++++ b/drivers/net/wireless/ath/ath11k/nss.c
+@@ -188,6 +188,7 @@ static void ath11k_nss_get_peer_stats(struct ath11k_base *ab, struct nss_wifili_peer_stats *stats)
+ 		peer->nss.nss_stats->tx_bytes += tx_bytes;
+ 		peer->nss.nss_stats->tx_retries += pstats->tx.retries;
+ 
++		tx_dropped = 0;
+ 		for (j = 0; j < NSS_WIFILI_TQM_RR_MAX; j++)
+ 			tx_dropped += pstats->tx.dropped.drop_stats[j];
+ 

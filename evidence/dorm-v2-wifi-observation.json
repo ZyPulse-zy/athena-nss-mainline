@@ -1,0 +1,2212 @@
+{
+  "finalAirTidAcVerified": false,
+  "radios": [
+    {
+      "survey": [
+        {
+          "frequencyMHz": 5745,
+          "intervalSeconds": 30.60000000000582,
+          "counters": {
+            "busyFraction": {
+              "state": "ok",
+              "value": 0.08438750484058345
+            },
+            "busyMs": {
+              "state": "ok",
+              "value": 2615
+            },
+            "externalInterferenceMeasured": false,
+            "scope": "reported-frequency-not-entire-wide-channel",
+            "receiveMs": {
+              "state": "ok",
+              "value": 753
+            },
+            "transmitMs": {
+              "state": "ok",
+              "value": 1058
+            },
+            "activeMs": {
+              "state": "ok",
+              "value": 30988
+            }
+          },
+          "noiseDbm": -107
+        }
+      ],
+      "hostAql": {
+        "aql_enable": {
+          "state": "ok",
+          "value": 1
+        },
+        "featureAdvertisement": {
+          "queryState": "ok",
+          "state": "not-observed",
+          "api": "nl80211-EXT_FEATURE_AQL"
+        },
+        "aql_txq_limit": {
+          "state": "ok",
+          "statistics": {
+            "state": "ok",
+            "rows": [
+              {
+                "ac": "VO",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "VI",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "BE",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "BK",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              }
+            ]
+          }
+        },
+        "aql_pending": {
+          "state": "ok",
+          "statistics": {
+            "state": "ok",
+            "rows": [
+              {
+                "ac": "VO",
+                "pendingUs": 0
+              },
+              {
+                "ac": "VI",
+                "pendingUs": 0
+              },
+              {
+                "ac": "BE",
+                "pendingUs": 0
+              },
+              {
+                "ac": "BK",
+                "pendingUs": 0
+              }
+            ]
+          }
+        }
+      },
+      "surveyState": "ok",
+      "alias": "radio1",
+      "hwFlags": {
+        "state": "ok",
+        "values": {
+          "HAS_TX_QUEUE": true,
+          "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+          "SUPPORTS_NSS_OFFLOAD": true,
+          "SUPPORTS_TID_CLASS_OFFLOAD": true
+        }
+      }
+    },
+    {
+      "survey": [
+        {
+          "frequencyMHz": 2437,
+          "intervalSeconds": 30.60000000000582,
+          "counters": {
+            "busyFraction": {
+              "state": "ok",
+              "value": 0.2981093067458068
+            },
+            "busyMs": {
+              "state": "ok",
+              "value": 8940
+            },
+            "externalInterferenceMeasured": false,
+            "scope": "reported-frequency-not-entire-wide-channel",
+            "receiveMs": {
+              "state": "ok",
+              "value": 0
+            },
+            "transmitMs": {
+              "state": "ok",
+              "value": 119
+            },
+            "activeMs": {
+              "state": "ok",
+              "value": 29989
+            }
+          },
+          "noiseDbm": -102
+        }
+      ],
+      "hostAql": {
+        "aql_enable": {
+          "state": "ok",
+          "value": 1
+        },
+        "featureAdvertisement": {
+          "queryState": "ok",
+          "state": "not-observed",
+          "api": "nl80211-EXT_FEATURE_AQL"
+        },
+        "aql_txq_limit": {
+          "state": "ok",
+          "statistics": {
+            "state": "ok",
+            "rows": [
+              {
+                "ac": "VO",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "VI",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "BE",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "BK",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              }
+            ]
+          }
+        },
+        "aql_pending": {
+          "state": "ok",
+          "statistics": {
+            "state": "ok",
+            "rows": [
+              {
+                "ac": "VO",
+                "pendingUs": 0
+              },
+              {
+                "ac": "VI",
+                "pendingUs": 0
+              },
+              {
+                "ac": "BE",
+                "pendingUs": 0
+              },
+              {
+                "ac": "BK",
+                "pendingUs": 0
+              }
+            ]
+          }
+        }
+      },
+      "surveyState": "ok",
+      "alias": "radio2",
+      "hwFlags": {
+        "state": "ok",
+        "values": {
+          "HAS_TX_QUEUE": true,
+          "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+          "SUPPORTS_NSS_OFFLOAD": true,
+          "SUPPORTS_TID_CLASS_OFFLOAD": true
+        }
+      }
+    },
+    {
+      "survey": [
+        {
+          "frequencyMHz": 5180,
+          "intervalSeconds": 30.630000000004657,
+          "counters": {
+            "busyFraction": {
+              "state": "ok",
+              "value": 0.051291977160553566
+            },
+            "busyMs": {
+              "state": "ok",
+              "value": 1590
+            },
+            "externalInterferenceMeasured": false,
+            "scope": "reported-frequency-not-entire-wide-channel",
+            "receiveMs": {
+              "state": "ok",
+              "value": 41
+            },
+            "transmitMs": {
+              "state": "ok",
+              "value": 196
+            },
+            "activeMs": {
+              "state": "ok",
+              "value": 30999
+            }
+          },
+          "noiseDbm": -107
+        }
+      ],
+      "hostAql": {
+        "aql_enable": {
+          "state": "ok",
+          "value": 1
+        },
+        "featureAdvertisement": {
+          "queryState": "ok",
+          "state": "not-observed",
+          "api": "nl80211-EXT_FEATURE_AQL"
+        },
+        "aql_txq_limit": {
+          "state": "ok",
+          "statistics": {
+            "state": "ok",
+            "rows": [
+              {
+                "ac": "VO",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "VI",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "BE",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              },
+              {
+                "ac": "BK",
+                "limitLowUs": 5000,
+                "limitHighUs": 12000
+              }
+            ]
+          }
+        },
+        "aql_pending": {
+          "state": "ok",
+          "statistics": {
+            "state": "ok",
+            "rows": [
+              {
+                "ac": "VO",
+                "pendingUs": 0
+              },
+              {
+                "ac": "VI",
+                "pendingUs": 0
+              },
+              {
+                "ac": "BE",
+                "pendingUs": 0
+              },
+              {
+                "ac": "BK",
+                "pendingUs": 0
+              }
+            ]
+          }
+        }
+      },
+      "surveyState": "ok",
+      "alias": "radio3",
+      "hwFlags": {
+        "state": "ok",
+        "values": {
+          "HAS_TX_QUEUE": true,
+          "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+          "SUPPORTS_NSS_OFFLOAD": true,
+          "SUPPORTS_TID_CLASS_OFFLOAD": true
+        }
+      }
+    }
+  ],
+  "readOnly": true,
+  "notices": [
+    "AP tx is wireless downlink; AP rx is client uplink.",
+    "Busy time includes own BSS activity and is not an external interference percentage.",
+    "Counters from nl80211, mac80211 and NSS remain separate; zero is only a measured value.",
+    "Rates are recent driver estimates, not delivered throughput or client uplink QoS.",
+    "TX failed can include NSS TQM drops; it is not necessarily retry-exhaustion over the air."
+  ],
+  "endToEndLossMeasured": false,
+  "aps": [
+    {
+      "frequencyMHz": {
+        "state": "ok",
+        "value": 5745
+      },
+      "radio": "radio1",
+      "country": {
+        "state": "ok",
+        "value": "CN"
+      },
+      "center1MHz": {
+        "state": "ok",
+        "value": 5775
+      },
+      "stationQueries": {
+        "start": "ok",
+        "finish": "ok"
+      },
+      "widthMHz": {
+        "state": "ok",
+        "value": 80
+      },
+      "stable": true,
+      "channel": {
+        "state": "ok",
+        "value": 149
+      },
+      "txpowerDbm": {
+        "state": "ok",
+        "value": 20
+      },
+      "mode": "AP",
+      "alias": "ap1",
+      "center2MHz": {
+        "state": "missing"
+      }
+    },
+    {
+      "frequencyMHz": {
+        "state": "ok",
+        "value": 2437
+      },
+      "radio": "radio2",
+      "country": {
+        "state": "ok",
+        "value": "CN"
+      },
+      "center1MHz": {
+        "state": "ok",
+        "value": 2437
+      },
+      "stationQueries": {
+        "start": "ok",
+        "finish": "ok"
+      },
+      "widthMHz": {
+        "state": "ok",
+        "value": 20
+      },
+      "stable": true,
+      "channel": {
+        "state": "ok",
+        "value": 6
+      },
+      "txpowerDbm": {
+        "state": "ok",
+        "value": 20
+      },
+      "mode": "AP",
+      "alias": "ap2",
+      "center2MHz": {
+        "state": "missing"
+      }
+    },
+    {
+      "frequencyMHz": {
+        "state": "ok",
+        "value": 5180
+      },
+      "radio": "radio3",
+      "country": {
+        "state": "ok",
+        "value": "CN"
+      },
+      "center1MHz": {
+        "state": "ok",
+        "value": 5210
+      },
+      "stationQueries": {
+        "start": "ok",
+        "finish": "ok"
+      },
+      "widthMHz": {
+        "state": "ok",
+        "value": 80
+      },
+      "stable": true,
+      "channel": {
+        "state": "ok",
+        "value": 36
+      },
+      "txpowerDbm": {
+        "state": "ok",
+        "value": 20
+      },
+      "mode": "AP",
+      "alias": "ap3",
+      "center2MHz": {
+        "state": "missing"
+      }
+    }
+  ],
+  "stations": [
+    {
+      "authenticated": true,
+      "sameAssociation": true,
+      "rxRateMbps": 600.4,
+      "signalAvgDbm": -55,
+      "associationObserved": true,
+      "alias": "station1",
+      "tidState": "not-exported",
+      "tids": [],
+      "signalDbm": -54,
+      "txRateMbps": 864.8,
+      "intervalSeconds": 30.639999999999418,
+      "associated": true,
+      "authorized": true,
+      "counterBasis": "nl80211-driver-export-dependent",
+      "counters": {
+        "txBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "txPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "txDurationUs": {
+          "state": "ok",
+          "value": 24474
+        },
+        "rxBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxDurationUs": {
+          "state": "ok",
+          "value": 0
+        },
+        "txFailed": {
+          "state": "ok",
+          "value": 0
+        },
+        "txRetries": {
+          "state": "ok",
+          "value": 0
+        }
+      },
+      "debug": {
+        "aql": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "aqm": {
+          "state": "ok",
+          "counterDeltas": [],
+          "statisticsBasis": "host-scheduler-endpoint-snapshot",
+          "statistics": {
+            "state": "empty",
+            "rows": []
+          },
+          "scope": "mac80211-host-statistics"
+        },
+        "tx_retry_failed": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "airtime": {
+          "scope": "mac80211-host-statistics",
+          "deficitUs": {
+            "VO": 256,
+            "BK": 256,
+            "BE": 256,
+            "VI": 256
+          },
+          "counters": {
+            "rxUs": {
+              "state": "ok",
+              "value": 0
+            },
+            "txUs": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "state": "ok"
+        },
+        "nss_stats": {
+          "scope": "NSS-peer-export-separate-basis",
+          "counters": {
+            "rx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_retries": {
+              "state": "missing"
+            },
+            "rx_dropped": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_multiple_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_total_retries": {
+              "state": "missing"
+            },
+            "tx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed_retries": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "semanticStatus": "firmware-layout-and-counter-basis-require-source-audit",
+          "state": "ok"
+        },
+        "tx_retry_count": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        }
+      },
+      "inactiveMs": 44520,
+      "ap": "ap1"
+    },
+    {
+      "authenticated": true,
+      "sameAssociation": true,
+      "rxRateMbps": 960.7,
+      "signalAvgDbm": -61,
+      "associationObserved": true,
+      "alias": "station2",
+      "tidState": "not-exported",
+      "tids": [],
+      "signalDbm": -61,
+      "txRateMbps": 480.3,
+      "intervalSeconds": 30.639999999999418,
+      "associated": true,
+      "authorized": true,
+      "counterBasis": "nl80211-driver-export-dependent",
+      "counters": {
+        "txBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "txPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "txDurationUs": {
+          "state": "ok",
+          "value": 526686
+        },
+        "rxBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxDurationUs": {
+          "state": "ok",
+          "value": 0
+        },
+        "txFailed": {
+          "state": "ok",
+          "value": 0
+        },
+        "txRetries": {
+          "state": "ok",
+          "value": 0
+        }
+      },
+      "debug": {
+        "aql": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "aqm": {
+          "state": "ok",
+          "counterDeltas": [],
+          "statisticsBasis": "host-scheduler-endpoint-snapshot",
+          "statistics": {
+            "state": "empty",
+            "rows": []
+          },
+          "scope": "mac80211-host-statistics"
+        },
+        "tx_retry_failed": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "airtime": {
+          "scope": "mac80211-host-statistics",
+          "deficitUs": {
+            "VO": 256,
+            "BK": 256,
+            "BE": 256,
+            "VI": 256
+          },
+          "counters": {
+            "rxUs": {
+              "state": "ok",
+              "value": 0
+            },
+            "txUs": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "state": "ok"
+        },
+        "nss_stats": {
+          "scope": "NSS-peer-export-separate-basis",
+          "counters": {
+            "rx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_retries": {
+              "state": "missing"
+            },
+            "rx_dropped": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_multiple_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_total_retries": {
+              "state": "missing"
+            },
+            "tx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed_retries": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "semanticStatus": "firmware-layout-and-counter-basis-require-source-audit",
+          "state": "ok"
+        },
+        "tx_retry_count": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        }
+      },
+      "inactiveMs": 54540,
+      "ap": "ap1"
+    },
+    {
+      "authenticated": true,
+      "sameAssociation": true,
+      "rxRateMbps": 360.3,
+      "signalAvgDbm": -58,
+      "associationObserved": true,
+      "alias": "station3",
+      "tidState": "not-exported",
+      "tids": [],
+      "signalDbm": -57,
+      "txRateMbps": 720.6,
+      "intervalSeconds": 30.639999999999418,
+      "associated": true,
+      "authorized": true,
+      "counterBasis": "nl80211-driver-export-dependent",
+      "counters": {
+        "txBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "txPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "txDurationUs": {
+          "state": "ok",
+          "value": 484859
+        },
+        "rxBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxDurationUs": {
+          "state": "ok",
+          "value": 0
+        },
+        "txFailed": {
+          "state": "ok",
+          "value": 0
+        },
+        "txRetries": {
+          "state": "ok",
+          "value": 0
+        }
+      },
+      "debug": {
+        "aql": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "aqm": {
+          "state": "ok",
+          "counterDeltas": [],
+          "statisticsBasis": "host-scheduler-endpoint-snapshot",
+          "statistics": {
+            "state": "empty",
+            "rows": []
+          },
+          "scope": "mac80211-host-statistics"
+        },
+        "tx_retry_failed": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "airtime": {
+          "scope": "mac80211-host-statistics",
+          "deficitUs": {
+            "VO": 256,
+            "BK": 256,
+            "BE": 256,
+            "VI": 256
+          },
+          "counters": {
+            "rxUs": {
+              "state": "ok",
+              "value": 0
+            },
+            "txUs": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "state": "ok"
+        },
+        "nss_stats": {
+          "scope": "NSS-peer-export-separate-basis",
+          "counters": {
+            "rx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_retries": {
+              "state": "missing"
+            },
+            "rx_dropped": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_multiple_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_total_retries": {
+              "state": "missing"
+            },
+            "tx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed_retries": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "semanticStatus": "firmware-layout-and-counter-basis-require-source-audit",
+          "state": "ok"
+        },
+        "tx_retry_count": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        }
+      },
+      "inactiveMs": 54450,
+      "ap": "ap1"
+    },
+    {
+      "authenticated": true,
+      "sameAssociation": true,
+      "rxRateMbps": 286.7,
+      "signalAvgDbm": -49,
+      "associationObserved": true,
+      "alias": "station4",
+      "tidState": "not-exported",
+      "tids": [],
+      "signalDbm": -43,
+      "txRateMbps": 6,
+      "intervalSeconds": 30.65000000000873,
+      "associated": true,
+      "authorized": true,
+      "counterBasis": "nl80211-driver-export-dependent",
+      "counters": {
+        "txBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "txPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "txDurationUs": {
+          "state": "ok",
+          "value": 327
+        },
+        "rxBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxDurationUs": {
+          "state": "ok",
+          "value": 0
+        },
+        "txFailed": {
+          "state": "ok",
+          "value": 0
+        },
+        "txRetries": {
+          "state": "ok",
+          "value": 0
+        }
+      },
+      "debug": {
+        "aql": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "aqm": {
+          "state": "ok",
+          "counterDeltas": [],
+          "statisticsBasis": "host-scheduler-endpoint-snapshot",
+          "statistics": {
+            "state": "empty",
+            "rows": []
+          },
+          "scope": "mac80211-host-statistics"
+        },
+        "tx_retry_failed": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "airtime": {
+          "scope": "mac80211-host-statistics",
+          "deficitUs": {
+            "VO": 256,
+            "BK": 256,
+            "BE": 256,
+            "VI": 256
+          },
+          "counters": {
+            "rxUs": {
+              "state": "ok",
+              "value": 0
+            },
+            "txUs": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "state": "ok"
+        },
+        "nss_stats": {
+          "scope": "NSS-peer-export-separate-basis",
+          "counters": {
+            "rx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_retries": {
+              "state": "missing"
+            },
+            "rx_dropped": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_multiple_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_total_retries": {
+              "state": "missing"
+            },
+            "tx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed_retries": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "semanticStatus": "firmware-layout-and-counter-basis-require-source-audit",
+          "state": "ok"
+        },
+        "tx_retry_count": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        }
+      },
+      "inactiveMs": 54630,
+      "ap": "ap3"
+    },
+    {
+      "authenticated": true,
+      "sameAssociation": true,
+      "rxRateMbps": 1200.9,
+      "signalAvgDbm": -49,
+      "associationObserved": true,
+      "alias": "station5",
+      "tidState": "not-exported",
+      "tids": [],
+      "signalDbm": -48,
+      "txRateMbps": 648.5,
+      "intervalSeconds": 30.65000000000873,
+      "associated": true,
+      "authorized": true,
+      "counterBasis": "nl80211-driver-export-dependent",
+      "counters": {
+        "txBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "txPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "txDurationUs": {
+          "state": "ok",
+          "value": 58297
+        },
+        "rxBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxDurationUs": {
+          "state": "ok",
+          "value": 0
+        },
+        "txFailed": {
+          "state": "ok",
+          "value": 0
+        },
+        "txRetries": {
+          "state": "ok",
+          "value": 0
+        }
+      },
+      "debug": {
+        "aql": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "aqm": {
+          "state": "ok",
+          "counterDeltas": [],
+          "statisticsBasis": "host-scheduler-endpoint-snapshot",
+          "statistics": {
+            "state": "empty",
+            "rows": []
+          },
+          "scope": "mac80211-host-statistics"
+        },
+        "tx_retry_failed": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "airtime": {
+          "scope": "mac80211-host-statistics",
+          "deficitUs": {
+            "VO": 256,
+            "BK": 256,
+            "BE": 256,
+            "VI": 256
+          },
+          "counters": {
+            "rxUs": {
+              "state": "ok",
+              "value": 0
+            },
+            "txUs": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "state": "ok"
+        },
+        "nss_stats": {
+          "scope": "NSS-peer-export-separate-basis",
+          "counters": {
+            "rx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_retries": {
+              "state": "missing"
+            },
+            "rx_dropped": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_multiple_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_total_retries": {
+              "state": "missing"
+            },
+            "tx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed_retries": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "semanticStatus": "firmware-layout-and-counter-basis-require-source-audit",
+          "state": "ok"
+        },
+        "tx_retry_count": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        }
+      },
+      "inactiveMs": 54110,
+      "ap": "ap3"
+    },
+    {
+      "authenticated": true,
+      "sameAssociation": true,
+      "rxRateMbps": 1080.6,
+      "signalAvgDbm": -54,
+      "associationObserved": true,
+      "alias": "station6",
+      "tidState": "not-exported",
+      "tids": [],
+      "signalDbm": -56,
+      "txRateMbps": 48,
+      "intervalSeconds": 30.65000000000873,
+      "associated": true,
+      "authorized": true,
+      "counterBasis": "nl80211-driver-export-dependent",
+      "counters": {
+        "txBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "txPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxPackets": {
+          "state": "ok",
+          "value": 0
+        },
+        "txDurationUs": {
+          "state": "ok",
+          "value": 1049
+        },
+        "rxBytes": {
+          "state": "ok",
+          "value": 0
+        },
+        "rxDurationUs": {
+          "state": "ok",
+          "value": 0
+        },
+        "txFailed": {
+          "state": "ok",
+          "value": 0
+        },
+        "txRetries": {
+          "state": "ok",
+          "value": 0
+        }
+      },
+      "debug": {
+        "aql": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "aqm": {
+          "state": "ok",
+          "counterDeltas": [],
+          "statisticsBasis": "host-scheduler-endpoint-snapshot",
+          "statistics": {
+            "state": "empty",
+            "rows": []
+          },
+          "scope": "mac80211-host-statistics"
+        },
+        "tx_retry_failed": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        },
+        "airtime": {
+          "scope": "mac80211-host-statistics",
+          "deficitUs": {
+            "VO": 256,
+            "BK": 256,
+            "BE": 256,
+            "VI": 256
+          },
+          "counters": {
+            "rxUs": {
+              "state": "ok",
+              "value": 0
+            },
+            "txUs": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "state": "ok"
+        },
+        "nss_stats": {
+          "scope": "NSS-peer-export-separate-basis",
+          "counters": {
+            "rx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_bytes": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_retries": {
+              "state": "missing"
+            },
+            "rx_dropped": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_multiple_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_packets": {
+              "state": "ok",
+              "value": 0
+            },
+            "rx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_mpdu_total_retries": {
+              "state": "missing"
+            },
+            "tx_retries": {
+              "state": "ok",
+              "value": 0
+            },
+            "tx_failed_retries": {
+              "state": "ok",
+              "value": 0
+            }
+          },
+          "semanticStatus": "firmware-layout-and-counter-basis-require-source-audit",
+          "state": "ok"
+        },
+        "tx_retry_count": {
+          "state": "missing",
+          "scope": "mac80211-host-statistics"
+        }
+      },
+      "inactiveMs": 54630,
+      "ap": "ap3"
+    }
+  ],
+  "counterRatiosCalculated": false,
+  "generatedTraffic": false,
+  "requestedSeconds": 30,
+  "departedStations": 0,
+  "unobservedStations": 0,
+  "limits": null,
+  "queries": [
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "boot-identity",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.09999999999126885,
+      "exitCode": 0,
+      "kind": "interface-discovery",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.13999999999941792,
+      "exitCode": 0,
+      "kind": "regulatory-domain",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "channel-survey",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "host-aql_enable",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_pending",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_txq_limit",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "hardware-flags",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "phy-capabilities",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "channel-survey",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "host-aql_enable",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_pending",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "host-aql_txq_limit",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "hardware-flags",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "phy-capabilities",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "channel-survey",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "host-aql_enable",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_pending",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "host-aql_txq_limit",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "hardware-flags",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "phy-capabilities",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-dump",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-dump",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-dump",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "start"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "start"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "boot-identity",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.11000000000058208,
+      "exitCode": 0,
+      "kind": "interface-discovery",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.09999999999126885,
+      "exitCode": 0,
+      "kind": "regulatory-domain",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.020000000004074536,
+      "exitCode": 0,
+      "kind": "channel-survey",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_enable",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "host-aql_pending",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_txq_limit",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "hardware-flags",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "phy-capabilities",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "channel-survey",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_enable",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_pending",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "host-aql_txq_limit",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "hardware-flags",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "phy-capabilities",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.020000000004074536,
+      "exitCode": 0,
+      "kind": "channel-survey",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "host-aql_enable",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "host-aql_pending",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "host-aql_txq_limit",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "hardware-flags",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "phy-capabilities",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-dump",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-dump",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-dump",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.029999999998835847,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.010000000009313226,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-nss_stats",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0.00999999999476131,
+      "exitCode": 0,
+      "kind": "station-airtime",
+      "endpoint": "end"
+    },
+    {
+      "state": "ok",
+      "seconds": 0,
+      "exitCode": 0,
+      "kind": "station-aqm",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.010000000009313226,
+      "exitCode": 1,
+      "kind": "station-aql",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0.00999999999476131,
+      "exitCode": 1,
+      "kind": "station-tx_retry_count",
+      "endpoint": "end"
+    },
+    {
+      "state": "missing",
+      "seconds": 0,
+      "exitCode": 1,
+      "kind": "station-tx_retry_failed",
+      "endpoint": "end"
+    }
+  ],
+  "elapsedSeconds": 31.30000000000291,
+  "topology": {
+    "truncated": false,
+    "startInterfaces": 3,
+    "start": "ok",
+    "endInterfaces": 3,
+    "bootStable": true,
+    "finish": "ok"
+  },
+  "schema": 1,
+  "samples": 2,
+  "capturedAt": "2026-10-10T16:26:43.718Z",
+  "processSeconds": 31.487827299999996,
+  "streamedWithoutInstallation": true,
+  "sourceBundleSha256": "0cf8a8569aaf1794a38ab0ffdf0b3cf22518d8bbd95f0859699130fd9f9113e7",
+  "sourceFiles": {
+    "wifi.lua": "15bb00e0f49c716d5fc246ffb6818ff2fd5364c531f156d4dc8f0ba8bfacf20b",
+    "wifi_collect.lua": "2e47994f913dc13353898057711a4c81f90627a32f5b3630c7706b5788f89cfc",
+    "wifi-diagnose.lua": "9fa6dd21684512ab895b86a29ac106862d1e8134a635e77ff2ec8b51d31d35ed"
+  }
+}

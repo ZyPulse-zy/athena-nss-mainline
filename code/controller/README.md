@@ -1,4 +1,19 @@
-# 维护入口：恢复表修复已安装运行
+# 维护入口：手动 Wi-Fi 观察与离线修复候选
+
+维护目录为 `code/controller`。当前安装仍为 `2996d40`，本轮新增入口和三个驱动补丁均未安装。
+`wifi-observe.mjs` 可立即用已有私有安全 SSH 适配器将 Lua 从 stdin 执行，手动读取两端点，不安装文件。
+具体命令、连接契约、权限/计数口径和成本见 [Wi-Fi 核查](../../docs/DORM_V2_WIFI_AUDIT.md)。
+新增 `native/wifi.lua`（匿名模型）、`native/wifi_collect.lua`（有界只读采集）、`native/wifi-diagnose.lua`（执行入口），
+与六秒循环完全分离。原始 MAC/身份/日志只在私有目录，summary 使用本次匿名别名。
+在将来明确获准安装此候选后，才可执行 `athena-qos wifi-diagnose 30`；现有安装版本没有该子命令。
+
+`native/patches/001..003` 针对固定固件源码：peer drop 临时累加清零、host queue 安全初始化、NSS 统计布局宏对齐。
+没有改变 RT/BULK 策略、DSCP、WMM、AQL 参数、无线模式、聚合/省电或服务生命周期。
+补丁尚需完整模块/包构建和真实 firmware ABI 验证，不能因离线测试通过直接替换现网模块。
+维护套件 `python3 tools/run_controller_offline.py` 为 10 Lua + 2 C 来源测试，另有三个真实源码/头文件定向复现和四项传输测试。
+任何现场部署、无线变更或重启需新的明确许可；PR #1 保持草稿。
+
+## 已安装恢复表版本（本轮保持运行）
 
 恢复表修复已按用户新授权完成一次受控部署。安装源码 `2996d40`
 包含 `f848caf` 修复；实际只替换 writer，其他安装文件保持。2026-10-10 19:26:35 北京时间核验
