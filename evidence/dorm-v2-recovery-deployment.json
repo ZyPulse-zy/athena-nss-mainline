@@ -1,0 +1,519 @@
+{
+  "event": "recovery-ledger-fix-controlled-deployment",
+  "authorization": "User explicitly authorized deployment after offline results; formal game/Wi-Fi acceptance remains postponed.",
+  "installedSourceCommit": "2996d405c9a96ec4d891887358f02f28de4e340c",
+  "fixCommit": "f848caf16432fa7f6de996ddf085adcbfccd426d",
+  "priorSourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+  "deploymentBeijing": "2026-10-10 19:22:47",
+  "verifiedBeijing": "2026-10-10 19:26:35",
+  "changedPersistentRuntimeFiles": [
+    "writer.lua"
+  ],
+  "deployment": {
+    "deployedAt": "2026-10-10T11:22:47.885Z",
+    "installedSourceCommit": "2996d405c9a96ec4d891887358f02f28de4e340c",
+    "sourceFile": "code/controller/native/writer.lua",
+    "priorSourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+    "priorSha256": "e22d6ebf95594a497045692bdfde5b7731f2624fdffc6a2f3537c120b12b01e4",
+    "installedSha256": "ee856617c64b8c897bd46b78b64787bac50e72aa84f023883438340e226524cf",
+    "backupVerified": true,
+    "backupSha256": "f288918ec476f21d5fe039720f6a64d743d5fb8b179beaceacc053336d118ada",
+    "completeRestorationBeforeWrite": true,
+    "persistentAndRamSourceMatch": true,
+    "otherInstalledFilesUnchanged": true,
+    "installedFileCount": 26,
+    "protectedHashesUnchanged": true,
+    "protectedHashCount": 10,
+    "softwareCakeRootsUnchanged": 10,
+    "wanIdentityUnchanged": true,
+    "authClassifierAutorateProxyTailscaleIdentitiesUnchanged": true,
+    "coreGuardReloaded": true,
+    "routerRebooted": false,
+    "bootEnabledUnchanged": true,
+    "bootEnabled": true,
+    "phase": "native-running",
+    "sourceFresh": true,
+    "nss": 0,
+    "unconfirmed": 0,
+    "automaticRetries": 0,
+    "sourcePauses": 0,
+    "sourceResumes": 0,
+    "fullModuleBuildOrUpstreamPatchDeployed": false,
+    "trafficFixture": false,
+    "formalGameWifiAcceptance": false
+  },
+  "offlineValidation": {
+    "luaSuites": 9,
+    "cSuites": 2,
+    "writerAssertions": 740,
+    "receiptAssertions": 168,
+    "selectorAssertions": 55,
+    "luaFilesParsed": 29,
+    "nftParserValidated": false,
+    "firmwareFailureModel": false
+  },
+  "naturalObservation": {
+    "completedAt": "2026-10-10T11:26:35.598Z",
+    "elapsedSeconds": 180.61000000000058,
+    "protectionReadbacksUnchanged": true,
+    "serviceAndOwnerIdentitiesUnchanged": true,
+    "phase": "native-running",
+    "sourceFresh": true,
+    "automaticRetryDelta": 0,
+    "sourcePauseDelta": 0,
+    "sourceResumeDelta": 0,
+    "recoveryWithdrawalDelta": 1,
+    "recoveryOverflowFallbackDelta": 0,
+    "nss": 4,
+    "unconfirmed": 0,
+    "reportSha256": "c3dce46ad474c8ce209f5966d878850a98b65986e80085d056b2987c54bfcfd7"
+  },
+  "recovery": {
+    "tracked": 0,
+    "limit": 32,
+    "newIdentityAdmissionPaused": false,
+    "ledgerFull": false,
+    "exhausted": 0,
+    "maximumRetries": 2,
+    "eventLimit": 32,
+    "withdrawals": 2,
+    "overflowFallbacks": 0,
+    "quarantinedSlots": 0,
+    "eventsOmitted": 0
+  },
+  "retainedRecoveryEventPhaseCounts": {
+    "requested": 2,
+    "retired": 2,
+    "readmitted": 2
+  },
+  "diagnostic": {
+    "sourceRestores": 0,
+    "flowEvidenceOmitted": 0,
+    "readOnly": true,
+    "counterResets": 0,
+    "rtNotCreatedSamples": 2,
+    "hardware": {
+      "byteDelta": {
+        "rx": 175557030,
+        "tx": 178584026
+      },
+      "intervals": 59,
+      "scope": "global-NSS-IPv4-special-counters",
+      "measured": true,
+      "perFlowAttribution": false,
+      "counterResets": 0
+    },
+    "sampleSeconds": 180,
+    "flowEvidenceLimit": 80,
+    "rtFlowAliasLimit": 256,
+    "byteCoverage": {
+      "hardwareBytes": 60154452,
+      "excludedFlowWindows": 357,
+      "totalBytes": 138167114,
+      "includesBestEffort": true,
+      "measurement": "bracketed-downstream-lower-bound",
+      "classes": {
+        "BE": {
+          "bytes": 320041,
+          "flows": 2645,
+          "hardware": 0
+        },
+        "RT": {
+          "bytes": 616493,
+          "flows": 27,
+          "hardware": 338236
+        },
+        "UNKNOWN": {
+          "bytes": 0,
+          "flows": 0,
+          "hardware": 0
+        },
+        "BULK": {
+          "bytes": 137230580,
+          "flows": 6,
+          "hardware": 59816216
+        }
+      },
+      "scope": "persistent-five-WAN-zone0-nonproxy-IPv4-TCP-UDP-with-stable-class",
+      "sameByteBasis": true,
+      "lastWindow": {
+        "hardwareEnd": 73514.77,
+        "ctStart": 73509.59,
+        "ctEnd": 73515.8,
+        "hardwareStart": 73511.69
+      },
+      "windows": 28,
+      "measured": true,
+      "fullLanCoverage": false,
+      "ratioLowerBound": 0.43537460006583045
+    },
+    "rtFlowAliases": 17,
+    "actualNssMax": 4,
+    "perFlowHardware": {
+      "basis": "firmware-RX-sync",
+      "measured": true,
+      "byteDelta": {
+        "down": 149588397,
+        "up": 4541776
+      },
+      "intervals": 92
+    },
+    "budgetUpdates": {
+      "lastReadCommands": 10,
+      "readFailures": 0,
+      "source": "independent-reader-software-budgets",
+      "lastReadSeconds": 0.07000000000698492,
+      "lastSuccessAtUptime": 73514.46,
+      "skippedLeaseMargin": false,
+      "ownerReadSeconds": 0,
+      "publicationSequence": 73,
+      "batches": 0,
+      "lastSeconds": 0,
+      "lastCommands": 0,
+      "skippedSourceGap": false,
+      "lastReadAtUptime": 73515.28,
+      "lastReadSucceeded": true,
+      "leaseMarginAfterReadSeconds": 4.820000000006985,
+      "leaseMarginBeforeReadSeconds": 4.820000000006985
+    },
+    "rtProgressingSamples": 72,
+    "rtCreatedSamples": 70,
+    "eventsOmitted": 0,
+    "reader": {
+      "policySeconds": 0,
+      "clientReasons": {
+        "learned-wired-port": 1,
+        "associated-station": 4
+      },
+      "classificationSource": "candidate-projection",
+      "topologySeconds": 0.04000000000814907,
+      "stationSources": {
+        "iwFallback": 0,
+        "hostapd": 3
+      },
+      "previousEncodeSeconds": 0.00999999999476131,
+      "collection": {
+        "failures": 0,
+        "commands": {
+          "hostapd-phy1-ap0": {
+            "ok": true,
+            "seconds": 0.00999999999476131,
+            "exitCode": 0
+          },
+          "wan-addresses": {
+            "ok": true,
+            "seconds": 0,
+            "exitCode": 0
+          },
+          "hostapd-phy2-ap0": {
+            "ok": true,
+            "seconds": 0.00999999999476131,
+            "exitCode": 0
+          },
+          "neighbors": {
+            "ok": true,
+            "seconds": 0.010000000009313226,
+            "exitCode": 0
+          },
+          "fdb": {
+            "ok": true,
+            "seconds": 0,
+            "exitCode": 0
+          },
+          "hostapd-phy0-ap0": {
+            "ok": true,
+            "seconds": 0,
+            "exitCode": 0
+          }
+        }
+      },
+      "topologyComplete": true,
+      "sourceLeaseSeconds": 6,
+      "publicationSeconds": 0
+    },
+    "flowAliases": 20,
+    "endToEndLossMeasured": false,
+    "maxReadSeconds": 0.09999999999126885,
+    "actualNssMin": 0,
+    "evidenceScope": "candidate-RT-and-BULK-with-passive-per-flow-firmware-byte-progress",
+    "scopeNotice": "Includes non-game RT flows. Hardware tc queries require explicit --queues; missing or unrequested queue counters do not prove zero drops.",
+    "requestedSeconds": 180,
+    "rtBindingChanges": 0,
+    "sourceGaps": 0,
+    "queueStatisticsRequested": false,
+    "generatedTraffic": false,
+    "samples": 60,
+    "byteCoverageRequested": true,
+    "labelMismatchSamples": 0,
+    "lastPhase": "native-running",
+    "events": [
+      {
+        "flow": 2,
+        "atUptime": 73349.1,
+        "kind": "active-rt-without-current-create"
+      },
+      {
+        "flow": 6,
+        "atUptime": 73364.39,
+        "kind": "active-rt-without-current-create"
+      }
+    ],
+    "flowEvidence": [
+      {
+        "flow": 6,
+        "createAcknowledged": true,
+        "incomingQos": {
+          "flow": 2115371014,
+          "returnValue": 2048262150
+        },
+        "class": "RT",
+        "admitted": true,
+        "sourceFresh": true,
+        "hardware": {
+          "basis": "passive-firmware-RX-sync-same-as-conntrack-accounting",
+          "delta": {
+            "down": 8794,
+            "up": 1240
+          },
+          "samples": 20,
+          "up": 21088,
+          "fresh": true,
+          "measured": true,
+          "down": 160787,
+          "lastSyncMs": 73515500
+        },
+        "hardwareBytesAttributed": true,
+        "labels": {
+          "basis": "CREATE-payload-and-ACK-not-firmware-queue-readback",
+          "expected": {
+            "igsDown": 31254,
+            "igsUp": 0,
+            "down": 2048262150,
+            "up": 2115371014
+          },
+          "observed": {
+            "igsDown": 31254,
+            "igsUp": 0,
+            "down": 2048262150,
+            "up": 2115371014
+          },
+          "status": "verified"
+        },
+        "wireless": false,
+        "wan": 1,
+        "egress": "lan4",
+        "policyApplied": true,
+        "leaseRemainingMs": 4711
+      },
+      {
+        "flow": 1,
+        "createAcknowledged": true,
+        "incomingQos": {
+          "flow": 2118516742,
+          "returnValue": 2051407878
+        },
+        "class": "RT",
+        "admitted": true,
+        "sourceFresh": true,
+        "hardware": {
+          "basis": "passive-firmware-RX-sync-same-as-conntrack-accounting",
+          "delta": {
+            "down": 8652,
+            "up": 1212
+          },
+          "samples": 39,
+          "up": 46840,
+          "fresh": true,
+          "measured": true,
+          "down": 309007,
+          "lastSyncMs": 73515500
+        },
+        "hardwareBytesAttributed": true,
+        "labels": {
+          "basis": "CREATE-payload-and-ACK-not-firmware-queue-readback",
+          "expected": {
+            "igsDown": 31302,
+            "igsUp": 0,
+            "down": 2051407878,
+            "up": 2118516742
+          },
+          "observed": {
+            "igsDown": 31302,
+            "igsUp": 0,
+            "down": 2051407878,
+            "up": 2118516742
+          },
+          "status": "verified"
+        },
+        "wireless": false,
+        "wan": 4,
+        "egress": "lan4",
+        "policyApplied": true,
+        "leaseRemainingMs": 4711
+      },
+      {
+        "flow": 20,
+        "createAcknowledged": true,
+        "incomingQos": {
+          "flow": 2115371014,
+          "returnValue": 0
+        },
+        "class": "RT",
+        "admitted": true,
+        "sourceFresh": true,
+        "hardware": {
+          "basis": "passive-firmware-RX-sync-same-as-conntrack-accounting",
+          "delta": {
+            "down": 104,
+            "up": 82
+          },
+          "samples": 3,
+          "up": 164,
+          "fresh": true,
+          "measured": true,
+          "down": 260,
+          "lastSyncMs": 73515500
+        },
+        "hardwareBytesAttributed": true,
+        "labels": {
+          "basis": "CREATE-payload-and-ACK-not-firmware-queue-readback",
+          "expected": {
+            "igsDown": 31254,
+            "igsUp": 0,
+            "down": 2048262150,
+            "up": 2115371014
+          },
+          "observed": {
+            "igsDown": 31254,
+            "igsUp": 0,
+            "down": 2048262150,
+            "up": 2115371014
+          },
+          "status": "verified"
+        },
+        "wireless": true,
+        "wan": 1,
+        "egress": "phy0-ap0",
+        "policyApplied": true,
+        "leaseRemainingMs": 4711
+      },
+      {
+        "flow": 4,
+        "createAcknowledged": true,
+        "incomingQos": {
+          "flow": 2117402624,
+          "returnValue": 2050293760
+        },
+        "class": "BULK",
+        "admitted": true,
+        "sourceFresh": true,
+        "hardware": {
+          "basis": "passive-firmware-RX-sync-same-as-conntrack-accounting",
+          "delta": {
+            "down": 9580260,
+            "up": 289819
+          },
+          "samples": 16,
+          "up": 4486012,
+          "fresh": true,
+          "measured": true,
+          "down": 150207318,
+          "lastSyncMs": 73515500
+        },
+        "hardwareBytesAttributed": true,
+        "labels": {
+          "basis": "CREATE-payload-and-ACK-not-firmware-queue-readback",
+          "expected": {
+            "igsDown": 31285,
+            "igsUp": 0,
+            "down": 2050293760,
+            "up": 2117402624
+          },
+          "observed": {
+            "igsDown": 31285,
+            "igsUp": 0,
+            "down": 2050293760,
+            "up": 2117402624
+          },
+          "status": "verified"
+        },
+        "wireless": true,
+        "wan": 3,
+        "egress": "phy2-ap0",
+        "policyApplied": true,
+        "leaseRemainingMs": 4711
+      }
+    ],
+    "interpretation": "No local event does not prove zero loss or jitter. A CREATE receipt is not a per-packet delivery acknowledgement.",
+    "labelVerifiedSamples": 129,
+    "rtQueueDropsMeasured": false,
+    "scope": "all-budget-admitted-RT-flows-not-game-exclusive"
+  },
+  "existingNativeModuleVersionsReused": true,
+  "existingNativeEcmAndIngressCopiesReloadedByEstablishedLifecycle": true,
+  "originalDiskModulesReplaced": false,
+  "upstreamEcmDraft": "https://github.com/qosmio/nss-packages/pull/78",
+  "upstreamEcmSourcePatchDeployed": false,
+  "remaining": [
+    "Wi-Fi final TID/AC",
+    "same-wireless-device game plus download",
+    "long wired FDB",
+    "complete per-flow CREATE failure/removal/recreate proof",
+    "silent rule disappearance",
+    "classification source interruption root cause",
+    "representative all-LAN byte coverage",
+    "long-term load stability",
+    "upstream full module/package build and firmware validation"
+  ],
+  "privacy": "No credentials, raw connection keys, addresses, MACs, private archives or runtime snapshots published.",
+  "privateBackup": {
+    "localArchiveVerified": true,
+    "routerArchiveVerified": true,
+    "sha256": "f288918ec476f21d5fe039720f6a64d743d5fb8b179beaceacc053336d118ada",
+    "bytes": 349340,
+    "ramStageRemoved": true
+  },
+  "finalReadback": {
+    "capturedAt": "2026-10-10T11:28:26.840Z",
+    "phase": "native-running",
+    "sourceFresh": true,
+    "actualNss": 3,
+    "admission": 0,
+    "sourcePauses": 0,
+    "sourceResumes": 0,
+    "allWansUp": true,
+    "installedMatchedCommit": "2996d405c9a96ec4d891887358f02f28de4e340c",
+    "installedMatched": [
+      "launch.sh",
+      "reader.lua",
+      "classifier_recovery.lua",
+      "tag_rules.lua",
+      "core_guard_permission.lua",
+      "writer.lua",
+      "transaction.lua",
+      "lifecycle.lua",
+      "flow_json.lua",
+      "health.lua",
+      "queue_plan.lua",
+      "coverage.lua",
+      "supervisor.lua",
+      "diagnose.lua",
+      "install_core_guard.lua",
+      "ingress_probe.lua",
+      "collector.lua",
+      "core.lua",
+      "prepare.lua"
+    ],
+    "installedMismatches": [],
+    "runtimeHashesMatched": true,
+    "serviceRunning": {
+      "router-project-minieap": true,
+      "sing-box-athena": true,
+      "athena-dorm-native": true,
+      "tailscale-athena": true,
+      "router-project-game-classifier": true,
+      "router-project-autorate": true,
+      "router-project-core": true
+    }
+  }
+}

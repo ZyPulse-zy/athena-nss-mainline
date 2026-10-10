@@ -45251,6 +45251,13 @@
       "bytes": 27522,
       "role": "controller-maintenance-readme",
       "revision": "dorm-v2-offline-recheck-and-upstream-20261010"
+    },
+    {
+      "path": "code/controller/README.md",
+      "sha256": "2d7f1c7b046b1a7b6984313cd9637d112c498864e08c3e924377fa799aa340c3",
+      "bytes": 27760,
+      "role": "controller-maintenance-readme",
+      "revision": "dorm-v2-recovery-ledger-deployed-20261010"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",

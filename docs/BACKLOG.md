@@ -1,10 +1,19 @@
 # 当前剩余工作与已完成项
 
-恢复表满误拒绝新流已修复为离线候选；11 个套件通过，writer 740 断言。ECM 两版源码和完整软件源补丁序列回归通过，已创建上游草稿 #78。README/STATE/操作入口以本轮状态为准。
+恢复表修复已按用户新授权完成一次受控部署。安装源码 `2996d40`
+包含 `f848caf` 修复；实际只替换 writer，其他安装文件保持。2026-10-10 19:26:35 北京时间核验
+native-running/sourceFresh，未确认回执 0。180 秒自然观察 NSS 0..4，
+标签一致 129 个流样本、差异 0，来源新增暂停/恢复
+0/0，自动恢复新增 0。五 WAN、原保护文件、
+十个软件 CAKE 根、自启以及认证/分类器/autorate/代理/Tailscale 服务身份保持。
 
-剩余工作：上游要求的完整模块/软件包构建和评审；nftables 原生 Linux 独立命名空间文本/JSON 回读及历史 vendor 断言定位；用户恢复正式验收后再做同机无线 TID/AC、有线长连接、完整逐流重建、来源中断根因和代表性字节覆盖。不得自动部署或开始延期验收。
+剩余：完整上游构建/评审、原生 Linux 的 nftables 文本/JSON 无 hook 复现、完整逐流恢复链、最终空口与有线长连接、来源中断根因、代表性覆盖和长期负载。短窗不代表这些验收完成。
 
-[详细状态与边界](DORM_V2_RECHECK_20261010.md) · [ECM](../upstream/ecm/README.md) · [Netfilter RFC](../upstream/nftables/REPORT.md)
+本次单次部署授权已用于这次切换，不据此自动重复部署、重启、故障/拥塞测试或修改无线/学校网络。
+游戏/Wi-Fi 正式验收仍延期，既有正常服务继续运行。ECM 上游 #78 为未部署的草稿，
+还需完整模块/软件包构建与固件验证；PR #1 保持 draft，不合并。
+
+[部署和短窗证据](DORM_V2_RECOVERY_DEPLOYMENT.md) · [恢复表逻辑](DORM_V2_RECOVERY_LEDGER.md) · [ECM 草稿 #78](https://github.com/qosmio/nss-packages/pull/78)
 
 <details>
 <summary>此前阶段记录（历史事实，部署授权不可沿用）</summary>

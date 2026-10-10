@@ -1,10 +1,16 @@
-# Athena AX6600 NSS v2：离线修复与上游准备
+# Athena AX6600 NSS v2：恢复表修复已部署
 
-维护分支为 `codex/dorm-qos-v2`，现网源码仍为 `224ee07`。恢复表修复 `f848caf` 已推送，但未安装；ECM 通用双向 UDP 优先级补丁已开上游草稿 PR #78。2026-10-10 19:00:46 北京时间只读复核 native-running/sourceFresh，五 WAN 和原服务身份、安装/运行源码及保护配置哈希保持。
+恢复表修复已按用户新授权完成一次受控部署。安装源码 `2996d40`
+包含 `f848caf` 修复；实际只替换 writer，其他安装文件保持。2026-10-10 19:26:35 北京时间核验
+native-running/sourceFresh，未确认回执 0。180 秒自然观察 NSS 0..4，
+标签一致 129 个流样本、差异 0，来源新增暂停/恢复
+0/0，自动恢复新增 0。五 WAN、原保护文件、
+十个软件 CAKE 根、自启以及认证/分类器/autorate/代理/Tailscale 服务身份保持。
+本次单次部署授权已用于这次切换，不据此自动重复部署、重启、故障/拥塞测试或修改无线/学校网络。
+游戏/Wi-Fi 正式验收仍延期，既有正常服务继续运行。ECM 上游 #78 为未部署的草稿，
+还需完整模块/软件包构建与固件验证；PR #1 保持 draft，不合并。
 
-本轮只授权离线改动、测试、提交和上游贡献准备；不部署、停止/重启服务或路由器、加载模块、改无线/学校网络、造拥塞或注入故障。游戏/Wi-Fi 正式验收继续延期，PR #1 保持 draft。下方历史授权和“当前”阶段描述均已结束。
-
-[本轮复查与结果](docs/DORM_V2_RECHECK_20261010.md) · [当前状态](docs/STATE.md) · [剩余工作](docs/BACKLOG.md) · [ECM 草稿 PR #78](https://github.com/qosmio/nss-packages/pull/78)
+[部署和短窗证据](docs/DORM_V2_RECOVERY_DEPLOYMENT.md) · [恢复表逻辑](docs/DORM_V2_RECOVERY_LEDGER.md) · [ECM 草稿 #78](https://github.com/qosmio/nss-packages/pull/78)
 
 <details>
 <summary>此前阶段记录（历史事实，部署授权不可沿用）</summary>

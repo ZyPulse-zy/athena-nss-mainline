@@ -1,14 +1,17 @@
-# 当前任务约束：2026-10-10 离线复查与上游准备
+# 当前任务约束：恢复表修复部署已完成，后续保持正常运行
 
-先读 docs/DORM_V2_RECHECK_20261010.md 和 evidence/dorm-v2-recheck-20261010.json。
-当前维护 code/controller，冻结 code/work 与历史证据；manifest 只追加命名维护版本。
-恢复表修复 f848caf 已推送开发分支，但现网仍为 224ee07。ECM 上游草稿为 qosmio/nss-packages #78。
-这次用户明确禁止部署、停止/重启控制器或路由器、模块重载、固件/EDMA/无线变更、拥塞/故障注入。
-保持五 WAN 认证/PBR/NAT、代理/Tailscale、原 CAKE/autorate、学校网络和游戏设备策略。
-游戏/Wi-Fi 正式验收仍延期。只做离线源码/测试/提交和有界只读检查；两个端点不是长期验收。
-PR #1 与 #78 保持 draft，不合并；不把本地控制器 bug 或二进制适配器当通用上游修复。
-完整 ECM 模块构建和 nftables 原生命名空间回读仍待完成；证据必须标明 mock/源码/固件/验收层级。
-下方是历史事实和此前阶段限制；其中的部署/重启许可不能沿用到本任务。
+先读 docs/DORM_V2_RECOVERY_DEPLOYMENT.md 和 evidence/dorm-v2-recovery-deployment.json。
+用户在此前离线阶段之后明确授权“可以部署”；一次完整 stop/恢复确认/单 writer 替换/start 已完成。
+安装源码 2996d405c9a96ec4d891887358f02f28de4e340c（包含恢复表修复 f848caf）。
+维护 code/controller，冻结 code/work 和历史证据；manifest 只追加命名维护版本。
+五 WAN、认证/PBR/NAT、原 CAKE/autorate、代理/Tailscale、无线/学校网络和游戏设备策略保持。
+既有 native owner/core guard/ECM/IGS 副本按已有生命周期重载；原磁盘模块、固件/EDMA未替换。
+这次授权已用于单次受控切换，不自动重复部署、停止/重启、改无线或故障/拥塞测试。
+游戏/Wi-Fi 正式验收仍延期。180 秒自然观察不代表正式验收或长期稳定性。
+ECM 上游 qosmio/nss-packages #78 未部署，完整模块/软件包构建与固件验证待完成。
+PR #1 和 #78 保持 draft，不合并；不把控制器 bug/专用二进制适配器提交通用上游。
+Netfilter 尚未验证最新原生文本/JSON 崩溃，不发布未经证实的 crash 修复 claim。
+下方为历史事实和此前阶段限制；现场状态以新的只读核验为准。
 
 ## 历史交接记录
 
