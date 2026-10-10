@@ -114,6 +114,7 @@ flowchart TD
     H --> A[ath11k_mac_op_tx]
     A --> N[ath11k_nss_tx / nss_wifi_vdev_tx_buf]
     N --> Q[NSS H2N descriptor qos_tag = skb priority]
+    N -->|enqueue 返回失败| X[mac_op_tx 释放 skb，不自动重试 dp_tx]
     F[NSS 加速 flow CREATE 的双向 QoS / IGS 标签] --> W[NSS 固件转发]
     Q --> W
     W --> U[固件 TID 覆盖 / DSCP map / 无线队列：末端待验证]
@@ -136,6 +137,8 @@ flowchart TD
 | 发送失败 | ath11k/nss.c:3558 合并 host retry_failed 和 NSS tx_failed；NSS tx_failed 来源为 TQM drop bins | 与重试耗尽不是同一累计口径，禁止直接当空口丢包率 |
 
 软件分类函数 `cfg80211_classify8021d()`（net/wireless/util.c:964）会处理 QoS map/VLAN/特殊 priority，并有 RFC8325 修正；普通数值 6 的 meta priority 并不是 256..263 的强制分类魔数。
+这里的“回退”须区分：ECM flow 退出加速后回到软件 IP 转发，仍可能经过 NSS 无线入口；只有 `ab->nss.enabled` 为假才进入普通 `ath11k_dp_tx`。
+NSS 无线 enqueue 返回失败则在 mac.c:6964 释放 skb，没有自动转交 dp_tx 重试；管理帧及支持的 QoS-null 另走 WMI，不混作一般 RT/BULK 数据路径。
 在无其它覆盖、软件分类实际被调用时，EF46 变为 UP6/VO；TCL 默认表则给 EF46 TID5/VI。
 这个差异证明不能假设所有路径映射相同，不证明当前 NSS 固件就使用任一张表。
 维护 writer 当前对精确合格 RT/BULK 使用低位 6/0 和高位硬件队列 tag，tag_rules 只写 meta priority，没有新增 DSCP 改写。
