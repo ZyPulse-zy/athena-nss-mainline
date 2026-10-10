@@ -12,7 +12,7 @@ local function flow(id,class,rate)
   reply={src='198.51.100.99',sport=443,dst='198.51.100.1',dport=40000+id}}
 end
 local function fixture()
- local at=100;local rows={};local controls={};local fail=false;local slowBudget=false
+ local at=100;local rows={};local controls={};local fail=false;local slowBudget=false;local staleBudget=false
  local r={wans={},ingress={up=plan.plan(0x7e00,{40000,40000,40000,40000,40000}),down=plan.plan(0x7a00,{70000,70000,70000,70000,70000})}}
  for w=1,5 do r.wans['rpwan'..w]='198.51.100.'..w end
  n.open=function(path,mode)
@@ -31,11 +31,7 @@ local function fixture()
   end}
  end
  local function command(c,boundedRead)
-  if c:match('^/sbin/tc %-j %-d qdisc show dev rp')then
-   assert(boundedRead==true,'Software CAKE query is not bounded')
-   if slowBudget then at=at+1;return nil end
-   return j.stringify({{kind='cake',options={bandwidth=c:find('rpifb',1,true)and 8750000 or 5000000}}})
-  end
+  assert(not c:find('qdisc show',1,true),'Guardian must not query software CAKE')
   assert(c:match('^/usr/sbin/nft %-c %-f ')or c:match('^/usr/sbin/nft %-f ')or
    c:match('^/root/router%-project/experiments/nss8%-htb2%-20261001/tc%-nss filter '),'Unexpected command: '..c)
   return''
@@ -48,8 +44,11 @@ local function fixture()
  end
  local writer=dofile(root..'/writer.lua').new(root,command,read,function(p,text)
   assert(p==root..'/tags.nft'or p==root..'/budgets.tc');assert(type(text)=='string')
- end,function()return at end,function()end,r)
- return{r=r,rows=rows,controls=controls,time=function(t)at=t end,fail=function(v)fail=v end,slowBudget=function(v)slowBudget=v end,tick=function(flows,fresh)
+ end,function()return at end,function()end,r,function()
+  return{version=1,source='software-cake',sequence=at,complete=not slowBudget,startedAtUptime=at-(slowBudget and 1 or staleBudget and 7.06 or 0.06),
+   finishedAtUptime=at-(staleBudget and 7 or 0),values={up={40000,40000,40000,40000,40000},down={70000,70000,70000,70000,70000}},diagnostics={commandCount=slowBudget and 1 or 10}}
+ end)
+ return{r=r,rows=rows,controls=controls,time=function(t)at=t end,fail=function(v)fail=v end,slowBudget=function(v)slowBudget=v end,staleBudget=function(v)staleBudget=v end,tick=function(flows,fresh)
   writer.tick({wans=r.wans,flows=flows,operations={},summary={sourceFresh=fresh~=false,tracked=#flows,clients=1,exits={},classes={}}})
  end}
 end
@@ -133,13 +132,14 @@ f=fixture();all={flow(1)};f.tick(all)
 local up,down=f.controls[1]:match(' (%d+) (%d+)\n$');check(tonumber(up)==0x7e150000 and tonumber(down)==0x7a150000)
 f.time(103);all[1].sequence=2;all[1].validUntil=109;f.slowBudget(true);f.tick(all)
 check(f.r.flowState.nativeOwned==1 and f.r.flowState.budgetUpdates.readFailures==1 and f.r.flowState.budgetUpdates.lastReadCommands==1)
-check(f.r.flowState.budgetUpdates.lastReadSeconds==1 and not f.r.flowState.budgetUpdates.lastReadSucceeded)
+check(f.r.flowState.budgetUpdates.lastReadSeconds==1 and not f.r.flowState.budgetUpdates.lastReadSucceeded and f.r.flowState.writerTickSeconds==0)
 f.slowBudget(false);f.time(106);all[1].sequence=3;all[1].validUntil=112;f.tick(all)
 check(f.r.flowState.budgetUpdates.lastReadSucceeded and f.r.flowState.budgetUpdates.lastReadCommands==10)
 f=fixture();all={flow(40,'RT')};all[1].validUntil=101;f.tick(all)
-check(f.r.flowState.budgetUpdates.skippedLeaseMargin and f.r.flowState.budgetUpdates.lastReadCommands==0)
+check(not f.r.flowState.budgetUpdates.skippedLeaseMargin and f.r.flowState.budgetUpdates.lastReadCommands==10)
 up,down=f.controls[1]:match(' (%d+) (%d+)\n$');check(tonumber(up)==0x7e160006 and tonumber(down)==0x7a160006)
-f.time(107);all[1].validUntil=108;all[1].sequence=2;local ok,err=pcall(f.tick,all)
+for t=101,125 do f.time(t);all[1].validUntil=t+2;all[1].sequence=t;f.tick(all);check(f.r.flowState.nativeOwned==1 and f.r.flowState.writerTickSeconds==0)end
+f.staleBudget(true);f.time(131);all[1].validUntil=133;all[1].sequence=131;local ok,err=pcall(f.tick,all)
 check(not ok and tostring(err):find('Software CAKE budget observation expired',1,true))
 n.open=originalOpen
 print(j.stringify({passed=true,checks=checks,mockedKernel=true,dataPlaneWrites=false,fullSlotsDelayedAck=true,rejectedCacheBounded=true,receiptGatedFiniteRecovery=true,boundedBudgetReads=true}))

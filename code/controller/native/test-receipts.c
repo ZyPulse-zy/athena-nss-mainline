@@ -186,7 +186,7 @@ int main(void)
  athena_receipt_policy_clear(0,81);check(policies[0].active);
  m=message(0,80,tuple);m.cm.len=172;memcpy(m.payload,&(u16){0x808},2);
  memcpy(m.payload+112,&(u32){0x7e160006},4);memcpy(m.payload+116,&(u32){0x7e160006},4);
- memcpy(m.payload+170,&(u16){0x7a16},2);
+ memcpy(m.payload+170,&(u16){0x7a15},2); /* Stale BE IGS tag on a current RT lease. */
  check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
  struct athena_telemetry tele;
  check(!athena_receipt_read_telemetry(80,0,&tele));
@@ -211,8 +211,12 @@ int main(void)
  memset(records,0,sizeof(records));
  struct athena_tuple reversed={tuple.dst,tuple.dport,tuple.src,tuple.sport,tuple.protocol};
  check(!athena_receipt_policy_set(0,82,500,&tuple,0x7e150000,0x7a150000));
- m=message(0,82,reversed);m.cm.len=172;check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
+ m=message(0,82,reversed);m.cm.len=172;memcpy(m.payload,&(u16){0x808},2);
+ memcpy(m.payload+168,&(u16){0x7a16},2); /* Stale RT on a current reverse BE lease. */
+ check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
  check(!athena_receipt_read_telemetry(82,0,&tele) && tele.policy_applied && tele.observation.receipt.flow_qos==0x7a150000 && tele.observation.receipt.return_qos==0x7e150000);
+ check(tele.observation.receipt.igs_flow==0x7a15 && tele.observation.receipt.igs_return==0);
+ u16 igs;memcpy(&igs,m.payload+168,2);check(igs==0x7a15);
  athena_nss_ipv4_notify_register(original,(void *)99);check(registered_notify==notify_received);
  struct {struct common_prefix cm;struct sync_entry entry;} notification={0};
  notification.cm=(struct common_prefix){.type=3,.response=5,.len=116,.app_data=99};

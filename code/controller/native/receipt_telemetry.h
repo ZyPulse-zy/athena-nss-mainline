@@ -49,6 +49,12 @@ static void apply_policy(struct record *r,struct nss_ipv4_msg *message)
   memcpy((char *)message+152,&r->receipt.flow_qos,4);
   memcpy((char *)message+156,&r->receipt.return_qos,4);
   memcpy(&valid,(char *)message+40,2);valid|=8;memcpy((char *)message+40,&valid,2);
+  if(valid&0x800){
+   /* IGS classification can also predate the latest leased RT/BE class.
+    * Only normalize an already-valid IGS rule; never enable a new binding. */
+   r->receipt.igs_flow=forward?0:p->down>>16;r->receipt.igs_return=forward?p->down>>16:0;
+   memcpy((char *)message+208,&r->receipt.igs_flow,2);memcpy((char *)message+210,&r->receipt.igs_return,2);
+  }
   r->receipt.qos_observed=true;r->telemetry.policy_applied=true;
   r->telemetry.policy_generation=p->generation;break;
  }

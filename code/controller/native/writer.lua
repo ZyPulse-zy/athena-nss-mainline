@@ -1,7 +1,8 @@
 -- Executed only by the independent transaction guardian. The reader publishes
 -- desired observations; this is the sole native/tc/nft writer for this backend.
 local M={}
-function M.new(root,command,read,put,now,store,r)
+function M.new(root,command,read,put,now,store,r,budgetReader)
+ assert(type(budgetReader)=='function','Independent software budget publication required')
  local core=dofile(root..'/core.lua');local j=require('luci.jsonc');local fs=require('nixio.fs');local n=require('nixio')
  local tc='/root/router-project/experiments/nss8-htb2-20261001/tc-nss'
  local gate='/sys/kernel/debug/athena_ecm_gate/'
@@ -108,29 +109,29 @@ function M.new(root,command,read,put,now,store,r)
   end end
  end
  local function budget_snapshot(diagnostics)
-  local values={up={},down={}};local deadline=now()+0.75
-  diagnostics.lastReadCommands=0
-  for w=1,5 do for _,x in ipairs({{'up','rpwan'},{'down','rpifb'}})do
-   assert(now()<deadline,'budget-read-batch-deadline')
-   diagnostics.lastReadCommands=diagnostics.lastReadCommands+1
-   local text=assert(command('/sbin/tc -j -d qdisc show dev '..x[2]..w,true),'budget-read-failed')
-   local rows=assert(j.parse(text))
-   for _,q in ipairs(rows)do if q.kind=='cake' then values[x[1]][w]=assert(tonumber(q.options.bandwidth))*8/1000 end end
-   assert(values[x[1]][w],'Software budget unavailable')
+  local p=assert(budgetReader(),'budget-publication-unavailable')
+  diagnostics.lastReadCommands=p.diagnostics and p.diagnostics.commandCount or 0
+  diagnostics.lastReadSeconds=type(p.finishedAtUptime)=='number' and type(p.startedAtUptime)=='number' and p.finishedAtUptime-p.startedAtUptime or nil
+  assert(p.version==1 and p.source=='software-cake' and p.complete==true and (not r.boot or p.boot==r.boot),'budget-publication-invalid')
+  assert(type(p.sequence)=='number' and p.sequence>=1 and type(p.startedAtUptime)=='number' and type(p.finishedAtUptime)=='number' and
+   p.finishedAtUptime>=p.startedAtUptime and p.finishedAtUptime-p.startedAtUptime<=2.75 and p.finishedAtUptime<=now() and now()-p.startedAtUptime<6,'budget-publication-stale')
+  for _,direction in ipairs{'up','down'}do for w=1,5 do
+   local value=p.values and p.values[direction] and p.values[direction][w]
+   assert(type(value)=='number' and value==value and value>0 and value<math.huge,'budget-value-invalid')
   end end
-  return values
+  diagnostics.lastSuccessAtUptime=p.finishedAtUptime;diagnostics.publicationSequence=p.sequence;diagnostics.source='independent-reader-software-budgets'
+  return p.values
  end
  local budgetAt=0;local budgetStats={batches=0,lastCommands=0,lastSeconds=0,lastReadSeconds=0,lastReadCommands=0,readFailures=0,lastSuccessAtUptime=now()}
  local function sync_budgets()
   if now()<budgetAt+3 then return end;budgetAt=now()
-  local beganRead=now();local ok,values=pcall(budget_snapshot,budgetStats);budgetStats.lastReadSeconds=now()-beganRead;budgetStats.lastReadAtUptime=now()
+  local beganRead=now();local ok,values=pcall(budget_snapshot,budgetStats);budgetStats.ownerReadSeconds=now()-beganRead;budgetStats.lastReadAtUptime=now()
   budgetStats.lastReadSucceeded=ok
   if not ok then
    budgetStats.readFailures=budgetStats.readFailures+1
    assert(now()-budgetStats.lastSuccessAtUptime<6,'Software CAKE budget observation expired; restore native backend')
    return
   end
-  budgetStats.lastSuccessAtUptime=now()
   local plan=dofile(root..'/queue_plan.lua')
   local batches={};local plans={}
   for _,direction in ipairs({'up','down'})do
@@ -288,8 +289,8 @@ function M.new(root,command,read,put,now,store,r)
   for _,p in pairs(owned)do if not p.retiring then leaseMargin=math.min(leaseMargin or math.huge,p.leaseUntil-now())end end
   budgetStats.leaseMarginBeforeReadSeconds=leaseMargin
   local budgetBegan=now();budgetStats.skippedSourceGap=not sourceFresh
-  budgetStats.skippedLeaseMargin=leaseMargin~=nil and leaseMargin<3
-  if sourceFresh and not budgetStats.skippedLeaseMargin then sync_budgets()end
+  budgetStats.skippedLeaseMargin=false -- Reading the small publication cannot stall CT renewals.
+  if sourceFresh then sync_budgets()end
   if sourceFresh then assert(now()-budgetStats.lastSuccessAtUptime<6,'Software CAKE budget observation expired; restore native backend')end
   budgetStats.leaseMarginAfterReadSeconds=leaseMargin and leaseMargin-(now()-budgetBegan) or nil
   local count=0;for _ in pairs(owned)do count=count+1 end

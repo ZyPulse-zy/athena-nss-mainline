@@ -7,6 +7,8 @@ local cfg={version=1,mode='shadow',policyGeneration='native-abi1',lanAddress='19
  maxTracked=2048,maxCandidates=32,includeBestEffort=false}
 local state=core.new(cfg)
 local previousEncodeSeconds=0
+local budgetAt=-math.huge;local budgetSequence=0
+local bootFile=assert(io.open('/proc/sys/kernel/random/boot_id'));local boot=assert(bootFile:read('*a')):match('^%S+');bootFile:close()
 local function atomic(name,text)
  local p=root..'/'..name;local f=assert(io.open(p..'.new','w'));assert(f:write(text));assert(f:close());assert(fs.rename(p..'.new',p))
 end
@@ -22,5 +24,12 @@ while not fs.stat(root..'/stop')do
  -- Contains private CT/topology identities; the directory must remain 0700.
  local encodingAt=collector.now();local text=flowJson.stringify(result,j);previousEncodeSeconds=collector.now()-encodingAt
  atomic('desired.json',text);atomic('heartbeat',tostring(collector.now()))
+ -- The sole reader owns these read-only queries. Publish desired CT leases
+ -- first; the guardian only reads the small result and never waits for tc.
+ if collector.now()>=budgetAt+3 then
+  budgetAt=collector.now();budgetSequence=budgetSequence+1
+  local budget=collector.software_budgets();budget.sequence=budgetSequence;budget.boot=boot
+  atomic('software-budgets.json',j.stringify(budget));atomic('heartbeat',tostring(collector.now()))
+ end
  n.nanosleep(1)
 end

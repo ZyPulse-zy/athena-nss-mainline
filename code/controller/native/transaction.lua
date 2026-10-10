@@ -17,11 +17,9 @@ local function process_start(pid)
 end
 local function write(p,s)local f=assert(io.open(p..'.new','w'));assert(f:write(s));assert(f:close());assert(fs.rename(p..'.new',p))end
 local function put(p,s)local f=assert(io.open(p,'w'));assert(f:write(s));assert(f:close())end
-local function command(c,boundedRead)
- if boundedRead then assert(c:match('^/sbin/tc %-j %-d qdisc show dev rpwan[1-5]$') or c:match('^/sbin/tc %-j %-d qdisc show dev rpifb[1-5]$'),'Only owned software CAKE observations may use boundedRead')end
- local f=assert(io.popen((boundedRead and '/usr/bin/timeout -k 1 1 ' or '')..c..' 2>&1; printf "\\nATHENA_EXIT_%s\\n" "$?"'))
+local function command(c)
+ local f=assert(io.popen(c..' 2>&1; printf "\\nATHENA_EXIT_%s\\n" "$?"'))
  local s=f:read('*a');f:close();local body,code=s:match('^(.*)\nATHENA_EXIT_(%d+)\n$')
- if boundedRead and (not body or code~='0')then return nil end
  assert(body and code=='0',c..': '..s);return body
 end
 local function loaded(name)return fs.stat('/sys/module/'..name,'type')=='dir'end
@@ -161,6 +159,7 @@ if mode=='stop' or mode=='rollback' then
 end
 if mode=='guard' then
  local r=assert(json(root..'/status.json'));local due=r.durationSeconds==0 and math.huge or now()+(r.durationSeconds or 290)
+ r.boot=assert(read('/proc/sys/kernel/random/boot_id')):match('^%S+')
  r.guardianPid=n.getpid();r.guardianStart=assert(process_start(r.guardianPid));store(r)
  local ok,err=pcall(function()
   write(root..'/guard-ready',tostring(now()))
@@ -189,7 +188,7 @@ if mode=='guard' then
    local reader=assert(n.fork())
    if reader==0 then n.exec('/usr/bin/lua',root..'/reader.lua');os.exit(127)end
    r.readerPid=reader;store(r)
-   local writer=dofile(root..'/writer.lua').new(root,command,read,put,now,store,r)
+   local writer=dofile(root..'/writer.lua').new(root,command,read,put,now,store,r,function()return json(root..'/software-budgets.json')end)
    local initialized=false
    while not fs.stat(root..'/stop') and now()<due do
     if r.supervisedOwnerPid and process_start(r.supervisedOwnerPid)~=r.supervisedOwnerStart then

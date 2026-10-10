@@ -28,6 +28,22 @@ function M.publications(includeFull)
   return projection,includeFull~=false and parse(read(base..'snapshot.json')) or nil
 end
 function M.now() return assert(tonumber(assert(read('/proc/uptime',256)):match('^[%d.]+'))) end
+function M.software_budgets()
+  local began=M.now();local diagnostics={commands={},failures=0,commandCount=0};local values={up={},down={}}
+  local complete=true
+  for w=1,5 do for _,x in ipairs{{'up','rpwan'},{'down','rpifb'}}do
+    if M.now()-began>=0.75 then complete=false;break end
+    diagnostics.commandCount=diagnostics.commandCount+1
+    local rows=parse(command('/sbin/tc -j -d qdisc show dev '..x[2]..w,nil,'cake-'..x[1]..'-'..w,diagnostics))
+    local rate,count=nil,0
+    for _,q in ipairs(type(rows)=='table' and rows or{})do if q.kind=='cake' and q.root==true then
+      count=count+1;rate=q.options and tonumber(q.options.bandwidth)
+    end end
+    if count~=1 or not rate or rate<=0 then complete=false;break end
+    values[x[1]][w]=rate*8/1000
+  end;if not complete then break end end
+  return{version=1,source='software-cake',complete=complete,values=values,startedAtUptime=began,finishedAtUptime=M.now(),diagnostics=diagnostics}
+end
 function M.resolve(neighbors,leases,fdb,stations,wallNow)
   local clients,leaseMap={},{}
   for _,l in ipairs(leases) do if l.expires==0 or l.expires>wallNow then leaseMap[l.ip]=l.mac end end

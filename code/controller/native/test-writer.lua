@@ -47,7 +47,10 @@ local function read(p)assert(p=='/sys/kernel/debug/athena_ecm_gate/status');retu
 local function put(p,s)
  assert(p==root..'/tags.nft' or p==root..'/budgets.tc');local f=assert(io.open(p,'w'));assert(f:write(s));assert(f:close())
 end
-local writer=dofile(root..'/writer.lua').new(root,command,read,put,function()return at end,function()end,r)
+local writer=dofile(root..'/writer.lua').new(root,command,read,put,function()return at end,function()end,r,function()
+ return{version=1,source='software-cake',complete=true,sequence=at,startedAtUptime=at,finishedAtUptime=at,
+ values={up={40000,40000,40000,40000,40000},down={downBudget*8/1000,70000,70000,70000,70000}},diagnostics={commandCount=10}}
+end)
 writer.tick({wans=r.wans,flows={},operations={},summary={tracked=0,clients=0,exits={},classes={},sourceFresh=false,sourceSequence=1}})
 assert(parsed and r.flowState.nativeOwned==0)
 local flow={key='one',binding='source',class='BULK',candidate=true,budgetAdmitted=false,client='192.0.2.12',egress='phy0-ap0',

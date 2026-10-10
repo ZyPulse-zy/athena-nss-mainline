@@ -1,5 +1,5 @@
 {
-  "revision": "dorm-v2-directional-policy-and-passive-sync-20261010",
+  "revision": "dorm-v2-independent-budget-and-igs-correction-20261010",
   "reviewBase": "3208540780e56b0b498616d75a136e1e1011dd21",
   "priorDeployedCodeCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
   "productionCandidateDeployed": false,
@@ -16,17 +16,24 @@
     "budgetQueryBatchSeconds": 0.75,
     "budgetQueryTermSeconds": 1,
     "budgetQueryKillSeconds": 1,
-    "skipBudgetReadsBelowLeaseMarginSeconds": 3,
     "budgetObservationExpirySeconds": 6,
     "classificationLeaseSeconds": 6,
-    "sharedNetworkQuotasAdded": false
+    "sharedNetworkQuotasAdded": false,
+    "independentReaderBudgetPublication": true,
+    "guardianPerformsBudgetQueries": false,
+    "minimumLeaseMarginDoesNotSkipFreshBudgets": true,
+    "budgetPublicationPeriodSeconds": 3,
+    "budgetPublicationMaxDurationSeconds": 2.75,
+    "exactBootAndPublicationAgeChecked": true,
+    "alreadyValidIgsTagsNormalized": true,
+    "newIgsBindingsEnabled": false
   },
   "tests": {
     "local": [
       {
         "test": "test-writer-policy.lua",
         "exit": 0,
-        "output": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":215,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}"
+        "output": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":240,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}"
       },
       {
         "test": "test-health.lua",
@@ -46,7 +53,7 @@
       {
         "test": "test-collector.lua",
         "exit": 0,
-        "output": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":86,\"passed\":true,\"failedReadDistinctFromEmpty\":true}"
+        "output": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":137,\"passed\":true,\"failedReadDistinctFromEmpty\":true}"
       },
       {
         "test": "test-tag-rules.lua",
@@ -77,7 +84,7 @@
         {
           "name": "test-writer-policy.lua",
           "exit": 0,
-          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":215,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}\n",
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":240,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}\n",
           "stderr": ""
         },
         {
@@ -101,7 +108,7 @@
         {
           "name": "test-collector.lua",
           "exit": 0,
-          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":86,\"passed\":true,\"failedReadDistinctFromEmpty\":true}\n",
+          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":137,\"passed\":true,\"failedReadDistinctFromEmpty\":true}\n",
           "stderr": ""
         }
       ],
@@ -110,7 +117,7 @@
       "cleaned": true
     },
     "receiptC": {
-      "checks": 166,
+      "checks": 168,
       "mockedTransport": true,
       "firmwareProof": false
     },
@@ -131,8 +138,8 @@
       "ecm_ae_classifier_public.h": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
       "Makefile": "57161558b522da5a56a32d29187fc0dcf3d5c1f386fae5577c4d9b7d5ed5c13f",
       "receipts.h": "9e277067cd246993aa396853a81876d87151dc2f2acae60baf59215a600e743b",
-      "receipt_telemetry.h": "f8a2c56c96e7e01501bc5c769157b906c95c3d82a6bbe53c050698bcb8ac2c59",
-      "test-receipts.c": "b1c67002be3a54164ad44d859016e284110d05d2ef6035e2b24d7c20eb2e7ffc",
+      "receipt_telemetry.h": "c3a9cad333522ed8b19a1fdcfe986a2a0594cab2e31fdf578d8a208a4110046d",
+      "test-receipts.c": "d2aa515c337882cfccba37f249194190789b0b793d757ec0a3806d0156b02187",
       "test-receipts.py": "1999420e6d357cbaad2049dcfc19d31e4bd718b3ac12bfa2289d3c0d1601033e",
       "test-selection.py": "54710822b45e2ca37318ecf9341ec8831348f5461c2cc4e85a6086102a00615a"
     },
@@ -162,12 +169,12 @@
     "ingressOriginalSha256": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb",
     "ingressReceiptCopySha256": "116a088ad024f2f21b8e52ae08531532639ce318ee629ae8d850524da3ae25ce",
     "athena_ecm_gate.ko": {
-      "sha256": "32f5b2bb0103d79a63f84a9d6e5c22ffeb52560c9709aa426a2e541d377189a9",
+      "sha256": "09951c593e59d77a8c64342d1b413670ff23d9888dae8a05856fc366dd65fa8e",
       "bytes": 129592
     },
     "athena_nss_receipts.ko": {
-      "sha256": "58d7a422b2647162b9d5977ae2cd331c67fd39d88c8e29d790b8693d12c6d327",
-      "bytes": 178848
+      "sha256": "dfe4ec1dad235204c757f9ca0f6e989f60b8b4bd29be21daae06f3eb06c65b09",
+      "bytes": 181168
     },
     "passed": true,
     "extraSymbols": "Verified installed exports; zero CRC because MODVERSIONS is disabled, not an ABI guarantee",
@@ -270,5 +277,32 @@
     "routerRebooted": false,
     "wirelessSettingsChanged": false
   },
-  "historicalEvidencePreserved": true
+  "historicalEvidencePreserved": true,
+  "firstTrial": {
+    "sourceCommit": "c2ccdbb3e78a4e642b9818a00ad9d1bb76194553",
+    "productionTrialFailed": true,
+    "automatedRecoveries": 2,
+    "failure": "Lease-margin skip kept budget observations from refreshing; six-second expiry triggered normal complete rollback",
+    "labelIssue": "Some CREATE IGS fields retained a previous BE class while current leased class was RT",
+    "secondaryInspectionIssue": "launch.sh is a persistent entry point and was incorrectly expected in the RAM file list; other runtime hashes matched",
+    "validatedAt": "2026-10-10T02:00:46.955Z",
+    "initialNssRange": [
+      0,
+      1
+    ],
+    "initialLabelMismatchSamples": 1,
+    "returnedToKnownGood": {
+      "at": "2026-10-10T02:04:38.428Z",
+      "previousSourceCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
+      "phase": "native-running",
+      "sourceFresh": true,
+      "nss": 0,
+      "unconfirmed": 0,
+      "installedPreviousHashesMatched": true,
+      "allWansUp": true
+    },
+    "wirelessSettingsChanged": false,
+    "routerRebooted": false,
+    "originalDiskModulesReplaced": false
+  }
 }

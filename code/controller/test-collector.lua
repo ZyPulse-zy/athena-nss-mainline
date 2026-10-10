@@ -28,6 +28,7 @@ io.popen=function(cmd)
  elseif cmd:find('brctl showmacs',1,true)then name='fdb';body='port no mac addr is local? ageing timer\n 1 02:00:00:00:00:01 no 5.00\n'
  elseif cmd:find('ubus call hostapd.',1,true)then name='hostapd';body=j.stringify({clients={}})
  elseif cmd:find('iw dev',1,true)then name='iw';body=''
+ elseif cmd:find('/sbin/tc -j -d qdisc show dev rp',1,true)then name='cake';body=j.stringify({{kind='cake',root=true,options={bandwidth=5000000}}})
  else error('Unexpected command: '..cmd)end
  commands[name]=cmd
  if invalid==name then body='invalid JSON'end
@@ -45,5 +46,9 @@ invalid=nil;failed='hostapd';good=collector.topology();check(good.complete and g
 -- Successful empty neighbors are an actual empty observation, distinguishable
 -- from the timeout above. No command status can create an identity by itself.
 failed=nil;values.neighbors={};good=collector.topology();check(good.complete and next(good.clients)==nil)
+local budgets=collector.software_budgets();check(budgets.complete and budgets.diagnostics.commandCount==10 and budgets.values.up[5]==40000)
+failed='cake';budgets=collector.software_budgets();check(not budgets.complete and budgets.diagnostics.commandCount==1 and budgets.diagnostics.failures==1 and budgets.finishedAtUptime-budgets.startedAtUptime==1)
+local resolved=collector.resolve({{dst='192.0.2.1',lladdr='02:00:00:00:00:01'}},{},{{mac='02:00:00:00:00:01',ifname='lan1',localEntry=false,age=61}},{},1)
+check(not resolved['192.0.2.1'].valid and resolved['192.0.2.1'].reason=='wired-fdb-observation-expired')
 io.open,io.popen,fs.dir=originalOpen,originalPopen,originalDir
 print(j.stringify({passed=true,checks=checks,mockedProcesses=true,dataPlaneWrites=false,failedReadDistinctFromEmpty=true}))

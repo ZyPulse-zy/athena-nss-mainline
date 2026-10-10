@@ -12,13 +12,13 @@
 | ④ 轻量分层观察 | 分类、完整身份及租约、CREATE ACK、双向 QoS/IGS 提交字段、逐连接固件 RX 字节分别呈现；保留全局计数，显式注明非独立固件队列读回 | 默认无硬件 tc；逐连接字节复用既有统计回调 |
 | ⑤ 无线/有线末段 | 上下行完整队列标签在 CREATE 时精确校正，RT 低位 6 / BE 低位 0；FDB >60 秒给出明确原因与汇总，不以陈旧 FDB 放行；现有三 station 固件统计只读收集 | 标准映射及源码路径有证据；实际 TID/AC、同机游戏下载和持续有线 FDB 的正式验收延期 |
 | ⑥ 字节覆盖与 BE 范围 | 新 `--coverage` 只读取完整分类快照，包括 BE，下行 CT 窗口包住较短硬件统计窗；完整身份/生产者/启动/类别/代号变化或计数回退不混算，输出稳定子集的保守下界 | 不称全 LAN 精确覆盖；不据低负载结果自动扩大 BE、32 槽或频繁替换 |
-| ⑦ 采集、预算与租约开销 | 来源查询维持 1 秒 TERM+1 秒 KILL，失败暂停续租；CAKE 只查十个软件根，批次最多继续 0.75 秒，单查询有界；续租余量 <3 秒跳过查询，预算观测超过 6 秒失效则走既有完整恢复 | 超时、跳过及成功恢复模型通过；不扩大六秒分类租约，未追加 CPU/故障压力循环 |
+| ⑦ 采集、预算与租约开销 | 来源查询维持 1 秒 TERM+1 秒 KILL，失败暂停续租；CAKE 只查十个软件根，批次最多继续 0.75 秒，单查询有界；独立读端先发布分类再每 3 秒采集并发布小型预算；续租写端仅校验读取该文件，完全不等待 tc。预算观测超过 6 秒失效才走既有完整恢复 | 超时、持续低租约余量、失效及成功恢复模型通过；不扩大六秒分类租约，未追加 CPU/故障压力循环 |
 
 ## 双向 QoS 差异的原因与修复
 
 前一部署确实报告 116 个重复的 mismatch 流样本，不能称 116 个独立连接或丢包。QCA ECM `ecm_classifier_dscp.c` 502–523 的 UDP 路径，在双向尚未齐备时，会把当前包优先级复制到另一方向；后续两方向已见时可保留先前值。NSS ported IPv4 前端 1154–1169 将分类器返回的值直接放入 CREATE。这与已见的 up/down 都为 7e、但 IGS 下行正确为 7a 相符。
 
-[writer](../code/controller/native/writer.lua) 现在同时发送精确身份和 WAN/类别对应的 up/down 标签；[gate](../code/controller/native/athena_ecm_gate.c) 验证所有身份、mark、WAN、租约和合法标签，并将策略绑定到槽位新代。[receipt provider](../code/controller/native/receipt_telemetry.h) 只在有效精确策略匹配 CREATE 元组时校正两个 QoS 字段及有效标志，保留 IGS/NAT/其它 payload。反向 CREATE 交换两方向；续租只更新相同代号，撤销/到期立即撤去策略。观察同时保存校正前值与提交值，不修改预期来掩盖差异，不因标签 mismatch 撤销健康流。
+[writer](../code/controller/native/writer.lua) 现在同时发送精确身份和 WAN/类别对应的 up/down 标签；[gate](../code/controller/native/athena_ecm_gate.c) 验证所有身份、mark、WAN、租约和合法标签，并将策略绑定到槽位新代。[receipt provider](../code/controller/native/receipt_telemetry.h) 只在有效精确策略匹配 CREATE 元组时校正两个 QoS 字段及有效标志；已有有效 IGS 规则的下行标签也按当前 RT/BE 及方向校正，不开启缺失的 IGS 绑定，保留 NAT/其它 payload。反向 CREATE 交换两方向；续租只更新相同代号，撤销/到期立即撤去策略。观察同时保存校正前值与提交值，不修改预期来掩盖差异，不因标签 mismatch 撤销健康流。
 
 原 receipt/observation 结构 ABI 保留；新 gate 使用新 telemetry/policy 导出，必须与新 provider 及匹配 ECM 副本成套安装。ECM 和 IGS 可执行代码段保持逐段相同，只修改指定 import 绑定；原磁盘模块、NSS 固件、EDMA、内核均不更换。
 
@@ -40,9 +40,9 @@ ECM public decel 的实现会将对应 CI 标为 defunct；确认撤销并释放
 
 ## 测试和部署
 
-本地实际源码定向 Lua 378 项：writer 215、health 41、coverage 11、core 25、collector 86；辅助 tag/lifecycle/guard 20/25/26 项通过。回执/策略/统计实际 C 源码 166 项，选择器与五 WAN 标签校验实际函数 55 项通过。它们使用明确时钟/CT/传输 mock，不能冒充固件验收。目标 Lua 的相同模型与解析结果、最终交叉构建和部署读回写入 [结构化证据](../evidence/dorm-v2-final-improvements.json)。
+本地及目标路由器实际源码定向 Lua 454 项：writer 240、health 41、coverage 11、core 25、collector 137；辅助 tag/lifecycle/guard 20/25/26 项通过。回执/策略/统计实际 C 源码 168 项，选择器与五 WAN 标签校验实际函数 55 项通过。它们使用明确时钟/CT/传输 mock，不能冒充固件验收。目标 Lua 的相同模型与解析结果、最终交叉构建和部署读回写入 [结构化证据](../evidence/dorm-v2-final-improvements.json)。
 
-部署尚待本节后续补入实际时间、提交和读回结果。继续保持 PR #1 draft，不合并。保护五 WAN 认证/PBR/NAT、原 CAKE/autorate、代理/Tailscale、无线与自启；保留原安装私有备份及历史失败。
+首次 c2ccdbb 试部署在正常低租约余量时反复跳过预算查询，导致六秒预算失效并两次自动完整恢复；同时发现部分已有效 IGS 标签保留旧 BE 类别。09:59 开始试部署，10:04:38 已恢复 db872e0 并重新运行，五 WAN 和软件基线保持。此次失败和完整恢复记录保留。后续修正版将预算采集从续租写端移至现有读端，增加持续低余量回归，修正正反向 IGS 标签；不会用重试或改预期掩盖问题。修正版部署事实将在下节写入。继续保持 PR #1 draft，不合并。保护五 WAN 认证/PBR/NAT、原 CAKE/autorate、代理/Tailscale、无线与自启；保留原安装私有备份及历史失败。
 
 ## 延期的可执行验收
 
