@@ -12,7 +12,7 @@ local function flow(id,class,rate)
   reply={src='198.51.100.99',sport=443,dst='198.51.100.1',dport=40000+id}}
 end
 local function fixture()
- local at=100;local rows={};local controls={};local fail=false;local slowBudget=false;local staleBudget=false
+ local at=100;local rows={};local controls={};local fail=false;local slowBudget=false;local staleBudget=false;local publishedAt
  local r={wans={},ingress={up=plan.plan(0x7e00,{40000,40000,40000,40000,40000}),down=plan.plan(0x7a00,{70000,70000,70000,70000,70000})}}
  for w=1,5 do r.wans['rpwan'..w]='198.51.100.'..w end
  n.open=function(path,mode)
@@ -45,10 +45,11 @@ local function fixture()
  local writer=dofile(root..'/writer.lua').new(root,command,read,function(p,text)
   assert(p==root..'/tags.nft'or p==root..'/budgets.tc');assert(type(text)=='string')
  end,function()return at end,function()end,r,function()
-  return{version=1,source='software-cake',sequence=at,complete=not slowBudget,startedAtUptime=at-(slowBudget and 1 or staleBudget and 7.06 or 0.06),
-   finishedAtUptime=at-(staleBudget and 7 or 0),values={up={40000,40000,40000,40000,40000},down={70000,70000,70000,70000,70000}},diagnostics={commandCount=slowBudget and 1 or 10}}
+  local published=publishedAt or at
+  return{version=1,source='software-cake',sequence=published,complete=not slowBudget,startedAtUptime=published-(slowBudget and 1 or staleBudget and 7.06 or 0.06),
+   finishedAtUptime=published-(staleBudget and 7 or 0),values={up={40000,40000,40000,40000,40000},down={70000,70000,70000,70000,70000}},diagnostics={commandCount=slowBudget and 1 or 10}}
  end)
- return{r=r,rows=rows,controls=controls,time=function(t)at=t end,fail=function(v)fail=v end,slowBudget=function(v)slowBudget=v end,staleBudget=function(v)staleBudget=v end,tick=function(flows,fresh)
+ return{r=r,rows=rows,controls=controls,time=function(t)at=t end,publishedAt=function(t)publishedAt=t end,fail=function(v)fail=v end,slowBudget=function(v)slowBudget=v end,staleBudget=function(v)staleBudget=v end,tick=function(flows,fresh)
   writer.tick({wans=r.wans,flows=flows,operations={},summary={sourceFresh=fresh~=false,tracked=#flows,clients=1,exits={},classes={}}})
  end}
 end
@@ -141,5 +142,12 @@ up,down=f.controls[1]:match(' (%d+) (%d+)\n$');check(tonumber(up)==0x7e160006 an
 for t=101,125 do f.time(t);all[1].validUntil=t+2;all[1].sequence=t;f.tick(all);check(f.r.flowState.nativeOwned==1 and f.r.flowState.writerTickSeconds==0)end
 f.staleBudget(true);f.time(131);all[1].validUntil=133;all[1].sequence=131;local ok,err=pcall(f.tick,all)
 check(not ok and tostring(err):find('Software CAKE budget observation expired',1,true))
+-- Reader and owner periods drift independently. An old locally cached sample
+-- can cross six seconds before the next scheduled owner read, while a newer
+-- valid publication is already present. Read it before declaring expiry.
+f=fixture();all={flow(1)};f.publishedAt(96.9);f.tick(all)
+f.publishedAt(99.95);f.time(102.95);all[1].sequence=2;all[1].validUntil=108
+local ok=pcall(f.tick,all);check(ok,'Fresh publication was mistaken for an expired local cache')
+check(f.r.flowState.budgetUpdates.lastSuccessAtUptime==99.95 and f.r.flowState.nativeOwned==1)
 n.open=originalOpen
 print(j.stringify({passed=true,checks=checks,mockedKernel=true,dataPlaneWrites=false,fullSlotsDelayedAck=true,rejectedCacheBounded=true,receiptGatedFiniteRecovery=true,boundedBudgetReads=true}))

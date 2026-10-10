@@ -1,5 +1,5 @@
 {
-  "revision": "dorm-v2-independent-budget-and-igs-correction-20261010",
+  "revision": "dorm-v2-budget-publication-drift-20261010",
   "reviewBase": "3208540780e56b0b498616d75a136e1e1011dd21",
   "priorDeployedCodeCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
   "productionCandidateDeployed": false,
@@ -26,14 +26,18 @@
     "budgetPublicationMaxDurationSeconds": 2.75,
     "exactBootAndPublicationAgeChecked": true,
     "alreadyValidIgsTagsNormalized": true,
-    "newIgsBindingsEnabled": false
+    "newIgsBindingsEnabled": false,
+    "localBudgetCacheRecheckedBeforeExpiry": true,
+    "refreshLocalCacheAtAgeSeconds": 5,
+    "permissionTimestampAfterAllObservations": true,
+    "previousAttemptSummaryLimit": 1
   },
   "tests": {
     "local": [
       {
         "test": "test-writer-policy.lua",
         "exit": 0,
-        "output": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":240,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}"
+        "output": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":243,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}"
       },
       {
         "test": "test-health.lua",
@@ -84,7 +88,7 @@
         {
           "name": "test-writer-policy.lua",
           "exit": 0,
-          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":240,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}\n",
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":243,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}\n",
           "stderr": ""
         },
         {
@@ -304,5 +308,87 @@
     "wirelessSettingsChanged": false,
     "routerRebooted": false,
     "originalDiskModulesReplaced": false
+  },
+  "secondTrial": {
+    "sourceCommit": "f63ff1e61e2e480af72b2a63a8ad5ee1f90099e0",
+    "productionTrialFailed": true,
+    "automaticRecoveries": 2,
+    "initialNaturalWindow": {
+      "seconds": 90,
+      "labelVerifiedSamples": 52,
+      "labelMismatchSamples": 0,
+      "perFlowHardware": {
+        "basis": "firmware-RX-sync",
+        "measured": true,
+        "byteDelta": {
+          "down": 36946299,
+          "up": 1570836
+        },
+        "intervals": 39
+      },
+      "byteCoverage": {
+        "hardwareBytes": 15249743,
+        "excludedFlowWindows": 168,
+        "totalBytes": 62868977,
+        "includesBestEffort": true,
+        "measurement": "bracketed-downstream-lower-bound",
+        "classes": {
+          "BE": {
+            "bytes": 10007078,
+            "flows": 1219,
+            "hardware": 0
+          },
+          "RT": {
+            "bytes": 448758,
+            "flows": 11,
+            "hardware": 281590
+          },
+          "UNKNOWN": {
+            "bytes": 0,
+            "flows": 0,
+            "hardware": 0
+          },
+          "BULK": {
+            "bytes": 52413141,
+            "flows": 3,
+            "hardware": 14968153
+          }
+        },
+        "scope": "persistent-five-WAN-zone0-nonproxy-IPv4-TCP-UDP-with-stable-class",
+        "sameByteBasis": true,
+        "lastWindow": {
+          "hardwareEnd": 40450.06,
+          "ctStart": 40445.26,
+          "ctEnd": 40451.46,
+          "hardwareStart": 40447
+        },
+        "windows": 12,
+        "measured": true,
+        "fullLanCoverage": false,
+        "ratioLowerBound": 0.2425638801153071
+      }
+    },
+    "exactExitReasonOverwrittenByRetry": true,
+    "offlineBugReproduced": "A locally cached budget was older than six seconds before the next scheduled read, while a valid newer publication already existed",
+    "directRuntimeCausalityProved": false,
+    "normalFullRestoration": {
+      "at": "2026-10-10T02:17:54.854Z",
+      "phase": "restored",
+      "rollbackConfirmed": true,
+      "gateAbsent": true,
+      "providerAbsent": true,
+      "nss": 0,
+      "allWansUp": true
+    },
+    "returnedToKnownGood": {
+      "at": "2026-10-10T02:17:59.876Z",
+      "previousSourceCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
+      "phase": "native-running",
+      "sourceFresh": true,
+      "nss": 3,
+      "unconfirmed": 0,
+      "installedPreviousHashesMatched": true,
+      "allWansUp": true
+    }
   }
 }

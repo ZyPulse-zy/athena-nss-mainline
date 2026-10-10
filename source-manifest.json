@@ -45188,6 +45188,41 @@
       "bytes": 4063,
       "role": "router-native-source-test-or-maintenance",
       "revision": "dorm-v2-independent-budget-and-igs-correction-20261010"
+    },
+    {
+      "path": "code/controller/native/core_guard_permission.lua",
+      "sha256": "7fc2d5b1a9f6e3a25dc8645c8ea5dbc5e8e46d00106ee8842eb37aa18d397aeb",
+      "bytes": 3663,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-budget-publication-drift-20261010"
+    },
+    {
+      "path": "code/controller/native/supervisor.lua",
+      "sha256": "ba3e1076f35fe38b19db8ead8d89fb1b7db6d05ed4f40eb682b8d294ab23d673",
+      "bytes": 7326,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-budget-publication-drift-20261010"
+    },
+    {
+      "path": "code/controller/native/test-writer-policy.lua",
+      "sha256": "c63132437ab01e869013e1e89afbbc7baac96b2b67e6540088d75ff7ff9a0324",
+      "bytes": 11935,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-budget-publication-drift-20261010"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "sha256": "af4744e7711e4092be141559bafcdfef6bcccaa058d17012a441afb36feab51d",
+      "bytes": 18003,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-budget-publication-drift-20261010"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "sha256": "e22d6ebf95594a497045692bdfde5b7731f2624fdffc6a2f3537c120b12b01e4",
+      "bytes": 20940,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-budget-publication-drift-20261010"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -45310,5 +45345,12 @@
     "sourceRecordsAppended": 10,
     "evidence": "evidence/dorm-v2-final-improvements.json",
     "productionCandidateDeployed": false
+  },
+  "lastRouterLocalBudgetDriftExport": {
+    "revision": "dorm-v2-budget-publication-drift-20261010",
+    "capturedAt": "2026-10-10T02:21:29.898Z",
+    "sourceRecordsAppended": 5,
+    "productionCandidateDeployed": false,
+    "evidence": "evidence/dorm-v2-final-improvements.json"
   }
 }

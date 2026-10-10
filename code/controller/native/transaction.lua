@@ -192,13 +192,13 @@ if mode=='guard' then
    local initialized=false
    while not fs.stat(root..'/stop') and now()<due do
     if r.supervisedOwnerPid and process_start(r.supervisedOwnerPid)~=r.supervisedOwnerStart then
-     r.ownerExited=true;store(r);break
+     r.ownerExited=true;r.stopReason='owner-identity-lost';store(r);break
     end
     if r.supervisorPid and process_start(r.supervisorPid)~=r.supervisorStart then
-     r.supervisorExited=true;store(r);break
+     r.supervisorExited=true;r.stopReason='supervisor-identity-lost';store(r);break
     end
     local heartbeat=tonumber(read(root..'/heartbeat'))
-    if not heartbeat or now()-heartbeat>8 then break end
+    if not heartbeat or now()-heartbeat>8 then r.stopReason='reader-heartbeat-missing-or-stale';break end
     local desired=json(root..'/desired.json')
     if desired and desired.summary.atUptime>=r.startedAtUptime then
      writer.tick(desired)
@@ -215,6 +215,7 @@ if mode=='guard' then
     end
     n.nanosleep(0,250000000)
    end
+   r.stopReason=r.stopReason or(fs.stat(root..'/stop')and'operator-stop'or'duration-expired')
    rollback(r);return
   end
   while not fs.stat(root..'/stop') and now()<due do

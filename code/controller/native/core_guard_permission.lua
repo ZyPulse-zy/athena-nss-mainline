@@ -31,8 +31,11 @@ if arg and arg[0] and arg[0]:match('/core_guard_permission.lua$')then
    local command=mode=='supervisor' and '/usr/bin/lua\0/usr/lib/athena-dorm-native/supervisor.lua\0' or '/usr/bin/lua\0'..root..'/transaction.lua\0'..mode..'\0'..(mode=='foreground' and '0\0' or '')
    return fields[1]~='Z' and fields[20]==start and read('/proc/'..pid..'/cmdline',8192)==command
   end
+  local heartbeat=tonumber(read(root..'/heartbeat',128));local gate=read('/sys/kernel/debug/athena_ecm_gate/status',65536)
+  -- Timestamp after the observations: a concurrently published heartbeat
+  -- must not appear to come from the future merely due to read ordering.
   at=tonumber(assert(read('/proc/uptime',128)):match('^[%d.]+'))
-  return M.allowed(r,desired,tonumber(read(root..'/heartbeat',128)),read('/sys/kernel/debug/athena_ecm_gate/status',65536),at,process)
+  return M.allowed(r,desired,heartbeat,gate,at,process)
  end)
  print(require('luci.jsonc').stringify({allowed=ok and allowed==true,reason=ok and reason or 'permission-read-failed',atUptime=at,sourceFresh=sourceFresh}))
  os.exit(ok and allowed and 0 or 1)

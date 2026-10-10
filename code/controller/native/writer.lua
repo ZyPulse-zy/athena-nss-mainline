@@ -124,7 +124,9 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
  end
  local budgetAt=0;local budgetStats={batches=0,lastCommands=0,lastSeconds=0,lastReadSeconds=0,lastReadCommands=0,readFailures=0,lastSuccessAtUptime=now()}
  local function sync_budgets()
-  if now()<budgetAt+3 then return end;budgetAt=now()
+  -- Independent reader/owner periods drift. Refresh a near-expiry local
+  -- cache before asserting publication failure, even between scheduled reads.
+  if now()<budgetAt+3 and now()-budgetStats.lastSuccessAtUptime<5 then return end;budgetAt=now()
   local beganRead=now();local ok,values=pcall(budget_snapshot,budgetStats);budgetStats.ownerReadSeconds=now()-beganRead;budgetStats.lastReadAtUptime=now()
   budgetStats.lastReadSucceeded=ok
   if not ok then

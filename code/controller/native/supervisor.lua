@@ -76,6 +76,16 @@ while not stopped() do
   if stopped() and not fs.stat(root..'/lock')then break end
   n.nanosleep(0,250000000)
  until now()>=untilRestored
+ if r then
+  -- One bounded previous-attempt summary survives launch overwriting status
+  -- and the private guardian log. Do not retain CT/client identities here.
+  state.lastAttempt={phase=r.phase,rollbackConfirmed=r.rollbackConfirmed,stopReason=r.stopReason,
+   executionError=r.executionError,stageError=r.stageError,coreGuardLastCheck=r.coreGuardLastCheck,
+   startedAtUptime=r.startedAtUptime,finishedAtUptime=r.finishedAtUptime,
+   sourcePauses=r.flowState and r.flowState.sourcePauses,sourceResumes=r.flowState and r.flowState.sourceResumes,
+   budgetUpdates=r.flowState and r.flowState.budgetUpdates}
+  store()
+ end
  local ready,reason=policy.retry(r,softwareFacts(),pid,launchedAt,state.automaticRetries,stopped())
  if not ready and not fs.stat(root..'/status.json') and not fs.stat(root..'/guard-ready')then
   -- No transaction record/guardian means this attempt failed before native
