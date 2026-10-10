@@ -1,5 +1,19 @@
+# 当前任务约束：2026-10-10 离线复查与上游准备
+
+先读 docs/DORM_V2_RECHECK_20261010.md 和 evidence/dorm-v2-recheck-20261010.json。
+当前维护 code/controller，冻结 code/work 与历史证据；manifest 只追加命名维护版本。
+恢复表修复 f848caf 已推送开发分支，但现网仍为 224ee07。ECM 上游草稿为 qosmio/nss-packages #78。
+这次用户明确禁止部署、停止/重启控制器或路由器、模块重载、固件/EDMA/无线变更、拥塞/故障注入。
+保持五 WAN 认证/PBR/NAT、代理/Tailscale、原 CAKE/autorate、学校网络和游戏设备策略。
+游戏/Wi-Fi 正式验收仍延期。只做离线源码/测试/提交和有界只读检查；两个端点不是长期验收。
+PR #1 与 #78 保持 draft，不合并；不把本地控制器 bug 或二进制适配器当通用上游修复。
+完整 ECM 模块构建和 nftables 原生命名空间回读仍待完成；证据必须标明 mock/源码/固件/验收层级。
+下方是历史事实和此前阶段限制；其中的部署/重启许可不能沿用到本任务。
+
+## 历史交接记录
+
 <!-- remaining-work-deployment-20261010 -->
-# 当前：224ee07 已部署，剩余代码改进完成
+### 历史记录：当前：224ee07 已部署，剩余代码改进完成
 
 最终安装源码提交 **224ee079a99bb43c6763bb54151a1c6aba7ab391**；2026-10-10 10:25:28 北京时间复核：native-running、sourceFresh、NSS 2、未确认 0、自动恢复 0、来源暂停/恢复 0/0。17 个持久文件和 15 个运行 RAM 文件哈希一致；launch.sh 与 supervisor.lua 使用持久入口，单独核对安装哈希。五 WAN 身份、保护配置、认证/分类器/autorate/代理/Tailscale 服务 PID 和启动时间、十个软件 CAKE 根的句柄及除动态 bandwidth 外所有选项、自启均保持。既有 owner 与所拥有 core guard 随正常切换重载；原 /lib/modules、固件、无线设置和路由器启动状态没有改动。
 
@@ -15,7 +29,7 @@
 <!-- /remaining-work-deployment-20261010 -->
 
 <!-- audit-deployment-20261010 -->
-# 当前接续：db872e0已获准安装并运行
+### 历史记录：当前接续：db872e0已获准安装并运行
 
 用户随后明确要求直接部署，本次单次正常退出/完整回退确认、11文件成套安装及start已完成。先读docs/DORM_V2_DEPLOYMENT_ACCEPTANCE.md和evidence/dorm-v2-audit-deployment.json，不要再以候选未部署为由暂停或重复start。2026-10-10 00:55:06北京时间：native-running/NSS8/sourceFresh/未确认0，新会话来源0/0、自动重试0；持久及运行RAM11文件哈希一致、五WAN身份/保护/十个软件CAKE根选项保留，自启保留。native owner与其核心guard按既有流程重载，认证/分类器/autorate/代理/Tailscale服务身份不变。原安装私有备份已在路由器和本地验证，本次RAM安装暂存已清理。
 
@@ -25,7 +39,7 @@
 <!-- /audit-deployment-20261010 -->
 
 <!-- audit-remediation-20261010 -->
-# 当前接续：审查修复已验证，候选尚未部署
+### 历史记录：当前接续：审查修复已验证，候选尚未部署
 
 本次以远端 be46953 / 审查 3208540 的 ABI2 本机32槽为基线，已实现 pending RT、防重复撤销、有界 rejected、回执门控的有限单连接恢复、分层只读证据及采集失败/耗时。见 docs/DORM_V2_AUDIT_REMEDIATION.md 与 evidence/dorm-v2-audit-remediation.json。内核 !selected 保留；新 gate/receipt provider 须成套部署，新导出不允许混用旧 provider。只维护 code/controller，冻结 code/work 与 manifest 历史。
 
@@ -37,7 +51,7 @@
 <!-- /audit-remediation-20261010 -->
 
 <!-- longterm-deployment-fix-20261009 -->
-# 当前接续：长期部署修复已上线，冷启动验收通过
+### 历史记录：当前接续：长期部署修复已上线，冷启动验收通过
 
 复核 2026-10-09 15:18:51.319 UTC：native-running，实际NSS1、来源新鲜、未确认0；本次启动来源累计暂停/恢复2/2。开机自启已开启，五WAN/代理/Tailscale正常，保护配置与19个已安装源码哈希通过，九张规则表可读。
 
@@ -55,7 +69,7 @@
 
 <!-- /longterm-deployment-fix-20261009 -->
 
-# 当前接续：f1f58cc现网运行，标签修复候选尚未部署
+### 历史记录：当前接续：f1f58cc现网运行，标签修复候选尚未部署
 
 当前现网仍为 f1f58cc，NSS继续运行；2026/10/9 18:52:48 北京时间最终复核：NSS1、sourceFresh、IPv4开启、未确认0，owner/guardian/reader与服务/保护/已安装源码不变。用户此前回报“不卡了”；正式游戏验收及端到端零Loss/Miss仍未证明。
 
@@ -67,7 +81,7 @@
 
 ## 以下为此前记录，不能覆盖本次部署差异
 
-# 当前接续：NSS继续运行，Loss/Miss诊断已安装
+### 历史记录：当前接续：NSS继续运行，Loss/Miss诊断已安装
 
 先读STATE及evidence/dorm-v2-native.json lossMissInvestigation。2026-10-09T08:57:33.823Z（北京时间16:57）复核：NSS保持运行。当前用户报告约0.4% Loss与Miss，方向不明；尚未复现或证明根因，不能宣布已解决。
 
@@ -83,7 +97,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下为此前记录，不代表当前运行状态
 
-# 当前接续：下载并发游戏采集优化已部署，短时改善
+### 历史记录：当前接续：下载并发游戏采集优化已部署，短时改善
 
 先读STATE首段和evidence/dorm-v2-native.json downloadLoadEfficiency。复核 2026-10-09T05:23:24.961Z：本机 native-running，实际 NSS1，来源新鲜、IPv4准入开启、未确认0；本次启动来源暂停/恢复 1/1。五WAN、原软件队列、认证/PBR/NAT、代理/Tailscale、管理与原磁盘模块核验通过，旧Windows停止，自启关闭。
 
@@ -97,7 +111,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下为修复前的历史状态，不代表当前运行状态
 
-# 当前接续：ABI2 NSS 已运行，批准重启与完整回退已实测
+### 历史记录：当前接续：ABI2 NSS 已运行，批准重启与完整回退已实测
 
 先读 STATE 当前首段及 evidence/dorm-v2-native.json approvedRebootDelivery。用户明确允许一次重启，已执行；旧 gate 引用消失。最新交付复核本机 ABI2 32 槽/NSS28/sourceFresh/健康寿命0/IPv4开启，同一启动264.85秒、两个实际CREATE客户端（有线+Wi-Fi），旧 Windows STOPPED，自启关闭。不要重复 start、恢复旧 Windows 或擅自重启。
 
@@ -107,7 +121,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下为批准重启前的历史记录，不代表当前状态
 
-# 当前接续：NSS启用请求受旧模块引用阻断，ABI2修复已保存
+### 历史记录：当前接续：NSS启用请求受旧模块引用阻断，ABI2修复已保存
 
 先读 STATE 当前首段与 evidence/dorm-v2-native.json activationRecovery。NSS0、软件队列/五WAN/保护服务已恢复；旧Windows停止，ABI1 gate自引用5/ECM CI5仍在，完整回退未确认。五个精确 DESTROY 原始 ENACK4/error5 实测证明规则不存在；新 ABI2 源码、134 C mock、目标writer-NFT模型/解析/编译通过并存入 /usr/lib/athena-dorm-native，未加载、自启关闭。不要重复start、旧实验、强卸载、伪造ACK或修改内核内存。
 
@@ -115,7 +129,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下为本次启用前的历史记录，不代表当前状态
 
-# 当前接续：v2 本机服务实测后停用，真人验收延期
+### 历史记录：当前接续：v2 本机服务实测后停用，真人验收延期
 
 先读docs/STATE.md当前段、code/controller/README.md及evidence/dorm-v2-native.json。仅维护code/controller；旧code/work/失败及6304历史源码冻结。32成本槽已有真实多客户端/有线/两AP NSS、逐流/IGS FW ACK、共同上行clsact、119秒无健康固定寿命、活跃stop/reader-loss和手动procd owner退出恢复。最终receipt周期修复96 mock与模块加载通过。本机候选安装停止/关闭自启/无respawn，旧Windows continuous恢复；先Status核对，不重复启动。
 
@@ -123,7 +137,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下保留历史，旧范围及“当前”不得覆盖上方事实
 
-# 当前接续：用户 v2 规格，路由器本机影子已实测
+### 历史记录：当前接续：用户 v2 规格，路由器本机影子已实测
 
 先读 docs/STATE.md 当前首段、code/controller/README.md 和 evidence/dorm-v2-shadow.json。主线是全宿舍有线/Wi-Fi 游戏稳定、BULK 借用余量、长期 NSS/QoS；不新增设备公平配额。code/controller 是唯一新维护入口，旧 code/work 和原失败保持冻结。影子试用已停止清理；随后用户明确授权“可以 那继续吧 直接可以做到最后一步”，可连续推进相关代码、编译、可回退现场部署及最终验收。仍保留五 WAN/PBR/NAT/代理/Tailscale/管理通道，不升级、刷机、重启或替换 EDMA。用户提供自己的 Wi-Fi 电脑用于最后验收，具体设备与真人测试时间未给出。
 
@@ -131,7 +145,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下保留历史，旧范围/上限不得覆盖当前用户规格与事实
 
-# 当前接续：连续合格NSS控制器已部署
+### 历史记录：当前接续：连续合格NSS控制器已部署
 
 先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_CONTINUOUS；用 work/resident-continuous-dev-20261008/service.ps1 Status 核对，禁止重复启动。2026-10-08，取消健康代90秒退出和20分钟四次启动限制。合格流持续自动续租；分类/socket6秒新鲜度、native滚动120秒、guardian滚动180秒及失联撤销保持。实际RT mask2连续NSS 196.75秒／393采样校验／65续租，跨原90/120/180秒后主动Stop和完整恢复通过。
 
@@ -139,7 +153,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下保留历史记录
 
-# 当前接续：独立准入集成完成，dev-i常驻观察
+### 历史记录：当前接续：独立准入集成完成，dev-i常驻观察
 
 先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_SERVICE并用work/resident-service-dev-i-20261008/service.ps1 Status核对，不重复启动。RT mask2实际NSS90秒/181采样/ECM1/30续租、完整恢复及端点/客户端清理通过；15:12保留dev-i，启动完整只读健康/两物理原队列审核通过。原dev-h模块绑定失败已本地修正，旧失败/源码/证据保存。49/119/124与16守护pre-fork回归通过；native源码和二进制未改。
 
@@ -147,61 +161,61 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下保留历史记录
 
-# 当前接续：dev-h独立合格流入口候选运行
+### 历史记录：当前接续：dev-h独立合格流入口候选运行
 
 先读STATE/PLAN/KNOWN_FAILURES/RESIDENT_SERVICE；使用work/resident-service-dev-h-20261008/service.ps1 Status，不重复启动。14:43启动完整只读/两物理恢复审核通过，BULK0/RT0/0新NSS，准入未暂停，heartbeat暂停。独立1..3槽位、最多2BULK＋1RT、允许同WAN，原分类/归属/CT/NAT/mark/affinity/pin/lease和全部期限/字节/恢复保护保持。33一般/119入口/124服务及native157/109/134模型、七子集Lua/尺寸、6.18.44编译通过，新optional native尚未硬件加载；仅等待自然负载一次有界集成，不造fixture/操作游戏/新下载/重做CPU。准备期已stage的缺资格须完整恢复后才等新代，旧g失败细节缺失不retro分类。游戏丢包P1尚未关闭。
 
 ## 以下保留历史记录
 
-# 当前接续：dev-g已恢复，RT1／BULK0等待自然组合
+### 历史记录：当前接续：dev-g已恢复，RT1／BULK0等待自然组合
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md及RESIDENT_SERVICE.md；使用 work/resident-service-dev-g-20261008/service.ps1 Status核对，不重复启动。13:32运行且准入未暂停，RT1/BULK0/ECM0，三次只读成功。dev-f 13:15来源在OS查询后过期，checkpoint/stage前拒绝并最终恢复；原中间审核拒绝保留。180本地检查完成最终分类读取后置修复，source6/OS6和全部保护保持，当前完整90秒集成仍待自然合格负载。保持下载，不操作游戏/造fixture/重做CPU，heartbeat仍暂停。旧RT0不当作无UDP或CT退出。
 
 ## 以下保留历史记录
 
-# 当前接续：dev-f正常应用常驻，P1读取修复待完整集成
+### 历史记录：当前接续：dev-f正常应用常驻，P1读取修复待完整集成
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md与RESIDENT_SERVICE.md；使用work/resident-service-dev-f-20261008/service.ps1 Status核对，不重复启动。dev-e已实际Steam／CS2三流NSS3、54.07秒／18续租后inode读取拒绝，完整恢复通过。165本地检查修复不同WAN选择、严格checkpoint前无候选及三个发布通道一次50ms重读，六份其它Lua和全部保护／期限保持。12:28运行WAITING_FLOW，BULK4／RT0，ECM0；新完整90秒未完成。用户自报小丢包约1%以内、比之前好，非匹配因果验收。保持下载，不操作游戏/造fixture/重复CPU；有合格原流接续一次有界集成，没有条件则常驻等待。未知进入后失败暂停，P0优先恢复；heartbeat仍暂停。
 
 ## 以下保留历史记录
 
-# 当前接续：dev-d进程运行，实际NSS等待合格流
+### 历史记录：当前接续：dev-d进程运行，实际NSS等待合格流
 
 先核对work/resident-service-dev-d-20261008/service.ps1 Status，不重复启动。dev-c异步cwd路径退出已本地复现并修复；48服务检查、11 JS/2 PS语法及实际启动审核通过。当前WAITING_FLOW/0新NSS，未宣称下载游戏丢包解决。旧源码/错误/空锁保留，原入口、数据面及全部保护不变；heartbeat仍暂停。详见docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md。
 
 ## 以下保留历史记录
 
-# 当前接续：dev-c运行，实际下载游戏丢包待闭环
+### 历史记录：当前接续：dev-c运行，实际下载游戏丢包待闭环
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md、RESIDENT_SERVICE.md，并核对work/resident-service-dev-c-20261008/service.ps1 Status，不重复启动。P2前置Lua空值读已修，65入口/37服务本地回归及三WAN只读查询通过。RT1/BULK0、新NSS0，自动准入未暂停。用户60–70%丢包在下载降速后消失；P1体验尚未关闭，不能宣称根因或NSS改善已证实。保持原数据面/准入/期限/恢复，复用历史证明，不操作游戏/制造fixture/重复CPU/逐bug archive；heartbeat仍暂停。
 
 ## 以下保留历史记录
 
-# 当前接续：常驻调度 dev-b 运行
+### 历史记录：当前接续：常驻调度 dev-b 运行
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md；核对work/resident-service-dev-b-20261008/service.ps1 Status，不重复启动。37项本地检查通过：仅完整证明checkpoint前无候选且恢复正常的拒绝继续等待新鲜流，其它错误仍暂停。原入口/数据面/期限保持；没有新正式硬件轮次。用户要求NSS开启持续有效，进程运行与实际NSS命中分别核对。下载时网络回弹待核验；已有只读软件路径处理压力证据，不能宣称根因或体验修复。不操作游戏/造新fixture/重复CPU证明，heartbeat仍暂停。
 
 ## 以下保留历史介绍
 
-# 当前接续：手动常驻进程运行中
+### 历史记录：当前接续：手动常驻进程运行中
 
 常驻进程已部署并保留WAITING_FLOW，任务Athena-NSS-Controller-Manual，无登录触发或故障自动重启。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md与RESIDENT_SERVICE.md，并核对实际service.ps1 Status；不要重复启动、重做已结束soak或重开fixture。18本地检查和实际启动/源推进/停止/重启通过；当前0新NSS代。源/绑定/入口拒绝会暂停准入，P0禁止后续写入并先确认恢复。原入口/数据面/所有期限不变，heartbeat仍暂停。用户常驻授权持续有效。
 
 ## 以下保留历史接续
 
-# 当前开发接续：正常流常驻 controller
+### 历史记录：当前开发接续：正常流常驻 controller
 
 2026-10-08 08:10，正常流入口和四代有界常驻协调通过，恢复通过。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和[正常入口](docs/RESIDENT_NORMAL_CONTROLLER.md)。P0停止写入并恢复，P1定向修复，P2本地批量收敛。原source6/native120/owner180/client180全部保护上限保持；默认永久NSS关闭、heartbeat暂停。本批结束，不主动新增实验或边界问题。
 
 ## 以下保留历史接续
 
-# 当前工作方式：Athena NSS Development Mode
+### 历史记录：当前工作方式：Athena NSS Development Mode
 
 北京时间2026-10-08 00:41。先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md及[常驻控制器文档](docs/RESIDENT_CONTROLLER.md)。以RC1当前结果为准；下方v58及更早“最新”是冻结历史。P0停止写入并恢复，P1针对性修复，P2在同一开发批次本地收敛，不“一bug一硬件版本”。原native120/owner180/client180及全部保护上限保持。当前90秒集成通过，soak实际COMPLETE；默认永久NSS关闭，heartbeat暂停。完成本次验收后不主动新增边界、CPU或功能实验。
 
 ## 以下保留历史接续说明
 
-# 最新状态：五 WAN 入口闭环完成；常驻候选已修复程序错误，资格不足退出并恢复
+### 历史记录：最新状态：五 WAN 入口闭环完成；常驻候选已修复程序错误，资格不足退出并恢复
 
 更新：北京时间2026-10-07 21:47。v54真实可复用入口3421绑定，四TCP BULK WAN1／2／4／5＋UDP RT WAN3，NSS B60.01秒／121采样／ECM5／20续租与完整恢复通过。旧入口未通过的记录为历史，当前入口闭环已完成。
 
@@ -215,7 +229,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下为保留的历史状态
 
-# 最新状态：载荷取得拒绝再次出现，现网完整恢复
+### 历史记录：最新状态：载荷取得拒绝再次出现，现网完整恢复
 
 更新时间：北京时间2026-10-07 19:25。有界只读定位得到原失败窗20行sshd-session日志；认证前关闭／重置与客户端未收首包同时出现，精确归属及根因未证明，未发现可证明限额／penalty因果的记录。原sshd标签0行与同窗口unit查找均保留。
 
@@ -227,7 +241,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下为已保留的授权与历史状态
 
-# 最新接续授权：入口完成后尝试常驻 NSS
+### 历史记录：最新接续授权：入口完成后尝试常驻 NSS
 
 北京时间2026-10-07 18:46，用户明确授权“完成后可以尝试常驻NSS了”。先收敛当前 TCP 候选首包取得问题，完成可复用入口及完整恢复，再实施可撤销的常驻 NSS 试用。该授权持续有效，接续时不再重复询问同一授权；当前尚未启用常驻 NSS 加速。
 
@@ -235,7 +249,7 @@ code/controller为维护入口；冻结旧code/work/失败，保留manifest历�
 
 ## 以下为已封存的实际状态
 
-# 同字节v45入口接续：并发启动实测通过，候选首包超时，已恢复
+### 历史记录：同字节v45入口接续：并发启动实测通过，候选首包超时，已恢复
 
 更新：北京时间2026-10-07 18:38。原v45提交`07001d7d60670094c684ab029332ef58b8411a4f`已push/archive通过4910源SHA/5577文件/1480链接。端点只读恢复连接后，只复用24模型/3406绑定的原v45源码接续一次，未重跑核心准备。四初始PID约0.087秒齐备、四路第一次同时payload约10.71秒；并发启动已实测。
 
@@ -247,7 +261,7 @@ v42五WAN高级QoS核心硬件验收保持。下一问题仅为候选首包取�
 
 ## 以下保留原历史记录，旧“最新”按当时解读
 
-# v45提前取得候选通过，端点SSH写前拒绝；完整恢复
+### 历史记录：v45提前取得候选通过，端点SSH写前拒绝；完整恢复
 
 更新：北京时间2026-10-07 18:04。原v44发布`f3a4287094633477487682ff137465c9b1fcbc66`已实际archive读回4757源SHA/5419文件/1462链接。v45同样四条TCP同时启动、四个唯一PID发布后提前核对，24模型/默认inspect/3406绑定通过；最终首包、CIM/socket/CT、4BULK＋1RT、五WAN及全部原期限/恢复条件保持，七Lua原字节。
 
@@ -261,7 +275,7 @@ v42五WAN高级QoS核心硬件验收保持。下一问题仅为候选首包取�
 
 ## 以下保留历史记录；旧“最新”仅代表当时
 
-# v44入口准入前退出，已完整恢复；五WAN硬件验收保持
+### 历史记录：v44入口准入前退出，已完整恢复；五WAN硬件验收保持
 
 更新：北京时间2026-10-07 17:36。执行权限恢复后，原v43提交`b0a3c47965ba7d0113b592f4049a2893005ee946`已推送并实际archive读回，4553源SHA/5209文件/1442链接。v43首次恢复尝试因本地路径替换漏尾部分隔符，在连接/fixture前拒绝；新v44分隔符修复15模型通过，旧失败不改。
 
@@ -275,7 +289,7 @@ v42五WAN高级QoS核心硬件验收保持。下一问题仅为候选首包取�
 
 ## 以下为原历史记录，旧“未推送”和“权限不可用”只对应当时状态
 
-# v43 发布接续：本地已提交，远端未发布
+### 历史记录：v43 发布接续：本地已提交，远端未发布
 
 更新时间：北京时间2026-10-07 16:50。可复用入口的13模型、默认inspect、4553源SHA与暂存检查通过；本地候选提交`854e28b440ffbabc656c32e6d9c98956096e1ef8`保留。实际启动在Windows CIM身份检查处写前拒绝，没有新硬件会话。
 
@@ -285,7 +299,7 @@ CLI推送的凭据子进程因当前执行环境权限失败；GitHub写入接�
 
 ## 以下保留已有入口验证记录
 
-# 多 WAN 可复用入口已接入；现场启动写前拒绝
+### 历史记录：多 WAN 可复用入口已接入；现场启动写前拒绝
 
 更新：北京时间2026-10-07 16:36。v43新增默认inspect/status/run/stop入口，复用v42五WAN已验收数据面。13模型和默认inspect通过，模型3405绑定=原3354+51；七Lua原字节、分类/QoS/lease/恢复与字节上限保持。新命名空间/独占锁/同session停止支持显式一次运行，不自动连续新代或常驻。
 
@@ -297,7 +311,7 @@ v42五WAN60.01秒/ECM5/20续租/2373UDP全返回与完整恢复保持；v41计�
 
 ## 以下保留历史记录
 
-# 五 WAN 模拟功能验收完成，完整恢复
+### 历史记录：五 WAN 模拟功能验收完成，完整恢复
 
 更新：北京时间2026-10-07 14:52。v42自有四TCP BULK＋模拟UDP RT自然走TCP WAN2/3/4/5＋UDP WAN1，实际NSS五流60.01秒/121采样ECM5/20续租、双向十tag/leaf/完整ct mark/NAT/affinity通过。共享DOWN18附近四bulk合计16.70Mbps，UP60每WAN12硬上限/RT prio0/FQ-CoDel保持；内部57.06秒2373 UDP全部回包、RT上下leaf零drop，RTT中位/P95/P99约196.47/198.68/200.36ms。不是CS2/HUD/真人、新CPU或长期常驻证明。
 
@@ -309,7 +323,7 @@ v41原BE/cooldown退出和全部旧证据不改。对齐后PC交付与分类计�
 
 ## 以下保留历史记录
 
-# 五 WAN 首次同时 NSS 命中；60 秒维持未通过，完整恢复
+### 历史记录：五 WAN 首次同时 NSS 命中；60 秒维持未通过，完整恢复
 
 更新：北京时间2026-10-07 14:15。v41使用自有四TCP＋模拟UDP，原自动分类自然取得TCP WAN2/4/5/3＋UDP WAN1；新checkpoint下载SHA/gzip与独立守护写前通过，五条实际NSS/ECM5、双向十tag/leaf/ct mark/NAT/affinity已取得。B仅3.90秒/6采样/0续租，不能标60秒验收。
 
@@ -321,7 +335,7 @@ v41原BE/cooldown退出和全部旧证据不改。对齐后PC交付与分类计�
 
 ## 以下保留历史记录
 
-# 五 WAN 模拟前提有界拒绝，控制命令修正已封存
+### 历史记录：五 WAN 模拟前提有界拒绝，控制命令修正已封存
 
 更新：北京时间2026-10-07 13:51。按用户“继续”推进五 WAN 同时 NSS，使用自有四 TCP＋模拟 UDP，不操作 CS2 / Steam。v39已完成轮换命令在30秒后被重复检查导致客户端退出；v40新目录仅修正旧命令无操作，四 TCP健康、错误0，但实际分类 WAN2/3/3/4＋UDP WAN2未满足五个不同 WAN，准入前拒绝。两轮均无checkpoint/stage/模块/ECM放行，不归因NSS/固件，不再盲重试或改PBR/门槛/期限。
 
@@ -331,7 +345,7 @@ v41原BE/cooldown退出和全部旧证据不改。对齐后PC交付与分类计�
 
 ## 以下保留历史记录
 
-# 模拟实时流跨 WAN NSS 验收通过，完整恢复
+### 历史记录：模拟实时流跨 WAN NSS 验收通过，完整恢复
 
 更新：北京时间2026-10-07 12:59。用户已停止 CS2 测试，后续使用自有脚本模拟游戏包。v38 实际 TCP BULK/UDP RT/TCP BULK走 WAN3/WAN3/WAN5；原自动分类、60秒 NSS / ECM3 / 20续租、双向六tag与bulk/RT leaf / mark / NAT / affinity通过。DOWN18共享借用保持，附近两个bulk约6.82/8.40Mbps；内部约57.17秒发出2443 UDP，全部回包，RT上下leaf零drop，RTT中位/P95/P99约199.92/200.79/202.51ms。是自有海外回包测量，非CS2 HUD/真人或新CPU证明。
 
@@ -345,7 +359,7 @@ v35已做10本地/7RAM选择与失败帧修正但普通程序factory未执行；
 
 ## 以下保留历史记录
 
-# checkpoint 后三流选择通过；owner 最终准入拒绝，已完整恢复
+### 历史记录：checkpoint 后三流选择通过；owner 最终准入拒绝，已完整恢复
 
 更新：北京时间2026-10-07 11:56。v34实际Cache死斗＋已有Hades临时32Mbps，自动分类1CS2 RT/11Steam BULK/1跨WAN三流。准备native后才冻结TCP/WAN，新checkpoint下载SHA/gzip及后续BULK/RT/BULK选择通过；独立owner/暂存/物理QoS实际执行，但首次owner准入报`Selected class is not admitted`。gate模块未加载、ECM未放行、NSS B段和正常程序factory未验收。
 
@@ -359,7 +373,7 @@ v35已做10本地/7RAM选择与失败帧修正但普通程序factory未执行；
 
 ## 以下保留原正常入口及历史记录
 
-# 正常程序已识别三流；NSS 写前拒绝，恢复通过
+### 历史记录：正常程序已识别三流；NSS 写前拒绝，恢复通过
 
 更新：北京时间2026-10-07 11:12。v33实际Mirage死斗＋已有Hades约32Mbps，自动分类1CS2 RT/9Steam BULK/1跨WAN三流，完整控制器已调用。准备期间两条选中TCP不再合格，checkpoint/stage/模块/ECM前拒绝，普通应用NSS factory验收仍未完成。
 
@@ -373,7 +387,7 @@ v35已做10本地/7RAM选择与失败帧修正但普通程序factory未执行；
 
 ## 以下保留原正常入口与夜间记录
 
-# Steam 已恢复；普通应用 NSS 验收尚未完成
+### 历史记录：Steam 已恢复；普通应用 NSS 验收尚未完成
 
 更新：北京时间2026-10-07 10:12。v32承接用户继续推进及一次Hades家庭库限时下载许可，实际约32Mbps；死斗首次被remote host关闭，原180秒守护内只再匹配一次，最终连接/HUD和负载中的程序分类未取得。完整NSS factory、checkpoint/stage/ECM均未启动，不能标硬件/真人验收通过。
 
@@ -387,7 +401,7 @@ v20三流多WAN与五WAN队列/共享借用/RT优先级硬件结果继续复用�
 
 ## 以下保留原正常入口与夜间记录
 
-# 正常应用写前拒绝已定位并修正；factory验收仍待完成
+### 历史记录：正常应用写前拒绝已定位并修正；factory验收仍待完成
 
 更新：北京时间2026-10-07 09:14。v30实际CS2＋已有Steam更新识别1RT/24BULK，完整审核后原第一TCP不在合格应用候选中，原UDP和第二TCP保持；checkpoint/stage/ECM前拒绝。2615实际输入和冻结源码逐字节保持，缺失候选不当CT退出证据。
 
@@ -401,7 +415,7 @@ v20三流多WAN、五WAN队列与共享DOWN18/UP60每WAN12硬上限/RT优先级0
 
 ## 以下保留原传输与夜间记录
 
-# TCP协议源地址假设已修正；单TCP认证短测与恢复通过
+### 历史记录：TCP协议源地址假设已修正；单TCP认证短测与恢复通过
 
 更新：北京时间2026-10-07 08:28。用户在08:00晨间封存后要求继续；本轮没有新NSS或router配置写入。v28只读实际TCP走WAN1、UDP走WAN5，公网源地址不同且上游改写TCP源端口；TCP metadata只作时间关联。v29分别取协议公网地址，原两个单IPv4规则/180秒独立FW撤销与原认证server保持，1.391秒首payload、25.007秒22960476字节、客户端无错误。旧v27具体失败连接的精确根因仍未追认。
 
@@ -413,7 +427,7 @@ v20三流多WAN、五WAN队列与共享DOWN18/UP60每WAN12硬上限/RT优先级0
 
 ## 以下保留晨间与夜间原记录
 
-# 夜间多 WAN / 高级 QoS 受控原型完成；晨间恢复核验通过
+### 历史记录：夜间多 WAN / 高级 QoS 受控原型完成；晨间恢复核验通过
 
 更新：北京时间2026-10-07 07:44。07:41最后只读核验全部通过：原完整audit来源1.29秒、五WAN健康/保护配置保持/ECM关闭全零；两物理原mq＋四fq_codel所有选项和handle一致；17个自有端点退出、FW原基线一致/临时规则0/端口关闭；16个本机fixture namespace测试进程零残留。本次无生产实验或远端写入，原冻结源码/失败/证据保持。
 
@@ -425,7 +439,7 @@ v27 raw TCP首包超时发生在checkpoint/stage/ECM前，原失败保留、根�
 
 ## 以下保留原始夜间记录
 
-# 夜间受控多WAN已封存；晨间最后审核待执行
+### 历史记录：夜间受控多WAN已封存；晨间最后审核待执行
 
 更新：北京时间2026-10-07 05:32。v20的三流跨WAN、五WAN队列/下行共享借用/RT优先级已在硬件证明；当前没有五WAN同时加速、正常程序新factory或长期常驻声明。v27首TCP超时发生在NSS前，端点/FW/客户端与05:19原完整路由器审核/两物理默认队列均恢复通过，e90c4a6已推送并实际archive验证。额外只读input规则顺序没有发现无条件末尾drop，不能借此确定TCP超时根因。
 
@@ -437,7 +451,7 @@ v27 raw TCP首包超时发生在checkpoint/stage/ECM前，原失败保留、根�
 
 ## 保留的实测与失败
 
-# 多 WAN高级QoS受控通过；五流新负载在NSS前拒绝
+### 历史记录：多 WAN高级QoS受控通过；五流新负载在NSS前拒绝
 
 更新：2026-10-07北京时间05:20。v20三流跨WAN和五WAN队列/共享借用硬件结论保持；v26正常Steam/CS2入口已发布并实际archive校验4975bcc。正常整合factory仍仅只读0流，五WAN同时加速和长期常驻未验。
 
@@ -451,7 +465,7 @@ v27唯一改动为四条自有SSH bulk数据连接改成nonce认证raw TCP，固
 
 ## 保留的正常入口与历史硬件证明
 
-# 多 WAN 高级 QoS：受控硬件通过，正常流入口只读就绪
+### 历史记录：多 WAN 高级 QoS：受控硬件通过，正常流入口只读就绪
 
 更新：2026-10-07北京时间05:08。已通过的范围仍以v20真实硬件为准：两TCP BULK＋一UDP RT跨两个或三个WAN、60秒/121帧/ECM3/20续租；上下行五WAN各18class、11leaf，DOWN18共享借用、UP60每WAN12硬上限，RT优先级0/FQ-CoDel。完整tag、ct mark、NAT、WAN affinity和恢复通过。该范围是受控有界原型，尚未长期常驻或覆盖所有正常连接。
 
@@ -469,7 +483,7 @@ v27唯一改动为四条自有SSH bulk数据连接改成nonce认证raw TCP，固
 
 ## 保留的五WAN队列硬件证明
 
-# 五 WAN NSS 队列映射与共享借用通过
+### 历史记录：五 WAN NSS 队列映射与共享借用通过
 
 更新：2026-10-07北京时间03:50。上下行各18个HTB class、11个FQ-CoDel leaf已实际建立和完整读取，涵盖WAN1..5的BULK/RT以及default950。共同DOWN18：每WAN保障3、ceiling18可借用；共同UP60：每WAN12硬上限。原三槽native gate和常驻自动分类器保持，只放行两TCP BULK＋一UDP RT；实际自然WAN4／5，不声称五WAN同时fast path。
 
@@ -481,7 +495,7 @@ v27唯一改动为四条自有SSH bulk数据连接改成nonce认证raw TCP，固
 
 ## 三流跨WAN借用与更早历史
 
-# 多 WAN NSS 共享预算借用实测通过
+### 历史记录：多 WAN NSS 共享预算借用实测通过
 
 更新：2026-10-07北京时间03:45。保持v18的DOWN18借用／UP60硬上限政策与v16三槽gate，唯一负载变化28＋4→24＋8Mbps，总32和64KiB credit不变。实际WAN1／4／5三条TCP BULK、TCP BULK、UDP RT完成60.01秒／121帧，ECM持续3、20次续租；六tag、完整ct mark、NAT和WAN affinity正确。2497实际绑定，record808129字节在原1MiB内。
 
@@ -493,7 +507,7 @@ v27唯一改动为四条自有SSH bulk数据连接改成nonce认证raw TCP，固
 
 ## 保留的改类失败与更早历史
 
-# 共享预算借用配置已建立；低速 TCP 改类后精确结束旧代
+### 历史记录：共享预算借用配置已建立；低速 TCP 改类后精确结束旧代
 
 更新：2026-10-07北京时间03:35。三条自然WAN1／4／5流进入ECM3，DOWN18共同父预算下按WAN和leaf可借用空闲份额、UP60按WAN硬上限保持，初始tag/ct mark/NAT/affinity正确。但B仅3.09秒，不能宣称60秒或借用吞吐验收通过；原控制器failed结果保持。
 
@@ -507,7 +521,7 @@ v27唯一改动为四条自有SSH bulk数据连接改成nonce认证raw TCP，固
 
 ## 已完成的预算响应与更早历史
 
-# 多 WAN NSS 下行预算响应与 RT 共存通过
+### 历史记录：多 WAN NSS 下行预算响应与 RT 共存通过
 
 更新：2026-10-07北京时间03:20。唯一数据面改动为共享DOWN30→18Mbps，UP60保留；三槽native gate、分类器/标签/精确CT pin及其它Lua均复用v16字节。TCP BULK自然WAN3／WAN2、UDP RT在WAN3；60.00秒/121个B帧、ECM3、20次续租、六tag/完整ct mark/NAT/affinity正确，结束ECM0并完整恢复。2425绑定，实际guardian8831／bundle72637／record747019都在原上限内。
 
@@ -521,7 +535,7 @@ v27唯一改动为四条自有SSH bulk数据连接改成nonce认证raw TCP，固
 
 ## 三流跨WAN及更早历史
 
-# 三流跨 WAN NSS 与独立 QoS leaf 实测通过
+### 历史记录：三流跨 WAN NSS 与独立 QoS leaf 实测通过
 
 更新：2026-10-07北京时间03:05。两条自有 TCP BULK 自然走WAN1／WAN2，小UDP RT走WAN2。新三槽gate实际运行60.01秒、121个B帧，ECM全程3、20次续租，结束后0。六个上下行按WAN/类别派生的tag、完整ct mark、NAT、LAN/bridge入口和WAN affinity全部正确。实际2389绑定，常驻自动分类器未修改。
 
@@ -537,7 +551,7 @@ v27唯一改动为四条自有SSH bulk数据连接改成nonce认证raw TCP，固
 
 ## 双WAN两槽及更早历史
 
-# 双 WAN 独立类别 tag 与 NSS QoS 预算实测通过
+### 历史记录：双 WAN 独立类别 tag 与 NSS QoS 预算实测通过
 
 更新：2026-10-07北京时间02:35。受控TCP BULK自然走WAN3、UDP RT走WAN2。60.01秒、121帧全程ECM2，20次续租；四个按WAN/方向/类别派生的tag、完整ct mark、NAT及连接粘性正确。NSS gate与常驻自动分类器未变，实际2335绑定。测试结束ECM0，模块、两private WAN、两物理原mq＋四fq_codel、端点FW和客户端完整恢复；原完整审核通过。
 
@@ -553,7 +567,7 @@ source6／kernel90(最大120)／独立owner180／client180保持；record767123�
 
 ## 双WAN60秒及更早历史
 
-# 双 WAN 60 秒 NSS 运行与完整恢复通过
+### 历史记录：双 WAN 60 秒 NSS 运行与完整恢复通过
 
 更新：2026-10-07北京时间02:15。真实受控 TCP BULK 自然走WAN4、小UDP RT走WAN3，Linux PBR仍决定出口。NSS B段60.01秒、121帧全程ECM2、20次续租，四tag/完整ct mark/NAT/WAN affinity正确；结束后ECM0、模块/两WAN/两物理原mq＋四fq_codel/端点FW/客户端全部恢复，原完整审核通过。
 
@@ -567,7 +581,7 @@ source6／kernel90(最大120)／独立owner180／client180保持；record767123�
 
 ## 双WAN20秒及更早历史
 
-# 双 WAN NSS 硬件闭环通过
+### 历史记录：双 WAN NSS 硬件闭环通过
 
 用户最新授权：自主推进到2026-10-07北京时间08:00，目标扩展为多 WAN 与高级 QoS。旧 v1 冻结及停止扩展的计划属于历史；其技术证据继续复用，真人体感未验仍保留。
 
@@ -585,7 +599,7 @@ QoS 当前是两物理口上的共享 bulk/RT HTB＋四 FQ-CoDel leaf，UP60（5
 
 ## v1.1及更早历史
 
-# v1.1 单 WAN 有界启停入口已交付
+### 历史记录：v1.1 单 WAN 有界启停入口已交付
 
 更新：2026-10-07 00:04，北京时间。用户要求一次推进交付，复用 v1 历史证据，不新增 NSS161 实验编号或重新打开 gap/CPU/故障注入支线。
 
@@ -601,7 +615,7 @@ QoS 当前是两物理口上的共享 bulk/RT HTB＋四 FQ-CoDel leaf，UP60（5
 
 ## 已冻结 v1 与更早历史
 
-# Athena NSS v1 技术闭环完成并冻结；真人体感未验
+### 历史记录：Athena NSS v1 技术闭环完成并冻结；真人体感未验
 
 更新：2026-10-06 22:53，北京时间。NSS159为起点，本次为最终有界收尾，停止新增自动实验。
 
@@ -640,7 +654,7 @@ v1已知限制和v1.1/v2事项集中到BACKLOG。现有CAKE仅未加速流fallba
 
 ## NSS159及更早历史（不作为当前待办）
 
-# 真实下行功能闭环通过，实时质量仍有明确缺口
+### 历史记录：真实下行功能闭环通过，实时质量仍有明确缺口
 
 更新：2026-10-06 19:48，北京时间。NSS159；本日20:00授权的晚间收尾。后台自有下载＋小UDP，没有操作桌面/Steam/CS2。
 
@@ -671,7 +685,7 @@ v1已知限制和v1.1/v2事项集中到BACKLOG。现有CAKE仅未加速流fallba
 
 ## NSS158及更早历史
 
-# 改类撤销与重学整合通过，完整三段对照已完成
+### 历史记录：改类撤销与重学整合通过，完整三段对照已完成
 
 更新：2026-10-06 18:33，北京时间。最新NSS158，合并封存NSS157真实生命周期。未操作桌面、Steam或CS2。
 
@@ -706,7 +720,7 @@ v1已知限制和v1.1/v2事项集中到BACKLOG。现有CAKE仅未加速流fallba
 
 ## NSS156及更早历史
 
-# 真实TCP退出、新TCP与原UDP重学通过
+### 历史记录：真实TCP退出、新TCP与原UDP重学通过
 
 更新：2026-10-06 16:38，北京时间。最新NSS156。后台自有流量，未操作桌面/Steam/CS2。
 
@@ -728,7 +742,7 @@ v1已知限制和v1.1/v2事项集中到BACKLOG。现有CAKE仅未加速流fallba
 
 ## NSS155及更早历史
 
-# 真实流退出通过，新TCP后继仍待验证
+### 历史记录：真实流退出通过，新TCP后继仍待验证
 
 更新：2026-10-06 15:39，北京时间。最新NSS155。两次在真实ECM2时关闭自有TCP上传socket，旧双流代停止新学习、精确范围内撤销整个pair并完整恢复；原UDP应用继续收发。WAN5与WAN2分别验证，每次只有一个健康WAN。
 
@@ -748,7 +762,7 @@ v1已知限制和v1.1/v2事项集中到BACKLOG。现有CAKE仅未加速流fallba
 
 ## NSS154及更早历史
 
-# 监督器自身重启后从磁盘接管通过
+### 历史记录：监督器自身重启后从磁盘接管通过
 
 更新：2026-10-06 15:02，北京时间。最新NSS154；后台自有32Mbps上传＋小UDP，一健康WAN，未操作桌面/Steam/CS2。
 
@@ -771,7 +785,7 @@ NSS153只杀控制子进程且父监督器存活；本轮杀直接执行epoch的
 
 ## NSS153及更早历史
 
-# 控制子进程中断后自动新代重学通过
+### 历史记录：控制子进程中断后自动新代重学通过
 
 更新：2026-10-06 14:29，北京时间。最新 NSS153。用户不用电脑，直接以后台自有32Mbps上传＋小UDP完成单WAN测试；没有桌面、Steam、CS2操作。
 
@@ -796,7 +810,7 @@ NSS153只杀控制子进程且父监督器存活；本轮杀直接执行epoch的
 
 ## NSS152及更早历史
 
-# 自动改类重学与控制进程中断恢复已实测
+### 历史记录：自动改类重学与控制进程中断恢复已实测
 
 更新：2026-10-06 13:30，北京时间。最新 NSS152，包含 NSS151 自动改类闭环。仅后台自有有界 TCP 上传＋小 UDP，没有桌面、Steam、CS2 操作。
 
@@ -819,7 +833,7 @@ NSS153只杀控制子进程且父监督器存活；本轮杀直接执行epoch的
 
 ## NSS150及更早历史
 
-# 单 WAN 自动生命周期已通过有限两代实测
+### 历史记录：单 WAN 自动生命周期已通过有限两代实测
 
 更新：2026-10-06 12:28，北京时间。最新 NSS150。用户使用电脑，本轮仅后台自有受控下载＋小UDP，无桌面、Steam、CS2 操作。
 
@@ -842,25 +856,25 @@ NSS153只杀控制子进程且父监督器存活；本轮杀直接执行epoch的
 
 ## NSS148及更早接续
 
-# 接续此研究
+### 历史记录：接续此研究
 
 最新NSS148整理／147实测：用户使用电脑，不操作UI/Steam/CS2。自有32Mbps有界下载＋小UDP，单WAN5三段20.01秒/123帧、ECM0/2/0、四tag/四leaf/完整mark/NAT/affinity/7续租/精确恢复通过。下载26.681/26.971/25.442，softirq17.549/3.008/8.061；背景3.556/2.650/2.028违反原可比条件，comparison=false/降幅null，UDP不作CS2。下bulkdrop379/两RTdrop0，非300/真人/长期/完整CAKE验收。147修闭软件段旧epoch过期并补顶facade传参：只能stop且ECM全零时跳过旧6秒准入截止；当前source/class/CT仍严，active27/owner100不改。145/146 ECM前失败和146即时instance恢复审核失败／后续成功分开保留。1518实际绑定冻结精确、actualpayload73686/actualguardian8899；8consumer+9phase RAM分项，不称整个factory RAM。148真人wrapper用147已实测factory/143精简visibility reader，1527项/defaultinspect现场0pair/no writes，真人wrapper完整ABA未执行。1439311/9203/9175>9000失败及首UIguard失败后点击保存；144漏审核依赖、146资格/模型尺寸/语法、147分析缺字段均保存。常驻68/config581b5d46…c791d7/31657/17139/upTag0不变，最终ECM全零无残留/两根精确恢复，11端点/客户端/SSH sender关闭，WAN4down四路failover保持。142 runtime归档原字节，heartbeat保持暂停，不扩WAN/共享预算/WiFi/autorate/新游戏下载。工程可继续后台自有受控测试；最后真人只在用户方便时一次，不重复CPU门槛、不重装classifier。以STATE开头为准。
 
 ## NSS142及更早历史
 
-# 接续此研究
+### 历史记录：接续此研究
 
 最新NSS142：09:40后晨间只读完整终态、两物理根、七端点与客户端/SSH receiver关闭核验全部通过；140准备入口1385当前/旧冻结输入精确相同，没有重跑模型/生产写入/ECM/负载/UI。常驻68/31657/17139、upTag0/config不变；WAN4仍down，既有四路failover精确不变。首次本地调用语法拒绝原记录保留，141 runtime原Git字节归档，旧证据不改。发布archive验证后立即暂停本夜heartbeat，10点后不新实验，临时keep-awake自到期。下一步用户醒来一次集中真人CS2＋已有下载的140单WAN三段20秒闭环；140整合完整ABA尚未执行，139撤销/重学和128约30Mbps CPU仅历史实测，不扩WAN/不新下载/不重复准备。以STATE开头为准。
 
 ## NSS141及更早历史
 
-# 接续此研究
+### 历史记录：接续此研究
 
 最新NSS141：140最后真人入口已离线整合，1385绑定/原355全部继承，完整class/程序tuple/双向tag保留，新增撤销10RAM/程序过滤10RAM及8Node，默认inspect现场0pair/no writes。正常20秒A/B/A2；受支持BE改类先stop新学习、完整同query→仅TCP CI撤销/原UDP核验，再结束旧代，不能作为完整ABA，必须新分类/pin/checkpoint/owner重进。140整合factory完整ABA未执行，139实测和128 CPU只继承历史。6/27/100及字节上限不变；初断言/无效尺寸模型/alias/过大模型命令原失败冻结。常驻68/31657/17139不改，终态ECM全零无残留/两根/receiver恢复，WAN4down四路不动。最后真人留醒来集中一次，不UI/新下载/CPU重复/扩WAN，09:50晨间收尾10点前暂停本夜；STATE为准。
 
 ## NSS139及更早历史
 
-# 接续此研究
+### 历史记录：接续此研究
 
 最新NSS139：实际138/1340项，单WAN2完整真实BULK→BE同query/同CT，比较器只TCP，ECM2→1/原UDP RT CI保持，再旧代0；恢复同socket后新分类/kernel pin/checkpoint/owner与不同CI重学2→0。两完整审核/两根/端点恢复，success-only完整恢复后5秒记录宽限，失败仍100秒，6/27/100/180及字节上限不变。135仅第一撤销过、第二期限拒绝；129/131/132/133/136/137原失败和原因分开冻结。129常驻4859自然apply256/0.35秒退出，procd31657/guardian17139、68/config/upTag0不变；orphan batch只是未证实假设，不改classifier。终态source0.91、selectors0、ECM关闭全零，无事务/stage/state/模块，两物理原根/7负载/SSH receiver已恢复，WAN4仍down四路failover不动。旧128 runtime原字节保存，本轮无CPU/300Mbps/真人验收。下一步仅把实测撤销/重学并入最后真人入口，先离线；睡眠不UI/新下载/扩WAN/CPU重复。09:50收尾10点前暂停本夜；STATE为准。
 

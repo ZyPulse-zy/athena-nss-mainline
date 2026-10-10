@@ -1,5 +1,18 @@
+# 维护入口：224ee07 运行，恢复表候选仅离线
+
+维护分支为 `codex/dorm-qos-v2`，现网源码仍为 `224ee07`。恢复表修复 `f848caf` 已推送，但未安装；ECM 通用双向 UDP 优先级补丁已开上游草稿 PR #78。2026-10-10 19:00:46 北京时间只读复核 native-running/sourceFresh，五 WAN 和原服务身份、安装/运行源码及保护配置哈希保持。
+
+本轮只授权离线改动、测试、提交和上游贡献准备；不部署、停止/重启服务或路由器、加载模块、改无线/学校网络、造拥塞或注入故障。游戏/Wi-Fi 正式验收继续延期，PR #1 保持 draft。下方历史授权和“当前”阶段描述均已结束。
+
+离线验证用 `python3 tools/run_controller_offline.py`（仓库根目录，Lua 5.1/cjson/C 编译器）。此兼容层不证明目标 nft 解析。不要在现网目录执行策略 fixture；启动前 classifier_recovery 不可用来观察正在运行的 gate。
+
+[本轮操作边界](../../docs/DORM_V2_RECHECK_20261010.md) · [恢复候选](../../docs/DORM_V2_RECOVERY_LEDGER.md)
+
+<details>
+<summary>此前阶段记录（历史事实，部署授权不可沿用）</summary>
+
 <!-- remaining-work-deployment-20261010 -->
-# 当前：224ee07 已部署，剩余代码改进完成
+### 历史记录：当前：224ee07 已部署，剩余代码改进完成
 
 最终安装源码提交 **224ee079a99bb43c6763bb54151a1c6aba7ab391**；2026-10-10 10:25:28 北京时间复核：native-running、sourceFresh、NSS 2、未确认 0、自动恢复 0、来源暂停/恢复 0/0。17 个持久文件和 15 个运行 RAM 文件哈希一致；launch.sh 与 supervisor.lua 使用持久入口，单独核对安装哈希。五 WAN 身份、保护配置、认证/分类器/autorate/代理/Tailscale 服务 PID 和启动时间、十个软件 CAKE 根的句柄及除动态 bandwidth 外所有选项、自启均保持。既有 owner 与所拥有 core guard 随正常切换重载；原 /lib/modules、固件、无线设置和路由器启动状态没有改动。
 
@@ -15,7 +28,7 @@
 <!-- /remaining-work-deployment-20261010 -->
 
 <!-- audit-deployment-20261010 -->
-# 当前维护：db872e0审查修复已安装并运行
+### 历史记录：当前维护：db872e0审查修复已安装并运行
 
 用户随后明确要求直接进行，已完成一次正常stop/独立完整回退、11文件成套安装和start。2026-10-10 00:55:06北京时间native-running/NSS8/sourceFresh/未确认0，新会话来源0/0/自动重试0，持久及运行RAM11文件哈希与该候选一致。十个软件CAKE根句柄/选项与原哈希配置匹配，五WAN/认证/分类器/autorate/代理/Tailscale和自启保留；native owner及其core-guard按既有流程重载。原安装private备份已本地/路由器验证，暂存已清理。
 
@@ -29,7 +42,7 @@
 <!-- /audit-deployment-20261010 -->
 
 <!-- audit-remediation-20261010 -->
-# 当前维护：审查修复候选，现网仍为此前部署
+### 历史记录：当前维护：审查修复候选，现网仍为此前部署
 
 维护源码已实现RT pending预留、防重复撤销、32项/6秒 rejected、单连接回执门控的两次重试/1与3秒退避、分层只读分类/lease/CREATE/双向QoS/硬件字节及采集完整性。新gate保留!selected；receipt旧结构ABI不变，新观察API以独立导出要求匹配provider。344目标Lua断言、27目标解析、C137+13及6.18.44交叉构建通过；实际collector六查询0.05秒成功。所有候选目标执行在独立RAM目录，无hook/配置写入，清理完成。
 
@@ -45,7 +58,7 @@ recovery只依据观察过的CREATE失败或真实DESTROY/NO_CONNECTION回执，
 <!-- /audit-remediation-20261010 -->
 
 <!-- longterm-deployment-fix-20261009 -->
-# 当前维护：已安装精确标签与有限自动恢复
+### 历史记录：当前维护：已安装精确标签与有限自动恢复
 
 复核 2026-10-09 15:18:51.319 UTC：native-running，实际NSS1、来源新鲜、未确认0；本次启动来源累计暂停/恢复2/2。开机自启已开启，五WAN/代理/Tailscale正常，保护配置与19个已安装源码哈希通过，九张规则表可读。
 
@@ -81,7 +94,7 @@ supervisor.lua/lifecycle.lua负责单一外层procd与有限预算，transaction
 
 <!-- /longterm-deployment-fix-20261009 -->
 
-# 当前维护：可读的精确标签候选，现网仍为f1f58cc
+### 历史记录：当前维护：可读的精确标签候选，现网仍为f1f58cc
 
 当前现网仍为 f1f58cc，NSS继续运行；2026/10/9 18:52:48 北京时间最终复核：NSS1、sourceFresh、IPv4开启、未确认0，owner/guardian/reader与服务/保护/已安装源码不变。用户此前回报“不卡了”；正式游戏验收及端到端零Loss/Miss仍未证明。
 
@@ -95,7 +108,7 @@ supervisor.lua/lifecycle.lua负责单一外层procd与有限预算，transaction
 
 ## 以下为此前记录，不能覆盖本次部署差异
 
-# 当前：运行保留，增加Loss/Miss只读诊断
+### 历史记录：当前：运行保留，增加Loss/Miss只读诊断
 
 2026-10-09T08:57:33.823Z（北京时间16:57）复核：NSS保持运行。当前用户报告约0.4% Loss与Miss，方向不明；尚未复现或证明根因，不能宣布已解决。
 
@@ -120,7 +133,7 @@ sh /usr/lib/athena-dorm-native/athena-qos diagnose 60
 
 ## 以下为此前记录，不代表当前运行状态
 
-# Athena 全宿舍 v2 本机控制器
+### 历史记录：Athena 全宿舍 v2 本机控制器
 
 复核 2026-10-09T05:23:24.961Z：本机 native-running，实际 NSS1，来源新鲜、IPv4准入开启、未确认0；本次启动来源暂停/恢复 1/1。五WAN、原软件队列、认证/PBR/NAT、代理/Tailscale、管理与原磁盘模块核验通过，旧Windows停止，自启关闭。 用户自然游戏/舍友下载已被动观察，当前回报暂时改善；端到端丢包与长期质量未通过。见 [当前状态](../../docs/STATE.md) 与 [实际证据](../../evidence/dorm-v2-native.json)。
 
@@ -206,3 +219,5 @@ prepare只写自有RAM pins并核对构建/保护配置。0无固定健康期限
 21策略模型（目标Lua5.1）、实际receipt C的134 mock、目标nft -c空表/prepare、6.18.44编译/加载；119秒续租/逐流FW ACK、活跃stop、reader退出、手动procd持有3条NSS时owner退出后的独立恢复。IGS部分绑定失败恢复仅mock，未现场注入。本轮17个guard权限模型、目标Lua/Shell解析、两轮22样本及活跃24条stop/full rollback/restart通过。各轮计数分别记录，详情见STATE。
 
 影子默认ATHENA_QOS_BACKEND=shadow，原service.lua/config.example.json和同一入口，设置ATHENA_QOS_TEMPORARY=1/ATHENA_QOS_TEST_SECONDS=120后使用start/status/stop/rollback。它不写数据面，accelerated恒零。父目录init.sh是未安装影子服务，native/init.sh是已安装候选。
+
+</details>

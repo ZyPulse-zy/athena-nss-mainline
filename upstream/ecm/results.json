@@ -1,0 +1,174 @@
+{
+  "proposedPatchAppliedWithZeroFuzz": true,
+  "existingPackagePatchMaximumFuzz": 2,
+  "versions": [
+    {
+      "sourceVersion": "12",
+      "sourceCommit": "30fbfa493d700270ac6c14685290f340b6ead28c",
+      "packageCommit": "0d970dbf0185e3f53709bd803e8a466598023c57",
+      "packagePatchSequence": [
+        "0001-treewide-componentize-the-module-even-more.patch",
+        "0004-qca-nss-ecm-resolve-the-cpu-high-load-regarding-ecm.patch",
+        "0006-treewide-rework-notifier-changes-for-5.15.patch",
+        "0008-ecm_tracker_datagram-drop-static-for-EXPORT_SYMBOL.patch",
+        "0009-frontends-drop-udp_get_timeouts-and-use-standard-ups.patch",
+        "0010-ecm_interface-fix-ppp-generic-function-calls-for-5.15.patch",
+        "0011-ecm_classifier-move-defs.patch",
+        "0012-ecm_add-check-for-pppoe.patch",
+        "0013-treewide-export-ipv4-and-ipv6-symbols.patch",
+        "0015-ecm-add-support-for-kernel-6.6.patch",
+        "0016-ecm-conditionally-check-mlo-device.patch",
+        "0017-ecm-interface-fix-fortify_memcpy_chk.patch",
+        "0018-ecm-compat-nss-12_5.patch",
+        "0020-remove-check-mlo-device.patch",
+        "0021-fix-read-write-tcp-udp-denied-ports.patch",
+        "0022-fix-undefined-dev-for-tunipip6.patch",
+        "0023-nss-ecm-add-kernel-6.12-support.patch",
+        "0024-ecm-add-wildcard-opt-to-del-denied.patch",
+        "0025-ecm_interface-fix-ppp-deadlock-use-lockless-functions.patch"
+      ],
+      "existingPatchFuzz": [
+        {
+          "patch": "0025-ecm_interface-fix-ppp-deadlock-use-lockless-functions.patch",
+          "output": "patching file ecm_interface.c\nHunk #3 succeeded at 3762 with fuzz 2 (offset -2 lines)."
+        }
+      ],
+      "before": {
+        "mockedCT": true,
+        "firmwareTested": false,
+        "fullModuleBuilt": false,
+        "actualSourceHashes": {
+          "ecm_classifier_dscp.c": "4ece94e85dd49d04d6de6a06730c82dbabca67f3f6f77b4f3b613bb8d2ffa452",
+          "frontends/nss/ecm_nss_ported_ipv4.c": "0ee3e21bca12c67359b468153307a3eeefeb40dce96629b3713610d5a0ffbefe",
+          "frontends/nss/ecm_nss_ported_ipv6.c": "33934de883af9abb2abb63cdbd9ffe557b44b5360e96ac4ecb0ab180ead18b8a",
+          "frontends/nss/ecm_nss_non_ported_ipv4.c": "9cccaeee4434eb49c6a44f25658dfc2cf5a33e478c6cd4c5559e3d1fad53e3d7",
+          "frontends/nss/ecm_nss_non_ported_ipv6.c": "ef80f1cdbcbd7bb8b343a2ca3bb1bbeed2e95b0c8704b338d13a2f5a9816fb37"
+        },
+        "variants": [
+          {
+            "checks": 1838,
+            "failures": 196,
+            "passed": false,
+            "igsEnabled": false
+          },
+          {
+            "checks": 3182,
+            "failures": 196,
+            "passed": false,
+            "igsEnabled": true
+          }
+        ],
+        "passed": false
+      },
+      "after": {
+        "mockedCT": true,
+        "firmwareTested": false,
+        "fullModuleBuilt": false,
+        "actualSourceHashes": {
+          "ecm_classifier_dscp.c": "bdd100790d91a9008e6d2a365b7d6a519cdc5cf75b7d4c5d36dcd6c6c3f17cc4",
+          "frontends/nss/ecm_nss_ported_ipv4.c": "0ee3e21bca12c67359b468153307a3eeefeb40dce96629b3713610d5a0ffbefe",
+          "frontends/nss/ecm_nss_ported_ipv6.c": "33934de883af9abb2abb63cdbd9ffe557b44b5360e96ac4ecb0ab180ead18b8a",
+          "frontends/nss/ecm_nss_non_ported_ipv4.c": "9cccaeee4434eb49c6a44f25658dfc2cf5a33e478c6cd4c5559e3d1fad53e3d7",
+          "frontends/nss/ecm_nss_non_ported_ipv6.c": "ef80f1cdbcbd7bb8b343a2ca3bb1bbeed2e95b0c8704b338d13a2f5a9816fb37"
+        },
+        "variants": [
+          {
+            "checks": 1838,
+            "failures": 0,
+            "passed": true,
+            "igsEnabled": false
+          },
+          {
+            "checks": 3182,
+            "failures": 0,
+            "passed": true,
+            "igsEnabled": true
+          }
+        ],
+        "passed": true
+      }
+    },
+    {
+      "sourceVersion": "14",
+      "sourceCommit": "7894b769eeb64f1c44fde547a107a8b866997590",
+      "packageCommit": "c3bc04aa2f7bba688309b7b0356b558fe1fdad34",
+      "packagePatchSequence": [
+        "0000-treewide-build-only-for-Linux-6.18-and-7.3.patch",
+        "0001-treewide-componentize-the-module-even-more.patch",
+        "0004-qca-nss-ecm-resolve-the-cpu-high-load-regarding-ecm.patch",
+        "0009-frontends-drop-udp_get_timeouts-and-use-standard-ups.patch",
+        "0026-treewide-no-skb-int_pri-on-vanilla-kernels.patch",
+        "0030-frontends-accelerate-same-bridge-inter-subnet-routing.patch",
+        "0032-frontends-allow-pppoe-ingress-multicast.patch",
+        "0033-frontends-ipv4-ipv6-multicast-parity.patch",
+        "0035-frontends-restore-ipv4-ipv6-offload-parity.patch",
+        "0038-frontends-nss-respect-bridge-port-VLAN-tagging-for-vlan-over-bridge.patch",
+        "0039-ecm_db-fix-world-writable-defunct-sysctl-and-its-NULL-deref.patch",
+        "0040-ecm_interface-fix-the-multicast-hierarchy-row-bound.patch",
+        "0041-ecm_sdx-drop-the-world-writable-sysctl-mode.patch",
+        "0042-ecm_interface-fix-the-second-multicast-hierarchy-row-bound.patch",
+        "0043-ecm_tracker-reject-a-total-length-below-the-ip-header.patch",
+        "0044-frontends-nss-do-not-window-check-an-accelerated-connection.patch",
+        "0045-ecm_interface-classify-a-header-less-modem-as-raw-ip.patch",
+        "0046-frontends-nss-restart-the-stats-sync-when-a-reply-goes-missing.patch",
+        "0047-frontends-drop-the-nf_conntrack_tcp_no_window_check-knob.patch",
+        "0048-ecm_interface-accelerate-ports-behind-a-qca-8021q-switch.patch"
+      ],
+      "existingPatchFuzz": [],
+      "before": {
+        "mockedCT": true,
+        "firmwareTested": false,
+        "fullModuleBuilt": false,
+        "actualSourceHashes": {
+          "ecm_classifier_dscp.c": "9b1fe865c64cb8bdb33db3ea1fd492755d5fc922ba26452adb0e47cc897877cc",
+          "frontends/nss/ecm_nss_ported_ipv4.c": "9932ff86631aa5f04a56bf1657b0f0686b27608bb4fd1b6b5b654a2ea603c4b7",
+          "frontends/nss/ecm_nss_ported_ipv6.c": "cae95e971e116670296bf00d178a6dc4a6e8b84161cc10c4f957fb5bdc83dafe",
+          "frontends/nss/ecm_nss_non_ported_ipv4.c": "b7bc9f19daec390f226ba3916fd478b99c0cd9310fc56b693921b88322b68e96",
+          "frontends/nss/ecm_nss_non_ported_ipv6.c": "8fb79ed8f459041db62de39e167f8d882b29b3d068cf609890f623e40e43b286"
+        },
+        "variants": [
+          {
+            "checks": 1838,
+            "failures": 196,
+            "passed": false,
+            "igsEnabled": false
+          },
+          {
+            "checks": 3182,
+            "failures": 196,
+            "passed": false,
+            "igsEnabled": true
+          }
+        ],
+        "passed": false
+      },
+      "after": {
+        "mockedCT": true,
+        "firmwareTested": false,
+        "fullModuleBuilt": false,
+        "actualSourceHashes": {
+          "ecm_classifier_dscp.c": "53f16073cf506da15985f8a3f6cf3685f753f68ab2353f3699364a49b239bd42",
+          "frontends/nss/ecm_nss_ported_ipv4.c": "9932ff86631aa5f04a56bf1657b0f0686b27608bb4fd1b6b5b654a2ea603c4b7",
+          "frontends/nss/ecm_nss_ported_ipv6.c": "cae95e971e116670296bf00d178a6dc4a6e8b84161cc10c4f957fb5bdc83dafe",
+          "frontends/nss/ecm_nss_non_ported_ipv4.c": "b7bc9f19daec390f226ba3916fd478b99c0cd9310fc56b693921b88322b68e96",
+          "frontends/nss/ecm_nss_non_ported_ipv6.c": "8fb79ed8f459041db62de39e167f8d882b29b3d068cf609890f623e40e43b286"
+        },
+        "variants": [
+          {
+            "checks": 1838,
+            "failures": 0,
+            "passed": true,
+            "igsEnabled": false
+          },
+          {
+            "checks": 3182,
+            "failures": 0,
+            "passed": true,
+            "igsEnabled": true
+          }
+        ],
+        "passed": true
+      }
+    }
+  ]
+}

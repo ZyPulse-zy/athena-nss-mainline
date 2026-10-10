@@ -45244,6 +45244,13 @@
       "bytes": 15183,
       "role": "maintained-controller-source-or-regression-test",
       "revision": "dorm-v2-recovery-ledger-independent-admission-20261010"
+    },
+    {
+      "path": "code/controller/README.md",
+      "sha256": "d529e8911aad3be31fc93a9b232909ef9a1bafa123f8f361ff15bd7931eb647e",
+      "bytes": 27522,
+      "role": "controller-maintenance-readme",
+      "revision": "dorm-v2-offline-recheck-and-upstream-20261010"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -45388,5 +45395,11 @@
     "sourceRecordsAppended": 2,
     "productionCandidateDeployed": false,
     "evidence": "evidence/dorm-v2-recovery-ledger.json"
+  },
+  "lastOfflineRecheckExport": {
+    "capturedAt": "2026-10-10T11:06:37.791358+00:00",
+    "productionCandidateDeployed": false,
+    "sourceRecordsAppended": 1,
+    "evidence": "evidence/dorm-v2-recheck-20261010.json"
   }
 }

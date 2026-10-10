@@ -1,0 +1,16 @@
+{
+  "status": "draft-pr-open",
+  "url": "https://github.com/qosmio/nss-packages/pull/78",
+  "fork": "https://github.com/ZyPulse-zy/nss-packages",
+  "branch": "codex/ecm-udp-directional-priorities",
+  "headCommit": "ddcbe809089774f9d1ab9b1fd2582eeb009a510f",
+  "baseBranch": "NSS-12.5-K6.x",
+  "changedFiles": 4,
+  "sourcePatchLinesAdded": 20,
+  "packageRelease": "7 -> 8",
+  "fullModuleBuilt": false,
+  "firmwareTested": false,
+  "deployed": false,
+  "merged": false,
+  "secondFeedPrOpened": false
+}

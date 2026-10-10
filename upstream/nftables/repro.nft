@@ -1,0 +1,10 @@
+# Fictitious addresses; no chain, hook, rule, packet or interface dependency.
+table inet concat_read_repro {
+    map policy {
+        typeof ct id . ct mark . meta l4proto . ct original ip saddr . ct original proto-src . ct original ip daddr . ct original proto-dst . ct reply ip saddr . ct reply proto-src . ct reply ip daddr . ct reply proto-dst : meta priority
+        elements = {
+            12 . 65536 . udp . 192.0.2.12 . 41000 . 198.51.100.99 . 27015 . 198.51.100.99 . 27015 . 203.0.113.1 . 50000 : 0x00160006,
+            13 . 65536 . udp . 192.0.2.13 . 41001 . 198.51.100.99 . 27015 . 198.51.100.99 . 27015 . 203.0.113.1 . 50001 : 0x00260006
+        }
+    }
+}
