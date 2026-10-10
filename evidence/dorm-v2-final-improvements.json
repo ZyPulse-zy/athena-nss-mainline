@@ -1,0 +1,274 @@
+{
+  "revision": "dorm-v2-directional-policy-and-passive-sync-20261010",
+  "reviewBase": "3208540780e56b0b498616d75a136e1e1011dd21",
+  "priorDeployedCodeCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
+  "productionCandidateDeployed": false,
+  "changes": {
+    "exactLeasedDirectionalQos": true,
+    "firmwareSyncPassive": true,
+    "firmwareFlushEvictRecoveryBounded": true,
+    "selectedOnceGuardPreserved": true,
+    "maximumRecoveryRetries": 2,
+    "recoveryEventLimit": 32,
+    "bestEffortInclusiveByteBaseline": true,
+    "byteCoverageIsConservativeBound": true,
+    "automaticBestEffortAdmissionEnabled": false,
+    "budgetQueryBatchSeconds": 0.75,
+    "budgetQueryTermSeconds": 1,
+    "budgetQueryKillSeconds": 1,
+    "skipBudgetReadsBelowLeaseMarginSeconds": 3,
+    "budgetObservationExpirySeconds": 6,
+    "classificationLeaseSeconds": 6,
+    "sharedNetworkQuotasAdded": false
+  },
+  "tests": {
+    "local": [
+      {
+        "test": "test-writer-policy.lua",
+        "exit": 0,
+        "output": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":215,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}"
+      },
+      {
+        "test": "test-health.lua",
+        "exit": 0,
+        "output": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}"
+      },
+      {
+        "test": "test-coverage.lua",
+        "exit": 0,
+        "output": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}"
+      },
+      {
+        "test": "test-core.lua",
+        "exit": 0,
+        "output": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}"
+      },
+      {
+        "test": "test-collector.lua",
+        "exit": 0,
+        "output": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":86,\"passed\":true,\"failedReadDistinctFromEmpty\":true}"
+      },
+      {
+        "test": "test-tag-rules.lua",
+        "exit": 0,
+        "output": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}"
+      },
+      {
+        "test": "test-lifecycle.lua",
+        "exit": 0,
+        "output": "bounded-recovery-models-passed 25"
+      },
+      {
+        "test": "test-core-guard.lua",
+        "exit": 0,
+        "output": "core-guard-permission-models-passed 26"
+      },
+      {
+        "test": "test-efficiency.lua",
+        "exit": 0,
+        "output": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}"
+      }
+    ],
+    "target": {
+      "readOnlyDataPlane": true,
+      "modelDirectorySeparate": true,
+      "productionFilesChanged": false,
+      "tests": [
+        {
+          "name": "test-writer-policy.lua",
+          "exit": 0,
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":215,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}\n",
+          "stderr": ""
+        },
+        {
+          "name": "test-health.lua",
+          "exit": 0,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}\n",
+          "stderr": ""
+        },
+        {
+          "name": "test-coverage.lua",
+          "exit": 0,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}\n",
+          "stderr": ""
+        },
+        {
+          "name": "test-core.lua",
+          "exit": 0,
+          "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}\n",
+          "stderr": ""
+        },
+        {
+          "name": "test-collector.lua",
+          "exit": 0,
+          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":86,\"passed\":true,\"failedReadDistinctFromEmpty\":true}\n",
+          "stderr": ""
+        }
+      ],
+      "parsers": 29,
+      "passed": true,
+      "cleaned": true
+    },
+    "receiptC": {
+      "checks": 166,
+      "mockedTransport": true,
+      "firmwareProof": false
+    },
+    "gateC": {
+      "checks": 55,
+      "mockedCT": true,
+      "firmwareProof": false
+    }
+  },
+  "build": {
+    "kernelChanged": false,
+    "routerConnected": false,
+    "binaryLoaded": false,
+    "sourceHashes": {
+      "athena_ecm_gate.c": "a32352cd5b378aa1c6b70aa94f4a3a0f2dad57e1ae6ad8546182f05476c8d19a",
+      "athena_nss_receipts.c": "0ae24c45c2a83832851b2566bfdb3783253c56470d3319b2b26a2b9a6e37d6e3",
+      "build.py": "c202b32fc86f1d2c37637cefac212be10fed0309c16c9a4f3e939cfb18278073",
+      "ecm_ae_classifier_public.h": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "Makefile": "57161558b522da5a56a32d29187fc0dcf3d5c1f386fae5577c4d9b7d5ed5c13f",
+      "receipts.h": "9e277067cd246993aa396853a81876d87151dc2f2acae60baf59215a600e743b",
+      "receipt_telemetry.h": "f8a2c56c96e7e01501bc5c769157b906c95c3d82a6bbe53c050698bcb8ac2c59",
+      "test-receipts.c": "b1c67002be3a54164ad44d859016e284110d05d2ef6035e2b24d7c20eb2e7ffc",
+      "test-receipts.py": "1999420e6d357cbaad2049dcfc19d31e4bd718b3ac12bfa2289d3c0d1601033e",
+      "test-selection.py": "54710822b45e2ca37318ecf9341ec8831348f5461c2cc4e85a6086102a00615a"
+    },
+    "installedInterfaceMessageBytes": 96,
+    "installedIPv4MessageBytes": 736,
+    "installedIPv4Interface": 161,
+    "nativeGateAbi": 2,
+    "ecmCodeSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".text.unlikely",
+      ".init.text",
+      ".exit.text"
+    ],
+    "ecmOriginalSha256": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2",
+    "ecmReceiptCopySha256": "7239dec3ad7827247177bc034172e4cc57bb36e335f74920a6494977e6c7a98b",
+    "driverSha256": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+    "ingressCodeSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".init.text",
+      ".exit.text",
+      ".text.unlikely"
+    ],
+    "ingressOriginalSha256": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb",
+    "ingressReceiptCopySha256": "116a088ad024f2f21b8e52ae08531532639ce318ee629ae8d850524da3ae25ce",
+    "athena_ecm_gate.ko": {
+      "sha256": "32f5b2bb0103d79a63f84a9d6e5c22ffeb52560c9709aa426a2e541d377189a9",
+      "bytes": 129592
+    },
+    "athena_nss_receipts.ko": {
+      "sha256": "58d7a422b2647162b9d5977ae2cd331c67fd39d88c8e29d790b8693d12c6d327",
+      "bytes": 178848
+    },
+    "passed": true,
+    "extraSymbols": "Verified installed exports; zero CRC because MODVERSIONS is disabled, not an ABI guarantee",
+    "kernelHashes": {
+      ".config": "24f0389ac9618779974c03d8c71f891b80a1ca58c1e4ef5a6877be4b6b9fe06c",
+      "Module.symvers": "b0782f7327ba04cf3a3f3ad85c735c6639af6accc0d8fa307b8abac9af46cd5d",
+      "include/generated/autoconf.h": "4ef35271b52eb223a7524fe6bb9f1af64c6cc7bc33f2e967843d0700fac397f7"
+    }
+  },
+  "sourceEvidence": {
+    "dscp": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/ecm_classifier_dscp.c",
+      "sha256": "e6706c1ae13c86e615cc5672f03b83df0a812dd7ed23ba1e94caf5d0f02c0707"
+    },
+    "ecmIpv4": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/frontends/nss/ecm_nss_ipv4.c",
+      "sha256": "51210fdfc955ea72e773a60d3902adde8e0a03dbdfb6120988d32ebd30bc89a8"
+    },
+    "ecmPorted": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/frontends/nss/ecm_nss_ported_ipv4.c",
+      "sha256": "f90bd6baafc01e365750852ba1682b32f0734bdff0f2c56441c98a6fd50cd449"
+    },
+    "ecmDb": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/ecm_db/ecm_db_connection.c",
+      "sha256": "bc2bb1a603c73b25b3ea33813666e07c87a65837c166d3f28c93c7b6ca7b06fc"
+    },
+    "ecmInterface": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/ecm_interface.c",
+      "sha256": "8724489a2034bb68c71db63b4b0c6f125ac4efc33176bf2e92fc132e2a22a27c"
+    },
+    "driverIpv4": {
+      "path": "nss2-igs/nss-drv-6aa14c7/nss_ipv4.c",
+      "sha256": "eaff877cdd123e9cdb884502e7ec73d7559eaa2d39442f8c092d9ad46164fb6b"
+    },
+    "driverIpv4Abi": {
+      "path": "nss2-igs/nss-drv-6aa14c7/exports/nss_ipv4.h",
+      "sha256": "f04663c61ca0c74e9be8e72a9c3dc496ab7bd47404c2d7d0388b9c98acd32a41"
+    }
+  },
+  "wirelessAndFdbReadOnly": {
+    "at": "2026-10-10T01:54:30.621Z",
+    "readOnly": true,
+    "wirelessSettingsChanged": false,
+    "firmwareStatsEnabled": false,
+    "passiveNssPeerFiles": 3,
+    "existingPeerStatsConfig": [
+      "00000001\n",
+      "00000001\n",
+      "00000001\n"
+    ],
+    "peerCounters": [
+      {
+        "tx_packets": 3,
+        "tx_bytes": 1981,
+        "tx_retries": 0,
+        "tx_failed": 450280,
+        "rx_packets": 0,
+        "rx_bytes": 0,
+        "rx_dropped": 0,
+        "rx_retries": 0
+      },
+      {
+        "tx_packets": 0,
+        "tx_bytes": 97,
+        "tx_retries": 0,
+        "tx_failed": 0,
+        "rx_packets": 0,
+        "rx_bytes": 0,
+        "rx_dropped": 0,
+        "rx_retries": 0
+      },
+      {
+        "tx_packets": 5,
+        "tx_bytes": 121,
+        "tx_retries": 0,
+        "tx_failed": 225,
+        "rx_packets": 0,
+        "rx_bytes": 0,
+        "rx_dropped": 0,
+        "rx_retries": 0
+      }
+    ],
+    "learnedFdbEntries": 4,
+    "fdbAgeMin": 0.02,
+    "fdbAgeMax": 55.08,
+    "fdbAgeOver60": 0,
+    "currentWiredOwnedFlows": 1,
+    "currentDscpClassifierEnabled": 1,
+    "currentAccelDelayFound": true,
+    "actualTIDorACVerified": false,
+    "gameAndDownloadAcceptanceDeferred": true
+  },
+  "limits": {
+    "gameWifiAcceptanceDeferredByUser": true,
+    "independentFirmwareQosReadback": false,
+    "airTIDorACVerified": false,
+    "fullLanByteCoverage": false,
+    "historicalClassifierPauseRootCauseProved": false,
+    "liveFaultOrCongestionGenerated": false,
+    "routerRebooted": false,
+    "wirelessSettingsChanged": false
+  },
+  "historicalEvidencePreserved": true
+}

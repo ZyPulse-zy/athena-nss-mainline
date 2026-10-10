@@ -10,6 +10,12 @@ static int transport_status,original_calls,checks;
 static struct message *sent;
 static struct message exact_sent;
 static unsigned ipv4_calls;
+static nss_callback registered_sync;
+static nss_callback registered_notify;static unsigned reset_serial;
+void nss_ipv4_conn_sync_many_notify_register(nss_callback cb){registered_sync=cb;}
+void nss_ipv4_conn_sync_many_notify_unregister(void){registered_sync=NULL;}
+struct nss_ctx_instance *nss_ipv4_notify_register(nss_callback cb,void *data){registered_notify=cb;return NULL;}
+void nss_ipv4_notify_unregister(void){registered_notify=NULL;}
 static struct message if_sent[8];
 static unsigned if_count;
 static void original(void *data,struct nss_ipv4_msg *m)
@@ -17,6 +23,7 @@ static void original(void *data,struct nss_ipv4_msg *m)
  struct common_prefix *c=(void *)m;
  if (c->app_data!=(u64)(unsigned long)data || c->cb!=(u64)(unsigned long)original) abort();
  original_calls++;
+ if(reset_serial){struct record *r=find_serial(reset_serial);if(r){r->create_attempt++;r->telemetry=(struct athena_telemetry){0};}}
 }
 int nss_ipv4_tx(struct nss_ctx_instance *ctx,struct nss_ipv4_msg *m)
 { ipv4_calls++;sent=(void *)m;if(sent->cm.interface==161){memcpy(&exact_sent,m,736);sent=&exact_sent;}return transport_status; }
@@ -167,6 +174,60 @@ int main(void)
  check(athena_receipt_arm(200,200,&tuple)==-ENOSPC);
  m=message(0,200,tuple);check(athena_nss_ipv4_tx_receipt(NULL,(void *)&m)==1);
  check(m.cm.cb==(u64)(unsigned long)original);
+ /* The driver replaces a SYNC_MANY request callback with its registered
+  * observer. Test that real ABI instead of a normal TX ticket assumption. */
+ memset(records,0,sizeof(records));memset(policies,0,sizeof(policies));
+ check(athena_receipt_policy_set(32,1,500,&tuple,1,2)==-EINVAL);
+ check(athena_receipt_policy_set(0,0,500,&tuple,1,2)==-EINVAL);
+ check(athena_receipt_policy_set(0,1,6101,&tuple,1,2)==-EINVAL);
+ check(!athena_receipt_policy_set(0,80,500,&tuple,0x7e160006,0x7a160006));
+ check(athena_receipt_policy_set(0,81,500,&tuple,1,2)==-EBUSY);
+ check(athena_receipt_policy_set(1,81,500,&tuple,1,2)==-EEXIST);
+ athena_receipt_policy_clear(0,81);check(policies[0].active);
+ m=message(0,80,tuple);m.cm.len=172;memcpy(m.payload,&(u16){0x808},2);
+ memcpy(m.payload+112,&(u32){0x7e160006},4);memcpy(m.payload+116,&(u32){0x7e160006},4);
+ memcpy(m.payload+170,&(u16){0x7a16},2);
+ check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
+ struct athena_telemetry tele;
+ check(!athena_receipt_read_telemetry(80,0,&tele));
+ check(tele.policy_applied && tele.policy_generation==80 && tele.incoming_return_qos==0x7e160006);
+ check(tele.observation.receipt.return_qos==0x7a160006 && tele.observation.receipt.igs_return==0x7a16);
+ u32 value;memcpy(&value,m.payload+116,4);check(value==0x7a160006);
+ athena_nss_ipv4_sync_register(original);check(registered_sync==sync_received);
+ struct {struct common_prefix cm;u16 index,size,next,count;struct sync_entry entry[34];} batch={0};
+ batch.cm=(struct common_prefix){.len=8,.type=7,.cb=(u64)(unsigned long)registered_sync,.app_data=88};
+ batch.size=4096;batch.count=1;
+ batch.entry[0]=(struct sync_entry){.protocol=tuple.protocol,.flow_ip=tuple.src,.flow_ident=tuple.sport,
+ .return_ip=tuple.dst,.return_ident=tuple.dport,.flow_rx_bytes=123,.return_rx_bytes=456};
+ registered_sync((void *)88,(void *)&batch);
+ check(!athena_receipt_read_telemetry(80,0,&tele));
+ check(tele.sync_samples==1 && tele.hardware_flow_rx_bytes==123 && tele.hardware_return_rx_bytes==456 && tele.last_sync_ms==100);
+ batch.count=35;registered_sync((void *)88,(void *)&batch);
+ check(!athena_receipt_read_telemetry(80,0,&tele) && tele.sync_samples==1 && sync_rejected==1);
+ batch.count=1;batch.entry[0].flow_ip^=1;registered_sync((void *)88,(void *)&batch);
+ check(!athena_receipt_read_telemetry(80,0,&tele) && tele.sync_samples==1);
+ athena_nss_ipv4_sync_unregister();check(!registered_sync && !sync_original);
+ athena_receipt_policy_clear(0,80);check(!policies[0].active);
+ memset(records,0,sizeof(records));
+ struct athena_tuple reversed={tuple.dst,tuple.dport,tuple.src,tuple.sport,tuple.protocol};
+ check(!athena_receipt_policy_set(0,82,500,&tuple,0x7e150000,0x7a150000));
+ m=message(0,82,reversed);m.cm.len=172;check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
+ check(!athena_receipt_read_telemetry(82,0,&tele) && tele.policy_applied && tele.observation.receipt.flow_qos==0x7a150000 && tele.observation.receipt.return_qos==0x7e150000);
+ athena_nss_ipv4_notify_register(original,(void *)99);check(registered_notify==notify_received);
+ struct {struct common_prefix cm;struct sync_entry entry;} notification={0};
+ notification.cm=(struct common_prefix){.type=3,.response=5,.len=116,.app_data=99};
+ notification.entry=(struct sync_entry){.protocol=tuple.protocol,.flow_ip=tuple.src,.flow_ident=tuple.sport,.return_ip=tuple.dst,.return_ident=tuple.dport,
+  .flow_rx_bytes=10,.return_rx_bytes=20,.reason=3};
+ registered_notify((void *)99,(void *)&notification);
+ check(!athena_receipt_read_telemetry(82,0,&tele) && tele.hardware_flow_rx_bytes==20 && tele.hardware_return_rx_bytes==10 && !tele.firmware_flush_seen);
+ notification.entry.reason=1;registered_notify((void *)99,(void *)&notification);
+ check(!athena_receipt_read_telemetry(82,0,&tele) && tele.firmware_flush_seen && tele.sync_reason==1);
+ reset_serial=82;registered_notify((void *)99,(void *)&notification);reset_serial=0;
+ check(!athena_receipt_read_telemetry(82,0,&tele) && !tele.firmware_flush_seen && tele.sync_samples==0);
+ athena_nss_ipv4_notify_unregister();check(!registered_notify && !notify_original);
+ memset(records,0,sizeof(records));telemetry_clock=500;
+ m=message(0,83,tuple);m.cm.len=172;check(!athena_nss_ipv4_tx_receipt(NULL,(void *)&m));respond(0);
+ check(!athena_receipt_read_telemetry(83,0,&tele) && !tele.policy_applied);
  printf("{\"passed\":true,\"checks\":%d,\"mockedTransport\":true,\"firmwareProof\":false}\n",checks);
  return 0;
 }

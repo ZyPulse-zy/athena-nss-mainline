@@ -25,6 +25,19 @@ int athena_receipt_release(u32 serial, u64 generation);
 /* After admission is denied, request the observed exact firmware tuple when
  * ECM has already decelerated and cannot issue another DESTROY itself. */
 int athena_receipt_request_destroy(u32 serial, u64 generation);
+/* Independent new API: exact leased policy and passive firmware telemetry.
+ * The earlier receipt and observation layouts remain unchanged. */
+struct athena_telemetry {
+ struct athena_observation observation;
+ u64 policy_generation,hardware_flow_rx_bytes,hardware_return_rx_bytes,last_sync_ms;
+ u32 incoming_flow_qos,incoming_return_qos,sync_samples,sync_reason;
+ bool policy_applied,firmware_flush_seen;
+};
+int athena_receipt_policy_set(unsigned slot,u64 generation,u64 until,
+ const struct athena_tuple *tuple,u32 up,u32 down);
+void athena_receipt_policy_clear(unsigned slot,u64 generation);
+int athena_receipt_read_telemetry(u32 serial,u64 generation,
+ struct athena_telemetry *telemetry);
 static inline bool athena_receipt_firmware_absent(const struct athena_receipt *r)
 {
  /* NSS_CMN_RESPONSE_ENACK=4, NSS_IPV4_DR_NO_CONNECTION_ENTRY_ERROR=5.

@@ -7,6 +7,12 @@ function M.new(root,command,read,put,now,store,r)
  local gate='/sys/kernel/debug/athena_ecm_gate/'
  local owned,filters={},{};local binding=0;local rejected={};local pending={};local recovery={};local lastTags
  local rejectLimit,rejectTtl=32,6
+ local recoveryEvents,recoveryEventsOmitted={},0
+ local function recovery_event(phase,p,e,v)
+  if #recoveryEvents==32 then table.remove(recoveryEvents,1);recoveryEventsOmitted=recoveryEventsOmitted+1 end
+  recoveryEvents[#recoveryEvents+1]={atUptime=now(),phase=phase,slot=e and e.slot,generation=e and e.generation,serial=e and e.serial,
+   attempt=v and v.attempts,reason=v and v.reason}
+ end
  local tagRules=dofile(root..'/tag_rules.lua')
  local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0,sourcePauses=0,sourceResumes=0,rtPreemptions=0,rejectedPruned=0,recoveryWithdrawals=0,recoveryExhausted=0}
  local sourceUnavailableSince,lastSourceResumedAt
@@ -34,14 +40,18 @@ function M.new(root,command,read,put,now,store,r)
   assert(text:match('^abi=2 capacity=32 stopping=0 '))
   for line in text:gmatch('[^\n]+')do
    local e={};for key,value in line:gmatch('([%w_]+)=(%d+)')do e[key]=tonumber(value)end
-   if e.slot then rows[e.slot]=e end
+   if e.slot then rows[e.slot]=e elseif e.telemetry_slot and rows[e.telemetry_slot] then
+    for key,value in pairs(e)do rows[e.telemetry_slot][key]=value end
+   end
   end
   return rows
  end
  local function pin_command(e,token)
   local o,p=e.original,e.reply
+  local class=e.class=='RT' and e.budgetAdmitted and 'RT' or 'BE';local low=class=='RT' and 6 or 0
   return table.concat({dec(e.connectionId),dec(e.protocol),hex(core.ipnumber(o.src)),dec(o.sport),hex(core.ipnumber(o.dst)),dec(o.dport),
-   hex(core.ipnumber(p.src)),dec(p.sport),hex(core.ipnumber(p.dst)),dec(p.dport),dec(e.mark),dec(math.floor(e.validUntil*1000)),dec(e.sequence),hex(token)},' ')
+   hex(core.ipnumber(p.src)),dec(p.sport),hex(core.ipnumber(p.dst)),dec(p.dport),dec(e.mark),dec(math.floor(e.validUntil*1000)),dec(e.sequence),hex(token),
+   dec(r.ingress.up.tags[e.wan][class]*65536+low),dec(r.ingress.down.tags[e.wan][class]*65536+low)},' ')
  end
  local function key_elements(e)
   local o,p=e.original,e.reply
@@ -97,19 +107,30 @@ function M.new(root,command,read,put,now,store,r)
    end
   end end
  end
- local function budget_snapshot()
-  local values={up={},down={}}
+ local function budget_snapshot(diagnostics)
+  local values={up={},down={}};local deadline=now()+0.75
+  diagnostics.lastReadCommands=0
   for w=1,5 do for _,x in ipairs({{'up','rpwan'},{'down','rpifb'}})do
-   local rows=assert(j.parse(command('/sbin/tc -j -d qdisc show dev '..x[2]..w)))
+   assert(now()<deadline,'budget-read-batch-deadline')
+   diagnostics.lastReadCommands=diagnostics.lastReadCommands+1
+   local text=assert(command('/sbin/tc -j -d qdisc show dev '..x[2]..w,true),'budget-read-failed')
+   local rows=assert(j.parse(text))
    for _,q in ipairs(rows)do if q.kind=='cake' then values[x[1]][w]=assert(tonumber(q.options.bandwidth))*8/1000 end end
    assert(values[x[1]][w],'Software budget unavailable')
   end end
   return values
  end
- local budgetAt=0;local budgetStats={batches=0,lastCommands=0,lastSeconds=0,lastReadSeconds=0,lastReadCommands=0}
+ local budgetAt=0;local budgetStats={batches=0,lastCommands=0,lastSeconds=0,lastReadSeconds=0,lastReadCommands=0,readFailures=0,lastSuccessAtUptime=now()}
  local function sync_budgets()
   if now()<budgetAt+3 then return end;budgetAt=now()
-  local beganRead=now();local values=budget_snapshot();budgetStats.lastReadSeconds=now()-beganRead;budgetStats.lastReadCommands=10;budgetStats.lastReadAtUptime=now()
+  local beganRead=now();local ok,values=pcall(budget_snapshot,budgetStats);budgetStats.lastReadSeconds=now()-beganRead;budgetStats.lastReadAtUptime=now()
+  budgetStats.lastReadSucceeded=ok
+  if not ok then
+   budgetStats.readFailures=budgetStats.readFailures+1
+   assert(now()-budgetStats.lastSuccessAtUptime<6,'Software CAKE budget observation expired; restore native backend')
+   return
+  end
+  budgetStats.lastSuccessAtUptime=now()
   local plan=dofile(root..'/queue_plan.lua')
   local batches={};local plans={}
   for _,direction in ipairs({'up','down'})do
@@ -160,6 +181,7 @@ function M.new(root,command,read,put,now,store,r)
    if e.selected>0 then stats.selected=stats.selected+1 end
    if e.state==1 and e.receipt_present==1 and e.receipt==0 and e.create_ack==1 and e.create_pending==0 then stats.firmwareCreated=stats.firmwareCreated+1 end
    if e.state==3 or e.state==4 or e.state==6 then
+    local v=recovery[p.key];if v and p.retiring then recovery_event('retired',p,e,v)end
     local name=({[3]='retiredAck',[4]='retiredNeverCreated',[6]='retiredFirmwareAbsent'})[e.state];stats[name]=stats[name]+1;owned[slot]=nil
    elseif e.state==1 then
     local fresh=desired[p.key]
@@ -174,17 +196,22 @@ function M.new(root,command,read,put,now,store,r)
      -- observations alone are never reasons to withdraw a healthy flow.
      local failed=e.selected>0 and e.receipt_present==1 and e.create_pending==0 and e.create_seen==1 and e.create_ack==0 and e.receipt==0
      local removed=e.selected>0 and e.receipt_present==1 and e.create_pending==0 and
-      (e.receipt==2 or e.receipt==3 and e.receipt_response==4 and e.receipt_error==5)
+      (e.receipt==2 or e.receipt==3 and e.receipt_response==4 and e.receipt_error==5 or
+       e.firmware_flush_seen==1 and e.policy_applied==1 and e.policy_generation==e.generation)
      local v=recovery[p.key]
+     if v and v.awaitingCreate and e.receipt_present==1 and e.receipt==0 and e.create_pending==0 and e.create_ack==1 then
+      recovery_event('created',p,e,v);v.awaitingCreate=false
+     end
      if sourceFresh and (failed or removed) and not v and recoveryCount<32 then
       v={binding=p.binding,class=p.class,attempts=0,nextAt=0};recovery[p.key]=v;recoveryCount=recoveryCount+1
      end
      if sourceFresh and (failed or removed) and v and v.attempts<2 and now()>=v.nextAt then
       assert(write_control('revoke '..slot));p.retiring=true
       v.attempts=v.attempts+1;v.nextAt=now()+({1,3})[v.attempts]
-      v.reason=failed and 'observed-create-failure' or 'observed-rule-removal';stats.recoveryWithdrawals=stats.recoveryWithdrawals+1
+      v.reason=failed and 'observed-create-failure' or e.firmware_flush_seen==1 and 'firmware-flush-or-evict-notification' or 'observed-rule-removal';stats.recoveryWithdrawals=stats.recoveryWithdrawals+1
+      recovery_event('requested',p,e,v)
      elseif sourceFresh and (failed or removed) and v and v.attempts>=2 then
-      if not v.exhausted then v.exhausted=true;stats.recoveryExhausted=stats.recoveryExhausted+1 end
+      if not v.exhausted then v.exhausted=true;stats.recoveryExhausted=stats.recoveryExhausted+1;recovery_event('exhausted',p,e,v)end
       -- Let this entry's independent lease retire; remain in software for
       -- this verified identity epoch rather than restart a shared backend.
      elseif sourceFresh and (failed or removed) and not v then
@@ -253,6 +280,7 @@ function M.new(root,command,read,put,now,store,r)
      original=e.original,reply=e.reply,wan=e.wan}
     stats.admitted=stats.admitted+1
     rejected[e.key]=nil;pending[e.key]=nil
+    local v=recovery[e.key];if v then v.awaitingCreate=true;recovery_event('readmitted',owned[a.slot],{slot=a.slot},v)end
    else reject(e);stats.identityRejected=stats.identityRejected+1 end
   end
   -- Renew already verified CT leases before updating adaptive queue budgets.
@@ -260,7 +288,9 @@ function M.new(root,command,read,put,now,store,r)
   for _,p in pairs(owned)do if not p.retiring then leaseMargin=math.min(leaseMargin or math.huge,p.leaseUntil-now())end end
   budgetStats.leaseMarginBeforeReadSeconds=leaseMargin
   local budgetBegan=now();budgetStats.skippedSourceGap=not sourceFresh
-  if sourceFresh then sync_budgets()end
+  budgetStats.skippedLeaseMargin=leaseMargin~=nil and leaseMargin<3
+  if sourceFresh and not budgetStats.skippedLeaseMargin then sync_budgets()end
+  if sourceFresh then assert(now()-budgetStats.lastSuccessAtUptime<6,'Software CAKE budget observation expired; restore native backend')end
   budgetStats.leaseMarginAfterReadSeconds=leaseMargin and leaseMargin-(now()-budgetBegan) or nil
   local count=0;for _ in pairs(owned)do count=count+1 end
   local createdClients,createdExits={},{};r.ownedFlows={}
@@ -288,7 +318,8 @@ function M.new(root,command,read,put,now,store,r)
    nativeOwned=count,actualCreatedReceipts=stats.firmwareCreated,actualCreatedClients=createdClientCount,actualCreatedExits=createdExits,selected=stats.selected,
    admitted=stats.admitted,renewed=stats.renewed,retiredAck=stats.retiredAck,retiredNeverCreated=stats.retiredNeverCreated,retiredFirmwareAbsent=stats.retiredFirmwareAbsent,
    identityRejected=stats.identityRejected,pendingRt=pendingCount,rtPreemptions=stats.rtPreemptions,
-   recovery={tracked=recoveryCount,limit=32,maximumRetries=2,withdrawals=stats.recoveryWithdrawals,exhausted=stats.recoveryExhausted,newIdentityAdmissionPaused=recoveryCount>=32},
+   recovery={tracked=recoveryCount,limit=32,maximumRetries=2,withdrawals=stats.recoveryWithdrawals,exhausted=stats.recoveryExhausted,newIdentityAdmissionPaused=recoveryCount>=32,
+    events=recoveryEvents,eventLimit=32,eventsOmitted=recoveryEventsOmitted},
    rejectedCache={entries=rejectedCount,limit=rejectLimit,ttlSeconds=rejectTtl,pruned=stats.rejectedPruned},perDeviceQuotas=false}
   store(r)
  end

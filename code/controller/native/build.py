@@ -3,8 +3,8 @@
 
 Arguments: --kernel prepared-kernel --toolchain bin --ecm installed-ecm.ko
            --driver installed-qca-nss-drv.ko --output private-output
-The ECM code sections remain byte-for-byte identical. One undefined import is
-renamed to our receipt forwarding API. No ABI, firmware, EDMA or kernel update.
+The ECM code sections remain byte-for-byte identical. Receipt and statistics
+imports forward through bounded observers. No firmware, EDMA or kernel update.
 """
 import argparse, hashlib, json, os, pathlib, re, shutil, struct, subprocess, tempfile
 
@@ -37,7 +37,7 @@ def main():
     ecm_exports=['ecm_ae_classifier_ops_register','ecm_ae_classifier_ops_unregister',
        'ecm_ae_classifier_decelerate_v4_connection','ecm_db_connection_find_and_ref',
        'ecm_db_connection_serial_get','ecm_db_connection_deref']
-    driver_exports=['nss_ipv4_tx','nss_ipv4_get_mgr','nss_ipv4_msg_init','nss_if_tx_msg','nss_igs_get_context']
+    driver_exports=['nss_ipv4_tx','nss_ipv4_conn_sync_many_notify_register','nss_ipv4_conn_sync_many_notify_unregister','nss_ipv4_notify_register','nss_ipv4_notify_unregister','nss_ipv4_get_mgr','nss_ipv4_msg_init','nss_if_tx_msg','nss_igs_get_context']
     for binary, symbols, label in [(a.ecm,ecm_exports,'ecm'),(a.driver,driver_exports,'driver')]:
         output=run([nm,binary],label+'-symbols-private.txt')
         for symbol in symbols: assert '__kstrtab_'+symbol in output, symbol+' not exported'
@@ -52,9 +52,15 @@ def main():
     report.update(installedIPv4MessageBytes=736,installedIPv4Interface=161,nativeGateAbi=2)
     old_imports=run([nm,'-u',a.ecm],'ecm-imports-before.txt')
     assert ' U nss_ipv4_tx\n' in old_imports
+    assert ' U nss_ipv4_conn_sync_many_notify_register\n' in old_imports
+    assert ' U nss_ipv4_conn_sync_many_notify_unregister\n' in old_imports
     patched=a.output/'ecm-receipts.ko'
     temporary=a.output/'ecm-symbols-private.ko'
     run([objcopy,'--redefine-sym','nss_ipv4_tx=athena_nss_ipv4_tx_receipt',
+         '--redefine-sym','nss_ipv4_conn_sync_many_notify_register=athena_nss_ipv4_sync_register',
+         '--redefine-sym','nss_ipv4_conn_sync_many_notify_unregister=athena_nss_ipv4_sync_unregister',
+         '--redefine-sym','nss_ipv4_notify_register=athena_nss_ipv4_notify_register',
+         '--redefine-sym','nss_ipv4_notify_unregister=athena_nss_ipv4_notify_unregister',
          '--redefine-sym','ecm_ae_classifier_dummy_get=athena_receipts_default_deny',a.ecm,temporary],'ecm-import-rename.log')
     # Change the existing dummy FUNC symbol to an undefined import. Both its
     # initial data relocation and unregister reset now resolve to default deny.
@@ -78,7 +84,8 @@ def main():
     assert changed==1; temporary.write_bytes(elf)
     run([objcopy,temporary,patched],'ecm-symbol-canonicalize.log')
     new_imports=run([nm,'-u',patched],'ecm-imports-after.txt')
-    expected=old_imports.replace(' U nss_ipv4_tx\n',' U athena_nss_ipv4_tx_receipt\n')+'                 U athena_receipts_default_deny\n'
+    expected=old_imports.replace(' U nss_ipv4_tx\n',' U athena_nss_ipv4_tx_receipt\n').replace(' U nss_ipv4_conn_sync_many_notify_register\n',' U athena_nss_ipv4_sync_register\n').replace(' U nss_ipv4_conn_sync_many_notify_unregister\n',' U athena_nss_ipv4_sync_unregister\n')+'                 U athena_receipts_default_deny\n'
+    expected=expected.replace(' U nss_ipv4_notify_register\n',' U athena_nss_ipv4_notify_register\n').replace(' U nss_ipv4_notify_unregister\n',' U athena_nss_ipv4_notify_unregister\n')
     assert sorted(new_imports.splitlines())==sorted(expected.splitlines())
     # Compare every executable section, relocation target change excluded.
     readelf=a.toolchain/'aarch64-openwrt-linux-musl-readelf'

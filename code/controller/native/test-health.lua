@@ -51,4 +51,13 @@ check(m.coverage({sameCohort=true,sameWindow=true,sameDirection=true,sameByteBas
 check(not m.coverage({sameCohort=true,sameWindow=true,sameDirection=true,sameByteBasis=true,hardwareBytes=201,totalBytes=200}).measured)
 local gone=flow(3);gone.receiptState=2;row=sample(105,true,{gone});m.tick(a,row)
 check(not m.report(a).flowEvidence[1].createAcknowledged and not m.report(a).byteCoverage.measured)
+local hw=flow(1);hw.qosDirection=1;hw.policyApplied=1;hw.policyGeneration=hw.generation;hw.syncSamples=1
+hw.hardwareFlowRxBytes=100;hw.hardwareReturnRxBytes=200;hw.lastSyncMs=100000
+local x=m.flowHardware(hw,nil,true,101000);check(x.measured and x.up==100 and x.down==200 and x.fresh)
+check(not m.flowHardware(hw,nil,false,101000).measured)
+hw.policyGeneration=hw.generation+1;check(not m.flowHardware(hw,nil,true,101000).measured);hw.policyGeneration=hw.generation
+local prev={serial=hw.serial,generation=hw.generation,up=40,down=50,samples=1}
+x=m.flowHardware(hw,prev,true,107000);check(x.delta.up==60 and x.delta.down==150 and not x.fresh)
+prev.generation=8;check(not m.flowHardware(hw,prev,true,101000).delta)
+hw.qosDirection=2;x=m.flowHardware(hw,nil,true,101000);check(x.up==200 and x.down==100)
 print(require('luci.jsonc').stringify({passed=true,checks=checks,dataPlaneWrites=false,modelOnly=true}))

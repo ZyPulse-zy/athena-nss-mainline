@@ -17,9 +17,11 @@ local function process_start(pid)
 end
 local function write(p,s)local f=assert(io.open(p..'.new','w'));assert(f:write(s));assert(f:close());assert(fs.rename(p..'.new',p))end
 local function put(p,s)local f=assert(io.open(p,'w'));assert(f:write(s));assert(f:close())end
-local function command(c)
- local f=assert(io.popen(c..' 2>&1; printf "\\nATHENA_EXIT_%s\\n" "$?"'))
+local function command(c,boundedRead)
+ if boundedRead then assert(c:match('^/sbin/tc %-j %-d qdisc show dev rpwan[1-5]$') or c:match('^/sbin/tc %-j %-d qdisc show dev rpifb[1-5]$'),'Only owned software CAKE observations may use boundedRead')end
+ local f=assert(io.popen((boundedRead and '/usr/bin/timeout -k 1 1 ' or '')..c..' 2>&1; printf "\\nATHENA_EXIT_%s\\n" "$?"'))
  local s=f:read('*a');f:close();local body,code=s:match('^(.*)\nATHENA_EXIT_(%d+)\n$')
+ if boundedRead and (not body or code~='0')then return nil end
  assert(body and code=='0',c..': '..s);return body
 end
 local function loaded(name)return fs.stat('/sys/module/'..name,'type')=='dir'end

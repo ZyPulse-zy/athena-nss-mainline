@@ -150,4 +150,6 @@ function M.tick(state, projection, full, topology, now)
   return {summary=summary,flows=rows,operations=operations}
 end
 M.ipnumber=ipnumber
+M.observationFresh=frame_ok
+M.observationIdentity=identity
 return M

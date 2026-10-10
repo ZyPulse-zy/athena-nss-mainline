@@ -33,6 +33,19 @@ function M.hardware(text)
  for _,direction in ipairs{'rx','tx'}do o[direction]=tonumber(text:match('ipv4_'..direction..'_bytes%s*=%s*(%d+)'))end
  return number(o.rx)and number(o.tx)and o or nil
 end
+function M.flowHardware(f,old,admitted,atMs)
+ local out={measured=false,basis='passive-firmware-RX-sync-same-as-conntrack-accounting'}
+ if not admitted or f.policyGeneration~=f.generation or f.policyApplied~=1 or not number(f.syncSamples) or f.syncSamples==0 or
+  not number(f.hardwareFlowRxBytes) or not number(f.hardwareReturnRxBytes) or (f.qosDirection~=1 and f.qosDirection~=2) then return out end
+ out.measured=true;out.up=f.qosDirection==1 and f.hardwareFlowRxBytes or f.hardwareReturnRxBytes
+ out.down=f.qosDirection==1 and f.hardwareReturnRxBytes or f.hardwareFlowRxBytes
+ out.lastSyncMs=f.lastSyncMs;out.fresh=number(atMs) and number(f.lastSyncMs) and atMs>=f.lastSyncMs and atMs-f.lastSyncMs<6000
+ out.samples=f.syncSamples
+ if old and old.serial==f.serial and old.generation==f.generation and old.up<=out.up and old.down<=out.down and old.samples<=out.samples then
+  out.delta={up=out.up-old.up,down=out.down-old.down}
+ end
+ return out
+end
 function M.coverage(v)
  if not v or v.sameCohort~=true or v.sameWindow~=true or v.sameDirection~=true or v.sameByteBasis~=true or
   not number(v.hardwareBytes)or not number(v.totalBytes)or v.totalBytes==0 or v.hardwareBytes>v.totalBytes then
@@ -53,7 +66,7 @@ function M.new()
  return{samples=0,events={},eventsOmitted=0,aliases={},nextAlias=0,previous={},
   minNss=nil,maxNss=nil,sourceGaps=0,sourceRestores=0,rtPacketSamples=0,
   rtCreatedSamples=0,rtNotCreatedSamples=0,rtRebindings=0,queueDrops={},counterResets=0,maxReadSeconds=0,
-  evidence={},rtAliases={},hardwareDelta={rx=0,tx=0},hardwareIntervals=0,hardwareResets=0,labelVerifiedSamples=0,labelMismatchSamples=0}
+  evidence={},rtAliases={},flowHardware={},attributedIntervals=0,attributedDelta={up=0,down=0},hardwareDelta={rx=0,tx=0},hardwareIntervals=0,hardwareResets=0,labelVerifiedSamples=0,labelMismatchSamples=0}
 end
 local function event(state,at,kind,flow)
  if #state.events<128 then state.events[#state.events+1]={atUptime=at,kind=kind,flow=flow}
@@ -82,19 +95,26 @@ function M.tick(state,s)
  end
  state.lastHardware=s.hardware -- Missing reads break the comparison window.
  if s.unconfirmed and s.unconfirmed>0 then event(state,s.atUptime,'firmware-removal-unconfirmed')end
- local nextPrevious,seen={},{}
+ local nextPrevious,nextHardware,seen={},{},{}
  for _,f in ipairs(s.flows)do
   assert(type(f.key)=='string'and not seen[f.key]);seen[f.key]=true
   if not state.aliases[f.key]and state.nextAlias<256 then state.nextAlias=state.nextAlias+1;state.aliases[f.key]=state.nextAlias end
   local admitted=f.owned==true and f.identityMatches==true and f.state==1 and number(f.untilMs)and number(s.gateNowMs)and f.untilMs>s.gateNowMs
   local receipt=admitted and f.createAck==1 and f.createPending==0 and f.receiptPresent==1 and f.receiptState==0
   local labels=M.labels(f,s.tags,receipt)
+  local hardware=M.flowHardware(f,state.flowHardware[f.key],receipt,s.gateNowMs)
+  if hardware.measured then
+   nextHardware[f.key]={up=hardware.up,down=hardware.down,samples=hardware.samples,serial=f.serial,generation=f.generation}
+   if hardware.delta then state.attributedIntervals=state.attributedIntervals+1
+    state.attributedDelta.up=state.attributedDelta.up+hardware.delta.up;state.attributedDelta.down=state.attributedDelta.down+hardware.delta.down end
+  end
   if labels.status=='verified'then state.labelVerifiedSamples=state.labelVerifiedSamples+1
   elseif labels.status=='mismatch'then state.labelMismatchSamples=state.labelMismatchSamples+1 end
   if #state.evidence<80 then
    state.evidence[#state.evidence+1]={flow=state.aliases[f.key],class=f.class,wan=f.wan,egress=f.egress,
     wireless=f.wireless,sourceFresh=s.sourceFresh,admitted=admitted==true,leaseRemainingMs=admitted and f.untilMs-s.gateNowMs or nil,
-    createAcknowledged=receipt==true,labels=labels,hardwareBytesAttributed=false}
+    createAcknowledged=receipt==true,labels=labels,hardwareBytesAttributed=hardware.measured,hardware=hardware,
+    policyApplied=f.policyApplied==1,incomingQos={flow=f.incomingFlowQos,returnValue=f.incomingReturnQos}}
   else state.evidenceOmitted=state.evidenceOmitted+1 end
   if f.class=='RT'and f.budgetAdmitted==true then
    if state.aliases[f.key]then state.rtAliases[f.key]=true end
@@ -114,6 +134,7 @@ function M.tick(state,s)
   end
  end
  state.previous=nextPrevious
+ state.flowHardware=nextHardware
  for _,q in ipairs(s.queues or{})do
   assert(type(q.key)=='string'and number(q.drops))
   local old=state.queueDrops[q.key]
@@ -138,11 +159,12 @@ function M.report(state)
   rtQueueDropDelta=state.rtQueueDropDelta or 0,counterResets=state.counterResets,
   maxReadSeconds=state.maxReadSeconds,events=state.events,eventsOmitted=state.eventsOmitted,
   flowEvidence=state.evidence,flowEvidenceLimit=80,flowEvidenceOmitted=state.evidenceOmitted,
-  evidenceScope='candidate-RT-and-BULK-with-global-hardware-byte-progress',
+  evidenceScope='candidate-RT-and-BULK-with-passive-per-flow-firmware-byte-progress',
   labelVerifiedSamples=state.labelVerifiedSamples,labelMismatchSamples=state.labelMismatchSamples,
   hardware={measured=state.hardwareIntervals>0,intervals=state.hardwareIntervals,byteDelta=state.hardwareIntervals>0 and state.hardwareDelta or nil,
    counterResets=state.hardwareResets,scope='global-NSS-IPv4-special-counters',perFlowAttribution=false},
-  byteCoverage={measured=false,reason='No hardware bytes for the same CT cohort; candidate projection excludes BE'},
+  perFlowHardware={measured=state.attributedIntervals>0,intervals=state.attributedIntervals,byteDelta=state.attributedDelta,basis='firmware-RX-sync'},
+  byteCoverage={measured=false,reason='Use --coverage for a bracketed downstream byte baseline including BE'},
   interpretation='No local event does not prove zero loss or jitter. A CREATE receipt is not a per-packet delivery acknowledgement.'}
 end
 return M

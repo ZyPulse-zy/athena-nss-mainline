@@ -25,6 +25,8 @@
 #include <linux/debugfs.h>
 #include <linux/seq_file.h>
 #include <linux/uaccess.h>
+#include <linux/ktime.h>
+#include <linux/netdevice.h>
 #endif
 #include "receipts.h"
 #include "ecm_ae_classifier_public.h"
@@ -33,6 +35,10 @@ struct nss_ipv4_msg;
 struct nss_if_msg;
 typedef void (*nss_callback)(void *, struct nss_ipv4_msg *);
 extern int nss_ipv4_tx(struct nss_ctx_instance *, struct nss_ipv4_msg *);
+extern void nss_ipv4_conn_sync_many_notify_register(nss_callback);
+extern void nss_ipv4_conn_sync_many_notify_unregister(void);
+extern struct nss_ctx_instance *nss_ipv4_notify_register(nss_callback,void *);
+extern void nss_ipv4_notify_unregister(void);
 extern struct nss_ctx_instance *nss_ipv4_get_mgr(void);
 extern void nss_ipv4_msg_init(struct nss_ipv4_msg *,u16,u32,u32,nss_callback,void *);
 int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *,struct nss_ipv4_msg *);
@@ -52,7 +58,7 @@ struct common_prefix { u16 version, len; u32 interface, response, type, error,
 struct destroy_prefix { struct common_prefix cm;
  u32 src, sport, dst, dport; u8 protocol, reserved[3]; };
 struct record { bool used,igs_observed; u64 create_attempt,destroy_attempt; struct athena_tuple tuple;
- struct athena_receipt receipt; };
+ struct athena_receipt receipt; struct athena_telemetry telemetry; };
 struct ticket { nss_callback original; void *data; u32 serial; u64 generation;
  u64 create_attempt,destroy_attempt; bool create; struct athena_tuple tuple; };
 #define RECEIPT_CAPACITY 32
@@ -91,6 +97,7 @@ static bool tuples_equal(const struct athena_tuple *a,const struct athena_tuple 
   ((a->src==b->src && a->sport==b->sport && a->dst==b->dst && a->dport==b->dport) ||
    (a->src==b->dst && a->sport==b->dport && a->dst==b->src && a->dport==b->sport));
 }
+#include "receipt_telemetry.h"
 int athena_receipt_find_tuple(const struct athena_tuple *tuple,u32 *serial)
 {
  int n,result=-ENOENT; spin_lock_bh(&receipt_lock);
@@ -207,7 +214,8 @@ int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *ctx,
    r->receipt.create_ack=false; r->create_attempt=++attempts; }
   /* QCA's IPv4 create ABI: common=40, flags+tuple=24, connection=44,
    * TCP=28, PPPoE=16, QoS=8; IGS follows at byte 208. Observe the
-   * original fields without rewriting the rule or guessing a QoS result. */
+   * original fields before applying an exact gate-authorized leased policy.
+   * Preserve IGS and every other field. This is not firmware readback. */
   if (r && m->cm.len>=172) {
    u16 valid;memcpy(&valid,(char *)message+40,2);
    r->receipt.qos_observed=(valid&8)!=0;
@@ -216,6 +224,7 @@ int athena_nss_ipv4_tx_receipt(struct nss_ctx_instance *ctx,
    memcpy(&r->receipt.return_qos,(char *)message+156,4);
    memcpy(&r->receipt.igs_flow,(char *)message+208,2);
    memcpy(&r->receipt.igs_return,(char *)message+210,2);
+   apply_policy(r,message);
   }
  } else if (!r || r->receipt.state!=ATHENA_ARMED || !tuple_equal(&r->tuple,m)) {
   r=NULL;

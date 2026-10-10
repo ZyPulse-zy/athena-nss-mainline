@@ -12,7 +12,7 @@ local function flow(id,class,rate)
   reply={src='198.51.100.99',sport=443,dst='198.51.100.1',dport=40000+id}}
 end
 local function fixture()
- local at=100;local rows={};local controls={};local fail=false
+ local at=100;local rows={};local controls={};local fail=false;local slowBudget=false
  local r={wans={},ingress={up=plan.plan(0x7e00,{40000,40000,40000,40000,40000}),down=plan.plan(0x7a00,{70000,70000,70000,70000,70000})}}
  for w=1,5 do r.wans['rpwan'..w]='198.51.100.'..w end
  n.open=function(path,mode)
@@ -30,8 +30,10 @@ local function fixture()
    return #text
   end}
  end
- local function command(c)
+ local function command(c,boundedRead)
   if c:match('^/sbin/tc %-j %-d qdisc show dev rp')then
+   assert(boundedRead==true,'Software CAKE query is not bounded')
+   if slowBudget then at=at+1;return nil end
    return j.stringify({{kind='cake',options={bandwidth=c:find('rpifb',1,true)and 8750000 or 5000000}}})
   end
   assert(c:match('^/usr/sbin/nft %-c %-f ')or c:match('^/usr/sbin/nft %-f ')or
@@ -47,7 +49,7 @@ local function fixture()
  local writer=dofile(root..'/writer.lua').new(root,command,read,function(p,text)
   assert(p==root..'/tags.nft'or p==root..'/budgets.tc');assert(type(text)=='string')
  end,function()return at end,function()end,r)
- return{r=r,rows=rows,controls=controls,time=function(t)at=t end,fail=function(v)fail=v end,tick=function(flows,fresh)
+ return{r=r,rows=rows,controls=controls,time=function(t)at=t end,fail=function(v)fail=v end,slowBudget=function(v)slowBudget=v end,tick=function(flows,fresh)
   writer.tick({wans=r.wans,flows=flows,operations={},summary={sourceFresh=fresh~=false,tracked=#flows,clients=1,exits={},classes={}}})
  end}
 end
@@ -98,6 +100,7 @@ f.tick(all);check(revokes(f)==1 and f.r.flowState.recovery.withdrawals==1)
 f.time(102);all[1].sequence=2;all[1].validUntil=108;before=#f.controls;f.tick(all)
 check(#f.controls==before and f.r.flowState.nativeOwned==1,'Recovery bypassed pending retirement')
 f.rows[0].state=4;f.tick(all);check(f.rows[0].id==1 and f.rows[0].state==1 and f.r.flowState.recovery.tracked==1)
+f.tick(all);local ev=f.r.flowState.recovery.events;check(#ev==4 and ev[1].phase=='requested' and ev[2].phase=='retired' and ev[3].phase=='readmitted' and ev[4].phase=='created')
 f.rows[0].create_ack=0;f.rows[0].create_seen=1;f.tick(all);check(revokes(f)==2)
 f.rows[0].state=6;f.time(104);all[1].validUntil=110;f.tick(all);check(f.r.flowState.nativeOwned==0)
 f.time(105);f.tick(all);check(f.r.flowState.nativeOwned==1)
@@ -110,6 +113,15 @@ f=fixture();all={flow(1)};f.tick(all);f.rows[0].receipt=2;f.tick(all)
 check(revokes(f)==1 and f.r.flowState.recovery.withdrawals==1)
 f.rows[0].state=5;before=#f.controls;local ok=pcall(function()f.tick(all)end)
 check(not ok and #f.controls==before,'Unconfirmed firmware removal must remain fatal')
+-- A firmware FLUSH/EVICT event requests exact retirement, not direct re-add.
+-- A stale policy generation cannot authorize recovery for a new binding.
+f=fixture();all={flow(1)};f.tick(all);f.rows[0].firmware_flush_seen=1;f.rows[0].policy_applied=1
+f.rows[0].policy_generation=f.rows[0].generation+1;f.tick(all);check(revokes(f)==0)
+f.rows[0].policy_generation=f.rows[0].generation;f.tick(all);check(revokes(f)==1 and f.r.flowState.nativeOwned==1)
+check(f.r.flowState.recovery.events[1].reason=='firmware-flush-or-evict-notification')
+f.tick(all);check(revokes(f)==1 and f.r.flowState.nativeOwned==1)
+f.rows[0].state=6;f.time(102);all[1].sequence=2;all[1].validUntil=108;f.tick(all)
+check(f.r.flowState.nativeOwned==1 and f.r.flowState.retiredFirmwareAbsent==1)
 -- A full recovery ledger cannot lose retry history or admit new identities
 -- around the finite budget. Software classification remains independent.
 f=fixture();all={};for id=1,32 do all[id]=flow(id)end;f.tick(all)
@@ -117,5 +129,17 @@ for slot=0,31 do f.rows[slot].create_ack=0;f.rows[slot].create_seen=1 end
 f.tick(all);check(f.r.flowState.recovery.tracked==32 and f.r.flowState.recovery.newIdentityAdmissionPaused)
 all[33]=flow(100,'RT');before=#f.controls;f.tick(all)
 check(#f.controls==before and f.r.flowState.pendingRt==0,'Full retry ledger was bypassed by a new RT')
+f=fixture();all={flow(1)};f.tick(all)
+local up,down=f.controls[1]:match(' (%d+) (%d+)\n$');check(tonumber(up)==0x7e150000 and tonumber(down)==0x7a150000)
+f.time(103);all[1].sequence=2;all[1].validUntil=109;f.slowBudget(true);f.tick(all)
+check(f.r.flowState.nativeOwned==1 and f.r.flowState.budgetUpdates.readFailures==1 and f.r.flowState.budgetUpdates.lastReadCommands==1)
+check(f.r.flowState.budgetUpdates.lastReadSeconds==1 and not f.r.flowState.budgetUpdates.lastReadSucceeded)
+f.slowBudget(false);f.time(106);all[1].sequence=3;all[1].validUntil=112;f.tick(all)
+check(f.r.flowState.budgetUpdates.lastReadSucceeded and f.r.flowState.budgetUpdates.lastReadCommands==10)
+f=fixture();all={flow(40,'RT')};all[1].validUntil=101;f.tick(all)
+check(f.r.flowState.budgetUpdates.skippedLeaseMargin and f.r.flowState.budgetUpdates.lastReadCommands==0)
+up,down=f.controls[1]:match(' (%d+) (%d+)\n$');check(tonumber(up)==0x7e160006 and tonumber(down)==0x7a160006)
+f.time(107);all[1].validUntil=108;all[1].sequence=2;local ok,err=pcall(f.tick,all)
+check(not ok and tostring(err):find('Software CAKE budget observation expired',1,true))
 n.open=originalOpen
-print(j.stringify({passed=true,checks=checks,mockedKernel=true,dataPlaneWrites=false,fullSlotsDelayedAck=true,rejectedCacheBounded=true,receiptGatedFiniteRecovery=true}))
+print(j.stringify({passed=true,checks=checks,mockedKernel=true,dataPlaneWrites=false,fullSlotsDelayedAck=true,rejectedCacheBounded=true,receiptGatedFiniteRecovery=true,boundedBudgetReads=true}))

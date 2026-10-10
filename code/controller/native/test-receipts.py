@@ -21,6 +21,9 @@ typedef uint64_t u64; typedef uint32_t __be32;
 #define THIS_MODULE 0
 #define try_module_get(x) true
 #define module_put(x) ((void)(x))
+#define READ_ONCE(x) (x)
+#define WRITE_ONCE(x,v) ((x)=(v))
+#define synchronize_net() ((void)0)
 #define BUILD_BUG_ON(x) _Static_assert(!(x), #x)
 #define EXPORT_SYMBOL(x)
 #define EXPORT_SYMBOL_GPL(x)

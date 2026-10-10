@@ -1,0 +1,55 @@
+# NSS v2 剩余开发与部署：双向标签、固件统计和有界恢复
+
+2026-10-10。基线为开发分支 cbaf0f5 / 已安装 db872e0，原审查为 3208540。现行代码是路由器本机 ABI2、32 个成本槽；main 的 Windows 三槽方案不是当前部署。用户明确要求全部修改部署，随后答复“先不验收”：游戏与 Wi-Fi 的正式配合验收延期，代码、部署与安全运行核对继续。
+
+## 七项原始需求的落实
+
+| 优先级 | 实现与源码证据 | 核验层级 |
+|---|---|---|
+| ① 满槽重复撤销 | db872e0 已保留每个精确 RT binding 的 pending 槽，计入空槽/已撤销槽，最低当前速率非 RT 优先；没有健康 BULK 周期轮换。原样旧/新四轮模型为 4→1 撤销 | 定向回归通过；自然流量没有制造满槽 |
+| ② rejected 增长 | 32 项上限、6 秒 TTL，离开/新序列/成功即清理；不扩大缓存 | 定向回归通过，运行计数可读 |
+| ③ 单连接恢复 | 保留 `!selected`；明确 CREATE 失败、真实 DESTROY/NO_ENTRY 或固件 FLUSH/EVICT 通知后，先拒绝旧代、通过精确撤销回执确认清理，再以新代重试，1/3 秒退避、每个身份最多两次；新增最多 32 条恢复阶段记录 | 实际 C/Lua 模型通过；不伪造固件或空闲失败，不重启共享服务来修一条流 |
+| ④ 轻量分层观察 | 分类、完整身份及租约、CREATE ACK、双向 QoS/IGS 提交字段、逐连接固件 RX 字节分别呈现；保留全局计数，显式注明非独立固件队列读回 | 默认无硬件 tc；逐连接字节复用既有统计回调 |
+| ⑤ 无线/有线末段 | 上下行完整队列标签在 CREATE 时精确校正，RT 低位 6 / BE 低位 0；FDB >60 秒给出明确原因与汇总，不以陈旧 FDB 放行；现有三 station 固件统计只读收集 | 标准映射及源码路径有证据；实际 TID/AC、同机游戏下载和持续有线 FDB 的正式验收延期 |
+| ⑥ 字节覆盖与 BE 范围 | 新 `--coverage` 只读取完整分类快照，包括 BE，下行 CT 窗口包住较短硬件统计窗；完整身份/生产者/启动/类别/代号变化或计数回退不混算，输出稳定子集的保守下界 | 不称全 LAN 精确覆盖；不据低负载结果自动扩大 BE、32 槽或频繁替换 |
+| ⑦ 采集、预算与租约开销 | 来源查询维持 1 秒 TERM+1 秒 KILL，失败暂停续租；CAKE 只查十个软件根，批次最多继续 0.75 秒，单查询有界；续租余量 <3 秒跳过查询，预算观测超过 6 秒失效则走既有完整恢复 | 超时、跳过及成功恢复模型通过；不扩大六秒分类租约，未追加 CPU/故障压力循环 |
+
+## 双向 QoS 差异的原因与修复
+
+前一部署确实报告 116 个重复的 mismatch 流样本，不能称 116 个独立连接或丢包。QCA ECM `ecm_classifier_dscp.c` 502–523 的 UDP 路径，在双向尚未齐备时，会把当前包优先级复制到另一方向；后续两方向已见时可保留先前值。NSS ported IPv4 前端 1154–1169 将分类器返回的值直接放入 CREATE。这与已见的 up/down 都为 7e、但 IGS 下行正确为 7a 相符。
+
+[writer](../code/controller/native/writer.lua) 现在同时发送精确身份和 WAN/类别对应的 up/down 标签；[gate](../code/controller/native/athena_ecm_gate.c) 验证所有身份、mark、WAN、租约和合法标签，并将策略绑定到槽位新代。[receipt provider](../code/controller/native/receipt_telemetry.h) 只在有效精确策略匹配 CREATE 元组时校正两个 QoS 字段及有效标志，保留 IGS/NAT/其它 payload。反向 CREATE 交换两方向；续租只更新相同代号，撤销/到期立即撤去策略。观察同时保存校正前值与提交值，不修改预期来掩盖差异，不因标签 mismatch 撤销健康流。
+
+原 receipt/observation 结构 ABI 保留；新 gate 使用新 telemetry/policy 导出，必须与新 provider 及匹配 ECM 副本成套安装。ECM 和 IGS 可执行代码段保持逐段相同，只修改指定 import 绑定；原磁盘模块、NSS 固件、EDMA、内核均不更换。
+
+## 恢复和字节统计的实际接口
+
+ECM public decel 的实现会将对应 CI 标为 defunct；确认撤销并释放 gate 的旧 CI 引用后，新代可以重新发现 CI，不能直接清零 selected。原 ECM 收到 FLUSH/EVICT 时调用 `accel_ceased`，但可能不再发送 DESTROY；新增旁路观察遵循这项原始语义，触发精确撤销确认，不把通知、软件屏障或统计无增长当作清理 ACK。无通知的未知固件失踪仍保持保守：缺少字节进展本身不能证明消失。
+
+统计不能把 SYNC_MANY 当成普通 TX 回执：nss-drv 会用注册回调覆盖 request callback，公共长度只含头部。实现转接原注册/注销函数，保留原 app_data、消息内容和回调，先完成原 ECM 会计处理，再发布自己的有界副本；注销时等待旧网络读者结束。32 个记录、单批最多 34 个 116 字节 sync 项；不分配逐统计 ticket，不新增固件轮询。收到不同 CREATE attempt 的旧回调不更新新记录。
+
+固件 flow/return RX deltas 正是原 ECM 加入 conntrack account 的计数，支持可比下行字节。覆盖率基线包含 BE，仍明确排除代理/其它协议、流消失/重生、类别或代改变、未完整追踪的快照；只输出持续可比子集的保守下界。[coverage reducer](../code/controller/native/coverage.lua) 的 CT 窗口更宽，不能把下界当完整宿舍精确覆盖或用零负载选槽。
+
+## Wi-Fi 与 FDB：证据和边界
+
+标准用户优先级 6/7 对应 VO、0 对应 BE。[Linux Wireless 队列文档](https://wireless.docs.kernel.org/en/latest/en/developers/documentation/mac80211/queues.html)。当前 SDK 的 ath11k/NSS 补丁还包含 NSS vdev 发送与 TCL 硬件 TID 分类路径；它们说明 CPU 的 skb priority 不足以证明最终空口 TID。未调整 AP/WMM/DSCP 映射或 station 设置，正式验收按用户要求延期。
+
+2026-10-10 09:54 北京时间只读发现三 station 的 `nss_stats`，三 radio 已有 peer stats 配置为 1，本轮没有开启额外统计。其一 tx_failed=450280 而 tx_packets=3，另一 tx_failed=225 而 tx_packets=5；计数期间、重置/回绕及 firmware layout 未核对，**这些总量不能计算当前游戏失败率，也不能证明空口零丢包**。它们不含逐 TID/AC 的可比游戏计数，保留原始私有证据，避免据此乱改无线。
+
+同窗四条非 local FDB 的 age 0.02..55.08 秒，没有 >60 秒条目，当前有一条已准入 wired 流。这只是单次观察。ECM `ecm_interface.c` 7230–7238 在 bridge port 接收硬件 sync 的 rx_packets 时调用 `br_fdb_entry_refresh`，源代码具备快转下刷新桥 FDB 的路径；长时间实际有线流刷新仍需对应 MAC/端口/硬件进展同窗证明。保留 60 秒判断，不扩大 FDB 缓存或把快照冒充持续验收。
+
+## 测试和部署
+
+本地实际源码定向 Lua 378 项：writer 215、health 41、coverage 11、core 25、collector 86；辅助 tag/lifecycle/guard 20/25/26 项通过。回执/策略/统计实际 C 源码 166 项，选择器与五 WAN 标签校验实际函数 55 项通过。它们使用明确时钟/CT/传输 mock，不能冒充固件验收。目标 Lua 的相同模型与解析结果、最终交叉构建和部署读回写入 [结构化证据](../evidence/dorm-v2-final-improvements.json)。
+
+部署尚待本节后续补入实际时间、提交和读回结果。继续保持 PR #1 draft，不合并。保护五 WAN 认证/PBR/NAT、原 CAKE/autorate、代理/Tailscale、无线与自启；保留原安装私有备份及历史失败。
+
+## 延期的可执行验收
+
+- 现场有线或 Wi-Fi 游戏与同机下载自然并行时，一次 `athena-qos diagnose 60 --coverage` 同步详细游戏 HUD 时间；先检查完整身份/租约、CREATE、提交标签与逐连接 hardware delta，再解释 Loss/Miss。默认不查硬件 tc。
+- 当自然满槽出现时，核对每个 waiting RT 的 pending 槽与撤销计数；在延迟回执期间，单个 RT 不应撤销第二个 BULK。不得为验收制造共享网络拥塞。
+- 若自然 CREATE 失败/FLUSH/EVICT 出现，读取恢复事件 requested→retired→readmitted→created，确认代号改变、最多两次且精确撤销已确认。缺少某阶段如实保留，不重启共享 NSS 来补成绩。
+- 游戏/无线配合恢复后，关联 station/TID/AC 实际计数及端到端表现；peer 总量与优先级低位仅作背景。长有线连接需跨 60 秒关联 FDB refresh 与逐连接硬件进展。
+- 普通 BE 范围只依据有代表性的可比字节窗口调整。当前低负载没有依据提高槽上限、扩大缓存、增加人均配额或主动轮换健康下载。
+
+正式验收延期、独立固件 QoS 读回、端到端零 Loss/Miss、未知无通知规则失踪和历史分类器间断根因，不以“代码完成”代替实测结论。

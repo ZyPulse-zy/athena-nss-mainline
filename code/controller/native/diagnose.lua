@@ -1,9 +1,12 @@
 -- Read-only, bounded capture. No full classifier snapshot or per-station dump.
 local root=assert(arg[0]:match('^(.*)/[^/]+$'))
 local seconds=tonumber(arg[1]or'60');assert(seconds and seconds%1==0 and seconds>=1 and seconds<=180,'Duration must be 1..180 seconds')
-local queueMode=arg[2]or'';assert(queueMode==''or queueMode=='--queues','Queue statistics require optional --queues')
-local queryQueues=queueMode=='--queues'
+local queryQueues,queryCoverage=false,false
+for i=2,3 do local option=arg[i]or'';assert(option==''or option=='--queues' or option=='--coverage','Unknown diagnostic option')
+ queryQueues=queryQueues or option=='--queues';queryCoverage=queryCoverage or option=='--coverage'end
 local j=require('luci.jsonc');local n=require('nixio');local health=dofile(root..'/health.lua')
+local coverage=queryCoverage and dofile(root..'/coverage.lua');local coverageState=coverage and coverage.new()
+local core=coverage and dofile(root..'/core.lua')
 local function read(p,cap)
  local f=io.open(p);if not f then return nil end;local s=f:read((cap or 4194304)+1)or'';f:close()
  assert(#s<=(cap or 4194304),'Observation exceeds read bound');return s
@@ -19,7 +22,8 @@ end
 local function collect()
  local at=now();local s=json('/tmp/athena-dorm-native/status.json');local d=json('/tmp/athena-dorm-native/desired.json')
  local p=json('/tmp/router-project-game-classifier/classification.json');local gate=read('/sys/kernel/debug/athena_ecm_gate/status',65536)or''
- local slots={};for line in gate:gmatch('[^\n]+')do local e={};for k,v in line:gmatch('([%w_]+)=(%d+)')do e[k]=tonumber(v)end;if e.slot then slots[e.slot]=e end end
+ local slots={};for line in gate:gmatch('[^\n]+')do local e={};for k,v in line:gmatch('([%w_]+)=(%d+)')do e[k]=tonumber(v)end
+  if e.slot then slots[e.slot]=e elseif e.telemetry_slot and slots[e.telemetry_slot] then for k,v in pairs(e)do slots[e.telemetry_slot][k]=v end end end
  local owned={};for _,v in ipairs(s.ownedFlows or{})do owned[v.key]=v end
  local flows={};for _,f in ipairs(d.flows or{})do
   local a=owned[f.key];local g=a and slots[a.slot]or{}
@@ -27,8 +31,12 @@ local function collect()
    identityMatches=health.identity(f,a,g),
    state=g.state,createAck=g.create_ack,createPending=g.create_pending,untilMs=g.until_ms,serial=g.serial,generation=g.generation,
    receiptPresent=g.receipt_present,receiptState=g.receipt,qosObserved=g.qos_observed,igsObserved=g.igs_observed,qosDirection=g.qos_direction,
-   flowQos=g.flow_qos,returnQos=g.return_qos,igsFlow=g.igs_flow,igsReturn=g.igs_return,wan=f.wan,egress=f.egress,wireless=f.wireless}
+   flowQos=g.flow_qos,returnQos=g.return_qos,igsFlow=g.igs_flow,igsReturn=g.igs_return,wan=f.wan,egress=f.egress,wireless=f.wireless,
+   policyApplied=g.policy_applied,policyGeneration=g.policy_generation,incomingFlowQos=g.incoming_flow_qos,incomingReturnQos=g.incoming_return_qos,
+   hardwareFlowRxBytes=g.hardware_flow_rx_bytes,hardwareReturnRxBytes=g.hardware_return_rx_bytes,syncSamples=g.sync_samples,lastSyncMs=g.last_sync_ms}
  end
+ local hardwareAt=now();local cohort
+ if coverage then cohort=coverage.cohort(json('/tmp/router-project-game-classifier/snapshot.json'),s.wans,now(),core)end
  local queues={};local queueReads=0
  if queryQueues and gate:match('^abi=2 capacity=32 ')then
   for _,dev in ipairs{'wan','athenaigs'}do
@@ -45,15 +53,22 @@ local function collect()
   tags={up=s.ingress and s.ingress.up and s.ingress.up.tags,down=s.ingress and s.ingress.down and s.ingress.down.tags},
   hardware=health.hardware(read('/sys/kernel/debug/qca-nss-drv/stats/ipv4',65536)or''),
   reader=s.flowState and s.flowState.reader,budgetUpdates=s.flowState and s.flowState.budgetUpdates,
-  queueReads=queueReads,readSeconds=now()-at}
+  cohort=cohort,hardwareAt=hardwareAt,queueReads=queueReads,readSeconds=now()-at}
 end
 local state=health.new();local start=now();local queueReadFailures=0;local last
 repeat
  last=collect();health.tick(state,last);if queryQueues and last.queueReads~=2 then queueReadFailures=queueReadFailures+1 end
+ if coverage then
+  local hardware={};for _,f in ipairs(last.flows)do
+   local h=state.flowHardware[f.key];if h then hardware[f.key]=h end
+  end
+  coverage.tick(coverageState,last.hardwareAt,last.cohort,hardware)
+ end
  local remaining=start+seconds-now();if remaining<=0 then break end
  local wait=math.min(3,remaining);n.nanosleep(math.floor(wait),math.floor((wait%1)*1000000000))
 until false
 local report=health.report(state);report.lastPhase=last.phase
+report.byteCoverageRequested=queryCoverage;if coverage then report.byteCoverage=coverage.report(coverageState)end
 report.queueStatisticsRequested=queryQueues;report.rtQueueDropsMeasured=queryQueues and queueReadFailures==0
 if queryQueues then report.queueReadIncompleteSamples=queueReadFailures end
 if not report.rtQueueDropsMeasured then report.rtQueueDropDelta=nil end

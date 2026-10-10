@@ -38,7 +38,10 @@ function M.resolve(neighbors,leases,fdb,stations,wallNow)
       if old and (old.mac~=mac or old.reason=='neighbor-conflict') then c.reason='neighbor-conflict'
       elseif leaseMap[n.dst] and leaseMap[n.dst]~=mac then c.reason='dhcp-neighbor-conflict'
       else
-        local ports={};for _,e in ipairs(fdb) do if e.mac==mac and not e.localEntry and e.age<=60 then ports[e.ifname]=true end end
+        local ports={};local staleWired=false
+        for _,e in ipairs(fdb) do if e.mac==mac and not e.localEntry then
+          if e.age<=60 then ports[e.ifname]=true elseif e.ifname:match('^lan%d+$')then staleWired=true end
+        end end
         local aps={};for _,s in ipairs(stations) do if s.mac==mac then aps[s.ifname]=true end end
         local port,count,ap,apcount=nil,0,nil,0
         for p in pairs(ports) do port=p;count=count+1 end
@@ -47,7 +50,8 @@ function M.resolve(neighbors,leases,fdb,stations,wallNow)
           c.ifname=ap;c.wireless=true;c.valid=true;c.reason='associated-station'
         elseif apcount==0 and count==1 and port:match('^lan%d+$') then
           c.ifname=port;c.wireless=false;c.valid=true;c.reason='learned-wired-port'
-        elseif apcount>1 or count>1 or apcount==1 and count==1 and port~=ap then c.reason='roam-or-fdb-conflict' end
+        elseif apcount>1 or count>1 or apcount==1 and count==1 and port~=ap then c.reason='roam-or-fdb-conflict'
+        elseif staleWired then c.reason='wired-fdb-observation-expired' end
       end
       clients[n.dst]=c
     end
@@ -111,7 +115,9 @@ function M.topology()
       for _,v in ipairs(a.addr_info or {}) do if v.family=='inet' and v.scope=='global' then wans[a.ifname]=v['local'] end end
     end
   end
-  return {clients=M.resolve(neighbors,leases,fdb,stations,os.time()),wans=wans,
+  local clients=M.resolve(neighbors,leases,fdb,stations,os.time());local reasons={}
+  for _,c in pairs(clients)do reasons[c.reason]=(reasons[c.reason]or 0)+1 end
+  return {clients=clients,wans=wans,clientReasons=reasons,
     associatedStations=#stations,bridgeFdbEntries=#fdb,stationSources=stationSources,complete=complete,collection=diagnostics}
 end
 return M

@@ -60,11 +60,17 @@ int main(void){
  i.flag=ECM_AE_CLASSIFIER_FLOW_ROUTED;i.src_port++;check(select_flow(&i)==ECM_AE_CLASSIFIER_RESULT_NOT_YET);
  i.src_port--;entries[0].state=2;check(select_flow(&i)==ECM_AE_CLASSIFIER_RESULT_NOT_YET);
  entries[0].state=LIVE;check(select_flow(&i)==ECM_AE_CLASSIFIER_RESULT_NSS);
+ for(unsigned w=1;w<=5;w++)for(unsigned rt=0;rt<=1;rt++){
+  u32 low=rt?6:0,up=(0x7e00+w*16+(rt?6:5))*65536+low,down=(0x7a00+w*16+(rt?6:5))*65536+low;
+  check(qos_valid(w*65536,up,down));check(!qos_valid(w*65536,up,up));
+  check(!qos_valid(w*65536,up,down+1));check(!qos_valid((w==5?1:w+1)*65536,up,down));
+ }
+ check(!qos_valid(0,0x7e060006,0x7a060006));check(!qos_valid(6*65536,0x7e660006,0x7a660006));
  printf("{\"passed\":true,\"checks\":%u,\"oneSelectionPreserved\":true,\"mockedCT\":true,\"firmwareProof\":false}\n",checks);
 }
 '''
 with tempfile.TemporaryDirectory(prefix='athena-selection-') as directory:
     root=pathlib.Path(directory);file=root/'test.c';output=root/'test'
-    file.write_text(stub+function('ae_tuple(')+function('select_flow(')+test)
+    file.write_text(stub+function('qos_valid(')+function('ae_tuple(')+function('select_flow(')+test)
     subprocess.run(['cc','-std=c11','-Wall','-Wextra','-Werror',str(file),'-o',str(output)],check=True)
     subprocess.run([str(output)],check=True)

@@ -44971,6 +44971,153 @@
       "bytes": 23645,
       "role": "router-native-source-test-or-maintenance",
       "revision": "dorm-v2-audit-production-deployed-20261010"
+    },
+    {
+      "path": "code/controller/athena-qos",
+      "sha256": "6e49f120420148ed6c7ea718bf11d2ea28b81fbc96f9eb5f519c2fc8e5d95e39",
+      "bytes": 2393,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/collector.lua",
+      "sha256": "4d7ef4a9b83b7ae3443a2292abfc96be0c71adab286a673b19c41d4d0a8f9432",
+      "bytes": 6479,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/core.lua",
+      "sha256": "342f4fa45a9789c2194a9b77809f417113785aeccfcce69c17c9373a85c7d19b",
+      "bytes": 8818,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/athena_ecm_gate.c",
+      "sha256": "a32352cd5b378aa1c6b70aa94f4a3a0f2dad57e1ae6ad8546182f05476c8d19a",
+      "bytes": 17196,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/athena_nss_receipts.c",
+      "sha256": "0ae24c45c2a83832851b2566bfdb3783253c56470d3319b2b26a2b9a6e37d6e3",
+      "bytes": 19356,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/build.py",
+      "sha256": "c202b32fc86f1d2c37637cefac212be10fed0309c16c9a4f3e939cfb18278073",
+      "bytes": 10520,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/diagnose.lua",
+      "sha256": "05c69b57cc79e9b7594bcfc72e33bed5ece58eee7ce10c395cb5ffcbdac234fa",
+      "bytes": 5976,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/health.lua",
+      "sha256": "66badf4cde6451524a41906cc62e3d812eac9e67e41301637aad1cc735bcc3ed",
+      "bytes": 11330,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "sha256": "f530aafdfd3d44bcf0acf53dd0f79ccf67286f845a117a5f480ed2bf56a7954c",
+      "bytes": 1230,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/reader.lua",
+      "sha256": "e96737c4d7ef9f0b7b6a2a37bb6c944fa9d1d7ef432d3b2b7eb656193a70761a",
+      "bytes": 1756,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/receipts.h",
+      "sha256": "9e277067cd246993aa396853a81876d87151dc2f2acae60baf59215a600e743b",
+      "bytes": 2486,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/test-health.lua",
+      "sha256": "ace914e8c3158f26c737808c3cd8cb20c7fc7ed4c485fe5b9f12afd41f27464b",
+      "bytes": 6348,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/test-receipts.c",
+      "sha256": "b1c67002be3a54164ad44d859016e284110d05d2ef6035e2b24d7c20eb2e7ffc",
+      "bytes": 15712,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/test-receipts.py",
+      "sha256": "1999420e6d357cbaad2049dcfc19d31e4bd718b3ac12bfa2289d3c0d1601033e",
+      "bytes": 1531,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/test-selection.py",
+      "sha256": "54710822b45e2ca37318ecf9341ec8831348f5461c2cc4e85a6086102a00615a",
+      "bytes": 4252,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/test-writer-policy.lua",
+      "sha256": "5eb88c83410bc352eb15caa0acbd16d3c1d06279248a3674c037085a261c4c94",
+      "bytes": 10826,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "sha256": "bc94b625d0e18d35e701897b8714098fe2da65d5c2378620556e6ebc73ee854d",
+      "bytes": 17992,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "sha256": "a1d455ec096df8078ef42df3178cd45a01bbeedc67a9fde837fdb6d486477197",
+      "bytes": 20141,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/receipt_telemetry.h",
+      "sha256": "f8a2c56c96e7e01501bc5c769157b906c95c3d82a6bbe53c050698bcb8ac2c59",
+      "bytes": 7374,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/coverage.lua",
+      "sha256": "77dd3b1dbdf472208187d1ee0cdc2c6c42acaecadc2dab6b005936f73529db9b",
+      "bytes": 3807,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
+    },
+    {
+      "path": "code/controller/native/test-coverage.lua",
+      "sha256": "b7cdc1509ac78dd90eb465fb11ab09636b52a2edfd9d9c331e0e8e0244efacda",
+      "bytes": 1945,
+      "role": "router-native-source-test-or-maintenance",
+      "revision": "dorm-v2-directional-policy-and-passive-sync-20261010"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -45079,5 +45226,12 @@
     "sourceRecordsAppended": 1,
     "evidence": "evidence/dorm-v2-audit-deployment.json",
     "qosLabelsAccepted": false
+  },
+  "lastRouterLocalRemainingWorkExport": {
+    "capturedAt": "2026-10-10T01:57:50.385Z",
+    "revision": "dorm-v2-directional-policy-and-passive-sync-20261010",
+    "sourceRecordsAppended": 21,
+    "evidence": "evidence/dorm-v2-final-improvements.json",
+    "productionCandidateDeployed": false
   }
 }
