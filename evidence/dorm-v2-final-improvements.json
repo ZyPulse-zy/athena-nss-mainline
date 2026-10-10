@@ -2,7 +2,7 @@
   "revision": "dorm-v2-budget-publication-drift-20261010",
   "reviewBase": "3208540780e56b0b498616d75a136e1e1011dd21",
   "priorDeployedCodeCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
-  "productionCandidateDeployed": false,
+  "productionCandidateDeployed": true,
   "changes": {
     "exactLeasedDirectionalQos": true,
     "firmwareSyncPassive": true,
@@ -30,7 +30,9 @@
     "localBudgetCacheRecheckedBeforeExpiry": true,
     "refreshLocalCacheAtAgeSeconds": 5,
     "permissionTimestampAfterAllObservations": true,
-    "previousAttemptSummaryLimit": 1
+    "previousAttemptSummaryLimit": 1,
+    "budgetReadPeriodIsStrict": false,
+    "nearExpiryReadIsReadOnly": true
   },
   "tests": {
     "local": [
@@ -390,5 +392,334 @@
       "installedPreviousHashesMatched": true,
       "allWansUp": true
     }
-  }
+  },
+  "deployment": {
+    "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+    "stage": {
+      "at": "2026-10-10T02:21:36.561Z",
+      "commit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+      "backupSaved": true,
+      "backupSha256": "364a389c2985f76f9efcc10423d0d915dc184223b14c9ea4f81d0a755e9273c3",
+      "backupBytes": 334438,
+      "downloadDigestMatched": true,
+      "gzipValidated": true,
+      "stagedFiles": 17,
+      "stageDigestMatched": true,
+      "controllerStillRunning": true,
+      "productionSourceChanged": false,
+      "allWansUp": true,
+      "beforeNss": 2,
+      "beforeSourceFresh": true,
+      "bootEnabled": true
+    },
+    "stop": {
+      "at": "2026-10-10T02:21:44.231Z",
+      "commandExit": 0,
+      "seconds": 2.516,
+      "independentFullRestorationConfirmed": true,
+      "protectedExceptOwnedGuardUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "wanIdentitiesUnchanged": true,
+      "allWansUp": true,
+      "bootEnabledPreserved": true,
+      "phase": "restored"
+    },
+    "install": {
+      "at": "2026-10-10T02:21:45.933Z",
+      "installedFiles": 17,
+      "installedDigestsMatched": true,
+      "matchingProviderGateBundle": true,
+      "controllerStillStopped": true,
+      "originalDiskModulesReplaced": false,
+      "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391"
+    },
+    "start": {
+      "at": "2026-10-10T02:21:51.099Z",
+      "seconds": 3.864,
+      "phase": "native-running",
+      "sourceFresh": true,
+      "actualNss": 0,
+      "admissionEnabled": true,
+      "unconfirmed": 0,
+      "gateLoaded": true,
+      "receiptsLoaded": true,
+      "allWansUp": true,
+      "wanIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "bootEnabledPreserved": true,
+      "installedDigestsMatched": true,
+      "newObservationFeaturesPresent": true,
+      "automaticRetries": 0
+    },
+    "validation": {
+      "at": "2026-10-10T02:24:52.597Z",
+      "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+      "productionCandidateDeployed": true,
+      "phase": "native-running",
+      "sourceFresh": true,
+      "actualNss": 2,
+      "admissionEnabled": true,
+      "unconfirmed": 0,
+      "allWansUp": true,
+      "wanIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "coreGuardRunning": true,
+      "serviceIdentityScope": "Authentication, classifier, autorate, proxy and Tailscale; exclude native owner and its owned core-guard reload",
+      "bootEnabledPreserved": true,
+      "installedDigestsMatched": true,
+      "automaticRetries": 0,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "rejectedCache": {
+        "pruned": 0,
+        "limit": 32,
+        "ttlSeconds": 6,
+        "entries": 0
+      },
+      "pendingRt": 0,
+      "recovery": {
+        "tracked": 0,
+        "limit": 32,
+        "exhausted": 0,
+        "maximumRetries": 2,
+        "eventLimit": 32,
+        "withdrawals": 1,
+        "newIdentityAdmissionPaused": false,
+        "events": [
+          {
+            "atUptime": 40918.75,
+            "slot": 0,
+            "generation": 7,
+            "phase": "requested",
+            "attempt": 1,
+            "serial": 3,
+            "reason": "firmware-flush-or-evict-notification"
+          },
+          {
+            "atUptime": 40919.07,
+            "slot": 0,
+            "generation": 7,
+            "phase": "retired",
+            "attempt": 1,
+            "serial": 3,
+            "reason": "firmware-flush-or-evict-notification"
+          },
+          {
+            "atUptime": 40919.86,
+            "slot": 0,
+            "attempt": 1,
+            "phase": "readmitted",
+            "reason": "firmware-flush-or-evict-notification"
+          }
+        ],
+        "eventsOmitted": 0
+      },
+      "reader": {
+        "policySeconds": 0,
+        "clientReasons": {
+          "learned-wired-port": 1,
+          "associated-station": 3
+        },
+        "classificationSource": "candidate-projection",
+        "topologySeconds": 0.040000000000873115,
+        "stationSources": {
+          "iwFallback": 0,
+          "hostapd": 3
+        },
+        "previousEncodeSeconds": 0,
+        "collection": {
+          "failures": 0,
+          "commands": {
+            "hostapd-phy1-ap0": {
+              "ok": true,
+              "seconds": 0.010000000002037268,
+              "exitCode": 0
+            },
+            "wan-addresses": {
+              "ok": true,
+              "seconds": 0.00999999999476131,
+              "exitCode": 0
+            },
+            "hostapd-phy2-ap0": {
+              "ok": true,
+              "seconds": 0,
+              "exitCode": 0
+            },
+            "neighbors": {
+              "ok": true,
+              "seconds": 0,
+              "exitCode": 0
+            },
+            "fdb": {
+              "ok": true,
+              "seconds": 0,
+              "exitCode": 0
+            },
+            "hostapd-phy0-ap0": {
+              "ok": true,
+              "seconds": 0.010000000002037268,
+              "exitCode": 0
+            }
+          }
+        },
+        "topologyComplete": true,
+        "sourceLeaseSeconds": 6,
+        "publicationSeconds": 0
+      },
+      "budgetUpdates": {
+        "lastReadCommands": 10,
+        "readFailures": 0,
+        "source": "independent-reader-software-budgets",
+        "lastReadSeconds": 0.06999999999970896,
+        "lastSuccessAtUptime": 41010.15,
+        "skippedLeaseMargin": false,
+        "ownerReadSeconds": 0,
+        "publicationSequence": 57,
+        "batches": 0,
+        "lastSeconds": 0,
+        "skippedSourceGap": false,
+        "lastCommands": 0,
+        "lastReadAtUptime": 41011.81,
+        "lastReadSucceeded": true,
+        "leaseMarginAfterReadSeconds": 2.3300000000017462,
+        "leaseMarginBeforeReadSeconds": 2.3300000000017462
+      },
+      "diagnosticSeconds": 180.549,
+      "diagnose": {
+        "samples": 60,
+        "seconds": 180,
+        "sourceGaps": 0,
+        "sourceRestores": 0,
+        "nssRange": [
+          0,
+          3
+        ],
+        "currentFlowLabelStates": {
+          "verified": 2
+        },
+        "labelVerifiedSamples": 43,
+        "labelMismatchSamples": 0,
+        "hardware": {
+          "byteDelta": {
+            "rx": 417291,
+            "tx": 452739
+          },
+          "intervals": 59,
+          "scope": "global-NSS-IPv4-special-counters",
+          "measured": true,
+          "perFlowAttribution": false,
+          "counterResets": 0
+        },
+        "perFlowHardware": {
+          "basis": "firmware-RX-sync",
+          "measured": true,
+          "byteDelta": {
+            "down": 346247,
+            "up": 36881
+          },
+          "intervals": 32
+        },
+        "byteCoverage": {
+          "hardwareBytes": 94873,
+          "excludedFlowWindows": 491,
+          "totalBytes": 402410,
+          "includesBestEffort": true,
+          "measurement": "bracketed-downstream-lower-bound",
+          "classes": {
+            "BE": {
+              "bytes": 212994,
+              "flows": 3487,
+              "hardware": 0
+            },
+            "RT": {
+              "bytes": 189416,
+              "flows": 14,
+              "hardware": 94873
+            },
+            "UNKNOWN": {
+              "bytes": 0,
+              "flows": 0,
+              "hardware": 0
+            },
+            "BULK": {
+              "bytes": 0,
+              "flows": 0,
+              "hardware": 0
+            }
+          },
+          "scope": "persistent-five-WAN-zone0-nonproxy-IPv4-TCP-UDP-with-stable-class",
+          "sameByteBasis": true,
+          "lastWindow": {
+            "hardwareEnd": 41011.52,
+            "ctStart": 41006.46,
+            "ctEnd": 41012.67,
+            "hardwareStart": 41008.46
+          },
+          "windows": 28,
+          "measured": true,
+          "fullLanCoverage": false,
+          "ratioLowerBound": 0.23576203374667629
+        },
+        "maxReadSeconds": 0.11000000000058208,
+        "queueStatisticsRequested": false,
+        "endToEndLossMeasured": false
+      }
+    },
+    "finalReadback": {
+      "at": "2026-10-10T02:25:28.493Z",
+      "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+      "phase": "native-running",
+      "sourceFresh": true,
+      "actualNss": 2,
+      "unconfirmed": 0,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "automaticRetries": 0,
+      "runtimeBundleHashesMatched": true,
+      "installedBundleHashesMatched": true,
+      "allWansUp": true,
+      "wanIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "coreGuardRunning": true,
+      "bootEnabledPreserved": true,
+      "softwareContractInspectSucceeded": true,
+      "softwareConfigUnchanged": true
+    },
+    "cleanup": {
+      "at": "2026-10-10T02:25:29.698Z",
+      "persistentPrivateBackupVerified": true,
+      "downloadedPrivateBackupVerified": true,
+      "backupBytes": 334438,
+      "onlyOwnRamStageRemoved": true,
+      "existingBackupsPreserved": true
+    },
+    "wiredFdb": {
+      "at": "2026-10-10T02:24:59.412Z",
+      "readOnly": true,
+      "observations": [],
+      "continuousEverySecondAgeMeasured": false,
+      "settingsChanged": false
+    },
+    "draftPullRequestPreserved": true,
+    "mergeRequestedOrPerformed": false
+  },
+  "failedTrialBackupCleanup": [
+    {
+      "at": "2026-10-10T02:25:30.846Z",
+      "trialFailureRecordsPreserved": true,
+      "privateRollbackArchiveLocalAndRouterVerified": true,
+      "onlyOwnRamStageRemoved": true,
+      "bytes": 333929
+    },
+    {
+      "at": "2026-10-10T02:25:31.038Z",
+      "trialFailureRecordsPreserved": true,
+      "privateRollbackArchiveLocalAndRouterVerified": true,
+      "onlyOwnRamStageRemoved": true,
+      "bytes": 334508
+    }
+  ]
 }

@@ -1734,7 +1734,7 @@
     ],
     "rawIdentitiesMacCredentialsAndBinariesIncluded": false
   },
-  "latestEvidenceKey": "codeReviewDeployment",
+  "latestEvidenceKey": "remainingWorkDeployment",
   "repositoryReview": {
     "reviewedSourceCommit": "c8ab8123298b63751a8bfc665b297f6e11a97e27",
     "scope": [
@@ -4022,7 +4022,7 @@
       "receivedErrorDelta": 0,
       "received": 150,
       "p99Ms": 9,
-      "maximumMs": 11.0,
+      "maximumMs": 11,
       "p95Ms": 2,
       "receivedDiscardDelta": 0,
       "lossPct": 0
@@ -4669,5 +4669,98 @@
     "sampleCountsAreUniqueConnectionsOrLossRate": false,
     "endToEndGameLossOrWifiAirQueuesVerified": false,
     "historicalRecordsRetained": true
+  },
+  "remainingWorkDeployment": {
+    "capturedAt": "2026-10-10T02:25:28.493Z",
+    "revision": "dorm-v2-remaining-work-deployed-20261010",
+    "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+    "evidence": "evidence/dorm-v2-final-improvements.json",
+    "report": "docs/DORM_V2_REMAINING_WORK.md",
+    "productionCandidateDeployed": true,
+    "finalReadback": {
+      "at": "2026-10-10T02:25:28.493Z",
+      "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+      "phase": "native-running",
+      "sourceFresh": true,
+      "actualNss": 2,
+      "unconfirmed": 0,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "automaticRetries": 0,
+      "runtimeBundleHashesMatched": true,
+      "installedBundleHashesMatched": true,
+      "allWansUp": true,
+      "wanIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "coreGuardRunning": true,
+      "bootEnabledPreserved": true,
+      "softwareContractInspectSucceeded": true,
+      "softwareConfigUnchanged": true
+    },
+    "labelMismatchFlowSamples": 0,
+    "labelVerifiedFlowSamples": 43,
+    "labelsBasis": "CREATE-payload-and-ACK-not-independent-firmware-queue-readback",
+    "perFlowHardware": {
+      "basis": "firmware-RX-sync",
+      "measured": true,
+      "byteDelta": {
+        "down": 346247,
+        "up": 36881
+      },
+      "intervals": 32
+    },
+    "byteCoverage": {
+      "hardwareBytes": 94873,
+      "excludedFlowWindows": 491,
+      "totalBytes": 402410,
+      "includesBestEffort": true,
+      "measurement": "bracketed-downstream-lower-bound",
+      "classes": {
+        "BE": {
+          "bytes": 212994,
+          "flows": 3487,
+          "hardware": 0
+        },
+        "RT": {
+          "bytes": 189416,
+          "flows": 14,
+          "hardware": 94873
+        },
+        "UNKNOWN": {
+          "bytes": 0,
+          "flows": 0,
+          "hardware": 0
+        },
+        "BULK": {
+          "bytes": 0,
+          "flows": 0,
+          "hardware": 0
+        }
+      },
+      "scope": "persistent-five-WAN-zone0-nonproxy-IPv4-TCP-UDP-with-stable-class",
+      "sameByteBasis": true,
+      "lastWindow": {
+        "hardwareEnd": 41011.52,
+        "ctStart": 41006.46,
+        "ctEnd": 41012.67,
+        "hardwareStart": 41008.46
+      },
+      "windows": 28,
+      "measured": true,
+      "fullLanCoverage": false,
+      "ratioLowerBound": 0.23576203374667629
+    },
+    "wiredFdb": {
+      "at": "2026-10-10T02:24:59.412Z",
+      "readOnly": true,
+      "observations": [],
+      "continuousEverySecondAgeMeasured": false,
+      "settingsChanged": false
+    },
+    "formalGameWifiAcceptanceDeferredByUser": true,
+    "endToEndZeroLossProved": false,
+    "draftPullRequestPreserved": true,
+    "failedTrialsPreserved": 2
   }
 }

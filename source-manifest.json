@@ -45223,6 +45223,13 @@
       "bytes": 20940,
       "role": "router-native-source-test-or-maintenance",
       "revision": "dorm-v2-budget-publication-drift-20261010"
+    },
+    {
+      "path": "code/controller/README.md",
+      "sha256": "b02864385ac1a23af0c03908897950b18d3c2412d6dd19aa39946ca423818a1a",
+      "bytes": 26206,
+      "role": "controller-maintenance-readme",
+      "revision": "dorm-v2-remaining-work-deployed-20261010"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -45352,5 +45359,14 @@
     "sourceRecordsAppended": 5,
     "productionCandidateDeployed": false,
     "evidence": "evidence/dorm-v2-final-improvements.json"
+  },
+  "lastRouterLocalRemainingDeploymentExport": {
+    "capturedAt": "2026-10-10T02:25:28.493Z",
+    "revision": "dorm-v2-remaining-work-deployed-20261010",
+    "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+    "productionCandidateDeployed": true,
+    "evidence": "evidence/dorm-v2-final-improvements.json",
+    "latestEvidenceKey": "remainingWorkDeployment",
+    "sourceRecordsAppended": 1
   }
 }
