@@ -107,6 +107,14 @@ f.time(105);f.tick(all);check(f.r.flowState.nativeOwned==1)
 f.rows[0].create_ack=0;f.rows[0].create_seen=1;all[1].sequence=3;before=#f.controls;f.tick(all)
 check(#f.controls==before and f.r.flowState.recovery.exhausted==1,'Recovery budget restarted or renewed exhausted failure')
 f.rows[0].state=4;f.tick(all);check(f.r.flowState.nativeOwned==0 and #f.controls==before)
+-- Long-lived fresh classifications and alternating confirmed terminal
+-- observations cannot turn an exhausted identity into a new initial add.
+for t=106,225 do
+ f.time(t);all[1].sequence=t;all[1].validUntil=t+6
+ f.rows[0].state=({3,4,6})[t%3+1];f.tick(all)
+ check(#f.controls==before and f.r.flowState.recovery.withdrawals==2 and f.r.flowState.recovery.tracked==1,'Long-lived exhausted identity restarted recovery')
+ check(f.r.flowState.nativeOwned==0 and f.r.flowState.recovery.exhausted==1)
+end
 -- A naturally observed DESTROY ACK is independently sufficient to begin
 -- exact retirement, without weakening the gate's selected-once condition.
 f=fixture();all={flow(1)};f.tick(all);f.rows[0].receipt=2;f.tick(all)
@@ -122,13 +130,46 @@ check(f.r.flowState.recovery.events[1].reason=='firmware-flush-or-evict-notifica
 f.tick(all);check(revokes(f)==1 and f.r.flowState.nativeOwned==1)
 f.rows[0].state=6;f.time(102);all[1].sequence=2;all[1].validUntil=108;f.tick(all)
 check(f.r.flowState.nativeOwned==1 and f.r.flowState.retiredFirmwareAbsent==1)
--- A full recovery ledger cannot lose retry history or admit new identities
--- around the finite budget. Software classification remains independent.
+-- Recovery history must not block a healthy first RT admission. Existing
+-- failed identities still wait for exact retirement and keep their budgets.
 f=fixture();all={};for id=1,32 do all[id]=flow(id)end;f.tick(all)
 for slot=0,31 do f.rows[slot].create_ack=0;f.rows[slot].create_seen=1 end
-f.tick(all);check(f.r.flowState.recovery.tracked==32 and f.r.flowState.recovery.newIdentityAdmissionPaused)
+f.tick(all);check(f.r.flowState.recovery.tracked==32 and not f.r.flowState.recovery.newIdentityAdmissionPaused,'Full recovery history paused healthy new identities')
+check(f.r.flowState.recovery.ledgerFull)
 all[33]=flow(100,'RT');before=#f.controls;f.tick(all)
-check(#f.controls==before and f.r.flowState.pendingRt==0,'Full retry ledger was bypassed by a new RT')
+check(#f.controls==before and f.r.flowState.pendingRt==1,'Healthy RT needs one pending slot, not a global history pause')
+f.rows[0].state=4;f.time(102);for _,e in ipairs(all)do e.sequence=2;e.validUntil=108 end;f.tick(all)
+check(f.rows[0].id==100 and f.r.flowState.recovery.tracked==32,'Full history blocked a healthy RT after confirmed retirement')
+check(f.r.flowState.pendingRt==0 and f.r.flowState.recovery.withdrawals==32)
+-- This new RT has no ledger cell if it fails. Retain its retired slot as a
+-- tombstone instead of clearing an old retry counter or repeatedly adding it.
+f.rows[0].create_ack=0;f.rows[0].create_seen=1;before=#f.controls;f.tick(all,false)
+check(#f.controls==before and f.r.flowState.recovery.quarantinedSlots==0,'Source gap authorized overflow retirement')
+f.tick(all)
+check(f.r.flowState.recovery.quarantinedSlots==1 and f.r.flowState.recovery.overflowFallbacks==1)
+check(f.r.flowState.recovery.withdrawals==32 and f.rows[0].state==2)
+before=#f.controls;all[34]=flow(101,'RT');f.tick(all)
+check(f.r.flowState.pendingRt==1 and #f.controls==before,'Another RT reserved a quarantined slot')
+f.rows[0].state=6;f.rows[1].state=4;f.time(103);for _,e in ipairs(all)do e.sequence=3;e.validUntil=109 end;f.tick(all)
+check(f.rows[0].id==100 and f.rows[0].state==6 and f.rows[1].id==101,'Software tombstone was forgotten or blocked a healthy RT')
+check(f.r.flowState.recovery.tracked==32 and f.r.flowState.recovery.quarantinedSlots==1)
+local retired=f.r.flowState.retiredFirmwareAbsent
+-- A continuing long-lived identity, fresh classification and free slots must
+-- not reset either overflow fallback or a tracked two-retry budget.
+f.rows[2].state=4
+for t=104,223 do
+ f.time(t);for _,e in ipairs(all)do e.sequence=t;e.validUntil=t+6 end;f.tick(all)
+ check(f.rows[0].id==100 and f.rows[0].state==6 and f.r.flowState.recovery.quarantinedSlots==1,'Long-lived overflow identity was re-added')
+ check(f.r.flowState.recovery.tracked<=32 and f.r.flowState.nativeOwned<=32)
+end
+check(f.r.flowState.retiredFirmwareAbsent==retired and f.r.flowState.recovery.overflowFallbacks==1,'Terminal tombstone counted repeatedly')
+-- Source loss cannot renew or release the still-observed tombstone.
+before=#f.controls;f.tick(all,false);check(#f.controls==before and f.r.flowState.recovery.quarantinedSlots==1)
+-- Ending this binding epoch releases the confirmed tombstone without adding
+-- a recovery retry; a genuinely fresh client binding can use the slot.
+all[33].binding='new-verified-client';all[33].sequence=224;all[33].validUntil=230;f.time(224);f.tick(all)
+check(f.r.flowState.recovery.quarantinedSlots==0 and f.rows[0].id==100 and f.rows[0].state==1)
+check(f.r.flowState.recovery.withdrawals==32 and f.r.flowState.recovery.overflowFallbacks==1)
 f=fixture();all={flow(1)};f.tick(all)
 local up,down=f.controls[1]:match(' (%d+) (%d+)\n$');check(tonumber(up)==0x7e150000 and tonumber(down)==0x7a150000)
 f.time(103);all[1].sequence=2;all[1].validUntil=109;f.slowBudget(true);f.tick(all)

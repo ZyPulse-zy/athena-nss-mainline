@@ -15,7 +15,7 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
    attempt=v and v.attempts,reason=v and v.reason}
  end
  local tagRules=dofile(root..'/tag_rules.lua')
- local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0,sourcePauses=0,sourceResumes=0,rtPreemptions=0,rejectedPruned=0,recoveryWithdrawals=0,recoveryExhausted=0}
+ local stats={admitted=0,renewed=0,retiredAck=0,retiredNeverCreated=0,retiredFirmwareAbsent=0,identityRejected=0,selected=0,firmwareCreated=0,sourcePauses=0,sourceResumes=0,rtPreemptions=0,rejectedPruned=0,recoveryWithdrawals=0,recoveryExhausted=0,recoveryOverflowFallbacks=0}
  local sourceUnavailableSince,lastSourceResumedAt
  local function dec(x)return string.format('%.0f',x)end
  local function reject(e)
@@ -184,8 +184,15 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
    if e.selected>0 then stats.selected=stats.selected+1 end
    if e.state==1 and e.receipt_present==1 and e.receipt==0 and e.create_ack==1 and e.create_pending==0 then stats.firmwareCreated=stats.firmwareCreated+1 end
    if e.state==3 or e.state==4 or e.state==6 then
-    local v=recovery[p.key];if v and p.retiring then recovery_event('retired',p,e,v)end
-    local name=({[3]='retiredAck',[4]='retiredNeverCreated',[6]='retiredFirmwareAbsent'})[e.state];stats[name]=stats[name]+1;owned[slot]=nil
+    if not p.retirementCounted then
+     local v=recovery[p.key];if v and p.retiring then recovery_event('retired',p,e,v)end
+     local name=({[3]='retiredAck',[4]='retiredNeverCreated',[6]='retiredFirmwareAbsent'})[e.state];stats[name]=stats[name]+1;p.retirementCounted=true
+    end
+    local fresh=desired[p.key]
+    -- An overflow failure has no retry-ledger entry. Keep its existing slot
+    -- as a bounded software-only tombstone until this identity epoch ends.
+    -- Reusing it would forget the failure and allow unlimited initial adds.
+    if not (p.quarantined and fresh and fresh.binding==p.binding and fresh.class==p.class and not withdrawn[p.key])then owned[slot]=nil end
    elseif e.state==1 then
     local fresh=desired[p.key]
     local eligible=fresh and (fresh.candidate or fresh.reason=='candidate-capacity-software-fallback')
@@ -218,8 +225,12 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
       -- Let this entry's independent lease retire; remain in software for
       -- this verified identity epoch rather than restart a shared backend.
      elseif sourceFresh and (failed or removed) and not v then
-      -- A full bounded retry ledger cannot justify renewing a known failure.
-      -- Its independent lease expires; admission below cannot bypass the cap.
+      -- Healthy first admissions do not need recovery history. If an
+      -- untracked identity fails while the ledger is full, withdraw exactly
+      -- once and retain this slot; never evict another identity's retry count.
+      assert(write_control('revoke '..slot));p.retiring=true;p.quarantined=true
+      stats.recoveryOverflowFallbacks=stats.recoveryOverflowFallbacks+1
+      recovery_event('software-fallback',p,e,{attempts=0,reason='recovery-ledger-full'})
      elseif sourceFresh and fresh.sequence~=p.sequence then
       if write_control('renew '..slot..' '..pin_command(fresh,p.token))then p.sequence=fresh.sequence;p.leaseUntil=fresh.validUntil;stats.renewed=stats.renewed+1 end
      end
@@ -234,7 +245,7 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
   end
   local function blocked(e)
    local v=recovery[e.key]
-   return rejected[e.key] and rejected[e.key].sequence==e.sequence or v and (v.exhausted or now()<v.nextAt) or not v and recoveryCount>=32
+   return rejected[e.key] and rejected[e.key].sequence==e.sequence or v and (v.exhausted or now()<v.nextAt)
   end
   local proposed={};local occupied={};for slot,p in pairs(owned)do occupied[slot]=true;proposed[p.key]=true end
   local function reusable(slot)
@@ -254,12 +265,12 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
    local slot
    for k=0,31 do if not reserved[k] and reusable(k)then slot=k;break end end
    if not slot then for k=0,31 do local p=owned[k]
-    if not reserved[k] and p and p.class~='RT' and p.retiring then slot=k;break end
+    if not reserved[k] and p and not p.quarantined and p.class~='RT' and p.retiring then slot=k;break end
    end end
    if not slot then
     local lowest=math.huge
     for k=0,31 do local p=owned[k];local rate=p and desired[p.key] and desired[p.key].rateKbps or 0
-     if not reserved[k] and p and p.class~='RT' and not p.retiring and rate<lowest then slot,lowest=k,rate end
+     if not reserved[k] and p and not p.quarantined and p.class~='RT' and not p.retiring and rate<lowest then slot,lowest=k,rate end
     end
     if slot then assert(write_control('revoke '..slot));owned[slot].retiring=true;stats.rtPreemptions=stats.rtPreemptions+1 end
    end
@@ -295,7 +306,7 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
   if sourceFresh then sync_budgets()end
   if sourceFresh then assert(now()-budgetStats.lastSuccessAtUptime<6,'Software CAKE budget observation expired; restore native backend')end
   budgetStats.leaseMarginAfterReadSeconds=leaseMargin and leaseMargin-(now()-budgetBegan) or nil
-  local count=0;for _ in pairs(owned)do count=count+1 end
+  local count,quarantined=0,0;for _,p in pairs(owned)do count=count+1;if p.quarantined then quarantined=quarantined+1 end end
   local createdClients,createdExits={},{};r.ownedFlows={}
   for slot,p in pairs(owned)do
    local flow=desired[p.key];local e=native[slot]
@@ -303,7 +314,7 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
    r.ownedFlows[#r.ownedFlows+1]={slot=slot,key=p.key,class=p.class,client=p.client,egress=p.egress,
     connectionId=p.connectionId,mark=p.mark,protocol=p.protocol,wan=p.wan,original=p.original,reply=p.reply,
     bindingToken=p.token,
-    retiring=p.retiring or false,serial=e and e.id==p.connectionId and e.serial or nil,
+    retiring=p.retiring or false,quarantined=p.quarantined or false,serial=e and e.id==p.connectionId and e.serial or nil,
     generation=e and e.id==p.connectionId and e.generation or nil}
    if flow then
     if e and e.state==1 and e.receipt_present==1 and e.receipt==0 and e.create_ack==1 and e.create_pending==0 then
@@ -321,7 +332,8 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
    nativeOwned=count,actualCreatedReceipts=stats.firmwareCreated,actualCreatedClients=createdClientCount,actualCreatedExits=createdExits,selected=stats.selected,
    admitted=stats.admitted,renewed=stats.renewed,retiredAck=stats.retiredAck,retiredNeverCreated=stats.retiredNeverCreated,retiredFirmwareAbsent=stats.retiredFirmwareAbsent,
    identityRejected=stats.identityRejected,pendingRt=pendingCount,rtPreemptions=stats.rtPreemptions,
-   recovery={tracked=recoveryCount,limit=32,maximumRetries=2,withdrawals=stats.recoveryWithdrawals,exhausted=stats.recoveryExhausted,newIdentityAdmissionPaused=recoveryCount>=32,
+   recovery={tracked=recoveryCount,limit=32,maximumRetries=2,withdrawals=stats.recoveryWithdrawals,exhausted=stats.recoveryExhausted,newIdentityAdmissionPaused=false,
+    ledgerFull=recoveryCount>=32,quarantinedSlots=quarantined,overflowFallbacks=stats.recoveryOverflowFallbacks,
     events=recoveryEvents,eventLimit=32,eventsOmitted=recoveryEventsOmitted},
    rejectedCache={entries=rejectedCount,limit=rejectLimit,ttlSeconds=rejectTtl,pruned=stats.rejectedPruned},perDeviceQuotas=false}
   store(r)

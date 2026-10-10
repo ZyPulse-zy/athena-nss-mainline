@@ -1,0 +1,109 @@
+{
+  "capturedAt": "2026-10-10T10:48:21.662720+00:00",
+  "baseCommit": "5cec1b057e97dcbfe678f495193f5848947d4676",
+  "installedCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+  "deployed": false,
+  "sourceHashes": {
+    "code/controller/native/writer.lua": "ee856617c64b8c897bd46b78b64787bac50e72aa84f023883438340e226524cf",
+    "code/controller/native/test-writer-policy.lua": "36b4e32c217acfb8134f44e1874590cd8fd8070a28e115e58e6fe26a9b3d426f"
+  },
+  "before": {
+    "routerConnected": false,
+    "dataPlaneWrites": false,
+    "mockedTargetIO": true,
+    "nftParserTested": false,
+    "tests": [
+      {
+        "name": "test-writer-policy.lua",
+        "passed": false,
+        "stdout": "",
+        "stderr": "/usr/bin/lua5.1: /tmp/athena-offline-xsggtnxb/test-writer-policy.lua:7: Full recovery history paused healthy new identities\nstack traceback:\n\t[C]: in function 'assert'\n\t/tmp/athena-offline-xsggtnxb/test-writer-policy.lua:7: in function 'check'\n\t/tmp/athena-offline-xsggtnxb/test-writer-policy.lua:137: in main chunk\n\t[C]: in function 'dofile'\n\t/tmp/athena-offline-xsggtnxb/shim.lua:13: in main chunk\n\t[C]: ?"
+      }
+    ],
+    "passed": false,
+    "luaParsed": 29
+  },
+  "after": {
+    "routerConnected": false,
+    "dataPlaneWrites": false,
+    "mockedTargetIO": true,
+    "nftParserTested": false,
+    "tests": [
+      {
+        "name": "test-writer-policy.lua",
+        "passed": true,
+        "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":740,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}",
+        "stderr": ""
+      },
+      {
+        "name": "test-health.lua",
+        "passed": true,
+        "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}",
+        "stderr": ""
+      },
+      {
+        "name": "test-coverage.lua",
+        "passed": true,
+        "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}",
+        "stderr": ""
+      },
+      {
+        "name": "test-tag-rules.lua",
+        "passed": true,
+        "stdout": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}",
+        "stderr": ""
+      },
+      {
+        "name": "test-lifecycle.lua",
+        "passed": true,
+        "stdout": "bounded-recovery-models-passed 25",
+        "stderr": ""
+      },
+      {
+        "name": "test-core-guard.lua",
+        "passed": true,
+        "stdout": "core-guard-permission-models-passed 26",
+        "stderr": ""
+      },
+      {
+        "name": "test-efficiency.lua",
+        "passed": true,
+        "stdout": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+        "stderr": ""
+      },
+      {
+        "name": "test-core.lua",
+        "passed": true,
+        "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}",
+        "stderr": ""
+      },
+      {
+        "name": "test-collector.lua",
+        "passed": true,
+        "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":137,\"passed\":true,\"failedReadDistinctFromEmpty\":true}",
+        "stderr": ""
+      },
+      {
+        "name": "test-receipts.py",
+        "passed": true,
+        "stdout": "{\"passed\":true,\"checks\":168,\"mockedTransport\":true,\"firmwareProof\":false}",
+        "stderr": ""
+      },
+      {
+        "name": "test-selection.py",
+        "passed": true,
+        "stdout": "{\"passed\":true,\"checks\":55,\"oneSelectionPreserved\":true,\"mockedCT\":true,\"firmwareProof\":false}",
+        "stderr": ""
+      }
+    ],
+    "passed": true,
+    "luaParsed": 29
+  },
+  "maximumRecoveryRetries": 2,
+  "recoveryLedgerLimit": 32,
+  "ownedSlotLimit": 32,
+  "overflowFallback": "retain confirmed software-only slot until identity epoch ends",
+  "targetNftParserTested": false,
+  "firmwareRecoveryTested": false,
+  "formalAcceptancePerformed": false
+}

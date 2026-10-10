@@ -45230,6 +45230,20 @@
       "bytes": 26206,
       "role": "controller-maintenance-readme",
       "revision": "dorm-v2-remaining-work-deployed-20261010"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "sha256": "ee856617c64b8c897bd46b78b64787bac50e72aa84f023883438340e226524cf",
+      "bytes": 21952,
+      "role": "maintained-controller-source-or-regression-test",
+      "revision": "dorm-v2-recovery-ledger-independent-admission-20261010"
+    },
+    {
+      "path": "code/controller/native/test-writer-policy.lua",
+      "sha256": "36b4e32c217acfb8134f44e1874590cd8fd8070a28e115e58e6fe26a9b3d426f",
+      "bytes": 15183,
+      "role": "maintained-controller-source-or-regression-test",
+      "revision": "dorm-v2-recovery-ledger-independent-admission-20261010"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -45368,5 +45382,11 @@
     "evidence": "evidence/dorm-v2-final-improvements.json",
     "latestEvidenceKey": "remainingWorkDeployment",
     "sourceRecordsAppended": 1
+  },
+  "lastOfflineRecoveryLedgerExport": {
+    "capturedAt": "2026-10-10T10:48:21.662720+00:00",
+    "sourceRecordsAppended": 2,
+    "productionCandidateDeployed": false,
+    "evidence": "evidence/dorm-v2-recovery-ledger.json"
   }
 }
