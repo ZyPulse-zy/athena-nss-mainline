@@ -33,8 +33,8 @@ For **each** feed, compiled actual-source statement regressions give:
 | IGS disabled | 1,838 | 196 | 0 |
 | IGS enabled | 3,182 | 196 | 0 |
 
-These include four priority pairs (including zero), both ECM senders, all six
-conntrack-info values, no delay / wait forever / threshold reached / threshold
+These include four priority pairs (including zero), both ECM senders, ctinfo
+values 0..5 (five kernel states plus the count sentinel), no delay / wait forever / threshold reached / threshold
 not reached, a cached bidirectional state, partial flags, TCP, and actual
 ported/non-ported IPv4/IPv6 NSS CREATE QoS/IGS assignments. The CREATE code
 copies the classifier output correctly; the observed source defect is the
