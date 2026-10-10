@@ -1,0 +1,94 @@
+{
+  "routerConnected": false,
+  "dataPlaneWrites": false,
+  "mockedTargetIO": true,
+  "nftParserTested": false,
+  "tests": [
+    {
+      "name": "test-wifi.lua",
+      "passed": true,
+      "stdout": "Wireless observer assertions passed: 158",
+      "stderr": ""
+    },
+    {
+      "name": "test-writer-policy.lua",
+      "passed": true,
+      "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":740,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}",
+      "stderr": ""
+    },
+    {
+      "name": "test-health.lua",
+      "passed": true,
+      "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}",
+      "stderr": ""
+    },
+    {
+      "name": "test-coverage.lua",
+      "passed": true,
+      "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}",
+      "stderr": ""
+    },
+    {
+      "name": "test-tag-rules.lua",
+      "passed": true,
+      "stdout": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}",
+      "stderr": ""
+    },
+    {
+      "name": "test-lifecycle.lua",
+      "passed": true,
+      "stdout": "bounded-recovery-models-passed 25",
+      "stderr": ""
+    },
+    {
+      "name": "test-core-guard.lua",
+      "passed": true,
+      "stdout": "core-guard-permission-models-passed 26",
+      "stderr": ""
+    },
+    {
+      "name": "test-efficiency.lua",
+      "passed": true,
+      "stdout": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+      "stderr": ""
+    },
+    {
+      "name": "test-core.lua",
+      "passed": true,
+      "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}",
+      "stderr": ""
+    },
+    {
+      "name": "test-collector.lua",
+      "passed": true,
+      "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":137,\"passed\":true,\"failedReadDistinctFromEmpty\":true}",
+      "stderr": ""
+    },
+    {
+      "name": "test-receipts.py",
+      "passed": true,
+      "stdout": "{\"passed\":true,\"checks\":168,\"mockedTransport\":true,\"firmwareProof\":false}",
+      "stderr": ""
+    },
+    {
+      "name": "test-selection.py",
+      "passed": true,
+      "stdout": "{\"passed\":true,\"checks\":55,\"oneSelectionPreserved\":true,\"mockedCT\":true,\"firmwareProof\":false}",
+      "stderr": ""
+    }
+  ],
+  "passed": true,
+  "luaParsed": 33,
+  "transportTests": {
+    "passed": true,
+    "tests": 4,
+    "routerConnected": false
+  },
+  "observerSourceHashes": {
+    "code/controller/wifi-observe.mjs": "73449c2085b8d0711726199a15ed1c923d70c197f4a4c90d9152c4c232b5e788",
+    "code/controller/native/wifi.lua": "15bb00e0f49c716d5fc246ffb6818ff2fd5364c531f156d4dc8f0ba8bfacf20b",
+    "code/controller/native/wifi_collect.lua": "2e47994f913dc13353898057711a4c81f90627a32f5b3630c7706b5788f89cfc",
+    "code/controller/native/wifi-diagnose.lua": "9fa6dd21684512ab895b86a29ac106862d1e8134a635e77ff2ec8b51d31d35ed",
+    "code/controller/native/test-wifi.lua": "8d3c4354f28ab57e63fabdaf424dc5553aee77ddf02183d03dd98bfb2bccf0ea"
+  }
+}

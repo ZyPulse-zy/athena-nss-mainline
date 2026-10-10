@@ -1,3 +1,107 @@
+# 2026-10-10 至 11：独立 Wi-Fi 观察、精确源码和离线修复
+
+远端起点 112dfc2，安装维护文件仍全匹配 2996d40；不使用 main 旧 Windows 三槽方案。
+新增手动只读入口/匿名 reducer/有界 collector/stdin 客户端，没有部署、扫描、统计启用、模式或服务变化。
+最终两端点默认 30 秒实际 31.30 秒/120 查询，84 成功、36 缺失、最大 0.14 秒、查询墙钟合计 1.28 秒。
+实际 149/36 均为不同频块的 80 MHz、CN、20 dBm；末窗 busy 8.44%/5.13%，survey TX 1058/196 ms。
+此前两个窗口偏向 36，末窗偏向 149，未证明持续负载偏斜；不构造外部干扰率或混合口径重试率，不改变无线。
+
+原 Backports 7.2 的 301 配方/补丁 Git blob 及全 299 补丁验证，NSS 固定 6aa14c78 的配方/20 补丁也验证并应用。
+现场 hwflags 证实 HAS_TX_QUEUE/TID/NSS，源路径跳过 host TXQ/AQL；最终 firmware TID/AC 仍缺证据。
+三个实际源码缺陷对应三个一行补丁：多 peer drop 累加、未初始化 host queue、consumer/provider 统计宏及 stride 196/212 不一致。
+原版定向失败保留；修后 peer 函数两宏各 41 断言、TX 完整函数 160 断言、真实头文件三 peer ABI 往返通过。
+无线模型 158 断言，10 Lua/2 C 来源维护测试、33 Lua 语法及四项客户端传输测试通过。
+
+首次长 SSH exec 被拒绝，改 stdin 后通过；首次保护路径猜测缺失，改为维护 prepare 已固定的 classifier config 后完整 31 文件哈希核验通过。
+这些读取失败保留为失败。最终 49 服务实例 PID/运行态、五 WAN 设备/地址、boot、十软件 CAKE 根固定选项和 31 文件哈希保持。
+末次 00:27:39 UTC+8 为 native-running/sourceFresh/未确认0；来源暂停/恢复新增 0/0，既有恢复表新增两个撤销恢复，末次无 tracked/exhausted/quarantined/pending，未做故障注入或归因查询。
+原始 MAC/终端/日志/模块/连接資料仅留私有目录。候选未安装，完整构建/二进制复现、固件统计 ABI、最终空口和正式游戏验收待完成；PR #1 仍草稿。
+
+[完整核查与具体调优依据](DORM_V2_WIFI_AUDIT.md) · [结构化汇总](../evidence/dorm-v2-wifi-audit.json)
+
+<!-- longterm-deployment-fix-20261009 -->
+# 2026-10-09：长期部署修复、实际恢复与冷启动验证
+
+复核 2026-10-09 15:18:51.319 UTC：native-running，实际NSS1、来源新鲜、未确认0；本次启动来源累计暂停/恢复2/2。开机自启已开启，五WAN/代理/Tailscale正常，保护配置与19个已安装源码哈希通过，九张规则表可读。
+
+仅清除经本地归档、全部六文件及已安装二进制哈希核对的重复Tailscale安装缓存，释放104240KiB；overlay由97%/32976KiB可用降至86%/137216KiB可用。约567MiB回退备份保留，已安装Tailscale/代理未替换。新私有基线330成员已下载并验证，凭据/原始CT/日志/归档/二进制不入Git。
+
+已安装此前精确标签候选，保留完整11字段身份与双向RT/BE标签；NSS32成本槽、路由器本机全LAN识别、无健康固定90秒/18-60实验寿命、无按人/设备配额保持。新增单一procd监督器，最多三次自动重试、5/15/30秒退避：运行后失败只在本次owner完整恢复确认后重试；启动前失败须无native记录/guardian并确认软件基线。手动stop阻止重试，rollback同时关闭开机自启。等待五WAN及原十个队列合同就绪后，复用原分类器精确恢复，不改其源码/配置或autorate速率。
+
+真实owner退出后独立完整恢复及一次有限重启10.4秒通过；实际手动rollback关闭自启且不复活，再start/开启自启通过。本机150/150低频网关回应、P95 2ms。上线后89.95秒/19个自然轻负载样本：NSS0..6、硬件转发字节增加2317571、24个活跃RT样本均有当前CREATE、实时队列drop增量0、来源无新增暂停；WAN平均仅3.864Mbps，WAN RX drop增3/LAN4增1归属未知。模型25恢复判定/26许可/20标签、目标0/2/80规则与实际fork/wait四场景通过；模型依赖/恢复被替换，不能冒充现场冷启动。
+
+第一轮获准重启失败事实保留：五WAN/代理/Tailscale恢复，但启动前子进程退出1，尚无native事务记录，监督器阻止了后续启动。原分类器出现terminal stop；稍后原精确恢复工具修复十个diffserv4队列和十对基础规则、确认原cleanup后重启原分类器成功。初次stderr未完整保留，不能断定唯一初因。 修复后第二轮获准重启已通过无人值守恢复：启动后113.06秒观察到五WAN和全部服务恢复、NSS本机服务运行，自动重试0次；没有手动start或分类器repair。
+
+重启后89.95秒/19样本：NSS0..2，硬件转发字节增加10119523；五WAN网关/公网合计100/100回应。但来源暂停/恢复新增2/2，硬件队列读取缺失2次；原分类器audit捕获tc子进程清理未确认、rawStatus256/耗时4.17秒并精确恢复。其与硬件队列读取超时同窗，低频ICMP也与采样重叠，因果未证明；不能把缺失读当零drop或说全部长期问题已解决。 默认diagnose已取消硬件tc队列查询，需显式--queues才请求；未观测队列drop不再输出零。真实60秒/21样本轻量诊断：最长单读0.02秒、来源新增暂停0/恢复0、NSS0..2、两次活跃RT样本均有当前CREATE；没有重启服务、修改数据面设置或重做硬件查询。该短窗不能证明所有历史tc/恢复失败已消失。 后续2026-10-09T15:24:36.740Z交付复核NSS1/sourceFresh/未确认0，来源累计暂停/恢复已到4/4；本代理未再主动硬件tc队列查询。来源间歇暂停仍需定位，轻量诊断没有消除该问题。
+
+正式游戏/下载验收仍按用户要求延期；满载空闲带宽利用、每Wi-Fi station/TID/同设备混合负载、全端口字节覆盖、长期CPU/softirq、历史recover超时和固件规则提前消失原因尚未闭环。短窗零队列drop不是端到端零Loss/Miss。未升级/刷机/更换EDMA或修改五WAN认证、PBR/NAT、代理/Tailscale/无线配置。
+
+[脱敏证据](../evidence/dorm-v2-native.json)
+
+## 以下为历史记录
+
+<!-- /longterm-deployment-fix-20261009 -->
+
+# 2026-10-09：长期部署前实测与可读标签候选
+
+当前现网仍为 f1f58cc，NSS继续运行；2026/10/9 18:52:48 北京时间最终复核：NSS1、sourceFresh、IPv4开启、未确认0，owner/guardian/reader与服务/保护/已安装源码不变。用户此前回报“不卡了”；正式游戏验收及端到端零Loss/Miss仍未证明。
+
+15分钟/181样本：NSS1..9、硬件IPv4转发字节增加149942818，来源无新增暂停，10个实时队列drop增量0。五WAN各网关/公网合计600/600回应；本机到路由器300/300，P95 3ms/P99 4ms。平均WAN下行5.854Mbps、五秒峰值52.355Mbps，属于自然轻负载；不能替代满载游戏验收。525个活跃RT样本中520有有效CREATE、5未观察到，另有6次绑定改变；全部RT范围，不作为游戏丢包率。WAN RX drop增30/LAN4 RX drop增1归属未知，未宣称全路径零损失。
+
+长期部署尚有实际问题：持久存储97%/约32MiB可用（约567MiB历史备份、118MiB暂存，无本窗口增长，未删除）；nft读取当前athena_dorm_qos标签表会用户态断言退出，其它八表可读；开机自启和确认回退后的有限恢复仍关闭，重启后不会自动启用NSS，原分类器冷启动基础规则修复也尚未完成无人值守验收。历史recover超时、短暂RT规则变化、Wi-Fi station队列/TID/同机混合负载继续未闭环。
+
+仅修改维护代码的修复候选：用一个标量CT ID成员集合快速跳过无关包，再做至多80条策略的完整11字段精确匹配，保留mark/NAT/WAN、双向队列标签和RT/BE低位；不以CT ID单独授权、不新增配额、不改C/固件/EDMA。6组模型、26 Lua/Shell解析及另1个维护Shell解析通过；真实目标无hook模型0/2/80策略安装、文本/JSON读取、导出重解析、字段/标签校验及清理通过。候选未安装、运行性能未验收，现网继续原版本。
+
+只读现网及无流量hook的独立测试表；所有测试表已删除。新私有回退基线下载/摘要/gzip与236成员清单通过，未执行恢复。未重启/stop/start/故障注入/主动大下载/调整队列或速率/改认证PBR代理无线设置/开启自启。部署候选或调整长期恢复需先核对共享网络维护窗口授权；不默认复用已执行的一次重启许可。
+
+## 以下为此前记录，不能覆盖本次部署差异
+
+# 2026-10-09 获准重启、启动基线修复与 ABI2 真实恢复
+
+交付只读复核 2026-10-09T00:48:42.825Z：同一最终启动已运行 264.85 秒，实际 NSS28/ECM31，2 个实际 CREATE 客户端、出口 lan4/phy0-ap0，2665 次续租、11 次真实固件不存在撤销，未确认0。原 core guard 对真实 owner 的许可、来源新鲜度、原软件队列/五 WAN/服务/保护配置/模块及已安装候选哈希全部通过；继续运行，自启关闭。
+
+2026-10-09，用户明确“现在可以重启了”后执行一次路由器重启，boot ID 改变，旧 ABI1 gate/receipt 与五个残留引用消失，五 WAN、认证、autorate、代理与 Tailscale 恢复。已加载 ABI2，最终本机服务保持 native-running、IPv4 准入开启/IPv6 关闭、32 成本槽、健康寿命 0；旧 Windows continuous 停止，自启仍关闭。
+
+重启暴露真实启动差异：十个原 CAKE 回到 besteffort、40900/41900 基础过滤规则未恢复，原分类器进入 terminal stop。新增 classifier_recovery.lua 只把已核对的队列恢复 diffserv4，保留实时 bandwidth/root/其他选项，补齐原有十对基础规则，通过原 cleanup 精确恢复后解除终止标记；原分类器源码/配置哈希未改，数据发布恢复。原 core-guard 每五秒关闭 NSS；新增只读 owner/guardian PID+start、8 秒数据/心跳及 ABI2 默认拒绝 gate 核验钩子，仅有效时跳过 IPv4 关闭，保留 PBR、日志和 IPv6 行为。原 shell watch 需重载才能使用钩子；stop/rollback 精确还原原脚本字节并重载，已实测。
+
+完整受影响验证：第一轮 22 样本最大 NSS17，实际停止时 NSS24，固件撤销、ECM0/NSS0、46 原队列结构/非速率选项、五 bridge/mwan0、原磁盘模块/保护配置/原服务、原 core guard 字节、标签/锁清理全部通过；重复 rollback 通过。重新 start 后另 22 样本最大/结束 NSS23/23，343 续租、真实 FIRMWARE_ABSENT 撤销2，结束 CREATE 客户端1，来源/owner/队列/WAN/原服务核验通过并保留运行。各轮计数不合并，未造流量夹具。
+
+17 个 core-guard 权限模型、受影响目标 Lua/Shell 解析通过；此前 134 实际 receipt C mock、目标 writer/NFT 模型、原 6.18.44 构建复用，C 源码和构建物本轮未改。未升级/刷机/更换 EDMA/修改认证、PBR/NAT、代理/Tailscale配置，也未开启自启。
+
+旧引用阻断 P0 已通过获准重启释放，ABI2 真实删除及完整回退通过。规则最初为何提前从固件消失仍无直接通知证据。真人游戏/下载验收按用户要求延期；全端口/每 Wi-Fi station/字节覆盖、混合软件-NSS双重排队质量、长期 CPU/softirq 和重启自动启用仍未验收。
+
+## 以下为批准重启前的历史记录，不代表当前状态
+
+# 2026-10-09 启用失败、精确 NO_ENTRY 恢复与 ABI2 修复
+
+2026-10-09，用户要求立即启用。旧版重新启动实测最大 NSS14，随后五条撤销没有 DESTROY 回执，进入 rollback-unconfirmed。对这五条已否决的 serial/generation，用已安装 ECM 的公开 getter 取得实际固件 tuple、匹配原 receipt，逐条发送精确 DESTROY；五条全部返回原始 ENACK=4 / NO_CONNECTION_ENTRY=5。未发送 CREATE、伪造 ACK、强卸载或重启。
+
+已恢复本次 nft 标记、IGS/共同物理队列、五 MacVLAN bridge/mwan0；46 原队列结构和非速率选项、保护配置/磁盘模块哈希一致，五 WAN、认证、原 autorate/分类、代理、Tailscale 正常且 PID 未改变。现时 NSS0，reader/guardian/旧 Windows continuous 均已停止。旧 ABI1 gate 的五个自引用和 ECM CI 引用仍在，普通卸载无法通过，完整回退仍未确认。
+
+同一 code/controller 修复为 ABI2：ECM 已减速而未发 DESTROY 时请求原 observer 的精确 tuple；真实 NO_ENTRY 为独立 FIRMWARE_ABSENT 状态，原 NACK/错误保留，未知返回仍拒绝。支持已确认不存在后的新 CREATE 周期，保存已从 desired 消失的 retiring 身份，关闭准入立即修正 status，有限等待删除与 owner 退出后重试 rollback。134 实际 C mock、目标 Lua writer/NFT 模型、5 文件目标解析及 6.18.44 构建通过；未加载修复模块。修复版已保存本机服务目录，旧版私有备份完整、自启仍关闭。
+
+阻断：旧 ABI1 模块没有释放 NO_ENTRY 引用的接口。保留它们，不通过修改内核内存/伪造 ACK/强卸载绕过。用户原明确要求不擅自重启；需要确认一次路由器重启后，才可清除旧内存模块并实测启用修复版。真人游戏/下载验收仍延期，无流量夹具、刷机、升级或 EDMA 更换。
+
+# 2026-10-08：v2 本机服务和完整恢复
+
+原kernel/NSS/EDMA保持；gate/receipt真实编译加载，RAM ECM/act符号重定向而executable sections相同。真实CT pin/单流撤销、CREATE/DESTROY原始ACK、IGS bind/unbind ACK和6秒软件共同下行已执行。软件上行初落default/root filter EINVAL，clsact在原CAKE后补标签修复，五账号/RT叶取得流量。
+
+无固定健康期限轮118.82秒、NSS最大8/FW最多4客户端/有线和两AP；活跃stop轮最大12/停前3；reader-loss轮最大16/故障前0，各轮不拼接。119秒后的故障阶段NFT空表错误修正并定向复验。receipt自然DESTROY再CREATE周期修复后96 mock通过，最终模块最大5/停前4/完整恢复。
+
+手动procd安装/PID所有权、持有3条NSS时owner退出、独立恢复/reader回收和幂等stop/rollback通过。新服务停止/关闭自启/无respawn，RAM清理，旧continuous恢复。46原qdisc结构与非速率选项一致，原autorate速率变化单列证据；保护文件/原模块哈希及五WAN服务保持。21策略/96 receipt mock及目标prepare/NFT/编译通过。没有游戏/下载夹具、CPU压力、拔电、升级、重启或EDMA更换。真人测试延期。[脱敏证据](../evidence/dorm-v2-native.json)。
+
+## 以下保留历史，旧范围及“当前”不得覆盖上方事实
+
+# 2026-10-08：v2 接手与授权临时影子实测
+
+取得真实附件 v2，核对 main 04d98a3 和 dev-i 后进度，保存 Git bundle/327 条目敏感归档。复用全 LAN 分类器，新增唯一 code/controller 维护目录及动态按流影子状态。20 个受影响模型在目标 Lua 5.1 执行通过，没有新网络 fixture 或旧核心重测。
+
+用户明确同意 /tmp-only、最多五分钟、无数据面写入的试用。首次缺 nohup，后续 nixio 数字权限不接受，均在采样服务启动前失败；本批集中修复、保留原输出。成功连续采样至少 95.87 秒，4 客户端、3 station、LAN4/两个 Wi-Fi 出口，来源序列推进；主动 Stop 及幂等 Rollback 通过。补修停止状态 error 字段及资源摘要后，另一短运行 8.77 秒内主动 Rollback 通过，4 次采样/RSS3280 KiB/最长0.21秒。检查仅匹配精确进程参数后确认影子进程与锁为零，删除自有已知临时文件。
+
+前后完整 qdisc 配置及四项保护文件哈希一致；最终五 WAN/认证/代理/Tailscale/分类/autorate 运行，ECM停止全零。旧连续 Windows 控制器保持 WAITING_FLOW，未更换 kernel/NSS/EDMA、未重启。真实游戏验收和数据面扩展仍未进行。[脱敏证据](../evidence/dorm-v2-shadow.json)。
+
+## 以下保留历史
+
 # 连续常驻开发批次收尾（2026-10-08）
 
 2026-10-08，取消健康代90秒退出和20分钟四次启动限制。合格流持续自动续租；分类/socket6秒新鲜度、native滚动120秒、guardian滚动180秒及失联撤销保持。实际RT mask2连续NSS 196.75秒／393采样校验／65续租，跨原90/120/180秒后主动Stop和完整恢复通过。

@@ -3,9 +3,8 @@ import hashlib, json, re, copy
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 manifest=json.loads((root/'source-manifest.json').read_text(encoding='utf-8'))
-for item in manifest['sources']:
-    file=root/item['path']; assert file.is_file(), item['path']
-    assert hashlib.sha256(file.read_bytes()).hexdigest()==item['sha256'],item['path']
+from source_manifest import verify_sources
+currentSourceCount=verify_sources(root,manifest)
 rules={
  'private-key':r'-----BEGIN (?:RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----',
  'github-token':r'\b(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{35,})\b',
@@ -2545,4 +2544,4 @@ if (root/'evidence/resident-service-runtime.json').exists():
 if (root/'evidence/resident-continuous.json').exists():
  import runpy
  runpy.run_path(str(root/'tools/check_resident_continuous.py'))['check'](root)
-print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))
+print(json.dumps({'passed':True,'filesChecked':count,'sourceHashesChecked':currentSourceCount,'sourceRevisionRecords':len(manifest['sources']),'markdownLinksChecked':links,'obviousSecretChecksPassed':True,'scope':'Current bytes use the latest named controller revision; frozen source checks and historical evidence remain intact. Curated allowlist plus pattern checks; not a claim of comprehensive secret detection.'}))

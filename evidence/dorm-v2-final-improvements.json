@@ -1,0 +1,725 @@
+{
+  "revision": "dorm-v2-budget-publication-drift-20261010",
+  "reviewBase": "3208540780e56b0b498616d75a136e1e1011dd21",
+  "priorDeployedCodeCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
+  "productionCandidateDeployed": true,
+  "changes": {
+    "exactLeasedDirectionalQos": true,
+    "firmwareSyncPassive": true,
+    "firmwareFlushEvictRecoveryBounded": true,
+    "selectedOnceGuardPreserved": true,
+    "maximumRecoveryRetries": 2,
+    "recoveryEventLimit": 32,
+    "bestEffortInclusiveByteBaseline": true,
+    "byteCoverageIsConservativeBound": true,
+    "automaticBestEffortAdmissionEnabled": false,
+    "budgetQueryBatchSeconds": 0.75,
+    "budgetQueryTermSeconds": 1,
+    "budgetQueryKillSeconds": 1,
+    "budgetObservationExpirySeconds": 6,
+    "classificationLeaseSeconds": 6,
+    "sharedNetworkQuotasAdded": false,
+    "independentReaderBudgetPublication": true,
+    "guardianPerformsBudgetQueries": false,
+    "minimumLeaseMarginDoesNotSkipFreshBudgets": true,
+    "budgetPublicationPeriodSeconds": 3,
+    "budgetPublicationMaxDurationSeconds": 2.75,
+    "exactBootAndPublicationAgeChecked": true,
+    "alreadyValidIgsTagsNormalized": true,
+    "newIgsBindingsEnabled": false,
+    "localBudgetCacheRecheckedBeforeExpiry": true,
+    "refreshLocalCacheAtAgeSeconds": 5,
+    "permissionTimestampAfterAllObservations": true,
+    "previousAttemptSummaryLimit": 1,
+    "budgetReadPeriodIsStrict": false,
+    "nearExpiryReadIsReadOnly": true
+  },
+  "tests": {
+    "local": [
+      {
+        "test": "test-writer-policy.lua",
+        "exit": 0,
+        "output": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":243,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}"
+      },
+      {
+        "test": "test-health.lua",
+        "exit": 0,
+        "output": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}"
+      },
+      {
+        "test": "test-coverage.lua",
+        "exit": 0,
+        "output": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}"
+      },
+      {
+        "test": "test-core.lua",
+        "exit": 0,
+        "output": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}"
+      },
+      {
+        "test": "test-collector.lua",
+        "exit": 0,
+        "output": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":137,\"passed\":true,\"failedReadDistinctFromEmpty\":true}"
+      },
+      {
+        "test": "test-tag-rules.lua",
+        "exit": 0,
+        "output": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}"
+      },
+      {
+        "test": "test-lifecycle.lua",
+        "exit": 0,
+        "output": "bounded-recovery-models-passed 25"
+      },
+      {
+        "test": "test-core-guard.lua",
+        "exit": 0,
+        "output": "core-guard-permission-models-passed 26"
+      },
+      {
+        "test": "test-efficiency.lua",
+        "exit": 0,
+        "output": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}"
+      }
+    ],
+    "target": {
+      "readOnlyDataPlane": true,
+      "modelDirectorySeparate": true,
+      "productionFilesChanged": false,
+      "tests": [
+        {
+          "name": "test-writer-policy.lua",
+          "exit": 0,
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":243,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}\n",
+          "stderr": ""
+        },
+        {
+          "name": "test-health.lua",
+          "exit": 0,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}\n",
+          "stderr": ""
+        },
+        {
+          "name": "test-coverage.lua",
+          "exit": 0,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}\n",
+          "stderr": ""
+        },
+        {
+          "name": "test-core.lua",
+          "exit": 0,
+          "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}\n",
+          "stderr": ""
+        },
+        {
+          "name": "test-collector.lua",
+          "exit": 0,
+          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":137,\"passed\":true,\"failedReadDistinctFromEmpty\":true}\n",
+          "stderr": ""
+        }
+      ],
+      "parsers": 29,
+      "passed": true,
+      "cleaned": true
+    },
+    "receiptC": {
+      "checks": 168,
+      "mockedTransport": true,
+      "firmwareProof": false
+    },
+    "gateC": {
+      "checks": 55,
+      "mockedCT": true,
+      "firmwareProof": false
+    }
+  },
+  "build": {
+    "kernelChanged": false,
+    "routerConnected": false,
+    "binaryLoaded": false,
+    "sourceHashes": {
+      "athena_ecm_gate.c": "a32352cd5b378aa1c6b70aa94f4a3a0f2dad57e1ae6ad8546182f05476c8d19a",
+      "athena_nss_receipts.c": "0ae24c45c2a83832851b2566bfdb3783253c56470d3319b2b26a2b9a6e37d6e3",
+      "build.py": "c202b32fc86f1d2c37637cefac212be10fed0309c16c9a4f3e939cfb18278073",
+      "ecm_ae_classifier_public.h": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "Makefile": "57161558b522da5a56a32d29187fc0dcf3d5c1f386fae5577c4d9b7d5ed5c13f",
+      "receipts.h": "9e277067cd246993aa396853a81876d87151dc2f2acae60baf59215a600e743b",
+      "receipt_telemetry.h": "c3a9cad333522ed8b19a1fdcfe986a2a0594cab2e31fdf578d8a208a4110046d",
+      "test-receipts.c": "d2aa515c337882cfccba37f249194190789b0b793d757ec0a3806d0156b02187",
+      "test-receipts.py": "1999420e6d357cbaad2049dcfc19d31e4bd718b3ac12bfa2289d3c0d1601033e",
+      "test-selection.py": "54710822b45e2ca37318ecf9341ec8831348f5461c2cc4e85a6086102a00615a"
+    },
+    "installedInterfaceMessageBytes": 96,
+    "installedIPv4MessageBytes": 736,
+    "installedIPv4Interface": 161,
+    "nativeGateAbi": 2,
+    "ecmCodeSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".text.unlikely",
+      ".init.text",
+      ".exit.text"
+    ],
+    "ecmOriginalSha256": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2",
+    "ecmReceiptCopySha256": "7239dec3ad7827247177bc034172e4cc57bb36e335f74920a6494977e6c7a98b",
+    "driverSha256": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+    "ingressCodeSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".init.text",
+      ".exit.text",
+      ".text.unlikely"
+    ],
+    "ingressOriginalSha256": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb",
+    "ingressReceiptCopySha256": "116a088ad024f2f21b8e52ae08531532639ce318ee629ae8d850524da3ae25ce",
+    "athena_ecm_gate.ko": {
+      "sha256": "09951c593e59d77a8c64342d1b413670ff23d9888dae8a05856fc366dd65fa8e",
+      "bytes": 129592
+    },
+    "athena_nss_receipts.ko": {
+      "sha256": "dfe4ec1dad235204c757f9ca0f6e989f60b8b4bd29be21daae06f3eb06c65b09",
+      "bytes": 181168
+    },
+    "passed": true,
+    "extraSymbols": "Verified installed exports; zero CRC because MODVERSIONS is disabled, not an ABI guarantee",
+    "kernelHashes": {
+      ".config": "24f0389ac9618779974c03d8c71f891b80a1ca58c1e4ef5a6877be4b6b9fe06c",
+      "Module.symvers": "b0782f7327ba04cf3a3f3ad85c735c6639af6accc0d8fa307b8abac9af46cd5d",
+      "include/generated/autoconf.h": "4ef35271b52eb223a7524fe6bb9f1af64c6cc7bc33f2e967843d0700fac397f7"
+    }
+  },
+  "sourceEvidence": {
+    "dscp": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/ecm_classifier_dscp.c",
+      "sha256": "e6706c1ae13c86e615cc5672f03b83df0a812dd7ed23ba1e94caf5d0f02c0707"
+    },
+    "ecmIpv4": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/frontends/nss/ecm_nss_ipv4.c",
+      "sha256": "51210fdfc955ea72e773a60d3902adde8e0a03dbdfb6120988d32ebd30bc89a8"
+    },
+    "ecmPorted": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/frontends/nss/ecm_nss_ported_ipv4.c",
+      "sha256": "f90bd6baafc01e365750852ba1682b32f0734bdff0f2c56441c98a6fd50cd449"
+    },
+    "ecmDb": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/ecm_db/ecm_db_connection.c",
+      "sha256": "bc2bb1a603c73b25b3ea33813666e07c87a65837c166d3f28c93c7b6ca7b06fc"
+    },
+    "ecmInterface": {
+      "path": "nss2-isolation/qca-nss-ecm-8c7355b/ecm_interface.c",
+      "sha256": "8724489a2034bb68c71db63b4b0c6f125ac4efc33176bf2e92fc132e2a22a27c"
+    },
+    "driverIpv4": {
+      "path": "nss2-igs/nss-drv-6aa14c7/nss_ipv4.c",
+      "sha256": "eaff877cdd123e9cdb884502e7ec73d7559eaa2d39442f8c092d9ad46164fb6b"
+    },
+    "driverIpv4Abi": {
+      "path": "nss2-igs/nss-drv-6aa14c7/exports/nss_ipv4.h",
+      "sha256": "f04663c61ca0c74e9be8e72a9c3dc496ab7bd47404c2d7d0388b9c98acd32a41"
+    }
+  },
+  "wirelessAndFdbReadOnly": {
+    "at": "2026-10-10T01:54:30.621Z",
+    "readOnly": true,
+    "wirelessSettingsChanged": false,
+    "firmwareStatsEnabled": false,
+    "passiveNssPeerFiles": 3,
+    "existingPeerStatsConfig": [
+      "00000001\n",
+      "00000001\n",
+      "00000001\n"
+    ],
+    "peerCounters": [
+      {
+        "tx_packets": 3,
+        "tx_bytes": 1981,
+        "tx_retries": 0,
+        "tx_failed": 450280,
+        "rx_packets": 0,
+        "rx_bytes": 0,
+        "rx_dropped": 0,
+        "rx_retries": 0
+      },
+      {
+        "tx_packets": 0,
+        "tx_bytes": 97,
+        "tx_retries": 0,
+        "tx_failed": 0,
+        "rx_packets": 0,
+        "rx_bytes": 0,
+        "rx_dropped": 0,
+        "rx_retries": 0
+      },
+      {
+        "tx_packets": 5,
+        "tx_bytes": 121,
+        "tx_retries": 0,
+        "tx_failed": 225,
+        "rx_packets": 0,
+        "rx_bytes": 0,
+        "rx_dropped": 0,
+        "rx_retries": 0
+      }
+    ],
+    "learnedFdbEntries": 4,
+    "fdbAgeMin": 0.02,
+    "fdbAgeMax": 55.08,
+    "fdbAgeOver60": 0,
+    "currentWiredOwnedFlows": 1,
+    "currentDscpClassifierEnabled": 1,
+    "currentAccelDelayFound": true,
+    "actualTIDorACVerified": false,
+    "gameAndDownloadAcceptanceDeferred": true
+  },
+  "limits": {
+    "gameWifiAcceptanceDeferredByUser": true,
+    "independentFirmwareQosReadback": false,
+    "airTIDorACVerified": false,
+    "fullLanByteCoverage": false,
+    "historicalClassifierPauseRootCauseProved": false,
+    "liveFaultOrCongestionGenerated": false,
+    "routerRebooted": false,
+    "wirelessSettingsChanged": false
+  },
+  "historicalEvidencePreserved": true,
+  "firstTrial": {
+    "sourceCommit": "c2ccdbb3e78a4e642b9818a00ad9d1bb76194553",
+    "productionTrialFailed": true,
+    "automatedRecoveries": 2,
+    "failure": "Lease-margin skip kept budget observations from refreshing; six-second expiry triggered normal complete rollback",
+    "labelIssue": "Some CREATE IGS fields retained a previous BE class while current leased class was RT",
+    "secondaryInspectionIssue": "launch.sh is a persistent entry point and was incorrectly expected in the RAM file list; other runtime hashes matched",
+    "validatedAt": "2026-10-10T02:00:46.955Z",
+    "initialNssRange": [
+      0,
+      1
+    ],
+    "initialLabelMismatchSamples": 1,
+    "returnedToKnownGood": {
+      "at": "2026-10-10T02:04:38.428Z",
+      "previousSourceCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
+      "phase": "native-running",
+      "sourceFresh": true,
+      "nss": 0,
+      "unconfirmed": 0,
+      "installedPreviousHashesMatched": true,
+      "allWansUp": true
+    },
+    "wirelessSettingsChanged": false,
+    "routerRebooted": false,
+    "originalDiskModulesReplaced": false
+  },
+  "secondTrial": {
+    "sourceCommit": "f63ff1e61e2e480af72b2a63a8ad5ee1f90099e0",
+    "productionTrialFailed": true,
+    "automaticRecoveries": 2,
+    "initialNaturalWindow": {
+      "seconds": 90,
+      "labelVerifiedSamples": 52,
+      "labelMismatchSamples": 0,
+      "perFlowHardware": {
+        "basis": "firmware-RX-sync",
+        "measured": true,
+        "byteDelta": {
+          "down": 36946299,
+          "up": 1570836
+        },
+        "intervals": 39
+      },
+      "byteCoverage": {
+        "hardwareBytes": 15249743,
+        "excludedFlowWindows": 168,
+        "totalBytes": 62868977,
+        "includesBestEffort": true,
+        "measurement": "bracketed-downstream-lower-bound",
+        "classes": {
+          "BE": {
+            "bytes": 10007078,
+            "flows": 1219,
+            "hardware": 0
+          },
+          "RT": {
+            "bytes": 448758,
+            "flows": 11,
+            "hardware": 281590
+          },
+          "UNKNOWN": {
+            "bytes": 0,
+            "flows": 0,
+            "hardware": 0
+          },
+          "BULK": {
+            "bytes": 52413141,
+            "flows": 3,
+            "hardware": 14968153
+          }
+        },
+        "scope": "persistent-five-WAN-zone0-nonproxy-IPv4-TCP-UDP-with-stable-class",
+        "sameByteBasis": true,
+        "lastWindow": {
+          "hardwareEnd": 40450.06,
+          "ctStart": 40445.26,
+          "ctEnd": 40451.46,
+          "hardwareStart": 40447
+        },
+        "windows": 12,
+        "measured": true,
+        "fullLanCoverage": false,
+        "ratioLowerBound": 0.2425638801153071
+      }
+    },
+    "exactExitReasonOverwrittenByRetry": true,
+    "offlineBugReproduced": "A locally cached budget was older than six seconds before the next scheduled read, while a valid newer publication already existed",
+    "directRuntimeCausalityProved": false,
+    "normalFullRestoration": {
+      "at": "2026-10-10T02:17:54.854Z",
+      "phase": "restored",
+      "rollbackConfirmed": true,
+      "gateAbsent": true,
+      "providerAbsent": true,
+      "nss": 0,
+      "allWansUp": true
+    },
+    "returnedToKnownGood": {
+      "at": "2026-10-10T02:17:59.876Z",
+      "previousSourceCommit": "db872e093ebfcc33a65509e33eda7f773ae13814",
+      "phase": "native-running",
+      "sourceFresh": true,
+      "nss": 3,
+      "unconfirmed": 0,
+      "installedPreviousHashesMatched": true,
+      "allWansUp": true
+    }
+  },
+  "deployment": {
+    "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+    "stage": {
+      "at": "2026-10-10T02:21:36.561Z",
+      "commit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+      "backupSaved": true,
+      "backupSha256": "364a389c2985f76f9efcc10423d0d915dc184223b14c9ea4f81d0a755e9273c3",
+      "backupBytes": 334438,
+      "downloadDigestMatched": true,
+      "gzipValidated": true,
+      "stagedFiles": 17,
+      "stageDigestMatched": true,
+      "controllerStillRunning": true,
+      "productionSourceChanged": false,
+      "allWansUp": true,
+      "beforeNss": 2,
+      "beforeSourceFresh": true,
+      "bootEnabled": true
+    },
+    "stop": {
+      "at": "2026-10-10T02:21:44.231Z",
+      "commandExit": 0,
+      "seconds": 2.516,
+      "independentFullRestorationConfirmed": true,
+      "protectedExceptOwnedGuardUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "wanIdentitiesUnchanged": true,
+      "allWansUp": true,
+      "bootEnabledPreserved": true,
+      "phase": "restored"
+    },
+    "install": {
+      "at": "2026-10-10T02:21:45.933Z",
+      "installedFiles": 17,
+      "installedDigestsMatched": true,
+      "matchingProviderGateBundle": true,
+      "controllerStillStopped": true,
+      "originalDiskModulesReplaced": false,
+      "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391"
+    },
+    "start": {
+      "at": "2026-10-10T02:21:51.099Z",
+      "seconds": 3.864,
+      "phase": "native-running",
+      "sourceFresh": true,
+      "actualNss": 0,
+      "admissionEnabled": true,
+      "unconfirmed": 0,
+      "gateLoaded": true,
+      "receiptsLoaded": true,
+      "allWansUp": true,
+      "wanIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "bootEnabledPreserved": true,
+      "installedDigestsMatched": true,
+      "newObservationFeaturesPresent": true,
+      "automaticRetries": 0
+    },
+    "validation": {
+      "at": "2026-10-10T02:24:52.597Z",
+      "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+      "productionCandidateDeployed": true,
+      "phase": "native-running",
+      "sourceFresh": true,
+      "actualNss": 2,
+      "admissionEnabled": true,
+      "unconfirmed": 0,
+      "allWansUp": true,
+      "wanIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "coreGuardRunning": true,
+      "serviceIdentityScope": "Authentication, classifier, autorate, proxy and Tailscale; exclude native owner and its owned core-guard reload",
+      "bootEnabledPreserved": true,
+      "installedDigestsMatched": true,
+      "automaticRetries": 0,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "rejectedCache": {
+        "pruned": 0,
+        "limit": 32,
+        "ttlSeconds": 6,
+        "entries": 0
+      },
+      "pendingRt": 0,
+      "recovery": {
+        "tracked": 0,
+        "limit": 32,
+        "exhausted": 0,
+        "maximumRetries": 2,
+        "eventLimit": 32,
+        "withdrawals": 1,
+        "newIdentityAdmissionPaused": false,
+        "events": [
+          {
+            "atUptime": 40918.75,
+            "slot": 0,
+            "generation": 7,
+            "phase": "requested",
+            "attempt": 1,
+            "serial": 3,
+            "reason": "firmware-flush-or-evict-notification"
+          },
+          {
+            "atUptime": 40919.07,
+            "slot": 0,
+            "generation": 7,
+            "phase": "retired",
+            "attempt": 1,
+            "serial": 3,
+            "reason": "firmware-flush-or-evict-notification"
+          },
+          {
+            "atUptime": 40919.86,
+            "slot": 0,
+            "attempt": 1,
+            "phase": "readmitted",
+            "reason": "firmware-flush-or-evict-notification"
+          }
+        ],
+        "eventsOmitted": 0
+      },
+      "reader": {
+        "policySeconds": 0,
+        "clientReasons": {
+          "learned-wired-port": 1,
+          "associated-station": 3
+        },
+        "classificationSource": "candidate-projection",
+        "topologySeconds": 0.040000000000873115,
+        "stationSources": {
+          "iwFallback": 0,
+          "hostapd": 3
+        },
+        "previousEncodeSeconds": 0,
+        "collection": {
+          "failures": 0,
+          "commands": {
+            "hostapd-phy1-ap0": {
+              "ok": true,
+              "seconds": 0.010000000002037268,
+              "exitCode": 0
+            },
+            "wan-addresses": {
+              "ok": true,
+              "seconds": 0.00999999999476131,
+              "exitCode": 0
+            },
+            "hostapd-phy2-ap0": {
+              "ok": true,
+              "seconds": 0,
+              "exitCode": 0
+            },
+            "neighbors": {
+              "ok": true,
+              "seconds": 0,
+              "exitCode": 0
+            },
+            "fdb": {
+              "ok": true,
+              "seconds": 0,
+              "exitCode": 0
+            },
+            "hostapd-phy0-ap0": {
+              "ok": true,
+              "seconds": 0.010000000002037268,
+              "exitCode": 0
+            }
+          }
+        },
+        "topologyComplete": true,
+        "sourceLeaseSeconds": 6,
+        "publicationSeconds": 0
+      },
+      "budgetUpdates": {
+        "lastReadCommands": 10,
+        "readFailures": 0,
+        "source": "independent-reader-software-budgets",
+        "lastReadSeconds": 0.06999999999970896,
+        "lastSuccessAtUptime": 41010.15,
+        "skippedLeaseMargin": false,
+        "ownerReadSeconds": 0,
+        "publicationSequence": 57,
+        "batches": 0,
+        "lastSeconds": 0,
+        "skippedSourceGap": false,
+        "lastCommands": 0,
+        "lastReadAtUptime": 41011.81,
+        "lastReadSucceeded": true,
+        "leaseMarginAfterReadSeconds": 2.3300000000017462,
+        "leaseMarginBeforeReadSeconds": 2.3300000000017462
+      },
+      "diagnosticSeconds": 180.549,
+      "diagnose": {
+        "samples": 60,
+        "seconds": 180,
+        "sourceGaps": 0,
+        "sourceRestores": 0,
+        "nssRange": [
+          0,
+          3
+        ],
+        "currentFlowLabelStates": {
+          "verified": 2
+        },
+        "labelVerifiedSamples": 43,
+        "labelMismatchSamples": 0,
+        "hardware": {
+          "byteDelta": {
+            "rx": 417291,
+            "tx": 452739
+          },
+          "intervals": 59,
+          "scope": "global-NSS-IPv4-special-counters",
+          "measured": true,
+          "perFlowAttribution": false,
+          "counterResets": 0
+        },
+        "perFlowHardware": {
+          "basis": "firmware-RX-sync",
+          "measured": true,
+          "byteDelta": {
+            "down": 346247,
+            "up": 36881
+          },
+          "intervals": 32
+        },
+        "byteCoverage": {
+          "hardwareBytes": 94873,
+          "excludedFlowWindows": 491,
+          "totalBytes": 402410,
+          "includesBestEffort": true,
+          "measurement": "bracketed-downstream-lower-bound",
+          "classes": {
+            "BE": {
+              "bytes": 212994,
+              "flows": 3487,
+              "hardware": 0
+            },
+            "RT": {
+              "bytes": 189416,
+              "flows": 14,
+              "hardware": 94873
+            },
+            "UNKNOWN": {
+              "bytes": 0,
+              "flows": 0,
+              "hardware": 0
+            },
+            "BULK": {
+              "bytes": 0,
+              "flows": 0,
+              "hardware": 0
+            }
+          },
+          "scope": "persistent-five-WAN-zone0-nonproxy-IPv4-TCP-UDP-with-stable-class",
+          "sameByteBasis": true,
+          "lastWindow": {
+            "hardwareEnd": 41011.52,
+            "ctStart": 41006.46,
+            "ctEnd": 41012.67,
+            "hardwareStart": 41008.46
+          },
+          "windows": 28,
+          "measured": true,
+          "fullLanCoverage": false,
+          "ratioLowerBound": 0.23576203374667629
+        },
+        "maxReadSeconds": 0.11000000000058208,
+        "queueStatisticsRequested": false,
+        "endToEndLossMeasured": false
+      }
+    },
+    "finalReadback": {
+      "at": "2026-10-10T02:25:28.493Z",
+      "sourceCommit": "224ee079a99bb43c6763bb54151a1c6aba7ab391",
+      "phase": "native-running",
+      "sourceFresh": true,
+      "actualNss": 2,
+      "unconfirmed": 0,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "automaticRetries": 0,
+      "runtimeBundleHashesMatched": true,
+      "installedBundleHashesMatched": true,
+      "allWansUp": true,
+      "wanIdentitiesUnchanged": true,
+      "protectedHashesUnchanged": true,
+      "otherServiceIdentitiesUnchanged": true,
+      "coreGuardRunning": true,
+      "bootEnabledPreserved": true,
+      "softwareContractInspectSucceeded": true,
+      "softwareConfigUnchanged": true
+    },
+    "cleanup": {
+      "at": "2026-10-10T02:25:29.698Z",
+      "persistentPrivateBackupVerified": true,
+      "downloadedPrivateBackupVerified": true,
+      "backupBytes": 334438,
+      "onlyOwnRamStageRemoved": true,
+      "existingBackupsPreserved": true
+    },
+    "wiredFdb": {
+      "at": "2026-10-10T02:24:59.412Z",
+      "readOnly": true,
+      "observations": [],
+      "continuousEverySecondAgeMeasured": false,
+      "settingsChanged": false
+    },
+    "draftPullRequestPreserved": true,
+    "mergeRequestedOrPerformed": false
+  },
+  "failedTrialBackupCleanup": [
+    {
+      "at": "2026-10-10T02:25:30.846Z",
+      "trialFailureRecordsPreserved": true,
+      "privateRollbackArchiveLocalAndRouterVerified": true,
+      "onlyOwnRamStageRemoved": true,
+      "bytes": 333929
+    },
+    {
+      "at": "2026-10-10T02:25:31.038Z",
+      "trialFailureRecordsPreserved": true,
+      "privateRollbackArchiveLocalAndRouterVerified": true,
+      "onlyOwnRamStageRemoved": true,
+      "bytes": 334508
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+From: ZyPulse <121911521+ZyPulse-zy@users.noreply.github.com>
+Subject: [PATCH RFC] netlink: use typeof concat expression count when decoding keys
+
+A typeof key retains its full expression list, while the legacy packed
+32-bit datatype identifier retains at most six subtype slots. Decoding
+from dtype->subtypes alone can therefore drop fields from an eleven-field
+key. When the full key expression is available, use its expression count.
+
+This candidate is verified by an internal-source component regression
+linked to the built libnftables helpers. The isolated kernel list/text/JSON
+round trip remains untested on this WSL1 host. Do not equate it with the
+historical vendor mergesort assertion or submit as a confirmed crash fix.
+This decoder-only change also does not fix concat typeof metadata's separate
+four-field producer/parser limit in expression.c or userdata size handling.
+The eleven-field key was manually assembled; a complete fix needs both paths.
+---
+--- a/src/netlink.c
++++ b/src/netlink.c
+@@ -1457,8 +1457,10 @@
+ 	struct expr *concat, *expr, *n = NULL;
+ 	int off = dtype->subtypes;
+ 
+-	if (set->key->etype == EXPR_CONCAT)
++	if (set->key->etype == EXPR_CONCAT) {
++		off = expr_concat(set->key)->size;
+ 		n = list_first_entry(&expr_concat(set->key)->expressions, struct expr, list);
++	}
+ 
+ 	concat = concat_expr_alloc(&data->location);
+ 	while (off > 0) {

@@ -1,4 +1,99 @@
-# 当前交付：连续合格NSS常驻控制器
+# Athena AX6600 NSS v2：恢复表修复已部署
+
+恢复表修复已按用户新授权完成一次受控部署。安装源码 `2996d40`
+包含 `f848caf` 修复；实际只替换 writer，其他安装文件保持。2026-10-10 19:26:35 北京时间核验
+native-running/sourceFresh，未确认回执 0。180 秒自然观察 NSS 0..4，
+标签一致 129 个流样本、差异 0，来源新增暂停/恢复
+0/0，自动恢复新增 0。五 WAN、原保护文件、
+十个软件 CAKE 根、自启以及认证/分类器/autorate/代理/Tailscale 服务身份保持。
+本次单次部署授权已用于这次切换，不据此自动重复部署、重启、故障/拥塞测试或修改无线/学校网络。
+游戏/Wi-Fi 正式验收仍延期，既有正常服务继续运行。ECM 上游 #78 为未部署的草稿，
+还需完整模块/软件包构建与固件验证；PR #1 保持 draft，不合并。
+
+[部署和短窗证据](docs/DORM_V2_RECOVERY_DEPLOYMENT.md) · [恢复表逻辑](docs/DORM_V2_RECOVERY_LEDGER.md) · [ECM 草稿 #78](https://github.com/qosmio/nss-packages/pull/78)
+
+[上游贡献复查](docs/DORM_V2_UPSTREAM_REVIEW.md)：新增 ECM 完整分类器的真实头文件编译证据，
+并复现 nftables 五字段以上的 typeof 元数据截断；完整模块与 Netfilter 原生回读仍待验证。
+
+<details>
+<summary>此前阶段记录（历史事实，部署授权不可沿用）</summary>
+
+<!-- audit-deployment-20261010 -->
+### 历史记录：当前：审查修复已部署，NSS持续运行
+
+用户明确要求直接进行后，db872e0已通过正常退出/完整回退、11文件成套安装及start上线。2026-10-10 00:55:06北京时间：native-running/NSS8/sourceFresh/未确认0，新会话暂停/恢复0/0、自动重试0；安装与运行RAM哈希一致，五WAN、受保护配置、原十个软件CAKE根选项及主要服务身份保留。private回退副本已本地/路由器验证，安装暂存清理；没有重启路由器或改无线。
+
+一次60秒自然轻量诊断NSS6..9、global硬件RX/TX增长4156949/4270237字节。新核验检出6个标签verified/116个mismatch流样本：多数无线RT的return_qos高位仍等于up，低位6和下行IGS正确。**部署成功，完整双向标签与空口/端到端验收尚未通过**；没有用mismatch触发撤销或更改预期。
+
+[部署与验收报告](docs/DORM_V2_DEPLOYMENT_ACCEPTANCE.md) · [部署证据](evidence/dorm-v2-audit-deployment.json) · [代码修复与模型](docs/DORM_V2_AUDIT_REMEDIATION.md)。PR #1保持draft、未合并。
+
+## 以下为部署前候选与历史记录
+<!-- /audit-deployment-20261010 -->
+
+<!-- audit-remediation-20261010 -->
+### 历史记录：当前：审查问题已修复为候选，现网保留原部署
+
+以 be46953 / 上轮3208540为基线，新增满槽RT预留、防重复BULK撤销、32项/6秒失败缓存、保留内核一次选择保护的单连接有限恢复、分层CREATE/双向标签/硬件字节证据与采集完整性/耗时。旧/新实际writer四轮模型：撤销4条降为1条；目标344 Lua断言/27解析、C137+13、6.18.44模块构建通过，候选真实只读采集六查询0.05秒。
+
+2026-10-10 00:23:42北京时间，原部署仍native-running/NSS1/sourceFresh/未确认0，五WAN、服务身份/保护配置/已安装源码不变，来源累计4/4。**新候选未安装**；没有停止/重启、改现网QoS/无线或造流量/故障。部署须另获明确许可，PR #1 保持draft。
+
+[逐优先级修复、风险与验收](docs/DORM_V2_AUDIT_REMEDIATION.md) · [当前状态](docs/STATE.md) · [操作](code/controller/README.md) · [修复证据](evidence/dorm-v2-audit-remediation.json)。Wi-Fi逐TID/AC、持续有线FDB、同口径逐CT字节覆盖及真实固件恢复仍未验证，不能把模型/全局字节当端到端体验。
+
+## 以下为原部署与历史记录
+<!-- /audit-remediation-20261010 -->
+
+<!-- longterm-deployment-fix-20261009 -->
+### 历史记录：当前：长期部署修复已上线，冷启动验收通过
+
+复核 2026-10-09 15:18:51.319 UTC：native-running，实际NSS1、来源新鲜、未确认0；本次启动来源累计暂停/恢复2/2。开机自启已开启，五WAN/代理/Tailscale正常，保护配置与19个已安装源码哈希通过，九张规则表可读。
+
+修复后第二轮获准重启已通过无人值守恢复：启动后113.06秒观察到五WAN和全部服务恢复、NSS本机服务运行，自动重试0次；没有手动start或分类器repair。 仅清除经本地归档、全部六文件及已安装二进制哈希核对的重复Tailscale安装缓存，释放104240KiB；overlay由97%/32976KiB可用降至86%/137216KiB可用。约567MiB回退备份保留，已安装Tailscale/代理未替换。新私有基线330成员已下载并验证，凭据/原始CT/日志/归档/二进制不入Git。
+
+[当前状态](docs/STATE.md) · [实际操作](code/controller/README.md) · [未解决问题](docs/KNOWN_FAILURES.md) · [结构化证据](evidence/dorm-v2-native.json)。代码在codex/dorm-qos-v2草稿PR，未合并。
+
+重启后89.95秒/19样本：NSS0..2，硬件转发字节增加10119523；五WAN网关/公网合计100/100回应。但来源暂停/恢复新增2/2，硬件队列读取缺失2次；原分类器audit捕获tc子进程清理未确认、rawStatus256/耗时4.17秒并精确恢复。其与硬件队列读取超时同窗，低频ICMP也与采样重叠，因果未证明；不能把缺失读当零drop或说全部长期问题已解决。 默认diagnose已取消硬件tc队列查询，需显式--queues才请求；未观测队列drop不再输出零。真实60秒/21样本轻量诊断：最长单读0.02秒、来源新增暂停0/恢复0、NSS0..2、两次活跃RT样本均有当前CREATE；没有重启服务、修改数据面设置或重做硬件查询。该短窗不能证明所有历史tc/恢复失败已消失。 后续2026-10-09T15:24:36.740Z交付复核NSS1/sourceFresh/未确认0，来源累计暂停/恢复已到4/4；本代理未再主动硬件tc队列查询。来源间歇暂停仍需定位，轻量诊断没有消除该问题。
+
+正式游戏/下载验收仍按用户要求延期；满载空闲带宽利用、每Wi-Fi station/TID/同设备混合负载、全端口字节覆盖、长期CPU/softirq、历史recover超时和固件规则提前消失原因尚未闭环。短窗零队列drop不是端到端零Loss/Miss。未升级/刷机/更换EDMA或修改五WAN认证、PBR/NAT、代理/Tailscale/无线配置。
+
+## 以下为历史记录
+
+<!-- /longterm-deployment-fix-20261009 -->
+
+### 历史记录：当前：NSS现网正常运行，长期无人值守部署尚未验收
+
+当前现网仍为 f1f58cc，NSS继续运行；2026/10/9 18:52:48 北京时间最终复核：NSS1、sourceFresh、IPv4开启、未确认0，owner/guardian/reader与服务/保护/已安装源码不变。用户此前回报“不卡了”；正式游戏验收及端到端零Loss/Miss仍未证明。
+
+长期部署尚有实际问题：持久存储97%/约32MiB可用（约567MiB历史备份、118MiB暂存，无本窗口增长，未删除）；nft读取当前athena_dorm_qos标签表会用户态断言退出，其它八表可读；开机自启和确认回退后的有限恢复仍关闭，重启后不会自动启用NSS，原分类器冷启动基础规则修复也尚未完成无人值守验收。历史recover超时、短暂RT规则变化、Wi-Fi station队列/TID/同机混合负载继续未闭环。
+
+完整记录见[当前状态](docs/STATE.md)和[结构化证据](evidence/dorm-v2-native.json)。标签修复代码与维护回归已准备并在目标无hook模型通过，尚未安装，不能把分支最新源码当作当前现场版本。
+
+## 以下为此前记录，不能覆盖本次部署差异
+
+### 历史记录：当前：本机NSS运行，偶发Loss/Miss仍待定位
+
+2026-10-09T08:57:33.823Z（北京时间16:57）复核：NSS保持运行。当前用户报告约0.4% Loss与Miss，方向不明；尚未复现或证明根因，不能宣布已解决。
+
+32槽、健康无固定寿命、路由器本机识别全宿舍有线/Wi-Fi RT/BULK；旧Windows入口停止，不新增按人/设备公平配额。直接匹配当前CS2进程UDP端口/实时LAN地址的91.84秒被动样本：活跃游戏流保持RT与同一CREATE绑定，实时队列drop增量0，来源无新增中断；随后游戏流停止计数增长并退出候选。物理WAN平均下行仅1.35Mbps，这不是下载高负载验收。来源累计暂停/恢复7/7；此前recover退出124/raw31744/耗时6.23秒仍待定位。
+
+另一次自然下载92.57秒/31样本，WAN平均下行267.14Mbps、NSS14..20；22个匹配游戏流进展样本全部RT、有正剩余租约/CREATE回执且同一绑定，全部实时队列drop增量0、来源无新增中断。平均CPU忙25.8%、所有softnet drop/time_squeeze增量0；WAN rx_drop增3、归属未知，未拿它当游戏Loss。最后对应流停止计数并退出候选。没有操作游戏或造下载，仍无实时HUD Loss/Miss与本地事件对齐。
+
+新增health.lua/diagnose.lua和手动diagnose入口，1–180秒只读、有界事件/匿名流别名、记录来源间断、活跃RT缺CREATE/绑定切换及实时队列drop/计数重置，不读取完整诊断快照、不造流量。20个模型、5文件目标解析、非法期限拒绝和真实一分钟采集通过；一分钟21样本/20个RT流进展样本全部有当前CREATE租约，RT drop增量0、来源中断0、绑定切换0，单样本最大0.04秒。该采集包括全部RT流，不能冒充游戏端到端统计。
+
+仅安装诊断文件和入口/下次启动的复制列表；owner/guardian/reader、全部相关服务PID及启动时间、五WAN身份与保护哈希前后相同，NSS准入保持开启。没有重启控制器/路由器或改reader/writer/core、分类规则、队列速率/缓冲、游戏设置、认证/PBR/NAT、代理/Tailscale、固件/EDMA、自启/respawn。旧失败和冻结code/work保留。
+
+[当前状态](docs/STATE.md) · [未解决问题](docs/KNOWN_FAILURES.md) · [操作](code/controller/README.md) · [证据](evidence/dorm-v2-native.json)。代码保持codex/dorm-qos-v2草稿PR，未合并。
+
+## 以下为此前记录，不代表当前运行状态
+
+### 历史记录：当前交付：v2 路由器本机全 LAN 影子控制器
+
+新增 [可维护源码与 status/start/stop/rollback](code/controller/README.md)，20项相关模型及用户授权的 /tmp 临时连续采样、运行中停止/回退通过。现网与回退基线已核对，4客户端、两个Wi-Fi出口和LAN4可识别；没有新增设备份额。
+
+**当前仅影子后端，实际加速为零；全宿舍 NSS/QoS 和游戏验收尚未完成。** 旧健康90秒/四次上限已取消，.207/Windows/内核三槽/LAN4和实验18/60仍存在。完整事实集中在 [STATE](docs/STATE.md) 与 [本批证据](evidence/dorm-v2-shadow.json)。
+
+## 以下保留历史
+
+### 历史记录：当前交付：连续合格NSS常驻控制器
 
 2026-10-08，取消健康代90秒退出和20分钟四次启动限制。合格流持续自动续租；分类/socket6秒新鲜度、native滚动120秒、guardian滚动180秒及失联撤销保持。实际RT mask2连续NSS 196.75秒／393采样校验／65续租，跨原90/120/180秒后主动Stop和完整恢复通过。
 
@@ -12,73 +107,73 @@
 
 当前接续：dev-g只修分类＋Windows归属读取时序，180本地检查和现场只读通过；13:32 RT1/BULK0/ECM0，控制器运行且准入未暂停，完整90秒NSS集成仍待自然合格组合。见[状态](docs/STATE.md)与[本批事实](evidence/resident-service-dev-g.json)。
 
-# 当前接续：dev-f正常应用常驻，P1读取修复待完整集成
+### 历史记录：当前接续：dev-f正常应用常驻，P1读取修复待完整集成
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md与RESIDENT_SERVICE.md；使用work/resident-service-dev-f-20261008/service.ps1 Status核对，不重复启动。dev-e已实际Steam／CS2三流NSS3、54.07秒／18续租后inode读取拒绝，完整恢复通过。165本地检查修复不同WAN选择、严格checkpoint前无候选及三个发布通道一次50ms重读，六份其它Lua和全部保护／期限保持。12:28运行WAITING_FLOW，BULK4／RT0，ECM0；新完整90秒未完成。用户自报小丢包约1%以内、比之前好，非匹配因果验收。保持下载，不操作游戏/造fixture/重复CPU；有合格原流接续一次有界集成，没有条件则常驻等待。未知进入后失败暂停，P0优先恢复；heartbeat仍暂停。
 
 ## 以下保留历史记录
 
-# 当前接续：dev-d进程运行，实际NSS等待合格流
+### 历史记录：当前接续：dev-d进程运行，实际NSS等待合格流
 
 先核对work/resident-service-dev-d-20261008/service.ps1 Status，不重复启动。dev-c异步cwd路径退出已本地复现并修复；48服务检查、11 JS/2 PS语法及实际启动审核通过。当前WAITING_FLOW/0新NSS，未宣称下载游戏丢包解决。旧源码/错误/空锁保留，原入口、数据面及全部保护不变；heartbeat仍暂停。详见docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md。
 
 ## 以下保留历史记录
 
-# 当前接续：dev-c运行，实际下载游戏丢包待闭环
+### 历史记录：当前接续：dev-c运行，实际下载游戏丢包待闭环
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md、RESIDENT_SERVICE.md，并核对work/resident-service-dev-c-20261008/service.ps1 Status，不重复启动。P2前置Lua空值读已修，65入口/37服务本地回归及三WAN只读查询通过。RT1/BULK0、新NSS0，自动准入未暂停。用户60–70%丢包在下载降速后消失；P1体验尚未关闭，不能宣称根因或NSS改善已证实。保持原数据面/准入/期限/恢复，复用历史证明，不操作游戏/制造fixture/重复CPU/逐bug archive；heartbeat仍暂停。
 
 ## 以下保留历史记录
 
-# 当前接续：常驻调度 dev-b 运行
+### 历史记录：当前接续：常驻调度 dev-b 运行
 
 先读docs/STATE.md、PLAN.md、KNOWN_FAILURES.md和RESIDENT_SERVICE.md；核对work/resident-service-dev-b-20261008/service.ps1 Status，不重复启动。37项本地检查通过：仅完整证明checkpoint前无候选且恢复正常的拒绝继续等待新鲜流，其它错误仍暂停。原入口/数据面/期限保持；没有新正式硬件轮次。用户要求NSS开启持续有效，进程运行与实际NSS命中分别核对。下载时网络回弹待核验；已有只读软件路径处理压力证据，不能宣称根因或体验修复。不操作游戏/造新fixture/重复CPU证明，heartbeat仍暂停。
 
 ## 以下保留历史介绍
 
-# 当前交付：手动常驻 Multi-WAN controller
+### 历史记录：当前交付：手动常驻 Multi-WAN controller
 
 常驻进程已保留运行，真实启动/停止/重启与源读取推进通过；无登录自启。当前等待合格自然流量，尚无新的NSS代，原硬件证据复用。见[状态](docs/STATE.md)及[控制与限制](docs/RESIDENT_SERVICE.md)。
 
 ## 以下保留历史介绍
 
-# 当前交付：正常流 Multi-WAN controller
+### 历史记录：当前交付：正常流 Multi-WAN controller
 
 正常流入口和四代有界常驻协调通过，完整恢复。控制器观察已有socket/自动分类，不创建流量；默认永久NSS关闭。见[当前状态](docs/STATE.md)及[正常流控制器](docs/RESIDENT_NORMAL_CONTROLLER.md)。
 
 ## 以下保留历史介绍
 
-# 当前交付：Multi-WAN resident controller RC1
+### 历史记录：当前交付：Multi-WAN resident controller RC1
 
 当前有界常驻控制器 soak 通过，完整恢复通过；采用Development Mode集中修复与一次里程碑发布。默认永久NSS保持关闭。见[当前状态](docs/STATE.md)和[控制器使用及范围](docs/RESIDENT_CONTROLLER.md)。五WAN数据面与CPU历史证明继续复用。
 
 ## 以下保留历史介绍
 
-# Athena NSS 多WAN／高级QoS受控原型
+### 历史记录：Athena NSS 多WAN／高级QoS受控原型
 
 v54可复用五WAN入口60秒硬件闭环完成，现网完整恢复。常驻90秒候选尚未进入NSS；当前不是永久NSS部署。具体事实与限制见[最新记录](docs/ENTRY_REPAIR_RESIDENT_2026-10-07.md)、[STATE](docs/STATE.md)。
 
 ## 以下为历史状态
 
-# Athena NSS 多WAN／高级QoS受控原型
+### 历史记录：Athena NSS 多WAN／高级QoS受控原型
 
 v42五WAN核心功能验收保持。最新有界入口仍被SSH首包取得拒绝，本轮没有NSS写入，已完整恢复。用户已授权入口完成后尝试常驻，前置入口闭环尚未通过。见[最新记录](docs/V47_TCP_ACQUISITION_2026-10-07.md)、[STATE](docs/STATE.md)。
 
 ## 以下为历史状态
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 五WAN核心硬件功能已验收。原v45入口本次并发启动已实测，但自然WAN去重后的TCP候选首包超时，NSS写前拒绝并完整恢复；完整最新入口尚未通过，没有永久部署。见[当前接续](docs/V46_ENTRY_CONTINUATION_2026-10-07.md)、[STATE](docs/STATE.md)。
 
 ## 以下为历史状态
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 五WAN核心硬件功能已验收。v45有界入口的软件检查24项通过，实际入口因端点SSH连接超时在任何fixture或NSS写前退出；完整恢复，最新入口现场整合尚未通过。没有操作CS2/Steam，没有永久开启NSS。见[本次进展](docs/V45_EARLY_ACQUISITION_2026-10-07.md)、[STATE](docs/STATE.md)。
 
 ## 以下保留历史描述，当前状态以上文为准
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 五WAN硬件功能验收保持。可复用入口已补本地分隔符和输出隔离：17模型、默认inspect通过；唯一实际流量窗口未自然配齐五WAN，在NSS写前拒绝并完整恢复，最新入口现场验收仍未通过。原v43推送和归档已补齐。见[本次整合](docs/BOUNDED_ENTRY_INTEGRATION_2026-10-07.md)、[入口使用](docs/BOUNDED_MULTIWAN_ENTRY.md)和[STATE](docs/STATE.md)。
 
@@ -86,149 +181,149 @@ v42五WAN核心功能验收保持。最新有界入口仍被SSH首包取得拒�
 
 > v43发布状态：13项软件模型与本地提交通过；当前执行环境的CIM身份检查和GitHub写入批准不可用，尚未推送或取得新入口硬件验收。远端仍为v42，后续从本地保存的提交接续。
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 五WAN硬件验收保持，新增可复用的默认预览、状态、一次运行和停止入口。软件检查通过；当前Windows进程身份读取条件不足，实际启动写前拒绝，没有新现场验收。见[入口使用与边界](docs/BOUNDED_MULTIWAN_ENTRY.md)和[STATE](docs/STATE.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 五WAN五条精确流已完成一次60秒NSS维持及高级QoS受控功能验收，并完整恢复。模拟UDP内部窗口2373包全部返回；这不代表全网、永久或长期部署。见[STATE](docs/STATE.md)、[本次报告](docs/FIVE_WAN_SIMULATED_ACCEPTANCE_2026-10-07.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 最新五WAN已同时进入NSS，四TCP改类后按规则完整恢复；60秒维持验收仍未通过。已有两WAN/三流与高级QoS硬件结论保持，见[STATE](docs/STATE.md)和[五WAN实际命中报告](docs/FIVE_WAN_INITIAL_HIT_2026-10-07.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 两WAN模拟实时流硬件已通过；最新五WAN前提短测在NSS前安全拒绝，修正了已完成轮换命令重复检查问题。完整恢复、未永久启用NSS，见[STATE](docs/STATE.md)与[五WAN短测报告](docs/FIVE_WAN_SIMULATION_2026-10-07.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 最新脚本模拟实时流＋两条下载已完成 WAN3/WAN5 的60秒真实NSS和恢复，内部2443个UDP全部回包。后续使用模拟游戏包，CS2不再是测试前提。当前完整恢复、没有永久启用NSS，见[STATE](docs/STATE.md)与[实际报告](docs/SIMULATED_MULTIWAN_2026-10-07.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 三流跨WAN及五WAN队列/共享借用已经硬件证明。最新真实CS2＋Steam进入checkpoint后的三流选择和独立暂存，但owner最终分类准入拒绝，正常程序factory仍未验收。当前完整恢复、NSS关闭、下载暂停，见[STATE](docs/STATE.md)与[实际报告](docs/NORMAL_ADMISSION_2026-10-07.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / 高级QoS受控原型
+### 历史记录：Athena NSS 多WAN / 高级QoS受控原型
 
 三流跨WAN及五WAN队列/共享借用已在硬件证明。最新实际CS2＋Steam已配齐三流，但准备期间TCP不再合格，NSS写前安全拒绝，普通应用factory仍未验收。当前NSS关闭、下载暂停、原设置已恢复，见[STATE](docs/STATE.md)与[实际报告](docs/NORMAL_ATTEMPT_2026-10-07.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / QoS 受控原型
+### 历史记录：Athena NSS 多WAN / QoS 受控原型
 
 三流跨WAN和五WAN队列/共享预算已有硬件证明。本次Steam恢复可用、限时下载与客户端退出完成；死斗连接问题发生在NSS前，普通应用factory尚未执行。当前NSS关闭、下载暂停，见[STATE](docs/STATE.md)和[实际窗口报告](docs/NORMAL_WINDOW_2026-10-07.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / QoS 受控原型
+### 历史记录：Athena NSS 多WAN / QoS 受控原型
 
 三流跨WAN、五WAN队列映射和共享预算已硬件通过。正常应用入口本次在NSS前拒绝，选流时机已修正并通过实际帧14模型；当前NSS关闭，正常factory仍未硬件验收，Steam UI恢复未确认。见[STATE](docs/STATE.md)及[正常入口报告](docs/NORMAL_ENTRY_2026-10-07.md)。
 
 ## 以下保留历史交付
 
-# Athena NSS 多WAN / QoS 受控原型
+### 历史记录：Athena NSS 多WAN / QoS 受控原型
 
 三流跨WAN、五WAN队列映射和共享预算已硬件通过。最新TCP/UDP公网源地址假设修正，单TCP认证短测与完整恢复通过；当前NSS关闭，五WAN同时加速和正常应用新factory仍未验。见[STATE](docs/STATE.md)及[传输定位](docs/PEER_DIAGNOSIS_2026-10-07.md)。
 
 ## 以下保留晨间交付和历史记录
 
-# Athena NSS 多 WAN / 高级 QoS 受控原型
+### 历史记录：Athena NSS 多 WAN / 高级 QoS 受控原型
 
 三流跨WAN、五WAN队列映射、共享下行预算借用和RT优先级已在硬件通过，晨间恢复核验全部正常。当前NSS关闭，五WAN同时加速、正常应用新factory和长期常驻尚未验收。见[晨间报告](docs/NIGHT_REPORT_2026-10-07.md)及[STATE](docs/STATE.md)。
 
 ## 以下保留 v1 和历史记录
 
-# Athena NSS v1 — frozen
+### 历史记录：Athena NSS v1 — frozen
 
 自动分类→单WAN双向NSS bulk/RT→真实CS2＋现有Steam更新的完整ABA已通过并恢复。技术闭环冻结；用户本次只允许记录HUD，真人体感未验。NSS159 echo缺口保留known limitation，不继续自动实验。详情见[STATE](docs/STATE.md)、[v1报告](reports/nss160-v1-report.html)、[限制及后续](docs/BACKLOG.md)。当前ECM关闭，未永久部署NSS控制器。
 
 ## NSS159及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新[NSS159](evidence/nss159-mainline.json)：真实下行三段功能通过，NSS段36个UDP echo未返回，实时质量仍待定位；晚间全部恢复。先读[STATE](docs/STATE.md)。
 
 ## NSS158及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新[NSS158](evidence/nss158-mainline.json)：真实改类精确撤销、新代重学与20秒三段功能闭环通过；本轮CPU可比性未通过。先读[STATE](docs/STATE.md)。
 
 ## NSS156及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新[NSS156](evidence/nss156-mainline.json)：真实自有TCP退出、新TCP与原UDP新代重学20秒通过。继续至20:00，先读[STATE](docs/STATE.md)。
 
 ## NSS155及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新[NSS155](evidence/nss155-mainline.json)：真实自有TCP退出后whole-pair恢复通过，新TCP后继仍待验证。继续至20:00，先读[STATE](docs/STATE.md)。
 
 ## NSS154及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新[NSS154](evidence/nss154-mainline.json)：监督器自身被终止后，新进程从磁盘journal验证独立恢复并完成同连接新代重学。继续至20:00；先读[STATE](docs/STATE.md)。
 
 ## NSS153及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新[NSS153](evidence/nss153-mainline.json)：自有控制子进程中断后，独立恢复及同连接自动新代重学通过；单WAN有限两代，所有实验已撤销。仓库按用户最新设置要求恢复public。先读[STATE](docs/STATE.md)与[PLAN](docs/PLAN.md)。
 
 ## NSS152及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新 [NSS152](evidence/nss152-mainline.json)：真实改类自动撤销/新代重学和精确PC控制进程中断后的路由器独立恢复通过。后台自有TCP/UDP，无需游戏或下载；所有实验已恢复，长期/300Mbps/真人仍未验收。先读 [STATE](docs/STATE.md) 与 [PLAN](docs/PLAN.md)。
 
 ## NSS150及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新 [NSS150](evidence/nss150-mainline.json)：后台自有真实流完成单WAN两代自动加速、精确撤销、完整恢复、新query/checkpoint/owner/pin/CI接续，原socket/CT/mark/NAT/WAN不变。无需开游戏。有限两代已过，长期/300Mbps/真人仍未验收，最终已恢复。先读 [STATE](docs/STATE.md) 和 [PLAN](docs/PLAN.md)。
 
 ## NSS148及更早历史
 
-# Athena NSS mainline
+### 历史记录：Athena NSS mainline
 
 最新 [NSS148](evidence/nss148-mainline.json)：修复测试程序的软件段旧epoch错误，147自有后台下载单WAN完整20秒A/B/A2、ECM0/2/0、双向四tag/四FQ-CoDel leaf及恢复通过。无需启动游戏或Steam。背景负载变化使本轮严格CPU对比未通过；不称真人CS2/300Mbps/长期验收。148真人入口使用已实测147 factory，默认只读已运行；实验均撤销，常驻68不变。先读 [STATE](docs/STATE.md)、[PLAN](docs/PLAN.md)。
 
 ## NSS142及更早历史
 
-# Athena NSS 主线
+### 历史记录：Athena NSS 主线
 
 最新 [NSS142晨间终态](evidence/nss142-mainline.json)：完整保护/两物理根/七端点/客户端收尾通过，常驻68且ECM关闭；140最后真人入口1385输入未变，整合版完整A/B/A2仍待一次集中真人验收。夜间任务在发布校验后暂停，10:00后不新实验。以 [STATE](docs/STATE.md) 与 [PLAN](docs/PLAN.md) 开头为准。
 
-# Athena NSS 主线
+### 历史记录：Athena NSS 主线
 
 最新 [NSS141真人入口准备](evidence/nss141-mainline.json)：真实改类撤销与新代重学已在 [NSS139](evidence/nss139-class-lifecycle.json)通过，现已并入最后集中真人入口并完成必要离线/只读核验。常驻68、ECM关闭；140整合版本完整A/B/A2和真人验收尚未执行。以 [STATE](docs/STATE.md) 与 [PLAN](docs/PLAN.md) 开头为准，下方旧摘要仅历史。
 
-# Athena NSS 主线
+### 历史记录：Athena NSS 主线
 
 最新 [NSS92单WAN32Mbps闭环](evidence/nss92-mainline.json)：60Mbps预算下，相同32Mbps真实TCP/UDP中softirq约下降66.4%，三段UDP全部返回、ECM0→2→0与恢复通过。52Mbps回程缺包根因未定，当前NSS已撤销、常驻68未改。先读 [状态](docs/STATE.md) 和 [计划](docs/PLAN.md)。
 
-# Athena NSS 主线
+### 历史记录：Athena NSS 主线
 
 最新 [NSS82受控工程闭环](evidence/nss82-mainline.json)：两次完整单WAN A/B/A2通过；同18Mbps负载softirq约下降55%，32Mbps发送负载bulk拥塞而RT队列零丢弃。当前NSS已撤销、常驻NSS68未改。工程无需反复开Steam/CS2，下一步直接更高单WAN受控带宽，真人游戏只留最后集中验收。先读 [状态](docs/STATE.md) 和 [计划](docs/PLAN.md)。下方旧结论为历史。
 
-# Athena NSS 主线记录
+### 历史记录：Athena NSS 主线记录
 
 最新 [NSS78](evidence/nss78-mainline.json)：轻载准备窗口已实测存在；目前无真实游戏/下载对，未开启NSS。入口仍NSS77，下一步直接集中闭环。现网原完整审核通过。下方77及更早为历史。
 
@@ -283,3 +378,5 @@ Athena AX6600 网络优化研究。唯一主线：**自动识别游戏流 → NS
 | `source-manifest.json` | 来源路径、内容哈希与部署匹配关系 |
 
 代码镜像不是通用安装包，未附带运行所需的私有状态文件。不要直接运行现场控制器，也不要从旧的 `deployment-latest.json` 推断当前部署。详见 [本地接续](docs/LOCAL_SETUP.md)。
+
+</details>

@@ -1,0 +1,84 @@
+{
+  "sourceCommit": "30fbfa493d700270ac6c14685290f340b6ead28c",
+  "feedCommit": "0d970dbf0185e3f53709bd803e8a466598023c57",
+  "translationUnit": "ecm_classifier_dscp.c",
+  "target": "ecm_classifier_dscp.o",
+  "patchedSourceSha256": "bdd100790d91a9008e6d2a365b7d6a519cdc5cf75b7d4c5d36dcd6c6c3f17cc4",
+  "kernel": "6.18.44",
+  "arch": "arm64",
+  "compiler": "aarch64-openwrt-linux-musl-gcc 14.4.0",
+  "nssFrontendEnabled": true,
+  "mockedKernelHeaders": false,
+  "mockedCT": false,
+  "routerConnected": false,
+  "binaryLoaded": false,
+  "firmwareTested": false,
+  "fullModuleBuilt": false,
+  "packageBuilt": false,
+  "exportedSymbolLinkingTestedForClassifierTarget": false,
+  "driverHeaderRevision": "d5ee67b",
+  "driverHeaderArchiveSha256": "38f68cad4205f35bd8f367580c2f8995c7757bcc4c7c90e2bd1c02168ddd91ba",
+  "kernelInputHashes": {
+    ".config": "c837aef711c8992108d68c76fa95c905e90aa752808f7c450bc5c6fb28f86598",
+    "Module.symvers": "a7aaa2a083c667d886493069e9797eb0d634b4b8154a4d196a98a135ad9b367c",
+    "include/generated/autoconf.h": "31f250d64f52fa83801bb7122df54bb4aaeff8cff2603a216e4860f8368b8add"
+  },
+  "originalKernelInputsUnchanged": true,
+  "modversions": false,
+  "variants": [
+    {
+      "igs": false,
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 3.033472,
+      "classifierObjectCompiled": true,
+      "classifierObjectSha256": "f8de2b8b41f851332c4a8b99de990878bc002a1d129bd010050b9e4b906bf55f"
+    },
+    {
+      "igs": true,
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 2.886024,
+      "classifierObjectCompiled": true,
+      "classifierObjectSha256": "db1b580ed5c854884dcdfdf4207aa046cf38d962450d20f06f74eabb9c62d3b7"
+    }
+  ],
+  "initialFullModuleAttempts": [
+    {
+      "igs": false,
+      "exitCode": 2,
+      "failedUnmodifiedSourceFile": "ecm_db/ecm_db_timer.c",
+      "diagnostic": "implicit declaration of del_timer_sync"
+    },
+    {
+      "igs": true,
+      "exitCode": 2,
+      "failedUnmodifiedSourceFile": "ecm_db/ecm_db_timer.c",
+      "diagnostic": "implicit declaration of del_timer_sync"
+    }
+  ],
+  "independentKernel618CompatibilityProbe": {
+    "udpPatchIncluded": false,
+    "igs": false,
+    "candidateChanges": [
+      "bridge EXTRA_CFLAGS into ccflags-y",
+      "timer_delete_sync for kernels >= 6.6"
+    ],
+    "compiledObjects": 41,
+    "linkedEcmObject": true,
+    "moduleBuilt": false,
+    "exitCode": 2,
+    "failedStage": "modpost: missing matching NSS kernel export dependencies",
+    "unresolvedSymbolExamples": [
+      "br_fdb_register_notify",
+      "br_fdb_update_register_notify",
+      "br_dev_update_stats",
+      "br_port_dev_get",
+      "ppp_hold_channels",
+      "br_fdb_has_entry",
+      "ip_rt_unregister_notifier"
+    ],
+    "igsEnabledVariantTested": false,
+    "originalKernelInputsUnchanged": true
+  }
+}
