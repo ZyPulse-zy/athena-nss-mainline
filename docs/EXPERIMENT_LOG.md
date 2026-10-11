@@ -1,3 +1,15 @@
+# 2026-10-11 Linux 无线模块构建完成，未部署
+
+同步开发分支最新远端 e5f344b 后保留六账号候选；本轮集中完成三份无线补丁的完整模块编译。原版/修订版各八模块及四项依赖严格 modpost 通过，AArch64 实际 Kbuild 探针通过。
+旧 003 结论纠正：原版 NSS/ath11k 均 196 字节；单改 consumer 会造成 196/212 不匹配。003 已改为两端 ccflags-y 配对，实际 212/212，但 firmware wire ABI 仍待验证。
+同步后的五/六账号各 13 Lua + 2 C、51 Lua/12 shell 语法通过；peer drop 两种宏各 41、TX 160、无线 158、传输四测试通过。原失败证据保留。
+本轮没有连接路由器；2996d40 仅为此前最后核对的安装版本，不称当前重新验证。现网五 WAN/NSS/认证/PBR/NAT/CAKE/autorate/代理/Tailscale/无线保持；任何部署、重启、模块/无线变更仍需新许可。PR #1 保持草稿。
+完整 OpenWrt 包、已安装二进制/CN shim 复现、真实 firmware ABI、最终空口 TID/AC 及正式游戏验收仍未完成。
+
+[Linux 构建与纠正报告](DORM_V2_WIFI_MODULE_BUILD.md) · [编译证据](../evidence/dorm-v2-wifi-linux-build.json) · [离线/失败记录](../evidence/dorm-v2-wifi-linux-validation.json)
+
+## 此前记录（历史结论须结合上述纠正）
+
 # 2026-10-11：六账号 NSS 离线与只读核验
 
 确认正确仓库/分支与原安装差别；发现既有 wan6 是 DHCPv6，新增账号采用 campus6。13 Lua+2 C 各跑五/六配置，50 Lua/12 shell 语法、目标四套虚拟 I/O 模型和 nft -c 通过；原 Windows prepared kernel/工具链只读复用，目标 gate/receipts 交叉构建成功。构建相对路径、nft readiness 表达式及虚拟文件索引语法的初次失败已保留并修正。现网只读，未认证/部署/发起拥塞。

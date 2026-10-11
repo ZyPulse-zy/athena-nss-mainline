@@ -45810,6 +45810,22 @@
       "bytes": 2784,
       "role": "maintained-controller-source-or-test",
       "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch",
+      "workspaceSource": "code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch",
+      "sha256": "78468ba038c2926531e3a6cb5aa4c348abd832e875181ae2a8ab54591456f053",
+      "bytes": 1165,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wifi-paired-abi-full-build-20261011"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "534536938b27d3e61c1ff7ce50cb6559156efa9ba0876165ba389b1408027bf5",
+      "bytes": 30529,
+      "role": "maintained-controller-documentation",
+      "revision": "dorm-v2-wifi-paired-abi-full-build-20261011"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -45977,5 +45993,12 @@
     "productionCandidateDeployed": false,
     "evidence": "evidence/dorm-v2-wan6-offline.json",
     "realSixWanFirmwareVerified": false
+  },
+  "lastOfflineWifiModuleBuild": {
+    "revision": "dorm-v2-wifi-paired-abi-full-build-20261011",
+    "evidence": "evidence/dorm-v2-wifi-linux-build.json",
+    "fullModuleBuildPassed": true,
+    "firmwareAbiRuntimeValidated": false,
+    "routerConnected": false
   }
 }

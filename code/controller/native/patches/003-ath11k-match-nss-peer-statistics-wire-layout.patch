@@ -1,15 +1,28 @@
-Subject: [PATCH] ath11k: match the pinned NSS driver's statistics wire layout
+Subject: [PATCH] ath11k/NSS: enable the pinned statistics layout on both sides
 
-The firmware recipe compiles qca-nss-drv with NSS_FIRMWARE_VERSION_12_5.
-ath11k consumes the same exported nss_wifili_if.h but lacks that define:
-peer records are shorter, and batched peer/retry statistics are misread.
-Match the provider's flag when ath11k NSS support is selected. This patch
-targets the pinned 90448ee recipe, not arbitrary firmware versions.
+The pinned recipe specifies NSS_FIRMWARE_VERSION_12_5 via EXTRA_CFLAGS,
+but Linux 6.18 no longer adopts that legacy variable. Actual Kbuild probes
+show both original sides use a 196-byte peer; changing ath11k alone would
+introduce a mismatch. Put the recipe's intended define in NSS ccflags-y
+as well, and match it in the NSS-enabled ath11k consumer. Both become
+212 bytes. This paired candidate still requires firmware wire validation;
+it is not evidence that the installed driver pair was already mismatched.
+Apply from a root containing backports/ and nss-drv/, after pinned patches.
 
---- a/drivers/net/wireless/ath/ath11k/Makefile
-+++ b/drivers/net/wireless/ath/ath11k/Makefile
+--- a/backports/drivers/net/wireless/ath/ath11k/Makefile
++++ b/backports/drivers/net/wireless/ath/ath11k/Makefile
 @@ -1,3 +1,4 @@
  # SPDX-License-Identifier: BSD-3-Clause-Clear
 +ccflags-$(CPTCFG_ATH11K_NSS_SUPPORT) += -DNSS_FIRMWARE_VERSION_12_5
  obj-$(CPTCFG_ATH11K) += ath11k.o
  ath11k-y += core.o \
+--- a/nss-drv/Makefile
++++ b/nss-drv/Makefile
+@@ -5,6 +5,7 @@
+ obj-m += qca-nss-drv.o
+ 
+ ccflags-y += $(NSS_DRV_EXTRA_INCLUDES)
++ccflags-y += -DNSS_FIRMWARE_VERSION_12_5
+ 
+ #
+ # Regular NSS path

@@ -1,3 +1,15 @@
+# 2026-10-11 Linux 无线模块构建完成，未部署
+
+同步开发分支最新远端 e5f344b 后保留六账号候选；本轮集中完成三份无线补丁的完整模块编译。原版/修订版各八模块及四项依赖严格 modpost 通过，AArch64 实际 Kbuild 探针通过。
+旧 003 结论纠正：原版 NSS/ath11k 均 196 字节；单改 consumer 会造成 196/212 不匹配。003 已改为两端 ccflags-y 配对，实际 212/212，但 firmware wire ABI 仍待验证。
+同步后的五/六账号各 13 Lua + 2 C、51 Lua/12 shell 语法通过；peer drop 两种宏各 41、TX 160、无线 158、传输四测试通过。原失败证据保留。
+本轮没有连接路由器；2996d40 仅为此前最后核对的安装版本，不称当前重新验证。现网五 WAN/NSS/认证/PBR/NAT/CAKE/autorate/代理/Tailscale/无线保持；任何部署、重启、模块/无线变更仍需新许可。PR #1 保持草稿。
+完整 OpenWrt 包、已安装二进制/CN shim 复现、真实 firmware ABI、最终空口 TID/AC 及正式游戏验收仍未完成。
+
+[Linux 构建与纠正报告](DORM_V2_WIFI_MODULE_BUILD.md) · [编译证据](../evidence/dorm-v2-wifi-linux-build.json) · [离线/失败记录](../evidence/dorm-v2-wifi-linux-validation.json)
+
+## 此前记录（历史结论须结合上述纠正）
+
 # Wi-Fi 只读观察、发送路径与三个离线修复候选
 
 本轮完成独立手动观察入口、现场自然短窗、精确源码重建和三个定向修复。
@@ -152,7 +164,7 @@ NSS 无线 enqueue 返回失败则在 mac.c:6964 释放 skb，没有自动转交
 |---|---|---|
 | 001 peer drop 累加 | nss.c 的 tx_dropped 在多 peer 循环外初始化，后续 peer 包含前序丢弃；在每 peer 求和前清零 | 修正统计归属，不能承诺吞吐/游戏收益；原函数两种宏均失败，修后各 41 断言通过 |
 | 002 host queue 初始化 | HAS 跳过 select_queue 后仍以未初始化 queue 索引数组；默认初始化为安全 BE，保留正常软件分类 | 消除未定义索引；NSS netdev 队列按 CPU 分配，不能拿 CPU queue 直接作 AC。原完整函数触发 -Werror=maybe-uninitialized，修后 160 断言通过；BE 是主机中转默认，不是强制最终空口 BE |
-| 003 NSS 统计 ABI 对齐 | provider 编译宏有 NSS_FIRMWARE_VERSION_12_5，ath11k consumer 没有；peer stride 为 212/196，retry offset 为 188/180 | 使用同一真实导出头及实际 Makefile flags，原三 peer 消息错位，修后三 peer 全匹配；仅 NSS 支持开启时对齐当前配方宏 |
+| 003 NSS 统计 ABI 候选（已纠正） | 旧模型错误假设 EXTRA_CFLAGS 生效；实际原版两端均 196/180 | Linux 全模块探针拒绝单端 212；修订后两端 212/188，真实 firmware ABI 未验证，见新报告 |
 
 现场 `nss_stats` 成功导出旧字段，但没有宏控制的 tx_mpdu_retries/tx_mpdu_total_retries 两个字段，与未启用 consumer 宏的源码一致。
 第三项是 provider/consumer 源码及构建标志不一致的可复现证据；仍未抓取原始固件消息确认现场固件 ABI，不能把每个异常读数或游戏丢包归为该缺陷。
