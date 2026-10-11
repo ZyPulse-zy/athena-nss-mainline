@@ -2,6 +2,7 @@
 -- This does not replace the classifier, its configuration, or the autorater.
 local root=assert(arg[0]:match('^(.*)/[^/]+$'))
 assert(root=='/tmp/athena-dorm-native' or root=='/usr/lib/athena-dorm-native')
+local profile=dofile(root..'/wan_contract.lua').load(root)
 local mode=arg[1] or 'inspect';assert(mode=='inspect' or mode=='repair')
 local j=require('luci.jsonc');local n=require('nixio');local fs=require('nixio.fs')
 assert(not fs.stat('/sys/module/athena_ecm_gate') and not fs.stat('/tmp/athena-dorm-native/lock'))
@@ -22,7 +23,7 @@ end
 local base,hash=read('/root/router-project/game-classifier-generation'):match('^(%S+)%s+(%x+)%s*$')
 assert(base and base:match('^/root/router%-project/classifier/nss23%-%w+%-[%w%-]+$') and #hash==64)
 assert(run('sha256sum '..base..'/config.json'):match('^(%x+) ')==hash,'Classifier config changed')
-local cfg=assert(j.parse(read(base..'/config.json')));assert(cfg.version==23)
+local cfg=assert(j.parse(read(base..'/config.json')));assert(cfg.version==23 and (cfg.wanCount or 5)==profile.wanCount,'Classifier/profile mismatch')
 assert(run('sha256sum '..base..'/owned.lua'):match('^(%x+) ')==cfg.files['owned.lua'],'Classifier filter parser changed')
 local owned=dofile(base..'/owned.lua')
 local function queue(dev)
@@ -60,7 +61,7 @@ local function filters(dev,h)
  return true
 end
 local before,needed,missingBase={},{},{}
-for w=1,5 do for _,prefix in ipairs{'rpwan','rpifb'}do
+for w=1,profile.wanCount do for _,prefix in ipairs{'rpwan','rpifb'}do
  local dev=prefix..w;local q=queue(dev);check(dev,q);before[dev]=q
  if q.options.diffserv~='diffserv4' then needed[#needed+1]=dev end
  if filters(dev,q.handle)then missingBase[#missingBase+1]=dev end

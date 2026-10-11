@@ -1,3 +1,16 @@
+# 当前任务：六账号 NSS 候选，未部署
+
+用户此次明确授权扩展第六独立账号，覆盖下方历史不扩 WAN 的限制。先读 docs/DORM_V2_WAN6.md 和 evidence/dorm-v2-wan6-offline.json。
+正确仓库 ZyPulse-zy/athena-nss-mainline、分支 codex/dorm-qos-v2；起点 8b44396，实际安装 2996d40，20 文件匹配。PR #1 保持 draft。
+六账号代码和 6.18.44 gate/receipts 交叉构建通过，全部候选未安装。软件 CAKE 是原退路与预算来源；扩展的是物理 wan/athenaigs 上的双向 NSS 硬件队列。
+既有 network.wan6 是 DHCPv6，新增校园账号使用 campus6/rpwan6/rpifb6、表106、规则906/1006，不能覆盖旧 wan6。
+原五账号、完整 fwmark/NAT affinity、32槽、六秒租约、精确 CREATE/REMOVE、保护文件与回退约束保持。游戏窄策略仍禁用。
+新的私有检查点和完整平台独立回退执行器尚未在目标验证；共享 source/native 切换和必要 watcher 切换仍需额外明确许可。
+不把源/虚拟 I/O 模型或 cross-build 当作真实六账号 firmware 成功；WAN6 未认证，真实 CREATE/字节进展未验证。
+凭据仅在必要的正常认证中沿用私有入口，不能进入日志、回复、提交、夹具、证据或 PR。下方旧部署授权不用于本轮自动切换。
+
+## 此前任务记录
+
 # 当前任务约束：Wi-Fi 观察与三个离线补丁完成，现网未部署候选
 
 先读 docs/STATE.md、code/controller/README.md、docs/DORM_V2_WIFI_AUDIT.md 和 evidence/dorm-v2-wifi-audit.json。

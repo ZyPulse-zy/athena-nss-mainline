@@ -49,7 +49,7 @@ local cfg=assert(read(arg[2] or here..'/config.example.json'))
 assert(type(cfg.pollSeconds)=='number' and cfg.pollSeconds>=1 and cfg.pollSeconds<=3)
 local state=core.new(cfg)
 local function sample()
-  local topology=collector.topology()
+  local topology=collector.topology(cfg.wanCount)
   local p,full=collector.publications()
   local result=core.tick(state,p,full,topology,collector.now())
   result.summary.associatedStations=topology.associatedStations

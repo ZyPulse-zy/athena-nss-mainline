@@ -1,0 +1,616 @@
+{
+  "capturedAt": "2026-10-11T14:32:09.538996+00:00",
+  "repository": "ZyPulse-zy/athena-nss-mainline",
+  "branch": "codex/dorm-qos-v2",
+  "startingRemoteHead": "8b44396b7194aea09292e90201f051efdbb6b7e1",
+  "pr": 1,
+  "prRemainsDraft": true,
+  "installedCommit": "2996d405c9a96ec4d891887358f02f28de4e340c",
+  "deployed": false,
+  "routerWrites": false,
+  "credentialsUsedForCampusAuthentication": false,
+  "plaintextCredentialsIncluded": false,
+  "design": {
+    "acceleration": "NSS hardware nsshtb/nssfq_codel on physical wan and athenaigs, not per-WAN software acceleration",
+    "wanCountDefault": 5,
+    "wanCountCandidate": 6,
+    "account6Interface": "campus6",
+    "account6Devices": [
+      "rpwan6",
+      "rpifb6"
+    ],
+    "preservedOriginalWan6": "DHCPv6 on physical wan",
+    "routeTable": 106,
+    "oifRule": 906,
+    "markRule": 1006,
+    "wanMark": "0x00060000/0x00ff0000",
+    "fullMarkPreserved": true,
+    "natConnectionsNotMigrated": true,
+    "normalPool": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "capacity": 32,
+    "leaseSeconds": 6,
+    "sharedRootKbps": 950000,
+    "maximumSharedAccountBudgetKbps": 900000,
+    "nssLabels": {
+      "upBE": "7e65",
+      "upRT": "7e66",
+      "downBE": "7a65",
+      "downRT": "7a66"
+    },
+    "cakeRole": "Existing software fallback and independent rate-budget source; no claim CAKE is NSS hardware QoS"
+  },
+  "liveReadonly": {
+    "physicalMbps": 1000,
+    "kernel": "6.18.44",
+    "allFiveOnline": true,
+    "account6": {
+      "authConfigPresent": false,
+      "rpwan6Present": false,
+      "campus6Present": false
+    },
+    "originalWan6": {
+      "device": "wan",
+      "proto": "dhcpv6",
+      "up": false
+    },
+    "installedSourceMatches": {
+      "launch.sh": true,
+      "reader.lua": true,
+      "classifier_recovery.lua": true,
+      "tag_rules.lua": true,
+      "core_guard_permission.lua": true,
+      "writer.lua": true,
+      "transaction.lua": true,
+      "athena-qos": true,
+      "lifecycle.lua": true,
+      "flow_json.lua": true,
+      "health.lua": true,
+      "supervisor.lua": true,
+      "coverage.lua": true,
+      "queue_plan.lua": true,
+      "diagnose.lua": true,
+      "install_core_guard.lua": true,
+      "ingress_probe.lua": true,
+      "collector.lua": true,
+      "core.lua": true,
+      "prepare.lua": true
+    },
+    "protectedHashesStable": true,
+    "softwareQueueFixedContractStable": {
+      "rpwan1": true,
+      "rpifb1": true,
+      "rpwan2": true,
+      "rpifb2": true,
+      "rpwan3": true,
+      "rpifb3": true,
+      "rpwan4": true,
+      "rpifb4": true,
+      "rpwan5": true,
+      "rpifb5": true
+    },
+    "servicePidsStable": {
+      "router-project-autorate": {
+        "wan5": {
+          "same": true,
+          "running": true
+        },
+        "wan4": {
+          "same": true,
+          "running": true
+        },
+        "wan1": {
+          "same": true,
+          "running": true
+        },
+        "wan2": {
+          "same": true,
+          "running": true
+        },
+        "wan3": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-game-classifier": {
+        "classifier": {
+          "same": true,
+          "running": true
+        },
+        "guardian": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-shaper": {
+        "shaper": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-core": {
+        "guard": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-auth-watchdog": {
+        "watchdog": {
+          "same": true,
+          "running": true
+        }
+      },
+      "tailscale-athena": {
+        "daemon": {
+          "same": true,
+          "running": true
+        },
+        "integration": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-health": {
+        "health": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-wifi-qos": {
+        "mapper": {
+          "same": true,
+          "running": true
+        }
+      },
+      "sing-box-athena": {
+        "core": {
+          "same": true,
+          "running": true
+        },
+        "guard": {
+          "same": true,
+          "running": true
+        }
+      },
+      "athena-dorm-native": {
+        "controller": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-codex-led": {
+        "adapter": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-steering": {
+        "wired": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-minieap": {
+        "wan5": {
+          "same": true,
+          "running": true
+        },
+        "wan4": {
+          "same": true,
+          "running": true
+        },
+        "wan1": {
+          "same": true,
+          "running": true
+        },
+        "wan2": {
+          "same": true,
+          "running": true
+        },
+        "wan3": {
+          "same": true,
+          "running": true
+        }
+      },
+      "router-project-guard": {
+        "guard": {
+          "same": true,
+          "running": true
+        }
+      }
+    },
+    "native": {
+      "unconfirmed": 0,
+      "sourcePauses": 3,
+      "sourceResumes": 3,
+      "phase": "native-running",
+      "pending": 0,
+      "live": 8,
+      "sourceFresh": true
+    },
+    "moduleHashes": {
+      "act_nssmirred": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb",
+      "qca-nss-drv": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+      "ecm": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2"
+    },
+    "routingPrerequisites": {
+      "table106Empty": true,
+      "pref906Free": true,
+      "firewallZone1": "wan",
+      "campusPortCapacityMeasured": false,
+      "pref1006Free": true
+    },
+    "historicalBackup": {
+      "sha256": "f288918ec476f21d5fe039720f6a64d743d5fb8b179beaceacc053336d118ada",
+      "gzipIntegrityPassed": true,
+      "freshWan6Checkpoint": false
+    }
+  },
+  "tests": {
+    "five": {
+      "routerConnected": false,
+      "dataPlaneWrites": false,
+      "mockedTargetIO": true,
+      "nftParserTested": false,
+      "wanCountTested": 5,
+      "tests": [
+        {
+          "name": "test-wifi.lua",
+          "passed": true,
+          "stdout": "Wireless observer assertions passed: 158",
+          "stderr": ""
+        },
+        {
+          "name": "test-writer-policy.lua",
+          "passed": true,
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":742,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-health.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}",
+          "stderr": ""
+        },
+        {
+          "name": "test-coverage.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}",
+          "stderr": ""
+        },
+        {
+          "name": "test-tag-rules.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}",
+          "stderr": ""
+        },
+        {
+          "name": "test-lifecycle.lua",
+          "passed": true,
+          "stdout": "bounded-recovery-models-passed 25",
+          "stderr": ""
+        },
+        {
+          "name": "test-core-guard.lua",
+          "passed": true,
+          "stdout": "core-guard-permission-models-passed 26",
+          "stderr": ""
+        },
+        {
+          "name": "test-efficiency.lua",
+          "passed": true,
+          "stdout": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-core.lua",
+          "passed": true,
+          "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}",
+          "stderr": ""
+        },
+        {
+          "name": "test-collector.lua",
+          "passed": true,
+          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":204,\"passed\":true,\"failedReadDistinctFromEmpty\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-wan6.lua",
+          "passed": true,
+          "stdout": "{\"gamePolicyEnabled\":false,\"realGameAccuracyMeasured\":false,\"dataPlaneWrites\":false,\"checks\":1645,\"gameFixture\":{\"falseNegative\":20,\"falsePositive\":10,\"truePositive\":80,\"trueNegative\":90},\"modelOnly\":true,\"passed\":true,\"wanCount\":6}",
+          "stderr": ""
+        },
+        {
+          "name": "test-source-recovery.lua",
+          "passed": true,
+          "stdout": "PASS typed expiry before WAN 1 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 2 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 3 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 4 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 5 preserves then precisely recovers earlier journal entries\nPASS unknown writer after typed child response prevents success publication and is preserved\nPASS unbound apply response cannot withdraw a different producer or recover its rules\nPASS a fresh observation follows expiry recovery without reusing the expired request\nCOMPLETE 8",
+          "stderr": ""
+        },
+        {
+          "name": "test-source-six.lua",
+          "passed": true,
+          "stdout": "{\"routerConnected\":false,\"sourceObserverExecuted\":true,\"checks\":53,\"passed\":true,\"wanCount\":5}",
+          "stderr": ""
+        },
+        {
+          "name": "test-receipts.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":168,\"mockedTransport\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        },
+        {
+          "name": "test-selection.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":63,\"oneSelectionPreserved\":true,\"mockedCT\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        }
+      ],
+      "passed": true,
+      "luaParsed": 51,
+      "shellParsed": 12
+    },
+    "six": {
+      "routerConnected": false,
+      "dataPlaneWrites": false,
+      "mockedTargetIO": true,
+      "nftParserTested": false,
+      "wanCountTested": 6,
+      "tests": [
+        {
+          "name": "test-wifi.lua",
+          "passed": true,
+          "stdout": "Wireless observer assertions passed: 158",
+          "stderr": ""
+        },
+        {
+          "name": "test-writer-policy.lua",
+          "passed": true,
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":742,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-health.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}",
+          "stderr": ""
+        },
+        {
+          "name": "test-coverage.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}",
+          "stderr": ""
+        },
+        {
+          "name": "test-tag-rules.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}",
+          "stderr": ""
+        },
+        {
+          "name": "test-lifecycle.lua",
+          "passed": true,
+          "stdout": "bounded-recovery-models-passed 25",
+          "stderr": ""
+        },
+        {
+          "name": "test-core-guard.lua",
+          "passed": true,
+          "stdout": "core-guard-permission-models-passed 26",
+          "stderr": ""
+        },
+        {
+          "name": "test-efficiency.lua",
+          "passed": true,
+          "stdout": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-core.lua",
+          "passed": true,
+          "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}",
+          "stderr": ""
+        },
+        {
+          "name": "test-collector.lua",
+          "passed": true,
+          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":204,\"passed\":true,\"failedReadDistinctFromEmpty\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-wan6.lua",
+          "passed": true,
+          "stdout": "{\"gamePolicyEnabled\":false,\"realGameAccuracyMeasured\":false,\"dataPlaneWrites\":false,\"checks\":1645,\"gameFixture\":{\"falseNegative\":20,\"falsePositive\":10,\"truePositive\":80,\"trueNegative\":90},\"modelOnly\":true,\"passed\":true,\"wanCount\":6}",
+          "stderr": ""
+        },
+        {
+          "name": "test-source-recovery.lua",
+          "passed": true,
+          "stdout": "PASS typed expiry before WAN 1 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 2 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 3 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 4 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 5 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 6 preserves then precisely recovers earlier journal entries\nPASS unknown writer after typed child response prevents success publication and is preserved\nPASS unbound apply response cannot withdraw a different producer or recover its rules\nPASS a fresh observation follows expiry recovery without reusing the expired request\nCOMPLETE 9",
+          "stderr": ""
+        },
+        {
+          "name": "test-source-six.lua",
+          "passed": true,
+          "stdout": "{\"routerConnected\":false,\"sourceObserverExecuted\":true,\"checks\":63,\"passed\":true,\"wanCount\":6}",
+          "stderr": ""
+        },
+        {
+          "name": "test-receipts.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":168,\"mockedTransport\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        },
+        {
+          "name": "test-selection.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":63,\"oneSelectionPreserved\":true,\"mockedCT\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        }
+      ],
+      "passed": true,
+      "luaParsed": 51,
+      "shellParsed": 12
+    },
+    "targetModels": {
+      "nativeLuaJsonImplementation": true,
+      "allIOIntercepted": true,
+      "filesystemOrDataPlaneWrites": false,
+      "wan6Checks": 1645,
+      "sourceObserverChecks": 63,
+      "writerChecks": 742,
+      "sourceRecoveryScenarios": 9,
+      "firmwareProof": false
+    },
+    "targetNftCheck": {
+      "passed": true,
+      "checkOnly": true,
+      "candidateGameRules": true,
+      "additivePbrNatRules": true,
+      "sixFullIdentityLabelRules": true,
+      "hookFreeModelTable": true,
+      "fixtureExclusionsNotActualCampusInventory": true
+    }
+  },
+  "crossBuild": {
+    "kernelChanged": false,
+    "routerConnected": false,
+    "binaryLoaded": false,
+    "maximumWanCount": 6,
+    "sourceHashes": {
+      "test-wifi-peer-drop.c": "65ec9bc219dc281ad16fd744d1a64f8eeaa1978830e2b94a90b3834968d5ed5a",
+      "ecm_ae_classifier_public.h": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "build.py": "b0282e3a37c35b7f22caedbfada40f15fe3d1ad3311f9e9252b3d85ee772679c",
+      "athena_nss_receipts.c": "0ae24c45c2a83832851b2566bfdb3783253c56470d3319b2b26a2b9a6e37d6e3",
+      "test-selection.py": "16f5796aeb8b8f4b64462da1e7912dd5b2f1209bfe171bce8d372b682bed8a78",
+      "test-wifi-tx-queue.c": "8defe8fbbcd827d34411b38314107367bfa10c6ef7640e693cc1ee51cf38cec7",
+      "athena_ecm_gate.c": "d2af7f15acdf07b4934a9250b103a78cee3efa2e005b48ad86ca1294ce18afb1",
+      "test-wifi-stat-abi.c": "2d028d502c087c7e323f51ad656764f87c416c4538111ca9a706103b777dbb74",
+      "test-receipts.py": "1999420e6d357cbaad2049dcfc19d31e4bd718b3ac12bfa2289d3c0d1601033e",
+      "receipts.h": "9e277067cd246993aa396853a81876d87151dc2f2acae60baf59215a600e743b",
+      "receipt_telemetry.h": "c3a9cad333522ed8b19a1fdcfe986a2a0594cab2e31fdf578d8a208a4110046d",
+      "Makefile": "57161558b522da5a56a32d29187fc0dcf3d5c1f386fae5577c4d9b7d5ed5c13f",
+      "test-receipts.c": "d2aa515c337882cfccba37f249194190789b0b793d757ec0a3806d0156b02187"
+    },
+    "installedInterfaceMessageBytes": 96,
+    "installedIPv4MessageBytes": 736,
+    "installedIPv4Interface": 161,
+    "nativeGateAbi": 2,
+    "ecmCodeSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".text.unlikely",
+      ".init.text",
+      ".exit.text"
+    ],
+    "ecmOriginalSha256": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2",
+    "ecmReceiptCopySha256": "7239dec3ad7827247177bc034172e4cc57bb36e335f74920a6494977e6c7a98b",
+    "driverSha256": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+    "ingressCodeSectionsUnchanged": [
+      ".plt",
+      ".text.ftrace_trampoline",
+      ".text",
+      ".init.text",
+      ".exit.text",
+      ".text.unlikely"
+    ],
+    "ingressOriginalSha256": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb",
+    "ingressReceiptCopySha256": "116a088ad024f2f21b8e52ae08531532639ce318ee629ae8d850524da3ae25ce",
+    "athena_ecm_gate.ko": {
+      "sha256": "f409b1224d44205aa057d62d482c1b4daef052ef57502a56e7c0c0dd60c0c044",
+      "bytes": 129600
+    },
+    "athena_nss_receipts.ko": {
+      "sha256": "544f3cb7e686e4b475e159e999c09a40efb6f1213d94051067727934af9385aa",
+      "bytes": 181168
+    },
+    "passed": true,
+    "extraSymbols": "Verified installed exports; zero CRC because MODVERSIONS is disabled, not an ABI guarantee",
+    "kernelHashes": {
+      ".config": "24f0389ac9618779974c03d8c71f891b80a1ca58c1e4ef5a6877be4b6b9fe06c",
+      "Module.symvers": "b0782f7327ba04cf3a3f3ad85c735c6639af6accc0d8fa307b8abac9af46cd5d",
+      "include/generated/autoconf.h": "4ef35271b52eb223a7524fe6bb9f1af64c6cc7bc33f2e967843d0700fac397f7"
+    }
+  },
+  "resolvedFailures": [
+    {
+      "stage": "cross-build",
+      "cause": "relative kernel path interpreted from module build directory",
+      "fix": "resolve build inputs to absolute paths"
+    },
+    {
+      "stage": "target nft parser",
+      "cause": "constant membership expression for readiness",
+      "fix": "timed port allowlist set; subsequent target checks passed"
+    },
+    {
+      "stage": "target model harness",
+      "cause": "adjacent long-string brackets in virtual file index",
+      "fix": "separate brackets; four target models then passed"
+    }
+  ],
+  "gamePolicy": {
+    "enabled": false,
+    "allowlistedDestinationPorts": "27015-27050",
+    "maximumIPv4Bytes": 256,
+    "firstOriginalPacketOnly": true,
+    "readyLeaseSeconds": 15,
+    "requirements": [
+      "reviewed complete campus/proxy/VPN endpoint exclusions",
+      "WAN6 online and healthy",
+      "fresh same-boot six-WAN native/queue/budget state"
+    ],
+    "excluded": [
+      "UDP443/QUIC",
+      "DNS",
+      "known VPN/control ports",
+      "private/special/fake-IP/Tailscale ranges",
+      "reviewed site CIDRs",
+      "existing WAN affinity and proxy marks"
+    ],
+    "indistinguishableSamePortVpnOrBusinessCannotBeRecognized": true,
+    "syntheticFixture": {
+      "samples": 200,
+      "TP": 80,
+      "FN": 20,
+      "FP": 10,
+      "TN": 90
+    },
+    "realAccuracyMeasured": false
+  },
+  "pending": [
+    "Fresh private checkpoint and independently verified full platform rollback executor",
+    "Additional user approval before shared native/source replacement or watcher switches",
+    "WAN6 authentication, DHCP/routing/NAT and autorate instance start",
+    "Twelve live queue/budget/source checks",
+    "Real WAN6 CREATE/REMOVE acknowledgements, RT/BE tags and bidirectional per-flow byte progress",
+    "Passive shared campus-port capacity assessment; no congestion tests",
+    "Game site exclusions and separate risk review before enabling"
+  ],
+  "limitations": {
+    "wan6AuthenticationVerified": false,
+    "wan6NssCreateVerified": false,
+    "wan6PerFlowBytesObserved": false,
+    "sixWanHardwareFirmwareValidated": false,
+    "campusPort100MbpsPerAccountProved": false,
+    "wholeSystemLatencyOrThroughputBenefitProved": false,
+    "freshRollbackGuardianVerified": false,
+    "coldBootOfSixWanCandidateTested": false,
+    "platformCandidatesExecutedOnRouter": false
+  },
+  "repositoryChecks": {
+    "passed": true,
+    "filesChecked": 7154,
+    "sourceHashesChecked": 6396,
+    "sourceRevisionRecords": 6520,
+    "markdownLinksChecked": 1802,
+    "obviousSecretChecksPassed": true,
+    "scope": "Current bytes use the latest named controller revision; frozen source checks and historical evidence remain intact. Curated allowlist plus pattern checks; not a claim of comprehensive secret detection."
+  },
+  "exactTaskCredentialExclusionPassed": true
+}

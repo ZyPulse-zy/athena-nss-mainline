@@ -11,6 +11,8 @@ local function run(c)
 end
 local function sha(p)return assert(run('/usr/bin/sha256sum '..p):match('^(%x+) '))end
 local f=assert(io.open(root..'/build-result.json'));local pins=assert(j.parse(f:read('*a')));f:close()
+local profile=dofile(root..'/wan_contract.lua').load(root)
+assert(profile.wanCount==5 or pins.maximumWanCount==6,'Six-account modules must be rebuilt')
 assert(pins.passed and run('/bin/uname -r'):match('^6%.18%.44%s*$'))
 assert(sha('/lib/modules/6.18.44/ecm.ko')==pins.ecmOriginalSha256)
 assert(sha('/lib/modules/6.18.44/qca-nss-drv.ko')==pins.driverSha256)

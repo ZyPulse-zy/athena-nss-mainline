@@ -1,5 +1,5 @@
 -- One short architecture probe; the transaction guardian is its only writer.
--- Keep existing WAN/LAN roots and all ten software CAKE instances intact.
+-- Keep existing WAN/LAN roots and all existing software CAKE instances intact.
 local M={}
 function M.new(root,command,read,put,now,loaded,store,r)
  local fs=require('nixio.fs');local n=require('nixio');local j=require('luci.jsonc')
@@ -77,7 +77,7 @@ function M.new(root,command,read,put,now,loaded,store,r)
   local plan=dofile(root..'/queue_plan.lua')
   local function rates(prefix)
    local values={}
-   for w=1,5 do
+   for w=1,(r.wanCount or 5) do
     local rows=assert(j.parse(command('/sbin/tc -j -d qdisc show dev '..prefix..w)))
     for _,q in ipairs(rows)do if q.kind=='cake' then values[w]=assert(tonumber(q.options.bandwidth))*8/1000 end end
     assert(values[w],'Software account budget unavailable')
@@ -91,7 +91,7 @@ function M.new(root,command,read,put,now,loaded,store,r)
   end
   s.uplinkAttempted=true;store(r)
   for _,line in ipairs(s.up.commands)do command(tc..' '..string.format(line,'wan'))end
-  for w=1,5 do
+  for w=1,(r.wanCount or 5) do
    assert(topology.wans['rpwan'..w],'WAN address unavailable')
    command(tc..' filter add dev '..device..' parent 7a00: protocol ip pref '..(5000+w)..
     ' u32 match ip dst '..topology.wans['rpwan'..w]..'/32 flowid '..string.format('%x:',0x7a00+w*16+5))

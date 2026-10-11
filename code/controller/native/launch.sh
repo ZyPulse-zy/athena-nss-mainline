@@ -9,6 +9,14 @@ test ! -d /sys/module/athena_nss_receipts
 mkdir -p "$target"
 chmod 700 "$target"
 rm -f "$target/software-budgets.json"
+cp "$source/wan_contract.lua" "$target/wan_contract.lua"
+chmod 600 "$target/wan_contract.lua"
+if [ -f "$source/wan-profile.json" ]; then
+ cp "$source/wan-profile.json" "$target/wan-profile.json"
+ chmod 600 "$target/wan-profile.json"
+else
+ rm -f "$target/wan-profile.json"
+fi
 cp "$source/classifier_recovery.lua" "$target/classifier_recovery.lua"
 chmod 600 "$target/classifier_recovery.lua"
 lua "$target/classifier_recovery.lua" repair >"$target/classifier-recovery.json"

@@ -174,7 +174,7 @@ if mode=='guard' then
   end
   if r.nativeRun then
    assert(not command('/usr/sbin/nft list tables'):find('athena_dorm_qos',1,true),'Another tag owner exists')
-   local topology=dofile(root..'/collector.lua').topology();r.wans=topology.wans;store(r)
+   local topology=dofile(root..'/collector.lua').topology(r.wanCount);r.wans=topology.wans;store(r)
    dofile(root..'/ingress_probe.lua').new(root,command,read,put,now,loaded,store,r).setup_native(topology)
    -- Same private-MacVLAN/mwan flag prerequisite already validated by the
    -- historical five-WAN ECM path. Retain MAC/IP, EAP, PBR and NAT identities.
@@ -258,7 +258,9 @@ if mode=='start-native' or mode=='foreground' then
  duration=tonumber(arg[2]) or 0
  assert(duration>=0 and duration<=290 and duration==math.floor(duration))
 end
-local r={version=1,phase='prepared',running=true,startedAtUptime=now(),pins=pins,
+local profile=dofile(root..'/wan_contract.lua').load(root)
+assert(profile.wanCount==5 or pins.maximumWanCount==6,'Six-account build pins required')
+local r={wanCount=profile.wanCount,version=1,phase='prepared',running=true,startedAtUptime=now(),pins=pins,
  baseline={stop4=1,stop6=1,dscp=count('ecm_classifier_dscp/enabled')},
  permanentInstall=false,firmwareChanged=false,edmaChanged=false,queuesChanged=false}
 r.ingressProbe=mode=='probe-ingress';r.queuesChanged=r.ingressProbe
@@ -277,7 +279,7 @@ if r.nativeRun then
  r.baseline.mwan=assert(tonumber(read('/proc/sys/net/ecm/mwan3_enable')))
  assert(r.baseline.mwan==0,'Existing ECM mwan owner is active')
  r.baseline.wanLinks={}
- for w=1,5 do
+ for w=1,r.wanCount do
   local e=assert(j.parse(command('/sbin/ip -j -d link show dev rpwan'..w)))[1]
   assert(e.linkinfo.info_kind=='macvlan' and e.linkinfo.info_data.mode=='bridge')
   r.baseline.wanLinks[#r.baseline.wanLinks+1]=e

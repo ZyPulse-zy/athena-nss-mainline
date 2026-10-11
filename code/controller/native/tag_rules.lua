@@ -1,3 +1,4 @@
+local contract=dofile(assert(debug.getinfo(1,'S').source:match('^@(.*)/[^/]+$'))..'/wan_contract.lua')
 -- Exact per-flow postrouting labels. The installed nft userspace cannot list
 -- some multi-element concatenation maps; individual matches retain all eleven
 -- fields without relying on that serializer. This module only produces text.
@@ -43,7 +44,9 @@ function M.render(policies,budgets,options)
  lines[#lines+1]='set flow_ids { typeof ct id;'..(#idList>0 and(' elements = { '..table.concat(idList,', ')..' };')or'')..' }'
  lines[#lines+1]='chain tags {'
  if options.hook~=false then lines[#lines+1]='type filter hook postrouting priority 0; policy accept;'end
- for w=1,5 do
+ local count=contract.count(budgets.up.wanCount)
+ assert(count==contract.count(budgets.down.wanCount))
+ for w=1,count do
   lines[#lines+1]='ct direction original ct mark & 0x00ff0000 == '..uint(w*65536,4294967295)..
    ' meta priority set (meta priority & 0x0000ffff) | '..uint(budgets.up.tags[w].BE*65536,4294967295)
  end

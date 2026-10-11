@@ -5,6 +5,7 @@ local core=dofile(root..'/core.lua');local collector=dofile(root..'/collector.lu
 local flowJson=dofile(root..'/flow_json.lua')
 local cfg={version=1,mode='shadow',policyGeneration='native-abi1',lanAddress='192.168.237.0',lanBits=24,
  maxTracked=2048,maxCandidates=32,includeBestEffort=false}
+local profile=dofile(root..'/wan_contract.lua').load(root);cfg.wanCount=profile.wanCount
 local state=core.new(cfg)
 local previousEncodeSeconds=0
 local budgetAt=-math.huge;local budgetSequence=0
@@ -13,7 +14,7 @@ local function atomic(name,text)
  local p=root..'/'..name;local f=assert(io.open(p..'.new','w'));assert(f:write(text));assert(f:close());assert(fs.rename(p..'.new',p))
 end
 while not fs.stat(root..'/stop')do
- local began=collector.now();local topology=collector.topology();local topologyAt=collector.now()
+ local began=collector.now();local topology=collector.topology(cfg.wanCount);local topologyAt=collector.now()
  local projection,full=collector.publications(false);local publicationAt=collector.now()
  local result=core.tick(state,projection,full,topology,publicationAt)
  result.wans=topology.wans
@@ -28,7 +29,7 @@ while not fs.stat(root..'/stop')do
  -- first; the guardian only reads the small result and never waits for tc.
  if collector.now()>=budgetAt+3 then
   budgetAt=collector.now();budgetSequence=budgetSequence+1
-  local budget=collector.software_budgets();budget.sequence=budgetSequence;budget.boot=boot
+  local budget=collector.software_budgets(cfg.wanCount);budget.sequence=budgetSequence;budget.boot=boot
   atomic('software-budgets.json',j.stringify(budget));atomic('heartbeat',tostring(collector.now()))
  end
  n.nanosleep(1)

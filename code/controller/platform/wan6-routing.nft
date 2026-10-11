@@ -1,0 +1,4 @@
+add chain inet rp_pbr mark_w6
+add rule inet rp_pbr mark_w6 ct mark set (ct mark & 0xff00ffff) | 0x00060000 return
+add rule inet rp_pbr local_output ct state new ct mark & 0x00ff0000 == 0 oifname "rpwan6" ct mark set (ct mark & 0xff00ffff) | 0x00060000
+add rule inet rp_pbr forwarding_counters iifname "br-lan" oifname "rpwan6" ct mark & 0x00ff0000 == 0x00060000 counter comment "WAN6 marked LAN egress"

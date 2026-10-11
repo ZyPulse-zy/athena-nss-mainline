@@ -5,7 +5,7 @@ local failed,invalid,at,checks=nil,nil,100,0
 local commands={}
 local function check(ok)assert(ok);checks=checks+1 end
 local values={neighbors={{dst='192.0.2.1',lladdr='02:00:00:00:00:01'}},addresses={}}
-for w=1,5 do values.addresses[w]={ifname='rpwan'..w,addr_info={{family='inet',scope='global',['local']='198.51.100.'..w}}}end
+for w=1,6 do values.addresses[w]={ifname='rpwan'..w,addr_info={{family='inet',scope='global',['local']='198.51.100.'..w}}}end
 io.open=function(path,mode)
  check(mode==nil or mode=='r')
  local text
@@ -47,6 +47,8 @@ invalid=nil;failed='hostapd';good=collector.topology();check(good.complete and g
 -- from the timeout above. No command status can create an identity by itself.
 failed=nil;values.neighbors={};good=collector.topology();check(good.complete and next(good.clients)==nil)
 local budgets=collector.software_budgets();check(budgets.complete and budgets.diagnostics.commandCount==10 and budgets.values.up[5]==40000)
+local six=collector.topology(6);check(six.wans.rpwan6=='198.51.100.6' and good.wans.rpwan6==nil)
+local sixBudget=collector.software_budgets(6);check(sixBudget.complete and sixBudget.wanCount==6 and sixBudget.diagnostics.commandCount==12 and sixBudget.values.down[6]==40000)
 failed='cake';budgets=collector.software_budgets();check(not budgets.complete and budgets.diagnostics.commandCount==1 and budgets.diagnostics.failures==1 and budgets.finishedAtUptime-budgets.startedAtUptime==1)
 local resolved=collector.resolve({{dst='192.0.2.1',lladdr='02:00:00:00:00:01'}},{},{{mac='02:00:00:00:00:01',ifname='lan1',localEntry=false,age=61}},{},1)
 check(not resolved['192.0.2.1'].valid and resolved['192.0.2.1'].reason=='wired-fdb-observation-expired')

@@ -15,14 +15,16 @@ lua = shutil.which('lua5.1') or shutil.which('lua')
 assert lua, 'Install Lua 5.1 and lua-cjson'
 tests = ['test-wifi.lua', 'test-writer-policy.lua', 'test-health.lua', 'test-coverage.lua',
          'test-tag-rules.lua', 'test-lifecycle.lua', 'test-core-guard.lua',
-         'test-efficiency.lua', 'test-core.lua', 'test-collector.lua']
+         'test-efficiency.lua', 'test-core.lua', 'test-collector.lua', 'test-wan6.lua', 'test-source-recovery.lua', 'test-source-six.lua']
 report = {'routerConnected': False, 'dataPlaneWrites': False, 'mockedTargetIO': True,
-          'nftParserTested': False, 'tests': []}
+          'nftParserTested': False, 'wanCountTested': int(__import__('os').getenv('ATHENA_TEST_WAN_COUNT', '5')), 'tests': []}
 with tempfile.TemporaryDirectory(prefix='athena-offline-') as folder:
     stage = pathlib.Path(folder)
     for source in [root / 'code/controller', root / 'code/controller/native']:
         for file in source.glob('*.lua'):
             shutil.copyfile(file, stage / file.name)
+    shutil.copytree(root / 'code/controller/source_classifier', stage / 'source_classifier')
+    shutil.copytree(root / 'code/controller/platform', stage / 'platform')
     if args.writer:
         shutil.copyfile(args.writer, stage / 'writer.lua')
     (stage / 'shim.lua').write_text('''
@@ -55,12 +57,17 @@ local file=assert(arg[1]);arg[0]=file;arg[1]=nil;dofile(file)
                                     'stdout': result.stdout.strip(), 'stderr': result.stderr.strip()})
     report['passed'] = all(row['passed'] for row in report['tests'])
     report['luaParsed'] = 0
-    for file in stage.glob('*.lua'):
+    for file in stage.rglob('*.lua'):
         if file.name == 'shim.lua':
             continue
         subprocess.run([shutil.which('luac5.1') or 'luac', '-p', str(file)],
                        text=True, capture_output=True, check=True)
         report['luaParsed'] += 1
+report['shellParsed'] = 0
+for file in (root / 'code/controller/platform').iterdir():
+    if file.suffix == '.sh' or file.name.startswith('router-project-'):
+        subprocess.run(['bash' if file.name.startswith('config.') else 'sh', '-n', str(file)], check=True)
+        report['shellParsed'] += 1
 if args.output:
     args.output.write_text(json.dumps(report, indent=2) + '\n')
 print(json.dumps(report, indent=2))

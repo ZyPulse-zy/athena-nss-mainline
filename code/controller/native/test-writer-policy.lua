@@ -3,18 +3,21 @@
 local root=assert(arg[0]:match('^(.*)/[^/]+$'))
 assert(root~='/tmp/athena-dorm-native')
 local j=require('luci.jsonc');local n=require('nixio');local plan=dofile(root..'/queue_plan.lua')
+local count=tonumber(os.getenv('ATHENA_TEST_WAN_COUNT') or '5');assert(count==5 or count==6)
+local function rates(v)local a={};for w=1,count do a[w]=v end;return a end
 local checks=0
 local function check(ok,message)assert(ok,message);checks=checks+1 end
 local function flow(id,class,rate)
+ local wan=(id-1)%count+1
  return{key='flow-'..id,binding='verified-client',class=class or'BULK',candidate=true,budgetAdmitted=class=='RT',
-  client='192.0.2.12',egress='lan1',connectionId=id,mark=65536,protocol=6,wan=1,validUntil=106,
+  client='192.0.2.12',egress='lan1',connectionId=id,mark=wan*65536+256,protocol=6,wan=wan,validUntil=106,
   sequence=1,rateKbps=rate or id,original={src='192.0.2.12',sport=40000+id,dst='198.51.100.99',dport=443},
-  reply={src='198.51.100.99',sport=443,dst='198.51.100.1',dport=40000+id}}
+  reply={src='198.51.100.99',sport=443,dst='198.51.100.'..wan,dport=40000+id}}
 end
 local function fixture()
- local at=100;local rows={};local controls={};local fail=false;local slowBudget=false;local staleBudget=false;local publishedAt
- local r={wans={},ingress={up=plan.plan(0x7e00,{40000,40000,40000,40000,40000}),down=plan.plan(0x7a00,{70000,70000,70000,70000,70000})}}
- for w=1,5 do r.wans['rpwan'..w]='198.51.100.'..w end
+ local at=100;local rows={};local controls={};local fail=false;local slowBudget=false;local staleBudget=false;local publishedAt;local kernelMaximum=6
+ local r={wanCount=count,wans={},ingress={up=plan.plan(0x7e00,rates(40000)),down=plan.plan(0x7a00,rates(70000))}}
+ for w=1,count do r.wans['rpwan'..w]='198.51.100.'..w end
  n.open=function(path,mode)
   assert(path=='/sys/kernel/debug/athena_ecm_gate/control'and mode=='w','Unexpected I/O')
   return{close=function()end,write=function(_,text)
@@ -38,7 +41,7 @@ local function fixture()
  end
  local function read(path)
   assert(path=='/sys/kernel/debug/athena_ecm_gate/status')
-  local text='abi=2 capacity=32 stopping=0 firmware_receipts=1\n'
+  local text='abi=2 capacity=32 stopping=0 firmware_receipts=1'..(kernelMaximum and ' wan_max='..kernelMaximum or '')..'\n'
   for s=0,31 do if rows[s]then for k,v in pairs(rows[s])do text=text..k..'='..v..' 'end;text=text..'\n'end end
   return text
  end
@@ -46,15 +49,18 @@ local function fixture()
   assert(p==root..'/tags.nft'or p==root..'/budgets.tc');assert(type(text)=='string')
  end,function()return at end,function()end,r,function()
   local published=publishedAt or at
-  return{version=1,source='software-cake',sequence=published,complete=not slowBudget,startedAtUptime=published-(slowBudget and 1 or staleBudget and 7.06 or 0.06),
-   finishedAtUptime=published-(staleBudget and 7 or 0),values={up={40000,40000,40000,40000,40000},down={70000,70000,70000,70000,70000}},diagnostics={commandCount=slowBudget and 1 or 10}}
+  return{version=1,wanCount=count,source='software-cake',sequence=published,complete=not slowBudget,startedAtUptime=published-(slowBudget and 1 or staleBudget and 7.06 or 0.06),
+   finishedAtUptime=published-(staleBudget and 7 or 0),values={up=rates(40000),down=rates(70000)},diagnostics={commandCount=slowBudget and 1 or count*2}}
  end)
- return{r=r,rows=rows,controls=controls,time=function(t)at=t end,publishedAt=function(t)publishedAt=t end,fail=function(v)fail=v end,slowBudget=function(v)slowBudget=v end,staleBudget=function(v)staleBudget=v end,tick=function(flows,fresh)
-  writer.tick({wans=r.wans,flows=flows,operations={},summary={sourceFresh=fresh~=false,tracked=#flows,clients=1,exits={},classes={}}})
+ return{r=r,rows=rows,controls=controls,kernelMaximum=function(v)kernelMaximum=v end,time=function(t)at=t end,publishedAt=function(t)publishedAt=t end,fail=function(v)fail=v end,slowBudget=function(v)slowBudget=v end,staleBudget=function(v)staleBudget=v end,tick=function(flows,fresh)
+  writer.tick({wans=r.wans,flows=flows,operations={},summary={wanCount=count,sourceFresh=fresh~=false,tracked=#flows,clients=1,exits={},classes={}}})
  end}
 end
 local function revokes(f)local count=0;for _,c in ipairs(f.controls)do if c:match('^revoke ')then count=count+1 end end;return count end
 local originalOpen=n.open
+local attestation=fixture();attestation.kernelMaximum(nil)
+check(pcall(attestation.tick,{})==(count==5),'Six accounts require explicit kernel feature attestation; five preserve legacy headers')
+attestation.kernelMaximum(60);check(pcall(attestation.tick,{})==(count==5),'Reject a prefix lookalike feature flag')
 local f=fixture();local bulk={};for id=1,32 do bulk[id]=flow(id)end
 f.tick(bulk);check(f.r.flowState.nativeOwned==32)
 local rt=flow(40,'RT');local all={rt};for _,e in ipairs(bulk)do all[#all+1]=e end
@@ -176,10 +182,10 @@ f.time(103);all[1].sequence=2;all[1].validUntil=109;f.slowBudget(true);f.tick(al
 check(f.r.flowState.nativeOwned==1 and f.r.flowState.budgetUpdates.readFailures==1 and f.r.flowState.budgetUpdates.lastReadCommands==1)
 check(f.r.flowState.budgetUpdates.lastReadSeconds==1 and not f.r.flowState.budgetUpdates.lastReadSucceeded and f.r.flowState.writerTickSeconds==0)
 f.slowBudget(false);f.time(106);all[1].sequence=3;all[1].validUntil=112;f.tick(all)
-check(f.r.flowState.budgetUpdates.lastReadSucceeded and f.r.flowState.budgetUpdates.lastReadCommands==10)
+check(f.r.flowState.budgetUpdates.lastReadSucceeded and f.r.flowState.budgetUpdates.lastReadCommands==count*2)
 f=fixture();all={flow(40,'RT')};all[1].validUntil=101;f.tick(all)
-check(not f.r.flowState.budgetUpdates.skippedLeaseMargin and f.r.flowState.budgetUpdates.lastReadCommands==10)
-up,down=f.controls[1]:match(' (%d+) (%d+)\n$');check(tonumber(up)==0x7e160006 and tonumber(down)==0x7a160006)
+check(not f.r.flowState.budgetUpdates.skippedLeaseMargin and f.r.flowState.budgetUpdates.lastReadCommands==count*2)
+up,down=f.controls[1]:match(' (%d+) (%d+)\n$');check(tonumber(up)==(0x7e00+all[1].wan*16+6)*65536+6 and tonumber(down)==(0x7a00+all[1].wan*16+6)*65536+6)
 for t=101,125 do f.time(t);all[1].validUntil=t+2;all[1].sequence=t;f.tick(all);check(f.r.flowState.nativeOwned==1 and f.r.flowState.writerTickSeconds==0)end
 f.staleBudget(true);f.time(131);all[1].validUntil=133;all[1].sequence=131;local ok,err=pcall(f.tick,all)
 check(not ok and tostring(err):find('Software CAKE budget observation expired',1,true))

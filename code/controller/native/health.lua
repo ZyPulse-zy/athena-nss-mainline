@@ -58,7 +58,7 @@ function M.queues(text,dev)
  for line in(text..'\n'):gmatch('([^\n]*)\n')do
   if line:match('^qdisc ')then handle=line:match('^qdisc %S+ (%S+)')end
   local drops=tonumber(line:match('Sent %d+ bytes %d+ pkt %(dropped (%d+)'))
-  if handle and handle:match('^7[ae][1-5]6:$')and drops then rows[#rows+1]={key=dev..'/'..handle,class='RT',drops=drops}end
+  if handle and handle:match('^7[ae][1-6]6:$')and drops then rows[#rows+1]={key=dev..'/'..handle,class='RT',drops=drops}end
  end
  return rows
 end

@@ -51,7 +51,7 @@ static u64 now_ms(void) { return ktime_get_boottime_ns()/NSEC_PER_MSEC; }
 static bool qos_valid(u32 mark,u32 up,u32 down)
 {
  u32 wan=(mark>>16)&255,low=up&0xffff;
- return wan>=1 && wan<=5 && (low==0 || low==6) && (down&0xffff)==low &&
+ return wan>=1 && wan<=6 && (low==0 || low==6) && (down&0xffff)==low &&
   (up>>16)==0x7e00+wan*16+(low==6?6:5) &&
   (down>>16)==0x7a00+wan*16+(low==6?6:5);
 }
@@ -234,7 +234,7 @@ static ssize_t control_write(struct file *file,const char __user *input,
  if (count!=18 || (strcmp(op,"add") && strcmp(op,"renew")) || stopping ||
      (proto!=6 && proto!=17) || !id || !sport || !dport || !rsport || !rdport ||
      sport>65535 || dport>65535 || rsport>65535 || rdport>65535 ||
-     ((mark>>16)&255)<1 || ((mark>>16)&255)>5 || (mark&8192) ||
+     ((mark>>16)&255)<1 || ((mark>>16)&255)>6 || (mark&8192) ||
      (src&lan_mask)!=(lan_network&lan_mask) || rs!=dst || rsport!=dport ||
      !binding || !sequence || until<=now_ms() || until>now_ms()+6000) goto out;
  if(!qos_valid(mark,up_qos,down_qos))goto out;
@@ -287,7 +287,7 @@ out:
 static int status_show(struct seq_file *s,void *data)
 {
  int n; mutex_lock(&control_mutex);
- seq_printf(s,"abi=2 capacity=%u stopping=%u firmware_receipts=1 now_ms=%llu routed_attempts=%llu tuple_matches=%llu instance_rejections=%llu policy_qos=1 hardware_sync=1\n",CAPACITY,stopping,now_ms(),routed_attempts,tuple_matches,instance_rejections);
+ seq_printf(s,"abi=2 capacity=%u stopping=%u firmware_receipts=1 now_ms=%llu routed_attempts=%llu tuple_matches=%llu instance_rejections=%llu policy_qos=1 hardware_sync=1 wan_max=6\n",CAPACITY,stopping,now_ms(),routed_attempts,tuple_matches,instance_rejections);
  for (n=0;n<CAPACITY;n++) { struct entry *e=&entries[n];
   struct athena_telemetry telemetry={0};struct athena_observation observation;struct athena_receipt receipt;
   struct nf_conn_acct *acct=e->ct?nf_conn_acct_find(e->ct):NULL;

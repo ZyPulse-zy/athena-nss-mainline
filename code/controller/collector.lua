@@ -1,3 +1,4 @@
+local contract=dofile(assert(debug.getinfo(1,'S').source:match('^@(.*)/[^/]+$'))..'/wan_contract.lua')
 -- Uses tools/libraries already present on Athena; never queries Windows.
 local json=require('luci.jsonc')
 local fs=require('nixio.fs')
@@ -28,10 +29,11 @@ function M.publications(includeFull)
   return projection,includeFull~=false and parse(read(base..'snapshot.json')) or nil
 end
 function M.now() return assert(tonumber(assert(read('/proc/uptime',256)):match('^[%d.]+'))) end
-function M.software_budgets()
+function M.software_budgets(wanCount)
+  wanCount=contract.count(wanCount)
   local began=M.now();local diagnostics={commands={},failures=0,commandCount=0};local values={up={},down={}}
   local complete=true
-  for w=1,5 do for _,x in ipairs{{'up','rpwan'},{'down','rpifb'}}do
+  for w=1,wanCount do for _,x in ipairs{{'up','rpwan'},{'down','rpifb'}}do
     if M.now()-began>=0.75 then complete=false;break end
     diagnostics.commandCount=diagnostics.commandCount+1
     local rows=parse(command('/sbin/tc -j -d qdisc show dev '..x[2]..w,nil,'cake-'..x[1]..'-'..w,diagnostics))
@@ -42,7 +44,7 @@ function M.software_budgets()
     if count~=1 or not rate or rate<=0 then complete=false;break end
     values[x[1]][w]=rate*8/1000
   end;if not complete then break end end
-  return{version=1,source='software-cake',complete=complete,values=values,startedAtUptime=began,finishedAtUptime=M.now(),diagnostics=diagnostics}
+  return{version=1,source='software-cake',wanCount=wanCount,complete=complete,values=values,startedAtUptime=began,finishedAtUptime=M.now(),diagnostics=diagnostics}
 end
 function M.resolve(neighbors,leases,fdb,stations,wallNow)
   local clients,leaseMap={},{}
@@ -84,7 +86,8 @@ function M.station_clients(clients,ifname)
   end
   return out
 end
-function M.topology()
+function M.topology(wanCount)
+  wanCount=contract.count(wanCount)
   local diagnostics={commands={},failures=0};local complete=true
   local function query(cmd,name)return command(cmd,nil,name,diagnostics)end
   -- BusyBox timeout may prefer its own ip applet for a bare command name;
@@ -127,7 +130,8 @@ function M.topology()
   local addresses=parse(query('/sbin/ip -j -4 address show','wan-addresses'))
   if type(addresses)~='table'then complete=false;addresses={}end
   for _,a in ipairs(addresses) do
-    if a.ifname and a.ifname:match('^rpwan[1-5]$') then
+    local w=a.ifname and tonumber(a.ifname:match('^rpwan([1-6])$'))
+    if w and w<=wanCount then
       for _,v in ipairs(a.addr_info or {}) do if v.family=='inet' and v.scope=='global' then wans[a.ifname]=v['local'] end end
     end
   end

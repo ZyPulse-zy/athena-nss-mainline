@@ -2,6 +2,8 @@
 -- desired observations; this is the sole native/tc/nft writer for this backend.
 local M={}
 function M.new(root,command,read,put,now,store,r,budgetReader)
+ local contract=dofile(root..'/wan_contract.lua');contract.count(r.wanCount)
+ assert(r.ingress.up.wanCount==(r.wanCount or 5) and r.ingress.down.wanCount==(r.wanCount or 5),'Queue/profile mismatch')
  assert(type(budgetReader)=='function','Independent software budget publication required')
  local core=dofile(root..'/core.lua');local j=require('luci.jsonc');local fs=require('nixio.fs');local n=require('nixio')
  local tc='/root/router-project/experiments/nss8-htb2-20261001/tc-nss'
@@ -39,6 +41,7 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
  local function status()
   local rows={};local text=assert(read(gate..'status'))
   assert(text:match('^abi=2 capacity=32 stopping=0 '))
+  assert((r.wanCount or 5)==5 or ((text:match('^([^\n]+)') or '')..' '):find(' wan_max=6 ',1,true), 'Kernel does not attest six-account QoS support')
   for line in text:gmatch('[^\n]+')do
    local e={};for key,value in line:gmatch('([%w_]+)=(%d+)')do e[key]=tonumber(value)end
    if e.slot then rows[e.slot]=e elseif e.telemetry_slot and rows[e.telemetry_slot] then
@@ -112,10 +115,11 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
   local p=assert(budgetReader(),'budget-publication-unavailable')
   diagnostics.lastReadCommands=p.diagnostics and p.diagnostics.commandCount or 0
   diagnostics.lastReadSeconds=type(p.finishedAtUptime)=='number' and type(p.startedAtUptime)=='number' and p.finishedAtUptime-p.startedAtUptime or nil
+  assert((p.wanCount or 5)==(r.wanCount or 5),'budget-account-count-mismatch')
   assert(p.version==1 and p.source=='software-cake' and p.complete==true and (not r.boot or p.boot==r.boot),'budget-publication-invalid')
   assert(type(p.sequence)=='number' and p.sequence>=1 and type(p.startedAtUptime)=='number' and type(p.finishedAtUptime)=='number' and
    p.finishedAtUptime>=p.startedAtUptime and p.finishedAtUptime-p.startedAtUptime<=2.75 and p.finishedAtUptime<=now() and now()-p.startedAtUptime<6,'budget-publication-stale')
-  for _,direction in ipairs{'up','down'}do for w=1,5 do
+  for _,direction in ipairs{'up','down'}do for w=1,(r.wanCount or 5) do
    local value=p.values and p.values[direction] and p.values[direction][w]
    assert(type(value)=='number' and value==value and value>0 and value<math.huge,'budget-value-invalid')
   end end
@@ -155,13 +159,14 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
  function out.tick(result)
   local tickBegan=now()
   assert(type(result.summary.sourceFresh)=='boolean','Reader source state invalid')
+  assert((result.summary.wanCount or 5)==(r.wanCount or 5),'Reader/profile mismatch')
   local sourceFresh=result.summary.sourceFresh
   if not sourceFresh and not sourceUnavailableSince then
    sourceUnavailableSince=now();stats.sourcePauses=stats.sourcePauses+1
   elseif sourceFresh and sourceUnavailableSince then
    sourceUnavailableSince=nil;lastSourceResumedAt=now();stats.sourceResumes=stats.sourceResumes+1
   end
-  if sourceFresh then for w=1,5 do assert(result.wans['rpwan'..w]==r.wans['rpwan'..w],'WAN/NAT address changed; withdraw native backend')end end
+  if sourceFresh then for w=1,(r.wanCount or 5) do assert(result.wans['rpwan'..w]==r.wans['rpwan'..w],'WAN/NAT address changed; withdraw native backend')end end
   local native=status();local desired={};local choices={};local tags={};local tagKeys={}
   local withdrawn={};for _,op in ipairs(result.operations or {})do if op.op=='revoke' then withdrawn[op.key]=true end end
   stats.selected=0;stats.firmwareCreated=0

@@ -1,3 +1,11 @@
+# 2026-10-11：六账号 NSS 离线与只读核验
+
+确认正确仓库/分支与原安装差别；发现既有 wan6 是 DHCPv6，新增账号采用 campus6。13 Lua+2 C 各跑五/六配置，50 Lua/12 shell 语法、目标四套虚拟 I/O 模型和 nft -c 通过；原 Windows prepared kernel/工具链只读复用，目标 gate/receipts 交叉构建成功。构建相对路径、nft readiness 表达式及虚拟文件索引语法的初次失败已保留并修正。现网只读，未认证/部署/发起拥塞。
+
+[WAN6 NSS 方案及回退](DORM_V2_WAN6.md) · [结构化核验](../evidence/dorm-v2-wan6-offline.json)
+
+## 此前记录
+
 # 2026-10-10 至 11：独立 Wi-Fi 观察、精确源码和离线修复
 
 远端起点 112dfc2，安装维护文件仍全匹配 2996d40；不使用 main 旧 Windows 三槽方案。

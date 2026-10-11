@@ -7,7 +7,7 @@ function M.cohort(publication,wans,at,core)
  if not core.observationFresh(publication,at) then return nil end
  local s,q=publication.snapshot,publication.snapshot.provenance
  if #s.flows>2048 or not s.selection or s.selection.untracked~=0 then return nil end
- local rows={};local cfg={lanAddress='192.168.237.0',lanBits=24}
+ local rows={};local cfg={wanCount=wans and wans.rpwan6 and 6 or 5,lanAddress='192.168.237.0',lanBits=24}
  for _,f in ipairs(s.flows)do
   local key=core.observationIdentity(f,cfg,wans or{});local i,d=f.identity or{},f.decision or{}
   local p=i.queryProvenance or{};local bytes=i.reply and i.reply.bytes
@@ -52,7 +52,7 @@ function M.report(state)
  return{measured=state.windows>0 and bytes>0,measurement='bracketed-downstream-lower-bound',ratioLowerBound=bytes>0 and hardware/bytes or nil,
   hardwareBytes=hardware,totalBytes=bytes,classes=state.classes,windows=state.windows,excludedFlowWindows=state.excluded,lastWindow=state.lastWindow,
   fullLanCoverage=false,sameByteBasis=true,includesBestEffort=true,
-  scope='persistent-five-WAN-zone0-nonproxy-IPv4-TCP-UDP-with-stable-class',
+  scope='persistent-enabled-WAN-zone0-nonproxy-IPv4-TCP-UDP-with-stable-class',
   reason=bytes==0 and 'No comparable downstream bytes in the completed windows' or nil}
 end
 return M

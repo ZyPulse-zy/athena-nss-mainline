@@ -4,9 +4,10 @@ local root=assert(arg[0]:match('^(.*)/[^/]+$'))
 local fs=require('nixio.fs');local j=require('luci.jsonc')
 assert(root~='/tmp/athena-dorm-native','Use a separate model directory')
 local plan=dofile(root..'/queue_plan.lua')
-local r={wans={},ingress={up=plan.plan(0x7e00,{40000,40000,40000,40000,40000}),
- down=plan.plan(0x7a00,{70000,70000,70000,70000,70000})}}
-for w=1,5 do r.wans['rpwan'..w]='198.51.100.'..w end
+local count=tonumber(os.getenv('ATHENA_TEST_WAN_COUNT') or '5');assert(count==5 or count==6)
+local function rates(v)local a={};for w=1,count do a[w]=v end;return a end
+local r={wanCount=count,wans={},ingress={up=plan.plan(0x7e00,rates(40000)),down=plan.plan(0x7a00,rates(70000))}}
+for w=1,count do r.wans['rpwan'..w]='198.51.100.'..w end
 local parsed=false;local downBudget=8750000;local batchCommands=0;local events={}
 local function command(c)
  if c:match('^/sbin/tc %-j %-d qdisc show dev rp')then
@@ -43,20 +44,21 @@ nixio.open=function(p,mode)
   return #text
  end,close=function()end}
 end
-local function read(p)assert(p=='/sys/kernel/debug/athena_ecm_gate/status');return 'abi=2 capacity=32 stopping=0 firmware_receipts=1\n'..row end
+local function read(p)assert(p=='/sys/kernel/debug/athena_ecm_gate/status');return 'abi=2 capacity=32 stopping=0 firmware_receipts=1 wan_max=6\n'..row end
 local function put(p,s)
  assert(p==root..'/tags.nft' or p==root..'/budgets.tc');local f=assert(io.open(p,'w'));assert(f:write(s));assert(f:close())
 end
 local writer=dofile(root..'/writer.lua').new(root,command,read,put,function()return at end,function()end,r,function()
- return{version=1,source='software-cake',complete=true,sequence=at,startedAtUptime=at,finishedAtUptime=at,
- values={up={40000,40000,40000,40000,40000},down={downBudget*8/1000,70000,70000,70000,70000}},diagnostics={commandCount=10}}
+ local down=rates(70000);down[1]=downBudget*8/1000
+ return{version=1,wanCount=count,source='software-cake',complete=true,sequence=at,startedAtUptime=at,finishedAtUptime=at,
+ values={up=rates(40000),down=down},diagnostics={commandCount=count*2}}
 end)
-writer.tick({wans=r.wans,flows={},operations={},summary={tracked=0,clients=0,exits={},classes={},sourceFresh=false,sourceSequence=1}})
+writer.tick({wans=r.wans,flows={},operations={},summary={wanCount=count,tracked=0,clients=0,exits={},classes={},sourceFresh=false,sourceSequence=1}})
 assert(parsed and r.flowState.nativeOwned==0)
 local flow={key='one',binding='source',class='BULK',candidate=true,budgetAdmitted=false,client='192.0.2.12',egress='phy0-ap0',
  connectionId=12,mark=65536,protocol=6,wan=1,validUntil=106,sequence=2,
  original={src='192.0.2.12',sport=41000,dst='198.51.100.99',dport=443},reply={src='198.51.100.99',sport=443,dst='198.51.100.1',dport=50000}}
-local summary={tracked=1,clients=1,exits={['phy0-ap0']=1},classes={BULK=1},sourceFresh=true,sourceSequence=2}
+local summary={wanCount=count,tracked=1,clients=1,exits={['phy0-ap0']=1},classes={BULK=1},sourceFresh=true,sourceSequence=2}
 writer.tick({wans=r.wans,flows={flow},operations={},summary=summary})
 assert(additions==1 and #r.ownedFlows==1 and r.ownedFlows[1].connectionId==12)
 writer.tick({wans=r.wans,flows={},operations={},summary=summary})

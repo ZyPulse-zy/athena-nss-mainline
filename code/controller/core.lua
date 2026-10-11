@@ -1,3 +1,4 @@
+local contract=dofile(assert(debug.getinfo(1,'S').source:match('^@(.*)/[^/]+$'))..'/wan_contract.lua')
 -- Router-local all-LAN flow state. Pure policy: no network/configuration writes.
 local M = {}
 local function integer(v, low, high)
@@ -20,7 +21,7 @@ local function identity(f, cfg, wans)
   local i = f.identity or {}
   local o,r = tuple(i.original),tuple(i.reply)
   local id,zone,mark,wan = integer(i.connectionId,1,4294967295),integer(i.zone,0,65535),
-    integer(i.mark,0,4294967295),integer(i.wan,1,5)
+    integer(i.mark,0,4294967295),integer(i.wan,1,contract.count(cfg.wanCount))
   if not (o and r and id and zone == 0 and mark and wan) then return nil,'identity-unverified' end
   if i.protocolNumber ~= 6 and i.protocolNumber ~= 17 then return nil,'protocol-unsupported' end
   local address = ipnumber(i.original.src)
@@ -51,6 +52,7 @@ local function frame_ok(p, now)
     now < q.startedAtUptime+6
 end
 function M.new(cfg)
+  contract.count(cfg.wanCount)
   assert(cfg.version == 1 and cfg.mode == 'shadow','Only the read-only shadow backend is released')
   assert(ipnumber(cfg.lanAddress) and integer(cfg.lanBits,16,30))
   assert(integer(cfg.maxTracked,1,2048) and integer(cfg.maxCandidates,1,cfg.maxTracked))
@@ -131,7 +133,7 @@ function M.tick(state, projection, full, topology, now)
   -- Table capacity is about controller cost, not per-person download quotas.
   for n=#rows,cfg.maxTracked+1,-1 do retire(rows[n].key,'software-table-capacity'); table.remove(rows,n) end
   local summary={version=1,mode='shadow',running=true,atUptime=now,sourceFresh=not not fresh,
-    sourceSequence=state.sequence,completeObservation=not not complete,tracked=#rows,
+    wanCount=contract.count(cfg.wanCount),sourceSequence=state.sequence,completeObservation=not not complete,tracked=#rows,
     retired=state.retired,candidates=0,candidateOverflow=0,accelerated=0,
     classes={RT=0,BULK=0,BE=0,UNKNOWN=0},clients=0,exits={},hardwareWrites=false,
     softwareBackend='existing-classifier-and-CAKE',softwareProtectionVerified=0,

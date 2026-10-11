@@ -1,6 +1,7 @@
 -- One procd instance, normal indefinite sessions, three bounded recovery tries.
 local fs=require('nixio.fs');local n=require('nixio');local j=require('luci.jsonc')
 local source='/usr/lib/athena-dorm-native';local root='/tmp/athena-dorm-native'
+local contract=dofile(source..'/wan_contract.lua');local profile=contract.load(source)
 local policy=dofile(source..'/lifecycle.lua')
 local function read(p)local f=io.open(p);if not f then return '' end;local s=f:read(4194305) or '';f:close();assert(#s<=4194304);return s end
 local function json(p)return j.parse(read(p))end
@@ -27,12 +28,10 @@ end
 local function dependencies()
  local services=j.parse(command('ubus call service list')) or {}
  for _,name in ipairs{'router-project-core','router-project-autorate','router-project-minieap'}do
-  local instances=(services[name] or {}).instances or {};local count=0
-  for _,x in pairs(instances)do if not x.running then return false end;count=count+1 end
-  if count<(name=='router-project-core' and 1 or 5)then return false end
+  if not contract.service_ready(name,(services[name] or {}).instances,profile.wanCount)then return false end
  end
- for w=1,5 do local wan=j.parse(command('ubus call network.interface.wan'..w..' status'));if not wan or not wan.up or not wan['ipv4-address'] or #wan['ipv4-address']==0 then return false end end
- -- Process presence alone did not prove the original ten CAKE roots were
+ for w=1,profile.wanCount do local wan=j.parse(command('ubus call network.interface.'..profile.interfaces[w]..' status'));if not contract.interface_ready(w,wan)then return false end end
+ -- Process presence alone did not prove the configured software CAKE roots were
  -- ready during the first real cold boot. Inspect their existing contract.
  local classifier=j.parse(command('/usr/bin/lua '..source..'/classifier_recovery.lua inspect'))
  if not classifier or classifier.mode~='inspect' or classifier.configUnchanged~=true then return false end

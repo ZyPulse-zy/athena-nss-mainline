@@ -41,7 +41,7 @@ local function collect()
  if queryQueues and gate:match('^abi=2 capacity=32 ')then
   for _,dev in ipairs{'wan','athenaigs'}do
    local text=run('/root/router-project/experiments/nss8-htb2-20261001/tc-nss -s -d qdisc show dev '..dev)
-   if text then local rows=health.queues(text,dev);if #rows==5 then queueReads=queueReads+1 end
+   if text then local rows=health.queues(text,dev);if #rows==(s.wanCount or 5) then queueReads=queueReads+1 end
     for _,q in ipairs(rows)do queues[#queues+1]=q end
    end
   end

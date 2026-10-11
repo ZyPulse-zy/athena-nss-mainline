@@ -45362,6 +45362,454 @@
       "bytes": 29195,
       "role": "maintained-controller-documentation",
       "revision": "dorm-v2-manual-wifi-and-pinned-source-fixes-20261011"
+    },
+    {
+      "path": "code/controller/collector.lua",
+      "workspaceSource": "code/controller/collector.lua",
+      "sha256": "c5974962f313d6d410a02394fa9de80b5b0ee2687180d19d2d52d3dca3343c80",
+      "bytes": 7689,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/core.lua",
+      "workspaceSource": "code/controller/core.lua",
+      "sha256": "46a86bb9b2052f7ddfd315159dd64665e2f04f02ebc50dbd401d8b335fc5cabc",
+      "bytes": 9017,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/game_wan6.lua",
+      "workspaceSource": "code/controller/game_wan6.lua",
+      "sha256": "bcd1a28862f0134081fe89e4c6b7a2c348ce0355aa1608d9f91af833a50b7ebc",
+      "bytes": 5247,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/game_wan6_health.lua",
+      "workspaceSource": "code/controller/game_wan6_health.lua",
+      "sha256": "e16dfb148790b2324a5392a6f5e174296f3c6f6e91471173a4e804c88157d35d",
+      "bytes": 1297,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/athena_ecm_gate.c",
+      "workspaceSource": "code/controller/native/athena_ecm_gate.c",
+      "sha256": "d2af7f15acdf07b4934a9250b103a78cee3efa2e005b48ad86ca1294ce18afb1",
+      "bytes": 17206,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/build.py",
+      "workspaceSource": "code/controller/native/build.py",
+      "sha256": "b0282e3a37c35b7f22caedbfada40f15fe3d1ad3311f9e9252b3d85ee772679c",
+      "bytes": 10647,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/classifier_recovery.lua",
+      "workspaceSource": "code/controller/native/classifier_recovery.lua",
+      "sha256": "6885347d49280a3a214d8f4cfa163e2a84ba80d135e869302c1bcaf330324bb3",
+      "bytes": 7414,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/coverage.lua",
+      "workspaceSource": "code/controller/native/coverage.lua",
+      "sha256": "a97fe06e1db71e0f2d450f28bce54ffd83f023ebcb1754b7b6934c3eb95b8d0c",
+      "bytes": 3851,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/diagnose.lua",
+      "workspaceSource": "code/controller/native/diagnose.lua",
+      "sha256": "702767584ad3bb859f50d9343242f3aedb0b2601e3030ffadc6fb9a56f76bee7",
+      "bytes": 5992,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/health.lua",
+      "workspaceSource": "code/controller/native/health.lua",
+      "sha256": "73af156022404f0ddd8889a239cda5b1cdc12416688a45710c262fd6ed154a1e",
+      "bytes": 11330,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/ingress_probe.lua",
+      "workspaceSource": "code/controller/native/ingress_probe.lua",
+      "sha256": "e79cec59f5b5be077b6bedd9028dd7ddce0c8b30e1ab0a40f67790bfae7fbde9",
+      "bytes": 7241,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "workspaceSource": "code/controller/native/launch.sh",
+      "sha256": "0d7118466b8ae0a76b19a14208e5b96a09aad0c541893fd422ccdd7ea7e45b15",
+      "bytes": 1543,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/prepare.lua",
+      "workspaceSource": "code/controller/native/prepare.lua",
+      "sha256": "e0cde89450c1b7dbbec6517b215565d59106cb7aafb31cb03709376bc191ef74",
+      "bytes": 2169,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/queue_plan.lua",
+      "workspaceSource": "code/controller/native/queue_plan.lua",
+      "sha256": "df420a6c7415416dfb9db45a6d39a6893dd7b40dda8e7cf2ba308fd11a41f7e9",
+      "bytes": 2488,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/reader.lua",
+      "workspaceSource": "code/controller/native/reader.lua",
+      "sha256": "04e8039d9faf185c06bb6ad860b79d0843f523a5c27f9780ad060dc4964cf34d",
+      "bytes": 2499,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/supervisor.lua",
+      "workspaceSource": "code/controller/native/supervisor.lua",
+      "sha256": "285ce0f19d327ede98fe242cc31f071b5a79a38a521efa4fab20b793a20c4eac",
+      "bytes": 7287,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/tag_rules.lua",
+      "workspaceSource": "code/controller/native/tag_rules.lua",
+      "sha256": "99d85f5553a571f3bdd34bad63619ace4e8d6b38c1a16e6ae714cb532764ea0d",
+      "bytes": 3618,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/test-selection.py",
+      "workspaceSource": "code/controller/native/test-selection.py",
+      "sha256": "16f5796aeb8b8f4b64462da1e7912dd5b2f1209bfe171bce8d372b682bed8a78",
+      "bytes": 4252,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/test-writer-policy.lua",
+      "workspaceSource": "code/controller/native/test-writer-policy.lua",
+      "sha256": "2127a524cad58a6629074d5308fd4d26e192de798763e8555621b5fb60cbb173",
+      "bytes": 15859,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/test-writer.lua",
+      "workspaceSource": "code/controller/native/test-writer.lua",
+      "sha256": "d89acae4f0aa422522c553e17eea99f6cf8618603951f401074636eddf92329e",
+      "bytes": 7280,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "workspaceSource": "code/controller/native/transaction.lua",
+      "sha256": "fdb6750680c44066363d9ca176cb5d78b7cb49fce68347522bbdba220eb6286d",
+      "bytes": 18196,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "workspaceSource": "code/controller/native/writer.lua",
+      "sha256": "e716880338ae0c508b2a2c916f5b96c269b1f58306dbfca23ae2703129c3e197",
+      "bytes": 22498,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/auth-recover.sh",
+      "workspaceSource": "code/controller/platform/auth-recover.sh",
+      "sha256": "b0c956dc4d4a1f3a99bc512e23da8f5b5225f36a5775519b01462afa3de3550b",
+      "bytes": 1449,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/auth-watchdog.lua",
+      "workspaceSource": "code/controller/platform/auth-watchdog.lua",
+      "sha256": "263bf65935a1854b7c7459c11f100e99e73a6027b62e3f715dbe2f8ac866e7d9",
+      "bytes": 3929,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/autorate-run.sh",
+      "workspaceSource": "code/controller/platform/autorate-run.sh",
+      "sha256": "467a7c0ed2ad09f3df10c6e9d9fb5b6a362e7532f17d073717341cdf13a36339",
+      "bytes": 473,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/config.wan6.sh",
+      "workspaceSource": "code/controller/platform/config.wan6.sh",
+      "sha256": "4e132c3ef1e0edabd727e8670a1e9be1c1ec15f28159899966f57bcfd88541fe",
+      "bytes": 722,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/dhcp-line.sh",
+      "workspaceSource": "code/controller/platform/dhcp-line.sh",
+      "sha256": "d881e3913da2f301d2db9dd4b5f0396199f04e71b4c0ec46682b1e0f5ad7658d",
+      "bytes": 504,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/dhcp-wan6.sh",
+      "workspaceSource": "code/controller/platform/dhcp-wan6.sh",
+      "sha256": "579021e7e15b122d66fae2d94f8a3cb5f570c19878549100ae89160e8f7a2e1f",
+      "bytes": 59,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/health-controller.lua",
+      "workspaceSource": "code/controller/platform/health-controller.lua",
+      "sha256": "fc11930a6de31d9c9f751acdfaeaa124d425cb5730e2bad24253a93bc422841f",
+      "bytes": 8733,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/health-probes.sh",
+      "workspaceSource": "code/controller/platform/health-probes.sh",
+      "sha256": "7c743214b67bb9516feeef03174eeda91ce4d246c909dbf62b54bb4cf97b2fa3",
+      "bytes": 1237,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/minieap-run.sh",
+      "workspaceSource": "code/controller/platform/minieap-run.sh",
+      "sha256": "42f57b32877920b8d446789bacffe3b9273b8f001deed7608d45b8ae0f9fad50",
+      "bytes": 1112,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/nss-macvlan-owned.lua",
+      "workspaceSource": "code/controller/platform/nss-macvlan-owned.lua",
+      "sha256": "ca325d59e531807ff6dad8751beff74b0f998aae39da6ba4d29cbeeb51d7d88d",
+      "bytes": 1284,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/pbr-ensure.sh",
+      "workspaceSource": "code/controller/platform/pbr-ensure.sh",
+      "sha256": "650b55e71fe5e939d9fd0b0a10d10e1339195d0a3850345bce6dd47632498bcf",
+      "bytes": 1495,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/prepare-macvlans.sh",
+      "workspaceSource": "code/controller/platform/prepare-macvlans.sh",
+      "sha256": "3a59be336f0176a792070d91403394f9678ae8b018ad7ba7ec964f20c2e4c931",
+      "bytes": 1336,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/router-project-autorate",
+      "workspaceSource": "code/controller/platform/router-project-autorate",
+      "sha256": "f55e785cddd692b82a195c88ddd8cbf3fb77ee778fd954ed8378063931fef41e",
+      "bytes": 976,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/router-project-minieap",
+      "workspaceSource": "code/controller/platform/router-project-minieap",
+      "sha256": "c2f0b353b0b6f00deea0f8f02a8ea3b0a4461fbd40b9187a27c9e4aeb440a90f",
+      "bytes": 1424,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/shaper.sh",
+      "workspaceSource": "code/controller/platform/shaper.sh",
+      "sha256": "61ac456a25ccdce11ebdc943063a2191b71f63ca3bb1fec2654b413ac83150d6",
+      "bytes": 2692,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/platform/wan6-routing.nft",
+      "workspaceSource": "code/controller/platform/wan6-routing.nft",
+      "sha256": "20082acce62c6761fbd0f344ce8c6bbb3cb2e9aca603014f0b5598b479526e4f",
+      "bytes": 403,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/service.lua",
+      "workspaceSource": "code/controller/service.lua",
+      "sha256": "bfc1b061f4be888287d47aeadcf17088fa76c1d67fac647905891ab29734025f",
+      "bytes": 4421,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/backend.lua",
+      "workspaceSource": "code/controller/source_classifier/backend.lua",
+      "sha256": "793029f4f69fa0c60d2efbff1aa783ba7b0a37593e375c08bfd5999c57181fba",
+      "bytes": 11685,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/classifier-core.lua",
+      "workspaceSource": "code/controller/source_classifier/classifier-core.lua",
+      "sha256": "04b3e99e155f74be43c7cdef2432704422ecf9990947785c8278d8e5e997c353",
+      "bytes": 10145,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/cleanup.sh",
+      "workspaceSource": "code/controller/source_classifier/cleanup.sh",
+      "sha256": "de41d810a19f3b2506fb46e85c955f38c2f60971105652982be1b259dc1749b0",
+      "bytes": 674,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/conntrack-source.lua",
+      "workspaceSource": "code/controller/source_classifier/conntrack-source.lua",
+      "sha256": "e1e01fe23988aed2d92e1ba1f9ad3053c52756ab557f6c78d991954c394af109",
+      "bytes": 6404,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/guardian.lua",
+      "workspaceSource": "code/controller/source_classifier/guardian.lua",
+      "sha256": "97bb3f78076cade8fe44cfeec5c149085c63f2295b28cf1a505f89f3de80de70",
+      "bytes": 5279,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/init.sh",
+      "workspaceSource": "code/controller/source_classifier/init.sh",
+      "sha256": "9ad7b1c93c0dcc5c4bc01a6b5a73d396328478ed0487af6ffecb9d314484bab7",
+      "bytes": 1234,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/owned.lua",
+      "workspaceSource": "code/controller/source_classifier/owned.lua",
+      "sha256": "e0cefd9364e9362ef2c3ececad339143e6b47ea19754fe64a5a681644cf51f26",
+      "bytes": 21584,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/prepare_config.lua",
+      "workspaceSource": "code/controller/source_classifier/prepare_config.lua",
+      "sha256": "fab3f0fd2a4a0678111125c17778876189f863f561e0a72f0c9606a0a1e637fc",
+      "bytes": 2661,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/stop-worker.lua",
+      "workspaceSource": "code/controller/source_classifier/stop-worker.lua",
+      "sha256": "74afd01c9d114279b388f954fa5e138cfe16449151e93ecb62539368a7e69a1f",
+      "bytes": 2501,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/source_classifier/worker.lua",
+      "workspaceSource": "code/controller/source_classifier/worker.lua",
+      "sha256": "6131a9fb9fef509467f75c1ca41f7336f4f0d396b323d6bcc4a9a858d176b9a8",
+      "bytes": 32163,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/test-collector.lua",
+      "workspaceSource": "code/controller/test-collector.lua",
+      "sha256": "7da1de3c23c190c89b8a57f276c496319a4aa833399621a28b31352c2a9cc9c8",
+      "bytes": 4337,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/test-source-recovery.lua",
+      "workspaceSource": "code/controller/test-source-recovery.lua",
+      "sha256": "b4542fcbdebf493baa1ae8dc84c9be2eb78e50159403b09244c93b6308841799",
+      "bytes": 12088,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/test-source-six.lua",
+      "workspaceSource": "code/controller/test-source-six.lua",
+      "sha256": "8c35cb80269ea3b8aaf2578bbd18da74dfc9eea90018a8308141530b2eaa4cc6",
+      "bytes": 2450,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/test-wan6.lua",
+      "workspaceSource": "code/controller/test-wan6.lua",
+      "sha256": "7e13f9eb1e3a956fd9d95fffda47ad69c2b6ff603935fb881ddb8e8e605cb3e5",
+      "bytes": 11953,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/wan-profile.six.example.json",
+      "workspaceSource": "code/controller/wan-profile.six.example.json",
+      "sha256": "fc100c93e8c7d9b1c567e7f9568a69af9efee02d75d55b0614451fd2ef4ce11d",
+      "bytes": 87,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/wan6_plan.lua",
+      "workspaceSource": "code/controller/wan6_plan.lua",
+      "sha256": "29ed20f6e2dadefc72695d9fbffa31e51a18dd41f75d938a159717abba6638a0",
+      "bytes": 6368,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
+    },
+    {
+      "path": "code/controller/wan_contract.lua",
+      "workspaceSource": "code/controller/wan_contract.lua",
+      "sha256": "16b3b1b01feb16c25a6a9f8c9a515f71b38b20779199b0452c6e4713ee703dd9",
+      "bytes": 2784,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-six-account-nss-offline-20261011"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -45521,5 +45969,13 @@
     "evidence": "evidence/dorm-v2-wifi-audit.json",
     "finalAirTidAcVerified": false,
     "driverPatchCandidates": 3
+  },
+  "lastOfflineWan6Export": {
+    "capturedAt": "2026-10-11T14:32:09.598140+00:00",
+    "revision": "dorm-v2-six-account-nss-offline-20261011",
+    "sourceRecordsAppended": 56,
+    "productionCandidateDeployed": false,
+    "evidence": "evidence/dorm-v2-wan6-offline.json",
+    "realSixWanFirmwareVerified": false
   }
 }

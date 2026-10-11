@@ -15,9 +15,11 @@ def main():
     p = argparse.ArgumentParser()
     for key in ['kernel', 'toolchain', 'ecm', 'driver', 'output']:
         p.add_argument('--'+key, required=True, type=pathlib.Path)
-    a=p.parse_args(); a.output.mkdir(parents=True, exist_ok=True)
+    a=p.parse_args()
+    for key in ['kernel','toolchain','ecm','driver','output']: setattr(a,key,getattr(a,key).resolve())
+    a.output.mkdir(parents=True, exist_ok=True)
     here=pathlib.Path(__file__).resolve().parent
-    report={'kernelChanged':False, 'routerConnected':False, 'binaryLoaded':False,
+    report={'kernelChanged':False, 'routerConnected':False, 'binaryLoaded':False, 'maximumWanCount':6,
         'sourceHashes':{f.name:sha(f) for f in here.iterdir() if f.suffix in ['.c','.h','.py'] or f.name=='Makefile'}}
     def run(argv, log):
         r=subprocess.run(list(map(str,argv)), text=True, stdout=subprocess.PIPE,
