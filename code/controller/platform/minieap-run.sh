@@ -9,7 +9,11 @@ dev=rpwan$n
 [ -s "/etc/minieap/wan$n.conf" ]
 if [ "$n" = 6 ]; then
  [ ! -L /etc/minieap/wan6.conf ]
- [ "$(stat -c '%u:%g:%a' /etc/minieap/wan6.conf)" = 0:0:600 ]
+ /usr/bin/lua - <<'ATHENA_PRIVATE_AUTH_FILE'
+local fs=require('nixio.fs')
+local a=assert(fs.lstat('/etc/minieap/wan6.conf'))
+assert(a.type=='reg' and a.uid==0 and a.gid==0 and a.modedec==600 and a.nlink==1,'Unsafe private authentication file')
+ATHENA_PRIVATE_AUTH_FILE
 fi
 if [ "$n" = 6 ]; then
  "$ROOT/scripts/prepare-macvlans.sh" 6

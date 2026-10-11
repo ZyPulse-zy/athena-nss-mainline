@@ -119,6 +119,16 @@ local rollout=dofile(root..'/wan6_plan.lua');local facts={rollbackVerified=true,
  table106Free=true,rules906And1006Free=true,campus6Absent=true,rpwan6Absent=true,rpifb6Absent=true,auth6Absent=true,
  wan6OriginalProto='dhcpv6',mac='02:00:00:00:00:66',macUnused=true,gameEnabled=false,firewallZoneName='wan',firewallMasquerade=true,macMapPinned=true}
 local deployment=rollout.plan(facts);check(deployment.accountInterface=='campus6' and deployment.existingNatMigration==false)
+local rf=assert(io.open(root..'/platform/wan6-routing.nft'));local routing=rf:read('*a');rf:close()
+check(routing==deployment.nft and routing==rollout.routing_nft(),'Runtime and cold-start routing contracts must be identical')
+check(routing:find('oifname "rpwan6" jump srcnat_wan',1,true)~=nil,'New account requires actual NAT')
+check(routing:find('accept_to_wan oifname "rpwan6" accept',1,true)~=nil,'New account requires actual LAN forwarding')
+local rules=0;for line in routing:gmatch('[^\n]+')do if line:match('^add rule')then rules=rules+1;if not line:find('mark_w6 ct mark',1,true)then check(line:find('comment "athena-wan6-',1,true)~=nil,'External hooks require an owned rollback identifier')end end end
+check(routing:find('oifname "rpwan6" ct state invalid drop',1,true)~=nil,'Preserve firewall NAT leakage protection for the new device')
+check(rules==6,'The persisted file must include all PBR, NAT and forwarding hooks')
+local sf=assert(io.open(root..'/platform/shaper.sh'));local shaper=sf:read('*a');sf:close()
+check(shaper:find('root handle 8061: cake bandwidth 40mbit diffserv4 dual-srchost nat',1,true)~=nil,'Cold-start WAN6 uplink handle must match the captured source contract')
+check(shaper:find('root handle 8062: cake bandwidth 70mbit diffserv4 dual-dsthost nat',1,true)~=nil,'Cold-start WAN6 downlink handle must match the captured source contract')
 for _,c in ipairs(deployment.commands)do check(not c:find('network.wan6',1,true) and not c:find('rpwan1',1,true) and not c:find('reboot',1,true))end
 facts.independentGuardianReady=false;check(not pcall(rollout.plan,facts))
 local undo=rollout.rollback({checkpointOwned=true,bootMatches=true,fileHashesMatch=true})

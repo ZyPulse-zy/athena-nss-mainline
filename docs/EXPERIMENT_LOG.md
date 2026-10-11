@@ -1,3 +1,11 @@
+# 最新：六账号 NSS 已部署，真实 WAN6 CREATE/字节进展通过
+
+用户明确授权当前部署窗口；六账号成套 source/native 及必要平台入口已安装。五账号身份/认证/autorate、保护网络/防火墙段、无线、代理/Tailscale与十个软件根固定合同保持。首次文件安装权限错误已独立回退并保留；修正后在目标私有目录完成46文件安装探针。当前 native-running/sourceFresh，pending/未确认0，十二预算。
+真实单条新 LAN 连接：18 CREATE ACK/双向标签样本，mismatch0；16同代区间，上行15996/下行26846硬件归属字节；正常关闭后精确firmware-absent响应4/error5，不冒充REMOVE ACK。临时规则已删。游戏关闭，普通bucket仍五路。
+先读 docs/DORM_V2_WAN6_DEPLOYMENT.md 和 evidence/dorm-v2-wan6-deployment.json。PR #1 保持draft。后续勿重复start/stop或测试流；本窗口已提交。冷启动/完整六账号回退演练/共享端口容量/游戏与长期验收未测。不得据短窗宣称全部稳定、零丢包或六路满速。凭据仅原路由器私有认证入口。
+
+## 此前记录
+
 # 2026-10-11 Linux 无线模块构建完成，未部署
 
 同步开发分支最新远端 e5f344b 后保留六账号候选；本轮集中完成三份无线补丁的完整模块编译。原版/修订版各八模块及四项依赖严格 modpost 通过，AArch64 实际 Kbuild 探针通过。

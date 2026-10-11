@@ -1,3 +1,7 @@
+# 最新状态：六账号已部署，真实 WAN6 NSS 已验证
+
+请先读 [本轮部署与实测](DORM_V2_WAN6_DEPLOYMENT.md)。下文保留为部署前记录，不代表当前安装状态。
+
 # WAN6：NSS 六账号候选与部署核验
 
 本轮仓库是 `ZyPulse-zy/athena-nss-mainline`，分支 `codex/dorm-qos-v2`，远端起点 `8b44396`，PR #1 保持 draft。路由器实际安装仍为 `2996d40`。**候选未安装，第六账号未认证；没有 WAN6 真实 NSS CREATE 或字节进展。**

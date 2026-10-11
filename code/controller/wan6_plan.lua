@@ -1,6 +1,17 @@
 -- Reviewable additive preparation, never executes commands. The independent
 -- deployment guardian must own rollback before any of these operations run.
 local M={}
+function M.routing_nft()
+ local nft={
+   'add chain inet rp_pbr mark_w6',
+   'add rule inet rp_pbr mark_w6 ct mark set (ct mark & 0xff00ffff) | 0x00060000 return',
+   'add rule inet rp_pbr local_output ct state new ct mark & 0x00ff0000 == 0 oifname "rpwan6" ct mark set (ct mark & 0xff00ffff) | 0x00060000 comment "athena-wan6-local-output"',
+   'add rule inet rp_pbr forwarding_counters iifname "br-lan" oifname "rpwan6" ct mark & 0x00ff0000 == 0x00060000 counter comment "athena-wan6-lan-egress"',
+   'add rule inet fw4 srcnat oifname "rpwan6" jump srcnat_wan comment "athena-wan6-srcnat"',
+   'add rule inet fw4 accept_to_wan meta nfproto ipv4 oifname "rpwan6" ct state invalid drop comment "athena-wan6-nat-leak"',
+   'add rule inet fw4 accept_to_wan oifname "rpwan6" accept comment "athena-wan6-forward"'}
+ return table.concat(nft,'\n')..'\n'
+end
 function M.plan(f)
  assert(f.rollbackVerified and f.independentGuardianReady,'Independent rollback required')
  assert(f.installedBaselineVerified and f.fiveWansStable and f.protectedFilesPinned,'Current baseline required')
@@ -36,14 +47,8 @@ function M.plan(f)
   'tc filter add dev rpwan6 parent ffff: protocol ip pref 10 matchall action mirred egress redirect dev rpifb6'}
  -- Native source classifier performs precise basic filter installation from
  -- the captured WAN6 queue contract. Existing ten queue roots are untouched.
- local nft={
-  'add chain inet rp_pbr mark_w6',
-  'add rule inet rp_pbr mark_w6 ct mark set (ct mark & 0xff00ffff) | 0x00060000 return',
-  'add rule inet rp_pbr local_output ct state new ct mark & 0x00ff0000 == 0 oifname "rpwan6" ct mark set (ct mark & 0xff00ffff) | 0x00060000',
-  'add rule inet rp_pbr forwarding_counters iifname "br-lan" oifname "rpwan6" ct mark & 0x00ff0000 == 0x00060000 counter comment "WAN6 marked LAN egress"',
-  'add rule inet fw4 srcnat oifname "rpwan6" jump srcnat_wan comment "athena-wan6-srcnat"',
-  'add rule inet fw4 forward_lan oifname "rpwan6" jump accept_to_wan comment "athena-wan6-forward"'}
- return{commands=commands,nft=table.concat(nft,'\n')..'\n',requiresApproval=true,
+
+ return{commands=commands,nft=M.routing_nft(),requiresApproval=true,
   originalFiveMarksPreserved=true,existingNatMigration=false,restartRouter=false,
   credentials='Existing private MiniEAP config provider; no argv, stdout or evidence',
   accountInterface='campus6',accountDevice='rpwan6',routeTable=106,

@@ -45826,6 +45826,46 @@
       "bytes": 30529,
       "role": "maintained-controller-documentation",
       "revision": "dorm-v2-wifi-paired-abi-full-build-20261011"
+    },
+    {
+      "path": "code/controller/platform/minieap-run.sh",
+      "workspaceSource": "code/controller/platform/minieap-run.sh",
+      "sha256": "8fe26821011ebe8bf98c495edd118b2e3c05e539717927171c5001716ceffe2b",
+      "bytes": 1319,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wan6-deployed-platform-corrections"
+    },
+    {
+      "path": "code/controller/platform/shaper.sh",
+      "workspaceSource": "code/controller/platform/shaper.sh",
+      "sha256": "a63c5331de69077ff6db9b2b8d9e15c1942d4674f6382b68ba3af08b09f673c7",
+      "bytes": 2718,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wan6-deployed-platform-corrections"
+    },
+    {
+      "path": "code/controller/platform/wan6-routing.nft",
+      "workspaceSource": "code/controller/platform/wan6-routing.nft",
+      "sha256": "40230992f1b5a60b479df7e6826a1f04971aac136753ce3ee267c956e5b6e1de",
+      "bytes": 731,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wan6-deployed-platform-corrections"
+    },
+    {
+      "path": "code/controller/test-wan6.lua",
+      "workspaceSource": "code/controller/test-wan6.lua",
+      "sha256": "14013b7f04c159e4d88fb4f6b76808bd8a42f50070369d3a4ae99b2c185602d6",
+      "bytes": 13324,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wan6-deployed-platform-corrections"
+    },
+    {
+      "path": "code/controller/wan6_plan.lua",
+      "workspaceSource": "code/controller/wan6_plan.lua",
+      "sha256": "ff085d4b1d89a5ad670015ca2988078ceaff2edc4317ffa3e7f51581c0df19e8",
+      "bytes": 6579,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wan6-deployed-platform-corrections"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -46000,5 +46040,12 @@
     "fullModuleBuildPassed": true,
     "firmwareAbiRuntimeValidated": false,
     "routerConnected": false
+  },
+  "lastWan6Deployment": {
+    "evidence": "evidence/dorm-v2-wan6-deployment.json",
+    "productionDeployed": true,
+    "sourceRecordsAppended": 5,
+    "realWan6CreateAndBytesVerified": true,
+    "gameEnabled": false
   }
 }

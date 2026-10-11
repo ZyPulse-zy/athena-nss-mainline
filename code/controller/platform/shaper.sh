@@ -16,13 +16,13 @@ ensure_one() {
    tc qdisc show dev "$dev" | grep -Eq "$allowed" || { logger -t rp-shaper "Refusing unexpected root qdisc on $dev"; return 1; }
    if [ "$dev" = "rpwan$n" ]; then
     if [ "$n" = 6 ]; then
-     tc qdisc replace dev "$dev" root cake bandwidth 40mbit diffserv4 dual-srchost nat overhead 38 mpu 84
+     tc qdisc replace dev "$dev" root handle 8061: cake bandwidth 40mbit diffserv4 dual-srchost nat overhead 38 mpu 84
     else
      tc qdisc replace dev "$dev" root cake bandwidth 40mbit besteffort dual-srchost nat overhead 38 mpu 84
     fi
    else
     if [ "$dev" = rpifb6 ]; then
-     tc qdisc replace dev "$dev" root cake bandwidth 70mbit diffserv4 dual-dsthost nat ingress overhead 38 mpu 84
+     tc qdisc replace dev "$dev" root handle 8062: cake bandwidth 70mbit diffserv4 dual-dsthost nat ingress overhead 38 mpu 84
     elif [ "$dev" = rpifb5 ]; then
      tc qdisc replace dev "$dev" root cake bandwidth 50mbit besteffort flows nonat no-split-gso ingress overhead 38 mpu 84
     else
