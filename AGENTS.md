@@ -1,3 +1,12 @@
+# 2026-10-12：001/002 的 CN 兼容候选构建通过，未加载
+
+已找回与现场哈希一致的 CN shim 生成脚本并源码移植为 004。stable-cn 只应用 001/002，保留 CN 规则和原 196 字节布局；完整模块/严格 modpost 与目标布局探针通过。修复 recipe evaluation 未读 kernel 配置造成的 LED 符号缺失；原候选明确拒绝，修订后 ath11k/mac80211 依赖、参数、vermagic、导入/导出集合匹配。现场未启用 MODVERSIONS，CRC 无法比较，不声称加载/运行 ABI 已验证。
+观察工具已安装，不重复安装或验收。本轮只读捕获模块和固件指纹，无重启、无线/参数/驱动变更。003 真实 firmware wire ABI 仍未知。另一个任务正处理游戏分流，受控驱动重载/独立回退待后续串行执行，沿用已有许可。PR #1 草稿。
+
+[候选、命令与边界](docs/DORM_V2_WIFI_STABLE_CANDIDATE.md) · [完整证据](evidence/dorm-v2-wifi-stable-cn-candidate.json)
+
+## 此前记录
+
 # 2026-10-12：手动无线观察已安装，驱动尚未部署
 
 六 WAN 成功部署后，按用户已有许可，仅新增三份独立诊断 Lua 文件。实际 `athena-qos wifi-diagnose 5` 成功，6.17 秒/120 查询、单项最大 0.14 秒；六 WAN、来源、保护配置、服务 PID/start、既有执行文件、软件队列合同和模块哈希保持。未重启、重载无线或改变参数。

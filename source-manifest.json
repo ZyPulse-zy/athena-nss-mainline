@@ -45874,6 +45874,30 @@
       "bytes": 31396,
       "role": "maintained-controller-documentation",
       "revision": "dorm-v2-wifi-observer-deployment-20261012"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "733f5bf9d21756a527aa05059465d9dc66141a2f98fc82521250134eb98f8e65",
+      "bytes": 32412,
+      "role": "maintained-controller-documentation",
+      "revision": "dorm-v2-cn-preserved-stable-driver-candidate-20261012"
+    },
+    {
+      "path": "code/controller/native/patches/004-ath11k-preserve-installed-cn-bandwidth-shim.patch",
+      "workspaceSource": "code/controller/native/patches/004-ath11k-preserve-installed-cn-bandwidth-shim.patch",
+      "sha256": "8287504a32d70f21aa30db70f0997d2b6d29beba95800e2afc948e5a15eac896",
+      "bytes": 1754,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-cn-preserved-stable-driver-candidate-20261012"
+    },
+    {
+      "path": "code/controller/native/test-wifi-cn-shim.c",
+      "workspaceSource": "code/controller/native/test-wifi-cn-shim.c",
+      "sha256": "b359e4352a4a22aa508590510c4bdf4f7c7c7d7e8c0810fb20dbef36ead70e90",
+      "bytes": 1967,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-cn-preserved-stable-driver-candidate-20261012"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -46060,5 +46084,10 @@
     "evidence": "evidence/dorm-v2-wifi-observer-deployment.json",
     "observerInstalled": true,
     "wifiModulesDeployed": false
+  },
+  "lastStableWifiCandidate": {
+    "evidence": "evidence/dorm-v2-wifi-stable-cn-candidate.json",
+    "modulesDeployed": false,
+    "peerLayoutBytes": 196
   }
 }

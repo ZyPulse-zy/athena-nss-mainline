@@ -1241,3 +1241,4 @@ code/work/resident-task-continuous-20261008/upgrade.ps1 whitespace=cr-at-eol,-bl
 code/work/resident-rc1-run-20261008111038-d536b062/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
 
 /code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch whitespace=-blank-at-eol
+/code/controller/native/patches/004-ath11k-preserve-installed-cn-bandwidth-shim.patch whitespace=-blank-at-eol

@@ -35,6 +35,7 @@ def main():
     parser.add_argument('--sdk-staging', required=True, type=pathlib.Path)
     parser.add_argument('--host-tools', type=pathlib.Path, help='Optional native bin directory containing bison, flex and m4')
     parser.add_argument('--output', required=True, type=pathlib.Path)
+    parser.add_argument('--patch-set', choices=['paired', 'stable-cn'], default='paired', help='stable-cn preserves installed CN shim and 196-byte ABI; applies only 001/002')
     parser.add_argument('--jobs', type=int, choices=range(1, 9), default=4)
     args = parser.parse_args()
     prepared, firmware, sdk, output = [p.resolve() for p in
@@ -64,7 +65,7 @@ def main():
               'firmwareSourceCommit': PIN, 'kernelVersion': '6.18.44', 'compiler': compiler,
               'kernelInputsSha256': kernel_before, 'dependencySources': dependency_proof['packages'],
               'phases': [], 'artifacts': {}, 'patches': [], 'abiProbes': {},
-              'strictModpost': True, 'openwrtPackageBuilt': False, 'installedBinaryReproduced': False,
+              'patchSet': args.patch_set, 'strictModpost': True, 'openwrtPackageBuilt': False, 'installedBinaryReproduced': False,
               'firmwareAbiRuntimeValidated': False, 'routerConnected': False, 'routerModified': False}
     mappings = [(str(output), '$BUILD'), (str(prepared), '$PREPARED'),
                 (str(firmware), '$FIRMWARE'), (str(sdk), '$SDK'),
@@ -138,6 +139,8 @@ def main():
     for filename in ['rules.mk', 'include/kernel.mk', 'include/package.mk']:
         (evaluation / filename).touch()
     (evaluation / 'rules.mk').write_text('empty :=\nspace := $(empty) $(empty)\n')
+    # Match include/kernel.mk: recipes also consume prepared kernel CONFIG_* values.
+    (evaluation / 'include/kernel.mk').write_text('-include $(LINUX_DIR)/.config\n')
     def variables(name, package, directory, names):
         file = evaluation / (name + '.mk')
         common = {'TOPDIR': str(evaluation), 'INCLUDE_DIR': str(evaluation / 'include'),
@@ -209,15 +212,23 @@ def main():
         for revision in ['original', 'patched']:
             backports = output / ('backports' if revision=='patched' else 'backports-original')
             shutil.copytree(prepared / 'backports', backports)
+            if args.patch_set == 'stable-cn':
+                cn_patch = pathlib.Path(__file__).resolve().parents[1] / 'code/controller/native/patches/004-ath11k-preserve-installed-cn-bandwidth-shim.patch'
+                text = run(revision+'-preserve-cn-shim', ['patch','-f','--fuzz=0','-p1','-d',str(backports),'-i',str(cn_patch)])
+                assert 'offset' not in text and 'fuzz' not in text, text
+                report['patches'].append({'name':cn_patch.name,'revision':revision,'sha256':digest(cn_patch),'appliedWithoutFuzzOrOffset':True})
             if revision == 'patched':
                 patch_folder = pathlib.Path(__file__).resolve().parents[1] / 'code/controller/native/patches'
                 for patch in sorted(patch_folder.glob('00[123]-*.patch')):
+                    if args.patch_set == 'stable-cn' and patch.name.startswith('003-'):
+                        continue
                     patch_root = output if patch.name.startswith('003-') else backports
                     text = run('apply-'+patch.stem, ['patch','-f','--fuzz=0','-p1','-d',str(patch_root),'-i',str(patch)])
                     assert 'offset' not in text and 'fuzz' not in text, text
                     report['patches'].append({'name':patch.name,'sha256':digest(patch),'appliedWithoutFuzzOrOffset':True})
-                run('nss-paired-modules', kernel_make(nss, nss_options))
-                run('mesh-paired-modules', kernel_make(clients, client_options))
+                if args.patch_set == 'paired':
+                    run('nss-paired-modules', kernel_make(nss, nss_options))
+                    run('mesh-paired-modules', kernel_make(clients, client_options))
                 probe('provider', nss / '.nss_wifili.o.cmd', '"nss_tx_rx_common.h"', nss)
             # Mirror the recipe's Build/Prepare deletions, rather than compiling duplicate native headers.
             for path in ['include/linux/ssb','include/linux/bcma','include/net/bluetooth',
@@ -250,7 +261,7 @@ def main():
                 assert 'AArch64' in header and vermagic.startswith('6.18.44 ')
                 report['artifacts'][revision+'/'+relative] = {'sha256':digest(module),'bytes':module.stat().st_size,
                                                             'elfMachine':'AArch64','vermagic':vermagic}
-        assert report['abiProbes']['provider']['peerBytes'] == 212
+        assert report['abiProbes']['provider']['peerBytes'] == (196 if args.patch_set == 'stable-cn' else 212)
         assert report['abiProbes']['original']['peerBytes'] == 196
         assert report['abiProbes']['original'] == report['abiProbes']['provider-original']
         assert report['abiProbes']['patched'] == report['abiProbes']['provider']

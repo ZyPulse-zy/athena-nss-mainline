@@ -1,0 +1,49 @@
+From: Athena NSS v2 maintainers
+Subject: [PATCH] ath11k: preserve installed CN bandwidth shim in source
+
+Source equivalent of the verified installed 8a0928ae module shim.
+Guard CN and <=64 rules; only exact 5735-5835 MHz / 160 MHz becomes 80 MHz.
+Preserve the existing warning and all frequency/power/flags. No new tuning.
+
+--- a/drivers/net/wireless/ath/ath11k/reg.c
++++ b/drivers/net/wireless/ath/ath11k/reg.c
+@@ -232,6 +232,31 @@
+ 	for (i = 0; i < regd_orig->n_reg_rules; i++)
+ 		memcpy(&regd_copy->reg_rules[i], &regd_orig->reg_rules[i],
+ 		       sizeof(struct ieee80211_reg_rule));
++}
++
++/* Preserve the exact deployed CN bandwidth shim; no other rule fields change. */
++static void ath11k_preserve_cn_bw(struct ath11k_base *ab,
++		                              struct ieee80211_regdomain *regd)
++{
++	unsigned int i;
++
++	if (regd->alpha2[0] != 'C' || regd->alpha2[1] != 'N' ||
++	    regd->n_reg_rules > 64)
++		return;
++
++	for (i = 0; i < regd->n_reg_rules; i++) {
++		struct ieee80211_reg_rule *rule = &regd->reg_rules[i];
++		struct ieee80211_freq_range *freq = &rule->freq_range;
++
++		if (freq->start_freq_khz != 5735000 || freq->end_freq_khz != 5835000 ||
++		    freq->max_bandwidth_khz != 160000)
++			continue;
++		freq->max_bandwidth_khz = 80000;
++		ath11k_warn(ab, "QCN_CN_BW_FIX CN rule=%u start_khz=%u end_khz=%u bw_khz=%u gain_mbi=%u eirp_mbm=%u\n",
++		            i, freq->start_freq_khz, freq->end_freq_khz,
++		            freq->max_bandwidth_khz, rule->power_rule.max_antenna_gain,
++		            rule->power_rule.max_eirp);
++	}
+ }
+ 
+ int ath11k_regd_update(struct ath11k *ar)
+@@ -283,6 +308,7 @@
+ 		goto err;
+ 	}
+ 
++	ath11k_preserve_cn_bw(ab, regd_copy);
+ 	ret = regulatory_set_wiphy_regd(ar->hw->wiphy, regd_copy);
+ 
+ 	kfree(regd_copy);
