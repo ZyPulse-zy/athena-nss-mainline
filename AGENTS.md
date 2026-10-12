@@ -1,3 +1,12 @@
+# 2026-10-12：手动无线观察已安装，驱动尚未部署
+
+六 WAN 成功部署后，按用户已有许可，仅新增三份独立诊断 Lua 文件。实际 `athena-qos wifi-diagnose 5` 成功，6.17 秒/120 查询、单项最大 0.14 秒；六 WAN、来源、保护配置、服务 PID/start、既有执行文件、软件队列合同和模块哈希保持。未重启、重载无线或改变参数。
+001/002/003 驱动仍未加载：build-06 缺现场 CN shim，003 真实 firmware wire ABI 未知。原版两端均 196，配对候选两端 212，不能把原版错误宣称为已错位。先解决技术前置，不重复询问已授予的部署许可。PR #1 保持草稿。
+
+[可用命令、保护与剩余缺口](docs/DORM_V2_WIFI_OBSERVER_DEPLOYMENT.md) · [匿名部署证据](evidence/dorm-v2-wifi-observer-deployment.json)
+
+## 此前记录
+
 # 最新：六账号 NSS 已部署，真实 WAN6 CREATE/字节进展通过
 
 用户明确授权当前部署窗口；六账号成套 source/native 及必要平台入口已安装。五账号身份/认证/autorate、保护网络/防火墙段、无线、代理/Tailscale与十个软件根固定合同保持。首次文件安装权限错误已独立回退并保留；修正后在目标私有目录完成46文件安装探针。当前 native-running/sourceFresh，pending/未确认0，十二预算。

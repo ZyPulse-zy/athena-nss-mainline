@@ -45866,6 +45866,14 @@
       "bytes": 6579,
       "role": "maintained-controller-source-or-test",
       "revision": "dorm-v2-wan6-deployed-platform-corrections"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "49bde1dd39b62cb26668599e3fa3de0852ec3a26106e1499755d1b447e16342f",
+      "bytes": 31396,
+      "role": "maintained-controller-documentation",
+      "revision": "dorm-v2-wifi-observer-deployment-20261012"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -46047,5 +46055,10 @@
     "sourceRecordsAppended": 5,
     "realWan6CreateAndBytesVerified": true,
     "gameEnabled": false
+  },
+  "lastWifiObserverDeployment": {
+    "evidence": "evidence/dorm-v2-wifi-observer-deployment.json",
+    "observerInstalled": true,
+    "wifiModulesDeployed": false
   }
 }
