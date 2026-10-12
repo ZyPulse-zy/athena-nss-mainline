@@ -1,3 +1,5 @@
+最新游戏优先策略已经启用，详见 [游戏规则与风险核验](DORM_V2_GAME_WAN6.md)。下文保留为六账号部署时记录。
+
 # WAN6 双向 NSS 已部署并实测
 
 当前六个校园账号均在线，六账号 source/native 已成套安装，NSS 为 `native-running`、`sourceFresh`，pending/未确认均为 0。第六账号使用 `campus6/rpwan6/rpifb6`、表 106 和原完整 WAN mark 掩码；既有 DHCPv6 `network.wan6` 保留。新上行/下行 NSS 标签为 BE `7e65/7a65`、RT `7e66/7a66`。46 个控制器/平台文件及 12 个 source/helper 文件哈希核对通过，来源和预算覆盖十二个软件根。

@@ -45898,6 +45898,54 @@
       "bytes": 1967,
       "role": "maintained-controller-source-or-test",
       "revision": "dorm-v2-cn-preserved-stable-driver-candidate-20261012"
+    },
+    {
+      "path": "code/controller/game_wan6.lua",
+      "workspaceSource": "code/controller/game_wan6.lua",
+      "sha256": "298abb2403fa1d47c42a6b33c97fa58804a0dd842a7ee48ddd58c6e18990fa48",
+      "bytes": 9359,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-reviewed-steam-relay-game-wan6"
+    },
+    {
+      "path": "code/controller/game_wan6_control.lua",
+      "workspaceSource": "code/controller/game_wan6_control.lua",
+      "sha256": "4e33c808ae584d312f08edf295bd14a44faf4b49fd78baa0d26b38c66b272683",
+      "bytes": 11538,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-reviewed-steam-relay-game-wan6"
+    },
+    {
+      "path": "code/controller/game_wan6_cli.lua",
+      "workspaceSource": "code/controller/game_wan6_cli.lua",
+      "sha256": "05c000dd942e111fdbed0e9fdab244388de7ce1894f00a080b1738f71b00e6da",
+      "bytes": 860,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-reviewed-steam-relay-game-wan6"
+    },
+    {
+      "path": "code/controller/test-game-wan6.lua",
+      "workspaceSource": "code/controller/test-game-wan6.lua",
+      "sha256": "59601092a59ee8633862928d83bdfc32e8283d426c3562baed686167dc4a21d5",
+      "bytes": 13705,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-reviewed-steam-relay-game-wan6"
+    },
+    {
+      "path": "code/controller/test-wan6.lua",
+      "workspaceSource": "code/controller/test-wan6.lua",
+      "sha256": "710419d44423304d8735abfeef099276f33f5fc48c7ab3c8e69121688d816f2e",
+      "bytes": 13592,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-reviewed-steam-relay-game-wan6"
+    },
+    {
+      "path": "code/controller/platform/health-controller.lua",
+      "workspaceSource": "code/controller/platform/health-controller.lua",
+      "sha256": "39573576de1f1d8f39eb8b75a141919d86188c1a936954b02b867fec118a8bcd",
+      "bytes": 8313,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-reviewed-steam-relay-game-wan6"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -46089,5 +46137,11 @@
     "evidence": "evidence/dorm-v2-wifi-stable-cn-candidate.json",
     "modulesDeployed": false,
     "peerLayoutBytes": 196
+  },
+  "lastGameWan6Enablement": {
+    "evidence": "evidence/dorm-v2-game-wan6.json",
+    "enabled": true,
+    "sourceRecordsAppended": 6,
+    "realGameUdpVerified": false
   }
 }

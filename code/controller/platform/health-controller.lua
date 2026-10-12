@@ -4,8 +4,7 @@ local nixio=require('nixio')
 local root='/root/router-project'
 local enabled6=io.open(root..'/policy/wan6.enabled');local wanCount=enabled6 and 6 or 5;if enabled6 then enabled6:close()end
 local dir='/tmp/router-project-health'
-local gameGate=dofile('/usr/lib/athena-dorm-native/game_wan6_health.lua')
-local game=dofile('/usr/lib/athena-dorm-native/game_wan6.lua')
+local gameControl=dofile('/usr/lib/athena-dorm-native/game_wan6_control.lua').runtime()
 local function read(p) local f=io.open(p);if not f then return nil end;local v=f:read('*a');f:close();return v end
 local function write(p,v) local f=assert(io.open(p..'.new','w'));f:write(v);f:close();assert(os.rename(p..'.new',p)) end
 local function number(p) return tonumber(read(p)) or 0 end
@@ -102,13 +101,10 @@ while true do
  -- Never publish WAN6 game eligibility from a stale cached native status.
  -- Rule installation and reviewed exclusion configuration remain a separate stage.
  if read(root..'/policy/wan6-game.enabled') then
-  local native=json.parse(read('/tmp/athena-dorm-native/status.json') or '{}') or {}
-  local iface=json.parse(command('ubus call network.interface.campus6 status 2>/dev/null')) or {}
-  local boot=(read('/proc/sys/kernel/random/boot_id') or ''):gsub('%s+$','')
-  local eligible=gameGate.state(native,iface,state[6],start,boot)
-  write(dir..'/wan6-ready.nft',game.ready_update(eligible))
-  report.wan6GameReady=eligible.ready
-  if os.execute('nft -c -f '..dir..'/wan6-ready.nft >/dev/null 2>&1 && nft -f '..dir..'/wan6-ready.nft >/dev/null 2>&1')~=0 then report.wan6GameReady=false;report.wan6GameGateError=true end
+  local ok,result=pcall(gameControl.tick,state[6])
+  report.wan6GameReady=ok and result.ready==true or false
+  report.wan6GamePolicy=ok and result or {error='game-only-policy-update-refused'}
+  if not ok then report.wan6GameGateError=true end
  end
  write(dir..'/status.json',json.stringify(report));log(report)
  first=false

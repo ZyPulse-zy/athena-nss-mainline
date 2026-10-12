@@ -73,18 +73,18 @@ for hi=0,255 do for _,low in ipairs{0,6,256,4096,32768,65535}do
  check(fresh==mark+6*65536 and fresh%65536==low and math.floor(fresh/16777216)==hi)
 end end
 local packet={family=4,iif='br-lan',direction='original',ctState='new',zone=0,originalPackets=1,
- mark=0x81000100,metaMark=256,protocol=17,ipBytes=120,sport=41000,dport=27015,dst='203.0.113.12'}
-local state={enabled=true,exclusionsComplete=true,exclusionCidrs={'203.0.113.240/28'},ready=true,at=100,now=101}
+ mark=0x81000100,metaMark=256,protocol=17,ipBytes=120,sport=41000,dport=27015,dst='155.133.248.36'}
+local state={version=2,provider='steam-sdr-730',resolverIPv4='10.8.8.8',enabled=true,exclusionsReviewed=true,exclusionCidrs={'155.133.248.240/28'},sourceSha256=string.rep('a',64),sourceRevision=1,sourceFetchedAtEpoch=1000,maximumAgeSeconds=604800,refreshAfterSeconds=86400,relayGroups={{low=27015,high=27050,addresses={'155.133.248.36'}}},epoch=1001,ready=true,at=100,now=101}
 local routed=game.decide(packet,state);check(routed==contract.mark(packet.mark,6))
 for k,v in pairs{protocol=6,dport=443,sport=53,ipBytes=1400,originalPackets=2,zone=1,
  ctState='established',direction='reply',iif='tailscale0',fragmented=true,mark=65536,metaMark=8192,
  dst='100.64.0.1'}do
  local p=copy(packet);p[k]=v;check(game.decide(p,state)==nil,k)
 end
-local p=copy(packet);p.dst='203.0.113.242';check(game.decide(p,state)==nil)
+local p=copy(packet);p.dst='155.133.248.242';check(game.decide(p,state)==nil)
 local unknownVpn=copy(packet);unknownVpn.vpn=true;check(game.decide(unknownVpn,state)~=nil,'A semantic label unavailable to nft cannot mask first-packet ambiguity')
-for k,v in pairs{enabled=false,ready=false,exclusionsComplete=false,now=115}do local s=copy(state);s[k]=v;check(game.decide(packet,s)==nil,k)end
-check(not pcall(game.render,{exclusionsComplete=false,exclusionCidrs={'203.0.113.240/28'}}))
+for k,v in pairs{enabled=false,ready=false,exclusionsReviewed=false,now=115}do local s=copy(state);s[k]=v;check(game.decide(packet,s)==nil,k)end
+check(not pcall(game.render,{exclusionsReviewed=false,exclusionCidrs={'203.0.113.240/28'}}))
 local nft=game.render(state);check(nft:find('ct original packets != 1 return',1,true)~=nil and not nft:find('flush chain',1,true))
 check(game.ready_update({wanCount=6}):match('^flush set') and not game.ready_update({wanCount=6}):find('add element',1,true))
 local gate=dofile(root..'/game_wan6_health.lua')
