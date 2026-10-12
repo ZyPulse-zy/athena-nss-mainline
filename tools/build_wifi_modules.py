@@ -35,7 +35,7 @@ def main():
     parser.add_argument('--sdk-staging', required=True, type=pathlib.Path)
     parser.add_argument('--host-tools', type=pathlib.Path, help='Optional native bin directory containing bison, flex and m4')
     parser.add_argument('--output', required=True, type=pathlib.Path)
-    parser.add_argument('--patch-set', choices=['paired', 'stable-cn'], default='paired', help='stable-cn preserves installed CN shim and 196-byte ABI; applies only 001/002')
+    parser.add_argument('--patch-set', choices=['paired', 'stable-cn', 'firmware-212-cn'], default='paired', help='stable-cn: 001/002/004 with 196 consumer; firmware-212-cn: add firmware-verified consumer-only 003; paired is the historical option name, no longer changes NSS')
     parser.add_argument('--jobs', type=int, choices=range(1, 9), default=4)
     args = parser.parse_args()
     prepared, firmware, sdk, output = [p.resolve() for p in
@@ -212,7 +212,7 @@ def main():
         for revision in ['original', 'patched']:
             backports = output / ('backports' if revision=='patched' else 'backports-original')
             shutil.copytree(prepared / 'backports', backports)
-            if args.patch_set == 'stable-cn':
+            if args.patch_set in ('stable-cn', 'firmware-212-cn'):
                 cn_patch = pathlib.Path(__file__).resolve().parents[1] / 'code/controller/native/patches/004-ath11k-preserve-installed-cn-bandwidth-shim.patch'
                 text = run(revision+'-preserve-cn-shim', ['patch','-f','--fuzz=0','-p1','-d',str(backports),'-i',str(cn_patch)])
                 assert 'offset' not in text and 'fuzz' not in text, text
@@ -261,10 +261,12 @@ def main():
                 assert 'AArch64' in header and vermagic.startswith('6.18.44 ')
                 report['artifacts'][revision+'/'+relative] = {'sha256':digest(module),'bytes':module.stat().st_size,
                                                             'elfMachine':'AArch64','vermagic':vermagic}
-        assert report['abiProbes']['provider']['peerBytes'] == (196 if args.patch_set == 'stable-cn' else 212)
+        assert report['abiProbes']['provider']['peerBytes'] == 196
         assert report['abiProbes']['original']['peerBytes'] == 196
         assert report['abiProbes']['original'] == report['abiProbes']['provider-original']
-        assert report['abiProbes']['patched'] == report['abiProbes']['provider']
+        assert report['abiProbes']['patched']['peerBytes'] == (196 if args.patch_set == 'stable-cn' else 212)
+        report['nssPeerDeclarationIsFirmwareProducer'] = False
+        report['firmwareWireValidationRequired'] = args.patch_set != 'stable-cn'
         required = ['net/mac80211/mac80211.ko','net/wireless/cfg80211.ko','drivers/net/wireless/ath/ath11k/ath11k.ko',
                     'drivers/net/wireless/ath/ath11k/ath11k_ahb.ko','drivers/net/wireless/ath/ath11k/ath11k_pci.ko']
         assert all('patched/'+name in report['artifacts'] for name in required)

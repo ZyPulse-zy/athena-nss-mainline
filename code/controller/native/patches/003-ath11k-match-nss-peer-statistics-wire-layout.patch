@@ -1,13 +1,16 @@
-Subject: [PATCH] ath11k/NSS: enable the pinned statistics layout on both sides
+Subject: [PATCH] ath11k: consume verified NSS 12.5 firmware peer statistics
 
-The pinned recipe specifies NSS_FIRMWARE_VERSION_12_5 via EXTRA_CFLAGS,
-but Linux 6.18 no longer adopts that legacy variable. Actual Kbuild probes
-show both original sides use a 196-byte peer; changing ath11k alone would
-introduce a mismatch. Put the recipe's intended define in NSS ccflags-y
-as well, and match it in the NSS-enabled ath11k consumer. Both become
-212 bytes. This paired candidate still requires firmware wire validation;
-it is not evidence that the installed driver pair was already mismatched.
-Apply from a root containing backports/ and nss-drv/, after pinned patches.
+The exact installed IPQ6018 NSS.FW.12.5-210-CP.R release firmware emits
+212-byte peer records. Bounded multi-peer observations reject 196-byte
+stride and match 212-byte stride against live peer membership. cm.len=216
+is a fixed template length, not a variable-array byte count.
+
+The pinned NSS driver forwards this message without parsing peer records;
+its legacy 196-byte declaration does not produce firmware wire data. Keep
+that installed driver unchanged. Enable the matching layout only in the
+NSS-enabled ath11k consumer. Preserve CN shim and existing module parameters.
+See docs/DORM_V2_WIFI_FIRMWARE_ABI.md for evidence and remaining limits.
+Apply from a root containing backports/, after pinned patches.
 
 --- a/backports/drivers/net/wireless/ath/ath11k/Makefile
 +++ b/backports/drivers/net/wireless/ath/ath11k/Makefile
@@ -16,13 +19,3 @@ Apply from a root containing backports/ and nss-drv/, after pinned patches.
 +ccflags-$(CPTCFG_ATH11K_NSS_SUPPORT) += -DNSS_FIRMWARE_VERSION_12_5
  obj-$(CPTCFG_ATH11K) += ath11k.o
  ath11k-y += core.o \
---- a/nss-drv/Makefile
-+++ b/nss-drv/Makefile
-@@ -5,6 +5,7 @@
- obj-m += qca-nss-drv.o
- 
- ccflags-y += $(NSS_DRV_EXTRA_INCLUDES)
-+ccflags-y += -DNSS_FIRMWARE_VERSION_12_5
- 
- #
- # Regular NSS path

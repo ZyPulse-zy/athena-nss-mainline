@@ -5,17 +5,19 @@ local function cmd(c)local f=assert(io.popen(c));local s=f:read('*a');f:close();
 local expected=assert(j.parse(assert(read(checkpoint..'/verify-expected.json'))))
 local function hash(p)return cmd('sha256sum '..p..' 2>/dev/null'):match('^(%x+) ')end
 assert(read('/proc/sys/kernel/random/boot_id'):match('%S+')==expected.boot)
-for p,sha in pairs(expected.protection)do assert(hash(p)==sha,'Protected config changed: '..p)end
 for name,sha in pairs(expected.sourceHashes)do assert(hash('/usr/lib/athena-dorm-native/'..name)==sha,'Installed source changed: '..name)end
 for name,sha in pairs(expected.unchangedModules)do assert(hash('/lib/modules/6.18.44/'..name..'.ko')==sha,'Unchanged module modified: '..name)end
 local deadline=tonumber(read('/proc/uptime'):match('^[%d.]+'))+120
 local state
 repeat
  state=j.parse(read('/tmp/athena-dorm-native/status.json')or'{}')or{}
- if state.phase=='native-running' and state.flowState and state.flowState.sourceFresh then break end
+ local protectionReady=true
+ for p,sha in pairs(expected.protection)do if hash(p)~=sha then protectionReady=false end end
+ if protectionReady and state.phase=='native-running' and state.flowState and state.flowState.sourceFresh then break end
  n.nanosleep(1,0)
 until tonumber(read('/proc/uptime'):match('^[%d.]+'))>=deadline
 assert(state.phase=='native-running' and state.flowState and state.flowState.sourceFresh,'Native source not fresh')
+for p,sha in pairs(expected.protection)do assert(hash(p)==sha,'Protected config changed: '..p)end
 local gate=cmd('cat /sys/kernel/debug/athena_ecm_gate/status')
 assert(not gate:match('slot=%d+ state=2 ') and not gate:match('slot=%d+ state=5 '),'Pending or unconfirmed firmware state')
 for w=1,6 do

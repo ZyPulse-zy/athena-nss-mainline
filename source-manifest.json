@@ -45978,6 +45978,54 @@
       "bytes": 2415,
       "role": "maintained-controller-source-or-test",
       "revision": "dorm-v2-wifi-driver-deployment-20261012"
+    },
+    {
+      "path": "code/controller/native/wifi-abi-observer.c",
+      "workspaceSource": "code/controller/native/wifi-abi-observer.c",
+      "sha256": "d842397d7d6f7327bc03ea067de30bc4c0cdaa5695278f91f07525a292d3d486",
+      "bytes": 5082,
+      "role": "maintained-controller-source-or-test",
+      "revision": "wifi-firmware-212-verified-20261012"
+    },
+    {
+      "path": "code/controller/native/wifi-driver-runtime.sh",
+      "workspaceSource": "code/controller/native/wifi-driver-runtime.sh",
+      "sha256": "ec6788a02cec0e2214dd9370c9dae6f764bffb0ea90e8240f9bdeb8a5c412af8",
+      "bytes": 5086,
+      "role": "maintained-controller-source-or-test",
+      "revision": "wifi-firmware-212-verified-20261012"
+    },
+    {
+      "path": "code/controller/native/test-wifi-abi-observer.c",
+      "workspaceSource": "code/controller/native/test-wifi-abi-observer.c",
+      "sha256": "2a28345bcb9ef279906de13a4483febd3875fc57f68decf8ed6e62860790b6fa",
+      "bytes": 3252,
+      "role": "maintained-controller-source-or-test",
+      "revision": "wifi-firmware-212-verified-20261012"
+    },
+    {
+      "path": "code/controller/native/wifi-driver-verify.lua",
+      "workspaceSource": "code/controller/native/wifi-driver-verify.lua",
+      "sha256": "4cbb8410867011fdfb4c5d8135af4f00994151eabc037a32ba251245e86f1f96",
+      "bytes": 2557,
+      "role": "maintained-controller-source-or-test",
+      "revision": "wifi-firmware-212-verified-20261012"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "92a68de809e64ce5121ff8ce87837b0175c64760e25f004c2632075e506d3cb0",
+      "bytes": 33844,
+      "role": "maintained-controller-source-or-test",
+      "revision": "wifi-firmware-212-verified-20261012"
+    },
+    {
+      "path": "code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch",
+      "workspaceSource": "code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch",
+      "sha256": "e7a3634ed7295d400d5fc631edb9a73dd4cc5a9cbd3b046c5b5197b53fe98991",
+      "bytes": 1093,
+      "role": "maintained-controller-source-or-test",
+      "revision": "wifi-firmware-212-verified-20261012"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",

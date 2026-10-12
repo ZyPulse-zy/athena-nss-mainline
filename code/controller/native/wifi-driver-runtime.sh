@@ -9,6 +9,7 @@ test -d "$checkpoint"
 exec >>"$checkpoint/runtime.log" 2>&1
 run_action() {
  name=$1
+ printf 'action:%s\n' "$name"
  if test "${ATHENA_DRIVER_MODEL:-}" = 1; then
   "$checkpoint/model-action" "$name"
  else
@@ -29,19 +30,25 @@ run_action() {
     lua -e 'local j=require("luci.jsonc");local f=assert(io.open("/tmp/athena-dorm-native/status.json"));local s=assert(j.parse(f:read("*a")));f:close();assert(s.phase=="restored" and s.rollbackConfirmed);local fs=require("nixio.fs");assert(not fs.stat("/tmp/athena-dorm-native/lock") and not fs.stat("/sys/module/athena_ecm_gate") and not fs.stat("/sys/module/athena_nss_receipts"))' ;;
    wifi-down) timeout -k 5 60 wifi down ;;
    unload)
-    for m in ath11k_pci ath11k_ahb ath11k mac80211; do
+    unload_modules="ath11k_pci ath11k_ahb ath11k mac80211"
+    test ! -f "$checkpoint/ath11k-only" || unload_modules="ath11k_pci ath11k_ahb ath11k"
+    for m in $unload_modules; do
      test ! -d "/sys/module/$m" || timeout -k 5 30 rmmod "$m"
     done ;;
    load-original|load-candidate)
     which=original; test "$name" != load-candidate || which=candidate
-    timeout -k 5 40 insmod "$checkpoint/$which/mac80211.ko" $(cat "$checkpoint/mac80211.args")
+    if test ! -f "$checkpoint/ath11k-only"; then
+     timeout -k 5 40 insmod "$checkpoint/$which/mac80211.ko" $(cat "$checkpoint/mac80211.args")
+    fi
     timeout -k 5 90 insmod "$checkpoint/$which/ath11k.ko" $(cat "$checkpoint/ath11k.args")
     # Bus modules and NSS/mesh/cfg80211 binaries always remain original.
     timeout -k 5 90 insmod "$checkpoint/original/ath11k_ahb.ko"
     timeout -k 5 90 insmod "$checkpoint/original/ath11k_pci.ko" ;;
    restore-persistent)
     if test -f "$checkpoint/persist-started"; then
-     for m in mac80211 ath11k; do
+     replace_modules="mac80211 ath11k"
+     test ! -f "$checkpoint/ath11k-only" || replace_modules="ath11k"
+     for m in $replace_modules; do
       cp "$checkpoint/original/$m.ko" "/lib/modules/6.18.44/.$m.wifi-restore"
       chmod 644 "/lib/modules/6.18.44/.$m.wifi-restore"
       mv "/lib/modules/6.18.44/.$m.wifi-restore" "/lib/modules/6.18.44/$m.ko"
@@ -50,7 +57,9 @@ run_action() {
     fi ;;
    persist-candidate)
     : > "$checkpoint/persist-started"
-    for m in mac80211 ath11k; do
+    replace_modules="mac80211 ath11k"
+    test ! -f "$checkpoint/ath11k-only" || replace_modules="ath11k"
+    for m in $replace_modules; do
      cp "$checkpoint/candidate/$m.ko" "/lib/modules/6.18.44/.$m.wifi-new"
      chmod 644 "/lib/modules/6.18.44/.$m.wifi-new"
      mv "/lib/modules/6.18.44/.$m.wifi-new" "/lib/modules/6.18.44/$m.ko"

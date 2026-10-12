@@ -1,8 +1,8 @@
-"""Compare original, unsafe consumer-only and paired NSS statistics layouts.
+"""Check original and repaired consumers against a firmware-212 fixture.
 
-The original provider's EXTRA_CFLAGS define is not effective in Linux 6.18
-Kbuild. This host model selects effective ccflags-y defines from actual
-Makefiles; full ARM64 Kbuild probes independently verify that assumption.
+The pinned NSS host declaration is not the wire producer. Actual bounded
+firmware observations establish stride separately; this offline model checks
+record indexing and retry-field offsets, not real firmware field semantics.
 """
 import argparse
 import hashlib
@@ -70,29 +70,25 @@ with tempfile.TemporaryDirectory(prefix='athena-wifi-abi-') as folder:
                                 text=True,capture_output=True,timeout=30)
         assert result.returncode==0,result.stderr
         return executable
-    for revision in ['original', 'consumer-only-rejected', 'paired']:
-        if revision=='paired':
-            subprocess.run(['patch','-f','--fuzz=0','-p1','-d',str(stage),'-i',str(patch)],
-                           check=True,capture_output=True,timeout=10)
+    # Firmware is the wire producer; NSS forwards peer payload without decoding.
+    provider=compile('firmware-212', ['-DNSS_FIRMWARE_VERSION_12_5'])
+    wire=stage/'message'
+    subprocess.run([str(provider),'write',str(wire)],check=True,timeout=10)
+    for revision in ['original', 'firmware-matched-consumer']:
+        if revision != 'original':
+            subprocess.run(['patch','-f','--fuzz=0','-p1','-d',str(stage),'-i',str(patch)],check=True,capture_output=True,timeout=10)
         provider_flags=macro_flags(provider_make)
         consumer_flags=macro_flags(consumer_make)
-        if revision=='consumer-only-rejected': consumer_flags=['-DNSS_FIRMWARE_VERSION_12_5']
-        provider=compile('provider',provider_flags)
+        assert provider_flags == []  # host declaration is not firmware serialization
         consumer=compile('consumer',consumer_flags)
-        wire=stage/'message'
-        subprocess.run([str(provider),'write',str(wire)],check=True,timeout=10)
-        provider_values=json.loads(subprocess.check_output([str(provider),'read',str(wire)],text=True))
         result=subprocess.run([str(consumer),'read',str(wire)],capture_output=True,text=True,timeout=10)
         values=json.loads(result.stdout) if result.returncode==0 else None
         matches=bool(values and values['peers']==expected)
-        assert matches==(revision!='consumer-only-rejected')
-        if revision=='consumer-only-rejected': assert result.returncode==8
-        else:
-            assert provider_values['peerBytes']==values['peerBytes']==(212 if revision=='paired' else 196)
-            assert provider_values['retryOffset']==values['retryOffset']==(188 if revision=='paired' else 180)
-        report['runs'].append({'revision':revision,'providerFlags':provider_flags,
-                              'consumerFlags':consumer_flags,'matchesProvider':matches,
-                              'providerLayout':{k:provider_values[k] for k in ['peerBytes','retryOffset']},
+        assert matches == (revision != 'original')
+        if matches: assert values['peerBytes']==212 and values['retryOffset']==188
+        report['runs'].append({'revision':revision,'firmwareRecordBytes':212,
+                              'nssHostDeclarationMacroFlags':provider_flags,
+                              'consumerFlags':consumer_flags,'matchesFirmwareFixture':matches,
                               'consumerExit':result.returncode,'consumerValues':values})
 report['passed']=True
 if args.output: args.output.write_text(json.dumps(report,indent=2)+'\n')
