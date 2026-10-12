@@ -23,7 +23,7 @@ function M.cleanup_text(choose,tableText)
  if tableText:find('chain athena_game_wan6 {',1,true)then
   lines[#lines+1]='flush chain inet rp_pbr athena_game_wan6';lines[#lines+1]='delete chain inet rp_pbr athena_game_wan6'
  end
- for _,name in ipairs({'athena_wan6_ready','athena_wan6_excluded'})do
+ for _,name in ipairs({'athena_wan6_ready','athena_wan6_excluded','athena_wan6_generic_ready','athena_wan6_generic_rate'})do
   if tableText:find('set '..name..' {',1,true)then lines[#lines+1]='delete set inet rp_pbr '..name end
  end
  local names={};for name in tableText:gmatch('set (athena_wan6_game_%d+) {')do names[#names+1]=name end;table.sort(names)
@@ -137,9 +137,10 @@ function M.runtime()
   local eligible=gameGate.state(nr,iface,wan6Health,uptime,boot)
   epoch=os.time()
   eligible.policyCurrent=cfg.enabled==true and M.cache_ready(cfg,epoch,read('/sys/kernel/debug/athena_ecm_gate/status',65536,true))
-  transaction(game.ready_update(eligible))
+  transaction(game.ready_update(eligible,cfg))
   s.enabled=true;s.configSha=shaNow;s.atEpoch=epoch;s.sourceRevision=cfg.sourceRevision;s.sourceFetchedAtEpoch=cfg.sourceFetchedAtEpoch;s.relayCount=game.validate(cfg);s.ready=eligible.ready and eligible.policyCurrent or false
-  write(statePath,j.stringify(s));return{ready=s.ready,relayCount=s.relayCount,sourceRevision=s.sourceRevision,snapshotAgeSeconds=epoch-cfg.sourceFetchedAtEpoch,lastRefreshSucceeded=s.lastRefreshSucceeded}
+  s.smallUdpEnabled=cfg.smallUdp and cfg.smallUdp.enabled==true or false
+  write(statePath,j.stringify(s));return{ready=s.ready,relayCount=s.relayCount,smallUdpEnabled=s.smallUdpEnabled,sourceRevision=s.sourceRevision,snapshotAgeSeconds=epoch-cfg.sourceFetchedAtEpoch,lastRefreshSucceeded=s.lastRefreshSucceeded}
  end
  -- POSIX lock serializes activation, lease renewal, refresh and rollback.
  -- Inherited subprocesses cannot race on the shared transaction file.

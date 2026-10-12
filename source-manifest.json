@@ -46042,6 +46042,30 @@
       "bytes": 4127,
       "role": "maintained-controller-source-or-test",
       "revision": "wifi-passive-tid-aql-20261012"
+    },
+    {
+      "path": "code/controller/game_wan6.lua",
+      "workspaceSource": "code/controller/game_wan6.lua",
+      "sha256": "0bc9427a97cf7aa66853edd3d1959d2bdd36b31c6d74922e307944fb3f517ac1",
+      "bytes": 12588,
+      "role": "maintained-controller-source-or-test",
+      "revision": "small-udp-wan6-20261012"
+    },
+    {
+      "path": "code/controller/game_wan6_control.lua",
+      "workspaceSource": "code/controller/game_wan6_control.lua",
+      "sha256": "f105f198b9592ab366b1b9379cc4b48c08efbd5abda1c38dc42687c67e39d6d9",
+      "bytes": 11704,
+      "role": "maintained-controller-source-or-test",
+      "revision": "small-udp-wan6-20261012"
+    },
+    {
+      "path": "code/controller/test-game-wan6.lua",
+      "workspaceSource": "code/controller/test-game-wan6.lua",
+      "sha256": "219894a1e80aeb23fdef61f39bbfa2dbb74bc4378ce8e991373abbcb7cf799f2",
+      "bytes": 18346,
+      "role": "maintained-controller-source-or-test",
+      "revision": "small-udp-wan6-20261012"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",

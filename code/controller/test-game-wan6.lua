@@ -45,10 +45,35 @@ check(not pcall(ctl.cleanup_text,'jump foreign comment "athena-wan6-first-packet
 -- A known relay/port identifies the service endpoint, never the process or
 -- payload: Steam relay probes/voice or a custom same-service tunnel can match.
 local ambiguous=copy(packet);ambiguous.semanticVpn=true;check(game.decide(ambiguous,cfg)~=nil,'Residual ambiguity must remain explicit')
+-- Broader first-packet heuristic, deliberately distinct from observed rate.
+-- Synthetic exclusions are coverage checks, not a field false-positive rate.
+local generic=copy(cfg);generic.smallUdp={enabled=true,maximumIpBytes=256,minimumPort=1024,perHostRate=4,perHostBurst=8,globalRate=16,globalBurst=32}
+local unknown=copy(packet);unknown.dst='8.8.8.8';unknown.dport=30000;unknown.udpBytes=100;unknown.payloadByte1=0x55;unknown.payloadWord1=0x55667788;unknown.payloadWord2=0x99aabbcc;unknown.hostRateAllowed=true;unknown.globalRateAllowed=true
+local marked,reason=game.decide(unknown,generic);check(marked==0x81060100 and reason=='small-udp-heuristic-candidate','Unknown public endpoint may qualify without a game name')
+for _,t in ipairs{{'dport',443},{'dport',53},{'dport',51820},{'dport',3478},{'dport',6881},{'sport',5349},{'dport',1234},{'udpBytes',19},{'udpBytes',237},{'hostRateAllowed',false},{'globalRateAllowed',false},{'payloadWord2',0x2112a442},{'payloadWord1',0x01000000},{'payloadWord1',0x02000000},{'payloadWord1',0x03000000},{'payloadWord1',0x04000000},{'payloadByte1',0xc3},{'payloadByte1',0x21},{'ipBytes',1500},{'dst','202.116.64.144'},{'dst','198.18.1.1'},{'metaMark',0x2000},{'mark',65536},{'protocol',6}}do
+ local p=copy(unknown);p[t[1]]=t[2]
+ -- 1234 is intentionally an arbitrary high game port and should qualify.
+ check((game.decide(p,generic)~=nil)==(t[1]=='dport'and t[2]==1234),'Generic exclusion '..t[1]..'/'..tostring(t[2]))
+end
+local later=copy(unknown);later.mark=marked;later.originalPackets=2;later.ctState='established';later.ipBytes=1500
+check(game.decide(later,generic)==nil,'Later BULK cannot migrate an existing NAT connection')
+local indistinguishable=copy(unknown);indistinguishable.semanticVpn=true;indistinguishable.futureRateKbps=100000
+check(game.decide(indistinguishable,generic)~=nil,'Custom tunnel or small download handshake remains a possible false positive')
+local broad=game.render(generic);check(broad:find('limit rate 4/second burst 8 packets',1,true) and broad:find('limit rate 16/second burst 32 packets',1,true),'Bound both per-host and global first-packet selection')
+check(broad:find('size 1024',1,true) and broad:find('meta l4proto @athena_wan6_generic_ready',1,true),'Bounded state and independent expiring generic eligibility')
+check(not broad:find(' drop',1,true),'Exclusions and rate failures fall through, never drop')
+local expired=copy(base);expired.policyCurrent=false
+check(game.ready_update(base,generic):find('{ udp timeout 15s }',1,true)~=nil and not game.ready_update(expired,generic):find('add element',1,true),'Both paths withdraw on stale health/cache')
+local undoBroad=ctl.cleanup_text(choose,tableText..'set athena_wan6_generic_ready {\nset athena_wan6_generic_rate {\n')
+check(undoBroad:find('delete set inet rp_pbr athena_wan6_generic_rate',1,true) and undoBroad:find('delete set inet rp_pbr athena_wan6_generic_ready',1,true),'Generic rollback removes only owned sets')
+local refreshedBroad=game.from_sdr(generic,{success=true,revision=2,pops={x={relays={{ipv4='155.133.248.40',port_range={27015,27060}}}}}},string.rep('b',64),2000)
+check(refreshedBroad.smallUdp.enabled and refreshedBroad.smallUdp.perHostRate==4,'Daily relay refresh retains reviewed generic policy')
+for _,key in ipairs{'maximumIpBytes','minimumPort','perHostRate','perHostBurst','globalRate','globalBurst'}do local c=copy(generic);c.smallUdp[key]=65535;check(not pcall(game.validate,c),'Reject unbounded generic '..key)end
 print(require('luci.jsonc').stringify({passed=true,checks=checks,gameEndpointScope='official-relay-IPv4-with-published-port-intersection',kernelIoMocked=true,realGameMisidentificationRateMeasured=false}))
 -- Execute the real runtime in a virtual filesystem/command environment. This
 -- exercises boot reconstruction, registered updates and rollback without
 -- touching a router, shared nft table, source/native owner or real DNS.
+cfg=copy(generic);tableText=tableText..'set athena_wan6_generic_ready {\nset athena_wan6_generic_rate {\n'
 local j=require('luci.jsonc');local files={};local epoch=1001;local uptime=101;local boot='test-boot';local installed=false;local rendered='';local refreshFails=false
 local oldOpen,oldPopen,oldTime=io.open,io.popen,os.time
 local oldFs,oldN=package.loaded['nixio.fs'],package.loaded['nixio'];local oldFsPre,oldNPre=package.preload['nixio.fs'],package.preload['nixio']
@@ -86,11 +111,20 @@ local ok,err=pcall(function()
  local runtime=ctl.runtime();check(runtime.prepare().dataPlaneWrites==false and not installed,'Prepare must not apply live rules')
  check(runtime.install().enabled and installed and files[ctl.ownerPath]~=nil,'Persist cache owner on initial activation')
  local state=runtime.tick({healthy=true});check(state.ready and rendered:find('add element',1,true)~=nil,'Initial lease')
+ check(state.smallUdpEnabled and rendered:find('{ udp timeout 15s }',1,true),'Renew the generic lease from the same real runtime gate')
+ -- A live scope edit must register its pending hash. The next health tick
+ -- rebuilds the owned objects and updates RAM bookkeeping before renewing.
+ local edited=copy(cfg);edited.smallUdp.enabled=false
+ local own=j.parse(files[ctl.ownerPath]);put(ctl.configPath,edited);own.pendingConfigSha=sha(ctl.configPath);put(ctl.ownerPath,own)
+ state=runtime.tick({healthy=true});check(state.ready and not state.smallUdpEnabled and j.parse(files[ctl.ownerPath]).pendingConfigSha==nil,'Registered narrow live edit replaces cache state')
+ own=j.parse(files[ctl.ownerPath]);put(ctl.configPath,cfg);own.pendingConfigSha=sha(ctl.configPath);put(ctl.ownerPath,own)
+ state=runtime.tick({healthy=true});check(state.ready and state.smallUdpEnabled and rendered:find('{ udp timeout 15s }',1,true),'Registered broad live edit renews both leases')
  -- A reboot/table reload loses RAM bookkeeping, but verified persistent
  -- owner/config/flag reconstruct only the game namespace and empty lease.
  installed=false;for p in pairs(files)do if p:match('^/tmp/')then files[p]=nil end end
  boot='test-boot-two';put('/proc/sys/kernel/random/boot_id',boot..'\n');nr.boot=boot;put('/tmp/athena-dorm-native/status.json',nr)
  state=runtime.tick({healthy=true});check(state.ready and installed,'Restore verified game policy after RAM/table loss without source/native restart')
+ check(state.smallUdpEnabled,'Generic policy survives registered boot/table reconstruction')
  epoch=87400;state=runtime.tick({healthy=true});local owner2=j.parse(files[ctl.ownerPath]);local cached=j.parse(files[ctl.configPath])
  check(state.ready and state.sourceRevision==2 and cached.sourceFetchedAtEpoch==epoch,'Bounded real-address TLS refresh')
  check(owner2.configSha==sha(ctl.configPath) and owner2.pendingConfigSha==nil,'Finalize exact persistent owner after cache update')
