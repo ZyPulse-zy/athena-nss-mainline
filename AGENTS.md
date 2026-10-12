@@ -1,3 +1,11 @@
+# 2026-10-12：部署后被动观察与TID/AQL核查
+
+五个30秒自然窗口及25秒同设备分组只读完成；未重启/重载/造流/改无线参数。来源间断0，RT有真实NSS进展与标签核验；本窗BULK无CREATE/字节归属，同机RT/BULK未同时出现。当前HAS_TX_QUEUE与未宣告AQL能力使host AQL不约束正常发送路径；aql_enable=1/pending=0不是生效证据。最终固件TID/AC、override和固件队列控制仍未导出，不能把标签正确冒充末端正确。精确源码模型23项通过，配置保持。正式游戏延期，PR1草稿。
+
+[路径、命令、现场证据与缺口](docs/DORM_V2_WIFI_PASSIVE_STABILITY.md) · [匿名模型](evidence/dorm-v2-wifi-passive-stability.json)
+
+## 此前记录
+
 # 2026-10-12：003 固件 ABI 已现场核实并部署
 
 精确IPQ6018 NSS.FW.12.5-210-CP.R发行固件与现场逐字节相同。有界多peer观察排除196并支持212；NSS为不解析peer记录的转发层，003缩小为ath11k消费端修复。完整构建/严格modpost、离线定向模型与RAM试装通过，仅ath11k持久替换；mac80211/NSS/mesh/cfg80211、CN、参数、六WAN/游戏策略保持。首次核验过早比较core guard触发独立回退，恢复实证保留，修订有界等待后重试成功。30秒被动11样本来源间断0，有真实RT/NSS进展及标签核验，仍未证明最终空口队列或游戏收益。正式游戏验收继续延期，PR1草稿。

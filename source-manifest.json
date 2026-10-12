@@ -46026,6 +46026,22 @@
       "bytes": 1093,
       "role": "maintained-controller-source-or-test",
       "revision": "wifi-firmware-212-verified-20261012"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "7a7e12d0254da4f6b95122c2f6f2fba68c37093bbed00f28676bc77176185cd9",
+      "bytes": 34057,
+      "role": "maintained-controller-source-or-test",
+      "revision": "wifi-passive-tid-aql-20261012"
+    },
+    {
+      "path": "code/controller/native/test-wifi-tid-aql.c",
+      "workspaceSource": "code/controller/native/test-wifi-tid-aql.c",
+      "sha256": "521f79fd242bb4634b33001d60b466dbf90de013a9712d4815e5f3fa5d1a94cf",
+      "bytes": 4127,
+      "role": "maintained-controller-source-or-test",
+      "revision": "wifi-passive-tid-aql-20261012"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
