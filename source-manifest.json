@@ -45946,6 +45946,38 @@
       "bytes": 8313,
       "role": "maintained-controller-source-or-test",
       "revision": "dorm-v2-reviewed-steam-relay-game-wan6"
+    },
+    {
+      "path": "code/controller/README.md",
+      "workspaceSource": "code/controller/README.md",
+      "sha256": "65f044e26c209e9e5ecc26641fc6771de4bf9a08160ac1c1583ce3abf1fb123a",
+      "bytes": 33598,
+      "role": "maintained-controller-documentation",
+      "revision": "dorm-v2-wifi-driver-deployment-20261012"
+    },
+    {
+      "path": "code/controller/native/wifi-driver-runtime.sh",
+      "workspaceSource": "code/controller/native/wifi-driver-runtime.sh",
+      "sha256": "19e9df8e4e597e334fc53cbb649f890919d004034654d0935d6d9b99b6ee1b85",
+      "bytes": 4657,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wifi-driver-deployment-20261012"
+    },
+    {
+      "path": "code/controller/native/wifi-driver-guardian.sh",
+      "workspaceSource": "code/controller/native/wifi-driver-guardian.sh",
+      "sha256": "65fb90dd334c9c053c4ddab5ee9070fef066efa0724c2fc464f5a7f29de6f1a7",
+      "bytes": 1016,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wifi-driver-deployment-20261012"
+    },
+    {
+      "path": "code/controller/native/wifi-driver-verify.lua",
+      "workspaceSource": "code/controller/native/wifi-driver-verify.lua",
+      "sha256": "8db9f9ff369e41e003f3f1c9b3779fbaf892d6b597d40713cca6363c5039213d",
+      "bytes": 2415,
+      "role": "maintained-controller-source-or-test",
+      "revision": "dorm-v2-wifi-driver-deployment-20261012"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
@@ -46143,5 +46175,14 @@
     "enabled": true,
     "sourceRecordsAppended": 6,
     "realGameUdpVerified": false
+  },
+  "lastWifiDriverDeployment": {
+    "evidence": "evidence/dorm-v2-wifi-driver-deployment.json",
+    "modulesInstalled": [
+      "ath11k",
+      "mac80211"
+    ],
+    "patch003Applied": false,
+    "peerLayoutBytes": 196
   }
 }
