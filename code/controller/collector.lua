@@ -9,8 +9,9 @@ local function read(p,limit)
   if not s or #s>(limit or 4194304) then return nil end
   return s
 end
-local function command(cmd,limit,name,diagnostics)
+local function command(cmd,limit,name,diagnostics,progress)
   local began=M.now();limit=limit or 262144
+  if progress then progress({phase='query',command=name,atUptime=began})end
   local f=io.popen('/usr/bin/timeout -k 1 1 '..cmd..' 2>/dev/null; printf "\nATHENA_COLLECT_EXIT_%s\n" "$?"')
   local s=f and f:read(limit+1);if f then f:close()end
   local body,code;if s and #s<=limit then body,code=s:match('^(.*)\nATHENA_COLLECT_EXIT_(%d+)\n$')end
@@ -34,14 +35,18 @@ function M.software_budgets(wanCount)
   local began=M.now();local diagnostics={commands={},failures=0,commandCount=0};local values={up={},down={}}
   local complete=true
   for w=1,wanCount do for _,x in ipairs{{'up','rpwan'},{'down','rpifb'}}do
-    if M.now()-began>=0.75 then complete=false;break end
+    if M.now()-began>=0.75 then complete=false;diagnostics.failureKind='sample-time-budget';diagnostics.failedQueue=x[1]..'-'..w;break end
     diagnostics.commandCount=diagnostics.commandCount+1
     local rows=parse(command('/sbin/tc -j -d qdisc show dev '..x[2]..w,nil,'cake-'..x[1]..'-'..w,diagnostics))
     local rate,count=nil,0
     for _,q in ipairs(type(rows)=='table' and rows or{})do if q.kind=='cake' and q.root==true then
       count=count+1;rate=q.options and tonumber(q.options.bandwidth)
     end end
-    if count~=1 or not rate or rate<=0 then complete=false;break end
+    if count~=1 or not rate or rate<=0 then
+      complete=false;diagnostics.failedQueue=x[1]..'-'..w
+      diagnostics.failureKind=not rows and (diagnostics.commands['cake-'..x[1]..'-'..w].ok and 'invalid-qdisc-json' or 'qdisc-command-failed') or 'invalid-cake-root-rate'
+      break
+    end
     values[x[1]][w]=rate*8/1000
   end;if not complete then break end end
   return{version=1,source='software-cake',wanCount=wanCount,complete=complete,values=values,startedAtUptime=began,finishedAtUptime=M.now(),diagnostics=diagnostics}
@@ -86,10 +91,10 @@ function M.station_clients(clients,ifname)
   end
   return out
 end
-function M.topology(wanCount)
+function M.topology(wanCount,progress)
   wanCount=contract.count(wanCount)
   local diagnostics={commands={},failures=0};local complete=true
-  local function query(cmd,name)return command(cmd,nil,name,diagnostics)end
+  local function query(cmd,name)return command(cmd,nil,name,diagnostics,progress)end
   -- BusyBox timeout may prefer its own ip applet for a bare command name;
   -- select ip-full explicitly because these reads require JSON support.
   local neighbors=parse(query('/sbin/ip -j -4 neigh show dev br-lan','neighbors'))

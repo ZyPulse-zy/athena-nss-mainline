@@ -46066,6 +46066,102 @@
       "bytes": 18346,
       "role": "maintained-controller-source-or-test",
       "revision": "small-udp-wan6-20261012"
+    },
+    {
+      "path": "code/controller/collector.lua",
+      "workspaceSource": "code/controller/collector.lua",
+      "sha256": "a9c6b6043c5029d22751a67b9c74db358a1bdd1b55b843a5c4c7834509c19143",
+      "bytes": 8098,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/reader.lua",
+      "workspaceSource": "code/controller/native/reader.lua",
+      "sha256": "132b0bb8e0835fce9e767f789b47bc03830b85537d552d77026b31933f75dcea",
+      "bytes": 2291,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/writer.lua",
+      "workspaceSource": "code/controller/native/writer.lua",
+      "sha256": "c31d0794b4e34ffe68621049a896b1d5b2e2bec42ca58a51e1792f808827a784",
+      "bytes": 22729,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "workspaceSource": "code/controller/native/transaction.lua",
+      "sha256": "747a0de598e541504f61d99122d576ae100e31814c28f9b36befeb9280bdffd8",
+      "bytes": 19153,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "workspaceSource": "code/controller/native/launch.sh",
+      "sha256": "bdd2ed966b5fd4f65078570ed3f08a62e31b27a66695f7398188b26d92e6b1ec",
+      "bytes": 1668,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/supervisor.lua",
+      "workspaceSource": "code/controller/native/supervisor.lua",
+      "sha256": "bdb53b065cc8f8d3de27d5881c12addd4df194219d1096d3e475ecb0ec071869",
+      "bytes": 7349,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/budget_reader.lua",
+      "workspaceSource": "code/controller/native/budget_reader.lua",
+      "sha256": "dde3e5786cf6a5a1c069b00d8045e0345ccb7e8d3f3a789aa309983526f1ff50",
+      "bytes": 957,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/budget_sampler.lua",
+      "workspaceSource": "code/controller/native/budget_sampler.lua",
+      "sha256": "7ef1ce354db299abcdce42ecd7a5ae0d48f90f11e78fd9835b7780b191c253b8",
+      "bytes": 1428,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/native_recovery.lua",
+      "workspaceSource": "code/controller/native/native_recovery.lua",
+      "sha256": "111e2358fb67a2461f0fdf932096f9ddf6a67d3de4b38d1fddd81550b65e2f8a",
+      "bytes": 7438,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/test-budget-sampler.lua",
+      "workspaceSource": "code/controller/native/test-budget-sampler.lua",
+      "sha256": "0c43b8f6a328f5ff6b3ca24fb316f42a287f83b64406ee320c9fb28e9a49cc11",
+      "bytes": 4286,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/native/test-native-recovery.lua",
+      "workspaceSource": "code/controller/native/test-native-recovery.lua",
+      "sha256": "7659c537d4c0e49613531d812e33b17580e7a4d62e81deea041ead533ddf0013",
+      "bytes": 7067,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/platform/health-controller.lua",
+      "workspaceSource": "code/controller/platform/health-controller.lua",
+      "sha256": "f7b3b5d9e9808fe5f7ff2ba3032fe70fb8aef103175bfac6431e3b07d0e28223",
+      "bytes": 8570,
+      "role": "maintained-controller-source-or-test",
+      "revision": "independent-budget-bounded-recovery-20261015"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",

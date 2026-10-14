@@ -59,6 +59,19 @@ local function rollback(r)
   if not r.readerReaped then n.kill(r.readerPid,9);assert(n.waitpid(r.readerPid)==r.readerPid);r.readerReaped=true end
   store(r)
  end
+ -- The budget child is owned by this same guardian, never an external daemon.
+ -- Reap it before restoration finishes so no orphan can publish a new budget.
+ if r.budgetReaderPid and not r.budgetReaderReaped then
+  n.kill(r.budgetReaderPid,15)
+  local deadline=now()+2
+  repeat
+   local child=n.waitpid(r.budgetReaderPid,'nohang')
+   if child==r.budgetReaderPid then r.budgetReaderReaped=true;break end
+   n.nanosleep(0,100000000)
+  until now()>=deadline
+  if not r.budgetReaderReaped then n.kill(r.budgetReaderPid,9);assert(n.waitpid(r.budgetReaderPid)==r.budgetReaderPid);r.budgetReaderReaped=true end
+  store(r)
+ end
  if loaded('athena_ecm_gate') then
   put('/sys/kernel/debug/athena_ecm_gate/control','stop\n')
   local untilAt=now()+9
@@ -185,6 +198,9 @@ if mode=='guard' then
     assert(current.ifindex==e.ifindex and current.address==e.address,'WAN identity changed')
    end
    put('/proc/sys/net/ecm/mwan3_enable','1\n')
+   local budgetReader=assert(n.fork())
+   if budgetReader==0 then n.exec('/usr/bin/lua',root..'/budget_reader.lua');os.exit(127)end
+   r.budgetReaderPid=budgetReader;store(r)
    local reader=assert(n.fork())
    if reader==0 then n.exec('/usr/bin/lua',root..'/reader.lua');os.exit(127)end
    r.readerPid=reader;store(r)
@@ -198,7 +214,7 @@ if mode=='guard' then
      r.supervisorExited=true;r.stopReason='supervisor-identity-lost';store(r);break
     end
     local heartbeat=tonumber(read(root..'/heartbeat'))
-    if not heartbeat or now()-heartbeat>8 then r.stopReason='reader-heartbeat-missing-or-stale';break end
+    if not heartbeat or now()-heartbeat>8 then r.stopReason='reader-heartbeat-missing-or-stale';r.readerProgress=json(root..'/reader-progress.json');break end
     local desired=json(root..'/desired.json')
     if desired and desired.summary.atUptime>=r.startedAtUptime then
      writer.tick(desired)
@@ -228,6 +244,8 @@ if mode=='guard' then
  end)
  if not ok then
   r.executionError=tostring(err)
+  r.budgetSampler=json(root..'/budget-sampler.json')
+  r.readerProgress=json(root..'/reader-progress.json')
   if r.phase~='rolling-back' and r.phase~='restored' then
    local restored,why=pcall(rollback,r)
    if restored then store(r);error(err)end

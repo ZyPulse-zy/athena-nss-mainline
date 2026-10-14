@@ -115,6 +115,7 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
   local p=assert(budgetReader(),'budget-publication-unavailable')
   diagnostics.lastReadCommands=p.diagnostics and p.diagnostics.commandCount or 0
   diagnostics.lastReadSeconds=type(p.finishedAtUptime)=='number' and type(p.startedAtUptime)=='number' and p.finishedAtUptime-p.startedAtUptime or nil
+  diagnostics.lastPublication={sequence=p.sequence,complete=p.complete,startedAtUptime=p.startedAtUptime,finishedAtUptime=p.finishedAtUptime,diagnostics=p.diagnostics}
   assert((p.wanCount or 5)==(r.wanCount or 5),'budget-account-count-mismatch')
   assert(p.version==1 and p.source=='software-cake' and p.complete==true and (not r.boot or p.boot==r.boot),'budget-publication-invalid')
   assert(type(p.sequence)=='number' and p.sequence>=1 and type(p.startedAtUptime)=='number' and type(p.finishedAtUptime)=='number' and
@@ -133,6 +134,7 @@ function M.new(root,command,read,put,now,store,r,budgetReader)
   if now()<budgetAt+3 and now()-budgetStats.lastSuccessAtUptime<5 then return end;budgetAt=now()
   local beganRead=now();local ok,values=pcall(budget_snapshot,budgetStats);budgetStats.ownerReadSeconds=now()-beganRead;budgetStats.lastReadAtUptime=now()
   budgetStats.lastReadSucceeded=ok
+  budgetStats.lastReadError=not ok and tostring(values) or nil
   if not ok then
    budgetStats.readFailures=budgetStats.readFailures+1
    assert(now()-budgetStats.lastSuccessAtUptime<6,'Software CAKE budget observation expired; restore native backend')

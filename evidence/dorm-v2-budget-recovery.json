@@ -1,0 +1,155 @@
+{
+  "date": "2026-10-15",
+  "baseHead": "61cb2fa932a93bc4a751e012ba25c6dda0712363",
+  "deployed": true,
+  "historicalFailure": {
+    "lastBudgetComplete": true,
+    "lastBudgetCommandCount": 12,
+    "lastBudgetCommandFailures": 0,
+    "lastBudgetSeconds": 0.08000000001629815,
+    "lastDesiredAtUptime": 298334.73,
+    "lastBudgetAtUptime": 298332.56,
+    "lastRejectedReadAtUptime": 298338.76,
+    "expiredAgeSeconds": 6.2000000000116415,
+    "rollbackConfirmed": true,
+    "supervisorRetriesExhausted": 3,
+    "exactHistoricalBlockingCommandKnown": false,
+    "exactHistoricalSchedulingCauseKnown": false,
+    "structuralCouplingReproducedInModel": true
+  },
+  "readOnlyBeforeRepair": {
+    "seconds": 25.19000000000233,
+    "samples": 22,
+    "allBudgetsComplete": true,
+    "maximumTopologySeconds": 0.13999999995576218,
+    "maximumBudgetSeconds": 0.10999999998603016
+  },
+  "fix": {
+    "budgetPeriodSeconds": 1,
+    "separateGuardianOwnedBudgetChild": true,
+    "budgetChildReapedOnRollback": {
+      "sourceModelVerified": true,
+      "liveStopExperimentPerformed": false
+    },
+    "budgetLeaseSecondsUnchanged": 6,
+    "ctLeaseSecondsUnchanged": 6,
+    "budgetChildDoesNotRenewCtHeartbeat": true,
+    "typedQueueFailureAndReaderProgressAdded": true,
+    "durableRecoveryAttemptBound": {
+      "cooldownSeconds": 1800,
+      "checkSeconds": 30,
+      "consecutiveHealthyChecks": 3,
+      "maximumStartsInRolling24Hours": 2,
+      "originalSupervisorRetriesPerSession": 3,
+      "requiresConfirmedRestorationAndHealthySixAccounts": true,
+      "operatorStopPreserved": true,
+      "unknownFirmwareOwnershipBlocksStart": true,
+      "newDaemonOrScheduler": false
+    }
+  },
+  "tests": {
+    "5": {
+      "passed": true,
+      "tests": 18,
+      "luaParsed": 60,
+      "shellParsed": 12
+    },
+    "6": {
+      "passed": true,
+      "tests": 18,
+      "luaParsed": 60,
+      "shellParsed": 12
+    }
+  },
+  "targetModels": {
+    "budgetSamplerAndExactChildReapingChecks": 168,
+    "boundedRecoveryRuntimeChecks": 51,
+    "realFailureInjectionOrForcedAutoStartPerformed": false
+  },
+  "passiveNss": {
+    "samples": 31,
+    "sampleSeconds": 90,
+    "sourceGaps": 0,
+    "sourceRestores": 0,
+    "actualNssMin": 0,
+    "actualNssMax": 2,
+    "rtCreatedSamples": 18,
+    "labelVerifiedSamples": 28,
+    "labelMismatchSamples": 0,
+    "perFlowHardware": {
+      "basis": "firmware-RX-sync",
+      "measured": true,
+      "byteDelta": {
+        "down": 2940,
+        "up": 3301
+      },
+      "intervals": 20
+    },
+    "maxReadSeconds": 0.02000000001862645
+  },
+  "passiveBudgetAndWan6": {
+    "seconds": 90.64999999996508,
+    "samples": 30,
+    "allReadyAndSourceFresh": true,
+    "maximumBudgetAgeSeconds": 1.1000000000349246,
+    "budgetSequence": [
+      70,
+      158
+    ],
+    "sourcePauses": [
+      1,
+      1
+    ],
+    "sourceResumes": [
+      1,
+      1
+    ],
+    "wan6DesiredUdpMaximum": 0,
+    "wan6CreateAckSamples": 0,
+    "wan6HardwareByteDelta": {
+      "down": 0,
+      "up": 0
+    }
+  },
+  "delivery": {
+    "nativePhase": "native-running",
+    "actualAcceleratedIpv4": 1,
+    "gatePresent": true,
+    "pending": 0,
+    "unconfirmed": 0,
+    "sourceFresh": true,
+    "sourcePauses": 1,
+    "sourceResumes": 1,
+    "gameReady": true,
+    "genericLeaseActive": true,
+    "relayCount": 215,
+    "firstPacketCounter": 28,
+    "firstPacketBytes": 2418,
+    "originalFiveBuckets": 300,
+    "unexpectedCooldownStarts": 0,
+    "nativeRecoveryStatus": "controller-active",
+    "sixAccountsOnline": true,
+    "routerRebooted": false,
+    "wirelessRestarted": false,
+    "authProxyRoutingNatChanged": false
+  },
+  "verificationNotes": [
+    {
+      "stage": "post-health-update baseline verification",
+      "result": "original first-stage health PID comparison refused the authorized second-stage restart; exact before/after health source hashes registered, verification then passed; original baseline preserved"
+    },
+    {
+      "stage": "private rollback executor refresh only",
+      "result": "one generated whitespace syntax error was rejected without touching native runtime; fixed and local/target Lua verification passed"
+    }
+  ],
+  "limitations": {
+    "specific20261013BlockingCommandUnrecoverableFromOldLogs": true,
+    "realWan6UdpNssBytesObservedInWindow": false,
+    "realGameLatencyOrLossVerified": false,
+    "actualCooldownFailureScenarioInjected": false,
+    "newBudgetChildLiveStopReapExercised": false,
+    "dayLongStabilityVerified": false,
+    "noClaimThatAllHostSchedulingStallsAreEliminated": true
+  }
+}

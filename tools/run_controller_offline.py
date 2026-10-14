@@ -15,7 +15,7 @@ lua = shutil.which('lua5.1') or shutil.which('lua')
 assert lua, 'Install Lua 5.1 and lua-cjson'
 tests = ['test-wifi.lua', 'test-writer-policy.lua', 'test-health.lua', 'test-coverage.lua',
          'test-tag-rules.lua', 'test-lifecycle.lua', 'test-core-guard.lua',
-         'test-efficiency.lua', 'test-core.lua', 'test-collector.lua', 'test-game-wan6.lua', 'test-wan6.lua', 'test-source-recovery.lua', 'test-source-six.lua']
+         'test-efficiency.lua', 'test-budget-sampler.lua', 'test-native-recovery.lua', 'test-core.lua', 'test-collector.lua', 'test-game-wan6.lua', 'test-wan6.lua', 'test-source-recovery.lua', 'test-source-six.lua']
 report = {'routerConnected': False, 'dataPlaneWrites': False, 'mockedTargetIO': True,
           'nftParserTested': False, 'wanCountTested': int(__import__('os').getenv('ATHENA_TEST_WAN_COUNT', '5')), 'tests': []}
 with tempfile.TemporaryDirectory(prefix='athena-offline-') as folder:

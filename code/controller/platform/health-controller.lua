@@ -5,6 +5,7 @@ local root='/root/router-project'
 local enabled6=io.open(root..'/policy/wan6.enabled');local wanCount=enabled6 and 6 or 5;if enabled6 then enabled6:close()end
 local dir='/tmp/router-project-health'
 local gameControl=dofile('/usr/lib/athena-dorm-native/game_wan6_control.lua').runtime()
+local nativeRecovery=dofile('/usr/lib/athena-dorm-native/native_recovery.lua').runtime()
 local function read(p) local f=io.open(p);if not f then return nil end;local v=f:read('*a');f:close();return v end
 local function write(p,v) local f=assert(io.open(p..'.new','w'));f:write(v);f:close();assert(os.rename(p..'.new',p)) end
 local function number(p) return tonumber(read(p)) or 0 end
@@ -106,6 +107,8 @@ while true do
   report.wan6GamePolicy=ok and result or {error='game-only-policy-update-refused'}
   if not ok then report.wan6GameGateError=true end
  end
+ local recoveryOk,recoveryState=pcall(nativeRecovery.tick,report.wan)
+ report.nssRecovery=recoveryOk and recoveryState or {enabled=true,reason='recovery-check-failed'}
  write(dir..'/status.json',json.stringify(report));log(report)
  first=false
  nixio.nanosleep(5)
