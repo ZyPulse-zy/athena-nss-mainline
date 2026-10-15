@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-15",
+  "scope": "repository organization and configuration examples only",
+  "configurationRepository": "ZyPulse-zy/router-configs",
+  "configurationRepositoryVisibility": "private",
+  "sourceCommit": "86211364363e747ca828988068e9eada031d99cf",
+  "templateFiles": 3,
+  "checks": {
+    "jsonParsing": "passed",
+    "templateHashes": "passed",
+    "relativeMarkdownLinks": "passed",
+    "credentialMarkerCheck": "passed",
+    "shellSyntax": "passed"
+  },
+  "routerConnected": false,
+  "liveConfigurationExported": false,
+  "deploymentPerformed": false,
+  "newHardwareValidation": false,
+  "pullRequestsRemainDraft": [
+    "qosmio/nss-packages#78",
+    "ZyPulse-zy/athena-nss-mainline#1"
+  ]
+}
