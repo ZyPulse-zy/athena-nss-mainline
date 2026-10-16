@@ -6,7 +6,7 @@ Arguments: --kernel prepared-kernel --toolchain bin --ecm installed-ecm.ko
 The ECM code sections remain byte-for-byte identical. Receipt and statistics
 imports forward through bounded observers. No firmware, EDMA or kernel update.
 """
-import argparse, hashlib, json, os, pathlib, re, shutil, struct, subprocess, tempfile
+import argparse, hashlib, json, os, pathlib, re, shutil, struct, subprocess, sys, tempfile
 
 def sha(p):
     return hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
@@ -29,6 +29,9 @@ def main():
         return r.stdout
     env=os.environ.copy(); env['PATH']=str(a.toolchain)+':'+env['PATH']
     env['STAGING_DIR']=str(a.kernel.parents[3]/'staging_dir')
+    report['budgetReader']=json.loads(run([sys.executable,here.parents[2]/'tools/build_budget_reader.py',
+        '--cc',a.toolchain/'aarch64-openwrt-linux-musl-gcc','--output',a.output/'cake-budget-read'],
+        'budget-reader-build.log'))
     config=(a.kernel/'.config').read_text()
     assert 'CONFIG_ARM64=y' in config and '# CONFIG_MODVERSIONS is not set' in config
     assert (a.kernel/'include/config/kernel.release').read_text().strip()=='6.18.44'

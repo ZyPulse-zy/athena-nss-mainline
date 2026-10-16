@@ -15,7 +15,7 @@ lua = shutil.which('lua5.1') or shutil.which('lua')
 assert lua, 'Install Lua 5.1 and lua-cjson'
 tests = ['test-wifi.lua', 'test-writer-policy.lua', 'test-health.lua', 'test-coverage.lua',
          'test-tag-rules.lua', 'test-lifecycle.lua', 'test-core-guard.lua',
-         'test-efficiency.lua', 'test-budget-sampler.lua', 'test-native-recovery.lua', 'test-topology-deadline.lua', 'test-core.lua', 'test-collector.lua', 'test-game-wan6.lua', 'test-wan6.lua', 'test-source-recovery.lua', 'test-source-six.lua']
+         'test-efficiency.lua', 'test-budget-sampler.lua', 'test-budget-netlink.lua', 'test-native-recovery.lua', 'test-topology-deadline.lua', 'test-core.lua', 'test-collector.lua', 'test-game-wan6.lua', 'test-wan6.lua', 'test-source-recovery.lua', 'test-source-six.lua']
 report = {'routerConnected': False, 'dataPlaneWrites': False, 'mockedTargetIO': True,
           'nftParserTested': False, 'wanCountTested': int(__import__('os').getenv('ATHENA_TEST_WAN_COUNT', '5')), 'tests': []}
 with tempfile.TemporaryDirectory(prefix='athena-offline-') as folder:
@@ -50,7 +50,7 @@ local file=assert(arg[1]);arg[0]=file;arg[1]=nil;dofile(file)
         if result.returncode:
             break
     if all(row['passed'] for row in report['tests']):
-        for test in ['test-receipts.py', 'test-selection.py']:
+        for test in ['test-receipts.py', 'test-selection.py', 'test-cake-budget-read.py']:
             result = subprocess.run(['python3', str(root / 'code/controller/native' / test)],
                                     text=True, capture_output=True, timeout=60)
             report['tests'].append({'name': test, 'passed': result.returncode == 0,

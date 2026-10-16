@@ -1,4 +1,5 @@
-local contract=dofile(assert(debug.getinfo(1,'S').source:match('^@(.*)/[^/]+$'))..'/wan_contract.lua')
+local moduleRoot=assert(debug.getinfo(1,'S').source:match('^@(.*)/[^/]+$'))
+local contract=dofile(moduleRoot..'/wan_contract.lua')
 -- Uses tools/libraries already present on Athena; never queries Windows.
 local json=require('luci.jsonc')
 local fs=require('nixio.fs')
@@ -30,25 +31,32 @@ function M.publications(includeFull)
   return projection,includeFull~=false and parse(read(base..'snapshot.json')) or nil
 end
 function M.now() return assert(tonumber(assert(read('/proc/uptime',256)):match('^[%d.]+'))) end
-function M.software_budgets(wanCount)
+function M.software_budgets(wanCount,progress)
   wanCount=contract.count(wanCount)
-  local began=M.now();local diagnostics={commands={},failures=0,commandCount=0};local values={up={},down={}}
+  local began=M.now();local diagnostics={commands={},failures=0,commandCount=1,validatedRootCount=0,
+    transport='one-read-only-rtnetlink-dump'};local values={up={},down={}}
   local complete=true
+  local rows=parse(command(moduleRoot..'/cake-budget-read '..wanCount,nil,'cake-roots',diagnostics,progress))
+  if type(rows)~='table' or #rows~=wanCount*2 then
+    complete=false;diagnostics.failureKind=not rows and(diagnostics.commands['cake-roots'].ok and'invalid-qdisc-json'or'qdisc-command-failed')or'invalid-software-root-count'
+  end
   for w=1,wanCount do for _,x in ipairs{{'up','rpwan'},{'down','rpifb'}}do
+    if not complete then break end
     if M.now()-began>=0.75 then complete=false;diagnostics.failureKind='sample-time-budget';diagnostics.failedQueue=x[1]..'-'..w;break end
-    diagnostics.commandCount=diagnostics.commandCount+1
-    local rows=parse(command('/sbin/tc -j -d qdisc show dev '..x[2]..w,nil,'cake-'..x[1]..'-'..w,diagnostics))
     local rate,count=nil,0
-    for _,q in ipairs(type(rows)=='table' and rows or{})do if q.kind=='cake' and q.root==true then
+    for _,q in ipairs(rows)do if q.dev==x[2]..w and q.root==true then
       count=count+1;rate=q.options and tonumber(q.options.bandwidth)
+      if q.kind~='cake'then rate=nil end
     end end
-    if count~=1 or not rate or rate<=0 then
+    if count~=1 or not rate or rate~=rate or rate<125000 or rate>25000000 then
       complete=false;diagnostics.failedQueue=x[1]..'-'..w
-      diagnostics.failureKind=not rows and (diagnostics.commands['cake-'..x[1]..'-'..w].ok and 'invalid-qdisc-json' or 'qdisc-command-failed') or 'invalid-cake-root-rate'
+      diagnostics.failureKind='invalid-cake-root-rate'
       break
     end
+    diagnostics.validatedRootCount=diagnostics.validatedRootCount+1
     values[x[1]][w]=rate*8/1000
   end;if not complete then break end end
+  if complete and M.now()-began>=0.75 then complete=false;diagnostics.failureKind='sample-time-budget'end
   return{version=1,source='software-cake',wanCount=wanCount,complete=complete,values=values,startedAtUptime=began,finishedAtUptime=M.now(),diagnostics=diagnostics}
 end
 function M.resolve(neighbors,leases,fdb,stations,wallNow)

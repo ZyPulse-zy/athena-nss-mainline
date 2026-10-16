@@ -46194,6 +46194,78 @@
       "bytes": 7787,
       "role": "maintained-controller-source-or-test",
       "revision": "topology-round-deadline-failure-snapshot-20261016"
+    },
+    {
+      "path": "code/controller/collector.lua",
+      "workspaceSource": "code/controller/collector.lua",
+      "sha256": "871c953127423c86f1d1bfe9a73618d66f9ebe9dc0291da46882ebbeb919aab0",
+      "bytes": 9810,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
+    },
+    {
+      "path": "code/controller/native/budget_sampler.lua",
+      "workspaceSource": "code/controller/native/budget_sampler.lua",
+      "sha256": "7848125888c2302de9443ed539b3f631a7ca69a1a2ee1a4a1b0afdbd73bf14f7",
+      "bytes": 1906,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
+    },
+    {
+      "path": "code/controller/native/launch.sh",
+      "workspaceSource": "code/controller/native/launch.sh",
+      "sha256": "8ec8db457b9d65b3e80241e9fefa615f0d8f5e5bb5258e774d754226f88fef5e",
+      "bytes": 1762,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
+    },
+    {
+      "path": "code/controller/native/build.py",
+      "workspaceSource": "code/controller/native/build.py",
+      "sha256": "f8923002502d81e8f1014cc8be13fc0ab1a4ff082ec76c0f09960554b6e61ce6",
+      "bytes": 10895,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
+    },
+    {
+      "path": "code/controller/test-collector.lua",
+      "workspaceSource": "code/controller/test-collector.lua",
+      "sha256": "1d109a6f07dbddc93bc9db9cc91514cc4dcf8454dcde5cb02e52a0ebf03263a6",
+      "bytes": 4591,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
+    },
+    {
+      "path": "code/controller/native/cake_budget_read.c",
+      "workspaceSource": "code/controller/native/cake_budget_read.c",
+      "sha256": "6647617e28b82fa233b6fad116d03d46bfb5363f4524326cecd9b863d16c0207",
+      "bytes": 7915,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
+    },
+    {
+      "path": "code/controller/native/test-budget-netlink.lua",
+      "workspaceSource": "code/controller/native/test-budget-netlink.lua",
+      "sha256": "81da89b780a6cdf3bdfc132c2dde3ea34eb733804e34013eae32d1e56f7398f3",
+      "bytes": 3316,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
+    },
+    {
+      "path": "code/controller/native/test-cake-budget-read.c",
+      "workspaceSource": "code/controller/native/test-cake-budget-read.c",
+      "sha256": "b32b4f86432c4c12012e6be69cc7302722c7898fd72f7ef03a64162282714baf",
+      "bytes": 3829,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
+    },
+    {
+      "path": "code/controller/native/test-cake-budget-read.py",
+      "workspaceSource": "code/controller/native/test-cake-budget-read.py",
+      "sha256": "5caf4474a72ec656fd8d6861bee7bb33794cefba7345d0c238a985cd0d89ac29",
+      "bytes": 827,
+      "role": "maintained-controller-source-or-test",
+      "revision": "single-netlink-software-budget-20261016"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
