@@ -82,7 +82,8 @@ while not stopped() do
    executionError=r.executionError,stageError=r.stageError,coreGuardLastCheck=r.coreGuardLastCheck,
    startedAtUptime=r.startedAtUptime,finishedAtUptime=r.finishedAtUptime,
    sourcePauses=r.flowState and r.flowState.sourcePauses,sourceResumes=r.flowState and r.flowState.sourceResumes,
-   budgetUpdates=r.flowState and r.flowState.budgetUpdates,budgetSampler=r.budgetSampler,readerProgress=r.readerProgress}
+   budgetUpdates=r.flowState and r.flowState.budgetUpdates,budgetSampler=r.budgetSampler,readerProgress=r.readerProgress,
+   failureDiagnostics=r.failureDiagnostics}
   store()
  end
  local ready,reason=policy.retry(r,softwareFacts(),pid,launchedAt,state.automaticRetries,stopped())

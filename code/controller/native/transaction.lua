@@ -25,6 +25,29 @@ end
 local function loaded(name)return fs.stat('/sys/module/'..name,'type')=='dir'end
 local function pin(p,sha)assert(command('/usr/bin/sha256sum '..p):match('^(%x+) ')==sha,'Binary/config changed: '..p)end
 local function store(r)write(root..'/status.json',j.stringify(r))end
+local function diagnostic_json(name)
+ local ok,value=pcall(json,root..'/'..name)
+ return ok and type(value)=='table' and value or {unavailable=true}
+end
+local function capture_failure(r)
+ -- Snapshot before rollback reaps children and launch removes their files.
+ -- Missing/corrupt diagnostics must never prevent the existing rollback.
+ local at=now()
+ local function heartbeat(name)
+  local ok,value=pcall(read,root..'/'..name);return ok and tonumber(value) or nil
+ end
+ local readerAt,budgetAt=heartbeat('heartbeat'),heartbeat('budget-heartbeat')
+ local b=diagnostic_json('software-budgets.json')
+ r.readerProgress=diagnostic_json('reader-progress.json')
+ r.budgetSampler=diagnostic_json('budget-sampler.json')
+ r.failureDiagnostics={capturedAtUptime=at,readerHeartbeatAtUptime=readerAt,
+  readerHeartbeatAgeSeconds=readerAt and at-readerAt,budgetHeartbeatAtUptime=budgetAt,
+  budgetHeartbeatAgeSeconds=budgetAt and at-budgetAt,
+  softwareBudgetPublication={unavailable=b.unavailable,version=b.version,boot=b.boot,
+   sequence=b.sequence,complete=b.complete,wanCount=b.wanCount,
+   startedAtUptime=b.startedAtUptime,finishedAtUptime=b.finishedAtUptime,
+   ageSeconds=type(b.startedAtUptime)=='number' and at-b.startedAtUptime or nil,diagnostics=b.diagnostics}}
+end
 local function count(path)return tonumber(assert(read('/sys/kernel/debug/ecm/'..path)))end
 local function native_status()
  if not loaded('athena_ecm_gate') then return {loaded=false,live=0,pending=0,acked=0,neverCreated=0,unconfirmed=0,firmwareAbsent=0} end
@@ -214,7 +237,9 @@ if mode=='guard' then
      r.supervisorExited=true;r.stopReason='supervisor-identity-lost';store(r);break
     end
     local heartbeat=tonumber(read(root..'/heartbeat'))
-    if not heartbeat or now()-heartbeat>8 then r.stopReason='reader-heartbeat-missing-or-stale';r.readerProgress=json(root..'/reader-progress.json');break end
+    if not heartbeat or now()-heartbeat>8 then
+     r.stopReason='reader-heartbeat-missing-or-stale';capture_failure(r);store(r);break
+    end
     local desired=json(root..'/desired.json')
     if desired and desired.summary.atUptime>=r.startedAtUptime then
      writer.tick(desired)
@@ -236,16 +261,16 @@ if mode=='guard' then
   end
   while not fs.stat(root..'/stop') and now()<due do
    local heartbeat=tonumber(read(root..'/heartbeat'))
-   if heartbeat and now()-heartbeat>8 then break end
-   if not heartbeat and now()-r.startedAtUptime>8 then break end
+   if heartbeat and now()-heartbeat>8 or not heartbeat and now()-r.startedAtUptime>8 then
+    r.stopReason='reader-heartbeat-missing-or-stale';capture_failure(r);store(r);break
+   end
    n.nanosleep(0,250000000)
   end
   r=assert(json(root..'/status.json'));rollback(r)
  end)
  if not ok then
   r.executionError=tostring(err)
-  r.budgetSampler=json(root..'/budget-sampler.json')
-  r.readerProgress=json(root..'/reader-progress.json')
+  if not r.failureDiagnostics then capture_failure(r)end
   if r.phase~='rolling-back' and r.phase~='restored' then
    local restored,why=pcall(rollback,r)
    if restored then store(r);error(err)end

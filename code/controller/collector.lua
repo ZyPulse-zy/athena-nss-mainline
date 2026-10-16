@@ -2,7 +2,7 @@ local contract=dofile(assert(debug.getinfo(1,'S').source:match('^@(.*)/[^/]+$'))
 -- Uses tools/libraries already present on Athena; never queries Windows.
 local json=require('luci.jsonc')
 local fs=require('nixio.fs')
-local M={}
+local M={topologyBudgetSeconds=3.5,topologyCommandReserveSeconds=2.1}
 local function read(p,limit)
   local f=io.open(p,'r');if not f then return nil end
   local s=f:read((limit or 4194304)+1);f:close()
@@ -93,8 +93,25 @@ function M.station_clients(clients,ifname)
 end
 function M.topology(wanCount,progress)
   wanCount=contract.count(wanCount)
-  local diagnostics={commands={},failures=0};local complete=true
-  local function query(cmd,name)return command(cmd,nil,name,diagnostics,progress)end
+  local began=M.now();local deadline=began+M.topologyBudgetSeconds
+  local diagnostics={commands={},failures=0,startedAtUptime=began,deadlineAtUptime=deadline,
+    budgetSeconds=M.topologyBudgetSeconds,skippedCommands={}};local complete=true
+  local function exhausted(name)
+    complete=false;diagnostics.failureKind='topology-time-budget'
+    diagnostics.skippedCommands[#diagnostics.skippedCommands+1]=name
+    if progress then progress({phase='query-skipped',command=name,atUptime=M.now(),deadlineAtUptime=deadline})end
+  end
+  local function query(cmd,name)
+    -- timeout's one-second TERM plus one-second KILL allowance must fit in
+    -- this round. Per-command limits alone permit serial AP fallbacks to
+    -- exhaust the reader heartbeat. Never launch work on borrowed time.
+    if M.now()+M.topologyCommandReserveSeconds>deadline then exhausted(name);return nil end
+    local result=command(cmd,nil,name,diagnostics,progress)
+    -- Scheduling/driver stalls can exceed a userspace timeout. Fail closed
+    -- on return as well; retain neither late evidence nor a cached topology.
+    if M.now()>=deadline then exhausted(name);return nil end
+    return result
+  end
   -- BusyBox timeout may prefer its own ip applet for a bare command name;
   -- select ip-full explicitly because these reads require JSON support.
   local neighbors=parse(query('/sbin/ip -j -4 neigh show dev br-lan','neighbors'))
@@ -142,6 +159,8 @@ function M.topology(wanCount,progress)
   end
   local clients=M.resolve(neighbors,leases,fdb,stations,os.time());local reasons={}
   for _,c in pairs(clients)do reasons[c.reason]=(reasons[c.reason]or 0)+1 end
+  diagnostics.finishedAtUptime=M.now();diagnostics.seconds=diagnostics.finishedAtUptime-began
+  if diagnostics.finishedAtUptime>=deadline then complete=false;diagnostics.failureKind='topology-time-budget'end
   return {clients=clients,wans=wans,clientReasons=reasons,
     associatedStations=#stations,bridgeFdbEntries=#fdb,stationSources=stationSources,complete=complete,collection=diagnostics}
 end

@@ -46162,6 +46162,38 @@
       "bytes": 8570,
       "role": "maintained-controller-source-or-test",
       "revision": "independent-budget-bounded-recovery-20261015"
+    },
+    {
+      "path": "code/controller/collector.lua",
+      "workspaceSource": "code/controller/collector.lua",
+      "sha256": "85b6f3bbe0afd8fb044b1bfc115e60d86eead9fdbc12b137777dd3fa6157e25e",
+      "bytes": 9392,
+      "role": "maintained-controller-source-or-test",
+      "revision": "topology-round-deadline-failure-snapshot-20261016"
+    },
+    {
+      "path": "code/controller/native/transaction.lua",
+      "workspaceSource": "code/controller/native/transaction.lua",
+      "sha256": "0e60e1bc08f1fbf5575eaaf7275a614de1a86774ab57afe0bb5c5d3e4c07decc",
+      "bytes": 20420,
+      "role": "maintained-controller-source-or-test",
+      "revision": "topology-round-deadline-failure-snapshot-20261016"
+    },
+    {
+      "path": "code/controller/native/supervisor.lua",
+      "workspaceSource": "code/controller/native/supervisor.lua",
+      "sha256": "834058d516c49ed3af1337334e1afd002acfcf0b8e4b36827cb78bd1c086dc7a",
+      "bytes": 7393,
+      "role": "maintained-controller-source-or-test",
+      "revision": "topology-round-deadline-failure-snapshot-20261016"
+    },
+    {
+      "path": "code/controller/native/test-topology-deadline.lua",
+      "workspaceSource": "code/controller/native/test-topology-deadline.lua",
+      "sha256": "42dd2490dff63e6bf03711ebb39b537a7f7e447874b60859dc69c6044532624d",
+      "bytes": 7787,
+      "role": "maintained-controller-source-or-test",
+      "revision": "topology-round-deadline-failure-snapshot-20261016"
     }
   ],
   "lastAppendExport": "V27_OWN_RAW_PREREQUISITE",
