@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "mode": "shadow",
+  "policyGeneration": "dorm-v2-shadow-1",
+  "lanAddress": "192.168.237.0",
+  "lanBits": 24,
+  "pollSeconds": 2,
+  "maxTracked": 2048,
+  "maxCandidates": 32
+}

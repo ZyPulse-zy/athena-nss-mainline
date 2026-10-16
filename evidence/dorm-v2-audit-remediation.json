@@ -1,0 +1,842 @@
+{
+  "version": 1,
+  "capturedAt": "2026-10-09T16:35:11.851Z",
+  "repository": "ZyPulse-zy/athena-nss-mainline",
+  "branch": "codex/dorm-qos-v2",
+  "baselineRemoteHead": "be469530a891944c5a5ed83e4c149b971517384b",
+  "reviewCommit": "3208540780e56b0b498616d75a136e1e1011dd21",
+  "revision": "dorm-v2-audit-remediation-20261010",
+  "productionCandidateDeployed": false,
+  "pr": {
+    "number": 1,
+    "draft": true,
+    "merged": false
+  },
+  "originalAuditArtifactsAccessible": false,
+  "method": "Actual reviewed source reproduction; bounded mocked I/O models in private scratch and separate target RAM directories; local cross-build; passive natural-traffic reads and one final successful candidate read-only topology invocation. No controller stop, hooks, configuration changes, firmware loading, congestion or fault injection.",
+  "baselineInstalledFiles": [
+    {
+      "name": "writer.lua",
+      "installed": "4e86ef9417e3f3bdf07d2cf30db4d0420da2604428b28327d523335d73775b41",
+      "matches": true
+    },
+    {
+      "name": "reader.lua",
+      "installed": "c72cc71edb7df0abd481485811e02ae9a3669e4217e6b5933a1e10757a488b9c",
+      "matches": true
+    },
+    {
+      "name": "collector.lua",
+      "installed": "bbf5ec24f7f35da33ee95e7278d99f6ffdc617fda3ff97f1cf64f77da8d3ea6b",
+      "matches": true
+    },
+    {
+      "name": "health.lua",
+      "installed": "592fbf39a6b986a2c548a3ee3d4a70dc61123e179827d013bff722ddea140cab",
+      "matches": true
+    },
+    {
+      "name": "diagnose.lua",
+      "installed": "950ade68272087afb0e83c1d6a212adfb0c2a4fd78449bcb4a2e7efc52c7d983",
+      "matches": true
+    }
+  ],
+  "changes": {
+    "pendingRt": {
+      "oneReservationPerWaitingRt": true,
+      "reuseConfirmedTerminalOnly": true,
+      "bulkCannotTakeReservedSlot": true,
+      "preemptionOrder": "Lowest current classified rateKbps, then ascending slot; not measured hardware benefit"
+    },
+    "rejectedCache": {
+      "maximumEntries": 32,
+      "ttlSeconds": 6,
+      "pruneOn": [
+        "flow-absence",
+        "candidate-loss",
+        "new-sequence",
+        "expiry",
+        "successful-add"
+      ]
+    },
+    "singleFlowRecovery": {
+      "kernelOneSelectionProtectionPreserved": true,
+      "exactRetirementRequired": true,
+      "maximumRetriesPerContinuousVerifiedEpoch": 2,
+      "backoffSeconds": [
+        1,
+        3
+      ],
+      "maximumLedgerEntries": 32,
+      "newIdentityHardwareAdmissionPausedWhenLedgerFull": true,
+      "pendingMissingReceiptsIdleBytesAndQosMismatchAreNotRecoveryTriggers": true,
+      "unconfirmedStillBlocksReuse": true,
+      "actualFirmwareRecoveryVerified": false
+    },
+    "readOnlyEvidence": {
+      "classificationAdmissionCreateLabelsHardwareBytesSeparated": true,
+      "labelBasis": "Observed CREATE payload plus ACK with tuple-derived direction and QoS/IGS valid flags, not independent firmware queue readback",
+      "hardwareCounterScope": "Global NSS IPv4 special RX/TX bytes; no per-CT attribution",
+      "byteCoverageMeasured": false,
+      "defaultHardwareTcQueueQueries": false,
+      "flowEvidenceLimit": 80,
+      "aliasLimit": 256,
+      "eventLimit": 128
+    },
+    "sourceCollection": {
+      "requiredReadFailuresPauseAdmissionAndRenewal": true,
+      "oldLeaseNotExtended": true,
+      "commandTermTimeoutSeconds": 1,
+      "commandKillGraceSeconds": 1,
+      "ipFullAbsolutePath": "/sbin/ip",
+      "busyboxTimeoutIpAppletCompatibilityVerified": true,
+      "perCommandStatusAndTiming": true,
+      "cakeReadCommandsPerBudgetSnapshot": 10,
+      "cakeBudgetPeriodSeconds": 3,
+      "actualLeaseMarginsRecorded": true,
+      "historicClassifierPausesSolved": false
+    },
+    "unchangedPolicy": {
+      "capacity": 32,
+      "leaseSeconds": 6,
+      "includeBestEffort": false,
+      "perDeviceQuotas": false,
+      "healthyBulkRankingChurn": false
+    }
+  },
+  "baselineReproduction": [
+    {
+      "revision": "3208540",
+      "newRT": 1,
+      "occupiedSlots": 32,
+      "mockedKernel": true,
+      "waitingPolls": 4,
+      "dataPlaneWrites": false,
+      "revokeRequests": 4
+    },
+    {
+      "revision": "candidate",
+      "newRT": 1,
+      "occupiedSlots": 32,
+      "mockedKernel": true,
+      "waitingPolls": 4,
+      "dataPlaneWrites": false,
+      "revokeRequests": 1
+    }
+  ],
+  "tests": {
+    "localLua": [
+      {
+        "test": "test-writer-policy.lua",
+        "exit": 0,
+        "seconds": 0.061,
+        "stderr": "",
+        "result": {
+          "receiptGatedFiniteRecovery": true,
+          "mockedKernel": true,
+          "checks": 198,
+          "rejectedCacheBounded": true,
+          "dataPlaneWrites": false,
+          "passed": true,
+          "fullSlotsDelayedAck": true
+        }
+      },
+      {
+        "test": "test-health.lua",
+        "exit": 0,
+        "seconds": 0.004,
+        "stderr": "",
+        "result": {
+          "dataPlaneWrites": false,
+          "modelOnly": true,
+          "passed": true,
+          "checks": 35
+        }
+      },
+      {
+        "test": "test-core.lua",
+        "exit": 0,
+        "seconds": 0.006,
+        "stderr": "",
+        "result": {
+          "routerNetworkWrites": false,
+          "modelOnly": true,
+          "passed": true,
+          "checks": 25
+        }
+      },
+      {
+        "test": "test-collector.lua",
+        "exit": 0,
+        "seconds": 0.004,
+        "stderr": "",
+        "result": {
+          "mockedProcesses": true,
+          "dataPlaneWrites": false,
+          "checks": 86,
+          "passed": true,
+          "failedReadDistinctFromEmpty": true
+        }
+      },
+      {
+        "test": "test-tag-rules.lua",
+        "exit": 0,
+        "seconds": 0.005,
+        "stderr": "",
+        "result": {
+          "dataPlaneWrites": false,
+          "scalarIdGateNotSufficientForLabel": true,
+          "checks": 20,
+          "modelOnly": true,
+          "allElevenIdentityFields": true,
+          "passed": true,
+          "boundedPolicies": 80
+        }
+      },
+      {
+        "test": "test-lifecycle.lua",
+        "exit": 0,
+        "seconds": 0.004,
+        "stdout": "bounded-recovery-models-passed 25\n",
+        "stderr": ""
+      },
+      {
+        "test": "test-core-guard.lua",
+        "exit": 0,
+        "seconds": 0.003,
+        "stdout": "core-guard-permission-models-passed 26\n",
+        "stderr": ""
+      },
+      {
+        "test": "test-efficiency.lua",
+        "exit": 0,
+        "seconds": 0.004,
+        "stderr": "",
+        "result": {
+          "selectiveBudgetClasses": true,
+          "dataPlaneWrites": false,
+          "authorizedAssociationsOnly": true,
+          "chunkedFlowRoundTrip": true,
+          "passed": true,
+          "modelOnly": true
+        }
+      }
+    ],
+    "targetLua": {
+      "readOnlyDataPlane": true,
+      "modelDirectorySeparate": true,
+      "productionFilesChanged": false,
+      "tests": [
+        {
+          "name": "test-writer-policy.lua",
+          "exit": 0,
+          "stderr": "",
+          "result": {
+            "receiptGatedFiniteRecovery": true,
+            "mockedKernel": true,
+            "checks": 198,
+            "rejectedCacheBounded": true,
+            "dataPlaneWrites": false,
+            "passed": true,
+            "fullSlotsDelayedAck": true
+          }
+        },
+        {
+          "name": "test-health.lua",
+          "exit": 0,
+          "stderr": "",
+          "result": {
+            "dataPlaneWrites": false,
+            "modelOnly": true,
+            "passed": true,
+            "checks": 35
+          }
+        },
+        {
+          "name": "test-core.lua",
+          "exit": 0,
+          "stderr": "",
+          "result": {
+            "routerNetworkWrites": false,
+            "modelOnly": true,
+            "passed": true,
+            "checks": 25
+          }
+        },
+        {
+          "name": "test-collector.lua",
+          "exit": 0,
+          "stderr": "",
+          "result": {
+            "mockedProcesses": true,
+            "dataPlaneWrites": false,
+            "checks": 86,
+            "passed": true,
+            "failedReadDistinctFromEmpty": true
+          }
+        }
+      ],
+      "parsers": 27,
+      "passed": true,
+      "cleaned": true
+    },
+    "targetDistinctAssertions": 344,
+    "cReceipts": {
+      "checks": 137,
+      "passed": true,
+      "mockedTransport": true,
+      "firmwareProof": false
+    },
+    "cSelection": {
+      "checks": 13,
+      "passed": true,
+      "mockedCT": true,
+      "oneSelectionPreserved": true,
+      "firmwareProof": false
+    },
+    "crossBuild": {
+      "kernelChanged": false,
+      "routerConnected": false,
+      "binaryLoaded": false,
+      "sourceHashes": {
+        "athena_ecm_gate.c": "5b0b469801ccabbde935a0246264f7ffa8104aee65d4e48027454cc02d1eadf3",
+        "athena_nss_receipts.c": "680321a57431d7cc4a3d6ed4dd455ef9b5156f944c074035698d6fa859ef5e9b",
+        "build.py": "dd8f17be94bc89257bbd5ffcd5352919dec2bf785a7c430613feedf8a325ecc2",
+        "ecm_ae_classifier_public.h": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+        "Makefile": "57161558b522da5a56a32d29187fc0dcf3d5c1f386fae5577c4d9b7d5ed5c13f",
+        "receipts.h": "2070c49f6697df16ee732bc50fd8e79d7901504f0478f0c85be39b5a784e7588",
+        "test-receipts.c": "7a1f27760ebcb71db46c75ef24b0cf17fe097090908b5def505dd9aea88ef0a1",
+        "test-receipts.py": "451ad6463f78575abeb0b5db0811c494483460e6c0e38794d629e5d3aea822e6",
+        "test-selection.py": "01e7995d632c48fdfffb97d5ee0942934e94947a889d9eb404abdc76e6254afa"
+      },
+      "installedInterfaceMessageBytes": 96,
+      "installedIPv4MessageBytes": 736,
+      "installedIPv4Interface": 161,
+      "nativeGateAbi": 2,
+      "ecmCodeSectionsUnchanged": [
+        ".plt",
+        ".text.ftrace_trampoline",
+        ".text",
+        ".text.unlikely",
+        ".init.text",
+        ".exit.text"
+      ],
+      "ecmOriginalSha256": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2",
+      "ecmReceiptCopySha256": "c9f3b43683cf18add1976a328504821e6c5e399c40826593ac24e4a66af86b8c",
+      "driverSha256": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+      "ingressCodeSectionsUnchanged": [
+        ".plt",
+        ".text.ftrace_trampoline",
+        ".text",
+        ".init.text",
+        ".exit.text",
+        ".text.unlikely"
+      ],
+      "ingressOriginalSha256": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb",
+      "ingressReceiptCopySha256": "116a088ad024f2f21b8e52ae08531532639ce318ee629ae8d850524da3ae25ce",
+      "athena_ecm_gate.ko": {
+        "sha256": "ad11698c01c8121fe196aec03190bcaf0dab03880c41ea8c8f0ecab0fda3e47c",
+        "bytes": 125264
+      },
+      "athena_nss_receipts.ko": {
+        "sha256": "fd7d4bd1556e10b283b120f4212c4f87388f7261526947189519f37cb4b45411",
+        "bytes": 142808
+      },
+      "passed": true,
+      "extraSymbols": "Verified installed exports; zero CRC because MODVERSIONS is disabled, not an ABI guarantee",
+      "kernelHashes": {
+        ".config": "24f0389ac9618779974c03d8c71f891b80a1ca58c1e4ef5a6877be4b6b9fe06c",
+        "Module.symvers": "b0782f7327ba04cf3a3f3ad85c735c6639af6accc0d8fa307b8abac9af46cd5d",
+        "include/generated/autoconf.h": "4ef35271b52eb223a7524fe6bb9f1af64c6cc7bc33f2e967843d0700fac397f7"
+      }
+    }
+  },
+  "passiveObservation": {
+    "readOnly": true,
+    "generatedTraffic": false,
+    "configurationWrites": false,
+    "seconds": 71.59999999999991,
+    "samples": 8,
+    "start": "2026-10-09T16:00:49.944Z",
+    "end": "2026-10-09T16:02:01.547Z",
+    "allNativeRunning": true,
+    "allSourceFresh": true,
+    "sourcePausesDelta": 0,
+    "sourceResumesDelta": 0,
+    "maxTopologySeconds": 0.03999999999996362,
+    "maxSshReadMilliseconds": 229,
+    "protectedHashesUnchanged": true,
+    "globalHardwareByteDelta": {
+      "rx": 3334551,
+      "tx": 3396389
+    },
+    "hardwareCountersScope": "global-NSS-IPv4-special-counters-not-CT-attributed",
+    "byteCoverage": {
+      "measured": false,
+      "reason": "No same-cohort per-CT hardware byte counter; projection excludes BE"
+    },
+    "flows": [
+      {
+        "flow": 1,
+        "device": 1,
+        "egress": "phy0-ap0",
+        "class": "RT",
+        "wireless": true,
+        "samples": [
+          {
+            "uptime": 3570.78,
+            "fdbAges": [
+              0.04
+            ],
+            "replyPackets": 665,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2116419590,
+            "returnQos": 2116419590,
+            "igsFlow": 0,
+            "igsReturn": 31269
+          },
+          {
+            "uptime": 3581,
+            "fdbAges": [
+              0.04
+            ],
+            "replyPackets": 810,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2116419590,
+            "returnQos": 2116419590,
+            "igsFlow": 0,
+            "igsReturn": 31269
+          },
+          {
+            "uptime": 3611.68,
+            "fdbAges": [
+              0.48
+            ],
+            "replyPackets": 1281,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2116419590,
+            "returnQos": 2116419590,
+            "igsFlow": 0,
+            "igsReturn": 31269
+          },
+          {
+            "uptime": 3621.9,
+            "fdbAges": [
+              0.01
+            ],
+            "replyPackets": 1432,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2116419590,
+            "returnQos": 2116419590,
+            "igsFlow": 0,
+            "igsReturn": 31269
+          },
+          {
+            "uptime": 3632.14,
+            "fdbAges": [
+              0.3
+            ],
+            "replyPackets": 1449,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2116419590,
+            "returnQos": 2116419590,
+            "igsFlow": 0,
+            "igsReturn": 31269
+          }
+        ]
+      },
+      {
+        "flow": 2,
+        "device": 2,
+        "egress": "lan4",
+        "class": "RT",
+        "wireless": false,
+        "samples": [
+          {
+            "uptime": 3570.78,
+            "fdbAges": [
+              0.03
+            ],
+            "replyPackets": 923,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2117468166,
+            "returnQos": 2050359302,
+            "igsFlow": 0,
+            "igsReturn": 31286
+          }
+        ]
+      },
+      {
+        "flow": 3,
+        "device": 2,
+        "egress": "lan4",
+        "class": "RT",
+        "wireless": false,
+        "samples": [
+          {
+            "uptime": 3581,
+            "fdbAges": [
+              0.03
+            ],
+            "replyPackets": 40,
+            "created": false,
+            "selected": 0,
+            "flowQos": 0,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 0
+          }
+        ]
+      },
+      {
+        "flow": 4,
+        "device": 1,
+        "egress": "phy0-ap0",
+        "class": "RT",
+        "wireless": true,
+        "samples": [
+          {
+            "uptime": 3581,
+            "fdbAges": [
+              0.04
+            ],
+            "replyPackets": 41,
+            "created": false,
+            "selected": 0,
+            "flowQos": 0,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 0
+          },
+          {
+            "uptime": 3611.68,
+            "fdbAges": [
+              0.48
+            ],
+            "replyPackets": 49,
+            "created": false,
+            "selected": 0,
+            "flowQos": 0,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 0
+          },
+          {
+            "uptime": 3621.9,
+            "fdbAges": [
+              0.01
+            ],
+            "replyPackets": 53,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2116419590,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 31269
+          }
+        ]
+      },
+      {
+        "flow": 5,
+        "device": 1,
+        "egress": "phy0-ap0",
+        "class": "RT",
+        "wireless": true,
+        "samples": [
+          {
+            "uptime": 3581,
+            "fdbAges": [
+              0.04
+            ],
+            "replyPackets": 68,
+            "created": false,
+            "selected": 0,
+            "flowQos": 0,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 0
+          }
+        ]
+      },
+      {
+        "flow": 6,
+        "device": 1,
+        "egress": "phy0-ap0",
+        "class": "BULK",
+        "wireless": true,
+        "samples": [
+          {
+            "uptime": 3581,
+            "fdbAges": [
+              0.04
+            ],
+            "replyPackets": 4214,
+            "created": false,
+            "selected": 0,
+            "flowQos": 0,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 0
+          },
+          {
+            "uptime": 3591.23,
+            "fdbAges": [
+              0.15
+            ],
+            "replyPackets": 4863,
+            "created": false,
+            "selected": 0,
+            "flowQos": 0,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 0
+          },
+          {
+            "uptime": 3611.68,
+            "fdbAges": [
+              0.48
+            ],
+            "replyPackets": 5330,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2118451200,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 31301
+          },
+          {
+            "uptime": 3621.9,
+            "fdbAges": [
+              0.01
+            ],
+            "replyPackets": 6978,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2118451200,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 31301
+          }
+        ]
+      },
+      {
+        "flow": 7,
+        "device": 1,
+        "egress": "phy0-ap0",
+        "class": "RT",
+        "wireless": true,
+        "samples": [
+          {
+            "uptime": 3591.23,
+            "fdbAges": [
+              0.15
+            ],
+            "replyPackets": 666,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2117468166,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 31285
+          },
+          {
+            "uptime": 3601.45,
+            "fdbAges": [
+              0.03
+            ],
+            "replyPackets": 675,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2117468166,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 31285
+          },
+          {
+            "uptime": 3611.68,
+            "fdbAges": [
+              0.48
+            ],
+            "replyPackets": 692,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2117468166,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 31285
+          },
+          {
+            "uptime": 3621.9,
+            "fdbAges": [
+              0.01
+            ],
+            "replyPackets": 722,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2117468166,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 31286
+          },
+          {
+            "uptime": 3632.14,
+            "fdbAges": [
+              0.3
+            ],
+            "replyPackets": 729,
+            "created": true,
+            "selected": 1,
+            "flowQos": 2117468166,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 31286
+          }
+        ]
+      },
+      {
+        "flow": 8,
+        "device": 2,
+        "egress": "lan4",
+        "class": "RT",
+        "wireless": false,
+        "samples": [
+          {
+            "uptime": 3601.45,
+            "fdbAges": [
+              0.02
+            ],
+            "replyPackets": 42,
+            "created": false,
+            "selected": 0,
+            "flowQos": 0,
+            "returnQos": 0,
+            "igsFlow": 0,
+            "igsReturn": 0
+          }
+        ]
+      }
+    ],
+    "moduleBuildInputsMatchLive": true,
+    "candidateDevices": 2,
+    "sameDeviceRtBulkSamples": 4,
+    "actualNssRange": [
+      0,
+      4
+    ],
+    "stationTidStatisticsEnabled": null,
+    "stationTidStatisticsRead": false,
+    "wifiPerFlowAirQueueVerified": false,
+    "wiredNssFdbRefreshVerified": false,
+    "endToEndLossMeasured": false
+  },
+  "finalReadback": {
+    "at": "2026-10-09T16:23:42.021Z",
+    "readOnly": true,
+    "generatedTraffic": false,
+    "configurationWrites": false,
+    "productionCandidateDeployed": false,
+    "phase": "native-running",
+    "sourceFresh": true,
+    "sourcePauses": 4,
+    "sourceResumes": 4,
+    "unconfirmed": 0,
+    "admission": 0,
+    "allWansUp": true,
+    "serviceIdentitiesUnchanged": true,
+    "protectedHashesUnchanged": true,
+    "installedFilesMatchInitialBaseline": true,
+    "gateObservationFieldsPresent": false,
+    "candidateCollector": {
+      "seconds": 0.0500000000001819,
+      "stationSources": {
+        "iwFallback": 0,
+        "hostapd": 3
+      },
+      "bridgeFdbEntries": 11,
+      "collection": {
+        "failures": 0,
+        "commands": {
+          "hostapd-phy1-ap0": {
+            "ok": true,
+            "seconds": 0,
+            "exitCode": 0
+          },
+          "wan-addresses": {
+            "ok": true,
+            "seconds": 0,
+            "exitCode": 0
+          },
+          "hostapd-phy2-ap0": {
+            "ok": true,
+            "seconds": 0.009999999999308784,
+            "exitCode": 0
+          },
+          "neighbors": {
+            "ok": true,
+            "seconds": 0.010000000000218279,
+            "exitCode": 0
+          },
+          "fdb": {
+            "ok": true,
+            "seconds": 0.010000000000218279,
+            "exitCode": 0
+          },
+          "hostapd-phy0-ap0": {
+            "ok": true,
+            "seconds": 0.010000000000218279,
+            "exitCode": 0
+          }
+        }
+      },
+      "associatedStations": 3,
+      "complete": true
+    },
+    "isolatedDirectoryCleaned": true,
+    "actualNss": 1
+  },
+  "sourceHashes": {
+    "code/controller/README.md": "730dfd59b0ef90af16ad39ca0e8c8d0d34a4e8f97ca516dee6364cefeece7b45",
+    "code/controller/collector.lua": "f73b73793a0a5f5524eae31df8b07f09e187001c3369ab490f1efae4ab2fa32e",
+    "code/controller/core.lua": "cc9a2e31ab8ddbc49303ac4f619f16793deb0a6e27f957cd6338f54477cf0728",
+    "code/controller/native/athena_ecm_gate.c": "5b0b469801ccabbde935a0246264f7ffa8104aee65d4e48027454cc02d1eadf3",
+    "code/controller/native/athena_nss_receipts.c": "680321a57431d7cc4a3d6ed4dd455ef9b5156f944c074035698d6fa859ef5e9b",
+    "code/controller/native/diagnose.lua": "81d658d497bce06ef7a947c21c72ac490ecd14f409bccbd63dbfdcbd55b23c64",
+    "code/controller/native/health.lua": "19beb7381a758ef62bfc1ce603d55cec65d32a883c91019e4e63676df1fd045c",
+    "code/controller/native/reader.lua": "16fcb20607eade821b5c210aa79f084f61ee9ce6e5b1010bad9a7601871c4cb7",
+    "code/controller/native/receipts.h": "2070c49f6697df16ee732bc50fd8e79d7901504f0478f0c85be39b5a784e7588",
+    "code/controller/native/test-health.lua": "e7e27b05b65ba9ddc3b617323962ff2865652f15a5a4ab721385a3ce57a6f731",
+    "code/controller/native/test-receipts.c": "7a1f27760ebcb71db46c75ef24b0cf17fe097090908b5def505dd9aea88ef0a1",
+    "code/controller/native/test-selection.py": "01e7995d632c48fdfffb97d5ee0942934e94947a889d9eb404abdc76e6254afa",
+    "code/controller/native/test-writer-policy.lua": "86c8ecdf7d1a3282e45f59c702b209790485f654fda2841225a1a2cfb98ea5b3",
+    "code/controller/native/writer.lua": "b201025fe57769ed89a5fbf5a770bbd4878ae4700f64fb2e4aa289821bf0ffe7",
+    "code/controller/test-collector.lua": "10553256420a8269bb3963782d38666c06d073a33a2da91f63affff440c4a6a5",
+    "code/controller/test-core.lua": "ea05c6008c93ee928db8aebd3155b307f2042ac06cf9e170c2dce635751bdc32"
+  },
+  "unresolved": [
+    "Actual ECM reselection and firmware re-creation after exact retirement",
+    "Lost CREATE callback, TX_FAILED or silent firmware removal without observed evidence",
+    "Historical 4/4 source gaps and original classifier tc/recovery cleanup failures",
+    "Partial old return_qos observations and independent firmware queue readback",
+    "Per-station/TID/AC and same-device game/download end-to-end performance",
+    "Client uplink airtime prioritization",
+    "Wired sustained NSS fastpath FDB refresh beyond 60 seconds",
+    "Comparable per-CT byte coverage including BE",
+    "Worst-case collection/CAKE read tail relative to six-second lease"
+  ],
+  "authorization": {
+    "branchCommitAndPush": true,
+    "keepPrDraft": true,
+    "merge": false,
+    "productionInstallOrControllerStopRestart": false,
+    "routerRebootFirmwareFlash": false,
+    "liveQosWirelessChanges": false,
+    "activeCongestionFaultInjection": false
+  },
+  "rawConntrackMacIpCredentialsLogsAndBinariesIncluded": false
+}

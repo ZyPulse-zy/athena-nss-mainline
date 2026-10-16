@@ -1,0 +1,25 @@
+{
+  "actualCompleteSourceFunctionExtracted": true,
+  "kernelIOAndClassifierMocked": true,
+  "fullModuleBuilt": false,
+  "firmwareTidAcTested": false,
+  "routerModified": false,
+  "originalFunctionSha256": "9251522601a5852abaf63bd487e310226f4a939c3a5fec1237d8172471695fde",
+  "patchSha256": "5525cc8fabbfe18d683508a5f5b63d4dc433dd38d56d4c4f0e46616612c79f96",
+  "runs": [
+    {
+      "revision": "original",
+      "compileExit": 1,
+      "diagnostics": "In function ‘ieee80211_8023_xmit’,\n    inlined from ‘main’ at <fixture>/test.c:179:3:\n<fixture>/test.c:126:45: error: ‘queue’ may be used uninitialized [-Werror=maybe-uninitialized]\n  126 |         info->hw_queue = sdata->vif.hw_queue[queue];\n      |                          ~~~~~~~~~~~~~~~~~~~^~~~~~~\n<fixture>/test.c: In function ‘main’:\n<fixture>/test.c:78:13: note: ‘queue’ was declared here\n   78 |         u16 queue;\n      |             ^~~~~\ncc1: all warnings being treated as errors"
+    },
+    {
+      "revision": "patched",
+      "compileExit": 0,
+      "diagnostics": "",
+      "exit": 0,
+      "stdout": "Actual complete 8023 function assertions passed: 160",
+      "stderr": ""
+    }
+  ],
+  "passed": true
+}

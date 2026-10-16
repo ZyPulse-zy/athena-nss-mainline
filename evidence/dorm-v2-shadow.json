@@ -1,0 +1,291 @@
+{
+  "schema": "athena-dorm-v2-shadow-1",
+  "capturedAt": "2026-10-08T12:02:56.273Z",
+  "specification": {
+    "file": "Athena_Dorm_QoS_Improvement_Plan_2026-10-08.md",
+    "version": "v2",
+    "sha256": "2743e93f844a6da57154fdac747f0243b5c40a8064851a1341cd7bd5788251d1"
+  },
+  "baseline": {
+    "repository": "ZyPulse-zy/athena-nss-mainline",
+    "branch": "main",
+    "commit": "04d98a3622bb54dafe50294e468b2999be8264de",
+    "originalCheckoutClean": true,
+    "gitBundleVerified": true,
+    "archiveEntries": 327,
+    "archiveBytes": 479574,
+    "archiveSha256": "e1b7c1f022fc66820b96a76c9f3035ece7ff90524a4e8cda62e4de851cba6898",
+    "sensitiveArchivePublished": false,
+    "protectedFilesStable": true
+  },
+  "implementation": {
+    "mode": "shadow",
+    "routerLocal": true,
+    "requiresWindows": false,
+    "requiresClient207": false,
+    "configurableTrackedLimit": 2048,
+    "configurableCandidateLimit": 32,
+    "candidateLimitIsHardwareCapacityProof": false,
+    "perDeviceQuotasAdded": false,
+    "perFlowLeasesSeconds": 6,
+    "hardwareBackendImplemented": false,
+    "hardwareWrites": false
+  },
+  "verification": {
+    "policyModels": {
+      "routerNetworkWrites": false,
+      "modelOnly": true,
+      "passed": true,
+      "checks": 20
+    },
+    "minimumContinuousObservedSeconds": 95.87,
+    "observations": [
+      {
+        "capturedAt": "2026-10-08T11:52:55.868Z",
+        "atUptime": 2277921.47,
+        "clients": 1,
+        "hardwareWrites": false,
+        "associatedStations": 3,
+        "retired": 0,
+        "running": true,
+        "sourceSequence": 6512,
+        "mode": "shadow",
+        "tracked": 2,
+        "completeObservation": false,
+        "perDeviceQuotas": false,
+        "accelerated": 0,
+        "candidateOverflow": 0,
+        "sourceFresh": true,
+        "classes": {
+          "BE": 0,
+          "RT": 2,
+          "BULK": 0,
+          "UNKNOWN": 0
+        },
+        "softwareProtectionVerified": 0,
+        "version": 1,
+        "exits": {
+          "lan4": 2
+        },
+        "bridgeFdbEntries": 11,
+        "softwareBackend": "existing-classifier-and-CAKE",
+        "hardwareBackend": "not-installed",
+        "candidates": 2
+      },
+      {
+        "capturedAt": "2026-10-08T11:53:31.958Z",
+        "atUptime": 2277955.65,
+        "clients": 4,
+        "hardwareWrites": false,
+        "associatedStations": 3,
+        "retired": 68,
+        "running": true,
+        "sourceSequence": 6523,
+        "mode": "shadow",
+        "tracked": 249,
+        "completeObservation": true,
+        "perDeviceQuotas": false,
+        "accelerated": 0,
+        "candidateOverflow": 0,
+        "sourceFresh": true,
+        "classes": {
+          "BE": 229,
+          "RT": 6,
+          "BULK": 0,
+          "UNKNOWN": 14
+        },
+        "softwareProtectionVerified": 6,
+        "version": 1,
+        "exits": {
+          "phy0-ap0": 2,
+          "lan4": 123,
+          "phy2-ap0": 124
+        },
+        "bridgeFdbEntries": 11,
+        "softwareBackend": "existing-classifier-and-CAKE",
+        "hardwareBackend": "not-installed",
+        "candidates": 6
+      },
+      {
+        "capturedAt": "2026-10-08T11:54:32.460Z",
+        "atUptime": 2278017.34,
+        "clients": 4,
+        "hardwareWrites": false,
+        "associatedStations": 3,
+        "retired": 301,
+        "running": true,
+        "sourceSequence": 6543,
+        "mode": "shadow",
+        "tracked": 259,
+        "completeObservation": true,
+        "perDeviceQuotas": false,
+        "accelerated": 0,
+        "candidateOverflow": 0,
+        "sourceFresh": true,
+        "classes": {
+          "BE": 242,
+          "RT": 0,
+          "BULK": 0,
+          "UNKNOWN": 17
+        },
+        "softwareProtectionVerified": 0,
+        "version": 1,
+        "exits": {
+          "phy0-ap0": 2,
+          "lan4": 43,
+          "phy2-ap0": 214
+        },
+        "bridgeFdbEntries": 11,
+        "softwareBackend": "existing-classifier-and-CAKE",
+        "hardwareBackend": "not-installed",
+        "candidates": 0
+      }
+    ],
+    "finalRun": {
+      "polls": 4,
+      "stopped": true,
+      "hardwareWrites": false,
+      "running": false,
+      "stoppedAtUptime": 2278347.73,
+      "accelerated": 0,
+      "startedAtUptime": 2278338.96,
+      "resources": {
+        "residentKiB": 3280
+      },
+      "maxSampleSeconds": 0.2099999999627471,
+      "mode": "shadow",
+      "durationSeconds": 8.77
+    },
+    "activeStopPassed": true,
+    "activeRollbackPassed": true,
+    "idempotentRollbackPassed": true,
+    "startupIssuesFixed": [
+      "router-no-nohup",
+      "nixio-permissions-require-octal-string",
+      "startup-must-confirm-heartbeat",
+      "successful-stop-error-field"
+    ],
+    "originalFailureOutputsRetainedPrivately": true,
+    "queueConfigurationStable": true,
+    "protectedConfigurationStable": true,
+    "postHealth": {
+      "wans": [
+        {
+          "device": "rpwan1",
+          "addressPresent": true,
+          "name": "wan1",
+          "up": true
+        },
+        {
+          "device": "rpwan2",
+          "addressPresent": true,
+          "name": "wan2",
+          "up": true
+        },
+        {
+          "device": "rpwan3",
+          "addressPresent": true,
+          "name": "wan3",
+          "up": true
+        },
+        {
+          "device": "rpwan4",
+          "addressPresent": true,
+          "name": "wan4",
+          "up": true
+        },
+        {
+          "device": "rpwan5",
+          "addressPresent": true,
+          "name": "wan5",
+          "up": true
+        }
+      ],
+      "services": {
+        "router-project-minieap": {
+          "wan5": true,
+          "wan4": true,
+          "wan1": true,
+          "wan2": true,
+          "wan3": true
+        },
+        "sing-box-athena": {
+          "core": true,
+          "guard": true
+        },
+        "router-project-game-classifier": {
+          "classifier": true,
+          "guardian": true
+        },
+        "tailscale-athena": {
+          "daemon": true,
+          "integration": true
+        },
+        "router-project-autorate": {
+          "wan5": true,
+          "wan4": true,
+          "wan1": true,
+          "wan2": true,
+          "wan3": true
+        }
+      },
+      "ecm": {
+        "accelerated6": 0,
+        "accelerated4": 0,
+        "stop6": 1,
+        "stop4": 1
+      },
+      "shadowProcesses": 0,
+      "shadowLockPresent": false
+    },
+    "temporaryReviewRemoved": true,
+    "realGameAcceptancePerformed": false,
+    "procdInstallationTested": false
+  },
+  "currentDataPlane": {
+    "uploadMbitPerWan": 40,
+    "downloadMbitPerWan": 70,
+    "softwareRateConfigurationIsCapacityMeasurement": false,
+    "wan5Download": {
+      "flowmode": "flows",
+      "nat": false,
+      "splitGso": false
+    },
+    "otherDownload": {
+      "flowmode": "dual-dsthost",
+      "nat": true,
+      "splitGso": true
+    },
+    "uploadFlowmode": "dual-srchost",
+    "autorateInstancesRunning": 5,
+    "legacyContinuousController": {
+      "state": "WAITING_FLOW",
+      "identityAndHeartbeatVerified": true,
+      "healthyFixedSessionLimitRemoved": true,
+      "rollingFreshnessAndRevokeRetained": true,
+      "maxTcpBulk": 2,
+      "maxUdpRt": 1,
+      "fixedClient207": true,
+      "requiresWindowsSocketOwnership": true,
+      "nativeSlots": 3,
+      "physicalQosExit": "lan4",
+      "experimentalSharedDownMbit": 18,
+      "experimentalSharedUpMbit": 60
+    },
+    "classifierPolicy": {
+      "maxTracked": 2048,
+      "maxFlows": 48,
+      "perHostMaxFlows": 6,
+      "perHostPriorityKbps": 4000,
+      "globalPriorityKbps": 12000,
+      "limitsUnchanged": true
+    }
+  },
+  "unresolved": [
+    "dynamic-native-gate-and-per-flow-firmware-delete-confirmation",
+    "verified-wired-wifi-and-software-NSS-shared-QoS-budget",
+    "permanent-router-local-service-and-independent-native-lease-guardian",
+    "three-real-wired-wifi-game-download-acceptance-scenarios"
+  ],
+  "rawTuplesMacAddressesCredentialsIncluded": false
+}

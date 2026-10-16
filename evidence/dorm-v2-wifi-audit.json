@@ -1,0 +1,181 @@
+{
+  "capturedAt": "2026-10-10T16:27:39.819Z",
+  "repoBaselineCommit": "112dfc2c4ad9eb3b8fc442531af15d0c1384d8aa",
+  "installedControllerCommit": "2996d405c9a96ec4d891887358f02f28de4e340c",
+  "installedSourceFilesMatching": [
+    {
+      "source": "code/controller/native/classifier_recovery.lua",
+      "sha256": "0b158af2b72dd950d8086a31639cc96aa5fcd5c597a9538cf298ee5e96125a14"
+    },
+    {
+      "source": "code/controller/collector.lua",
+      "sha256": "21e7c82796203d6625ef11c33d36085003058358bdbe65f3215ef8ac0192dfa5"
+    },
+    {
+      "source": "code/controller/core.lua",
+      "sha256": "342f4fa45a9789c2194a9b77809f417113785aeccfcce69c17c9373a85c7d19b"
+    },
+    {
+      "source": "code/controller/native/core_guard_permission.lua",
+      "sha256": "7fc2d5b1a9f6e3a25dc8645c8ea5dbc5e8e46d00106ee8842eb37aa18d397aeb"
+    },
+    {
+      "source": "code/controller/native/coverage.lua",
+      "sha256": "77dd3b1dbdf472208187d1ee0cdc2c6c42acaecadc2dab6b005936f73529db9b"
+    },
+    {
+      "source": "code/controller/native/diagnose.lua",
+      "sha256": "05c69b57cc79e9b7594bcfc72e33bed5ece58eee7ce10c395cb5ffcbdac234fa"
+    },
+    {
+      "source": "code/controller/flow_json.lua",
+      "sha256": "a811fa335cb1b506a828b89d7b36395eaeb89445feaaabce26beb11f59eebb7c"
+    },
+    {
+      "source": "code/controller/native/health.lua",
+      "sha256": "66badf4cde6451524a41906cc62e3d812eac9e67e41301637aad1cc735bcc3ed"
+    },
+    {
+      "source": "code/controller/native/ingress_probe.lua",
+      "sha256": "5aa86300b9b9ba7b61371aa6ee023d41bead197d51b95e8d4c3addf68a0a5c38"
+    },
+    {
+      "source": "code/controller/native/install_core_guard.lua",
+      "sha256": "9256fea875ce7b337a3d429d51d92a8fccced607f9c464efd698c17f618cd347"
+    },
+    {
+      "source": "code/controller/native/lifecycle.lua",
+      "sha256": "6a0f5cc739c91c0aa8669b813daeaba5658ae98cbb2c8f0b92c092d64ef1bdd8"
+    },
+    {
+      "source": "code/controller/native/prepare.lua",
+      "sha256": "6c0d7bedd1819535d0264cd6845eb82c50c22bb2b8e123452d44905261ee5f2b"
+    },
+    {
+      "source": "code/controller/native/queue_plan.lua",
+      "sha256": "25d0d35fb9c20b8f55fb8989dc0e8bc6126c63acfb619d3209b58f490a7ed1ab"
+    },
+    {
+      "source": "code/controller/native/reader.lua",
+      "sha256": "0f6ea9526fea057fa0fcc439d2ea4342b9f71f937e59bfede2cff1d5b8b226da"
+    },
+    {
+      "source": "code/controller/native/supervisor.lua",
+      "sha256": "ba3e1076f35fe38b19db8ead8d89fb1b7db6d05ed4f40eb682b8d294ab23d673"
+    },
+    {
+      "source": "code/controller/native/tag_rules.lua",
+      "sha256": "40428f104d8900f906d7a72a7183e27cbbb179cb15060a17a70882222352f07d"
+    },
+    {
+      "source": "code/controller/native/transaction.lua",
+      "sha256": "af4744e7711e4092be141559bafcdfef6bcccaa058d17012a441afb36feab51d"
+    },
+    {
+      "source": "code/controller/native/writer.lua",
+      "sha256": "ee856617c64b8c897bd46b78b64787bac50e72aa84f023883438340e226524cf"
+    },
+    {
+      "source": "code/controller/athena-qos",
+      "sha256": "6e49f120420148ed6c7ea718bf11d2ea28b81fbc96f9eb5f519c2fc8e5d95e39"
+    }
+  ],
+  "candidateInstalled": false,
+  "driverPatchesInstalled": false,
+  "prNumber": 1,
+  "prRemainsDraft": true,
+  "observer": {
+    "manual": true,
+    "loopIntegrated": false,
+    "streamedWithoutInstallation": true,
+    "requestedSeconds": 30,
+    "elapsedSeconds": 31.30000000000291,
+    "queries": 120,
+    "queryStates": {
+      "ok": 84,
+      "missing": 36
+    },
+    "queryCostSumSeconds": 1.2799999999988358,
+    "maxQuerySeconds": 0.13999999999941792,
+    "existingPeerStatsConfiguration": [
+      "00000001",
+      "00000001",
+      "00000001"
+    ],
+    "statisticsEnabledOrChanged": false,
+    "rawCapturesPublic": false,
+    "activeScan": false,
+    "generatedTraffic": false
+  },
+  "protection": {
+    "before": "2026-10-10T16:26:09.780Z",
+    "after": "2026-10-10T16:27:39.819Z",
+    "hashesUnchanged": true,
+    "filesCompared": 31,
+    "serviceInstancesCompared": 49,
+    "servicePidAndRunningUnchanged": true,
+    "bootUnchanged": true,
+    "fiveWansUpAndIdentityUnchanged": true,
+    "softwareCakeRootsCompared": 10,
+    "cakeHandlesAndAllOptionsExceptDynamicBandwidthUnchanged": true,
+    "finalPhase": "native-running",
+    "sourceFresh": true,
+    "unconfirmed": 0,
+    "sourcePauseDelta": 0,
+    "sourceResumeDelta": 0,
+    "recoveryWithdrawalDelta": 2
+  },
+  "modules": {
+    "ath11k.ko": "8a0928ae768eefa98eb86ed58fe3a16554e96e90dbc7ec3b05e25d4441bef950",
+    "ath11k_ahb.ko": "7c11c727ecfb2cdb2416618512a8b9f4e7ef770324f27c88922cb73a116c988a",
+    "ath11k_pci.ko": "93fe42552726cbd91799f769fa17cadd0e561db240525338b06118ee01eca42d",
+    "mac80211.ko": "c4b90591ac2d20553c86f3c0c76f13544ee45b7f9f2b968047c88346ed4a9c34",
+    "cfg80211.ko": "568bde82589c9d56f6927e35caf8833d81ecd7aa6e8e77e2f3c325f10a6ca7f0",
+    "qca-nss-drv.ko": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a"
+  },
+  "sourceAudit": {
+    "firmwareCommit": "90448eeb2b8f5d172caedfe6d96ab3bacb058c09",
+    "backportsPatchCount": 299,
+    "backportsSourceBlobsVerified": 301,
+    "nssCommit": "6aa14c78e097b29c493ff2fef87e4d35906b2b5a",
+    "nssPatchCount": 20,
+    "nssRecipeAndPatchBlobsVerified": 21,
+    "binaryReproduced": false,
+    "firmwareAbiRuntimeValidated": false
+  },
+  "findings": {
+    "crossPeerDropAccumulatorReproduced": true,
+    "uninitializedHostQueueReproduced": true,
+    "ath11kNssProviderConsumerWireLayoutMismatchReproduced": true,
+    "providerPeerBytes": 212,
+    "originalConsumerPeerBytes": 196,
+    "liveAth11kNewMacroDebugFieldsExported": false,
+    "finalAirTidAcVerified": false,
+    "sameClientRtBulkAirSeparationVerified": false,
+    "gameAcceptanceCompleted": false
+  },
+  "queryLimitations": [
+    {
+      "query": "NSS module version",
+      "state": "missing"
+    },
+    {
+      "query": "Initial protection path guess",
+      "state": "failed",
+      "correctedBeforeFinal31FileAudit": true
+    },
+    {
+      "query": "Initial SSH exec source transfer",
+      "state": "failed",
+      "replacedByVerifiedStdinTransfer": true
+    }
+  ],
+  "runtimeBoundary": {
+    "wifiReload": false,
+    "configurationChanges": false,
+    "serviceRestarts": false,
+    "moduleReplacement": false,
+    "deployment": false,
+    "activeCongestion": false
+  }
+}

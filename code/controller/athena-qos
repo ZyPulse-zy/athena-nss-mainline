@@ -1,0 +1,58 @@
+#!/bin/sh
+# Installed path: /usr/lib/athena-dorm-qos. No edits to the existing data plane.
+set -eu
+base=${ATHENA_QOS_BASE:-/usr/lib/athena-dorm-qos}
+backend=${ATHENA_QOS_BACKEND:-shadow}
+if test "${0%/*}" = /usr/lib/athena-dorm-native; then base=/usr/lib/athena-dorm-native; backend=native; fi
+if test "${1:-}" = wifi-diagnose; then
+  test "$#" -le 2 || { echo 'Usage: athena-qos wifi-diagnose [5..120 seconds]' >&2; exit 2; }
+  seconds=${2:-30}
+  case "$seconds" in ''|*[!0-9]*) echo 'Invalid wireless observation duration' >&2; exit 2;; esac
+  test "$seconds" -ge 5 && test "$seconds" -le 120 || { echo 'Duration must be 5..120 seconds' >&2; exit 2; }
+  while test "${seconds#0}" != "$seconds"; do seconds=${seconds#0}; done
+  diagnostic="$base/wifi-diagnose.lua"
+  if test ! -f "$diagnostic"; then diagnostic="$base/native/wifi-diagnose.lua"; fi
+  test -f "$diagnostic" || { echo 'Wireless observer is not installed in this base' >&2; exit 2; }
+  exec /usr/bin/timeout -k 2 "$((seconds + 45))" lua "$diagnostic" "$seconds"
+fi
+if test "$backend" = native; then
+  if test "$base" = /usr/lib/athena-dorm-native; then
+    case "${1:-status}" in
+      start|stop|rollback) exec /etc/init.d/athena-dorm-native "${1:-status}" ;;
+      status) exec /etc/init.d/athena-dorm-native inspect ;;
+      diagnose) exec lua "$base/diagnose.lua" "${2:-60}" "${3:-}" "${4:-}" ;;
+      *) echo 'Usage: athena-qos status|start|stop|rollback|diagnose [1..180 seconds] [--queues] [--coverage]' >&2; exit 2 ;;
+    esac
+  fi
+  case "${1:-status}" in
+    start) exec lua "$base/transaction.lua" start-native "${ATHENA_QOS_NATIVE_SECONDS:-0}" ;;
+    diagnose) exec lua "$base/diagnose.lua" "${2:-60}" "${3:-}" "${4:-}" ;;
+    status|stop|rollback) exec lua "$base/transaction.lua" "$1" ;;
+    *) echo 'Usage: athena-qos status|start|stop|rollback|diagnose [1..180 seconds] [--queues]' >&2; exit 2 ;;
+  esac
+fi
+test "$backend" = shadow
+case "${1:-status}" in
+  status) exec lua "$base/service.lua" status ;;
+  sample) exec lua "$base/service.lua" once "$base/config.example.json" ;;
+  start)
+    if test -d /tmp/athena-dorm-qos/lock; then echo 'Shadow already owns its lock; inspect status' >&2; exit 1; fi
+    rm -f /tmp/athena-dorm-qos/stop
+    if test "${ATHENA_QOS_TEMPORARY:-0}" = 1; then
+      seconds=${ATHENA_QOS_TEST_SECONDS:-120}
+      case "$seconds" in ''|*[!0-9]*) echo 'Invalid test duration' >&2; exit 2;; esac
+      test "$seconds" -ge 1 && test "$seconds" -le 290
+      lua "$base/service.lua" launch "$base/config.example.json" "$seconds"
+    else
+      /etc/init.d/athena-dorm-qos start
+    fi
+    exec lua "$base/service.lua" wait ;;
+  stop|rollback)
+    if test -d /tmp/athena-dorm-qos/lock; then : > /tmp/athena-dorm-qos/stop; fi
+    tries=0
+    while test -d /tmp/athena-dorm-qos/lock && test "$tries" -lt 8; do sleep 1; tries=$((tries+1)); done
+    if test -d /tmp/athena-dorm-qos/lock; then echo 'Shadow stop unconfirmed; lock retained' >&2; exit 1; fi
+    echo '{"stopped":true,"hardwareWrites":false,"legacyControllerChanged":false}'
+    ;;
+  *) echo 'Usage: athena-qos status|sample|start|stop|rollback' >&2; exit 2 ;;
+esac

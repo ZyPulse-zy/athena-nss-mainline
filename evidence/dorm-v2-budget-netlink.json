@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "date": "2026-10-16",
+  "baseCommit": "f8a3dc441138bdc8aada2a54e6a3d7be202ed9fe",
+  "incident": {
+    "lastFailedQueue": "up-1",
+    "commandSeconds": 4,
+    "exitCode": 143,
+    "exitMeaning": "SIGTERM",
+    "exactHistoricalWaiterOrLockOwnerProved": false,
+    "jsonParsingProvedToCauseFourSeconds": false
+  },
+  "confirmedMechanism": {
+    "iprouteDeviceFilterInUserspace": true,
+    "matchingKernelDumpTraversesAllQdiscsUnderRtnl": true,
+    "legacyGlobalDumpsPerSixWanSample": 12,
+    "newGlobalDumpsPerSample": 1,
+    "unfilteredStandardTcJsonValid": false,
+    "invalidJsonKind": "nsshtb",
+    "unknownQdiscTextInsideJson": true,
+    "historicalFourSecondUniqueTriggerProved": false
+  },
+  "change": {
+    "readOnlyRequest": "RTM_GETQDISC",
+    "kernelSourceOrModulesOrFirmwareChanged": false,
+    "samplerIndependent": true,
+    "fullRootCount": 12,
+    "internalSampleBudgetSeconds": 0.75,
+    "originalOuterTermSeconds": 1,
+    "originalOuterKillAfterSeconds": 1,
+    "ctAndBudgetLeaseSeconds": 6,
+    "readerHeartbeatSeconds": 8,
+    "topologyRoundSeconds": 3.5,
+    "nativeCapacity": 32,
+    "nativeRateUnits": "kernel-base-rate64-bytes-per-second",
+    "missingDuplicateWrongKindOrInvalidRateRejected": true,
+    "truncatedInterruptedIncompleteDumpRejected": true,
+    "kernelSenderAndSequenceValidated": true,
+    "interfaceIndicesRechecked": true,
+    "staleFailureTimestampRefreshed": false,
+    "lastFailureRetainedAcrossSuccessfulSamples": true
+  },
+  "preRepairPassive": {
+    "seconds": 90.1,
+    "polls": 355,
+    "slowEvents": 0,
+    "maximumCollectingAgeSeconds": 0.15,
+    "maximumBudgetAgeSeconds": 1.14,
+    "kernelWaitStackAvailable": false,
+    "newRetryObserved": false
+  },
+  "readOnlyComparison": {
+    "groups": 3,
+    "stableRootComparisons": 36,
+    "stableRootMatches": 36,
+    "oldSeconds": [
+      0.09,
+      0.09,
+      0.1
+    ],
+    "newBeforeSeconds": [
+      0.01,
+      0,
+      0.01
+    ],
+    "newAfterSeconds": [
+      0.01,
+      0.01,
+      0
+    ],
+    "timerResolutionSeconds": 0.01,
+    "gameOrWholeRouterCpuBenefitProved": false
+  },
+  "tests": {
+    "offline": {
+      "5": {
+        "passed": true,
+        "tests": 21,
+        "lua": 18,
+        "c": 3,
+        "luaParsed": 62,
+        "platformShellParsed": 12
+      },
+      "6": {
+        "passed": true,
+        "tests": 21,
+        "lua": 18,
+        "c": 3,
+        "luaParsed": 62,
+        "platformShellParsed": 12
+      }
+    },
+    "hostDecoderChecksWithAsanUbsan": 207,
+    "targetDecoderChecks": 207,
+    "hostLuaSamplingChecks": 199,
+    "targetLuaSamplingChecks": 201,
+    "targetBudgetCadenceAndReapingChecks": 168,
+    "targetCheckpointGuardAndHelperUndoChecks": 30,
+    "targetElfMachine": 183,
+    "targetElfArchitecture": "AArch64-musl",
+    "targetBinarySha256": "f9560a5afd5c5bbe1d34c55f6549a7656acfb357fe0aca9fc67cc060c8ad3552",
+    "sourceSha256": "6647617e28b82fa233b6fad116d03d46bfb5363f4524326cecd9b863d16c0207",
+    "fullKernelModuleRebuildPerformed": false,
+    "liveFaultOrCongestionInjected": false
+  },
+  "deployment": {
+    "committed": true,
+    "independentRollbackGuardSeconds": 180,
+    "guardPhase": "committed",
+    "normalNssLifecycleSwitches": 1,
+    "changedFiles": {
+      "collector.lua": {
+        "originalSha256": "85b6f3bbe0afd8fb044b1bfc115e60d86eead9fdbc12b137777dd3fa6157e25e",
+        "candidateSha256": "871c953127423c86f1d1bfe9a73618d66f9ebe9dc0291da46882ebbeb919aab0",
+        "runtimeCopy": true
+      },
+      "budget_sampler.lua": {
+        "originalSha256": "7ef1ce354db299abcdce42ecd7a5ae0d48f90f11e78fd9835b7780b191c253b8",
+        "candidateSha256": "7848125888c2302de9443ed539b3f631a7ca69a1a2ee1a4a1b0afdbd73bf14f7",
+        "runtimeCopy": true
+      },
+      "launch.sh": {
+        "originalSha256": "bdd2ed966b5fd4f65078570ed3f08a62e31b27a66695f7398188b26d92e6b1ec",
+        "candidateSha256": "8ec8db457b9d65b3e80241e9fefa615f0d8f5e5bb5258e774d754226f88fef5e",
+        "runtimeCopy": false
+      },
+      "cake-budget-read": {
+        "originalSha256": null,
+        "candidateSha256": "f9560a5afd5c5bbe1d34c55f6549a7656acfb357fe0aca9fc67cc060c8ad3552",
+        "runtimeCopy": true
+      }
+    },
+    "routerBootUnchanged": true,
+    "protectedHashesUnchanged": true,
+    "sixWanIdentitiesUnchanged": true,
+    "softwareCakeRootsAndFixedOptionsUnchanged": true,
+    "unrelatedServicePidsUnchanged": true,
+    "routingProxyNatRulesUnchanged": true,
+    "nssOwnedCoreGuardLifecycleRestarted": true,
+    "natConnectionsMigrated": false,
+    "authenticationProxyTailscaleWifiRestarted": false
+  },
+  "passive": {
+    "seconds": 120.37,
+    "samples": 41,
+    "allNativeRunning": true,
+    "allSourceFresh": true,
+    "allBudgetComplete": true,
+    "allOneQueryAndTwelveRoots": true,
+    "maximumBudgetSeconds": 0.03,
+    "maximumObservedBudgetAgeSeconds": 0.43,
+    "maximumTopologySeconds": 0.17,
+    "budgetSequenceFirst": 61,
+    "budgetSequenceLast": 181,
+    "actualNssMinimum": 7,
+    "actualNssMaximum": 11,
+    "nativeLiveMinimum": 7,
+    "nativeLiveMaximum": 14,
+    "maximumPending": 0,
+    "maximumUnconfirmed": 0,
+    "sourcePauseDelta": 0,
+    "sourceResumeDelta": 0,
+    "automaticRetries": [
+      0
+    ],
+    "allSixHealthyAndGameReady": true
+  },
+  "latest": {
+    "unconfirmed": 0,
+    "phase": "native-running",
+    "pending": 0,
+    "budgetComplete": true,
+    "sourceFresh": true,
+    "retries": 0,
+    "budgetSequence": 241,
+    "routingProxyNatPreserved": true,
+    "live": 13
+  },
+  "limitations": {
+    "historicalRtnlHolderIdentified": false,
+    "liveFourSecondStallReproduced": false,
+    "allUnderlyingStallsEliminated": false,
+    "newLiveFailureRetentionObserved": false,
+    "independentRollbackExpiryTriggered": false,
+    "perFlowFirmwareByteProgressMeasured": false,
+    "wan6GameOrEndToEndLatencyProved": false,
+    "longTermStabilityProved": false
+  },
+  "publication": {
+    "draftPr": 1,
+    "credentialsOrRawCtOrPrivateEndpointsIncluded": false
+  }
+}

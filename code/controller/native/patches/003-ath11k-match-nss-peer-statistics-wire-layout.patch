@@ -1,0 +1,21 @@
+Subject: [PATCH] ath11k: consume verified NSS 12.5 firmware peer statistics
+
+The exact installed IPQ6018 NSS.FW.12.5-210-CP.R release firmware emits
+212-byte peer records. Bounded multi-peer observations reject 196-byte
+stride and match 212-byte stride against live peer membership. cm.len=216
+is a fixed template length, not a variable-array byte count.
+
+The pinned NSS driver forwards this message without parsing peer records;
+its legacy 196-byte declaration does not produce firmware wire data. Keep
+that installed driver unchanged. Enable the matching layout only in the
+NSS-enabled ath11k consumer. Preserve CN shim and existing module parameters.
+See docs/DORM_V2_WIFI_FIRMWARE_ABI.md for evidence and remaining limits.
+Apply from a root containing backports/, after pinned patches.
+
+--- a/backports/drivers/net/wireless/ath/ath11k/Makefile
++++ b/backports/drivers/net/wireless/ath/ath11k/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: BSD-3-Clause-Clear
++ccflags-$(CPTCFG_ATH11K_NSS_SUPPORT) += -DNSS_FIRMWARE_VERSION_12_5
+ obj-$(CPTCFG_ATH11K) += ath11k.o
+ ath11k-y += core.o \

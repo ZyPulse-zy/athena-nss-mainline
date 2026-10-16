@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-12",
+  "deployed": true,
+  "baseHead": "1d2966e8d45ef23a76373749583c1c086c88cae1",
+  "scope": "new IPv4 br-lan UDP first packet heuristic; original relay path retained",
+  "policy": {
+    "maximumIpBytes": 256,
+    "genericUdpBytes": [
+      20,
+      236
+    ],
+    "genericPorts": [
+      1024,
+      65535
+    ],
+    "perHostNewFlowRate": 4,
+    "perHostBurst": 8,
+    "globalNewFlowRate": 16,
+    "globalBurst": 32,
+    "rateSetSize": 1024,
+    "rateSetTimeoutSeconds": 30,
+    "eligibilityLeaseSeconds": 15,
+    "routingConfersRtAdmission": false,
+    "existingNatMigrated": false
+  },
+  "exclusions": {
+    "retainedSiteProxyVpnDnsQuicPrivateReservedExclusions": true,
+    "additionalPorts": [
+      3478,
+      3479,
+      5349
+    ],
+    "additionalPortRanges": [
+      [
+        6881,
+        6999
+      ]
+    ],
+    "genericPayloadExclusions": [
+      "STUN magic cookie",
+      "WireGuard message types 1-4",
+      "QUIC long header candidate",
+      "uTP v1 header candidate"
+    ],
+    "payloadExclusionsMayRejectGames": true,
+    "customTunnelOrVoiceStillAmbiguous": true
+  },
+  "tests": {
+    "5": {
+      "passed": true,
+      "cases": 16,
+      "luaParsed": 55,
+      "shellParsed": 12
+    },
+    "6": {
+      "passed": true,
+      "cases": 16,
+      "luaParsed": 55,
+      "shellParsed": 12
+    }
+  },
+  "target": {
+    "luaPolicyChecks": 124,
+    "luaRuntimeChecks": 138,
+    "candidateNftCheckOnlyPassed": true,
+    "rollbackNftCheckOnlyPassed": true,
+    "sixAccountsOnline": 6,
+    "protectedFilesAndServicePidsExceptHealthPreserved": true,
+    "nativeRestarted": false,
+    "routerRebooted": false,
+    "wirelessChanged": false,
+    "authChanged": false,
+    "newDaemonOrSchedule": false,
+    "wan6RtLabels": {
+      "up": "7e66",
+      "down": "7a66"
+    },
+    "genericFirstPacketsAtCommit": 1,
+    "genericFirstPacketBytesAtCommit": 166
+  },
+  "passiveObservation": {
+    "seconds": 45.36999999999534,
+    "samples": 15,
+    "allSourceFresh": true,
+    "allPolicyReady": true,
+    "sourcePauses": [
+      0,
+      0
+    ],
+    "sourceResumes": [
+      0,
+      0
+    ],
+    "pendingMaximum": 0,
+    "unconfirmedMaximum": 0,
+    "wan6DesiredUdpMaximum": 0,
+    "createAckSamples": 0,
+    "labelsVerifiedSamples": 0,
+    "labelsMismatchSamples": 0,
+    "sameBindingHardwareIntervals": 0,
+    "hardwareByteDelta": {
+      "down": 0,
+      "up": 0
+    }
+  },
+  "preservedFailures": [
+    {
+      "stage": "initial target nft check only",
+      "issue": "transport context inference when timed l4proto set lookup precedes UDP fields",
+      "livePolicyChanged": false,
+      "fixed": "put UDP fields before lookup; target parser passed"
+    },
+    {
+      "stage": "first controlled scope replacement",
+      "issue": "new configuration hash not registered as pending; health rejected stale RAM ownership",
+      "genericLeaseRenewed": false,
+      "rollbackActuallyExecutedAndConfirmed": true,
+      "nativeStopped": false,
+      "fixed": "register pending hash before restarting health; add live narrow/broad runtime models"
+    }
+  ],
+  "limitations": {
+    "realApplicationIdentityVerified": false,
+    "realGameFalsePositiveRateMeasured": false,
+    "realGenericUdpNssCreateAndBytesObserved": false,
+    "realGameLatencyBenefitMeasured": false,
+    "smallFirstPacketProvesLowRate": false,
+    "genericNewFlowRateLimitsProtectAgainstFutureBulk": false,
+    "actualColdBootTested": false,
+    "longTermStabilityTested": false,
+    "syntheticChecksAreFieldAccuracy": false
+  }
+}

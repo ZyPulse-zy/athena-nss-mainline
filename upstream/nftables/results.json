@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-10T10:56:41.745248+00:00",
+  "nftablesCommit": "91373de3ec389004c30ae5465d1bb34dcaf690dd",
+  "libnftnlCommit": "6b3bded9a9e86f327b00e26391ac72076368a487",
+  "builtWithJson": true,
+  "fullUserSpaceBuildPassed": true,
+  "kernelRoundTripTested": false,
+  "namespaceProbe": {
+    "exitCode": 1,
+    "message": "unshare: unshare failed: Permission denied",
+    "nftTableInstalled": false
+  },
+  "before": {
+    "inputFields": 11,
+    "packedSubtypeCount": 6,
+    "decodedFields": 6,
+    "passed": false,
+    "kernelNetlinkTested": false,
+    "candidateChangeApplied": false
+  },
+  "afterCandidate": {
+    "inputFields": 11,
+    "packedSubtypeCount": 6,
+    "decodedFields": 11,
+    "passed": true,
+    "kernelNetlinkTested": false,
+    "candidateChangeApplied": true
+  },
+  "componentSourceSha256": "1e278cb2ff02be24b1b29b12e8b88876debc8d785ad615e4750664cbd5d2e509",
+  "historicalVendorAssertionReproducedNow": false,
+  "upstreamSubmitted": false
+}

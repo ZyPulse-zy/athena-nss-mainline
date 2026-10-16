@@ -1,0 +1,28 @@
+#!/bin/sh /etc/rc.common
+START=98
+STOP=17
+USE_PROCD=1
+EXTRA_COMMANDS="line_start line_stop"
+add_line() {
+ local n="$1"
+ [ -f /root/router-project/policy/autorate-ready ] || return 0
+ [ -f /root/router-project/policy/wan$n.enabled ] || return 0
+ [ -s /root/router-project/policy/autorate/config.wan$n.sh ] || return 0
+ procd_open_instance "wan$n"
+ procd_set_param command /bin/sh /root/router-project/scripts/autorate-run.sh "$n"
+ procd_set_param respawn 3600 15 0
+ procd_set_param term_timeout 8
+ procd_close_instance
+}
+start_service() { for n in 1 2 3 4 5 6; do add_line "$n"; done; }
+line_start() {
+ local n="$1"; case "$n" in 1|2|3|4|5|6);; *)return 2;;esac
+ . /lib/functions/procd.sh
+ procd_open_service router-project-autorate /etc/init.d/router-project-autorate
+ add_line "$n"
+ procd_close_service add
+}
+line_stop() {
+ local n="$1"; case "$n" in 1|2|3|4|5|6);; *)return 2;;esac
+ ubus call service delete "{\"name\":\"router-project-autorate\",\"instance\":\"wan$n\"}"
+}

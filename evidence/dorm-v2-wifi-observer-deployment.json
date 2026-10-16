@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-12 Asia/Shanghai",
+  "baseCommit": "569fab2",
+  "deploymentPermissionReusedFromUser": true,
+  "prDraft": true,
+  "observerDeployment": {
+    "completed": true,
+    "installedFiles": {
+      "wifi.lua": "15bb00e0f49c716d5fc246ffb6818ff2fd5364c531f156d4dc8f0ba8bfacf20b",
+      "wifi_collect.lua": "2e47994f913dc13353898057711a4c81f90627a32f5b3630c7706b5788f89cfc",
+      "wifi-diagnose.lua": "9fa6dd21684512ab895b86a29ac106862d1e8134a635e77ff2ec8b51d31d35ed"
+    },
+    "existingAthenaQosHashVerified": true,
+    "newFilesOnly": true,
+    "privateIndependentGuardianArmed": true,
+    "commitMarkerVerified": true,
+    "targetLuaParsePassed": 3,
+    "guardTests": [
+      {
+        "case": "uncommitted",
+        "passed": true
+      },
+      {
+        "case": "committed",
+        "passed": true
+      },
+      {
+        "case": "changed-by-other-owner",
+        "passed": true
+      }
+    ],
+    "firstAttemptFailedBeforeObserverFileWrites": true,
+    "firstFailure": "Target lacks base64 and nohup; switched to verified openssl base64 and setsid before retry",
+    "firstPartialCheckpointRetainedPrivate": true
+  },
+  "observation": {
+    "elapsedSeconds": 6.170000000012806,
+    "queries": 120,
+    "maxQuerySeconds": 0.14000000001396984,
+    "queryWallClockSum": 1.1300000000046566,
+    "statuses": {
+      "unspecified": 120
+    },
+    "rawDataPrivate": true
+  },
+  "protectionUnchanged": {
+    "boot": true,
+    "protection": true,
+    "services": true,
+    "sources": true,
+    "queues": true,
+    "moduleHashes": true
+  },
+  "postNative": {
+    "unconfirmed": 0,
+    "sourcePauses": 0,
+    "sourceResumes": 0,
+    "phase": "native-running",
+    "pending": 0,
+    "live": 1,
+    "sourceFresh": true
+  },
+  "campus6Online": true,
+  "installedModuleHashesUnchanged": {
+    "cfg80211": "568bde82589c9d56f6927e35caf8833d81ecd7aa6e8e77e2f3c325f10a6ca7f0",
+    "ath11k_ahb": "7c11c727ecfb2cdb2416618512a8b9f4e7ef770324f27c88922cb73a116c988a",
+    "ecm": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2",
+    "mac80211": "c4b90591ac2d20553c86f3c0c76f13544ee45b7f9f2b968047c88346ed4a9c34",
+    "ath11k": "8a0928ae768eefa98eb86ed58fe3a16554e96e90dbc7ec3b05e25d4441bef950",
+    "qca-nss-drv": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+    "act_nssmirred": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb"
+  },
+  "moduleDeployment": {
+    "completed": false,
+    "modulesLoaded": false,
+    "firmwareAbiKnown": false,
+    "reason": "Existing full build omits installed CN shim; 003 changes host layouts from matching196 to paired212 without firmware wire ABI verification. No ready-to-install matched module set."
+  },
+  "rebooted": false,
+  "serviceRestarted": false,
+  "wirelessReloaded": false,
+  "radioConfigChanged": false,
+  "activeScan": false,
+  "permanentCollectionAdded": false,
+  "formalGameAcceptancePerformed": false
+}

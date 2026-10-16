@@ -1,4 +1,7 @@
 * text=auto eol=lf
+# Unified-diff context markers must precede original tabs and empty lines.
+/code/controller/native/patches/001-ath11k-nss-isolate-peer-drop-totals.patch whitespace=-space-before-tab,-blank-at-eol,-blank-at-eof
+/code/controller/native/patches/002-mac80211-initialize-offload-host-queue.patch whitespace=-space-before-tab,-blank-at-eol
 # These are byte-exact evidence sources, including existing CRLF line endings.
 /code/** -text
 # Frozen runtime references carry byte hashes and must retain their source endings.
@@ -1236,3 +1239,6 @@ code/work/resident-task-dev-i-20261008/upgrade.ps1 whitespace=cr-at-eol,-blank-a
 code/work/resident-continuous-dev-20261008/generation-outcome.mjs whitespace=cr-at-eol,-blank-at-eof
 code/work/resident-task-continuous-20261008/upgrade.ps1 whitespace=cr-at-eol,-blank-at-eof
 code/work/resident-rc1-run-20261008111038-d536b062/fast-path.lua whitespace=cr-at-eol,-blank-at-eol
+
+/code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch whitespace=-blank-at-eol
+/code/controller/native/patches/004-ath11k-preserve-installed-cn-bandwidth-shim.patch whitespace=-blank-at-eol

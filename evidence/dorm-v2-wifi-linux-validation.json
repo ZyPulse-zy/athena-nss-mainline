@@ -1,0 +1,809 @@
+{
+  "routerConnected": false,
+  "routerModified": false,
+  "remoteBaseAfterSync": "e5f344bf17c9fbca2e64cd841c831080b0e47695",
+  "migration": {
+    "preparedSourceChecksPassed": true,
+    "dependencyRecipeChecks": 37,
+    "kernelVersion": "6.18.44",
+    "oldMountReadOnly": true,
+    "sdkArchiveSha256": "4ae47c1c51fbc74e013c6b3a64869352cb66a618407f6eb16576bfd1161d81f8",
+    "kernelLinksRestored": 85,
+    "routerConnected": false
+  },
+  "tests": {
+    "linux-offline": {
+      "routerConnected": false,
+      "dataPlaneWrites": false,
+      "mockedTargetIO": true,
+      "nftParserTested": false,
+      "tests": [
+        {
+          "name": "test-wifi.lua",
+          "passed": true,
+          "stdout": "Wireless observer assertions passed: 158",
+          "stderr": ""
+        },
+        {
+          "name": "test-writer-policy.lua",
+          "passed": true,
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":740,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-health.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}",
+          "stderr": ""
+        },
+        {
+          "name": "test-coverage.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}",
+          "stderr": ""
+        },
+        {
+          "name": "test-tag-rules.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}",
+          "stderr": ""
+        },
+        {
+          "name": "test-lifecycle.lua",
+          "passed": true,
+          "stdout": "bounded-recovery-models-passed 25",
+          "stderr": ""
+        },
+        {
+          "name": "test-core-guard.lua",
+          "passed": true,
+          "stdout": "core-guard-permission-models-passed 26",
+          "stderr": ""
+        },
+        {
+          "name": "test-efficiency.lua",
+          "passed": true,
+          "stdout": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-core.lua",
+          "passed": true,
+          "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}",
+          "stderr": ""
+        },
+        {
+          "name": "test-collector.lua",
+          "passed": true,
+          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":137,\"passed\":true,\"failedReadDistinctFromEmpty\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-receipts.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":168,\"mockedTransport\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        },
+        {
+          "name": "test-selection.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":55,\"oneSelectionPreserved\":true,\"mockedCT\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        }
+      ],
+      "passed": true,
+      "luaParsed": 33
+    },
+    "linux-peer-drop": {
+      "originalFunctionSha256": "fbe204d3d0ed981bbe410fcea513e29f2c690587509491f8aba244d3e56bfb80",
+      "patchSha256": "bdd1503ff39154d7b737c37545667549f7c9b14c30c499e4bbc0cc3b3d5bc0c3",
+      "actualCompleteSourceFunctionExtracted": true,
+      "kernelAndWireStructuresMocked": true,
+      "fullModuleBuilt": false,
+      "firmwareAbiTested": false,
+      "routerModified": false,
+      "runs": [
+        {
+          "revision": "original",
+          "firmware12_5Macro": false,
+          "exit": -6,
+          "stdout": "",
+          "stderr": "FAIL second peer receives only its own drops"
+        },
+        {
+          "revision": "original",
+          "firmware12_5Macro": true,
+          "exit": -6,
+          "stdout": "",
+          "stderr": "FAIL second peer receives only its own drops"
+        },
+        {
+          "revision": "patched",
+          "firmware12_5Macro": false,
+          "exit": 0,
+          "stdout": "Actual complete peer statistics function assertions passed: 41",
+          "stderr": ""
+        },
+        {
+          "revision": "patched",
+          "firmware12_5Macro": true,
+          "exit": 0,
+          "stdout": "Actual complete peer statistics function assertions passed: 41",
+          "stderr": ""
+        }
+      ],
+      "passed": true
+    },
+    "linux-tx-queue": {
+      "actualCompleteSourceFunctionExtracted": true,
+      "kernelIOAndClassifierMocked": true,
+      "fullModuleBuilt": false,
+      "firmwareTidAcTested": false,
+      "routerModified": false,
+      "originalFunctionSha256": "9251522601a5852abaf63bd487e310226f4a939c3a5fec1237d8172471695fde",
+      "patchSha256": "5525cc8fabbfe18d683508a5f5b63d4dc433dd38d56d4c4f0e46616612c79f96",
+      "runs": [
+        {
+          "revision": "original",
+          "compileExit": 1,
+          "diagnostics": "In function ‘ieee80211_8023_xmit’,\n    inlined from ‘main’ at <fixture>/test.c:179:3:\n<fixture>/test.c:126:45: error: ‘queue’ may be used uninitialized [-Werror=maybe-uninitialized]\n  126 |         info->hw_queue = sdata->vif.hw_queue[queue];\n      |                          ~~~~~~~~~~~~~~~~~~~^~~~~~~\n<fixture>/test.c: In function ‘main’:\n<fixture>/test.c:78:13: note: ‘queue’ was declared here\n   78 |         u16 queue;\n      |             ^~~~~\ncc1: all warnings being treated as errors"
+        },
+        {
+          "revision": "patched",
+          "compileExit": 0,
+          "diagnostics": "",
+          "exit": 0,
+          "stdout": "Actual complete 8023 function assertions passed: 160",
+          "stderr": ""
+        }
+      ],
+      "passed": true
+    },
+    "linux-stat-abi-paired": {
+      "actualHeaderStructuresUsed": true,
+      "syntheticWireMessage": true,
+      "fullModuleBuiltByThisTest": false,
+      "firmwareAbiRuntimeValidated": false,
+      "routerModified": false,
+      "legacyExtraCflagsNotAdoptedByKernel618": true,
+      "targetKbuildEvidenceRequired": true,
+      "headerSha256": "83705654d09a8673a18ff0bd6d5b49f1d530a20bd774c998aaaf8be0b1122439",
+      "patchSha256": "78468ba038c2926531e3a6cb5aa4c348abd832e875181ae2a8ab54591456f053",
+      "runs": [
+        {
+          "revision": "original",
+          "providerFlags": [],
+          "consumerFlags": [],
+          "matchesProvider": true,
+          "providerLayout": {
+            "peerBytes": 196,
+            "retryOffset": 180
+          },
+          "consumerExit": 0,
+          "consumerValues": {
+            "peerBytes": 196,
+            "retryOffset": 180,
+            "peers": [
+              {
+                "id": 1001,
+                "txPackets": 10,
+                "txBytes": 1000,
+                "rxBytes": 2000,
+                "txFailedRetries": 30
+              },
+              {
+                "id": 1002,
+                "txPackets": 11,
+                "txBytes": 1001,
+                "rxBytes": 2001,
+                "txFailedRetries": 31
+              },
+              {
+                "id": 1003,
+                "txPackets": 12,
+                "txBytes": 1002,
+                "rxBytes": 2002,
+                "txFailedRetries": 32
+              }
+            ]
+          }
+        },
+        {
+          "revision": "consumer-only-rejected",
+          "providerFlags": [],
+          "consumerFlags": [
+            "-DNSS_FIRMWARE_VERSION_12_5"
+          ],
+          "matchesProvider": false,
+          "providerLayout": {
+            "peerBytes": 196,
+            "retryOffset": 180
+          },
+          "consumerExit": 8,
+          "consumerValues": null
+        },
+        {
+          "revision": "paired",
+          "providerFlags": [
+            "-DNSS_FIRMWARE_VERSION_12_5"
+          ],
+          "consumerFlags": [
+            "-DNSS_FIRMWARE_VERSION_12_5"
+          ],
+          "matchesProvider": true,
+          "providerLayout": {
+            "peerBytes": 212,
+            "retryOffset": 188
+          },
+          "consumerExit": 0,
+          "consumerValues": {
+            "peerBytes": 212,
+            "retryOffset": 188,
+            "peers": [
+              {
+                "id": 1001,
+                "txPackets": 10,
+                "txBytes": 1000,
+                "rxBytes": 2000,
+                "txFailedRetries": 30
+              },
+              {
+                "id": 1002,
+                "txPackets": 11,
+                "txBytes": 1001,
+                "rxBytes": 2001,
+                "txFailedRetries": 31
+              },
+              {
+                "id": 1003,
+                "txPackets": 12,
+                "txBytes": 1002,
+                "rxBytes": 2002,
+                "txFailedRetries": 32
+              }
+            ]
+          }
+        }
+      ],
+      "passed": true
+    },
+    "linux-offline-after-sync-five": {
+      "routerConnected": false,
+      "dataPlaneWrites": false,
+      "mockedTargetIO": true,
+      "nftParserTested": false,
+      "wanCountTested": 5,
+      "tests": [
+        {
+          "name": "test-wifi.lua",
+          "passed": true,
+          "stdout": "Wireless observer assertions passed: 158",
+          "stderr": ""
+        },
+        {
+          "name": "test-writer-policy.lua",
+          "passed": true,
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":742,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-health.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}",
+          "stderr": ""
+        },
+        {
+          "name": "test-coverage.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}",
+          "stderr": ""
+        },
+        {
+          "name": "test-tag-rules.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}",
+          "stderr": ""
+        },
+        {
+          "name": "test-lifecycle.lua",
+          "passed": true,
+          "stdout": "bounded-recovery-models-passed 25",
+          "stderr": ""
+        },
+        {
+          "name": "test-core-guard.lua",
+          "passed": true,
+          "stdout": "core-guard-permission-models-passed 26",
+          "stderr": ""
+        },
+        {
+          "name": "test-efficiency.lua",
+          "passed": true,
+          "stdout": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-core.lua",
+          "passed": true,
+          "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}",
+          "stderr": ""
+        },
+        {
+          "name": "test-collector.lua",
+          "passed": true,
+          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":204,\"passed\":true,\"failedReadDistinctFromEmpty\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-wan6.lua",
+          "passed": true,
+          "stdout": "{\"gamePolicyEnabled\":false,\"realGameAccuracyMeasured\":false,\"dataPlaneWrites\":false,\"checks\":1645,\"gameFixture\":{\"falseNegative\":20,\"falsePositive\":10,\"truePositive\":80,\"trueNegative\":90},\"modelOnly\":true,\"passed\":true,\"wanCount\":6}",
+          "stderr": ""
+        },
+        {
+          "name": "test-source-recovery.lua",
+          "passed": true,
+          "stdout": "PASS typed expiry before WAN 1 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 2 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 3 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 4 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 5 preserves then precisely recovers earlier journal entries\nPASS unknown writer after typed child response prevents success publication and is preserved\nPASS unbound apply response cannot withdraw a different producer or recover its rules\nPASS a fresh observation follows expiry recovery without reusing the expired request\nCOMPLETE 8",
+          "stderr": ""
+        },
+        {
+          "name": "test-source-six.lua",
+          "passed": true,
+          "stdout": "{\"routerConnected\":false,\"sourceObserverExecuted\":true,\"checks\":53,\"passed\":true,\"wanCount\":5}",
+          "stderr": ""
+        },
+        {
+          "name": "test-receipts.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":168,\"mockedTransport\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        },
+        {
+          "name": "test-selection.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":63,\"oneSelectionPreserved\":true,\"mockedCT\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        }
+      ],
+      "passed": true,
+      "luaParsed": 51,
+      "shellParsed": 12
+    },
+    "linux-offline-after-sync-six": {
+      "routerConnected": false,
+      "dataPlaneWrites": false,
+      "mockedTargetIO": true,
+      "nftParserTested": false,
+      "wanCountTested": 6,
+      "tests": [
+        {
+          "name": "test-wifi.lua",
+          "passed": true,
+          "stdout": "Wireless observer assertions passed: 158",
+          "stderr": ""
+        },
+        {
+          "name": "test-writer-policy.lua",
+          "passed": true,
+          "stdout": "{\"boundedBudgetReads\":true,\"receiptGatedFiniteRecovery\":true,\"mockedKernel\":true,\"checks\":742,\"rejectedCacheBounded\":true,\"dataPlaneWrites\":false,\"passed\":true,\"fullSlotsDelayedAck\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-health.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":41}",
+          "stderr": ""
+        },
+        {
+          "name": "test-coverage.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":11}",
+          "stderr": ""
+        },
+        {
+          "name": "test-tag-rules.lua",
+          "passed": true,
+          "stdout": "{\"dataPlaneWrites\":false,\"scalarIdGateNotSufficientForLabel\":true,\"checks\":20,\"modelOnly\":true,\"allElevenIdentityFields\":true,\"passed\":true,\"boundedPolicies\":80}",
+          "stderr": ""
+        },
+        {
+          "name": "test-lifecycle.lua",
+          "passed": true,
+          "stdout": "bounded-recovery-models-passed 25",
+          "stderr": ""
+        },
+        {
+          "name": "test-core-guard.lua",
+          "passed": true,
+          "stdout": "core-guard-permission-models-passed 26",
+          "stderr": ""
+        },
+        {
+          "name": "test-efficiency.lua",
+          "passed": true,
+          "stdout": "{\"selectiveBudgetClasses\":true,\"dataPlaneWrites\":false,\"authorizedAssociationsOnly\":true,\"chunkedFlowRoundTrip\":true,\"passed\":true,\"modelOnly\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-core.lua",
+          "passed": true,
+          "stdout": "{\"routerNetworkWrites\":false,\"modelOnly\":true,\"passed\":true,\"checks\":25}",
+          "stderr": ""
+        },
+        {
+          "name": "test-collector.lua",
+          "passed": true,
+          "stdout": "{\"mockedProcesses\":true,\"dataPlaneWrites\":false,\"checks\":204,\"passed\":true,\"failedReadDistinctFromEmpty\":true}",
+          "stderr": ""
+        },
+        {
+          "name": "test-wan6.lua",
+          "passed": true,
+          "stdout": "{\"gamePolicyEnabled\":false,\"realGameAccuracyMeasured\":false,\"dataPlaneWrites\":false,\"checks\":1645,\"gameFixture\":{\"falseNegative\":20,\"falsePositive\":10,\"truePositive\":80,\"trueNegative\":90},\"modelOnly\":true,\"passed\":true,\"wanCount\":6}",
+          "stderr": ""
+        },
+        {
+          "name": "test-source-recovery.lua",
+          "passed": true,
+          "stdout": "PASS typed expiry before WAN 1 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 2 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 3 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 4 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 5 preserves then precisely recovers earlier journal entries\nPASS typed expiry before WAN 6 preserves then precisely recovers earlier journal entries\nPASS unknown writer after typed child response prevents success publication and is preserved\nPASS unbound apply response cannot withdraw a different producer or recover its rules\nPASS a fresh observation follows expiry recovery without reusing the expired request\nCOMPLETE 9",
+          "stderr": ""
+        },
+        {
+          "name": "test-source-six.lua",
+          "passed": true,
+          "stdout": "{\"routerConnected\":false,\"sourceObserverExecuted\":true,\"checks\":63,\"passed\":true,\"wanCount\":6}",
+          "stderr": ""
+        },
+        {
+          "name": "test-receipts.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":168,\"mockedTransport\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        },
+        {
+          "name": "test-selection.py",
+          "passed": true,
+          "stdout": "{\"passed\":true,\"checks\":63,\"oneSelectionPreserved\":true,\"mockedCT\":true,\"firmwareProof\":false}",
+          "stderr": ""
+        }
+      ],
+      "passed": true,
+      "luaParsed": 51,
+      "shellParsed": 12
+    }
+  },
+  "failedAttempts": [
+    {
+      "attempt": 1,
+      "passed": false,
+      "failure": "provider-abi-compile failed:\naarch64-openwrt-linux-musl-gcc: warning: environment variable 'STAGING_DIR' not defined\n$BUILD/provider-abi-probe.c:1:10: fatal error: nss_wifili_if.h: No such file or directory\n    1 | #include <nss_wifili_if.h>\n      |          ^~~~~~~~~~~~~~~~~\ncompilation terminated.\n",
+      "lastPhase": {
+        "name": "provider-abi-compile",
+        "command": [
+          "$SDK/toolchain-aarch64_cortex-a53_gcc-14.4.0_musl/bin/aarch64-openwrt-linux-musl-gcc",
+          "-nostdinc",
+          "-I$PREPARED/kernel/arch/arm64/include",
+          "-I$PREPARED/kernel/arch/arm64/include/generated",
+          "-I$PREPARED/kernel/include",
+          "-I$PREPARED/kernel/include",
+          "-I$PREPARED/kernel/arch/arm64/include/uapi",
+          "-I$PREPARED/kernel/arch/arm64/include/generated/uapi",
+          "-I$PREPARED/kernel/include/uapi",
+          "-I$PREPARED/kernel/include/generated/uapi",
+          "-include",
+          "$PREPARED/kernel/include/linux/compiler-version.h",
+          "-include",
+          "$PREPARED/kernel/include/linux/kconfig.h",
+          "-include",
+          "$PREPARED/kernel/include/linux/compiler_types.h",
+          "-D__KERNEL__",
+          "-mlittle-endian",
+          "-DKASAN_SHADOW_SCALE_SHIFT=",
+          "-std=gnu11",
+          "-fshort-wchar",
+          "-funsigned-char",
+          "-fno-common",
+          "-fno-PIE",
+          "-fno-strict-aliasing",
+          "-mgeneral-regs-only",
+          "-DCONFIG_CC_HAS_K_CONSTRAINT=1",
+          "-Wno-psabi",
+          "-mabi=lp64",
+          "-fno-asynchronous-unwind-tables",
+          "-fno-unwind-tables",
+          "-mbranch-protection=pac-ret",
+          "-Wa,-march=armv8.5-a",
+          "-DARM64_ASM_ARCH=\"armv8.5-a\"",
+          "-DKASAN_SHADOW_SCALE_SHIFT=",
+          "-fno-delete-null-pointer-checks",
+          "-O2",
+          "-fno-allow-store-data-races",
+          "-fstack-protector",
+          "-fno-omit-frame-pointer",
+          "-fno-optimize-sibling-calls",
+          "-fno-stack-clash-protection",
+          "-fmin-function-alignment=4",
+          "-fstrict-flex-arrays=3",
+          "-fno-strict-overflow",
+          "-fno-stack-check",
+          "-fconserve-stack",
+          "-fno-builtin-wcslen",
+          "-Wall",
+          "-Wextra",
+          "-Wundef",
+          "-Werror=implicit-function-declaration",
+          "-Werror=implicit-int",
+          "-Werror=return-type",
+          "-Werror=strict-prototypes",
+          "-Wno-format-security",
+          "-Wno-trigraphs",
+          "-Wno-frame-address",
+          "-Wno-address-of-packed-member",
+          "-Wmissing-declarations",
+          "-Wmissing-prototypes",
+          "-Wframe-larger-than=2048",
+          "-Wno-main",
+          "-Wno-dangling-pointer",
+          "-Wvla-larger-than=1",
+          "-Wno-pointer-sign",
+          "-Wcast-function-type",
+          "-Wno-array-bounds",
+          "-Wno-stringop-overflow",
+          "-Wno-alloc-size-larger-than",
+          "-Wimplicit-fallthrough=5",
+          "-Werror=date-time",
+          "-Werror=incompatible-pointer-types",
+          "-Werror=designated-init",
+          "-Wenum-conversion",
+          "-Wunused",
+          "-Wno-unused-but-set-variable",
+          "-Wno-unused-const-variable",
+          "-Wno-packed-not-aligned",
+          "-Wno-format-overflow",
+          "-Wno-format-truncation",
+          "-Wno-stringop-truncation",
+          "-Wno-override-init",
+          "-Wno-missing-field-initializers",
+          "-Wno-type-limits",
+          "-Wno-shift-negative-value",
+          "-Wno-maybe-uninitialized",
+          "-Wno-sign-compare",
+          "-Wno-unused-parameter",
+          "-g",
+          "-fno-var-tracking",
+          "-femit-struct-debug-baseonly",
+          "-mstack-protector-guard=sysreg",
+          "-mstack-protector-guard-reg=sp_el0",
+          "-mstack-protector-guard-offset=1160",
+          "-I$BUILD/stage/usr/include/qca-nss-dp",
+          "-I$BUILD/stage/usr/include/qca-ssdk",
+          "-DNSS_DRV_BRIDGE_ENABLE",
+          "-DNSS_DRV_WIFI_EXT_VDEV_ENABLE",
+          "-DNSS_DRV_WIFI_MESH_ENABLE",
+          "-DNSS_DRV_L2TP_ENABLE",
+          "-DNSS_DRV_LAG_ENABLE",
+          "-DNSS_DRV_IPV6_ENABLE",
+          "-DNSS_DRV_GRE_ENABLE",
+          "-DNSS_DRV_GRE_REDIR_ENABLE",
+          "-DNSS_DRV_MAPT_ENABLE",
+          "-DNSS_DRV_PPTP_ENABLE",
+          "-DNSS_DRV_SHAPER_ENABLE",
+          "-DNSS_DRV_TUN6RD_ENABLE",
+          "-DNSS_DRV_TUNIPIP6_ENABLE",
+          "-DNSS_DRV_IGS_ENABLE",
+          "-DNSS_DRV_VXLAN_ENABLE",
+          "-DNSS_DRV_MATCH_ENABLE",
+          "-DNSS_DRV_MIRROR_ENABLE",
+          "-DNSS_DRV_IPV4_ENABLE",
+          "-DNSS_DRV_ETH_RX_ENABLE",
+          "-DNSS_DRV_PPPOE_ENABLE",
+          "-DNSS_DRV_WIFIOFFLOAD_ENABLE",
+          "-DNSS_DRV_VLAN_ENABLE",
+          "-DNSS_DRV_PPE_ENABLE",
+          "-DNSS_DRV_EDMA_ENABLE",
+          "-DNSS_DRV_CRYPTO_ENABLE",
+          "-DNSS_DRV_DMA_ENABLE",
+          "-DNSS_DATA_PLANE_GENERIC_SUPPORT",
+          "-I./nss_hal/ipq60xx",
+          "-DNSS_HAL_IPQ60XX_SUPPORT",
+          "-DNSS_MULTI_H2N_DATA_RING_SUPPORT",
+          "-I./nss_hal/include",
+          "-I./nss_data_plane/include",
+          "-I./exports",
+          "-DNSS_DEBUG_LEVEL=0",
+          "-DNSS_PKT_STATS_ENABLED=1",
+          "-I./nss_data_plane/hal/include",
+          "-DNSS_PM_DEBUG_LEVEL=0",
+          "-DNSS_SKB_REUSE_SUPPORT=1",
+          "-Wall",
+          "-Werror",
+          "-I.",
+          "-DNSS_FREQ_SCALE_SUPPORT=1",
+          "-DNSS_DT_SUPPORT=1",
+          "-DNSS_FW_DBG_SUPPORT=0",
+          "-DNSS_PM_SUPPORT=0",
+          "-DNSS_FABRIC_SCALING_SUPPORT=0",
+          "-DMODULE",
+          "-DKBUILD_BASENAME=\"nss_wifili\"",
+          "-DKBUILD_MODNAME=\"qca_nss_drv\"",
+          "-D__KBUILD_MODNAME=kmod_qca_nss_drv",
+          "-c",
+          "-o",
+          "$BUILD/provider-abi-probe.o",
+          "$BUILD/provider-abi-probe.c"
+        ],
+        "exitCode": 1,
+        "elapsedSeconds": 0.032,
+        "logSha256": "93e0c65beab1e8a699924db3ac2784d45eff165a0b6f2411e9b69b195d7008be",
+        "warnings": [
+          "aarch64-openwrt-linux-musl-gcc: warning: environment variable 'STAGING_DIR' not defined"
+        ]
+      },
+      "abiProbes": {}
+    },
+    {
+      "attempt": 2,
+      "passed": false,
+      "failure": "original-configure failed:\nGenerating local configuration database from kernel ... done.\ngcc -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -DKBUILD_NO_NLS   -c -o conf.o conf.c\nlex -ozconf.lex.c -L zconf.l\nyacc -Wno-yacc -ozconf.tab.c -t -l zconf.y\n$SDK/host/bin/bison: m4 subprocess failed: No such file or directory\nmake[2]: *** [Makefile:20: zconf.tab.c] Error 1\nmake[1]: *** [Makefile.real:39: allnoconfig] Error 2\nmake: *** [Makefile:121: allnoconfig] Error 2\n",
+      "lastPhase": {
+        "name": "original-configure",
+        "command": [
+          "make",
+          "-C",
+          "$BUILD/backports-original",
+          "ARCH=arm64",
+          "CROSS_COMPILE=$SDK/toolchain-aarch64_cortex-a53_gcc-14.4.0_musl/bin/aarch64-openwrt-linux-musl-",
+          "KERNELRELEASE=6.18.44",
+          "KBUILD_MODPOST_WARN=",
+          "KBUILD_HAVE_NLS=no",
+          "CONFIG_SHELL=/bin/bash",
+          "KLIB_BUILD=$PREPARED/kernel",
+          "KLIB=$BUILD/no-install",
+          "EXTRA_CFLAGS=-I$BUILD/backports-original/include -I$BUILD/stage/usr/include/qca-nss-drv -I$BUILD/stage/usr/include/qca-nss-clients",
+          "KCFLAGS=-I$BUILD/backports-original/include -I$BUILD/stage/usr/include/qca-nss-drv -I$BUILD/stage/usr/include/qca-nss-clients",
+          "KBUILD_EXTRA_SYMBOLS=$BUILD/qca-ssdk/mk/Module.symvers $BUILD/qca-nss-dp/Module.symvers $BUILD/nss-drv/Module.symvers $BUILD/qca-nss-clients/Module.symvers",
+          "KBUILD_LDFLAGS_MODULE_PREREQ=",
+          "allnoconfig"
+        ],
+        "exitCode": 2,
+        "elapsedSeconds": 0.314,
+        "logSha256": "5396a17d7e405e0c494a888d2388111cef8130ef387c3893b8134a3ef02a6395",
+        "warnings": []
+      },
+      "abiProbes": {
+        "provider": {
+          "peerBytes": 196,
+          "retryOffset": 180,
+          "usesActualKbuildFlags": true
+        }
+      }
+    },
+    {
+      "attempt": 3,
+      "passed": false,
+      "failure": "original-configure failed:\nGenerating local configuration database from kernel ... done.\ngcc -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -DKBUILD_NO_NLS   -c -o conf.o conf.c\nlex -ozconf.lex.c -L zconf.l\nyacc -Wno-yacc -ozconf.tab.c -t -l zconf.y\n$SDK/host/bin/bison: m4 subprocess failed: No such file or directory\nmake[2]: *** [Makefile:20: zconf.tab.c] Error 1\nmake[1]: *** [Makefile.real:39: allnoconfig] Error 2\nmake: *** [Makefile:121: allnoconfig] Error 2\n",
+      "lastPhase": {
+        "name": "original-configure",
+        "command": [
+          "make",
+          "-C",
+          "$BUILD/backports-original",
+          "ARCH=arm64",
+          "CROSS_COMPILE=$SDK/toolchain-aarch64_cortex-a53_gcc-14.4.0_musl/bin/aarch64-openwrt-linux-musl-",
+          "KERNELRELEASE=6.18.44",
+          "KBUILD_MODPOST_WARN=",
+          "KBUILD_HAVE_NLS=no",
+          "CONFIG_SHELL=/bin/bash",
+          "KLIB_BUILD=$PREPARED/kernel",
+          "KLIB=$BUILD/no-install",
+          "EXTRA_CFLAGS=-I$BUILD/backports-original/include -I$BUILD/stage/usr/include/qca-nss-drv -I$BUILD/stage/usr/include/qca-nss-clients",
+          "KCFLAGS=-I$BUILD/backports-original/include -I$BUILD/stage/usr/include/qca-nss-drv -I$BUILD/stage/usr/include/qca-nss-clients",
+          "KBUILD_EXTRA_SYMBOLS=$BUILD/qca-ssdk/mk/Module.symvers $BUILD/qca-nss-dp/Module.symvers $BUILD/nss-drv/Module.symvers $BUILD/qca-nss-clients/Module.symvers",
+          "KBUILD_LDFLAGS_MODULE_PREREQ=",
+          "allnoconfig"
+        ],
+        "exitCode": 2,
+        "elapsedSeconds": 0.314,
+        "logSha256": "5396a17d7e405e0c494a888d2388111cef8130ef387c3893b8134a3ef02a6395",
+        "warnings": []
+      },
+      "abiProbes": {
+        "provider": {
+          "peerBytes": 196,
+          "retryOffset": 180,
+          "usesActualKbuildFlags": true
+        }
+      }
+    },
+    {
+      "attempt": 4,
+      "passed": false,
+      "failure": "",
+      "lastPhase": {
+        "name": "patched-abi-extract",
+        "command": [
+          "$SDK/toolchain-aarch64_cortex-a53_gcc-14.4.0_musl/bin/aarch64-openwrt-linux-musl-objcopy",
+          "-O",
+          "binary",
+          "--only-section=.athena_layout",
+          "$BUILD/patched-abi-probe.o",
+          "$BUILD/patched-abi-probe.bin"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.008,
+        "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "warnings": []
+      },
+      "abiProbes": {
+        "provider": {
+          "peerBytes": 196,
+          "retryOffset": 180,
+          "usesActualKbuildFlags": true
+        },
+        "original": {
+          "peerBytes": 196,
+          "retryOffset": 180,
+          "usesActualKbuildFlags": true
+        },
+        "patched": {
+          "peerBytes": 212,
+          "retryOffset": 188,
+          "usesActualKbuildFlags": true
+        }
+      }
+    },
+    {
+      "attempt": 5,
+      "passed": false,
+      "failure": "apply-003-ath11k-match-nss-peer-statistics-wire-layout failed:\npatching file backports/drivers/net/wireless/ath/ath11k/Makefile\npatching file nss-drv/Makefile\nHunk #1 FAILED at 5.\n1 out of 1 hunk FAILED -- saving rejects to file nss-drv/Makefile.rej\n",
+      "lastPhase": {
+        "name": "apply-003-ath11k-match-nss-peer-statistics-wire-layout",
+        "command": [
+          "patch",
+          "-f",
+          "--fuzz=0",
+          "-p1",
+          "-d",
+          "$BUILD",
+          "-i",
+          "$REPO/code/controller/native/patches/003-ath11k-match-nss-peer-statistics-wire-layout.patch"
+        ],
+        "exitCode": 1,
+        "elapsedSeconds": 0.007,
+        "logSha256": "51be0dadaaaae011125a23961006e686fd7d1cda1df1f2dd625879df70b3d0f8",
+        "warnings": []
+      },
+      "abiProbes": {
+        "provider-original": {
+          "peerBytes": 196,
+          "retryOffset": 180,
+          "usesActualKbuildFlags": true
+        },
+        "original": {
+          "peerBytes": 196,
+          "retryOffset": 180,
+          "usesActualKbuildFlags": true
+        }
+      }
+    }
+  ],
+  "correction": "Original actual Kbuild provider/consumer both 196 bytes. Consumer-only 212-byte patch rejected. Revised paired ccflags-y patch yields 212/212; firmware wire ABI remains unverified.",
+  "toolSha256": {
+    "tools/build_wifi_modules.py": "b6d8ec2e8408ee3c7adbce90789f69e653f3dd57d8be6f5065c7489b620e4606",
+    "tools/test_wifi_stat_abi.py": "0382693fc6ca731b6d45c172f308c2180c30c1e74c34348f59c56be250356fa4"
+  },
+  "transportTests": {
+    "passed": true,
+    "tests": 4
+  },
+  "repositoryChecks": {
+    "passed": true,
+    "filesChecked": 7158,
+    "sourceHashesChecked": 6396,
+    "sourceRevisionRecords": 6522,
+    "markdownLinksChecked": 1823,
+    "manifestTestsPassed": 4,
+    "diffWhitespacePassed": true,
+    "pythonSyntaxPassed": true
+  }
+}

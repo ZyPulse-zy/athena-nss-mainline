@@ -1,0 +1,40 @@
+{
+  "originalFunctionSha256": "fbe204d3d0ed981bbe410fcea513e29f2c690587509491f8aba244d3e56bfb80",
+  "patchSha256": "bdd1503ff39154d7b737c37545667549f7c9b14c30c499e4bbc0cc3b3d5bc0c3",
+  "actualCompleteSourceFunctionExtracted": true,
+  "kernelAndWireStructuresMocked": true,
+  "fullModuleBuilt": false,
+  "firmwareAbiTested": false,
+  "routerModified": false,
+  "runs": [
+    {
+      "revision": "original",
+      "firmware12_5Macro": false,
+      "exit": -6,
+      "stdout": "",
+      "stderr": "FAIL second peer receives only its own drops"
+    },
+    {
+      "revision": "original",
+      "firmware12_5Macro": true,
+      "exit": -6,
+      "stdout": "",
+      "stderr": "FAIL second peer receives only its own drops"
+    },
+    {
+      "revision": "patched",
+      "firmware12_5Macro": false,
+      "exit": 0,
+      "stdout": "Actual complete peer statistics function assertions passed: 41",
+      "stderr": ""
+    },
+    {
+      "revision": "patched",
+      "firmware12_5Macro": true,
+      "exit": 0,
+      "stdout": "Actual complete peer statistics function assertions passed: 41",
+      "stderr": ""
+    }
+  ],
+  "passed": true
+}

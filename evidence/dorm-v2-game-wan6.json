@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "recordedAtUTC": "2026-10-12T02:42:36.385870+00:00",
+  "baseCommit": "569fab2677c59902d1bcb53c658a6588497baf84",
+  "repository": "ZyPulse-zy/athena-nss-mainline",
+  "branch": "codex/dorm-qos-v2",
+  "draftPr": 1,
+  "enabled": true,
+  "scope": {
+    "officialSteamCs2RelayAddresses": 214,
+    "groups": [
+      {
+        "low": 27015,
+        "high": 27044,
+        "addressCount": 69
+      },
+      {
+        "low": 27015,
+        "high": 27050,
+        "addressCount": 145
+      }
+    ],
+    "firstPacketOnly": true,
+    "ipv4LanOnly": true,
+    "udpOnly": true,
+    "maximumFirstIpPacketBytes": 256,
+    "fullMarkPreserved": true,
+    "proxyMarkExcluded": "0x2000",
+    "oldAffinityExcluded": true,
+    "existingNatMigrated": false,
+    "applicationIdentityInspected": false,
+    "matchingRouteDoesNotForceRtOrNssAdmission": true,
+    "fallback": "Original WAN1-5 selection and unchanged NSS RT admission"
+  },
+  "exclusions": {
+    "quicUdp443": true,
+    "dnsAndControlPorts": true,
+    "knownVpnPorts": true,
+    "tailscaleInterfaceAndCgnat": true,
+    "proxyMarksFakeIpAndKnownEndpoints": true,
+    "privateLinkLocalDocumentationMulticastReserved": true,
+    "campus": "Sun Yat-sen University",
+    "campusConservativeExclusion": "202.116.0.0/16",
+    "verifiedCampusDnsAndPortalVpnAddressesCovered": true,
+    "allPublicCampusServicesInventoried": false,
+    "unknownDestinationsNeverMatchGameAllowlist": true,
+    "privateProxyEndpointAddressesPublished": false
+  },
+  "cache": {
+    "sourceUrl": "https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730",
+    "sourceRevision": 1790374330,
+    "sourceSha256": "38a2be117b0d1571d455a7a16a87be58cc523a2f89869b647dfe885bc6d55769",
+    "updateIntervalSeconds": 86400,
+    "failedUpdateRetryMinimumSeconds": 3600,
+    "maximumVerifiedCacheAgeSeconds": 604800,
+    "existingHealthLoopOnly": true,
+    "noNewDaemonOrSchedule": true,
+    "officialTlsAndSchemaValidated": true,
+    "resolverIPv4": "10.8.8.8",
+    "globalDnsOrProxyChanged": false,
+    "readyLeaseSeconds": 15,
+    "recheckReadinessAfterNetworkIo": true,
+    "persistentCurrentAndPendingHashes": true,
+    "gameOnlyMutexVerifiedOnTarget": true
+  },
+  "risk": {
+    "firstPacketCannotProveApplication": true,
+    "sameOfficialRelayPortSteamProbeVoiceOrCustomTunnelCanMatch": true,
+    "gamesOutsideVerifiedAddressesOrNarrowPortsCanBeMissed": true,
+    "realFalsePositiveRateMeasured": false,
+    "syntheticAdversarialLabelsNotARealErrorRate": true
+  },
+  "finalAudit": {
+    "wan6Tags": {
+      "down": {
+        "BE": 31333,
+        "RT": 31334
+      },
+      "up": {
+        "BE": 32357,
+        "RT": 32358
+      }
+    },
+    "cacheMaximumAgeSeconds": 604800,
+    "originalFiveAndNativeServicePidsPreserved": true,
+    "routerRebooted": false,
+    "relayGroupCount": 2,
+    "protectedNetworkFirewallWirelessSourcePointerAndMacMapUnchanged": true,
+    "native": {
+      "unconfirmed": 0,
+      "sourcePauses": 1,
+      "sourceResumes": 1,
+      "phase": "native-running",
+      "pending": 0,
+      "live": 0,
+      "sourceFresh": true
+    },
+    "gameReady": true,
+    "sixAccountsOnline": 6,
+    "snapshotAgeSeconds": 2829,
+    "policyEnabled": true,
+    "relayCount": 214,
+    "gameHookCount": 1,
+    "realGamingSessionStarted": false,
+    "coldBootPhysicallyTested": false,
+    "nativeRestarted": false,
+    "existingNatMigrated": false,
+    "sourceRevision": 1790374330,
+    "allChecksPassed": true,
+    "originalFiveBuckets": 300
+  },
+  "passiveWindow": {
+    "seconds": 63.420000000012806,
+    "samples": 21,
+    "readySamples": 21,
+    "nativeRunningSourceFreshSamples": 21,
+    "firstPacketsMatched": 0,
+    "actualWan6GameCreateSamples": 0,
+    "gameHardwareByteDelta": {
+      "down": 0,
+      "up": 0
+    },
+    "newSourcePausesDuringFinalWindow": 0,
+    "newSourceResumesDuringFinalWindow": 0,
+    "realGameSessionStarted": false,
+    "newGameFlowActuallyVerified": false
+  },
+  "rollout": {
+    "separatePrivateCheckpoint": true,
+    "twoEarlierObservationWindowsAutoWithdrewAfterHeartbeatExpiry": true,
+    "gameOnlyRollbackActuallyConfirmed": true,
+    "sharedSourceOrNativeStoppedDuringGameRollback": false,
+    "finalWindowCommitted": true,
+    "healthProcessUpdated": true,
+    "sixAccountCredentialsReadOrChanged": false,
+    "coldBootActuallyPerformed": false
+  },
+  "tests": {
+    "five": {
+      "passed": true,
+      "luaAndCTests": 16,
+      "luaParsed": 54,
+      "shellParsed": 12
+    },
+    "six": {
+      "passed": true,
+      "luaAndCTests": 16,
+      "luaParsed": 54,
+      "shellParsed": 12
+    }
+  },
+  "newGameModels": {
+    "policyChecks": 85,
+    "totalWithRuntimeChecks": 95,
+    "realRuntimeCodeExecutedWithVirtualIo": true,
+    "bootTableReconstructionModeled": true,
+    "officialRefreshAndSevenDayExpiryModeled": true,
+    "ownedCleanupAndRegisteredUpdatesModeled": true,
+    "kernelAndNetworkIoMocked": true
+  },
+  "sources": {
+    "steam": "https://partner.steamgames.com/doc/features/multiplayer/steamdatagramrelay",
+    "officialConfig": "https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730",
+    "sysuDns": "https://inc.sysu.edu.cn/article/556"
+  }
+}

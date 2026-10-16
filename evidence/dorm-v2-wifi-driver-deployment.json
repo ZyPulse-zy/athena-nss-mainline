@@ -1,0 +1,213 @@
+{
+  "date": "2026-10-12 Asia/Shanghai",
+  "baseCommit": "2a04380",
+  "moduleDeploymentCompleted": true,
+  "persistentFilesReplaced": [
+    "ath11k.ko",
+    "mac80211.ko"
+  ],
+  "appliedPatches": [
+    "001",
+    "002",
+    "004-source-equivalent-of-installed-CN-shim"
+  ],
+  "patch003Applied": false,
+  "peerLayoutBytes": 196,
+  "nssFirmwareAbiChanged": false,
+  "nssAndMeshAndCfg80211Replaced": false,
+  "originalModuleParametersPreserved": true,
+  "privateCheckpointRetained": true,
+  "independentGuardianTargetDetachedMockRecoveryPassed": true,
+  "wiredManagementRouteVerified": true,
+  "wiredPhysicalPort": "lan4",
+  "runtimeFailureModels": {
+    "passed": true,
+    "tests": [
+      {
+        "failureOnce": null,
+        "passed": true,
+        "mockedAllRouterActions": true
+      },
+      {
+        "failureOnce": "verify-checkpoint",
+        "passed": true,
+        "mockedAllRouterActions": true
+      },
+      {
+        "failureOnce": "verify-restoration",
+        "passed": true,
+        "mockedAllRouterActions": true
+      },
+      {
+        "failureOnce": "unload",
+        "passed": true,
+        "mockedAllRouterActions": true
+      },
+      {
+        "failureOnce": "load-candidate",
+        "passed": true,
+        "mockedAllRouterActions": true
+      },
+      {
+        "failureOnce": "verify-recovery",
+        "passed": true,
+        "mockedAllRouterActions": true
+      },
+      {
+        "failureOnce": "persist-candidate",
+        "passed": true,
+        "mockedAllRouterActions": true
+      }
+    ],
+    "routerModified": false,
+    "targetGuardianTestStillRequired": true
+  },
+  "firstFailedTrial": {
+    "ramTrialDidRun": true,
+    "persistentFilesChanged": false,
+    "verifierArgumentMissing": true,
+    "guardianRollbackActionRan": true,
+    "guardianFinalVerificationArgumentAlsoMissing": true,
+    "originalDiskModulesVerified": true,
+    "manualFullRecoveryVerifierPassed": true,
+    "nativeRecovered": {
+      "unconfirmed": 0,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "phase": "native-running",
+      "pending": 0,
+      "live": 0,
+      "sourceFresh": true
+    },
+    "secondModuleTrialStarted": false
+  },
+  "correctedActualBackendTargetCheckPassed": true,
+  "secondRamTrialAndPersistCommitted": true,
+  "stripProof": {
+    "passed": true,
+    "stripDebugOnly": true,
+    "modules": {
+      "ath11k": {
+        "unstrippedSha256": "ada09266f8af3c94baf63a8f6c88243316d5c7a2f376fc98281107a8953318e6",
+        "strippedSha256": "afff499982dccf947ed3c579f7772791bfdd9dfa73dc87b7660cc17add33f3e3",
+        "unstrippedBytes": 8151336,
+        "strippedBytes": 986336,
+        "sectionsUnchanged": {
+          ".text": "24936c59ef5c399cdc3726f70346d1f0656375a859a8a0da5f4d85b8981363c5",
+          ".rodata": "45a3f771bb2414df7d83d044e7523ecfede223f6bcf2ede18873dc55138754cf",
+          ".modinfo": "54b66269e3d8586457b16c55ad30fd7e83d2f6836c23ce5960108fcd995eea06",
+          "__ksymtab": "fea95ee6654315a11e31ce972ff371fc74f2ad8dc02dd7439dafe6ceff383e9a",
+          "__ksymtab_strings": "3bf6c0085e1c8bc8d41a26aeec274d6e30e38f82cb864799530652b78dbe1c6a"
+        }
+      },
+      "mac80211": {
+        "unstrippedSha256": "2b2d8cc781f984692b273b90e47311ba1fbd0a383b3e65838efeb88801c5a986",
+        "strippedSha256": "e40c564ddfeba94339a6b77f7f717405f5b118dffb126e74f4cfd9a4ea03066e",
+        "unstrippedBytes": 8386904,
+        "strippedBytes": 1171456,
+        "sectionsUnchanged": {
+          ".text": "cb94f35e232fbac32739d8705edce52e51b2db2ad516b47cd82e14d924ae333f",
+          ".rodata": "e2631dfc2500576a5e79346f7bf4f544ed804eb6dfe76b8f93e8f9e84409a001",
+          ".modinfo": "5240ff2e000bbce8d54ae95cea693a51c43eccb24c765580bb10062825d18463",
+          "__ksymtab": "6249da5c681dd8a542b8e38150a3026e02385d590a9dd94f4f83940fd856ee73",
+          "__ksymtab_strings": "9644814a93857a8db526d0ae550fa4bbe5eef2c893b484136130873d7421aa9e"
+        }
+      }
+    },
+    "routerModified": false
+  },
+  "installedModuleHashes": {
+    "cfg80211": "568bde82589c9d56f6927e35caf8833d81ecd7aa6e8e77e2f3c325f10a6ca7f0",
+    "ath11k_ahb": "7c11c727ecfb2cdb2416618512a8b9f4e7ef770324f27c88922cb73a116c988a",
+    "ecm": "681cf250053ba3bb7ec1fe28866862ca989bfd168ccee7386139f71e37cc68e2",
+    "mac80211": "e40c564ddfeba94339a6b77f7f717405f5b118dffb126e74f4cfd9a4ea03066e",
+    "ath11k": "afff499982dccf947ed3c579f7772791bfdd9dfa73dc87b7660cc17add33f3e3",
+    "qca-nss-drv": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+    "act_nssmirred": "93259215eec49e8ac694218a43d47f6eb01ab81a00cb9731998342c2d4221adb"
+  },
+  "verification": {
+    "bootUnchanged": true,
+    "protectionHashesUnchanged": true,
+    "sourceFilesUnchanged": true,
+    "softwareQueuesUnchanged": true,
+    "originalFiveIdentitiesUnchanged": true,
+    "changedServices": [
+      "router-project-core",
+      "athena-dorm-native"
+    ],
+    "unchangedServices": [
+      "router-project-autorate",
+      "router-project-game-classifier",
+      "router-project-shaper",
+      "router-project-auth-watchdog",
+      "tailscale-athena",
+      "router-project-health",
+      "router-project-wifi-qos",
+      "sing-box-athena",
+      "router-project-codex-led",
+      "router-project-steering",
+      "router-project-minieap",
+      "router-project-guard"
+    ],
+    "campus6Up": true,
+    "postNative": {
+      "unconfirmed": 0,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "phase": "native-running",
+      "pending": 0,
+      "live": 0,
+      "sourceFresh": true
+    },
+    "countersResetWithNewNativeOwner": true,
+    "historicalPauseDeltaNotClaimed": true
+  },
+  "rebooted": false,
+  "wifiReloaded": true,
+  "nativeStoppedAndRestarted": true,
+  "authenticationRestarted": false,
+  "radioSettingsChanged": false,
+  "observerReinstalled": false,
+  "activeScan": false,
+  "congestionInjected": false,
+  "formalGameAcceptancePerformed": false,
+  "finalAirTidAcVerified": false,
+  "coldBootTested": false,
+  "longTermStableProven": false,
+  "runtimeSourceSha256": {
+    "wifi-driver-runtime.sh": "19e9df8e4e597e334fc53cbb649f890919d004034654d0935d6d9b99b6ee1b85",
+    "wifi-driver-guardian.sh": "65fb90dd334c9c053c4ddab5ee9070fef066efa0724c2fc464f5a7f29de6f1a7",
+    "wifi-driver-verify.lua": "8db9f9ff369e41e003f3f1c9b3779fbaf892d6b597d40713cca6363c5039213d"
+  },
+  "passivePostCheck": {
+    "readOnly": true,
+    "sampleSeconds": 30,
+    "samples": 11,
+    "maxReadSeconds": 0.02000000001862645,
+    "sourceGaps": 0,
+    "sourceRestores": 0,
+    "counterResets": 0,
+    "actualNssMin": 0,
+    "actualNssMax": 0,
+    "rtCreatedSamples": 0,
+    "rtNotCreatedSamples": 0,
+    "labelVerifiedSamples": 0,
+    "labelMismatchSamples": 0,
+    "endToEndLossMeasured": false,
+    "rtQueueDropsMeasured": false,
+    "queueStatisticsRequested": false,
+    "generatedTraffic": false,
+    "lastPhase": "native-running",
+    "noQualifiedFlowsObserved": true
+  },
+  "actualChannelsAfter": [
+    "channel 36 (5180 MHz), width: 80 MHz, center1: 5210 MHz",
+    "channel 6 (2437 MHz), width: 20 MHz, center1: 2437 MHz",
+    "channel 149 (5745 MHz), width: 80 MHz, center1: 5775 MHz"
+  ],
+  "boundedKernelLogReview": {
+    "coverage": "last 120 lines; not complete boot log",
+    "fatalPatternMatches": 0,
+    "cnShimWarningMatches": 2
+  }
+}

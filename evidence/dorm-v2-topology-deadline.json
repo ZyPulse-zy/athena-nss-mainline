@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "date": "2026-10-16",
+  "baseCommit": "3e7f89415bccde0430db30fe87397fb009fae0be",
+  "authorization": "Repair topology round timeout and capture budget state on heartbeat failure; no router reboot",
+  "change": {
+    "topologyBudgetSeconds": 3.5,
+    "commandTermSeconds": 1,
+    "commandKillAfterSeconds": 1,
+    "commandLaunchReserveSeconds": 2.1,
+    "lateReturnRejected": true,
+    "incompleteTopologyAdmissible": false,
+    "cachedTopologyUsed": false,
+    "ctBudgetLeaseSeconds": 6,
+    "readerHeartbeatSeconds": 8,
+    "nativeSlots": 32,
+    "budgetSamplerStillIndependent": true,
+    "failureSnapshotBeforeRollback": true,
+    "firstFailureSnapshotPreserved": true,
+    "supervisorPersistsFailureSnapshot": true,
+    "corruptDiagnosticsCannotBlockRollback": true
+  },
+  "incidents": [
+    {
+      "kind": "reader-heartbeat-missing-or-stale",
+      "lastStage": "iw-query",
+      "lastCompleteBudgetSeconds": 0.21,
+      "lastCompleteBudgetCommands": 12,
+      "restorationConfirmedAt": "2026-10-16T21:15:45+08:00",
+      "newSessionStartedAt": "2026-10-16T21:15:54+08:00",
+      "exactUnderlyingBlockProved": false
+    },
+    {
+      "kind": "software-budget-expired",
+      "observedDuringPreparation": true,
+      "lastIncompleteBudgetSeconds": 4,
+      "lastIncompleteBudgetCommandCount": 1,
+      "budgetSamplerPhase": "collecting",
+      "readerStage": "hostapd-query",
+      "restorationConfirmedAt": "2026-10-16T23:00:34+08:00",
+      "samplingRecoupledToTopology": false,
+      "exactUnderlyingBlockProved": false
+    }
+  ],
+  "tests": {
+    "offlineProfiles": {
+      "5": {
+        "passed": true,
+        "tests": 19,
+        "luaParsed": 61,
+        "shellParsed": 12,
+        "luaTests": 17,
+        "cTests": 2
+      },
+      "6": {
+        "passed": true,
+        "tests": 19,
+        "luaParsed": 61,
+        "shellParsed": 12,
+        "luaTests": 17,
+        "cTests": 2
+      }
+    },
+    "targetActualSourceTopologyAndSnapshotChecks": 350,
+    "targetActualSourceBudgetAndReapingChecks": 168,
+    "targetCheckpointRollbackAndGuardVirtualChecks": 22,
+    "targetLuaParsePassed": true,
+    "kernelModuleSourcesChanged": false,
+    "kernelCrossBuildRequired": false,
+    "liveFaultOrTrafficInjected": false
+  },
+  "deployment": {
+    "committed": true,
+    "changedPersistentFiles": {
+      "collector.lua": {
+        "beforeSha256": "a9c6b6043c5029d22751a67b9c74db358a1bdd1b55b843a5c4c7834509c19143",
+        "installedSha256": "85b6f3bbe0afd8fb044b1bfc115e60d86eead9fdbc12b137777dd3fa6157e25e",
+        "runtimeCopyPresent": true
+      },
+      "transaction.lua": {
+        "beforeSha256": "747a0de598e541504f61d99122d576ae100e31814c28f9b36befeb9280bdffd8",
+        "installedSha256": "0e60e1bc08f1fbf5575eaaf7275a614de1a86774ab57afe0bb5c5d3e4c07decc",
+        "runtimeCopyPresent": true
+      },
+      "supervisor.lua": {
+        "beforeSha256": "bdb53b065cc8f8d3de27d5881c12addd4df194219d1096d3e475ecb0ec071869",
+        "installedSha256": "834058d516c49ed3af1337334e1afd002acfcf0b8e4b36827cb78bd1c086dc7a",
+        "runtimeCopyPresent": false
+      }
+    },
+    "normalNssLifecycleSwitches": 1,
+    "firmwareAndSoftwareRestorationConfirmedBeforeWrite": true,
+    "independentGuardSeconds": 180,
+    "guardPhase": "committed",
+    "originalSourcesAndIncidentRecordsKeptPrivately": true,
+    "routerBootUnchanged": true,
+    "protectedFileHashesUnchanged": true,
+    "sixWanIdentitiesUnchanged": true,
+    "twelveSoftwareCakeContractsUnchanged": true,
+    "unrelatedServicePidsUnchanged": true,
+    "routingProxyNatRulesUnchanged": true,
+    "nssOwnedCoreGuardLifecycleRestarted": true,
+    "natConnectionsMigrated": false,
+    "wifiOrAuthenticationOrProxyRestarted": false
+  },
+  "passive": {
+    "seconds": 57.19,
+    "samples": 20,
+    "nativeRunningAll": true,
+    "actualNssAcceleratedMinimum": 0,
+    "actualNssAcceleratedMaximum": 9,
+    "nativeLiveMinimum": 0,
+    "nativeLiveMaximum": 11,
+    "maximumPending": 0,
+    "maximumUnconfirmed": 0,
+    "topologyCompleteAll": true,
+    "maximumTopologySeconds": 0.16,
+    "installedTopologyBudgetAll": true,
+    "budgetSequenceFirst": 54,
+    "budgetSequenceLast": 108,
+    "maximumObservedBudgetAgeSeconds": 4.31,
+    "incompleteBudgetSamples": 1,
+    "nonfreshSourceSamples": 1,
+    "sourcePauseDelta": 1,
+    "sourceResumeDelta": 1,
+    "automaticRetriesAll": [
+      0
+    ],
+    "allSixWanHealthyAndGameReady": true
+  },
+  "latest": {
+    "unconfirmed": 0,
+    "phase": "native-running",
+    "pending": 0,
+    "budgetComplete": true,
+    "sourceFresh": true,
+    "retries": 0,
+    "budgetSequence": 193,
+    "routingProxyNatPreserved": true,
+    "live": 9
+  },
+  "limitations": {
+    "systemwideOrUninterruptibleStallEliminated": false,
+    "exactHistoricalBlockingCommandProved": false,
+    "realHeartbeatFaultInjected": false,
+    "newFailureSnapshotObservedInNaturalHeartbeatFailure": false,
+    "liveRollbackExpiryTriggered": false,
+    "perFlowFirmwareByteProgressMeasuredThisRound": false,
+    "wan6GameOrEndToEndLatencyProved": false,
+    "longTermStabilityProved": false
+  },
+  "publication": {
+    "pr": 1,
+    "draft": true,
+    "credentialsOrPrivateEndpointsOrRawCtIncluded": false
+  }
+}

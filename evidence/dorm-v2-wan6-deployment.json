@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "recordedAtUTC": "2026-10-11T17:28:25.351250+00:00",
+  "repository": "ZyPulse-zy/athena-nss-mainline",
+  "branch": "codex/dorm-qos-v2",
+  "pr": 1,
+  "draft": true,
+  "remoteHeadBeforeDeployment": "d37766a7b90332577f0b3c0c2db99bd7ebbf4f9d",
+  "candidateBase": "e5f344bf17c9fbca2e64cd841c831080b0e47695",
+  "previousInstalledController": "2996d405c9a96ec4d891887358f02f28de4e340c",
+  "deployment": {
+    "completed": true,
+    "wanCount": 6,
+    "controllerFilesVerified": 46,
+    "sourceFilesVerified": 12,
+    "sourceQueueCount": 12,
+    "sixInterfacesOnline": true,
+    "privateCredentialUsedOnlyOnRouterAuthenticationConfig": true,
+    "credentialsIncluded": false,
+    "nativeBootEnabledUnchanged": true,
+    "sourceRamOwnerRetiredByInodeAndBoot": true,
+    "gameEnabled": false,
+    "normalBucketsRemainFive": true,
+    "existingNatMigrated": false,
+    "rebooted": false,
+    "firmwareFlashed": false,
+    "edmaChanged": false,
+    "wifiModulesReplaced": false,
+    "temporaryLanProofRuleRemoved": true
+  },
+  "initialAttempt": {
+    "fileInstallFailedBeforeCandidateModuleLoad": true,
+    "reason": "POSIX integer 384 was invalid for nixio.fs.chmod; mode 600 is required",
+    "independentRollbackExecuted": true,
+    "originalFiveSourceProtectionQueueAndIdentityVerified": true,
+    "account6Configured": false,
+    "correctedPrivateInstallProbeFiles": 46
+  },
+  "targetCorrections": [
+    "Validate private authentication file with installed nixio.fs rather than absent stat command",
+    "Persist all PBR/NAT/forwarding rules with exact owned comments",
+    "Add WAN6 accept/drop rules inside accept_to_wan because its original device alias excludes rpwan6",
+    "Pin cold-start WAN6 CAKE handles 8061/8062 to captured source configuration"
+  ],
+  "finalAudit": {
+    "sourceFilesVerified": 12,
+    "originalFiveNetworkAndFirewallSectionsPreserved": true,
+    "nativeBootEnabled": true,
+    "bootUnchanged": true,
+    "sharedPortCapacityMeasured": false,
+    "wan": [
+      {
+        "proto": "dhcp",
+        "up": true,
+        "device": "rpwan1",
+        "identityUnchanged": true,
+        "authenticatorRunning": true,
+        "autorateRunning": true
+      },
+      {
+        "proto": "dhcp",
+        "up": true,
+        "device": "rpwan2",
+        "identityUnchanged": true,
+        "authenticatorRunning": true,
+        "autorateRunning": true
+      },
+      {
+        "proto": "dhcp",
+        "up": true,
+        "device": "rpwan3",
+        "identityUnchanged": true,
+        "authenticatorRunning": true,
+        "autorateRunning": true
+      },
+      {
+        "proto": "dhcp",
+        "up": true,
+        "device": "rpwan4",
+        "identityUnchanged": true,
+        "authenticatorRunning": true,
+        "autorateRunning": true
+      },
+      {
+        "proto": "dhcp",
+        "up": true,
+        "device": "rpwan5",
+        "identityUnchanged": true,
+        "authenticatorRunning": true,
+        "autorateRunning": true
+      },
+      {
+        "proto": "dhcp",
+        "up": true,
+        "device": "rpwan6",
+        "authenticatorRunning": true,
+        "autorateRunning": true
+      }
+    ],
+    "native": {
+      "unconfirmed": 0,
+      "live": 1,
+      "sourcePauses": 0,
+      "sourceResumes": 0,
+      "phase": "native-running",
+      "pending": 0,
+      "wanCount": 6,
+      "sourceFresh": true
+    },
+    "game": {
+      "normalBucketsRemainFive": true,
+      "readySetPresent": false,
+      "installedConfig": false
+    },
+    "firmwareQueueDropReadbackPerformed": false,
+    "budget": {
+      "lastReadCommands": 12,
+      "readFailures": 0
+    },
+    "wan6Tags": {
+      "down": {
+        "BE": 31333,
+        "RT": 31334
+      },
+      "up": {
+        "BE": 32357,
+        "RT": 32358
+      }
+    },
+    "sourceQueueCount": 12,
+    "wan6PrivateAuthFileSecure": true,
+    "wirelessPreserved": true,
+    "originalPhysicalIPv6WAN6Preserved": true,
+    "allChecksPassed": true,
+    "payloadFilesVerified": 46
+  },
+  "realLanProof": {
+    "oneNewConnection": true,
+    "successful": true,
+    "httpStatus400IsTransportProofNotApplicationOrGamingValidation": true,
+    "observerSeconds": 64.38999999998487,
+    "samples": 32,
+    "identityIncludesFullMarkZoneOriginalAndReplyNatTuples": true,
+    "createAckSamples": 18,
+    "labelVerifiedSamples": 18,
+    "labelMismatchSamples": 0,
+    "labels": {
+      "basis": "CREATE-payload-and-ACK-not-firmware-queue-readback",
+      "expected": {
+        "igsDown": 31334,
+        "igsUp": 0,
+        "down": 2053505030,
+        "up": 2120613894
+      },
+      "observed": {
+        "igsDown": 31334,
+        "igsUp": 0,
+        "down": 2053505030,
+        "up": 2120613894
+      },
+      "status": "verified"
+    },
+    "sameGenerationAndSerialByteIntervals": 16,
+    "hardwareRxAttributedByteDelta": {
+      "down": 26846,
+      "up": 15996
+    },
+    "fullMark": 393216,
+    "zone": 0,
+    "removal": {
+      "state": 6,
+      "removeError": 5,
+      "createSeen": 0,
+      "removeResponse": 4
+    },
+    "removalInterpretation": "Exact same binding reached firmware-absent state 6, ENACK response 4/error 5. This is not a successful REMOVE ACK."
+  },
+  "tests": {
+    "five": {
+      "passed": true,
+      "luaParsed": 51,
+      "shellParsed": 12,
+      "luaAndCTests": 15,
+      "mockedTargetIo": true
+    },
+    "six": {
+      "passed": true,
+      "luaParsed": 51,
+      "shellParsed": 12,
+      "luaAndCTests": 15,
+      "mockedTargetIo": true
+    }
+  },
+  "targetVirtualModels": {
+    "passed": true,
+    "kernelAndFirmwareMocked": true,
+    "wan6Checks": 1657,
+    "sourceChecks": 63,
+    "sourceRecoveryScenarios": 9,
+    "writerChecks": 742
+  },
+  "build": {
+    "preparedKernel": "6.18.44",
+    "passedPreviously": true,
+    "nativeInputsUnchangedSinceBuild": true,
+    "originalDiskModuleHashesPreserved": true
+  },
+  "limitations": {
+    "fullSixAccountPlatformRollbackDrilled": false,
+    "coldBootActuallyTested": false,
+    "longTermOrFullDormLoadValidated": false,
+    "campusSharedPortCapacityMeasured": false,
+    "firmwareQueueCountersReadback": false,
+    "gameClassifierEnabled": false,
+    "realGameLatencyLossMeasured": false,
+    "allSixConcurrent100MbpsProved": false
+  }
+}

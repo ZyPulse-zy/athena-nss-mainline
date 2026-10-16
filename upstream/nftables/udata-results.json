@@ -1,0 +1,107 @@
+{
+  "registerSizeBytes": 4,
+  "registerCount": 16,
+  "userdataBufferBytes": 256,
+  "variants": [
+    {
+      "fields": 1,
+      "setKeyEnvelope": false,
+      "buildReturnObserved": true,
+      "buildReturn": 0,
+      "userdataBytes": 24,
+      "parsedFields": 1,
+      "passed": true
+    },
+    {
+      "fields": 4,
+      "setKeyEnvelope": false,
+      "buildReturnObserved": true,
+      "buildReturn": 0,
+      "userdataBytes": 90,
+      "parsedFields": 4,
+      "passed": true
+    },
+    {
+      "fields": 5,
+      "setKeyEnvelope": false,
+      "buildReturnObserved": true,
+      "buildReturn": -1,
+      "userdataBytes": 90,
+      "parsedFields": 4,
+      "passed": false
+    },
+    {
+      "fields": 6,
+      "setKeyEnvelope": false,
+      "buildReturnObserved": true,
+      "buildReturn": -1,
+      "userdataBytes": 90,
+      "parsedFields": 4,
+      "passed": false
+    },
+    {
+      "fields": 11,
+      "setKeyEnvelope": false,
+      "buildReturnObserved": true,
+      "buildReturn": -1,
+      "userdataBytes": 90,
+      "parsedFields": 4,
+      "passed": false
+    },
+    {
+      "fields": 1,
+      "setKeyEnvelope": true,
+      "buildReturnObserved": false,
+      "buildReturn": null,
+      "userdataBytes": 32,
+      "parsedFields": 1,
+      "passed": true
+    },
+    {
+      "fields": 4,
+      "setKeyEnvelope": true,
+      "buildReturnObserved": false,
+      "buildReturn": null,
+      "userdataBytes": 98,
+      "parsedFields": 4,
+      "passed": true
+    },
+    {
+      "fields": 5,
+      "setKeyEnvelope": true,
+      "buildReturnObserved": false,
+      "buildReturn": null,
+      "userdataBytes": 98,
+      "parsedFields": 4,
+      "passed": false
+    },
+    {
+      "fields": 6,
+      "setKeyEnvelope": true,
+      "buildReturnObserved": false,
+      "buildReturn": null,
+      "userdataBytes": 98,
+      "parsedFields": 4,
+      "passed": false
+    },
+    {
+      "fields": 11,
+      "setKeyEnvelope": true,
+      "buildReturnObserved": false,
+      "buildReturn": null,
+      "userdataBytes": 98,
+      "parsedFields": 4,
+      "passed": false
+    }
+  ],
+  "failedCases": 6,
+  "passed": false,
+  "realBuiltLibrary": true,
+  "sourceCommit": "91373de3ec389004c30ae5465d1bb34dcaf690dd",
+  "mnlSourceSha256": "4ee29941e8490d40d202882c538d43ab13684d46c09f4ccbec40dd32fa9ee9f4",
+  "expressionSourceSha256": "290353679e6f20ffea57713dea432bdc98f382f16dc13b0bdce6b2cd5e9d9d09",
+  "staticLibrarySha256": "631cd54f0ce6326bca92202e65715cff1b54547922c46aeadc86fb92bac3c71f",
+  "setEnvelopeUsesActualSource": true,
+  "otherSetMapAttributesIncluded": false,
+  "kernelNetlinkTested": false
+}

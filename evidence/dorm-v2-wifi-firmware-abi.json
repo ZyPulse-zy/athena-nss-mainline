@@ -1,0 +1,190 @@
+{
+  "firmwareSourceCommit": "90448eeb2b8f5d172caedfe6d96ab3bacb058c09",
+  "firmwareRecipeBlob": "9040b662824e0c1e6e11f4008bdc80b476874c18",
+  "firmwareVersion": "NSS.FW.12.5-210-CP.R",
+  "releaseArchiveSha256": "10a4b1e69470db150915cb063525436494b8ae4eebb8b50ea6ad894082d7abb0",
+  "installedFirmwareSha256": "3c7708960681859a24d964895dff166f2336de8ccaae4ba9e7e39f272561ccee",
+  "releaseFirmwareByteIdenticalToInstalled": true,
+  "vendorFirmwareCSourceAvailable": false,
+  "boundedObserver": {
+    "durationSeconds": 20,
+    "maxRows": 64,
+    "metadataOnly": true,
+    "rawPeerIdsOrMacsRetained": false,
+    "extraFirmwareStatisticsEnabled": false,
+    "originalCallbackForwardedExactlyOnce": true,
+    "recordRows": 64,
+    "peerCounts": [
+      2,
+      5
+    ],
+    "cmLen": 216,
+    "cmLenIsVariableArraySize": false,
+    "stride212MembershipAndUniquenessPassed": 64,
+    "stride196MembershipAndUniquenessPassed": 0,
+    "callbackOwnershipLost": false,
+    "callbackDetached": true,
+    "moduleUnloaded": true,
+    "sourceModelChecks": 25
+  },
+  "targetLayouts": {
+    "False": {
+      "messageBytes": 2096,
+      "peerBytes": 196,
+      "peerTemplateBytes": 200
+    },
+    "True": {
+      "messageBytes": 2096,
+      "peerBytes": 212,
+      "peerTemplateBytes": 216
+    }
+  },
+  "fullBuildPassed": true,
+  "buildAbiProbes": {
+    "provider-original": {
+      "peerBytes": 196,
+      "retryOffset": 180,
+      "usesActualKbuildFlags": true,
+      "firmware12_5MacroEffective": false
+    },
+    "original": {
+      "peerBytes": 196,
+      "retryOffset": 180,
+      "usesActualKbuildFlags": true,
+      "firmware12_5MacroEffective": false
+    },
+    "provider": {
+      "peerBytes": 196,
+      "retryOffset": 180,
+      "usesActualKbuildFlags": true,
+      "firmware12_5MacroEffective": false
+    },
+    "patched": {
+      "peerBytes": 212,
+      "retryOffset": 188,
+      "usesActualKbuildFlags": true,
+      "firmware12_5MacroEffective": true
+    }
+  },
+  "nssDriverIsWireProducer": false,
+  "nssDriverParsesPeerRecords": false,
+  "deployment": {
+    "status": "committed",
+    "onlyReplaceAth11k": true,
+    "ath11kSha256": "6d21891e207dc7b80bf17fef99101e62422a8db943bf57c71aa50b08b16d24fa",
+    "previousAth11kSha256": "afff499982dccf947ed3c579f7772791bfdd9dfa73dc87b7660cc17add33f3e3",
+    "mac80211Sha256": "e40c564ddfeba94339a6b77f7f717405f5b118dffb126e74f4cfd9a4ea03066e",
+    "nssDriverSha256": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+    "nssModuleReplaced": false,
+    "mac80211Reloaded": false,
+    "cnShimPreserved": true,
+    "bootUnchanged": true,
+    "protectionUnchanged": true,
+    "sourceFilesUnchanged": true,
+    "softwareQueueContractsUnchanged": true,
+    "otherModuleHashesUnchanged": true,
+    "onlyServicesRestarted": [
+      "athena-dorm-native",
+      "router-project-core"
+    ],
+    "sixAccountsOnline": true,
+    "apCount": 3,
+    "firstRamTrialRolledBack": true,
+    "rollbackFinalHashesAndSourceFreshVerified": true,
+    "firstTrialReason": "protected-core-guard-compared-before-asynchronous-native-start-completed",
+    "secondRamTrialPassed": true,
+    "boundedVerifierWaitsForSourceAndExactProtectedHashes": true,
+    "independentPrivateCheckpointRetained": true
+  },
+  "formalGameAcceptanceDeferred": true,
+  "finalAirQueuesVerified": false,
+  "realFirmwareCounterFieldSemanticsFullyValidated": false,
+  "staticModuleComparison": {
+    "passed": true,
+    "moduleLoadTested": false,
+    "runtimeCompatibilityProven": false,
+    "routerModified": false,
+    "modules": {
+      "ath11k": {
+        "installedSha256": "afff499982dccf947ed3c579f7772791bfdd9dfa73dc87b7660cc17add33f3e3",
+        "candidateSha256": "6d21891e207dc7b80bf17fef99101e62422a8db943bf57c71aa50b08b16d24fa",
+        "metadata": {
+          "name": "ath11k",
+          "depends": "qca-nss-drv,mac80211,qca-nss-wifi-meshmgr,cfg80211,qmi_helpers,compat",
+          "vermagic": "6.18.44 SMP mod_unload aarch64",
+          "parm": "cold_boot_cal: (bool)\nnss_offload: (uint)\ndebug_mask: (uint)\ncrypto_mode: (uint)\nframe_mode: (uint)\nftm_mode: (bool)"
+        },
+        "metadataMatches": true,
+        "importsUnchanged": true,
+        "exportsUnchanged": true,
+        "importedSymbolCount": 291,
+        "exportedSymbolCount": 51,
+        "addedImports": [],
+        "removedImports": [],
+        "symbolCrcStatus": "unsupported: one or both ELF modules lack modversion data",
+        "symbolCrcEqual": null,
+        "passed": true
+      },
+      "mac80211": {
+        "installedSha256": "e40c564ddfeba94339a6b77f7f717405f5b118dffb126e74f4cfd9a4ea03066e",
+        "candidateSha256": "1a6a0f662a437dbe5da5e03c79543908bee66ea3388f2332fc81d2c99677cb78",
+        "metadata": {
+          "name": "mac80211",
+          "depends": "cfg80211,compat",
+          "vermagic": "6.18.44 SMP mod_unload aarch64",
+          "parm": "minstrel_vht_only: (bool)\nmax_nullfunc_tries: (int)\nmax_probe_tries: (int)\nbeacon_loss_count: (int)\nprobe_wait_ms: (int)\nieee80211_default_rc_algo: (charp)"
+        },
+        "metadataMatches": true,
+        "importsUnchanged": true,
+        "exportsUnchanged": true,
+        "importedSymbolCount": 361,
+        "exportedSymbolCount": 160,
+        "addedImports": [],
+        "removedImports": [],
+        "symbolCrcStatus": "unsupported: one or both ELF modules lack modversion data",
+        "symbolCrcEqual": null,
+        "passed": true
+      }
+    },
+    "exportNamesFromKstrtab": true
+  },
+  "postLoadObserver": {
+    "expectedCallbackFromExactRamCandidateMatched": true,
+    "metadataRows": 64,
+    "multiPeerCount": 4,
+    "stride212OnlyRows": 32,
+    "singlePeerUnassessableRows": 32,
+    "ownershipLost": false,
+    "detached": true,
+    "moduleUnloaded": true
+  },
+  "passivePostDeployment": {
+    "requestedSeconds": 30,
+    "samples": 11,
+    "sourceGaps": 0,
+    "sourceRestores": 0,
+    "lastPhase": "native-running",
+    "actualNssMin": 0,
+    "actualNssMax": 5,
+    "rtCreatedSamples": 17,
+    "rtProgressingSamples": 17,
+    "labelVerifiedSamples": 29,
+    "labelMismatchSamples": 0,
+    "counterResets": 0,
+    "generatedTraffic": false,
+    "endToEndLossMeasured": false,
+    "rtQueueDropsMeasured": false
+  },
+  "tests": {
+    "observerActualSourceFunctions": 25,
+    "runtimeGuardianAndRealBackendScopes": 9,
+    "firmware212FixtureOriginalConsumerFailsPatchedConsumerPasses": true,
+    "fullModuleBuildAndStrictModpost": true
+  },
+  "observerReproducibleBuild": {
+    "passed": true,
+    "strictModpost": true,
+    "offlineOnly": true,
+    "failedAttemptsPreserved": 2
+  }
+}

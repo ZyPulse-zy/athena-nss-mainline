@@ -1,0 +1,1230 @@
+{
+  "scope": "bounded-post-deployment-passive-observation",
+  "currentInstalledAth11kSha256": "6d21891e207dc7b80bf17fef99101e62422a8db943bf57c71aa50b08b16d24fa",
+  "currentInstalledMac80211Sha256": "e40c564ddfeba94339a6b77f7f717405f5b118dffb126e74f4cfd9a4ea03066e",
+  "currentInstalledNssDriverSha256": "b993a255ec858700fd2230f9d10d11618ea0c48f9734b1dad92cca0a52b37b7a",
+  "firmwareSourceCommit": "90448eeb2b8f5d172caedfe6d96ab3bacb058c09",
+  "nssSourceCommit": "6aa14c78e097b29c493ff2fef87e4d35906b2b5a",
+  "sourceRefs": [
+    {
+      "id": "mac",
+      "source": "backports/drivers/net/wireless/ath/ath11k/mac.c",
+      "sha256": "c8a90e0047e49842b9e8762dfb4fa3c9b55be18c4f4bcecce1efee647e33a0c5",
+      "lineRanges": [
+        [
+          6959,
+          6970
+        ],
+        [
+          11185,
+          11204
+        ],
+        [
+          11320,
+          11326
+        ]
+      ]
+    },
+    {
+      "id": "nss_tx",
+      "source": "backports/drivers/net/wireless/ath/ath11k/nss.c",
+      "sha256": "00bbdd9ec6ebc37137cebdbbbf63c550a631c32bb83b8bb35a26c51cbc136b3f",
+      "lineRanges": [
+        [
+          2129,
+          2190
+        ]
+      ]
+    },
+    {
+      "id": "mac_tx",
+      "source": "backports/net/mac80211/tx.c",
+      "sha256": "3b95ad828130c44ed57a168593a3f8e9bc24de0c520f156279dc6a8ab8a98bba",
+      "lineRanges": [
+        [
+          1616,
+          1688
+        ],
+        [
+          4255,
+          4288
+        ],
+        [
+          4770,
+          4780
+        ],
+        [
+          4910,
+          4917
+        ]
+      ]
+    },
+    {
+      "id": "sta",
+      "source": "backports/net/mac80211/sta_info.c",
+      "sha256": "9dcd6d30c733f7643338eed06ba45f53e40b5dc32e87300aa6e91d9d45fe9e05",
+      "lineRanges": [
+        [
+          717,
+          743
+        ],
+        [
+          2513,
+          2523
+        ]
+      ]
+    },
+    {
+      "id": "classify",
+      "source": "backports/net/wireless/util.c",
+      "sha256": "99081c1f0bb9089b2a429ccda6554bb73ee3368f070e4ef95c61625258321cd1",
+      "lineRanges": [
+        [
+          964,
+          1102
+        ]
+      ]
+    },
+    {
+      "id": "tid_ac",
+      "source": "backports/net/mac80211/wme.c",
+      "sha256": "d29428479c89df3a1e446e77f67adb20923a8a46deda3804a4832d3695d3eb4a",
+      "lineRanges": [
+        [
+          23,
+          32
+        ]
+      ]
+    },
+    {
+      "id": "tcl_map",
+      "source": "backports/drivers/net/wireless/ath/ath11k/hal_tx.c",
+      "sha256": "78427931f2800e2dcddd6a078aa6aa69932a22d3f7d5b0e3da2acdc341460915",
+      "lineRanges": [
+        [
+          26,
+          35
+        ],
+        [
+          60,
+          80
+        ]
+      ]
+    },
+    {
+      "id": "dp",
+      "source": "backports/drivers/net/wireless/ath/ath11k/dp_tx.c",
+      "sha256": "583b916d4d627e0973e83ab1976f5904795d986332e6bd866fae86aec7aef12c",
+      "lineRanges": [
+        [
+          215,
+          225
+        ]
+      ]
+    },
+    {
+      "id": "nss_h2n",
+      "source": "nss-drv/nss_core.c",
+      "sha256": "b162d43a174d1e747c7e5889c84afffe561e4c4ea16607c721a793df3d9a988d",
+      "lineRanges": [
+        [
+          2611,
+          2627
+        ],
+        [
+          2872,
+          2876
+        ],
+        [
+          3389,
+          3413
+        ]
+      ]
+    },
+    {
+      "id": "nss_override_api",
+      "source": "nss-drv/exports/nss_wifi_vdev.h",
+      "sha256": "1ba84b885bd63e60c53b92855a1bb04122f41abf2db972c8ead818303ee466fc",
+      "lineRanges": [
+        [
+          190,
+          207
+        ]
+      ]
+    },
+    {
+      "id": "peer_export",
+      "source": "backports/drivers/net/wireless/ath/ath11k/debugfs_sta.c",
+      "sha256": "1b7d183f8e88ebff1c9ea2abb4e3027f5e751bcccc06f01c19d23dce06ea4108",
+      "lineRanges": [
+        [
+          1240,
+          1295
+        ]
+      ]
+    },
+    {
+      "id": "nss_stats_config",
+      "source": "backports/drivers/net/wireless/ath/ath11k/debugfs.c",
+      "sha256": "857055aec8ae9f568db02cc97048c215225b8dee34dab7ea5aaa3f45a30ea659",
+      "lineRanges": [
+        [
+          1670,
+          1734
+        ]
+      ]
+    },
+    {
+      "id": "rx-and-ppdu-tid",
+      "source": "backports/drivers/net/wireless/ath/ath11k/dp_rx.c",
+      "sha256": "d33337d128a8c2f279a00474407431fee33f7861fa45589d20cb1349ef46cab1",
+      "lineRanges": [
+        [
+          1634,
+          1655
+        ],
+        [
+          1756,
+          1778
+        ],
+        [
+          3533,
+          3537
+        ],
+        [
+          5008,
+          5015
+        ]
+      ]
+    }
+  ],
+  "nativeWindows": [
+    {
+      "requestedSeconds": 30,
+      "sampleSeconds": 30,
+      "samples": 11,
+      "sourceGaps": 0,
+      "sourceRestores": 0,
+      "rtCreatedSamples": 19,
+      "rtProgressingSamples": 20,
+      "labelVerifiedSamples": 33,
+      "labelMismatchSamples": 0,
+      "counterResets": 0,
+      "actualNssMin": 1,
+      "actualNssMax": 5,
+      "lastPhase": "native-running",
+      "generatedTraffic": false,
+      "endToEndLossMeasured": false,
+      "rtQueueDropsMeasured": false,
+      "wirelessEvidenceByClass": {
+        "RT": 6
+      },
+      "wirelessBulkCreateAcknowledged": 0
+    },
+    {
+      "requestedSeconds": 30,
+      "sampleSeconds": 30,
+      "samples": 11,
+      "sourceGaps": 0,
+      "sourceRestores": 0,
+      "rtCreatedSamples": 16,
+      "rtProgressingSamples": 19,
+      "labelVerifiedSamples": 31,
+      "labelMismatchSamples": 0,
+      "counterResets": 0,
+      "actualNssMin": 1,
+      "actualNssMax": 5,
+      "lastPhase": "native-running",
+      "generatedTraffic": false,
+      "endToEndLossMeasured": false,
+      "rtQueueDropsMeasured": false,
+      "wirelessEvidenceByClass": {
+        "RT": 3,
+        "BULK": 1
+      },
+      "wirelessBulkCreateAcknowledged": 0
+    },
+    {
+      "requestedSeconds": 30,
+      "sampleSeconds": 30,
+      "samples": 11,
+      "sourceGaps": 0,
+      "sourceRestores": 0,
+      "rtCreatedSamples": 16,
+      "rtProgressingSamples": 16,
+      "labelVerifiedSamples": 35,
+      "labelMismatchSamples": 0,
+      "counterResets": 0,
+      "actualNssMin": 1,
+      "actualNssMax": 6,
+      "lastPhase": "native-running",
+      "generatedTraffic": false,
+      "endToEndLossMeasured": false,
+      "rtQueueDropsMeasured": false,
+      "wirelessEvidenceByClass": {
+        "RT": 6
+      },
+      "wirelessBulkCreateAcknowledged": 0
+    }
+  ],
+  "wirelessWindows": [
+    {
+      "requestedSeconds": 30,
+      "elapsedSeconds": 31.04000000000815,
+      "queryCount": 84,
+      "totalQuerySeconds": 1.010000000038417,
+      "maxQuerySeconds": 0.10999999998603016,
+      "queryStates": {
+        "ok": 66,
+        "missing": 18
+      },
+      "finalAirTidAcVerified": false,
+      "radios": [
+        {
+          "frequencyMHz": {
+            "state": "ok",
+            "value": 5745
+          },
+          "center1MHz": {
+            "state": "ok",
+            "value": 5775
+          },
+          "widthMHz": {
+            "state": "ok",
+            "value": 80
+          },
+          "survey": [
+            {
+              "frequencyMHz": 5745,
+              "intervalSeconds": 30.45999999999185,
+              "counters": {
+                "busyFraction": {
+                  "state": "ok",
+                  "value": 0.04208209676881523
+                },
+                "busyMs": {
+                  "state": "ok",
+                  "value": 1262
+                },
+                "externalInterferenceMeasured": false,
+                "scope": "reported-frequency-not-entire-wide-channel",
+                "receiveMs": {
+                  "state": "ok",
+                  "value": 139
+                },
+                "transmitMs": {
+                  "state": "ok",
+                  "value": 386
+                },
+                "activeMs": {
+                  "state": "ok",
+                  "value": 29989
+                }
+              },
+              "noiseDbm": -108
+            }
+          ],
+          "hostAql": {
+            "aql_enable": {
+              "state": "ok",
+              "value": 1
+            },
+            "featureAdvertisement": {
+              "queryState": "ok",
+              "state": "not-observed",
+              "api": "nl80211-EXT_FEATURE_AQL"
+            },
+            "aql_txq_limit": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "VI",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BE",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BK",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  }
+                ]
+              }
+            },
+            "aql_pending": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "VI",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BE",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BK",
+                    "pendingUs": 0
+                  }
+                ]
+              }
+            }
+          },
+          "hwFlags": {
+            "state": "ok",
+            "values": {
+              "HAS_TX_QUEUE": true,
+              "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+              "SUPPORTS_NSS_OFFLOAD": true,
+              "SUPPORTS_TID_CLASS_OFFLOAD": true
+            }
+          },
+          "associatedStationsObserved": 2,
+          "comparableAssociationIntervals": 2,
+          "stationDeltas": {
+            "txBytes": 3163826,
+            "rxBytes": 421042,
+            "txPackets": 2700,
+            "rxPackets": 2282,
+            "txRetries": 0,
+            "txFailed": 0
+          },
+          "stationCountersScope": "same-association-export-only-not-RT-BULK-split",
+          "airTidExportStates": {
+            "not-exported": 2
+          },
+          "hostAqmStates": {
+            "empty": 2
+          }
+        },
+        {
+          "frequencyMHz": {
+            "state": "ok",
+            "value": 2437
+          },
+          "center1MHz": {
+            "state": "ok",
+            "value": 2437
+          },
+          "widthMHz": {
+            "state": "ok",
+            "value": 20
+          },
+          "survey": [
+            {
+              "frequencyMHz": 2437,
+              "intervalSeconds": 30.45999999999185,
+              "counters": {
+                "busyFraction": {
+                  "state": "ok",
+                  "value": 0.14608409435606182
+                },
+                "busyMs": {
+                  "state": "ok",
+                  "value": 4527
+                },
+                "externalInterferenceMeasured": false,
+                "scope": "reported-frequency-not-entire-wide-channel",
+                "receiveMs": {
+                  "state": "ok",
+                  "value": 10
+                },
+                "transmitMs": {
+                  "state": "ok",
+                  "value": 377
+                },
+                "activeMs": {
+                  "state": "ok",
+                  "value": 30989
+                }
+              },
+              "noiseDbm": -105
+            }
+          ],
+          "hostAql": {
+            "aql_enable": {
+              "state": "ok",
+              "value": 1
+            },
+            "featureAdvertisement": {
+              "queryState": "ok",
+              "state": "not-observed",
+              "api": "nl80211-EXT_FEATURE_AQL"
+            },
+            "aql_txq_limit": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "VI",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BE",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BK",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  }
+                ]
+              }
+            },
+            "aql_pending": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "VI",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BE",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BK",
+                    "pendingUs": 0
+                  }
+                ]
+              }
+            }
+          },
+          "hwFlags": {
+            "state": "ok",
+            "values": {
+              "HAS_TX_QUEUE": true,
+              "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+              "SUPPORTS_NSS_OFFLOAD": true,
+              "SUPPORTS_TID_CLASS_OFFLOAD": true
+            }
+          },
+          "associatedStationsObserved": 1,
+          "comparableAssociationIntervals": 1,
+          "stationDeltas": {
+            "txBytes": 1968,
+            "rxBytes": 8380,
+            "txPackets": 17,
+            "rxPackets": 58,
+            "txRetries": 0,
+            "txFailed": 6
+          },
+          "stationCountersScope": "same-association-export-only-not-RT-BULK-split",
+          "airTidExportStates": {
+            "not-exported": 1
+          },
+          "hostAqmStates": {
+            "empty": 1
+          }
+        },
+        {
+          "frequencyMHz": {
+            "state": "ok",
+            "value": 5180
+          },
+          "center1MHz": {
+            "state": "ok",
+            "value": 5210
+          },
+          "widthMHz": {
+            "state": "ok",
+            "value": 80
+          },
+          "survey": [
+            {
+              "frequencyMHz": 5180,
+              "intervalSeconds": 30.460000000020955,
+              "counters": {
+                "busyFraction": {
+                  "state": "ok",
+                  "value": 0.05420180672689089
+                },
+                "busyMs": {
+                  "state": "ok",
+                  "value": 1626
+                },
+                "externalInterferenceMeasured": false,
+                "scope": "reported-frequency-not-entire-wide-channel",
+                "receiveMs": {
+                  "state": "ok",
+                  "value": 0
+                },
+                "transmitMs": {
+                  "state": "ok",
+                  "value": 159
+                },
+                "activeMs": {
+                  "state": "ok",
+                  "value": 29999
+                }
+              },
+              "noiseDbm": -105
+            }
+          ],
+          "hostAql": {
+            "aql_enable": {
+              "state": "ok",
+              "value": 1
+            },
+            "featureAdvertisement": {
+              "queryState": "ok",
+              "state": "not-observed",
+              "api": "nl80211-EXT_FEATURE_AQL"
+            },
+            "aql_txq_limit": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "VI",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BE",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BK",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  }
+                ]
+              }
+            },
+            "aql_pending": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "VI",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BE",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BK",
+                    "pendingUs": 0
+                  }
+                ]
+              }
+            }
+          },
+          "hwFlags": {
+            "state": "ok",
+            "values": {
+              "HAS_TX_QUEUE": true,
+              "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+              "SUPPORTS_NSS_OFFLOAD": true,
+              "SUPPORTS_TID_CLASS_OFFLOAD": true
+            }
+          },
+          "associatedStationsObserved": 0,
+          "comparableAssociationIntervals": 0,
+          "stationDeltas": {
+            "txBytes": 0,
+            "rxBytes": 0,
+            "txPackets": 0,
+            "rxPackets": 0,
+            "txRetries": 0,
+            "txFailed": 0
+          },
+          "stationCountersScope": "same-association-export-only-not-RT-BULK-split",
+          "airTidExportStates": {},
+          "hostAqmStates": {}
+        }
+      ]
+    },
+    {
+      "requestedSeconds": 30,
+      "elapsedSeconds": 30.980000000010477,
+      "queryCount": 84,
+      "totalQuerySeconds": 0.9800000000104774,
+      "maxQuerySeconds": 0.10000000000582077,
+      "queryStates": {
+        "ok": 66,
+        "missing": 18
+      },
+      "finalAirTidAcVerified": false,
+      "radios": [
+        {
+          "frequencyMHz": {
+            "state": "ok",
+            "value": 5745
+          },
+          "center1MHz": {
+            "state": "ok",
+            "value": 5775
+          },
+          "widthMHz": {
+            "state": "ok",
+            "value": 80
+          },
+          "survey": [
+            {
+              "frequencyMHz": 5745,
+              "intervalSeconds": 30.45000000001164,
+              "counters": {
+                "busyFraction": {
+                  "state": "ok",
+                  "value": 0.055653739704558336
+                },
+                "busyMs": {
+                  "state": "ok",
+                  "value": 1669
+                },
+                "externalInterferenceMeasured": false,
+                "scope": "reported-frequency-not-entire-wide-channel",
+                "receiveMs": {
+                  "state": "ok",
+                  "value": 118
+                },
+                "transmitMs": {
+                  "state": "ok",
+                  "value": 359
+                },
+                "activeMs": {
+                  "state": "ok",
+                  "value": 29989
+                }
+              },
+              "noiseDbm": -107
+            }
+          ],
+          "hostAql": {
+            "aql_enable": {
+              "state": "ok",
+              "value": 1
+            },
+            "featureAdvertisement": {
+              "queryState": "ok",
+              "state": "not-observed",
+              "api": "nl80211-EXT_FEATURE_AQL"
+            },
+            "aql_txq_limit": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "VI",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BE",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BK",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  }
+                ]
+              }
+            },
+            "aql_pending": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "VI",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BE",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BK",
+                    "pendingUs": 0
+                  }
+                ]
+              }
+            }
+          },
+          "hwFlags": {
+            "state": "ok",
+            "values": {
+              "HAS_TX_QUEUE": true,
+              "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+              "SUPPORTS_NSS_OFFLOAD": true,
+              "SUPPORTS_TID_CLASS_OFFLOAD": true
+            }
+          },
+          "associatedStationsObserved": 2,
+          "comparableAssociationIntervals": 2,
+          "stationDeltas": {
+            "txBytes": 2918741,
+            "rxBytes": 219758,
+            "txPackets": 2587,
+            "rxPackets": 1839,
+            "txRetries": 0,
+            "txFailed": 0
+          },
+          "stationCountersScope": "same-association-export-only-not-RT-BULK-split",
+          "airTidExportStates": {
+            "not-exported": 2
+          },
+          "hostAqmStates": {
+            "empty": 2
+          }
+        },
+        {
+          "frequencyMHz": {
+            "state": "ok",
+            "value": 2437
+          },
+          "center1MHz": {
+            "state": "ok",
+            "value": 2437
+          },
+          "widthMHz": {
+            "state": "ok",
+            "value": 20
+          },
+          "survey": [
+            {
+              "frequencyMHz": 2437,
+              "intervalSeconds": 30.45000000001164,
+              "counters": {
+                "busyFraction": {
+                  "state": "ok",
+                  "value": 0.16712381812901353
+                },
+                "busyMs": {
+                  "state": "ok",
+                  "value": 5179
+                },
+                "externalInterferenceMeasured": false,
+                "scope": "reported-frequency-not-entire-wide-channel",
+                "receiveMs": {
+                  "state": "ok",
+                  "value": 34
+                },
+                "transmitMs": {
+                  "state": "ok",
+                  "value": 354
+                },
+                "activeMs": {
+                  "state": "ok",
+                  "value": 30989
+                }
+              },
+              "noiseDbm": -105
+            }
+          ],
+          "hostAql": {
+            "aql_enable": {
+              "state": "ok",
+              "value": 1
+            },
+            "featureAdvertisement": {
+              "queryState": "ok",
+              "state": "not-observed",
+              "api": "nl80211-EXT_FEATURE_AQL"
+            },
+            "aql_txq_limit": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "VI",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BE",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BK",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  }
+                ]
+              }
+            },
+            "aql_pending": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "VI",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BE",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BK",
+                    "pendingUs": 0
+                  }
+                ]
+              }
+            }
+          },
+          "hwFlags": {
+            "state": "ok",
+            "values": {
+              "HAS_TX_QUEUE": true,
+              "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+              "SUPPORTS_NSS_OFFLOAD": true,
+              "SUPPORTS_TID_CLASS_OFFLOAD": true
+            }
+          },
+          "associatedStationsObserved": 1,
+          "comparableAssociationIntervals": 1,
+          "stationDeltas": {
+            "txBytes": 184,
+            "rxBytes": 3649,
+            "txPackets": 5,
+            "rxPackets": 34,
+            "txRetries": 0,
+            "txFailed": 2
+          },
+          "stationCountersScope": "same-association-export-only-not-RT-BULK-split",
+          "airTidExportStates": {
+            "not-exported": 1
+          },
+          "hostAqmStates": {
+            "empty": 1
+          }
+        },
+        {
+          "frequencyMHz": {
+            "state": "ok",
+            "value": 5180
+          },
+          "center1MHz": {
+            "state": "ok",
+            "value": 5210
+          },
+          "widthMHz": {
+            "state": "ok",
+            "value": 80
+          },
+          "survey": [
+            {
+              "frequencyMHz": 5180,
+              "intervalSeconds": 30.45999999999185,
+              "counters": {
+                "busyFraction": {
+                  "state": "ok",
+                  "value": 0.14840989399293286
+                },
+                "busyMs": {
+                  "state": "ok",
+                  "value": 4452
+                },
+                "externalInterferenceMeasured": false,
+                "scope": "reported-frequency-not-entire-wide-channel",
+                "receiveMs": {
+                  "state": "ok",
+                  "value": 1
+                },
+                "transmitMs": {
+                  "state": "ok",
+                  "value": 173
+                },
+                "activeMs": {
+                  "state": "ok",
+                  "value": 29998
+                }
+              },
+              "noiseDbm": -105
+            }
+          ],
+          "hostAql": {
+            "aql_enable": {
+              "state": "ok",
+              "value": 1
+            },
+            "featureAdvertisement": {
+              "queryState": "ok",
+              "state": "not-observed",
+              "api": "nl80211-EXT_FEATURE_AQL"
+            },
+            "aql_txq_limit": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "VI",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BE",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  },
+                  {
+                    "ac": "BK",
+                    "limitLowUs": 5000,
+                    "limitHighUs": 12000
+                  }
+                ]
+              }
+            },
+            "aql_pending": {
+              "state": "ok",
+              "statistics": {
+                "state": "ok",
+                "rows": [
+                  {
+                    "ac": "VO",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "VI",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BE",
+                    "pendingUs": 0
+                  },
+                  {
+                    "ac": "BK",
+                    "pendingUs": 0
+                  }
+                ]
+              }
+            }
+          },
+          "hwFlags": {
+            "state": "ok",
+            "values": {
+              "HAS_TX_QUEUE": true,
+              "SUPPORTS_TX_ENCAP_OFFLOAD": true,
+              "SUPPORTS_NSS_OFFLOAD": true,
+              "SUPPORTS_TID_CLASS_OFFLOAD": true
+            }
+          },
+          "associatedStationsObserved": 0,
+          "comparableAssociationIntervals": 0,
+          "stationDeltas": {
+            "txBytes": 0,
+            "rxBytes": 0,
+            "txPackets": 0,
+            "rxPackets": 0,
+            "txRetries": 0,
+            "txFailed": 0
+          },
+          "stationCountersScope": "same-association-export-only-not-RT-BULK-split",
+          "airTidExportStates": {},
+          "hostAqmStates": {}
+        }
+      ]
+    }
+  ],
+  "sameDeviceWindow": {
+    "costSeconds": 0.059999999997671694,
+    "finalAirTidAcVerified": false,
+    "scope": "fresh-classification-same-MAC-cohort-not-final-transmission",
+    "identitiesExported": false,
+    "windowSeconds": 25,
+    "samples": [
+      {
+        "index": 1,
+        "devicesWithBoth": 0,
+        "phase": "native-running",
+        "wirelessRt": 8,
+        "wirelessBulk": 0,
+        "sourceFresh": true
+      },
+      {
+        "index": 2,
+        "devicesWithBoth": 0,
+        "phase": "native-running",
+        "wirelessRt": 7,
+        "wirelessBulk": 0,
+        "sourceFresh": true
+      },
+      {
+        "index": 3,
+        "devicesWithBoth": 0,
+        "phase": "native-running",
+        "wirelessRt": 5,
+        "wirelessBulk": 0,
+        "sourceFresh": true
+      },
+      {
+        "index": 4,
+        "devicesWithBoth": 0,
+        "phase": "native-running",
+        "wirelessRt": 3,
+        "wirelessBulk": 0,
+        "sourceFresh": true
+      },
+      {
+        "index": 5,
+        "devicesWithBoth": 0,
+        "phase": "native-running",
+        "wirelessRt": 2,
+        "wirelessBulk": 0,
+        "sourceFresh": true
+      },
+      {
+        "index": 6,
+        "devicesWithBoth": 0,
+        "phase": "native-running",
+        "wirelessRt": 5,
+        "wirelessBulk": 0,
+        "sourceFresh": true
+      }
+    ],
+    "readOnly": true,
+    "reads": 12
+  },
+  "unchanged": {
+    "boot": true,
+    "protection": true,
+    "services": true,
+    "sources": true,
+    "moduleHashes": true,
+    "queues": true
+  },
+  "wirelessParametersChanged": false,
+  "modulesLoadedOrReplaced": false,
+  "servicesRestarted": false,
+  "activeTrafficGenerated": false,
+  "firmwareStatsEnabledByThisWork": false,
+  "nssPeerStatsConfigAlreadyEnabled": [
+    1,
+    1,
+    1
+  ],
+  "hostAqlDataPathEnforced": false,
+  "hostAqlConclusionBasis": "HAS_TX_QUEUE bypass plus absent nl80211 AQL feature plus source gate/accounting early return",
+  "firmwareOwnQueueControlKnown": false,
+  "finalAirTidAcVerified": false,
+  "driverBufferedTidBitmap": "zero snapshots; buffering bitmap not transmitted-TID histogram",
+  "finalAirMappingConsistencyAcrossPathsVerified": false,
+  "offlineSourceModel": {
+    "passed": true,
+    "checks": 23,
+    "actualSourceFunctionsUsed": true,
+    "firmwareIoMocked": true,
+    "routerModified": false,
+    "finalAirTidAcVerified": false,
+    "sourceSha256": {
+      "util": "99081c1f0bb9089b2a429ccda6554bb73ee3368f070e4ef95c61625258321cd1",
+      "wme": "d29428479c89df3a1e446e77f67adb20923a8a46deda3804a4832d3695d3eb4a",
+      "tx": "3b95ad828130c44ed57a168593a3f8e9bc24de0c520f156279dc6a8ab8a98bba",
+      "hal": "78427931f2800e2dcddd6a078aa6aa69932a22d3f7d5b0e3da2acdc341460915"
+    }
+  },
+  "formalGameAcceptanceDeferred": true,
+  "privateIdentitiesAndRawLogsCommitted": false,
+  "finalNative": {
+    "phase": "native-running",
+    "sourceFresh": true,
+    "sourcePauses": 0,
+    "sourceResumes": 0,
+    "pending": 0,
+    "unconfirmed": 0
+  },
+  "overallObservationSpanSeconds": 868.570000000007,
+  "sixAccountsOnline": true,
+  "existingExtTxRxStatsFlagValues": [
+    "0",
+    "00000000",
+    "0",
+    "00000000",
+    "0",
+    "00000000"
+  ],
+  "missingExistingPerStationTxRxStats": 2,
+  "extensionFlagsChanged": false,
+  "supplementalExistingStatsQueries": {
+    "performed": 6,
+    "totalQuerySeconds": 0.02,
+    "maxQuerySeconds": 0.01,
+    "perQueryLimitSeconds": 2,
+    "queryExitCodes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "missingExports": 2
+  }
+}
