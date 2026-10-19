@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "continuous-qualified-2026-10-08",
+  "snapshot_date": "2026-10-08",
+  "source_manifest_sha256": "ba7d00cb26686ca3dd34835a98f926d846ff9fa85353b1e7701c42c0d731b12b",
+  "evidence": {
+    "path": "evidence/resident-continuous.json",
+    "sha256": "c73c74300585bb2071babb8b6c33dffc6c422d75fbaac8288d091bac40550b8f"
+  },
+  "components": [
+    {
+      "id": "coordinator",
+      "path": "code/work/resident-continuous-dev-20261008/daemon.mjs",
+      "sha256": "5917ee3dc3f9134d35cf1a01465e4e7e17663329a2483bc51a4ebe75fb11ee98"
+    },
+    {
+      "id": "admission",
+      "path": "code/work/resident-continuous-dev-20261008/normal-entry.mjs",
+      "sha256": "66c0f41bdcf15ca033341b89d7bc18c56c4cf89db483ac5bf0d00665f07266c4"
+    },
+    {
+      "id": "lifecycle",
+      "path": "code/work/resident-continuous-dev-20261008/run-generation.mjs",
+      "sha256": "8ee90a87b58a8423d4f405f592fb9c29b30246becc385a372ec4cbee35a08853"
+    },
+    {
+      "id": "outcome",
+      "path": "code/work/resident-continuous-dev-20261008/generation-outcome.mjs",
+      "sha256": "a1d5d9305ce684da26cbff63f51f670552372fa73df196f4fd770f1359228223"
+    },
+    {
+      "id": "policy",
+      "path": "code/work/resident-continuous-dev-20261008/policy.mjs",
+      "sha256": "7266ad190507f9faf6a50b765c5e077ace0fe8828760a001a6bbb762b15b29a6"
+    },
+    {
+      "id": "storage",
+      "path": "code/work/resident-continuous-dev-20261008/storage.mjs",
+      "sha256": "8840ae0c69b7e695c9a61c8eef71c81c70760b77ecdd172d8c95a7c6fcdbf806"
+    },
+    {
+      "id": "adaptation",
+      "path": "code/work/resident-continuous-dev-20261008/adapt.mjs",
+      "sha256": "0ae289308d762cf3746441776ecf69dc21786cea67f8816c932f43be086c3774"
+    },
+    {
+      "id": "startup",
+      "path": "code/work/resident-continuous-dev-20261008/startup-health.mjs",
+      "sha256": "7bbddcddd936181fd58034db729e4f419d0f2bf865d8133b7dda20b78b7a152d"
+    },
+    {
+      "id": "qualification",
+      "path": "code/work/resident-continuous-dev-20261008/qualification.mjs",
+      "sha256": "92ea63633d7afe13ad6f14b4198463ea84293d18fe7766ea3781a19573b50c9b"
+    },
+    {
+      "id": "classifier",
+      "path": "code/work/resident-dev-20261007/classifier-core.lua",
+      "sha256": "9356a1218a348d1a94a7622f989e57a8157ff9cf5fb3767a411b9f167501957b"
+    },
+    {
+      "id": "base-generator",
+      "path": "code/work/resident-dev-20261007/materialize.mjs",
+      "sha256": "acf5a208dd1614813e5564e3316f37b3cd0e8f42544307480c23a5d6ad81faff"
+    },
+    {
+      "id": "normal-generator",
+      "path": "code/work/resident-normal-dev-i-20261008/materialize-normal.mjs",
+      "sha256": "116de29bc94b11ee3d210d75fd0cb042c5cb5c62b1ab9a43e00ae60e23081b5a"
+    },
+    {
+      "id": "normal-reader",
+      "path": "code/work/resident-normal-dev-i-20261008/normal-reader.mjs",
+      "sha256": "bbfd0f253ae5fd58be233152457b8aae1c1069be80159ff315c69d76b2a42115"
+    },
+    {
+      "id": "dataplane-template",
+      "path": "code/work/v20-five/fast-path.lua",
+      "sha256": "096bc7cf90ff3575ed5f97d53678c03292825b1fc5a97005f6a5bdcc12be0d5b"
+    },
+    {
+      "id": "qos-template",
+      "path": "code/work/v20-five/qos-physical.lua",
+      "sha256": "69ceade747001b7bb20f3e1c8089bca00f829eb2a279c814b3f7ab0457b95390"
+    },
+    {
+      "id": "kernel-gate",
+      "path": "code/work/resident-continuous-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "cf5f7bb61c157554906971728ddffb1caaff1ba30bbc7fdc5f387d73634b0c36"
+    },
+    {
+      "id": "backend-interface",
+      "path": "code/work/resident-continuous-dev-20261008/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe"
+    },
+    {
+      "id": "process-tests",
+      "path": "code/work/resident-continuous-dev-20261008/test-continuous.mjs",
+      "sha256": "5b0a8ef5c7ba5f6ed09e1733c9922be6aa95496a38c0df7dc668288a7ce5bdce"
+    },
+    {
+      "id": "guardian-tests",
+      "path": "code/work/resident-continuous-dev-20261008/test-guardian-preflight.mjs",
+      "sha256": "5d102cc31c57111993fc449ff0aa0f80bd2d0f85e426503c48adf8ccc4857dbd"
+    },
+    {
+      "id": "native-harness",
+      "path": "code/work/resident-continuous-dev-20261008/endpoint-gate/control_harness.py",
+      "sha256": "84f08fb6e193d96e2889c7c328342ef5928de2224225c481152363f3695780aa"
+    }
+  ]
+}

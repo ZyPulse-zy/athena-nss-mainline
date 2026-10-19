@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "source_manifest_sha256": "ba7d00cb26686ca3dd34835a98f926d846ff9fa85353b1e7701c42c0d731b12b",
+  "project_default": "GPL-2.0-only",
+  "source_license_counts": {
+    "GPL-2.0-only": 6296,
+    "ISC": 8
+  },
+  "explicit_notices": [
+    {
+      "path": "code/work/nss11/group-runner.c",
+      "sha256": "35d47f40a3c3f3d4afbf5420a1d615c64e922bd88d45c946425e7066bce985ac",
+      "bytes": 3587,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/nss27/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "license": "ISC",
+      "basis": "upstream-permission-notice"
+    },
+    {
+      "path": "code/work/nss27/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "7cfd5b7e94cbe0c5d89363653b69c44a8b42024d6dda059888eab34304558237",
+      "bytes": 26939,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/nss27/endpoint-gate/two_slot_predicate.h",
+      "sha256": "02beb7eb4d29483548b3f86efa20cdeb0dc06a88153021732dc1b5f3adf91ac5",
+      "bytes": 4184,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/resident-continuous-dev-20261008/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "license": "ISC",
+      "basis": "upstream-permission-notice"
+    },
+    {
+      "path": "code/work/resident-continuous-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "cf5f7bb61c157554906971728ddffb1caaff1ba30bbc7fdc5f387d73634b0c36",
+      "bytes": 30264,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/resident-continuous-dev-20261008/endpoint-gate/two_slot_predicate.h",
+      "sha256": "f8fdc261ad2d585080acd78718024ff13ab7bead2075fdbc66f48ae269083308",
+      "bytes": 5530,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "license": "ISC",
+      "basis": "upstream-permission-notice"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "2b009916d3de9eca7ccfcb338779e1827f045ff3d56c2125bcad84d8ad53b167",
+      "bytes": 29923,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/resident-general-dev-20261008/endpoint-gate/two_slot_predicate.h",
+      "sha256": "f8fdc261ad2d585080acd78718024ff13ab7bead2075fdbc66f48ae269083308",
+      "bytes": 5530,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/resident-general-dev-i-20261008/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "license": "ISC",
+      "basis": "upstream-permission-notice"
+    },
+    {
+      "path": "code/work/resident-general-dev-i-20261008/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "2b009916d3de9eca7ccfcb338779e1827f045ff3d56c2125bcad84d8ad53b167",
+      "bytes": 29923,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/resident-general-dev-i-20261008/endpoint-gate/two_slot_predicate.h",
+      "sha256": "f8fdc261ad2d585080acd78718024ff13ab7bead2075fdbc66f48ae269083308",
+      "bytes": 5530,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "license": "ISC",
+      "basis": "upstream-permission-notice"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "c97879ec103d09691fe6bc51d66df591a22c3b8d85d74bb100450c732cfd8ece",
+      "bytes": 26941,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/v12/endpoint-gate/two_slot_predicate.h",
+      "sha256": "02beb7eb4d29483548b3f86efa20cdeb0dc06a88153021732dc1b5f3adf91ac5",
+      "bytes": 4184,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "license": "ISC",
+      "basis": "upstream-permission-notice"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "2d406b3c31d019b28fc9eccf3c5b6b1dcc8f423c7535c4fcc90e8949f7e063c0",
+      "bytes": 27108,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/v13/endpoint-gate/two_slot_predicate.h",
+      "sha256": "02beb7eb4d29483548b3f86efa20cdeb0dc06a88153021732dc1b5f3adf91ac5",
+      "bytes": 4184,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "license": "ISC",
+      "basis": "upstream-permission-notice"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "a570c6ec3af180764bdcb38eb8b011ae8d9ecd76e33d957912d9c58a5abbfc18",
+      "bytes": 29565,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/v16-three/endpoint-gate/two_slot_predicate.h",
+      "sha256": "4407302551dbcc1cdaae987026f2218871a113645ad1b411342cee7b1ae28b80",
+      "bytes": 5079,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/v21-fiveflow/endpoint-gate/ecm_ae_classifier_public.h",
+      "sha256": "a00bd1c86a70aabb304cf487e1d1bae74375e8ec6b10ae109f23f91bc2b89cbe",
+      "bytes": 4924,
+      "license": "ISC",
+      "basis": "upstream-permission-notice"
+    },
+    {
+      "path": "code/work/v21-fiveflow/endpoint-gate/rp_ecm_gate_lab_ct.c",
+      "sha256": "abead36542569ba4541c74846f4e1c545b02d8eafbde9ba59ee265eddecc576f",
+      "bytes": 33147,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    },
+    {
+      "path": "code/work/v21-fiveflow/endpoint-gate/two_slot_predicate.h",
+      "sha256": "1fe32c0888981e731c9862ebb07fb184d1173b75d5264636f6d259eb57ef3a6f",
+      "bytes": 6481,
+      "license": "GPL-2.0-only",
+      "basis": "spdx-header",
+      "original_identifier": "GPL-2.0"
+    }
+  ]
+}

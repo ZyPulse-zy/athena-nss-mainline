@@ -1,0 +1,20 @@
+# Third-party notices
+
+The following ECM interface header copies retain the ISC permission notice and
+these copyright statements:
+
+- Copyright (c) 2021, The Linux Foundation. All rights reserved.
+- Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+
+- code/work/nss27/endpoint-gate/ecm_ae_classifier_public.h
+- code/work/resident-continuous-dev-20261008/endpoint-gate/ecm_ae_classifier_public.h
+- code/work/resident-general-dev-20261008/endpoint-gate/ecm_ae_classifier_public.h
+- code/work/resident-general-dev-i-20261008/endpoint-gate/ecm_ae_classifier_public.h
+- code/work/v12/endpoint-gate/ecm_ae_classifier_public.h
+- code/work/v13/endpoint-gate/ecm_ae_classifier_public.h
+- code/work/v16-three/endpoint-gate/ecm_ae_classifier_public.h
+- code/work/v21-fiveflow/endpoint-gate/ecm_ae_classifier_public.h
+
+The original headers retain their notices. The complete permission text is in
+LICENSES/ISC.txt. Project-authored code and documentation use GPL-2.0-only;
+see LICENSE and docs/LICENSING.md.

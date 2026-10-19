@@ -4,6 +4,8 @@
 
 本仓库保存控制器原型、代码快照和实验记录，尚未整理成通用安装包。
 
+从[主线源码入口](src/README.md)阅读当前研究版本；各轮代码见[源码快照索引](docs/history/README.md)。
+
 ## 研究内容
 
 - 结合流量分类、进程与 socket（套接字）归属、连接跟踪信息，选择可加速的连接。
@@ -25,11 +27,13 @@
 
 | 路径 | 内容 |
 | --- | --- |
+| [src/](src/) | 主线组件入口及源码哈希绑定 |
 | [code/](code/) | 分类器、控制器及各轮实验的源代码快照 |
 | [docs/](docs/) | 设计说明、问题分析、状态与实验记录 |
 | [evidence/](evidence/) | 结构化测量结果和验证记录 |
 | [reports/](reports/) | 实验报告 |
 | [tools/](tools/) | 仓库校验、离线回放和数据同步工具 |
+| [LICENSES/](LICENSES/) | 第三方许可文本及源码许可索引 |
 | [source-manifest.json](source-manifest.json) | 源文件路径及内容哈希清单 |
 
 ## 阅读与离线检查
@@ -39,10 +43,11 @@
 - [实验记录](docs/EXPERIMENT_LOG.md)与[证据索引](docs/ARTIFACT_INDEX.md)：查阅具体轮次。
 - [状态记录](docs/STATE.md)与[问题记录](docs/KNOWN_FAILURES.md)：按日期查看进展及未解决问题。
 
-使用 Python 3 校验源文件哈希、文档链接和仓库内容：
+使用 Python 3.10 及以上版本校验主线选择、历史索引、源文件哈希和文档链接：
 
 ```sh
-python3 tools/check_repository.py
+make check
+make test
 ```
 
 使用 Lua 5.1 执行准入逻辑的离线回放：
@@ -64,4 +69,6 @@ python3 tools/replay_admission.py --lua /path/to/lua5.1
 
 ## 许可证
 
-本仓库尚未设置统一的仓库级许可证。相关独立项目的许可证见各自仓库。
+项目原创代码及配套文档采用 [GPL-2.0-only](LICENSE)。第三方接口头文件保留 ISC 许可与原署名，详见[许可证说明](docs/LICENSING.md)和 [NOTICE](NOTICE)。
+
+维护流程见[贡献说明](CONTRIBUTING.md)。
